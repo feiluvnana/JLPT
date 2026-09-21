@@ -90,6 +90,7 @@ import argparse
 import json
 import re
 import sys
+import unicodedata
 from pathlib import Path
 
 import numpy as np
@@ -441,19 +442,63 @@ def spoken_shape(script_lines: list[str]) -> tuple[int, int, int]:
     return sum(len(s) for s in spoken), len(spoken), choices
 
 
+# ---------------------------------------------------------------- figure items
+#
+# THE ONE COPY of the figure-item predicate. `build_choukai_bank.py` imports
+# `figure_dependent` from here rather than keeping its own; two copies is how
+# the ア/イ/ウ half below stayed missing from one of them (see the docstring).
+
 BARE_DIGIT_OPTION = re.compile(r"^[\s]*[1-4\uff11-\uff14][\s]*$")
+
+# The kana a 座席図 / 配置図 / 図 labels its regions with. Deliberately ONE
+# character per token: a real option that happens to start with katakana
+# (「アルバイト」「イベント」) is several characters and never matches.
+FIGURE_LABEL_TOKEN = re.compile(r"^[\u30a2\u30a4\u30a6\u30a8\u30aa]$")  # ア イ ウ エ オ
+# Separators official uses between labels in a combination option: whitespace
+# (「ア　イ　ウ」, ideographic space), 、 ・ ， / and 「と」 (「アとイ」).
+FIGURE_LABEL_SEPARATOR = re.compile(r"[\s\u3000\u3001\u30fb\uff64\uff65,/\uff0f]+|\u3068")
+
+
+def _figure_label_option(option) -> bool:
+    """Is this ONE printed option nothing but figure labels?
+
+    True only when every separator-delimited token is a single ア/イ/ウ/エ/オ:
+    「ア」, 「ア　イ」, 「ア　イ　ウ」, 「アとイ」. False for any option that
+    carries a word — including a katakana one — because a token of two or more
+    characters cannot match `FIGURE_LABEL_TOKEN`.
+    """
+    text = unicodedata.normalize("NFKC", str(option)).strip()
+    if not text:
+        return False
+    tokens = [t for t in FIGURE_LABEL_SEPARATOR.split(text) if t]
+    return bool(tokens) and all(FIGURE_LABEL_TOKEN.match(t) for t in tokens)
 
 
 def figure_dependent(options) -> bool:
     """Are these printed options only meaningful beside a picture?
 
-    Same predicate as `build_choukai_bank.figure_dependent`, applied to a
-    textbook item's option list: a digits-only option set labels regions of a
-    figure and carries no meaning on its own. See the call site for why both
-    builders write the flag.
+    Two shapes, and the WHOLE option set must be one of them:
+
+    1. the bare digits 1-4 — regions of the picture, numbered;
+    2. the kana position labels ア/イ/ウ/エ/オ, alone or in combinations
+       (「ア　イ　ウ」/「ア　イ　エ」…) — a 座席図 or 配置図.
+
+    Shape 2 was missing until 2026-09-17 and three papers shipped an
+    unanswerable 問題1-2番 because of it (`qa/root-cause-20260917_1.md` RC-2:
+    `2023-12:問題1-2` and `2024-12:問題1-2` were banked as drawable). Requiring
+    EVERY option to be label-only is what keeps a real option safe: a set is
+    only refused when not one of its four members says anything without the
+    picture.
+
+    Called by both bank builders — `build_choukai_bank.figure_dependent()`
+    wraps this for the official half's `詳細解説` block shape.
     """
-    opts = list(options or [])
-    return bool(opts) and all(BARE_DIGIT_OPTION.match(str(o)) for o in opts)
+    opts = [str(o) for o in (options or [])]
+    if not opts:
+        return False
+    if all(BARE_DIGIT_OPTION.match(o) for o in opts):
+        return True
+    return all(_figure_label_option(o) for o in opts)
 
 
 def build_one(spec: dict) -> dict:

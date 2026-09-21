@@ -90,6 +90,7 @@ no distractors to design.
 |---|---|
 | `tools/choukai_segment.py` | Finding item boundaries in an official MP3. The committed implementation of `references/official_pacing.md` §1's two-threshold envelope method |
 | `tools/build_choukai_bank.py` | `logs/choukai_bank.json` (`BANK_VERSION = 2`) — the OFFICIAL half, 290 items + 50 preambles, and the single writer of the whole file |
+| `tools/build_archive_bank.py` | The ARCHIVE half — hand-declared items cut straight out of the 21 un-imported sittings of `refs/JLPT_N2_NEW/` (`references/archive_bank_expansion.md`, route C). Slot-PRESERVING like an imported official record, because the clip speaks its own 「N番。」; tagged `source: "official"` + `provenance: "archive"`. `make archive-bank`, `make archive-bank SCOUT=YYYY-MM` for a sitting's pause map |
 | `tools/build_textbook_bank.py` | The SLOT-FREE half — resolving `.agents/choukai-audio/references/textbook_items.json` to audio (a CD track, or a `window` into one shared file for the 問題例集 sample), measuring each body span, and refusing an item whose audio disagrees with its transcript. Owns `rate_band_for()`: one CHAR_RATE band per recording style, because a textbook CD is pressed tighter than the exam. Also `band_headroom()`, which reports where each admitted item sits inside its 大問's band |
 | `tools/choukai_wear.py` | How hard the pool is mined, measured and projected — the number `TEXTBOOK_SLOTS` is set from (`make choukai-wear`) |
 | `tools/harvest_number_calls.py` | `logs/choukai_number_calls.json` — one clean official 「N番。」 per number 1–11, all from one sitting |
@@ -101,8 +102,13 @@ no distractors to design.
    from item *k* of 問題N in some sitting. Official reads 「N番。」 continuously
    into the situation line with **no pause between them**, so renumbering would
    mean cutting inside speech. Keeping the slot puts every cut in a structural
-   silence and keeps the announcer's own numbering correct. All 31 sittings run
-   the same 5/6/5/11/2 shape, so each slot has one candidate per sitting.
+   silence and keeps the announcer's own numbering correct. The ten BANKED
+   sittings all run 5/6/5/11/2, so each of their slots has one candidate per
+   sitting — but **the archive as a whole does not**: measured against
+   `refs/JLPT_N2_NEW/answer_keys.json`, 11 of the 31 sittings run that shape and
+   20 do not (`references/archive_bank_expansion.md` §2; re-measured
+   2026-09-17). The shape is read per sitting from
+   `choukai_segment.slots_for()`, never from a constant.
 2. **Hand-declared draws are slot-FREE, and the composer speaks the number.** A
    textbook track carries no number call at all, and a 問題例集 clip is cut to
    start after its own, so those items are banked body-only
@@ -246,7 +252,10 @@ measurement that justifies it** — never by widening a band.
   *audio* is present — it rides inside the section preamble clip, uncut — so
   the paper sounds complete while `聴解スクリプト.txt` has no 例 block. Every
   `tests/imported-*` sitting carries the same divergence.
-- **Finite novelty, now less finite.** Ten official candidates per slot plus 85
+- **Finite novelty, now less finite.** Ten official candidates per slot — **12
+  for 問題3 since 2026-09-17**, when the archive expansion banked all five 問題3
+  items of 2020-12 and of 2014-12 (`references/archive_bank_expansion.md` §9
+  "What is banked so far"; 14 more clean sittings would take it to 26) — plus 85
   slot-free items (問題1 ×15, 問題2 ×15, 問題3 ×19, 問題4 ×36).
   `logs/choukai_draws.json` records every paper's draw and the composer spends
   the least-used clips first; across the suite of 24 papers `make choukai-wear`
@@ -259,13 +268,25 @@ measurement that justifies it** — never by widening a band.
   up, for 73 banked. Its other 76 items are transcribed one 大問 at a time — so
   where this file used to read "depth is no longer the binding constraint, the
   sources are", the binding constraint on 問題1/2/3 is now **transcription
-  time**, and the numbers to beat are: 問題1 and 問題3 need 18 for a third slot
+  time** — on BOTH sides now, since the archive is declared one item at a time
+  by exactly the same method. The numbers to beat are: 問題1 and 問題3 need 18 for a third slot
   (問題1 holds 15; 問題3 reached its third slot on 2026-09-10 and needs 24 for a
   fourth, holding 19), and 問題2 — stuck at one slot since the pool began —
   **reached two on 2026-09-10** and needs 18 for a third (it holds 15, with 13
   more transcribable items across 完全模試 and 耳から覚える). `references/textbook_bank_plan.md` §6 lists
   what is genuinely blocked; the next real novelty is the 21 official sittings
-  in `refs/JLPT_N2_NEW/` that are not yet imported (§6.4).
+  in `refs/JLPT_N2_NEW/` that are not yet imported (§6.4), and that expansion is
+  **building** — `references/archive_bank_expansion.md` owns it.
+- **Composing now needs `refs/JLPT_N2_NEW/` on disk**, which it did not before
+  2026-09-17: an archive record's `audio.path` points into that 1.2 GB folder
+  (restore: `gh release download refs --pattern 'JLPT_N2_NEW.zip'`).
+- **The control paper is not protected yet.** An archive record is
+  `source: "official"`, `needs_number_call: false`, so `draw()` files it in the
+  official pool and `20260807_1` would spend archive clips — and
+  `check_choukai_source_mix` cannot see it, because the row still reads
+  `{"official"}`. `compose_choukai.draw()` must filter on
+  `provenance == "imported"` for `OFFICIAL_ONLY_TESTS` BEFORE any paper is
+  composed against this bank (`archive_bank_expansion.md` §6 Step 5, §8.1).
 - **No answer-position control.** Lifted options cannot be reordered — 問題3/4/5
   read them aloud — so `answer_positions.聴解_問題N` prescribes nothing for a
   composed paper and `make check` skips it. Balance is a SELECTION objective in

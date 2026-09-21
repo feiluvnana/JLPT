@@ -949,16 +949,16 @@
   ]
  },
  "問1-2": {
-  "why_correct": "Nữ quản lý giao「ホールの入口」(ア)và「清掃」(ウ)cho nam hôm nay.",
+  "why_correct": "Cô yêu cầu \"trước mắt cứ dán giấy thông báo đính chính\", và anh đáp đã hiểu.",
   "options_analysis": [
-   "“ア・イ” sai vì イ(bán đồ ăn)là việc buổi trước, không phải hôm nay.",
-   "Đúng, cả ア và ウ.",
-   "“イ・ウ” sai vì イ không phải việc hôm nay.",
-   "“ア・イ・ウ” sai vì gồm cả イ không thuộc hôm nay."
+   "Chương trình đã in và phát cho hội viên rồi.",
+   "Đúng: làm giấy dán thông báo đính chính là chỉ thị trước mắt.",
+   "Việc điều chỉnh giờ lớp thì \"không kịp cho tháng sau\".",
+   "Không làm lại chương trình, chỉ đính chính bản đã in."
   ],
   "points": [
-   "清掃《せいそう》: nghĩa “dọn dẹp”.",
-   "研修《けんしゅう》: nghĩa “đào tạo, tập huấn”."
+   "とりあえず: trước mắt, tạm thời làm việc này đã.",
+   "訂正《ていせい》: đính chính, sửa cho đúng."
   ]
  },
  "問1-3": {
@@ -988,19 +988,32 @@
   ]
  },
  "問1-5": {
-  "why_correct": "Tin nhắn nhờ khách mang máy cho mượn đến cửa hàng vào lúc nào thuận tiện.",
+  "why_correct": "「日光がよく当たる窓際に移してあげるといいですよ」→ nên đổi chỗ đặt cây đầu tiên.",
   "options_analysis": [
-   "Đúng: hôm nào tiện thì mang máy mượn tới cửa hàng.",
-   "Máy không sửa được nên không phát sinh tiền sửa.",
-   "Nội dung tư vấn là đổi máy, không phải đổi địa chỉ.",
-   "Cửa hàng đã liên lạc rồi, chính là tin nhắn này."
+   "Đúng, việc đầu tiên là đổi chỗ đặt cây.",
+   "Cách tưới nước hiện tại đã ổn, không cần đổi.",
+   "Nhân viên nói không cần cắt cành yếu.",
+   "Đổi chậu chỉ nên làm sau khi cây khỏe lại."
   ],
   "points": [
-   "ご持参《じさん》の上《うえ》: sau khi mang theo.",
-   "取《と》り扱《あつか》う: có bán, có xử lý mặt hàng đó."
+   "日当たり《ひあたり》: hướng có nắng",
+   "鉢《はち》: chậu cây"
   ]
  },
  "問2-1": {
+  "why_correct": "Lời khuyên MỚI của nữ là cố cười dù gượng ép, các việc khác đã làm từ trước.",
+  "options_analysis": [
+   "Đúng, lời khuyên mới: cố giữ nét mặt tươi dù gượng ép.",
+   "Làm ghi chú là lời khuyên cũ, nam xác nhận đã có ích rồi.",
+   "Chào hỏi đầu buổi cũng là lời khuyên cũ đã làm tốt.",
+   "Luyện tập với bạn Nhật chỉ nhắc lại tiếp tục như trước."
+  ],
+  "points": [
+   "表情《ひょうじょう》: biểu cảm khuôn mặt.",
+   "面接《めんせつ》: phỏng vấn."
+  ]
+ },
+ "問2-2": {
   "why_correct": "Chủ nuôi nói con chó \"vẫn cứ nằm suốt\", tức là chỉ ngủ li bì.",
   "options_analysis": [
    "Đúng: nằm suốt nghĩa là chỉ ngủ, khớp tình trạng hiện tại.",
@@ -1011,19 +1024,6 @@
   "points": [
    "横《よこ》になる: nằm nghỉ, nằm xuống.",
    "無理矢理《むりやり》: ép buộc dù đối phương không muốn."
-  ]
- },
- "問2-2": {
-  "why_correct": "「自分が仕事でどう力を発揮できるか、そこを知りたい」＝muốn tìm thế mạnh bản thân.",
-  "options_analysis": [
-   "Cô nói rõ chưa nghĩ đến việc lợi cho xin việc.",
-   "Lo lắng giao tiếp là mối bận tâm, không phải điều kỳ vọng.",
-   "“Hiểu đời sống công ty” là gợi ý của bạn nam, không phải của cô.",
-   "Đúng."
-  ],
-  "points": [
-   "実習《じっしゅう》: nghĩa “thực tập”.",
-   "発揮《はっき》する: nghĩa “phát huy”."
   ]
  },
  "問2-3": {
@@ -1040,97 +1040,58 @@
   ]
  },
  "問2-4": {
-  "why_correct": "「佐藤さんにはやっぱり僕と同じ方法がお勧めだね」＝mặc đồ đơn giản.",
+  "why_correct": "Nữ nói:「合わせるもので同じ着物とは思えないってくらい印象が変わるんだよ」＋「毎日着たいくらい大好きになっちゃった」.",
   "options_analysis": [
-   "Chỉ nói tạp chí 'có thể tham khảo' rồi chuyển ý khác.",
-   "Nữ từ chối vì trả lại đồ phiền phức.",
-   "Khuyên áp dụng cách của chính nam sinh.",
-   "Nữ ngần ngại với đồ cũ."
+   "[Sai] Giá rẻ chỉ là lý do mua được nhiều, không phải lý do mê.",
+   "[Sai] Cô nói KHÔNG đặc biệt thích đồ cũ「そういうわけじゃない」.",
+   "[Đúng] Say mê vì cách phối đồ đổi hẳn ấn tượng bộ kimono.",
+   "[Sai] Cô nói KHÔNG quan tâm ánh mắt người khác."
   ],
   "points": [
-   "制服化《せいふくか》: mặc theo kiểu cố định mỗi ngày.",
-   "似合《にあ》う: hợp, phù hợp."
+   "組《く》み合《あ》わせ: sự phối đồ.",
+   "印象《いんしょう》: ấn tượng."
   ]
  },
  "問2-5": {
-  "why_correct": "「前に勤めてた会社に...不満があったわけじゃなく、新たな世界を見てみたい」.",
+  "why_correct": "Cô ấy tự nói trước đây uống thuốc ho tương tự thì bị buồn nôn.",
   "options_analysis": [
-   "Chỉ là ví dụ về NGƯỜI KHÁC cô nêu ra.",
-   "Cũng chỉ là ví dụ về người khác, không phải lý do của cô.",
-   "Đây là lý do của LẦN CHUYỂN VIỆC ĐẦU TIÊN.",
-   "Không bất mãn, muốn thử lĩnh vực mới."
+   "Lần trước uống thuốc ho bị buồn nôn nên bỏ sau 2-3 lần.",
+   "Thuốc dạ dày chỉ được kê kèm, không nói bị đau.",
+   "Không có câu nào nói thuốc không có tác dụng.",
+   "Không phải bệnh nặng thêm, mà xuất hiện triệu chứng khác."
   ],
   "points": [
-   "不満《ふまん》: bất mãn, không hài lòng.",
-   "新《あら》たな世界《せかい》: thế giới mới."
+   "処方《しょほう》する: bác sĩ kê đơn.",
+   "おさまる: (triệu chứng) dịu đi."
   ]
  },
  "問2-6": {
-  "why_correct": "「他社製品は2センチ以上の段差…グリーンは1センチ以上に対応できず」→ vấn đề là vượt bậc thềm thấp hơn.",
+  "why_correct": "「適切な判断ができないとチームの勝ちには繋がりません」＝trọng tâm rèn luyện.",
   "options_analysis": [
-   "Tiếng ồn được đánh giá yên tĩnh hơn, không phải vấn đề.",
-   "Thời gian sạc được đánh giá ngắn hơn, không phải vấn đề.",
-   "Lực hút được đánh giá mạnh hơn, không phải vấn đề.",
-   "Đúng, khả năng vượt bậc thềm là vấn đề."
+   "Kỹ thuật cao chỉ là điều kiện nền tảng đương nhiên.",
+   "Thể lực cũng chỉ là điều kiện cơ bản.",
+   "Tinh thần mạnh không đi kèm từ 'đặc biệt'.",
+   "Năng lực phán đoán được nhấn mạnh đặc biệt."
   ],
   "points": [
-   "段差《だんさ》: bậc thềm",
-   "吸い込む《すいこむ》: hút vào"
+   "判断力《はんだんりょく》: khả năng phán đoán.",
+   "不可欠《ふかけつ》: không thể thiếu."
   ]
  },
  "問3-1": {
-  "why_correct": "Người nam kể mua cả sách giấy lẫn ebook, dùng tùy hoàn cảnh (xa dùng ebook, nhà dùng giấy).",
+  "why_correct": "Nhóm 「みかんの会」 sắp hoạt động, do người dân tự đứng ra tổ chức: bài nói về một nhóm cư dân mới ra đời.",
   "options_analysis": [
-   "Ảnh hưởng đến mắt chỉ được nữ nhắc thoáng, không phải trọng tâm.",
-   "Người nam không khẳng định giấy tốt hơn, chỉ dùng tùy trường hợp.",
-   "Không có nội dung về đặc điểm khiến trẻ thích ebook.",
-   "Người nam mô tả rõ khi nào dùng ebook, khi nào dùng giấy."
+   "Trọng tâm là nhóm mới ra đời, mục đích và tên gọi.",
+   "Hội chợ chỉ là ví dụ hoạt động, không phải thông báo.",
+   "「栽培する会かな」chỉ là phỏng đoán, đã bị phủ định.",
+   "Tên đã được đặt rồi, không hề tuyển chọn tên."
   ],
   "points": [
-   "電子書籍《でんししょせき》: sách điện tử.",
-   "持《も》ち運《はこ》び: mang theo, di chuyển."
+   "主体的《しゅたいてき》: chủ động, tự mình đứng ra làm.",
+   "実る《みのる》: kết trái, đạt được thành quả."
   ]
  },
  "問3-2": {
-  "why_correct": "Người nam bảo cứ xem phim hay là lòng lại chùng xuống vì nghĩ ngợi đời mình rốt cuộc là gì.",
-  "options_analysis": [
-   "[Đúng] Vì phim hay nên tâm trạng anh chùng xuống.",
-   "[Sai] Anh không nói phim dở mà vẫn thấy vui.",
-   "[Sai] Phim dở cũng làm anh buồn, nhưng là vì tiếc thời gian.",
-   "[Sai] Phim không hay không dở là ý người nữ, và anh đã từ chối."
-  ],
-  "points": [
-   "気分《きぶん》が沈《しず》む: tâm trạng chùng xuống.",
-   "無駄《むだ》な時間《じかん》: thời gian lãng phí."
-  ]
- },
- "問3-3": {
-  "why_correct": "「体が床から浮きます」「1センチくらい背が伸びる」「顔が丸くなる」「足の裏の皮が柔らかくなります」— toàn bài kể các thay đổi cơ thể trong không gian.",
-  "options_analysis": [
-   "[Sai] Bài không giải thích cơ chế vô trọng lực, chỉ kể hiện tượng.",
-   "[Sai] Bài không nói về thí nghiệm trong vũ trụ.",
-   "[Sai] Bài không nói về sinh hoạt thường ngày của phi hành gia.",
-   "[Đúng] Toàn bài kể các thay đổi của cơ thể trong không gian."
-  ],
-  "points": [
-   "無重力《むじゅうりょく》: không trọng lực.",
-   "背《せ》が伸《の》びる: cao lên."
-  ]
- },
- "問3-4": {
-  "why_correct": "Bài xâu chuỗi sự thay đổi: từ gạo sang thịt và dầu, rồi cả cách ăn cũng khác xưa.",
-  "options_analysis": [
-   "Nói cả nội dung lẫn cách ăn đều 「昔とは大きく異なる」.",
-   "Không chỉ từ 1950 mà theo dòng thay đổi từ xưa tới nay.",
-   "Không đánh giá về dinh dưỡng.",
-   "Đồ ăn ngoại chỉ được nhắc như nguyên nhân của thay đổi."
-  ],
-  "points": [
-   "食生活《しょくせいかつ》: sinh hoạt ăn uống.",
-   "〜に伴《ともな》って: kéo theo đó, cùng với đó."
-  ]
- },
- "問3-5": {
   "why_correct": "Anh cho rằng học từ xa không phù hợp với người như cô, ý là cô sẽ lại bỏ giữa đường.",
   "options_analysis": [
    "Anh còn khen cô giỏi chăm trẻ, tức là phù hợp làm bảo mẫu.",
@@ -1143,16 +1104,55 @@
    "扱《あつか》い方《かた》: cách đối xử, cách xử lý."
   ]
  },
- "問4-1": {
-  "why_correct": "「大学を卒業して以来だよね？」＝lâu rồi không gặp → đáp án 2.",
+ "問3-3": {
+  "why_correct": "Bộ anime được yêu thích ở nước ngoài: phát sóng 25 nước, truyện dịch 5 thứ tiếng, DVD bán chạy.",
   "options_analysis": [
-   "Ngược ý câu gốc (đang nói lâu không gặp).",
-   "久しぶりだね。元気？＝lâu rồi không gặp, phản hồi tự nhiên.",
-   "Nói hẹn gặp tương lai, không hợp vì đang nói việc gặp lại sau nhiều năm."
+   "Chỉ nói một tác phẩm, không phân tích điểm chung.",
+   "Có nhắc việc dịch nhưng không bàn chất lượng.",
+   "Việc dựng phim chỉ là một ví dụ, không nói xu hướng.",
+   "Trọng tâm là sức nổi tiếng lan ra toàn thế giới."
   ],
   "points": [
-   "〜以来《いらい》: kể từ khi ~.",
-   "久しぶり《ひさしぶり》: đã lâu không gặp/làm."
+   "掴む《つかむ》: nắm bắt, thu hút lòng người.",
+   "好調《こうちょう》: thuận lợi, bán chạy."
+  ]
+ },
+ "問3-4": {
+  "why_correct": "Người phụ nữ kể đã đổi bữa ăn: chọn cơm suất có salad và sáng tự làm nước ép rau.",
+  "options_analysis": [
+   "Không đưa ra thực đơn cân bằng dinh dưỡng lý tưởng.",
+   "Không giải thích lý do vì sao rau lại tốt cho sức khỏe.",
+   "Trọng tâm là việc cải thiện nội dung bữa ăn hằng ngày.",
+   "Vị ngon chỉ được nhắc như mẹo để nước ép dễ uống hơn."
+  ],
+  "points": [
+   "改善《かいぜん》: cải thiện, sửa chỗ chưa tốt.",
+   "食生活《しょくせいかつ》: chế độ, thói quen ăn uống."
+  ]
+ },
+ "問3-5": {
+  "why_correct": "Bài nói người ta làm việc không chỉ vì tiền: khi đạt mục tiêu và được công nhận thì thấy mãn nguyện.",
+  "options_analysis": [
+   "Hoạt động tiêu dùng chỉ được nêu ra để so sánh.",
+   "Trọng tâm là ý nghĩa của lao động ngoài chuyện tiền bạc.",
+   "Giải trí chỉ được nhắc như một lý do người ta đi làm.",
+   "Mục tiêu chỉ là ví dụ, không bàn tầm quan trọng của nó."
+  ],
+  "points": [
+   "意義《いぎ》: ý nghĩa, giá trị.",
+   "得難い《えがたい》: khó mà có được."
+  ]
+ },
+ "問4-1": {
+  "why_correct": "「最初は」hàm ý lúc đầu hối hận nhưng giờ đã khác → xác nhận là may mà đã nhận.",
+  "options_analysis": [
+   "Là lời khuyên trước khi nhận, nhưng việc đã xong rồi.",
+   "Nói với người đã không nhận, trái với thực tế.",
+   "Xác nhận sự hài lòng hiện tại ẩn sau 「最初は」."
+  ],
+  "points": [
+   "〜なきゃよかった: giá mà đã không làm (hối hận).",
+   "最初《さいしょ》は: lúc đầu thì... (ngụ ý sau đã khác)."
   ]
  },
  "問4-2": {
@@ -1204,15 +1204,15 @@
   ]
  },
  "問4-6": {
-  "why_correct": "「最初は」hàm ý lúc đầu hối hận nhưng giờ đã khác → xác nhận là may mà đã nhận.",
+  "why_correct": "Từ chối lời đề nghị của nhân viên → 「結構です」là cách từ chối lịch sự.",
   "options_analysis": [
-   "Là lời khuyên trước khi nhận, nhưng việc đã xong rồi.",
-   "Nói với người đã không nhận, trái với thực tế.",
-   "Xác nhận sự hài lòng hiện tại ẩn sau 「最初は」."
+   "Từ chối lịch sự, nghĩa là không cần.",
+   "「預かる」là động từ của bên nhận giữ; khách phải nói 「預ける」.",
+   "「お預け」không phải cách nói tự nhiên, dạng kính ngữ cũng sai."
   ],
   "points": [
-   "〜なきゃよかった: giá mà đã không làm (hối hận).",
-   "最初《さいしょ》は: lúc đầu thì... (ngụ ý sau đã khác)."
+   "預《あず》かる / 預《あず》ける: bên giữ và bên gửi dùng động từ khác nhau.",
+   "結構です: từ chối lịch sự, «không cần đâu»."
   ]
  },
  "問4-7": {
@@ -1228,15 +1228,15 @@
   ]
  },
  "問4-8": {
-  "why_correct": "Câu hỏi về việc có đủ thời gian xem hết vườn thú, phản hồi tự nhiên là khẳng định đủ.",
+  "why_correct": "Nhân viên đề nghị kèm đũa → nhận lời bằng 「お願いします」.",
   "options_analysis": [
-   "Đúng, khẳng định một ngày là đủ.",
-   "Hiểu sai thành không cần quan tâm thời gian.",
-   "Hiểu ngược thành xem xong quá nhanh, không khớp câu hỏi."
+   "「大丈夫です」thường mang nghĩa từ chối, mâu thuẫn với 「はい」.",
+   "Câu nhận lời đề nghị một cách tự nhiên.",
+   "「お〜する」là khiêm nhường ngữ, không dùng cho hành động của đối phương."
   ],
   "points": [
-   "回り切る《まわりきる》: đi hết một vòng",
-   "動物園《どうぶつえん》: vườn thú"
+   "お〜する: khiêm nhường ngữ, chỉ dùng cho hành động của mình.",
+   "大丈夫です: ở đây mang nghĩa từ chối, «không cần»."
   ]
  },
  "問4-9": {
@@ -1264,15 +1264,15 @@
   ]
  },
  "問4-11": {
-  "why_correct": "「乗るところだった」nghĩa là suýt lên nhưng đã không lên → đáp nếu lên thì to chuyện.",
+  "why_correct": "Trả lời phù hợp với kết quả bất ngờ (trái dự đoán) là bày tỏ sự ngạc nhiên và thắc mắc lý do.",
   "options_analysis": [
-   "Nói về nơi đã lên tàu, không nhắc việc suýt lên nhầm.",
-   "Nói nếu lên thì gay, tiếp nhận việc đã tránh được.",
-   "Hiểu là đã lên rồi, trái với sự thật."
+   "Đúng: 「意外ですね。なんででしょう」= đồng cảm với sự bất ngờ và thắc mắc lý do.",
+   "「この結果を予想していたんですね」mâu thuẫn với ý 'trái với dự đoán'.",
+   "「思ったより厳しかったんですね」hiểu ngược ý (thực tế là được ưa chuộng)."
   ],
   "points": [
-   "〜ところだった: suýt nữa thì..., mà đã không.",
-   "うっかり: vô ý, không để ý."
+   "予想《よそう》に反《はん》して: trái với dự đoán.",
+   "各年代《かくねんだい》: mọi lứa tuổi."
   ]
  },
  "問5-1": {

@@ -176,7 +176,8 @@
       {
         "scenario": "図書館:電子書籍の利用登録",
         "theme": "デジタル化",
-        "key": "図書館:電子書籍の利用"
+        "key": "図書館:電子書籍の利用",
+        "note": "2026-09-21: this row is a 聴解 scenario drawn in the pre-2026-09-08 authored-listening era. Since then a paper's whole 聴解 half is COMPOSED from real recordings (choukai-audio Part 0), so this scenario is not in 20260904_1 at all — nothing was authored from it and no surface ships it. `check_theme_record_agreement()` joins a spec/ledger row to a surface by its institution head, and the head here is the three-character 図書館, which also occurs in this paper's 読解問題10(4) description (開架の棚と図書館の棚の役割, tagged 教育). Until 2026-09-21 the join was AMBIGUOUS and therefore skipped, because the row's old 聴解 surface descriptions also named 図書館; refreshing those rows to the 2026-09-21 re-composition left exactly one candidate and the spurious join surfaced as a theme disagreement. Nothing about the paper changed. No `shipped_theme` is recorded on purpose: the paper ships no surface for this draw, so any value would be a manufactured record. The drawn `scenario`/`theme`/`key` strings are untouched — recency_map keys on them."
       }
     ],
     "reading_topics": [

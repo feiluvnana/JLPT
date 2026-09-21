@@ -1,6 +1,14 @@
 # Expanding the 聴解 clip bank to the 21 un-imported archive sittings
 
-Status: **DESIGN ONLY — nothing here is built.** Written 2026-09-14 as the
+Status: **BUILDING — §6 Steps 1, 2, 3 (first sub-case) and 4 are LANDED**
+(2026-09-17). `tools/build_archive_bank.py` +
+`.agents/choukai-audio/references/archive_items.json` exist, `make archive-bank`
+reports them, `make choukai-bank` appends them, and `make check`'s
+`check_choukai_archive_bank` re-derives their guards from the bank. **10 問題3
+items are banked** — all five of 2020-12 and all five of 2014-12 — and the bank
+is 435 records. §6 Step 5 (the composer's `provenance` filter) is **NOT** done
+and is a HARD PREREQUISITE before any paper is composed: see §8.1. Written
+2026-09-14 as the
 research answer to "which route should future tests get
 `refs/JLPT_N2_NEW/`'s 21 older sittings by?". It is the numbered follow-up to
 `textbook_bank_plan.md` §6.4, which named the expansion as "the right next move,
@@ -52,10 +60,14 @@ Bank today (`python3 -c` over `logs/choukai_bank.json`):
 | official items (10 sittings × 29 slots) | 290 |
 | official preambles | 50 |
 | hand-declared items (soumatome 37, shinkanzen 21, kanzenmoshi 19, mimikara 4, mondaireishuu 4) | 85 |
-| **total** | **425** |
+| **hand-declared ARCHIVE items** (2020-12 問題3 ×5, 2014-12 問題3 ×5 — landed 2026-09-17) | **10** |
+| **total** | **435** |
 
 Two official records are `figure_dependent` and undrawable
-(`2021-12:問題1-5`, `2022-12:問題1-2`).
+(`2021-12:問題1-5`, `2022-12:問題1-2`) — **four since 2026-09-17**, when the
+detector was widened to the ア/イ/ウ seat-label option sets it had been missing
+(`2023-12:問題1-2`, `2024-12:問題1-2`; `qa/root-cause-20260917_1.md` RC-2).
+Record counts are unchanged; 問題1 slot 2 keeps 7 of its 10 candidates.
 
 ---
 
@@ -427,10 +439,27 @@ print(tb, len(d))"
 | 問題5 | 0 | — | — | 10 | **2.80** |
 
 **`make choukai-wear`'s non-zero exit is a TEXTBOOK-pool problem and the archive
-does not touch it directly.** It is fixable today by dropping
+does not touch it directly.** The obvious repair is to drop
 `TEXTBOOK_SLOTS["問題3"]` from 3 to 2 (2 × 27 ÷ 19 = **2.84**, inside the
-ceiling), at the price of 問題3's official wear rising 1.18 → 1.72. That is the
-correct immediate repair and it needs no new source.
+ceiling), at the price of 問題3's official wear rising 1.18 → 1.72.
+
+**THAT REPAIR IS REFUTED — do not take it** (`qa/root-cause-20260917_1.md` RC-1
+addendum, 2026-09-17). It fixes the wear number and *hardens* finding F2 at the
+same time: `draw()` spends least-used clips first, the 問題3 textbook pool's
+unique two-use pair is `mimikara:cd2-14` + `mondaireishuu:問3-1`, and **2 slots
+takes exactly that pair, in every seed**. They are the pair whose option sets
+score 0.571 — the founding case of `check_choukai_option_set_reuse` itself. Any
+cut to 問題3's textbook slots must go to **≤1**, and the official side has to be
+deep enough to absorb the slots that come back, which is what this expansion
+buys. Re-measured 2026-09-17 with the first 10 archive items banked, 29 composed
+papers (28 mixed), 問題3 official candidates/slot **10 → 12**:
+
+| `TEXTBOOK_SLOTS["問題3"]` | textbook wear | official wear (12/slot) | official wear (10/slot, before) | F2 |
+|---|---|---|---|---|
+| 3 (today) | **4.42 — OVER 4.0** | 1.02 | 1.22 | present |
+| 2 | 2.95 | 1.48 | 1.78 | **GUARANTEED** |
+| **1 (recommended)** | **1.47** | **1.95** | 2.34 | **closed** |
+| 0 | — | 2.42 | 2.90 | closed, but 問題3 stops being mixed |
 
 What the archive buys is different and larger:
 
@@ -456,6 +485,19 @@ Ordered so each step is independently shippable and independently gated.
 
 ### Step 1 — era-aware slot shapes (code only, no new clips)
 
+**LANDED 2026-09-17.** `choukai_segment.slots_for(sitting)` derives every
+sitting's shape from `answer_keys.json` (re-measured: 11 of 31 modern, exactly
+the table in §2), `segment()` takes `expected=`, and
+`build_choukai_bank.build_sitting()` passes `slots_for(sitting)` to all three of
+its readers. Both docstrings are corrected. The ten imports are all modern, so
+the change is a no-op on them: `--check` still reconciles **340 official
+records** (290 items + 50 preambles; 425 with the textbook half) and every audio
+offset in `logs/choukai_bank.json` is byte-identical. Consequence 1 of §2 ("a
+2014-12 sitting raises `NotSegmented` today") is now historical — it raises only
+when a caller hands an old sitting the modern shape, which is the loud failure
+the parameter exists for. **Not done, still open**: §8.6's `make check`
+assertion that `slots_for()` reproduces all 31 shapes.
+
 *File*: `tools/choukai_segment.py`
 
 * Replace the module-level `EXPECTED_SLOTS` constant with
@@ -473,6 +515,22 @@ Ordered so each step is independently shippable and independently gated.
   ten imports to the same 340 records. That is the regression bar.
 
 ### Step 2 — `tools/build_archive_bank.py` + `archive_items.json`
+
+**LANDED 2026-09-17.** Both files exist and are wired in: `build_records()` has
+the same `(records, refusals)` signature as the textbook half and
+`build_choukai_bank.main()` appends it the same way, so a refusal blocks the
+write. `make archive-bank` reports; `make archive-bank SCOUT=YYYY-MM` prints one
+sitting's structural pause map, which is how a `window` is found. Every §7 check
+is implemented (see the checklist there); `check_choukai_archive_bank` in
+`make check` re-derives the span, the rate and the provenance tag FROM THE BANK,
+because the textbook half's own band check filters on `needs_number_call` and is
+blind to an archive record. **Divergences from the sketch below**: the record is
+emitted in the OFFICIAL shape (`script` string, `answers`/`explanation`/
+`explanation_vi`/`kaisetsu_cell` keyed `問N-M`) rather than the textbook one,
+because `compose_choukai.resolve()` reads a slot-preserving record that way; and
+`explanation.stem`/`explanation.options` may be declared WITH furigana, which
+the builder then checks character-for-character against the script once 《…》 is
+stripped — a second witness for free.
 
 *New files*: `tools/build_archive_bank.py`,
 `.agents/choukai-audio/references/archive_items.json`.
@@ -527,6 +585,10 @@ a trap).
 
 ### Step 3 — number call and slot placement
 
+**FIRST SUB-CASE LANDED 2026-09-17**; the second is still deferred, and the
+builder now REFUSES a declaration whose `target_slot != slot` with that reason
+in the message rather than leaving it to a reader's memory.
+
 Two sub-cases, and **only take the first one in the initial cut**:
 
 * **`target_slot == slot`** (問題1/2/3/4 everywhere, 問題5-1番): bank the clip
@@ -540,6 +602,17 @@ Two sub-cases, and **only take the first one in the initial cut**:
   after the first cut ships.
 
 ### Step 4 — do NOT bank archive preambles
+
+**LANDED 2026-09-17** as a rule in `build_archive_bank.py`'s module docstring:
+archive records are items only, and there is no code path that could emit a
+preamble. A further reason turned up while scouting, and it is worth recording:
+**the 2020-12 and 2014-12 recordings do not CONTAIN their 問題3 instructions.**
+Measured on both, 問題3-1番's own 「1番。」 starts immediately after 問題2's last
+12 s answer pause (2020-12 at 1123.92 s, 2014-12 at 1149.08 s), with 3.3 s and
+3.4 s of speech before the talk — the situation line, and nothing else. Neither
+the 問題N instruction nor the 例 is in the audio. The items themselves are
+complete and measure at the official rate (0.17–0.23 s/char), so this costs the
+expansion nothing; it would have cost a preamble harvest everything.
 
 `build_choukai_bank.build_sitting()` emits one preamble clip per section, whose
 `text` is lifted from the import's `聴解スクリプト.txt`. The archive has no such
@@ -601,6 +674,17 @@ widening a band.
 
 Checks 1, 2 and 6 are new and all three are cheap, exact and specific to this
 source. Check 9 is the human one and there is no substitute for it.
+
+**All twelve are live as of 2026-09-17.** Where each one sits:
+
+| # | where it runs |
+|---|---|
+| 1, 2, 3, 4, 5, 6, 7, 8 | `build_archive_bank.build_one()`, at declaration time; a refusal blocks `make choukai-bank` |
+| 9 | `build_one()` requires `source_page` to match `「… (image-verified YYYY-MM-DD)」` — it cannot verify the reading, only that someone recorded doing it |
+| 10 | `check_choukai_option_grounding` (existing, WARN, 問題1/2 only) |
+| 11 | `ARCHIVE_LUFS_BAND` = **(−21.06, −15.06)**, the 31-sitting median −18.06 ± 3 dB, measured with `choukai_segment.measure`. §9's own −15.3/−22.9/−23.3 figures are `volumedetect` `mean_volume` readings, which `choukai-audio` Part 4 step 1 forbids — re-measured as LUFS the band holds **the same three sittings** out, which is the corroboration worth having |
+| 12 | `make choukai-wear`, and §5's table above is the reading of it |
+| — | plus `check_choukai_archive_bank` in `make check`, which re-derives 3, 4 and the provenance tag from the BANK, so a band that moves cannot leave a stale record passing |
 
 ---
 
@@ -712,25 +796,56 @@ Each with the measurement that disqualifies it. None of these is a judgment.
 | **2019-12 (−23.3 dB) and 2019-07 (−22.9 dB)** | 8.0 dB and 7.6 dB below 2015-07's −15.3 dB; the pool's own median is ≈ −19.9 dB | **hold until §8.4's per-clip gain exists**; they are the two extreme ends of the level spread |
 | **2015-07 (−15.3 dB)** | the loud end of the same spread | same hold |
 | **2010-12 and 2016-07** | MP3 sample rate **32 000 Hz** (`audio_inspection.md`), against 44.1/48 kHz everywhere else — an audible bandwidth step after the composer's 48 kHz resample | **hold**; admit only if a listen says the step is inaudible, and record that listen |
-| **any item whose printed options are bare digits** | `figure_dependent()` | auto-excluded by the composer, kept in the bank so the exclusion stays countable (2 of 290 official records today) |
+| **any item whose printed options are picture LABELS** — bare digits, or ア/イ/ウ/エ/オ alone or combined | `figure_dependent()` | auto-excluded by the composer, kept in the bank so the exclusion stays countable (4 of 290 official records, measured 2026-09-17) |
 | **any item whose declared spoken options are not in ascending digit order after re-sorting** | acceptance check 6 | refused; re-read the page |
 
-The two 32 kHz sittings and the three loudness outliers are **six of the 21**;
-the remaining 15 are clean on every mechanical measure and are where the work
-should go.
+The two 32 kHz sittings and the three loudness outliers are **five of the 21**
+(this paragraph said "six … the remaining 15" and both numbers were wrong:
+2010-12, 2016-07, 2015-07, 2019-07, 2019-12 is five, and 21 − 5 = **16**). The
+remaining 16 are clean on every mechanical measure and are where the work should
+go.
+
+**Re-measured 2026-09-17 as integrated LUFS** (`choukai_segment.measure`, all 31
+sittings; the table above is `volumedetect` `mean_volume`, which Part 4 step 1
+forbids). Median **−18.06**, band ±3 dB = (−21.06, −15.06). Outside it:
+**2015-07 −13.49, 2019-07 −21.27, 2019-12 −21.40** — the same three, reached by
+a different measurement. Every one of the ten imports is inside the band
+(−20.28 … −15.55), so the band excludes nothing the bank already trusts.
+`build_archive_bank.ARCHIVE_LUFS_BAND` is that number and it REFUSES, so the
+hold is enforced rather than remembered.
+
+### What is banked so far (2026-09-17)
+
+| sitting | 大問 | items | spans | rates | LUFS |
+|---|---|---|---|---|---|
+| **2020-12** | 問題3 | **5 of 5** | 82.1–116.5 s | 0.196–0.219 | −17.06 |
+| **2014-12** | 問題3 | **5 of 5** | 73.1–94.3 s | 0.172–0.232 | −17.91 |
+
+Both sittings' 問題3 is DONE; no item of either was refused. Every other sitting
+is **untouched**. 2014-12 is also the worked example of §3.4: its 2番, 3番, 4番
+and 5番 all print their four options in TWO COLUMNS, `script.md` OCRs them in
+visual order (2,1,4,3), and the declarations store them by their own digit —
+which is what acceptance check 6 asserts.
 
 ---
 
 ## 10. Where to start, concretely
 
-1. **Step 1** (era-aware shapes, code only). Regression bar: `--check` still
-   reconciles the ten imports to 340 records.
-2. **2020-12** — the only un-imported sitting already on the modern shape, so it
-   exercises steps 2 and 3 with zero era mapping. 29 declarable items.
+1. ~~**Step 1** (era-aware shapes, code only).~~ **DONE 2026-09-17.**
+2. ~~**2020-12**~~ — **問題3 DONE 2026-09-17** (5 items). Its other 24 items are
+   still declarable and untouched.
 3. **問題5 slot 1** across the 15 clean sittings. 15 items, the 大問 with the
    worst official wear (2.80) and no second source, and the one
    `textbook_bank_plan.md` §6.2 costs at "re-introduce Edge-TTS" from the
    textbook side. This is the highest value per hour in the whole expansion.
 4. **問題3**, then **問題2** — the two 大問 whose textbook wear is at or over the
    ceiling, so each archive item there directly buys back an official slot.
+   **問題3 is where 2026-09-17 spent its session**: 2020-12 and 2014-12 are done,
+   14 clean sittings remain, and each one adds **+1 official candidate per
+   問題3 slot** (10 → 12 so far, 26 if all 14 land).
 5. Re-run `make choukai-wear`, LOWER `TEXTBOOK_SLOTS`, and re-read every line.
+   **The number is 1, not 2** (§5's table and RC-1's addendum). This has NOT
+   been applied: lowering it re-draws every paper composed afterwards, and
+   §6 Step 5's `provenance` filter has to land first or the control paper
+   `20260807_1` starts drawing archive clips with every gate line still green
+   (§8.1).

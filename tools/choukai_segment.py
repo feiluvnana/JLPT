@@ -51,6 +51,7 @@ guessed numbers.
 
 from __future__ import annotations
 
+import functools
 import hashlib
 import json
 import math
@@ -109,8 +110,82 @@ MIN_REPORTED_PAUSE = 1.5        # shorter runs are turn gaps, not structure
 MIN_ITEM_SPAN = 12.0
 
 # Item counts per 大問, excluding 例 (which official prints nowhere and which
-# this repo's imports therefore do not carry). All 31 sittings run this shape.
+# this repo's imports therefore do not carry).
+#
+# THE MODERN SHAPE ONLY — this file used to claim "all 31 sittings run this
+# shape" and that is refuted. Measured against `refs/JLPT_N2_NEW/answer_keys.json`
+# (`archive_bank_expansion.md` §2, re-measured 2026-09-17), 5/6/5/11/2 is the
+# shape of **11 of the 31 sittings** — 2020-12 and the ten imported ones
+# (2021-07 … 2025-12). The other 20 run one of six older shapes: 問題4 carried
+# 12 items until 2017-12, 問題2 ran 5 in 2013-07 and 2018-07 … 2019-12, 2012-12
+# ran 4 問題3 items, and every sitting before 2020-12 had a THREE-item 問題5
+# (four scored answers). A 2014-12 recording therefore raises `NotSegmented`
+# under this constant — use `slots_for(sitting)`.
 EXPECTED_SLOTS = {"問題1": 5, "問題2": 6, "問題3": 5, "問題4": 11, "問題5": 2}
+
+# The archive's own key file: exact, tracked in git even though the `refs/`
+# binaries are not (AGENTS.md §3), and the single source of every sitting's
+# shape. The era table is DERIVED from it on every call, never retyped — the
+# table in `archive_bank_expansion.md` §2 is that derivation's expected output,
+# not its input (AGENTS.md §4, "a measured number has one owner, and it is a
+# script").
+ANSWER_KEYS = Path(__file__).resolve().parent.parent / "refs" / "JLPT_N2_NEW" / "answer_keys.json"
+
+_SITTING_RE = re.compile(r"(20\d\d)-(\d\d)")
+
+
+@functools.lru_cache(maxsize=1)
+def archive_shapes() -> dict[str, dict[str, int]]:
+    """{'2014-12': {'問題1': 5, …}} for every sitting in `answer_keys.json`.
+
+    Keyed by `YYYY-MM` and by the sitting's own folder name, so a caller may
+    look a shape up by either. Counts DISTINCT item numbers, not answer rows:
+    a pre-2020 問題5 has three items and four answers (its last item asks
+    質問1 and 質問2), and it is the ITEM count the segmenter fits.
+
+    An absent or unreadable key file returns `{}` rather than raising, so
+    `slots_for()` falls back to the modern shape — the file is tracked, but a
+    caller segmenting one composed paper should not need the archive at all.
+    """
+    try:
+        exams = json.loads(ANSWER_KEYS.read_text(encoding="utf-8"))["exams"]
+    except (OSError, ValueError, KeyError):
+        return {}
+    out: dict[str, dict[str, int]] = {}
+    for folder, exam in exams.items():
+        items: dict[str, set] = {}
+        for entry in exam.get("items", []):
+            if entry.get("part") != "聴解" and entry.get("section") != "聴解":
+                continue
+            items.setdefault(f"問題{entry['mondai']}", set()).add(entry["no"])
+        if not items:
+            continue
+        shape = {name: len(nos) for name, nos in
+                 sorted(items.items(), key=lambda kv: kv[0])}
+        key = f"{exam['year']}-{exam['month']:02d}"
+        out[key] = shape
+        out[exam.get("folder", folder)] = shape
+        out[folder] = shape
+    return out
+
+
+def slots_for(sitting: str | None) -> dict[str, int]:
+    """That sitting's item counts per 大問 — the era-aware `EXPECTED_SLOTS`.
+
+    `sitting` may be `2014-12`, `imported-n2-2014-12`, or the archive folder
+    name (`5. N2 12-2014`). Anything unrecognised — a generated test id, None —
+    gets the modern shape, which is what every composed paper is built to.
+    """
+    if not sitting:
+        return dict(EXPECTED_SLOTS)
+    shapes = archive_shapes()
+    for key in (sitting, sitting.removeprefix("imported-n2-")):
+        if key in shapes:
+            return dict(shapes[key])
+    match = _SITTING_RE.search(sitting)
+    if match and match.group(0) in shapes:
+        return dict(shapes[match.group(0)])
+    return dict(EXPECTED_SLOTS)
 
 
 class NotSegmented(Exception):
@@ -364,7 +439,14 @@ def expected_gaps(section: str, slot: int, lines: int,
         gaps += TURN_GAP * max(dialogue - 1, 0)
         gaps += GAP_BETWEEN_SPOKEN_CHOICES * choice_lines
         if slot == 2:
-            # 質問1's answer time sits INSIDE 2番's span, before 質問2 is read
+            # 質問1's answer time sits INSIDE 2番's span, before 質問2 is read.
+            # Slot 2 is the two-question item in the MODERN shape only: every
+            # sitting before 2020-12 ran a three-item 問題5 whose 3番 carried
+            # 質問1/質問2 (`archive_bank_expansion.md` §2). Those items are not
+            # placeable without a number-call re-cut and are deferred to that
+            # file's Step 3, so this stays keyed on 2 — the day an old 問題5 is
+            # banked, this line and `build_choukai_bank.answer_ids()` move
+            # together.
             gaps += GAP_AFTER_SHITSUMON1
     return gaps
 
@@ -464,15 +546,23 @@ def _align_tail(candidates: list[Pause], predicted: list[float],
     return list(reversed(out)), cost[n_items - 1][end]
 
 
-def segment(path: Path, item_hint: dict[str, list[tuple[int, int]]] | None = None
-            ) -> Segmentation:
+def segment(path: Path, item_hint: dict[str, list[tuple[int, int]]] | None = None,
+            expected: dict[str, int] | None = None) -> Segmentation:
     """Segment one official 聴解 MP3 into sections and item slots.
 
     `item_hint` maps each 問題 to one (chars, lines, choice_lines) triple per
     item, taken from that sitting's own `聴解スクリプト.txt`. It is required:
     pause shape alone mis-reads at least one item in 4 of the 10 sittings on
     disk (see the attribution comment below for the four failure modes).
+
+    `expected` is that sitting's item count per 大問 — `slots_for(sitting)` for
+    an archive recording, and the modern `EXPECTED_SLOTS` by default, which is
+    what every composed paper and every imported sitting on disk runs. It is a
+    parameter because 20 of the 31 archive sittings do NOT run 5/6/5/11/2
+    (`archive_bank_expansion.md` §2): passing the wrong one here does not
+    mis-cut quietly, it raises `NotSegmented` on the item_hint length.
     """
+    expected = dict(expected or EXPECTED_SLOTS)
     envelope, lufs = measure(path)
     duration = envelope.size * FRAME_MS / 1000.0
     pauses = find_pauses(envelope, lufs)
@@ -511,7 +601,7 @@ def segment(path: Path, item_hint: dict[str, list[tuple[int, int]]] | None = Non
     # section, slot, chars, lines, choice_lines
     items: list[tuple[str, int, int, int, int]] = []
     free_before: set[int] = set()
-    for name, count in EXPECTED_SLOTS.items():
+    for name, count in expected.items():
         hint = item_hint.get(name, [])
         if len(hint) != count:
             raise NotSegmented(
@@ -538,7 +628,7 @@ def segment(path: Path, item_hint: dict[str, list[tuple[int, int]]] | None = Non
     #     cases. Without this anchor the DP reads each option pause as the
     #     preceding item's answer pause and 問題2 comes out shifted by one slot.
     option = [p for p in pauses if _in(OPTION_READING, p.duration)]
-    want2 = EXPECTED_SLOTS["問題2"]
+    want2 = expected["問題2"]
     if len(option) < want2:
         raise NotSegmented(
             f"{label(path)}: found {len(option)} option-reading pauses "
@@ -644,7 +734,7 @@ def segment(path: Path, item_hint: dict[str, list[tuple[int, int]]] | None = Non
     section_first = {sec: i for i, (sec, slot, *_r) in reversed(list(enumerate(items)))
                      if slot == 1}
     prev_section_end = 0.0
-    for si, (name, count) in enumerate(EXPECTED_SLOTS.items()):
+    for si, (name, count) in enumerate(expected.items()):
         i = section_first[name]
         _, _, chars, lines, choices = items[i]
         want = rate * chars + expected_gaps(name, 1, lines, choices)
@@ -685,8 +775,11 @@ def main(argv: list[str] | None = None) -> int:
         script = path.parent / "聴解スクリプト.txt"
         hint = (hint_from_script(script.read_text(encoding="utf-8"))
                 if script.is_file() else None)
+        # The folder names the sitting for an archive recording
+        # (`5. N2 12-2014`) or an import (`imported-n2-2014-12`); a generated
+        # test id matches nothing and gets the modern shape.
         try:
-            seg = segment(path, hint)
+            seg = segment(path, hint, slots_for(path.parent.name))
         except NotSegmented as exc:
             print(f"NOT SEGMENTED  {exc}")
             failures += 1
@@ -695,7 +788,7 @@ def main(argv: list[str] | None = None) -> int:
         print(f"ok  {path.parent.name:<22} {seg.duration / 60:5.1f} min  "
               f"LUFS {seg.lufs:6.2f}  {counts}")
         if args.verbose:
-            for name in EXPECTED_SLOTS:
+            for name in seg.answers:
                 for slot in range(1, len(seg.answers[name]) + 1):
                     lo, hi = seg.slot_span(name, slot)
                     print(f"      {name}-{slot}番  {lo:8.2f} → {hi:8.2f}  "

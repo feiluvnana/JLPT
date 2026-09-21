@@ -499,6 +499,18 @@ projects 3.16, inside the ceiling.
 
 ### 6.4 The remaining source of novelty is outside all three
 
+> **SUPERSEDED 2026-09-14, and now BUILDING.** This section costs the archive
+> expansion as "one sitting is a full pipeline run; 21 is not a session", which
+> is route A. `.agents/choukai-audio/references/archive_bank_expansion.md` re-costs
+> it with measurements and takes **route C** instead — hand-declare ONE ITEM at a
+> time straight against `refs/JLPT_N2_NEW/`, key and printed options free from
+> `key.md`/`booklet.md`, no import folder — and that file now owns the expansion.
+> First items landed 2026-09-17: `tools/build_archive_bank.py` +
+> `archive_items.json`, ten 問題3 clips (2020-12 ×5, 2014-12 ×5), 問題3 official
+> candidates per slot 10 → 12. The paragraphs below are kept because their
+> measurement of route A's cost is what route C was chosen against.
+
+
 `refs/JLPT_N2_NEW/` holds 21 official sittings that are not imported. They
 carry **exact** `booklet.md` (printed options) and `key.md` plus audio, and
 would take the official pool from 10 to 31 candidates per slot with zero

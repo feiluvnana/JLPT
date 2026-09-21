@@ -559,10 +559,10 @@
   ]
  },
  "44": {
-  "why_correct": "Thứ tự: 2 → 3 → 1 → 4. 「かどうかを」 cần vị ngữ thể thường trước, chỉ 「音が出る」 hợp.",
+  "why_correct": "Thứ tự: 2 → 3 → 1 → 4. 「かどうかを」 cần vị ngữ thể thường trước; 「捨てるに捨てられない」 phải chốt câu nên chỉ còn 「音が出る」.",
   "options_analysis": [
    "「〜ないことには」 là điều kiện, đứng ngay trước kết luận nên vào ★.",
-   "「音が出る」 là thẻ duy nhất ở thể thường.",
+   "「音が出る」 là vị ngữ thể thường duy nhất còn dùng được trước 「かどうか」.",
    "「かどうかを」 kết bằng 「を」, cần động từ 「確かめる」 sau.",
    "「捨てるに捨てられない」 là dạng phủ định kết thúc câu."
   ],

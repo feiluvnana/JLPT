@@ -122,7 +122,19 @@ OFFICIAL_ONLY_TESTS = {"20260807_1"}
 # 1番's four choices where this repo speaks them, and neither book lays the 10 s
 # 質問1 answer pause that sits INSIDE an official 2番 between the two read-backs.
 # Both need composer surgery, not a transcript. See textbook_bank_plan.md §6.
-TEXTBOOK_SLOTS = {"問題1": 2, "問題2": 2, "問題3": 3, "問題4": 4}
+# 問題3 went 3 -> 1 on 2026-09-21, and the reason is NOT the wear projection.
+# `choukai_wear.py` says "grow the pool, never the slot count", and
+# `archive_bank_expansion.md` §5 prescribes 3 -> 2 for the wear breach. Applying
+# EITHER to 問題3 would have hardened a live defect: the 19-clip textbook pool had
+# exactly two clips at the minimum use count (mimikara:cd2-14, mondaireishuu:問3-1),
+# `draw()` scores on sum(used[...]), so 3 slots took both + one more and **2 slots
+# would have taken precisely those two**. They are one item — spoken option-set
+# Jaccard 0.571, same keyed category — and a 300-seed sweep drew the pair 300/300
+# times. Only <=1 breaks the pinning. The pool WAS grown first (archive 問題3 items,
+# official candidates/slot 10 -> 12) so the two returned slots land on official
+# clips: textbook 1x28/19 = 1.47, official 4x28/60 = 1.87, both inside the 4.0
+# ceiling. See qa/root-cause-20260917_1.md RC-1 and its addendum.
+TEXTBOOK_SLOTS = {"問題1": 2, "問題2": 2, "問題3": 1, "問題4": 4}
 
 SR = 48_000               # official recordings are 48 kHz
 LOUDNORM = "loudnorm=I=-15:TP=-1.0:LRA=11"
@@ -459,6 +471,80 @@ def option_set_jaccard(a: frozenset[str], b: frozenset[str]) -> float:
     return len(a & b) / len(a | b) if a and b else 0.0
 
 
+# The QUESTION SENTENCE bar: no two clips of ONE 大問 may read the same question
+# aloud. This one is WITHIN a paper, where the two bars above are cross-paper.
+#
+# THE RULE: an item's stem is 場面 + question, and its last 。-terminated
+# sentence is the question the candidate actually answers
+# (「アナウンサーは何について話していますか。」). Two items of one 大問 that read it
+# byte-identical are the same prompt twice; official varies the speaker
+# descriptor precisely so that never happens (7/2025's 問題3 runs 女の人 /
+# 家具を作る職人 / お菓子屋の人 / 専門家 / アナウンサー).
+#
+# MEASURED (2026-09-21, over every paper's `詳細解説.json` 聴解 stems): **0 of
+# the 10 imported official sittings** repeats a question sentence inside one
+# 大問; **4 of the 29 generated papers** do — `20260904_3` (問3-3/問3-4),
+# `20260910_1` (問3-1/問3-4), `20260914_1` (問3-1/問3-5), and `20260917_1`,
+# which carries TWO pairs. What is NOT the defect: frame CONCENTRATION. Official
+# may run 5 of 5 問題3 items on 「何について」, so the bar is on the SENTENCE and
+# never on the frame.
+#
+# THE INCIDENT (qa-report-20260917_1 F1): `20260917_1` shipped 問題3-4番
+# (`archive:2014-12:問題3-4`) beside 問題3-5番 (`archive:2020-12:問題3-5`) — both
+# 「アナウンサーは何について話していますか。」, adjacent slots, both monologues by
+# the same speaker type. It is a BAR rather than another seed because a second
+# seed was tried and REPRODUCED the class: 79644767 left that pair untouched and
+# ADDED 問題3-1番 (`shinkanzen:cd2-59`) beside 問題3-3番
+# (`archive:2014-12:問題3-3`), both 「女の人は何について話していますか。」. Re-seeding
+# until the dice fall well is the seed-shopping `exam-blueprint` forbids.
+#
+# `check_consistency.check_choukai_duplicate_question_line` is this bar's gate
+# half — it FAILs on the shipped paper what this refuses in the draw. Change the
+# two together.
+def question_sentence(rec: dict) -> str:
+    """The sentence this clip ASKS, furigana stripped; "" when undecidable.
+
+    An OFFICIAL record is slot-preserved, so it already keeps its stem under
+    `explanation[<its only slot key>]`; a slot-free one has no slot until the
+    draw places it and keeps the same field in `explanation_payload` (see
+    `resolve`). A record with neither field, with no stem, or with a stem that
+    does not end in 。 returns "" — it is then simply not constrained. A missing
+    field is a reason to bar nothing, never a reason to crash a build: 問題4's
+    stimulus lines and every 問題5-2番 stem land here by construction.
+    """
+    payload = rec.get("explanation_payload")
+    if payload is None:
+        expl = rec.get("explanation") or {}
+        payload = next(iter(expl.values())) if len(expl) == 1 else None
+    stem = strip_furigana((payload or {}).get("stem") or "").strip()
+    if not stem.endswith("。"):
+        return ""
+    sentences = [s.strip() for s in stem.split("。") if s.strip()]
+    return sentences[-1] + "。" if sentences else ""
+
+
+def question_index(bank: dict) -> dict[str, set[str]]:
+    """{question sentence -> every item id that asks it}. "" is not indexed."""
+    out: dict[str, set[str]] = {}
+    for rec in bank["records"]:
+        if rec.get("kind") != "item":
+            continue
+        q = question_sentence(rec)
+        if q:
+            out.setdefault(q, set()).add(rec["id"])
+    return out
+
+
+def question_partners(records, by_question: dict[str, set[str]]) -> frozenset[str]:
+    """Every clip barred because `records` already ask its question sentence."""
+    out: set[str] = set()
+    for rec in records:
+        q = question_sentence(rec)
+        if q:
+            out |= by_question.get(q, set()) - {rec["id"]}
+    return frozenset(out)
+
+
 def draw(bank: dict, seed: int, used: Counter, test_id: str,
          attempts: int = 400,
          avoid_slot: dict[str, str] | None = None) -> tuple[dict, dict]:
@@ -530,6 +616,8 @@ def draw(bank: dict, seed: int, used: Counter, test_id: str,
     starved: list[str] = []
 
     index = by_id(bank)
+    # {question sentence -> the ids that ask it}, for the within-大問 bar below.
+    by_question = question_index(bank)
     # The previous paper's names, per 大問 — `name_clash`'s cross-paper half
     # (qa-report-20260910_1 F3). A PENALTY, so this never narrows the pool.
     previous_names: dict[str, set[str]] = {}
@@ -604,6 +692,13 @@ def draw(bank: dict, seed: int, used: Counter, test_id: str,
         (qa-report-20260910_1 F3/F4). Those two are the ways a DIFFERENT clip
         id still hands the candidate the previous paper's item.
 
+        …and `question_partners`, the one bar here that is WITHIN this paper:
+        every clip whose question sentence a slot of THIS 大問 has already read
+        aloud (qa-report-20260917_1 F1; 0 of 10 official sittings do this, 4 of
+        29 generated papers did). It reaches both halves of the draw, because
+        the pair that founded it was official × official and the pair a second
+        seed then produced was textbook × official.
+
         If barring would leave the slot with nothing, the bar is dropped for
         that slot and the fact is PRINTED: a genuinely exhausted slot is a
         pool-growth problem to report, not a reason to fail the build
@@ -631,9 +726,16 @@ def draw(bank: dict, seed: int, used: Counter, test_id: str,
             for slot in slots:
                 slot_key = f"{section}-{slot}"
                 # ...plus the partners of what THIS paper has already spent, so
-                # a mutually-exclusive pair cannot share a paper either.
-                bar = cross_paper_bar | mutex_partners(
-                    r["id"] for _s, _n, r in picked)
+                # a mutually-exclusive pair cannot share a paper either, and
+                # every clip asking a question sentence THIS 大問 has already
+                # read aloud (qa-report-20260917_1 F1 — see `question_sentence`;
+                # scoped to the current section because that is the unit the
+                # candidate hears as one run of items).
+                bar = (cross_paper_bar
+                       | mutex_partners(r["id"] for _s, _n, r in picked)
+                       | question_partners(
+                           (r for s, _n, r in picked if s == section),
+                           by_question))
                 if slot in from_textbook:
                     rec = freshest(textbook[section], spent, slot_key,
                                    bar | previous_paper)

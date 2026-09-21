@@ -320,8 +320,9 @@ restate them here or in a skill; fix them there.
 | `make matrix`             | `matrix_helper.py` — **validate only**; both generators are hard-disabled (they had no 音訓 table and emitted kana-skeleton-violating grids — qa-report-20260819_1 F4) | `question-authoring` |
 | `make booklet <id>`       | `build_booklet.py` on both Markdown sources | `exam-app` |
 | `make mp3 <id> SEED=n`    | `tools/compose_choukai.py` — composes the whole 聴解 half from banked clips (script, booklet, MP3, chapters, both 詳細解説 panes). Edge-TTS is retired | `choukai-audio` |
-| `make choukai-bank [CHECK=1]` | `tools/build_choukai_bank.py` → `logs/choukai_bank.json`; BOTH halves of the mixed pool — the ten imported sittings plus the textbook items | `choukai-audio` |
+| `make choukai-bank [CHECK=1]` | `tools/build_choukai_bank.py` → `logs/choukai_bank.json`; ALL THREE halves of the mixed pool — the ten imported sittings, the textbook items, and the hand-declared archive items | `choukai-audio` |
 | `make textbook-bank`      | `tools/build_textbook_bank.py` — report-only: what the Shin Kanzen / Soumatome half measures, and which declared items the duration/rate guards refuse | `choukai-audio` |
+| `make archive-bank [SCOUT=YYYY-MM]` | `tools/build_archive_bank.py` — report-only: the items hand-declared out of the 21 un-imported `refs/JLPT_N2_NEW/` sittings, and which the §7 acceptance checks refuse. `SCOUT=` prints one sitting's structural pause map, which is how a declaration's `window` is found | `choukai-audio` |
 | `make choukai-wear`       | `tools/choukai_wear.py` — how many papers spend each clip, measured and projected per 大問 and per source; the measurement `compose_choukai.TEXTBOOK_SLOTS` is set from, and it exits non-zero above the wear ceiling | `choukai-audio` |
 | `make number-calls [CHECK=1]` | `tools/harvest_number_calls.py` → `logs/choukai_number_calls.json` — the 11 official 「N番。」 spans a textbook clip is given | `choukai-audio` |
 | `make sheet <id>`         | `build_interactive.py` → `解答.html` **and** `練習.html` (both modes of one paper) | `exam-app` |

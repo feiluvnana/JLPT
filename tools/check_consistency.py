@@ -687,6 +687,12 @@ FINDING_REPAIR: dict[str, tuple[str, str]] = {
     # (compose_choukai.OPTION_SET_REUSE_MAX), so re-running `make mp3` with a
     # fresh RNG seed is both the repair and the proof.
     "choukai_option_set_reuse":       ("<composed re-draw>",  "deterministic"),
+    # F1 (qa-report-20260917_1): two items of ONE 大問 reading the same question
+    # sentence. Same artifact and same reasoning as the row above — both stems
+    # are lifted from real recordings, 聴解.md/聴解スクリプト.txt/詳細解説.json are
+    # all `make mp3` outputs, so the only repair is another draw. The composer
+    # bars the clip itself (compose_choukai.question_partners).
+    "choukai_duplicate_question_line": ("<composed re-draw>", "deterministic"),
     "choukai_probe_carousel":         ("<section re-author>", "authoring"),
     "choukai_q3_talk_band":           ("<section re-author>", "authoring"),
     "choukai_q4_stimulus_register":   ("<section re-author>", "authoring"),
@@ -11670,6 +11676,116 @@ def check_choukai_question_repeat(test_id: str, st: str, m):
          "PDFs, and it is reported so a NEW one is not mistaken for it")
 
 
+# Papers that shipped a within-大問 duplicate question sentence BEFORE the
+# composer could refuse one. Every id here predates
+# `compose_choukai.question_partners` (2026-09-21) and each is named with its
+# offending pair, so the exemption is auditable rather than a bare list:
+#   20260904_3   問3-3 × 問3-4   「女の人は何について話していますか。」
+#   20260910_1   問3-1 × 問3-4   「女の人は何について話していますか。」
+#   20260914_1   問3-1 × 問3-5   「男の人は何について話していますか。」
+# They are grandfathered rather than repaired because the repair is a RE-DRAW of
+# a shipped paper (`choukai-audio` Part 0: a recorded seed does not reproduce a
+# past draw, so re-composing one re-skins it), and the machinery that produced
+# them can no longer produce them. `20260917_1` — the founding case, and the
+# only paper that carried TWO pairs — is deliberately NOT here: it was
+# re-composed on 2026-09-21 and passes on merit.
+# The repo's convention applies as it does to every other set in this file: an
+# id LEAVES this set the moment its 聴解 row is re-composed, and any id not
+# named here FAILS on the same measurement.
+CHOUKAI_DUPLICATE_QUESTION_GRANDFATHERED = {
+    "20260904_3", "20260910_1", "20260914_1",
+}
+
+
+def check_choukai_duplicate_question_line(test_id: str):
+    """No two items of ONE 大問 may read the same question sentence (F1).
+
+    THE RULE: an item's stem is 場面 + question, and its last 。-terminated
+    sentence is the question the candidate answers. Two items of one 大問 that
+    read it byte-identical are one prompt heard twice — official varies the
+    speaker descriptor so that it never happens (7/2025's 問題3: 女の人 /
+    家具を作る職人 / お菓子屋の人 / 専門家 / アナウンサー). Frame CONCENTRATION is
+    NOT the defect: official may key 5 of 5 問題3 items to 「何について」, so this
+    line reads the SENTENCE and never the frame.
+
+    THE MEASUREMENT (2026-09-21, this predicate run over every paper's
+    `詳細解説.json`, which is the ONE stored copy of the exam wording both
+    language panes print): **0 of the 10 imported official sittings** repeats a
+    question sentence inside one 大問; **4 of the 29 generated papers** did —
+    the three in `CHOUKAI_DUPLICATE_QUESTION_GRANDFATHERED` plus `20260917_1`.
+    Firing on zero official sittings is what licenses a FAIL here.
+
+    THE INCIDENT (qa-report-20260917_1 F1): `20260917_1` shipped
+    問題3-4番 (`archive:2014-12:問題3-4`) beside 問題3-5番
+    (`archive:2020-12:問題3-5`), both 「アナウンサーは何について話していますか。」,
+    adjacent slots, both monologues by the same speaker type. A second seed was
+    tried and reproduced the class — it left that pair and ADDED 問題3-1番 ×
+    問題3-3番 on 「女の人は何について話していますか。」 — which is why the composer
+    now BARS it (`compose_choukai.question_partners`) instead of the pipeline
+    re-seeding until the dice fall well, which is the seed-shopping
+    `exam-blueprint` forbids.
+
+    THE REPAIR is a re-draw: `make mp3 <id> SEED=<fresh rng>`, then
+    `make booklet` + `make sheet`. NEVER hand-edit 聴解.md, 聴解スクリプト.txt or
+    詳細解説.json — all three are `make mp3` outputs (`choukai-audio` Part 0),
+    and an edit puts the paper permanently out of sync with the bank. If a re-draw
+    reports a starved slot instead, that is a pool-growth problem to report, not
+    a line to silence.
+
+    The question sentence is computed by `compose_choukai.question_sentence`,
+    imported rather than reimplemented, so the gate and the draw bar cannot
+    drift apart (AGENTS.md §4 'one owner per rule').
+    """
+    name = f"{test_id}: no two 聴解 items in one 大問 ask the same question"
+    path = ROOT / "tests" / test_id / "詳細解説.json"
+    if not path.is_file():
+        return skip(name, "no 詳細解説.json")
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return skip(name, "詳細解説.json does not parse (see the prose checks)")
+    composer = load("tools/compose_choukai.py")
+    sections: dict[str, list[tuple[str, str]]] = {}
+    for key, item in sorted(data.items()):
+        # `問5-2-1`/`問5-2-2` are 問題5-2番's two questions and they are keyed
+        # three-deep, so the pattern reaches them too: they are the one place a
+        # 大問 asks twice inside one item, and they must differ for the same
+        # reason two items must. Measured over all 39 papers on disk, widening
+        # the pattern changes nothing — 3 hits either way — so it is coverage
+        # bought at zero false positives.
+        m = re.match(r"^問([1-5])-(\d+)(?:-\d+)?$", str(key))
+        if not m or not isinstance(item, dict):
+            continue
+        q = composer.question_sentence({"explanation_payload": item})
+        sections.setdefault(m.group(1), []).append((key, q))
+    if not sections:
+        return skip(name, "no 聴解 entries in 詳細解説.json")
+    dup = []
+    for sec, items in sorted(sections.items()):
+        seen: dict[str, str] = {}
+        for key, q in items:
+            if not q:
+                continue        # no 。-terminated stem: 問題4 stimuli, 問題5-2番
+            if q in seen:
+                dup.append(f"問題{sec}: {seen[q]} × {key}「{q}」")
+            else:
+                seen[q] = key
+    detail = ("; ".join(dup) + " — these two items of one 大問 read the SAME "
+              "question aloud. Official varies the speaker descriptor and does "
+              "this in 0 of its 10 sittings; 4 of 29 generated papers did. Fix "
+              "it with a RE-DRAW (`make mp3 <id> SEED=<fresh rng>`, then "
+              "`make booklet` + `make sheet`) — never by hand-editing 聴解.md, "
+              "聴解スクリプト.txt or 詳細解説.json, which are all make mp3 outputs. "
+              "The composer bars this in the draw too "
+              "(compose_choukai.question_partners); change the two together "
+              "(qa-report-20260917_1 F1, reproduced at a second seed)")
+    if test_id in CHOUKAI_DUPLICATE_QUESTION_GRANDFATHERED:
+        return warn(name, not dup, detail + GRANDFATHER_NOTE,
+                    slug="choukai_duplicate_question_line", test_id=test_id)
+    check(name, not dup, detail,
+          slug="choukai_duplicate_question_line", test_id=test_id)
+
+
 # --- 聴解 volume ------------------------------------------------------------
 # Bands measured over the ten `tests/imported-*` sittings by
 # `choukai_profile.official_volume_band()` (問題4 excluded — see its comment):
@@ -13475,6 +13591,90 @@ def check_choukai_textbook_bands():
          "which, and say so; do not widen the band to quiet this line")
 
 
+def check_choukai_archive_bank():
+    """The ARCHIVE half's guards, re-derived FROM THE BANK.
+
+    `tools/build_archive_bank.py` banks hand-declared items cut straight out of
+    the 21 un-imported sittings of `refs/JLPT_N2_NEW/`
+    (`.agents/choukai-audio/references/archive_bank_expansion.md`, route C). It
+    applies every acceptance check §7 lists at build time — but so does
+    `build_textbook_bank.py`, and `check_choukai_textbook_bands` exists anyway,
+    for one reason: a band that MOVES leaves already-banked records behind, and
+    a bank is only re-written when someone runs `make choukai-bank`. That reason
+    applies here unchanged, and the archive half is invisible to that check
+    because it filters on `needs_number_call` — an archive clip speaks its own
+    「N番。」, so the flag is False and every archive record slips past it.
+
+    Three things are asserted, all imported rather than restated:
+
+    * the measured span sits inside its 大問's `TYPE_BANDS`;
+    * the implied rate sits inside `CHAR_RATE_OFFICIAL` — these ARE official
+      recordings, so `rate_band_for` must not judge them by a textbook CD's
+      band (`build_textbook_bank`'s `CHAR_RATE_OFFICIAL` comment owns why);
+    * **every archive record carries `provenance: "archive"`** and no record
+      outside the archive half does. That flag is the whole of §8.1: an archive
+      clip is tagged `source: "official"` on purpose, because tagging it
+      anything else makes `check_choukai_source_mix`'s
+      `set(sources) <= {"official"}` test stop meaning what it says — which
+      leaves `provenance` as the ONLY thing that can keep the control paper
+      `20260807_1` drawing from the ten hand-verified imports alone. A record
+      that loses the flag is silently promoted into the control paper's pool.
+    """
+    print("\n聴解 archive bank (refusal bands, provenance)")
+    bank_path = ROOT / "logs" / "choukai_bank.json"
+    if not bank_path.is_file():
+        check("logs/choukai_bank.json exists", False, "run `make choukai-bank`")
+        return
+    try:
+        textbook = load("tools/build_textbook_bank.py")
+    except Exception as exc:                              # pragma: no cover
+        check("build_textbook_bank.py imports", False, str(exc))
+        return
+
+    bank = json.loads(bank_path.read_text(encoding="utf-8"))
+    records = [r for r in bank["records"]
+               if r["kind"] == "item" and r.get("provenance") == "archive"]
+    if not records:
+        skip("every banked archive item sits inside its 大問's TYPE_BANDS",
+             "the bank carries no archive records")
+        return
+
+    out_of_band, bad_rate, bad_tag = [], [], []
+    for rec in records:
+        band = textbook.TYPE_BANDS.get(rec["section"])
+        span = rec.get("measured", {}).get("span")
+        rate = rec.get("measured", {}).get("rate")
+        if band and span is not None and not band[0] <= span <= band[1]:
+            out_of_band.append(f"{rec['id']} {span:.1f}s vs "
+                               f"{band[0]:.0f}–{band[1]:.0f}s")
+        lo, hi = textbook.CHAR_RATE_OFFICIAL
+        if rate is not None and not lo <= rate <= hi:
+            bad_rate.append(f"{rec['id']} {rate:.3f} s/char vs {lo}–{hi}")
+        if rec.get("source") != "official":
+            bad_tag.append(f"{rec['id']} source={rec.get('source')!r}")
+    stray = [r["id"] for r in bank["records"]
+             if r.get("provenance") not in (None, "archive")]
+
+    check(f"every banked archive item's measured span sits inside its 大問's "
+          f"TYPE_BANDS ({len(records)} item(s))", not out_of_band,
+          "; ".join(out_of_band) + " — the band is what refuses a window "
+          "bracketing the wrong item. A banked item outside it means the bank "
+          "predates the current band: re-run `make choukai-bank`, and never "
+          "widen a band to admit an item")
+    check("...and its implied speech rate inside CHAR_RATE_OFFICIAL",
+          not bad_rate, "; ".join(bad_rate) + " — re-run `make choukai-bank`")
+    check(f"every archive record is tagged source=official + "
+          f"provenance=archive, and nothing else carries a provenance",
+          not bad_tag and not stray,
+          "; ".join(bad_tag + stray) + " — `source` stays 'official' because "
+          "these are the same JEES recordings and "
+          "check_choukai_source_mix reads that field; `provenance` is what "
+          "keeps the control paper 20260807_1 drawing only from the ten "
+          "hand-verified imports (archive_bank_expansion.md §8.1). Losing the "
+          "flag promotes an un-verified clip into the control paper with every "
+          "gate line still green")
+
+
 # A single kanji, not itself preceded by a kanji, run straight into って言 — see
 # check_textbook_script_grammaticality() for the founding case and the measured
 # false-positive rate this shape (and not the looser `[kanji]って言`) was chosen
@@ -14058,7 +14258,16 @@ def check_kaisetsu_wording_matches_source(test_id: str, ja: dict):
     # (11 of 30 items on 20260814_1). Comparing without stripping it reports
     # every ruby'd item as superseded — which is what the first cut of this
     # check did, on a paper whose scripts were entirely current.
+    # Strip BOTH sides. Stripping only the stored copy assumes 《…》 is always
+    # hand-applied furigana the raw script lacks — false since 2026-09-21, when
+    # the hand-declared archive items landed: `archive:2020-12:問題3-3`'s own
+    # transcript prints a work TITLE as 《虹色の僕ら》, so the stripped stored line
+    # 「えー、というアニメ…」 could never be found in the unstripped script and the
+    # item read as superseded while being byte-identical to what the MP3 speaks
+    # (20260828_1 問3-3, proved by `stored.strip() in script` -> True). Stripping
+    # the haystack too can only ADD matches, so no real staleness is hidden.
     _strip = lambda s: re.sub(r"《[^》]*》", "", s)
+    script = _strip(script)
     stale = []
     for key, item in ja.items():
         if not isinstance(item, dict):
@@ -16377,6 +16586,10 @@ def check_tests():
             # composed paper that draws the clip, so scoping it to authored
             # papers would inspect only the copies (qa-report-20260914_1 F4).
             check_choukai_question_repeat(d.name, st, m)
+            # ORIGIN-AGNOSTIC too, and for the reason that licenses the FAIL:
+            # the ten imported sittings are the corpus that measured 0 of 10, so
+            # running them here keeps the yardstick visible instead of assumed.
+            check_choukai_duplicate_question_line(d.name)
             # Register is a GENERATION failure mode: an imported official paper
             # is the reference these thresholds came from, and its script.md is
             # partly OCR, so measuring it here would flag the yardstick.
@@ -16702,6 +16915,7 @@ def main():
         check_choukai_option_set_reuse()
         check_choukai_source_mix()
         check_choukai_textbook_bands()
+        check_choukai_archive_bank()
         check_textbook_script_grammaticality()
         check_choukai_script_latin()
         check_draw_provenance()

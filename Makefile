@@ -4,7 +4,7 @@
        init-import extract-pdf extract-archive extract-keys extract-kanji-tables extract-shinkanzen-goi extract-shinkanzen-dokkai extract-shinkanzen \
        lint-draft lint verify-scramble scaffold-explanations irt \
        scaffold-sections matrix qa-eval autofix findings repair-plan choukai-bank \
-       textbook-bank number-calls choukai-wear
+       textbook-bank archive-bank number-calls choukai-wear
 
 # Positional test-id argument: "make grade 1", "make sheet 2", "make sample 5".
 # Equivalent: "make grade TEST=1". `serve` is deliberately NOT here: one server
@@ -64,6 +64,7 @@ help:
 	@echo "  make mp3 1 SEED=n     Compose listening audio for test 1 from official clips (聴解.mp3)"
 	@echo "  make choukai-bank     Rebuild logs/choukai_bank.json (official sittings + textbook items)"
 	@echo "  make textbook-bank    Measure/validate the Shin Kanzen + Soumatome half of the bank"
+	@echo "  make archive-bank     Measure/validate the refs/JLPT_N2_NEW/ half of the bank [SCOUT=YYYY-MM]"
 	@echo "  make number-calls     Re-harvest the 11 official 「N番。」 clips textbook items are given"
 	@echo "  make choukai-wear     Measure how hard the clip pool is mined (sets TEXTBOOK_SLOTS)"
 	@echo "  make sheet 1          Build BOTH modes of test 1: 解答.html (exam) + 練習.html (practice)"
@@ -161,6 +162,13 @@ choukai-bank:
 # duration/rate guards refuse. Writes nothing — `make choukai-bank` does.
 textbook-bank:
 	python3 tools/build_textbook_bank.py
+
+# The same, for the hand-declared items cut out of the 21 un-imported sittings
+# of refs/JLPT_N2_NEW/ (archive_bank_expansion.md, route C). Report-only.
+# SCOUT=YYYY-MM prints that sitting's structural pause map instead, which is how
+# a declaration's `window` bracket is found — never by guessing at a timestamp.
+archive-bank:
+	python3 tools/build_archive_bank.py $(if $(SCOUT),--scout $(SCOUT),)
 
 # The 11 official 「N番。」 spans a textbook clip is given, since textbook tracks
 # speak no number call. CHECK=1 re-harvests and diffs against the file on disk.

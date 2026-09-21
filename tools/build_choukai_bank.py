@@ -22,8 +22,18 @@ Every record is tagged with the slot it occupied in its source paper, and the
 composer may only place it in that same slot. This is not a stylistic choice:
 official reads 「N番。」 continuously into the situation line with no pause
 between them, so renumbering an item would mean cutting inside speech. Keeping
-the slot means every cut lands in a structural silence. All 31 sittings run the
-same 5/6/5/11/2 shape, so each slot has one candidate per sitting.
+the slot means every cut lands in a structural silence.
+
+The ten sittings this script banks all run 5/6/5/11/2, so each of their slots
+has one candidate per sitting. **This paragraph used to say "all 31 sittings
+run the same 5/6/5/11/2 shape" and that is refuted**: measured against
+`refs/JLPT_N2_NEW/answer_keys.json`, 11 of the 31 do (2020-12 plus the ten
+imports) and 20 do not — 問題4 ran 12 items until 2017-12, 問題2 ran 5 in
+2013-07 and 2018-07 … 2019-12, 2012-12 ran 4 問題3 items, and every sitting
+before 2020-12 had a three-item 問題5. The shape therefore comes from
+`choukai_segment.slots_for(sitting)`, which derives it from that key file, and
+not from a constant (`.agents/choukai-audio/references/archive_bank_expansion.md`
+§2 and §6 Step 1; re-measured 2026-09-17).
 
 The mixed pool (bank v2)
 ------------------------
@@ -55,9 +65,13 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "tools"))
 
-from build_textbook_bank import build_records as build_textbook_records  # noqa: E402
+from build_archive_bank import (  # noqa: E402
+    build_records as build_archive_records)
+from build_textbook_bank import (  # noqa: E402
+    build_records as build_textbook_records,
+    figure_dependent as figure_dependent_options)
 from choukai_segment import (  # noqa: E402
-    EXPECTED_SLOTS, NotSegmented, hint_from_script, segment)
+    NotSegmented, hint_from_script, segment, slots_for)
 
 BANK_PATH = ROOT / "logs" / "choukai_bank.json"
 BANK_VERSION = 2
@@ -180,7 +194,14 @@ def item_key(section: str, slot: int, sub: int | None = None) -> str:
 
 
 def answer_ids(section: str, slot: int) -> list[str]:
-    """The scored answer ids a slot produces — 問題5-2番 carries two."""
+    """The scored answer ids a slot produces — 問題5-2番 carries two.
+
+    Slot 2 is the two-question item in the MODERN 問題5 only; every sitting
+    before 2020-12 ran three 問題5 items with 質問1/質問2 on 3番. Those are not
+    bankable without a number-call re-cut and are deferred
+    (`archive_bank_expansion.md` §2 consequence 2, §6 Step 3), so this stays
+    keyed on 2 — deliberately, not by oversight.
+    """
     if section == "問題5" and slot == 2:
         return [item_key(section, slot, 1), item_key(section, slot, 2)]
     return [item_key(section, slot)]
@@ -212,18 +233,25 @@ def build_sitting(test_dir: Path) -> list[dict]:
     # --- the text must describe the shape the segmenter expects, BEFORE the
     #     audio is touched: a script that is short one item would otherwise
     #     silently align every later slot against the wrong span.
-    for section, expected in EXPECTED_SLOTS.items():
+    #
+    #     The shape is the SITTING's, not a constant: 20 of the 31 archive
+    #     sittings are not 5/6/5/11/2 (see this module's docstring). All ten
+    #     imports are modern, so `slots_for` returns `EXPECTED_SLOTS` for every
+    #     one of them today and this is a no-op — it stops being one the first
+    #     time a pre-2021 sitting is banked.
+    expected_slots = slots_for(sitting)
+    for section, count in expected_slots.items():
         found = sorted(s for (sec, s) in blocks if sec == section)
-        if found != list(range(1, expected + 1)):
+        if found != list(range(1, count + 1)):
             raise Reconciliation(
                 f"{test_dir.name}: {section} script blocks are {found}, "
-                f"expected 1..{expected}"
+                f"expected 1..{count}"
             )
 
-    seg = segment(audio, hint_from_script(script_text))
+    seg = segment(audio, hint_from_script(script_text), expected_slots)
 
     records: list[dict] = []
-    for section, count in EXPECTED_SLOTS.items():
+    for section, count in expected_slots.items():
         for slot in range(1, count + 1):
             speech_lo, speech_hi = seg.slot_span(section, slot)
             ids = answer_ids(section, slot)
@@ -259,8 +287,9 @@ def build_sitting(test_dir: Path) -> list[dict]:
                 # A FIGURE ITEM CANNOT BE COMPOSED (2026-09-09,
                 # qa-report-20260909_1 F1). Official 問題1 occasionally prints a
                 # picture and asks which REGION of it to act on; its four
-                # printed options are then the bare digits 1-4, which mean
-                # nothing without the image. A composed paper carries no
+                # printed options are then LABELS of that picture — the bare
+                # digits 1-4, or the kana 「ア　イ　ウ」 of a 座席図 — and they
+                # mean nothing without the image. A composed paper carries no
                 # images (`build_booklet.py` renders no figure for a drawn
                 # clip), so such an item reaches the learner as
                 # 「1. 1 / 2. 2 / 3. 3 / 4. 4」 and is unanswerable — the
@@ -268,9 +297,15 @@ def build_sitting(test_dir: Path) -> list[dict]:
                 # item. `20260909_1` shipped one (`2022-12:問題1-2`, a poster
                 # layout) all the way to a blind solve, which caught it as the
                 # single mismatch in 101 items.
-                # Exactly TWO of the 402 banked records are figure items
-                # (`2021-12:問題1-5` seat selection, `2022-12:問題1-2` poster),
-                # so this excludes 0.5 % of the pool and no 大問 loses a slot.
+                # FOUR of the 375 banked item records are figure items, measured
+                # 2026-09-17 after the ア/イ/ウ half of the predicate landed:
+                # `2021-12:問題1-5` (seat selection) and `2022-12:問題1-2`
+                # (poster) on digits, `2023-12:問題1-2` and `2024-12:問題1-2` on
+                # 「ア　イ　ウ」 seat labels — the two the digits-only predicate
+                # missed, after three papers had already shipped one
+                # (`qa/root-cause-20260917_1.md` RC-2). That is 1.1 % of the
+                # pool; the thinnest slot it touches is 問題1 slot 2, which
+                # keeps 7 of its 10 official candidates.
                 # The record is KEPT and flagged rather than dropped, so the
                 # bank stays a faithful inventory of the corpus and the
                 # exclusion is countable.
@@ -295,7 +330,7 @@ def build_sitting(test_dir: Path) -> list[dict]:
     #     instruction + 「では、練習しましょう。」 + the 例 + its confirmation +
     #     「では、始めます。」, lifted as ONE clip. Nothing inside is cut, so the
     #     例 stays coherent and no announcer line is spliced mid-sentence.
-    ordered = list(EXPECTED_SLOTS)
+    ordered = list(expected_slots)
     for i, section in enumerate(ordered):
         lo = 0.0 if i == 0 else seg.answers[ordered[i - 1]][-1].end
         hi = seg.preamble_end[section].start
@@ -331,27 +366,33 @@ def build_sitting(test_dir: Path) -> list[dict]:
 
 # ---------------------------------------------------------------- CLI
 
-BARE_DIGIT_OPTION = re.compile(r"^[\s]*[1-4\uff11-\uff14][\s]*$")
-
-
 def figure_dependent(explanation: dict) -> bool:
     """Do this item's printed options only make sense beside a picture?
 
     An official 問題1 item occasionally prints a figure and asks which part of
-    it to act on; the four printed options are then the bare digits 1-4, which
-    label regions of that image and carry no meaning on their own. The imported
-    sitting embeds the picture (`tests/imported-*/聴解.md` carries it as a
-    base64 block); a COMPOSED paper has no figure to embed, so the item would
-    print as 「1. 1 / 2. 2 / 3. 3 / 4. 4」.
+    it to act on; its four printed options are then LABELS of that image —
+    either the bare digits 1-4 or the kana 「ア　イ　ウ」 a 座席図 indexes — and
+    they carry no meaning on their own. The imported sitting embeds the picture
+    (`tests/imported-*/聴解.md` carries it as a base64 block); a COMPOSED paper
+    has no figure to embed, so the item reaches the learner as
+    「1. 1 / 2. 2 / 3. 3 / 4. 4」 or 「1. ア　イ　ウ / 2. ア　イ　エ / …」.
 
     Detected from the printed options rather than from the stem's wording,
     because the stem phrasings vary (「ポスターのどこを直しますか」,
-    「どの席にしますか」) while the digits-only option set is the invariant that
+    「どの席にしますか」) while the label-only option set is the invariant that
     actually makes the item unrenderable.
+
+    **The predicate itself lives in `build_textbook_bank.figure_dependent`, and
+    it is imported, not copied.** Until 2026-09-17 each builder carried its own
+    copy that recognised digits only, so every ア/イ/ウ diagram item was banked
+    as drawable and three papers shipped one
+    (`qa/root-cause-20260917_1.md` RC-2). This function is now only the shape
+    adapter: the official half stores its options inside a `詳細解説` block, one
+    entry per scored answer id, and an item is figure-dependent if ANY of them
+    is a label-only set.
     """
     for entry in (explanation or {}).values():
-        opts = (entry or {}).get("options") or []
-        if opts and all(BARE_DIGIT_OPTION.match(str(o)) for o in opts):
+        if figure_dependent_options((entry or {}).get("options")):
             return True
     return False
 
@@ -408,6 +449,28 @@ def main(argv: list[str] | None = None) -> int:
     print(f"ok    textbook items          {len(textbook)} items — "
           + ", ".join(f"{b}/{s} ×{n}" for (b, s), n in sorted(shape.items())))
     all_records.extend(textbook)
+
+    # --- the ARCHIVE half: hand-declared items cut from the 21 un-imported
+    #     sittings of `refs/JLPT_N2_NEW/` (route C,
+    #     `.agents/choukai-audio/references/archive_bank_expansion.md`). Same
+    #     contract as the textbook half — report-only builder, a refusal blocks
+    #     the write — and still one writer for one file.
+    archive, arch_refusals = build_archive_records()
+    for line in arch_refusals:
+        print(f"REFUSED  {line}")
+    if arch_refusals:
+        print(f"\n{len(arch_refusals)} archive item(s) refused — bank not "
+              f"written. Each refusal names the acceptance check it failed "
+              f"(archive_bank_expansion.md §7); fix the declaration in "
+              f".agents/choukai-audio/references/archive_items.json or move "
+              f"the item to its `excluded` list with a measured reason.")
+        return 1
+    if archive:
+        ashape = _Counter((r["sitting"], r["section"]) for r in archive)
+        print(f"ok    archive items           {len(archive)} items — "
+              + ", ".join(f"{s}/{sec} ×{n}"
+                          for (s, sec), n in sorted(ashape.items())))
+        all_records.extend(archive)
 
     if args.check:
         print(f"\n--check: {len(all_records)} records reconciled, nothing written")

@@ -10,7 +10,7 @@ server, the static Pages twin, and grading — all in `.agents/exam-app/scripts/
 
 | Script | Job |
 | - | - |
-| `build_booklet.py` | Markdown → booklet HTML (`言語知識・読解.html`, `聴解.html`); shared CSS and ruby/furigana helpers |
+| `build_booklet.py` | Markdown → booklet HTML (`言語知識・読解.html`, `聴解.html`); shared CSS, `render_body()` (the one render chain) and ruby/furigana helpers |
 | `build_interactive.py` | Markdown → `解答.html`, the merged sheet with in-page grading; also the `--keyless` QA render |
 | `build_practice.py` | Markdown → `練習.html`, 練習モード: the same paper flat, no clock, no grading, one model answer per question |
 | `serve_sheet.py` | the ONE local server: test list, exam, results, saved into `tests/<id>/` |
@@ -29,12 +29,11 @@ server, the static Pages twin, and grading — all in `.agents/exam-app/scripts/
   defined anywhere else.
 - `local_store.py` — `window.JLPTStore`, the ONLY place the localStorage key
   schema is written.
-- `build_interactive.py` imports `build_booklet.py`'s `CSS`, `SCREEN_CSS`,
-  `widen()`, `fit_ruby()`, `mark_furigana_blocks()` so sheet and booklet
-  render identically — sibling imports, both live in this skill's `scripts/`.
-  `add_choukai_furigana()` is NOT shared: applied only to 聴解-named files,
-  so `聴解.html` carries auto-furigana the 聴解 half of `解答.html` lacks — a
-  known difference, not a bug.
+- `build_interactive.render_bodies()` calls `build_booklet.render_body()` for
+  both halves (and imports its `CSS`/`SCREEN_CSS`), so sheet, practice page and
+  booklet run ONE render chain — boxes, option grid, item-number boxes,
+  underlines and 聴解 auto-furigana cannot differ. Sibling imports, both in
+  this skill's `scripts/`.
 - `build_pages.py` calls `build_interactive.build()` rather than copying
   `解答.html`, which would ship a sheet POSTing to a nonexistent API.
 - `build_practice.py` imports the sheet's own `strip_key()`,
@@ -84,11 +83,27 @@ differently, so whichever was on PATH silently changed the furigana output.
    Never put a sans-serif font ahead of YuMincho in the body chain — regressed
    once already (commit `116cc88` silently rendered a whole booklet
    sans-serif). Verify: `fc-list | grep -iE "yumincho|yugothic"`.
-3. **Option widening**: lines with 3+ options get three IDEOGRAPHIC spaces
-   (U+3000) between them — HTML collapses ASCII spaces but keeps U+3000.
+3. **Options (`widen()`)**: printed as official — `1　はしら`, no period. A
+   line with 3+ options becomes a grid of 4 equal columns, 2×2, or one per
+   line, whichever the LONGEST option fits (`COLS_*_MAX_EM`), so no option
+   wraps mid-word; a vertical ` 1. …` line keeps its row. The sheet's parsers
+   read the Markdown before `widen()`, so bubble counts never depend on it.
 4. **Tables**: `width:100%; border-collapse:collapse; page-break-inside:avoid`.
-5. **Page-break control**: avoid inside tables/blockquotes, avoid after
-   headings; line-height ≥1.9 for Japanese.
+5. **Page-break control**: avoid inside tables/blockquotes and inside one
+   item (stem + options), avoid after headings; 読解 and the key open a new
+   page, each 聴解 問題 too; line-height ≥1.9 for Japanese. `@page` prints
+   「— N —」 and the section name as running head.
+5a. **The official look** (`style_exam()`, exam part only): boxed item number
+   (`strong.bk-qn`) with the stem hanging past it; bold-Gothic
+   「問題N」 + hanging instruction, no shading; 【文字・語彙】-style parts as
+   small boxed labels; the tested word `**word**` UNDERLINED in 明朝
+   (`strong.bk-tw`) — a bold span that fills its own line or opens one as a
+   label (`**夕食**　…`) stays bold; ーメモー → centred 「― メモ ―」. The
+   Markdown conventions do not change. The first paragraph's leading U+3000
+   indent survives Markdown (`keep_indent()`).
+5b. **Cover** (booklet HTML only; the sheet has its gate): level, section name
+   and minutes from the level table, 注意 box, 受験番号・名前 lines. A named
+   `@page bk-cover` resets the counter so page 1 is the first question page.
 6. Layout per `jlpt-exam-structure`: horizontal options for 文字・語彙・文法,
    vertical for 聴解 and 問題6.
 7. **Ruby furigana**: `<ruby>漢字<rt>かんじ</rt></ruby>`, stacked by hand
@@ -98,11 +113,16 @@ differently, so whichever was on PATH silently changed the furigana output.
    left/right:-0.6em`. `fit_ruby()` gives ruby a `min-width` when the reading
    is wider than its base; `mark_furigana_blocks()` adds `class="furi"`
    (line-height 2.1) only to blocks containing ruby.
-8. **Vocabulary notes** (`（注1）…`): `.vocab-notes` styling (9pt, line-height
-   1.6, top dashed border) replicates the official Dokkai layout.
+8. **Vocabulary notes** (`（注1）…`): `.vocab-notes` (10pt, no rule) under the
+   passage; inline （注N） markers print small and raised (`.bk-chu`).
 9. **Passage boxes are not optional decoration** — official booklets print
-   every 問題9–14 passage/notice inside a ruled box, separate from the
-   questions below it (`.passage-box`, produced by `box_passages()`).
+   every 問題9–14 passage/notice inside a thin black rule on white, separate
+   from the questions below it (`.passage-box`, produced by `box_passages()`).
+   A box over `FLOW_CHARS` or holding a table carries a hidden `.bk-flow`
+   first child and may break across pages (a scroll container or an
+   unbreakable over-tall box printed 問題14 as a blank page); 問題14's flyer
+   (`FLYER_START`) opens its own page. The open tag stays exactly
+   `<div class="passage-box">` — the gate and `build_practice` match it.
    **14 boxes per paper**: 問題9 ×1, 問題10 ×5, 問題11 ×4, 問題12 ×2 (A and B
    box separately), 問題13 ×1, 問題14 ×1 — `make check`
    (`check_passage_boxes`) FAILs any other count, in the Markdown AND in both
@@ -129,7 +149,8 @@ differently, so whichever was on PATH silently changed the furigana output.
 
 ### `verify()` — automatic, aborts the build
 
-Runs on every build; aborts on mojibake, an `<ol>` in the output (stems must
+Runs on every build on the HTML STRING, before anything is written (a failing
+build leaves the previous file, never a freshly stamped bad one); aborts on mojibake, an `<ol>` in the output (stems must
 be bold `**6**`, never `N.` list syntax which restarts numbering), or a
 gap in the bold stem numbers (they must run 1..max contiguously, whatever the
 level's count). Still check by eye that key/
@@ -358,8 +379,8 @@ check. Every emitted document goes through the same `strip_key()`.
 — unexecutable before this existed, since the keys live at the END of the
 same two Markdown files the paper lives in. `--keyless` emits the whole paper
 through `strip_key()` plus `聴解スクリプト.txt` verbatim, embeds no key data
-at all, and re-scans its own output with `KEY_HEADING`, refusing to write a
-render that still carries one. Header carries each source's `sha1[:12]` —
+at all, and scans the text with `KEY_HEADING` BEFORE writing, refusing to
+write a render that still carries one. Header carries each source's `sha1[:12]` —
 what the QA report header must name. Not a deliverable: lands in
 `qa/<id>/keyless.md` (gitignored), beside the QA report.
 
@@ -370,6 +391,8 @@ what the QA report header must name. Not a deliverable: lands in
   0.75–1.5, chapter dropdown.
 - **Chapter marks** come from `聴解_チャプター.json` (exact assembler offsets,
   not silence-detection guesses) — absent, the dropdown just hides itself.
+  Entries carry no `type`: a label without 番/質問 (「問題2」) is a 大問 header,
+  the rest are indented items; an explicit `type` still wins.
 - Some browsers block `file://` media: a 「MP3を選ぶ」 picker is always
   present as fallback. Never require a web server.
 
@@ -464,6 +487,10 @@ shoves 採点する off-screen). All inside `@media screen`. `initSpy()`/
 `fitPlayer()` measures the bar and sets the player's sticky offset — never
 hard-code it.
 
+**Bubbles** look like マークシート ovals (`.qa label`, CSS only): a tall oval
+with its digit, filled solid when chosen; the radio is transparent over it, so
+behaviour and every `input[name=q_…]` lookup are unchanged.
+
 ## Answer capture
 
 Every radio click writes to the one place this build uses (and so does every
@@ -493,7 +520,10 @@ plus the same shape: `{"言語知識_読解": {"33": 2, …}, "聴解": {"問1-1
 
 Parses keys from the two Markdown sources, reads responses, writes
 `採点結果.json`. **User answers are auto-discovered**: `ユーザー解答*.json` in
-the test dir and cwd; inline `--answers-gengo`/`--answers-choukai` override.
+the test dir only (matched NFC-normalised; a stray file in the shell's cwd is
+not merged); inline `--answers-gengo`/`--answers-choukai` override. With no
+answers loaded it exits without writing, so a real `採点結果.json` is never
+replaced by an empty grading. Rounding is half-up (`js_round`), `Math.round`'s rule.
 
 - **Scaled 0–180 scoring**: raw section counts → 0–60 per section —
   言語知識 (51 items), 読解 (20 items), 聴解 (30 answers; 問題5-2番 yields two).

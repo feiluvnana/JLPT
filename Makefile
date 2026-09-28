@@ -21,7 +21,21 @@ ifneq ($(filter $(FIRST_GOAL),$(TARGET_CMDS)),)
   endif
 endif
 
-TEST ?= $(if $(POS_ARG),$(POS_ARG),1)
+TEST ?= $(POS_ARG)
+# A per-test target with no id used to fall back to TEST=1: `make sample SEED=n`
+# then created tests/1/ and a ledger row for it, and `make mp3 SEED=n` composed
+# into it. No default — name the paper (2026-09-28).
+PER_TEST_CMDS := $(filter-out pages repair-plan upload-files matrix,$(TARGET_CMDS))
+ifneq ($(filter $(PER_TEST_CMDS),$(MAKECMDGOALS)),)
+  ifeq ($(strip $(TEST)),)
+    $(error name the test: make $(FIRST_GOAL) <test_id>  (or TEST=<test_id>))
+  endif
+  ifeq ($(filter sample,$(MAKECMDGOALS)),)
+    ifeq ($(wildcard tests/$(TEST)/.),)
+      $(error no such test folder: tests/$(TEST)/)
+    endif
+  endif
+endif
 TARGET ?= tests
 # No default seed on purpose: the seed must be an RNG output passed explicitly
 # (SEED=$$(python3 -c "import secrets; print(secrets.randbelow(10**8))")),
@@ -103,7 +117,7 @@ help:
 	@echo "  make choukai-profile [BASELINE=1] 聴解 measurement: archive vs tests (--baseline for the doc tables)"
 	@echo "  make findings         Gate in --json mode -> logs/findings.json (slug/tier per finding)"
 	@echo "  make repair-plan [1] [TIER=B] 聴解+読解 work order -> qa/[<id>/]repair-plan.{json,md}"
-	@echo "  (any per-test target also takes TEST=<id>; default TEST=1)"
+	@echo "  (any per-test target also takes TEST=<id>; there is no default id)"
 	@echo "=========================================================================="
 
 check:
@@ -135,7 +149,7 @@ findings:
 	-python3 tools/check_consistency.py --json logs/findings.json
 
 repair-plan: findings
-	python3 tools/choukai_repair_plan.py $(if $(filter-out 1,$(TEST)),$(TEST),) $(if $(TIER),--tier $(TIER),)
+	python3 tools/choukai_repair_plan.py $(TEST) $(if $(TIER),--tier $(TIER),)
 
 extract-shinkanzen:
 	python3 tools/extract_shinkanzen_choukai.py

@@ -21,8 +21,11 @@ Usage:
 import argparse
 import json
 import re
+import os
 import socket
 import sys
+import tempfile
+import threading
 import urllib.parse
 import webbrowser
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
@@ -52,6 +55,18 @@ RESULT_JSON = "採点結果.json"
 
 
 # ------------------------------------------------------------ test discovery
+# One writer per test at a time; the answers file and the result are read and
+# written as a pair, so two requests for one test must not interleave.
+_LOCKS: dict[str, threading.Lock] = {}
+_LOCKS_GUARD = threading.Lock()
+MAX_POST_BYTES = 5_000_000
+
+
+def _lock_for(test_id: str) -> threading.Lock:
+    with _LOCKS_GUARD:
+        return _LOCKS.setdefault(test_id, threading.Lock())
+
+
 def natural_key(name: str):
     """`10` sorts after `9`; imported-* after plain ids; other names last."""
     if name.isdigit():
@@ -284,9 +299,9 @@ class AnswerSheetHandler(SimpleHTTPRequestHandler):
     def end_headers(self):
         if self.command == "GET":
             self.send_header("Accept-Ranges", "bytes")
-        self.send_header("Access-Control-Allow-Origin", "*")
-        self.send_header("Access-Control-Allow-Headers", "Content-Type")
-        self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+        # No CORS headers, on purpose: every page this server hands out is
+        # same-origin, and `Access-Control-Allow-Origin: *` let any website a
+        # candidate had open POST /clear and wipe a sitting.
         super().end_headers()
 
     def do_OPTIONS(self):
@@ -317,9 +332,32 @@ class AnswerSheetHandler(SimpleHTTPRequestHandler):
 
     @staticmethod
     def _write_json_file(d: Path, name: str, data) -> str:
-        (d / name).write_text(json.dumps(data, indent=2, ensure_ascii=False),
-                              encoding="utf-8")
+        """Atomic: a temp file in the same folder, then os.replace. The page
+        sends overlapping saves (debounce, 15 s heartbeat, persistNow, submit)
+        and a threaded server wrote them into one truncated file — 44 of 200
+        concurrent rounds left invalid JSON, i.e. a lost sitting."""
+        target = d / name
+        fd, tmp = tempfile.mkstemp(prefix=f".{name}.", suffix=".tmp", dir=d)
+        try:
+            with os.fdopen(fd, "w", encoding="utf-8") as fh:
+                json.dump(data, fh, indent=2, ensure_ascii=False)
+            os.replace(tmp, target)
+        except BaseException:
+            Path(tmp).unlink(missing_ok=True)
+            raise
         return name
+
+    def _same_origin(self) -> bool:
+        """A POST must come from a page this server served: JSON body (so a
+        cross-site form or text/plain fetch cannot skip the preflight) and, when
+        the browser names one, an Origin whose host is ours."""
+        ctype = self.headers.get("Content-Type", "").split(";")[0].strip().lower()
+        if ctype != "application/json":
+            return False
+        origin = self.headers.get("Origin")
+        if not origin or origin == "null":
+            return origin is None
+        return urllib.parse.urlsplit(origin).netloc == self.headers.get("Host", "")
 
     # ---------------------------------------------------------------- POST
     def do_POST(self):
@@ -330,13 +368,25 @@ class AnswerSheetHandler(SimpleHTTPRequestHandler):
         d = test_dir(m.group(1))
         if not d:
             return self.send_error(404, "Unknown test")
-
+        if not self._same_origin():
+            return self._write_json(403, {"success": False,
+                                          "error": "cross-origin or non-JSON POST refused"})
         try:
             length = int(self.headers.get("Content-Length", 0))
+        except ValueError:
+            length = -1
+        if not 0 <= length <= MAX_POST_BYTES:
+            return self._write_json(400, {"success": False,
+                                          "error": "bad Content-Length"})
+
+        with _lock_for(d.name):
+            self._handle_post(d, m.group(2), length)
+
+    def _handle_post(self, d: Path, action: str, length: int):
+        try:
             raw = self.rfile.read(length).decode("utf-8") if length else "{}"
             data = json.loads(raw or "{}")
 
-            action = m.group(2)
             if action == "clear":
                 removed = []
                 for name in (RESULT_JSON, ANSWERS_JSON):

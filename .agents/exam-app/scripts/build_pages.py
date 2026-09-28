@@ -29,8 +29,11 @@ instead of with a silent one.
 Nothing under `tests/` on disk is written or modified.
 """
 import argparse
+import contextlib
+import io
 import shutil
 import sys
+from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
@@ -111,17 +114,13 @@ def copy_audio(src: Path, dst: Path) -> int:
     return src.stat().st_size
 
 
-def build_site(out: Path, test_id: str | None = None, with_audio: bool = True,
-               force: bool = False) -> list[dict]:
-    dirs = deployable(test_id)
-    if not dirs:
-        sys.exit(f"no deployable tests in {TESTS}"
-                 + (f" matching {test_id!r}" if test_id else "")
-                 + " (each needs 言語知識・読解.md and 聴解.md)")
-
-    prepare_out(out, force)
-    manifest, copied = [], 0
-    for d in dirs:
+def _build_one(job: tuple[Path, Path, bool]) -> tuple[dict, int, str]:
+    """Build one test into the site; returns (manifest entry, audio bytes
+    copied, captured stdout). Top-level so a worker process can pickle it."""
+    d, out, with_audio = job
+    buf = io.StringIO()
+    copied = 0
+    with contextlib.redirect_stdout(buf):
         dest = out / "tests" / d.name
         # The sheet is REBUILT, never copied from tests/<id>/: that one is the
         # server build and would POST to an /api/ that does not exist on Pages.
@@ -147,20 +146,47 @@ def build_site(out: Path, test_id: str | None = None, with_audio: bool = True,
         else:
             print(f"  ! {d.name}: no 聴解 audio/chapters (run make mp3 {d.name})")
 
-        # The static half of what the list needs; the progress half comes from
-        # localStorage in the page. Same field names as serve_sheet.progress_of.
-        manifest.append({
-            "id": d.name,
-            "origin": serve_sheet.test_origin(d.name),
-            "level": serve_sheet.level_of(d),
-            "has_sheet": True,
-            "has_audio": has_audio and with_audio,
-            "has_explanation": has_explanation,
-            # Per-test, not the era constant: an imported past paper can key a
-            # different number of items (7/2021 is 72 + 30), and the static list
-            # has no server to ask.
-            "total": serve_sheet.question_count_of(d),
-        })
+    # The static half of what the list needs; the progress half comes from
+    # localStorage in the page. Same field names as serve_sheet.progress_of.
+    entry = {
+        "id": d.name,
+        "origin": serve_sheet.test_origin(d.name),
+        "level": serve_sheet.level_of(d),
+        "has_sheet": True,
+        "has_audio": has_audio and with_audio,
+        "has_explanation": has_explanation,
+        # Per-test, not the era constant: an imported past paper can key a
+        # different number of items (7/2021 is 72 + 30), and the static list
+        # has no server to ask.
+        "total": serve_sheet.question_count_of(d),
+    }
+    return entry, copied, buf.getvalue()
+
+
+def build_site(out: Path, test_id: str | None = None, with_audio: bool = True,
+               force: bool = False) -> list[dict]:
+    dirs = deployable(test_id)
+    if not dirs:
+        sys.exit(f"no deployable tests in {TESTS}"
+                 + (f" matching {test_id!r}" if test_id else "")
+                 + " (each needs 言語知識・読解.md and 聴解.md)")
+
+    prepare_out(out, force)
+    # Each test is independent (its own dest folder), so they build in worker
+    # processes — 40 tests took ~13 s serially, ~5 s this way. Results are
+    # collected in `dirs` order, so the manifest and the log read as before.
+    jobs = [(d, out, with_audio) for d in dirs]
+    if len(jobs) > 1:
+        with ProcessPoolExecutor() as pool:
+            results = list(pool.map(_build_one, jobs))
+    else:
+        results = [_build_one(j) for j in jobs]
+    manifest, copied = [], 0
+    for entry, n_bytes, log in results:
+        if log:
+            print(log, end="")
+        manifest.append(entry)
+        copied += n_bytes
 
     (out / "index.html").write_text(index_view.index_html("local", manifest),
                                     encoding="utf-8")

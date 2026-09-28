@@ -123,16 +123,23 @@ def load_manifest() -> dict:
     if MANIFEST.is_file():
         try:
             return json.loads(MANIFEST.read_text(encoding="utf-8"))
-        except json.JSONDecodeError:
-            print(f"Warning: {MANIFEST} is not valid JSON — starting a fresh manifest.",
-                  flush=True)
+        except json.JSONDecodeError as exc:
+            # Refuse rather than start fresh: a fresh manifest is saved over
+            # the damaged one after the first upload, erasing every other
+            # record, and the next run re-pushes the whole archive.
+            sys.exit(f"{MANIFEST} is not valid JSON ({exc}). Restore it with "
+                     f"`git checkout -- {MANIFEST.relative_to(ROOT)}` and re-run.")
     return {}
 
 
 def save_manifest(manifest: dict) -> None:
+    """Atomic (temp + os.replace): it is saved after every asset, so a Ctrl-C
+    mid-write used to leave the truncated file load_manifest() then discarded."""
     MANIFEST.parent.mkdir(parents=True, exist_ok=True)
-    MANIFEST.write_text(json.dumps(manifest, ensure_ascii=False, indent=2,
-                                   sort_keys=True) + "\n", encoding="utf-8")
+    tmp = MANIFEST.with_name(f".{MANIFEST.name}.tmp")
+    tmp.write_text(json.dumps(manifest, ensure_ascii=False, indent=2,
+                              sort_keys=True) + "\n", encoding="utf-8")
+    os.replace(tmp, MANIFEST)
 
 
 def file_sha256(path: Path, cached: dict | None) -> str:

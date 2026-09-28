@@ -21,6 +21,8 @@ Usage:
 
 import argparse
 import json
+import unicodedata
+import math
 import re
 import sys
 from datetime import datetime, timezone
@@ -272,9 +274,9 @@ def grade(gengo_keys: dict, choukai_keys: dict, user_answers: dict,
         }
 
     # Scaled Scores (JLPT Scale out of 60 per section)
-    scaled_goi_bunpou = round((goi_bunpou_correct / goi_bunpou_total) * sec_goi["max"]) if goi_bunpou_total > 0 else 0
-    scaled_dokkai = round((dokkai_correct / dokkai_total) * sec_dokkai["max"]) if dokkai_total > 0 else 0
-    scaled_choukai = round((choukai_correct / choukai_total) * sec_choukai["max"]) if choukai_total > 0 else 0
+    scaled_goi_bunpou = js_round((goi_bunpou_correct / goi_bunpou_total) * sec_goi["max"]) if goi_bunpou_total > 0 else 0
+    scaled_dokkai = js_round((dokkai_correct / dokkai_total) * sec_dokkai["max"]) if dokkai_total > 0 else 0
+    scaled_choukai = js_round((choukai_correct / choukai_total) * sec_choukai["max"]) if choukai_total > 0 else 0
 
     total_scaled_score = scaled_goi_bunpou + scaled_dokkai + scaled_choukai
 
@@ -296,7 +298,7 @@ def grade(gengo_keys: dict, choukai_keys: dict, user_answers: dict,
             "section": spec["section"],
             "correct": cat_correct,
             "total": cat_total,
-            "percentage": round((cat_correct / cat_total) * 100, 1) if cat_total > 0 else 0
+            "percentage": js_round((cat_correct / cat_total) * 100 * 10) / 10 if cat_total > 0 else 0
         }
 
     # Listening mondai breakdown
@@ -317,7 +319,7 @@ def grade(gengo_keys: dict, choukai_keys: dict, user_answers: dict,
             "section": "聴解",
             "correct": cor,
             "total": tot,
-            "percentage": round((cor / tot) * 100, 1) if tot > 0 else 0
+            "percentage": js_round((cor / tot) * 100 * 10) / 10 if tot > 0 else 0
         }
 
     return {
@@ -382,12 +384,29 @@ def result_payload(results: dict, test_id: str, graded_at: str | None = None) ->
     }
 
 
+def js_round(x: float) -> int:
+    """JavaScript's Math.round (half up), NOT Python's round (half to even).
+    computeResult() in 解答.html rounds with Math.round; the two graders must
+    agree field for field, and 12/32 × 60 = 22.5 split them 22 vs 23."""
+    return math.floor(x + 0.5)
+
+
+def answer_files(test_path: Path) -> list[Path]:
+    """ユーザー解答*.json in the test folder, matched after NFC normalisation:
+    Path.glob compares bytes, so an NFD-named file (APFS keeps what it is
+    given) was invisible to it while `is_file()` found it."""
+    want = unicodedata.normalize("NFC", "ユーザー解答")
+    return sorted(p for p in test_path.iterdir()
+                  if p.suffix == ".json"
+                  and unicodedata.normalize("NFC", p.name).startswith(want))
+
+
 def main():
     parser = argparse.ArgumentParser(description="Grade user responses for JLPT mock test.")
     parser.add_argument("--test-dir", required=True, help="Path to test output directory, e.g. tests/1")
     parser.add_argument("--user-answers",
                         help="Comma-separated user answer JSON file(s). "
-                             "Default: ユーザー解答*.json in the test dir or cwd.")
+                             "Default: ユーザー解答*.json in the test dir.")
     parser.add_argument("--answers-gengo", help="Quick gengo answers string like '1:4,2:2,3:1...'")
     parser.add_argument("--answers-choukai", help="Quick choukai answers string like '問1-1:2,問1-2:3...'")
 
@@ -417,13 +436,16 @@ def main():
     if args.user_answers:
         sources = [Path(x.strip()) for x in args.user_answers.split(",")]
     else:
-        sources = sorted(test_path.glob("ユーザー解答*.json")) + \
-                  sorted(Path.cwd().glob("ユーザー解答*.json"))
+        # The test folder only: a cwd glob merged whatever answers file sat in
+        # the shell's directory into EVERY test's grading.
+        sources = answer_files(test_path)
 
+    loaded_any = False
     for ua_path in sources:
         if not ua_path.exists():
             print(f"  warning: {ua_path} not found", file=sys.stderr)
             continue
+        loaded_any = True
         loaded = json.loads(ua_path.read_text(encoding="utf-8"))
         user_answers["言語知識_読解"].update(loaded.get("言語知識_読解", {}))
         user_answers["聴解"].update(loaded.get("聴解", {}))
@@ -445,6 +467,11 @@ def main():
             if ":" in pair:
                 q, a = pair.strip().split(":")
                 user_answers["聴解"][q.strip()] = int(a.strip())
+
+    if not (loaded_any or args.answers_gengo or args.answers_choukai):
+        # Grading nothing would write an all-未解答 採点結果.json over a real
+        # result (an existing 150 became 0). Stop instead.
+        sys.exit("nothing to grade: no answers loaded — 採点結果.json left untouched")
 
     # 3. Perform Grading
     level = LEVEL.declared_level(test_path) or LEVEL.level_of(test_path.resolve().name)

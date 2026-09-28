@@ -81,7 +81,9 @@ Gate: `check_moji_option_reuse` over 問題1–6.
 The band gate reads `level_band_grammar.txt`, which covers 問題7–9 grammar only.
 Check every 問題1–6 key against Shinkanzen N2-Goi/N2-Kanji and Soumatome N2
 語彙/漢字 — a headline N3-or-below word absent from either N2 volume is too easy
-(avoid 賢い/かしこい). No vendored word list exists anymore to query; this is a
+(avoid 賢い/かしこい). **問題5 is the exception**: its key is the SIMPLER word by
+construction, and official keys N5-core paraphrases (12/2016 つねに→いつも,
+たちまち→すぐに ×3) — there the band test binds the underlined TARGET (Part 5). No vendored word list exists anymore to query; this is a
 judgment call, and a re-drawn key's band goes into the QA report by name with the
 book and page that confirmed it.
 
@@ -571,11 +573,14 @@ printed, however many options are on the page.
 
 `20260904_1` 問題5-24 keyed 「いつも」 on target 常に against たまに／まれに／
 ときどき — three ways of saying "not often", killed in the 解説 by one clause
-(「いずれも頻度が低いことを表す副詞で」). It is also the off-level half of the
-same defect: 「いつも」 is N5-core, and §2.5's named TOO_EASY example is exactly
-「four basic N4–N5 adverbs」. Both halves came from ONE pool row, so the durable
-repair is `exam-blueprint` §"A `paraphrase` parenthetical" — but the option set
-is yours either way, because the pool never writes the other three.
+(「いずれも頻度が低いことを表す副詞で」). **The KEY was not the defect** (corrected
+2026-09-28): official 12/2016 問題5-27 keys exactly つねに→いつも, beside
+当然／特に／できるだけ, and official keys N5-core paraphrases routinely
+(たちまち→すぐに, やや→少し, 一層→もっと, 依然→まだ — `exam-blueprint` §"A
+`paraphrase` parenthetical" has the measurement). A 問題5 key is the simpler
+word by construction; the band test applies to the TARGET. The defect was the
+distractor SET, and the option set is yours, because the pool never writes the
+other three.
 
 **Measured against official practice (re-run 2026-09-04 over the 8 imported
 sittings, 40 問題5 option sets; the founding measurement read 25 over 5):

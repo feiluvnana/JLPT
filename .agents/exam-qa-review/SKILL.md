@@ -373,7 +373,10 @@ three shapes in one paper). This binds the OPTION SET as a whole too — four
 basic N4–N5 adverbs (めったに/なかなか/とても/ちっとも) is TOO_EASY even if the
 key alone might survive a lookup. **This is a judgment call, not a lookup
 verdict** — `openjlpt` mislabeled ordinary N2 vocabulary (把握, 審査, 依頼…)
-as "N1"/"N3", so a single source's label was never sufficient.
+as "N1"/"N3", so a single source's label was never sufficient. **One exception:
+問題5's KEY is the simpler word by construction** — official keys N5-core
+paraphrases routinely (つねに→いつも, たちまち→すぐに); judge its TARGET, not
+its key (exam-blueprint §"The TARGET must sit in the N2 band").
 
 **`refs/`'s `*_reference.md` and `vocab_reference.md` are OCR, not an index:
 when you cite a word's presence as band evidence, open the hit lines, confirm

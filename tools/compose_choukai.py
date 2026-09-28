@@ -47,6 +47,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import random
 import re
 import hashlib
@@ -239,9 +240,24 @@ def previous_slot_clips(draws: dict, exclude: str = "") -> dict[str, str]:
     rows = [r for r in draws["history"] if r.get("test_id") != exclude]
     if not rows:
         return {}
-    earlier = [r for r in rows if str(r.get("test_id", "")) < exclude]
-    row = max(earlier, key=lambda r: str(r["test_id"])) if earlier else rows[-1]
+    # Compared as (date, n) — a string compare put `20260928_10` before `_9`.
+    earlier = [r for r in rows if id_order(r.get("test_id", "")) < id_order(exclude)]
+    row = max(earlier, key=lambda r: id_order(r["test_id"])) if earlier else rows[-1]
     return dict(row["clips"])
+
+
+def write_atomic(path: Path, text: str) -> None:
+    """Sibling temp file + os.replace: a reader never sees half a file."""
+    tmp = path.with_name(f".{path.name}.tmp")
+    tmp.write_text(text, encoding="utf-8")
+    os.replace(tmp, path)
+
+
+def id_order(test_id) -> tuple:
+    """Sort key for `YYYYMMDD_n` ids with a numeric `n`; anything else sorts
+    by its string, after them."""
+    m = re.fullmatch(r"(?:[a-z]\d-)?(\d{8})_(\d+)", str(test_id))
+    return (0, m.group(1), int(m.group(2))) if m else (1, str(test_id), 0)
 
 
 def resolve(rec: dict, section: str, slot: int) -> dict:
@@ -1133,33 +1149,39 @@ def main(argv: list[str] | None = None) -> int:
         clips, pres = draw(bank, args.seed, used, args.test_id,
                            avoid_slot=previous_slot_clips(draws, exclude=args.test_id))
 
-    (test_dir / "聴解スクリプト.txt").write_text(
-        render_script(index, clips, pres), encoding="utf-8")
-    (test_dir / "聴解.md").write_text(
-        render_booklet(index, clips, pres), encoding="utf-8")
-    merge_explanations(test_dir, index, clips)
+    script = render_script(index, clips, pres)
+    booklet = render_booklet(index, clips, pres)
 
-    if not args.no_audio:
-        work = Path(tempfile.mkdtemp(prefix=f"choukai-{args.test_id}-"))
-        try:
-            marks = build_audio(index, clips, pres,
-                                test_dir / "聴解.mp3", work)
-        finally:
-            shutil.rmtree(work, ignore_errors=True)
-        marks["source"] = "composed"
-        marks["bank_version"] = bank["version"]
-        # Same contract as the TTS path: mechanical evidence that the audio on
-        # disk speaks the script on disk. `pacing_sha` has no analogue — the
-        # pauses come from the pacing table via this file, and the speech comes
-        # from the archive, so there are no synthesis constants to hash.
-        marks["script_sha"] = hashlib.sha1(
-            (test_dir / "聴解スクリプト.txt").read_bytes()).hexdigest()[:12]
-        (test_dir / "聴解_チャプター.json").write_text(
-            json.dumps(marks, ensure_ascii=False, indent=1) + "\n",
-            encoding="utf-8")
-        print(f"{args.test_id}: {marks['duration'] / 60:.1f} min, "
-              f"{len(marks['chapters'])} chapters")
-    else:
+    # THE AUDIO IS BUILT FIRST, INTO A TEMP FILE, AND NOTHING IN THE PAPER IS
+    # TOUCHED UNTIL IT EXISTS (2026-09-28). A missing source MP3 `sys.exit`s
+    # inside build_audio(), and the text used to be written before it: the run
+    # died with 聴解スクリプト.txt, 聴解.md and both 詳細解説 panes describing the
+    # NEW draw, the MP3 and choukai_draws.json still the OLD one — a paper whose
+    # script and audio disagree, all from one failed command.
+    work = Path(tempfile.mkdtemp(prefix=".compose-", dir=test_dir))
+    try:
+        if not args.no_audio:
+            marks = build_audio(index, clips, pres, work / "聴解.mp3", work)
+            marks["source"] = "composed"
+            marks["bank_version"] = bank["version"]
+            # Mechanical evidence that the audio on disk speaks the script on
+            # disk. `pacing_sha` has no analogue — the pauses come from the
+            # pacing table via this file, and the speech from the archive.
+            marks["script_sha"] = hashlib.sha1(
+                script.encode("utf-8")).hexdigest()[:12]
+
+        write_atomic(test_dir / "聴解スクリプト.txt", script)
+        write_atomic(test_dir / "聴解.md", booklet)
+        merge_explanations(test_dir, index, clips)
+        if not args.no_audio:
+            os.replace(work / "聴解.mp3", test_dir / "聴解.mp3")
+            write_atomic(test_dir / "聴解_チャプター.json",
+                         json.dumps(marks, ensure_ascii=False, indent=1) + "\n")
+            print(f"{args.test_id}: {marks['duration'] / 60:.1f} min, "
+                  f"{len(marks['chapters'])} chapters")
+    finally:
+        shutil.rmtree(work, ignore_errors=True)
+    if args.no_audio:
         # The script bytes just changed, so the stamp that proves "this MP3
         # speaks this script" has to be re-taken. Legitimate here and only here:
         # the audio is a pure function of the draw, the draw did not move, and
@@ -1189,9 +1211,7 @@ def main(argv: list[str] | None = None) -> int:
         "clips": clips,
         "preambles": pres,
     })
-    DRAWS_PATH.write_text(
-        json.dumps(draws, ensure_ascii=False, indent=1) + "\n",
-        encoding="utf-8")
+    write_atomic(DRAWS_PATH, json.dumps(draws, ensure_ascii=False, indent=1) + "\n")
 
     mix = Counter(index[i].get("source", "official") for i in clips.values())
     sittings = Counter(index[i]["sitting"] for i in clips.values()

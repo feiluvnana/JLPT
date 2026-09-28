@@ -1322,20 +1322,17 @@ def build_model_answer(test_dir: Path, out_path: Path | None = None) -> Path:
     if chapter_path.is_file():
         try:
             cjson = json.loads(chapter_path.read_text(encoding="utf-8"))
+            # Chapter labels are 「問題N M番」 (compose_choukai / choukai_segment);
+            # a bare 「問題N」 is the section's own start. The old reader wanted a
+            # `section` field no writer emits, so no page had a jump button.
             for ch in cjson.get("chapters", []):
-                sec = ch.get("section", "")
-                lbl = ch.get("label", "")
-                st = ch.get("start", 0)
-                m_digit = re.search(r"(\d+)", lbl)
-                if sec and m_digit:
-                    k = f"問{sec.replace('問題', '')}-{m_digit.group(1)}"
-                    chapters_data[k] = st
-                elif sec == "問題5":
-                    if "1" in lbl:
-                        chapters_data["問5-1"] = st
-                    elif "2" in lbl:
-                        chapters_data["問5-2-1"] = st
-                        chapters_data["問5-2-2"] = st
+                m = re.fullmatch(r"\s*問題(\d+)\s*(\d+)番\s*", ch.get("label", ""))
+                if not m:
+                    continue
+                sec, n, st = m.group(1), m.group(2), ch.get("start", 0)
+                if sec == "5" and n == "2":
+                    chapters_data["問5-2-1"] = chapters_data["問5-2-2"] = st
+                chapters_data[f"問{sec}-{n}"] = st
         except Exception:
             pass
 

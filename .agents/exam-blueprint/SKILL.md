@@ -16,7 +16,8 @@ wearing a randomness costume. Hence four mechanisms: **explicit pools**
 
 **Tested linguistic items are always the pool's, topics are always yours to
 write.** Grammar, vocabulary, kanji, idioms/keigo ALWAYS come from
-`pools.json`, calibrated against Shin Kanzen Master; the assigned
+`pools.json`, calibrated against Shin Kanzen Master (grammar: an SK N2
+headword or an official N2 key — §"One grammar point, one pool entry"); the assigned
 `reading_topics` entry sets scene and content, and the author writes the
 passage from it directly at N2 level (Part II) — no external source, no
 harvest, no blend ratio. Workflow placement: `jlpt-test-generation` (pass
@@ -193,15 +194,30 @@ previously-shipped `領: えり` defect, and can refute but never confirm an
 entry). Both PDFs are scanned images with no text layer — read the relevant
 pages or corroborate against the official archive's OCR'd `booklet.md`/`key.md`.
 
-The 2026-08-06 audit removed 103 of 218 entries, leaving 112. **The pool now
-holds 1526 `kanji_reading` entries** — it was grown after that audit, and the
+The 2026-08-06 audit removed 103 of 218 entries, leaving 112. **The pool held
+1526 `kanji_reading` entries on 2026-09-28** — it was grown after that audit, and the
 growth was manual by policy (below), so the audit's coverage does NOT extend to
 the current pool. `無事(むじ)` was found in it on 2026-09-07 by a routine draw and
 corrected to `無事(ぶじ)`: Shin Kanzen 漢字 別冊1 gives 無 as ム (無理/無料) and
 **ブ** (無事), so the entry would have keyed an unanswerable item, the same class
 as the `領(えり)` defect the original audit removed.
 
-**A full re-audit of the 1526 entries is outstanding and cannot be scripted.**
+**2026-09-28 partial audit** (`--check-depth` prints today's drawable count):
+two wrong readings corrected (`翌年(よくとし)`→`よくねん`, `匹敵する(ひってき)`→
+`ひってきする`); eight rule-3 entries deleted whose printed spelling also reads
+a lower-graded word (`門(かど)`/もん, `弾く(はじく)`/ひく, `昨夜(さくや)`/ゆうべ,
+`値(あたい)`/ね, `明後日(みょうごにち)`/あさって, `何人(なにじん)`/なんにん,
+`角(かど)`/つの, `表(おもて)`/ひょう); `片~(かた)` (not a word) and `凌ぐ` (表外,
+fails the 問題1 glyph gate) deleted; six N1 entries with zero hits in every
+textbook extract and all 31 booklets deleted (遮る, 培う, 阻む, 尊ぶ, 綻びる,
+浅ましい); and **82 tanos-N5/N4 core words** removed — 79 never-drawn deleted,
+訪ねる/最も/驚く retired — because official keys such a target in ~3 % of 問題1
+items (辛い, 貿易, 景色, 腕 matched, all kept) while the pool ran 7 %.
+Single-kanji 訓 nouns (髪, 葉, 湯, 隅, 裏, 湖, 港) were kept: they are
+official's own shape (腕, 柱, 針). The per-entry list is in the audit's change
+log, not here.
+
+**A full re-audit of the remaining entries is outstanding and cannot be scripted.**
 The obvious proxy — "is the headword attested in the archive or the four textbook
 extracts?" — was measured on 2026-09-07 and is too weak to act on: it clears only
 71 % of the pool, and the 443 it flags include 措置, 潔い, 焦る, 誇る, 覆う, 漂う,
@@ -286,9 +302,18 @@ objects would orphan the shipped ledger rows that name them.
 - `form_family_tokens()` puts the family into **`taken_tokens()` only, not
   `identity_tokens()`** — one paper may not draw two of a family; two
   consecutive papers may each draw one. The defect is two in one 問題8.
-- **Membership is "one form spelled twice", not "shares a stem".** Today:
-  `{〜つつある, 経過状況(〜つつ…する)}`, `{目的表現(〜ように…する),
-  目的達成(〜ように努力する)}` and `{〜おかげで/せいで, 〜おかげで}`.
+- **Membership is "one form spelled twice", not "shares a stem".** Read the
+  map itself for today's list; the 2026-09-28 audit added four families, each
+  checked against the Shin Kanzen N2 文法 index (book p.208–211): `にしろ`
+  (〜としても・にしても・にしろ・にせよ + the paired 〜にしろ〜にしろ /
+  〜にせよ〜にせよ / 〜にしても〜にしても, SK 15課6 and 10課3), `限り(は)`
+  (〜限りは, 〜ない限り, 条件限定(〜ない限りは…) — SK 5課2), `わけにはいかない`
+  (SK 18課2) and `ずにはいられない` (SK 25課3). **Where SK heads two pool
+  spellings as ONE form, the variant was also RETIRED** (〜にせよ〜にせよ,
+  〜にしても〜にしても, 〜わけにもいかない, 〜ないではいられない): the family stops
+  the pair in one paper, but only one live spelling stops it rotating as two
+  items across papers. 〜限り / 〜限りでは / 〜に限り / 〜ないわけにはいかない are
+  separate SK headwords and stay unfamilied.
   〜ばかりに vs 〜ばかりか, 〜として vs 〜としても and
   〜ない限り vs 〜に限らず are **not** families — Shin Kanzen headlines them
   separately and folding them would refuse honest draws.
@@ -355,6 +380,56 @@ two whole lessons with zero coverage. Added 60 N2-band forms to `grammar_p7`
 (172 total; `grammar_p8` unchanged at 42), each checked against the band-ban
 list and the skeleton-dup check.
 
+**2026-09-28: re-audited against the Shin Kanzen N2 文法 INDEX (book
+p.208–211, PDF p.217–220), which lists every headed form.** Added to
+`grammar_p7` the eleven indexed forms still missing (〜最中だ, 〜さえ, 〜からすると,
+〜ことなく, 〜てでも, 〜にきまっている, 〜のことだから, 〜わけだ, 〜とのことだ,
+〜ところから, 〜だの〜だの) and six keigo/使役受身 entries (敬語:拝見する/存じる/
+申し上げる/いたす/〜させていただく, 使役受身:〜させられる) — official prints such
+forms in the 問題7 block of all 31 sittings, bunpou.md's inventory names the
+humble/honorific traps, and 使役受身 is SK 第3部6課. Retired 〜がち (bunpou.md
+bans it bare) and 〜にくい (N4). `grammar_p8` retired seven N4/N5 or lexical
+frames (同時進行, 例示指示, 目的結果, 目的表現, 目的達成, 仮定帰結, 心理変化) and
+gained 26 SK N2 forms spelled exactly as in `grammar_p7`, so the two pools fold
+by string and by form.
+
+**The evidence rule: a grammar entry needs a Shin Kanzen N2 文法 headword OR an
+official N2 key, cited by sitting + 問題 + item** (owner decision 2026-09-28;
+`question-authoring/references/bunpou.md` §Inventory owns the wording). An
+official key means the form is the KEYED option of a 問題7/問題9 item, or sits on
+a 問題8 item's cards, in `refs/JLPT_N2_NEW/<sitting>/booklet.md` + `key.md`; a
+form printed only as a distractor or in running text is not evidence. The band
+lists still apply on top. Added under the second leg the same day (every one
+also absent from the SK 索引, checked on the page):
+
+| entry | pool | official key |
+|---|---|---|
+| 〜反面 | p7 | 12/2023 問題7-34 |
+| 〜ついでに | p7 | 12/2018 問題7-32 (「のついでに」) |
+| 〜によらず | p7 | 12/2011 問題7-39 |
+| 〜すら | p7 | 12/2011 問題7-34, 7/2021 問題7-31 |
+| 〜こそ | p7 | 12/2012 問題7-33, 12/2020 問題7-32 |
+| 〜というより | p7 | 12/2021 問題7-34 |
+| 〜ずに済む | p7 | 12/2025 問題7-39 (「待たずに済んだ」) |
+| 〜に限る | p7 + p8 | 12/2013 問題8-47 (cards 「に限る/早く/寝る/して」) |
+| 敬語:ご覧いただく | p7 | 12/2013 問題7-38, 12/2021 問題7-40 (also 「ご覧のように」 12/2012 問題7-43) |
+| 敬語:おいでになる | p7 | 7/2016 問題7-37; 「おいでくださり」 12/2019 問題7-36, 7/2025 問題7-34 |
+| 敬語:いらっしゃる | p7 | 7/2022 問題7-38 |
+| 敬語:なさる | p7 | 12/2023 問題7-37 (「駐車なさらないよう」) |
+| 敬語:ございます | p7 | 12/2017 問題7-39 |
+| 使役:〜させてくれる | p7 | 12/2010 問題7-41 (「楽しませてくれます」), 12/2023 問題7-40 (「思わせてくれた」) |
+| 〜からすると | p8 (p7 already, SK p.124) | ★ card of 7/2010 問題8-49 and 7/2024 問題8-47 |
+
+**Still out, for want of either leg:** 向き (SK heads only 〜向けだ, already
+pooled), を中心に (only a 7/2025 問題9 distractor), に加えて (問題7 distractor
+only), とは限らない, ときたら (running text, 7/2016 問題9), ところを, かのようだ
+(distractor in 12/2018 and 7/2021 問題9 and three 問題7 sets, never keyed),
+ないこともない (distractor, 7/2015 問題9-54 and 7/2017 問題9-51), and から見ると
+(SK heads 〜からすると/〜からいうと/〜からして; never keyed). Plain 授受
+(〜ていただく, 〜てくださる) and bare passive/causative keys are N4 and stay out
+under §"Pool entries stay inside the N2 band". A distractor-only form re-enters
+the day an official sitting keys it.
+
 ## A `paraphrase` parenthetical is a NON-BINDING gloss — and a bad one is a POOL defect
 
 `納める(税金)` is context, `詫びる(謝る)` a synonym, `半ば(なかば)` a reading:
@@ -378,26 +453,37 @@ touch one: correct the entry, and carry the corrected string into every
 `test_spec.json`/`logs/ledger.json` row that recorded it, so
 `check_draw_provenance()` still resolves.
 
-**Both halves must sit in the N2 band — the target AND the parenthesised
-word.** A `paraphrase` entry states what is tested and what the author is
-expected to key, so an entry whose parenthesised word is an N5-core adverb or
-verb (いつも・とても・たくさん・すぐ・みんな) makes the item **unfixable by
-authoring**: the author writes the sentence the pool prescribes, keys the word
-the pool prescribes, and ships an item whose key is the first word of its class
-any learner meets. There is nowhere else to fix it — the defect is the pool row,
-so repair the row.
+**The TARGET must sit in the N2 band; the parenthesised word need not — it is
+the SIMPLER word by construction** (corrected 2026-09-28; this section read
+"Both halves must sit in the N2 band" until then, and the archive refutes it).
+問題5 asks for the easier word that means what the hard one means, so official
+keys N5-core paraphrases as a matter of routine. Measured over the 31 sittings'
+問題5 keys (`tools/goi_profile.py` `official_items()`, key-matched): **12/2016
+問題5-27 keys つねに→いつも** — the exact pair the old rule banned — and
+ただちに／たちまち→すぐに (7/2012, 7/2014, 7/2023), やや→少し (12/2015),
+一層→もっと (12/2019), 依然→まだ (12/2021), ほぼ／およそ／おおよそ→だいたい
+(7/2011, 12/2013, 7/2024) and ぶかぶか→とても大きい (12/2010) — 17 of the 151
+parsed 問題5 keys contain an N5-core word. An N5-core parenthetical is
+therefore **not** a pool defect, and no row should be re-glossed to avoid one.
 
-**Founding case, measured (qa-report-20260904_1 F2/§5):** `20260904_1`'s 問題5-24
-shipped 「いつも」 as the key on target 常に, beside たまに／まれに／ときどき — an
-off-level key on three mutually-synonymous distractors, an automatic QA fail.
-Scanning all 143 `paraphrase` entries the day the finding was written,
-`つねに(いつも)` was **the only** row whose parenthesised word is N5-core, so the
-repair is one row and re-classifies nothing else; the entry now reads
-`つねに(絶えず)` (絶えず: 6 hits in `refs/Shinkanzen/goi_reference.md`, printed in
-official 12/2023). No spec or ledger row had ever drawn the old string, so
-nothing downstream had to be carried across. The authoring-side counterpart —
-the four options as a SET — is `question-authoring/references/moji-goi.md`
-§問題5.
+What IS a pool defect in a `paraphrase` row: a TARGET below the band (the row
+tests nothing — `丈夫だ` was deleted 2026-09-28 on that ground), a gloss that is
+not a synonym (`なおさら(いよいよ)`, retired 2026-09-28 for `なおさら(いっそう)`;
+`いざ(いざとなったら)`, whose gloss is the target itself, deleted), or one that is
+not idiomatic in the target's frame (`うっすら` above).
+
+**Founding case, re-read (qa-report-20260904_1 F2/§5):** `20260904_1`'s 問題5-24
+shipped 「いつも」 as the key on target 常に, beside たまに／まれに／ときどき, and QA
+called it an automatic fail on two grounds: an off-level key, and three
+mutually-synonymous distractors. **Only the second ground survives the
+archive** — official 12/2016 prints the same key on the same target, beside
+当然／特に／できるだけ, i.e. three distractors that each die for their own reason.
+The defect was the option SET, which the pool never writes and
+`question-authoring/references/moji-goi.md` §問題5 owns. The row was re-glossed
+to `つねに(絶えず)` at the time; that gloss is sound and stays, but nothing
+required it. `exam-qa-review` §2.5's "every key N3-or-lower is TOO_EASY"
+test does not apply to a 問題5 key for the same reason, and its founding line in
+`check_pool_gloss_band()`'s docstring cites the old section name.
 
 ## Composition is drawn, not authored — three shapes `draw()` enforces
 
@@ -435,12 +521,17 @@ several 2026-08-11 passes — legacy 2級-era katakana dumps and off-domain
 concrete nouns were removed, replacements mined from Shinkanzen/Soumatome
 after `openjlpt`'s removal, with a reconciliation pass catching near-duplicate
 harvests across concurrent editing sessions (normalizing trailing な/だ/に/
-する/の before comparing). Current state: `paraphrase` 143 entries, `usage`
-217, katakana share dropped from ~30% to single digits — real dilution, but
+する/の before comparing). Katakana share dropped from ~30% to single digits — real dilution, but
 the sampler cap above remains the actual enforcement mechanism, not pool
-composition. Cross-pool suffix-variant overlap (a bare `context_words`
-headword vs a conjugated `paraphrase`/`usage` entry of the same word) is left
-in deliberately — only byte-identical entries are guaranteed kept apart.
+composition (read today's sizes off `--check-depth`). Cross-pool
+suffix-variant overlap (a bare `context_words` headword vs a conjugated
+`paraphrase`/`usage` entry of the same word) stays in the pools, and since
+2026-09-28 it is FOLDED: `vocab_lemma()` makes 「妥当」 and 「妥当だ」 one item
+for both the in-paper `taken` set and the cross-paper cooldown (§"Rotation
+model"). The 2026-09-28 audit also retired or deleted the N5 basic verbs and
+adjectives official never keys in 問題4/問題6 (取る, かかる, 軽い, 暗い, 乗る,
+合う, 掛ける, 固い …; 31 sittings' 152 問題6 headwords hold none — the nearest
+are はずす/保つ/進める/鋭い).
 
 ## Topic themes — the closed vocabulary (this skill owns it)
 
@@ -785,6 +876,35 @@ flat ledger migrates automatically.
   and a pool edit moves them. As with every window here, the repair for a
   too-optimistic promise is to make the arithmetic honest, never to lower a
   number until the gate goes green.
+- **...and it is not only the grammar pair: EVERY pool category shares one
+  rotation space with every other (2026-09-28).** Recency has always been by
+  WORD across categories (below), so a `kanji_reading` 「柔軟(じゅうなん)」, an
+  `orthography` 「柔軟」 or a `context_words` 「柔軟」 cools the `usage` entry
+  「柔軟」 exactly as a `usage` draw does — yet `usage`'s window was sized off its
+  own 5 draws (217 // 5 − 2 = 41). A pool-audit simulation from the live ledger
+  aborted in `assert_rotation()` on EVERY seed once the ledger reached ~42 rows
+  (「usage:「柔軟」 … needs its own 41-draw cooldown」); re-run as a control on
+  the 18-paper ledger it aborted at the 24th future paper. `rotation_partners()`
+  now names every other drawn pool category and `shared_space_draw()` counts
+  what each really spends of this one (a pair with no shared words adds 0), so
+  `usage` 41 → 28 and every other window moved to what `--check-depth` prints
+  (it now prints each window and the per-paper spend). **Verified: 45 + 60
+  consecutive fresh-seed full draws on a copy of the live ledger, zero aborts
+  and zero relaxations** (the same harness on the old pool + sampler: abort at
+  paper 24).
+- **A word's LEMMA is one identity (2026-09-28).** `vocab_lemma()` strips one
+  trailing する/な/だ/に/と/の (stem ≥ 2 characters; 〜-marked grammar and affix
+  entries excluded) and the `lemma»` token goes into BOTH `identity_tokens()`
+  and `taken_tokens()`. Before it, 「感染」/「感染する」 in `context_words` and
+  「困難(こんなん)」/「困難な(こんなんな)」 in `kanji_reading` were two items each
+  (14 same-category pairs), and 106 cross-category pairs (usage 「導入する」 vs
+  kanji_reading 「導入(どうにゅう)」) could key one word twice in one paper. The
+  in-paper half also closes head-identical cross-category pairs (kanji_reading
+  「把握(はあく)」 vs usage 「把握」), which `taken` used to let through because
+  it deliberately carried no `head()`. The never-drawn member of each
+  same-category pair was deleted; the gate's own `check_spec_rotation` still
+  compares raw string + `head()` only, so it does not see a lemma clash — the
+  sampler is stricter than the gate here, which is the safe direction.
 - **Weighted by recency too, not just filtered** — `weighted_sample_no_replacement()`
   favors items that have gone longest since use (weight `ago(x)+1`), so a
   just-cooled item doesn't cluster right at the cooldown boundary.

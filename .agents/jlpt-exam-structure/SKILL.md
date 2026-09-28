@@ -358,13 +358,16 @@ equal the announcer's declared number — `make check` compares them.
 - **Numbering**: bold numbers (`**1**`…`**71**`; `**例**`, `**1番**`) —
   never `1.`/`6.` list syntax (resets HTML `<ol>` numbering).
 - 文字・語彙・文法: short options run HORIZONTALLY (` 1. ◯◯  2. ◯◯ …`).
-  Reading questions and 問題6 sentences are vertical.
+  Reading questions and 問題6 sentences are vertical. The booklet prints them
+  as official — `1　はしら`, no period, on 4 equal columns or 2×2 (render
+  rules: `exam-app` §"Non-negotiables" 3 and 5a).
 - 聴解 booklet: options stacked VERTICALLY, one per line, in 問題1/2 ONLY
   (the two sections that print any). 問題3/4/5 print a bare bubble row
   (`**1番** 1 ・ 2 ・ 3 ・ 4`) and nothing else.
 - Stems bold the tested word (**地域**) or show blanks as (　)/＿＿. The bold
   span covers the whole word, okurigana included — never a bare kanji with
-  its tail outside.
+  its tail outside. Official prints that span UNDERLINED in the body face;
+  the renderer does so from the same `**…**`.
 - 問題8 uses ＿＿ ＿＿ ★ ＿＿, answer = whichever option lands on ★.
 - **読解 vocabulary notes**: 問題9–14 passages carry NO furigana; over-level
   terms are annotated inline only via `（注1）`, `（注2）`…, with structured

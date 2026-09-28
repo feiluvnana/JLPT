@@ -7,18 +7,57 @@
 
 <!-- src_sha: 聴解_チャプター.json=76567ac33525 -->
 <style>
-@page { size: A4; margin: 18mm 16mm; }
+@page { size: A4; margin: 18mm 16mm 20mm;
+  @bottom-center { content: "— " counter(page) " —"; font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", sans-serif;
+                   font-size: 10pt; color: #1a1a1a; } }
+/* The cover is not page 1: official numbering starts on the first page of
+   questions. A named page is the one reset Chrome honours (counter-reset on an
+   element or on @page:first is ignored). */
+@page bk-cover { counter-reset: page 0; @bottom-center { content: none; }
+                 @top-right { content: none; } }
 body { font-family: "YuMincho", "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", "Noto Serif CJK JP", serif;
-       font-size: 11.5pt; line-height: 1.9; color: #1a1a1a; }
-h1 { font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", sans-serif; font-size: 15pt;
-     border-bottom: 2.5px solid #1a1a1a; padding-bottom: 5px;
-     margin: 30px 0 14px; page-break-after: avoid; }
-h2 { font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", sans-serif; font-size: 12pt;
-     background: #efefef; border-left: 5px solid #444; padding: 5px 10px;
-     margin: 26px 0 12px; page-break-after: avoid; }
-h3 { font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", sans-serif; font-size: 11pt;
-     margin: 20px 0 8px; page-break-after: avoid; }
-p { margin: 12px 0; }
+       font-size: 11.5pt; line-height: 1.9; color: #1a1a1a; background: #fff; }
+h1, h2, h3 { font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", sans-serif; break-after: avoid; page-break-after: avoid;
+             break-inside: avoid; }
+h1 { font-size: 15pt; border-bottom: 2.5px solid #1a1a1a; padding-bottom: 5px;
+     margin: 30px 0 14px; }
+/* 【文字・語彙】/【文法】/【読解】: official prints the part as a small boxed
+   label (the tab on the page edge), not a banner. */
+h1.bk-part { display: table; font-size: 10.5pt; letter-spacing: .08em;
+             border: 1px solid #1a1a1a; padding: 1px 12px; margin: 22px 0 12px; }
+h2 { font-size: 12pt; margin: 26px 0 12px; }
+/* 「問題1　＿＿の言葉の…」: bold Gothic, the instruction hanging under itself. */
+h2.bk-mondai { display: flex; align-items: baseline; gap: 0 1em; line-height: 1.75; }
+h2.bk-mondai .bk-mn { flex: 0 0 auto; white-space: nowrap; }
+h2.bk-mondai .bk-mi { flex: 1 1 auto; min-width: 0; }
+h2.bk-mondai-l { font-size: 18pt; margin: 34px 0 8px; }
+h3 { font-size: 11pt; margin: 20px 0 8px; }
+p { margin: 12px 0; orphans: 2; widows: 2; }
+strong { font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", sans-serif; }
+/* The item number, in a thin box (official 「[11] 9時（　）の…」). */
+strong.bk-qn { display: inline-block; min-width: 1.55em; padding: 0 .28em;
+               border: 1px solid #1a1a1a; line-height: 1.3; text-align: center;
+               font-size: .9em; margin-right: .6em; box-sizing: border-box; }
+/* The tested word / the marked span: official UNDERLINES it in the body face.
+   The Markdown convention stays **word**; only its rendering changed. */
+strong.bk-tw { font-family: inherit; font-weight: normal; text-decoration: underline;
+               text-decoration-thickness: 1px; text-underline-offset: .24em; }
+/* Options: 「1　はしら」, no period, on four equal columns — or two, or one,
+   whichever the longest option fits (widen() decides). */
+.bk-opts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+           gap: .05em 1em; margin: .3em 0 .1em 2.1em; }
+.bk-opts.bk-c2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.bk-opts.bk-c1 { grid-template-columns: minmax(0, 1fr); }
+.bk-o, .bk-ov { display: flex; gap: .95em; }
+.bk-ov { margin: .05em 0 0 2.1em; }
+.bk-on { flex: 0 0 auto; }
+.bk-ot { flex: 1 1 auto; min-width: 0; }
+.bk-opts + br, .bk-ov + br { display: none; }
+/* The stem hangs past its number box; its options sit on the same edge. */
+p:has(> strong.bk-qn:first-child) { padding-left: 1.95em; text-indent: -1.95em; }
+p:has(> strong.bk-qn:first-child) > .bk-opts,
+p:has(> strong.bk-qn:first-child) > .bk-ov { margin-left: 0; }
+.bk-opts, .bk-ov, strong.bk-qn, ruby { text-indent: 0; }
 /* Furigana: WeasyPrint has NO ruby layout (and ignores ruby-position), so the
    reading is stacked manually. rt is taken out of flow and pinned above the
    base, which keeps the base glyphs on the text baseline and leaves line
@@ -51,27 +90,74 @@ rp { display: none; }
 /* Only blocks that actually carry furigana get extra leading, so the reading
    clears the descenders of the line above without loosening plain text. */
 p.furi, li.furi { line-height: 2.1; }
-.vocab-notes { margin-top: 8px; font-size: 9.5pt; color: #333; line-height: 1.6; border-top: 1px dashed #aaa; padding-top: 6px; }
+/* 注 glosses: body-ish size under the passage, no rule; the inline （注N）
+   marker is small and raised, as printed. */
+.vocab-notes { margin: 10px 0 0; font-size: 10pt; line-height: 1.75; color: #1a1a1a; }
+.bk-chu { font-size: .68em; position: relative; top: -.4em; }
 table { border-collapse: collapse; margin: 10px 0; width: 100%; page-break-inside: avoid; }
 th, td { border: 1px solid #888; padding: 4px 9px; font-size: 10pt;
          line-height: 1.6; }
 th { background: #f0f0f0; font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", sans-serif; }
 blockquote { border: 1px solid #999; background: #fafafa; margin: 10px 0;
              padding: 10px 14px; page-break-inside: avoid; }
-/* 問題9-14: the passage/notice text official booklets print inside a ruled
-   box, separate from the questions below it. See box_passages(). */
-.passage-box { border: 1px solid #999; background: #fafafa; margin: 10px 0 16px;
-                padding: 10px 16px; page-break-inside: avoid; overflow-x: auto; }
-.passage-box > *:first-child { margin-top: 0; }
+/* 問題9-14: the passage/notice text official booklets print inside a thin
+   black rule on white, separate from the questions below it. See
+   box_passages(). A box too tall for a page (問題13's essay, 問題14's flyer)
+   carries the .bk-flow marker and may break; the rest stay whole. The box must
+   not scroll in print: Chrome lays a scroll container out as one unbreakable
+   block, which is how 問題14 once printed a blank page. */
+.passage-box { border: 1px solid #1a1a1a; background: #fff; margin: 10px 0 16px;
+               padding: 12px 18px; break-inside: avoid; page-break-inside: avoid; }
+.passage-box:has(> .bk-flow) { break-inside: auto; page-break-inside: auto; }
+.passage-box > *:first-child, .passage-box > .bk-flow + * { margin-top: 0; }
 .passage-box > *:last-child { margin-bottom: 0; }
+.bk-flow { display: none; }
+/* 聴解: 「― メモ ―」 centred, with room to write under it. */
+.bk-memo { text-align: center; letter-spacing: .25em; margin: 16px 0 72px; }
 hr { border: none; border-top: 1px dashed #999; margin: 22px 0; }
-strong { font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", sans-serif; }
+/* The 問題用紙 cover (booklet HTML only — the sheet has its own gate screen). */
+.bk-cover { font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", sans-serif; }
+.bk-cv-head { display: flex; justify-content: space-between; align-items: baseline; }
+.bk-cv-en { font-size: 10pt; font-weight: 700; }
+.bk-cv-kind { font-size: 17pt; font-weight: 700; }
+.bk-cv-level { text-align: center; font-size: 46pt; font-weight: 800; line-height: 1.2;
+               margin: 1.1em 0 .1em; letter-spacing: .04em; }
+.bk-cv-title { text-align: center; font-size: 21pt; font-weight: 800; line-height: 1.4; }
+.bk-cv-time { text-align: center; font-size: 17pt; font-weight: 700; margin: .3em 0 .9em; }
+.bk-cv-notes { border: 1px solid #1a1a1a; padding: .8em 1.8em 1em; margin: 0 auto 1.4em;
+               max-width: 36em; font-family: "YuMincho", "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif; }
+.bk-cv-nh { text-align: center; font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", sans-serif; font-weight: 700; font-size: 13pt;
+            letter-spacing: .5em; margin-bottom: .4em; }
+.bk-cv-nh small { font-size: 7.5pt; letter-spacing: 0; }
+.bk-cv-item { display: flex; gap: .8em; margin: .35em 0; line-height: 1.6; }
+.bk-cv-item small { display: block; font-size: 8pt; color: #333; line-height: 1.35; }
+.bk-cv-box { display: inline-block; border: 1px solid #1a1a1a; min-width: 1.2em;
+             line-height: 1.15; text-align: center; font-size: .85em; font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", sans-serif; }
+.bk-cv-id { max-width: 36em; margin: .7em auto; font-family: "YuMincho", "Yu Mincho", serif; }
+.bk-cv-id th { width: 45%; background: #fff; font-weight: normal; text-align: left;
+               font-family: inherit; }
+.bk-cv-id td { height: 2.2em; }
+@media print {
+  .bk-cover { page: bk-cover; break-after: page; }
+  h1.bk-brk, h1.bk-key { break-before: page; page-break-before: always; }
+  /* An item (stem + its options) never splits across pages. */
+  p:has(> .bk-opts), p:has(> .bk-ov) { break-inside: avoid; page-break-inside: avoid; }
+  /* 聴解: every 問題 opens a new page, as printed (the first follows the label). */
+  h2.bk-mondai-l { break-before: page; page-break-before: always; }
+  h1.bk-part + h2.bk-mondai-l { break-before: auto; page-break-before: auto; }
+  /* 「右のページは…の案内である」: the flyer gets a page of its own. */
+  .passage-box:has(> .bk-flyer) { break-before: page; page-break-before: always; }
+}
 
 @media screen {
   :root { --gutter: 1.6em; }
   body { max-width: 60em; margin: 0 auto; padding: 2.5em var(--gutter) 6em;
          background: #fff; }
   table { max-width: 100%; }
+  /* A wide 問題14 table scrolls sideways on a narrow screen. Screen only: a
+     scroll container cannot break across printed pages (see .passage-box). */
+  .passage-box { overflow-x: auto; }
+  .bk-cover { border: 1px solid #d4d4d4; padding: 2.4em 2.6em 1.6em; margin: 0 0 3em; }
 }
 @media screen and (max-width: 48em) {
   :root { --gutter: 0.8em; }
@@ -79,7 +165,18 @@ strong { font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", 
   table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
   blockquote { padding: 8px 10px; margin: 8px 0; }
   h1 { font-size: 13.5pt; margin: 22px 0 10px; }
-  h2 { font-size: 11pt; padding: 4px 8px; margin: 18px 0 10px; }
+  h2 { font-size: 11pt; margin: 18px 0 10px; }
+  h2.bk-mondai-l { font-size: 15pt; }
+  .passage-box { padding: 10px 12px; }
+  /* Four columns do not fit a phone: halve them, never wrap mid-option. */
+  .bk-opts { margin-left: .4em; }
+  .bk-opts.bk-c4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .bk-opts.bk-c2 { grid-template-columns: minmax(0, 1fr); }
+  .bk-ov { margin-left: .4em; }
+  .bk-cover { padding: 1.2em 1em; }
+  .bk-cv-level { font-size: 32pt; }
+  .bk-cv-title { font-size: 15pt; }
+  .bk-cv-notes { padding: .6em .9em; }
 }
 
 :root{
@@ -475,22 +572,30 @@ html.is-result-mode #where{display:none!important}
 .gate .gate-alt{margin:1.8em 0 0;padding-top:1.4em;border-top:1px solid #e2e8f0}
 .gate .alt-note{margin:0 0 .9em;font-size:9.5pt;line-height:1.8;color:#475569;
   text-align:left}
-.qa{display:flex;flex-wrap:wrap;gap:.25em 1.1em;margin:.25em 0 .65em 1.2em}
-.qa label{display:inline-flex;align-items:center;gap:.32em;cursor:pointer;
-  padding:.15em .6em;border:1px solid #cbd5e1;border-radius:9999px;font-size:10pt;
-  background:#ffffff;line-height:1.5;transition:all .15s ease}
-.qa label:hover{background:#eff6ff;border-color:#93c5fd}
-.qa input{margin:0;cursor:pointer}
-.qa input:checked+span{font-weight:700}
-.qa label:has(input:checked){background:#2563eb;border-color:#2563eb;color:#ffffff;
-  font-weight:700;box-shadow:0 2px 6px rgba(37,99,235,0.25)}
-.qa .qid{border:none;background:none;color:#64748b;font-size:9pt;padding-left:0}
+/* The bubble row reads as a マークシート row: a tall oval per choice with its
+   digit inside (①②③④), filled solid like a pencil mark when chosen. The radio
+   itself is transparent over the whole oval, so click, keyboard and the
+   grader's input[name=q_…] lookups are unchanged. */
+.qa{display:flex;flex-wrap:wrap;align-items:center;gap:.3em .85em;margin:.35em 0 .8em 1.95em}
+.qa label{position:relative;display:inline-flex;align-items:center;justify-content:center;
+  width:1.6em;height:2.15em;box-sizing:border-box;border:1.5px solid #8b95a1;
+  border-radius:50%;font-family:var(--ui);font-size:10pt;font-weight:600;
+  color:#5b6573;background:#ffffff;line-height:1;cursor:pointer;
+  font-variant-numeric:tabular-nums;transition:background .12s ease,border-color .12s ease}
+.qa label:hover{background:#eff6ff;border-color:#2563eb;color:#1d4ed8}
+.qa input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
+.qa label:has(input:checked){background:#1a1a1a;border-color:#1a1a1a;color:#ffffff;font-weight:700}
+.qa label:has(input:focus-visible){outline:2px solid #2563eb;outline-offset:2px}
+.qa label:has(input:disabled){opacity:.5;cursor:not-allowed}
+.qa .qid{border:none;background:none;color:#64748b;font-size:9pt;padding-left:0;
+  font-family:var(--ui)}
 /* The 例 row is shown, not answerable — its answer is already marked, because
    the announcer says 「解答用紙の問題◯の例のところを見てください」. */
 .qa.ex .mark{display:inline-flex;align-items:center;justify-content:center;
-  min-width:2em;padding:.12em .6em;border:1px solid #cbd5e1;border-radius:9999px;
-  font-size:10pt;background:#ffffff;line-height:1.5;color:#64748b}
-.qa.ex .mark.on{background:#0f172a;border-color:#0f172a;color:#ffffff;font-weight:700}
+  width:1.6em;height:2.15em;box-sizing:border-box;border:1.5px solid #8b95a1;
+  border-radius:50%;font-family:var(--ui);font-size:10pt;background:#ffffff;
+  line-height:1;color:#64748b}
+.qa.ex .mark.on{background:#1a1a1a;border-color:#1a1a1a;color:#ffffff;font-weight:700}
 .opt{display:flex;align-items:flex-start;gap:.5em;margin:.15em 0}
 .opt .b{flex:0 0 auto;margin-top:.25em}
 #done{font-variant-numeric:tabular-nums}
@@ -598,10 +703,9 @@ html.is-result-mode #where{display:none!important}
 }
 @media screen and (max-width:48em){
   #screen-exam,#screen-result{padding:1.2em var(--gutter) 4em;margin:0 auto;border-radius:0;border:none}
-  .qa{margin:.3em 0 .8em .2em;gap:.4em .6em}
-  .qa label{padding:.35em .75em;font-size:11pt;min-height:40px;min-width:40px;
-    justify-content:center;box-sizing:border-box;font-weight:500}
-  .qa input{width:18px;height:18px}
+  .qa{margin:.3em 0 .8em .4em;gap:.45em .8em}
+  /* 34×46 px: a thumb-sized target that is still an oval. */
+  .qa label,.qa.ex .mark{width:34px;height:46px;font-size:11pt}
   #player{padding:.6em var(--gutter)}
   .pctl{gap:.4em .6em;margin-top:.5em;font-size:9.5pt}
   .pctl button,.pctl select,.pctl .pick{min-height:36px;padding:.3em .65em;
@@ -618,405 +722,405 @@ html.is-result-mode #where{display:none!important}
   .rs-detail-body{padding:.7em .85em;font-size:10pt}
   .section-title{font-size:13.5pt;padding:.4em .7em;margin:1.5em 0 .8em}
 }
-</style></head><body><div id="bar"><a class="back" href="/">← テスト一覧</a><b id="bar-title">テスト 20260928_1（受験）</b><span id="tabs"><button id="tab-gengo" type="button" data-label="言語知識・読解" onclick="goTab('gengo')">言語知識・読解</button><button id="tab-choukai" type="button" data-label="聴解" onclick="goTab('choukai')">聴解</button></span><span class="sub" id="where"></span><span class="grow"></span><span id="bar-controls"><span class="sub" id="clock">残り --:--</span> <span class="sub" id="done">解答済み 0 / 101</span> <button onclick="clearAll()">消去</button> <button onclick="finishGengo(false)" id="advance-btn" class="primary" disabled>聴解へ進む</button> <button onclick="submitAll(false)" id="grade-btn" class="primary" disabled>採点する</button></span></div><script>if(document.documentElement.classList.contains("is-result-mode")){document.getElementById("bar-title").textContent="テスト 20260928_1（採点結果）";}</script><div id="screen-exam"><div class="gate" id="gate-gengo" style="display:none"><h2>言語知識（文字・語彙・文法）・読解</h2><p class="lim">制限時間 <b>105分</b>／全71問</p><p class="note"><span class="warn">開始すると時計が動きます。</span>残り時間が0になった時点で、解答はそのまま自動的に提出されます。<br>提出したあとは、この部分に戻ることはできません。<br>時計はこのタブを見ている間だけ進み、ほかのタブや別のウィンドウに移ると止まります。</p><button class="ui-btn primary" onclick="startSection('gengo')">開始する</button><div class="gate-alt"><p class="alt-note">じっくり復習したいときは<b>練習モード</b>へ。制限時間も採点もなく、全問が1ページに並び、設問ごとに模範解答・解説を開けます。</p><a class="ui-btn" href="練習.html">練習モードで解く（採点・制限時間なし）</a></div></div><div id="section-gengo" style="display:none"><h1 class="section-title">JLPT N2 言語知識（文字・語彙・文法）・読解</h1><h1>【文字・語彙】</h1>
-<h2>問題1 ＿＿の言葉の読み方として最もよいものを、1・2・3・4から一つ選びなさい。</h2>
-<p><strong>1</strong> 父はテレビで<strong>首相</strong>の話を聞いていた。<br />
- 1. しゅしょう　　　2. しゅうそう　　　3. しゅそう　　　4. しゅうしょう</p>
+</style></head><body><div id="bar"><a class="back" href="/">← テスト一覧</a><b id="bar-title">テスト 20260928_1（受験）</b><span id="tabs"><button id="tab-gengo" type="button" data-label="言語知識・読解" onclick="goTab('gengo')">言語知識・読解</button><button id="tab-choukai" type="button" data-label="聴解" onclick="goTab('choukai')">聴解</button></span><span class="sub" id="where"></span><span class="grow"></span><span id="bar-controls"><span class="sub" id="clock">残り --:--</span> <span class="sub" id="done">解答済み 0 / 101</span> <button onclick="clearAll()">消去</button> <button onclick="finishGengo(false)" id="advance-btn" class="primary" disabled>聴解へ進む</button> <button onclick="submitAll(false)" id="grade-btn" class="primary" disabled>採点する</button></span></div><script>if(document.documentElement.classList.contains("is-result-mode")){document.getElementById("bar-title").textContent="テスト 20260928_1（採点結果）";}</script><div id="screen-exam"><div class="gate" id="gate-gengo" style="display:none"><h2>言語知識（文字・語彙・文法）・読解</h2><p class="lim">制限時間 <b>105分</b>／全71問</p><p class="note"><span class="warn">開始すると時計が動きます。</span>残り時間が0になった時点で、解答はそのまま自動的に提出されます。<br>提出したあとは、この部分に戻ることはできません。<br>時計はこのタブを見ている間だけ進み、ほかのタブや別のウィンドウに移ると止まります。</p><button class="ui-btn primary" onclick="startSection('gengo')">開始する</button><div class="gate-alt"><p class="alt-note">じっくり復習したいときは<b>練習モード</b>へ。制限時間も採点もなく、全問が1ページに並び、設問ごとに模範解答・解説を開けます。</p><a class="ui-btn" href="練習.html">練習モードで解く（採点・制限時間なし）</a></div></div><div id="section-gengo" style="display:none"><h1 class="section-title">JLPT N2 言語知識（文字・語彙・文法）・読解</h1><h1 class="bk-part">【文字・語彙】</h1>
+<h2 class="bk-mondai"><span class="bk-mn">問題1</span> <span class="bk-mi">＿＿の言葉の読み方として最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
+<p><strong class="bk-qn">1</strong> 父はテレビで<strong class="bk-tw">首相</strong>の話を聞いていた。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">しゅしょう</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">しゅうそう</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">しゅそう</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">しゅうしょう</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_1" value="1"><span>1</span></label><label><input type="radio" name="q_1" value="2"><span>2</span></label><label><input type="radio" name="q_1" value="3"><span>3</span></label><label><input type="radio" name="q_1" value="4"><span>4</span></label></div>
-<p><strong>2</strong> 兄はクラスの中で<strong>最も</strong>背が高い。<br />
- 1. とても　　　2. なんとも　　　3. ちっとも　　　4. もっとも</p>
+<p><strong class="bk-qn">2</strong> 兄はクラスの中で<strong class="bk-tw">最も</strong>背が高い。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">とても</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">なんとも</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">ちっとも</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">もっとも</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_2" value="1"><span>1</span></label><label><input type="radio" name="q_2" value="2"><span>2</span></label><label><input type="radio" name="q_2" value="3"><span>3</span></label><label><input type="radio" name="q_2" value="4"><span>4</span></label></div>
-<p><strong>3</strong> この<strong>辺り</strong>は夜になると静かです。<br />
- 1. まわり　　　2. とおり　　　3. あたり　　　4. となり</p>
+<p><strong class="bk-qn">3</strong> この<strong class="bk-tw">辺り</strong>は夜になると静かです。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">まわり</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">とおり</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">あたり</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">となり</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_3" value="1"><span>1</span></label><label><input type="radio" name="q_3" value="2"><span>2</span></label><label><input type="radio" name="q_3" value="3"><span>3</span></label><label><input type="radio" name="q_3" value="4"><span>4</span></label></div>
-<p><strong>4</strong> 私は毎朝、<strong>柔軟体操</strong>をしています。<br />
- 1. にゅうなんたいそう　　　2. じゅうなんだいそう　　　3. にゅうなんだいそう　　　4. じゅうなんたいそう</p>
+<p><strong class="bk-qn">4</strong> 私は毎朝、<strong class="bk-tw">柔軟体操</strong>をしています。<br />
+<span class="bk-opts bk-c2"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">にゅうなんたいそう</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">じゅうなんだいそう</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">にゅうなんだいそう</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">じゅうなんたいそう</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_4" value="1"><span>1</span></label><label><input type="radio" name="q_4" value="2"><span>2</span></label><label><input type="radio" name="q_4" value="3"><span>3</span></label><label><input type="radio" name="q_4" value="4"><span>4</span></label></div>
-<p><strong>5</strong> 姉は来月から<strong>副社長</strong>になります。<br />
- 1. ふくじゃちょう　　　2. ふくしゃちょ　　　3. ふくしゃちょう　　　4. ふくじゃちょ</p>
+<p><strong class="bk-qn">5</strong> 姉は来月から<strong class="bk-tw">副社長</strong>になります。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">ふくじゃちょう</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">ふくしゃちょ</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">ふくしゃちょう</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">ふくじゃちょ</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_5" value="1"><span>1</span></label><label><input type="radio" name="q_5" value="2"><span>2</span></label><label><input type="radio" name="q_5" value="3"><span>3</span></label><label><input type="radio" name="q_5" value="4"><span>4</span></label></div>
-<h2>問題2 ＿＿の言葉を漢字で書くとき、最もよいものを1・2・3・4から一つ選びなさい。</h2>
-<p><strong>6</strong> アルバイトにも交通費が<strong>しきゅう</strong>される。<br />
- 1. 枝給　　　2. 支給　　　3. 支級　　　4. 枝級</p>
+<h2 class="bk-mondai"><span class="bk-mn">問題2</span> <span class="bk-mi">＿＿の言葉を漢字で書くとき、最もよいものを1・2・3・4から一つ選びなさい。</span></h2>
+<p><strong class="bk-qn">6</strong> アルバイトにも交通費が<strong class="bk-tw">しきゅう</strong>される。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">枝給</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">支給</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">支級</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">枝級</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_6" value="1"><span>1</span></label><label><input type="radio" name="q_6" value="2"><span>2</span></label><label><input type="radio" name="q_6" value="3"><span>3</span></label><label><input type="radio" name="q_6" value="4"><span>4</span></label></div>
-<p><strong>7</strong> 弟は年下の子に<strong>いばって</strong>ばかりいる。<br />
- 1. 威張って　　　2. 意貼って　　　3. 威貼って　　　4. 意張って</p>
+<p><strong class="bk-qn">7</strong> 弟は年下の子に<strong class="bk-tw">いばって</strong>ばかりいる。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">威張って</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">意貼って</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">威貼って</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">意張って</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_7" value="1"><span>1</span></label><label><input type="radio" name="q_7" value="2"><span>2</span></label><label><input type="radio" name="q_7" value="3"><span>3</span></label><label><input type="radio" name="q_7" value="4"><span>4</span></label></div>
-<p><strong>8</strong> スープの味を<strong>みて</strong>から塩を足した。<br />
- 1. 診て　　　2. 観て　　　3. 見て　　　4. 看て</p>
+<p><strong class="bk-qn">8</strong> スープの味を<strong class="bk-tw">みて</strong>から塩を足した。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">診て</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">観て</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">見て</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">看て</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_8" value="1"><span>1</span></label><label><input type="radio" name="q_8" value="2"><span>2</span></label><label><input type="radio" name="q_8" value="3"><span>3</span></label><label><input type="radio" name="q_8" value="4"><span>4</span></label></div>
-<p><strong>9</strong> 夜空に大きな<strong>はなび</strong>が上がった。<br />
- 1. 華火　　　2. 花火　　　3. 花灯　　　4. 華灯</p>
+<p><strong class="bk-qn">9</strong> 夜空に大きな<strong class="bk-tw">はなび</strong>が上がった。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">華火</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">花火</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">花灯</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">華灯</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_9" value="1"><span>1</span></label><label><input type="radio" name="q_9" value="2"><span>2</span></label><label><input type="radio" name="q_9" value="3"><span>3</span></label><label><input type="radio" name="q_9" value="4"><span>4</span></label></div>
-<p><strong>10</strong> いらない書類は、<strong>はき</strong>してください。<br />
- 1. 破棄　　　2. 波期　　　3. 破期　　　4. 波棄</p>
+<p><strong class="bk-qn">10</strong> いらない書類は、<strong class="bk-tw">はき</strong>してください。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">破棄</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">波期</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">破期</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">波棄</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_10" value="1"><span>1</span></label><label><input type="radio" name="q_10" value="2"><span>2</span></label><label><input type="radio" name="q_10" value="3"><span>3</span></label><label><input type="radio" name="q_10" value="4"><span>4</span></label></div>
-<h2>問題3 （　）に入れるのに最もよいものを、1・2・3・4から一つ選びなさい。</h2>
-<p><strong>11</strong> 申込書に（　）記入の欄が一つありました。<br />
- 1. 非　　　2. 不　　　3. 未　　　4. 反</p>
+<h2 class="bk-mondai"><span class="bk-mn">問題3</span> <span class="bk-mi">（　）に入れるのに最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
+<p><strong class="bk-qn">11</strong> 申込書に（　）記入の欄が一つありました。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">非</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">不</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">未</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">反</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_11" value="1"><span>1</span></label><label><input type="radio" name="q_11" value="2"><span>2</span></label><label><input type="radio" name="q_11" value="3"><span>3</span></label><label><input type="radio" name="q_11" value="4"><span>4</span></label></div>
-<p><strong>12</strong> 依頼（　）の希望に合わせて家を設計した。<br />
- 1. 家　　　2. 主　　　3. 手　　　4. 士</p>
+<p><strong class="bk-qn">12</strong> 依頼（　）の希望に合わせて家を設計した。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">家</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">主</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">手</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">士</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_12" value="1"><span>1</span></label><label><input type="radio" name="q_12" value="2"><span>2</span></label><label><input type="radio" name="q_12" value="3"><span>3</span></label><label><input type="radio" name="q_12" value="4"><span>4</span></label></div>
-<p><strong>13</strong> このクラスには（　）様な考えの学生がいます。<br />
- 1. 諸　　　2. 数　　　3. 総　　　4. 多</p>
+<p><strong class="bk-qn">13</strong> このクラスには（　）様な考えの学生がいます。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">諸</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">数</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">総</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">多</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_13" value="1"><span>1</span></label><label><input type="radio" name="q_13" value="2"><span>2</span></label><label><input type="radio" name="q_13" value="3"><span>3</span></label><label><input type="radio" name="q_13" value="4"><span>4</span></label></div>
-<h2>問題4 （　）に入れるのに最もよいものを、1・2・3・4から一つ選びなさい。</h2>
-<p><strong>14</strong> 祖父が建てた古い家は、これまで何度も大きな地震に（　）きた。<br />
- 1. 慣れて　　　2. 耐えて　　　3. 逆らって　　　4. 応じて</p>
+<h2 class="bk-mondai"><span class="bk-mn">問題4</span> <span class="bk-mi">（　）に入れるのに最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
+<p><strong class="bk-qn">14</strong> 祖父が建てた古い家は、これまで何度も大きな地震に（　）きた。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">慣れて</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">耐えて</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">逆らって</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">応じて</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_14" value="1"><span>1</span></label><label><input type="radio" name="q_14" value="2"><span>2</span></label><label><input type="radio" name="q_14" value="3"><span>3</span></label><label><input type="radio" name="q_14" value="4"><span>4</span></label></div>
-<p><strong>15</strong> 今日は冷たい雨なので、私はどうも外に出る（　）。<br />
- 1. 気が知れない　　　2. 気がきかない　　　3. 気が済まない　　　4. 気がしない</p>
+<p><strong class="bk-qn">15</strong> 今日は冷たい雨なので、私はどうも外に出る（　）。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">気が知れない</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">気がきかない</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">気が済まない</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">気がしない</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_15" value="1"><span>1</span></label><label><input type="radio" name="q_15" value="2"><span>2</span></label><label><input type="radio" name="q_15" value="3"><span>3</span></label><label><input type="radio" name="q_15" value="4"><span>4</span></label></div>
-<p><strong>16</strong> 夏に魚を台所に出したままにしていたら、（　）しまった。<br />
- 1. 腐って　　　2. 枯れて　　　3. さびて　　　4. 濁って</p>
+<p><strong class="bk-qn">16</strong> 夏に魚を台所に出したままにしていたら、（　）しまった。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">腐って</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">枯れて</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">さびて</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">濁って</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_16" value="1"><span>1</span></label><label><input type="radio" name="q_16" value="2"><span>2</span></label><label><input type="radio" name="q_16" value="3"><span>3</span></label><label><input type="radio" name="q_16" value="4"><span>4</span></label></div>
-<p><strong>17</strong> 兄は営業の仕事をしていて、一年中日本全国を（　）いる。<br />
- 1. 見回って　　　2. 出回って　　　3. 転げ回って　　　4. 飛び回って</p>
+<p><strong class="bk-qn">17</strong> 兄は営業の仕事をしていて、一年中日本全国を（　）いる。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">見回って</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">出回って</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">転げ回って</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">飛び回って</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_17" value="1"><span>1</span></label><label><input type="radio" name="q_17" value="2"><span>2</span></label><label><input type="radio" name="q_17" value="3"><span>3</span></label><label><input type="radio" name="q_17" value="4"><span>4</span></label></div>
-<p><strong>18</strong> 友人の家を訪ねたが留守だったので、お母さんに伝言を（　）帰った。<br />
- 1. 言いつけて　　　2. 話しかけて　　　3. 言付けて　　　4. 申し出て</p>
+<p><strong class="bk-qn">18</strong> 友人の家を訪ねたが留守だったので、お母さんに伝言を（　）帰った。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">言いつけて</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">話しかけて</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">言付けて</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">申し出て</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_18" value="1"><span>1</span></label><label><input type="radio" name="q_18" value="2"><span>2</span></label><label><input type="radio" name="q_18" value="3"><span>3</span></label><label><input type="radio" name="q_18" value="4"><span>4</span></label></div>
-<p><strong>19</strong> 私たちのサークルは（　）に苦しいので、新しいユニフォームが買えない。<br />
- 1. 精神的　　　2. 体力的　　　3. 財政的　　　4. 技術的</p>
+<p><strong class="bk-qn">19</strong> 私たちのサークルは（　）に苦しいので、新しいユニフォームが買えない。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">精神的</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">体力的</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">財政的</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">技術的</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_19" value="1"><span>1</span></label><label><input type="radio" name="q_19" value="2"><span>2</span></label><label><input type="radio" name="q_19" value="3"><span>3</span></label><label><input type="radio" name="q_19" value="4"><span>4</span></label></div>
-<p><strong>20</strong> この子ども向けの絵本は、ページを開くと動物が（　）になって飛び出す。<br />
- 1. 平面　　　2. 立体　　　3. 図形　　　4. 模型</p>
+<p><strong class="bk-qn">20</strong> この子ども向けの絵本は、ページを開くと動物が（　）になって飛び出す。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">平面</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">立体</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">図形</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">模型</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_20" value="1"><span>1</span></label><label><input type="radio" name="q_20" value="2"><span>2</span></label><label><input type="radio" name="q_20" value="3"><span>3</span></label><label><input type="radio" name="q_20" value="4"><span>4</span></label></div>
-<h2>問題5 ＿＿の言葉に意味が最も近いものを、1・2・3・4から一つ選びなさい。</h2>
-<p><strong>21</strong> 弟は最近ピアノの練習を<strong>怠って</strong>いる。<br />
- 1. 嫌がって　　　2. 自慢して　　　3. なまけて　　　4. 急いで</p>
+<h2 class="bk-mondai"><span class="bk-mn">問題5</span> <span class="bk-mi">＿＿の言葉に意味が最も近いものを、1・2・3・4から一つ選びなさい。</span></h2>
+<p><strong class="bk-qn">21</strong> 弟は最近ピアノの練習を<strong class="bk-tw">怠って</strong>いる。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">嫌がって</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">自慢して</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">なまけて</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">急いで</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_21" value="1"><span>1</span></label><label><input type="radio" name="q_21" value="2"><span>2</span></label><label><input type="radio" name="q_21" value="3"><span>3</span></label><label><input type="radio" name="q_21" value="4"><span>4</span></label></div>
-<p><strong>22</strong> 友達と旅行の<strong>プラン</strong>について話した。<br />
- 1. 費用　　　2. 写真　　　3. 感想　　　4. 計画</p>
+<p><strong class="bk-qn">22</strong> 友達と旅行の<strong class="bk-tw">プラン</strong>について話した。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">費用</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">写真</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">感想</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">計画</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_22" value="1"><span>1</span></label><label><input type="radio" name="q_22" value="2"><span>2</span></label><label><input type="radio" name="q_22" value="3"><span>3</span></label><label><input type="radio" name="q_22" value="4"><span>4</span></label></div>
-<p><strong>23</strong> <strong>そういえば</strong>、駅前に新しい店ができたね。<br />
- 1. 思い出したけど　　　2. 残念だけど　　　3. 念のため言うと　　　4. 正直に言うと</p>
+<p><strong class="bk-qn">23</strong> <strong class="bk-tw">そういえば</strong>、駅前に新しい店ができたね。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">思い出したけど</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">残念だけど</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">念のため言うと</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">正直に言うと</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_23" value="1"><span>1</span></label><label><input type="radio" name="q_23" value="2"><span>2</span></label><label><input type="radio" name="q_23" value="3"><span>3</span></label><label><input type="radio" name="q_23" value="4"><span>4</span></label></div>
-<p><strong>24</strong> 長い列に並んで<strong>ようやく</strong>店に入れた。<br />
- 1. やっと　　　2. さっそく　　　3. 偶然　　　4. 何度も</p>
+<p><strong class="bk-qn">24</strong> 長い列に並んで<strong class="bk-tw">ようやく</strong>店に入れた。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">やっと</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">さっそく</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">偶然</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">何度も</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_24" value="1"><span>1</span></label><label><input type="radio" name="q_24" value="2"><span>2</span></label><label><input type="radio" name="q_24" value="3"><span>3</span></label><label><input type="radio" name="q_24" value="4"><span>4</span></label></div>
-<p><strong>25</strong> 地震のときは<strong>直ちに</strong>机の下に入ってください。<br />
- 1. ゆっくり　　　2. 必ず　　　3. 静かに　　　4. すぐに</p>
+<p><strong class="bk-qn">25</strong> 地震のときは<strong class="bk-tw">直ちに</strong>机の下に入ってください。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">ゆっくり</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">必ず</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">静かに</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">すぐに</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_25" value="1"><span>1</span></label><label><input type="radio" name="q_25" value="2"><span>2</span></label><label><input type="radio" name="q_25" value="3"><span>3</span></label><label><input type="radio" name="q_25" value="4"><span>4</span></label></div>
-<h2>問題6 次の言葉の使い方として最もよいものを、1・2・3・4から一つ選びなさい。</h2>
-<p><strong>26</strong> <strong>貸し出す</strong><br />
- 1. この図書館では、雑誌も一週間まで<strong>貸し出して</strong>います。<br />
- 2. 私は図書館で料理の本を三冊<strong>貸し出して</strong>、家で読みました。<br />
- 3. 困っていたとき、先輩が親切に知恵を<strong>貸し出して</strong>くれた。<br />
- 4. 旅行に使うお金を、駅前の機械で口座から<strong>貸し出した</strong>。</p>
+<h2 class="bk-mondai"><span class="bk-mn">問題6</span> <span class="bk-mi">次の言葉の使い方として最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
+<p><strong class="bk-qn">26</strong> <strong>貸し出す</strong><br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">この図書館では、雑誌も一週間まで<strong class="bk-tw">貸し出して</strong>います。</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">私は図書館で料理の本を三冊<strong class="bk-tw">貸し出して</strong>、家で読みました。</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">困っていたとき、先輩が親切に知恵を<strong class="bk-tw">貸し出して</strong>くれた。</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">旅行に使うお金を、駅前の機械で口座から<strong class="bk-tw">貸し出した</strong>。</span></span></p>
 <div class="qa"><label><input type="radio" name="q_26" value="1"><span>1</span></label><label><input type="radio" name="q_26" value="2"><span>2</span></label><label><input type="radio" name="q_26" value="3"><span>3</span></label><label><input type="radio" name="q_26" value="4"><span>4</span></label></div>
-<p><strong>27</strong> <strong>支える</strong><br />
- 1. 毎朝七時に起きるという自分との約束を、一年間<strong>支えて</strong>きた。<br />
- 2. 父は一人で働いて、五人家族の生活を長い間<strong>支えて</strong>きた。<br />
- 3. 暖房のない部屋で、厚いコートを着て冬の寒さを<strong>支えた</strong>。<br />
- 4. 電車が大きく揺れたので、あわててつり革を<strong>支えた</strong>。</p>
+<p><strong class="bk-qn">27</strong> <strong>支える</strong><br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">毎朝七時に起きるという自分との約束を、一年間<strong class="bk-tw">支えて</strong>きた。</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">父は一人で働いて、五人家族の生活を長い間<strong class="bk-tw">支えて</strong>きた。</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">暖房のない部屋で、厚いコートを着て冬の寒さを<strong class="bk-tw">支えた</strong>。</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">電車が大きく揺れたので、あわててつり革を<strong class="bk-tw">支えた</strong>。</span></span></p>
 <div class="qa"><label><input type="radio" name="q_27" value="1"><span>1</span></label><label><input type="radio" name="q_27" value="2"><span>2</span></label><label><input type="radio" name="q_27" value="3"><span>3</span></label><label><input type="radio" name="q_27" value="4"><span>4</span></label></div>
-<p><strong>28</strong> <strong>尊重する</strong><br />
- 1. 祖母からもらった古い時計を<strong>尊重して</strong>、毎日腕につけている。<br />
- 2. 話し合いでは、立場の違う一人一人の意見を<strong>尊重する</strong>ことが大切だ。<br />
- 3. 年上の人と話すときは、なるべく敬語を<strong>尊重して</strong>話すようにしている。<br />
- 4. 兄はけがをした右足を<strong>尊重して</strong>、ゆっくりと階段を下りた。</p>
+<p><strong class="bk-qn">28</strong> <strong>尊重する</strong><br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">祖母からもらった古い時計を<strong class="bk-tw">尊重して</strong>、毎日腕につけている。</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">話し合いでは、立場の違う一人一人の意見を<strong class="bk-tw">尊重する</strong>ことが大切だ。</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">年上の人と話すときは、なるべく敬語を<strong class="bk-tw">尊重して</strong>話すようにしている。</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">兄はけがをした右足を<strong class="bk-tw">尊重して</strong>、ゆっくりと階段を下りた。</span></span></p>
 <div class="qa"><label><input type="radio" name="q_28" value="1"><span>1</span></label><label><input type="radio" name="q_28" value="2"><span>2</span></label><label><input type="radio" name="q_28" value="3"><span>3</span></label><label><input type="radio" name="q_28" value="4"><span>4</span></label></div>
-<p><strong>29</strong> <strong>伸びる</strong><br />
- 1. エアコンが壊れて、部屋の温度がどんどん<strong>伸びて</strong>きた。<br />
- 2. 何度も洗ったので、お気に入りのセーターの色が<strong>伸びて</strong>しまった。<br />
- 3. テーブルに置いたままのアイスクリームが、暑さで<strong>伸びて</strong>しまった。<br />
- 4. 毎日の練習を続けたおかげで、英語の試験の点数が大きく<strong>伸びた</strong>。</p>
+<p><strong class="bk-qn">29</strong> <strong>伸びる</strong><br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">エアコンが壊れて、部屋の温度がどんどん<strong class="bk-tw">伸びて</strong>きた。</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">何度も洗ったので、お気に入りのセーターの色が<strong class="bk-tw">伸びて</strong>しまった。</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">テーブルに置いたままのアイスクリームが、暑さで<strong class="bk-tw">伸びて</strong>しまった。</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">毎日の練習を続けたおかげで、英語の試験の点数が大きく<strong class="bk-tw">伸びた</strong>。</span></span></p>
 <div class="qa"><label><input type="radio" name="q_29" value="1"><span>1</span></label><label><input type="radio" name="q_29" value="2"><span>2</span></label><label><input type="radio" name="q_29" value="3"><span>3</span></label><label><input type="radio" name="q_29" value="4"><span>4</span></label></div>
-<p><strong>30</strong> <strong>合意する</strong><br />
- 1. このシャツは私の体にぴったり<strong>合意して</strong>いて、とても着やすい。<br />
- 2. 料理教室で、しょうゆとさとうをよく<strong>合意して</strong>たれを作った。<br />
- 3. 新しい職場の雰囲気にやっと<strong>合意して</strong>、毎日が楽しくなった。<br />
- 4. 何度も話し合った末、二つの会社は新しい条件で<strong>合意した</strong>。</p>
+<p><strong class="bk-qn">30</strong> <strong>合意する</strong><br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">このシャツは私の体にぴったり<strong class="bk-tw">合意して</strong>いて、とても着やすい。</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">料理教室で、しょうゆとさとうをよく<strong class="bk-tw">合意して</strong>たれを作った。</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">新しい職場の雰囲気にやっと<strong class="bk-tw">合意して</strong>、毎日が楽しくなった。</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">何度も話し合った末、二つの会社は新しい条件で<strong class="bk-tw">合意した</strong>。</span></span></p>
 <div class="qa"><label><input type="radio" name="q_30" value="1"><span>1</span></label><label><input type="radio" name="q_30" value="2"><span>2</span></label><label><input type="radio" name="q_30" value="3"><span>3</span></label><label><input type="radio" name="q_30" value="4"><span>4</span></label></div>
-<h1>【文法】</h1>
-<h2>問題7 次の文の（　）に入れるのに最もよいものを、1・2・3・4から一つ選びなさい。</h2>
-<p><strong>31</strong> 住所も電話番号も分からないのでは、連絡を取り（　）。<br />
- 1. がちだ　　　2. つつある　　　3. ようがない　　　4. かけだ</p>
+<h1 class="bk-part">【文法】</h1>
+<h2 class="bk-mondai"><span class="bk-mn">問題7</span> <span class="bk-mi">次の文の（　）に入れるのに最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
+<p><strong class="bk-qn">31</strong> 住所も電話番号も分からないのでは、連絡を取り（　）。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">がちだ</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">つつある</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">ようがない</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">かけだ</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_31" value="1"><span>1</span></label><label><input type="radio" name="q_31" value="2"><span>2</span></label><label><input type="radio" name="q_31" value="3"><span>3</span></label><label><input type="radio" name="q_31" value="4"><span>4</span></label></div>
-<p><strong>32</strong> 授業の終わりのチャイムが鳴るか鳴らない（　）、子どもたちは校庭へ走り出していった。<br />
- 1. とたんに　　　2. 最中に　　　3. かのうちに　　　4. かと思うと</p>
+<p><strong class="bk-qn">32</strong> 授業の終わりのチャイムが鳴るか鳴らない（　）、子どもたちは校庭へ走り出していった。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">とたんに</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">最中に</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">かのうちに</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">かと思うと</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_32" value="1"><span>1</span></label><label><input type="radio" name="q_32" value="2"><span>2</span></label><label><input type="radio" name="q_32" value="3"><span>3</span></label><label><input type="radio" name="q_32" value="4"><span>4</span></label></div>
-<p><strong>33</strong> この雨では、午後の決勝戦は予定どおり行われ（　）。<br />
- 1. かねる　　　2. っぱなしだ　　　3. たがらない　　　4. そうにない</p>
+<p><strong class="bk-qn">33</strong> この雨では、午後の決勝戦は予定どおり行われ（　）。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">かねる</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">っぱなしだ</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">たがらない</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">そうにない</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_33" value="1"><span>1</span></label><label><input type="radio" name="q_33" value="2"><span>2</span></label><label><input type="radio" name="q_33" value="3"><span>3</span></label><label><input type="radio" name="q_33" value="4"><span>4</span></label></div>
-<p><strong>34</strong> 長年この町で暮らしてきた祖母（　）、商店街の古い映画館は、若いころの思い出が詰まった特別な場所だ。<br />
- 1. に対して　　　2. について　　　3. によって　　　4. にとって</p>
+<p><strong class="bk-qn">34</strong> 長年この町で暮らしてきた祖母（　）、商店街の古い映画館は、若いころの思い出が詰まった特別な場所だ。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">に対して</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">について</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">によって</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">にとって</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_34" value="1"><span>1</span></label><label><input type="radio" name="q_34" value="2"><span>2</span></label><label><input type="radio" name="q_34" value="3"><span>3</span></label><label><input type="radio" name="q_34" value="4"><span>4</span></label></div>
-<p><strong>35</strong> 今日の説明会では、時間の許す（　）、参加者の皆さんからの質問にお答えします。<br />
- 1. ものの　　　2. 限り　　　3. あまり　　　4. くせに</p>
+<p><strong class="bk-qn">35</strong> 今日の説明会では、時間の許す（　）、参加者の皆さんからの質問にお答えします。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">ものの</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">限り</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">あまり</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">くせに</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_35" value="1"><span>1</span></label><label><input type="radio" name="q_35" value="2"><span>2</span></label><label><input type="radio" name="q_35" value="3"><span>3</span></label><label><input type="radio" name="q_35" value="4"><span>4</span></label></div>
-<p><strong>36</strong> 隣町での二号店の開店（　）、店長は近所の店を一軒ずつ回ってあいさつをした。<br />
- 1. にあたって　　　2. をめぐって　　　3. に基づいて　　　4. に沿って</p>
+<p><strong class="bk-qn">36</strong> 隣町での二号店の開店（　）、店長は近所の店を一軒ずつ回ってあいさつをした。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">にあたって</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">をめぐって</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">に基づいて</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">に沿って</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_36" value="1"><span>1</span></label><label><input type="radio" name="q_36" value="2"><span>2</span></label><label><input type="radio" name="q_36" value="3"><span>3</span></label><label><input type="radio" name="q_36" value="4"><span>4</span></label></div>
-<p><strong>37</strong> 今年の大会では、大方の予想（　）、初出場の高校が決勝まで勝ち進んだ。<br />
- 1. に反して　　　2. に加えて　　　3. にこたえて　　　4. に比べて</p>
+<p><strong class="bk-qn">37</strong> 今年の大会では、大方の予想（　）、初出場の高校が決勝まで勝ち進んだ。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">に反して</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">に加えて</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">にこたえて</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">に比べて</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_37" value="1"><span>1</span></label><label><input type="radio" name="q_37" value="2"><span>2</span></label><label><input type="radio" name="q_37" value="3"><span>3</span></label><label><input type="radio" name="q_37" value="4"><span>4</span></label></div>
-<p><strong>38</strong> （大学の掲示）<br />
+<p><strong class="bk-qn">38</strong> （大学の掲示）<br />
 よほどの事情が（　）、レポートの提出期限の延長は認めません。<br />
- 1. あるからには　　　2. ないばかりか　　　3. あるだけに　　　4. ない限り</p>
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">あるからには</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">ないばかりか</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">あるだけに</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">ない限り</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_38" value="1"><span>1</span></label><label><input type="radio" name="q_38" value="2"><span>2</span></label><label><input type="radio" name="q_38" value="3"><span>3</span></label><label><input type="radio" name="q_38" value="4"><span>4</span></label></div>
-<p><strong>39</strong> （電話で）<br />
+<p><strong class="bk-qn">39</strong> （電話で）<br />
 学生「来週の月曜日の午後、先生の研究室に（　）もよろしいでしょうか。」<br />
 先生「ええ、三時より後なら空いていますよ。」<br />
- 1. 伺って　　　2. いらっしゃって　　　3. お越しになって　　　4. 参られて</p>
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">伺って</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">いらっしゃって</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">お越しになって</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">参られて</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_39" value="1"><span>1</span></label><label><input type="radio" name="q_39" value="2"><span>2</span></label><label><input type="radio" name="q_39" value="3"><span>3</span></label><label><input type="radio" name="q_39" value="4"><span>4</span></label></div>
-<p><strong>40</strong> （会社で）<br />
+<p><strong class="bk-qn">40</strong> （会社で）<br />
 A「新しい商品の名前、やっと決まったそうですね。」<br />
 B「ええ。三か月にわたって話し合いを重ねた（　）、ようやく全員が納得できる名前になりました。」<br />
- 1. たびに　　　2. 末に　　　3. 以来　　　4. ついでに</p>
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">たびに</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">末に</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">以来</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">ついでに</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_40" value="1"><span>1</span></label><label><input type="radio" name="q_40" value="2"><span>2</span></label><label><input type="radio" name="q_40" value="3"><span>3</span></label><label><input type="radio" name="q_40" value="4"><span>4</span></label></div>
-<p><strong>41</strong> 弟は小さいころから飽き（　）性格で、習い事がどれも長続きしなかった。<br />
- 1. がたい　　　2. っぽい　　　3. ぎみの　　　4. たがる</p>
+<p><strong class="bk-qn">41</strong> 弟は小さいころから飽き（　）性格で、習い事がどれも長続きしなかった。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">がたい</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">っぽい</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">ぎみの</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">たがる</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_41" value="1"><span>1</span></label><label><input type="radio" name="q_41" value="2"><span>2</span></label><label><input type="radio" name="q_41" value="3"><span>3</span></label><label><input type="radio" name="q_41" value="4"><span>4</span></label></div>
-<p><strong>42</strong> 駅前の再開発が進むの（　）、昔からある小さな商店が少しずつ姿を消している。<br />
- 1. にかけて　　　2. につけ　　　3. に伴って　　　4. に際して</p>
+<p><strong class="bk-qn">42</strong> 駅前の再開発が進むの（　）、昔からある小さな商店が少しずつ姿を消している。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">にかけて</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">につけ</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">に伴って</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">に際して</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_42" value="1"><span>1</span></label><label><input type="radio" name="q_42" value="2"><span>2</span></label><label><input type="radio" name="q_42" value="3"><span>3</span></label><label><input type="radio" name="q_42" value="4"><span>4</span></label></div>
-<h2>問題8 次の文の ★ に入る最もよいものを、1・2・3・4から一つ選びなさい。</h2>
-<p><strong>43</strong> 駅から少し遠いのに、私がこの喫茶店に＿＿ ＿＿ ★ ＿＿からだ。<br />
- 1. いれる一杯の　　　2. コーヒーが忘れられない　　　3. 通い続けているのは　　　4. 店主の</p>
+<h2 class="bk-mondai"><span class="bk-mn">問題8</span> <span class="bk-mi">次の文の ★ に入る最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
+<p><strong class="bk-qn">43</strong> 駅から少し遠いのに、私がこの喫茶店に＿＿ ＿＿ ★ ＿＿からだ。<br />
+<span class="bk-opts bk-c2"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">いれる一杯の</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">コーヒーが忘れられない</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">通い続けているのは</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">店主の</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_43" value="1"><span>1</span></label><label><input type="radio" name="q_43" value="2"><span>2</span></label><label><input type="radio" name="q_43" value="3"><span>3</span></label><label><input type="radio" name="q_43" value="4"><span>4</span></label></div>
-<p><strong>44</strong> （友人と）<br />
+<p><strong class="bk-qn">44</strong> （友人と）<br />
 A「あのラーメン屋、いつ見ても行列ができているね。」<br />
 B「うん。でも、＿＿ ＿＿ ★ ＿＿よ。」<br />
- 1. 大勢並んでいる　　　2. 料理がおいしいわけではない　　　3. 人が　　　4. からといって</p>
+<span class="bk-opts bk-c2"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">大勢並んでいる</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">料理がおいしいわけではない</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">人が</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">からといって</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_44" value="1"><span>1</span></label><label><input type="radio" name="q_44" value="2"><span>2</span></label><label><input type="radio" name="q_44" value="3"><span>3</span></label><label><input type="radio" name="q_44" value="4"><span>4</span></label></div>
-<p><strong>45</strong> 退職して時間ができた父は、＿＿ ＿＿ ★ ＿＿ようになった。<br />
- 1. 毎朝散歩に連れて行く　　　2. 健康のために　　　3. 飼い犬の　　　4. 年をとった</p>
+<p><strong class="bk-qn">45</strong> 退職して時間ができた父は、＿＿ ＿＿ ★ ＿＿ようになった。<br />
+<span class="bk-opts bk-c2"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">毎朝散歩に連れて行く</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">健康のために</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">飼い犬の</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">年をとった</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_45" value="1"><span>1</span></label><label><input type="radio" name="q_45" value="2"><span>2</span></label><label><input type="radio" name="q_45" value="3"><span>3</span></label><label><input type="radio" name="q_45" value="4"><span>4</span></label></div>
-<p><strong>46</strong> （洋服店で）<br />
+<p><strong class="bk-qn">46</strong> （洋服店で）<br />
 店員「申し訳ございません。この色の大きいサイズは、ただ今切らしております。」<br />
 客「では、取り寄せてもらえますか。」<br />
 店員「かしこまりました。＿＿ ＿＿ ★ ＿＿。」<br />
- 1. 商品が　　　2. お電話でご連絡します　　　3. 届き次第　　　4. お取り寄せした</p>
+<span class="bk-opts bk-c2"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">商品が</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">お電話でご連絡します</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">届き次第</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">お取り寄せした</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_46" value="1"><span>1</span></label><label><input type="radio" name="q_46" value="2"><span>2</span></label><label><input type="radio" name="q_46" value="3"><span>3</span></label><label><input type="radio" name="q_46" value="4"><span>4</span></label></div>
-<p><strong>47</strong> 料理好きの母は、＿＿ ＿＿ ★ ＿＿。<br />
- 1. 今も自分で作っている　　　2. 昔ながらの　　　3. 例えばみそや梅干しなどの　　　4. 保存食を</p>
+<p><strong class="bk-qn">47</strong> 料理好きの母は、＿＿ ＿＿ ★ ＿＿。<br />
+<span class="bk-opts bk-c2"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">今も自分で作っている</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">昔ながらの</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">例えばみそや梅干しなどの</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">保存食を</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_47" value="1"><span>1</span></label><label><input type="radio" name="q_47" value="2"><span>2</span></label><label><input type="radio" name="q_47" value="3"><span>3</span></label><label><input type="radio" name="q_47" value="4"><span>4</span></label></div>
-<h2>問題9 次の文章を読んで、文章全体の内容を考えて、48から51の中に入る最もよいものを、1・2・3・4から一つ選びなさい。</h2>
+<h2 class="bk-mondai"><span class="bk-mn">問題9</span> <span class="bk-mi">次の文章を読んで、文章全体の内容を考えて、48から51の中に入る最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
 <div class="passage-box">
 <p>見上げて乗り換える</p>
-<p>駅で電車を乗り換えるとき、わたしは長いあいだ、スマートフォンの道順案内に従って歩いていた。行き先を入れると、何番線の何両目に乗ればよいか、どの階段を上ればよいかまで、画面が一つずつ教えてくれる。わたしは画面から目を離さずに、矢印のとおりに足を動かしていた。</p>
-<p>去年の春、初めての駅で乗り換える途中で、電話の電池が切れてしまった。画面はもう何も教えてくれない。（　48　）、そこは五つの線が集まる大きな駅だった。わたしはホームの柱や天井に下がっている案内板を、一枚ずつ読んでいくことにした。板には、乗り換えに要る知らせがひと通りそろっていた。その日から、わたしは乗り換えのたびに、画面を開く前に、まず板を探すようにしている。</p>
-<p>初めのうちは、画面に従っていたころより時間がかかった。それでも、板を読みながら歩いていると、駅の形は少しずつ頭に入ってくる（　49　）。板はたいてい、ホームの端や階段を上りきった所など、決まった場所に下がっている。一枚を読めば、次にどこを見上げればよいか、おおよその見当がつく。</p>
-<p>先月、乗るはずだった電車が止まり、別の線に回らなければならなくなった。ホームでは、駅員に道を尋ねる声があちこちから聞こえた。わたしは天井の板を見上げ、別の線への矢印をたどって、もう歩き出していた。道順案内に従うだけだったころのわたしなら、（　50　）が新しい道順を示すまで、ホームに立ったままだっただろう。</p>
-<p>今でも、初めての駅では画面を開くことがある。ただ、歩き出す前に一度顔を上げて板を探すことは、いつのまにか（　51　）。乗り換えのたびに見上げてきた板の一枚一枚が、今ではわたしの頭の中で、駅の地図になってつながっている。</p>
+<p>　駅で電車を乗り換えるとき、わたしは長いあいだ、スマートフォンの道順案内に従って歩いていた。行き先を入れると、何番線の何両目に乗ればよいか、どの階段を上ればよいかまで、画面が一つずつ教えてくれる。わたしは画面から目を離さずに、矢印のとおりに足を動かしていた。</p>
+<p>　去年の春、初めての駅で乗り換える途中で、電話の電池が切れてしまった。画面はもう何も教えてくれない。（　48　）、そこは五つの線が集まる大きな駅だった。わたしはホームの柱や天井に下がっている案内板を、一枚ずつ読んでいくことにした。板には、乗り換えに要る知らせがひと通りそろっていた。その日から、わたしは乗り換えのたびに、画面を開く前に、まず板を探すようにしている。</p>
+<p>　初めのうちは、画面に従っていたころより時間がかかった。それでも、板を読みながら歩いていると、駅の形は少しずつ頭に入ってくる（　49　）。板はたいてい、ホームの端や階段を上りきった所など、決まった場所に下がっている。一枚を読めば、次にどこを見上げればよいか、おおよその見当がつく。</p>
+<p>　先月、乗るはずだった電車が止まり、別の線に回らなければならなくなった。ホームでは、駅員に道を尋ねる声があちこちから聞こえた。わたしは天井の板を見上げ、別の線への矢印をたどって、もう歩き出していた。道順案内に従うだけだったころのわたしなら、（　50　）が新しい道順を示すまで、ホームに立ったままだっただろう。</p>
+<p>　今でも、初めての駅では画面を開くことがある。ただ、歩き出す前に一度顔を上げて板を探すことは、いつのまにか（　51　）。乗り換えのたびに見上げてきた板の一枚一枚が、今ではわたしの頭の中で、駅の地図になってつながっている。</p>
 </div>
-<p><strong>48</strong><br />
- 1. けれども　　　2. しかも　　　3. なぜなら　　　4. それとも</p>
+<p><strong class="bk-qn">48</strong><br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">けれども</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">しかも</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">なぜなら</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">それとも</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_48" value="1"><span>1</span></label><label><input type="radio" name="q_48" value="2"><span>2</span></label><label><input type="radio" name="q_48" value="3"><span>3</span></label><label><input type="radio" name="q_48" value="4"><span>4</span></label></div>
-<p><strong>49</strong><br />
- 1. ものだ　　　2. ものか　　　3. ものではない　　　4. ものなら</p>
+<p><strong class="bk-qn">49</strong><br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">ものだ</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">ものか</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">ものではない</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">ものなら</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_49" value="1"><span>1</span></label><label><input type="radio" name="q_49" value="2"><span>2</span></label><label><input type="radio" name="q_49" value="3"><span>3</span></label><label><input type="radio" name="q_49" value="4"><span>4</span></label></div>
-<p><strong>50</strong><br />
- 1. 天井の板　　　2. 駅員　　　3. 止まった電車　　　4. 手元の画面</p>
+<p><strong class="bk-qn">50</strong><br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">天井の板</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">駅員</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">止まった電車</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">手元の画面</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_50" value="1"><span>1</span></label><label><input type="radio" name="q_50" value="2"><span>2</span></label><label><input type="radio" name="q_50" value="3"><span>3</span></label><label><input type="radio" name="q_50" value="4"><span>4</span></label></div>
-<p><strong>51</strong><br />
- 1. 気が済んだ　　　2. 手に余った　　　3. 身についた　　　4. 目についた</p>
+<p><strong class="bk-qn">51</strong><br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">気が済んだ</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">手に余った</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">身についた</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">目についた</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_51" value="1"><span>1</span></label><label><input type="radio" name="q_51" value="2"><span>2</span></label><label><input type="radio" name="q_51" value="3"><span>3</span></label><label><input type="radio" name="q_51" value="4"><span>4</span></label></div>
-<h1>【読解】</h1>
-<h2>問題10 次の(1)から(5)の文章を読んで、後の問いに対する答えとして最もよいものを、1・2・3・4から一つ選びなさい。</h2>
+<h1 class="bk-part bk-brk">【読解】</h1>
+<h2 class="bk-mondai"><span class="bk-mn">問題10</span> <span class="bk-mi">次の(1)から(5)の文章を読んで、後の問いに対する答えとして最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
 <h3>(1)</h3>
 <div class="passage-box">
-<p>片方の足が痛むとき、杖（注1）は、痛むほうとは反対側の手で持ちます。<br />
-　人は、右足を前に出すと左手が前に出るというように、手と足を互い違い（注2）に動かして歩きます。杖を反対側の手に持てば、この動作のまま、痛む足と杖が同時に床につきます。床についた杖には腕から体重の一部がかかり、そのぶん足の負担が減ります。痛む側の手で持つと、杖が床につくのは痛まないほうの足が出たときになってしまいます。<br />
+<p>　片方の足が痛むとき、杖<span class="bk-chu">（注1）</span>は、痛むほうとは反対側の手で持ちます。<br />
+　人は、右足を前に出すと左手が前に出るというように、手と足を互い違い<span class="bk-chu">（注2）</span>に動かして歩きます。杖を反対側の手に持てば、この動作のまま、痛む足と杖が同時に床につきます。床についた杖には腕から体重の一部がかかり、そのぶん足の負担が減ります。痛む側の手で持つと、杖が床につくのは痛まないほうの足が出たときになってしまいます。<br />
 　杖が床を押し返す分だけ、痛む足が受け止める重さは軽くなります。</p>
-<p>（注1）杖：歩くとき、体を支えようと手に持つ細長い棒<br />
+<p class="vocab-notes">（注1）杖：歩くとき、体を支えようと手に持つ細長い棒<br />
 （注2）互い違い：二つのものが、かわるがわる入れかわること</p>
 </div>
-<p><strong>52</strong> 筆者の説明に合うのはどれか。<br />
- 1. 杖を痛む側の手で持てば、痛む足と杖が同時に床について支えになる<br />
- 2. 杖は、痛まないほうの足が出る時に床について、体を前へ押し出す<br />
- 3. 手と足の動き方に合わせて持つと、杖が足の重さを分け持てる<br />
- 4. 杖を持つと、手と足を互い違いに動かさなくても楽に歩ける</p>
+<p><strong class="bk-qn">52</strong> 筆者の説明に合うのはどれか。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">杖を痛む側の手で持てば、痛む足と杖が同時に床について支えになる</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">杖は、痛まないほうの足が出る時に床について、体を前へ押し出す</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">手と足の動き方に合わせて持つと、杖が足の重さを分け持てる</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">杖を持つと、手と足を互い違いに動かさなくても楽に歩ける</span></span></p>
 <div class="qa"><label><input type="radio" name="q_52" value="1"><span>1</span></label><label><input type="radio" name="q_52" value="2"><span>2</span></label><label><input type="radio" name="q_52" value="3"><span>3</span></label><label><input type="radio" name="q_52" value="4"><span>4</span></label></div>
 <h3>(2)</h3>
 <div class="passage-box">
 <p>保護者のみなさまへ</p>
 <p><strong>お迎えのときの門の開け方が変わります</strong></p>
-<p>11月1日から、園の正門は、暗証番号を押して開ける鍵に変わります。番号はご家庭ごとに封筒でお渡ししますので、ご家族以外の方には教えないでください。<br />
+<p>　11月1日から、園の正門は、暗証番号を押して開ける鍵に変わります。番号はご家庭ごとに封筒でお渡ししますので、ご家族以外の方には教えないでください。<br />
 　お迎えは、これまでどおり、入園の際に登録された方にお願いします。祖父母の方など、登録のない方がお迎えに来られる場合は、前日の夕方5時までに、連絡帳かお電話で、その方のお名前をお知らせください。当日は、職員が門までご案内します。ご連絡のない方には、お子さんをお渡しできません。</p>
 <p>みなみ保育園</p>
 </div>
-<p><strong>53</strong> このお知らせで最も伝えたいことは何か。<br />
- 1. 門の番号は、祖父母にも前もって伝えておいてほしいということ<br />
- 2. いつもと違う人が迎えに来る日は、前もって知らせてほしいということ<br />
- 3. 登録した人も、毎日連絡帳に名前を書いてから迎えに来てほしいということ<br />
- 4. 番号の入った封筒を、前の日までに園へ受け取りに来てほしいということ</p>
+<p><strong class="bk-qn">53</strong> このお知らせで最も伝えたいことは何か。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">門の番号は、祖父母にも前もって伝えておいてほしいということ</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">いつもと違う人が迎えに来る日は、前もって知らせてほしいということ</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">登録した人も、毎日連絡帳に名前を書いてから迎えに来てほしいということ</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">番号の入った封筒を、前の日までに園へ受け取りに来てほしいということ</span></span></p>
 <div class="qa"><label><input type="radio" name="q_53" value="1"><span>1</span></label><label><input type="radio" name="q_53" value="2"><span>2</span></label><label><input type="radio" name="q_53" value="3"><span>3</span></label><label><input type="radio" name="q_53" value="4"><span>4</span></label></div>
 <h3>(3)</h3>
 <div class="passage-box">
-<p>夜中に何度も目が覚める人に、夕方以降の過ごし方をくわしく聞いてみると、多くの人に共通の習慣がある。夕食後、テレビの前でつい20分ばかり眠ってしまうのだ。夜の睡眠に比べればごく短い時間なのに、夜の眠りはそこから崩れていく。<br />
+<p>　夜中に何度も目が覚める人に、夕方以降の過ごし方をくわしく聞いてみると、多くの人に共通の習慣がある。夕食後、テレビの前でつい20分ばかり眠ってしまうのだ。夜の睡眠に比べればごく短い時間なのに、夜の眠りはそこから崩れていく。<br />
 　眠気は、起きている時間が長くなるにつれて少しずつたまり、夜の睡眠でまとめて使われる。夕方に少しでも眠れば、ためた分をそこで先に使ってしまい、布団に入るころには、朝まで眠り通すだけの眠気が残らない。夜の眠りを細かく切っていたのは、夕食後の、あの短いうたた寝（注）だった。</p>
-<p>（注）うたた寝：床に入らず、座ったままなどで少し眠ること</p>
+<p class="vocab-notes">（注）うたた寝：床に入らず、座ったままなどで少し眠ること</p>
 </div>
-<p><strong>54</strong> 筆者の考えに合うのはどれか。<br />
- 1. 20分ほどの短い眠りなら、夜の睡眠にはほとんど響かない<br />
- 2. 夕食後にテレビを見ると、目が疲れて夜の眠りが浅くなってしまう<br />
- 3. 夕方に少し眠ると、夜に使われるはずの眠気が減ってしまう<br />
- 4. 夜中に目が覚める人は、夕食後に少し眠っておくとよい</p>
+<p><strong class="bk-qn">54</strong> 筆者の考えに合うのはどれか。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">20分ほどの短い眠りなら、夜の睡眠にはほとんど響かない</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">夕食後にテレビを見ると、目が疲れて夜の眠りが浅くなってしまう</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">夕方に少し眠ると、夜に使われるはずの眠気が減ってしまう</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">夜中に目が覚める人は、夕食後に少し眠っておくとよい</span></span></p>
 <div class="qa"><label><input type="radio" name="q_54" value="1"><span>1</span></label><label><input type="radio" name="q_54" value="2"><span>2</span></label><label><input type="radio" name="q_54" value="3"><span>3</span></label><label><input type="radio" name="q_54" value="4"><span>4</span></label></div>
 <h3>(4)</h3>
 <div class="passage-box">
 <p>はるかぜ食器サービス　ご担当者様</p>
-<p>初めてご連絡いたします。ひかり工業総務課の西村と申します。<br />
+<p>　初めてご連絡いたします。ひかり工業総務課の西村と申します。<br />
 　12月8日に、社員とその家族、150名ほどが集まる年末の会を開きます。今年はごみを減らすため、例年の紙皿と紙コップをやめ、御社の、洗って繰り返し使える食器をお借りしたいと考えております。<br />
 　そこで、一点お尋ねします。会の終了後、食器はこちらで洗ってからお返しするのでしょうか。それとも、食べ残しを捨てただけでお返ししてよいのでしょうか。こちらで洗う場合は人手が必要になりますので、早めに知っておきたく存じます。<br />
 　ご回答をいただけますと幸いです。</p>
 <p>ひかり工業　総務課　西村</p>
 </div>
-<p><strong>55</strong> このメールで問い合わせていることは何か。<br />
- 1. 借りた食器を、どのような状態にして返せばよいか<br />
- 2. 150人分の食器を、会の前日までに届けてもらえるか<br />
- 3. 食器を洗う人を、会の当日に会社へ来させてもらえるか<br />
- 4. 紙皿と紙コップを、今年も同じ数だけ用意してもらえるか</p>
+<p><strong class="bk-qn">55</strong> このメールで問い合わせていることは何か。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">借りた食器を、どのような状態にして返せばよいか</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">150人分の食器を、会の前日までに届けてもらえるか</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">食器を洗う人を、会の当日に会社へ来させてもらえるか</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">紙皿と紙コップを、今年も同じ数だけ用意してもらえるか</span></span></p>
 <div class="qa"><label><input type="radio" name="q_55" value="1"><span>1</span></label><label><input type="radio" name="q_55" value="2"><span>2</span></label><label><input type="radio" name="q_55" value="3"><span>3</span></label><label><input type="radio" name="q_55" value="4"><span>4</span></label></div>
 <h3>(5)</h3>
 <div class="passage-box">
-<p>私は市の相談窓口で、家計のやりくり（注）について話を聞いている。相談に来る人の多くは、給料日の前になるとお金が足りなくなる、と言う。<br />
+<p>　私は市の相談窓口で、家計のやりくり（注）について話を聞いている。相談に来る人の多くは、給料日の前になるとお金が足りなくなる、と言う。<br />
 　3年分の相談の記録を読み返すと、お金の管理のしかたは家庭によってさまざまだった。使ったあとにレシートを家計簿に写す家庭もあれば、給料が入ったその日に、家賃や習い事の月謝など、その月に払うと分かっているお金を先に書き出す家庭もある。数えてみると、給料日に払う予定を書き出していた家庭ほど、月の終わりにお金が足りなくなった回数が少なかった。</p>
-<p>（注）やりくり：手元のお金を工夫して使い、足りるようにすること</p>
+<p class="vocab-notes">（注）やりくり：手元のお金を工夫して使い、足りるようにすること</p>
 </div>
-<p><strong>56</strong> 筆者の考えに合うのはどれか。<br />
- 1. 収入のあった日に支出の見通しを立てると、月末に困ることが少ない<br />
- 2. 使ったあとでレシートを家計簿に写しておくと、月末に困ることが少ない<br />
- 3. 家賃や電気代の高い家庭ほど、月末にお金が足りなくなりやすい<br />
- 4. 給料の多い家庭ほど、月末にお金が足りなくなることが少ない</p>
+<p><strong class="bk-qn">56</strong> 筆者の考えに合うのはどれか。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">収入のあった日に支出の見通しを立てると、月末に困ることが少ない</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">使ったあとでレシートを家計簿に写しておくと、月末に困ることが少ない</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">家賃や電気代の高い家庭ほど、月末にお金が足りなくなりやすい</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">給料の多い家庭ほど、月末にお金が足りなくなることが少ない</span></span></p>
 <div class="qa"><label><input type="radio" name="q_56" value="1"><span>1</span></label><label><input type="radio" name="q_56" value="2"><span>2</span></label><label><input type="radio" name="q_56" value="3"><span>3</span></label><label><input type="radio" name="q_56" value="4"><span>4</span></label></div>
-<h2>問題11 次の(1)から(4)の文章を読んで、後の問いに対する答えとして最もよいものを、1・2・3・4から一つ選びなさい。</h2>
+<h2 class="bk-mondai"><span class="bk-mn">問題11</span> <span class="bk-mi">次の(1)から(4)の文章を読んで、後の問いに対する答えとして最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
 <h3>(1)</h3>
 <div class="passage-box">
-<p>私の住む町内会では、毎年5月に、小学校の通学路に面したブロック塀を点検しています。大きな地震が来れば、古い塀が倒れて、児童の通る道をふさぐおそれがあるのです。<br />
-　点検には、市の防災課と相談して作った用紙を使います。用紙には、塀の高さ、ひびの長さ、上から垂らした（注1）糸と塀とのすき間の三つを記入する欄があります。住民は巻き尺（注2）を当て、おもり（注3）のついた糸を下げて、数字を書き入れます。用紙は市へ送られ、数字の大きかった塀には、市の担当者が確認に行きます。<br />
+<p>　私の住む町内会では、毎年5月に、小学校の通学路に面したブロック塀を点検しています。大きな地震が来れば、古い塀が倒れて、児童の通る道をふさぐおそれがあるのです。<br />
+　点検には、市の防災課と相談して作った用紙を使います。用紙には、塀の高さ、ひびの長さ、上から垂らした<span class="bk-chu">（注1）</span>糸と塀とのすき間の三つを記入する欄があります。住民は巻き尺<span class="bk-chu">（注2）</span>を当て、おもり<span class="bk-chu">（注3）</span>のついた糸を下げて、数字を書き入れます。用紙は市へ送られ、数字の大きかった塀には、市の担当者が確認に行きます。<br />
 　この点検には、始めた当初から反対の意見があります。専門の知識のない住民が見て回っても、危険かどうかは判断できない。それどころか、点検が済んだというだけで、町の人がかえって安心してしまう、という意見です。<br />
-　この心配には、うなずける（注4）点があり、塀の内部の鉄の棒がさびているかどうかは、外から見ても分かりません。私たちの見た塀が次の地震で倒れないとは、だれにも言えないのです。<br />
+　この心配には、うなずける<span class="bk-chu">（注4）</span>点があり、塀の内部の鉄の棒がさびているかどうかは、外から見ても分かりません。私たちの見た塀が次の地震で倒れないとは、だれにも言えないのです。<br />
 （中略）<br />
-　ただ、点検の用紙は、そうした見立て（注5）を住民に求めていません。記入するのはだれが測っても同じ結果になる数字で、「大丈夫」と書く欄は最初からありません。人数の少ない市の担当者も、住民の集めた数字があれば、優先して確認に行く塀を選べます。<br />
+　ただ、点検の用紙は、そうした見立て<span class="bk-chu">（注5）</span>を住民に求めていません。記入するのはだれが測っても同じ結果になる数字で、「大丈夫」と書く欄は最初からありません。人数の少ない市の担当者も、住民の集めた数字があれば、優先して確認に行く塀を選べます。<br />
 　ですから、町内の回覧板で「安全です」と知らせることもしていません。見て回る私たちは、塀が安全かどうかを決めているわけではないのです。</p>
-<p>（注1）垂らす：上からたれるように下げる<br />
+<p class="vocab-notes">（注1）垂らす：上からたれるように下げる<br />
 （注2）巻き尺：巻いてしまえる、布や金属でできた長いものさし<br />
 （注3）おもり：糸の先などにつける、重さのある小さな物<br />
 （注4）うなずける：もっともだと認められる<br />
 （注5）見立て：見て、どうであるかを判断すること</p>
 </div>
-<p><strong>57</strong> 筆者によると、点検の用紙に住民が書き込むのはどのようなことか。<br />
- 1. 測る人によって違いの出ない、塀の寸法やすき間の数字<br />
- 2. 塀の内部の鉄の棒が、さびているかどうかの見立て<br />
- 3. その塀が、次の地震で倒れそうかどうかという判断<br />
- 4. 点検の済んだ塀を、回覧板で知らせた日づけ</p>
+<p><strong class="bk-qn">57</strong> 筆者によると、点検の用紙に住民が書き込むのはどのようなことか。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">測る人によって違いの出ない、塀の寸法やすき間の数字</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">塀の内部の鉄の棒が、さびているかどうかの見立て</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">その塀が、次の地震で倒れそうかどうかという判断</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">点検の済んだ塀を、回覧板で知らせた日づけ</span></span></p>
 <div class="qa"><label><input type="radio" name="q_57" value="1"><span>1</span></label><label><input type="radio" name="q_57" value="2"><span>2</span></label><label><input type="radio" name="q_57" value="3"><span>3</span></label><label><input type="radio" name="q_57" value="4"><span>4</span></label></div>
-<p><strong>58</strong> 筆者の考えに合うのはどれか。<br />
- 1. 知識のない住民の点検は、町の人を安心させてしまうので、やめたほうがよい<br />
- 2. 巻き尺の使い方を学べば、住民にも塀が倒れるかどうかが判断できる<br />
- 3. 住民の点検は、市の担当者がどの塀から確かめるかを決める助けになる<br />
- 4. 点検の済んだ塀は、次の地震でも倒れないと町の人に知らせてよい</p>
+<p><strong class="bk-qn">58</strong> 筆者の考えに合うのはどれか。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">知識のない住民の点検は、町の人を安心させてしまうので、やめたほうがよい</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">巻き尺の使い方を学べば、住民にも塀が倒れるかどうかが判断できる</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">住民の点検は、市の担当者がどの塀から確かめるかを決める助けになる</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">点検の済んだ塀は、次の地震でも倒れないと町の人に知らせてよい</span></span></p>
 <div class="qa"><label><input type="radio" name="q_58" value="1"><span>1</span></label><label><input type="radio" name="q_58" value="2"><span>2</span></label><label><input type="radio" name="q_58" value="3"><span>3</span></label><label><input type="radio" name="q_58" value="4"><span>4</span></label></div>
 <h3>(2)</h3>
 <div class="passage-box">
-<p>冬のあいだ、私は部屋の窓を閉めきって（注1）暮らしていた。北向きの古いアパートで、すきま風が入らないよう、窓のふちにテープを貼っていたほどだ。暖房をつけ、厚いカーテンを引いて、朝も夜も同じ空気の中で過ごす。毎朝、窓ガラスの内側には水滴がびっしりと並び、カーテンのすそ（注2）は冷たく湿っていた。<br />
+<p>　冬のあいだ、私は部屋の窓を閉めきって<span class="bk-chu">（注1）</span>暮らしていた。北向きの古いアパートで、すきま風が入らないよう、窓のふちにテープを貼っていたほどだ。暖房をつけ、厚いカーテンを引いて、朝も夜も同じ空気の中で過ごす。毎朝、窓ガラスの内側には水滴がびっしりと並び、カーテンのすそ<span class="bk-chu">（注2）</span>は冷たく湿っていた。<br />
 　3年前の冬から、朝と夕方に5分ずつ、部屋の両端にある二つの窓を開けるようにした。台所の小窓と寝室の窓を同時に開けると、カーテンがふくらみ、冷たい空気が室内を通り抜けていくのが分かる。<br />
-　5分のあいだに部屋はすっかり冷え、始めたころはその寒さがつらかった。それでも、窓を閉めて暖房を入れ直すと、室内はじきに（注3）温まる。ガラスの水滴も、ひと冬でずいぶん減った。<br />
-　思いがけず増えたものもある。窓を開けているあいだに、外の音が部屋の中まで入ってくるのだ。朝は通学する子どもたちの声とごみの収集車の音、夕方は焼きいもを売って回る車の呼び声や、商店がシャッターを下ろす音。それが日によって少しずつ違うことに、私はやがて気がついた。霜（注4）の降りた朝は音が硬く、雪の前の夕方は、あたりがしんとして（注5）、遠くの踏切の音まで届く。<br />
+　5分のあいだに部屋はすっかり冷え、始めたころはその寒さがつらかった。それでも、窓を閉めて暖房を入れ直すと、室内はじきに<span class="bk-chu">（注3）</span>温まる。ガラスの水滴も、ひと冬でずいぶん減った。<br />
+　思いがけず増えたものもある。窓を開けているあいだに、外の音が部屋の中まで入ってくるのだ。朝は通学する子どもたちの声とごみの収集車の音、夕方は焼きいもを売って回る車の呼び声や、商店がシャッターを下ろす音。それが日によって少しずつ違うことに、私はやがて気がついた。霜<span class="bk-chu">（注4）</span>の降りた朝は音が硬く、雪の前の夕方は、あたりがしんとして<span class="bk-chu">（注5）</span>、遠くの踏切の音まで届く。<br />
 　窓を開ける5分のおかげで、閉めきった部屋に暮らしていても、外の季節がどのあたりまで来ているのかが分かるようになった。</p>
-<p>（注1）閉めきる：戸や窓を、少しのすきまもなく閉じたままにしておく<br />
+<p class="vocab-notes">（注1）閉めきる：戸や窓を、少しのすきまもなく閉じたままにしておく<br />
 （注2）すそ：着物やカーテンなどの、いちばん下の端の部分<br />
 （注3）じきに：時間をおかずに、まもなく<br />
 （注4）霜：寒い朝、地面や草の上に白くつく、氷の細かいつぶ<br />
 （注5）しんとする：物音ひとつせず、静まりかえる</p>
 </div>
-<p><strong>59</strong> 筆者によると、3年前までの冬、筆者はどのように暮らしていたか。<br />
- 1. 朝と夕方に一度ずつ、台所の小窓を開けて空気を入れかえていた<br />
- 2. 暖房をつけずに、厚いカーテンですきま風を防いでいた<br />
- 3. すきまをふさいだ部屋で、外の空気を入れずに過ごしていた<br />
- 4. 窓ガラスの水滴を、毎朝カーテンでふき取ってから出かけていた</p>
+<p><strong class="bk-qn">59</strong> 筆者によると、3年前までの冬、筆者はどのように暮らしていたか。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">朝と夕方に一度ずつ、台所の小窓を開けて空気を入れかえていた</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">暖房をつけずに、厚いカーテンですきま風を防いでいた</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">すきまをふさいだ部屋で、外の空気を入れずに過ごしていた</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">窓ガラスの水滴を、毎朝カーテンでふき取ってから出かけていた</span></span></p>
 <div class="qa"><label><input type="radio" name="q_59" value="1"><span>1</span></label><label><input type="radio" name="q_59" value="2"><span>2</span></label><label><input type="radio" name="q_59" value="3"><span>3</span></label><label><input type="radio" name="q_59" value="4"><span>4</span></label></div>
-<p><strong>60</strong> 筆者は、窓を開ける5分をどのようなものだと感じているか。<br />
- 1. 部屋の寒さをがまんして、体を冬の寒さに慣らしておく時間<br />
- 2. 部屋にいながら、外の移り変わりを感じ取れる時間<br />
- 3. 近所の人がどんな仕事をしているかを、音で知るための時間<br />
- 4. 暖房を入れ直したあと、部屋を早く温めるための時間</p>
+<p><strong class="bk-qn">60</strong> 筆者は、窓を開ける5分をどのようなものだと感じているか。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">部屋の寒さをがまんして、体を冬の寒さに慣らしておく時間</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">部屋にいながら、外の移り変わりを感じ取れる時間</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">近所の人がどんな仕事をしているかを、音で知るための時間</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">暖房を入れ直したあと、部屋を早く温めるための時間</span></span></p>
 <div class="qa"><label><input type="radio" name="q_60" value="1"><span>1</span></label><label><input type="radio" name="q_60" value="2"><span>2</span></label><label><input type="radio" name="q_60" value="3"><span>3</span></label><label><input type="radio" name="q_60" value="4"><span>4</span></label></div>
 <h3>(3)</h3>
 <div class="passage-box">
-<p>私の町の駅は、15年ほど前から駅員のいない無人駅になりました。しばらくは待合室にも鍵がかかったままで、冬の朝、ホームの風の中で列車を待つ高校生の姿が目立ちました。見かねた（注1）住民が鉄道会社と話し合い、交代で待合室を開けることになったのです。<br />
+<p>　私の町の駅は、15年ほど前から駅員のいない無人駅になりました。しばらくは待合室にも鍵がかかったままで、冬の朝、ホームの風の中で列車を待つ高校生の姿が目立ちました。見かねた<span class="bk-chu">（注1）</span>住民が鉄道会社と話し合い、交代で待合室を開けることになったのです。<br />
 　当番の仕事は、朝に鍵を開けてストーブをつけ、ベンチをふき、夕方に火を消して鍵をかけるくらいです。そのあいだは、待合室のすみでお茶を用意し、列車を待つ人と話をします。「ここで待てるようになって、朝が楽になった」と言ってくれるお年寄りもいます。<br />
 （中略）<br />
-　私は世話役として、10年分の当番表を預かっています。毎年春に翌年の当番を募る（注2）のですが、名前を書いてくれる人数は、年によってずいぶん違いました。<br />
-　そこで、当番表を並べ、組ごとに、翌年も名前を書いたかどうかを数えてみました。一人で当番に入った人は、2年目にはたいてい表から消えています。二人とも初めての組も、半数ほどしか残りません。長く続いていたのは、二人のうち一人が前の年から当番をしていた組でした。経験者がいれば、ストーブの火のつけ方も、戸の立てつけ（注3）の悪さも、その場で教えられます。初めての人が一人で困る時間がないのです。<br />
+　私は世話役として、10年分の当番表を預かっています。毎年春に翌年の当番を募る<span class="bk-chu">（注2）</span>のですが、名前を書いてくれる人数は、年によってずいぶん違いました。<br />
+　そこで、当番表を並べ、組ごとに、翌年も名前を書いたかどうかを数えてみました。一人で当番に入った人は、2年目にはたいてい表から消えています。二人とも初めての組も、半数ほどしか残りません。長く続いていたのは、二人のうち一人が前の年から当番をしていた組でした。経験者がいれば、ストーブの火のつけ方も、戸の立てつけ<span class="bk-chu">（注3）</span>の悪さも、その場で教えられます。初めての人が一人で困る時間がないのです。<br />
 　当番を二人一組にし、そのうち一人を前の年からの経験者にする。この二つがそろえば、翌年もたいていの人が当番表に名前を書いてくれます。</p>
-<p>（注1）見かねる：だまって見ていることができなくなる<br />
+<p class="vocab-notes">（注1）見かねる：だまって見ていることができなくなる<br />
 （注2）募る：広く呼びかけて、人や物を集める<br />
 （注3）立てつけ：戸や窓の、開けたり閉めたりするときの具合</p>
 </div>
-<p><strong>61</strong> 筆者によると、10年分の当番表を数えて分かったことは何か。<br />
- 1. 一人で当番に入った人のほうが、二人一組の人より長く続けていた<br />
- 2. 慣れた人と組んだ人は、翌年も当番を引き受けることが多かった<br />
- 3. 二人とも初めての組は、翌年には一人ずつ別の組に入り直していた<br />
- 4. お年寄りに声をかけられた人ほど、翌年も当番表に名前を書いていた</p>
+<p><strong class="bk-qn">61</strong> 筆者によると、10年分の当番表を数えて分かったことは何か。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">一人で当番に入った人のほうが、二人一組の人より長く続けていた</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">慣れた人と組んだ人は、翌年も当番を引き受けることが多かった</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">二人とも初めての組は、翌年には一人ずつ別の組に入り直していた</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">お年寄りに声をかけられた人ほど、翌年も当番表に名前を書いていた</span></span></p>
 <div class="qa"><label><input type="radio" name="q_61" value="1"><span>1</span></label><label><input type="radio" name="q_61" value="2"><span>2</span></label><label><input type="radio" name="q_61" value="3"><span>3</span></label><label><input type="radio" name="q_61" value="4"><span>4</span></label></div>
-<p><strong>62</strong> 筆者の考えに合うのはどれか。<br />
- 1. 当番の仕事を今より減らせば、一人でも長く続けられる人が増える<br />
- 2. 待合室を開けておく時間を短くすれば、引き受ける人が増える<br />
- 3. 当番を増やすには、春に呼びかける回数を増やすのがよい<br />
- 4. 困ったときにすぐ頼れる相手がいることが、続ける支えになる</p>
+<p><strong class="bk-qn">62</strong> 筆者の考えに合うのはどれか。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">当番の仕事を今より減らせば、一人でも長く続けられる人が増える</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">待合室を開けておく時間を短くすれば、引き受ける人が増える</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">当番を増やすには、春に呼びかける回数を増やすのがよい</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">困ったときにすぐ頼れる相手がいることが、続ける支えになる</span></span></p>
 <div class="qa"><label><input type="radio" name="q_62" value="1"><span>1</span></label><label><input type="radio" name="q_62" value="2"><span>2</span></label><label><input type="radio" name="q_62" value="3"><span>3</span></label><label><input type="radio" name="q_62" value="4"><span>4</span></label></div>
 <h3>(4)</h3>
 <div class="passage-box">
-<p>小学校で算数を教えていると、かけ算やわり算の筆算（注1）で、答えの合わない児童のノートをよく見る。計算の過程をたどると、九九（注2）は正確に合っている。ずれているのは、数字を書く位置のほうである。十の位に書くはずの数字が一つ右の列に入り込み、そのまま足し算に進んでしまう。<br />
-　筆算では、同じ位の数字を縦の列にそろえて書き、列ごとに計算する。無地（注3）の紙や横線だけのノートでは、この縦の列が目に見えない。児童は列を頭の中に思い浮かべながら書くことになり、数字の大きさが少し変わるだけで、列が斜めに傾いていく。<br />
-　ます目のノートでは、一つの数字を一つのます目に書くので、ます目の縦の並びがそのまま位の列になる。児童は列を頭の中で保っておく必要がなくなり、その分の注意を、九九や繰り上がり（注4）に向けられる。字の大きな子も小さな子も、ます目に収まっていれば列は崩れない。<br />
+<p>　小学校で算数を教えていると、かけ算やわり算の筆算<span class="bk-chu">（注1）</span>で、答えの合わない児童のノートをよく見る。計算の過程をたどると、九九<span class="bk-chu">（注2）</span>は正確に合っている。ずれているのは、数字を書く位置のほうである。十の位に書くはずの数字が一つ右の列に入り込み、そのまま足し算に進んでしまう。<br />
+　筆算では、同じ位の数字を縦の列にそろえて書き、列ごとに計算する。無地<span class="bk-chu">（注3）</span>の紙や横線だけのノートでは、この縦の列が目に見えない。児童は列を頭の中に思い浮かべながら書くことになり、数字の大きさが少し変わるだけで、列が斜めに傾いていく。<br />
+　ます目のノートでは、一つの数字を一つのます目に書くので、ます目の縦の並びがそのまま位の列になる。児童は列を頭の中で保っておく必要がなくなり、その分の注意を、九九や繰り上がり<span class="bk-chu">（注4）</span>に向けられる。字の大きな子も小さな子も、ます目に収まっていれば列は崩れない。<br />
 　もちろん、九九を覚え違えていれば、ます目があっても答えは合わない。それでも、算数のノートを替えた学期から、列のずれは明らかに減った。位のずれによる間違いは、書く紙の形を変えるだけで防げる種類の間違いなのである。</p>
-<p>（注1）筆算：紙に数字を書いて、位ごとに計算していくやり方<br />
+<p class="vocab-notes">（注1）筆算：紙に数字を書いて、位ごとに計算していくやり方<br />
 （注2）九九：一から九までの数どうしのかけ算の答えを、覚えやすく唱える言い方<br />
 （注3）無地：模様や線などが何もついていないこと<br />
 （注4）繰り上がり：足した数が十をこえたとき、一つ上の位に一を加えること</p>
 </div>
-<p><strong>63</strong> 筆者によると、答えの合わない児童のノートでよく起きていることは何か。<br />
- 1. 九九を覚え違えて、かけ算の答えが一つずつずれていること<br />
- 2. 字が大きすぎて、一行の中に数字が収まらないこと<br />
- 3. 足し算に進む前に、途中の数字を書き忘れていること<br />
- 4. 計算は合っていても、数字が別の位の列に入っていること</p>
+<p><strong class="bk-qn">63</strong> 筆者によると、答えの合わない児童のノートでよく起きていることは何か。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">九九を覚え違えて、かけ算の答えが一つずつずれていること</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">字が大きすぎて、一行の中に数字が収まらないこと</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">足し算に進む前に、途中の数字を書き忘れていること</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">計算は合っていても、数字が別の位の列に入っていること</span></span></p>
 <div class="qa"><label><input type="radio" name="q_63" value="1"><span>1</span></label><label><input type="radio" name="q_63" value="2"><span>2</span></label><label><input type="radio" name="q_63" value="3"><span>3</span></label><label><input type="radio" name="q_63" value="4"><span>4</span></label></div>
-<p><strong>64</strong> 筆者は、このようなノートの働きをどういうものだと述べているか。<br />
- 1. 九九を正しく覚えているかを、確かめられるようにするもの<br />
- 2. 字の大きさをそろえて、ノートをきれいに書けるようにするもの<br />
- 3. 繰り上がりの数を、小さく書き込む場所を用意するもの<br />
- 4. 位をそろえる手間を引き受け、計算に注意を向けさせるもの</p>
+<p><strong class="bk-qn">64</strong> 筆者は、このようなノートの働きをどういうものだと述べているか。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">九九を正しく覚えているかを、確かめられるようにするもの</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">字の大きさをそろえて、ノートをきれいに書けるようにするもの</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">繰り上がりの数を、小さく書き込む場所を用意するもの</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">位をそろえる手間を引き受け、計算に注意を向けさせるもの</span></span></p>
 <div class="qa"><label><input type="radio" name="q_64" value="1"><span>1</span></label><label><input type="radio" name="q_64" value="2"><span>2</span></label><label><input type="radio" name="q_64" value="3"><span>3</span></label><label><input type="radio" name="q_64" value="4"><span>4</span></label></div>
-<h2>問題12 次のAとBの文章を読んで、後の問いに対する答えとして最もよいものを、1・2・3・4から一つ選びなさい。</h2>
+<h2 class="bk-mondai"><span class="bk-mn">問題12</span> <span class="bk-mi">次のAとBの文章を読んで、後の問いに対する答えとして最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
 <p><strong>A</strong></p>
 <div class="passage-box">
-<p>職場で上の立場の人に声をかけるとき、多くの人は「課長」「部長」と役職で呼ぶ。呼ばれる側は気にしていなくても、呼ぶ側はそのたびに相手の立場を思い出し、言いたいことを一段やわらげてしまう。ちょっとした気づきを伝えるだけなのに、前置きがつい長くなるのである。<br />
+<p>　職場で上の立場の人に声をかけるとき、多くの人は「課長」「部長」と役職で呼ぶ。呼ばれる側は気にしていなくても、呼ぶ側はそのたびに相手の立場を思い出し、言いたいことを一段やわらげてしまう。ちょっとした気づきを伝えるだけなのに、前置きがつい長くなるのである。<br />
 　それなら、呼び方をそろえればよい。立場にかかわらず、だれもが名字に「さん」をつけて呼び合うのである。呼び方がそろえば、話しかける前のためらいが一つ減り、小さな相談も早く上がってくる。呼び方は、相手の立場を示す札というより、声をかける側が越える段差の高さそのものである。</p>
 </div>
 <p><strong>B</strong></p>
 <div class="passage-box">
-<p>呼び方ひとつで、話しかけやすさはずいぶん変わる。役職で呼び合う職場では、入ったばかりの人が上の人に声をかけるまでに、何度も言葉を選び直している。<br />
+<p>　呼び方ひとつで、話しかけやすさはずいぶん変わる。役職で呼び合う職場では、入ったばかりの人が上の人に声をかけるまでに、何度も言葉を選び直している。<br />
 　そこで、全員を「さん」で呼ぶ決まりを作る会社もある。これには、呼び方をそろえても上下の関係はそのまま残る、形だけの決まりだ、という声が上がる。この声はもっともだ。決まりで呼び方を変えても、呼ぶ側の迷いはすぐには消えない。<br />
 　それなら、呼び方を上から決めるのをやめ、一人一人が呼ばれたい呼び方を名札に書いておけばよい。上の立場の人が自分から「名字で呼んでください」と書いておけば、呼ぶ側は迷わずにすむ。本人が自分で選んで名札に書いた呼び方は、その日から、互いに口にする名前として使われていく。</p>
 </div>
-<p><strong>65</strong> AとBが共通して述べていることは何か。<br />
- 1. 役職で呼ぶ職場では、呼ばれる側が呼び方をとても気にしている<br />
- 2. どう呼ぶかによって、相手への声のかけやすさが違ってくる<br />
- 3. 全員を「さん」で呼ぶ決まりは、形だけで役に立たない<br />
- 4. 呼ばれたい呼び方を、それぞれが名札に書いておくのがよい</p>
+<p><strong class="bk-qn">65</strong> AとBが共通して述べていることは何か。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">役職で呼ぶ職場では、呼ばれる側が呼び方をとても気にしている</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">どう呼ぶかによって、相手への声のかけやすさが違ってくる</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">全員を「さん」で呼ぶ決まりは、形だけで役に立たない</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">呼ばれたい呼び方を、それぞれが名札に書いておくのがよい</span></span></p>
 <div class="qa"><label><input type="radio" name="q_65" value="1"><span>1</span></label><label><input type="radio" name="q_65" value="2"><span>2</span></label><label><input type="radio" name="q_65" value="3"><span>3</span></label><label><input type="radio" name="q_65" value="4"><span>4</span></label></div>
-<p><strong>66</strong> 職場での呼び方について、AとBはどのように述べているか。<br />
- 1. AもBも、呼ばれたい呼び方を名札に書いておくのがよいと述べている<br />
- 2. Aは名札に書いておくことを、Bは全員を「さん」で呼ぶことを勧めている<br />
- 3. Aは全員が「さん」で呼び合うことを、Bは本人の望む呼び方を示すことを勧めている<br />
- 4. AもBも、役職で呼ぶことは礼儀として続けたほうがよいと述べている</p>
+<p><strong class="bk-qn">66</strong> 職場での呼び方について、AとBはどのように述べているか。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">AもBも、呼ばれたい呼び方を名札に書いておくのがよいと述べている</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">Aは名札に書いておくことを、Bは全員を「さん」で呼ぶことを勧めている</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">Aは全員が「さん」で呼び合うことを、Bは本人の望む呼び方を示すことを勧めている</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">AもBも、役職で呼ぶことは礼儀として続けたほうがよいと述べている</span></span></p>
 <div class="qa"><label><input type="radio" name="q_66" value="1"><span>1</span></label><label><input type="radio" name="q_66" value="2"><span>2</span></label><label><input type="radio" name="q_66" value="3"><span>3</span></label><label><input type="radio" name="q_66" value="4"><span>4</span></label></div>
-<h2>問題13 次の文章を読んで、後の問いに対する答えとして最もよいものを、1・2・3・4から一つ選びなさい。</h2>
-<div class="passage-box">
-<p>落語は、話の終わりに置かれた「オチ（注1）」で客を笑わせる芸です。ですから、筋を知らずに聞くほうが楽しめるはずだと、私も長く思っていました。寄席（注2）に通い始めたころは、知っている題が高座（注3）にかかると、少し損をしたような気持ちになりました。<br />
-　ところが、何十年と通っている常連の人たちの話を聞くと、様子はまるで違いました。隣の席のお年寄りは、その日の噺（注4）を「もう100回は聞いた」と言いながら、客席のだれよりもよく笑っていました。筋も結末も知っている客は、いったい何を聞きに来ているのでしょうか。尋ねてみると、同じ噺でも、語る人によって、また同じ人でもその日によって、まるで別の噺になるのだと言います。<br />
+<h2 class="bk-mondai"><span class="bk-mn">問題13</span> <span class="bk-mi">次の文章を読んで、後の問いに対する答えとして最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
+<div class="passage-box"><span class="bk-flow"></span>
+<p>　落語は、話の終わりに置かれた「オチ<span class="bk-chu">（注1）</span>」で客を笑わせる芸です。ですから、筋を知らずに聞くほうが楽しめるはずだと、私も長く思っていました。寄席<span class="bk-chu">（注2）</span>に通い始めたころは、知っている題が高座<span class="bk-chu">（注3）</span>にかかると、少し損をしたような気持ちになりました。<br />
+　ところが、何十年と通っている常連の人たちの話を聞くと、様子はまるで違いました。隣の席のお年寄りは、その日の噺<span class="bk-chu">（注4）</span>を「もう100回は聞いた」と言いながら、客席のだれよりもよく笑っていました。筋も結末も知っている客は、いったい何を聞きに来ているのでしょうか。尋ねてみると、同じ噺でも、語る人によって、また同じ人でもその日によって、まるで別の噺になるのだと言います。<br />
 （中略）<br />
-　その言葉が腑に落ちた（注5）のは、ある古い噺を、3人の噺家（注6）で続けて聞いたときのことです。けち（注7）な男が、隣のうなぎ屋から流れてくるにおいだけをおかずにご飯を食べる、という短い噺です。一人目は、においをかぐ男の表情をじっくりと見せ、二人目は、においを取られる店の主人のいらだちを大きく語りました。三人目はほとんど表情を変えず、間（注8）の取り方で笑わせました。筋を知っていたので、私は話を追うことに気を取られず、それぞれの人がどこで黙り、どこで声を変えるかに耳を向けることができました。①<strong>筋を知っていること</strong>は、楽しみを減らすどころか、聞き分けるための足場になっていたのです。<br />
+　その言葉が腑に落ちた<span class="bk-chu">（注5）</span>のは、ある古い噺を、3人の噺家<span class="bk-chu">（注6）</span>で続けて聞いたときのことです。けち<span class="bk-chu">（注7）</span>な男が、隣のうなぎ屋から流れてくるにおいだけをおかずにご飯を食べる、という短い噺です。一人目は、においをかぐ男の表情をじっくりと見せ、二人目は、においを取られる店の主人のいらだちを大きく語りました。三人目はほとんど表情を変えず、間<span class="bk-chu">（注8）</span>の取り方で笑わせました。筋を知っていたので、私は話を追うことに気を取られず、それぞれの人がどこで黙り、どこで声を変えるかに耳を向けることができました。①<strong class="bk-tw">筋を知っていること</strong>は、楽しみを減らすどころか、聞き分けるための足場になっていたのです。<br />
 　とはいえ、初めての人に、何十回も聞いてから来てくださいとは言えません。その日の演目も、前もって知らせていないことが多いのです。それでも、よく演じられる噺はそれほど多くありません。あらすじを一つか二つ読んでおくと、聞こえ方はずいぶん変わるはずです。<br />
 　オチを知らないまま笑うのも、落語の楽しみの一つでしょう。しかし、それは一度きりの楽しみで、筋を知ったうえで聞く楽しみのほうは、何度でも味わえます。初めて寄席へ出かける人には、よく演じられる噺のあらすじを一つ読んでから行くことを、私は勧めたいと思います。</p>
-<p>（注1）オチ：落語などで、話の最後に客を笑わせる言葉<br />
+<p class="vocab-notes">（注1）オチ：落語などで、話の最後に客を笑わせる言葉<br />
 （注2）寄席：落語などを客に聞かせる、専用の小さな劇場<br />
 （注3）高座：演じる人が座る、客席より一段高くした場所<br />
 （注4）噺：落語で演じられる一つ一つの話<br />
@@ -1025,28 +1129,28 @@ B「うん。でも、＿＿ ＿＿ ★ ＿＿よ。」<br />
 （注7）けち：お金や物を出すのを、ひどくいやがること<br />
 （注8）間：話の中で、わざと言葉を切って置く短い時間</p>
 </div>
-<p><strong>67</strong> ①<strong>筋を知っていること</strong>とあるが、筆者によると、それは聞き手にどのように働いたか。<br />
- 1. オチの来る所が分かり、笑う用意をしてから聞けるようにした<br />
- 2. 話の流れを追わずにすみ、語り方の違いに耳を向けさせた<br />
- 3. 隣の客と同じ所で笑えるので、寄席へ通いやすくした<br />
- 4. 噺の筋を覚えて、ほかの人に話して聞かせられるようにした</p>
+<p><strong class="bk-qn">67</strong> ①<strong class="bk-tw">筋を知っていること</strong>とあるが、筆者によると、それは聞き手にどのように働いたか。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">オチの来る所が分かり、笑う用意をしてから聞けるようにした</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">話の流れを追わずにすみ、語り方の違いに耳を向けさせた</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">隣の客と同じ所で笑えるので、寄席へ通いやすくした</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">噺の筋を覚えて、ほかの人に話して聞かせられるようにした</span></span></p>
 <div class="qa"><label><input type="radio" name="q_67" value="1"><span>1</span></label><label><input type="radio" name="q_67" value="2"><span>2</span></label><label><input type="radio" name="q_67" value="3"><span>3</span></label><label><input type="radio" name="q_67" value="4"><span>4</span></label></div>
-<p><strong>68</strong> 筆者によると、寄席に長く通う人たちが、同じ噺を何度も聞きに来るのはなぜか。<br />
- 1. 同じ噺を聞くほど、オチを先に言い当てられるようになるから<br />
- 2. よく演じられる噺は、それほど多くないから<br />
- 3. 隣の席の人と同じ所で笑うことが、寄席での楽しみだから<br />
- 4. 語る人やその日によって、同じ筋でも違う噺に聞こえるから</p>
+<p><strong class="bk-qn">68</strong> 筆者によると、寄席に長く通う人たちが、同じ噺を何度も聞きに来るのはなぜか。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">同じ噺を聞くほど、オチを先に言い当てられるようになるから</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">よく演じられる噺は、それほど多くないから</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">隣の席の人と同じ所で笑うことが、寄席での楽しみだから</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">語る人やその日によって、同じ筋でも違う噺に聞こえるから</span></span></p>
 <div class="qa"><label><input type="radio" name="q_68" value="1"><span>1</span></label><label><input type="radio" name="q_68" value="2"><span>2</span></label><label><input type="radio" name="q_68" value="3"><span>3</span></label><label><input type="radio" name="q_68" value="4"><span>4</span></label></div>
-<p><strong>69</strong> 筆者が最も言いたいことは何か。<br />
- 1. 初めて寄席へ行くなら、噺の筋を少し知っておくと楽しみが増す<br />
- 2. 落語は、オチを知らないまま一度だけ聞くのがいちばん楽しい<br />
- 3. 寄席は、その日の演目を前もって客に知らせるべきだ<br />
- 4. 落語を楽しむには、同じ噺を何十回も聞いておく必要がある</p>
+<p><strong class="bk-qn">69</strong> 筆者が最も言いたいことは何か。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">初めて寄席へ行くなら、噺の筋を少し知っておくと楽しみが増す</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">落語は、オチを知らないまま一度だけ聞くのがいちばん楽しい</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">寄席は、その日の演目を前もって客に知らせるべきだ</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">落語を楽しむには、同じ噺を何十回も聞いておく必要がある</span></span></p>
 <div class="qa"><label><input type="radio" name="q_69" value="1"><span>1</span></label><label><input type="radio" name="q_69" value="2"><span>2</span></label><label><input type="radio" name="q_69" value="3"><span>3</span></label><label><input type="radio" name="q_69" value="4"><span>4</span></label></div>
-<h2>問題14 右のページは、かしわ台市学校給食センターが出している「夏休み親子見学会」の案内である。下の問いに対する答えとして最もよいものを、1・2・3・4から一つ選びなさい。</h2>
-<div class="passage-box">
+<h2 class="bk-mondai"><span class="bk-mn">問題14</span> <span class="bk-mi">右のページは、かしわ台市学校給食センターが出している「夏休み親子見学会」の案内である。下の問いに対する答えとして最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
+<div class="passage-box"><span class="bk-flow bk-flyer"></span>
 <p><strong>かしわ台市学校給食センター　夏休み親子見学会のご案内</strong></p>
-<p>市内の小学校と中学校の給食は、このセンターで作っています。夏休みに、給食ができあがるまでを親子で見ていただく見学会を開きます。</p>
+<p>　市内の小学校と中学校の給食は、このセンターで作っています。夏休みに、給食ができあがるまでを親子で見ていただく見学会を開きます。</p>
 <table>
 <thead>
 <tr>
@@ -1103,17 +1207,17 @@ B「うん。でも、＿＿ ＿＿ ★ ＿＿よ。」<br />
 ・駐車場は10台分しかありません。なるべくバスでお越しください（「給食センター前」下車）。<br />
 ・熱のある方は参加できません。当日の朝、センターへお電話ください。</p>
 </div>
-<p><strong>70</strong> 田中さんは、小学3年生の娘と夫と3人で、7月30日のコースに参加したい。田中さんたちが払う料金は、3人分で合わせていくらか。<br />
- 1. 700円<br />
- 2. 1,100円<br />
- 3. 1,200円<br />
- 4. 800円</p>
+<p><strong class="bk-qn">70</strong> 田中さんは、小学3年生の娘と夫と3人で、7月30日のコースに参加したい。田中さんたちが払う料金は、3人分で合わせていくらか。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">700円</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">1,100円</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">1,200円</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">800円</span></span></p>
 <div class="qa"><label><input type="radio" name="q_70" value="1"><span>1</span></label><label><input type="radio" name="q_70" value="2"><span>2</span></label><label><input type="radio" name="q_70" value="3"><span>3</span></label><label><input type="radio" name="q_70" value="4"><span>4</span></label></div>
-<p><strong>71</strong> 山本さんは、中学1年生の息子と二人で、おやつを作るコースに参加したい。山本さんは、どうしなければならないか。<br />
- 1. 電話で7月15日までに申し込み、当日はぼうしとエプロンを持って行く<br />
- 2. 7月10日に届くようはがきを出し、当日の持ち物はエプロンと三角きんでよい<br />
- 3. 7月10日に届くようはがきで申し込み、ぼうしとエプロンと三角きんを持って行く<br />
- 4. 7月15日までにはがきで申し込み、ぼうしとエプロンと三角きんを持って行く</p>
+<p><strong class="bk-qn">71</strong> 山本さんは、中学1年生の息子と二人で、おやつを作るコースに参加したい。山本さんは、どうしなければならないか。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">電話で7月15日までに申し込み、当日はぼうしとエプロンを持って行く</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">7月10日に届くようはがきを出し、当日の持ち物はエプロンと三角きんでよい</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">7月10日に届くようはがきで申し込み、ぼうしとエプロンと三角きんを持って行く</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">7月15日までにはがきで申し込み、ぼうしとエプロンと三角きんを持って行く</span></span></p>
 <div class="qa"><label><input type="radio" name="q_71" value="1"><span>1</span></label><label><input type="radio" name="q_71" value="2"><span>2</span></label><label><input type="radio" name="q_71" value="3"><span>3</span></label><label><input type="radio" name="q_71" value="4"><span>4</span></label></div></div><hr class="section-divider" id="section-divider" style="display:none"><div class="gate" id="gate-choukai" style="display:none"><h2>聴解</h2><p class="lim">制限時間 <b>50分</b>／全30問</p><p class="note"><span class="warn">開始すると時計が動きます。</span>残り時間が0になった時点で、解答はそのまま自動的に提出されます。<br>音声は最初から最後まで一続きで流れます。イヤホンなどの準備ができてから開始してください。<br>時計はこのタブを見ている間だけ進み、ほかのタブや別のウィンドウに移ると止まります。</p><button class="ui-btn primary" onclick="startSection('choukai')">開始する</button></div><div id="section-choukai" style="display:none"><h1 class="section-title">JLPT N2 聴解</h1><div id="player"><audio id="au" controls preload="metadata" src="聴解.mp3" data-fallback-src="https://github.com/feiluvnana/JLPT/releases/download/audio/20260928_1.mp3"></audio><div class="pctl"><button type="button" onclick="nudge(-10)">◀ 10秒</button><button type="button" onclick="nudge(10)">10秒 ▶</button><label>速度 <select id="rate" onchange="au.playbackRate=+this.value"><option>0.75</option><option selected>1</option><option>1.25</option><option>1.5</option></select></label><span id="chapwrap">章 <select id="chap" onchange="jump(this.value)"></select></span><label class="pick">MP3を選ぶ<input type="file" accept="audio/*" onchange="pick(this)"></label></div><script>window.CHAPTERS = {
  "duration": 2730.32,
  "chapters": [
@@ -1258,87 +1362,87 @@ B「うん。でも、＿＿ ＿＿ ★ ＿＿よ。」<br />
  "bank_version": 2,
  "script_sha": "d441551f5de8"
 }
-;</script></div><h1>【聴解】</h1>
-<h2>問題1</h2>
-<p class="furi"><ruby>問題<rt>もんだい</rt></ruby>1では、まず<ruby>質問<rt>しつもん</rt></ruby>を<ruby>聞<rt>き</rt></ruby>いてください。それから<ruby style="min-width:1.50em">話<rt>はなし</rt></ruby>を<ruby>聞<rt>き</rt></ruby>いて、<ruby>問題<rt>もんだい</rt></ruby><ruby>用紙<rt>ようし</rt></ruby>の1から4の<ruby>中<rt>なか</rt></ruby>から、<ruby style="min-width:1.50em">最<rt>もっと</rt></ruby>もよいものを<ruby>一<rt>ひと</rt></ruby>つ<ruby>選<rt>えら</rt></ruby>んでください。</p>
+;</script></div><h1 class="bk-part">【聴解】</h1>
+<h2 class="bk-mondai bk-mondai-l"><span class="bk-mn">問題1</span></h2>
+<p class="furi"><ruby>問題<rt>もんだい</rt></ruby>1では、まず<ruby>質問<rt>しつもん</rt></ruby>を<ruby>聞<rt>き</rt></ruby>いてください。それから<ruby>話<rt>はなし</rt></ruby>を<ruby>聞<rt>き</rt></ruby>いて、<ruby>問題<rt>もんだい</rt></ruby><ruby>用紙<rt>ようし</rt></ruby>の1から4の<ruby>中<rt>なか</rt></ruby>から、<ruby>最<rt>もっと</rt></ruby>もよいものを<ruby>一<rt>ひと</rt></ruby>つ<ruby>選<rt>えら</rt></ruby>んでください。</p>
 <p class="furi"><strong>1<ruby>番<rt>ばん</rt></ruby></strong><br />
- 1. <ruby>同意書<rt>どういしょ</rt></ruby>にサインする<br />
- 2. エプロンを<ruby>着<rt>つ</rt></ruby>ける<br />
- 3. ガラスの<ruby>色<rt>いろ</rt></ruby>を<ruby>選<rt>えら</rt></ruby>ぶ<br />
- 4. かびんの<ruby style="min-width:2.50em">送料<rt>そうりょう</rt></ruby>を<ruby>払<rt>はら</rt></ruby>う</p>
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot"><ruby>同意書<rt>どういしょ</rt></ruby>にサインする</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">エプロンを<ruby>着<rt>つ</rt></ruby>ける</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">ガラスの<ruby>色<rt>いろ</rt></ruby>を<ruby>選<rt>えら</rt></ruby>ぶ</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">かびんの<ruby>送料<rt>そうりょう</rt></ruby>を<ruby>払<rt>はら</rt></ruby>う</span></span></p>
 <div class="qa"><label><input type="radio" name="q_問1-1" value="1"><span>1</span></label><label><input type="radio" name="q_問1-1" value="2"><span>2</span></label><label><input type="radio" name="q_問1-1" value="3"><span>3</span></label><label><input type="radio" name="q_問1-1" value="4"><span>4</span></label></div>
 <p class="furi"><strong>2<ruby>番<rt>ばん</rt></ruby></strong><br />
- 1. <ruby>明日<rt>あした</rt></ruby><br />
- 2. <ruby>月曜日<rt>げつようび</rt></ruby><br />
- 3. <ruby>土曜日<rt>どようび</rt></ruby><br />
- 4. <ruby style="min-width:2.50em">祝日<rt>しゅくじつ</rt></ruby></p>
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot"><ruby>明日<rt>あした</rt></ruby></span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot"><ruby>月曜日<rt>げつようび</rt></ruby></span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot"><ruby>土曜日<rt>どようび</rt></ruby></span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot"><ruby>祝日<rt>しゅくじつ</rt></ruby></span></span></p>
 <div class="qa"><label><input type="radio" name="q_問1-2" value="1"><span>1</span></label><label><input type="radio" name="q_問1-2" value="2"><span>2</span></label><label><input type="radio" name="q_問1-2" value="3"><span>3</span></label><label><input type="radio" name="q_問1-2" value="4"><span>4</span></label></div>
 <p class="furi"><strong>3<ruby>番<rt>ばん</rt></ruby></strong><br />
- 1. <ruby style="min-width:4.00em">練習中<rt>れんしゅうちゅう</rt></ruby>の<ruby>写真<rt>しゃしん</rt></ruby>をとる<br />
- 2. <ruby style="min-width:1.50em">曲<rt>きょく</rt></ruby>のしょうかい<ruby>文<rt>ぶん</rt></ruby>を<ruby>書<rt>か</rt></ruby>く<br />
- 3. <ruby>先輩<rt>せんぱい</rt></ruby>にげんこうをたのむ<br />
- 4. <ruby>表紙<rt>ひょうし</rt></ruby>のデザイン<ruby>案<rt>あん</rt></ruby>を<ruby>作<rt>つく</rt></ruby>る</p>
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot"><ruby>練習中<rt>れんしゅうちゅう</rt></ruby>の<ruby>写真<rt>しゃしん</rt></ruby>をとる</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot"><ruby>曲<rt>きょく</rt></ruby>のしょうかい<ruby>文<rt>ぶん</rt></ruby>を<ruby>書<rt>か</rt></ruby>く</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot"><ruby>先輩<rt>せんぱい</rt></ruby>にげんこうをたのむ</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot"><ruby>表紙<rt>ひょうし</rt></ruby>のデザイン<ruby>案<rt>あん</rt></ruby>を<ruby>作<rt>つく</rt></ruby>る</span></span></p>
 <div class="qa"><label><input type="radio" name="q_問1-3" value="1"><span>1</span></label><label><input type="radio" name="q_問1-3" value="2"><span>2</span></label><label><input type="radio" name="q_問1-3" value="3"><span>3</span></label><label><input type="radio" name="q_問1-3" value="4"><span>4</span></label></div>
 <p class="furi"><strong>4<ruby>番<rt>ばん</rt></ruby></strong><br />
- 1. えんそうの<ruby>動画<rt>どうが</rt></ruby>を<ruby>作<rt>つく</rt></ruby>る<br />
- 2. えんそうの<ruby>動画<rt>どうが</rt></ruby>を<ruby style="min-width:2.50em">提出<rt>ていしゅつ</rt></ruby>する<br />
- 3. <ruby>応募<rt>おうぼ</rt></ruby>の<ruby>書類<rt>しょるい</rt></ruby>を<ruby>作<rt>つく</rt></ruby>る<br />
- 4. <ruby>応募<rt>おうぼ</rt></ruby>の<ruby>書類<rt>しょるい</rt></ruby>を<ruby style="min-width:2.50em">提出<rt>ていしゅつ</rt></ruby>する</p>
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">えんそうの<ruby>動画<rt>どうが</rt></ruby>を<ruby>作<rt>つく</rt></ruby>る</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">えんそうの<ruby>動画<rt>どうが</rt></ruby>を<ruby>提出<rt>ていしゅつ</rt></ruby>する</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot"><ruby>応募<rt>おうぼ</rt></ruby>の<ruby>書類<rt>しょるい</rt></ruby>を<ruby>作<rt>つく</rt></ruby>る</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot"><ruby>応募<rt>おうぼ</rt></ruby>の<ruby>書類<rt>しょるい</rt></ruby>を<ruby>提出<rt>ていしゅつ</rt></ruby>する</span></span></p>
 <div class="qa"><label><input type="radio" name="q_問1-4" value="1"><span>1</span></label><label><input type="radio" name="q_問1-4" value="2"><span>2</span></label><label><input type="radio" name="q_問1-4" value="3"><span>3</span></label><label><input type="radio" name="q_問1-4" value="4"><span>4</span></label></div>
 <p class="furi"><strong>5<ruby>番<rt>ばん</rt></ruby></strong><br />
- 1. <ruby>部屋<rt>へや</rt></ruby>を<ruby>借<rt>か</rt></ruby>りる<br />
- 2. ポスターの<ruby>準備<rt>じゅんび</rt></ruby>をする<br />
- 3. <ruby>当日<rt>とうじつ</rt></ruby>、<ruby>手伝<rt>てつだ</rt></ruby>ってくれる<ruby>人<rt>ひと</rt></ruby>を<ruby>探<rt>さが</rt></ruby>す<br />
- 4. マイクやアンプの<ruby>用意<rt>ようい</rt></ruby>をする</p>
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot"><ruby>部屋<rt>へや</rt></ruby>を<ruby>借<rt>か</rt></ruby>りる</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">ポスターの<ruby>準備<rt>じゅんび</rt></ruby>をする</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot"><ruby>当日<rt>とうじつ</rt></ruby>、<ruby>手伝<rt>てつだ</rt></ruby>ってくれる<ruby>人<rt>ひと</rt></ruby>を<ruby>探<rt>さが</rt></ruby>す</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">マイクやアンプの<ruby>用意<rt>ようい</rt></ruby>をする</span></span></p>
 <div class="qa"><label><input type="radio" name="q_問1-5" value="1"><span>1</span></label><label><input type="radio" name="q_問1-5" value="2"><span>2</span></label><label><input type="radio" name="q_問1-5" value="3"><span>3</span></label><label><input type="radio" name="q_問1-5" value="4"><span>4</span></label></div>
-<h2>問題2</h2>
-<p class="furi"><ruby>問題<rt>もんだい</rt></ruby>2では、まず<ruby>質問<rt>しつもん</rt></ruby>を<ruby>聞<rt>き</rt></ruby>いてください。そのあと、<ruby>問題<rt>もんだい</rt></ruby><ruby>用紙<rt>ようし</rt></ruby>のせんたくしを<ruby>読<rt>よ</rt></ruby>んでください。<ruby>読<rt>よ</rt></ruby>む<ruby>時間<rt>じかん</rt></ruby>があります。それから<ruby style="min-width:1.50em">話<rt>はなし</rt></ruby>を<ruby>聞<rt>き</rt></ruby>いて、<ruby>問題<rt>もんだい</rt></ruby><ruby>用紙<rt>ようし</rt></ruby>の1から4の<ruby>中<rt>なか</rt></ruby>から、<ruby style="min-width:1.50em">最<rt>もっと</rt></ruby>もよいものを<ruby>一<rt>ひと</rt></ruby>つ<ruby>選<rt>えら</rt></ruby>んでください。</p>
+<h2 class="bk-mondai bk-mondai-l"><span class="bk-mn">問題2</span></h2>
+<p class="furi"><ruby>問題<rt>もんだい</rt></ruby>2では、まず<ruby>質問<rt>しつもん</rt></ruby>を<ruby>聞<rt>き</rt></ruby>いてください。そのあと、<ruby>問題<rt>もんだい</rt></ruby><ruby>用紙<rt>ようし</rt></ruby>のせんたくしを<ruby>読<rt>よ</rt></ruby>んでください。<ruby>読<rt>よ</rt></ruby>む<ruby>時間<rt>じかん</rt></ruby>があります。それから<ruby>話<rt>はなし</rt></ruby>を<ruby>聞<rt>き</rt></ruby>いて、<ruby>問題<rt>もんだい</rt></ruby><ruby>用紙<rt>ようし</rt></ruby>の1から4の<ruby>中<rt>なか</rt></ruby>から、<ruby>最<rt>もっと</rt></ruby>もよいものを<ruby>一<rt>ひと</rt></ruby>つ<ruby>選<rt>えら</rt></ruby>んでください。</p>
 <p class="furi"><strong>1<ruby>番<rt>ばん</rt></ruby></strong><br />
- 1. コンタクトレンズがないから<br />
- 2. コンタクトレンズで<ruby>目<rt>め</rt></ruby>を<ruby>傷<rt>きず</rt></ruby>つけたから<br />
- 3. コンタクトレンズを<ruby>使<rt>つか</rt></ruby>うのをやめたから<br />
- 4. コンタクトレンズが<ruby>目<rt>め</rt></ruby>に<ruby>合<rt>あ</rt></ruby>わなかったから</p>
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">コンタクトレンズがないから</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">コンタクトレンズで<ruby>目<rt>め</rt></ruby>を<ruby>傷<rt>きず</rt></ruby>つけたから</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">コンタクトレンズを<ruby>使<rt>つか</rt></ruby>うのをやめたから</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">コンタクトレンズが<ruby>目<rt>め</rt></ruby>に<ruby>合<rt>あ</rt></ruby>わなかったから</span></span></p>
 <div class="qa"><label><input type="radio" name="q_問2-1" value="1"><span>1</span></label><label><input type="radio" name="q_問2-1" value="2"><span>2</span></label><label><input type="radio" name="q_問2-1" value="3"><span>3</span></label><label><input type="radio" name="q_問2-1" value="4"><span>4</span></label></div>
 <p class="furi"><strong>2<ruby>番<rt>ばん</rt></ruby></strong><br />
- 1. <ruby style="min-width:2.50em">会場<rt>かいじょう</rt></ruby>に<ruby style="min-width:4.00em">駐車場<rt>ちゅうしゃじょう</rt></ruby>がない<ruby>点<rt>てん</rt></ruby><br />
- 2. <ruby>費用<rt>ひよう</rt></ruby>が<ruby>予算<rt>よさん</rt></ruby>をこえている<ruby>点<rt>てん</rt></ruby><br />
- 3. <ruby style="min-width:3.50em">対象者<rt>たいしょうしゃ</rt></ruby>がしぼれていない<ruby>点<rt>てん</rt></ruby><br />
- 4. <ruby>安全面<rt>あんぜんめん</rt></ruby>へのたいさくが<ruby>不十分<rt>ふじゅうぶん</rt></ruby>な<ruby>点<rt>てん</rt></ruby></p>
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot"><ruby>会場<rt>かいじょう</rt></ruby>に<ruby>駐車場<rt>ちゅうしゃじょう</rt></ruby>がない<ruby>点<rt>てん</rt></ruby></span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot"><ruby>費用<rt>ひよう</rt></ruby>が<ruby>予算<rt>よさん</rt></ruby>をこえている<ruby>点<rt>てん</rt></ruby></span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot"><ruby>対象者<rt>たいしょうしゃ</rt></ruby>がしぼれていない<ruby>点<rt>てん</rt></ruby></span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot"><ruby>安全面<rt>あんぜんめん</rt></ruby>へのたいさくが<ruby>不十分<rt>ふじゅうぶん</rt></ruby>な<ruby>点<rt>てん</rt></ruby></span></span></p>
 <div class="qa"><label><input type="radio" name="q_問2-2" value="1"><span>1</span></label><label><input type="radio" name="q_問2-2" value="2"><span>2</span></label><label><input type="radio" name="q_問2-2" value="3"><span>3</span></label><label><input type="radio" name="q_問2-2" value="4"><span>4</span></label></div>
 <p class="furi"><strong>3<ruby>番<rt>ばん</rt></ruby></strong><br />
- 1. しんらいできるデータを<ruby>使<rt>つか</rt></ruby>って<ruby>書<rt>か</rt></ruby>くこと<br />
- 2. <ruby>引用<rt>いんよう</rt></ruby>と<ruby>自分<rt>じぶん</rt></ruby>の<ruby style="min-width:1.50em">考<rt>かんが</rt></ruby>えを<ruby>区別<rt>くべつ</rt></ruby>して<ruby>書<rt>か</rt></ruby>くこと<br />
- 3. <ruby>文体<rt>ぶんたい</rt></ruby>をとういつして<ruby>書<rt>か</rt></ruby>くこと<br />
- 4. <ruby>決<rt>き</rt></ruby>められた<ruby>文字数<rt>もじすう</rt></ruby>で<ruby>書<rt>か</rt></ruby>くこと</p>
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">しんらいできるデータを<ruby>使<rt>つか</rt></ruby>って<ruby>書<rt>か</rt></ruby>くこと</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot"><ruby>引用<rt>いんよう</rt></ruby>と<ruby>自分<rt>じぶん</rt></ruby>の<ruby>考<rt>かんが</rt></ruby>えを<ruby>区別<rt>くべつ</rt></ruby>して<ruby>書<rt>か</rt></ruby>くこと</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot"><ruby>文体<rt>ぶんたい</rt></ruby>をとういつして<ruby>書<rt>か</rt></ruby>くこと</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot"><ruby>決<rt>き</rt></ruby>められた<ruby>文字数<rt>もじすう</rt></ruby>で<ruby>書<rt>か</rt></ruby>くこと</span></span></p>
 <div class="qa"><label><input type="radio" name="q_問2-3" value="1"><span>1</span></label><label><input type="radio" name="q_問2-3" value="2"><span>2</span></label><label><input type="radio" name="q_問2-3" value="3"><span>3</span></label><label><input type="radio" name="q_問2-3" value="4"><span>4</span></label></div>
 <p class="furi"><strong>4<ruby>番<rt>ばん</rt></ruby></strong><br />
- 1. <ruby style="min-width:2.50em">商品<rt>しょうひん</rt></ruby>をサイズ<ruby>別<rt>べつ</rt></ruby>にならべる<br />
- 2. <ruby style="min-width:2.50em">商品<rt>しょうひん</rt></ruby>を<ruby>色別<rt>いろべつ</rt></ruby>にならべる<br />
- 3. <ruby>値札<rt>ねふだ</rt></ruby>のきんがくを<ruby>高<rt>たか</rt></ruby>く<ruby>書き変<rt>かきか</rt></ruby>える<br />
- 4. <ruby style="min-width:2.50em">商品<rt>しょうひん</rt></ruby>を<ruby>値段<rt>ねだん</rt></ruby>の<ruby style="min-width:1.50em">順<rt>じゅん</rt></ruby>にならべる</p>
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot"><ruby>商品<rt>しょうひん</rt></ruby>をサイズ<ruby>別<rt>べつ</rt></ruby>にならべる</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot"><ruby>商品<rt>しょうひん</rt></ruby>を<ruby>色別<rt>いろべつ</rt></ruby>にならべる</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot"><ruby>値札<rt>ねふだ</rt></ruby>のきんがくを<ruby>高<rt>たか</rt></ruby>く<ruby>書き変<rt>かきか</rt></ruby>える</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot"><ruby>商品<rt>しょうひん</rt></ruby>を<ruby>値段<rt>ねだん</rt></ruby>の<ruby>順<rt>じゅん</rt></ruby>にならべる</span></span></p>
 <div class="qa"><label><input type="radio" name="q_問2-4" value="1"><span>1</span></label><label><input type="radio" name="q_問2-4" value="2"><span>2</span></label><label><input type="radio" name="q_問2-4" value="3"><span>3</span></label><label><input type="radio" name="q_問2-4" value="4"><span>4</span></label></div>
 <p class="furi"><strong>5<ruby>番<rt>ばん</rt></ruby></strong><br />
- 1. これまでの<ruby>経験<rt>けいけん</rt></ruby>を<ruby>生<rt>い</rt></ruby>かせそうだったから<br />
- 2. <ruby style="min-width:3.00em">給料<rt>きゅうりょう</rt></ruby>などよいじょうけんがそろっていたから<br />
- 3. <ruby>前<rt>まえ</rt></ruby>のしょくばに<ruby>不満<rt>ふまん</rt></ruby>があったから<br />
- 4. <ruby style="min-width:1.50em">新<rt>あたら</rt></ruby>しい<ruby>分野<rt>ぶんや</rt></ruby>の<ruby>仕事<rt>しごと</rt></ruby>をしてみたかったから</p>
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">これまでの<ruby>経験<rt>けいけん</rt></ruby>を<ruby>生<rt>い</rt></ruby>かせそうだったから</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot"><ruby>給料<rt>きゅうりょう</rt></ruby>などよいじょうけんがそろっていたから</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot"><ruby>前<rt>まえ</rt></ruby>のしょくばに<ruby>不満<rt>ふまん</rt></ruby>があったから</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot"><ruby>新<rt>あたら</rt></ruby>しい<ruby>分野<rt>ぶんや</rt></ruby>の<ruby>仕事<rt>しごと</rt></ruby>をしてみたかったから</span></span></p>
 <div class="qa"><label><input type="radio" name="q_問2-5" value="1"><span>1</span></label><label><input type="radio" name="q_問2-5" value="2"><span>2</span></label><label><input type="radio" name="q_問2-5" value="3"><span>3</span></label><label><input type="radio" name="q_問2-5" value="4"><span>4</span></label></div>
 <p class="furi"><strong>6<ruby>番<rt>ばん</rt></ruby></strong><br />
- 1. かぎを<ruby>借<rt>か</rt></ruby>りるため<br />
- 2. ピンマイクを<ruby>借<rt>か</rt></ruby>りるため<br />
- 3. パソコンをネットにつなぐため<br />
- 4. <ruby>大学<rt>だいがく</rt></ruby>のホームページを<ruby>見<rt>み</rt></ruby>るため</p>
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">かぎを<ruby>借<rt>か</rt></ruby>りるため</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">ピンマイクを<ruby>借<rt>か</rt></ruby>りるため</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">パソコンをネットにつなぐため</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot"><ruby>大学<rt>だいがく</rt></ruby>のホームページを<ruby>見<rt>み</rt></ruby>るため</span></span></p>
 <div class="qa"><label><input type="radio" name="q_問2-6" value="1"><span>1</span></label><label><input type="radio" name="q_問2-6" value="2"><span>2</span></label><label><input type="radio" name="q_問2-6" value="3"><span>3</span></label><label><input type="radio" name="q_問2-6" value="4"><span>4</span></label></div>
-<h2>問題3</h2>
-<p class="furi"><ruby>問題<rt>もんだい</rt></ruby>3では、<ruby>問題<rt>もんだい</rt></ruby><ruby>用紙<rt>ようし</rt></ruby>に<ruby>何<rt>なに</rt></ruby>も<ruby>印刷<rt>いんさつ</rt></ruby>されていません。この<ruby>問題<rt>もんだい</rt></ruby>は、<ruby>全体<rt>ぜんたい</rt></ruby>としてどんな<ruby>内容<rt>ないよう</rt></ruby>かを<ruby>聞<rt>き</rt></ruby>く<ruby>問題<rt>もんだい</rt></ruby>です。<ruby style="min-width:1.50em">話<rt>はなし</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>に<ruby>質問<rt>しつもん</rt></ruby>はありません。まず<ruby style="min-width:1.50em">話<rt>はなし</rt></ruby>を<ruby>聞<rt>き</rt></ruby>いてください。それから、<ruby>質問<rt>しつもん</rt></ruby>とせんたくしを<ruby>聞<rt>き</rt></ruby>いて、1から4の<ruby>中<rt>なか</rt></ruby>から、<ruby style="min-width:1.50em">最<rt>もっと</rt></ruby>もよいものを<ruby>一<rt>ひと</rt></ruby>つ<ruby>選<rt>えら</rt></ruby>んでください。</p>
+<h2 class="bk-mondai bk-mondai-l"><span class="bk-mn">問題3</span></h2>
+<p class="furi"><ruby>問題<rt>もんだい</rt></ruby>3では、<ruby>問題<rt>もんだい</rt></ruby><ruby>用紙<rt>ようし</rt></ruby>に<ruby>何<rt>なに</rt></ruby>も<ruby>印刷<rt>いんさつ</rt></ruby>されていません。この<ruby>問題<rt>もんだい</rt></ruby>は、<ruby>全体<rt>ぜんたい</rt></ruby>としてどんな<ruby>内容<rt>ないよう</rt></ruby>かを<ruby>聞<rt>き</rt></ruby>く<ruby>問題<rt>もんだい</rt></ruby>です。<ruby>話<rt>はなし</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>に<ruby>質問<rt>しつもん</rt></ruby>はありません。まず<ruby>話<rt>はなし</rt></ruby>を<ruby>聞<rt>き</rt></ruby>いてください。それから、<ruby>質問<rt>しつもん</rt></ruby>とせんたくしを<ruby>聞<rt>き</rt></ruby>いて、1から4の<ruby>中<rt>なか</rt></ruby>から、<ruby>最<rt>もっと</rt></ruby>もよいものを<ruby>一<rt>ひと</rt></ruby>つ<ruby>選<rt>えら</rt></ruby>んでください。</p>
 <p class="furi"><strong>1<ruby>番<rt>ばん</rt></ruby></strong> <div class="qa"><label><input type="radio" name="q_問3-1" value="1"><span>1</span></label><label><input type="radio" name="q_問3-1" value="2"><span>2</span></label><label><input type="radio" name="q_問3-1" value="3"><span>3</span></label><label><input type="radio" name="q_問3-1" value="4"><span>4</span></label></div><br />
 <strong>2<ruby>番<rt>ばん</rt></ruby></strong> <div class="qa"><label><input type="radio" name="q_問3-2" value="1"><span>1</span></label><label><input type="radio" name="q_問3-2" value="2"><span>2</span></label><label><input type="radio" name="q_問3-2" value="3"><span>3</span></label><label><input type="radio" name="q_問3-2" value="4"><span>4</span></label></div><br />
 <strong>3<ruby>番<rt>ばん</rt></ruby></strong> <div class="qa"><label><input type="radio" name="q_問3-3" value="1"><span>1</span></label><label><input type="radio" name="q_問3-3" value="2"><span>2</span></label><label><input type="radio" name="q_問3-3" value="3"><span>3</span></label><label><input type="radio" name="q_問3-3" value="4"><span>4</span></label></div><br />
 <strong>4<ruby>番<rt>ばん</rt></ruby></strong> <div class="qa"><label><input type="radio" name="q_問3-4" value="1"><span>1</span></label><label><input type="radio" name="q_問3-4" value="2"><span>2</span></label><label><input type="radio" name="q_問3-4" value="3"><span>3</span></label><label><input type="radio" name="q_問3-4" value="4"><span>4</span></label></div><br />
 <strong>5<ruby>番<rt>ばん</rt></ruby></strong> <div class="qa"><label><input type="radio" name="q_問3-5" value="1"><span>1</span></label><label><input type="radio" name="q_問3-5" value="2"><span>2</span></label><label><input type="radio" name="q_問3-5" value="3"><span>3</span></label><label><input type="radio" name="q_問3-5" value="4"><span>4</span></label></div></p>
-<p>ーメモー</p>
-<h2>問題4</h2>
-<p class="furi"><ruby>問題<rt>もんだい</rt></ruby>4では、<ruby>問題<rt>もんだい</rt></ruby><ruby>用紙<rt>ようし</rt></ruby>に<ruby>何<rt>なに</rt></ruby>もいんさつされていません。まず<ruby>文<rt>ぶん</rt></ruby>を<ruby>聞<rt>き</rt></ruby>いてください。それから、それに<ruby>対<rt>たい</rt></ruby>する<ruby>返事<rt>へんじ</rt></ruby>を<ruby>聞<rt>き</rt></ruby>いて、1から3の<ruby>中<rt>なか</rt></ruby>から、<ruby style="min-width:1.50em">最<rt>もっと</rt></ruby>もよいものを<ruby>一<rt>ひと</rt></ruby>つ<ruby>選<rt>えら</rt></ruby>んでください。</p>
+<p class="bk-memo">― メモ ―</p>
+<h2 class="bk-mondai bk-mondai-l"><span class="bk-mn">問題4</span></h2>
+<p class="furi"><ruby>問題<rt>もんだい</rt></ruby>4では、<ruby>問題<rt>もんだい</rt></ruby><ruby>用紙<rt>ようし</rt></ruby>に<ruby>何<rt>なに</rt></ruby>もいんさつされていません。まず<ruby>文<rt>ぶん</rt></ruby>を<ruby>聞<rt>き</rt></ruby>いてください。それから、それに<ruby>対<rt>たい</rt></ruby>する<ruby>返事<rt>へんじ</rt></ruby>を<ruby>聞<rt>き</rt></ruby>いて、1から3の<ruby>中<rt>なか</rt></ruby>から、<ruby>最<rt>もっと</rt></ruby>もよいものを<ruby>一<rt>ひと</rt></ruby>つ<ruby>選<rt>えら</rt></ruby>んでください。</p>
 <p class="furi"><strong>1<ruby>番<rt>ばん</rt></ruby></strong> <div class="qa"><label><input type="radio" name="q_問4-1" value="1"><span>1</span></label><label><input type="radio" name="q_問4-1" value="2"><span>2</span></label><label><input type="radio" name="q_問4-1" value="3"><span>3</span></label></div><br />
 <strong>2<ruby>番<rt>ばん</rt></ruby></strong> <div class="qa"><label><input type="radio" name="q_問4-2" value="1"><span>1</span></label><label><input type="radio" name="q_問4-2" value="2"><span>2</span></label><label><input type="radio" name="q_問4-2" value="3"><span>3</span></label></div><br />
 <strong>3<ruby>番<rt>ばん</rt></ruby></strong> <div class="qa"><label><input type="radio" name="q_問4-3" value="1"><span>1</span></label><label><input type="radio" name="q_問4-3" value="2"><span>2</span></label><label><input type="radio" name="q_問4-3" value="3"><span>3</span></label></div><br />
@@ -1350,26 +1454,26 @@ B「うん。でも、＿＿ ＿＿ ★ ＿＿よ。」<br />
 <strong>9<ruby>番<rt>ばん</rt></ruby></strong> <div class="qa"><label><input type="radio" name="q_問4-9" value="1"><span>1</span></label><label><input type="radio" name="q_問4-9" value="2"><span>2</span></label><label><input type="radio" name="q_問4-9" value="3"><span>3</span></label></div><br />
 <strong>10<ruby>番<rt>ばん</rt></ruby></strong> <div class="qa"><label><input type="radio" name="q_問4-10" value="1"><span>1</span></label><label><input type="radio" name="q_問4-10" value="2"><span>2</span></label><label><input type="radio" name="q_問4-10" value="3"><span>3</span></label></div><br />
 <strong>11<ruby>番<rt>ばん</rt></ruby></strong> <div class="qa"><label><input type="radio" name="q_問4-11" value="1"><span>1</span></label><label><input type="radio" name="q_問4-11" value="2"><span>2</span></label><label><input type="radio" name="q_問4-11" value="3"><span>3</span></label></div></p>
-<p>ーメモー</p>
-<h2>問題5</h2>
-<p class="furi"><ruby>問題<rt>もんだい</rt></ruby>5では、<ruby>長<rt>なが</rt></ruby>めの<ruby style="min-width:1.50em">話<rt>はなし</rt></ruby>を<ruby>聞<rt>き</rt></ruby>きます。この<ruby>問題<rt>もんだい</rt></ruby>には<ruby style="min-width:2.50em">練習<rt>れんしゅう</rt></ruby>はありません。<ruby>問題<rt>もんだい</rt></ruby><ruby>用紙<rt>ようし</rt></ruby>にメモをとってもかまいません。</p>
+<p class="bk-memo">― メモ ―</p>
+<h2 class="bk-mondai bk-mondai-l"><span class="bk-mn">問題5</span></h2>
+<p class="furi"><ruby>問題<rt>もんだい</rt></ruby>5では、<ruby>長<rt>なが</rt></ruby>めの<ruby>話<rt>はなし</rt></ruby>を<ruby>聞<rt>き</rt></ruby>きます。この<ruby>問題<rt>もんだい</rt></ruby>には<ruby>練習<rt>れんしゅう</rt></ruby>はありません。<ruby>問題<rt>もんだい</rt></ruby><ruby>用紙<rt>ようし</rt></ruby>にメモをとってもかまいません。</p>
 <p class="furi"><strong>1<ruby>番<rt>ばん</rt></ruby></strong><br />
-<ruby>問題<rt>もんだい</rt></ruby><ruby>用紙<rt>ようし</rt></ruby>に<ruby>何<rt>なに</rt></ruby>も<ruby>印刷<rt>いんさつ</rt></ruby>されていません。まず<ruby style="min-width:1.50em">話<rt>はなし</rt></ruby>を<ruby>聞<rt>き</rt></ruby>いてください。それから、<ruby>質問<rt>しつもん</rt></ruby>とせんたくしを<ruby>聞<rt>き</rt></ruby>いて、1から4の<ruby>中<rt>なか</rt></ruby>から、<ruby style="min-width:1.50em">最<rt>もっと</rt></ruby>もよいものを<ruby>一<rt>ひと</rt></ruby>つ<ruby>選<rt>えら</rt></ruby>んでください。では、<ruby>始<rt>はじ</rt></ruby>めます。</p>
+<ruby>問題<rt>もんだい</rt></ruby><ruby>用紙<rt>ようし</rt></ruby>に<ruby>何<rt>なに</rt></ruby>も<ruby>印刷<rt>いんさつ</rt></ruby>されていません。まず<ruby>話<rt>はなし</rt></ruby>を<ruby>聞<rt>き</rt></ruby>いてください。それから、<ruby>質問<rt>しつもん</rt></ruby>とせんたくしを<ruby>聞<rt>き</rt></ruby>いて、1から4の<ruby>中<rt>なか</rt></ruby>から、<ruby>最<rt>もっと</rt></ruby>もよいものを<ruby>一<rt>ひと</rt></ruby>つ<ruby>選<rt>えら</rt></ruby>んでください。では、<ruby>始<rt>はじ</rt></ruby>めます。</p>
 <p class="furi"><strong>1<ruby>番<rt>ばん</rt></ruby></strong> <div class="qa"><label><input type="radio" name="q_問5-1" value="1"><span>1</span></label><label><input type="radio" name="q_問5-1" value="2"><span>2</span></label><label><input type="radio" name="q_問5-1" value="3"><span>3</span></label><label><input type="radio" name="q_問5-1" value="4"><span>4</span></label></div></p>
-<p>ーメモー</p>
+<p class="bk-memo">― メモ ―</p>
 <p class="furi"><strong>2<ruby>番<rt>ばん</rt></ruby></strong><br />
-<ruby>問題<rt>もんだい</rt></ruby><ruby>用紙<rt>ようし</rt></ruby>に<ruby>何<rt>なに</rt></ruby>も<ruby>印刷<rt>いんさつ</rt></ruby>されていません。まず<ruby style="min-width:1.50em">話<rt>はなし</rt></ruby>を<ruby>聞<rt>き</rt></ruby>いてください。それから、<ruby>二<rt>ふた</rt></ruby>つの<ruby>質問<rt>しつもん</rt></ruby>とせんたくしを<ruby>聞<rt>き</rt></ruby>いて、それぞれ1から4の<ruby>中<rt>なか</rt></ruby>から、<ruby style="min-width:1.50em">最<rt>もっと</rt></ruby>もよいものを<ruby>一<rt>ひと</rt></ruby>つ<ruby>選<rt>えら</rt></ruby>んでください。</p>
+<ruby>問題<rt>もんだい</rt></ruby><ruby>用紙<rt>ようし</rt></ruby>に<ruby>何<rt>なに</rt></ruby>も<ruby>印刷<rt>いんさつ</rt></ruby>されていません。まず<ruby>話<rt>はなし</rt></ruby>を<ruby>聞<rt>き</rt></ruby>いてください。それから、<ruby>二<rt>ふた</rt></ruby>つの<ruby>質問<rt>しつもん</rt></ruby>とせんたくしを<ruby>聞<rt>き</rt></ruby>いて、それぞれ1から4の<ruby>中<rt>なか</rt></ruby>から、<ruby>最<rt>もっと</rt></ruby>もよいものを<ruby>一<rt>ひと</rt></ruby>つ<ruby>選<rt>えら</rt></ruby>んでください。</p>
 <p class="furi"><strong><ruby>質問<rt>しつもん</rt></ruby>1</strong><br />
- 1. 1<ruby>番<rt>ばん</rt></ruby>の<ruby>自転車<rt>じてんしゃ</rt></ruby><br />
- 2. 2<ruby>番<rt>ばん</rt></ruby>の<ruby>自転車<rt>じてんしゃ</rt></ruby><br />
- 3. 3<ruby>番<rt>ばん</rt></ruby>の<ruby>自転車<rt>じてんしゃ</rt></ruby><br />
- 4. 4<ruby>番<rt>ばん</rt></ruby>の<ruby>自転車<rt>じてんしゃ</rt></ruby></p>
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">1<ruby>番<rt>ばん</rt></ruby>の<ruby>自転車<rt>じてんしゃ</rt></ruby></span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">2<ruby>番<rt>ばん</rt></ruby>の<ruby>自転車<rt>じてんしゃ</rt></ruby></span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">3<ruby>番<rt>ばん</rt></ruby>の<ruby>自転車<rt>じてんしゃ</rt></ruby></span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">4<ruby>番<rt>ばん</rt></ruby>の<ruby>自転車<rt>じてんしゃ</rt></ruby></span></span></p>
 <div class="qa"><label><input type="radio" name="q_問5-2-1" value="1"><span>1</span></label><label><input type="radio" name="q_問5-2-1" value="2"><span>2</span></label><label><input type="radio" name="q_問5-2-1" value="3"><span>3</span></label><label><input type="radio" name="q_問5-2-1" value="4"><span>4</span></label></div>
 <p class="furi"><strong><ruby>質問<rt>しつもん</rt></ruby>2</strong><br />
- 1. 1<ruby>番<rt>ばん</rt></ruby>の<ruby>自転車<rt>じてんしゃ</rt></ruby><br />
- 2. 2<ruby>番<rt>ばん</rt></ruby>の<ruby>自転車<rt>じてんしゃ</rt></ruby><br />
- 3. 3<ruby>番<rt>ばん</rt></ruby>の<ruby>自転車<rt>じてんしゃ</rt></ruby><br />
- 4. 4<ruby>番<rt>ばん</rt></ruby>の<ruby>自転車<rt>じてんしゃ</rt></ruby></p>
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">1<ruby>番<rt>ばん</rt></ruby>の<ruby>自転車<rt>じてんしゃ</rt></ruby></span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">2<ruby>番<rt>ばん</rt></ruby>の<ruby>自転車<rt>じてんしゃ</rt></ruby></span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">3<ruby>番<rt>ばん</rt></ruby>の<ruby>自転車<rt>じてんしゃ</rt></ruby></span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">4<ruby>番<rt>ばん</rt></ruby>の<ruby>自転車<rt>じてんしゃ</rt></ruby></span></span></p>
 <div class="qa"><label><input type="radio" name="q_問5-2-2" value="1"><span>1</span></label><label><input type="radio" name="q_問5-2-2" value="2"><span>2</span></label><label><input type="radio" name="q_問5-2-2" value="3"><span>3</span></label><label><input type="radio" name="q_問5-2-2" value="4"><span>4</span></label></div></div></div><div id="screen-result"></div><script>
 const KEYS = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "問1-1", "問1-2", "問1-3", "問1-4", "問1-5", "問2-1", "問2-2", "問2-3", "問2-4", "問2-5", "問2-6", "問3-1", "問3-2", "問3-3", "問3-4", "問3-5", "問4-1", "問4-2", "問4-3", "問4-4", "問4-5", "問4-6", "問4-7", "問4-8", "問4-9", "問4-10", "問4-11", "問5-1", "問5-2-1", "問5-2-2"], TESTID = "20260928_1", LEVEL = "N2";
 const GENGO_KEYS = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71"], CHOUKAI_KEYS = ["問1-1", "問1-2", "問1-3", "問1-4", "問1-5", "問2-1", "問2-2", "問2-3", "問2-4", "問2-5", "問2-6", "問3-1", "問3-2", "問3-3", "問3-4", "問3-5", "問4-1", "問4-2", "問4-3", "問4-4", "問4-5", "問4-6", "問4-7", "問4-8", "問4-9", "問4-10", "問4-11", "問5-1", "問5-2-1", "問5-2-2"];
@@ -1404,6 +1508,21 @@ const STORAGE = "server";
 // file:// these fetches simply fail and grading falls back to a download.
 const API = '/api/tests/' + encodeURIComponent(TESTID) + '/';
 
+// Every POST goes out after the previous one has finished. The debounce, the
+// 15 s heartbeat, persistNow() and submit() used to overlap, and the server could
+// then land an older 受験状態 (phase 'gengo') after a newer one.
+let _postChain = Promise.resolve();
+function queuePost(route, body){
+  const run = () => fetch(API + route, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(body)
+  });
+  const p = _postChain.then(run, run);
+  _postChain = p.then(()=>{}, ()=>{});
+  return p;
+}
+
 const StoreServer = {
   async loadAnswers(){
     try {
@@ -1412,11 +1531,8 @@ const StoreServer = {
     } catch(e){ return null; }
   },
   saveAnswers(payload){
-    return fetch(API + 'answers', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({answers: payload})
-    }).then(()=>{}, ()=>{ /* file:// or offline: grade download only */ });
+    return queuePost('answers', {answers: payload})
+      .then(()=>{}, ()=>{ /* file:// or offline: grade download only */ });
   },
   async loadResult(){
     try {
@@ -1426,11 +1542,7 @@ const StoreServer = {
   },
   async submit(payload, res){
     try {
-      const r = await fetch(API + 'submit', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({answers: payload, result: res})
-      });
+      const r = await queuePost('submit', {answers: payload, result: res});
       const data = r.ok ? await r.json() : null;
       if (data && data.success) return {saved: true, message: data.message};
     } catch(e){}
@@ -1676,7 +1788,12 @@ function _isQa(el){ return !!(el && el.classList && el.classList.contains('qa'))
 function _isBreak(el){ return !!(el && (/^H[12]$/.test(el.tagName) || el.tagName === 'HR')); }
 function _isUnit(el){ return !!(el && el.tagName === 'H3'); }
 function _isOptLine(el){
-  return !!(el && el.tagName === 'P' && /^\s*[1-4][.．]/.test(el.textContent || ''));
+  if (!el || el.tagName !== 'P') return false;
+  if (/^\s*[1-4][.．]/.test(el.textContent || '')) return true;
+  // The booklet prints options as `1　はしら` with no period (booklet.widen()),
+  // so an option paragraph is recognised by its grid/row markup instead.
+  const f = el.firstElementChild;
+  return !!(f && (f.classList.contains('bk-opts') || f.classList.contains('bk-ov')));
 }
 function _looksLikeStem(el){
   if (!el || el.tagName !== 'P') return false;
@@ -2121,6 +2238,7 @@ async function submitAll(auto){
         && !confirm("聴解を提出して採点します。\n\nよろしいですか？")) return;
   }
   clockFreeze();
+  clearTimeout(_saveTimer);     // a pending debounced save must not land after the result
   PHASE = 'done';
   const audio = document.getElementById('au');
   if (audio) audio.pause();
@@ -2447,12 +2565,16 @@ function pick(inp){
     return;
   }
   sel.insertAdjacentHTML('beforeend', '<option value="">— 選択 —</option>');
+  // compose_choukai writes {label, start} with no `type`: 「問題2」 is a 大問
+  // header, 「問題2 3番」 an item. An explicit `type` still wins.
+  const isSec = c => c.type ? c.type === 'section' : !/番|質問/.test(c.label);
   let sec = "";
   for (const c of d.chapters){
-    if (c.type === 'section'){ sec = c.label; }
+    if (isSec(c)){ sec = c.label; }
     const mm = String(Math.floor(c.start/60)).padStart(2,'0');
     const ss = String(Math.floor(c.start%60)).padStart(2,'0');
-    const name = c.type === 'section' ? c.label : '　' + sec + ' ' + c.label;
+    const name = isSec(c) ? c.label
+      : '　' + (sec && c.label.indexOf(sec) !== 0 ? sec + ' ' : '') + c.label;
     sel.insertAdjacentHTML('beforeend',
       '<option value="'+c.start+'">'+name+'  ('+mm+':'+ss+')</option>');
   }

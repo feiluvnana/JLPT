@@ -1,18 +1,57 @@
 <!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet"><title>言語知識・読解</title>
 <!-- src_sha: 言語知識・読解.md=cc4003161e1b -->
 <style>
-@page { size: A4; margin: 18mm 16mm; }
+@page { size: A4; margin: 18mm 16mm 20mm;
+  @bottom-center { content: "— " counter(page) " —"; font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", sans-serif;
+                   font-size: 10pt; color: #1a1a1a; } }
+/* The cover is not page 1: official numbering starts on the first page of
+   questions. A named page is the one reset Chrome honours (counter-reset on an
+   element or on @page:first is ignored). */
+@page bk-cover { counter-reset: page 0; @bottom-center { content: none; }
+                 @top-right { content: none; } }
 body { font-family: "YuMincho", "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", "Noto Serif CJK JP", serif;
-       font-size: 11.5pt; line-height: 1.9; color: #1a1a1a; }
-h1 { font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", sans-serif; font-size: 15pt;
-     border-bottom: 2.5px solid #1a1a1a; padding-bottom: 5px;
-     margin: 30px 0 14px; page-break-after: avoid; }
-h2 { font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", sans-serif; font-size: 12pt;
-     background: #efefef; border-left: 5px solid #444; padding: 5px 10px;
-     margin: 26px 0 12px; page-break-after: avoid; }
-h3 { font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", sans-serif; font-size: 11pt;
-     margin: 20px 0 8px; page-break-after: avoid; }
-p { margin: 12px 0; }
+       font-size: 11.5pt; line-height: 1.9; color: #1a1a1a; background: #fff; }
+h1, h2, h3 { font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", sans-serif; break-after: avoid; page-break-after: avoid;
+             break-inside: avoid; }
+h1 { font-size: 15pt; border-bottom: 2.5px solid #1a1a1a; padding-bottom: 5px;
+     margin: 30px 0 14px; }
+/* 【文字・語彙】/【文法】/【読解】: official prints the part as a small boxed
+   label (the tab on the page edge), not a banner. */
+h1.bk-part { display: table; font-size: 10.5pt; letter-spacing: .08em;
+             border: 1px solid #1a1a1a; padding: 1px 12px; margin: 22px 0 12px; }
+h2 { font-size: 12pt; margin: 26px 0 12px; }
+/* 「問題1　＿＿の言葉の…」: bold Gothic, the instruction hanging under itself. */
+h2.bk-mondai { display: flex; align-items: baseline; gap: 0 1em; line-height: 1.75; }
+h2.bk-mondai .bk-mn { flex: 0 0 auto; white-space: nowrap; }
+h2.bk-mondai .bk-mi { flex: 1 1 auto; min-width: 0; }
+h2.bk-mondai-l { font-size: 18pt; margin: 34px 0 8px; }
+h3 { font-size: 11pt; margin: 20px 0 8px; }
+p { margin: 12px 0; orphans: 2; widows: 2; }
+strong { font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", sans-serif; }
+/* The item number, in a thin box (official 「[11] 9時（　）の…」). */
+strong.bk-qn { display: inline-block; min-width: 1.55em; padding: 0 .28em;
+               border: 1px solid #1a1a1a; line-height: 1.3; text-align: center;
+               font-size: .9em; margin-right: .6em; box-sizing: border-box; }
+/* The tested word / the marked span: official UNDERLINES it in the body face.
+   The Markdown convention stays **word**; only its rendering changed. */
+strong.bk-tw { font-family: inherit; font-weight: normal; text-decoration: underline;
+               text-decoration-thickness: 1px; text-underline-offset: .24em; }
+/* Options: 「1　はしら」, no period, on four equal columns — or two, or one,
+   whichever the longest option fits (widen() decides). */
+.bk-opts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+           gap: .05em 1em; margin: .3em 0 .1em 2.1em; }
+.bk-opts.bk-c2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.bk-opts.bk-c1 { grid-template-columns: minmax(0, 1fr); }
+.bk-o, .bk-ov { display: flex; gap: .95em; }
+.bk-ov { margin: .05em 0 0 2.1em; }
+.bk-on { flex: 0 0 auto; }
+.bk-ot { flex: 1 1 auto; min-width: 0; }
+.bk-opts + br, .bk-ov + br { display: none; }
+/* The stem hangs past its number box; its options sit on the same edge. */
+p:has(> strong.bk-qn:first-child) { padding-left: 1.95em; text-indent: -1.95em; }
+p:has(> strong.bk-qn:first-child) > .bk-opts,
+p:has(> strong.bk-qn:first-child) > .bk-ov { margin-left: 0; }
+.bk-opts, .bk-ov, strong.bk-qn, ruby { text-indent: 0; }
 /* Furigana: WeasyPrint has NO ruby layout (and ignores ruby-position), so the
    reading is stacked manually. rt is taken out of flow and pinned above the
    base, which keeps the base glyphs on the text baseline and leaves line
@@ -45,27 +84,74 @@ rp { display: none; }
 /* Only blocks that actually carry furigana get extra leading, so the reading
    clears the descenders of the line above without loosening plain text. */
 p.furi, li.furi { line-height: 2.1; }
-.vocab-notes { margin-top: 8px; font-size: 9.5pt; color: #333; line-height: 1.6; border-top: 1px dashed #aaa; padding-top: 6px; }
+/* 注 glosses: body-ish size under the passage, no rule; the inline （注N）
+   marker is small and raised, as printed. */
+.vocab-notes { margin: 10px 0 0; font-size: 10pt; line-height: 1.75; color: #1a1a1a; }
+.bk-chu { font-size: .68em; position: relative; top: -.4em; }
 table { border-collapse: collapse; margin: 10px 0; width: 100%; page-break-inside: avoid; }
 th, td { border: 1px solid #888; padding: 4px 9px; font-size: 10pt;
          line-height: 1.6; }
 th { background: #f0f0f0; font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", sans-serif; }
 blockquote { border: 1px solid #999; background: #fafafa; margin: 10px 0;
              padding: 10px 14px; page-break-inside: avoid; }
-/* 問題9-14: the passage/notice text official booklets print inside a ruled
-   box, separate from the questions below it. See box_passages(). */
-.passage-box { border: 1px solid #999; background: #fafafa; margin: 10px 0 16px;
-                padding: 10px 16px; page-break-inside: avoid; overflow-x: auto; }
-.passage-box > *:first-child { margin-top: 0; }
+/* 問題9-14: the passage/notice text official booklets print inside a thin
+   black rule on white, separate from the questions below it. See
+   box_passages(). A box too tall for a page (問題13's essay, 問題14's flyer)
+   carries the .bk-flow marker and may break; the rest stay whole. The box must
+   not scroll in print: Chrome lays a scroll container out as one unbreakable
+   block, which is how 問題14 once printed a blank page. */
+.passage-box { border: 1px solid #1a1a1a; background: #fff; margin: 10px 0 16px;
+               padding: 12px 18px; break-inside: avoid; page-break-inside: avoid; }
+.passage-box:has(> .bk-flow) { break-inside: auto; page-break-inside: auto; }
+.passage-box > *:first-child, .passage-box > .bk-flow + * { margin-top: 0; }
 .passage-box > *:last-child { margin-bottom: 0; }
+.bk-flow { display: none; }
+/* 聴解: 「― メモ ―」 centred, with room to write under it. */
+.bk-memo { text-align: center; letter-spacing: .25em; margin: 16px 0 72px; }
 hr { border: none; border-top: 1px dashed #999; margin: 22px 0; }
-strong { font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", sans-serif; }
-
+/* The 問題用紙 cover (booklet HTML only — the sheet has its own gate screen). */
+.bk-cover { font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", sans-serif; }
+.bk-cv-head { display: flex; justify-content: space-between; align-items: baseline; }
+.bk-cv-en { font-size: 10pt; font-weight: 700; }
+.bk-cv-kind { font-size: 17pt; font-weight: 700; }
+.bk-cv-level { text-align: center; font-size: 46pt; font-weight: 800; line-height: 1.2;
+               margin: 1.1em 0 .1em; letter-spacing: .04em; }
+.bk-cv-title { text-align: center; font-size: 21pt; font-weight: 800; line-height: 1.4; }
+.bk-cv-time { text-align: center; font-size: 17pt; font-weight: 700; margin: .3em 0 .9em; }
+.bk-cv-notes { border: 1px solid #1a1a1a; padding: .8em 1.8em 1em; margin: 0 auto 1.4em;
+               max-width: 36em; font-family: "YuMincho", "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif; }
+.bk-cv-nh { text-align: center; font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", sans-serif; font-weight: 700; font-size: 13pt;
+            letter-spacing: .5em; margin-bottom: .4em; }
+.bk-cv-nh small { font-size: 7.5pt; letter-spacing: 0; }
+.bk-cv-item { display: flex; gap: .8em; margin: .35em 0; line-height: 1.6; }
+.bk-cv-item small { display: block; font-size: 8pt; color: #333; line-height: 1.35; }
+.bk-cv-box { display: inline-block; border: 1px solid #1a1a1a; min-width: 1.2em;
+             line-height: 1.15; text-align: center; font-size: .85em; font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", sans-serif; }
+.bk-cv-id { max-width: 36em; margin: .7em auto; font-family: "YuMincho", "Yu Mincho", serif; }
+.bk-cv-id th { width: 45%; background: #fff; font-weight: normal; text-align: left;
+               font-family: inherit; }
+.bk-cv-id td { height: 2.2em; }
+@media print {
+  .bk-cover { page: bk-cover; break-after: page; }
+  h1.bk-brk, h1.bk-key { break-before: page; page-break-before: always; }
+  /* An item (stem + its options) never splits across pages. */
+  p:has(> .bk-opts), p:has(> .bk-ov) { break-inside: avoid; page-break-inside: avoid; }
+  /* 聴解: every 問題 opens a new page, as printed (the first follows the label). */
+  h2.bk-mondai-l { break-before: page; page-break-before: always; }
+  h1.bk-part + h2.bk-mondai-l { break-before: auto; page-break-before: auto; }
+  /* 「右のページは…の案内である」: the flyer gets a page of its own. */
+  .passage-box:has(> .bk-flyer) { break-before: page; page-break-before: always; }
+}
+@page { @top-right { content: "言語知識（文字・語彙・文法）・読解"; font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", sans-serif; font-size: 8.5pt; color: #333; } }
 @media screen {
   :root { --gutter: 1.6em; }
   body { max-width: 60em; margin: 0 auto; padding: 2.5em var(--gutter) 6em;
          background: #fff; }
   table { max-width: 100%; }
+  /* A wide 問題14 table scrolls sideways on a narrow screen. Screen only: a
+     scroll container cannot break across printed pages (see .passage-box). */
+  .passage-box { overflow-x: auto; }
+  .bk-cover { border: 1px solid #d4d4d4; padding: 2.4em 2.6em 1.6em; margin: 0 0 3em; }
 }
 @media screen and (max-width: 48em) {
   :root { --gutter: 0.8em; }
@@ -73,134 +159,145 @@ strong { font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", 
   table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
   blockquote { padding: 8px 10px; margin: 8px 0; }
   h1 { font-size: 13.5pt; margin: 22px 0 10px; }
-  h2 { font-size: 11pt; padding: 4px 8px; margin: 18px 0 10px; }
+  h2 { font-size: 11pt; margin: 18px 0 10px; }
+  h2.bk-mondai-l { font-size: 15pt; }
+  .passage-box { padding: 10px 12px; }
+  /* Four columns do not fit a phone: halve them, never wrap mid-option. */
+  .bk-opts { margin-left: .4em; }
+  .bk-opts.bk-c4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .bk-opts.bk-c2 { grid-template-columns: minmax(0, 1fr); }
+  .bk-ov { margin-left: .4em; }
+  .bk-cover { padding: 1.2em 1em; }
+  .bk-cv-level { font-size: 32pt; }
+  .bk-cv-title { font-size: 15pt; }
+  .bk-cv-notes { padding: .6em .9em; }
 }
-</style></head><body><h1>【文字・語彙】</h1>
-<h2>問題1 ＿＿の言葉の読み方として最もよいものを、1・2・3・4から一つ選びなさい。</h2>
-<p><strong>1</strong> 状況を<strong>詳細</strong>に書いてください。<br />
- 1. そうざい　　　2. そうさい　　　3. しょうざい　　　4. しょうさい</p>
-<p><strong>2</strong> <strong>分析</strong>には少し時間がかかります。<br />
- 1. ぶんせき　　　2. ぶんかい　　　3. ぶんせつ　　　4. ぶんかつ</p>
-<p><strong>3</strong> 髪の毛がくしに<strong>絡まって</strong>しまって。<br />
- 1. はさまって　　　2. からまって　　　3. つまって　　　4. たまって</p>
-<p><strong>4</strong> ここでは<strong>農薬</strong>をまったく使わずに野菜を栽培している。<br />
- 1. のんやく　　　2. のうやく　　　3. のうらく　　　4. のんらく</p>
-<p><strong>5</strong> とても<strong>鮮やか</strong>だったことを覚えています。<br />
- 1. おだやか　　　2. さわやか　　　3. あざやか　　　4. なごやか</p>
-<h2>問題2 ＿＿の言葉を漢字で書くとき、最もよいものを1・2・3・4から一つ選びなさい。</h2>
-<p><strong>6</strong> この会社を<strong>しぼう</strong>した理由を教えてください。<br />
- 1. 希望　　　2. 志望　　　3. 指望　　　4. 貴望</p>
-<p><strong>7</strong> あの作家の<strong>たんぺん</strong>小説はとても面白い。<br />
- 1. 短編　　　2. 単編　　　3. 短遍　　　4. 単遍</p>
-<p><strong>8</strong> 桜の花が<strong>ちって</strong>いくのを眺める。<br />
- 1. 消って　　　2. 去って　　　3. 散って　　　4. 失って</p>
-<p><strong>9</strong> このセーターにはとても<strong>やわらかい</strong>毛糸が使われている。<br />
- 1. 伸らかい　　　2. 軽らかい　　　3. 暖らかい　　　4. 柔らかい</p>
-<p><strong>10</strong> 最近あまり体調がよくないのは、<strong>ひろう</strong>のせいだろう。<br />
- 1. 疲労　　　2. 病労　　　3. 疲老　　　4. 病老</p>
-<h2>問題3 （　）に入れるのに最もよいものを、1・2・3・4から一つ選びなさい。</h2>
-<p><strong>11</strong> しょうゆの（　）原料は大豆です。<br />
- 1. 主　　　2. 要　　　3. 正　　　4. 本</p>
-<p><strong>12</strong> 子どもたちの読書（　）が進んでいるらしい。<br />
- 1. 抜け　　　2. 逃げ　　　3. 別れ　　　4. 離れ</p>
-<p><strong>13</strong> 経営の方針については社長が決定（　）を持っている。<br />
- 1. 任　　　2. 手　　　3. 権　　　4. 裁</p>
-<h2>問題4 （　）に入れるのに最もよいものを、1・2・3・4から一つ選びなさい。</h2>
-<p><strong>14</strong> 両親はおいしい料理で客を（　）のが好きだ。<br />
- 1. もてなす　　　2. おだてる　　　3. ゆるす　　　4. すくう</p>
-<p><strong>15</strong> その駅は各駅停車の電車は止まりますが、急行電車は（　）します。<br />
- 1. 経由　　　2. 直進　　　3. 通過　　　4. 横断</p>
-<p><strong>16</strong> 見た人の記憶に残るような（　）のあるポスターにしたい。<br />
- 1. インパクト　　　2. プレッシャー　　　3. チャージ　　　4. ショック</p>
-<p><strong>17</strong> 地元の選手がオリンピックでメダルを獲得したことがテレビで（　）された。<br />
- 1. 通信　　　2. 普及　　　3. 伝言　　　4. 報道</p>
-<p><strong>18</strong> 台風で電車が運休になり通勤や通学で利用する人に（　）影響を与えた。<br />
- 1. 大まかな　　　2. 偉大な　　　3. 大げさな　　　4. 多大な</p>
-<p><strong>19</strong> 西川さんは転校してきたばかりだが、友達もできて、もうすっかりクラスに（　）いる。<br />
- 1. 当てはまって　　　2. 溶け込んで　　　3. 結びついて　　　4. 触れ合って</p>
-<p><strong>20</strong> 私は（　）性格なので、時々財布を持たずに買い物に出かけてしまうことがある。<br />
- 1. あつかましい　　　2. うっとうしい　　　3. そそっかしい　　　4. さわがしい</p>
-<h2>問題5 ＿＿の言葉に意味が最も近いものを、1・2・3・4から一つ選びなさい。</h2>
-<p><strong>21</strong> 出張の日程は<strong>おおよそ</strong>決まりました。<br />
- 1. だいたい　　　2. すべて　　　3. やっと　　　4. もう</p>
-<p><strong>22</strong> 彼女はとても<strong>行儀</strong>がいい。<br />
- 1. アイディア　　　2. サービス　　　3. マナー　　　4. イメージ</p>
-<p><strong>23</strong> 中西さんは、いつも<strong>いばっている</strong>。<br />
- 1. 眠そうにして　　　2. 偉そうにして　　　3. 暇そうにして　　　4. 嫌そうにして</p>
-<p><strong>24</strong> 使わない物は、ここに<strong>収納して</strong>ください。<br />
- 1. 並べて　　　2. 捨てて　　　3. 預けて　　　4. しまって</p>
-<p><strong>25</strong> 横山さんは<strong>不平</strong>を言うことが多い。<br />
- 1. 冗談　　　2. 文句　　　3. うそ　　　4. わがまま</p>
-<h2>問題6 次の言葉の使い方として最もよいものを、1・2・3・4から一つ選びなさい。</h2>
-<p><strong>26</strong> <strong>共有</strong><br />
- 1. 市民ボランティアの<strong>共有</strong>で、留学生のスピーチコンテストが行われた。<br />
- 2. 大学と企業が<strong>共有</strong>で新しい技術の研究を行っている。<br />
- 3. これらの事件には、発生場所に<strong>共有</strong>の特徴があることが分かった。<br />
- 4. 結婚してから購入した物は、夫婦の<strong>共有</strong>の財産になる。</p>
-<p><strong>27</strong> <strong>鋭い</strong><br />
- 1. 動物たちが自然界で生きていくためには、<strong>鋭い</strong>感覚が必要だ。<br />
- 2. 弟は記憶が<strong>鋭くて</strong>、本に載っているたくさんの国名や国旗をすぐに覚えた。<br />
- 3. 赤ちゃんの肌は<strong>鋭い</strong>から、少しの刺激で赤くなってしまう。<br />
- 4. 運動の能力が<strong>鋭い</strong>人は、どんなスポーツでもすぐに上達する。</p>
-<p><strong>28</strong> <strong>はきはき</strong><br />
- 1. よく眠ったので、今日は頭が<strong>はきはき</strong>としている。<br />
- 2. ビルの屋上から、遠くの山が<strong>はきはき</strong>と見える。<br />
- 3. その学生は、聞かれたことに<strong>はきはき</strong>と答えた。<br />
- 4. ミスの原因を<strong>はきはき</strong>とさせるために、調査が行われた。</p>
-<p><strong>29</strong> <strong>鑑賞</strong><br />
- 1. 学校の授業で、工場へ行って自動車を組み立てる様子を<strong>鑑賞</strong>した。<br />
- 2. 週末、市のコンサートホールでクラシック音楽を<strong>鑑賞</strong>した。<br />
- 3. 資料を読んで、自然を守るための国の活動について<strong>鑑賞</strong>した。<br />
- 4. レストランで、素材の良さを生かした料理を舌でじっくり<strong>鑑賞</strong>した。</p>
-<p><strong>30</strong> <strong>着々</strong><br />
- 1. ベランダが<strong>着々</strong>と古くなって危険なので、修理を決めた。<br />
- 2. ゲームに夢中になっていたら、時間が<strong>着々</strong>とたっていた。<br />
- 3. 来週のパーティーの準備は<strong>着々</strong>と進んでいるようだ。<br />
- 4. 夕方になって、外は<strong>着々</strong>と涼しくなってきている。</p>
-<h1>【文法】</h1>
-<h2>問題7 次の文の（　）に入れるのに最もよいものを、1・2・3・4から一つ選びなさい。</h2>
-<p><strong>31</strong> 卓球クラブの山谷さんは大きな大会で何度も優勝しているのに、「私（　）まだまだですよ。」といつも言っている。<br />
- 1. まで　　　2. さえ　　　3. なんか　　　4. ばかり</p>
-<p><strong>32</strong> 携帯電話を一人一台持つのは当たり前と言われる現代で、私のように携帯電話なしで生活している人は（　）いるのだろうか。<br />
- 1. どうも　　　2. どれほど　　　3. どうしても　　　4. どんなに</p>
-<p><strong>33</strong> 花山市では、きゅうりやトマト、なす（　）夏の野菜が多く生産されている。<br />
- 1. とする　　　2. に関する　　　3. といった　　　4. に沿った</p>
-<p><strong>34</strong> 彼とは数年前に先輩の結婚式で（　）、ずっと会っていない。<br />
- 1. 会ったきり　　　2. 会ったばかりか　　　3. 会っただけに　　　4. 会ったところ</p>
-<p><strong>35</strong> 近所に子供向けのダンススクールができるらしいので、オープンしたら、娘を体験レッスンに（　）と思っている。<br />
- 1. 参加してみようか　　　2. 参加させてみようか　　　3. 参加してみてよかった　　　4. 参加させてみてよかった</p>
-<p><strong>36</strong> （カメラ屋で）<br />
+</style></head><body><section class="bk-cover"><div class="bk-cv-head"><span class="bk-cv-en">Language Knowledge (Vocabulary/Grammar)・Reading</span><span class="bk-cv-kind">問題用紙</span></div><div class="bk-cv-level">N2</div><div class="bk-cv-title">言語知識（文字・語彙・文法）・読解</div><div class="bk-cv-time">（105分）</div><div class="bk-cv-notes"><div class="bk-cv-nh">注意 <small>Notes</small></div><div class="bk-cv-item"><span>1.</span><div>試験が始まるまで、この問題用紙を開けないでください。<small>Do not open this question booklet until the test begins.</small></div></div><div class="bk-cv-item"><span>2.</span><div>この問題用紙を持って帰ることはできません。<small>Do not take this question booklet with you after the test.</small></div></div><div class="bk-cv-item"><span>3.</span><div>受験番号と名前を下の欄に、受験票と同じように書いてください。<small>Write your examinee registration number and name clearly in each box below as written on your test voucher.</small></div></div><div class="bk-cv-item"><span>4.</span><div>問題には解答番号の<span class="bk-cv-box">1</span>、<span class="bk-cv-box">2</span>、<span class="bk-cv-box">3</span> … が付いています。解答は、解答用紙にある同じ番号のところにマークしてください。<small>One of the row numbers <span class="bk-cv-box">1</span>、<span class="bk-cv-box">2</span>、<span class="bk-cv-box">3</span> … is given for each question. Mark your answer in the same row of the answer sheet.</small></div></div></div><table class="bk-cv-id"><tr><th>受験番号　Examinee Registration Number</th><td></td></tr></table><table class="bk-cv-id"><tr><th>名前　Name</th><td></td></tr></table></section><h1 class="bk-part">【文字・語彙】</h1>
+<h2 class="bk-mondai"><span class="bk-mn">問題1</span> <span class="bk-mi">＿＿の言葉の読み方として最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
+<p><strong class="bk-qn">1</strong> 状況を<strong class="bk-tw">詳細</strong>に書いてください。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">そうざい</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">そうさい</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">しょうざい</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">しょうさい</span></span></span></p>
+<p><strong class="bk-qn">2</strong> <strong class="bk-tw">分析</strong>には少し時間がかかります。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">ぶんせき</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">ぶんかい</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">ぶんせつ</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">ぶんかつ</span></span></span></p>
+<p><strong class="bk-qn">3</strong> 髪の毛がくしに<strong class="bk-tw">絡まって</strong>しまって。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">はさまって</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">からまって</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">つまって</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">たまって</span></span></span></p>
+<p><strong class="bk-qn">4</strong> ここでは<strong class="bk-tw">農薬</strong>をまったく使わずに野菜を栽培している。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">のんやく</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">のうやく</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">のうらく</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">のんらく</span></span></span></p>
+<p><strong class="bk-qn">5</strong> とても<strong class="bk-tw">鮮やか</strong>だったことを覚えています。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">おだやか</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">さわやか</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">あざやか</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">なごやか</span></span></span></p>
+<h2 class="bk-mondai"><span class="bk-mn">問題2</span> <span class="bk-mi">＿＿の言葉を漢字で書くとき、最もよいものを1・2・3・4から一つ選びなさい。</span></h2>
+<p><strong class="bk-qn">6</strong> この会社を<strong class="bk-tw">しぼう</strong>した理由を教えてください。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">希望</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">志望</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">指望</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">貴望</span></span></span></p>
+<p><strong class="bk-qn">7</strong> あの作家の<strong class="bk-tw">たんぺん</strong>小説はとても面白い。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">短編</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">単編</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">短遍</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">単遍</span></span></span></p>
+<p><strong class="bk-qn">8</strong> 桜の花が<strong class="bk-tw">ちって</strong>いくのを眺める。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">消って</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">去って</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">散って</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">失って</span></span></span></p>
+<p><strong class="bk-qn">9</strong> このセーターにはとても<strong class="bk-tw">やわらかい</strong>毛糸が使われている。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">伸らかい</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">軽らかい</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">暖らかい</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">柔らかい</span></span></span></p>
+<p><strong class="bk-qn">10</strong> 最近あまり体調がよくないのは、<strong class="bk-tw">ひろう</strong>のせいだろう。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">疲労</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">病労</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">疲老</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">病老</span></span></span></p>
+<h2 class="bk-mondai"><span class="bk-mn">問題3</span> <span class="bk-mi">（　）に入れるのに最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
+<p><strong class="bk-qn">11</strong> しょうゆの（　）原料は大豆です。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">主</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">要</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">正</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">本</span></span></span></p>
+<p><strong class="bk-qn">12</strong> 子どもたちの読書（　）が進んでいるらしい。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">抜け</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">逃げ</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">別れ</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">離れ</span></span></span></p>
+<p><strong class="bk-qn">13</strong> 経営の方針については社長が決定（　）を持っている。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">任</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">手</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">権</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">裁</span></span></span></p>
+<h2 class="bk-mondai"><span class="bk-mn">問題4</span> <span class="bk-mi">（　）に入れるのに最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
+<p><strong class="bk-qn">14</strong> 両親はおいしい料理で客を（　）のが好きだ。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">もてなす</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">おだてる</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">ゆるす</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">すくう</span></span></span></p>
+<p><strong class="bk-qn">15</strong> その駅は各駅停車の電車は止まりますが、急行電車は（　）します。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">経由</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">直進</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">通過</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">横断</span></span></span></p>
+<p><strong class="bk-qn">16</strong> 見た人の記憶に残るような（　）のあるポスターにしたい。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">インパクト</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">プレッシャー</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">チャージ</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">ショック</span></span></span></p>
+<p><strong class="bk-qn">17</strong> 地元の選手がオリンピックでメダルを獲得したことがテレビで（　）された。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">通信</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">普及</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">伝言</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">報道</span></span></span></p>
+<p><strong class="bk-qn">18</strong> 台風で電車が運休になり通勤や通学で利用する人に（　）影響を与えた。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">大まかな</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">偉大な</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">大げさな</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">多大な</span></span></span></p>
+<p><strong class="bk-qn">19</strong> 西川さんは転校してきたばかりだが、友達もできて、もうすっかりクラスに（　）いる。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">当てはまって</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">溶け込んで</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">結びついて</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">触れ合って</span></span></span></p>
+<p><strong class="bk-qn">20</strong> 私は（　）性格なので、時々財布を持たずに買い物に出かけてしまうことがある。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">あつかましい</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">うっとうしい</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">そそっかしい</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">さわがしい</span></span></span></p>
+<h2 class="bk-mondai"><span class="bk-mn">問題5</span> <span class="bk-mi">＿＿の言葉に意味が最も近いものを、1・2・3・4から一つ選びなさい。</span></h2>
+<p><strong class="bk-qn">21</strong> 出張の日程は<strong class="bk-tw">おおよそ</strong>決まりました。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">だいたい</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">すべて</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">やっと</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">もう</span></span></span></p>
+<p><strong class="bk-qn">22</strong> 彼女はとても<strong class="bk-tw">行儀</strong>がいい。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">アイディア</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">サービス</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">マナー</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">イメージ</span></span></span></p>
+<p><strong class="bk-qn">23</strong> 中西さんは、いつも<strong class="bk-tw">いばっている</strong>。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">眠そうにして</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">偉そうにして</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">暇そうにして</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">嫌そうにして</span></span></span></p>
+<p><strong class="bk-qn">24</strong> 使わない物は、ここに<strong class="bk-tw">収納して</strong>ください。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">並べて</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">捨てて</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">預けて</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">しまって</span></span></span></p>
+<p><strong class="bk-qn">25</strong> 横山さんは<strong class="bk-tw">不平</strong>を言うことが多い。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">冗談</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">文句</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">うそ</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">わがまま</span></span></span></p>
+<h2 class="bk-mondai"><span class="bk-mn">問題6</span> <span class="bk-mi">次の言葉の使い方として最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
+<p><strong class="bk-qn">26</strong> <strong>共有</strong><br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">市民ボランティアの<strong class="bk-tw">共有</strong>で、留学生のスピーチコンテストが行われた。</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">大学と企業が<strong class="bk-tw">共有</strong>で新しい技術の研究を行っている。</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">これらの事件には、発生場所に<strong class="bk-tw">共有</strong>の特徴があることが分かった。</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">結婚してから購入した物は、夫婦の<strong class="bk-tw">共有</strong>の財産になる。</span></span></p>
+<p><strong class="bk-qn">27</strong> <strong>鋭い</strong><br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">動物たちが自然界で生きていくためには、<strong class="bk-tw">鋭い</strong>感覚が必要だ。</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">弟は記憶が<strong class="bk-tw">鋭くて</strong>、本に載っているたくさんの国名や国旗をすぐに覚えた。</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">赤ちゃんの肌は<strong class="bk-tw">鋭い</strong>から、少しの刺激で赤くなってしまう。</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">運動の能力が<strong class="bk-tw">鋭い</strong>人は、どんなスポーツでもすぐに上達する。</span></span></p>
+<p><strong class="bk-qn">28</strong> <strong>はきはき</strong><br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">よく眠ったので、今日は頭が<strong class="bk-tw">はきはき</strong>としている。</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">ビルの屋上から、遠くの山が<strong class="bk-tw">はきはき</strong>と見える。</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">その学生は、聞かれたことに<strong class="bk-tw">はきはき</strong>と答えた。</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">ミスの原因を<strong class="bk-tw">はきはき</strong>とさせるために、調査が行われた。</span></span></p>
+<p><strong class="bk-qn">29</strong> <strong>鑑賞</strong><br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">学校の授業で、工場へ行って自動車を組み立てる様子を<strong class="bk-tw">鑑賞</strong>した。</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">週末、市のコンサートホールでクラシック音楽を<strong class="bk-tw">鑑賞</strong>した。</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">資料を読んで、自然を守るための国の活動について<strong class="bk-tw">鑑賞</strong>した。</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">レストランで、素材の良さを生かした料理を舌でじっくり<strong class="bk-tw">鑑賞</strong>した。</span></span></p>
+<p><strong class="bk-qn">30</strong> <strong>着々</strong><br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">ベランダが<strong class="bk-tw">着々</strong>と古くなって危険なので、修理を決めた。</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">ゲームに夢中になっていたら、時間が<strong class="bk-tw">着々</strong>とたっていた。</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">来週のパーティーの準備は<strong class="bk-tw">着々</strong>と進んでいるようだ。</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">夕方になって、外は<strong class="bk-tw">着々</strong>と涼しくなってきている。</span></span></p>
+<h1 class="bk-part">【文法】</h1>
+<h2 class="bk-mondai"><span class="bk-mn">問題7</span> <span class="bk-mi">次の文の（　）に入れるのに最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
+<p><strong class="bk-qn">31</strong> 卓球クラブの山谷さんは大きな大会で何度も優勝しているのに、「私（　）まだまだですよ。」といつも言っている。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">まで</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">さえ</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">なんか</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">ばかり</span></span></span></p>
+<p><strong class="bk-qn">32</strong> 携帯電話を一人一台持つのは当たり前と言われる現代で、私のように携帯電話なしで生活している人は（　）いるのだろうか。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">どうも</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">どれほど</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">どうしても</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">どんなに</span></span></span></p>
+<p><strong class="bk-qn">33</strong> 花山市では、きゅうりやトマト、なす（　）夏の野菜が多く生産されている。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">とする</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">に関する</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">といった</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">に沿った</span></span></span></p>
+<p><strong class="bk-qn">34</strong> 彼とは数年前に先輩の結婚式で（　）、ずっと会っていない。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">会ったきり</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">会ったばかりか</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">会っただけに</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">会ったところ</span></span></span></p>
+<p><strong class="bk-qn">35</strong> 近所に子供向けのダンススクールができるらしいので、オープンしたら、娘を体験レッスンに（　）と思っている。<br />
+<span class="bk-opts bk-c2"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">参加してみようか</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">参加させてみようか</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">参加してみてよかった</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">参加させてみてよかった</span></span></span></p>
+<p><strong class="bk-qn">36</strong> （カメラ屋で）<br />
 客「カメラを海に落としてしまって、電源が入らないんです。中に水が入ってしまったようなのですが…。」<br />
 店員「海水が入った（　）、修理は難しいかもしれませんが、一応見てみますね。」<br />
- 1. のであれば　　　2. ことであれば　　　3. のであって　　　4. ことであって</p>
-<p><strong>37</strong> 母 「引っ越しまでまだ時間があるけど、直前になって慌てないように、（　）荷物の整理を進めておいてね。」<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">のであれば</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">ことであれば</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">のであって</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">ことであって</span></span></span></p>
+<p><strong class="bk-qn">37</strong> 母 「引っ越しまでまだ時間があるけど、直前になって慌てないように、（　）荷物の整理を進めておいてね。」<br />
 息子「うん、分かった。」<br />
- 1. 少しだけでいいのに　　　2. 少しだけならよくても　　　3. 少しずつでいいから　　　4. 少しずつならよく</p>
-<p><strong>38</strong> 1896年の第1回オリンピックに参加した国と地域の数は14だったが、2004年には200を超える（　）。<br />
- 1. べきだった　　　2. つもりだった　　　3. ほかなかった　　　4. までになった</p>
-<p><strong>39</strong> チームでの仕事をスムーズに進めるには、メンバー同士の十分なコミュニケーション（　）。<br />
- 1. にすぎない　　　2. が欠かせない　　　3. のおかげだ　　　4. とのことだ</p>
-<p><strong>40</strong> 昨日、新しくできた遊園地に行った。電車より車のほうが早いだろうと思って車で行ったら、ひどい渋滞でかえって時間がかかってしまった。やはり電車で（　）。<br />
- 1. 行けばよかった　　　2. 行くはずだった　　　3. 行かなくて済んだ　　　4. 行きたくてしかたがなかった</p>
-<p><strong>41</strong> 往復2時間の通勤を週に5日、40年間続けたとすると、通勤時間は約2万時間で、2年以上の時間を通勤に使う（　）。<br />
- 1. ということにする　　　2. ということにしている　　　3. ということになる　　　4. ということになっている</p>
-<p><strong>42</strong> （電話で）<br />
+<span class="bk-opts bk-c2"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">少しだけでいいのに</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">少しだけならよくても</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">少しずつでいいから</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">少しずつならよく</span></span></span></p>
+<p><strong class="bk-qn">38</strong> 1896年の第1回オリンピックに参加した国と地域の数は14だったが、2004年には200を超える（　）。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">べきだった</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">つもりだった</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">ほかなかった</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">までになった</span></span></span></p>
+<p><strong class="bk-qn">39</strong> チームでの仕事をスムーズに進めるには、メンバー同士の十分なコミュニケーション（　）。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">にすぎない</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">が欠かせない</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">のおかげだ</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">とのことだ</span></span></span></p>
+<p><strong class="bk-qn">40</strong> 昨日、新しくできた遊園地に行った。電車より車のほうが早いだろうと思って車で行ったら、ひどい渋滞でかえって時間がかかってしまった。やはり電車で（　）。<br />
+<span class="bk-opts bk-c2"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">行けばよかった</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">行くはずだった</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">行かなくて済んだ</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">行きたくてしかたがなかった</span></span></span></p>
+<p><strong class="bk-qn">41</strong> 往復2時間の通勤を週に5日、40年間続けたとすると、通勤時間は約2万時間で、2年以上の時間を通勤に使う（　）。<br />
+<span class="bk-opts bk-c2"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">ということにする</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">ということにしている</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">ということになる</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">ということになっている</span></span></span></p>
+<p><strong class="bk-qn">42</strong> （電話で）<br />
 A「お電話ありがとうございます。クロカワ建設営業課でございます。」<br />
 B「高橋さんはいらっしゃいますか。」<br />
 A「失礼ですが、お名前を（　）。」<br />
- 1. 伺ったらいかがでしょうか　　　2. 伺ってもよろしいでしょうか　　　3. お伝えしたらいかがでしょうか　　　4. お伝えしてもよろしいでしょうか</p>
-<h2>問題8 次の文の ★ に入る最もよいものを、1・2・3・4から一つ選びなさい。</h2>
-<p><strong>43</strong> 「さわら」という魚は、漢字の「鰆」と書く＿＿ ★ ＿＿ ＿＿魚の一つです。<br />
- 1. ように　　　2. わかる　　　3. ことから　　　4. 春を代表する</p>
-<p><strong>44</strong> 会議での西山さんのプレゼンは、普段はなかなか＿＿ ＿＿ ★ ＿＿素晴らしかった。<br />
- 1. ぐらい　　　2. 課長が　　　3. 褒める　　　4. 褒めることがない</p>
-<p><strong>45</strong> 同じ気温＿＿ ＿＿ ★ ＿＿は大きく変わる。<br />
- 1. 感じ方　　　2. でも　　　3. 温度や風の強さなど　　　4. によって</p>
-<p><strong>46</strong> 「山川大学アニメ研究会」は＿＿ ＿＿ ★ 、＿＿できた団体だ。<br />
- 1. 学生が　　　2. 集まって　　　3. アニメが　　　4. 好きでたまらないという</p>
-<p><strong>47</strong> 会社の今井先輩は、自分はミスが多いといつも言っているが、＿＿ ＿＿ ★ ＿＿ように見える。<br />
- 1. 新人で　　　2. 何でも完璧にできている　　　3. 私からすると　　　4. わからないことばかりの</p>
-<h2>問題9 次の文章を読んで、文章全体の内容を考えて、48から51の中に入る最もよいものを、1・2・3・4から一つ選びなさい。</h2>
+<span class="bk-opts bk-c2"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">伺ったらいかがでしょうか</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">伺ってもよろしいでしょうか</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">お伝えしたらいかがでしょうか</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">お伝えしてもよろしいでしょうか</span></span></span></p>
+<h2 class="bk-mondai"><span class="bk-mn">問題8</span> <span class="bk-mi">次の文の ★ に入る最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
+<p><strong class="bk-qn">43</strong> 「さわら」という魚は、漢字の「鰆」と書く＿＿ ★ ＿＿ ＿＿魚の一つです。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">ように</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">わかる</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">ことから</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">春を代表する</span></span></span></p>
+<p><strong class="bk-qn">44</strong> 会議での西山さんのプレゼンは、普段はなかなか＿＿ ＿＿ ★ ＿＿素晴らしかった。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">ぐらい</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">課長が</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">褒める</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">褒めることがない</span></span></span></p>
+<p><strong class="bk-qn">45</strong> 同じ気温＿＿ ＿＿ ★ ＿＿は大きく変わる。<br />
+<span class="bk-opts bk-c2"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">感じ方</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">でも</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">温度や風の強さなど</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">によって</span></span></span></p>
+<p><strong class="bk-qn">46</strong> 「山川大学アニメ研究会」は＿＿ ＿＿ ★ 、＿＿できた団体だ。<br />
+<span class="bk-opts bk-c2"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">学生が</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">集まって</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">アニメが</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">好きでたまらないという</span></span></span></p>
+<p><strong class="bk-qn">47</strong> 会社の今井先輩は、自分はミスが多いといつも言っているが、＿＿ ＿＿ ★ ＿＿ように見える。<br />
+<span class="bk-opts bk-c2"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">新人で</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">何でも完璧にできている</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">私からすると</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">わからないことばかりの</span></span></span></p>
+<h2 class="bk-mondai"><span class="bk-mn">問題9</span> <span class="bk-mi">次の文章を読んで、文章全体の内容を考えて、48から51の中に入る最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
 <div class="passage-box">
 <p>以下は、留学生がスピーチのために書いた文章である。</p>
 <p>紅葉の異変</p>
@@ -210,26 +307,26 @@ A「失礼ですが、お名前を（　）。」<br />
 <p>葉の変色が始まるのは、1日の最低気温が大体8度以下になってからです。秋になっても、最低気温が一定の気温まで下がらなければ、紅葉は（　50　）。その後、さらに寒くなり、5〜6度まで下がると、紅葉は一気に進みます。また、5度以下の日が続くと、最も美しい紅葉が見られると言われています。</p>
 <p>紅葉に起きている異変を知り、このまま温暖化が進むと、日本の秋の景色が変わってしまう可能性もあるのではないかと思いました。もしかしたら、紅葉自体が見られなくなる日も来るかもしれません。紅葉を通して、温暖化が身近な問題であることをより強く（　51　）。</p>
 </div>
-<p><strong>48</strong><br />
- 1. そこの紅葉　　　2. そんな紅葉　　　3. そちら　　　4. 紅葉</p>
-<p><strong>49</strong><br />
- 1. 結局　　　2. 確かに　　　3. しかし　　　4. つまり</p>
-<p><strong>50</strong><br />
- 1. 始まらないのです　　　2. 始まらないためです　　　3. 始まらないのでしょうか　　　4. 始まらないためでしょうか</p>
-<p><strong>51</strong><br />
- 1. 感じているからだと思います　　　2. 感じられるところだと思います　　　3. 感じさせることができました　　　4. 感じるようになりました</p>
-<h1>【読解】</h1>
-<h2>問題10 次の(1)から(5)の文章を読んで、後の問いに対する答えとして最もよいものを、1・2・3・4から一つ選びなさい。</h2>
+<p><strong class="bk-qn">48</strong><br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">そこの紅葉</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">そんな紅葉</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">そちら</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">紅葉</span></span></span></p>
+<p><strong class="bk-qn">49</strong><br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">結局</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">確かに</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">しかし</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">つまり</span></span></span></p>
+<p><strong class="bk-qn">50</strong><br />
+<span class="bk-opts bk-c2"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">始まらないのです</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">始まらないためです</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">始まらないのでしょうか</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">始まらないためでしょうか</span></span></span></p>
+<p><strong class="bk-qn">51</strong><br />
+<span class="bk-opts bk-c2"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">感じているからだと思います</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">感じられるところだと思います</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">感じさせることができました</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">感じるようになりました</span></span></span></p>
+<h1 class="bk-part bk-brk">【読解】</h1>
+<h2 class="bk-mondai"><span class="bk-mn">問題10</span> <span class="bk-mi">次の(1)から(5)の文章を読んで、後の問いに対する答えとして最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
 <h3>(1)</h3>
 <div class="passage-box">
 <p>自分の言葉は自分の頭の中にしかなく、相手の言葉は相手の頭の中にしかありません。抽象的な言葉の場合には、まったく同じ意味で使用していることのほうが少ないと言えるでしょう。したがって、議論をする際には、言葉の定義づけ（注）が重要になってきます。相手がどういう意味でその言葉を使用しているのか、自分と同じ意味で使用しているのかを確認することは大切なことです。これは、論理的に会話をするうえでの大前提となるものです。</p>
 <p class="vocab-notes">（注）定義づけ：ここでは、意味を決めること</p>
 </div>
-<p><strong>52</strong> 筆者によると、論理的な会話をするのに必要なことは何か。<br />
- 1. 抽象的な言葉をできるだけ使用しないようにする。<br />
- 2. 抽象的な言葉を、正しい意味かどうかを確認してから使用する。<br />
- 3. 同じ言葉を、相手と自分が同じ意味で使用しているかを確認する。<br />
- 4. 相手の知らない言葉は、自分がどういう意味で使用しているかを説明する。</p>
+<p><strong class="bk-qn">52</strong> 筆者によると、論理的な会話をするのに必要なことは何か。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">抽象的な言葉をできるだけ使用しないようにする。</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">抽象的な言葉を、正しい意味かどうかを確認してから使用する。</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">同じ言葉を、相手と自分が同じ意味で使用しているかを確認する。</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">相手の知らない言葉は、自分がどういう意味で使用しているかを説明する。</span></span></p>
 <h3>(2)</h3>
 <div class="passage-box">
 <p>以下は、ある鉄道会社がホームページに掲載したお知らせである。</p>
@@ -241,24 +338,24 @@ A「失礼ですが、お名前を（　）。」<br />
 <p>ご不便をおかけいたしますが、ご理解くださいますようお願い申し上げます。</p>
 <p>北坂鉄道株式会社</p>
 </div>
-<p><strong>53</strong> このお知らせで伝えたいことは何か。<br />
- 1. 6月23日の午前2時から4時までは、インターネットで特急券が予約できない。<br />
- 2. 6月23日の午前2時から4時までは、ホームページで時刻表や運賃表が見られない。<br />
- 3. 6月23日の午前4時以降インターネットで特急券が予約できるようになる。<br />
- 4. 6月23日の午前4時以降、ホームページで時刻表や運賃表が見られるようになる。</p>
+<p><strong class="bk-qn">53</strong> このお知らせで伝えたいことは何か。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">6月23日の午前2時から4時までは、インターネットで特急券が予約できない。</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">6月23日の午前2時から4時までは、ホームページで時刻表や運賃表が見られない。</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">6月23日の午前4時以降インターネットで特急券が予約できるようになる。</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">6月23日の午前4時以降、ホームページで時刻表や運賃表が見られるようになる。</span></span></p>
 <h3>(3)</h3>
 <div class="passage-box">
-<p>新緑の時期に森を歩くと、地面に小さなロールキャベツ（注1）状の物体が落ちているのを見かけます。しばしば一か所に大量に落ちていて、とてもよく目立ちます。これはオトシブミという小さな甲虫（注2）の仲間が、自分の幼虫のためにつくったものです。この虫のメスは、数分の間に産んだ卵を木の葉で丁寧に包んでから地面に落とす習性（注3）をもちます。中で孵った（注4）幼虫は、内側からこの巻いた葉を食べて成長します。幼虫にとっては、この葉巻きは隠れ家であるとともに食料なわけです。</p>
+<p>新緑の時期に森を歩くと、地面に小さなロールキャベツ<span class="bk-chu">（注1）</span>状の物体が落ちているのを見かけます。しばしば一か所に大量に落ちていて、とてもよく目立ちます。これはオトシブミという小さな甲虫<span class="bk-chu">（注2）</span>の仲間が、自分の幼虫のためにつくったものです。この虫のメスは、数分の間に産んだ卵を木の葉で丁寧に包んでから地面に落とす習性<span class="bk-chu">（注3）</span>をもちます。中で孵った<span class="bk-chu">（注4）</span>幼虫は、内側からこの巻いた葉を食べて成長します。幼虫にとっては、この葉巻きは隠れ家であるとともに食料なわけです。</p>
 <p class="vocab-notes">（注1）ロールキャベツ：キャベツで肉を包んだ料理<br />
 （注2）甲虫：虫の一種<br />
 （注3）習性：ここでは、特徴的な性質<br />
 （注4）孵った：ここでは、卵から生まれた</p>
 </div>
-<p><strong>54</strong> オトシブミという虫について、筆者はどのように述べているか。<br />
- 1. 食料を木の葉で包んで落とし、幼虫はそれを見つけて食べる。<br />
- 2. 木の葉と卵を落とし、生まれた幼虫は食料をその葉で巻いて隠す。<br />
- 3. 卵を木の葉で包んで落とし、生まれた幼虫はその中でその葉を食べる。<br />
- 4. 落ちている木の葉に卵を産んで包み、幼虫はその中で生まれて育つ。</p>
+<p><strong class="bk-qn">54</strong> オトシブミという虫について、筆者はどのように述べているか。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">食料を木の葉で包んで落とし、幼虫はそれを見つけて食べる。</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">木の葉と卵を落とし、生まれた幼虫は食料をその葉で巻いて隠す。</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">卵を木の葉で包んで落とし、生まれた幼虫はその中でその葉を食べる。</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">落ちている木の葉に卵を産んで包み、幼虫はその中で生まれて育つ。</span></span></p>
 <h3>(4)</h3>
 <div class="passage-box">
 <p>以下は、ある会社に届いたメールである。</p>
@@ -272,32 +369,32 @@ A「失礼ですが、お名前を（　）。」<br />
 <p>JC文具<br />
 池西秋子　ikenishi_a@jcbungu.co.jp</p>
 </div>
-<p><strong>55</strong> このメールの用件は何か。<br />
- 1. 見本として5色すべての商品を送ってほしい。<br />
- 2. 見本として新色の3個を追加で送ってほしい。<br />
- 3. 見本の代金としていくら支払えばいいか教えてほしい。<br />
- 4. 商品5色を20個ずつ注文できるかどうか教えてほしい。</p>
+<p><strong class="bk-qn">55</strong> このメールの用件は何か。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">見本として5色すべての商品を送ってほしい。</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">見本として新色の3個を追加で送ってほしい。</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">見本の代金としていくら支払えばいいか教えてほしい。</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">商品5色を20個ずつ注文できるかどうか教えてほしい。</span></span></p>
 <h3>(5)</h3>
 <div class="passage-box">
-<p>競争や出世にはあまり関係のない、たとえばだれかを支えたり育んだり（注1）する仕事に喜びを感じる人もいるでしょう。仕事はそこそこに（注2）、趣味に生きることを楽しむ人もいるでしょう。たとえ、受験や就職、あるいは出世などの過酷な（注3）競争ゲームのただ中（注4）にあったとしても、そしてそれにある時、敗れてしまったとしても、わたしたちの人生の選択肢はそれだけではないし、「それで終わり」というわけでもありません。視点を変えれば、現代社会にはさまざまな生き方の世界が広がっているのです。</p>
+<p>競争や出世にはあまり関係のない、たとえばだれかを支えたり育んだり<span class="bk-chu">（注1）</span>する仕事に喜びを感じる人もいるでしょう。仕事はそこそこに<span class="bk-chu">（注2）</span>、趣味に生きることを楽しむ人もいるでしょう。たとえ、受験や就職、あるいは出世などの過酷な<span class="bk-chu">（注3）</span>競争ゲームのただ中<span class="bk-chu">（注4）</span>にあったとしても、そしてそれにある時、敗れてしまったとしても、わたしたちの人生の選択肢はそれだけではないし、「それで終わり」というわけでもありません。視点を変えれば、現代社会にはさまざまな生き方の世界が広がっているのです。</p>
 <p class="vocab-notes">（注1）育む：育てる<br />
 （注2）そこそこに：適度に<br />
 （注3）過酷な：非常に厳しい<br />
 （注4）ただ中：最中</p>
 </div>
-<p><strong>56</strong> 筆者の考えに合うのはどれか。<br />
- 1. 他人と競争せずに、自分の生き方を見つければいい。<br />
- 2. 人生の選択肢は多様であり、生き方は一つではない。<br />
- 3. 人生の選択肢が多ければ多いほど、世界が広がっていく。<br />
- 4. 仕事や趣味を通して、さまざまな生き方を知ることができる。</p>
-<h2>問題11 次の(1)から(4)の文章を読んで、後の問いに対する答えとして最もよいものを、1・2・3・4から一つ選びなさい。</h2>
+<p><strong class="bk-qn">56</strong> 筆者の考えに合うのはどれか。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">他人と競争せずに、自分の生き方を見つければいい。</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">人生の選択肢は多様であり、生き方は一つではない。</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">人生の選択肢が多ければ多いほど、世界が広がっていく。</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">仕事や趣味を通して、さまざまな生き方を知ることができる。</span></span></p>
+<h2 class="bk-mondai"><span class="bk-mn">問題11</span> <span class="bk-mi">次の(1)から(4)の文章を読んで、後の問いに対する答えとして最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
 <h3>(1)</h3>
 <div class="passage-box">
-<p>ほとんどの人が、スマホやタブレット（注1）を通して、大量のSNSやネットニュース（注2）を毎日見ていることでしょう。多くの人がその膨大な情報を読むことあるいは見ることに、かなりの時間を費やして（注3）いて、ネット上の情報に追われている印象すら受けます。その結果、じっくり考える時間がどんどん少なくなっているようにも感じられます。</p>
-<p>また、大量の情報がネット上に流されるようになった結果、自分に都合の良い情報にしか接しない人が増えてきています。技術革新（注4）のおかげではあるのですが、SNSやネットニュースでは、その人の履歴（注5）から判断して、その人が関心を持っていると思われる情報やニュースが目につくところに流れるような工夫がされています。</p>
-<p><strong>このような工夫</strong>はとても便利なことで、それによって時間が節約できたりする面は確かにあります。（中略）</p>
+<p>ほとんどの人が、スマホやタブレット<span class="bk-chu">（注1）</span>を通して、大量のSNSやネットニュース<span class="bk-chu">（注2）</span>を毎日見ていることでしょう。多くの人がその膨大な情報を読むことあるいは見ることに、かなりの時間を費やして<span class="bk-chu">（注3）</span>いて、ネット上の情報に追われている印象すら受けます。その結果、じっくり考える時間がどんどん少なくなっているようにも感じられます。</p>
+<p>また、大量の情報がネット上に流されるようになった結果、自分に都合の良い情報にしか接しない人が増えてきています。技術革新<span class="bk-chu">（注4）</span>のおかげではあるのですが、SNSやネットニュースでは、その人の履歴<span class="bk-chu">（注5）</span>から判断して、その人が関心を持っていると思われる情報やニュースが目につくところに流れるような工夫がされています。</p>
+<p><strong class="bk-tw">このような工夫</strong>はとても便利なことで、それによって時間が節約できたりする面は確かにあります。（中略）</p>
 <p>しかし、人々が見たいものだけを見て、信じている情報だけに接すると、発想が固定化してしまい、新しい進化が生まれにくくなってしまいます。また、思想的にも偏りのある考えが生まれやすくなってしまいます。</p>
-<p>そう考えると、この大量情報社会においては、いかに（注6）うまく情報を処理していくかがとても大事なことがわかります。また、大量の情報を、一部だけ最初から抜き出して把握する（注7）のではなく、偏りがない形で、大量に処理することも必要です。</p>
+<p>そう考えると、この大量情報社会においては、いかに<span class="bk-chu">（注6）</span>うまく情報を処理していくかがとても大事なことがわかります。また、大量の情報を、一部だけ最初から抜き出して把握する<span class="bk-chu">（注7）</span>のではなく、偏りがない形で、大量に処理することも必要です。</p>
 <p class="vocab-notes">（注1）スマホやタブレット：コンピューターの機能を持った小型の電子機器類<br />
 （注2）SNSやネットニュース：ここでは、インターネット上でやり取りされる情報やニュース<br />
 （注3）費やす：使う<br />
@@ -306,43 +403,43 @@ A「失礼ですが、お名前を（　）。」<br />
 （注6）いかに：どのように<br />
 （注7）把握する：理解する</p>
 </div>
-<p><strong>57</strong> <strong>このような工夫</strong>とはどのようなことか。<br />
- 1. 情報を要約して、短時間で大量に見られるようにすること。<br />
- 2. 多くの人が関心を持っている情報を優先的に流すこと。<br />
- 3. 見る人が自分では探せない情報を選んで、提供すること。<br />
- 4. 見る人の興味の傾向に合わせて、情報を提供すること。</p>
-<p><strong>58</strong> 大量情報社会について、筆者の考えに合うのはどれか。<br />
- 1. 発想が固定化しないように、大量の情報を工夫して処理しなければならない。<br />
- 2. 思想的に偏りのある考えでも、工夫してうまく処理しなければならない。<br />
- 3. 必要な情報を選ぶために、大量の情報をうまく処理しなければならない。<br />
- 4. 時間がかかっても、偏りなく大量の情報を処理しなければならない。</p>
+<p><strong class="bk-qn">57</strong> <strong class="bk-tw">このような工夫</strong>とはどのようなことか。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">情報を要約して、短時間で大量に見られるようにすること。</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">多くの人が関心を持っている情報を優先的に流すこと。</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">見る人が自分では探せない情報を選んで、提供すること。</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">見る人の興味の傾向に合わせて、情報を提供すること。</span></span></p>
+<p><strong class="bk-qn">58</strong> 大量情報社会について、筆者の考えに合うのはどれか。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">発想が固定化しないように、大量の情報を工夫して処理しなければならない。</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">思想的に偏りのある考えでも、工夫してうまく処理しなければならない。</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">必要な情報を選ぶために、大量の情報をうまく処理しなければならない。</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">時間がかかっても、偏りなく大量の情報を処理しなければならない。</span></span></p>
 <h3>(2)</h3>
 <div class="passage-box">
 <p>勉強にしても、仕事にしても、その能率には必ず波があり、それがないようにみえても、波が小さいだけである。つまり、人間は機械のようにいつも同じ調子ではたらいてはいないから、1時間に50個の製品がつくれるから、10時間で500個がつくれる、という具合には計算できない。従って、脳が最も快調にはたらいているときを基準にすると、たいていのときは不調ということになってしまう。</p>
-<p>それでも、全く無計画に勉強や仕事をするわけにもゆかないので、一応はスケジュールを立てる。その際に、快調に脳がはたらいているときの能率を基準にしてスケジュールを立てれば、そのスケジュールの通りにことが進行することは絶対にないといってもいい。その度に、自分の才能に失望していれば、失望しつづけることになる。さし迫った（注1）難しい状態では、どうしても脳がフル回転して（注2）いるときを基準にスケジュールを組むので、たいていは不完全な形で終わってしまう。スケジュールをつくるときには、せめて中等度に脳がはたらいているときの能率を基準にする必要がある。スケジュール以上にはかどっても（注3）誰もこまる人はいない。</p>
-<p>そして、スケジュールにこだわるよりは、脳の変動の波をできるだけ感じとり、能率が悪くても悲観（注4）せずに、必ず上げ潮のとき（注5）がくることを期待すればいい。そして、上げ潮のときには自分でもおどろくほどに能率が上がるので、そのときに一気に遅れをとり戻せばいいのである。</p>
+<p>それでも、全く無計画に勉強や仕事をするわけにもゆかないので、一応はスケジュールを立てる。その際に、快調に脳がはたらいているときの能率を基準にしてスケジュールを立てれば、そのスケジュールの通りにことが進行することは絶対にないといってもいい。その度に、自分の才能に失望していれば、失望しつづけることになる。さし迫った<span class="bk-chu">（注1）</span>難しい状態では、どうしても脳がフル回転して<span class="bk-chu">（注2）</span>いるときを基準にスケジュールを組むので、たいていは不完全な形で終わってしまう。スケジュールをつくるときには、せめて中等度に脳がはたらいているときの能率を基準にする必要がある。スケジュール以上にはかどっても<span class="bk-chu">（注3）</span>誰もこまる人はいない。</p>
+<p>そして、スケジュールにこだわるよりは、脳の変動の波をできるだけ感じとり、能率が悪くても悲観<span class="bk-chu">（注4）</span>せずに、必ず上げ潮のとき<span class="bk-chu">（注5）</span>がくることを期待すればいい。そして、上げ潮のときには自分でもおどろくほどに能率が上がるので、そのときに一気に遅れをとり戻せばいいのである。</p>
 <p class="vocab-notes">（注1）さし迫った：ここでは、時間に余裕がない<br />
 （注2）フル回転する：ここでは、最もはたらく<br />
 （注3）はかどる：順調に進む<br />
 （注4）悲観する：悲しむ<br />
 （注5）上げ潮のとき：調子が上向きになるとき</p>
 </div>
-<p><strong>59</strong> 筆者によると、スケジュールを立てる際の注意点は何か。<br />
- 1. 脳の調子がいいときを基準にしない。<br />
- 2. いつも脳が同じ調子ではたらけるようにする。<br />
- 3. 能率の変化を考えすぎない。<br />
- 4. 能率が悪くなったときに変更できるようにしておく。</p>
-<p><strong>60</strong> 筆者の考えに合うのはどれか。<br />
- 1. 能率を上げるためには、脳の状態をコントロールするといい。<br />
- 2. 脳の変動の波に合わせて勉強や仕事を進められる方法を探すといい。<br />
- 3. 計画の通りに行かなくても失望せずに、脳の調子が上がるのを待てばいい。<br />
- 4. 計画の通りに勉強や仕事を進めるために、脳の変動の波を小さくすればいい。</p>
+<p><strong class="bk-qn">59</strong> 筆者によると、スケジュールを立てる際の注意点は何か。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">脳の調子がいいときを基準にしない。</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">いつも脳が同じ調子ではたらけるようにする。</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">能率の変化を考えすぎない。</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">能率が悪くなったときに変更できるようにしておく。</span></span></p>
+<p><strong class="bk-qn">60</strong> 筆者の考えに合うのはどれか。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">能率を上げるためには、脳の状態をコントロールするといい。</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">脳の変動の波に合わせて勉強や仕事を進められる方法を探すといい。</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">計画の通りに行かなくても失望せずに、脳の調子が上がるのを待てばいい。</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">計画の通りに勉強や仕事を進めるために、脳の変動の波を小さくすればいい。</span></span></p>
 <h3>(3)</h3>
 <div class="passage-box">
-<p>お祭りの日は町の雰囲気が一変（注1）して、ふだんひっそりとしている町並み（注2）がいきいきとしています。そんな町の様子を「祭りがある町」として撮る。神社の境内（注3）で行われるような祭りであれば、「神社」の風景として撮る。というふうに少し視点を周辺にずらしてみると単なる祭り写真ではない写真に出会えます。祭りの中から自分だけの祭りを探し出すことができるかどうか。写真を見た人から、こういう祭りの見方もあるんだねと言われるような写真が撮れたら「祭りの写真」ではなく<strong>写真として内容のあるもの</strong>になると思います。</p>
+<p>お祭りの日は町の雰囲気が一変<span class="bk-chu">（注1）</span>して、ふだんひっそりとしている町並み<span class="bk-chu">（注2）</span>がいきいきとしています。そんな町の様子を「祭りがある町」として撮る。神社の境内<span class="bk-chu">（注3）</span>で行われるような祭りであれば、「神社」の風景として撮る。というふうに少し視点を周辺にずらしてみると単なる祭り写真ではない写真に出会えます。祭りの中から自分だけの祭りを探し出すことができるかどうか。写真を見た人から、こういう祭りの見方もあるんだねと言われるような写真が撮れたら「祭りの写真」ではなく<strong class="bk-tw">写真として内容のあるもの</strong>になると思います。</p>
 <p>（中略）</p>
-<p>「もう何年もかけて撮ってるんだけど、いい写真が撮れなくてね」とぼやく（注4）人がいますが、そういう人は頭の中で思い描いた「上手い写真」の構図（注5）から離れることができずにいて、すでにいろいろと見慣れている同じような画像を撮らされるだけだからなのです。</p>
-<p>ねらった被写体（注6）を自分のものにするのだと独占する強引さがないと、被写体が刺激的であるほどその場にふりまわされてしまいます。祭りなら激しい動きに、絶景（注7）なら色彩にのみこまれて被写体に撮らされているみたいになる。</p>
+<p>「もう何年もかけて撮ってるんだけど、いい写真が撮れなくてね」とぼやく<span class="bk-chu">（注4）</span>人がいますが、そういう人は頭の中で思い描いた「上手い写真」の構図<span class="bk-chu">（注5）</span>から離れることができずにいて、すでにいろいろと見慣れている同じような画像を撮らされるだけだからなのです。</p>
+<p>ねらった被写体<span class="bk-chu">（注6）</span>を自分のものにするのだと独占する強引さがないと、被写体が刺激的であるほどその場にふりまわされてしまいます。祭りなら激しい動きに、絶景<span class="bk-chu">（注7）</span>なら色彩にのみこまれて被写体に撮らされているみたいになる。</p>
 <p>被写体に撮らされてしまうような写真は、結局その場の説明でしかない。表現としての写真は自分だけの写真を撮ることになるわけで、それはフィクションでもあるのですから、つねに「私はこう見た」「私はこう撮った」を撮るのです。</p>
 <p class="vocab-notes">（注1）一変する：すっかり変わる<br />
 （注2）町並み：ここでは、町の様子<br />
@@ -352,24 +449,24 @@ A「失礼ですが、お名前を（　）。」<br />
 （注6）被写体：写真に撮る対象<br />
 （注7）絶景：素晴らしい景色</p>
 </div>
-<p><strong>61</strong> <strong>写真として内容のあるもの</strong>とはどのようなものか。<br />
- 1. 祭りの風景から町の人の様子が分かるような写真。<br />
- 2. 祭りに対する撮る人自身の見方が感じられる写真。<br />
- 3. 見る人にとって祭り独特の魅力が感じられる写真。<br />
- 4. 撮る人自身の祭りに対する情熱が伝わってくる写真。</p>
-<p><strong>62</strong> 写真を撮ることについて、筆者が言いたいことは何か。<br />
- 1. 上手い写真を撮ろうと思っても撮れるものではない。<br />
- 2. 上手い写真が撮れるまで、自分の撮り方を続けるべきだ。<br />
- 3. 自分だけの写真を撮るには、刺激的な対象を探し出すべきだ。<br />
- 4. 自分にしか表現できないものを撮るという気持ちで撮るべきだ。</p>
+<p><strong class="bk-qn">61</strong> <strong class="bk-tw">写真として内容のあるもの</strong>とはどのようなものか。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">祭りの風景から町の人の様子が分かるような写真。</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">祭りに対する撮る人自身の見方が感じられる写真。</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">見る人にとって祭り独特の魅力が感じられる写真。</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">撮る人自身の祭りに対する情熱が伝わってくる写真。</span></span></p>
+<p><strong class="bk-qn">62</strong> 写真を撮ることについて、筆者が言いたいことは何か。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">上手い写真を撮ろうと思っても撮れるものではない。</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">上手い写真が撮れるまで、自分の撮り方を続けるべきだ。</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">自分だけの写真を撮るには、刺激的な対象を探し出すべきだ。</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">自分にしか表現できないものを撮るという気持ちで撮るべきだ。</span></span></p>
 <h3>(4)</h3>
 <div class="passage-box">
-<p>何事もそうですが、「できる人」は応用がききます。接客が完全にマニュアル化されているファーストフード店に行っても、やはりスタッフの差は出ます。たまたま時間のかかるメニューを頼んでしまった際の事前説明、セットメニューに関する質問への対応など、ちょっと注意して観察してみると、頭の回転と表現力の差は随所（注1）に表れてきます。</p>
+<p>何事もそうですが、「できる人」は応用がききます。接客が完全にマニュアル化されているファーストフード店に行っても、やはりスタッフの差は出ます。たまたま時間のかかるメニューを頼んでしまった際の事前説明、セットメニューに関する質問への対応など、ちょっと注意して観察してみると、頭の回転と表現力の差は随所<span class="bk-chu">（注1）</span>に表れてきます。</p>
 <p>（中略）</p>
-<p>もっと高度な判断を求められる仕事の現場はどうでしょう。どんな仕事にも、マニュアルもしくは（注2）マニュアルに類するような規準があります。その中で「できる人」は、それぞれの仕事にあるマニュアル的なものを咀嚼（注3）して状況に対応します。これがまさに「仕事力の差」につながります。</p>
-<p>簡単に言えば、「できる人」は勝手に自分で応用してしまうのです。それは本人にとっては良いことであり、暴走（注4）による失敗は別として、お客にとっても会社や店にとってもプラスに作用することが多いと思います。</p>
-<p>しかし今度は人を率いる（注5）立場になり、多くの人を育てる番になったとき、今まで意識しなかった壁に突き当たることがあります。</p>
-<p>自分が自然とやってきたことを、なかなかできない人がたくさんいるという事実。これを頭では理解しても、なかなか感覚でキャッチ（注6）できません。そのため部下への指導が、「マニュアルを越えたものが見えている人の世界」で行われてしまうのです。ところが指導される側は「見えていない世界」の住人ですから、うまく受け取ることができないのは当然です。</p>
+<p>もっと高度な判断を求められる仕事の現場はどうでしょう。どんな仕事にも、マニュアルもしくは<span class="bk-chu">（注2）</span>マニュアルに類するような規準があります。その中で「できる人」は、それぞれの仕事にあるマニュアル的なものを咀嚼<span class="bk-chu">（注3）</span>して状況に対応します。これがまさに「仕事力の差」につながります。</p>
+<p>簡単に言えば、「できる人」は勝手に自分で応用してしまうのです。それは本人にとっては良いことであり、暴走<span class="bk-chu">（注4）</span>による失敗は別として、お客にとっても会社や店にとってもプラスに作用することが多いと思います。</p>
+<p>しかし今度は人を率いる<span class="bk-chu">（注5）</span>立場になり、多くの人を育てる番になったとき、今まで意識しなかった壁に突き当たることがあります。</p>
+<p>自分が自然とやってきたことを、なかなかできない人がたくさんいるという事実。これを頭では理解しても、なかなか感覚でキャッチ<span class="bk-chu">（注6）</span>できません。そのため部下への指導が、「マニュアルを越えたものが見えている人の世界」で行われてしまうのです。ところが指導される側は「見えていない世界」の住人ですから、うまく受け取ることができないのは当然です。</p>
 <p class="vocab-notes">（注1）随所：いろいろなところ<br />
 （注2）もしくは：または<br />
 （注3）咀嚼する：十分に理解する<br />
@@ -377,17 +474,17 @@ A「失礼ですが、お名前を（　）。」<br />
 （注5）率いる：ここでは、指導する<br />
 （注6）キャッチする：受け取る</p>
 </div>
-<p><strong>63</strong> 筆者によると、「できる人」とはどのような人か。<br />
- 1. マニュアルの問題点を見つけて改善できる人<br />
- 2. マニュアルをよく理解し、マニュアルどおりに対応できる人<br />
- 3. マニュアルをよく理解したうえで、自分が置かれた状況に対応できる人<br />
- 4. マニュアルがなくても、自分のやり方で状況に対応できる人</p>
-<p><strong>64</strong> 筆者によると、「できる人」が人を育てるときに問題になることは何か。<br />
- 1. マニュアルを使わないで、自分の好きなように説明してしまうこと<br />
- 2. 自分ができることは説明できても、できないことはうまく説明できないこと<br />
- 3. 自分ができることだけでなく、できないことまで、相手に期待してしまうこと<br />
- 4. 自分にはできることでも、それをできない人もいることが実感できないこと</p>
-<h2>問題12 次のAとBの文章を読んで、後の問いに対する答えとして最もよいものを、1・2・3・4から一つ選びなさい。</h2>
+<p><strong class="bk-qn">63</strong> 筆者によると、「できる人」とはどのような人か。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">マニュアルの問題点を見つけて改善できる人</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">マニュアルをよく理解し、マニュアルどおりに対応できる人</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">マニュアルをよく理解したうえで、自分が置かれた状況に対応できる人</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">マニュアルがなくても、自分のやり方で状況に対応できる人</span></span></p>
+<p><strong class="bk-qn">64</strong> 筆者によると、「できる人」が人を育てるときに問題になることは何か。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">マニュアルを使わないで、自分の好きなように説明してしまうこと</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">自分ができることは説明できても、できないことはうまく説明できないこと</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">自分ができることだけでなく、できないことまで、相手に期待してしまうこと</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">自分にはできることでも、それをできない人もいることが実感できないこと</span></span></p>
+<h2 class="bk-mondai"><span class="bk-mn">問題12</span> <span class="bk-mi">次のAとBの文章を読んで、後の問いに対する答えとして最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
 <h3>A</h3>
 <div class="passage-box">
 <p>新しい商品を企画するとき、いいアイディアがなかなか思いつかないことがある。そんなとき、自分には才能がないからだと思い込み、自信をなくしてしまうのはよくない。アイディアは生まれつきの能力に関係なく、努力次第で誰でも生み出すことができる。</p>
@@ -398,22 +495,22 @@ A「失礼ですが、お名前を（　）。」<br />
 <p>新しい商品を企画するには、これまでとは異なるアイディアが必要だ。現在流行している商品の情報を集めるだけでは、他社に勝つことはできないだろう。私はアイディアを生み出すために、一般的に考えられていることとは逆の発想をするようにしている。現在流行している商品が若者向けの物なら高齢者向けにできないかと考えたり、多機能の物なら機能を一つに絞れないかと考えたりするのである。</p>
 <p>アイディアは一部の才能がある人しか生み出せないものだという印象があるせいか、生み出し方を知ろうとしない人が多いと思う。才能がないからといってあきらめるのではなく、思い切って発想を転換してみれば、いいアイディアにつながっていく。</p>
 </div>
-<p><strong>65</strong> アイディアを生み出すことについて、AとBが共通して述べていることは何か。<br />
- 1. アイディアの生み出し方は、簡単に身につけることができる。<br />
- 2. 多くの情報を得ることで、アイディアを生み出しやすくなる。<br />
- 3. 特別な能力がなくても、アイディアを生み出すことができる。<br />
- 4. 発想のしかたを大きく変えなければ、アイディアは生み出せない。</p>
-<p><strong>66</strong> 新しい商品を企画することについて、AとBはどのようなアドバイスをしているか。<br />
- 1. AもBも、いろいろな分野の情報をできるだけ多く集めるといいと述べている。<br />
- 2. AもBも、流行している商品について詳しく調べるといいと述べている。<br />
- 3. Aは関連する分野の他社の商品の情報を集めるといいと述べ、Bは流行に逆らった考え方をするといいと述べている。<br />
- 4. Aは関連する分野だけでなく、ほかの分野の情報も得るといいと述べ、Bは普通とは反対のことを考えるといいと述べている。</p>
-<h2>問題13 次の文章を読んで、後の問いに対する答えとして最もよいものを、1・2・3・4から一つ選びなさい。</h2>
+<p><strong class="bk-qn">65</strong> アイディアを生み出すことについて、AとBが共通して述べていることは何か。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">アイディアの生み出し方は、簡単に身につけることができる。</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">多くの情報を得ることで、アイディアを生み出しやすくなる。</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">特別な能力がなくても、アイディアを生み出すことができる。</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">発想のしかたを大きく変えなければ、アイディアは生み出せない。</span></span></p>
+<p><strong class="bk-qn">66</strong> 新しい商品を企画することについて、AとBはどのようなアドバイスをしているか。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">AもBも、いろいろな分野の情報をできるだけ多く集めるといいと述べている。</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">AもBも、流行している商品について詳しく調べるといいと述べている。</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">Aは関連する分野の他社の商品の情報を集めるといいと述べ、Bは流行に逆らった考え方をするといいと述べている。</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">Aは関連する分野だけでなく、ほかの分野の情報も得るといいと述べ、Bは普通とは反対のことを考えるといいと述べている。</span></span></p>
+<h2 class="bk-mondai"><span class="bk-mn">問題13</span> <span class="bk-mi">次の文章を読んで、後の問いに対する答えとして最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
 <div class="passage-box">
-<p>読むことは、受動的な（注1）作業だと思っている人は意外に多い。（中略）読んでインプットして、書いてアウトプットする。そうではなくて、両方アウトプットなのだというのが、私の持論（注2）である。</p>
-<p>そこにある言葉を読む。すると心には、文字以上のものが広がる。たとえば、子どものころ読んだ海外作品に、聞いたこともない料理名が出てくるということが、よくあった。クロスグリのパイだとか、ジンジャークッキーだとか。食べたことのないものを、懸命に想像して味わう。それを食べる主人公の舌を、獲得するわけである。①<strong>この行為</strong>は、受動ではなく能動（注3）である。「創る」作業である。本でしか読んだことのない食べものを、大人になってから実際に食べ、「違う」と思った経験を持つ人は、意外に多いのではないだろうか。もちろん違うのは私たちの想像なのだが、しかし自分の頭のなかで創った料理のほうが、断然（注4）おいしかった、ということは、よくある。</p>
-<p>本を読まない、というのは、だから、私にとって創造の放棄（注5）である。②<strong>つまらない本</strong>、相性が悪い本というのはもちろんある。しかしそこで、どこがどんなふうにつまらないのか、どう展開したらおもしろかったのか、自分のどの部分と相性が悪いのか、そんなことを考えていると、つまらない本はおもしろくなるし、相性が悪い本はいつか相性がよくなる日を待とうと思うことができる。私は、おもしろかった本よりつまらなかった本のあらすじを人に話すほうが、ずっと好きだ。どこがどんなふうにつまらなく感じたかを話すのは、それだけ創造の余地（注6）があるからだろう。</p>
-<p>料理でも、絵画でも、あるいは家事の手順でも、創ることの喜びを知ってしまうと、なかなかそれから離れることができない。読むことの楽しみは、と訊かれれば（注7）、創ることの自由さだと私は答える。</p>
+<p>読むことは、受動的な<span class="bk-chu">（注1）</span>作業だと思っている人は意外に多い。（中略）読んでインプットして、書いてアウトプットする。そうではなくて、両方アウトプットなのだというのが、私の持論<span class="bk-chu">（注2）</span>である。</p>
+<p>そこにある言葉を読む。すると心には、文字以上のものが広がる。たとえば、子どものころ読んだ海外作品に、聞いたこともない料理名が出てくるということが、よくあった。クロスグリのパイだとか、ジンジャークッキーだとか。食べたことのないものを、懸命に想像して味わう。それを食べる主人公の舌を、獲得するわけである。①<strong class="bk-tw">この行為</strong>は、受動ではなく能動<span class="bk-chu">（注3）</span>である。「創る」作業である。本でしか読んだことのない食べものを、大人になってから実際に食べ、「違う」と思った経験を持つ人は、意外に多いのではないだろうか。もちろん違うのは私たちの想像なのだが、しかし自分の頭のなかで創った料理のほうが、断然<span class="bk-chu">（注4）</span>おいしかった、ということは、よくある。</p>
+<p>本を読まない、というのは、だから、私にとって創造の放棄<span class="bk-chu">（注5）</span>である。②<strong class="bk-tw">つまらない本</strong>、相性が悪い本というのはもちろんある。しかしそこで、どこがどんなふうにつまらないのか、どう展開したらおもしろかったのか、自分のどの部分と相性が悪いのか、そんなことを考えていると、つまらない本はおもしろくなるし、相性が悪い本はいつか相性がよくなる日を待とうと思うことができる。私は、おもしろかった本よりつまらなかった本のあらすじを人に話すほうが、ずっと好きだ。どこがどんなふうにつまらなく感じたかを話すのは、それだけ創造の余地<span class="bk-chu">（注6）</span>があるからだろう。</p>
+<p>料理でも、絵画でも、あるいは家事の手順でも、創ることの喜びを知ってしまうと、なかなかそれから離れることができない。読むことの楽しみは、と訊かれれば<span class="bk-chu">（注7）</span>、創ることの自由さだと私は答える。</p>
 <p class="vocab-notes">（注1）受動的な：ここでは、受け取るだけの<br />
 （注2）持論：いつも持っている考え<br />
 （注3）能動：自ら進んで行うこと<br />
@@ -422,23 +519,23 @@ A「失礼ですが、お名前を（　）。」<br />
 （注6）余地：ここでは、可能性<br />
 （注7）訊く：「聞く」と同じ</p>
 </div>
-<p><strong>67</strong> ①<strong>この行為</strong>とはどういうことか。<br />
- 1. 実際に、主人公が食べていた食べものを味わってみること。<br />
- 2. 食べたことのないものを主人公と一緒に食べているところを想像すること。<br />
- 3. 主人公がどんな食べものが好きかを想像してみること。<br />
- 4. 主人公になりきって、食べたことのないものを想像して味わうこと。</p>
-<p><strong>68</strong> ②<strong>つまらない本</strong>について、筆者はどのように述べているか。<br />
- 1. つまらなく感じた点についていろいろ考えていると、おもしろくなる。<br />
- 2. つまらなく感じた理由を考えていると、自分の好みがよく分かってくる。<br />
- 3. つまらないと思っても、いつか必ず相性がよくなる日がくる。<br />
- 4. つまらないと思っても、人にあらすじを話すと面白いところが見つけられる。</p>
-<p><strong>69</strong> 本を読むことについて、筆者はどのように考えているか。<br />
- 1. 本を読むことは、料理や絵画より創ることの喜びが大きい。<br />
- 2. 本を読むことは、自由に想像を膨らませる楽しい創造の作業だ。<br />
- 3. 本を読んでたくさん知ることができれば、創ることの喜びも増す。<br />
- 4. 本を読んで想像力を身につければ、生活のなかでも自由に創造が楽しめる。</p>
-<h2>問題14 右のページは、ある動画コンテストの募集案内である。下の問いに対する答えとして最もよいものを、1・2・3・4から一つ選びなさい。</h2>
-<div class="passage-box">
+<p><strong class="bk-qn">67</strong> ①<strong class="bk-tw">この行為</strong>とはどういうことか。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">実際に、主人公が食べていた食べものを味わってみること。</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">食べたことのないものを主人公と一緒に食べているところを想像すること。</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">主人公がどんな食べものが好きかを想像してみること。</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">主人公になりきって、食べたことのないものを想像して味わうこと。</span></span></p>
+<p><strong class="bk-qn">68</strong> ②<strong class="bk-tw">つまらない本</strong>について、筆者はどのように述べているか。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">つまらなく感じた点についていろいろ考えていると、おもしろくなる。</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">つまらなく感じた理由を考えていると、自分の好みがよく分かってくる。</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">つまらないと思っても、いつか必ず相性がよくなる日がくる。</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">つまらないと思っても、人にあらすじを話すと面白いところが見つけられる。</span></span></p>
+<p><strong class="bk-qn">69</strong> 本を読むことについて、筆者はどのように考えているか。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">本を読むことは、料理や絵画より創ることの喜びが大きい。</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">本を読むことは、自由に想像を膨らませる楽しい創造の作業だ。</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">本を読んでたくさん知ることができれば、創ることの喜びも増す。</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">本を読んで想像力を身につければ、生活のなかでも自由に創造が楽しめる。</span></span></p>
+<h2 class="bk-mondai"><span class="bk-mn">問題14</span> <span class="bk-mi">右のページは、ある動画コンテストの募集案内である。下の問いに対する答えとして最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
+<div class="passage-box"><span class="bk-flow bk-flyer"></span>
 <p>春口市「動画コンテスト」<br />
 動画作品募集のご案内</p>
 <p>春口市の魅力をアピールする動画を募集します。受賞した作品は、春口市のホームページで公開し、市の魅力を伝える活動に使用させていただきます。</p>
@@ -501,17 +598,17 @@ A「失礼ですが、お名前を（　）。」<br />
 </tbody>
 </table>
 </div>
-<p><strong>70</strong> 次の4人は、動画コンテストに応募しようと考えている。現段階で応募条件を満たしているのは誰か。<br />
- 1. ヤンさん<br />
- 2. 村木さん<br />
- 3. 長島さん<br />
- 4. 原田さん</p>
-<p><strong>71</strong> ローズさんは、動画コンテストに応募しようと考えている。動画は、インターネットで送りたい。ローズさんは、どうしなければならないか。<br />
- 1. 5月10日までに応募情報を送信し、17日までに動画を送信する。<br />
- 2. 5月10日までに応募情報を送信し、24日までに動画を送信する。<br />
- 3. 5月10日までに応募情報と動画を送信する。<br />
- 4. 5月24日までに応募情報と動画を送信する。</p>
-<h1>解答(言語知識・読解)</h1>
+<p><strong class="bk-qn">70</strong> 次の4人は、動画コンテストに応募しようと考えている。現段階で応募条件を満たしているのは誰か。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">ヤンさん</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">村木さん</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">長島さん</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">原田さん</span></span></p>
+<p><strong class="bk-qn">71</strong> ローズさんは、動画コンテストに応募しようと考えている。動画は、インターネットで送りたい。ローズさんは、どうしなければならないか。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">5月10日までに応募情報を送信し、17日までに動画を送信する。</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">5月10日までに応募情報を送信し、24日までに動画を送信する。</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">5月10日までに応募情報と動画を送信する。</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">5月24日までに応募情報と動画を送信する。</span></span></p>
+<h1 class="bk-key">解答(言語知識・読解)</h1>
 <h2>文字・語彙</h2>
 <table>
 <thead>

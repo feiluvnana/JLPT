@@ -172,7 +172,7 @@ PRACTICE_CSS = """
    `make check` counts them in this file — so it borrows the look and keeps its
    own class. Vietnamese prose, so the UI face, not 明朝. */
 .pr-ptext{display:flex;justify-content:flex-end;margin:10px 0 -4px}
-.pr-tr{border:1px solid #999;background:#fafafa;margin:10px 0 16px;
+.pr-tr{border:1px solid #1a1a1a;background:#fff;margin:10px 0 16px;
   padding:10px 16px;overflow-x:auto;font-family:var(--ui);line-height:1.95}
 @media print{
   .pr-btn,.pr-verdict,.pr-note,#bar,.pr-ptext{display:none}

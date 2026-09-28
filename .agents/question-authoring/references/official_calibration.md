@@ -38,7 +38,7 @@ passages) — cells failing that test are excluded, not guessed.
 
 | Measurement | Why |
 |---|---|
-| **聴解 script text for 28 of 31 sittings** | only 12/2023, 7/2024, 12/2024 have a text layer (~7.2–7.5k chars); the rest extract to ~1.0–2.0k chars (instructions/setup lines only, no dialogue). Turn-count/pacing are measured from the MP3s instead. |
+| **聴解 script text is OCR for most sittings, not exact** | corrected 2026-09-28: every one of the 31 `script.md` extracts now carries the dialogue (23–30k chars each), but most of it is fenced `[OCR ▼]…[OCR ▲]` Vision OCR of stencil-bitmap pages (~98 % character-accurate) — only a few PDFs have a real text layer, and the header of each file says how many of its lines are OCR. This row used to read "no script text for 28 of 31 sittings", which was true before the OCR pass and is now wrong. Exact wording still needs the PDF; trust rules are `reading-reference-pdfs.md`'s. The turn-count/pacing numbers in this file were measured from the MP3s before the OCR text existed and stand as MP3 measurements. |
 | **例 (practice item) conventions** | no 例 appears anywhere in the 31 booklets or three full scripts, or the official 2009 sample script. `jlpt-exam-structure` must not cite this file for 例 content conventions. |
 | **問題1 underline rendering as JEES prints it** | the archive is a Vietnamese-market reproduction typeset in Word, not a JEES scan — §5's finding is consistent but is the reproducer's typography. |
 | **問題10/11 per-passage split, 6 pre-2018 sittings** | a passage marker is lost in extraction for those 6; section totals stay reliable, per-passage numbers are excluded. |
@@ -54,12 +54,13 @@ From the official answer-key PDF, which parses cleanly for all 31 sittings.
 
 | Era | sittings | 言語知識・読解 items | 大問 1–14 counts | 聴解 items | 聴解 1–5 counts |
 |---|---|---|---|---|---|
-| 7/2010 – 7/2018 | 17 | **75** | 5/5/5/7/5/5/12/5/5/5/9/2/3/2 | **32** | 5/6/5/12/4 |
+| 7/2010 – 7/2018 | 17 | **75** | 5/5/5/7/5/5/12/5/5/5/9/2/3/2 | **30–32** (32 in 11; 31 in 7/2011, 12/2011, 7/2012, 12/2012, 7/2013; 30 in 7/2018) | 5/6/5/12/4 (問4=11 in 7/2011–7/2012 and 7/2018; 問2=5 in 7/2013 and 7/2018; 問3=4 in 12/2012) |
 | 12/2018 – 7/2021 | 5 | 72–73 | 問3→3, 問4 wobbles, 問9→4, 問11 9↔8 | 30 | 5/5–6/5/11/3–4 |
 | **12/2021 – 12/2025** | **9** | **71** | **5/5/3/7/5/5/12/5/4/5/8/2/3/2** | **30** | **5/6/5/11/3** |
 
-- The 2009 guidebook's 小問数目安 matches the 2010–2018 column (75+32=107)
-  exactly; the current 大問のねらい PDF has dropped that column entirely —
+- The 2009 guidebook's 小問数目安 matches the 2010–2018 column's modal shape
+  (75+32=107) exactly — 11 of those 17 sittings; the other six ran 30–31
+  聴解 items (re-counted from `answer_keys.json`, 2026-09-28); the current 大問のねらい PDF has dropped that column entirely —
   consistent with counts having drifted below it.
 - **The repo's 71+30=101 contract is correct — the 12/2021-onward format**,
   including 聴解問題4=11 (not 12) and 問題5=2 items/3 answers (not 3/4).

@@ -7,13 +7,31 @@ link-table rules are Item integrity #4–8 there). This file adds the
 問題7–9-specific rules and benchmark lengths, measured on
 `refs/JLPT_N2_NEW/` (per-sitting figures: `official_calibration.md` §7).
 
-## Inventory — N2-list items only
+## Inventory — N2-evidenced forms only
 
-Only Shin Kanzen N2 文法 headed forms: 〜かねない, 〜ざるを得ない,
-〜わけにはいかない, 〜に先立って, 〜を契機に, 〜つつも, 〜ようがない,
-〜に限って, 〜ものの, 〜ばかりに, 〜たところ, humble/honorific traps (伺う;
-include one FAKE form like 参られます as a distractor). Pool draws come from
-`exam-blueprint` — never invent a form outside that inventory.
+A form belongs to the 問題7–9 inventory when it has ONE of two kinds of
+evidence (owner decision 2026-09-28 — until then it was the first kind only):
+
+1. **A Shin Kanzen N2 文法 headword** — 〜かねない, 〜ざるを得ない,
+   〜わけにはいかない, 〜に先立って, 〜を契機に, 〜つつも, 〜ようがない,
+   〜に限って, 〜ものの, 〜ばかりに, 〜たところ, 使役受身 (〜させられる, 第3部6課)
+   … The checkable list is the book's own 索引 (book p.208–211, PDF p.217–220
+   of `refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Bunpou.pdf`) — read it there, not
+   from memory.
+2. **A key in an official N2 sitting** — the form IS the keyed option of a
+   問題7 or 問題9 item, or sits on the cards of a 問題8 item (all four cards
+   make up the keyed sentence), in `refs/JLPT_N2_NEW/<sitting>/booklet.md` +
+   `key.md` (both exact). **Cite it as sitting + 問題 + item number** (「12/2023
+   問題7-34」). A form printed only as a DISTRACTOR, or only in 読解 prose or a
+   stem, is not evidence — official prints off-key forms (かのようだ,
+   ないこともない, を中心に) as distractors on purpose. Humble/honorific traps
+   enter this way (伺う, ご覧いただく, おいでになる …; include one FAKE form like
+   参られます as a distractor).
+
+Either kind still has to clear the band lists below — official keyed
+〜に至っては (12/2023 問題7-31) and it stays TOO_HARD. Pool draws come from
+`exam-blueprint`, whose §"One grammar point, one pool entry" records each
+form's evidence — never invent a form outside that inventory.
 
 - **BANNED too easy (N3–N5):** 〜によると, 〜ば〜ほど, 〜がち alone,
   お〜ください, 〜てください, 〜ほうがいい, 〜ことができる, 〜たいです,

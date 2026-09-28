@@ -142,22 +142,30 @@ html.is-result-mode #where{display:none!important}
 .gate .gate-alt{margin:1.8em 0 0;padding-top:1.4em;border-top:1px solid #e2e8f0}
 .gate .alt-note{margin:0 0 .9em;font-size:9.5pt;line-height:1.8;color:#475569;
   text-align:left}
-.qa{display:flex;flex-wrap:wrap;gap:.25em 1.1em;margin:.25em 0 .65em 1.2em}
-.qa label{display:inline-flex;align-items:center;gap:.32em;cursor:pointer;
-  padding:.15em .6em;border:1px solid #cbd5e1;border-radius:9999px;font-size:10pt;
-  background:#ffffff;line-height:1.5;transition:all .15s ease}
-.qa label:hover{background:#eff6ff;border-color:#93c5fd}
-.qa input{margin:0;cursor:pointer}
-.qa input:checked+span{font-weight:700}
-.qa label:has(input:checked){background:#2563eb;border-color:#2563eb;color:#ffffff;
-  font-weight:700;box-shadow:0 2px 6px rgba(37,99,235,0.25)}
-.qa .qid{border:none;background:none;color:#64748b;font-size:9pt;padding-left:0}
+/* The bubble row reads as a マークシート row: a tall oval per choice with its
+   digit inside (①②③④), filled solid like a pencil mark when chosen. The radio
+   itself is transparent over the whole oval, so click, keyboard and the
+   grader's input[name=q_…] lookups are unchanged. */
+.qa{display:flex;flex-wrap:wrap;align-items:center;gap:.3em .85em;margin:.35em 0 .8em 1.95em}
+.qa label{position:relative;display:inline-flex;align-items:center;justify-content:center;
+  width:1.6em;height:2.15em;box-sizing:border-box;border:1.5px solid #8b95a1;
+  border-radius:50%;font-family:var(--ui);font-size:10pt;font-weight:600;
+  color:#5b6573;background:#ffffff;line-height:1;cursor:pointer;
+  font-variant-numeric:tabular-nums;transition:background .12s ease,border-color .12s ease}
+.qa label:hover{background:#eff6ff;border-color:#2563eb;color:#1d4ed8}
+.qa input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
+.qa label:has(input:checked){background:#1a1a1a;border-color:#1a1a1a;color:#ffffff;font-weight:700}
+.qa label:has(input:focus-visible){outline:2px solid #2563eb;outline-offset:2px}
+.qa label:has(input:disabled){opacity:.5;cursor:not-allowed}
+.qa .qid{border:none;background:none;color:#64748b;font-size:9pt;padding-left:0;
+  font-family:var(--ui)}
 /* The 例 row is shown, not answerable — its answer is already marked, because
    the announcer says 「解答用紙の問題◯の例のところを見てください」. */
 .qa.ex .mark{display:inline-flex;align-items:center;justify-content:center;
-  min-width:2em;padding:.12em .6em;border:1px solid #cbd5e1;border-radius:9999px;
-  font-size:10pt;background:#ffffff;line-height:1.5;color:#64748b}
-.qa.ex .mark.on{background:#0f172a;border-color:#0f172a;color:#ffffff;font-weight:700}
+  width:1.6em;height:2.15em;box-sizing:border-box;border:1.5px solid #8b95a1;
+  border-radius:50%;font-family:var(--ui);font-size:10pt;background:#ffffff;
+  line-height:1;color:#64748b}
+.qa.ex .mark.on{background:#1a1a1a;border-color:#1a1a1a;color:#ffffff;font-weight:700}
 .opt{display:flex;align-items:flex-start;gap:.5em;margin:.15em 0}
 .opt .b{flex:0 0 auto;margin-top:.25em}
 #done{font-variant-numeric:tabular-nums}
@@ -265,10 +273,9 @@ html.is-result-mode #where{display:none!important}
 }
 @media screen and (max-width:48em){
   #screen-exam,#screen-result{padding:1.2em var(--gutter) 4em;margin:0 auto;border-radius:0;border:none}
-  .qa{margin:.3em 0 .8em .2em;gap:.4em .6em}
-  .qa label{padding:.35em .75em;font-size:11pt;min-height:40px;min-width:40px;
-    justify-content:center;box-sizing:border-box;font-weight:500}
-  .qa input{width:18px;height:18px}
+  .qa{margin:.3em 0 .8em .4em;gap:.45em .8em}
+  /* 34×46 px: a thumb-sized target that is still an oval. */
+  .qa label,.qa.ex .mark{width:34px;height:46px;font-size:11pt}
   #player{padding:.6em var(--gutter)}
   .pctl{gap:.4em .6em;margin-top:.5em;font-size:9.5pt}
   .pctl button,.pctl select,.pctl .pick{min-height:36px;padding:.3em .65em;
@@ -302,12 +309,16 @@ function pick(inp){
     return;
   }
   sel.insertAdjacentHTML('beforeend', '<option value="">— 選択 —</option>');
+  // compose_choukai writes {label, start} with no `type`: 「問題2」 is a 大問
+  // header, 「問題2 3番」 an item. An explicit `type` still wins.
+  const isSec = c => c.type ? c.type === 'section' : !/番|質問/.test(c.label);
   let sec = "";
   for (const c of d.chapters){
-    if (c.type === 'section'){ sec = c.label; }
+    if (isSec(c)){ sec = c.label; }
     const mm = String(Math.floor(c.start/60)).padStart(2,'0');
     const ss = String(Math.floor(c.start%60)).padStart(2,'0');
-    const name = c.type === 'section' ? c.label : '　' + sec + ' ' + c.label;
+    const name = isSec(c) ? c.label
+      : '　' + (sec && c.label.indexOf(sec) !== 0 ? sec + ' ' : '') + c.label;
     sel.insertAdjacentHTML('beforeend',
       '<option value="'+c.start+'">'+name+'  ('+mm+':'+ss+')</option>');
   }
@@ -364,6 +375,21 @@ const STORAGE = "%(storage)s";
 // file:// these fetches simply fail and grading falls back to a download.
 const API = '/api/tests/' + encodeURIComponent(TESTID) + '/';
 
+// Every POST goes out after the previous one has finished. The debounce, the
+// 15 s heartbeat, persistNow() and submit() used to overlap, and the server could
+// then land an older 受験状態 (phase 'gengo') after a newer one.
+let _postChain = Promise.resolve();
+function queuePost(route, body){
+  const run = () => fetch(API + route, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(body)
+  });
+  const p = _postChain.then(run, run);
+  _postChain = p.then(()=>{}, ()=>{});
+  return p;
+}
+
 const StoreServer = {
   async loadAnswers(){
     try {
@@ -372,11 +398,8 @@ const StoreServer = {
     } catch(e){ return null; }
   },
   saveAnswers(payload){
-    return fetch(API + 'answers', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({answers: payload})
-    }).then(()=>{}, ()=>{ /* file:// or offline: grade download only */ });
+    return queuePost('answers', {answers: payload})
+      .then(()=>{}, ()=>{ /* file:// or offline: grade download only */ });
   },
   async loadResult(){
     try {
@@ -386,11 +409,7 @@ const StoreServer = {
   },
   async submit(payload, res){
     try {
-      const r = await fetch(API + 'submit', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({answers: payload, result: res})
-      });
+      const r = await queuePost('submit', {answers: payload, result: res});
       const data = r.ok ? await r.json() : null;
       if (data && data.success) return {saved: true, message: data.message};
     } catch(e){}
@@ -636,7 +655,12 @@ function _isQa(el){ return !!(el && el.classList && el.classList.contains('qa'))
 function _isBreak(el){ return !!(el && (/^H[12]$/.test(el.tagName) || el.tagName === 'HR')); }
 function _isUnit(el){ return !!(el && el.tagName === 'H3'); }
 function _isOptLine(el){
-  return !!(el && el.tagName === 'P' && /^\\s*[1-4][.．]/.test(el.textContent || ''));
+  if (!el || el.tagName !== 'P') return false;
+  if (/^\\s*[1-4][.．]/.test(el.textContent || '')) return true;
+  // The booklet prints options as `1　はしら` with no period (booklet.widen()),
+  // so an option paragraph is recognised by its grid/row markup instead.
+  const f = el.firstElementChild;
+  return !!(f && (f.classList.contains('bk-opts') || f.classList.contains('bk-ov')));
 }
 function _looksLikeStem(el){
   if (!el || el.tagName !== 'P') return false;
@@ -1081,6 +1105,7 @@ async function submitAll(auto){
         && !confirm("聴解を提出して採点します。\\n\\nよろしいですか？")) return;
   }
   clockFreeze();
+  clearTimeout(_saveTimer);     // a pending debounced save must not land after the result
   PHASE = 'done';
   const audio = document.getElementById('au');
   if (audio) audio.pause();
@@ -1823,22 +1848,14 @@ def render_bodies(gengo_md: str, choukai_md: str) -> tuple[str, str]:
     """The two halves of the paper as HTML, through the booklet's render chain.
 
     Both solving pages go through here — 解答.html below and 練習.html
-    (build_practice.py) — so the ruled passage boxes, the U+3000 option widening
-    and the 聴解 auto-furigana cannot come out differently on one of them. The
-    Markdown handed in has already had its radios injected and its key
-    truncated away.
+    (build_practice.py) — and both call the booklet's own `render_body()`, so
+    the ruled passage boxes, the option grid, the boxed item numbers and the
+    聴解 auto-furigana cannot come out differently from `言語知識・読解.html` /
+    `聴解.html`. The Markdown handed in has already had its radios injected and
+    its key truncated away.
     """
-    gengo_md = booklet.box_passages(gengo_md)
-    gengo_md = "\n".join(booklet.widen(l) for l in gengo_md.splitlines())
-    choukai_md = booklet.add_choukai_furigana(choukai_md)
-    choukai_md = "\n".join(booklet.widen(l) for l in choukai_md.splitlines())
-
-    gengo_body = booklet.mark_furigana_blocks(booklet.fit_ruby(
-        markdown.markdown(gengo_md, extensions=["tables", "nl2br"])))
-    gengo_body = booklet.box_passages_html(gengo_body)
-    choukai_body = booklet.mark_furigana_blocks(booklet.fit_ruby(
-        markdown.markdown(choukai_md, extensions=["tables", "nl2br"])))
-    return gengo_body, choukai_body
+    return (booklet.render_body(gengo_md, is_choukai=False),
+            booklet.render_body(choukai_md, is_choukai=True))
 
 
 def render_combined(gengo_md: str, choukai_md: str, testid: str, keys: list,
@@ -1997,11 +2014,14 @@ def build_keyless(d: Path, out_dir: Path | None = None) -> Path:
     dest.mkdir(parents=True, exist_ok=True)
     out = dest / KEYLESS_NAME
     text = keyless_markdown(d)
-    out.write_text(text, encoding="utf-8")
+    # Scan BEFORE writing: a leaking render must never reach disk, where a
+    # reviewer (or a stale earlier run's file) would be read as keyless.
     leaks = [m.group(0).strip() for m in KEY_HEADING.finditer(text)]
     if leaks:
         sys.exit(f"{out}: key heading survived the strip ({leaks}) — refusing to "
-                 f"hand a reviewer a 'keyless' render that still carries keys")
+                 f"hand a reviewer a 'keyless' render that still carries keys "
+                 f"(nothing written)")
+    out.write_text(text, encoding="utf-8")
     print(f"  {out}  ({len(text.splitlines())} lines; keys, key tables, "
           f"marked grid and 解説 stripped)")
     return out

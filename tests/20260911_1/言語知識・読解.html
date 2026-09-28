@@ -1,18 +1,57 @@
 <!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet"><title>言語知識・読解</title>
 <!-- src_sha: 言語知識・読解.md=3bbfd1d6baee -->
 <style>
-@page { size: A4; margin: 18mm 16mm; }
+@page { size: A4; margin: 18mm 16mm 20mm;
+  @bottom-center { content: "— " counter(page) " —"; font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", sans-serif;
+                   font-size: 10pt; color: #1a1a1a; } }
+/* The cover is not page 1: official numbering starts on the first page of
+   questions. A named page is the one reset Chrome honours (counter-reset on an
+   element or on @page:first is ignored). */
+@page bk-cover { counter-reset: page 0; @bottom-center { content: none; }
+                 @top-right { content: none; } }
 body { font-family: "YuMincho", "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", "Noto Serif CJK JP", serif;
-       font-size: 11.5pt; line-height: 1.9; color: #1a1a1a; }
-h1 { font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", sans-serif; font-size: 15pt;
-     border-bottom: 2.5px solid #1a1a1a; padding-bottom: 5px;
-     margin: 30px 0 14px; page-break-after: avoid; }
-h2 { font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", sans-serif; font-size: 12pt;
-     background: #efefef; border-left: 5px solid #444; padding: 5px 10px;
-     margin: 26px 0 12px; page-break-after: avoid; }
-h3 { font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", sans-serif; font-size: 11pt;
-     margin: 20px 0 8px; page-break-after: avoid; }
-p { margin: 12px 0; }
+       font-size: 11.5pt; line-height: 1.9; color: #1a1a1a; background: #fff; }
+h1, h2, h3 { font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", sans-serif; break-after: avoid; page-break-after: avoid;
+             break-inside: avoid; }
+h1 { font-size: 15pt; border-bottom: 2.5px solid #1a1a1a; padding-bottom: 5px;
+     margin: 30px 0 14px; }
+/* 【文字・語彙】/【文法】/【読解】: official prints the part as a small boxed
+   label (the tab on the page edge), not a banner. */
+h1.bk-part { display: table; font-size: 10.5pt; letter-spacing: .08em;
+             border: 1px solid #1a1a1a; padding: 1px 12px; margin: 22px 0 12px; }
+h2 { font-size: 12pt; margin: 26px 0 12px; }
+/* 「問題1　＿＿の言葉の…」: bold Gothic, the instruction hanging under itself. */
+h2.bk-mondai { display: flex; align-items: baseline; gap: 0 1em; line-height: 1.75; }
+h2.bk-mondai .bk-mn { flex: 0 0 auto; white-space: nowrap; }
+h2.bk-mondai .bk-mi { flex: 1 1 auto; min-width: 0; }
+h2.bk-mondai-l { font-size: 18pt; margin: 34px 0 8px; }
+h3 { font-size: 11pt; margin: 20px 0 8px; }
+p { margin: 12px 0; orphans: 2; widows: 2; }
+strong { font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", sans-serif; }
+/* The item number, in a thin box (official 「[11] 9時（　）の…」). */
+strong.bk-qn { display: inline-block; min-width: 1.55em; padding: 0 .28em;
+               border: 1px solid #1a1a1a; line-height: 1.3; text-align: center;
+               font-size: .9em; margin-right: .6em; box-sizing: border-box; }
+/* The tested word / the marked span: official UNDERLINES it in the body face.
+   The Markdown convention stays **word**; only its rendering changed. */
+strong.bk-tw { font-family: inherit; font-weight: normal; text-decoration: underline;
+               text-decoration-thickness: 1px; text-underline-offset: .24em; }
+/* Options: 「1　はしら」, no period, on four equal columns — or two, or one,
+   whichever the longest option fits (widen() decides). */
+.bk-opts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+           gap: .05em 1em; margin: .3em 0 .1em 2.1em; }
+.bk-opts.bk-c2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.bk-opts.bk-c1 { grid-template-columns: minmax(0, 1fr); }
+.bk-o, .bk-ov { display: flex; gap: .95em; }
+.bk-ov { margin: .05em 0 0 2.1em; }
+.bk-on { flex: 0 0 auto; }
+.bk-ot { flex: 1 1 auto; min-width: 0; }
+.bk-opts + br, .bk-ov + br { display: none; }
+/* The stem hangs past its number box; its options sit on the same edge. */
+p:has(> strong.bk-qn:first-child) { padding-left: 1.95em; text-indent: -1.95em; }
+p:has(> strong.bk-qn:first-child) > .bk-opts,
+p:has(> strong.bk-qn:first-child) > .bk-ov { margin-left: 0; }
+.bk-opts, .bk-ov, strong.bk-qn, ruby { text-indent: 0; }
 /* Furigana: WeasyPrint has NO ruby layout (and ignores ruby-position), so the
    reading is stacked manually. rt is taken out of flow and pinned above the
    base, which keeps the base glyphs on the text baseline and leaves line
@@ -45,27 +84,74 @@ rp { display: none; }
 /* Only blocks that actually carry furigana get extra leading, so the reading
    clears the descenders of the line above without loosening plain text. */
 p.furi, li.furi { line-height: 2.1; }
-.vocab-notes { margin-top: 8px; font-size: 9.5pt; color: #333; line-height: 1.6; border-top: 1px dashed #aaa; padding-top: 6px; }
+/* 注 glosses: body-ish size under the passage, no rule; the inline （注N）
+   marker is small and raised, as printed. */
+.vocab-notes { margin: 10px 0 0; font-size: 10pt; line-height: 1.75; color: #1a1a1a; }
+.bk-chu { font-size: .68em; position: relative; top: -.4em; }
 table { border-collapse: collapse; margin: 10px 0; width: 100%; page-break-inside: avoid; }
 th, td { border: 1px solid #888; padding: 4px 9px; font-size: 10pt;
          line-height: 1.6; }
 th { background: #f0f0f0; font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", sans-serif; }
 blockquote { border: 1px solid #999; background: #fafafa; margin: 10px 0;
              padding: 10px 14px; page-break-inside: avoid; }
-/* 問題9-14: the passage/notice text official booklets print inside a ruled
-   box, separate from the questions below it. See box_passages(). */
-.passage-box { border: 1px solid #999; background: #fafafa; margin: 10px 0 16px;
-                padding: 10px 16px; page-break-inside: avoid; overflow-x: auto; }
-.passage-box > *:first-child { margin-top: 0; }
+/* 問題9-14: the passage/notice text official booklets print inside a thin
+   black rule on white, separate from the questions below it. See
+   box_passages(). A box too tall for a page (問題13's essay, 問題14's flyer)
+   carries the .bk-flow marker and may break; the rest stay whole. The box must
+   not scroll in print: Chrome lays a scroll container out as one unbreakable
+   block, which is how 問題14 once printed a blank page. */
+.passage-box { border: 1px solid #1a1a1a; background: #fff; margin: 10px 0 16px;
+               padding: 12px 18px; break-inside: avoid; page-break-inside: avoid; }
+.passage-box:has(> .bk-flow) { break-inside: auto; page-break-inside: auto; }
+.passage-box > *:first-child, .passage-box > .bk-flow + * { margin-top: 0; }
 .passage-box > *:last-child { margin-bottom: 0; }
+.bk-flow { display: none; }
+/* 聴解: 「― メモ ―」 centred, with room to write under it. */
+.bk-memo { text-align: center; letter-spacing: .25em; margin: 16px 0 72px; }
 hr { border: none; border-top: 1px dashed #999; margin: 22px 0; }
-strong { font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", sans-serif; }
-
+/* The 問題用紙 cover (booklet HTML only — the sheet has its own gate screen). */
+.bk-cover { font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", sans-serif; }
+.bk-cv-head { display: flex; justify-content: space-between; align-items: baseline; }
+.bk-cv-en { font-size: 10pt; font-weight: 700; }
+.bk-cv-kind { font-size: 17pt; font-weight: 700; }
+.bk-cv-level { text-align: center; font-size: 46pt; font-weight: 800; line-height: 1.2;
+               margin: 1.1em 0 .1em; letter-spacing: .04em; }
+.bk-cv-title { text-align: center; font-size: 21pt; font-weight: 800; line-height: 1.4; }
+.bk-cv-time { text-align: center; font-size: 17pt; font-weight: 700; margin: .3em 0 .9em; }
+.bk-cv-notes { border: 1px solid #1a1a1a; padding: .8em 1.8em 1em; margin: 0 auto 1.4em;
+               max-width: 36em; font-family: "YuMincho", "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif; }
+.bk-cv-nh { text-align: center; font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", sans-serif; font-weight: 700; font-size: 13pt;
+            letter-spacing: .5em; margin-bottom: .4em; }
+.bk-cv-nh small { font-size: 7.5pt; letter-spacing: 0; }
+.bk-cv-item { display: flex; gap: .8em; margin: .35em 0; line-height: 1.6; }
+.bk-cv-item small { display: block; font-size: 8pt; color: #333; line-height: 1.35; }
+.bk-cv-box { display: inline-block; border: 1px solid #1a1a1a; min-width: 1.2em;
+             line-height: 1.15; text-align: center; font-size: .85em; font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", sans-serif; }
+.bk-cv-id { max-width: 36em; margin: .7em auto; font-family: "YuMincho", "Yu Mincho", serif; }
+.bk-cv-id th { width: 45%; background: #fff; font-weight: normal; text-align: left;
+               font-family: inherit; }
+.bk-cv-id td { height: 2.2em; }
+@media print {
+  .bk-cover { page: bk-cover; break-after: page; }
+  h1.bk-brk, h1.bk-key { break-before: page; page-break-before: always; }
+  /* An item (stem + its options) never splits across pages. */
+  p:has(> .bk-opts), p:has(> .bk-ov) { break-inside: avoid; page-break-inside: avoid; }
+  /* 聴解: every 問題 opens a new page, as printed (the first follows the label). */
+  h2.bk-mondai-l { break-before: page; page-break-before: always; }
+  h1.bk-part + h2.bk-mondai-l { break-before: auto; page-break-before: auto; }
+  /* 「右のページは…の案内である」: the flyer gets a page of its own. */
+  .passage-box:has(> .bk-flyer) { break-before: page; page-break-before: always; }
+}
+@page { @top-right { content: "言語知識（文字・語彙・文法）・読解"; font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", sans-serif; font-size: 8.5pt; color: #333; } }
 @media screen {
   :root { --gutter: 1.6em; }
   body { max-width: 60em; margin: 0 auto; padding: 2.5em var(--gutter) 6em;
          background: #fff; }
   table { max-width: 100%; }
+  /* A wide 問題14 table scrolls sideways on a narrow screen. Screen only: a
+     scroll container cannot break across printed pages (see .passage-box). */
+  .passage-box { overflow-x: auto; }
+  .bk-cover { border: 1px solid #d4d4d4; padding: 2.4em 2.6em 1.6em; margin: 0 0 3em; }
 }
 @media screen and (max-width: 48em) {
   :root { --gutter: 0.8em; }
@@ -73,226 +159,237 @@ strong { font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", 
   table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
   blockquote { padding: 8px 10px; margin: 8px 0; }
   h1 { font-size: 13.5pt; margin: 22px 0 10px; }
-  h2 { font-size: 11pt; padding: 4px 8px; margin: 18px 0 10px; }
+  h2 { font-size: 11pt; margin: 18px 0 10px; }
+  h2.bk-mondai-l { font-size: 15pt; }
+  .passage-box { padding: 10px 12px; }
+  /* Four columns do not fit a phone: halve them, never wrap mid-option. */
+  .bk-opts { margin-left: .4em; }
+  .bk-opts.bk-c4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .bk-opts.bk-c2 { grid-template-columns: minmax(0, 1fr); }
+  .bk-ov { margin-left: .4em; }
+  .bk-cover { padding: 1.2em 1em; }
+  .bk-cv-level { font-size: 32pt; }
+  .bk-cv-title { font-size: 15pt; }
+  .bk-cv-notes { padding: .6em .9em; }
 }
-</style></head><body><h1>【文字・語彙】</h1>
-<h2>問題1 ＿＿の言葉の読み方として最もよいものを、1・2・3・4から一つ選びなさい。</h2>
-<p><strong>1</strong> 父はいつも<strong>安全運転</strong>を心がけています。<br />
- 1. あんぜんうんてん　　　2. あんせんうんでん　　　3. あんぜんうんでん　　　4. あんせんうんてん</p>
-<p><strong>2</strong> 明日は先輩と<strong>打ち合わせる</strong>予定だ。<br />
- 1. まちあわせる　　　2. もちあわせる　　　3. たちあわせる　　　4. うちあわせる</p>
-<p><strong>3</strong> 土曜日の<strong>講演会</strong>に友人と行きました。<br />
- 1. こえんかい　　　2. こうえんかい　　　3. こえんがい　　　4. こうえんがい</p>
-<p><strong>4</strong> 詳しい理由は、<strong>前述</strong>のとおりである。<br />
- 1. せんじゅつ　　　2. ぜんじゅつ　　　3. せんしゅつ　　　4. ぜんしゅつ</p>
-<p><strong>5</strong> 兄弟には<strong>平等</strong>におやつを分けます。<br />
- 1. びょうどう　　　2. ひょうとう　　　3. びょうとう　　　4. ひょうどう</p>
-<h2>問題2 ＿＿の言葉を漢字で書くとき、最もよいものを1・2・3・4から一つ選びなさい。</h2>
-<p><strong>6</strong> 妹は今<strong>ひきざん</strong>の練習をしています。<br />
- 1. 匹算　　　2. 引散　　　3. 引算　　　4. 匹散</p>
-<p><strong>7</strong> 昔この家には<strong>おてつだいさん</strong>がいた。<br />
- 1. お手仕いさん　　　2. お手作いさん　　　3. お手使いさん　　　4. お手伝いさん</p>
-<p><strong>8</strong> 引っ越しの前に<strong>やぬし</strong>へ連絡しました。<br />
- 1. 宅主　　　2. 家主　　　3. 宿主　　　4. 店主</p>
-<p><strong>9</strong> この仕事は私が<strong>ひきうける</strong>つもりだ。<br />
- 1. 弾き請ける　　　2. 引き受ける　　　3. 弾き受ける　　　4. 引き請ける</p>
-<p><strong>10</strong> 祖父の家の庭には、<strong>いど</strong>があります。<br />
- 1. 居土　　　2. 井土　　　3. 居戸　　　4. 井戸</p>
-<h2>問題3 （　）に入れるのに最もよいものを、1・2・3・4から一つ選びなさい。</h2>
-<p><strong>11</strong> 会議では（　）対意見が相次いだ。<br />
- 1. 非　　　2. 不　　　3. 無　　　4. 反</p>
-<p><strong>12</strong> その喫茶店は昭和（　）の内装で人気がある。<br />
- 1. 化　　　2. 性　　　3. 風　　　4. 制</p>
-<p><strong>13</strong> 今月の和菓子は花（　）で、桜や梅の形が並ぶ。<br />
- 1. まみれ　　　2. 尽くし　　　3. だらけ　　　4. ぐるみ</p>
-<h2>問題4 （　）に入れるのに最もよいものを、1・2・3・4から一つ選びなさい。</h2>
-<p><strong>14</strong> 姉は休みの日に部屋をすみずみまで掃除しないと（　）らしい。<br />
- 1. 腹が立たない　　　2. 手が離せない　　　3. 気が済まない　　　4. 目が届かない</p>
-<p><strong>15</strong> 今日のみそ汁は（　）が濃すぎたので、お湯を足して飲みやすくした。<br />
- 1. 盛り付け　　　2. 下ごしらえ　　　3. 煮込み　　　4. 味付け</p>
-<p><strong>16</strong> この林は野鳥の（　）のため、立ち入りが禁じられている。<br />
- 1. 保護　　　2. 保存　　　3. 確保　　　4. 保管</p>
-<p><strong>17</strong> 新しい薬は開発の（　）にあり、発売の時期はまだ決まっていない。<br />
- 1. 途端　　　2. 目前　　　3. 途上　　　4. 直後</p>
-<p><strong>18</strong> 彼は将来が（　）な選手だと、監督にも高く評価されている。<br />
- 1. 有望　　　2. 有力　　　3. 有能　　　4. 有利</p>
-<p><strong>19</strong> 私は学生のころ、この先生から研究の面で大きな（　）を受けた。<br />
- 1. 礼　　　2. 徳　　　3. 恩　　　4. 情</p>
-<p><strong>20</strong> 友人の（　）に従って、日程に無理のある旅行の計画を立て直した。<br />
- 1. 忠告　　　2. 告白　　　3. 報告　　　4. 予告</p>
-<h2>問題5 ＿＿の言葉に意味が最も近いものを、1・2・3・4から一つ選びなさい。</h2>
-<p><strong>21</strong> 準備は<strong>おおかた</strong>終わりました。<br />
- 1. まったく　　　2. すっかり　　　3. だいたい　　　4. いくらか</p>
-<p><strong>22</strong> 今年の練習は去年より<strong>きつい</strong>。<br />
- 1. 楽しい　　　2. 厳しい　　　3. 珍しい　　　4. 短い</p>
-<p><strong>23</strong> 雨で山道は<strong>なおさら</strong>危なくなった。<br />
- 1. たいして　　　2. 多少　　　3. よほど　　　4. いよいよ</p>
-<p><strong>24</strong> 昨日駅で<strong>思いがけない</strong>人に会いました。<br />
- 1. 意外な　　　2. 立派な　　　3. 身近な　　　4. 有名な</p>
-<p><strong>25</strong> 彼は<strong>あくまで</strong>自分の考えを主張した。<br />
- 1. それとなく　　　2. いやいや　　　3. あっさり　　　4. どこまでも</p>
-<h2>問題6 次の言葉の使い方として最もよいものを、1・2・3・4から一つ選びなさい。</h2>
-<p><strong>26</strong> <strong>裏切る</strong><br />
- 1. 弟は父との約束を<strong>裏切って</strong>、夜遅くまで公園で遊んでいた。<br />
- 2. 楽しみにしていた遠足が大雨に<strong>裏切られ</strong>、一日中教室で過ごすことになった。<br />
- 3. 長年一緒に働いてきた同僚に<strong>裏切られ</strong>、しばらく立ち直れなかった。<br />
- 4. 玄関のマットは時々<strong>裏切って</strong>使うと、長持ちするそうだ。</p>
-<p><strong>27</strong> <strong>無数</strong><br />
- 1. よく晴れた夜には、<strong>無数</strong>の星が空いっぱいに広がって見える。<br />
- 2. 開会式の会場には<strong>無数</strong>の参加者が集まり、用意した席が足りなくなった。<br />
- 3. 大雨が続いたので、ダムには<strong>無数</strong>の水がたまっているそうだ。<br />
- 4. この図書館では、一人が一度に<strong>無数</strong>の本を借りられる。</p>
-<p><strong>28</strong> <strong>暗い</strong><br />
- 1. 私はこの辺りの地理に<strong>暗い</strong>ので、駅までの道を人に尋ねた。<br />
- 2. 祖母は目が<strong>暗く</strong>なったと言って、駅前の店で眼鏡を作り直してきた。<br />
- 3. 火事の原因はまだ<strong>暗い</strong>ままで、調査が続けられている。<br />
- 4. 父の病気は思ったより<strong>暗く</strong>、入院が長引きそうだ。</p>
-<p><strong>29</strong> <strong>蓄える</strong><br />
- 1. 使い終わった工具は、必ず元の棚に<strong>蓄えて</strong>おいてください。<br />
- 2. 兄は世界中の珍しい切手を<strong>蓄える</strong>のが趣味だそうだ。<br />
- 3. 地震に備えて、水や缶詰を少しずつ<strong>蓄える</strong>ようにしている。<br />
- 4. 彼は年老いた両親を<strong>蓄える</strong>ために、遠くの町で働いている。</p>
-<p><strong>30</strong> <strong>解消</strong><br />
- 1. 黒板に書いた文字を<strong>解消して</strong>から、教室のかぎを閉めた。<br />
- 2. 練習が終わると、部員たちは校庭で<strong>解消して</strong>家に帰った。<br />
- 3. 長かった会議からやっと<strong>解消されて</strong>、大きく息をついた。<br />
- 4. 毎朝歩くようにしてから、運動不足が少しずつ<strong>解消された</strong>。</p>
-<h1>【文法】</h1>
-<h2>問題7 次の文の（　）に入れるのに最もよいものを、1・2・3・4から一つ選びなさい。</h2>
-<p><strong>31</strong> この登山の会では、参加する人の経験（　）、出発前に全員が同じ手順で持ち物を確かめることになっている。<br />
- 1. を問わず　　　2. からして　　　3. を通じて　　　4. に伴って</p>
-<p><strong>32</strong> あんなに練習したんだから、次の試合は勝つ（　）。<br />
- 1. に決まっている　　　2. とは限らない　　　3. ものだ　　　4. おそれがある</p>
-<p><strong>33</strong> （会議で）<br />
+</style></head><body><section class="bk-cover"><div class="bk-cv-head"><span class="bk-cv-en">Language Knowledge (Vocabulary/Grammar)・Reading</span><span class="bk-cv-kind">問題用紙</span></div><div class="bk-cv-level">N2</div><div class="bk-cv-title">言語知識（文字・語彙・文法）・読解</div><div class="bk-cv-time">（105分）</div><div class="bk-cv-notes"><div class="bk-cv-nh">注意 <small>Notes</small></div><div class="bk-cv-item"><span>1.</span><div>試験が始まるまで、この問題用紙を開けないでください。<small>Do not open this question booklet until the test begins.</small></div></div><div class="bk-cv-item"><span>2.</span><div>この問題用紙を持って帰ることはできません。<small>Do not take this question booklet with you after the test.</small></div></div><div class="bk-cv-item"><span>3.</span><div>受験番号と名前を下の欄に、受験票と同じように書いてください。<small>Write your examinee registration number and name clearly in each box below as written on your test voucher.</small></div></div><div class="bk-cv-item"><span>4.</span><div>問題には解答番号の<span class="bk-cv-box">1</span>、<span class="bk-cv-box">2</span>、<span class="bk-cv-box">3</span> … が付いています。解答は、解答用紙にある同じ番号のところにマークしてください。<small>One of the row numbers <span class="bk-cv-box">1</span>、<span class="bk-cv-box">2</span>、<span class="bk-cv-box">3</span> … is given for each question. Mark your answer in the same row of the answer sheet.</small></div></div></div><table class="bk-cv-id"><tr><th>受験番号　Examinee Registration Number</th><td></td></tr></table><table class="bk-cv-id"><tr><th>名前　Name</th><td></td></tr></table></section><h1 class="bk-part">【文字・語彙】</h1>
+<h2 class="bk-mondai"><span class="bk-mn">問題1</span> <span class="bk-mi">＿＿の言葉の読み方として最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
+<p><strong class="bk-qn">1</strong> 父はいつも<strong class="bk-tw">安全運転</strong>を心がけています。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">あんぜんうんてん</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">あんせんうんでん</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">あんぜんうんでん</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">あんせんうんてん</span></span></span></p>
+<p><strong class="bk-qn">2</strong> 明日は先輩と<strong class="bk-tw">打ち合わせる</strong>予定だ。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">まちあわせる</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">もちあわせる</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">たちあわせる</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">うちあわせる</span></span></span></p>
+<p><strong class="bk-qn">3</strong> 土曜日の<strong class="bk-tw">講演会</strong>に友人と行きました。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">こえんかい</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">こうえんかい</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">こえんがい</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">こうえんがい</span></span></span></p>
+<p><strong class="bk-qn">4</strong> 詳しい理由は、<strong class="bk-tw">前述</strong>のとおりである。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">せんじゅつ</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">ぜんじゅつ</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">せんしゅつ</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">ぜんしゅつ</span></span></span></p>
+<p><strong class="bk-qn">5</strong> 兄弟には<strong class="bk-tw">平等</strong>におやつを分けます。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">びょうどう</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">ひょうとう</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">びょうとう</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">ひょうどう</span></span></span></p>
+<h2 class="bk-mondai"><span class="bk-mn">問題2</span> <span class="bk-mi">＿＿の言葉を漢字で書くとき、最もよいものを1・2・3・4から一つ選びなさい。</span></h2>
+<p><strong class="bk-qn">6</strong> 妹は今<strong class="bk-tw">ひきざん</strong>の練習をしています。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">匹算</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">引散</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">引算</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">匹散</span></span></span></p>
+<p><strong class="bk-qn">7</strong> 昔この家には<strong class="bk-tw">おてつだいさん</strong>がいた。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">お手仕いさん</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">お手作いさん</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">お手使いさん</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">お手伝いさん</span></span></span></p>
+<p><strong class="bk-qn">8</strong> 引っ越しの前に<strong class="bk-tw">やぬし</strong>へ連絡しました。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">宅主</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">家主</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">宿主</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">店主</span></span></span></p>
+<p><strong class="bk-qn">9</strong> この仕事は私が<strong class="bk-tw">ひきうける</strong>つもりだ。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">弾き請ける</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">引き受ける</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">弾き受ける</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">引き請ける</span></span></span></p>
+<p><strong class="bk-qn">10</strong> 祖父の家の庭には、<strong class="bk-tw">いど</strong>があります。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">居土</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">井土</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">居戸</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">井戸</span></span></span></p>
+<h2 class="bk-mondai"><span class="bk-mn">問題3</span> <span class="bk-mi">（　）に入れるのに最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
+<p><strong class="bk-qn">11</strong> 会議では（　）対意見が相次いだ。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">非</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">不</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">無</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">反</span></span></span></p>
+<p><strong class="bk-qn">12</strong> その喫茶店は昭和（　）の内装で人気がある。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">化</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">性</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">風</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">制</span></span></span></p>
+<p><strong class="bk-qn">13</strong> 今月の和菓子は花（　）で、桜や梅の形が並ぶ。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">まみれ</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">尽くし</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">だらけ</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">ぐるみ</span></span></span></p>
+<h2 class="bk-mondai"><span class="bk-mn">問題4</span> <span class="bk-mi">（　）に入れるのに最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
+<p><strong class="bk-qn">14</strong> 姉は休みの日に部屋をすみずみまで掃除しないと（　）らしい。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">腹が立たない</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">手が離せない</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">気が済まない</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">目が届かない</span></span></span></p>
+<p><strong class="bk-qn">15</strong> 今日のみそ汁は（　）が濃すぎたので、お湯を足して飲みやすくした。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">盛り付け</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">下ごしらえ</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">煮込み</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">味付け</span></span></span></p>
+<p><strong class="bk-qn">16</strong> この林は野鳥の（　）のため、立ち入りが禁じられている。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">保護</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">保存</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">確保</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">保管</span></span></span></p>
+<p><strong class="bk-qn">17</strong> 新しい薬は開発の（　）にあり、発売の時期はまだ決まっていない。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">途端</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">目前</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">途上</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">直後</span></span></span></p>
+<p><strong class="bk-qn">18</strong> 彼は将来が（　）な選手だと、監督にも高く評価されている。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">有望</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">有力</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">有能</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">有利</span></span></span></p>
+<p><strong class="bk-qn">19</strong> 私は学生のころ、この先生から研究の面で大きな（　）を受けた。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">礼</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">徳</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">恩</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">情</span></span></span></p>
+<p><strong class="bk-qn">20</strong> 友人の（　）に従って、日程に無理のある旅行の計画を立て直した。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">忠告</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">告白</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">報告</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">予告</span></span></span></p>
+<h2 class="bk-mondai"><span class="bk-mn">問題5</span> <span class="bk-mi">＿＿の言葉に意味が最も近いものを、1・2・3・4から一つ選びなさい。</span></h2>
+<p><strong class="bk-qn">21</strong> 準備は<strong class="bk-tw">おおかた</strong>終わりました。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">まったく</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">すっかり</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">だいたい</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">いくらか</span></span></span></p>
+<p><strong class="bk-qn">22</strong> 今年の練習は去年より<strong class="bk-tw">きつい</strong>。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">楽しい</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">厳しい</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">珍しい</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">短い</span></span></span></p>
+<p><strong class="bk-qn">23</strong> 雨で山道は<strong class="bk-tw">なおさら</strong>危なくなった。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">たいして</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">多少</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">よほど</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">いよいよ</span></span></span></p>
+<p><strong class="bk-qn">24</strong> 昨日駅で<strong class="bk-tw">思いがけない</strong>人に会いました。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">意外な</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">立派な</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">身近な</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">有名な</span></span></span></p>
+<p><strong class="bk-qn">25</strong> 彼は<strong class="bk-tw">あくまで</strong>自分の考えを主張した。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">それとなく</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">いやいや</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">あっさり</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">どこまでも</span></span></span></p>
+<h2 class="bk-mondai"><span class="bk-mn">問題6</span> <span class="bk-mi">次の言葉の使い方として最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
+<p><strong class="bk-qn">26</strong> <strong>裏切る</strong><br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">弟は父との約束を<strong class="bk-tw">裏切って</strong>、夜遅くまで公園で遊んでいた。</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">楽しみにしていた遠足が大雨に<strong class="bk-tw">裏切られ</strong>、一日中教室で過ごすことになった。</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">長年一緒に働いてきた同僚に<strong class="bk-tw">裏切られ</strong>、しばらく立ち直れなかった。</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">玄関のマットは時々<strong class="bk-tw">裏切って</strong>使うと、長持ちするそうだ。</span></span></p>
+<p><strong class="bk-qn">27</strong> <strong>無数</strong><br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">よく晴れた夜には、<strong class="bk-tw">無数</strong>の星が空いっぱいに広がって見える。</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">開会式の会場には<strong class="bk-tw">無数</strong>の参加者が集まり、用意した席が足りなくなった。</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">大雨が続いたので、ダムには<strong class="bk-tw">無数</strong>の水がたまっているそうだ。</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">この図書館では、一人が一度に<strong class="bk-tw">無数</strong>の本を借りられる。</span></span></p>
+<p><strong class="bk-qn">28</strong> <strong>暗い</strong><br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">私はこの辺りの地理に<strong class="bk-tw">暗い</strong>ので、駅までの道を人に尋ねた。</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">祖母は目が<strong class="bk-tw">暗く</strong>なったと言って、駅前の店で眼鏡を作り直してきた。</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">火事の原因はまだ<strong class="bk-tw">暗い</strong>ままで、調査が続けられている。</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">父の病気は思ったより<strong class="bk-tw">暗く</strong>、入院が長引きそうだ。</span></span></p>
+<p><strong class="bk-qn">29</strong> <strong>蓄える</strong><br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">使い終わった工具は、必ず元の棚に<strong class="bk-tw">蓄えて</strong>おいてください。</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">兄は世界中の珍しい切手を<strong class="bk-tw">蓄える</strong>のが趣味だそうだ。</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">地震に備えて、水や缶詰を少しずつ<strong class="bk-tw">蓄える</strong>ようにしている。</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">彼は年老いた両親を<strong class="bk-tw">蓄える</strong>ために、遠くの町で働いている。</span></span></p>
+<p><strong class="bk-qn">30</strong> <strong>解消</strong><br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">黒板に書いた文字を<strong class="bk-tw">解消して</strong>から、教室のかぎを閉めた。</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">練習が終わると、部員たちは校庭で<strong class="bk-tw">解消して</strong>家に帰った。</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">長かった会議からやっと<strong class="bk-tw">解消されて</strong>、大きく息をついた。</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">毎朝歩くようにしてから、運動不足が少しずつ<strong class="bk-tw">解消された</strong>。</span></span></p>
+<h1 class="bk-part">【文法】</h1>
+<h2 class="bk-mondai"><span class="bk-mn">問題7</span> <span class="bk-mi">次の文の（　）に入れるのに最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
+<p><strong class="bk-qn">31</strong> この登山の会では、参加する人の経験（　）、出発前に全員が同じ手順で持ち物を確かめることになっている。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">を問わず</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">からして</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">を通じて</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">に伴って</span></span></span></p>
+<p><strong class="bk-qn">32</strong> あんなに練習したんだから、次の試合は勝つ（　）。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">に決まっている</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">とは限らない</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">ものだ</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">おそれがある</span></span></span></p>
+<p><strong class="bk-qn">33</strong> （会議で）<br />
 A「この案ですが、費用の見積もりがまだ出ていないようですね。」<br />
 B「申し訳ありません。費用（　）は、来週の会議で改めてご説明いたします。」<br />
- 1. に関して　　　2. に対して　　　3. にわたって　　　4. に沿って</p>
-<p><strong>34</strong> 例の件を先方に伝えようか（　）、彼は三日も決めかねているようだ。<br />
- 1. 伝えたものか　　　2. 伝えまいか　　　3. 伝えるものか　　　4. 伝えまいと</p>
-<p><strong>35</strong> かぜを早く治したければ、まずはよく寝る（　）。<br />
- 1. 限りだ　　　2. ばかりだ　　　3. ことだ　　　4. ところだ</p>
-<p><strong>36</strong> この製品が世界中で受け入れられているのは、まさに開発者たちが十年にわたって失敗を重ねながら改良を続けてきた結果（　）。<br />
- 1. にすぎない　　　2. 次第だ　　　3. かのようだ　　　4. にほかならない</p>
-<p><strong>37</strong> 当店では、大きさも花の種類もお客様のご予算（　）お選びいただけますので、どうぞお気軽にご相談ください。<br />
- 1. にもかかわらず　　　2. にひきかえ　　　3. に応じて　　　4. をめぐって</p>
-<p><strong>38</strong> （家で）<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">に関して</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">に対して</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">にわたって</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">に沿って</span></span></span></p>
+<p><strong class="bk-qn">34</strong> 例の件を先方に伝えようか（　）、彼は三日も決めかねているようだ。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">伝えたものか</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">伝えまいか</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">伝えるものか</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">伝えまいと</span></span></span></p>
+<p><strong class="bk-qn">35</strong> かぜを早く治したければ、まずはよく寝る（　）。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">限りだ</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">ばかりだ</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">ことだ</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">ところだ</span></span></span></p>
+<p><strong class="bk-qn">36</strong> この製品が世界中で受け入れられているのは、まさに開発者たちが十年にわたって失敗を重ねながら改良を続けてきた結果（　）。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">にすぎない</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">次第だ</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">かのようだ</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">にほかならない</span></span></span></p>
+<p><strong class="bk-qn">37</strong> 当店では、大きさも花の種類もお客様のご予算（　）お選びいただけますので、どうぞお気軽にご相談ください。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">にもかかわらず</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">にひきかえ</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">に応じて</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">をめぐって</span></span></span></p>
+<p><strong class="bk-qn">38</strong> （家で）<br />
 兄「日曜の引っ越し、トラックを借りて自分たちで運ぶつもりなんだ。」<br />
 弟「自分で運ぶ（　）、あの荷物の量だと一日では終わらないと思うよ。」<br />
- 1. やら業者に頼むやら　　　2. だの業者に頼むだの　　　3. につけ業者に頼むにつけ　　　4. にしても業者に頼むにしても</p>
-<p><strong>39</strong> 一度契約書に署名した（　）、こちらの都合だけで条件を変えることはできない。<br />
- 1. かと思うと　　　2. きり　　　3. 以来　　　4. 以上は</p>
-<p><strong>40</strong> 新しい薬を飲んでみたが、熱は下がる（　）、かえって上がってしまった。<br />
- 1. からといって　　　2. どころか　　　3. わりに　　　4. ばかりか</p>
-<p><strong>41</strong> 駅前に新しくできたこの図書館は、市内に住む人（　）、近くの町から通ってくる人も自由に利用できる。<br />
- 1. にかけては　　　2. はもちろん　　　3. にしては　　　4. に限って</p>
-<p><strong>42</strong> （インタビューで）<br />
+<span class="bk-opts bk-c2"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">やら業者に頼むやら</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">だの業者に頼むだの</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">につけ業者に頼むにつけ</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">にしても業者に頼むにしても</span></span></span></p>
+<p><strong class="bk-qn">39</strong> 一度契約書に署名した（　）、こちらの都合だけで条件を変えることはできない。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">かと思うと</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">きり</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">以来</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">以上は</span></span></span></p>
+<p><strong class="bk-qn">40</strong> 新しい薬を飲んでみたが、熱は下がる（　）、かえって上がってしまった。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">からといって</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">どころか</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">わりに</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">ばかりか</span></span></span></p>
+<p><strong class="bk-qn">41</strong> 駅前に新しくできたこの図書館は、市内に住む人（　）、近くの町から通ってくる人も自由に利用できる。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">にかけては</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">はもちろん</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">にしては</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">に限って</span></span></span></p>
+<p><strong class="bk-qn">42</strong> （インタビューで）<br />
 長く東京で働いていましたが、祖父が倒れたこと（　）、実家の近くへ引っ越すことに決めました。<br />
- 1. をもとに　　　2. にあたって　　　3. を契機に　　　4. に基づいて</p>
-<h2>問題8 次の文の ★ に入る最もよいものを、1・2・3・4から一つ選びなさい。</h2>
-<p><strong>43</strong> （社内の案内）<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">をもとに</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">にあたって</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">を契機に</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">に基づいて</span></span></span></p>
+<h2 class="bk-mondai"><span class="bk-mn">問題8</span> <span class="bk-mi">次の文の ★ に入る最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
+<p><strong class="bk-qn">43</strong> （社内の案内）<br />
 台風などで ＿＿ ＿＿ ★ ＿＿。<br />
- 1. おいては　　　2. 交通機関の　　　3. 自宅で待機してください　　　4. 乱れが続いている状況に</p>
-<p><strong>44</strong> （家で）<br />
+<span class="bk-opts bk-c2"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">おいては</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">交通機関の</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">自宅で待機してください</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">乱れが続いている状況に</span></span></span></p>
+<p><strong class="bk-qn">44</strong> （家で）<br />
 姉「このソファ、ネットで買おうと思うんだけど。」<br />
 兄「あわてないで、＿＿ ＿＿ ★ ＿＿。」<br />
- 1. 部屋の入り口の幅を　　　2. いいんじゃない　　　3. はかったうえで　　　4. 注文したほうが</p>
-<p><strong>45</strong> この公園は、＿＿ ＿＿ ★ ＿＿、近くの人たちに長く親しまれている。<br />
- 1. はじめ四季おりおりの　　　2. 桜を　　　3. 花が楽しめる　　　4. 場所として</p>
-<p><strong>46</strong> （家で）<br />
+<span class="bk-opts bk-c2"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">部屋の入り口の幅を</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">いいんじゃない</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">はかったうえで</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">注文したほうが</span></span></span></p>
+<p><strong class="bk-qn">45</strong> この公園は、＿＿ ＿＿ ★ ＿＿、近くの人たちに長く親しまれている。<br />
+<span class="bk-opts bk-c2"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">はじめ四季おりおりの</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">桜を</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">花が楽しめる</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">場所として</span></span></span></p>
+<p><strong class="bk-qn">46</strong> （家で）<br />
 姉「駅前のパン屋、今日もまだ行列してるね。」<br />
 妹「この間、三十分並んでやっと買えたよ。＿＿ ＿＿ ★ ＿＿。」<br />
- 1. 毎朝並ぶ　　　2. ものではないかな　　　3. ほどの　　　4. とはいえ</p>
-<p><strong>47</strong> この川は、工場の水で魚がすめない川と言われていたが、住民が続けてきた清掃活動によって、＿＿ ＿＿ ★ ＿＿。<br />
- 1. 取りもどし　　　2. 清らかさを　　　3. つつある　　　4. かつての</p>
-<h2>問題9 次の文章を読んで、文章全体の内容を考えて、48から51の中に入る最もよいものを、1・2・3・4から一つ選びなさい。</h2>
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">毎朝並ぶ</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">ものではないかな</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">ほどの</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">とはいえ</span></span></span></p>
+<p><strong class="bk-qn">47</strong> この川は、工場の水で魚がすめない川と言われていたが、住民が続けてきた清掃活動によって、＿＿ ＿＿ ★ ＿＿。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">取りもどし</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">清らかさを</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">つつある</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">かつての</span></span></span></p>
+<h2 class="bk-mondai"><span class="bk-mn">問題9</span> <span class="bk-mi">次の文章を読んで、文章全体の内容を考えて、48から51の中に入る最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
 <div class="passage-box">
 <p>金曜の汁</p>
-<p>ひとり暮らしを始めた年から、金曜の晩は、冷蔵庫に残っているものだけで汁をつくることにしている。その日は買い足しをしない。にんじんの端も、しなびかけた葉も、細かく刻んで鍋に入れる。（　48　）、いたみかけたものだけは入れない。味つけは塩と決めていて、ほかは何も足さない。</p>
-<p>その週によく使った野菜は、金曜には残っていない。買い足しをしないのだから、鍋には、あまり手の伸びなかったものばかりが（　49　）。具の多い週もあれば、湯と塩に近い週もある。金曜の食卓を見れば、その一週間に何を買い、何に手を伸ばさなかったかが、そのまま並んでいることになる。</p>
-<p>半年ほど続けたころ、毎週決まって同じものが鍋に入っていることに気がついた。大きな束で買う葉物と、一袋に四つ入っているじゃがいもである。葉物は三日目には黄ばみ、じゃがいもは袋の底で芽を出しかけていた。あれも入れよう、これも入れようと考えている（　50　）、鍋はいつも同じ顔になった。</p>
-<p>次の買い物から、葉物は半分の束を選び、じゃがいもは量り売りの店で三つだけ買うようになった。一年前なら、安いという理由で大きな束に手を出していた。冷蔵庫の中で減らしたいものが先に分かっていれば、かごに入れる量のほうが変わる。片づけのために始めた鍋が、気がつけば（　51　）。</p>
-<p>金曜の汁は、いまも毎週つくっている。味は、その週によって違う。同じ味にならないのが、この汁のいいところだと思っている。</p>
+<p>　ひとり暮らしを始めた年から、金曜の晩は、冷蔵庫に残っているものだけで汁をつくることにしている。その日は買い足しをしない。にんじんの端も、しなびかけた葉も、細かく刻んで鍋に入れる。（　48　）、いたみかけたものだけは入れない。味つけは塩と決めていて、ほかは何も足さない。</p>
+<p>　その週によく使った野菜は、金曜には残っていない。買い足しをしないのだから、鍋には、あまり手の伸びなかったものばかりが（　49　）。具の多い週もあれば、湯と塩に近い週もある。金曜の食卓を見れば、その一週間に何を買い、何に手を伸ばさなかったかが、そのまま並んでいることになる。</p>
+<p>　半年ほど続けたころ、毎週決まって同じものが鍋に入っていることに気がついた。大きな束で買う葉物と、一袋に四つ入っているじゃがいもである。葉物は三日目には黄ばみ、じゃがいもは袋の底で芽を出しかけていた。あれも入れよう、これも入れようと考えている（　50　）、鍋はいつも同じ顔になった。</p>
+<p>　次の買い物から、葉物は半分の束を選び、じゃがいもは量り売りの店で三つだけ買うようになった。一年前なら、安いという理由で大きな束に手を出していた。冷蔵庫の中で減らしたいものが先に分かっていれば、かごに入れる量のほうが変わる。片づけのために始めた鍋が、気がつけば（　51　）。</p>
+<p>　金曜の汁は、いまも毎週つくっている。味は、その週によって違う。同じ味にならないのが、この汁のいいところだと思っている。</p>
 </div>
-<p><strong>48</strong><br />
- 1. ただし　　　2. だからこそ　　　3. そこで　　　4. なぜなら</p>
-<p><strong>49</strong><br />
- 1. 集まるものではない　　　2. 集まるにすぎない　　　3. 集まるはずがない　　　4. 集まるわけだ</p>
-<p><strong>50</strong><br />
- 1. ところで　　　2. とたんに　　　3. あげくに　　　4. うちに</p>
-<p><strong>51</strong><br />
- 1. 残り物を片づけている　　　2. 味つけの工夫を試している　　　3. 次の買い物を決めている　　　4. 食費の計算をしている</p>
-<h1>【読解】</h1>
-<h2>問題10 次の(1)から(5)の文章を読んで、後の問いに対する答えとして最もよいものを、1・2・3・4から一つ選びなさい。</h2>
+<p><strong class="bk-qn">48</strong><br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">ただし</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">だからこそ</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">そこで</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">なぜなら</span></span></span></p>
+<p><strong class="bk-qn">49</strong><br />
+<span class="bk-opts bk-c2"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">集まるものではない</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">集まるにすぎない</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">集まるはずがない</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">集まるわけだ</span></span></span></p>
+<p><strong class="bk-qn">50</strong><br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">ところで</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">とたんに</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">あげくに</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">うちに</span></span></span></p>
+<p><strong class="bk-qn">51</strong><br />
+<span class="bk-opts bk-c2"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">残り物を片づけている</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">味つけの工夫を試している</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">次の買い物を決めている</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">食費の計算をしている</span></span></span></p>
+<h1 class="bk-part bk-brk">【読解】</h1>
+<h2 class="bk-mondai"><span class="bk-mn">問題10</span> <span class="bk-mi">次の(1)から(5)の文章を読んで、後の問いに対する答えとして最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
 <h3>(1)</h3>
 <div class="passage-box">
-<p>古い寺や神社の石段を直す仕事を二十年続けていて、各地を回っては、石の表面の様子を確認する。<br />
+<p>　古い寺や神社の石段を直す仕事を二十年続けていて、各地を回っては、石の表面の様子を確認する。<br />
 　深くへこむのは人の通る真ん中だろうと、私は長く思っていた。ところが、どの石段でもいちばんくぼんでいるのは、下から三段目あたりの、端に寄った所である。<br />
-　理由は、上りはじめの部分にある。人はそこで足元を見ながら歩幅を決めるので、同じ場所に何度も足を置く。上へ進むにつれて歩き方が自然に定まり、足のつく場所はばらけて（注1）いく。<br />
+　理由は、上りはじめの部分にある。人はそこで足元を見ながら歩幅を決めるので、同じ場所に何度も足を置く。上へ進むにつれて歩き方が自然に定まり、足のつく場所はばらけて<span class="bk-chu">（注1）</span>いく。<br />
 　同じ石でも、歩き方の決まらない場所から先にへこんでいく。</p>
 <p class="vocab-notes">（注1）ばらける：一つの所に集まらず、あちこちに分かれる</p>
 </div>
-<p><strong>52</strong> 筆者の考えに合うのはどれか<br />
- 1. 石段の減り方を見れば、そこを通った人の数がおおよそ分かる<br />
- 2. 上へ進むにつれて歩き方が定まるので、石の減りも深くなる<br />
- 3. 石段を直すときは、人の通る真ん中から先に手を入れるのがよい<br />
- 4. 石がすり減る度合いは、そこでの足の運びが定まっているかで決まる</p>
+<p><strong class="bk-qn">52</strong> 筆者の考えに合うのはどれか<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">石段の減り方を見れば、そこを通った人の数がおおよそ分かる</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">上へ進むにつれて歩き方が定まるので、石の減りも深くなる</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">石段を直すときは、人の通る真ん中から先に手を入れるのがよい</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">石がすり減る度合いは、そこでの足の運びが定まっているかで決まる</span></span></p>
 <h3>(2)</h3>
 <div class="passage-box">
 <p>件名：会報の部数のご相談</p>
-<p>あさひ印刷　山口　様</p>
-<p>くすのき会の三浦です。お世話になっております。<br />
+<p>　あさひ印刷　山口　様</p>
+<p>　くすのき会の三浦です。お世話になっております。<br />
 　会報のことでご相談があります。これまでは毎号同じ部数をお願いしてまいりましたが、画面で読む会員が増え、紙で受け取りたいという方の人数が月ごとに変化するようになりました。そこで今後は、毎回数え直した部数をお伝えいたします。<br />
 　つきましては、おうかがいしたいのですが、部数のご連絡は、刷り始める何日前までにお送りすればよろしいでしょうか。締め切りの日が分かれば、会員への連絡も、それに合わせて準備できます。<br />
 　お手数ですが、よろしくお願いいたします。</p>
 </div>
-<p><strong>53</strong> このメールで問い合わせていることは何か<br />
- 1. 会報を紙ではなく画面で配るには、どうすればよいかということ<br />
- 2. 月ごとに変わる部数を、いつまでに知らせればよいかということ<br />
- 3. 紙で受け取りたい会員の数を、どのように数えればよいかということ<br />
- 4. 会報を刷る代金が、部数によってどう変わるのかということ</p>
+<p><strong class="bk-qn">53</strong> このメールで問い合わせていることは何か<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">会報を紙ではなく画面で配るには、どうすればよいかということ</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">月ごとに変わる部数を、いつまでに知らせればよいかということ</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">紙で受け取りたい会員の数を、どのように数えればよいかということ</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">会報を刷る代金が、部数によってどう変わるのかということ</span></span></p>
 <h3>(3)</h3>
 <div class="passage-box">
-<p>学習の相談の場では、「説明を聞けば分かるのに、一人になるとできない」という声をうかがいます。分かることとできることの間には、もう一つ、段階がはさまって（注1）います。<br />
+<p>　学習の相談の場では、「説明を聞けば分かるのに、一人になるとできない」という声をうかがいます。分かることとできることの間には、もう一つ、段階がはさまって<span class="bk-chu">（注1）</span>います。<br />
 　段階は三つに分かれます。説明を聞いて筋道が見えるのが一つ目、最後まで自分の手で運べるのが三つ目です。その間にあるのが、途中で手が止まったときに、どこまで戻ればよいかを自分で決められる段階です。<br />
 　この二つ目の段階は、手が止まった場面でしか育ちません。正しく解ける問題がふえても、手が止まる場面は、新しい問題に進むたびにやってきます。そのたびにどこまで戻るかをいっしょに探すことが、この段階を育てる手だてになります。</p>
 <p class="vocab-notes">（注1）はさまる：二つのものの間に入りこむ</p>
 </div>
-<p><strong>54</strong> 筆者の説明に合うのはどれか<br />
- 1. 説明を聞いて筋道が見えれば、あとは自分の手で最後まで運べるようになる<br />
- 2. 一人でやり切る前に、やり直す場所を自分で選ぶ段階がある<br />
- 3. 正しく解けた回数がふえるほど、途中で手が止まることも少なくなる<br />
- 4. 手が止まったら、はじめの説明をもう一度聞き直すのがよい</p>
+<p><strong class="bk-qn">54</strong> 筆者の説明に合うのはどれか<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">説明を聞いて筋道が見えれば、あとは自分の手で最後まで運べるようになる</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">一人でやり切る前に、やり直す場所を自分で選ぶ段階がある</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">正しく解けた回数がふえるほど、途中で手が止まることも少なくなる</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">手が止まったら、はじめの説明をもう一度聞き直すのがよい</span></span></p>
 <h3>(4)</h3>
 <div class="passage-box">
 <p>あおば駅前の広場　「まちの休み日」のお知らせ</p>
-<p>あおば駅前の広場を、来月から毎月第三日曜日、地域のみなさんが自由にお使いになれる日といたします。<br />
+<p>　あおば駅前の広場を、来月から毎月第三日曜日、地域のみなさんが自由にお使いになれる日といたします。<br />
 　これまで広場を利用できるのは、市の催しのある日に限られていました。ふだんは通り抜ける人ばかりで、休む人は見かけません。そこで、催しの有無にかかわらず、月に一度、だれでも使える日をもうけます。<br />
 　当日は、いすや机を持ちこんでもかまいません。品物を売ることと火を使うことはご遠慮ください。前もってのお申し込みは要りません。<br />
 　お使いになったあとは、持ちこんだ物をお持ち帰りください。</p>
 </div>
-<p><strong>55</strong> このお知らせで最も伝えたいことは何か<br />
- 1. 広場を、月に一度は自由に過ごせる場にするということ<br />
- 2. 市の催しのある日を、これから月に一度にふやしていくということ<br />
- 3. 広場を使いたい人は、前もってお申し込みをする必要があるということ<br />
- 4. 通り抜けるだけだった人のために、いすや机を置いておくということ</p>
+<p><strong class="bk-qn">55</strong> このお知らせで最も伝えたいことは何か<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">広場を、月に一度は自由に過ごせる場にするということ</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">市の催しのある日を、これから月に一度にふやしていくということ</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">広場を使いたい人は、前もってお申し込みをする必要があるということ</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">通り抜けるだけだった人のために、いすや机を置いておくということ</span></span></p>
 <h3>(5)</h3>
 <div class="passage-box">
-<p>古い家を借りて住みはじめたころ、私を弱らせたのは玄関の引き戸だった。梅雨のあいだは体でぶつかるようにしないと開かないのに、秋には指一本ですっと動く。<br />
+<p>　古い家を借りて住みはじめたころ、私を弱らせたのは玄関の引き戸だった。梅雨のあいだは体でぶつかるようにしないと開かないのに、秋には指一本ですっと動く。<br />
 　いまも直さないままにしてある。梅雨に入るころ、戸が重くなりはじめたら押し入れの物を出して風を通し、秋になって軽くなったら窓の紙を張り替える。いつからか、戸の重さが、家の仕事の順番を決めるようになっていた。<br />
-　直さずにおいた戸が、いつのまにか家の中の暦（注1）の代わりをしていた。</p>
+　直さずにおいた戸が、いつのまにか家の中の暦<span class="bk-chu">（注1）</span>の代わりをしていた。</p>
 <p class="vocab-notes">（注1）暦：一年の日づけや季節の移り変わりを示したもの</p>
 </div>
-<p><strong>56</strong> 筆者はどのように考えているか<br />
- 1. 梅雨に開かなくなる引き戸は、早めに直してもらうほうがよい<br />
- 2. 秋になって戸が軽くなったら、押し入れの物を出して風を通すとよい<br />
- 3. 手を入れないままの戸が、暮らしの区切りを教えるものになっていた<br />
- 4. 家の傷んだところは、季節ごとに手入れをして回るべきである</p>
-<h2>問題11 次の(1)から(4)の文章を読んで、後の問いに対する答えとして最もよいものを、1・2・3・4から一つ選びなさい。</h2>
+<p><strong class="bk-qn">56</strong> 筆者はどのように考えているか<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">梅雨に開かなくなる引き戸は、早めに直してもらうほうがよい</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">秋になって戸が軽くなったら、押し入れの物を出して風を通すとよい</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">手を入れないままの戸が、暮らしの区切りを教えるものになっていた</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">家の傷んだところは、季節ごとに手入れをして回るべきである</span></span></p>
+<h2 class="bk-mondai"><span class="bk-mn">問題11</span> <span class="bk-mi">次の(1)から(4)の文章を読んで、後の問いに対する答えとして最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
 <h3>(1)</h3>
 <div class="passage-box">
-<p>川ぞいの町で、水防（注1）の当番を三十年ほど続けてきた。大雨の晩になると、決まって何人かが堤防（注2）へ上がっていく。流されて亡くなった人が出た年もある。だから、見に行くのをやめさせればよい、という声が上がる。会合では毎年その話が出るし、その言い分（注3）は、もっとも（注4）なことだと思う。<br />
+<p>　川ぞいの町で、水防<span class="bk-chu">（注1）</span>の当番を三十年ほど続けてきた。大雨の晩になると、決まって何人かが堤防<span class="bk-chu">（注2）</span>へ上がっていく。流されて亡くなった人が出た年もある。だから、見に行くのをやめさせればよい、という声が上がる。会合では毎年その話が出るし、その言い分<span class="bk-chu">（注3）</span>は、もっとも<span class="bk-chu">（注4）</span>なことだと思う。<br />
 　上がった人に後から聞いてみると、答えはおおむねそろっている。知りたいのは、いま家を出たほうがよいのかどうかである。水位の数字だけなら、家にいても放送で分かる。町が配ってきた紙には、水位が何メートルになったら危ないかという数字が並んでいるが、その数字が自分の家にとって何を表すのかは、どこにも書かれていない。だから、自分の目で確かめに行くことになる。危険かどうかの判断が、住民一人一人にまかされていたのである。（中略）<br />
-　三年前、紙の作りを変えて、水位の段（注5）ごとに、「この段になったら、二階へ上げる物をまとめる」「この段になったら、坂の上の公民館へ移る」と、その家ですることを一行ずつ書き足した。<br />
+　三年前、紙の作りを変えて、水位の段<span class="bk-chu">（注5）</span>ごとに、「この段になったら、二階へ上げる物をまとめる」「この段になったら、坂の上の公民館へ移る」と、その家ですることを一行ずつ書き足した。<br />
 　その年の大雨の晩に堤防へ上がった人の数は、前の年の三分の一ほどになった。変えたのは紙の作りで、見回りをふやしてもいないし、数字を大きく刷ってもいない。<br />
 　見に行くのをやめさせるべきだという声は、今も強い。ただ、紙に一行を書き足した年から、堤防へ上がる人は目に見えて減った。</p>
 <p class="vocab-notes">（注1）水防：川があふれないように、住民が組になって備えること<br />
@@ -301,21 +398,21 @@ B「申し訳ありません。費用（　）は、来週の会議で改めて�
 （注4）もっともな：そう考えるのが当たり前で、理屈に合っている<br />
 （注5）段：ものごとの進み具合を、いくつかに区切った一つ一つ</p>
 </div>
-<p><strong>57</strong> 筆者によると、堤防へ上がっていった人が知りたかったことは何か<br />
- 1. 川の水位が、今どのくらいまで上がっているのかということ<br />
- 2. 町の会合で、どのような言い分が出されていたのかということ<br />
- 3. そろそろ家を離れるべき時なのかどうかということ<br />
- 4. 二階へ上げる物を、どこにまとめればよいのかということ</p>
-<p><strong>58</strong> 筆者の考えに合うのはどれか<br />
- 1. 大雨の晩に堤防へ上がる人がいるのは、危なさを軽く見ているためだ<br />
- 2. 外へ出る人が減ったのは、読み手が判断できる形に書き改めたからである<br />
- 3. 水位の数字は、大きく刷って見やすくすれば役に立つようになる<br />
- 4. 見回りの人数をふやしていけば、堤防へ上がる人はいなくなる</p>
+<p><strong class="bk-qn">57</strong> 筆者によると、堤防へ上がっていった人が知りたかったことは何か<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">川の水位が、今どのくらいまで上がっているのかということ</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">町の会合で、どのような言い分が出されていたのかということ</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">そろそろ家を離れるべき時なのかどうかということ</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">二階へ上げる物を、どこにまとめればよいのかということ</span></span></p>
+<p><strong class="bk-qn">58</strong> 筆者の考えに合うのはどれか<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">大雨の晩に堤防へ上がる人がいるのは、危なさを軽く見ているためだ</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">外へ出る人が減ったのは、読み手が判断できる形に書き改めたからである</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">水位の数字は、大きく刷って見やすくすれば役に立つようになる</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">見回りの人数をふやしていけば、堤防へ上がる人はいなくなる</span></span></p>
 <h3>(2)</h3>
 <div class="passage-box">
-<p>市のサッカー連盟で、審判の割りふり（注1）の仕事を十年ほど受け持っている。春と秋の大会が近づくたびに、笛を持つ人が足りず、名簿（注2）を何度も見返すことになる。<br />
-　名簿には、資格を持つ人が二百人ほど並んでいるが、一年に一度でも笛を持つ人は四十人ほどである。残りの人に連絡を取ると、断りの理由はよく似ている。判定（注3）を間違えたときに、その場でどうなるのかが分からない、というのである。<br />
-　応援に来た親から声が飛び、相手の監督が詰め寄る（注4）とき、審判は一人でその場に立っている。だれかが間に入ってくれるのか、それとも最後まで自分でこらえる（注5）ことになるのだろうか。<br />
+<p>　市のサッカー連盟で、審判の割りふり<span class="bk-chu">（注1）</span>の仕事を十年ほど受け持っている。春と秋の大会が近づくたびに、笛を持つ人が足りず、名簿<span class="bk-chu">（注2）</span>を何度も見返すことになる。<br />
+　名簿には、資格を持つ人が二百人ほど並んでいるが、一年に一度でも笛を持つ人は四十人ほどである。残りの人に連絡を取ると、断りの理由はよく似ている。判定<span class="bk-chu">（注3）</span>を間違えたときに、その場でどうなるのかが分からない、というのである。<br />
+　応援に来た親から声が飛び、相手の監督が詰め寄る<span class="bk-chu">（注4）</span>とき、審判は一人でその場に立っている。だれかが間に入ってくれるのか、それとも最後まで自分でこらえる<span class="bk-chu">（注5）</span>ことになるのだろうか。<br />
 　そこで去年、大会の規則を一つ変更して、判定への苦情は、審判本人ではなく、本部席の当番がまず受けることにした。本部席には連盟の役員が必ず一人座り、その場で話を聞く。役員には、苦情への対応のしかたを説明してある。審判は笛を持ったまま試合に戻れる。<br />
 　この規則を入れた大会から、断りの返事は目に見えて少なくなり、初めて笛を持つという人が続けて出てきた。連盟が新しく開いた講習は、その間に一つもない。<br />
 　講習の数をふやすだけでは、笛を持つ人はふえない。間違いが起きたその場でだれが前に出るのかを先に決めておくことこそが要る。</p>
@@ -325,22 +422,22 @@ B「申し訳ありません。費用（　）は、来週の会議で改めて�
 （注4）詰め寄る：相手に強く迫って、近くまで進み出る<br />
 （注5）こらえる：つらさや苦しさを、外に出さずに受け止める</p>
 </div>
-<p><strong>59</strong> 筆者によると、資格を持ちながら笛を持たない人が挙げる理由は何か<br />
- 1. 間違えたあとに自分がどうなるのか、見当がつかないから<br />
- 2. 講習で覚える決まりが多く、とても覚えきれないから<br />
- 3. 大会の数が少ないので、笛を持つ機会がなかなか回ってこないから<br />
- 4. 本部席の当番の仕事が重く、進んでやる人が出てこないから</p>
-<p><strong>60</strong> 筆者は、審判が足りないことについてどのように考えているか<br />
- 1. 資格を取る人をふやしていけば、笛を持つ人の数もおのずとふえていく<br />
- 2. 応援に来た親や監督には、試合中に声を出さないよう求めるべきだ<br />
- 3. 判定の間違いを減らすには、講習の回数をふやしていくのがよい<br />
- 4. 苦情をだれが先に受けるのかを、決まりとして定めておく必要がある</p>
+<p><strong class="bk-qn">59</strong> 筆者によると、資格を持ちながら笛を持たない人が挙げる理由は何か<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">間違えたあとに自分がどうなるのか、見当がつかないから</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">講習で覚える決まりが多く、とても覚えきれないから</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">大会の数が少ないので、笛を持つ機会がなかなか回ってこないから</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">本部席の当番の仕事が重く、進んでやる人が出てこないから</span></span></p>
+<p><strong class="bk-qn">60</strong> 筆者は、審判が足りないことについてどのように考えているか<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">資格を取る人をふやしていけば、笛を持つ人の数もおのずとふえていく</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">応援に来た親や監督には、試合中に声を出さないよう求めるべきだ</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">判定の間違いを減らすには、講習の回数をふやしていくのがよい</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">苦情をだれが先に受けるのかを、決まりとして定めておく必要がある</span></span></p>
 <h3>(3)</h3>
 <div class="passage-box">
-<p>十年ほど前から、私は車いすで町へ出ています。外出のしにくさの話になりますと、たいていは段差の話です。私自身も、使いはじめたころは、歩道と車道のあいだの段や、店の入り口の一段を、いちばんの相手だと思っておりました。<br />
+<p>　十年ほど前から、私は車いすで町へ出ています。外出のしにくさの話になりますと、たいていは段差の話です。私自身も、使いはじめたころは、歩道と車道のあいだの段や、店の入り口の一段を、いちばんの相手だと思っておりました。<br />
 　ところが、半年ほど記録をつけてみて、考えが変わりました。一日の終わりに腕が上がらなくなっている日を数えてみますと、段差の多かった日とは重なりません。重なっていたのは、ゆるく横に傾いた道を長く通った日のほうでした。（中略）<br />
-　歩道は、雨水を車道へ落とすために、横へわずか（注1）に傾けてあります。歩く人はほとんど気づきません。けれども車いすは、傾いた表面の上では、放っておく（注2）と低いほうへ寄っていきます。まっすぐ移動するには、下がる側の輪を強く、上がる側の輪を弱く回し続けます。百メートルのあいだ、片方の腕にだけ力をかけることになります。<br />
-　段差は目に見えますから、迂回（注3）の道を先に選べますし、通りがかり（注4）の人に一言頼むこともできます。傾きのほうは、写真にも写りませんし、こちらから言葉にしにくい。「少し斜め（注5）なので手を貸してください」とは、なかなか言えないものです。<br />
+　歩道は、雨水を車道へ落とすために、横へわずか<span class="bk-chu">（注1）</span>に傾けてあります。歩く人はほとんど気づきません。けれども車いすは、傾いた表面の上では、放っておく<span class="bk-chu">（注2）</span>と低いほうへ寄っていきます。まっすぐ移動するには、下がる側の輪を強く、上がる側の輪を弱く回し続けます。百メートルのあいだ、片方の腕にだけ力をかけることになります。<br />
+　段差は目に見えますから、迂回<span class="bk-chu">（注3）</span>の道を先に選べますし、通りがかり<span class="bk-chu">（注4）</span>の人に一言頼むこともできます。傾きのほうは、写真にも写りませんし、こちらから言葉にしにくい。「少し斜め<span class="bk-chu">（注5）</span>なので手を貸してください」とは、なかなか言えないものです。<br />
 　段差の前では人に頼めますが、傾いた道の上でだれかに頼んだことは、この十年で一度もありません。</p>
 <p class="vocab-notes">（注1）わずか：ほんの少しであること<br />
 （注2）放っておく：手を加えずに、そのままにする<br />
@@ -348,23 +445,23 @@ B「申し訳ありません。費用（　）は、来週の会議で改めて�
 （注4）通りがかり：用のない人が、たまたまそこに居合わせること<br />
 （注5）斜め：まっすぐでなく、かたむいている様子</p>
 </div>
-<p><strong>61</strong> 筆者によると、腕が上がらなくなっていた日に共通していたことは何か<br />
- 1. 歩道と車道のあいだの段を、何度も越えていたこと<br />
- 2. わずかに横へ下がった道を、その日に続けて進んでいたこと<br />
- 3. 雨水を車道へ落とすほど道がぬれていて、輪がすべりやすかったこと<br />
- 4. 店の入り口の一段を、通りがかりの人に頼んで上げてもらったこと</p>
-<p><strong>62</strong> 筆者は、そのような傾きをどういうものだと述べているか<br />
- 1. 前もって地図で調べておけば、通らずにすませることのできるもの<br />
- 2. 段差と同じように、そこを歩く人がすぐに気づくもの<br />
- 3. まわりから見えないため、人の手を借りにくいもの<br />
- 4. 車いすに慣れてくれば、しだいに気にならなくなるもの</p>
+<p><strong class="bk-qn">61</strong> 筆者によると、腕が上がらなくなっていた日に共通していたことは何か<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">歩道と車道のあいだの段を、何度も越えていたこと</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">わずかに横へ下がった道を、その日に続けて進んでいたこと</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">雨水を車道へ落とすほど道がぬれていて、輪がすべりやすかったこと</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">店の入り口の一段を、通りがかりの人に頼んで上げてもらったこと</span></span></p>
+<p><strong class="bk-qn">62</strong> 筆者は、そのような傾きをどういうものだと述べているか<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">前もって地図で調べておけば、通らずにすませることのできるもの</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">段差と同じように、そこを歩く人がすぐに気づくもの</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">まわりから見えないため、人の手を借りにくいもの</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">車いすに慣れてくれば、しだいに気にならなくなるもの</span></span></p>
 <h3>(4)</h3>
 <div class="passage-box">
-<p>市の健康相談の窓口で、眠りの相談を受けています。よく眠れないとおっしゃる方には、まず二週間、寝る前の一時間をどう過ごしたか、生活の記録を書いていただいており、三年で四百人ほどの紙がたまりました。<br />
-　その紙を、眠るまでにかかった時間の長さで並べ直し、全体の傾向を調査してみました。目についた（注1）のは、明かりの使い方の欄（注2）です。<br />
+<p>　市の健康相談の窓口で、眠りの相談を受けています。よく眠れないとおっしゃる方には、まず二週間、寝る前の一時間をどう過ごしたか、生活の記録を書いていただいており、三年で四百人ほどの紙がたまりました。<br />
+　その紙を、眠るまでにかかった時間の長さで並べ直し、全体の傾向を調査してみました。目についた<span class="bk-chu">（注1）</span>のは、明かりの使い方の欄<span class="bk-chu">（注2）</span>です。<br />
 　寝る一時間ほど前に天井の明かりを消し、手元の明かりだけで過ごしていた方が、全体の三割ほどおられました。この方たちの紙には、眠るまでの時間が十五分ほどと書かれていることが多い。天井の明かりをつけたまま過ごしていた方では、三十分を超える日が目立ちます。<br />
-　明るさそのものより、手元だけを照らすと、細かい字を読んだり台所を片づけたりといった続きのある用事が自然に終わる、という点が効いているようです。用事が途中のままだと、布団の中でその段取り（注3）を考えることになります。考えているあいだは、体のほうも休む構え（注4）に入りません。<br />
-　同じ紙を、寝る時刻をそろえる（注5）ことができていたかどうかでも並べ直してみました。時刻の早い遅いは、この四百人の紙の中では、眠るまでの時間と結びついておりませんでした。<br />
+　明るさそのものより、手元だけを照らすと、細かい字を読んだり台所を片づけたりといった続きのある用事が自然に終わる、という点が効いているようです。用事が途中のままだと、布団の中でその段取り<span class="bk-chu">（注3）</span>を考えることになります。考えているあいだは、体のほうも休む構え<span class="bk-chu">（注4）</span>に入りません。<br />
+　同じ紙を、寝る時刻をそろえる<span class="bk-chu">（注5）</span>ことができていたかどうかでも並べ直してみました。時刻の早い遅いは、この四百人の紙の中では、眠るまでの時間と結びついておりませんでした。<br />
 　夜、早めに天井の明かりを落としていた方の紙には、布団に入ってから眠るまでの時間の短い日が多く並んでいました。</p>
 <p class="vocab-notes">（注1）目につく：ほかより先に、はっと気づかされる<br />
 （注2）欄：紙の上で、書きこむために区切られた場所<br />
@@ -372,46 +469,46 @@ B「申し訳ありません。費用（　）は、来週の会議で改めて�
 （注4）構え：これから何かをするための、体や心の用意<br />
 （注5）そろえる：いくつかのものを、同じ形や同じ数にする</p>
 </div>
-<p><strong>63</strong> 四百人ほどの紙から、筆者はどのようなことが見えてきたと述べているか<br />
- 1. 寝る直前の明かりの使い方が、寝つきの早さと結びついていた<br />
- 2. 天井の明かりを消していた方ほど、寝る時刻そのものが早まっていた<br />
- 3. 二週間書き続けた方ほど、眠れないという訴えが軽くなっていった<br />
- 4. 明かりの欄を書かずに出した方が、全体の三割ほどを占めていた</p>
-<p><strong>64</strong> 筆者は、手元の明かりだけで過ごすことをどのように考えているか<br />
- 1. 部屋を明るくしないこと自体に、眠りをさそう働きがある<br />
- 2. 寝る時刻をそろえるより先に、明かりを落とすほうが効き目がある<br />
- 3. 眠れない人は、まず二週間の記録をつけてみるところから始めるとよい<br />
- 4. やりかけの用事が片づくため、寝床であれこれ考えずにすむ</p>
-<h2>問題12 次のAとBの文章を読んで、後の問いに対する答えとして最もよいものを、1・2・3・4から一つ選びなさい。</h2>
+<p><strong class="bk-qn">63</strong> 四百人ほどの紙から、筆者はどのようなことが見えてきたと述べているか<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">寝る直前の明かりの使い方が、寝つきの早さと結びついていた</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">天井の明かりを消していた方ほど、寝る時刻そのものが早まっていた</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">二週間書き続けた方ほど、眠れないという訴えが軽くなっていった</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">明かりの欄を書かずに出した方が、全体の三割ほどを占めていた</span></span></p>
+<p><strong class="bk-qn">64</strong> 筆者は、手元の明かりだけで過ごすことをどのように考えているか<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">部屋を明るくしないこと自体に、眠りをさそう働きがある</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">寝る時刻をそろえるより先に、明かりを落とすほうが効き目がある</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">眠れない人は、まず二週間の記録をつけてみるところから始めるとよい</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">やりかけの用事が片づくため、寝床であれこれ考えずにすむ</span></span></p>
+<h2 class="bk-mondai"><span class="bk-mn">問題12</span> <span class="bk-mi">次のAとBの文章を読んで、後の問いに対する答えとして最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
 <p><strong>A</strong></p>
 <div class="passage-box">
-<p>仕事を一人で抱えこまないようにするには、担当を二人にすればよい、と言われる。この方法は、以前から会議で提案されていた。私の勤め先では、去年の四月から、書類の受付と問い合わせの窓口を、すべて二人で持つことにした。一方が休んだ日でも、もう一方が同じ引き出しを開けて、同じ台帳を見られる。<br />
+<p>　仕事を一人で抱えこまないようにするには、担当を二人にすればよい、と言われる。この方法は、以前から会議で提案されていた。私の勤め先では、去年の四月から、書類の受付と問い合わせの窓口を、すべて二人で持つことにした。一方が休んだ日でも、もう一方が同じ引き出しを開けて、同じ台帳を見られる。<br />
 　一年たったところで、係の中で「あの人に聞かないと分からない」と言われる仕事を数え直してみたところ、前の年には十八あった。休みを取った日数のほうも、一人あたり平均で四日ふえている。<br />
 　担当を二人にしてから一年で、その人でなければ分からない仕事は、十八から四つになった。</p>
 </div>
 <p><strong>B</strong></p>
 <div class="passage-box">
-<p>担当を二人にすると聞いて、まず心配になったのは、手間が二倍になるのではないかということでした。同じ書類を二人が読み、同じ話を二度しなければなりません。その分、仕事は遅くなるはずだと思っておりました。<br />
+<p>　担当を二人にすると聞いて、まず心配になったのは、手間が二倍になるのではないかということでした。同じ書類を二人が読み、同じ話を二度しなければなりません。その分、仕事は遅くなるはずだと思っておりました。<br />
 　昨年、私どもの部でも同じやり方に変えましたので、時間の使い方を一年分数えてみました。たしかに、二人で話し合う時間は週に一時間ほどふえています。ただ、担当者の席まで行って不在に気づき、出直すという動きは、ほとんどなくなりました。こちらは、それまで週に三時間近くありました。<br />
 　二人で持つと遅くなるという心配は、もっともなものです。ただ、一年分を数え終えてみますと、ふえた時間は週に一時間、減った時間は週に三時間でした。</p>
 </div>
-<p><strong>65</strong> AとBが共通して述べていることは何か<br />
- 1. 担当を二人で持つやり方を取り入れ、その前と後を数えて確かめている<br />
- 2. 担当を二人で持つと、書類を読む手間がそのまま二倍になると述べている<br />
- 3. 担当を二人で持つやり方は、窓口の仕事には向いていないと述べている<br />
- 4. 担当を二人で持つには、係の人数をふやすことが先だと述べている</p>
-<p><strong>66</strong> 担当を二人で持つことについて、AとBはどのように述べているか<br />
- 1. AもBも、仕事にかかる時間そのものが短くなったと述べている<br />
- 2. Aは休みが取りやすくなったと述べ、Bは取りにくくなったと述べている<br />
- 3. Aは人手がさらに要ると述べ、Bは人手は要らなかったと述べている<br />
- 4. Aは一人しか分からない仕事が減ったと述べ、Bは手間はふえなかったと述べている</p>
-<h2>問題13 次の文章を読んで、後の問いに対する答えとして最もよいものを、1・2・3・4から一つ選びなさい。</h2>
-<div class="passage-box">
-<p>横断歩道の信号が青になっている時間の長さは、どうやって決めているのだろうか。私は市の道路の係で、十五年ほどこの数字を決める仕事をしてきた。<br />
-　まず、渡る人の歩く速さを一秒あたり一メートルとして計り、道幅が十二メートルなら十二秒とする。これが、渡り始めた人が向こう側に着くまでに要る時間である。青信号のあいだに出た人が渡り切れなければ、信号の意味がない。けれども、青の時間をそのまま十二秒にするわけにはいかない。青の終わりぎわ（注1）に足を踏み出した（注2）人が、渡っている途中で赤になってしまうからだ。（中略）<br />
-　そこで信号には、三つの時間が組まれている。一つ目は青で、渡り始めてよい時間である。二つ目は青の点滅（注3）で、このあいだに渡り始めてはいけないが、すでに渡っている人はそのまま進む。三つ目は、歩く人にも車にも、どちらにも赤信号が出ている①<strong>わずかな時間</strong>である。ここで、点滅の終わりごろに足を踏み出した人が、向こう側まで渡り切る。<br />
-　三つ目を長く取れば、渡る人はゆったり（注4）進めるが、その分だけ車の動ける時間が減り、信号の一回り（注5）が長くなる。一回りが長くなれば、次に青が来るまでの待ち時間も延びる。渡りやすさと待ち時間は、片方を取れば片方が減る間がらにある。この釣り合いを交差点ごとに決めていく。交通の量や事故の記録、道路の幅や周りの建物の利用のされ方まで、確認する材料は交差点ごとに違う。<br />
-　結局この仕事は、渡る人の速さをどう見込む（注6）かに行き着く。一秒あたり一メートルというのは、急がずに歩く大人の速さである。学校の前や病院の近くでは、これを〇・八メートルに落として計る。実際に歩いている人の様子を調査してから、数値を決めることもある。つえをついて歩く人や、手をつないだ親子は、一メートルでは間に合わないからである。同じ道幅でも、場所によって青の長さが違うのは、そのためである。<br />
+<p><strong class="bk-qn">65</strong> AとBが共通して述べていることは何か<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">担当を二人で持つやり方を取り入れ、その前と後を数えて確かめている</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">担当を二人で持つと、書類を読む手間がそのまま二倍になると述べている</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">担当を二人で持つやり方は、窓口の仕事には向いていないと述べている</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">担当を二人で持つには、係の人数をふやすことが先だと述べている</span></span></p>
+<p><strong class="bk-qn">66</strong> 担当を二人で持つことについて、AとBはどのように述べているか<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">AもBも、仕事にかかる時間そのものが短くなったと述べている</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">Aは休みが取りやすくなったと述べ、Bは取りにくくなったと述べている</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">Aは人手がさらに要ると述べ、Bは人手は要らなかったと述べている</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">Aは一人しか分からない仕事が減ったと述べ、Bは手間はふえなかったと述べている</span></span></p>
+<h2 class="bk-mondai"><span class="bk-mn">問題13</span> <span class="bk-mi">次の文章を読んで、後の問いに対する答えとして最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
+<div class="passage-box"><span class="bk-flow"></span>
+<p>　横断歩道の信号が青になっている時間の長さは、どうやって決めているのだろうか。私は市の道路の係で、十五年ほどこの数字を決める仕事をしてきた。<br />
+　まず、渡る人の歩く速さを一秒あたり一メートルとして計り、道幅が十二メートルなら十二秒とする。これが、渡り始めた人が向こう側に着くまでに要る時間である。青信号のあいだに出た人が渡り切れなければ、信号の意味がない。けれども、青の時間をそのまま十二秒にするわけにはいかない。青の終わりぎわ<span class="bk-chu">（注1）</span>に足を踏み出した<span class="bk-chu">（注2）</span>人が、渡っている途中で赤になってしまうからだ。（中略）<br />
+　そこで信号には、三つの時間が組まれている。一つ目は青で、渡り始めてよい時間である。二つ目は青の点滅<span class="bk-chu">（注3）</span>で、このあいだに渡り始めてはいけないが、すでに渡っている人はそのまま進む。三つ目は、歩く人にも車にも、どちらにも赤信号が出ている①<strong class="bk-tw">わずかな時間</strong>である。ここで、点滅の終わりごろに足を踏み出した人が、向こう側まで渡り切る。<br />
+　三つ目を長く取れば、渡る人はゆったり<span class="bk-chu">（注4）</span>進めるが、その分だけ車の動ける時間が減り、信号の一回り<span class="bk-chu">（注5）</span>が長くなる。一回りが長くなれば、次に青が来るまでの待ち時間も延びる。渡りやすさと待ち時間は、片方を取れば片方が減る間がらにある。この釣り合いを交差点ごとに決めていく。交通の量や事故の記録、道路の幅や周りの建物の利用のされ方まで、確認する材料は交差点ごとに違う。<br />
+　結局この仕事は、渡る人の速さをどう見込む<span class="bk-chu">（注6）</span>かに行き着く。一秒あたり一メートルというのは、急がずに歩く大人の速さである。学校の前や病院の近くでは、これを〇・八メートルに落として計る。実際に歩いている人の様子を調査してから、数値を決めることもある。つえをついて歩く人や、手をつないだ親子は、一メートルでは間に合わないからである。同じ道幅でも、場所によって青の長さが違うのは、そのためである。<br />
 　青が短く感じられる交差点と、ゆったりしている交差点がある。その差は、その道を渡る人としてだれが見込まれているかで決まる。数字は、その町が思い描いた歩き方の写しである。</p>
 <p class="vocab-notes">（注1）ぎわ：ちょうどそのときの、すぐ前<br />
 （注2）踏み出す：足を前へ出して、歩き始める<br />
@@ -420,25 +517,25 @@ B「申し訳ありません。費用（　）は、来週の会議で改めて�
 （注5）一回り：はじめから終わりまで進んで、もとに戻るまで<br />
 （注6）見込む：前もって、そうなるものとして数に入れる</p>
 </div>
-<p><strong>67</strong> 筆者によると、青の時間を道幅どおりの長さにできないのはなぜか<br />
- 1. 車の動ける時間が短くなり、信号の一回りが長くなってしまうから<br />
- 2. 渡る人の歩く速さが、場所によって大きく違っているから<br />
- 3. 点滅のあいだに渡り始める人が出て、混み合ってしまうから<br />
- 4. 青の終わりごろに渡り始めた人が、渡り終える前に赤になるから</p>
-<p><strong>68</strong> ①<strong>わずかな時間</strong>とあるが、この時間は何のためにあるか<br />
- 1. 青のあいだに渡り始めた人が、歩く速さを上げていくためのもの<br />
- 2. 車が動き出す前に、運転する人が左右を見て確かめるためのもの<br />
- 3. ぎりぎりで出た人が渡り終えるまでの余裕を取るためのもの<br />
- 4. 道幅の広い交差点で、青の長さを計り直すためのもの</p>
-<p><strong>69</strong> 筆者が最も言いたいことは何か<br />
- 1. 信号の青の長さは、道幅さえ分かれば計算で決められる<br />
- 2. 青の長さには、だれを想定して道を整えたかが映し出されている<br />
- 3. 歩く人にも車にも赤が出ている時間は、長く取るほどよい<br />
- 4. 学校や病院の近くでは、車の通る時間を減らすべきだ</p>
-<h2>問題14 右のページは、ある市が開いている実験の催しの案内である。下の問いに対する答えとして最もよいものを、1・2・3・4から一つ選びなさい。</h2>
-<div class="passage-box">
+<p><strong class="bk-qn">67</strong> 筆者によると、青の時間を道幅どおりの長さにできないのはなぜか<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">車の動ける時間が短くなり、信号の一回りが長くなってしまうから</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">渡る人の歩く速さが、場所によって大きく違っているから</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">点滅のあいだに渡り始める人が出て、混み合ってしまうから</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">青の終わりごろに渡り始めた人が、渡り終える前に赤になるから</span></span></p>
+<p><strong class="bk-qn">68</strong> ①<strong class="bk-tw">わずかな時間</strong>とあるが、この時間は何のためにあるか<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">青のあいだに渡り始めた人が、歩く速さを上げていくためのもの</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">車が動き出す前に、運転する人が左右を見て確かめるためのもの</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">ぎりぎりで出た人が渡り終えるまでの余裕を取るためのもの</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">道幅の広い交差点で、青の長さを計り直すためのもの</span></span></p>
+<p><strong class="bk-qn">69</strong> 筆者が最も言いたいことは何か<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">信号の青の長さは、道幅さえ分かれば計算で決められる</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">青の長さには、だれを想定して道を整えたかが映し出されている</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">歩く人にも車にも赤が出ている時間は、長く取るほどよい</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">学校や病院の近くでは、車の通る時間を減らすべきだ</span></span></p>
+<h2 class="bk-mondai"><span class="bk-mn">問題14</span> <span class="bk-mi">右のページは、ある市が開いている実験の催しの案内である。下の問いに対する答えとして最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
+<div class="passage-box"><span class="bk-flow bk-flyer"></span>
 <p>ひばり市民センター　「実験の日」のご案内</p>
-<p>毎月第二土曜日、ひばり市民センターの三階で「実験の日」を開いています。理科の道具や機械をそろえた部屋で、係の者の説明を聞きながら、ご自分の手で作ったり量ったりしていただけます。機械の動かし方は、その場でお教えしますので、初めての方もお越しください。</p>
+<p>　毎月第二土曜日、ひばり市民センターの三階で「実験の日」を開いています。理科の道具や機械をそろえた部屋で、係の者の説明を聞きながら、ご自分の手で作ったり量ったりしていただけます。機械の動かし方は、その場でお教えしますので、初めての方もお越しください。</p>
 <table>
 <thead>
 <tr>
@@ -485,17 +582,17 @@ B「申し訳ありません。費用（　）は、来週の会議で改めて�
 ・小学生以下のお子さんは、おうちの方とごいっしょにお越しください。<br />
 ・道具の数に限りがありますので、席がうまったところで締め切ることがあります。</p>
 </div>
-<p><strong>70</strong> 岡本さんは、小さな発電機を作る実験と、顕微鏡で葉を見る実験に申し込むことにした。記録に使う用紙は、二枚もらうつもりである。作った物を持ち帰る袋は、自分で用意してある。岡本さんが当日払う金額は、全部でいくらになるか<br />
- 1. 四百円<br />
- 2. 四百五十円<br />
- 3. 五百円<br />
- 4. 九百円</p>
-<p><strong>71</strong> 大原さんは、星の動きを記録する実験に出たいと考えている。大原さんは、どのようにすればよいか<br />
- 1. 三日前までに電話で申し込み、当日は午後七時から午後八時半の間に行く<br />
- 2. 当日、午前十時から午前十一時半の間に、受け付けで申し込む<br />
- 3. 三日前までに受け付けへ行き、申し込みの紙を出しておく<br />
- 4. 雨や曇りの日には、屋内で映像を見る回に申し込み直す</p>
-<h1>解答(言語知識・読解)</h1>
+<p><strong class="bk-qn">70</strong> 岡本さんは、小さな発電機を作る実験と、顕微鏡で葉を見る実験に申し込むことにした。記録に使う用紙は、二枚もらうつもりである。作った物を持ち帰る袋は、自分で用意してある。岡本さんが当日払う金額は、全部でいくらになるか<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">四百円</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">四百五十円</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">五百円</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">九百円</span></span></p>
+<p><strong class="bk-qn">71</strong> 大原さんは、星の動きを記録する実験に出たいと考えている。大原さんは、どのようにすればよいか<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">三日前までに電話で申し込み、当日は午後七時から午後八時半の間に行く</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">当日、午前十時から午前十一時半の間に、受け付けで申し込む</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">三日前までに受け付けへ行き、申し込みの紙を出しておく</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">雨や曇りの日には、屋内で映像を見る回に申し込み直す</span></span></p>
+<h1 class="bk-key">解答(言語知識・読解)</h1>
 <h2>文字・語彙</h2>
 <table>
 <thead>

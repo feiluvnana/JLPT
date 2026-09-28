@@ -68,6 +68,7 @@ import subprocess
 import sys
 import tempfile
 import unicodedata
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -151,8 +152,54 @@ def _record(slug: str | None, test_id: str | None, status: str, name: str, detai
                       "title": name, "detail": detail})
 
 
+# WITHDRAWN PAPERS SHRINK THE SPACING THE GATE SEES (2026-09-28). Cooldowns and
+# "previous N papers" rules are measured in papers, so removing a paper from
+# tests/ and the ledger moves the papers around it closer together, and draws
+# that were legal when made start failing. logs/withdrawn.json names the papers
+# that existed at each withdrawal; for THOSE, a failure of one of the spacing
+# checks below is reported as a WARN — the paper was proved at draw time, and
+# nothing in it changed. A paper drawn after the withdrawal is not listed, so it
+# is held to the reduced history in full, which is what frees the withdrawn
+# papers' items for reuse.
+SPACING_CHECK_STEMS = (
+    "rotation claim holds",
+    "no grammar form crosses 問題7 <-> 問題8",
+    "no drawn errand repeats inside its own cooldown",
+    "no headline theme repeats",
+    "no 聴解1/2/3/5 errand repeats",
+    "no invented place name repeats the previous",
+    "問題9 blanks reuse no option set from the previous",
+)
+
+
+@functools.lru_cache(maxsize=None)
+def _kept_at_withdrawal() -> dict[str, str]:
+    """test id → date of the first withdrawal it predates."""
+    f = ROOT / "logs" / "withdrawn.json"
+    if not f.is_file():
+        return {}
+    out: dict[str, str] = {}
+    for w in json.loads(f.read_text(encoding="utf-8")).get("withdrawals", []):
+        for tid in w.get("kept", []):
+            out.setdefault(tid, w.get("date", "?"))
+    return out
+
+
+def _spacing_exempt(name: str) -> str | None:
+    tid = name.split(":", 1)[0].strip()
+    date = _kept_at_withdrawal().get(tid)
+    if date and any(stem in name for stem in SPACING_CHECK_STEMS):
+        return date
+    return None
+
+
 def check(name: str, ok: bool, detail: str = "", slug: str | None = None,
           test_id: str | None = None) -> bool:
+    if not ok and (date := _spacing_exempt(name)):
+        warn(name, False, f"{detail} [spacing shrank when papers were withdrawn "
+                          f"on {date} (logs/withdrawn.json) — legal at draw time]",
+             slug, test_id)
+        return True
     print(f"  {'ok  ' if ok else 'FAIL'}  {name}" + (f" — {detail}" if detail and not ok else ""))
     if not ok:
         _fail.append(f"{name}: {detail}" if detail else name)
@@ -216,12 +263,30 @@ def git_tracks(path: str) -> bool:
     drifts. Not a git checkout (a tarball) → nothing is tracked → the path is
     treated as archive content, which is the safe direction.
     """
+    tracked = _git_tracked_refs() if path.startswith("refs/") else None
+    if tracked is not None:
+        prefix = path.rstrip("/") + "/"
+        path, prefix = (unicodedata.normalize("NFC", x) for x in (path, prefix))
+        return path in tracked or any(t.startswith(prefix) for t in tracked)
     try:
         out = subprocess.run(["git", "ls-files", "--", path], cwd=ROOT,
                              capture_output=True, text=True, check=True)
     except (OSError, subprocess.CalledProcessError):
         return False
     return bool(out.stdout.strip())
+
+
+@functools.lru_cache(maxsize=None)
+def _git_tracked_refs() -> frozenset[str] | None:
+    """Every tracked path under refs/, listed once (one `git ls-files` per
+    cited path cost ~0.5 s). None when this is not a git checkout."""
+    try:
+        out = subprocess.run(["git", "ls-files", "-z", "--", "refs"], cwd=ROOT,
+                             capture_output=True, text=True, check=True)
+    except (OSError, subprocess.CalledProcessError):
+        return None
+    return frozenset(unicodedata.normalize("NFC", t)
+                     for t in out.stdout.split("\0") if t)
 
 
 def check_refs():
@@ -1257,9 +1322,8 @@ P7_SPREAD_MIN = 25          # official ranges: 7/2025 = 48, 12/2025 = 42
 # carry; any id not in this set FAILS. Delete an id when that paper's 問題7 is
 # recompressed (bunpou.md: compress 3-4 stems to 25-34 chars, never lengthen).
 P7_DISTRIBUTION_GRANDFATHERED = {
-    "20260807_1", "20260810_1", "20260810_2", "20260811_1", "20260812_1",
-    "20260812_2", "20260813_1", "20260813_2", "20260814_1", "20260817_1",
-    "20260817_2",
+    "20260807_1", "20260812_1",
+    "20260812_2",
     # 20260817_3 removed 2026-08-19: its 問題7 was recompressed and now passes
     # on merit (mean 46.2, 3 stems under 34, spread 29), so leaving it here
     # would have downgraded a future regression from FAIL to WARN — the exact
@@ -2216,14 +2280,14 @@ DOKKAI_FLOOR = {10: 1100, 11: 2250, 12: 510, 13: 800, 14: 450}
 # floor: 20260810_1 問題14 395, 20260811_1 問題12 480, 20260813_1 問題12 485,
 # 20260817_1 問題14 447. They passed only on the instruction's bytes; they are a
 # WARN here because lengthening the prose is authoring that needs a QA pass.
-DOKKAI_FLOOR_LAYOUT_GRANDFATHERED = {"20260810_1", "20260811_1", "20260813_1", "20260817_1"}
+DOKKAI_FLOOR_LAYOUT_GRANDFATHERED = set()
 DOKKAI_CEILING = {10: 1330, 11: 2700, 12: 600, 13: 1070, 14: 640}
 DOKKAI_PASSAGE_FLOOR = {10: 150, 11: 400}
 DOKKAI_PASSAGE_CEILING = {10: 350}
 DOKKAI_DISTRIBUTION_GRANDFATHERED = {
-    "20260807_1", "20260810_1", "20260810_2", "20260811_1",
-    "20260812_1", "20260812_2", "20260813_1", "20260813_2",
-    "20260814_1", "20260817_1", "20260817_2", "20260817_3",
+    "20260807_1",
+    "20260812_1", "20260812_2",
+    "20260817_3",
     "20260818_1", "20260819_1"
 }
 # In-body （注N） markers per paper: official current era 27–61, median 39.
@@ -2767,11 +2831,9 @@ def final_template_cap(name: str) -> int:
 # is a decision about that paper; it is exempted BY NAME and prints the same
 # measurement as a WARN. Any id not in this set FAILS.
 FINAL_TEMPLATE_GRANDFATHERED = {
-    "20260817_1",   # だけでは/こそが ×3: 問題10(4), 問題11(1), 問題12(B)
     # Added 2026-08-19 when the 問題12 A/B split (R3-8) put a 13th final under
     # measurement for the first time: A's closing had never been read, and it
     # is A's that makes this paper's third hit.
-    "20260810_1",   # ではなく ×3: 問題11(1), 問題11(4), 問題12(A)
     # Added 2026-09-04 with the 分裂文 row above, which is the only template it
     # breaches: 「〜のは…だ」 ×3 on 問題10(1), 問題10(4), 問題10(5). The paper is
     # 2026-08-07, four weeks before the class was named, and clearing it means
@@ -2953,7 +3015,6 @@ CLOSING_REFRAME_GRANDFATHERED = {
     # 「というより」 finals on; removing 「というより」 from the whole-passage net
     # took its WARN there away, and this line is where that breach is now
     # recorded honestly, at closing scope.
-    "20260817_2": 4,
 }
 
 
@@ -3668,7 +3729,7 @@ def check_topics_closing_moves_vocabulary():
 # NEW paper that repeats a headline theme is the defect this promotion exists to
 # stop.
 HEADLINE_THEME_RULE4_GRANDFATHERED = frozenset({
-    "20260810_1", "20260810_2", "20260814_1", "20260827_2",
+    "20260827_2",
 })
 
 
@@ -4795,8 +4856,7 @@ def check_dokkai_q10_form_mix(name: str, body: str):
 # shape the archive avoids in 12 of 12 items. An id leaves this set when its two
 # stems ask a value, an action or a named option (REPORT-DOKKAI.md §F4).
 DOKKAI_Q14_TARGET_GRANDFATHERED = {
-    "20260812_1", "20260812_2", "20260813_2", "20260814_1",
-    "20260817_1", "20260817_2",
+    "20260812_1", "20260812_2",
     # 20260810_2 and 20260810_1 are NOT in this set: their stems ask 「…に合う
     # コースはどれか」, a named choice. The set shrank from 10 to 6 when the
     # classifier stopped reading a katakana noun before 「はどれか」 as generic.
@@ -4810,13 +4870,13 @@ DOKKAI_Q14_TARGET_GRANDFATHERED = {
 # converts to 「筆者によると」 retrieval and one 指示語 item — the shapes it
 # displaced (§F6).
 DOKKAI_SPAN_RATE_GRANDFATHERED = {
-    "20260810_2", "20260811_1", "20260812_1", "20260812_2", "20260813_1",
-    "20260813_2", "20260817_3", "20260818_1", "20260819_1",
+    "20260812_1", "20260812_2",
+    "20260817_3", "20260818_1", "20260819_1",
 }
 # Papers with no 筆者の考え item in 問題10 at all — official's dominant shape
 # (46% of its 問題10 items) missing entirely (§F9).
 DOKKAI_Q10_FORM_GRANDFATHERED = {
-    "20260807_1", "20260812_2", "20260813_2", "20260817_1", "20260817_2",
+    "20260807_1", "20260812_2",
 }
 
 
@@ -5111,7 +5171,7 @@ def check_mondai7_option_refs(name: str, key_bunpou: str,
 # repaired (「どころではない」 x3 -> x1; 問33 -> 「待つわけにはいかない」, 問38 ->
 # 「はずがない」). Clearing one of these means re-authoring that paper's
 # distractors — the form is printed, so nothing but new text repairs it.
-P7_FORM_REUSE_GRANDFATHERED = {"20260810_1", "20260814_1"}
+P7_FORM_REUSE_GRANDFATHERED = set()
 # THRESHOLD, and the plan for tightening it. Official's own maximum is ONE:
 # across the six current-era sittings (7/2023-12/2025) no 5-kana grammar n-gram
 # occurs in two 問題7 option lines. Shipping straight at 2 would fire on nine
@@ -5279,14 +5339,9 @@ P9_LOOKBACK = 2               # papers, per jlpt-test-generation §topic table
 # re-authoring a cloze blank's option set; delete an id when that lands.
 P9_REUSE_GRANDFATHERED = {
     "20260812_2",   # 問50 4/4 from 20260812_1
-    "20260813_2",   # 問48 4/4 from 20260813_1
-    "20260814_1",   # 問48 4/4 from both, 問51 4/4 from 20260813_2
-    "20260817_1",   # 問49 4/4 from 20260814_1
-    "20260817_2",   # 問48 3/4 from 20260814_1
     # Added 2026-08-19 with the per-tag thresholds (R3-9): at cap 1 for a
     # non-connective blank this paper's 問49 shares 2/4 with 20260812_1
     # (のも無理はない / わけがない) — the exact shape the founding incident had.
-    "20260813_1",
 }
 
 
@@ -5427,8 +5482,7 @@ def connective_frame_hits(prose: str, form: str) -> int:
 
 
 KEY_EXPOSURE_GRANDFATHERED = {
-    "20260807_1", "20260810_1", "20260810_2", "20260811_1", "20260812_2",
-    "20260813_1", "20260813_2", "20260814_1", "20260817_2",
+    "20260807_1", "20260812_2",
 }
 
 
@@ -5700,13 +5754,10 @@ def p9_modal_frame_hit(core: str, lines: list[str]) -> str | None:
 
 
 KEY_FRAME_GRANDFATHERED = {
-    "20260817_1",   # 問題7-35 keyed 「といえば」 連用; 問題10 prose 「議会といえば、」
     "20260819_1",   # 問題8 target 「〜のは…からだ」 reproduced whole in 問題10(1)
                     # 「…続けたのは、…回廊になっているからである。」 — the R2-F5
                     # founding case, cut from ×2 to ×1 by the 2026-08-19 repair,
                     # which the count rule (>1) then stopped seeing
-    "20260827_1",   # 問題7-31 keyed 「に応じて」 連用; （注1） gloss 「都合に応じて、」
-    "20260828_1",   # 問題7-39 keyed 「わけではない」 文末; 問題11 prose
                     # 「…免罪符を与えられるわけではない。」
 }
 
@@ -5964,6 +6015,9 @@ def check_verbatim_keys(name: str, body: str, keys: dict[int, int],
     passages = "\n".join(passage_prose(dokkai_section(body, n), bi)
                          for n in range(10, 15))
     flat = _flat(re.sub(r"（注\d+）|\(注\d+\)", "", passages))
+    # difflib indexes the SECOND sequence once (set_seq2); reusing it across the
+    # 20 items and only swapping seq1 is what keeps this check cheap.
+    matcher = SequenceMatcher(None, "", flat, autojunk=False)
     hits = []
     for q in range(52, 72):
         a, o = keys.get(q), opts.get(q) or []
@@ -5985,7 +6039,8 @@ def check_verbatim_keys(name: str, body: str, keys: dict[int, int],
             # paper on disk from the day it was written: on its founding case
             # (20260907_1 item 55) it reported LCS=3 (「町内会」) where the true
             # run is 22 (「市の知らせを待たず、町内会の判断で早めに開け」).
-            match = SequenceMatcher(None, flat_opt, flat, autojunk=False).find_longest_match(0, len(flat_opt), 0, len(flat))
+            matcher.set_seq1(flat_opt)
+            match = matcher.find_longest_match(0, len(flat_opt), 0, len(flat))
             lcs_len = match.size
 
         is_long_key = (kl >= LONG_KEY_MIN and mean > 0 and kl >= LONG_KEY_RATIO * mean)
@@ -6176,9 +6231,8 @@ LONGEST_KEY_RATE_MAX = 0.35
 # n=20); six of eleven at 30 % is the paper-generator's habit, not chance.
 DOKKAI_STRICT_LONGEST_MAX = 0.30
 DOKKAI_LENGTH_GRANDFATHERED = {
-    "20260807_1", "20260810_1", "20260810_2", "20260811_1",
-    "20260812_1", "20260812_2", "20260813_1", "20260813_2",
-    "20260814_1"
+    "20260807_1",
+    "20260812_1", "20260812_2",
 }
 
 
@@ -6989,6 +7043,18 @@ def check_pool_grammar_band():
           not out_of_band,
           "; ".join(out_of_band) + " — delete the entry; a banned form in the "
           "pool ships as a key sooner or later (exam-blueprint)")
+    # word_formation carries the band's TOO_HARD affixes too (〜ずくめ sat in the
+    # pool until 2026-09-28 because only "grammar" categories were scanned).
+    # Drawable rows only — a retired row is the ruling, not a defect — and
+    # TOO_HARD only: TOO_EASY lists grammar forms, not affixes.
+    wf = SAMPLE_ITEMS.drawable("word_formation", pools.get("word_formation", []), pools)
+    wf_hard = [f"word_formation/{e} (TOO_HARD: {ban})" for e in wf
+               for ban in _level_band_hits(pool_entry_text(e).replace("〜", "").replace("～", ""),
+                                           band["TOO_HARD"], band["ALLOW"])]
+    check(f"pools.json word_formation affixes stay out of the TOO_HARD band "
+          f"({len(wf)} drawable)", not wf_hard,
+          "; ".join(wf_hard) + " — retire the row (exam-blueprint §Pool entries "
+          "stay inside the N2 band)")
     check("no grammar category lists one point under two spellings", not dupes,
           "; ".join(dupes) + " — keep one spelling per point, or the sampler "
           "draws both and the test keys it twice (exam-blueprint)")
@@ -7485,19 +7551,7 @@ QUICK_RESPONSE_KEYS_LANDED = "2026-08-19 17:35:31"
 # with every line green. Delete the id when its 問題10(1) is re-drawn.
 AUTONOMOUS_DRIVING_KEY_LANDED = "2026-09-05 07:14:41"
 ERRAND_ROTATION_GRANDFATHERED = {
-    "20260810_2": ERRAND_KEY_FIELD_LANDED,   # 銀行:口座開設        (vs 20260810_1)
-    "20260811_1": ERRAND_KEY_FIELD_LANDED,   # 年金事務所:手続き案内 (vs 20260807_1)
-    "20260812_1": ERRAND_KEY_FIELD_LANDED,   # 保険会社:契約内容の見直し (vs 20260810_2)
     "20260812_2": ERRAND_KEY_FIELD_LANDED,   # 年金事務所:手続き案内 (vs 20260807_1)
-    "20260813_1": ERRAND_KEY_FIELD_LANDED,   # 観光案内所:モデルコース (vs 20260810_1)
-    "20260814_1": ERRAND_KEY_FIELD_LANDED,   # 図書館:電子書籍の利用 (vs 20260811_1)
-    "20260817_1": ERRAND_KEY_FIELD_LANDED,   # 工場:安全講習 / 書店:取り寄せ / 税務署
-    # + 窓口:担当者不在 (quick_response, vs 20260813_1) — the second breach became
-    # visible only when the loop grew the third category (F1, round 3); this id was
-    # already exempt for its listening_scenarios breach and its draw
-    # (2026-08-17 15:03:48) precedes both key dates, so the entry stands unchanged.
-    "20260817_2": ERRAND_KEY_FIELD_LANDED,   # 引っ越し業者:見積もり (vs 20260811_1)
-    "20260817_3": ERRAND_KEY_FIELD_LANDED,   # 引っ越し業者:見積もり + カルチャースクール
     # `20260818_1` is here for `quick_response` ONLY, and for the reason the
     # criterion names: its 問題4 stimuli 窓口:記名依頼 (vs 20260817_3, the paper
     # immediately before it), 職場:進捗確認 (vs 20260817_2) and 店:在庫照会 (vs
@@ -7565,13 +7619,8 @@ P8_FAMILY_COVERAGE_MIN = 0.50
 # ABSENT: it is the founding case and it was repaired
 # (`--reroll-one grammar_p8:0` seed 29028873, `grammar_p8:4` seed 35312257).
 GRAMMAR_CROSS_ROTATION_GRANDFATHERED = {
-    "20260811_1",   # p8 〜に基づいて      vs 20260807_1 p7 〜に基づいて
     "20260812_1",   # p8 〜ないことには/〜つつある vs 20260810_1 p7 (both)
     "20260812_2",   # p8 基準準拠(〜に沿って…進める) vs 20260807_1 p7 〜に沿って
-    "20260813_1",   # p8 〜に基づいて      vs 20260807_1 p7 〜に基づいて
-    "20260813_2",   # p7 〜ばかりに vs 20260807_1 p8; p8 〜として vs 20260813_1 p7
-    "20260817_1",   # p8 感情強調(〜てたまらない) vs 20260813_1 p7 〜てたまらない
-    "20260817_2",   # p8 原因理由構文(〜ばかりに…てしまった) vs 20260813_2 p7 〜ばかりに
     "20260818_1",   # p7 〜につれて / 〜のみならず vs 20260810_1 / 20260811_1 p8
     # ALTERNATION SPLIT, 2026-09-05. `sample.grammar_form_tokens()` now splits a
     # slashed pool entry (「〜おかげで/せいで」 -> form»おかげで + form»せいで), which
@@ -7860,7 +7909,7 @@ MONDAI1_KUN_FLOOR = SAMPLE_ITEMS.KUN_FLOOR["kanji_reading"]
 # re-drawn (`--reroll-one kanji_reading:<index>`, fresh seed).
 MONDAI1_KUN_FLOOR_PRE_RULING = 1
 MONDAI1_KUN_FLOOR_PRE_RULING_IDS = {
-    "20260812_2", "20260814_1", "20260817_1", "20260817_3", "20260818_1",
+    "20260812_2", "20260817_3", "20260818_1",
     "20260827_2", "20260904_1", "20260904_2", "20260904_3", "20260911_1",
     "20260914_1", "20260917_1",
 }
@@ -8111,10 +8160,16 @@ def check_spec_adjunct(spec: dict):
 
 
 def ledger_history() -> list[dict]:
+    """A fresh parse on every call (callers mutate what they get back), of a
+    file read once — it was read 99 times per gate run."""
+    text = _ledger_text()
+    return json.loads(text).get("history", []) if text else []
+
+
+@functools.lru_cache(maxsize=None)
+def _ledger_text() -> str:
     led = ROOT / "logs" / "ledger.json"
-    if not led.is_file():
-        return []
-    return json.loads(led.read_text(encoding="utf-8")).get("history", [])
+    return led.read_text(encoding="utf-8") if led.is_file() else ""
 
 
 def generated_specs() -> list[tuple[Path, dict]]:
@@ -8343,8 +8398,6 @@ def check_ledger_spec_agreement():
 # exempted and named rather than the rule being weakened. Any id not in this
 # map FAILS.
 THEME_RECORD_GRANDFATHERED = {
-    "20260810_1": 1,   # 聴解問題5-2番 文化祭模擬店: drawn 食 / shipped 教育
-    "20260810_2": 1,   # 聴解問題1-5番 信用金庫: drawn 消費・経済 / shipped 住まい
     "20260818_1": 1,   # 聴解問題1-3番 講演会: drawn 科学・技術 / shipped 働き方
 }
 
@@ -8367,9 +8420,9 @@ THEME_RECORD_GRANDFATHERED = {
 # 53 fields after the fact from prose nobody can re-verify manufactures
 # machine-readable data out of a guess.
 SHIPPED_SURFACE_GRANDFATHERED = frozenset({
-    "20260810_2", "20260811_1", "20260812_1", "20260812_2", "20260813_1",
-    "20260813_2", "20260814_1", "20260817_1", "20260817_2", "20260817_3",
-    "20260818_1", "20260819_1", "20260821_1", "20260828_1", "20260828_2",
+    "20260812_1", "20260812_2",
+    "20260817_3",
+    "20260818_1", "20260819_1", "20260821_1",
     "20260903_1", "20260904_1", "20260904_3",
 })
 
@@ -8541,9 +8594,9 @@ def check_theme_record_agreement():
 # asserting what a moving surface claims would be the very NF-5 defect. They
 # `skip` by name; no threshold is lowered and nothing is silenced.
 CLAIM_FIELD_PRE_RULE = frozenset({
-    "20260807_1", "20260810_1", "20260810_2", "20260811_1", "20260812_1",
-    "20260812_2", "20260813_1", "20260813_2", "20260814_1", "20260817_1",
-    "20260817_2", "20260817_3", "20260818_1", "20260819_1", "20260821_1",
+    "20260807_1", "20260812_1",
+    "20260812_2",
+    "20260817_3", "20260818_1", "20260819_1", "20260821_1",
 })
 PERSONA_CAP = 2   # no narrator archetype on more than 2 読解 surfaces
 
@@ -8655,7 +8708,7 @@ def check_topics_claim_field():
 # NEVER by widening the rule, and never by adding a fourth id: a new paper that
 # omits `shapes` is the drift this check exists to stop.
 TOPICS_SHAPES_DRIFT_GRANDFATHERED = frozenset({
-    "20260827_2", "20260828_1", "20260828_2",
+    "20260827_2",
 })
 
 
@@ -8776,8 +8829,7 @@ def check_topics_shapes_field():
 # round 2's own instruction, and the alternative (lowering the floor until they
 # pass) would delete the check. An id leaves the set when its row is rewritten.
 TOPICS_QUOTE_GRANDFATHERED = {
-    "20260810_2": 1, "20260813_2": 1, "20260818_1": 5, "20260819_1": 9,
-    "20260821_1": 1, "20260827_2": 6, "20260828_1": 5, "20260828_2": 3,
+    "20260821_1": 1, "20260827_2": 6,
     "20260903_1": 2, "20260904_1": 3,
     # `20260904_2` (16 spans) was REPAIRED on 2026-09-07, not exempted: every
     # unmatched 「…」 in its row named a rule, a gate message, a pool entry, a
@@ -9047,11 +9099,18 @@ def check_spec_rotation(d, spec: dict, sample, pools: dict):
                     t2 = pool_entry_text(x2)
                     recent.setdefault(t2, tid)
                     recent.setdefault(sample.head(t2), tid)
+                    # The sampler's same-word token (感染 / 感染する, 2026-09-28):
+                    # errand keys and grammar forms have their own checks
+                    # below; this is the one identity nothing else re-reads.
+                    for tok in sample.lemma_tokens(x2):
+                        recent.setdefault(tok, tid)
         for x in xs:
             t = pool_entry_text(x)
             if not t:
                 continue
-            tid = recent.get(t) or recent.get(sample.head(t))
+            tid = (recent.get(t) or recent.get(sample.head(t))
+                   or next((recent[k] for k in sample.lemma_tokens(x)
+                            if k in recent), None))
             if tid:
                 clashes.append(f"{cat}:「{t}」 (test {tid}, needs its own "
                                 f"{cool}-draw cooldown)")
@@ -9389,7 +9448,6 @@ P14_DECIDER_GRANDFATHERED = {
     # 24-hour window vs round-the-clock availability), which is why it went
     # unnoticed; the regex cannot tell the senses apart and the rule is about
     # the printed number.
-    "20260814_1",
 }
 
 
@@ -9636,6 +9694,11 @@ def _longest_shared_run(a: str, b: str, floor: int) -> str:
     23 × 35 times.
     """
     lo, hi, best = floor, min(len(a), len(b)), ""
+    # Most pairs share nothing at `floor`; test that once instead of letting
+    # the search open at a ~600-character probe and walk all the way down.
+    if lo > hi or not ({a[i:i + lo] for i in range(len(a) - lo + 1)}
+                       & {b[i:i + lo] for i in range(len(b) - lo + 1)}):
+        return ""
     while lo <= hi:
         mid = (lo + hi) // 2
         shared = ({a[i:i + mid] for i in range(len(a) - mid + 1)}
@@ -10020,7 +10083,7 @@ def check_pool_glyph_inventory():
 # alone does NOT catch the F1 class. The other paper in that class,
 # `20260904_1`'s 問題5-24 key 「いつも」, is an N5-CORE word — official prints it
 # unglossed 60+ times across the archive, so this check is silent on it and
-# `exam-blueprint` §"Both halves must sit in the N2 band" owns that half. The
+# `exam-blueprint` §"The TARGET must sit in the N2 band" owns that half. The
 # two failure directions are opposite (too hard / too easy) and only the
 # too-hard one leaves a machine-readable trace.
 #
@@ -10069,13 +10132,20 @@ def check_pool_gloss_band():
     # no band: retirement IS the ruling this WARN asks for (おのずと(自然に),
     # 2026-09-28). It stays in the list only so shipped draws still resolve.
     retired = SAMPLE_ITEMS.retired_map(pools)
+    # Bigram prefilter: a sitting can contain `head` only if it contains every
+    # 2-char piece of it. 3 000 headwords × 31 booklets of bare `in` was ~1 s.
+    grams = {s: {t[i:i + 2] for i in range(len(t) - 1)} for s, t in texts.items()}
+    drawable = {c: SAMPLE_ITEMS.drawable(c, pools.get(c, []), pools)
+                for c in GLOSS_BAND_CATEGORIES}
     for cat in GLOSS_BAND_CATEGORIES:
-        for e in SAMPLE_ITEMS.drawable(cat, pools.get(cat, []), pools):
+        for e in drawable[cat]:
             head = pool_entry_text(e).split("(")[0].split("（")[0].strip()
             head = head.replace("〜", "").replace("～", "")
             if len(head) < 2:
                 continue        # a single glyph matches half the archive
-            occurs = {s for s, t in texts.items() if head in t}
+            need = {head[i:i + 2] for i in range(len(head) - 1)}
+            occurs = {s for s, t in texts.items()
+                      if need <= grams[s] and head in t}
             if not occurs:
                 continue        # unattested is a different question entirely
             glossed = {s for s in occurs if any(head in h for h in heads[s])}
@@ -10086,7 +10156,7 @@ def check_pool_gloss_band():
                       for n, cat, head in hits[:12])
     n_retired = sum(len(retired.get(c) or {}) for c in GLOSS_BAND_CATEGORIES)
     warn(f"{name} ({len(hits)} of "
-         f"{sum(len(SAMPLE_ITEMS.drawable(c, pools.get(c, []), pools)) for c in GLOSS_BAND_CATEGORIES)} "
+         f"{sum(len(v) for v in drawable.values())} "
          f"drawable entries in {len(GLOSS_BAND_CATEGORIES)} tested categories"
          + (f", {n_retired} retired not read" if n_retired else "")
          + f", {len(books)} sittings read)",
@@ -10266,8 +10336,6 @@ MOJI_STEM_GRANDFATHERED: set[str] = set()
 # Clearing an id means rewriting ONE 問題1/2/5 stem to carry a 「、」 — tier B,
 # the key does not move, but every 詳細解説 cell quoting that stem does.
 MOJI_COMMA_FREE_CEILING_GRANDFATHERED: dict[str, str] = {
-    "20260817_1": "15/15 comma-free, measured 2026-09-17",
-    "20260827_1": "15/15 comma-free, measured 2026-09-17",
     "20260904_3": "15/15 comma-free, measured 2026-09-17",
 }
 # EMPTY as of 2026-08-21: every paper now runs 7–9 です・ます stems of 25
@@ -10949,7 +11017,6 @@ DRAWN_MEDIA = ("ラジオ", "テレビ", "放送", "ポッドキャスト", "イ
 # BY NAME and print the same measurement a FAIL would carry; delete an id when
 # its spec and ledger record the change.
 DRAWN_MEDIUM_GRANDFATHERED = {
-    "20260814_1",   # 「ラジオ局:リスナーからの質問対応」 — no ラジオ in the script
     # 20260819_1 left this set on 2026-08-25: its 「レストラン店長インタビュー」
     # draw now carries origin+note in both test_spec.json and logs/ledger.json,
     # which is what the rule asks for — a set is a queue, not an amnesty.
@@ -11613,8 +11680,8 @@ P3_TALK_CEILING = 400
 # never as `ok` and never as silence. Any id not in this set FAILS. Delete an id
 # the moment that test's 聴解 is repaired; do not add one to quiet a new paper.
 CHOUKAI_SECTION_GRANDFATHERED = {
-    "20260807_1", "20260810_1", "20260810_2", "20260811_1",
-    "20260812_1", "20260812_2", "20260813_1",
+    "20260807_1",
+    "20260812_1", "20260812_2",
     # 20260813_2 removed 2026-08-14: its 聴解 was re-authored against the G16/G17
     # rules (duplicate key, split turns, 問題3 talks and options, 問題4 distractor
     # shapes, 問題5 three-party, contractions, paraphrased keys, 構成表) and it
@@ -11797,7 +11864,6 @@ CHOUKAI_QUESTION_REPEAT_GRANDFATHERED: dict[str, str] = {
         "「何だと言っていますか」(head) vs 「何と言っていますか」(tail) — the source "
         "script PDF's own 解説欄 line; repairing it re-composes 20260810_1 and "
         "20260819_1 as well, and the 7/2022 audio has not been listened to",
-    "20260810_1:問題2-4番": "inherited from imported-n2-2022-07 問題2-4番",
     "20260819_1:問題2-4番": "inherited from imported-n2-2022-07 問題2-4番",
     "imported-n2-2021-07:問題2-5番":
         "「言っていますか」(head) vs 「いっていますか」(tail) — an ORTHOGRAPHY-only "
@@ -11807,7 +11873,6 @@ CHOUKAI_QUESTION_REPEAT_GRANDFATHERED: dict[str, str] = {
         "swap without a reading, and repairing it re-composes 20260812_2, "
         "20260827_1 and 20260910_1",
     "20260812_2:問題2-5番": "inherited from imported-n2-2021-07 問題2-5番",
-    "20260827_1:問題2-5番": "inherited from imported-n2-2021-07 問題2-5番",
     "20260910_1:問題2-5番": "inherited from imported-n2-2021-07 問題2-5番",
 }
 
@@ -12226,7 +12291,6 @@ ELIMINATION_SPLIT = re.compile(r"[、，,／/・＋+]+")
 # WARN. Any id not in this set FAILS. (The seven older papers have no 構成表 at
 # all and are already covered by CHOUKAI_SECTION_GRANDFATHERED.)
 ELIMINATION_VOCAB_GRANDFATHERED = {
-    "20260813_2", "20260814_1", "20260817_1",
 }
 
 
@@ -12658,11 +12722,10 @@ P4_DISTRACTOR_SHAPES = {
 }
 P4_SHAPE_SHARE_MAX = 0.40
 P4_SHAPE_VOCAB_GRANDFATHERED = {
-    "20260813_2", "20260814_1", "20260817_1", "20260817_2",
 }
 P4_SHAPE_PAIR_GRANDFATHERED = {
-    "20260817_2", "20260817_3", "20260819_1", "20260827_1",
-    "20260827_2", "20260828_2", "20260903_1",
+    "20260817_3", "20260819_1",
+    "20260827_2", "20260903_1",
 }
 P4_SHAPE_REPEAT = re.compile(r"[×x]\s*\d+$")
 
@@ -12768,7 +12831,7 @@ def check_choukai_p4_distractor_shapes(test_id: str, ct: str, bi):
 # axis AND another question type — never by relabelling a cell, which is the
 # move `choukai_decider_formula` exists to catch.
 DECIDER_QTYPE_PAIR_GRANDFATHERED = frozenset({
-    "20260810_2", "20260821_1", "20260827_2", "20260828_2",
+    "20260821_1", "20260827_2",
     "20260903_1", "20260904_1",
 })
 
@@ -12890,19 +12953,13 @@ CLOSING_SHAPE_CAP = 2
 # a decision about that paper. Delete an id when its 聴解 is repaired.
 CLOSING_SHAPE_GRANDFATHERED = {
     "20260807_1",   # 問題1 じゃあ〜ます ×3; key leak 3番/4番/5番
-    "20260810_1",   # 2026-08-27 (P5C2-20260810_1): rhyme cleared (0/2); 3
                     # structural leaks remain, all from 問題1-4番's own single
                     # continuous turn (自動音声ガイダンス, the paper's non-dialogue
                     # item — its whole message IS the "last spoken line" by
                     # construction, same inherent tradeoff as 20260807_1's
                     # non-dialogue item)
-    "20260810_2",   # key leak 例/1番/2番
     "20260812_1",   # 問題2 —〜ます ×6; key leak 5番
     "20260812_2",   # key leak 1番/2番/4番/5番 (問題1), 1番 (問題2)
-    "20260813_2",   # key leak 問題2-2番
-    "20260814_1",   # 問題1 はい〜ます ×3
-    "20260817_1",   # key leak 2番/3番
-    "20260817_2",   # key leak 2番/5番
 }
 
 
@@ -15164,9 +15221,8 @@ CHOUKAI_Q1_FORMS_GRANDFATHERED = {
     # 20260810_1 removed 2026-08-27: P5C2-20260810_1 rewrote 問題1 to
     # まず:2/物・提出:1/何をしますか:1/どう直す・方法:1 (no frame above 2 of 5
     # scored items) — verified with `make check`.
-    "20260811_1",
-    "20260812_1", "20260812_2", "20260813_1", "20260813_2",
-    "20260814_1", "20260817_1", "20260817_2", "20260817_3",
+    "20260812_1", "20260812_2",
+    "20260817_3",
     "20260818_1", "20260819_1",
 }
 CHOUKAI_DECIDER_GRANDFATHERED = {
@@ -15174,9 +15230,8 @@ CHOUKAI_DECIDER_GRANDFATHERED = {
     # column (冒頭3/中盤2/終盤1, no bucket over 3) — verified with `make check`.
     # 20260810_1 removed 2026-08-27: P5C2-20260810_1 added the 決め手の位置
     # column (冒頭3/中盤2/終盤1, no bucket over 3) — verified with `make check`.
-    "20260811_1",
-    "20260812_1", "20260812_2", "20260813_1", "20260813_2",
-    "20260814_1", "20260817_1", "20260817_2", "20260817_3",
+    "20260812_1", "20260812_2",
+    "20260817_3",
     "20260818_1", "20260819_1",
 }
 # S2 (qa-report-20260903_1-round2). The 決め手の位置 column had a cap
@@ -15199,8 +15254,8 @@ CHOUKAI_DECIDER_FORMULA_GRANDFATHERED = {
     # and now prints 「n行目／全m行」 in all six rows (例 6/9 中盤, 1番 5/8 中盤,
     # 2番 7文/8文 終盤, 3番 5/6 終盤, 4番 5/7 終盤, 5番 2/7 冒頭 — buckets 1/2/3,
     # inside the ≤3-rows cap). It passes on merit, as a `check`, not a `warn`.
-    "20260807_1", "20260810_1", "20260810_2", "20260817_3", "20260818_1",
-    "20260819_1", "20260821_1", "20260827_1", "20260827_2",
+    "20260807_1", "20260817_3", "20260818_1",
+    "20260819_1", "20260821_1", "20260827_2",
 }
 CHOUKAI_PROBE_GRANDFATHERED = {
     # 20260807_1 removed 2026-08-27: P5C2-20260807_1 rewrote 問題1 with 0/6
@@ -15216,9 +15271,8 @@ CHOUKAI_Q2_MIX_GRANDFATHERED = {
     # 内容・発言:4/理由:1/一番・優先:1 (most-common category capped at 4 of 6) —
     # verified with `make check` (理由=1 is a documented target/QA tradeoff,
     # not a gate failure; see the 構成表's 問題2 note).
-    "20260811_1",
-    "20260812_1", "20260812_2", "20260813_1", "20260814_1",
-    "20260817_1", "20260817_2", "20260817_3", "20260818_1", "20260819_1",
+    "20260812_1", "20260812_2",
+    "20260817_3", "20260818_1", "20260819_1",
 }
 CHOUKAI_Q4_REGISTER_GRANDFATHERED = {
     # 20260807_1 removed 2026-08-27: P5C2-20260807_1 rewrote 問題4 to 2
@@ -15227,9 +15281,8 @@ CHOUKAI_Q4_REGISTER_GRANDFATHERED = {
     # 20260810_1 removed 2026-08-27: P5C2-20260810_1's 問題4 was already
     # inside band (3 casual / 4 keigo, KEIGO_CAP-drawn) and left unchanged —
     # verified with `make check`.
-    "20260811_1",
-    "20260812_1", "20260812_2", "20260813_1", "20260813_2",
-    "20260814_1", "20260817_1", "20260817_2", "20260817_3",
+    "20260812_1", "20260812_2",
+    "20260817_3",
     "20260818_1", "20260819_1",
 }
 CHOUKAI_TALK_BAND_GRANDFATHERED = {
@@ -15239,7 +15292,6 @@ CHOUKAI_TALK_BAND_GRANDFATHERED = {
     # 20260810_1 removed 2026-08-27: P5C2-20260810_1 rewrote 問題3 to
     # 234-279 spoken chars per talk, inside the 220-300 target band —
     # verified with `make check`.
-    "20260811_1",
 }
 CHOUKAI_VOICE_BALANCE_GRANDFATHERED = {
     # 20260807_1 removed 2026-08-27: P5C2-20260807_1 rewrote 問題3's speaker
@@ -15248,9 +15300,8 @@ CHOUKAI_VOICE_BALANCE_GRANDFATHERED = {
     # 20260810_1 removed 2026-08-27: P5C2-20260810_1 rewrote 問題3's speaker
     # genders to a 3-female/3-male split (worst section now 問題4 at 67%) —
     # verified with `make check`.
-    "20260811_1",
-    "20260812_1", "20260812_2", "20260813_1", "20260813_2",
-    "20260814_1", "20260817_1", "20260817_2", "20260817_3",
+    "20260812_1", "20260812_2",
+    "20260817_3",
     "20260818_1", "20260819_1",
 }
 VOICE_MARGIN_GRANDFATHERED: set[str] = set()
@@ -15743,7 +15794,7 @@ CHOUKAI_NONDIALOGUE_MEDIA = (
 # scenario that used to carry the message is voiced as a two-person phone call
 # in 3番; MP3 re-synthesised. It now passes on merit, as a `check`, not a `warn`.
 CHOUKAI_NONDIALOGUE_ROTATION_GRANDFATHERED = {
-    "20260810_1", "20260818_1", "20260819_1", "20260827_1", "20260828_2",
+    "20260818_1", "20260819_1",
 }
 
 
@@ -15885,7 +15936,7 @@ CHOUKAI_OPTION_TOKEN_RE = re.compile(r"[一-鿿]{2,}|[ァ-ヶー]{2,}")
 # id repeat — is deliberately NOT here: it was re-drawn on 2026-09-10 and
 # passes on merit.
 CHOUKAI_OPTION_SET_REUSE_GRANDFATHERED = {
-    "20260811_1", "20260814_1", "20260821_1", "20260828_1", "20260903_1",
+    "20260821_1", "20260903_1",
     "20260904_1",
 }
 
@@ -16405,6 +16456,48 @@ LOCAL_STORE = load(".agents/exam-app/scripts/local_store.py")
 MODEL_ANSWER = load(".agents/exam-model-answer/scripts/build_model_answer.py")
 
 
+def printed_choukai_options(md: str) -> dict[str, list[str]]:
+    """`問題N-M番` → the option texts printed under it in a 聴解.md."""
+    out: dict[str, list[str]] = {}
+    sec, cur = None, None
+    for line in md.splitlines():
+        if (h := re.match(r"^##\s*問題(\d+)", line)):
+            sec, cur = h.group(1), None
+        elif (b := re.match(r"^\*\*(\d+)番\*\*\s*$", line)) and sec:
+            cur = f"問題{sec}-{b.group(1)}番"
+            out[cur] = []
+        elif cur and (o := re.match(r"^\s+[1-4]\.\s*(.*)$", line)):
+            out[cur].append(o.group(1).strip())
+        elif line.strip() and not line.startswith(" "):
+            cur = None
+    return out
+
+
+def check_composed_figure_items(d: Path):
+    """A composed 聴解 prints no figure, so a figure item is unanswerable.
+
+    The bank has flagged `figure_dependent` records since 2026-09-09 and the
+    composer skips them, but a paper composed BEFORE the flag kept its draw:
+    20260813_2 (問題1-5番) and 20260827_1 (問題1-2番) shipped
+    「1. 1 / 2. 2 / 3. 3 / 4. 4」 until a 2026-09-28 corpus triage withdrew
+    them — nothing in the gate read the printed options. This reads them with
+    the bank's own predicate (`build_textbook_bank.figure_dependent`), so the
+    two cannot disagree about what a figure item is.
+    """
+    md = d / "聴解.md"
+    if not md.is_file():
+        return
+    tb = load("tools/build_textbook_bank.py")
+    bad = [k for k, opts in printed_choukai_options(md.read_text(encoding="utf-8")).items()
+           if len(opts) >= 3 and tb.figure_dependent(opts)]
+    check(f"{d.name}: no composed 聴解 item prints figure labels without its figure",
+          not bad,
+          f"{', '.join(bad)} print only picture labels (1–4 / ア・イ・ウ) — the "
+          f"composed booklet has no picture, so the item is unanswerable. "
+          f"Re-draw the slot: `make mp3 {d.name} SEED=<fresh>` (choukai-audio "
+          f"Part 0; build_choukai_bank `figure_dependent`)")
+
+
 def check_tests():
     g = load(".agents/exam-app/scripts/grade_answers.py")
     m = load(".agents/choukai-audio/scripts/choukai_script.py")
@@ -16479,6 +16572,8 @@ def check_tests():
         # Functions that branch on `origin` for 聴解 want the composed half to
         # behave like an import: official structure, official wording.
         ck_arg = "imported" if ck_origin == "composed" else origin
+        if ck_origin == "composed":
+            check_composed_figure_items(d)
         if origin == "imported":
             slug = d.name[len(ORIGIN.IMPORTED_PREFIX):]
             check("imported- slug is non-empty kebab-case",
@@ -16981,14 +17076,22 @@ def check_grader_parity():
         return skip("grader parity", "node not installed")
 
     g = load(".agents/exam-app/scripts/grade_answers.py")
-    for sheet in sheets:
-        d = sheet.parent
-        with tempfile.TemporaryDirectory() as tmp:
-            harness = Path(tmp) / "h.js"
-            harness.write_text(JS_HARNESS, encoding="utf-8")
-            answers = Path(tmp) / "a.json"
-            r = subprocess.run(["node", str(harness), str(sheet), str(answers)],
-                               capture_output=True, text=True)
+    with tempfile.TemporaryDirectory() as tmp:
+        harness = Path(tmp) / "h.js"
+        harness.write_text(JS_HARNESS, encoding="utf-8")
+
+        def run_node(i_sheet):
+            i, sheet = i_sheet
+            answers = Path(tmp) / f"a{i}.json"
+            return subprocess.run(["node", str(harness), str(sheet), str(answers)],
+                                  capture_output=True, text=True), answers
+
+        # One node start is ~33 ms × 40 sheets; the runs are independent, so
+        # start them together and compare in order (output order unchanged).
+        with ThreadPoolExecutor(max_workers=8) as pool:
+            runs = list(pool.map(run_node, enumerate(sheets)))
+        for sheet, (r, answers) in zip(sheets, runs):
+            d = sheet.parent
             if r.returncode != 0:
                 check(f"{d.name}: JS grader runs under node", False,
                       r.stderr.strip().splitlines()[-1] if r.stderr.strip() else "no stderr")

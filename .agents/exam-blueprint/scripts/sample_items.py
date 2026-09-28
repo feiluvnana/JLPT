@@ -23,6 +23,7 @@ import argparse
 import hashlib
 import itertools
 import json
+import os
 import math
 import random
 import re
@@ -1120,10 +1121,30 @@ COOLDOWN_MARGIN = 2  # draws of headroom left below full pool exhaustion, so
 # they cool down together. `cooldown_for()` therefore cannot size either
 # window as if that category's own DRAW were the pool's only consumer — see
 # the SHARED_ROTATION_SPACE branch there.
+#
+# EVERY POOL CATEGORY SHARES ONE ROTATION SPACE WITH EVERY OTHER (2026-09-28).
+# The grammar pair was the first case found, not the only one: `recency_map()`
+# has always tracked recency BY WORD, ACROSS CATEGORIES, so a `kanji_reading`
+# 「柔軟(じゅうなん)」, an `orthography` 「柔軟」 or a `context_words` 「柔軟」
+# drawn into one paper cools the `usage` entry 「柔軟」 exactly as a `usage` draw
+# would. `usage`'s window was sized off its own 5 draws (217 // 5 - 2 = 41)
+# while a paper really consumes ~5.7 `usage` entries, so a pool audit's
+# simulation aborted in `assert_rotation()` at the ~11th future paper on EVERY
+# seed ("rotation broken … needs its own 41-draw cooldown") — the 2026-09-04
+# grammar incident one category over. `rotation_partners()` therefore names
+# every other drawn pool category, and `shared_space_draw()` counts what each
+# really spends of this one; a pair with no shared words contributes 0, so the
+# explicit map below is kept only as the record of where this was first found.
 SHARED_ROTATION_SPACE = {
     "grammar_p7": ("grammar_p8",),
     "grammar_p8": ("grammar_p7",),
 }
+
+
+def rotation_partners(cat: str) -> tuple[str, ...]:
+    """Every OTHER pool-drawn category — all of them can spend `cat`'s entries."""
+    return tuple(c for c in DRAW
+                 if c != cat and c not in AUTHORED_THEME_CATS)
 
 _POOLS_CACHE: dict = {}
 
@@ -1186,19 +1207,32 @@ def shared_space_draw(cat: str, pool) -> float:
     (`head()`/`affix_marker_free()`) lets one drawn entry knock out more than
     one pool entry. Estimated from pool structure only — no ledger — as
     `DRAW[cat] + sum(DRAW[partner] * <fraction of the partner pool that hits
-    this pool's identity space>)`.
+    this pool's identity space>)`, over `rotation_partners(cat)`.
+
+    Memoised on the pool contents and the pools.json revision: the gate calls
+    `cooldown_for()` per test and per category, and the partner scan reads
+    every vocabulary pool (~3 700 entries).
     """
+    all_pools()                     # refresh the (mtime, size) cache key first
+    key = (cat, tuple(item_text(x) for x in pool), _POOLS_CACHE.get("key"),
+           len(_KEY_BY_TEXT), len(_FAMILY_BY_TEXT))
+    if key in _SHARED_DRAW_CACHE:
+        return _SHARED_DRAW_CACHE[key]
     total = float(DRAW.get(cat, 0))
     toks: set[str] = set()
     for x in pool:
         toks |= identity_tokens(x)
-    for partner in SHARED_ROTATION_SPACE.get(cat, ()):
+    for partner in rotation_partners(cat):
         ppool = drawable(partner, all_pools().get(partner) or [])
         if not ppool:
             continue
         hits = sum(1 for x in ppool if identity_tokens(x) & toks)
         total += DRAW.get(partner, 0) * (hits / len(ppool))
+    _SHARED_DRAW_CACHE[key] = total
     return total
+
+
+_SHARED_DRAW_CACHE: dict = {}
 
 
 def cooldown_for(cat: str, pool) -> int:
@@ -1289,7 +1323,9 @@ def cooldown_for(cat: str, pool) -> int:
     # paper actually takes (`shared_space_draw()`, 13.8 for p7 / 6.1 for p8),
     # so the number this returns is one `draw()` can keep and
     # `assert_rotation()` can prove: p7 12 -> 9, p8 6 -> 4.
-    if cat in SHARED_ROTATION_SPACE:
+    # Since 2026-09-28 this runs for EVERY pool category, not only the grammar
+    # pair (see `rotation_partners()`): `usage` 41 -> 34 was the founding case.
+    if rotation_partners(cat):
         eff = shared_space_draw(cat, pool)
         depth = min(depth, pool_size // max(1, math.ceil(eff)))
     return max(COOLDOWN_FLOOR, depth - COOLDOWN_MARGIN)
@@ -1470,6 +1506,13 @@ def pools_sha() -> str:
     return hashlib.sha1(POOLS.read_bytes()).hexdigest()[:12]
 
 
+def write_atomic(path: Path, text: str) -> None:
+    """Write via a sibling temp file + os.replace, so a reader never sees half."""
+    tmp = path.with_name(f".{path.name}.tmp")
+    tmp.write_text(text, encoding="utf-8")
+    os.replace(tmp, path)
+
+
 def load_ledger() -> dict:
     if not LEDGER.exists():
         return {"version": 2, "history": []}
@@ -1563,6 +1606,46 @@ def affix_marker_free(t: str) -> str:
     if not re.search(r"[〜～]", re.split(r"[(（]", t)[0]):
         return ""
     return t.replace("〜", "").replace("～", "")
+
+
+# --- vocabulary LEMMA identity: one word, however its tail is spelled (2026-09-28)
+# `head()` folds a gloss away and nothing else, so 「感染」/「感染する」,
+# 「困難(こんなん)」/「困難な(こんなんな)」, 「続々」/「続々と」 and 「ただ」/「ただの」
+# were two items to every identity map. The 2026-09-28 pool audit measured 14
+# same-category pairs of that shape (context_words 9, kanji_reading 5) and 106
+# more ACROSS categories (usage 「導入する」 vs kanji_reading 「導入(どうにゅう)」,
+# paraphrase 「妥当だ」 vs usage 「妥当」 …): one paper could key the same word in
+# 問題1 and 問題6, and the cross-paper cooldown could not see it either.
+#
+# THE RULE: strip ONE trailing する/な/だ/に/と/の from the head, and only when
+# at least two characters are left. The floor is what keeps it honest —
+# measured over every pool the day it landed, the only pairs a 1-character stem
+# would have joined are different words (「対する」/「対」, 「実に」/「実」,
+# 「主に」/「主」), and every pair the 2-character floor joins is one word
+# (「次第に」/「次第」 is the loosest, and a candidate who met 次第 in 問題1 has
+# met it). Grammar and affix entries (anything carrying 〜) are excluded: their
+# identity is `grammar_form_tokens()` / `affix_marker_free()`, and a kana tail
+# there is part of the form, not an inflection.
+VOCAB_LEMMA_NS = "lemma»"
+_LEMMA_TAILS = ("する", "な", "だ", "に", "と", "の")
+_LEMMA_MIN_STEM = 2
+
+
+def vocab_lemma(entry) -> str:
+    """The word an entry tests with one inflectional tail removed, or ''."""
+    t = item_text(entry)
+    if not t or re.search(r"[〜～~]", t):
+        return ""
+    h = head(t)
+    for tail in _LEMMA_TAILS:
+        if h.endswith(tail) and len(h) - len(tail) >= _LEMMA_MIN_STEM:
+            return h[:-len(tail)]
+    return h
+
+
+def lemma_tokens(entry) -> set[str]:
+    lem = vocab_lemma(entry)
+    return {VOCAB_LEMMA_NS + lem} if lem else set()
 
 
 # --- grammar FORM identity: 問題7 and 問題8 are ONE rotation space (F1, 2026-08-20)
@@ -1687,6 +1770,7 @@ def identity_tokens(entry) -> set[str]:
     if k:
         toks.add(KEY_NS + k)
     toks |= grammar_form_tokens(entry)
+    toks |= lemma_tokens(entry)
     return toks
 
 
@@ -1703,11 +1787,18 @@ def taken_tokens(entry) -> set[str]:
     build its 問題8 frame on 限定表現(〜のみならず…も) — 「one grammar point may be
     the KEY only once per paper」 (question-authoring Item integrity #15) with
     nothing able to see it (F1).
+
+    The vocabulary LEMMA is here for the same reason (2026-09-28): 「導入」 in
+    問題1 and 「導入する」 in 問題6 are one word tested twice in one paper, and
+    so are 「感染」/「感染する」 drawn together into one 問題4. It also folds
+    head-identical cross-category entries (kanji_reading 「把握(はあく)」 vs usage
+    「把握」), which the in-test set used to let through — see `vocab_lemma()`.
     """
     t = item_text(entry)
     k = errand_key(entry)
     return (({t} if t else set()) | ({KEY_NS + k} if k else set())
-            | grammar_form_tokens(entry) | form_family_tokens(entry))
+            | grammar_form_tokens(entry) | form_family_tokens(entry)
+            | lemma_tokens(entry))
 
 
 # --- MUTUALLY EXCLUSIVE FORM FAMILIES (F5, qa-report-20260904_1) -----------
@@ -1733,9 +1824,11 @@ def taken_tokens(entry) -> set[str]:
 # cooldown. The defect is two of a family in ONE 問題8, not a family drawn two
 # papers running.
 #
-# TODAY'S MEMBERSHIP is two families, both cases where the two entries are one
-# form spelled twice: {〜つつある, 経過状況(〜つつ…する)} and {目的表現(〜ように…する),
-# 目的達成(〜ように努力する)}. Points that merely share a stem while being
+# MEMBERSHIP lives in `pools.json` (`grammar_form_families`), not here; every
+# family is a case where the entries are one form spelled twice — the founding
+# two were {〜つつある, 経過状況(〜つつ…する)} and {目的表現(〜ように…する),
+# 目的達成(〜ように努力する)}, and the 2026-09-28 audit added four checked
+# against the Shin Kanzen N2 index (exam-blueprint SKILL). Points that merely share a stem while being
 # separate N2 items (〜ばかりに vs 〜ばかりか, 〜として vs 〜としても, 〜ない限り vs
 # 〜に限らず) are NOT families — Shin Kanzen headlines them separately, and
 # folding them would refuse honest draws.
@@ -2290,8 +2383,16 @@ def check_pool_depths(pools: dict) -> None:
         gone = len(pools.get(cat, [])) - size
         ratio = size / n if n > 0 else 0
         status = "OK" if ratio >= 2.5 else "THIN"
+        # The window a draw made now is proved against, and what a paper
+        # really spends of this pool once every other category's draws of the
+        # same words are counted (`shared_space_draw()`, 2026-09-28).
+        window = ""
+        if cat not in AUTHORED_THEME_CATS and n:
+            eff = shared_space_draw(cat, drawable(cat, pools.get(cat, []), pools))
+            window = (f"  window {cooldown_for(cat, pools.get(cat, [])):3d} "
+                      f"(spends {eff:4.1f}/paper)")
         print(f"  [{status:4s}] {cat:20s}: {size:4d} items / {n:2d} draw ({ratio:5.1f}x headroom)"
-              + (f"  [{gone} retired, not counted]" if gone else ""))
+              + window + (f"  [{gone} retired, not counted]" if gone else ""))
 
 
 def main():
@@ -2311,6 +2412,9 @@ def main():
                          "records ledger attribution")
     ap.add_argument("--no-adjunct", action="store_true",
                     help="pure pool draw; ignore logs/adjunct_staging.json")
+    ap.add_argument("--force", action="store_true",
+                    help="allow a full re-draw of a paper that is already "
+                         "authored, or a seed another paper already used")
     ap.add_argument("--check-depth", action="store_true",
                     help="check pool sizes and headroom multipliers without sampling")
     args = ap.parse_args()
@@ -2386,6 +2490,26 @@ def main():
               f"before it")
     recency = recency_map(history if resample_idx is None
                           else history[:resample_idx])
+
+    # Two guards the skill states and nothing enforced (2026-09-28 audit): a
+    # full draw over an AUTHORED paper silently replaced a shipped paper's
+    # blueprint and ledger row, and a seed another paper already used re-draws
+    # that paper's picks (the re-skin incident, AGENTS.md §0).
+    if not (args.reroll or args.reroll_one or args.force):
+        tdir = spec_path.parent
+        authored = [n for n in ("言語知識・読解.md", "_sections")
+                    if (tdir / n).exists()]
+        if authored:
+            sys.exit(f"{tdir.relative_to(ROOT)} is already authored "
+                     f"({', '.join(authored)}): a full re-draw would orphan it. "
+                     f"Use --reroll <category> / --reroll-one CAT:INDEX, or "
+                     f"--force if you really are regenerating the paper.")
+        reused = sorted({str(h.get("test_id")) for h in history
+                         if h.get("seed") == seed
+                         and str(h.get("test_id")) != str(args.test_id)})
+        if reused:
+            sys.exit(f"seed {seed} was already used by {', '.join(reused)}; "
+                     f"pick a fresh one (or --force).")
 
     if args.reroll:
         cat = args.reroll
@@ -2827,10 +2951,12 @@ def main():
 
     LOGS_DIR.mkdir(parents=True, exist_ok=True)
     spec_path.parent.mkdir(parents=True, exist_ok=True)
-    spec_path.write_text(json.dumps(spec, ensure_ascii=False, indent=1),
-                         encoding="utf-8")
-    LEDGER.write_text(json.dumps(ledger, ensure_ascii=False, indent=1),
-                      encoding="utf-8")
+    # Ledger first, each file atomically: a crash mid-write used to leave a
+    # truncated ledger.json that load_ledger() cannot parse, i.e. every future
+    # draw blocked; and a spec written before its ledger row is a paper the
+    # rotation history does not know about.
+    write_atomic(LEDGER, json.dumps(ledger, ensure_ascii=False, indent=1))
+    write_atomic(spec_path, json.dumps(spec, ensure_ascii=False, indent=1))
     print(f"seed={spec['seed']} -> {spec_path.relative_to(ROOT)} written, "
           f"ledger updated at {LEDGER.relative_to(ROOT)} "
           f"({len(history)} draw(s) recorded)")

@@ -318,8 +318,8 @@ partly OCR** — trust rules and mechanics:
 
 Always run from the workspace root. Each command's rules and options live in
 its owner skill — this table is the router, not the manual. Per-test targets
-take the id positionally (`make sheet 20260917_1`) or as `TEST=…`; always
-pass one (the fallback `TEST=1` names no folder).
+take the id positionally (`make sheet 20260917_1`) or as `TEST=…`; there is
+no default, and one without an id (or naming no `tests/` folder) stops.
 
 **Environment prerequisites and per-OS setup (macOS, Windows/WSL2) are owned by
 `README.md`** — the interpreter and package versions, the external binaries

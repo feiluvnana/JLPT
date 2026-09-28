@@ -262,7 +262,7 @@ function meterHtml(t){
 }
 
 function originBadgeHtml(t){
-  var lv = t.level ? t.level + ' · ' : '';
+  var lv = t.level ? esc(t.level) + ' · ' : '';   // a restored backup is user data
   return t.origin === 'imported'
     ? '<span class="badge origin-imp">' + lv + 'imported</span>'
     : '<span class="badge origin-gen">' + lv + 'generated</span>';
@@ -274,7 +274,7 @@ function badgeHtml(t){
   var cls = t.result.passed ? 'pass' : 'fail';
   var label = t.result.passed ? '合格' : '不合格';
   return '<span class="badge ' + cls + '">' + label + ' '
-       + t.result.total_scaled_score + ' / ' + t.result.max_scaled_score + '</span>';
+       + esc(t.result.total_scaled_score) + ' / ' + esc(t.result.max_scaled_score) + '</span>';
 }
 
 function cardHtml(t){

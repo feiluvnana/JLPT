@@ -33,14 +33,21 @@ intent.
 | 4. QA | `exam-qa-review` in full — blind-solve every item, root-cause table | 1 **fresh** |
 | 5. Model answer | `詳細解説.json` (JA) + `詳細解説.vi.json` (VI) → `make model-answer` (also rebuilds `練習.html`) | **2, one per language**, no shared context |
 
-**The fix loop.** Every QA finding costs a fix + a fresh-eyes re-review of the
-touched items. **Exception:** a round returning FAIL with ≤3 findings may be
-fixed directly, with the same rigor (root-cause, `make check`, read the diff),
-stated in the final report. Capped at **2 fresh-eyes rounds**; if round 2 still
-FAILs, apply its findings directly and say explicitly which were fixed without
-independent re-verification. PASS closes the *paper*, not the *generator* — an
-open row in QA's root-cause table blocks the next run until applied or rejected
-with a reason.
+**The fix loop — one full QA round, then direct fixes** (owner rule since
+2026-09-28; every other file points here). Stage 4 runs ONCE over the whole
+paper. Its findings go back to the author context that owns the section, which
+fixes them directly: root-cause the finding, run `make check`, read the diff,
+and after any 問題10–14 edit do the keyed-form re-grep plus the 13-final column
+re-read (Stage 3). The QA report's disposition column records each fix. **A
+second review runs only when a fix changes a key, or replaces an item or
+passage wholesale** (a `--reroll`, a re-themed surface, a re-written passage).
+Even then it is **SCOPED**: one fresh context blind-solves only the replaced
+items and re-reads their 問題 and the column they sit in. It is never a full
+re-pass, and it runs **at most once**. Its findings are fixed directly and named
+in the final report. Wording and evidence fixes, a stem trim, a re-closed
+sentence and a bank/transcript fix get no re-review. PASS closes the *paper*,
+not the *generator*: an open row in QA's root-cause table blocks the next run
+until it is applied or rejected with a reason.
 
 **`make sample <next>` may not run while any test's QA is open** — not while a
 round is being written, not while findings are being applied. It writes

@@ -406,7 +406,7 @@ each a subagent with a bounded reading list, handing off through files on disk o
 banked real recordings at build time by `make mp3 <id> SEED=<rng>`
 (`choukai-audio` Part 0), so there is no 聴解 subagent.
 `jlpt-test-generation` owns the stage table, the reading map, the prompt
-template, and the fix→re-review loop; read it before any generation work.
+template, and the fix loop (one full QA round, then direct fixes); read it before any generation work.
 
 **Model answer generation (`make model-answer <id>`) MUST always be the final step**
 (for both generated exams and imported exams) — run only after QA/fidelity verification

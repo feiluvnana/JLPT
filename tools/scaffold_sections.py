@@ -120,11 +120,10 @@ def scaffold(test_dir: Path, overwrite: bool = False) -> list[Path]:
         bun += [f"**{q}**", OPTS]
     files["問7-9_文法.md"] = bun + _key_table("文法", spec, [(n, r[n]) for n in (7, 8, 9)])
 
-    topics = spec.get("items", {}).get("reading_topics", [])
-    doc = ["<!-- reading_topics (theme + avoid) — the orchestrator's allocation says "
-           "which entry feeds which surface: "
-           + "; ".join(f"[{i}] {t.get('theme', t) if isinstance(t, dict) else t}"
-                       for i, t in enumerate(topics)) + " -->", ""]
+    # No theme comment here: it went stale on a reroll and the gate read it as
+    # 問題9's final sentence (qa-report-20260928_1-round2 R2-F3). The themes
+    # live in test_spec.json and the orchestrator's allocation table.
+    doc = []
     for n in range(10, 15):
         rng = list(r[n])
         if n in READING_SHAPE:
@@ -139,7 +138,7 @@ def scaffold(test_dir: Path, overwrite: bool = False) -> list[Path]:
         else:
             head = (f"## 問題{n} 右のページは、〈…の案内〉である。" if n == 14 else f"## 問題{n}")
             doc += [canonical_heading(level, n, "", head), ""]
-            doc += (["A", "", "（本文）", "", "B", "", "（本文）", ""] if n == 12 else ["（本文）", ""])
+            doc += (["**A**", "", "（本文）", "", "**B**", "", "（本文）", ""] if n == 12 else ["（本文）", ""])
             for q in rng:
                 doc += [f"**{q}** 設問", OPTS_V]
     files["問10-14_読解.md"] = doc + _key_table("読解", spec, [(n, r[n]) for n in range(10, 15)])

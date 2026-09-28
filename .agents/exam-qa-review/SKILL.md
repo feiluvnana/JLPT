@@ -60,8 +60,8 @@ defect through.
 - **Evidence or it didn't pass** — a quoted line, a spliced sentence, a
   table, never "looks fine".
 - **No sampling. All 101 items, every check.** A spot-check is a skipped step.
-- **Any single automatic-fail finding fails the WHOLE test** until fixed and
-  re-reviewed. Automatic fails:
+- **Any single automatic-fail finding fails the WHOLE test** until fixed
+  (re-reviewed only under `jlpt-test-generation` §"The fix loop"). Automatic fails:
   - a second defensible answer; a keyed option the source does not state; an
     unanswerable item or 例; a 解説 quote not in the source; an AUTHORED
     topic repeated within the paper or from the previous test (§5 — a composed
@@ -177,15 +177,15 @@ defect through.
   has the cooldown data but no gate compares draws across tests; intersect the
   ledger's last two entries with this test's, after folding okurigana/kana
   tails, before trusting the draw.
-- **Fix, regenerate, re-check, RE-REVIEW.** Repair sources, regenerate
-  booklet/`解答.html`(+MP3 if the script changed), re-run `make check`. Changed
-  items AND their whole 問題 go back through steps 1–4; step 5's table rebuilds
-  if any topic moved. **Exception** (`jlpt-test-generation`'s stage-4 loop
-  rule): a FAIL round with ≤3 findings may be fixed directly, skipping
-  re-review — same rigor as any fix (root-cause, verify `make check`,
-  sanity-read the diff). Fixes introduce defects at the same rate as
-  authoring — a fix-and-approve in the same breath is a rubber stamp, not a
-  review. A closing-move-shape fix (`dokkai.md` §"Thirteen surfaces, thirteen
+- **Fix, regenerate, re-check — re-review only what was replaced.** Repair
+  sources, regenerate booklet/`解答.html` (+MP3 if the script changed), and
+  re-run `make check`. Step 5's table rebuilds if any topic moved. Whether a
+  second review runs, and how far it reaches, is `jlpt-test-generation`'s
+  §"The fix loop" rule: a scoped re-review, at most once, only for a changed
+  key or a wholesale-replaced item or passage. Every other finding is fixed
+  directly, under the same rigor (root-cause, `make check`, read the diff). A
+  fixer still does not approve its own fix, so write down what you verified.
+  A closing-move-shape fix (`dokkai.md` §"Thirteen surfaces, thirteen
   different essays") is verified by re-reading the new closing against the six
   named shapes, never by `make check` alone — `20260812_1`'s round-1 "fix"
   passed the mechanized marker check while shipping an identical 主張 shape,

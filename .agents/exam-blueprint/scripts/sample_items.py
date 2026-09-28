@@ -325,6 +325,18 @@ def split_reading_entry(entry) -> tuple[str, str]:
         else (item_text(entry).strip(), "")
 
 
+def _dictionary_readings(ch: str) -> set:
+    """pykakasi's readings for one kanji (音 and 訓 unmarked), hiragana; empty
+    when pykakasi is missing, which leaves `is_kun_target` judging 訓."""
+    try:
+        from pykakasi.kanji import Kanwa
+        table = Kanwa().load(ch) or {}
+    except Exception:
+        return set()
+    to_hira = str.maketrans({chr(c): chr(c - 0x60) for c in range(0x30A1, 0x30F7)})
+    return {str(y).translate(to_hira) for y, _ in table.get(ch, ())}
+
+
 def is_kun_target(entry) -> bool:
     """True when a `kanji_reading` entry's target is a 訓読み word.
 
@@ -345,6 +357,12 @@ def is_kun_target(entry) -> bool:
     m = re.search(r"([ぁ-ん]+)$", t)
     tail = m.group(1) if m else ""
     core = t[:len(t) - len(tail)] if tail else t
+    if (not tail and "の" in core and r and core.count("の") == r.count("の")
+            and all(_KUN_KANJI.findall(p) for p in core.split("の"))):
+        # A particle の, not okurigana: 五重の塔(ごじゅうのとう) and 気の毒 are
+        # 音読み throughout, 床の間/竹の子 are not — judge each side (2026-09-28).
+        return any(not on_segmentable(pr, len(_KUN_KANJI.findall(pc)))
+                   for pc, pr in zip(core.split("の"), r.split("の")))
     if _KUN_KANA.search(core):
         return True                       # internal okurigana: 折り曲げる, 取り扱う
     ks = _KUN_KANJI.findall(core)
@@ -353,15 +371,27 @@ def is_kun_target(entry) -> bool:
     if not r:
         return not tail
     if tail:
-        if not r.endswith(tail):
+        if r.endswith(tail):
+            stem = r[:-len(tail)]
+        elif tail in _SURU_TAILS:
+            # 匹敵する(ひってき): the reading omits the する, so it IS the stem.
+            # Judging this "kun" counted an 音 compound toward the 訓読み floor
+            # and let 20260928_1 draw one real 訓読み target (2026-09-28).
+            stem = r
+        else:
             return True                   # reading and spelling disagree: judge kun
-        stem = r[:-len(tail)]
     else:
         stem = r
     if len(ks) == 1:
         # 演じる/生じる/害する are 音読み stems wearing okurigana; 見にくい,
         # 閉じる, 恥じる are not — the stem has to be an on-shaped 2+-mora
         # reading before the okurigana can be discounted.
+        if tail == "す" and core == ks[0]:
+            # 略す(りゃくす) is 略 + す; 隠す(かくす)/移す(うつす) are 訓 even though
+            # かく/うつ are on-SHAPED, so a bare す also needs the stem to be one
+            # of the kanji's own dictionary readings (2026-09-28, 20260928_1).
+            return not (len(_morae(stem)) >= 2 and on_segmentable(stem, 1)
+                        and stem in _dictionary_readings(ks[0]))
         if tail and tail not in _SURU_TAILS:
             return True
         return not (len(_morae(stem)) >= 2 and on_segmentable(stem, 1))
@@ -2273,6 +2303,9 @@ def main():
                     help="resample ONE entry of a category, keep the other "
                          "entries and every other category "
                          "(e.g. --reroll-one quick_response:8)")
+    ap.add_argument("--exclude-theme", action="append", metavar="THEME",
+                    help="with --reroll-one on an authored-theme category: a "
+                         "theme a rule forbids for that slot (repeatable)")
     ap.add_argument("--test-id", required=True,
                     help="test id; writes tests/<test_id>/test_spec.json and "
                          "records ledger attribution")
@@ -2612,11 +2645,16 @@ def main():
         # 問題12/13/14, so a rule-4 breach against the previous paper's headline
         # set is drawable and `--reroll-one reading_topics:9` is a lottery over
         # the free themes (stage3-report-20260914_1 root-cause R4).
+        # `--exclude-theme` closes the lottery by hand: pass ONLY themes a rule
+        # forbids for that slot (rule 1/4 headline sets, the cloze's composed
+        # theme), never a preference — the draw stays random over what is left
+        # (20260928_1 drew 科学・技術, 交通, 行政・手続き for 問題12, all illegal).
         if cat in AUTHORED_THEME_CATS:
             picked = draw_authored_themes(
                 rng, 1, cat, prior_history,
                 kept_themes=[t for t in (entry_theme(x) for x in kept) if t],
-                exclude_themes=[t for t in (entry_theme(replaced),) if t])
+                exclude_themes=[t for t in (entry_theme(replaced),) if t]
+                + list(args.exclude_theme or ()))
             cool = None          # authored themes consume no pool cooldown
         else:
             cool_max = cooldown_for(cat, pools[cat])

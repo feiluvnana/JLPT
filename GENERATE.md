@@ -34,7 +34,7 @@ You orchestrate; you author nothing.
 | 1 | Blueprint: `make sample ⟨test_id⟩ SEED=<rng>` | 1 | `test_spec.json` + ledger row written |
 | 2 | `make scaffold-sections ⟨test_id⟩`, then author 文字・語彙 (問1–6) ǀ 文法 (問7–9) ǀ 読解 (問10–14) into the three fragments | **3, parallel** | no scaffold placeholder left; 読解 got its pre-assigned closing-move shapes |
 | 3 | Build + gate: `make assemble`, `make mp3 ⟨test_id⟩ SEED=<rng>` (composes the whole 聴解 half), `make upload-files TARGET=tests TEST=⟨test_id⟩`, booklet, sheet, `make check`, the whole-paper topic table, the `logs/topics.json` row | 1 | gate green, every WARN naming this test resolved or recorded with its reason |
-| 4 | QA: `exam-qa-review`, blind-solve every item | 1 **fresh** | `QA: PASS` (fix → fresh re-review loop per the skill) |
+| 4 | QA: `exam-qa-review`, blind-solve every item — ONE full round | 1 **fresh** | `QA: PASS`, or every finding fixed directly by its section's author; a scoped re-review only for a changed key or a replaced item/passage (skill §"The fix loop") |
 | 5 | Model answer: `詳細解説.json` (JA) and `詳細解説.vi.json` (VI), then `make model-answer ⟨test_id⟩` (also rebuilds `練習.html`) | **2, separate** | both panes authored inside the terseness bands, no scaffold placeholder left |
 
 Non-negotiables (each is in the skill; they are repeated because each has shipped broken):
@@ -49,7 +49,8 @@ Non-negotiables (each is in the skill; they are repeated because each has shippe
    by hand (re-render: `make mp3 ⟨test_id⟩ REPLAY=1`).
 4. **Read every line of `make check`**, WARN included. Green is the floor.
 5. **QA runs in a context that authored nothing**, and stage 5 only starts
-   after `QA: PASS` — any later item fix desynchronizes the explanations.
+   once QA's findings are all closed (PASS, or fixed per the fix loop) — any
+   later item fix desynchronizes the explanations.
 6. **The Vietnamese pane is written from the items, not translated** — its
    subagent never sees the Japanese set.
 7. `make check` once more after `make model-answer`.

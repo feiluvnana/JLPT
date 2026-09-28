@@ -1,0 +1,1325 @@
+{
+ "1": {
+  "why_correct": "「首相」 (thủ tướng) đọc âm On: 首 là 「しゅ」 (âm ngắn), 相 là 「しょう」, ghép lại thành 「しゅしょう」.",
+  "options_analysis": [
+   "Đúng: 首 đọc ngắn 「しゅ」, 相 đọc 「しょう」.",
+   "Kéo dài 首 thành 「しゅう」 và dùng âm 「そう」 của 相 — sai cả hai.",
+   "Phần 「しゅ」 đúng, nhưng trong từ này 相 đọc 「しょう」, không phải 「そう」.",
+   "Phần 「しょう」 đúng, nhưng 首 bị kéo dài thành 「しゅう」."
+  ],
+  "points": [
+   "首相《しゅしょう》: thủ tướng.",
+   "相談《そうだん》: ở đây 相 mới đọc 「そう」 — dễ nhầm với 「しょう」."
+  ]
+ },
+ "2": {
+  "why_correct": "「最も」 đọc âm Kun là 「もっとも」, nghĩa là “nhất”: anh trai cao nhất lớp.",
+  "options_analysis": [
+   "「とても」 (rất) là phó từ viết bằng kana, không dùng chữ 最.",
+   "「なんとも」 viết là 「何とも」, thường đi với phủ định, không có nghĩa “nhất”.",
+   "「ちっとも」 đi với phủ định (“chẳng chút nào”), không liên quan đến chữ 最.",
+   "Đúng: 最 đọc 「もっと」 + okurigana 「も」 → 「もっとも」."
+  ],
+  "points": [
+   "最《もっと》も: nhất (so sánh bậc cao nhất).",
+   "最高《さいこう》: âm On của 最 là 「サイ」."
+  ]
+ },
+ "3": {
+  "why_correct": "「辺り」 đọc 「あたり」: vùng quanh đây. 「この辺り」 = khu vực này.",
+  "options_analysis": [
+   "「まわり」 viết là 「周り」 (xung quanh), chữ Hán khác.",
+   "「とおり」 viết là 「通り」 (con đường), không phải chữ 辺.",
+   "Đúng: 辺 đọc âm Kun 「あた」 + okurigana 「り」.",
+   "「となり」 viết là 「隣」 (bên cạnh), chữ Hán khác."
+  ],
+  "points": [
+   "辺《あた》り: vùng lân cận, quanh đây.",
+   "周辺《しゅうへん》: âm On của 辺 là 「ヘン」."
+  ]
+ },
+ "4": {
+  "why_correct": "柔 đọc 「じゅう」, 軟 「なん」, 体 「たい」 (không bị đục), 操 「そう」 → 「じゅうなんたいそう」: bài thể dục giãn cơ.",
+  "options_analysis": [
+   "「にゅう」 là âm hiếm của 柔 (như 「柔和」), không dùng trong từ này.",
+   "Phần 「じゅう」 đúng, nhưng 体 ở đây giữ âm trong 「たい」, không đục thành 「だい」.",
+   "Sai cả hai chỗ: dùng 「にゅう」 cho 柔 và đục 体 thành 「だい」.",
+   "Đúng: 「じゅうなん」 + 「たいそう」."
+  ],
+  "points": [
+   "柔軟《じゅうなん》: mềm dẻo, linh hoạt.",
+   "体操《たいそう》: thể dục."
+  ]
+ },
+ "5": {
+  "why_correct": "副 đọc 「ふく」, 社 「しゃ」, 長 「ちょう」 (có trường âm) → 「ふくしゃちょう」: phó giám đốc.",
+  "options_analysis": [
+   "社 ở đây không đục thành 「じゃ」; âm đục chỉ gặp trong từ như 「神社」.",
+   "Thiếu trường âm: 長 phải đọc 「ちょう」, không phải 「ちょ」.",
+   "Đúng: 「ふく」 + 「しゃ」 + 「ちょう」.",
+   "Sai cả hai chỗ: đục thành 「じゃ」 và bỏ trường âm của 「ちょう」."
+  ],
+  "points": [
+   "副社長《ふくしゃちょう》: phó giám đốc công ty.",
+   "神社《じんじゃ》: trường hợp 社 đục thành 「じゃ」."
+  ]
+ },
+ "6": {
+  "why_correct": "「しきゅう」 ở đây là cấp, chi trả tiền: 支 (chi ra) + 給 (cấp cho) = 「支給」. Người làm thêm cũng được trả tiền đi lại.",
+  "options_analysis": [
+   "「枝」 là cành cây, chỉ trông giống chữ 「支」; 「枝給」 không phải từ.",
+   "Đúng: 「支給」 = cấp, trả (lương, phụ cấp).",
+   "「級」 là cấp bậc, lớp — không mang nghĩa cấp phát tiền.",
+   "Sai cả hai chữ: 「枝」 (cành) và 「級」 (cấp bậc)."
+  ],
+  "points": [
+   "支給《しきゅう》: cấp, chi trả.",
+   "交通費《こうつうひ》: tiền đi lại."
+  ]
+ },
+ "7": {
+  "why_correct": "「いばる」 viết là 「威張る」: 威 (uy, oai) + 張る (phô ra) = lên mặt, ra oai với người nhỏ tuổi hơn.",
+  "options_analysis": [
+   "Đúng: 「威」 + 「張って」.",
+   "「意」 là ý nghĩ, 「貼る」 là dán giấy — cả hai chữ đều sai.",
+   "「威」 đúng, nhưng 「貼る」 là dán, không phải 「張る」.",
+   "「張る」 đúng, nhưng 「意」 (ý) không mang nghĩa uy thế."
+  ],
+  "points": [
+   "威張《いば》る: lên mặt, hống hách.",
+   "年下《としした》: người ít tuổi hơn."
+  ]
+ },
+ "8": {
+  "why_correct": "「味をみる」 là nếm thử để kiểm tra vị, dùng chữ thông thường 「見る」.",
+  "options_analysis": [
+   "「診る」 dùng khi bác sĩ khám bệnh, không dùng cho nếm súp.",
+   "「観る」 là xem kịch, ngắm cảnh — thưởng thức bằng mắt.",
+   "Đúng: 「見る」 nghĩa chung, bao gồm “thử xem” vị món ăn.",
+   "「看る」 là chăm sóc người bệnh, không hợp với món súp."
+  ],
+  "points": [
+   "味《あじ》をみる: nếm thử vị.",
+   "診察《しんさつ》: khám bệnh (chữ 診)."
+  ]
+ },
+ "9": {
+  "why_correct": "「はなび」 = 花 (hoa) + 火 (lửa, đọc đục thành 「び」): pháo hoa.",
+  "options_analysis": [
+   "「華」 cũng đọc 「はな」, nhưng từ pháo hoa chỉ viết bằng 「花」.",
+   "Đúng: 「花」 + 「火」.",
+   "「灯」 là ngọn đèn, không phải lửa của pháo hoa.",
+   "Sai cả hai chữ: 「華」 và 「灯」."
+  ],
+  "points": [
+   "花火《はなび》: pháo hoa.",
+   "夜空《よぞら》: bầu trời đêm."
+  ]
+ },
+ "10": {
+  "why_correct": "「はき」 là hủy bỏ, vứt đi giấy tờ không cần: 破 (phá) + 棄 (vứt bỏ) = 「破棄」.",
+  "options_analysis": [
+   "Đúng: 「破棄」 = hủy, vứt bỏ.",
+   "「波」 là sóng, 「期」 là thời kỳ — không chữ nào mang nghĩa vứt bỏ.",
+   "「破」 đúng, nhưng 「期」 (thời kỳ) không mang nghĩa vứt đi.",
+   "「棄」 đúng, nhưng 「波」 (sóng) không mang nghĩa phá hủy."
+  ],
+  "points": [
+   "破棄《はき》: hủy bỏ (giấy tờ, hợp đồng).",
+   "書類《しょるい》: giấy tờ, hồ sơ."
+  ]
+ },
+ "11": {
+  "why_correct": "「未記入」 = chưa điền. Tiền tố 「未」 chỉ việc chưa làm tới: trong đơn còn một ô chưa điền.",
+  "options_analysis": [
+   "「非」 phủ định tính chất (「非公開」), không gắn với hành động 「記入」.",
+   "「不」 phủ định trạng thái (「不注意」); không có từ 「不記入」.",
+   "Đúng: 「未記入」 = chưa được điền vào.",
+   "「反」 là chống lại (「反社会的」), không hợp với việc điền đơn."
+  ],
+  "points": [
+   "未記入《みきにゅう》: chưa điền.",
+   "未完成《みかんせい》: chưa hoàn thành — cùng tiền tố 未."
+  ]
+ },
+ "12": {
+  "why_correct": "「依頼主」 là người đã nhờ, đã đặt làm. Ngôi nhà được thiết kế theo mong muốn của người đặt.",
+  "options_analysis": [
+   "「家」 chỉ người theo một nghề (「作家」); không có từ 「依頼家」.",
+   "Đúng: 「主」 chỉ người chủ của việc nhờ, đặt hàng.",
+   "「手」 gắn sau gốc động từ (「売り手」), không gắn sau danh từ 「依頼」.",
+   "「士」 chỉ người có bằng cấp (「弁護士」), không đi với 「依頼」."
+  ],
+  "points": [
+   "依頼主《いらいぬし》: người nhờ, người đặt làm.",
+   "設計《せっけい》: thiết kế."
+  ]
+ },
+ "13": {
+  "why_correct": "「多様」 = đa dạng. 「多様な考え」 = nhiều cách nghĩ khác nhau trong lớp.",
+  "options_analysis": [
+   "「諸」 gom nhiều sự việc (「諸問題」), không ghép với 「様」.",
+   "「数」 là “vài” (「数日」); không có từ 「数様」.",
+   "「総」 là toàn bộ (「総人口」), không ghép với 「様」.",
+   "Đúng: 「多」 + 「様」 = nhiều kiểu."
+  ],
+  "points": [
+   "多様《たよう》: đa dạng.",
+   "様々《さまざま》: đủ loại — gần nghĩa với 多様."
+  ]
+ },
+ "14": {
+  "why_correct": "Chủ ngữ là ngôi nhà cũ; 「地震に耐える」 = chịu được động đất, trụ vững qua nhiều trận lớn.",
+  "options_analysis": [
+   "「慣れる」 là quen dần, nói về người, không dùng cho nhà cửa.",
+   "Đúng: nhà chống chịu được sức rung của động đất.",
+   "「逆らう」 là chống lại mệnh lệnh, dòng nước — không tả nhà chịu rung.",
+   "「応じる」 là đáp lại yêu cầu; động đất không phải một yêu cầu."
+  ],
+  "points": [
+   "耐《た》える: chịu đựng, chống chịu.",
+   "地震《じしん》: động đất."
+  ]
+ },
+ "15": {
+  "why_correct": "「〜気がしない」 = không có hứng làm gì. Mưa lạnh nên tôi chẳng muốn ra ngoài.",
+  "options_analysis": [
+   "「気が知れない」 = không hiểu nổi suy nghĩ của người khác, không nói về mình.",
+   "「気がきかない」 = không tinh ý, là nhận xét về tính cách.",
+   "「気が済まない」 = chưa thấy yên lòng (「謝らないと気が済まない」), không hợp.",
+   "Đúng: 「外に出る気がしない」 = chẳng muốn ra ngoài."
+  ],
+  "points": [
+   "〜気《き》がしない: không muốn, không có hứng.",
+   "気《き》が済《す》む: thấy thỏa, yên lòng."
+  ]
+ },
+ "16": {
+  "why_correct": "Để cá ngoài bếp vào mùa hè thì cá bị ươn, hỏng — 「腐る」.",
+  "options_analysis": [
+   "Đúng: thức ăn để lâu thì 「腐る」.",
+   "「枯れる」 dùng cho cây cỏ héo chết.",
+   "「さびる」 dùng cho kim loại bị gỉ.",
+   "「濁る」 dùng cho nước, chất lỏng bị đục."
+  ],
+  "points": [
+   "腐《くさ》る: thối, hỏng (thức ăn).",
+   "錆《さ》びる: gỉ sét (kim loại)."
+  ]
+ },
+ "17": {
+  "why_correct": "Làm kinh doanh, quanh năm đi khắp Nhật Bản — 「飛び回る」 là bận rộn đi hết nơi này đến nơi khác.",
+  "options_analysis": [
+   "「見回る」 là đi tuần tra quanh một khu vực nhất định.",
+   "「出回る」 là hàng hóa có bán khắp nơi, không dùng cho người.",
+   "「転げ回る」 là lăn lộn (vì đau, vì cười).",
+   "Đúng: đi công tác khắp nơi, không ngơi nghỉ."
+  ],
+  "points": [
+   "飛《と》び回《まわ》る: đi khắp nơi, bận rộn.",
+   "営業《えいぎょう》: kinh doanh, bán hàng."
+  ]
+ },
+ "18": {
+  "why_correct": "Bạn vắng nhà nên nhờ mẹ bạn chuyển lời — 「伝言を言付ける」 = gửi lời nhắn qua người khác.",
+  "options_analysis": [
+   "「言いつける」 là ra lệnh cho người dưới hoặc mách tội, không phải gửi lời.",
+   "「話しかける」 là bắt chuyện, không nhận tân ngữ 「伝言を」.",
+   "Đúng: nhờ người khác chuyển lời nhắn.",
+   "「申し出る」 là tự mình đề nghị với cấp trên, cơ quan."
+  ],
+  "points": [
+   "言付《ことづ》ける: nhờ chuyển lời, gửi đồ.",
+   "伝言《でんごん》: lời nhắn."
+  ]
+ },
+ "19": {
+  "why_correct": "Không mua nổi đồng phục mới → khó khăn về tiền bạc: 「財政的に苦しい」.",
+  "options_analysis": [
+   "「精神的」 là về mặt tinh thần, không giải thích việc thiếu tiền.",
+   "「体力的」 là về thể lực, không liên quan việc mua đồ.",
+   "Đúng: khó khăn về mặt tài chính.",
+   "「技術的」 là về kỹ thuật, tay nghề, không liên quan tiền."
+  ],
+  "points": [
+   "財政《ざいせい》: tài chính (của tổ chức).",
+   "苦《くる》しい: khó khăn, eo hẹp."
+  ]
+ },
+ "20": {
+  "why_correct": "Mở trang ra là con vật bật lên, nổi khỏi mặt giấy — thành hình khối 「立体」 (sách pop-up).",
+  "options_analysis": [
+   "「平面」 là mặt phẳng, trái với việc bật ra khỏi trang.",
+   "Đúng: hình có chiều cao, rộng, sâu.",
+   "「図形」 là hình vẽ bằng nét (tam giác, hình tròn).",
+   "「模型」 là mô hình thu nhỏ, không phải trạng thái hình trên trang."
+  ],
+  "points": [
+   "立体《りったい》: hình khối, lập thể.",
+   "飛《と》び出《だ》す: bật ra, nhảy ra."
+  ]
+ },
+ "21": {
+  "why_correct": "「怠る」 = bỏ bê việc lẽ ra phải làm; gần nghĩa nhất là 「なまける」 (lười).",
+  "options_analysis": [
+   "「嫌がる」 là tỏ ra không thích, chưa chắc là đã bỏ tập.",
+   "「自慢する」 là khoe khoang về việc tập.",
+   "Đúng: lười tập, không chịu luyện.",
+   "「急ぐ」 là làm vội, vẫn có tập."
+  ],
+  "points": [
+   "怠《おこた》る: sao nhãng, bỏ bê.",
+   "怠《なま》ける: lười biếng."
+  ]
+ },
+ "22": {
+  "why_correct": "「プラン」 (plan) = kế hoạch = 「計画」: bàn về kế hoạch chuyến đi.",
+  "options_analysis": [
+   "「費用」 là chi phí, không phải kế hoạch.",
+   "「写真」 là ảnh chụp.",
+   "「感想」 là cảm nghĩ sau chuyến đi.",
+   "Đúng: 「計画」 = kế hoạch."
+  ],
+  "points": [
+   "計画《けいかく》: kế hoạch.",
+   "感想《かんそう》: cảm nghĩ."
+  ]
+ },
+ "23": {
+  "why_correct": "「そういえば」 dùng khi chợt nhớ ra điều gì giữa câu chuyện = 「思い出したけど」.",
+  "options_analysis": [
+   "Đúng: chợt nhớ ra thì nói luôn.",
+   "「残念だけど」 báo một điều trái mong đợi.",
+   "「念のため言うと」 là nói thêm cho chắc chắn.",
+   "「正直に言うと」 là nói thật lòng."
+  ],
+  "points": [
+   "そういえば: à, nhân tiện nhớ ra.",
+   "念《ねん》のため: để cho chắc."
+  ]
+ },
+ "24": {
+  "why_correct": "Xếp hàng dài rồi mới vào được: 「ようやく」 = cuối cùng thì, sau khi chờ lâu = 「やっと」.",
+  "options_analysis": [
+   "Đúng: 「やっと」 cũng là “mãi mới”.",
+   "「さっそく」 là ngay lập tức, trái với việc chờ lâu.",
+   "「偶然」 là tình cờ, không phải kết quả của việc chờ.",
+   "「何度も」 là nhiều lần; câu chỉ nói vào được một lần."
+  ],
+  "points": [
+   "ようやく: mãi rồi cũng (sau vất vả).",
+   "偶然《ぐうぜん》: tình cờ."
+  ]
+ },
+ "25": {
+  "why_correct": "「直ちに」 = ngay lập tức = 「すぐに」: động đất thì phải chui ngay xuống gầm bàn.",
+  "options_analysis": [
+   "「ゆっくり」 là thong thả, trái nghĩa.",
+   "「必ず」 là nhất định, không nói về độ nhanh.",
+   "「静かに」 là yên lặng, không nói về thời gian.",
+   "Đúng: 「すぐに」 = ngay."
+  ],
+  "points": [
+   "直《ただ》ちに: ngay lập tức.",
+   "必《かなら》ず: nhất định, chắc chắn."
+  ]
+ },
+ "26": {
+  "why_correct": "「貸し出す」 là cơ quan (thư viện, cửa hàng) cho mượn đồ mang ra ngoài. Câu 1 dùng đúng như vậy.",
+  "options_analysis": [
+   "Đúng: thư viện cho mượn tạp chí tối đa một tuần.",
+   "Người đọc mượn sách về thì phải là 「借りる」, ngược chiều.",
+   "Cụm cố định là 「知恵を貸す」, không nói 「貸し出す」.",
+   "Rút tiền từ tài khoản là 「引き出す」."
+  ],
+  "points": [
+   "貸《か》し出《だ》す: cho mượn (thư viện...).",
+   "引《ひ》き出《だ》す: rút (tiền)."
+  ]
+ },
+ "27": {
+  "why_correct": "「支える」 là chống đỡ; nghĩa bóng là gánh vác cuộc sống. Câu 2: bố một mình nuôi cả nhà năm người.",
+  "options_analysis": [
+   "Giữ lời hứa với bản thân là 「約束を守る」.",
+   "Đúng: gánh vác sinh kế gia đình.",
+   "Chịu rét là 「寒さに耐える」 hay 「寒さをしのぐ」.",
+   "Bám vào dây treo trên tàu là 「つり革につかまる」."
+  ],
+  "points": [
+   "支《ささ》える: chống đỡ, gánh vác.",
+   "守《まも》る: giữ (lời hứa)."
+  ]
+ },
+ "28": {
+  "why_correct": "「尊重する」 = tôn trọng ý kiến, nhân cách, suy nghĩ. Câu 2: tôn trọng ý kiến của từng người.",
+  "options_analysis": [
+   "Quý một món đồ là 「大切にする」; 「尊重」 không dùng cho đồ vật.",
+   "Đúng: tôn trọng ý kiến khác nhau.",
+   "Dùng kính ngữ là 「敬語を使う」.",
+   "Tránh dồn sức lên chân đau là 「かばう」."
+  ],
+  "points": [
+   "尊重《そんちょう》: tôn trọng.",
+   "意見《いけん》: ý kiến."
+  ]
+ },
+ "29": {
+  "why_correct": "「伸びる」 ngoài nghĩa dài ra còn là thành tích tăng lên. Câu 4: điểm tiếng Anh tăng nhiều.",
+  "options_analysis": [
+   "Nhiệt độ tăng là 「上がる」.",
+   "Màu áo phai là 「色があせる」.",
+   "Kem chảy vì nóng là 「溶ける」.",
+   "Đúng: điểm thi tăng nhờ luyện tập."
+  ],
+  "points": [
+   "伸《の》びる: dài ra; (thành tích) tăng.",
+   "溶《と》ける: tan chảy."
+  ]
+ },
+ "30": {
+  "why_correct": "「合意する」 = các bên thống nhất ý kiến sau khi bàn bạc. Câu 4: hai công ty đạt thỏa thuận.",
+  "options_analysis": [
+   "Áo vừa người là 「合う」.",
+   "Trộn xì dầu với đường là 「合わせる」 hoặc 「混ぜる」.",
+   "Quen với môi trường mới là 「なじむ」, 「慣れる」.",
+   "Đúng: hai bên thỏa thuận được điều kiện."
+  ],
+  "points": [
+   "合意《ごうい》: thỏa thuận, cùng đồng ý.",
+   "条件《じょうけん》: điều kiện."
+  ]
+ },
+ "31": {
+  "why_correct": "「Vます + ようがない」 = không có cách nào để làm. Không biết địa chỉ lẫn số điện thoại thì không thể liên lạc.",
+  "options_analysis": [
+   "「がちだ」 = hay bị như thế (xu hướng), không nói về chuyện không có cách.",
+   "「つつある」 = đang dần diễn ra, mâu thuẫn với không liên lạc được.",
+   "Đúng: 「連絡の取りようがない」 = không cách nào liên lạc.",
+   "「かけだ」 = làm dở chừng (「読みかけ」), không hợp."
+  ],
+  "points": [
+   "〜ようがない: không có cách nào ~.",
+   "連絡《れんらく》を取《と》る: liên lạc."
+  ]
+ },
+ "32": {
+  "why_correct": "「〜か〜ないかのうちに」 = vừa mới ~ thì đã (gần như cùng lúc). Chuông vừa reo, trẻ đã chạy ra sân.",
+  "options_analysis": [
+   "「とたんに」 đi sau thể た, không nối sau 「鳴らない」.",
+   "「最中に」 đi sau 「の」 hay 「ている」, chỉ lúc đang diễn ra.",
+   "Đúng: 「鳴るか鳴らないかのうちに」.",
+   "「かと思うと」 đi sau thể た (「鳴ったかと思うと」), không đặt sau 「鳴らない」."
+  ],
+  "points": [
+   "〜か〜ないかのうちに: vừa ~ thì đã.",
+   "校庭《こうてい》: sân trường."
+  ]
+ },
+ "33": {
+  "why_correct": "「Vます + そうにない」 = có vẻ không ~. Mưa thế này thì trận chung kết khó diễn ra đúng lịch.",
+  "options_analysis": [
+   "「かねる」 = khó lòng làm (vì lập trường người nói), không gắn với 「行われる」.",
+   "「っぱなし」 = để nguyên như thế (「出しっぱなし」), không phải dự đoán.",
+   "「たがらない」 nói mong muốn của người khác; trận đấu không có mong muốn.",
+   "Đúng: 「行われそうにない」 = có vẻ không diễn ra."
+  ],
+  "points": [
+   "〜そうにない: có vẻ không ~.",
+   "決勝戦《けっしょうせん》: trận chung kết."
+  ]
+ },
+ "34": {
+  "why_correct": "「Nにとって」 = đối với N (đánh giá từ lập trường N). Đối với bà, rạp phim cũ là nơi đặc biệt.",
+  "options_analysis": [
+   "「に対して」 chỉ đối tượng hành động hướng tới (「客に対して」), không phải góc đánh giá.",
+   "「について」 nêu chủ đề được bàn, câu không nói về bà.",
+   "「によって」 nêu nguyên nhân, phương tiện, hoặc sự khác nhau tùy người.",
+   "Đúng: 「祖母にとって」 = với bà."
+  ],
+  "points": [
+   "〜にとって: đối với ~ (góc nhìn).",
+   "商店街《しょうてんがい》: khu phố buôn bán."
+  ]
+ },
+ "35": {
+  "why_correct": "「時間の許す限り」 = trong chừng mực thời gian cho phép: sẽ trả lời câu hỏi đến khi hết giờ.",
+  "options_analysis": [
+   "「ものの」 = tuy... nhưng; ghép vào thành câu mâu thuẫn.",
+   "Đúng: 「限り」 chỉ giới hạn tối đa.",
+   "「あまり」 = vì quá ~ (「心配のあまり」), không hợp.",
+   "「くせに」 mang ý trách móc, không dùng khi thông báo."
+  ],
+  "points": [
+   "〜限《かぎ》り: trong phạm vi, hết mức ~.",
+   "説明会《せつめいかい》: buổi giới thiệu."
+  ]
+ },
+ "36": {
+  "why_correct": "「Nにあたって」 = nhân dịp bắt đầu việc quan trọng: sắp khai trương cửa hàng thứ hai nên đi chào hàng xóm.",
+  "options_analysis": [
+   "Đúng: nhân dịp khai trương.",
+   "「をめぐって」 = xoay quanh vấn đề tranh cãi; vế sau không có tranh cãi.",
+   "「に基づいて」 = dựa vào căn cứ; khai trương không phải căn cứ để đi chào.",
+   "「に沿って」 = theo phương châm, đường lối có sẵn."
+  ],
+  "points": [
+   "〜にあたって: nhân dịp, khi bắt đầu ~.",
+   "開店《かいてん》: khai trương."
+  ]
+ },
+ "37": {
+  "why_correct": "「予想に反して」 = trái với dự đoán: trường lần đầu dự giải lại vào tới chung kết.",
+  "options_analysis": [
+   "Đúng: kết quả ngược với dự đoán của mọi người.",
+   "「に加えて」 = thêm vào; vế sau không bổ sung gì cho dự đoán.",
+   "「にこたえて」 = đáp ứng kỳ vọng; không dùng với 「予想」, và kết quả lại trái dự đoán.",
+   "「に比べて」 cần vế sau so sánh mức độ."
+  ],
+  "points": [
+   "〜に反《はん》して: trái với ~.",
+   "大方《おおかた》: phần lớn (mọi người)."
+  ]
+ },
+ "38": {
+  "why_correct": "「〜ない限り」 = trừ khi ~. Trừ khi có lý do đặc biệt, trường không cho gia hạn nộp báo cáo.",
+  "options_analysis": [
+   "「あるからには」 = đã có thì đương nhiên; thành câu vô lý.",
+   "「ないばかりか」 = không những không..., cần vế bổ sung phía sau.",
+   "「あるだけに」 = chính vì có nên càng...; lập luận ngược.",
+   "Đúng: 「ない限り」 nêu điều kiện ngoại lệ."
+  ],
+  "points": [
+   "〜ない限《かぎ》り: trừ khi ~.",
+   "提出期限《ていしゅつきげん》: hạn nộp."
+  ]
+ },
+ "39": {
+  "why_correct": "Sinh viên nói về việc mình đến phòng thầy nên phải hạ mình: 「伺う」 là khiêm nhường ngữ của 「訪ねる・行く」.",
+  "options_analysis": [
+   "Đúng: khiêm nhường ngữ cho hành động của mình.",
+   "「いらっしゃる」 là tôn kính ngữ, không dùng cho mình.",
+   "「お越しになる」 cũng là tôn kính ngữ, dành cho người trên.",
+   "「参られる」 ghép khiêm nhường 「参る」 với tôn kính 「られる」 — sai."
+  ],
+  "points": [
+   "伺《うかが》う: đến thăm (khiêm nhường).",
+   "研究室《けんきゅうしつ》: phòng nghiên cứu."
+  ]
+ },
+ "40": {
+  "why_correct": "「Vた + 末に」 = sau một thời gian dài ~, rốt cuộc. Ba tháng bàn bạc, cuối cùng có cái tên ai cũng đồng ý.",
+  "options_analysis": [
+   "「たびに」 = mỗi lần ~ lại; đi với thể từ điển, không nói một kết quả duy nhất.",
+   "Đúng: 「重ねた末に」 = sau bao lần bàn.",
+   "「以来」 đi sau thể て, chỉ trạng thái kéo dài từ đó đến nay.",
+   "「ついでに」 = nhân tiện làm việc khác."
+  ],
+  "points": [
+   "〜末《すえ》に: sau khi ~ mãi, rốt cuộc.",
+   "納得《なっとく》: đồng tình, chấp nhận."
+  ]
+ },
+ "41": {
+  "why_correct": "「Vます + っぽい」 = dễ ~, hay ~. 「飽きっぽい」 = mau chán, nên học gì cũng không lâu.",
+  "options_analysis": [
+   "「がたい」 = khó mà ~; thành “khó chán”, trái với câu.",
+   "Đúng: tính mau chán.",
+   "「ぎみ」 = hơi có dấu hiệu lúc này (「風邪ぎみ」), không chỉ tính cách từ nhỏ.",
+   "「たがる」 = (người khác) muốn; thành “muốn chán”, vô lý."
+  ],
+  "points": [
+   "飽《あ》きっぽい: mau chán.",
+   "長続《ながつづ》き: kéo dài lâu."
+  ]
+ },
+ "42": {
+  "why_correct": "「〜に伴って」 = cùng với ~, một bên đổi kéo bên kia đổi theo. Tái phát triển tiến triển, tiệm nhỏ biến mất dần.",
+  "options_analysis": [
+   "「にかけて」 chỉ phạm vi thời gian, nơi chốn (「春から夏にかけて」).",
+   "「につけ」 gắn thẳng sau thể từ điển và nêu cảm xúc mỗi khi..., không đi sau 「の」.",
+   "Đúng: thay đổi song song.",
+   "「に際して」 chỉ một dịp đặc biệt, không phải thay đổi dần dần."
+  ],
+  "points": [
+   "〜に伴《ともな》って: cùng với ~.",
+   "再開発《さいかいはつ》: tái phát triển (đô thị)."
+  ]
+ },
+ "43": {
+  "why_correct": "Trật tự: 「通い続けているのは → 店主の → いれる一杯の → コーヒーが忘れられない」. Ô ★ (thứ ba) là 1.",
+  "options_analysis": [
+   "Đúng: 「店主のいれる一杯のコーヒー」 = ly cà phê chủ quán pha.",
+   "Kết thúc bằng thể thường nên đứng ngay trước 「からだ」, ở ô cuối.",
+   "Khung 「〜のは〜からだ」: vế này nhận 「この喫茶店に」 và đứng đầu.",
+   "「店主の」 làm chủ ngữ cho 「いれる」, đứng ô thứ hai."
+  ],
+  "points": [
+   "〜のは〜からだ: sở dĩ ~ là vì ~.",
+   "店主《てんしゅ》: chủ quán."
+  ]
+ },
+ "44": {
+  "why_correct": "Trật tự: 「人が → 大勢並んでいる → からといって → 料理がおいしいわけではない」. Ô ★ là 4.",
+  "options_analysis": [
+   "Là vị ngữ của 「人が」, đứng ô thứ hai, ngay trước 「からといって」.",
+   "「わけではない」 hô ứng với 「からといって」, là vế cuối.",
+   "「人が」 là chủ ngữ, mở đầu cụm.",
+   "Đúng: 「からといって」 nối vế lý do với vế phủ định."
+  ],
+  "points": [
+   "〜からといって〜わけではない: không phải cứ ~ là ~.",
+   "行列《ぎょうれつ》: hàng người xếp."
+  ]
+ },
+ "45": {
+  "why_correct": "Trật tự: 「年をとった → 飼い犬の → 健康のために → 毎朝散歩に連れて行く」. Ô ★ là 2.",
+  "options_analysis": [
+   "Thể từ điển nên đứng ngay trước 「ようになった」, ô cuối.",
+   "Đúng: 「飼い犬の健康のために」 = vì sức khỏe của con chó.",
+   "「飼い犬の」 bổ nghĩa cho 「健康」, đứng ô thứ hai.",
+   "「年をとった」 chỉ bổ nghĩa được cho 「飼い犬」, đứng đầu."
+  ],
+  "points": [
+   "〜ようになった: đã bắt đầu (thói quen mới).",
+   "退職《たいしょく》: nghỉ việc, nghỉ hưu."
+  ]
+ },
+ "46": {
+  "why_correct": "Trật tự: 「お取り寄せした → 商品が → 届き次第 → お電話でご連絡します」. Ô ★ là 3.",
+  "options_analysis": [
+   "「商品が」 là chủ ngữ của 「届き」, đứng ô thứ hai.",
+   "Là hành động khép câu, đứng cuối.",
+   "Đúng: 「Vます + 次第」 = ngay khi ~, cần hành động theo sau.",
+   "「お取り寄せした」 bổ nghĩa cho 「商品」, đứng đầu."
+  ],
+  "points": [
+   "〜次第《しだい》: ngay sau khi ~.",
+   "取《と》り寄《よ》せる: đặt hàng gửi về."
+  ]
+ },
+ "47": {
+  "why_correct": "Trật tự: 「例えばみそや梅干しなどの → 昔ながらの → 保存食を → 今も自分で作っている」. Ô ★ là 4.",
+  "options_analysis": [
+   "Là vị ngữ duy nhất khép được câu, đứng cuối.",
+   "「昔ながらの」 chỉ bổ nghĩa được cho 「保存食」, đứng ô thứ hai.",
+   "Mở bằng 「例えば」 để nêu ví dụ, đứng đầu.",
+   "Đúng: 「保存食を」 là tân ngữ của 「作っている」."
+  ],
+  "points": [
+   "昔《むかし》ながらの: kiểu xưa, như ngày trước.",
+   "保存食《ほぞんしょく》: thực phẩm để được lâu."
+  ]
+ },
+ "48": {
+  "why_correct": "Trước chỗ trống: điện thoại hết pin; sau: đó lại là ga lớn năm tuyến — thêm một khó khăn cùng chiều, nên dùng 「しかも」.",
+  "options_analysis": [
+   "「けれども」 nối hai ý trái chiều, nhưng cả hai câu đều bất lợi.",
+   "Đúng: thêm một điều bất lợi cùng chiều.",
+   "「なぜなら」 nêu lý do, mà ga lớn không phải lý do hết pin.",
+   "「それとも」 hỏi chọn một trong hai; ở đây không có câu hỏi."
+  ],
+  "points": [
+   "しかも: hơn nữa, lại còn.",
+   "乗《の》り換《か》え: việc đổi tàu."
+  ],
+  "passage_translation": "Ngẩng lên mà đổi tàu\n\n　Suốt một thời gian dài, mỗi khi đổi tàu ở ga, tôi cứ đi theo phần chỉ đường trên điện thoại thông minh. Nhập nơi muốn đến vào là màn hình chỉ cho từng bước một, đến cả việc lên tàu ở sân ga số mấy, toa thứ mấy, leo cầu thang nào. Tôi không rời mắt khỏi màn hình, cứ thế bước theo mũi tên.\n\n　Mùa xuân năm ngoái, đang đổi tàu giữa chừng ở một nhà ga lần đầu đến, điện thoại của tôi hết pin. Màn hình không còn chỉ gì nữa. （　48　）, đó lại là một nhà ga lớn nơi năm tuyến tàu gặp nhau. Tôi quyết định đọc lần lượt từng tấm biển chỉ dẫn treo trên cột và trần sân ga. Trên biển có đủ những thông tin cần để đổi tàu. Từ hôm đó, mỗi lần đổi tàu, trước khi mở màn hình, tôi đều tìm biển trước đã.\n\n　Lúc đầu, tôi mất nhiều thời gian hơn hồi đi theo màn hình. Dù vậy, vừa đọc biển vừa đi thì hình dạng nhà ga dần dần sẽ vào đầu （　49　）. Biển thường được treo ở những chỗ cố định, như ở đầu sân ga hay ở chỗ vừa lên hết cầu thang. Đọc một tấm là đại khái đoán được tiếp theo nên ngẩng nhìn chỗ nào.\n\n　Tháng trước, chuyến tàu tôi định đi bị dừng, và tôi phải vòng sang một tuyến khác. Trên sân ga, khắp nơi vang lên tiếng người hỏi đường nhân viên nhà ga. Tôi ngẩng nhìn tấm biển trên trần, lần theo mũi tên chỉ sang tuyến khác, và đã bước đi rồi. Nếu là tôi của thời chỉ biết đi theo phần chỉ đường, hẳn tôi đã đứng yên trên sân ga cho đến khi （　50　） chỉ ra lộ trình mới.\n\n　Bây giờ, ở những ga lần đầu đến, thỉnh thoảng tôi vẫn mở màn hình. Có điều, việc ngẩng mặt lên tìm biển một lần trước khi bước đi thì từ lúc nào không hay đã （　51　）. Từng tấm biển tôi ngẩng lên nhìn mỗi lần đổi tàu, giờ đây đã nối lại với nhau thành tấm bản đồ nhà ga trong đầu tôi."
+ },
+ "49": {
+  "why_correct": "Sau 「それでも」, tác giả nêu điều thường thấy: vừa đọc biển vừa đi thì hình dạng ga tự vào đầu — 「ものだ」.",
+  "options_analysis": [
+   "Đúng: 「ものだ」 nói xu hướng tự nhiên.",
+   "「ものか」 phủ định mạnh, trái với câu giải thích sau.",
+   "「ものではない」 là khuyên không nên làm — trái với câu sau.",
+   "「ものなら」 là giả định, cần vế sau, không kết câu được."
+  ],
+  "points": [
+   "〜ものだ: vốn dĩ là như thế (xu hướng chung).",
+   "見当《けんとう》がつく: đoán được đại khái."
+  ]
+ },
+ "50": {
+  "why_correct": "「道順案内に従うだけだったころ」 tác giả chỉ nhìn điện thoại, nên khi đó sẽ đứng chờ màn hình chỉ đường mới.",
+  "options_analysis": [
+   "Biển trên trần là thứ bây giờ tác giả mới biết nhìn.",
+   "Nhân viên ga là người hành khách khác hỏi, không phải thói quen cũ của tác giả.",
+   "Tàu đã dừng thì không thể chỉ ra lộ trình mới.",
+   "Đúng: màn hình điện thoại trong tay."
+  ],
+  "points": [
+   "手元《てもと》: trong tay, ngay bên mình.",
+   "道順《みちじゅん》: lộ trình, đường đi."
+  ]
+ },
+ "51": {
+  "why_correct": "Thói quen tìm biển trước khi mở màn hình đã thành của mình lúc nào không hay: 「いつのまにか身についた」.",
+  "options_analysis": [
+   "「気が済む」 là thấy thỏa mãn, không nói về thói quen.",
+   "「手に余る」 là quá sức mình, trái với đoạn kết tích cực.",
+   "Đúng: trở thành thói quen của bản thân.",
+   "「目につく」 là đập vào mắt, không dùng cho hành vi của mình."
+  ],
+  "points": [
+   "身《み》につく: thành kỹ năng, thói quen của mình.",
+   "いつのまにか: lúc nào không hay."
+  ]
+ },
+ "52": {
+  "why_correct": "Cầm gậy tay bên kia thì chân đau và gậy chạm sàn cùng lúc, 「腕から体重の一部がかかり」 — gậy chia sức nặng với chân.",
+  "options_analysis": [
+   "Ngược lại: cầm tay bên đau thì gậy chạm sàn lúc chân lành bước ra.",
+   "Đó là khi cầm sai tay; bài cũng không nói gậy đẩy người đi.",
+   "Đúng: theo nhịp tay chân thì gậy gánh bớt sức nặng.",
+   "Bài nói vẫn đi 「この動作のまま」, tay chân vẫn so le."
+  ],
+  "points": [
+   "杖《つえ》: gậy chống.",
+   "負担《ふたん》: gánh nặng, sức đè."
+  ],
+  "passage_translation": "　Khi một bên chân bị đau, gậy (chú 1) được cầm ở tay phía ngược với chân đau.\n　Con người khi đi bộ thì cử động tay và chân xen kẽ (chú 2), chẳng hạn đưa chân phải ra trước thì tay trái đưa ra trước. Nếu cầm gậy ở tay phía ngược lại, cứ giữ nguyên động tác ấy thì chân đau và gậy sẽ chạm sàn cùng một lúc. Gậy chạm sàn nhận một phần trọng lượng cơ thể qua cánh tay, và gánh nặng của chân giảm đi đúng chừng ấy. Nếu cầm ở tay cùng phía chân đau, gậy lại chạm sàn vào lúc chân không đau bước ra.\n　Gậy đẩy ngược lên từ sàn bao nhiêu thì sức nặng mà chân đau phải đỡ nhẹ đi bấy nhiêu.\n\n(chú 1) 杖 (gậy): cây gậy dài, mảnh, cầm trong tay để đỡ người khi đi\n(chú 2) 互い違い (xen kẽ): hai thứ luân phiên thay chỗ cho nhau"
+ },
+ "53": {
+  "why_correct": "Trọng tâm: người chưa đăng ký đến đón thì báo tên 「前日の夕方5時まで」; không báo thì không giao trẻ.",
+  "options_analysis": [
+   "Trái với 「ご家族以外の方には教えないでください」.",
+   "Đúng: người khác thường lệ đến đón thì báo trước.",
+   "Chỉ báo khi người chưa đăng ký đến đón, không phải ngày nào cũng ghi.",
+   "Mã số được gửi cho từng nhà trong phong bì, không phải đến lấy."
+  ],
+  "points": [
+   "お迎《むか》え: việc đón (trẻ).",
+   "暗証番号《あんしょうばんごう》: mã số bí mật."
+  ],
+  "passage_translation": "Kính gửi quý phụ huynh\n\n**Cách mở cổng khi đón trẻ sẽ thay đổi**\n\n　Từ ngày 1 tháng 11, cổng chính của nhà trẻ sẽ chuyển sang loại khóa mở bằng cách bấm mã số. Mã số sẽ được gửi riêng cho từng gia đình trong phong bì, xin đừng cho người ngoài gia đình biết.\n　Việc đón trẻ, như từ trước đến nay, xin nhờ những người đã đăng ký khi nhập học. Trường hợp người chưa đăng ký, như ông bà, đến đón, xin báo tên người đó qua sổ liên lạc hoặc điện thoại trước 5 giờ chiều ngày hôm trước. Hôm đó, nhân viên sẽ ra cổng đón và hướng dẫn. Với người không được báo trước, nhà trẻ không thể giao con cho quý vị.\n\nNhà trẻ Minami"
+ },
+ "54": {
+  "why_correct": "Buồn ngủ tích dần để dùng cho giấc đêm; chợp mắt buổi tối là 「ためた分をそこで先に使ってしまい」.",
+  "options_analysis": [
+   "Bài nói dù rất ngắn nhưng giấc đêm 「そこから崩れていく」.",
+   "Bài không nói gì về chuyện mỏi mắt vì xem ti vi.",
+   "Đúng: ngủ sớm một chút làm hụt phần buồn ngủ dành cho đêm.",
+   "Ngược lại: giấc chợp mắt ấy chính là thứ cắt vụn giấc ngủ đêm."
+  ],
+  "points": [
+   "眠気《ねむけ》: cơn buồn ngủ.",
+   "うたた寝《ね》: chợp mắt, ngủ gật."
+  ],
+  "passage_translation": "　Khi hỏi kỹ những người hay tỉnh giấc nhiều lần lúc nửa đêm về cách họ sinh hoạt từ chiều tối trở đi, thì thấy nhiều người có chung một thói quen. Sau bữa tối, họ lỡ ngủ thiếp đi chừng 20 phút trước ti vi. So với giấc ngủ đêm thì đó chỉ là khoảng thời gian rất ngắn, vậy mà giấc ngủ đêm bắt đầu rối loạn từ đó.\n　Cơn buồn ngủ tích dần lên khi thời gian thức càng dài, rồi được dùng gộp một lần trong giấc ngủ đêm. Chiều tối mà ngủ dù chỉ một chút, phần đã tích sẽ bị dùng trước ở đó, và đến lúc lên giường thì không còn đủ cơn buồn ngủ để ngủ một mạch đến sáng. Thứ cắt vụn giấc ngủ đêm chính là giấc chợp mắt (chú) ngắn ngủi sau bữa tối ấy.\n\n(chú) うたた寝 (chợp mắt): ngủ một chút mà không lên giường, chẳng hạn ngồi nguyên tại chỗ"
+ },
+ "55": {
+  "why_correct": "Thư hỏi: sau tiệc phải rửa bát đĩa rồi mới trả, hay chỉ bỏ thức ăn thừa rồi trả — tức là trả lại ở trạng thái nào.",
+  "options_analysis": [
+   "Đúng: hỏi cách xử lý bát đĩa trước khi trả.",
+   "Thư không hỏi về ngày giao hàng.",
+   "Thư chỉ nói nếu phải rửa thì cần người, không xin cử người đến.",
+   "Năm nay bỏ đĩa giấy và cốc giấy, không đặt thêm."
+  ],
+  "points": [
+   "繰《く》り返《かえ》し: lặp lại nhiều lần.",
+   "人手《ひとで》: nhân lực, người làm.",
+   "御社《おんしゃ》: quý công ty."
+  ],
+  "passage_translation": "Kính gửi người phụ trách, Dịch vụ bát đĩa Harukaze\n\n　Đây là lần đầu tôi liên lạc với quý công ty. Tôi là Nishimura, phòng Tổng vụ công ty Hikari Kogyo.\n　Ngày 8 tháng 12, chúng tôi sẽ tổ chức tiệc cuối năm, khoảng 150 người gồm nhân viên và gia đình tham dự. Năm nay, để giảm rác, chúng tôi muốn thôi dùng đĩa giấy và cốc giấy như mọi năm, và thuê bộ bát đĩa rửa được, dùng đi dùng lại nhiều lần của quý công ty.\n　Vì vậy, cho tôi hỏi một điểm. Sau khi tiệc kết thúc, chúng tôi phải tự rửa bát đĩa rồi mới trả lại? Hay chỉ cần đổ thức ăn thừa đi rồi trả lại là được? Nếu chúng tôi phải rửa thì sẽ cần thêm người, nên tôi muốn biết sớm.\n　Rất mong nhận được hồi âm của quý công ty.\n\nHikari Kogyo, phòng Tổng vụ, Nishimura"
+ },
+ "56": {
+  "why_correct": "「給料日に払う予定を書き出していた家庭ほど」 cuối tháng càng ít lần thiếu tiền — tức là lên dự tính chi vào ngày nhận lương.",
+  "options_analysis": [
+   "Đúng: ngày có thu nhập thì tính trước các khoản chi.",
+   "Chép hóa đơn chỉ là một cách được nêu ra để so, bài không nói nó tốt.",
+   "Bài không so sánh mức tiền nhà, tiền điện.",
+   "Bài không so sánh mức lương của các nhà."
+  ],
+  "points": [
+   "家計簿《かけいぼ》: sổ chi tiêu gia đình.",
+   "見通《みとお》し: dự tính trước.",
+   "収入《しゅうにゅう》: thu nhập."
+  ],
+  "passage_translation": "　Tôi làm ở quầy tư vấn của thành phố, nghe người dân kể về chuyện xoay xở chi tiêu trong nhà (chú). Phần đông người đến tư vấn nói rằng cứ gần đến ngày lĩnh lương là thiếu tiền.\n　Đọc lại hồ sơ tư vấn của ba năm, tôi thấy cách quản lý tiền mỗi nhà một khác. Có nhà tiêu xong thì chép hóa đơn vào sổ chi tiêu, cũng có nhà ngay hôm lương về thì ghi ra trước những khoản biết chắc phải trả trong tháng, như tiền nhà hay học phí các lớp học thêm. Đếm thử thì thấy, nhà nào ghi ra các khoản sẽ trả ngay vào ngày lĩnh lương thì số lần thiếu tiền vào cuối tháng càng ít.\n\n(chú) やりくり (xoay xở): khéo léo sử dụng số tiền có trong tay sao cho đủ"
+ },
+ "57": {
+  "why_correct": "「記入するのはだれが測っても同じ結果になる数字」: chiều cao tường, độ dài vết nứt, khe hở với sợi dây — ai đo cũng ra như nhau.",
+  "options_analysis": [
+   "Đúng: số đo không khác đi theo người đo.",
+   "Thép bên trong có gỉ không thì 「外から見ても分かりません」.",
+   "Phiếu 「そうした見立てを住民に求めていません」, không có ô ghi 「大丈夫」.",
+   "Bài không nói ghi ngày; họ còn không báo 「安全です」 qua bảng tin."
+  ],
+  "points": [
+   "塀《へい》: tường rào.",
+   "寸法《すんぽう》: kích thước.",
+   "点検《てんけん》: kiểm tra."
+  ],
+  "passage_translation": "　Ở hội khu phố nơi tôi sống, tháng 5 hằng năm chúng tôi kiểm tra những bức tường rào bằng gạch block nằm dọc đường đến trường tiểu học. Nếu động đất lớn xảy ra, tường cũ có thể đổ xuống và chắn mất con đường học sinh đi qua.\n　Việc kiểm tra dùng một mẫu phiếu soạn ra sau khi bàn với phòng phòng chống thiên tai của thành phố. Trên phiếu có ô để ghi ba thứ: chiều cao bức tường, độ dài vết nứt, và khe hở giữa tường với sợi dây thả (chú 1) từ trên xuống. Người dân áp thước cuộn (chú 2), thả sợi dây có gắn quả dọi (chú 3), rồi ghi con số vào. Phiếu được gửi lên thành phố, và những bức tường có con số lớn sẽ được cán bộ phụ trách của thành phố đến xác nhận.\n　Việc kiểm tra này ngay từ lúc bắt đầu đã có ý kiến phản đối. Người dân không có kiến thức chuyên môn có đi xem khắp nơi thì cũng không phán đoán được là nguy hiểm hay không. Hơn thế nữa, chỉ vì việc kiểm tra đã xong mà người trong khu phố lại càng yên tâm — đó là ý kiến ấy.\n　Mối lo này có điểm đáng gật đầu (chú 4): thanh thép bên trong tường có bị gỉ hay không thì nhìn từ bên ngoài cũng không biết được. Không ai có thể nói rằng những bức tường chúng tôi đã xem sẽ không đổ trong trận động đất tới.\n(lược một đoạn)\n　Tuy nhiên, phiếu kiểm tra không đòi hỏi người dân những phán đoán (chú 5) như thế. Thứ được ghi vào là những con số ai đo cũng ra kết quả giống nhau, và ngay từ đầu đã không có ô nào để ghi “ổn”. Cán bộ thành phố vốn ít người, nhưng có những con số người dân thu thập được thì có thể chọn ra những bức tường cần ưu tiên đến xác nhận.\n　Vì vậy, chúng tôi cũng không thông báo “an toàn” qua bảng tin chuyền tay trong khu phố. Chúng tôi, những người đi xem, không phải là người quyết định bức tường có an toàn hay không.\n\n(chú 1) 垂らす: thả cho rủ xuống từ trên cao\n(chú 2) 巻き尺: thước dây dài bằng vải hoặc kim loại, cuộn gọn lại được\n(chú 3) おもり: vật nhỏ có trọng lượng, gắn ở đầu sợi dây\n(chú 4) うなずける: có thể công nhận là có lý\n(chú 5) 見立て: nhìn rồi phán đoán xem tình trạng ra sao"
+ },
+ "58": {
+  "why_correct": "「住民の集めた数字があれば、優先して確認に行く塀を選べます」 — số liệu giúp cán bộ chọn tường cần xem trước.",
+  "options_analysis": [
+   "Đó là ý kiến phản đối; tác giả thấy có lý nhưng không bảo dừng.",
+   "Bài nói nhìn từ ngoài không biết được thép bên trong.",
+   "Đúng: số liệu của dân giúp chọn tường xác nhận trước.",
+   "Họ không hề báo 「安全です」 qua bảng tin."
+  ],
+  "points": [
+   "優先《ゆうせん》: ưu tiên.",
+   "回覧板《かいらんばん》: bảng tin chuyền tay trong khu phố."
+  ]
+ },
+ "59": {
+  "why_correct": "Trước đây tác giả đóng kín cửa, dán băng dính chặn gió lùa, 「朝も夜も同じ空気の中で過ごす」 — không cho không khí ngoài vào.",
+  "options_analysis": [
+   "Mở cửa sổ sáng và chiều là cách làm từ ba năm trước trở đi.",
+   "Tác giả có bật sưởi (「暖房をつけ」).",
+   "Đúng: bịt kín khe hở, không thay không khí.",
+   "Bài chỉ nói kính đọng nước và rèm ẩm, không nói lau bằng rèm."
+  ],
+  "points": [
+   "閉《し》めきる: đóng kín.",
+   "水滴《すいてき》: giọt nước.",
+   "暖房《だんぼう》: máy sưởi, sưởi ấm."
+  ],
+  "passage_translation": "　Suốt mùa đông, tôi sống với cửa sổ phòng đóng kín (chú 1). Đó là một căn hộ cũ quay về hướng bắc, đến mức tôi dán cả băng dính quanh mép cửa sổ để gió lùa không vào được. Bật sưởi, kéo rèm dày, sáng cũng như tối đều sống trong cùng một bầu không khí. Mỗi sáng, mặt trong kính cửa sổ đọng kín những giọt nước, và gấu rèm (chú 2) thì lạnh và ẩm.\n　Từ mùa đông ba năm trước, tôi bắt đầu mở hai cửa sổ ở hai đầu phòng, sáng và chiều mỗi lần năm phút. Mở cùng lúc cửa sổ nhỏ ở bếp và cửa sổ phòng ngủ thì rèm phồng lên, và có thể cảm thấy luồng không khí lạnh đi xuyên qua phòng.\n　Trong năm phút đó phòng lạnh hẳn đi, và hồi mới bắt đầu cái lạnh ấy thật khó chịu. Dù vậy, đóng cửa sổ và bật lại sưởi thì chẳng mấy chốc (chú 3) trong phòng lại ấm lên. Giọt nước trên kính sau một mùa đông cũng giảm đi nhiều.\n　Cũng có thứ tăng lên ngoài dự đoán. Trong lúc mở cửa sổ, âm thanh bên ngoài tràn vào tận trong phòng. Buổi sáng là tiếng trẻ con đi học và tiếng xe thu gom rác; buổi chiều là tiếng rao của xe bán khoai nướng, tiếng các cửa hàng kéo cửa cuốn xuống. Dần dần tôi nhận ra những âm thanh ấy mỗi ngày mỗi khác một chút. Những sáng có sương giá (chú 4) thì âm thanh nghe cứng, còn buổi chiều trước khi tuyết rơi thì xung quanh lặng như tờ (chú 5), đến cả tiếng chuông chắn tàu ở xa cũng vọng tới.\n　Nhờ năm phút mở cửa sổ, dù sống trong căn phòng đóng kín, tôi vẫn biết được mùa bên ngoài đã đến đâu rồi.\n\n(chú 1) 閉めきる: đóng cửa ra vào, cửa sổ kín hoàn toàn, không chừa một khe hở\n(chú 2) すそ: phần mép dưới cùng của áo kimono, rèm cửa...\n(chú 3) じきに: không lâu sau, chẳng mấy chốc\n(chú 4) 霜: những hạt băng nhỏ màu trắng bám trên mặt đất, trên cỏ vào buổi sáng lạnh\n(chú 5) しんとする: không một tiếng động, im phăng phắc"
+ },
+ "60": {
+  "why_correct": "Câu cuối: nhờ năm phút mở cửa, dù sống trong phòng kín vẫn biết 「外の季節がどのあたりまで来ているのか」.",
+  "options_analysis": [
+   "Bài chỉ nói lúc đầu thấy lạnh khó chịu, không nói để tập quen rét.",
+   "Đúng: ở trong phòng mà vẫn cảm được mùa đổi thay.",
+   "Âm thanh cho biết mùa, không phải hàng xóm làm nghề gì.",
+   "Năm phút ấy làm phòng lạnh đi, không phải để làm ấm nhanh."
+  ],
+  "points": [
+   "移《うつ》り変《か》わり: sự đổi thay (của mùa).",
+   "霜《しも》: sương giá."
+  ]
+ },
+ "61": {
+  "why_correct": "Đếm bảng phân trực thì thấy: 「長く続いていたのは、二人のうち一人が前の年から当番をしていた組でした」.",
+  "options_analysis": [
+   "Ngược lại: người trực một mình thường biến khỏi bảng vào năm thứ hai.",
+   "Đúng: ai được xếp cùng người đã quen việc thì năm sau vẫn trực.",
+   "Bài chỉ nói còn khoảng một nửa, không nói chuyển sang nhóm khác.",
+   "Tác giả không đếm theo lời khen của các cụ già."
+  ],
+  "points": [
+   "当番《とうばん》: phiên trực.",
+   "経験者《けいけんしゃ》: người có kinh nghiệm."
+  ],
+  "passage_translation": "　Ga ở thị trấn tôi, từ khoảng 15 năm trước, đã thành ga không người, không còn nhân viên. Một thời gian, phòng chờ cũng bị khóa suốt, và vào những sáng mùa đông, rất dễ thấy cảnh học sinh cấp ba đứng chờ tàu giữa gió trên sân ga. Người dân không đành lòng đứng nhìn (chú 1) đã bàn với công ty đường sắt, và quyết định thay phiên nhau mở phòng chờ.\n　Việc của người trực chỉ là sáng mở khóa, bật lò sưởi, lau ghế, chiều tắt lửa và khóa cửa. Trong khoảng thời gian đó, họ pha trà ở một góc phòng chờ và trò chuyện với người chờ tàu. Có những cụ già nói: “Từ khi được chờ ở đây, buổi sáng dễ chịu hẳn.”\n(lược một đoạn)\n　Là người lo liệu chung, tôi đang giữ bảng phân trực của mười năm. Mùa xuân hằng năm, chúng tôi kêu gọi (chú 2) người trực cho năm sau, nhưng số người ghi tên thay đổi khá nhiều tùy năm.\n　Vì thế, tôi bày các bảng phân trực ra, và đếm theo từng nhóm xem năm sau họ có ghi tên nữa không. Người trực một mình thì sang năm thứ hai hầu như đã biến khỏi bảng. Nhóm mà cả hai người đều mới lần đầu cũng chỉ còn lại khoảng một nửa. Những nhóm kéo dài lâu là nhóm có một trong hai người đã trực từ năm trước. Có người kinh nghiệm thì cả cách nhóm lò sưởi lẫn chuyện cánh cửa khó đóng mở (chú 3) đều được chỉ ngay tại chỗ. Người mới không có lúc nào phải loay hoay một mình.\n　Xếp người trực thành từng cặp hai người, và một trong hai là người có kinh nghiệm từ năm trước. Hai điều này mà đủ thì năm sau hầu hết mọi người đều sẽ ghi tên vào bảng phân trực.\n\n(chú 1) 見かねる: không thể im lặng đứng nhìn được nữa\n(chú 2) 募る: kêu gọi rộng rãi để tập hợp người hoặc vật\n(chú 3) 立てつけ: độ trơn tru khi mở và đóng cửa ra vào, cửa sổ"
+ },
+ "62": {
+  "why_correct": "Có người đã trực thì mọi việc 「その場で教えられます」, người mới không phải loay hoay một mình.",
+  "options_analysis": [
+   "Bài không đề xuất giảm việc; trực một mình lại là nhóm bỏ nhiều nhất.",
+   "Bài không bàn chuyện rút ngắn giờ mở phòng chờ.",
+   "Tác giả không đếm số lần kêu gọi.",
+   "Đúng: có người để hỏi ngay khi gặp khó giúp duy trì."
+  ],
+  "points": [
+   "募《つの》る: kêu gọi, tuyển người.",
+   "立《た》てつけ: độ khít, độ trơn của cửa."
+  ]
+ },
+ "63": {
+  "why_correct": "「九九は正確に合っている。ずれているのは、数字を書く位置のほうである」: số hàng chục lọt sang cột bên phải.",
+  "options_analysis": [
+   "Trái với 「九九は正確に合っている」.",
+   "Vấn đề là cột bị nghiêng, không phải chữ to không vừa dòng.",
+   "Bài không nói chuyện quên viết số.",
+   "Đúng: tính đúng nhưng số nằm sai cột hàng."
+  ],
+  "points": [
+   "筆算《ひっさん》: tính viết, đặt tính.",
+   "位《くらい》: hàng (đơn vị, chục).",
+   "九九《くく》: bảng cửu chương."
+  ],
+  "passage_translation": "　Dạy toán ở trường tiểu học, tôi hay gặp vở của những học sinh đặt tính (chú 1) nhân, chia mà đáp số không đúng. Lần theo quá trình tính thì thấy bảng cửu chương (chú 2) vẫn chính xác. Thứ bị lệch là vị trí viết con số. Con số lẽ ra viết ở hàng chục lại lọt sang cột bên phải một ô, rồi cứ thế chuyển sang phép cộng.\n　Khi đặt tính, ta viết các chữ số cùng hàng thẳng theo một cột dọc, rồi tính theo từng cột. Với giấy trơn (chú 3) hay vở chỉ có dòng kẻ ngang, cột dọc này không nhìn thấy được. Học sinh phải vừa hình dung cột trong đầu vừa viết, và chỉ cần cỡ chữ đổi đi chút ít là cột nghiêng dần.\n　Với vở ô vuông, mỗi chữ số được viết vào một ô, nên dãy ô theo chiều dọc trở thành cột hàng luôn. Học sinh không cần giữ cột trong đầu nữa, và có thể dành phần chú ý ấy cho bảng cửu chương và số nhớ (chú 4). Dù chữ to hay chữ nhỏ, cứ nằm gọn trong ô là cột không bị lệch.\n　Dĩ nhiên, nếu thuộc sai bảng cửu chương thì có ô vuông đáp số vẫn sai. Dù vậy, từ học kỳ đổi vở toán, lỗi lệch cột đã giảm rõ rệt. Lỗi do lệch hàng là loại lỗi có thể phòng được chỉ bằng cách thay đổi kiểu giấy để viết.\n\n(chú 1) 筆算: cách viết số ra giấy rồi tính lần lượt theo từng hàng\n(chú 2) 九九: cách đọc thuộc các kết quả nhân giữa các số từ 1 đến 9 cho dễ nhớ\n(chú 3) 無地: không có hoa văn hay đường kẻ gì\n(chú 4) 繰り上がり: khi cộng vượt quá mười thì thêm một vào hàng trên"
+ },
+ "64": {
+  "why_correct": "Vở ô vuông có sẵn cột hàng, nên 「列を頭の中で保っておく必要がなくなり、その分の注意を、九九や繰り上がりに向けられる」.",
+  "options_analysis": [
+   "Bài nói thuộc sai cửu chương thì vẫn sai, vở không kiểm tra được điều đó.",
+   "Chữ to hay nhỏ đều không lệch cột; vở không làm đều cỡ chữ.",
+   "Bài không nói về chỗ ghi số nhớ.",
+   "Đúng: vở lo phần giữ cột, học sinh dồn sức vào phép tính."
+  ],
+  "points": [
+   "ます目《め》: ô vuông kẻ sẵn.",
+   "繰《く》り上《あ》がり: nhớ sang hàng trên khi cộng."
+  ]
+ },
+ "65": {
+  "why_correct": "A: gọi bằng chức danh khiến người gọi nói giảm nhẹ ý mình; B: 「呼び方ひとつで、話しかけやすさはずいぶん変わる」. Cả hai: cách gọi quyết định độ dễ bắt chuyện.",
+  "options_analysis": [
+   "A nói 「呼ばれる側は気にしていなくても」, ngược lại.",
+   "Đúng: cả hai đều xuất phát từ ý này.",
+   "Chỉ B dẫn ý kiến “chỉ là hình thức”; A lại đề xuất gọi 「さん」.",
+   "Ghi lên bảng tên là đề xuất riêng của B."
+  ],
+  "points": [
+   "役職《やくしょく》: chức vụ.",
+   "名札《なふだ》: bảng tên.",
+   "段差《だんさ》: bậc chênh lệch."
+  ],
+  "passage_translation": "**A**\n\n　Khi bắt chuyện với người ở vị trí trên mình nơi làm việc, nhiều người gọi bằng chức danh như “trưởng phòng”, “trưởng ban”. Dù người được gọi không để tâm, người gọi mỗi lần như thế lại nhớ đến vị trí của đối phương, và nói nhẹ bớt đi một bậc điều mình muốn nói. Chỉ là báo một điều nhỏ mình nhận thấy, vậy mà lời rào đón cứ dài ra.\n　Nếu vậy thì hãy thống nhất cách gọi. Bất kể vị trí, mọi người gọi nhau bằng họ kèm 「さん」. Cách gọi mà thống nhất thì sự ngần ngại trước khi bắt chuyện bớt đi một phần, và cả những chuyện cần bàn nho nhỏ cũng sớm được báo lên. Cách gọi không hẳn là tấm biển cho biết vị trí của đối phương, mà chính là độ cao của bậc thềm người bắt chuyện phải bước qua.\n\n**B**\n\n　Chỉ một cách gọi thôi mà độ dễ bắt chuyện đã khác đi nhiều. Ở nơi làm việc gọi nhau bằng chức danh, người mới vào phải chọn đi chọn lại lời nói nhiều lần rồi mới bắt chuyện được với người trên.\n　Vì vậy, cũng có công ty đặt quy định gọi tất cả mọi người bằng 「さん」. Với việc này, có ý kiến cho rằng dù thống nhất cách gọi thì quan hệ trên dưới vẫn còn nguyên, đó chỉ là quy định hình thức. Ý kiến này có lý. Dù có đổi cách gọi bằng quy định, sự phân vân của người gọi cũng không mất ngay được.\n　Nếu vậy thì hãy thôi quyết định cách gọi từ trên xuống, và để mỗi người ghi lên bảng tên cách mình muốn được gọi. Nếu người ở vị trí trên tự ghi “Hãy gọi tôi bằng họ”, người gọi sẽ không phải phân vân. Cách gọi mà chính người đó tự chọn và ghi lên bảng tên, từ hôm ấy sẽ được dùng làm cái tên mọi người gọi nhau."
+ },
+ "66": {
+  "why_correct": "A đề xuất mọi người gọi nhau bằng họ kèm 「さん」; B đề xuất mỗi người tự ghi cách muốn được gọi lên bảng tên.",
+  "options_analysis": [
+   "Ghi lên bảng tên chỉ là đề xuất của B.",
+   "Đảo ngược đề xuất của A và B.",
+   "Đúng: A — gọi chung 「さん」, B — thể hiện cách gọi người đó muốn.",
+   "Cả hai đều cho rằng gọi bằng chức danh làm khó bắt chuyện."
+  ],
+  "points": [
+   "名字《みょうじ》: họ.",
+   "呼《よ》び合《あ》う: gọi nhau.",
+   "勧《すす》める: khuyên, đề xuất."
+  ]
+ },
+ "67": {
+  "why_correct": "Ngay trước ①: biết cốt truyện nên không phải theo dõi truyện, mà nghe được mỗi người im ở đâu, đổi giọng ở đâu.",
+  "options_analysis": [
+   "Bài không nói chuyện chuẩn bị cười trước câu chốt.",
+   "Đúng: khỏi bám cốt truyện, nghe ra khác biệt cách kể.",
+   "Cười cùng chỗ với người bên cạnh không phải tác dụng được nêu.",
+   "Bài không nói chuyện kể lại cho người khác."
+  ],
+  "points": [
+   "筋《すじ》: cốt truyện.",
+   "足場《あしば》: chỗ đứng, nền tảng."
+  ],
+  "passage_translation": "　Rakugo là môn nghệ thuật làm khán giả cười bằng “câu chốt” (chú 1) đặt ở cuối câu chuyện. Vì thế, bản thân tôi cũng từng nghĩ suốt một thời gian dài rằng nghe mà không biết cốt truyện thì hẳn sẽ thú vị hơn. Hồi mới bắt đầu đi rạp yose (chú 2), hễ tiết mục có tên tôi đã biết được diễn trên kōza (chú 3) là tôi lại thấy như mình bị thiệt một chút.\n　Thế nhưng, nghe những khách quen đã đi rạp mấy chục năm kể chuyện, thì tình hình khác hẳn. Cụ già ngồi ghế bên cạnh vừa nói câu chuyện (chú 4) hôm đó “nghe cả trăm lần rồi”, vậy mà lại cười nhiều hơn bất kỳ ai trong khán phòng. Những vị khách đã biết cả cốt truyện lẫn kết cục, rốt cuộc đến để nghe cái gì? Hỏi thử thì họ nói rằng cùng một câu chuyện, nhưng tùy người kể, và dù cùng một người thì tùy ngày, sẽ trở thành một câu chuyện hoàn toàn khác.\n(lược một đoạn)\n　Lời ấy thấm vào tôi (chú 5) là lần tôi nghe liền một câu chuyện cổ do ba người kể rakugo (chú 6) diễn. Đó là một truyện ngắn về anh chàng keo kiệt (chú 7) chỉ lấy mùi thơm bay sang từ quán lươn bên cạnh làm thức ăn kèm để ăn cơm. Người thứ nhất cho thấy thật kỹ nét mặt của anh chàng đang hít mùi, người thứ hai kể đậm sự bực bội của ông chủ quán bị lấy mất mùi. Người thứ ba hầu như không đổi nét mặt, mà làm khán giả cười bằng cách ngắt nhịp (chú 8). Vì đã biết cốt truyện, tôi không bị cuốn vào việc theo dõi câu chuyện, mà có thể lắng tai xem mỗi người im lặng ở đâu, đổi giọng ở đâu. ① **Việc biết cốt truyện** không những không làm giảm niềm vui, mà đã trở thành chỗ đứng để nghe ra sự khác biệt.\n　Dù vậy, tôi không thể bảo người đến lần đầu hãy nghe vài chục lần rồi hẵng đến. Tiết mục của ngày hôm đó phần nhiều cũng không được báo trước. Dù thế, những câu chuyện hay được diễn cũng không nhiều lắm. Đọc trước một, hai bản tóm tắt thì hẳn cách nghe sẽ khác đi nhiều.\n　Cười khi chưa biết câu chốt cũng là một niềm vui của rakugo. Nhưng đó là niềm vui chỉ có một lần, còn niềm vui nghe khi đã biết cốt truyện thì thưởng thức bao nhiêu lần cũng được. Với người lần đầu đi rạp yose, tôi muốn khuyên hãy đọc tóm tắt của một câu chuyện hay được diễn rồi hẵng đi.\n\n(chú 1) オチ: câu nói ở cuối câu chuyện làm khán giả cười, trong rakugo...\n(chú 2) 寄席: rạp nhỏ chuyên dùng để diễn rakugo... cho khán giả nghe\n(chú 3) 高座: chỗ người diễn ngồi, được làm cao hơn hàng ghế khán giả một bậc\n(chú 4) 噺: từng câu chuyện được diễn trong rakugo\n(chú 5) 腑に落ちる: thấy “à ra thế”, hiểu và đồng tình\n(chú 6) 噺家: người làm nghề diễn rakugo\n(chú 7) けち: rất ghét phải bỏ tiền hay đồ vật ra\n(chú 8) 間: khoảng thời gian ngắn cố ý ngắt lời trong câu chuyện"
+ },
+ "68": {
+  "why_correct": "Cụ già trả lời: cùng một truyện nhưng tùy người kể, tùy ngày mà 「まるで別の噺になる」.",
+  "options_analysis": [
+   "Bài không nói chuyện đoán trước câu chốt.",
+   "Đây là lý do người mới dễ đọc tóm tắt trước, không phải lý do của khách quen.",
+   "Bài không nói cười cùng người bên cạnh là niềm vui ở rạp.",
+   "Đúng: cùng cốt truyện nhưng nghe như truyện khác."
+  ],
+  "points": [
+   "常連《じょうれん》: khách quen.",
+   "噺家《はなしか》: người kể rakugo.",
+   "寄席《よせ》: rạp rakugo."
+  ]
+ },
+ "69": {
+  "why_correct": "Kết bài: niềm vui nghe khi đã biết cốt truyện 「何度でも味わえます」, và tác giả khuyên người mới đọc trước một bản tóm tắt.",
+  "options_analysis": [
+   "Đúng: biết sơ cốt truyện trước thì thêm phần thú vị.",
+   "Đó là suy nghĩ cũ của tác giả, đã bị lật lại bằng 「ところが」.",
+   "Bài chỉ nói tiết mục thường không báo trước, không đòi phải báo.",
+   "Trái với 「何十回も聞いてから来てくださいとは言えません」."
+  ],
+  "points": [
+   "あらすじ: tóm tắt nội dung.",
+   "演目《えんもく》: tiết mục."
+  ]
+ },
+ "70": {
+  "why_correct": "Ngày 30/7 là khóa イ: trẻ em 300 yên, người lớn 400 yên. Con gái và hai người lớn: 300 + 400×2 = 1.100 yên.",
+  "options_analysis": [
+   "Chỉ tính một người lớn: 300 + 400.",
+   "Đúng: 300 + 400 + 400.",
+   "Tính cả con gái theo giá người lớn: 400×3.",
+   "Nhầm với phí nguyên liệu 800 yên mỗi nhóm của khóa エ."
+  ],
+  "points": [
+   "試食《ししょく》: ăn thử.",
+   "料金《りょうきん》: phí, giá tiền."
+  ],
+  "passage_translation": "**Trung tâm Suất ăn Trường học thành phố Kashiwadai — Thông báo buổi tham quan cho phụ huynh và con dịp nghỉ hè**\n\n　Suất ăn của các trường tiểu học và trung học cơ sở trong thành phố được nấu tại trung tâm này. Vào kỳ nghỉ hè, chúng tôi tổ chức buổi tham quan để phụ huynh và con cùng xem quá trình làm ra bữa ăn.\n\n| Khóa | Ngày | Giờ | Nội dung | Số nhóm tối đa |\n|---|---|---|---|---|\n| ア　Tham quan | 28/7 (thứ Ba) | 10:00–11:00 | Xem khu bếp qua lớp kính | 30 nhóm |\n| イ　Tham quan và ăn thử | 30/7 (thứ Năm) | 10:00–12:30 | Sau khi tham quan, ăn thử suất ăn của ngày hôm đó | 20 nhóm |\n| ウ　Tham quan và ăn thử | 4/8 (thứ Ba) | 10:00–12:30 | Sau khi tham quan, ăn thử suất ăn của ngày hôm đó | 20 nhóm |\n| エ　Phụ huynh và con cùng làm bánh | 6/8 (thứ Năm) | 13:30–15:30 | Làm một món ăn nhẹ lấy từ thực đơn bữa ăn trường | 10 nhóm |\n\n**Phí**\n\n・ア: miễn phí\n・イ, ウ: trẻ em 300 yên/người, người lớn 400 yên/người\n・エ: 800 yên/nhóm tiền nguyên liệu (nhóm 3 người thì cộng thêm 200 yên)\n\n**Đăng ký**\n\n・Mỗi nhóm gồm một học sinh tiểu học hoặc trung học cơ sở trong thành phố và gia đình, tối đa 3 người.\n・ア, イ, ウ: xin gọi điện đến trung tâm để đăng ký trước ngày 15/7.\n・エ: xin đăng ký bằng bưu thiếp. Chúng tôi nhận những thiếp đến trung tâm chậm nhất ngày 10/7.\n・Khóa nào vượt số nhóm tối đa sẽ bốc thăm.\n・Với イ, ウ, エ, ai bị dị ứng thực phẩm xin báo khi đăng ký. Chúng tôi không thể đáp ứng nếu báo tại quầy tiếp đón hôm đó.\n\n**Lưu ý trong ngày**\n\n・Để tóc không rơi, xin tất cả mọi người mang theo mũ. Khóa エ cần thêm tạp dề và khăn tam giác trùm tóc.\n・Bãi đỗ xe chỉ có 10 chỗ. Xin cố gắng đến bằng xe buýt (xuống ở bến “Trước trung tâm Suất ăn”).\n・Người bị sốt không thể tham gia. Xin gọi điện đến trung tâm vào sáng hôm đó."
+ },
+ "71": {
+  "why_correct": "Khóa エ: gửi bưu thiếp đến nơi trước 10/7; ai cũng mang mũ, riêng エ thêm tạp dề và khăn tam giác.",
+  "options_analysis": [
+   "Gọi điện, hạn 15/7 là cách của ア, イ, ウ; lại thiếu khăn tam giác.",
+   "Cách đăng ký đúng nhưng thiếu mũ, thứ ai cũng phải mang.",
+   "Đúng: bưu thiếp đến trước 10/7, mang đủ ba thứ.",
+   "Nhầm hạn thành 15/7 của khóa ア, イ, ウ."
+  ],
+  "points": [
+   "三角《さんかく》きん: khăn tam giác trùm tóc.",
+   "抽選《ちゅうせん》: bốc thăm."
+  ]
+ },
+ "問1-1": {
+  "why_correct": "Sau khi nộp giấy đồng ý, nhân viên nói tiếp theo hãy mặc tạp dề và chờ.",
+  "options_analysis": [
+   "Việc ký giấy đồng ý đã xong rồi.",
+   "Đúng: sau khi nộp giấy đồng ý, việc tiếp theo là mặc tạp dề đúng cỡ và chờ.",
+   "Chọn màu kính là việc sau khi được dẫn đến xưởng, diễn ra sau khi mặc tạp dề.",
+   "Trả phí gửi hàng là việc làm sau khi trải nghiệm xong."
+  ],
+  "points": [
+   "同意書《どういしょ》: giấy đồng ý, cam kết.",
+   "エプロン: tạp dề."
+  ]
+ },
+ "問1-2": {
+  "why_correct": "Anh chốt \"vậy thứ Bảy\", rồi đổi sang \"mai đi\", nhưng bị nhắc thứ Hai và ngày lễ là ngày đóng cửa.",
+  "options_analysis": [
+   "Hôm nay Chủ nhật nên mai là thứ Hai, đúng ngày thư viện đóng.",
+   "Thứ Hai là ngày đóng cửa, chính cô gái chỉ ra điều đó.",
+   "Đúng: thứ Bảy mở tới 7 giờ như ngày thường, đi được sau giờ làm.",
+   "Ngày lễ cũng nằm trong ngày đóng cửa."
+  ],
+  "points": [
+   "休館日《きゅうかんび》: ngày cơ sở đóng cửa.",
+   "きつい: chật vật, khó xoay xở về thời gian."
+  ]
+ },
+ "問1-3": {
+  "why_correct": "Nữ sinh (phó chủ nhiệm) được giao việc nhờ các tiền bối viết lời nhắn.",
+  "options_analysis": [
+   "Ảnh chụp buổi tập do các sinh viên năm nhất chuẩn bị.",
+   "Bài giới thiệu các bản nhạc sẽ được chia cho vài trưởng bè phụ trách.",
+   "Đúng: nữ sinh (phó chủ nhiệm) được giao nhờ các tiền bối viết lời nhắn.",
+   "Thiết kế bìa sẽ chọn từ các mẫu có sẵn của công ty in."
+  ],
+  "points": [
+   "原稿《げんこう》: bản thảo.",
+   "パートリーダー: trưởng bè (trong dàn nhạc)."
+  ]
+ },
+ "問1-4": {
+  "why_correct": "男「締め切り明日だから、提出任せるね」→ giao việc nộp đơn cho nữ sinh làm trước.",
+  "options_analysis": [
+   "Quay video là việc nam sinh sẽ làm ngay sau đó.",
+   "Video chưa quay xong, chưa thể nộp.",
+   "Đơn đăng ký đã làm xong rồi, không cần làm lại.",
+   "Đúng, nữ sinh cần nộp đơn trước."
+  ],
+  "points": [
+   "締め切り《しめきり》: hạn chót",
+   "応募《おうぼ》: đăng ký"
+  ]
+ },
+ "問1-5": {
+  "why_correct": "Về người giúp hôm đó, cô nói \"đó mới là việc quan trọng nhất, phải lo ngay đi\".",
+  "options_analysis": [
+   "Phòng nhạc thì anh đã mượn được rồi.",
+   "Áp phích anh đã nhờ Emi làm giúp.",
+   "Đúng: cần ít nhất 3 người mà chưa nhờ được ai.",
+   "Mic và ampli thì thành viên band tự mang tới."
+  ],
+  "points": [
+   "手配《てはい》する: thu xếp người hoặc vật cần thiết.",
+   "苦手《にがて》: không giỏi, không thạo việc đó."
+  ]
+ },
+ "問2-1": {
+  "why_correct": "Lý do là hết kính áp tròng dùng một lần 「切らしちゃって」.",
+  "options_analysis": [
+   "切らす = dùng hết, không còn; nên hôm nay phải đeo kính.",
+   "Không có chuyện làm tổn thương mắt; dễ nhầm với ý «khô mắt».",
+   "「しばらくの間」là dự định sắp tới, không phải lý do hôm nay.",
+   "Cái không hợp thị lực là chiếc kính gọng, không phải kính áp tròng."
+  ],
+  "points": [
+   "切《き》らす: dùng hết, hết hàng.",
+   "〜ないよりまし: có còn hơn không."
+  ]
+ },
+ "問2-2": {
+  "why_correct": "課長「駐車場が…駐車場がある施設の方が参加者の数が増える」→ vấn đề là hội trường thiếu bãi đỗ xe.",
+  "options_analysis": [
+   "Đúng, đây là điểm bị chỉ ra là vấn đề.",
+   "Chi phí vượt dự toán được chấp nhận là hợp lý.",
+   "Đối tượng (trẻ nhỏ, phụ huynh) đã rõ ràng, không bị nêu là vấn đề.",
+   "An toàn là lý do hợp lý cho chi phí tăng, không bị phê bình."
+  ],
+  "points": [
+   "企画《きかく》: kế hoạch, dự án",
+   "見積もり《みつもり》: dự toán"
+  ]
+ },
+ "問2-3": {
+  "why_correct": "Cô nói nhiều bài chưa phân biệt rõ đâu là ý mình, đâu là câu trích từ tài liệu.",
+  "options_analysis": [
+   "[Sai] Cô khen mọi người đều dùng tài liệu đáng tin cậy.",
+   "[Đúng] Chưa tách bạch phần trích dẫn với ý kiến của bản thân.",
+   "[Sai] Về văn phong, cô nói không ai lẫn văn nói vào.",
+   "[Sai] Lần này mọi người đều gói gọn trong số chữ quy định."
+  ],
+  "points": [
+   "引用《いんよう》: sự trích dẫn.",
+   "考察《こうさつ》: sự khảo sát, nhận định."
+  ]
+ },
+ "問2-4": {
+  "why_correct": "Người nữ đề nghị chia theo cỡ rồi xếp thêm theo thứ tự giá, người nam đồng ý mai làm sớm.",
+  "options_analysis": [
+   "[Sai] Chia theo cỡ là việc hôm nay hai người đã làm rồi.",
+   "[Sai] Xếp theo màu bị người nam gạt vì không cần đến vậy.",
+   "[Sai] Chuyện sửa giá lên cao đã được chốt là cứ để nguyên.",
+   "[Đúng] Việc thêm mới cho ngày mai là xếp theo thứ tự giá."
+  ],
+  "points": [
+   "値札《ねふだ》: nhãn ghi giá.",
+   "取《と》り掛《か》かる: bắt tay vào làm."
+  ]
+ },
+ "問2-5": {
+  "why_correct": "「前に勤めてた会社に...不満があったわけじゃなく、新たな世界を見てみたい」.",
+  "options_analysis": [
+   "Chỉ là ví dụ về NGƯỜI KHÁC cô nêu ra.",
+   "Cũng chỉ là ví dụ về người khác, không phải lý do của cô.",
+   "Đây là lý do của LẦN CHUYỂN VIỆC ĐẦU TIÊN.",
+   "Không bất mãn, muốn thử lĩnh vực mới."
+  ],
+  "points": [
+   "不満《ふまん》: bất mãn, không hài lòng.",
+   "新《あら》たな世界《せかい》: thế giới mới."
+  ]
+ },
+ "問2-6": {
+  "why_correct": "Cậu ấy tự nói: dù sao cũng phải đến mượn chìa khóa hội trường.",
+  "options_analysis": [
+   "Vốn đã có việc mượn chìa khóa nên tiện thể ghé.",
+   "Micro cài áo mới ở mức «đi hỏi xem có mượn được không».",
+   "Kiểm tra mạng là việc làm tại hội trường.",
+   "Trang web là thứ bạn nữ bảo để cô ấy tra, không phải lý do đến văn phòng."
+  ],
+  "points": [
+   "どうせ: dù thế nào thì cũng.",
+   "ピンマイク: micro cài áo."
+  ]
+ },
+ "問3-1": {
+  "why_correct": "Bài nói về việc dùng phương ngữ vùng khác làm tiếng của nhóm bạn.",
+  "options_analysis": [
+   "Chủ đề là cách dùng từ ngữ, không phải cách đối xử với bạn.",
+   "Chỉ là một ví dụ được nhắc qua, không phải chủ đề.",
+   "Bài nói cả người không phải dân vùng đó, nên không đúng.",
+   "「仲間言葉として使う」là trọng tâm của bài nói."
+  ],
+  "points": [
+   "方言《ほうげん》: tiếng địa phương.",
+   "仲間言葉《なかまことば》: tiếng dùng trong nhóm thân."
+  ]
+ },
+ "問3-2": {
+  "why_correct": "Bài khuyên hãy đổi tâm trạng rồi mới làm tiếp, để không lặp lại cùng một sai lầm.",
+  "options_analysis": [
+   "Golf chỉ là ví dụ dẫn vào, không bàn cách luyện tập.",
+   "Đổi tâm trạng là cách làm, mục đích là tránh lặp lỗi.",
+   "Trọng tâm là cách để không lặp lại cùng một lỗi.",
+   "Bài nói ngược lại: đừng để căng thẳng kéo dài."
+  ],
+  "points": [
+   "気分転換《きぶんてんかん》: đổi tâm trạng, thư giãn.",
+   "過度《かど》: quá mức, thái quá."
+  ]
+ },
+ "問3-3": {
+  "why_correct": "Nội dung là điều cần lưu ý khi nhắc con, gồm cả việc công nhận nỗ lực của con.",
+  "options_analysis": [
+   "Bài nói không bàn về việc cùng nhau học tập.",
+   "Bài nói không chỉ bàn thời điểm khen, mà cách nhắc nhở nói chung.",
+   "Bài nói không bàn về mặt hại của việc mắng con.",
+   "Đúng: nội dung là điều cần lưu ý khi nhắc con, gồm công nhận nỗ lực."
+  ],
+  "points": [
+   "肯定感《こうていかん》: cảm giác tự tin, được công nhận.",
+   "目《め》を向《む》けさせる: hướng sự chú ý đến."
+  ]
+ },
+ "問3-4": {
+  "why_correct": "Bài nêu rắc rối với hàng xóm và bệnh lây sang ong nhà nghề, rồi nhắc 「気をつけることが大切です」.",
+  "options_analysis": [
+   "Không hướng dẫn cách lấy mật ong.",
+   "Có nói ong ít đốt, nhưng không nói cách xử lý khi bị đốt.",
+   "Việc khai báo là một lưu ý, không phải để bán mật.",
+   "Trọng tâm là điều người nuôi ong cần chú ý."
+  ],
+  "points": [
+   "手間《てま》: công sức, thời gian bỏ ra.",
+   "届け出る《とどけでる》: khai báo với cơ quan."
+  ]
+ },
+ "問3-5": {
+  "why_correct": "Nghị viên nói đường và cầu cũ đã bị cảnh báo nguy hiểm, cần tu sửa sớm để bảo đảm an toàn.",
+  "options_analysis": [
+   "Ông nói sân vận động đã có là đủ dùng.",
+   "Thiếu chỗ ở thì nhờ các địa phương lân cận hỗ trợ.",
+   "Đúng: nên tu sửa đường và cầu cũ trước.",
+   "Ông không đề nghị chuyển đại hội sang nơi khác."
+  ],
+  "points": [
+   "整備《せいび》: tu sửa, chỉnh trang.",
+   "確保《かくほ》する: bảo đảm, giữ cho chắc."
+  ]
+ },
+ "問4-1": {
+  "why_correct": "Câu hỏi đồng thuận về điều hòa; đáp lại tự nhiên là xác nhận cùng quan điểm.",
+  "options_analysis": [
+   "“Không có điều hòa cũng được à?” đi ngược nội dung câu hỏi.",
+   "“Sao lại không dùng?” giả định sai, câu gốc không hàm ý đó.",
+   "Đồng tình với「欠かせない」: nói không bật điều hòa thì không ngủ được."
+  ],
+  "points": [
+   "熱帯夜《ねったいや》: nghĩa “đêm nóng khó ngủ”.",
+   "欠《か》かせない: nghĩa “không thể thiếu”."
+  ]
+ },
+ "問4-2": {
+  "why_correct": "Được khuyên nên liên lạc → đáp rằng sẽ thử liên lạc.",
+  "options_analysis": [
+   "Là cách chấp thuận phương án của người khác, không đáp lời khuyên.",
+   "Tiếp nhận lời khuyên và nói sẽ liên lạc.",
+   "Chỉ nêu tình trạng hiện tại, không đáp lại lời khuyên."
+  ],
+  "points": [
+   "〜たほうがいい: khuyên đối phương nên làm gì.",
+   "連絡《れんらく》を取《と》る: liên lạc được với ai đó."
+  ]
+ },
+ "問4-3": {
+  "why_correct": "「お呼びですよ」là kính ngữ báo có người gọi → phản hồi tự nhiên là xác nhận và đi ngay.",
+  "options_analysis": [
+   "Đúng: xác nhận lại, thể hiện sẽ đến ngay, đúng phép lịch sự.",
+   "Hiểu sai thành phải gọi điện cho giám đốc.",
+   "Hiểu sai thành giám đốc sẽ đến phòng này, ngược vai trò."
+  ],
+  "points": [
+   "お呼びです: kính ngữ của gọi, chỉ người khác gọi mình.",
+   "すぐ行きます: phản hồi lịch sự khi được cấp trên gọi."
+  ]
+ },
+ "問4-4": {
+  "why_correct": "Người nói đang hỏi cái máy tính xách tay để ở đây đi đâu mất → đáp bằng nơi mình đã thấy nó.",
+  "options_analysis": [
+   "Là nhận xét về chất lượng máy, không trả lời chỗ để.",
+   "Đúng: cho biết đã nhìn thấy nó ở phòng họp.",
+   "Nói mình không dùng được, lệch khỏi câu hỏi về vị trí."
+  ],
+  "points": [
+   "知《し》らない？: cậu có biết ... đâu không?",
+   "会議室《かいぎしつ》: phòng họp."
+  ]
+ },
+ "問4-5": {
+  "why_correct": "「買い替えるほかない」＝chỉ còn cách mua mới; đáp lại là xác nhận không sửa được.",
+  "options_analysis": [
+   "「買い替えるほかない」nghĩa là không sửa được, khớp với「直せないんですか」.",
+   "“Sửa được à, tốt quá” ngược nghĩa với thông báo phải mua mới.",
+   "“Chưa biết có sửa được không” mâu thuẫn với câu đã khẳng định chắc chắn."
+  ],
+  "points": [
+   "〜ほかない: nghĩa “không còn cách nào khác”.",
+   "修理《しゅうり》: nghĩa “sửa chữa”."
+  ]
+ },
+ "問4-6": {
+  "why_correct": "「ありえない」ở đây nghĩa là chuyện Mori đi trễ thật khó tin → đáp rằng cậu ấy vốn luôn đúng giờ.",
+  "options_analysis": [
+   "Nói cậu ấy hay trễ, ngược hẳn với ý câu gốc.",
+   "Hiểu nhầm thành đã có báo trước là sẽ đến muộn.",
+   "Đúng: bình thường Mori luôn giữ đúng giờ."
+  ],
+  "points": [
+   "ありえない: không thể có chuyện đó.",
+   "時間《じかん》を守《まも》る: giữ đúng giờ hẹn."
+  ]
+ },
+ "問4-7": {
+  "why_correct": "Câu gốc đề nghị dừng việc vì trời tối, phản hồi tự nhiên là đồng tình dừng lại hôm nay.",
+  "options_analysis": [
+   "Khẳng định đã hoàn thành hết việc, không khớp ý dừng giữa chừng.",
+   "Hiểu ngược thành phải làm xong hôm nay.",
+   "Đúng, đồng tình dừng lại hôm nay."
+  ],
+  "points": [
+   "切り上げる《きりあげる》: kết thúc, dừng lại",
+   "作業《さぎょう》: công việc, thao tác"
+  ]
+ },
+ "問4-8": {
+  "why_correct": "Được khen thì đáp lại bằng cách khiêm tốn phủ nhận là tự nhiên nhất.",
+  "options_analysis": [
+   "Nói về việc sẽ thử làm, không phải đáp lời khen.",
+   "「大したことになった」= chuyện thành to, sai nghĩa.",
+   "Cách khiêm tốn quen dùng để gạt lời khen."
+  ],
+  "points": [
+   "それほどでもない: không đến mức như vậy.",
+   "えらい: giỏi, đáng khen."
+  ]
+ },
+ "問4-9": {
+  "why_correct": "「まずまず」= tạm ổn, là lời nói khiêm tốn → đáp lại bằng cách khen.",
+  "options_analysis": [
+   "Phủ nhận lời khiêm tốn và khen là trông rất ngon.",
+   "Nhầm với 「まずい」(dở) do gần âm.",
+   "Vừa đồng ý lời khiêm tốn vừa khen, tự mâu thuẫn."
+  ],
+  "points": [
+   "まずまず: không xuất sắc nhưng cũng không tệ.",
+   "〜といったところ: nói giảm, «đại khái ở mức đó»."
+  ]
+ },
+ "問4-10": {
+  "why_correct": "「乗るところだった」nghĩa là suýt lên nhưng đã không lên → đáp nếu lên thì to chuyện.",
+  "options_analysis": [
+   "Nói về nơi đã lên tàu, không nhắc việc suýt lên nhầm.",
+   "Nói nếu lên thì gay, tiếp nhận việc đã tránh được.",
+   "Hiểu là đã lên rồi, trái với sự thật."
+  ],
+  "points": [
+   "〜ところだった: suýt nữa thì..., mà đã không.",
+   "うっかり: vô ý, không để ý."
+  ]
+ },
+ "問4-11": {
+  "why_correct": "「〜とよかったのに」diễn tả tiếc nuối vì điều đó không xảy ra → phản hồi hợp lý là giải thích lý do vắng mặt.",
+  "options_analysis": [
+   "Khẳng định Sato đã đến giúp, mâu thuẫn với tiếc nuối vì vắng mặt.",
+   "Đúng: giải thích lý do Sato không đến giúp — vì bận.",
+   "Xác nhận Sato đã giúp, ngược ý câu gốc đang tiếc vì không có."
+  ],
+  "points": [
+   "〜とよかったのに: giá mà... thì tốt.",
+   "忙しかったみたい: có vẻ như đã bận."
+  ]
+ },
+ "問5-1": {
+  "why_correct": "先生「小道具で工夫するのがいいかもしれないね」男「扇子とか」先生「じゃあそれ試してみようか」→ đáp án 4.",
+  "options_analysis": [
+   "Động tác khó không khả thi vì「時間的に厳しいね」.",
+   "Đổi nhạc bị gạt vì phải chỉnh lại động tác.",
+   "Trang phục đã hoàn thành sẵn, không cần đổi.",
+   "Sẽ dùng đạo cụ cầm tay (quạt giấy) tạo điểm nhấn."
+  ],
+  "points": [
+   "小道具《こどうぐ》: đạo cụ nhỏ.",
+   "扇子《せんす》: quạt giấy."
+  ]
+ },
+ "問5-2-1": {
+  "why_correct": "Người phụ nữ muốn an toàn khi đi làm nên chọn xe ổn định nhất, xe số 3.",
+  "options_analysis": [
+   "Xe số 1 hợp đi mua sắm, nhẹ và rẻ, nhưng không nói về độ ổn định.",
+   "Xe số 2 gấp gọn được, không hợp mong muốn ổn định khi đi làm.",
+   "Đúng: xe số 3 chạy xa và ổn định nhất, được cô chọn.",
+   "Xe số 4 chịu xóc tốt nhưng giá cao, không đúng điều kiện cô đưa ra."
+  ],
+  "points": [
+   "安定性《あんていせい》: tính ổn định.",
+   "通勤《つうきん》: đi làm."
+  ]
+ },
+ "問5-2-2": {
+  "why_correct": "Người đàn ông muốn chở cá bằng ô tô nên chọn xe gấp gọn, xe số 2.",
+  "options_analysis": [
+   "Xe số 1 hợp đi mua sắm, không khớp mục đích chở bằng ô tô.",
+   "Đúng: xe số 2 gấp gọn, chở lên ô tô được, khớp ý anh.",
+   "Xe số 3 hợp đường dài, ổn định cao, không liên quan việc chở xe.",
+   "Xe số 4 chịu xóc tốt do cô đề xuất, nhưng anh chọn đi ô tô nên không dùng."
+  ],
+  "points": [
+   "折《お》りたためる: có thể gấp gọn lại.",
+   "凸凹道《でこぼこみち》: đường gồ ghề."
+  ]
+ }
+}

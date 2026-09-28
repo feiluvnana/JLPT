@@ -57,6 +57,7 @@ import json
 import math
 import re
 import subprocess
+import sys
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -129,7 +130,9 @@ EXPECTED_SLOTS = {"問題1": 5, "問題2": 6, "問題3": 5, "問題4": 11, "問�
 # table in `archive_bank_expansion.md` §2 is that derivation's expected output,
 # not its input (AGENTS.md §4, "a measured number has one owner, and it is a
 # script").
-ANSWER_KEYS = Path(__file__).resolve().parent.parent / "refs" / "JLPT_N2_NEW" / "answer_keys.json"
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / ".agents" / "jlpt-exam-structure" / "scripts"))
+import level as _LEVEL  # noqa: E402
+ANSWER_KEYS = _LEVEL.archive_dir("N2") / "answer_keys.json"
 
 _SITTING_RE = re.compile(r"(20\d\d)-(\d\d)")
 

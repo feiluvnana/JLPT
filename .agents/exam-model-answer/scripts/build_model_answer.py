@@ -21,56 +21,44 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
 
-# Sub-question taxonomy matching JLPT N2 specifications
-GENGO_TAXONOMY = {
-    "問1": {"mondai": "問題1", "name": "漢字読み", "en": "Kanji Reading", "range": (1, 5), "section": "文字・語彙"},
-    "問2": {"mondai": "問題2", "name": "表記", "en": "Orthography", "range": (6, 10), "section": "文字・語彙"},
-    "問3": {"mondai": "問題3", "name": "語形成", "en": "Word Formation", "range": (11, 13), "section": "文字・語彙"},
-    "問4": {"mondai": "問題4", "name": "文脈規定", "en": "Contextual Use", "range": (14, 20), "section": "文字・語彙"},
-    "問5": {"mondai": "問題5", "name": "言い換え類義", "en": "Paraphrases", "range": (21, 25), "section": "文字・語彙"},
-    "問6": {"mondai": "問題6", "name": "用法", "en": "Usage in Context", "range": (26, 30), "section": "文字・語彙"},
-    "問7": {"mondai": "問題7", "name": "文法形式の判断", "en": "Grammar Form", "range": (31, 42), "section": "文法"},
-    "問8": {"mondai": "問題8", "name": "文の組み立て（★）", "en": "Sentence Composition", "range": (43, 47), "section": "文法"},
-    "問9": {"mondai": "問題9", "name": "文章の文法", "en": "Text Grammar / Cloze", "range": (48, 51), "section": "文法"},
-    "問10": {"mondai": "問題10", "name": "内容理解（短文）", "en": "Short Passages", "range": (52, 56), "section": "読解"},
-    "問11": {"mondai": "問題11", "name": "内容理解（中文）", "en": "Medium Passages", "range": (57, 64), "section": "読解"},
-    "問12": {"mondai": "問題12", "name": "統合理解", "en": "Comparative Reading (A/B)", "range": (65, 66), "section": "読解"},
-    "問13": {"mondai": "問題13", "name": "主張理解（長文）", "en": "Long Essay / Thematic", "range": (67, 69), "section": "読解"},
-    "問14": {"mondai": "問題14", "name": "情報検索", "en": "Information Retrieval", "range": (70, 71), "section": "読解"},
-}
+# The 大問 taxonomy is the exam level's structure table
+# (jlpt-exam-structure/references/levels/<LEVEL>.json, read through level.py):
+# names, English glosses, booklet part, and one item-count row per era. It used
+# to be a literal N2 map here with its own copy of the 71-item ranges.
+sys.path.insert(0, str(ROOT / ".agents" / "jlpt-exam-structure" / "scripts"))
+import level as LEVEL  # noqa: E402
 
 
-def gengo_taxonomy_for(max_q: int) -> dict:
-    """GENGO_TAXONOMY with its 大問 ranges re-derived for THIS paper's era.
+def gengo_taxonomy_for(max_q: int | None = None, level: str = LEVEL.DEFAULT_LEVEL) -> dict:
+    """The 大問 map with its ranges derived for THIS paper's era.
 
-    The names above are era-independent; the ranges are not. An imported past
-    paper may be a 72- or 75-question sitting (7/2021 ran 問題11 as 3 passages
-    x 3Q), and with the fixed 71-question ranges its item 72 belonged to no 大問
-    and simply was not rendered. The counts have one owner —
-    grade_answers.GENGO_SHAPES — so this reads them rather than restating them.
+    The names are era-independent; the ranges are not. An imported past paper
+    may be a 72- or 75-question N2 sitting (7/2021 ran 問題11 as 3 passages x
+    3Q), and with fixed 71-question ranges its item 72 belonged to no 大問 and
+    simply was not rendered. An unknown count falls back to the level's
+    generated shape.
     """
-    counts = None
-    try:  # sys.path already carries .agents/exam-app/scripts by call time
-        import grade_answers as ga
-        counts = ga.GENGO_SHAPES.get(max_q)
-    except Exception:
-        counts = None
-    if not counts:
-        return GENGO_TAXONOMY
+    g = LEVEL.gengo(level)
+    shapes = LEVEL.gengo_shapes(level)
+    counts = shapes.get(max_q, shapes[g["generated_shape"]])
     tax, q = {}, 1
-    for (code, info), n in zip(GENGO_TAXONOMY.items(), counts):
-        tax[code] = {**info, "range": (q, q + n - 1)}
+    for m, n in zip(g["mondai"], counts):
+        tax[m["code"]] = {"mondai": m["mondai"], "name": m["name"], "en": m["en"],
+                          "range": (q, q + n - 1), "section": m["part"]}
         q += n
     return tax
 
 
-CHOUKAI_TAXONOMY = {
-    "問題1": {"name": "課題理解", "en": "Task Comprehension", "section": "聴解"},
-    "問題2": {"name": "ポイント理解", "en": "Point Comprehension", "section": "聴解"},
-    "問題3": {"name": "概要理解", "en": "Summary Comprehension", "section": "聴解"},
-    "問題4": {"name": "即時応答", "en": "Quick Response", "section": "聴解"},
-    "問題5": {"name": "統合理解", "en": "Integrated Comprehension", "section": "聴解"},
-}
+# N2's generated-shape map, under the name verify_fidelity/scaffold_explanations import.
+GENGO_TAXONOMY = gengo_taxonomy_for()
+
+
+def choukai_taxonomy_for(level: str = LEVEL.DEFAULT_LEVEL) -> dict:
+    return {m["code"]: {"name": m["name"], "en": m["en"], "section": "聴解"}
+            for m in LEVEL.choukai(level)["mondai"]}
+
+
+CHOUKAI_TAXONOMY = choukai_taxonomy_for()
 
 # ---------------------------------------------------------------- languages
 # 模範解答.html carries the explanation set in TWO languages, switched in-page by
@@ -94,7 +82,7 @@ UI = {
         "html_lang": "ja",
         "doc_title": "テスト {test_id}（模範解答・詳細解説）",
         "back": "← 採点結果へ戻る",
-        "title": "日本語能力試験 N2 模範解答・詳細解説",
+        "title": "日本語能力試験 {level} 模範解答・詳細解説",
         "subtitle": "テスト <strong>{test_id}</strong> ｜ <span>全{n_all}問（言語知識・読解 {n_gengo}問 ＋ 聴解 {n_choukai}問）完全網羅解説集</span>",
         "tab_all": "すべて",
         "tab_goi": "文字・語彙",
@@ -122,13 +110,13 @@ UI = {
         "points_title_choukai": "【重要表現・リスニングポイント】",
         "tag_correct": "[正解]",
         "tag_wrong": "[不正解]",
-        "footer": "JLPT N2 Mock Exam Model Answer &amp; Comprehensive Explanation (模範解答.html)",
+        "footer": "JLPT {level} Mock Exam Model Answer &amp; Comprehensive Explanation (模範解答.html)",
     },
     "vi": {
         "html_lang": "vi",
         "doc_title": "Đề {test_id}（Đáp án mẫu・Giải thích chi tiết）",
         "back": "← Về kết quả chấm",
-        "title": "JLPT N2 — Đáp án mẫu và giải thích chi tiết",
+        "title": "JLPT {level} — Đáp án mẫu và giải thích chi tiết",
         "subtitle": "Đề <strong>{test_id}</strong> ｜ <span>Giải thích đầy đủ {n_all} câu (Kiến thức ngôn ngữ・Đọc hiểu {n_gengo} câu ＋ Nghe {n_choukai} câu)</span>",
         "tab_all": "Tất cả",
         "tab_goi": "Chữ Hán・Từ vựng",
@@ -156,7 +144,7 @@ UI = {
         "points_title_choukai": "【Mẫu câu・Điểm nghe cần nhớ】",
         "tag_correct": "[Đúng]",
         "tag_wrong": "[Sai]",
-        "footer": "Đề thi thử JLPT N2 — Đáp án mẫu và giải thích chi tiết (模範解答.html)",
+        "footer": "Đề thi thử JLPT {level} — Đáp án mẫu và giải thích chi tiết (模範解答.html)",
     },
 }
 
@@ -1100,7 +1088,7 @@ footer {{
       <a href="解答.html?screen=result" class="header-back-btn">{lbl_back}</a>
       <div class="header-right">
         {lang_switch_html}
-        <span class="header-badge">JLPT N2 MODEL ANSWER &amp; EXPLANATION</span>
+        <span class="header-badge">JLPT {level} MODEL ANSWER &amp; EXPLANATION</span>
       </div>
     </div>
     <h1 class="title">{lbl_title}</h1>
@@ -1299,6 +1287,7 @@ def build_model_answer(test_dir: Path, out_path: Path | None = None) -> Path:
         raise FileNotFoundError(f"Test directory not found: {test_dir}")
 
     test_id = test_dir.name
+    level = LEVEL.declared_level(test_dir) or LEVEL.level_of(test_id)
     gengo_md_path = test_dir / "言語知識・読解.md"
     choukai_md_path = test_dir / "聴解.md"
     script_path = test_dir / "聴解スクリプト.txt"
@@ -1389,14 +1378,15 @@ def build_model_answer(test_dir: Path, out_path: Path | None = None) -> Path:
     # 1. Gengo & Dokkai
     current_sec = None
     gengo_tax = gengo_taxonomy_for(max(canonical_gengo_keys) if canonical_gengo_keys
-                                   else max(gengo_exps, default=71))
+                                   else max(gengo_exps, default=None), level)
     # Item counts the chrome prints. Derived, never typed: a 7/2021 import is
     # 72 + 30 = 102, not the 101 the header used to assert for every paper.
     _span = lambda sec: sum(t["range"][1] - t["range"][0] + 1
                             for t in gengo_tax.values() if t["section"] == sec)
     n_goi, n_bunpou, n_dokkai = _span("文字・語彙"), _span("文法"), _span("読解")
     n_gengo = n_goi + n_bunpou + n_dokkai
-    n_choukai = len(canonical_choukai_keys) or len(choukai_exps) or 30
+    n_choukai = (len(canonical_choukai_keys) or len(choukai_exps)
+                 or LEVEL.choukai(level)["generated_shape"])
     n_all = n_gengo + n_choukai
     prev_passage_text = None
     for tax_key, tax_info in gengo_tax.items():
@@ -1409,7 +1399,7 @@ def build_model_answer(test_dir: Path, out_path: Path | None = None) -> Path:
             content_blocks.append(
                 f'<div class="section-banner" data-section="{sec_code}">'
                 + pane(langs, lambda lg: f'<span>【{UI[lg][sec_label]}】{tax_info["mondai"]} 〜</span>')
-                + f'<small>JLPT N2 {sec_name}</small></div>'
+                + f'<small>JLPT {level} {sec_name}</small></div>'
             )
 
         q_start, q_end = tax_info["range"]
@@ -1509,7 +1499,7 @@ def build_model_answer(test_dir: Path, out_path: Path | None = None) -> Path:
     content_blocks.append(
         '<div class="section-banner" data-section="choukai">'
         + pane(langs, lambda lg: f'<span>【{UI[lg]["tab_choukai"]}】問題1〜問題5</span>')
-        + '<small>JLPT N2 Choukai</small></div>'
+        + f'<small>JLPT {level} Choukai</small></div>'
     )
 
     all_choukai_keys = sorted(set(list(choukai_exps.keys()) + list(canonical_choukai_keys.keys()) + list(choukai_raw.keys())))
@@ -1576,7 +1566,7 @@ def build_model_answer(test_dir: Path, out_path: Path | None = None) -> Path:
     mp3_path = test_dir / "聴解.mp3"
     chapters_path = test_dir / "聴解_チャプター.json"
     if mp3_path.is_file() or chapters_path.is_file():
-        fallback_url = f"https://github.com/feiluvnana/JLPT-N2/releases/download/audio/{test_id}.mp3"
+        fallback_url = LEVEL.audio_release_url(test_id)
         audio_player_html = f"""
         <div id="sticky-audio">
           <span style="font-weight:700; font-size:0.85rem;">{pane(langs, lambda lg: UI[lg]["audio_label"])}</span>
@@ -1604,6 +1594,7 @@ def build_model_answer(test_dir: Path, out_path: Path | None = None) -> Path:
         lang_switch_js=LANG_SWITCH_JS,
         passage_toggle_js=PASSAGE_TOGGLE_JS,
         test_id=test_id,
+        level=level,
         html_lang=UI[default_lang]["html_lang"],
         doc_title=UI[default_lang]["doc_title"].format(test_id=test_id),
         search_placeholder=UI[default_lang]["search_placeholder"],
@@ -1612,12 +1603,12 @@ def build_model_answer(test_dir: Path, out_path: Path | None = None) -> Path:
         lang_strings_json=json.dumps(js_strings, ensure_ascii=False),
         langs_json=json.dumps(langs),
         lbl_back=pane(langs, lambda lg: UI[lg]["back"]),
-        lbl_title=pane(langs, lambda lg: UI[lg]["title"]),
+        lbl_title=pane(langs, lambda lg: UI[lg]["title"].format(level=level)),
         lbl_subtitle=pane(langs, lambda lg: UI[lg]["subtitle"].format(
             test_id=test_id, n_all=n_all, n_gengo=n_gengo, n_choukai=n_choukai)),
         n_all=n_all, n_goi=n_goi, n_bunpou=n_bunpou, n_dokkai=n_dokkai,
         n_choukai=n_choukai,
-        lbl_footer=pane(langs, lambda lg: UI[lg]["footer"]),
+        lbl_footer=pane(langs, lambda lg: UI[lg]["footer"].format(level=level)),
         tab_all=pane(langs, lambda lg: UI[lg]["tab_all"]),
         tab_goi=pane(langs, lambda lg: UI[lg]["tab_goi"]),
         tab_bunpou=pane(langs, lambda lg: UI[lg]["tab_bunpou"]),

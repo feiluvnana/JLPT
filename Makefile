@@ -1,7 +1,7 @@
-# Makefile for JLPT N2 Mock Exam Pipeline
+# Makefile for the JLPT Mock Exam Pipeline (N1–N5; N2 calibrated)
 
 .PHONY: help check check-tests goi-profile dokkai-profile choukai-profile grade sheet practice model-answer explanation keyless serve pages preview-pages booklet mp3 sample \
-       init-import extract-pdf extract-archive extract-keys extract-kanji-tables extract-shinkanzen-goi extract-shinkanzen-dokkai extract-shinkanzen \
+       levels init-import extract-pdf extract-archive extract-keys extract-kanji-tables extract-shinkanzen-goi extract-shinkanzen-dokkai extract-shinkanzen \
        lint-draft lint verify-scramble scaffold-explanations irt \
        scaffold-sections matrix qa-eval autofix findings repair-plan choukai-bank \
        textbook-bank archive-bank number-calls choukai-wear
@@ -28,6 +28,10 @@ TARGET ?= tests
 # never a hand-picked or remembered number — see exam-blueprint/SKILL.md.
 SEED ?=
 SLUG ?=
+# Exam level for the archive targets (extract-archive/-keys, *-profile). A test
+# id already names its own level (n1-… / imported-n1-…; bare = N2), so the
+# per-test targets need nothing. See `make levels`.
+LEVEL ?= N2
 # Explanation language for `make scaffold-explanations`. `ja` scaffolds
 # 詳細解説.json (stems, options, passages pre-filled); anything else scaffolds an
 # EMPTY 詳細解説.<lang>.json — that set is written from the items, never
@@ -52,7 +56,7 @@ UPLOAD_TEST = $(if $(POS_ARG),$(POS_ARG),$(if $(filter command line,$(origin TES
 
 help:
 	@echo "=========================================================================="
-	@echo "                      JLPT N2 Mock Exam Commands                          "
+	@echo "                        JLPT Mock Exam Commands                           "
 	@echo "=========================================================================="
 	@echo "  make check            Verify docs/code/tests consistency (read-only)"
 	@echo "  make check-tests      Same gate, per-test contracts only (skips doc/code checks)"
@@ -87,8 +91,9 @@ help:
 	@echo "  make preview-pages    Serve _site/ locally to check the Pages build"
 	@echo "  make init-import SLUG=n2-2025-12   Scaffold tests/imported-<slug>/"
 	@echo "  make extract-pdf PDF=a.pdf OUT=tests/imported-x/_extract/a.txt"
-	@echo "  make extract-archive  refs/JLPT_N2_NEW/*/ -> booklet.md script.md audio_inspection.md"
-	@echo "  make extract-keys     Answer-key PDF -> per-exam key.md + answer_keys.json"
+	@echo "  make extract-archive  refs/JLPT_<LEVEL>_NEW/*/ -> booklet.md script.md audio_inspection.md [LEVEL=N2]"
+	@echo "  make extract-keys     Answer-key PDF -> per-exam key.md + answer_keys.json [LEVEL=N2]"
+	@echo "  make levels           Each JLPT level's status (scaffold/structured/calibrated) and what is missing"
 	@echo "  make extract-kanji-tables   Shin Kanzen N2-漢字 別冊1 -> refs/Shinkanzen/kanji_tables.md"
 	@echo "  make extract-shinkanzen-goi Shin Kanzen + Soumatome N2 語彙 -> refs/*/goi_reference.md"
 	@echo "  make extract-shinkanzen-dokkai Shin Kanzen N2 読解 -> refs/Shinkanzen/dokkai_reference.md"
@@ -108,13 +113,17 @@ check-tests:
 	python3 tools/check_consistency.py --tests
 
 goi-profile:
-	python3 tools/goi_profile.py $(if $(BASELINE),--baseline,--official --tests)
+	python3 tools/goi_profile.py --level $(LEVEL) $(if $(BASELINE),--baseline,--official --tests)
 
 dokkai-profile:
-	python3 tools/dokkai_profile.py $(if $(BASELINE),--baseline,--official --tests)
+	python3 tools/dokkai_profile.py --level $(LEVEL) $(if $(BASELINE),--baseline,--official --tests)
 
 choukai-profile:
-	python3 tools/choukai_profile.py $(if $(BASELINE),--baseline,--official --tests)
+	python3 tools/choukai_profile.py --level $(LEVEL) $(if $(BASELINE),--baseline,--official --tests)
+
+# Every level's status and what it is still missing (levels/<LEVEL>.json).
+levels:
+	python3 .agents/jlpt-exam-structure/scripts/level.py
 
 # The 聴解 work order: findings -> tier -> the batch that must land before a rebuild.
 # `findings` is the gate in --json mode, so no number is recomputed (REPORT-CHOUKAI.md §5.0).
@@ -250,10 +259,10 @@ extract-pdf:
 # Turn the refs/JLPT_N2_NEW/ past-paper archive into agent-readable Markdown.
 # Read-only with respect to the PDFs/MP3s; writes only the .md/.json beside them.
 extract-archive:
-	python3 tools/extract_jlpt_n2_new.py --all
+	python3 tools/extract_jlpt_n2_new.py --all --level $(LEVEL)
 
 extract-keys:
-	python3 tools/extract_jlpt_n2_key.py
+	python3 tools/extract_jlpt_n2_key.py --level $(LEVEL)
 
 extract-kanji-tables:
 	python3 tools/extract_kanji_tables.py

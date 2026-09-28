@@ -1,7 +1,14 @@
-# JLPT N2 Mock Exam Workshop
+# JLPT Mock Exam Workshop
 
-Generates, calibrates, renders, and grades **official-quality JLPT mock exams**
-(primarily N2), plus imports real past papers into the same format.
+Generates, calibrates, renders, and grades **official-quality JLPT mock exams**,
+plus imports real past papers into the same format. The pipeline is built for
+all five levels (N1–N5); **N2 is the calibrated one today**, and adding another
+level is mostly a matter of adding its `refs/` archive — see
+[Adding a level](#adding-a-level).
+
+Repository: <https://github.com/feiluvnana/JLPT> (renamed from `JLPT-N2` on
+2026-09-28; the old URL redirects). Live site:
+<https://feiluvnana.github.io/JLPT/>.
 
 Each test is a folder under `tests/<test_id>/` holding a complete sitting:
 
@@ -69,7 +76,7 @@ brew install --cask font-noto-serif-cjk-jp font-noto-sans-cjk-jp
 python3 -m pip install markdown pykakasi edge-tts pdfplumber pypdf pdfminer.six mutagen
 
 # 3. Clone — 40 MB, no binaries
-git clone <repo-url> jlpt && cd jlpt
+git clone https://github.com/feiluvnana/JLPT.git jlpt && cd jlpt
 
 # 4. Verify
 make check
@@ -213,7 +220,7 @@ explicitly justified.** Green is the floor, not a verdict on a paper's content.
 make serve            # ONE server for every test → http://127.0.0.1:8765 (no test id)
 make sheet 1          # rebuild tests/1/解答.html + 練習.html (exam + practice mode)
 make booklet 1        # rebuild both booklet HTMLs
-make mp3 1            # re-synthesize tests/1/聴解.mp3
+make mp3 1 SEED=n     # re-compose tests/1/聴解.mp3 from the clip bank
 make grade 1          # CLI grading → 採点結果.json
 make check            # the gate
 make pages            # static GitHub Pages build → _site/
@@ -221,6 +228,62 @@ make pages            # static GitHub Pages build → _site/
 
 Per-test targets take the id positionally (`make sheet 1`) or as `TEST=1`;
 default is `TEST=1`. `make serve` takes no id — one server covers every test.
+
+### Levels
+
+A test's folder name says its level: bare ids are N2 (`20260917_1`), every
+other level carries a prefix (`n1-20261005_1`), and imports name it in the slug
+(`imported-n1-2025-12`). Per-test commands need nothing more — `make sheet
+n1-20261005_1` grades and titles it as N1. The archive commands take `LEVEL=`
+(default `N2`):
+
+```bash
+make levels                         # every level: scaffold / structured / calibrated, and what is missing
+make extract-archive LEVEL=N1       # refs/JLPT_N1_NEW/*/ -> booklet.md, script.md, audio_inspection.md
+make extract-keys LEVEL=N1          # that level's answer-key PDF -> key.md + answer_keys.json
+make goi-profile LEVEL=N1 BASELINE=1
+```
+
+The test list shows each test's level and has an N1–N5 switcher; a level with
+no test yet is shown greyed out.
+
+### Adding a level
+
+Each level has a structure table,
+`.agents/jlpt-exam-structure/references/levels/<LEVEL>.json`. Everything that
+depends on the level reads it: the grader, the answer sheet, the model answer,
+the test list, the sampler, the 聴解 composer, the profilers and `make check`.
+`N1.json` is already there as a scaffold. For N1 (or `python3
+.agents/jlpt-exam-structure/scripts/level.py --scaffold N3` to start another):
+
+1. **Add the archive** under `refs/JLPT_N1_NEW/`, laid out like
+   `refs/JLPT_N2_NEW/` (one folder per sitting: booklet PDF, script PDF, MP3,
+   plus the answer-key PDF at the top), then run `make extract-archive LEVEL=N1`
+   and `make extract-keys LEVEL=N1`. Upload it with `make upload-files
+   TARGET=refs`; it becomes `JLPT_N1_NEW.zip` on the `refs` release.
+2. **Fill the structure** in `N1.json`. Take `scoring` and `timing` from
+   jlpt.jp, and `gengo`/`choukai` (the 大問 list, with one shapes row per era)
+   from the extracted `booklet.md`/`key.md`. Then set `"status": "structured"`.
+   At that point N1 past papers can be imported (`make init-import
+   SLUG=n1-2025-12`), rendered, served and graded, and `make check` runs the
+   structural contracts on them and visibly skips the rest.
+3. **Calibrate** to reach `"status": "calibrated"`. This is content work, not
+   plumbing: teach the three profilers N1's 大問 numbering and take the founding
+   measurement with `BASELINE=1`. Build `pools/N1.json` from the N1 textbook
+   volumes; keep their extracts under `refs/<Book>/N1/` so they don't collide
+   with N2's. Write N1's bands in the question-authoring references, and
+   re-measure the sampler's `DRAW`/target rates. Once N1 is calibrated, `make
+   sample n1-<date>_1` and `make mp3` stop refusing it, and N1's items and
+   聴解 clips go to their own `logs/N1/` ledger, bank and draw record.
+
+Every number in a table is an official jlpt.jp fact or a measurement of that
+level's own archive. None is carried over from N2 (`AGENTS.md` §4). `make
+check` fails any test whose level is still a scaffold, so a new level can't
+pass the gate just because it has nothing in it.
+
+Still open: whether an N1 paper should also avoid 読解/聴解 subjects an N2
+paper used. `logs/topics.json` is shared across levels for now, and the item
+ledgers are separate.
 
 ### Taking a test
 

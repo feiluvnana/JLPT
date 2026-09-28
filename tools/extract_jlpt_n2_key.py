@@ -36,7 +36,11 @@ except ImportError:  # pragma: no cover - dependency guard
     sys.exit("pdfplumber is required: pip install pdfplumber")
 
 ROOT = Path(__file__).resolve().parent.parent
-ARCHIVE = ROOT / "refs" / "JLPT_N2_NEW"
+# The archive is the exam level's (`refs/JLPT_<LEVEL>_NEW/`, named by its
+# structure table); `--level` picks another. N2 by default.
+sys.path.insert(0, str(ROOT / ".agents" / "jlpt-exam-structure" / "scripts"))
+import level as LEVEL  # noqa: E402
+ARCHIVE = LEVEL.archive_dir()
 # macOS stores the Vietnamese filename decomposed (NFD), so match on the
 # normalised form rather than globbing the literal "ĐÁP ÁN".
 KEY_PDF_MARK = "DAP AN JLPT N2"
@@ -304,10 +308,16 @@ def render_key_md(exam: dict, source: str, page_no: int) -> str:
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--pdf", type=Path, help="key PDF (default: the one in refs/JLPT_N2_NEW/)")
+    ap.add_argument("--pdf", type=Path, help="key PDF (default: the one in refs/JLPT_<LEVEL>_NEW/)")
     ap.add_argument("--check", action="store_true",
                     help="parse and validate only; write nothing")
+    ap.add_argument("--level", default=LEVEL.DEFAULT_LEVEL,
+                    help="exam level whose refs/JLPT_<LEVEL>_NEW/ archive to extract (default N2)")
     args = ap.parse_args()
+    global ARCHIVE, KEY_PDF_MARK, JSON_OUT
+    ARCHIVE = LEVEL.archive_dir(args.level)
+    KEY_PDF_MARK = f"DAP AN JLPT {LEVEL.normalize(args.level)}"
+    JSON_OUT = ARCHIVE / "answer_keys.json"
 
     pdf_path = args.pdf
     if pdf_path is None:

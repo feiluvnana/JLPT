@@ -1,0 +1,16 @@
+{
+  "level": "N1",
+  "status": "scaffold",
+  "id_prefix": "n1-",
+  "paths": {
+    "archive": "refs/JLPT_N1_NEW",
+    "pools": ".agents/exam-blueprint/references/pools/N1.json",
+    "ledger": "logs/N1/ledger.json",
+    "choukai_bank": "logs/N1/choukai_bank.json",
+    "choukai_draws": "logs/N1/choukai_draws.json"
+  },
+  "scoring": null,
+  "gengo": null,
+  "choukai": null,
+  "_todo": "Fill scoring from jlpt.jp's 認定の目安/合否判定 for N1; fill gengo/choukai (大問 list, one shapes row per era) from refs/JLPT_N1_NEW/*/booklet.md and key.md; then set status to 'structured'. Test ids at this level start 'n1-'."
+}

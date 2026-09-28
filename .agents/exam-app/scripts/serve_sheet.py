@@ -39,8 +39,8 @@ import app_style      # noqa: E402
 import grade_answers as ga  # noqa: E402  (per-test item counts)
 import index_view     # noqa: E402
 
-# 71 言語知識・読解 + 30 聴解. `make check` asserts 解答.html carries exactly this
-# many radio groups, so it is safe to use as the progress denominator.
+# A generated N2 paper's item count (level table). Only the fallback: every
+# test's own denominator is question_count_of(), off its key tables.
 QUESTION_COUNT = index_view.QUESTION_COUNT
 
 RANGE_RE = re.compile(r"^bytes=(\d*)-(\d*)$")
@@ -64,6 +64,11 @@ def natural_key(name: str):
 def test_origin(test_id: str) -> str:
     """Folder-name origin flag: ``imported-`` prefix ⇒ imported; else generated."""
     return "imported" if test_id.startswith("imported-") else "generated"
+
+
+def level_of(d: Path) -> str:
+    """The test's exam level (`N1`..`N5`) — its own spec/meta, else its id."""
+    return index_view.LEVEL.declared_level(d) or index_view.LEVEL.level_of(d.name)
 
 
 def test_dir(test_id: str) -> Path | None:
@@ -122,6 +127,7 @@ def progress_of(d: Path) -> dict:
     return {
         "id": d.name,
         "origin": test_origin(d.name),
+        "level": level_of(d),
         "answered": answered,
         "total": question_count_of(d),
         "has_sheet": (d / SHEET).is_file(),

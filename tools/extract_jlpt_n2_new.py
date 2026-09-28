@@ -55,7 +55,11 @@ except ImportError:  # pragma: no cover - dependency guard
     sys.exit("pdfplumber is required: pip install pdfplumber")
 
 ROOT = Path(__file__).resolve().parent.parent
-ARCHIVE = ROOT / "refs" / "JLPT_N2_NEW"
+# The archive is the exam level's (`refs/JLPT_<LEVEL>_NEW/`, named by its
+# structure table); `--level` picks another. N2 by default.
+sys.path.insert(0, str(ROOT / ".agents" / "jlpt-exam-structure" / "scripts"))
+import level as LEVEL  # noqa: E402
+ARCHIVE = LEVEL.archive_dir()
 OCR_SRC = ROOT / "tools" / "vision_ocr.swift"
 OCR_BIN = ROOT / "tools" / ".build" / "vision_ocr"
 OCR_DPI = 300  # 500 measured worse: the stencils' own resolution is ~240 DPI
@@ -484,12 +488,16 @@ def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("folders", nargs="*", type=Path, help="exam folders to extract")
-    ap.add_argument("--all", action="store_true", help="every folder under refs/JLPT_N2_NEW/")
+    ap.add_argument("--all", action="store_true", help="every folder under the level's refs/JLPT_<LEVEL>_NEW/")
     ap.add_argument("--only", default="booklet,script,audio",
                     help="comma-separated subset of booklet,script,audio")
     ap.add_argument("--no-ocr", action="store_true",
                     help="skip OCR; script.md then omits the rasterised dialogue")
+    ap.add_argument("--level", default=LEVEL.DEFAULT_LEVEL,
+                    help="exam level whose refs/JLPT_<LEVEL>_NEW/ archive to extract (default N2)")
     args = ap.parse_args()
+    global ARCHIVE
+    ARCHIVE = LEVEL.archive_dir(args.level)
 
     folders = list(args.folders)
     if args.all:

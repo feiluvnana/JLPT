@@ -152,6 +152,7 @@ def build_site(out: Path, test_id: str | None = None, with_audio: bool = True,
         manifest.append({
             "id": d.name,
             "origin": serve_sheet.test_origin(d.name),
+            "level": serve_sheet.level_of(d),
             "has_sheet": True,
             "has_audio": has_audio and with_audio,
             "has_explanation": has_explanation,

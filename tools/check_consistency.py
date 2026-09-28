@@ -91,6 +91,11 @@ def load(rel: str):
 
 # The imported-/generated folder-name flag, owned by external-test-import.
 ORIGIN = load(".agents/external-test-import/scripts/origin.py")
+# The exam level of a test and its structure table, owned by
+# jlpt-exam-structure. Every per-test structural number (item counts, 聴解
+# labels) is read through it; the calibrated checks are N2 measurements and run
+# only on a level whose table says `calibrated`.
+LEVEL = load(".agents/jlpt-exam-structure/scripts/level.py")
 
 # Reuse lint_draft.py's contraction pattern list rather than maintaining a
 # second, narrower copy — the two diverged (this file's own set missed とど-,
@@ -1023,6 +1028,40 @@ def check_item_counts():
 
 
 # --------------------------------------------------------------------- taxonomy
+def check_level_tables():
+    """Every level table is well-formed, and a level cannot go green by being empty.
+
+    `jlpt-exam-structure/references/levels/<LEVEL>.json` is what the grader,
+    the sheet, the model answer, the sampler and this gate read a paper's shape
+    from. A table that does not tile (a shape row that does not sum to its own
+    key, a 大問 with no label) would mis-grade every paper at that level, so it
+    FAILs. A level that is only a `scaffold` — paths declared, structure still
+    null, archive not landed — is reported as a SKIP naming what is missing:
+    an absent corpus is not a pass (AGENTS.md §3), and a silent one is how a
+    level goes green with nothing verified.
+    """
+    print("\nexam level tables (jlpt-exam-structure/references/levels/)")
+    levels = LEVEL.available()
+    check("an N2 level table exists", "N2" in levels,
+          f"found {levels} in {LEVEL.LEVELS_DIR.relative_to(ROOT)}")
+    for lv in levels:
+        t = LEVEL.load(lv)
+        probs = LEVEL.problems(t)
+        check(f"{lv}.json is well-formed (status {t.get('status')!r})", not probs,
+              "; ".join(probs))
+        if lv == LEVEL.DEFAULT_LEVEL:
+            check(f"{lv} is calibrated — every N2 threshold in this gate is its "
+                  f"measurement", LEVEL.is_calibrated(lv), f"status {t.get('status')!r}")
+            continue
+        todo = LEVEL.missing(lv)
+        if todo:
+            skip(f"{lv}: not usable yet ({t.get('status')})", "; ".join(todo))
+    # The N2 table is what the gate's N2 archive path means; one owner.
+    check("N2 archive path is refs/JLPT_N2_NEW (level table)",
+          LEVEL.archive_dir("N2") == ROOT / "refs" / "JLPT_N2_NEW",
+          str(LEVEL.archive_dir("N2")))
+
+
 def check_taxonomy():
     print("\ngengo taxonomy ↔ jlpt-exam-structure ↔ section scaling")
     g = load(".agents/exam-app/scripts/grade_answers.py")   # asserts tiling at import
@@ -9528,7 +9567,7 @@ def check_q14_apparatus_reuse():
             continue
         (imported if ORIGIN.is_imported(d.name) else generated).append((d.name, block))
     archive = []
-    for f in sorted((ROOT / "refs" / "JLPT_N2_NEW").glob("*/booklet.md")):
+    for f in sorted(LEVEL.archive_dir("N2").glob("*/booklet.md")):
         block = q14_block(f.read_text(encoding="utf-8"))
         if block:
             archive.append((f.parent.name, block))
@@ -9920,7 +9959,7 @@ def check_pool_gloss_band():
     """
     print("\npools.json level band vs the archive's own （注N） glosses")
     pools_path = AGENTS / "exam-blueprint" / "references" / "pools.json"
-    books = sorted(ROOT.glob("refs/JLPT_N2_NEW/*/booklet.md"))
+    books = sorted(LEVEL.archive_dir("N2").glob("*/booklet.md"))
     name = "no tested pool headword is glossed in every sitting that prints it"
     if not pools_path.is_file() or not books:
         return skip(name, "no pools.json or no refs/JLPT_N2_NEW/*/booklet.md "
@@ -16208,9 +16247,6 @@ def check_tests():
     m = load(".agents/choukai-audio/scripts/make_choukai_mp3.py")
     bi = load(".agents/exam-app/scripts/build_interactive.py")
     key_heading = re.compile(r"^#+\s*(解答|【?正解)", re.M)
-    expected_choukai = ([f"問{s}-{i}" for s, n in ((1, 5), (2, 6), (3, 5), (4, 11))
-                         for i in range(1, n + 1)]
-                        + ["問5-1", "問5-2-1", "問5-2-2"])
 
     dirs = sorted(p for p in (ROOT / "tests").glob("*") if p.is_dir()) if (ROOT / "tests").is_dir() else []
     if dirs and not any(ORIGIN.is_imported(p.name) for p in dirs):
@@ -16250,6 +16286,26 @@ def check_tests():
     for d in dirs:
         print(f"\nper-test contracts: {d.relative_to(ROOT)}")
         origin = ORIGIN.test_origin(d.name)
+        # The exam level: the id says it (level.py), and a spec/meta that
+        # records one must agree — a mislabelled paper would be graded and
+        # rendered against another level's structure.
+        level = LEVEL.level_of(d.name)
+        declared = LEVEL.declared_level(d)
+        check(f"{d.name}: level {level} (from the id) matches the level its "
+              f"test_spec.json/import_meta.json records",
+              declared in (None, level),
+              f"id says {level}, file says {declared} — generated ids at a "
+              f"non-N2 level start '{level.lower()}-', imports 'imported-{level.lower()}-'")
+        if level not in LEVEL.available() or not LEVEL.has_structure(level):
+            check(f"{d.name}: {level} has a structure table to build and grade "
+                  f"against", False,
+                  f"{level}.json is missing or still a scaffold — `python3 "
+                  f".agents/jlpt-exam-structure/scripts/level.py {level}` lists "
+                  f"what to fill (README 'Adding a level')")
+            continue
+        gen_shape = LEVEL.gengo(level)["generated_shape"]
+        lv_shapes = LEVEL.gengo_shapes(level)
+        ck_shapes = LEVEL.choukai_shapes(level)
         # The listening half has its own origin since 2026-09-08: a GENERATED
         # paper's 聴解 is composed from official clips, not synthesized. Every
         # authoring/register/pacing check below exists to police what an author
@@ -16326,15 +16382,22 @@ def check_tests():
         # 読解 from the wrong question onward — and 1..N must be contiguous, which
         # is what actually catches a dropped row.
         exp_g_count = (max(keys) if origin == "imported" and keys
-                       and max(keys) in g.GENGO_SHAPES else 71)
+                       and max(keys) in lv_shapes else gen_shape)
         check(f"{exp_g_count} gengo answer keys parse", len(keys) == exp_g_count,
               f"got {len(keys)}, missing {[q for q in range(1, exp_g_count + 1) if q not in keys]}"
-              + ("" if not keys or max(keys) in g.GENGO_SHAPES else
+              + ("" if not keys or max(keys) in lv_shapes else
                  f" — highest question number is {max(keys)}, which is no known "
-                 f"era shape {sorted(g.GENGO_SHAPES)}; an import of a paper with "
-                 f"a new shape needs a row in grade_answers.GENGO_SHAPES first"))
+                 f"{level} era shape {sorted(lv_shapes)}; an import of a paper with "
+                 f"a new shape needs a gengo.shapes row in levels/{level}.json first"))
         ck = g.parse_choukai_keys(choukai)
-        exp_c = ([f"問{s}-{i}" for s, n in ((1, 5), (2, 6), (3, 5), (4, 12)) for i in range(1, n + 1)] + ["問5-1", "問5-2", "問5-3-1", "問5-3-2"]) if len(ck) == 32 or "問5-3-1" in ck else expected_choukai
+        # The 聴解 era is the one whose label set this paper's keys match (N2:
+        # 30 current, 32 before 12/2018); a generated paper is the table's
+        # generated_shape.
+        ck_gen = LEVEL.choukai(level)["generated_shape"]
+        exp_c = next((labels for n, labels in sorted(ck_shapes.items())
+                      if origin == "imported" and set(ck) == set(labels)),
+                     ck_shapes[len(ck)] if origin == "imported" and len(ck) in ck_shapes
+                     else ck_shapes[ck_gen])
         check(f"{len(exp_c)} choukai answer keys parse with the expected labels",
               sorted(ck) == sorted(exp_c),
               f"missing {[k for k in exp_c if k not in ck]}, "
@@ -16349,6 +16412,14 @@ def check_tests():
               "; ".join(f"{q}: {v}" for q, v in sorted(dupes.items())))
         wrong_n = {q: len(v) for q, v in opts.items() if len(v) != 4}
         check("every gengo question parses to exactly 4 options", not wrong_n, f"{wrong_n}")
+        if not LEVEL.is_calibrated(level):
+            # Everything below is an N2 measurement or an N2 authoring rule. A
+            # structured-but-uncalibrated level gets the structural contracts
+            # above and a VISIBLE skip for the rest — never a silent green.
+            skip(f"{d.name}: calibrated per-test contracts",
+                 f"{level} is {LEVEL.status(level)!r}, not calibrated — its bands "
+                 f"are not measured yet, so only the structural contracts ran")
+            continue
         check_scramble_stars(gt, keys, opts, origin, d.name)
         check_grammar_stem_lengths(gt, bi, d.name, origin)
         # Official papers include short particle strips; the drill-length defect
@@ -16838,7 +16909,8 @@ def check_grader_parity():
             ua = {"言語知識_読解": {k: v for k, v in flat.items() if not k.startswith("問")},
                   "聴解": {k: v for k, v in flat.items() if k.startswith("問")}}
             res = g.grade(g.parse_gengo_keys(d / "言語知識・読解.md"),
-                          g.parse_choukai_keys(d / "聴解.md"), ua)
+                          g.parse_choukai_keys(d / "聴解.md"), ua,
+                          LEVEL.declared_level(d) or LEVEL.level_of(d.name))
             py_doc = g.result_payload(res, d.name)
 
             # Only the timestamp may differ: 採点結果.json must be byte-comparable
@@ -16879,6 +16951,7 @@ def main():
         check_every_choukai_finding_declares_repair()
         check_remediation_state()
         check_pacing()
+        check_level_tables()
         check_item_counts()
         check_taxonomy()
         check_pool_infrastructure()

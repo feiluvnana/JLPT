@@ -93,7 +93,9 @@ from choukai_segment import (  # noqa: E402
 
 ITEMS_PATH = (ROOT / ".agents" / "choukai-audio" / "references"
               / "archive_items.json")
-ARCHIVE_DIR = ROOT / "refs" / "JLPT_N2_NEW"
+sys.path.insert(0, str(ROOT / ".agents" / "jlpt-exam-structure" / "scripts"))
+import level as _LEVEL  # noqa: E402
+ARCHIVE_DIR = _LEVEL.archive_dir("N2")   # the clip bank is N2's (level table paths)
 ANSWER_KEYS = ARCHIVE_DIR / "answer_keys.json"
 
 # The ten sittings the official half already banks from `tests/imported-n2-*`.

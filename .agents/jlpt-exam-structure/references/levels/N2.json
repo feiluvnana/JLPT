@@ -1,0 +1,334 @@
+{
+  "level": "N2",
+  "status": "calibrated",
+  "id_prefix": "",
+  "paths": {
+    "archive": "refs/JLPT_N2_NEW",
+    "pools": ".agents/exam-blueprint/references/pools.json",
+    "ledger": "logs/ledger.json",
+    "choukai_bank": "logs/choukai_bank.json",
+    "choukai_draws": "logs/choukai_draws.json"
+  },
+  "timing": {
+    "gengo_min": 105,
+    "choukai_min": 50
+  },
+  "scoring": {
+    "max": 180,
+    "pass": 90,
+    "sections": [
+      {
+        "name": "言語知識（文字・語彙・文法）",
+        "max": 60,
+        "cutoff": 19
+      },
+      {
+        "name": "読解",
+        "max": 60,
+        "cutoff": 19
+      },
+      {
+        "name": "聴解",
+        "max": 60,
+        "cutoff": 19
+      }
+    ]
+  },
+  "gengo": {
+    "goi_mondai": 9,
+    "generated_shape": 71,
+    "mondai": [
+      {
+        "code": "問1",
+        "mondai": "問題1",
+        "name": "漢字読み",
+        "en": "Kanji Reading",
+        "part": "文字・語彙",
+        "grader_name": "漢字読み (Kanji Reading)",
+        "group_label": null
+      },
+      {
+        "code": "問2",
+        "mondai": "問題2",
+        "name": "表記",
+        "en": "Orthography",
+        "part": "文字・語彙",
+        "grader_name": "表記 (Orthography)",
+        "group_label": null
+      },
+      {
+        "code": "問3",
+        "mondai": "問題3",
+        "name": "語形成",
+        "en": "Word Formation",
+        "part": "文字・語彙",
+        "grader_name": "語形成 (Word Formation)",
+        "group_label": null
+      },
+      {
+        "code": "問4",
+        "mondai": "問題4",
+        "name": "文脈規定",
+        "en": "Contextual Use",
+        "part": "文字・語彙",
+        "grader_name": "文脈規定 (Word in Context)",
+        "group_label": null
+      },
+      {
+        "code": "問5",
+        "mondai": "問題5",
+        "name": "言い換え類義",
+        "en": "Paraphrases",
+        "part": "文字・語彙",
+        "grader_name": "言い換え類義 (Paraphrases)",
+        "group_label": null
+      },
+      {
+        "code": "問6",
+        "mondai": "問題6",
+        "name": "用法",
+        "en": "Usage in Context",
+        "part": "文字・語彙",
+        "grader_name": "用法 (Correct Usage)",
+        "group_label": null
+      },
+      {
+        "code": "問7",
+        "mondai": "問題7",
+        "name": "文法形式の判断",
+        "en": "Grammar Form",
+        "part": "文法",
+        "grader_name": "文法形式の判断 (Grammar Form)",
+        "group_label": null
+      },
+      {
+        "code": "問8",
+        "mondai": "問題8",
+        "name": "文の組み立て（★）",
+        "en": "Sentence Composition",
+        "part": "文法",
+        "grader_name": "文の組み立て (Sentence Composition ★)",
+        "group_label": null
+      },
+      {
+        "code": "問9",
+        "mondai": "問題9",
+        "name": "文章の文法",
+        "en": "Text Grammar / Cloze",
+        "part": "文法",
+        "grader_name": "文章の文法 (Text Grammar / Cloze)",
+        "group_label": "文章の文法"
+      },
+      {
+        "code": "問10",
+        "mondai": "問題10",
+        "name": "内容理解（短文）",
+        "en": "Short Passages",
+        "part": "読解",
+        "grader_name": "内容理解・短文 (Short Passages)",
+        "group_label": null
+      },
+      {
+        "code": "問11",
+        "mondai": "問題11",
+        "name": "内容理解（中文）",
+        "en": "Medium Passages",
+        "part": "読解",
+        "grader_name": "内容理解・中文 (Medium Passages)",
+        "group_label": "中文"
+      },
+      {
+        "code": "問12",
+        "mondai": "問題12",
+        "name": "統合理解",
+        "en": "Comparative Reading (A/B)",
+        "part": "読解",
+        "grader_name": "統合理解 (A/B Comparative Texts)",
+        "group_label": "統合理解"
+      },
+      {
+        "code": "問13",
+        "mondai": "問題13",
+        "name": "主張理解（長文）",
+        "en": "Long Essay / Thematic",
+        "part": "読解",
+        "grader_name": "主張理解・長文 (Long Essay)",
+        "group_label": "長文"
+      },
+      {
+        "code": "問14",
+        "mondai": "問題14",
+        "name": "情報検索",
+        "en": "Information Retrieval",
+        "part": "読解",
+        "grader_name": "情報検索 (Information Retrieval)",
+        "group_label": "情報検索"
+      }
+    ],
+    "shapes": {
+      "75": [
+        5,
+        5,
+        5,
+        7,
+        5,
+        5,
+        12,
+        5,
+        5,
+        5,
+        9,
+        2,
+        3,
+        2
+      ],
+      "72": [
+        5,
+        5,
+        3,
+        7,
+        5,
+        5,
+        12,
+        5,
+        4,
+        5,
+        9,
+        2,
+        3,
+        2
+      ],
+      "71": [
+        5,
+        5,
+        3,
+        7,
+        5,
+        5,
+        12,
+        5,
+        4,
+        5,
+        8,
+        2,
+        3,
+        2
+      ]
+    },
+    "shape_eras": {
+      "75": "7/2010 – 7/2018",
+      "72": "12/2018 – 7/2021",
+      "71": "12/2021 – 12/2025 (current)"
+    }
+  },
+  "choukai": {
+    "mondai": [
+      {
+        "code": "問題1",
+        "name": "課題理解",
+        "en": "Task Comprehension",
+        "grader_name": "課題理解 (Task Comprehension)"
+      },
+      {
+        "code": "問題2",
+        "name": "ポイント理解",
+        "en": "Point Comprehension",
+        "grader_name": "ポイント理解 (Point Comprehension)"
+      },
+      {
+        "code": "問題3",
+        "name": "概要理解",
+        "en": "Summary Comprehension",
+        "grader_name": "概要理解 (Summary Comprehension)"
+      },
+      {
+        "code": "問題4",
+        "name": "即時応答",
+        "en": "Quick Response",
+        "grader_name": "即時応答 (Quick Response)"
+      },
+      {
+        "code": "問題5",
+        "name": "統合理解",
+        "en": "Integrated Comprehension",
+        "grader_name": "統合理解 (Integrated Comprehension)"
+      }
+    ],
+    "generated_shape": 30,
+    "shapes": {
+      "30": {
+        "counts": [
+          5,
+          6,
+          5,
+          11
+        ],
+        "mondai5": [
+          "問5-1",
+          "問5-2-1",
+          "問5-2-2"
+        ]
+      },
+      "32": {
+        "counts": [
+          5,
+          6,
+          5,
+          12
+        ],
+        "mondai5": [
+          "問5-1",
+          "問5-2",
+          "問5-3-1",
+          "問5-3-2"
+        ]
+      }
+    }
+  },
+  "advice": [
+    {
+      "codes": [
+        "問1",
+        "問2",
+        "問3"
+      ],
+      "text": "『新完全マスター単語N2』『新完全マスター漢字N2』の基本語彙・訓読み・複合語の復習を徹底しましょう。"
+    },
+    {
+      "codes": [
+        "問4",
+        "問5",
+        "問6"
+      ],
+      "text": "語彙の文脈的意味やコロケーション（類義語・用法）の精度を高めましょう。単語カードでの例文暗記が効果的です。"
+    },
+    {
+      "codes": [
+        "問7",
+        "問8",
+        "問9"
+      ],
+      "text": "『新完全マスター文法N2』で機能語の接続・意味の違いおよび文章全体の論理展開（接続詞・指示語）を復習しましょう。"
+    },
+    {
+      "codes": [
+        "問10",
+        "問11",
+        "問12",
+        "問13",
+        "問14"
+      ],
+      "text": "『新完全マスター読解N2』を活用し、設問のキーワードのスキャニングおよび段落ごとの要旨把握のスキマ時間を増やしましょう。"
+    },
+    {
+      "codes": [
+        "問題1",
+        "問題2",
+        "問題3",
+        "問題4",
+        "問題5"
+      ],
+      "text": "『新完全マスター聴解N2』CD音源によるシャドーイングおよび即時応答（問題4）の定型表現・敬語表現の反復練習を行いましょう。"
+    }
+  ]
+}

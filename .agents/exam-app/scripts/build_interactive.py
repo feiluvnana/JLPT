@@ -35,6 +35,9 @@ ROOT = Path(__file__).resolve().parents[3]
 # time rather than sniffed at runtime.
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import local_store  # noqa: E402
+# The exam level's structure table — 大問 labels, scoring bands, repo URL.
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "jlpt-exam-structure" / "scripts"))
+import level as LEVEL  # noqa: E402
 
 _spec = importlib.util.spec_from_file_location(
     "build_booklet",
@@ -50,12 +53,13 @@ _style_spec.loader.exec_module(app_style)
 import markdown  # noqa: E402  (after booklet, which asserts its deps)
 
 # The two countdown clocks, in MINUTES. `jlpt-exam-structure` owns both numbers
-# (§'言語知識(文字・語彙・文法)・読解 — 105 min' and §'聴解 — ~50 min'); they are
-# restated here because the sheet has to enforce them, and check_consistency's
-# check_exam_time_limits reads them back out of that skill so the two cannot
-# drift apart. Change the exam's timing there first, never here.
-GENGO_LIMIT_MIN = 105
-CHOUKAI_LIMIT_MIN = 50
+# (§'言語知識(文字・語彙・文法)・読解 — 105 min' and §'聴解 — ~50 min') and its level
+# table carries them as `timing`, which is what the sheet enforces (per level, in
+# section_limits). These names are N2's, kept for check_consistency's
+# check_exam_time_limits, which reads the skill prose back against them so the
+# prose and the table cannot drift apart. Change the exam's timing there, never here.
+GENGO_LIMIT_MIN = LEVEL.load()["timing"]["gengo_min"]
+CHOUKAI_LIMIT_MIN = LEVEL.load()["timing"]["choukai_min"]
 
 # Everything from here down is the answer key — never rendered.
 KEY_HEADING = re.compile(r"^#+\s*(解答|【?正解)", re.M)
@@ -327,7 +331,7 @@ au.addEventListener('error', ()=>{
 """
 
 SCRIPT = """
-const KEYS = %(keys)s, TESTID = "%(testid)s";
+const KEYS = %(keys)s, TESTID = "%(testid)s", LEVEL = "%(level)s";
 const GENGO_KEYS = %(gengo_keys)s, CHOUKAI_KEYS = %(choukai_keys)s;
 const ANSWER_KEY = %(answer_key)s, TAXONOMY = %(taxonomy)s, ADVICE = %(advice)s;
 // Last 文字・語彙＋文法 question; 読解 starts at the next one. Baked in by
@@ -335,6 +339,9 @@ const ANSWER_KEY = %(answer_key)s, TAXONOMY = %(taxonomy)s, ADVICE = %(advice)s;
 // 72-question paper, 54 on a 75-question one), and the in-page grader must
 // split the sections exactly where the Python grader does.
 const GOI_CUTOFF = %(goi_cutoff)s;
+// The level's scoring bands (levels/<LEVEL>.json via level.py): section names,
+// per-section max and cutoff, total max and pass mark. N2: 60/19 ×3, 180, 90.
+const SCORING = %(scoring)s;
 const CHOUKAI_SCRIPTS = %(choukai_scripts)s;
 
 // Where 「← テスト一覧」 and 「テスト一覧へ戻る」 go: the unified server's root, or
@@ -413,7 +420,8 @@ const StoreLocal = {
 const STORE = STORAGE === 'local' ? StoreLocal : StoreServer;
 // Section labels are the keys grade_answers.py uses in its own result JSON —
 // the two graders write the SAME 採点結果.json shape, and make check proves it.
-const SEC_GENGO = "言語知識（文字・語彙・文法）", SEC_DOKKAI = "読解", SEC_CHOUKAI = "聴解";
+const SEC_GENGO = SCORING.sections[0].name, SEC_DOKKAI = SCORING.sections[1].name,
+      SEC_CHOUKAI = SCORING.sections[2].name;
 const EXAM_TITLE = "テスト " + TESTID + "（受験）", RESULT_TITLE = "テスト " + TESTID + "（採点結果）";
 
 function state(){
@@ -465,7 +473,7 @@ function updateCounter(ans){
   // answer. The clock is the one thing allowed to submit an incomplete section
   // — see timeUp(). Both handlers re-check; this is the visible half.
   gateButton('advance-btn', unansweredIn('gengo', ans).length,
-             "聴解へ進む", "問が未解答です。71問すべてに答えると聴解へ進めます。");
+             "聴解へ進む", "問が未解答です。" + GENGO_KEYS.length + "問すべてに答えると聴解へ進めます。");
   gateButton('grade-btn',
              PHASE === 'done' ? (KEYS.length - gCount - cCount)
                               : unansweredIn('choukai', ans).length,
@@ -558,23 +566,25 @@ function computeResult(ans){
     detailChoukai[k] = {correct: correct, user: user, is_correct: ok};
   }
 
-  // Raw section sizes: 51/54 / 20/21 / 30/32, each scaled to 60 (JLPT equating).
-  const nGoi = goiCutoff, nDokkai = maxQ - goiCutoff, nChoukai = CHOUKAI_KEYS.length || 30;
-  const sGoi = Math.round((goi / nGoi) * 60);
-  const sDokkai = Math.round((dokkai / nDokkai) * 60);
-  const sChoukai = Math.round((choukai / nChoukai) * 60);
+  // Raw section sizes (N2: 51/54 / 20/21 / 30/32), each scaled to the level's
+  // section max (JLPT equating; N2 60).
+  const [cG, cD, cC] = SCORING.sections;
+  const nGoi = goiCutoff, nDokkai = maxQ - goiCutoff, nChoukai = CHOUKAI_KEYS.length;
+  const sGoi = nGoi ? Math.round((goi / nGoi) * cG.max) : 0;
+  const sDokkai = nDokkai ? Math.round((dokkai / nDokkai) * cD.max) : 0;
+  const sChoukai = nChoukai ? Math.round((choukai / nChoukai) * cC.max) : 0;
   const totalScaled = sGoi + sDokkai + sChoukai;
-  const cutoffPassed = sGoi >= 19 && sDokkai >= 19 && sChoukai >= 19;
-  const overallPassed = totalScaled >= 90;
+  const cutoffPassed = sGoi >= cG.cutoff && sDokkai >= cD.cutoff && sChoukai >= cC.cutoff;
+  const overallPassed = totalScaled >= SCORING.pass;
 
-  function sec(correct, total, scaled){
+  function sec(correct, total, scaled, band){
     return {raw_correct: correct, raw_total: total, scaled_score: scaled,
-            cutoff: 19, passed_cutoff: scaled >= 19};
+            cutoff: band.cutoff, passed_cutoff: scaled >= band.cutoff};
   }
   const sections = {};
-  sections[SEC_GENGO] = sec(goi, nGoi, sGoi);
-  sections[SEC_DOKKAI] = sec(dokkai, nDokkai, sDokkai);
-  sections[SEC_CHOUKAI] = sec(choukai, nChoukai, sChoukai);
+  sections[SEC_GENGO] = sec(goi, nGoi, sGoi, cG);
+  sections[SEC_DOKKAI] = sec(dokkai, nDokkai, sDokkai, cD);
+  sections[SEC_CHOUKAI] = sec(choukai, nChoukai, sChoukai, cC);
 
   const taxonomy = {};
   for (const t of TAXONOMY){
@@ -600,7 +610,7 @@ function computeResult(ans){
     summary: {
       passed: overallPassed && cutoffPassed,
       total_scaled_score: totalScaled,
-      max_scaled_score: 180,
+      max_scaled_score: SCORING.max,
       cutoff_passed: cutoffPassed,
       overall_threshold_passed: overallPassed,
       sections: sections
@@ -820,15 +830,17 @@ function groupHeaderLabel(keys){
   if (keys.length === 1) return '設問 ' + keys[0];
   const first = keys[0], last = keys[keys.length - 1];
   if (/^\\d+$/.test(first)){
+    // The 大問 and its short label come from the level table (TAXONOMY's
+    // `mondai`/`group`), never a question-number chain: that chain was the
+    // 71-item N2 map, and it silently mislabelled every other shape. A 大問
+    // holding several equal-size passages (N2 問題11: 4 × 2) numbers them.
     let sub = '';
-    if (first === '48') sub = '（問題9 文章の文法）';
-    else if (first === '57') sub = '（問題11 中文 (1)）';
-    else if (first === '59') sub = '（問題11 中文 (2)）';
-    else if (first === '61') sub = '（問題11 中文 (3)）';
-    else if (first === '63') sub = '（問題11 中文 (4)）';
-    else if (first === '65') sub = '（問題12 統合理解）';
-    else if (first === '67') sub = '（問題13 長文）';
-    else if (first === '70') sub = '（問題14 情報検索）';
+    const t = TAXONOMY.find(x => x.group && x.keys.indexOf(first) !== -1);
+    if (t){
+      const per = keys.length, of = Math.round(t.keys.length / per);
+      const nth = Math.floor(t.keys.indexOf(first) / per) + 1;
+      sub = '（' + t.mondai + ' ' + t.group + (of > 1 ? ' (' + nth + ')' : '') + '）';
+    }
     return '設問 ' + first + ' 〜 ' + last + sub;
   }
   return '設問 ' + keys.join(' ・ ') + '（問題5 2番 共通）';
@@ -915,7 +927,7 @@ function resultHtml(res, msg, saved){
 
   // Screen 3 carries the same sticky #bar as screens 1 and 2, so its own
   // buttons belong at the END of the page — after the report you came to read.
-  L.push('<h1>JLPT N2 模擬試験 採点結果（テスト ' + res.test_id + '）</h1>');
+  L.push('<h1>JLPT ' + LEVEL + ' 模擬試験 採点結果（テスト ' + res.test_id + '）</h1>');
   L.push('<p class="rs-saved' + (saved ? ' ok' : '') + '">' + msg + '</p>');
   L.push('<div class="rs-head ' + cls + '">'
     + '<span class="rs-verdict">' + (s.passed ? '合格 (PASS)' : '不合格 (FAIL)') + '</span>'
@@ -937,17 +949,19 @@ function resultHtml(res, msg, saved){
   L.push('<h2>1. 得点サマリー (得点等化スケールスコア 換算)</h2>');
   L.push('<div class="ui-table-wrap"><table class="ui-table"><thead><tr><th>セクション</th><th>素点</th><th>換算得点</th>'
     + '<th>基準点</th><th>判定</th></tr></thead><tbody>');
+  let si = 0;
   for (const name in s.sections){
     const d = s.sections[name];
+    const band = SCORING.sections[si++] || SCORING.sections[0];
     L.push('<tr><td>' + name + '</td>'
       + '<td class="n">' + d.raw_correct + ' / ' + d.raw_total + '</td>'
-      + '<td class="n"><b>' + d.scaled_score + '</b> / 60</td>'
+      + '<td class="n"><b>' + d.scaled_score + '</b> / ' + band.max + '</td>'
       + '<td class="n">' + d.cutoff + '点</td>'
       + '<td>' + (d.passed_cutoff ? '基準点クリア' : '基準点未達') + '</td></tr>');
   }
   L.push('<tr><td><b>総合計</b></td><td class="n">-</td>'
-    + '<td class="n"><b>' + s.total_scaled_score + '</b> / 180</td>'
-    + '<td class="n">90点</td><td><b>'
+    + '<td class="n"><b>' + s.total_scaled_score + '</b> / ' + SCORING.max + '</td>'
+    + '<td class="n">' + SCORING.pass + '点</td><td><b>'
     + (s.passed ? '合格 (PASS)' : '不合格 (FAIL)') + '</b></td></tr>');
   L.push('</tbody></table></div>');
 
@@ -1041,7 +1055,7 @@ async function finishGengo(auto){
   if (!auto){
     const missing = unansweredIn('gengo');
     if (missing.length) return reportGap(missing,
-      "問が未解答です。71問すべてに答えてから聴解へ進んでください。");
+      "問が未解答です。" + GENGO_KEYS.length + "問すべてに答えてから聴解へ進んでください。");
     if (!confirm("言語知識（文字・語彙・文法）・読解を提出して聴解に進みます。\\n"
                + "提出したあとは、この部分に戻ることはできません。\\n\\nよろしいですか？")) return;
   }
@@ -1486,11 +1500,12 @@ def section_limits(d: Path) -> dict:
     the <audio> element's own metadata, for a machine with no ffprobe and for
     the Pages build, where the MP3 is streamed from the release.
     """
+    timing = LEVEL.load(LEVEL.declared_level(d) or LEVEL.level_of(d.name))["timing"]
     audio_ms = mp3_duration_ms(d)
-    choukai = CHOUKAI_LIMIT_MIN * 60_000
+    choukai = timing["choukai_min"] * 60_000
     if audio_ms:
         choukai = max(choukai, audio_ms + 60_000)
-    return {"gengo_limit_ms": GENGO_LIMIT_MIN * 60_000, "choukai_limit_ms": choukai}
+    return {"gengo_limit_ms": timing["gengo_min"] * 60_000, "choukai_limit_ms": choukai}
 
 
 def gate(sec: str, title: str, limit_ms: int, count: int) -> str:
@@ -1742,7 +1757,7 @@ def player_html(d: Path) -> str:
     data = "null"
     if chapters.is_file():
         data = chapters.read_text(encoding="utf-8")
-    fallback_url = f"https://github.com/feiluvnana/JLPT-N2/releases/download/audio/{d.name}.mp3"
+    fallback_url = LEVEL.audio_release_url(d.name)
     return (
         '<div id="player">'
         f'<audio id="au" controls preload="metadata" src="聴解.mp3" data-fallback-src="{fallback_url}"></audio>'
@@ -1762,7 +1777,8 @@ def player_html(d: Path) -> str:
 
 
 def grading_data(gam, gids: list, ckeys: dict, combined_keys: dict,
-                  choukai_scripts: dict | None = None):
+                  choukai_scripts: dict | None = None,
+                  level: str = LEVEL.DEFAULT_LEVEL):
     """Serialize grade_answers.py taxonomy/advice for in-page grading.
 
     The 大問 map is chosen from THIS paper's own last question number, because an
@@ -1771,14 +1787,17 @@ def grading_data(gam, gids: list, ckeys: dict, combined_keys: dict,
     Python grader on any other shape, which make check's in-page↔CLI parity
     check would then report as a grader bug.
     """
-    max_q = max((int(q) for q in gids if str(q).isdigit()), default=71)
+    max_q = max((int(q) for q in gids if str(q).isdigit()),
+                default=LEVEL.gengo(level)["generated_shape"])
+    labels = {m["code"]: m for m in LEVEL.gengo(level)["mondai"]}
     tax_gengo = [{"code": c, "name": s["name"], "section": s["section"],
+                  "mondai": labels[c]["mondai"], "group": labels[c].get("group_label"),
                   "keys": [str(q) for q in range(s["range"][0], s["range"][1] + 1)]}
-                 for c, s in gam.gengo_taxonomy(max_q).items()]
+                 for c, s in gam.gengo_taxonomy(max_q, level).items()]
     tax_choukai = [{"code": c, "name": s["name"], "section": s["section"],
                     "keys": [k for k in ckeys
                              if k.startswith("問" + c.replace("問題", "") + "-")]}
-                   for c, s in gam.CHOUKAI_QUESTION_TAXONOMY.items()]
+                   for c, s in gam.choukai_taxonomy(level).items()]
 
     combined_tax = [t for t in (tax_gengo + tax_choukai) if t["keys"]]
 
@@ -1787,8 +1806,9 @@ def grading_data(gam, gids: list, ckeys: dict, combined_keys: dict,
         "choukai_keys": json.dumps(list(ckeys.keys()), ensure_ascii=False),
         "answer_key": json.dumps({str(k): v for k, v in combined_keys.items()}, ensure_ascii=False),
         "taxonomy": json.dumps(combined_tax, ensure_ascii=False),
-        "goi_cutoff": json.dumps(gam.gengo_goi_cutoff(max_q)),
-        "advice": json.dumps(gam.ADVICE_FOR, ensure_ascii=False),
+        "goi_cutoff": json.dumps(gam.gengo_goi_cutoff(max_q, level)),
+        "scoring": json.dumps(LEVEL.scoring(level), ensure_ascii=False),
+        "advice": json.dumps(gam.advice_for(level), ensure_ascii=False),
         "choukai_scripts": json.dumps(choukai_scripts or {}, ensure_ascii=False),
     }
 
@@ -1871,12 +1891,12 @@ def render_combined(gengo_md: str, choukai_md: str, testid: str, keys: list,
         f'<div id="screen-exam">'
         f'{gate("gengo", "言語知識（文字・語彙・文法）・読解", gengo_limit_ms, n_gengo)}'
         f'<div id="section-gengo" style="display:none">'
-        f'<h1 class="section-title">JLPT N2 言語知識（文字・語彙・文法）・読解</h1>'
+        f'<h1 class="section-title">JLPT {gdata["level"]} 言語知識（文字・語彙・文法）・読解</h1>'
         f'{gengo_body}</div>'
         f'<hr class="section-divider" id="section-divider" style="display:none">'
         f'{gate("choukai", "聴解", choukai_limit_ms, n_choukai)}'
         f'<div id="section-choukai" style="display:none">'
-        f'<h1 class="section-title">JLPT N2 聴解</h1>'
+        f'<h1 class="section-title">JLPT {gdata["level"]} 聴解</h1>'
         f'{player}{choukai_body}</div>'
         f'</div>'
     )
@@ -2024,7 +2044,9 @@ def build(d: Path, storage: str = "server", out_dir: Path | None = None) -> Path
     dest = out_dir if out_dir is not None else d
     dest.mkdir(parents=True, exist_ok=True)
     out = dest / "解答.html"
-    gdata = grading_data(gam, gids, ckeys, combined_keys, choukai_scripts)
+    level = LEVEL.declared_level(d) or LEVEL.level_of(testid)
+    gdata = grading_data(gam, gids, ckeys, combined_keys, choukai_scripts, level)
+    gdata["level"] = level
     gdata.update(section_limits(d))
     # 聴解_チャプター.json is stamped as a FOURTH source because player_html()
     # embeds it verbatim: a rebuilt MP3 changes every chapter offset while the

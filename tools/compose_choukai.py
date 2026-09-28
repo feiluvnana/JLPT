@@ -58,8 +58,13 @@ from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-BANK_PATH = ROOT / "logs" / "choukai_bank.json"
-DRAWS_PATH = ROOT / "logs" / "choukai_draws.json"
+# The clip bank and the draw record are per level (the level table's paths): an
+# N1 paper can only be composed from N1 recordings. main() rebinds both for the
+# level the test id names; these are N2's.
+sys.path.insert(0, str(ROOT / ".agents" / "jlpt-exam-structure" / "scripts"))
+import level as LEVEL  # noqa: E402
+BANK_PATH = LEVEL.path(LEVEL.DEFAULT_LEVEL, "choukai_bank")
+DRAWS_PATH = LEVEL.path(LEVEL.DEFAULT_LEVEL, "choukai_draws")
 
 SECTIONS = {"問題1": 5, "問題2": 6, "問題3": 5, "問題4": 11, "問題5": 2}
 
@@ -1089,6 +1094,16 @@ def main(argv: list[str] | None = None) -> int:
     test_dir = ROOT / "tests" / args.test_id
     if not test_dir.is_dir():
         sys.exit(f"no such test: {test_dir.relative_to(ROOT)}")
+    # SECTIONS, the pauses and the acceptance bands are N2 measurements; a level
+    # without its own calibration has no bank to draw from.
+    global BANK_PATH, DRAWS_PATH
+    level = LEVEL.declared_level(test_dir) or LEVEL.level_of(args.test_id)
+    if not LEVEL.is_calibrated(level):
+        sys.exit(f"{args.test_id} is a {level} paper and {level} is not calibrated "
+                 f"(status {LEVEL.status(level)!r}): there is no {level} clip bank "
+                 f"or pacing table yet (README 'Adding a level')")
+    BANK_PATH = LEVEL.path(level, "choukai_bank")
+    DRAWS_PATH = LEVEL.path(level, "choukai_draws")
 
     bank = load_bank()
     index = by_id(bank)

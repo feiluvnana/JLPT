@@ -549,11 +549,12 @@ def build(d: Path, out_dir: Path | None = None, storage: str = "server") -> Path
             f'<a class="ui-btn" href="模範解答.html">'
             f'{label(langs, "model_answer")}</a></div></div>')
 
+    level = bi.LEVEL.declared_level(d) or bi.LEVEL.level_of(d.name)
     body = (f'<div id="screen-exam">{note}'
-            f'<h1 class="section-title">JLPT N2 言語知識（文字・語彙・文法）・読解</h1>'
+            f'<h1 class="section-title">JLPT {level} 言語知識（文字・語彙・文法）・読解</h1>'
             f'{gengo_body}'
             f'<hr class="section-divider">'
-            f'<h1 class="section-title">JLPT N2 聴解</h1>'
+            f'<h1 class="section-title">JLPT {level} 聴解</h1>'
             f'{player}{choukai_body}</div>')
 
     js = (PRACTICE_JS % {"answers": json.dumps(answers, ensure_ascii=False),

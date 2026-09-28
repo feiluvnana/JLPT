@@ -6,6 +6,8 @@ on:
     paths:
       - 'tests/**'
       - '.agents/exam-app/**'
+      - '.agents/exam-model-answer/**'
+      - '.agents/jlpt-exam-structure/**'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 

@@ -6,19 +6,19 @@ progress lives in localStorage instead. Rendering it twice in two languages is
 exactly how "the same" screen drifts, so the markup lives here once, in JS, and
 both deployments feed it the SAME array of test objects:
 
-    {id, origin, answered, total, has_sheet, has_audio,
+    {id, origin, level, answered, total, has_sheet, has_audio,
      result: {passed, total_scaled_score, max_scaled_score, graded_at} | null}
 
 `serve_sheet.py` produces that array in Python (`progress_of()`) and hands it
 over `GET /api/tests`; the Pages build bakes a manifest of the static half
-(`id/origin/has_sheet/has_audio`) and the page fills in the progress half from
+(`id/origin/level/has_sheet/has_audio`) and the page fills in the progress half from
 localStorage. Only the *source* differs — the cards, the CSS and the actions are
 this file.
 
 The cards are not a flat list: they hang under two collapsible `<details>`
 groups keyed on `origin` (imported past papers vs generated mocks), both shut on
-load, plus a search box that filters on id/origin and force-opens whichever
-group holds a hit.
+load, plus a search box that filters on id/origin/level (`n1`, `N2`) and
+force-opens whichever group holds a hit. Every card carries its exam level.
 
 Keep it dependency-free (see app_style.py): `make serve` must start without the
 authoring dependencies installed.
@@ -35,10 +35,12 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import app_style      # noqa: E402
 import local_store    # noqa: E402
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "jlpt-exam-structure" / "scripts"))
+import level as LEVEL  # noqa: E402
 
-# 71 言語知識・読解 + 30 聴解. `make check` asserts 解答.html carries exactly this
-# many radio groups, so it is safe to use as the progress denominator.
-QUESTION_COUNT = 101
+# A generated N2 paper's item count (71 言語知識・読解 + 30 聴解), from the level
+# table — only the fallback denominator; every row carries its own `total`.
+QUESTION_COUNT = LEVEL.total_items()
 
 SHEET = "解答.html"
 
@@ -150,6 +152,20 @@ code{background:#f1f5f9;padding:.15em .45em;border-radius:4px;font-size:9.5pt;bo
 .group .g-body .card{margin-bottom:.8em}
 .group .g-body .card:last-child{margin-bottom:0}
 .group .g-empty{padding:.4em .2em;color:var(--muted);font-size:10pt}
+/* Level switcher: one segment per JLPT level plus すべて. A level with no test
+   on disk yet stays visible but disabled — the portal covers N1–N5, and a
+   greyed N1 says "coming" where a missing one would say "not supported". */
+.levels{display:flex;flex-wrap:wrap;gap:.45em;margin:0 0 1.1em}
+.lv-btn{font-family:var(--ui);font-size:10.5pt;font-weight:700;cursor:pointer;
+  padding:.45em 1em;border-radius:9999px;border:1px solid #cbd5e1;background:#fff;
+  color:#334155;display:inline-flex;align-items:center;gap:.45em;
+  font-variant-numeric:tabular-nums}
+.lv-btn .n{font-size:8.5pt;font-weight:700;color:#64748b;background:#f1f5f9;
+  border-radius:9999px;padding:.05em .55em}
+.lv-btn:hover:not([disabled]){border-color:var(--accent)}
+.lv-btn.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.lv-btn.on .n{background:rgba(255,255,255,.22);color:#fff}
+.lv-btn[disabled]{opacity:.45;cursor:default}
 @media screen and (max-width: 54em){
   main{padding:1.2em 1em 4em}
   .card{grid-template-columns:1fr auto;grid-template-rows:auto auto auto auto auto;
@@ -203,7 +219,7 @@ function localTests(){
   return (window.PAGES_TESTS || []).map(function(t){
     var res = window.JLPTStore.result(t.id), summary = res && res.summary;
     return {
-      id: t.id, origin: t.origin, total: t.total || TOTAL,
+      id: t.id, origin: t.origin, level: t.level, total: t.total || TOTAL,
       has_sheet: t.has_sheet, has_audio: t.has_audio,
       has_explanation: t.has_explanation,
       answered: countAnswered(window.JLPTStore.answers(t.id)),
@@ -246,9 +262,10 @@ function meterHtml(t){
 }
 
 function originBadgeHtml(t){
+  var lv = t.level ? t.level + ' · ' : '';
   return t.origin === 'imported'
-    ? '<span class="badge origin-imp">imported</span>'
-    : '<span class="badge origin-gen">generated</span>';
+    ? '<span class="badge origin-imp">' + lv + 'imported</span>'
+    : '<span class="badge origin-gen">' + lv + 'generated</span>';
 }
 
 function badgeHtml(t){
@@ -308,9 +325,38 @@ var QUERY = '';
    no toggle event. */
 var OPEN = {imported: false, generated: false};
 
+/* The level switcher. Every card carries its level (level.py, off the folder
+   name); the choice survives reloads per browser. */
+var LEVELS = ['N1', 'N2', 'N3', 'N4', 'N5'];
+// Deliberately outside local_store's STORAGE_PREFIX namespace, or
+// JLPTStore.ids() would list it as a test.
+var LEVEL_KEY = 'jlpt-list/level';
+var LEVEL_SEL = 'all';
+try { LEVEL_SEL = localStorage.getItem(LEVEL_KEY) || 'all'; } catch (e) {}
+
+function matchesLevel(t){ return LEVEL_SEL === 'all' || (t.level || 'N2') === LEVEL_SEL; }
+
+function levelBarHtml(tests){
+  function n(lv){ return tests.filter(function(t){ return (t.level || 'N2') === lv; }).length; }
+  function btn(key, label, count){
+    return '<button type="button" class="lv-btn' + (LEVEL_SEL === key ? ' on' : '') + '"'
+         + ' data-level="' + key + '"' + (count ? '' : ' disabled title="まだテストがありません"')
+         + ' aria-pressed="' + (LEVEL_SEL === key) + '">' + label
+         + '<span class="n">' + count + '</span></button>';
+  }
+  return btn('all', 'すべて', tests.length)
+       + LEVELS.map(function(lv){ return btn(lv, lv, n(lv)); }).join('');
+}
+
+function setLevel(lv){
+  LEVEL_SEL = lv;
+  try { localStorage.setItem(LEVEL_KEY, lv); } catch (e) {}
+  render(TESTS);
+}
+
 function matchesQuery(t){
   if (!QUERY) return true;
-  var hay = (t.id + ' ' + (t.origin || '')).toLowerCase();
+  var hay = (t.id + ' ' + (t.origin || '') + ' ' + (t.level || '')).toLowerCase();
   return QUERY.split(/\\s+/).every(function(w){ return !w || hay.indexOf(w) >= 0; });
 }
 
@@ -331,7 +377,12 @@ function groupHtml(g, tests){
 
 function render(tests){
   TESTS = tests;     // the search re-renders from here — one assignment, one place
-  var shown = tests.filter(matchesQuery);
+  // A remembered level with nothing on disk any more falls back to すべて.
+  if (LEVEL_SEL !== 'all' && !tests.some(function(t){ return (t.level || 'N2') === LEVEL_SEL; }))
+    LEVEL_SEL = 'all';
+  var bar = document.getElementById('levels');
+  if (bar) bar.innerHTML = levelBarHtml(tests);
+  var shown = tests.filter(matchesQuery).filter(matchesLevel);
   var body = tests.length
     ? GROUPS.map(function(g){ return groupHtml(g, shown.filter(g.test)); }).join('')
     : '<div class="empty">tests/ にテストがありません。'
@@ -426,6 +477,8 @@ document.addEventListener('click', function(ev){
   if (!el || !el.closest) return;
   var btn = el.closest('[data-clear]');
   if (btn){ clearTestProgress(btn.getAttribute('data-clear')); return; }
+  var lv = el.closest('[data-level]');
+  if (lv && !lv.disabled){ setLevel(lv.getAttribute('data-level')); return; }
   if (el.closest('#q-clear')){
     var box = document.getElementById('q');
     if (box){ box.value = ''; box.focus(); }
@@ -451,7 +504,8 @@ def index_js() -> str:
     return INDEX_JS % {"total": QUESTION_COUNT, "sheet": json.dumps(SHEET, ensure_ascii=False)}
 
 
-GROUP_NOTE = ('テストは<b>公式過去問（imported）</b>と<b>模擬試験（generated）</b>の'
+GROUP_NOTE = ('上のボタンでレベル（N1〜N5）を切り替えられます。'
+              'テストは<b>公式過去問（imported）</b>と<b>模擬試験（generated）</b>の'
               '2グループに分かれています。見出しをクリックすると開きます。'
               '検索欄に入力すると、一致したテストを含むグループが自動で開きます。')
 
@@ -469,7 +523,7 @@ LEDE_LOCAL = ('受験するテストを選んでください。解答と採点�
 SEARCHBAR = ('<div class="searchbar">'
              '<input id="q" type="search" autocomplete="off" spellcheck="false" '
              'aria-label="テストを検索" '
-             'placeholder="テストを検索（テスト ID / imported / generated）">'
+             'placeholder="テストを検索（テスト ID / レベル / imported / generated）">'
              '<button type="button" class="ui-btn" id="q-clear">クリア</button>'
              '<span class="hits" id="hits"></span>'
              '</div>')
@@ -509,20 +563,21 @@ def index_html(mode: str = "server", tests: list | None = None) -> str:
         '<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8">'
         '<meta name="viewport" content="width=device-width,initial-scale=1">'
         f'{FONT_TAGS}'
-        '<title>JLPT N2 模擬試験 — テスト一覧</title>'
+        '<title>JLPT 模擬試験 — テスト一覧</title>'
         f'<style>{app_style.APP_CSS}{INDEX_CSS}</style></head><body>'
         f'<script>window.LIST_MODE = "{mode}";</script>{boot}'
         '<header class="app-header">'
         '<div class="header-inner">'
         '<div class="header-top-row">'
-        '<span class="header-badge">JLPT N2 MOCK EXAM PORTAL</span>'
+        '<span class="header-badge">JLPT MOCK EXAM PORTAL · N1–N5</span>'
         '<span class="sub" id="counts" style="color:#94a3b8;font-size:0.85rem;font-variant-numeric:tabular-nums;">読み込み中…</span>'
         '</div>'
-        '<h1 class="title">日本語能力試験 N2 模擬試験</h1>'
+        '<h1 class="title">日本語能力試験 模擬試験</h1>'
         '<div class="subtitle">公式過去問アーカイブ ＆ 精選模擬試験プラットフォーム ｜ 全問詳細解説付き</div>'
         '</div></header>'
         f'<main><p class="lede">{LEDE_LOCAL if local else LEDE_SERVER}</p>'
         f'{TOOLS_LOCAL if local else ""}'
+        '<div class="levels" id="levels" role="group" aria-label="レベル"></div>'
         f'{SEARCHBAR}'
         '<div id="cards"></div></main>'
         f'<script>{index_js()}</script>'

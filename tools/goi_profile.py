@@ -33,7 +33,11 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-REFS = ROOT / "refs" / "JLPT_N2_NEW"
+# The archive is the exam level's (`refs/JLPT_<LEVEL>_NEW/`, named by its
+# structure table); `--level` picks another. N2 by default.
+sys.path.insert(0, str(ROOT / ".agents" / "jlpt-exam-structure" / "scripts"))
+import level as LEVEL  # noqa: E402
+REFS = LEVEL.archive_dir()
 TESTS = ROOT / "tests"
 
 # Same definition as `check_consistency.jp_char_count()`; the gate asserts the
@@ -497,7 +501,11 @@ def main() -> int:
     ap.add_argument("--baseline", action="store_true")
     ap.add_argument("--matrix", action="store_true")
     ap.add_argument("--json", action="store_true")
+    ap.add_argument("--level", default=LEVEL.DEFAULT_LEVEL,
+                    help="exam level whose refs/JLPT_<LEVEL>_NEW/ archive to measure (default N2)")
     a = ap.parse_args()
+    global REFS
+    REFS = LEVEL.archive_dir(a.level)
     if a.baseline:
         baseline()
         return 0

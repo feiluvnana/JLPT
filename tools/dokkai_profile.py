@@ -29,7 +29,11 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-REFS = ROOT / "refs" / "JLPT_N2_NEW"
+# The archive is the exam level's (`refs/JLPT_<LEVEL>_NEW/`, named by its
+# structure table); `--level` picks another. N2 by default.
+sys.path.insert(0, str(ROOT / ".agents" / "jlpt-exam-structure" / "scripts"))
+import level as LEVEL  # noqa: E402
+REFS = LEVEL.archive_dir()
 TESTS = ROOT / "tests"
 
 # Same definition as `check_consistency.jp_char_count()`.
@@ -915,7 +919,15 @@ def main():
     ap.add_argument("--baseline", action="store_true", help="output baseline markdown tables")
     ap.add_argument("--json", action="store_true", help="output JSON")
 
+    ap.add_argument("--level", default=LEVEL.DEFAULT_LEVEL,
+
+                    help="exam level whose refs/JLPT_<LEVEL>_NEW/ archive to measure (default N2)")
+
     args = ap.parse_args()
+
+    global REFS
+
+    REFS = LEVEL.archive_dir(args.level)
 
     profiles: list[PaperProfile] = []
     if args.baseline or args.official:

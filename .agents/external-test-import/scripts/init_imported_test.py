@@ -18,6 +18,8 @@ from pathlib import Path
 SCRIPT_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPT_DIR))
 from origin import IMPORTED_PREFIX, imported_id  # noqa: E402
+sys.path.insert(0, str(SCRIPT_DIR.parents[1] / "jlpt-exam-structure" / "scripts"))
+import level as LEVEL  # noqa: E402
 
 ROOT = SCRIPT_DIR.parents[2]
 TESTS = ROOT / "tests"
@@ -37,7 +39,9 @@ def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--slug", required=True,
                     help="id suffix after imported- (e.g. n2-2025-12)")
-    ap.add_argument("--level", default="N2")
+    ap.add_argument("--level", default=None,
+                    help="exam level; derived from the slug (n1-… → N1), and "
+                         "must agree with it when given")
     ap.add_argument("--booklet", type=Path, help="source booklet PDF/MD")
     ap.add_argument("--script", type=Path, help="source listening script PDF/txt")
     ap.add_argument("--audio", type=Path, help="source listening MP3")
@@ -50,6 +54,10 @@ def main() -> None:
         test_id = imported_id(args.slug)
     except ValueError as e:
         sys.exit(str(e))
+    level = LEVEL.level_of(test_id)
+    if args.level and LEVEL.normalize(args.level) != level:
+        sys.exit(f"--level {args.level} disagrees with the slug, which says {level}: "
+                 f"name the level in the slug (imported-{args.level.lower()}-…)")
 
     dest = TESTS / test_id
     if dest.exists() and not args.force:
@@ -65,7 +73,7 @@ def main() -> None:
     meta = {
         "origin": "imported",
         "test_id": test_id,
-        "level": args.level,
+        "level": level,
         "imported_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "sources": {
             "booklet": rel_or_abs(args.booklet),

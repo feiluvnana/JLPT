@@ -5,6 +5,42 @@ description: Single owner of official JLPT exam format facts — section layout,
 
 # JLPT Exam Structure (N2 reference)
 
+## Levels — the machine-readable half of this skill
+
+This file is prose about **N2**. What code needs from it lives in one table per
+level, `references/levels/<LEVEL>.json`, read only through
+`scripts/level.py` (`make levels` prints every level's state):
+
+| Field | Holds | N2 |
+| --- | --- | --- |
+| `status` | `scaffold` (paths only) → `structured` (paper shape filled: import, render, grade) → `calibrated` (pools, bands, gate thresholds measured) | `calibrated` |
+| `id_prefix` | folder-name prefix of a generated paper; imports put it in the slug | `""` (bare `20260917_1`; `imported-n2-…`) |
+| `paths` | that level's `refs/JLPT_<LEVEL>_NEW/` archive, pool, ledger, 聴解 clip bank and draw record | today's paths, unchanged |
+| `timing` | the two section allowances | 105 / 50 min |
+| `scoring` | section names, per-section max and cutoff, total, pass mark | 60/19 ×3, 180, 90 |
+| `gengo` | the 大問 list (code, name, EN gloss, booklet part, grader label) and one item-count row per **era** | shapes 71 / 72 / 75 |
+| `choukai` | the 聴解 大問 list and label shapes per era | shapes 30 / 32 |
+| `advice` | weak-area study advice (names that level's textbooks) | Shin Kanzen N2 |
+
+The grader, the answer sheet, the practice page, the model answer, the test
+list, the sampler, the 聴解 composer, the profilers and the gate all read this
+table; none of them restates a count. `make check` asserts the §-tables below
+agree with N2's row (`check_taxonomy`, `check_item_counts`), validates every
+table (`check_level_tables`), and FAILs a test whose level is still a scaffold.
+A `structured` level runs the structural per-test contracts and visibly skips
+the calibrated ones.
+
+**Two different things are called "level".** `exam-blueprint/scripts/level_data.py`
+classifies a *pool item* (`item_level` — is this grammar point N2 or N1?) and
+`level_band_grammar.txt` keeps an N2 pool inside the N2 band. `level.py` names
+the *paper's target* (`exam_level`). For an N1 paper the band inverts — today's
+TOO_HARD list becomes the target — so a level's band check is part of
+calibrating it, never inherited from N2.
+
+Every number in a table is either an official jlpt.jp fact (scoring, timing)
+or a measurement of that level's own `refs/` archive — never interpolated from
+N2 (AGENTS.md §4). The steps for a new level are in README §"Adding a level".
+
 ## Deliverable File Mapping (`tests/<test_id>/`)
 
 All section layouts, counts, and item specs here are benchmarked against the

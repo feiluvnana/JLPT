@@ -289,10 +289,18 @@ else touches the visibility of a section, a gate, a tab or a control.
   from.
 
 **The two allowances belong to `jlpt-exam-structure`** (§'言語知識…— 105 min',
-§'聴解 — ~50 min'). `build_interactive` restates them as `GENGO_LIMIT_MIN` /
-`CHOUKAI_LIMIT_MIN` because it has to enforce them, and `make check`
-(`check_exam_time_limits`) reads them back out of that skill so the two cannot
-drift. Change the exam's timing there first, never in the builder.
+§'聴解 — ~50 min'), and its level table carries them per level as `timing`
+(`references/levels/<LEVEL>.json`), which is what `section_limits()` enforces.
+`GENGO_LIMIT_MIN` / `CHOUKAI_LIMIT_MIN` are N2's row, and `make check`
+(`check_exam_time_limits`) reads them back against the skill prose so the two
+cannot drift. Change the exam's timing there first, never in the builder.
+
+**Every level-dependent number the app prints comes from that table** — the
+大問 map and era shapes, the 聴解 labels, section names, per-section max and
+cutoff, total and pass mark (N2: 60/19 ×3, 180, 90), the study advice and the
+「JLPT N2」 titles. `level.py` resolves a test's level from its folder name
+(`n1-…`, `imported-n1-…`; bare = N2), and the test list shows it on every card
+and offers an N1–N5 switcher. The audio-release fallback URL is `level.REPO`.
 
 **聴解's clock is never shorter than its audio.** The recording IS that section
 and an official one can run past 50 minutes (imported-n2-2025-12 is 51.4), so

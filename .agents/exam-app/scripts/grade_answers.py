@@ -26,103 +26,101 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-# Sub-question mapping definitions for JLPT N2.
-# AUTHORITY: these ranges MUST match .agents/jlpt-exam-structure/SKILL.md, which is
-# the single owner of format facts. They previously did not (問1 was 1-8, 問11 was
-# 60-64, 問14 was 71-75), so every 大問別 diagnostic attributed questions to the
-# wrong 大問. Do not edit these without editing jlpt-exam-structure first.
+# The 大問 map, the era shapes, the 聴解 labels and the scoring bands are the
+# LEVEL's structure table (jlpt-exam-structure/references/levels/<LEVEL>.json,
+# read through level.py) — not literals here. They used to be: 問1 was 1-8, 問11
+# was 60-64 and 問14 was 71-75 while jlpt-exam-structure said otherwise, so every
+# 大問別 diagnostic filed questions under the wrong 大問.
 #
-# THE EXAM HAS THREE ERAS and an imported past paper may belong to any of them
+# THE EXAM HAS ERAS and an imported past paper may belong to any of them
 # (jlpt-exam-structure §"The counts below are the CURRENT era's"). A generated
-# mock is always 71; an import is whatever its sitting printed. 7/2021 is a
-# 72-question paper — 問題11 ran 3 passages x 3Q — and before this table was
-# era-aware its Q72 fell outside every 大問 and Q70 was filed under 問14.
-# One row per shape, counts for 問1..問14 in order; ranges are derived, so a
-# count and a range cannot drift apart.
-GENGO_SHAPES = {
-    75: (5, 5, 5, 7, 5, 5, 12, 5, 5, 5, 9, 2, 3, 2),   # 7/2010 – 7/2018
-    72: (5, 5, 3, 7, 5, 5, 12, 5, 4, 5, 9, 2, 3, 2),   # 12/2018 – 7/2021
-    71: (5, 5, 3, 7, 5, 5, 12, 5, 4, 5, 8, 2, 3, 2),   # 12/2021 – 12/2025 (current)
-}
-
-_GENGO_LABELS = [
-    ("問1", "漢字読み (Kanji Reading)", "言語知識"),
-    ("問2", "表記 (Orthography)", "言語知識"),
-    ("問3", "語形成 (Word Formation)", "言語知識"),
-    ("問4", "文脈規定 (Word in Context)", "言語知識"),
-    ("問5", "言い換え類義 (Paraphrases)", "言語知識"),
-    ("問6", "用法 (Correct Usage)", "言語知識"),
-    ("問7", "文法形式の判断 (Grammar Form)", "言語知識"),
-    ("問8", "文の組み立て (Sentence Composition ★)", "言語知識"),
-    ("問9", "文章の文法 (Text Grammar / Cloze)", "言語知識"),
-    ("問10", "内容理解・短文 (Short Passages)", "読解"),
-    ("問11", "内容理解・中文 (Medium Passages)", "読解"),
-    ("問12", "統合理解 (A/B Comparative Texts)", "読解"),
-    ("問13", "主張理解・長文 (Long Essay)", "読解"),
-    ("問14", "情報検索 (Information Retrieval)", "読解"),
-]
+# mock is always the level's `generated_shape` (N2: 71); an import is whatever
+# its sitting printed. 7/2021 is a 72-question N2 paper — 問題11 ran 3 passages
+# x 3Q — and before the table was era-aware its Q72 fell outside every 大問.
+# One row per shape, counts in 大問 order; ranges are derived, so a count and a
+# range cannot drift apart.
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "jlpt-exam-structure" / "scripts"))
+import level as LEVEL  # noqa: E402
 
 
-def gengo_taxonomy(max_q: int = 71) -> dict:
+def gengo_shapes(level: str = LEVEL.DEFAULT_LEVEL) -> dict:
+    return LEVEL.gengo_shapes(level)
+
+
+def _generated_shape(level: str) -> int:
+    return LEVEL.gengo(level)["generated_shape"]
+
+
+# N2's table, under the names callers already use.
+GENGO_SHAPES = gengo_shapes()
+_GENGO_LABELS = [(m["code"], m["grader_name"],
+                  "言語知識" if i < LEVEL.gengo()["goi_mondai"] else "読解")
+                 for i, m in enumerate(LEVEL.gengo()["mondai"])]
+
+
+def gengo_taxonomy(max_q: int | None = None, level: str = LEVEL.DEFAULT_LEVEL) -> dict:
     """The 大問 map for a paper whose last question is `max_q`.
 
-    Unknown counts fall back to the current era's 71 — a mangled key table must
-    not crash the grader — but every shape this repo has actually seen is listed
-    in GENGO_SHAPES above.
+    Unknown counts fall back to the level's generated shape — a mangled key
+    table must not crash the grader — but every shape this repo has actually
+    seen is a row in the level table.
     """
-    counts = GENGO_SHAPES.get(max_q, GENGO_SHAPES[71])
+    g = LEVEL.gengo(level)
+    shapes = LEVEL.gengo_shapes(level)
+    counts = shapes.get(max_q, shapes[g["generated_shape"]])
     tax, q = {}, 1
-    for (code, name, section), n in zip(_GENGO_LABELS, counts):
-        tax[code] = {"name": name, "range": (q, q + n - 1),
-                     "section": section, "total": n}
+    for i, (m, n) in enumerate(zip(g["mondai"], counts)):
+        tax[m["code"]] = {"name": m["grader_name"], "range": (q, q + n - 1),
+                          "section": "言語知識" if i < g["goi_mondai"] else "読解",
+                          "total": n}
         q += n
     return tax
 
 
-def gengo_goi_cutoff(max_q: int = 71) -> int:
+def gengo_goi_cutoff(max_q: int | None = None, level: str = LEVEL.DEFAULT_LEVEL) -> int:
     """Last question of 文字・語彙＋文法; 読解 starts at the next one."""
-    return sum(GENGO_SHAPES.get(max_q, GENGO_SHAPES[71])[:9])
+    g = LEVEL.gengo(level)
+    shapes = LEVEL.gengo_shapes(level)
+    return sum(shapes.get(max_q, shapes[g["generated_shape"]])[:g["goi_mondai"]])
 
 
 # The current era's map, kept under its historical name for callers that grade a
-# generated mock (always 71).
-GENGO_QUESTION_TAXONOMY = gengo_taxonomy(71)
+# generated N2 mock (always 71).
+GENGO_QUESTION_TAXONOMY = gengo_taxonomy()
 
 # Guard: every shape must tile 1..max_q exactly, with no gap and no overlap.
-for _max_q, _counts in GENGO_SHAPES.items():
-    assert sum(_counts) == _max_q, (
-        f"GENGO_SHAPES[{_max_q}] sums to {sum(_counts)}, not {_max_q}")
-    _covered = [q for s in gengo_taxonomy(_max_q).values()
-                for q in range(s["range"][0], s["range"][1] + 1)]
-    assert sorted(_covered) == list(range(1, _max_q + 1)), (
-        f"gengo_taxonomy({_max_q}) must tile questions 1-{_max_q} exactly "
-        f"(got {len(_covered)} entries, duplicates/gaps present)")
-
-CHOUKAI_QUESTION_TAXONOMY = {
-    "問題1": {"name": "課題理解 (Task Comprehension)", "section": "聴解"},
-    "問題2": {"name": "ポイント理解 (Point Comprehension)", "section": "聴解"},
-    "問題3": {"name": "概要理解 (Summary Comprehension)", "section": "聴解"},
-    "問題4": {"name": "即時応答 (Quick Response)", "section": "聴解"},
-    "問題5": {"name": "統合理解 (Integrated Comprehension)", "section": "聴解"},
-}
+for _level in LEVEL.available():
+    if not LEVEL.has_structure(_level):
+        continue
+    for _max_q, _counts in LEVEL.gengo_shapes(_level).items():
+        assert sum(_counts) == _max_q, (
+            f"{_level} gengo shape {_max_q} sums to {sum(_counts)}, not {_max_q}")
+        _covered = [q for s in gengo_taxonomy(_max_q, _level).values()
+                    for q in range(s["range"][0], s["range"][1] + 1)]
+        assert sorted(_covered) == list(range(1, _max_q + 1)), (
+            f"{_level} gengo_taxonomy({_max_q}) must tile questions 1-{_max_q} exactly "
+            f"(got {len(_covered)} entries, duplicates/gaps present)")
 
 
-# Weak-area study advice, keyed by 大問 group. Module level so that
-# build_interactive.py (exam-app) can serialize the SAME strings into the in-page
-# grader — one source of truth, no drift between the two implementations.
-ADVICE = [
-    (["問1", "問2", "問3"],
-     "『新完全マスター単語N2』『新完全マスター漢字N2』の基本語彙・訓読み・複合語の復習を徹底しましょう。"),
-    (["問4", "問5", "問6"],
-     "語彙の文脈的意味やコロケーション（類義語・用法）の精度を高めましょう。単語カードでの例文暗記が効果的です。"),
-    (["問7", "問8", "問9"],
-     "『新完全マスター文法N2』で機能語の接続・意味の違いおよび文章全体の論理展開（接続詞・指示語）を復習しましょう。"),
-    (["問10", "問11", "問12", "問13", "問14"],
-     "『新完全マスター読解N2』を活用し、設問のキーワードのスキャニングおよび段落ごとの要旨把握のスキマ時間を増やしましょう。"),
-    (["問題1", "問題2", "問題3", "問題4", "問題5"],
-     "『新完全マスター聴解N2』CD音源によるシャドーイングおよび即時応答（問題4）の定型表現・敬語表現の反復練習を行いましょう。"),
-]
-ADVICE_FOR = {code: text for codes, text in ADVICE for code in codes}
+def choukai_taxonomy(level: str = LEVEL.DEFAULT_LEVEL) -> dict:
+    return {m["code"]: {"name": m["grader_name"], "section": "聴解"}
+            for m in LEVEL.choukai(level)["mondai"]}
+
+
+CHOUKAI_QUESTION_TAXONOMY = choukai_taxonomy()
+
+
+# Weak-area study advice, keyed by 大問 group — the level table's `advice`, since
+# it names that level's textbooks. Module level so that build_interactive.py
+# (exam-app) serializes the SAME strings into the in-page grader — one source of
+# truth, no drift between the two implementations.
+def advice_for(level: str = LEVEL.DEFAULT_LEVEL) -> dict:
+    return {code: a["text"] for a in (LEVEL.load(level).get("advice") or [])
+            for code in a["codes"]}
+
+
+ADVICE = [(a["codes"], a["text"]) for a in LEVEL.load().get("advice") or []]
+ADVICE_FOR = advice_for()
 
 
 def parse_gengo_keys(gengo_md_path: Path) -> dict:
@@ -204,7 +202,8 @@ def parse_choukai_keys(choukai_md_path: Path) -> dict:
     return answers
 
 
-def grade(gengo_keys: dict, choukai_keys: dict, user_answers: dict) -> dict:
+def grade(gengo_keys: dict, choukai_keys: dict, user_answers: dict,
+          level: str = LEVEL.DEFAULT_LEVEL) -> dict:
     """
     Grading engine.
     Calculates raw scores, scaled scores (0-60 for each section), Pass/Fail, and category stats.
@@ -212,9 +211,11 @@ def grade(gengo_keys: dict, choukai_keys: dict, user_answers: dict) -> dict:
     user_gengo = user_answers.get("言語知識_読解", {})
     user_choukai = user_answers.get("聴解", {})
 
-    max_q = max(gengo_keys.keys()) if gengo_keys else 71
-    goi_cutoff = gengo_goi_cutoff(max_q)
-    taxonomy = gengo_taxonomy(max_q)
+    max_q = max(gengo_keys.keys()) if gengo_keys else _generated_shape(level)
+    goi_cutoff = gengo_goi_cutoff(max_q, level)
+    taxonomy = gengo_taxonomy(max_q, level)
+    sc = LEVEL.scoring(level)
+    (sec_goi, sec_dokkai, sec_choukai) = sc["sections"]
 
     # 1. Language Knowledge (Goi & Bunpou: Q1 - Q51/54)
     goi_bunpou_total = goi_cutoff
@@ -253,7 +254,7 @@ def grade(gengo_keys: dict, choukai_keys: dict, user_answers: dict) -> dict:
         }
 
     # 3. Listening (Choukai)
-    choukai_total = len(choukai_keys) if choukai_keys else 30
+    choukai_total = len(choukai_keys) if choukai_keys else LEVEL.choukai(level)["generated_shape"]
     choukai_correct = 0
     choukai_detail = {}
 
@@ -271,16 +272,17 @@ def grade(gengo_keys: dict, choukai_keys: dict, user_answers: dict) -> dict:
         }
 
     # Scaled Scores (JLPT Scale out of 60 per section)
-    scaled_goi_bunpou = round((goi_bunpou_correct / goi_bunpou_total) * 60) if goi_bunpou_total > 0 else 0
-    scaled_dokkai = round((dokkai_correct / dokkai_total) * 60) if dokkai_total > 0 else 0
-    scaled_choukai = round((choukai_correct / choukai_total) * 60) if choukai_total > 0 else 0
+    scaled_goi_bunpou = round((goi_bunpou_correct / goi_bunpou_total) * sec_goi["max"]) if goi_bunpou_total > 0 else 0
+    scaled_dokkai = round((dokkai_correct / dokkai_total) * sec_dokkai["max"]) if dokkai_total > 0 else 0
+    scaled_choukai = round((choukai_correct / choukai_total) * sec_choukai["max"]) if choukai_total > 0 else 0
 
     total_scaled_score = scaled_goi_bunpou + scaled_dokkai + scaled_choukai
 
     # Pass/Fail evaluation
-    # Overall >= 90 AND Sectional Cutoffs >= 19 in each section
-    cutoff_pass = (scaled_goi_bunpou >= 19) and (scaled_dokkai >= 19) and (scaled_choukai >= 19)
-    overall_pass = total_scaled_score >= 90
+    # Overall >= the level's pass mark AND every section >= its cutoff (N2: 90, 19)
+    cutoff_pass = (scaled_goi_bunpou >= sec_goi["cutoff"]) and (scaled_dokkai >= sec_dokkai["cutoff"]) \
+        and (scaled_choukai >= sec_choukai["cutoff"])
+    overall_pass = total_scaled_score >= sc["pass"]
     is_passed = overall_pass and cutoff_pass
 
     # Sub-category breakdown
@@ -311,7 +313,7 @@ def grade(gengo_keys: dict, choukai_keys: dict, user_answers: dict) -> dict:
         tot = stats["total"]
         cor = stats["correct"]
         taxonomy_stats[m_name] = {
-            "name": CHOUKAI_QUESTION_TAXONOMY.get(m_name, {}).get("name", m_name),
+            "name": choukai_taxonomy(level).get(m_name, {}).get("name", m_name),
             "section": "聴解",
             "correct": cor,
             "total": tot,
@@ -322,30 +324,30 @@ def grade(gengo_keys: dict, choukai_keys: dict, user_answers: dict) -> dict:
         "summary": {
             "passed": is_passed,
             "total_scaled_score": total_scaled_score,
-            "max_scaled_score": 180,
+            "max_scaled_score": sc["max"],
             "cutoff_passed": cutoff_pass,
             "overall_threshold_passed": overall_pass,
             "sections": {
-                "言語知識（文字・語彙・文法）": {
+                sec_goi["name"]: {
                     "raw_correct": goi_bunpou_correct,
                     "raw_total": goi_bunpou_total,
                     "scaled_score": scaled_goi_bunpou,
-                    "cutoff": 19,
-                    "passed_cutoff": scaled_goi_bunpou >= 19
+                    "cutoff": sec_goi["cutoff"],
+                    "passed_cutoff": scaled_goi_bunpou >= sec_goi["cutoff"]
                 },
-                "読解": {
+                sec_dokkai["name"]: {
                     "raw_correct": dokkai_correct,
                     "raw_total": dokkai_total,
                     "scaled_score": scaled_dokkai,
-                    "cutoff": 19,
-                    "passed_cutoff": scaled_dokkai >= 19
+                    "cutoff": sec_dokkai["cutoff"],
+                    "passed_cutoff": scaled_dokkai >= sec_dokkai["cutoff"]
                 },
-                "聴解": {
+                sec_choukai["name"]: {
                     "raw_correct": choukai_correct,
                     "raw_total": choukai_total,
                     "scaled_score": scaled_choukai,
-                    "cutoff": 19,
-                    "passed_cutoff": scaled_choukai >= 19
+                    "cutoff": sec_choukai["cutoff"],
+                    "passed_cutoff": scaled_choukai >= sec_choukai["cutoff"]
                 }
             }
         },
@@ -367,7 +369,7 @@ def result_payload(results: dict, test_id: str, graded_at: str | None = None) ->
     """
     stats = {code: s for code, s in results["taxonomy_stats"].items() if s["total"]}
     weak = [{"code": code, "name": s["name"], "section": s["section"],
-             "percentage": s["percentage"], "advice": ADVICE_FOR.get(code, "")}
+             "percentage": s["percentage"], "advice": advice_for(LEVEL.level_of(test_id)).get(code, "")}
             for code, s in stats.items() if s["percentage"] < 60]
     return {
         "test_id": test_id,
@@ -445,7 +447,8 @@ def main():
                 user_answers["聴解"][q.strip()] = int(a.strip())
 
     # 3. Perform Grading
-    results = grade(gengo_keys, choukai_keys, user_answers)
+    level = LEVEL.declared_level(test_path) or LEVEL.level_of(test_path.resolve().name)
+    results = grade(gengo_keys, choukai_keys, user_answers, level)
 
     # 4. Save the structured result document
     payload = result_payload(results, test_path.name)
@@ -456,13 +459,14 @@ def main():
     summary = results["summary"]
     status_str = "PASSED (合格)" if summary["passed"] else "FAILED (不合格)"
     print(f"\n==========================================")
-    print(f"       JLPT N2 GRADING RESULT ({test_path.name})")
+    print(f"       JLPT {level} GRADING RESULT ({test_path.name})")
     print(f"==========================================")
     print(f" Final Result    : {status_str}")
-    print(f" Total Scaled    : {summary['total_scaled_score']} / 180 (Pass threshold: 90)")
-    for sec_name, sec_data in summary["sections"].items():
-        pass_cut = "OK" if sec_data["passed_cutoff"] else "FAIL (Cutoff < 19)"
-        print(f"  - {sec_name:<16}: {sec_data['scaled_score']:2d}/60 (Raw: {sec_data['raw_correct']}/{sec_data['raw_total']}) [{pass_cut}]")
+    sc = LEVEL.scoring(level)
+    print(f" Total Scaled    : {summary['total_scaled_score']} / {sc['max']} (Pass threshold: {sc['pass']})")
+    for (sec_name, sec_data), sec in zip(summary["sections"].items(), sc["sections"]):
+        pass_cut = "OK" if sec_data["passed_cutoff"] else f"FAIL (Cutoff < {sec['cutoff']})"
+        print(f"  - {sec_name:<16}: {sec_data['scaled_score']:2d}/{sec['max']} (Raw: {sec_data['raw_correct']}/{sec_data['raw_total']}) [{pass_cut}]")
     if payload["weak_areas"]:
         print(" Weak areas (<60%): " +
               ", ".join(f"{w['code']} {w['percentage']}%" for w in payload["weak_areas"]))

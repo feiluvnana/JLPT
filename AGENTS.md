@@ -78,7 +78,7 @@ not route around it silently.
 ### Root Directories
 
 - `refs/`: Reference input files (scanned PDFs and audio recordings). See §3.
-- `tests/<test_id>/`: Output folder for each exam. **Origin is encoded in the folder name:** ids starting with `imported-` are external imports (e.g. `tests/imported-n2-2025-12/`); any other id is **generated** (e.g. `tests/1/`). See `external-test-import`.
+- `tests/<test_id>/`: Output folder for each exam. **Origin and level are encoded in the folder name:** ids starting with `imported-` are external imports (e.g. `tests/imported-n2-2025-12/`); any other id is **generated** (e.g. `tests/1/`). A generated paper at any level other than N2 carries a level prefix (`tests/n1-20261005_1/`) and an import names its level in the slug (`imported-n1-2025-12`); no prefix means N2. `jlpt-exam-structure/scripts/level.py` is the one parser, and `references/levels/<LEVEL>.json` is that level's structure table (`make levels`). See `external-test-import`.
 - `logs/`: Item coverage ledger (`logs/ledger.json`), topic history
   (`logs/topics.json`), adjunct staging, and any **remediation state file**
   (`logs/choukai_remediation_state.json`) — a long repair plan's resumable
@@ -134,6 +134,12 @@ Inside `tests/<test_id>/` — this table is the single copy; skills point here:
 ---
 
 ## 3. Reference Files (`refs/`)
+
+**One archive per exam level: `refs/JLPT_<LEVEL>_NEW/`**, same per-sitting layout
+and extracts as the N2 archive below; its path is declared by that level's
+structure table (`jlpt-exam-structure/references/levels/<LEVEL>.json`), and the
+archive make targets and profilers take `LEVEL=` (default N2). Only N2 is
+calibrated today; every band in this file and the skills is an N2 measurement.
 
 **The source archive is NOT in git, on purpose.** `refs/` is 2.6 GB of scanned
 PDFs and MP3s; tracking it through Git LFS exhausted the account's LFS budget,
@@ -310,9 +316,10 @@ restate them here or in a skill; fix them there.
 | ------------------------- | ------------------------------------ | ----------- |
 | `make check`              | `tools/check_consistency.py` — the read-only gate | (below) |
 | `make check-tests`        | the same gate, per-test contracts only | (below) |
-| `make goi-profile [BASELINE=1]` | `tools/goi_profile.py` — 文字・語彙 measurement (archive vs tests); `BASELINE=1` prints the doc tables | `question-authoring` |
-| `make dokkai-profile [BASELINE=1]` | `tools/dokkai_profile.py` — 読解 measurement (archive vs tests); `BASELINE=1` prints the doc tables | `question-authoring` |
-| `make choukai-profile [BASELINE=1]` | `tools/choukai_profile.py` — 聴解 measurement (archive vs tests); `BASELINE=1` prints the doc tables | `choukai-audio` |
+| `make levels`             | `level.py` — every JLPT level's status (scaffold/structured/calibrated) and what it still lacks | `jlpt-exam-structure` |
+| `make goi-profile [BASELINE=1] [LEVEL=N2]` | `tools/goi_profile.py` — 文字・語彙 measurement (archive vs tests); `BASELINE=1` prints the doc tables | `question-authoring` |
+| `make dokkai-profile [BASELINE=1] [LEVEL=N2]` | `tools/dokkai_profile.py` — 読解 measurement (archive vs tests); `BASELINE=1` prints the doc tables | `question-authoring` |
+| `make choukai-profile [BASELINE=1] [LEVEL=N2]` | `tools/choukai_profile.py` — 聴解 measurement (archive vs tests); `BASELINE=1` prints the doc tables | `choukai-audio` |
 | `make findings`           | the gate in `--json` mode → `logs/findings.json` (one record per slugged finding: slug, test id, artifact, tier) | (below) |
 | `make repair-plan [<id>] [TIER=B]` | `tools/choukai_repair_plan.py` → `qa/[<id>/]repair-plan.{json,md}` — the 聴解 **and** 読解 work order, grouped by the ARTIFACT each finding declares (the tier follows from it), so a 読解 prose repair is never printed under a `make mp3` rebuild | `exam-qa-review` |
 | `make sample <id> SEED=n` | `sample_items.py` → `test_spec.json` + ledger | `exam-blueprint` |
@@ -341,8 +348,8 @@ restate them here or in a skill; fix them there.
 | `make preview-pages`      | serves `_site/` locally | `exam-app` |
 | `make init-import SLUG=…` | `init_imported_test.py` — scaffold `tests/imported-<slug>/` | `external-test-import` |
 | `make extract-pdf PDF=… OUT=…` | `extract_pdf_text.py` | `external-test-import` |
-| `make extract-archive`    | `extract_jlpt_n2_new.py --all` — past-paper archive → Markdown | §3 above |
-| `make extract-keys`       | `extract_jlpt_n2_key.py` — key PDF → `key.md` + JSON | §3 above |
+| `make extract-archive [LEVEL=N2]` | `extract_jlpt_n2_new.py --all` — past-paper archive → Markdown | §3 above |
+| `make extract-keys [LEVEL=N2]` | `extract_jlpt_n2_key.py` — key PDF → `key.md` + JSON | §3 above |
 | `make extract-shinkanzen-dokkai` | `tools/extract_shinkanzen_dokkai.py` — Shin Kanzen Dokkai → Markdown | §3 above |
 | `make extract-shinkanzen` | `tools/extract_shinkanzen_choukai.py` — Shin Kanzen Choukai → Markdown | §3 above |
 | `make extract-hajimete`   | `tools/extract_hajimete.py` — はじめての N2単語 2500 → Markdown | §3 above |

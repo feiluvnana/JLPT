@@ -31,11 +31,20 @@ import time
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-POOLS = HERE.parent / "references" / "pools.json"
 ROOT = HERE.parents[2]
 LOGS_DIR = ROOT / "logs"
-LEDGER = LOGS_DIR / "ledger.json"
 STAGING = LOGS_DIR / "adjunct_staging.json"
+
+# The pool and the ledger are PER LEVEL: levels draw from different pools, so a
+# shared history would let an N1 draw spend an N2 cooldown slot, and
+# check_draw_provenance (every recorded draw resolves to a pool entry) would
+# start reading the wrong pool. The level's structure table names both paths —
+# N2 keeps its historical `references/pools.json` and `logs/ledger.json`. main()
+# rebinds these two for the level the --test-id names.
+sys.path.insert(0, str(HERE.parents[1] / "jlpt-exam-structure" / "scripts"))
+import level as LEVEL  # noqa: E402
+POOLS = LEVEL.path(LEVEL.DEFAULT_LEVEL, "pools")
+LEDGER = LEVEL.path(LEVEL.DEFAULT_LEVEL, "ledger")
 
 sys.path.insert(0, str(HERE))
 from level_data import (  # noqa: E402
@@ -2167,6 +2176,21 @@ def main():
                     help="check pool sizes and headroom multipliers without sampling")
     args = ap.parse_args()
 
+    # The level is the test id's (n1-20261005_1 → N1; a bare id is N2). Every
+    # category in DRAW and every target rate below is an N2 archive measurement,
+    # so only a CALIBRATED level may draw — a level at `structured` has a paper
+    # shape but no measured pool/rates yet, and drawing against N2's numbers is
+    # the interpolation AGENTS.md §4 forbids.
+    global POOLS, LEDGER
+    level = LEVEL.level_of(str(args.test_id))
+    if not LEVEL.is_calibrated(level):
+        sys.exit(f"{args.test_id} is a {level} paper and {level} is not calibrated "
+                 f"(status {LEVEL.status(level)!r}): its pool, DRAW table and target "
+                 f"rates do not exist yet. `python3 .agents/jlpt-exam-structure/"
+                 f"scripts/level.py {level}` lists what is missing (README 'Adding a level').")
+    POOLS, LEDGER = LEVEL.path(level, "pools"), LEVEL.path(level, "ledger")
+    LEDGER.parent.mkdir(parents=True, exist_ok=True)
+
     pools = json.loads(POOLS.read_text(encoding="utf-8"))
     check_pool_themes(pools)
     # Built once, read by errand_key() everywhere below (R14). It has to exist
@@ -2549,6 +2573,9 @@ def main():
             "seed": seed,
             "generated_at": time.strftime("%Y-%m-%d %H:%M:%S"),
             "test_id": args.test_id,
+            # The exam level; level.py derives the same from the id, and the
+            # gate asserts they agree.
+            "level": level,
             # R10: the rotation this draw actually enforced, so a gate can check
             # the paper against logs/ledger.json instead of trusting a constant.
             # cooldown is the WEAKEST level applied to any category (COOLDOWN

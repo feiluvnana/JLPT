@@ -8,7 +8,21 @@
   "cooldown": 4,
   "verified_items": [
    "陽気だ(明るい)"
-  ]
+  ],
+  "cooldowns": {
+   "kanji_reading": 303,
+   "orthography": 10,
+   "word_formation": 26,
+   "context_words": 195,
+   "paraphrase": 26,
+   "usage": 41,
+   "grammar_p7": 10,
+   "grammar_p8": 4,
+   "quick_response": 12,
+   "listening_scenarios": 11,
+   "reading_topics": 22
+  },
+  "cooldowns_source": "backfilled 2026-09-28 from pool depth at that date (cooldown_for() on pools.json before the 2026-09-28 retirements/additions; the paper predates the field, so this is the window the gate judged it against that day, frozen so later pool growth cannot re-judge it)"
  },
  "pools_sha": "4119aed1e4b0",
  "items": {

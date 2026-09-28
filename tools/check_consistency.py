@@ -96,6 +96,9 @@ ORIGIN = load(".agents/external-test-import/scripts/origin.py")
 # labels) is read through it; the calibrated checks are N2 measurements and run
 # only on a level whose table says `calibrated`.
 LEVEL = load(".agents/jlpt-exam-structure/scripts/level.py")
+# The official booklet layout (part banners, canonical 問題N lines), owned by
+# the level table and stamped by tools/assemble_paper.py.
+ASSEMBLE = load("tools/assemble_paper.py")
 
 # Reuse lint_draft.py's contraction pattern list rather than maintaining a
 # second, narrower copy — the two diverged (this file's own set missed とど-,
@@ -290,14 +293,9 @@ def check_filename_contracts():
         ("採点結果.json", ".agents/exam-app/scripts/grade_answers.py"),
         ("ユーザー解答.json", ".agents/exam-app/scripts/build_interactive.py"),
         ("ユーザー解答.json", ".agents/exam-app/scripts/serve_sheet.py"),
-        # The composer is the writer since 2026-09-08; make_choukai_mp3.py is
-        # retired but kept, so both are asserted — if the retired one ever loses
-        # these literals it has been gutted rather than parked, and Part 3's
-        # pacing table loses the code it is diffed against.
+        # The composer is the one writer since 2026-09-08 (Edge-TTS retired).
         ("聴解.mp3", "tools/compose_choukai.py"),
         ("聴解_チャプター.json", "tools/compose_choukai.py"),
-        ("聴解.mp3", ".agents/choukai-audio/scripts/make_choukai_mp3.py"),
-        ("聴解_チャプター.json", ".agents/choukai-audio/scripts/make_choukai_mp3.py"),
         ("choukai_bank.json", "tools/build_choukai_bank.py"),
         ("choukai_draws.json", "tools/compose_choukai.py"),
         ("choukai_number_calls.json", "tools/harvest_number_calls.py"),
@@ -914,15 +912,14 @@ def check_every_choukai_finding_declares_repair():
 
 # ------------------------------------------------------------------ choukai pacing
 def check_pacing():
-    print("\nchoukai pacing table ↔ make_choukai_mp3.py constants")
-    m = load(".agents/choukai-audio/scripts/make_choukai_mp3.py")
+    print("\nchoukai pacing table ↔ choukai_script.py constants")
+    m = load(".agents/choukai-audio/scripts/choukai_script.py")
     doc = (AGENTS / "choukai-audio" / "SKILL.md").read_text(encoding="utf-8")
 
     for const in ("GAP_BETWEEN_LINES", "GAP_AFTER_PRE_QUESTION", "GAP_OPTION_READING",
                   "GAP_BETWEEN_SPOKEN_CHOICES", "GAP_AFTER_SHITSUMON1",
-                  # Added with shape_pauses(): the inter-segment gaps above are
-                  # only real because segment padding is trimmed, and these two
-                  # decide what happens to a pause INSIDE one utterance.
+                  # These two decide what happens to a pause INSIDE one
+                  # utterance (official within-turn median 0.40 s, p90 0.72).
                   "GAP_WITHIN_TURN_MAX", "SHAPE_PAUSE_FLOOR"):
         row = re.search(rf"^\|\s*{const}\s*\|([^|]+)\|", doc, re.M)
         if not row:
@@ -941,8 +938,8 @@ def check_pacing():
               f"doc {documented} vs code {m.ANSWER_PAUSE}")
 
     # The dry-run pause distribution is derivable; assert the doc's numbers.
-    # SCORED items only: `pause_after()` gives an 例 the short instruction pause,
-    # not answer time, because official runs the practice item straight into its
+    # SCORED items only: an 例 gets the short instruction pause, not answer
+    # time, because official runs the practice item straight into its
     # 「最もよいものは◯番です…」 confirmation. Counting the 例 here is what made the
     # documented histogram read 13 × 12 s / 18 × 8 s against the archive's 12 and
     # 17, a mismatch the doc then explained away as ours-not-theirs.
@@ -1000,7 +997,7 @@ def check_pacing():
 # ------------------------------------------------------------------- item counts
 def check_item_counts():
     print("\n聴解 item counts ↔ EXPECTED_ITEMS ↔ jlpt-exam-structure")
-    m = load(".agents/choukai-audio/scripts/make_choukai_mp3.py")
+    m = load(".agents/choukai-audio/scripts/choukai_script.py")
 
     sw = (AGENTS / "choukai-audio" / "SKILL.md").read_text(encoding="utf-8")
     row = re.search(r"Item counts \(incl\. 例\)\s*\|([^|]+)\|", sw)
@@ -2213,6 +2210,13 @@ def strip_instruction_lines(text: str) -> str:
 #   問題13       814 /  904 / 1061                900 → FAILED 12/2022 and 7/2024
 #   問題14       489 /  604 /  638                560 → FAILED 12/2024 and 12/2025
 DOKKAI_FLOOR = {10: 1100, 11: 2250, 12: 510, 13: 800, 14: 450}
+# Four pre-rule papers printed their 問題N instruction INSIDE the passage body,
+# and the floor counted it as prose. `assemble_paper.py --normalize` moved each
+# line into its heading (2026-09-28) and the measured passage dropped below the
+# floor: 20260810_1 問題14 395, 20260811_1 問題12 480, 20260813_1 問題12 485,
+# 20260817_1 問題14 447. They passed only on the instruction's bytes; they are a
+# WARN here because lengthening the prose is authoring that needs a QA pass.
+DOKKAI_FLOOR_LAYOUT_GRANDFATHERED = {"20260810_1", "20260811_1", "20260813_1", "20260817_1"}
 DOKKAI_CEILING = {10: 1330, 11: 2700, 12: 600, 13: 1070, 14: 640}
 DOKKAI_PASSAGE_FLOOR = {10: 150, 11: 400}
 DOKKAI_PASSAGE_CEILING = {10: 350}
@@ -2644,8 +2648,39 @@ FINAL_SENTENCE_TEMPLATES = {
     # cap is `20260807_1`, grandfathered by name below. `20260904_1` measures
     # 0 after its own F2 repair and passes on merit, which is the point: the
     # paper the rule was written from is not exempt from it.
+    # WIDENED 2026-09-28 (root-cause-20260917_1 RC-4; qa-report-20260917_1 F2).
+    # The row was spelled `(の|ん)は` only, so a cleft whose nominaliser is not
+    # の was invisible: 20260917_1 round 1 closed 問題10(5), 問題11(4) and
+    # 問題12(A) 「相手に確かめてもらう**べきは**、…ことである。」 on the cleft
+    # (×3) while this row printed 2. The head set is now の/ん, bare べき, and
+    # こと/点 ONLY after an adjectival or べき modifier (大切なことは / 言いたい
+    # ことは / 注目すべき点は). 「ものは」 already matched via `のは`. A bare
+    # V-る/V-た 「〜ことは」 is NOT a cleft — it nominalises an event and
+    # EVALUATES it (「…引き出すことは、上司の大事な役目だ」 imported 2023-07
+    # 問題12(A); 「…なったことは、…大きな助けだ」; 「…ことは事実であり」) — and
+    # 「側は」 was read on every hit and is a plain topic (「指導される側は…住人
+    # ですから」), so neither counts. Every widened hit was read by hand.
+    # MEASURED BEFORE WIDENING, with `dokkai_closing_scopes()`' own 13 closings
+    # and this check's final-sentence scope, all 39 papers on disk (old→new):
+    #   generated: 20260807_1 3→3, 20260819_1 2→2, 20260828_1 2→2,
+    #              20260917_1 1→2 (問題10(5) + 問題12(A); reproduces round-2
+    #              QA's hand count of 2), 20260810_2 / 20260813_2 / 20260817_3 /
+    #              20260821_1 / 20260827_2 / 20260903_1 / 20260907_1 /
+    #              20260914_1 1→1, the other 17 0→0.
+    #   official (10): 2021-12 1→1, 2023-07 1→1, 2024-07 1→1, the other 7
+    #              0→0 — band 0–1, 3 clefts in 124 closings.
+    # FOUNDING CASE: round-1 20260917_1 (問題11(4) 「…手放したのは、…癖のほう
+    # である。」 restored) = 3 > 2 → FAILS; the old spelling gave 2 (`ok`).
+    # CAP stays the shared 2: officials never exceed 1, and at their own rate
+    # (≈2.4 %/closing) a 13-closing paper reaches 2 by chance ≈4 % of the time,
+    # so a cap of 1 would call ordinary official behaviour a defect and move
+    # three generated ids QA had already cleared. Only one id is over 2 —
+    # 20260807_1, already grandfathered below — so zero ids move.
+    # KNOWN NOISE in the `のは` branch, left as-is (not in RC-4's scope): it
+    # also matches の + a は-initial word (20260813_2 問題11(3) 「仕事のはかどり」)
+    # and 「〜のは当然です」 evaluatives (imported 2024-07 問題11(4)).
     "〜のは B だ（分裂文）": re.compile(
-        r"(の|ん)は、?[^。]{2,60}"
+        r"(?:の|ん|べき|(?:な|い|べき)(?:こと|点))は、?[^。]{2,60}"
         r"(だ|である|です|だった|であり|のだ|のである|でした)。?\s*$"),
     # Added 2026-09-04 (qa-report-20260904_1-round2 F2). THE 後知れ CLOSING —
     # 「…ていたのだ／のです」, a past progressive revealed at the end: "what was
@@ -2742,6 +2777,10 @@ FINAL_TEMPLATE_GRANDFATHERED = {
     # 2026-08-07, four weeks before the class was named, and clearing it means
     # re-closing three 問題10 passages — a decision about that paper, not about
     # this gate. Any id not named here FAILS on the same measurement.
+    # Re-measured 2026-09-28 when RC-4 widened the 分裂文 row to べきは /
+    # 〜なことは / 〜べき点は: still ×3 on the same three surfaces, and still the
+    # ONLY paper of 39 over the cap of 2 — so the widening grandfathers no new
+    # id (per-paper table in the row's comment above).
     "20260807_1",   # 分裂文 ×3: 問題10(1), 問題10(4), 問題10(5)
 }
 
@@ -3977,7 +4016,8 @@ def check_dokkai_lengths(name: str, body: str, bi, origin: str = "generated"):
                     thin.append(f"問題{n}({i}):{got_p}<{DOKKAI_PASSAGE_FLOOR[n]}")
                 if n in DOKKAI_PASSAGE_CEILING and got_p > DOKKAI_PASSAGE_CEILING[n]:
                     thick.append(f"問題{n}({i}):{got_p}>{DOKKAI_PASSAGE_CEILING[n]}")
-    check(f"{name}: 読解 sections reach the official length floor "
+    (warn if name in DOKKAI_FLOOR_LAYOUT_GRANDFATHERED else check)(
+          f"{name}: 読解 sections reach the official length floor "
           f"{DOKKAI_FLOOR}", not short,
           "; ".join(short) + " — lengthen the passage prose, not the stems. "
           "The floors sit under the observed minimum of the 7 current-era "
@@ -7326,7 +7366,8 @@ def check_spec_errand_rotation(d, spec: dict, sample, pools: dict):
             continue
         keyed[cat] = 0
         drawn[cat] = len(xs)
-        cool = sample.cooldown_for(cat, pools[cat])
+        # the window frozen at draw time, never today's pool depth (2026-09-28)
+        cool = sample.recorded_cooldown(spec.get("rotation"), cat, pools[cat])
         recent: dict[str, str] = {}
         for entry in prior[-cool:] if cool > 0 else []:
             tid = str(entry.get("test_id"))
@@ -7761,7 +7802,8 @@ def check_grammar_cross_category_rotation(d, spec: dict, sample, pools: dict):
         xs = (spec.get("items") or {}).get(cat) or []
         if not xs or cat not in pools:
             continue
-        cool = sample.cooldown_for(cat, pools[cat])
+        # the window frozen at draw time, never today's pool depth (2026-09-28)
+        cool = sample.recorded_cooldown(spec.get("rotation"), cat, pools[cat])
         recent: dict[str, tuple[str, str, str]] = {}
         for entry in prior[-cool:] if cool > 0 else []:
             tid = str(entry.get("test_id"))
@@ -7807,19 +7849,37 @@ def check_grammar_cross_category_rotation(d, spec: dict, sample, pools: dict):
 MONDAI1_KUN_GRANDFATHERED: set[str] = set()
 MONDAI1_KUN_CAP = 2
 MONDAI1_KUN_FLOOR = SAMPLE_ITEMS.KUN_FLOOR["kanji_reading"]
+# The floor rose 1 -> 2 on 2026-09-28 (owner ruling on open item #6 of
+# `qa/open-items-20260914_1.md`: `is_kun_target()` scores 14 of the 35
+# current-era targets as 訓, exactly 2 in every one of the seven sittings).
+# Past papers keep their recorded draws, so the papers below — each drawn
+# under the old floor of 1 and holding exactly ONE 訓読み target, measured
+# over all 29 generated specs the day the floor moved — are judged against
+# the floor they were drawn under. Grandfathered BY ID, not by date: no id
+# may join this set, and a paper leaves it only if its `kanji_reading` slot is
+# re-drawn (`--reroll-one kanji_reading:<index>`, fresh seed).
+MONDAI1_KUN_FLOOR_PRE_RULING = 1
+MONDAI1_KUN_FLOOR_PRE_RULING_IDS = {
+    "20260812_2", "20260814_1", "20260817_1", "20260817_3", "20260818_1",
+    "20260827_2", "20260904_1", "20260904_2", "20260904_3", "20260911_1",
+    "20260914_1", "20260917_1",
+}
 
 
 def check_mondai1_reading_type_mix(d, spec: dict, sample):
-    """1–2 of the 5 問題1 targets are 訓読み — a BAND, both bounds enforced.
+    """`KUN_FLOOR`–`KUN_CAP` (2–2) of the 5 問題1 targets are 訓読み — both bounds.
 
-    THE RULE (moji-goi.md §問題1): the five hand-classified current-era sittings
-    run 2/2/1/2/2 訓読み of 5 (7/2023-12/2025) — never more than two and never
-    fewer than one — and moji-goi's calibration table counts 12 訓読み among 35
-    current-era items (34 %). The archive cannot settle this by script: the
-    text-layer extract loses the underline, so no official 問題1 TARGET is
-    recoverable (`goi_profile.py` reports `target=None` by design). Five
-    sittings, hand-classified, is the honest evidence base — and it is a cap
-    plus a floor, not an assertion about all 31 sittings.
+    THE RULE (moji-goi.md §問題1), MEASURED 2026-09-28: `is_kun_target()` over
+    the 35 current-era 問題1 targets — recovered as 語(よみ) pairs from the seven
+    `refs/JLPT_N2_NEW/*/booklet.md` 問題1 blocks plus `answer_keys.json`, since
+    the extract loses the underline and `goi_profile.py` reports `target=None` —
+    scores **14 訓読み of 35 (40 %), exactly 2 in every sitting** (12/2022,
+    7/2023, 12/2023, 7/2024, 12/2024, 7/2025, 12/2025). That refutes the earlier
+    hand classification 「2/2/1/2/2」 and its 12/35, which this docstring used to
+    restate. The owner ruling of that date set the floor to 2; the 12 papers in
+    `MONDAI1_KUN_FLOOR_PRE_RULING_IDS` were drawn under the old floor of 1 and
+    are judged against it. Reading TYPE (14/21) is not authoring SHAPE (13/22,
+    背骨): moji-goi.md keeps both numbers and owns them.
 
     THE SECOND INCIDENT (REPORT-GOI §F5, 2026-08-21): with only a ceiling,
     `20260817_3` shipped **0 of 5** 訓読み — five on-reading compounds, no native
@@ -7848,18 +7908,22 @@ def check_mondai1_reading_type_mix(d, spec: dict, sample):
     if not xs:
         return skip(f"{d.name}: 問題1 訓読み/音読み mix", "no kanji_reading draw")
     kun = [pool_entry_text(x) for x in xs if sample.is_kun_target(x)]
+    floor = (MONDAI1_KUN_FLOOR_PRE_RULING
+             if d.name in MONDAI1_KUN_FLOOR_PRE_RULING_IDS else MONDAI1_KUN_FLOOR)
     name = (f"{d.name}: 問題1 訓読み mix ({len(kun)} of {len(xs)}, band "
-            f"{MONDAI1_KUN_FLOOR}-{MONDAI1_KUN_CAP})")
+            f"{floor}-{MONDAI1_KUN_CAP}"
+            + (", pre-2026-09-28 floor" if floor != MONDAI1_KUN_FLOOR else "")
+            + ")")
     detail = (f"訓読み {len(kun)} of {len(xs)} ({'/'.join(kun) or 'none'}) — the "
-              f"five hand-classified current-era sittings run 2/2/1/2/2 of 5, "
-              f"i.e. never more than {MONDAI1_KUN_CAP} and never fewer than "
-              f"{MONDAI1_KUN_FLOOR}. Above the cap the section stops testing the "
+              f"seven current-era sittings run exactly 2 of 5 each (14 of 35 by "
+              f"is_kun_target()), i.e. never more than {MONDAI1_KUN_CAP} and "
+              f"never fewer than {floor}. Above the cap the section stops testing the "
               f"2x2 on-reading grid (official runs it in 3-4 of 5 slots); at "
               f"zero it stops testing word recognition at all. "
               f"`--reroll-one kanji_reading:<index>` with a fresh RNG seed, "
               f"never a hand substitution (moji-goi.md §問題1; "
               f"qa-report-20260819_1 F3; REPORT-GOI §F5)")
-    outside = not MONDAI1_KUN_FLOOR <= len(kun) <= MONDAI1_KUN_CAP
+    outside = not floor <= len(kun) <= MONDAI1_KUN_CAP
     if d.name in MONDAI1_KUN_GRANDFATHERED:
         return warn(name, not outside, detail + GRANDFATHER_NOTE)
     check(name, not outside, detail)
@@ -8251,6 +8315,13 @@ def check_ledger_spec_agreement():
                 only_spec = [x for x in kept if x not in led]
                 only_led = [x for x in led if x not in kept]
                 off.append(f"{cat}: spec-only {only_spec}, ledger-only {only_led}")
+        # The frozen per-category windows (2026-09-28) are part of the draw
+        # record: the spec's rotation checks and the ledger-wide repeat queue
+        # read them from different files, so they must say the same thing.
+        spec_cd = (specs[tid].get("rotation") or {}).get("cooldowns")
+        if (spec_cd or entry.get("cooldowns")) and spec_cd != entry.get("cooldowns"):
+            off.append(f"cooldowns: spec {spec_cd} vs ledger "
+                       f"{entry.get('cooldowns')}")
         check(f"test {tid}: ledger history entry records the same draw as "
               f"tests/{tid}/test_spec.json", not off,
               "; ".join(off) + " — one side was edited after sampling; the "
@@ -8901,6 +8972,29 @@ def check_spec_rotation(d, spec: dict, sample, pools: dict):
     check(name, rot.get("recency_source") == "ledger",
           f"recency_source={rot.get('recency_source')!r} — only 'ledger' names "
           f"a source this gate can re-check (exam-blueprint)")
+    # FROZEN WINDOWS (owner ruling 2026-09-28, open item #1 of
+    # qa/open-items-20260914_1.md). Every rotation check below judges the paper
+    # against `rotation.cooldowns` — the per-category window the sampler proved
+    # at draw time — via `sample.recorded_cooldown()`. Without it they fell back
+    # to `cooldown_for()` on TODAY's pool, so growing a pool by 4 `paraphrase`
+    # entries FAILed a paper shipped weeks earlier. Every spec on disk that day
+    # was backfilled with the window the gate computed then (`cooldowns_source`
+    # says so), so this is a FAIL for any spec that lacks it.
+    cds = rot.get("cooldowns")
+    pool_cats = [c for c in (spec.get("items") or {})
+                 if c in sample.DRAW and c in pools
+                 and c not in getattr(sample, "AUTHORED_THEME_CATS", ())]
+    missing = [c for c in pool_cats
+               if not isinstance((cds or {}).get(c), int)]
+    check(f"{d.name}: test_spec freezes the cooldown window of every drawn "
+          f"pool category ({len(pool_cats) - len(missing)}/{len(pool_cats)}, "
+          f"{'backfilled' if str(rot.get('cooldowns_source') or '').startswith('backfilled') else 'draw-time'})",
+          not missing,
+          f"no frozen window for {missing} — `rotation.cooldowns` is written by "
+          f"sample_items.py at draw time; without it this paper would be judged "
+          f"against today's pool depth, which retro-FAILs shipped papers when a "
+          f"pool grows. Never hand-write a smaller number to clear a clash "
+          f"(exam-blueprint 'Rotation model')")
 
     per_cat_name = f"{d.name}: rotation claim holds — nothing drawn appears " \
                    "inside its own category's cooldown window"
@@ -8941,7 +9035,8 @@ def check_spec_rotation(d, spec: dict, sample, pools: dict):
             xs = [x for x in xs if pool_entry_text(x) in legacy_verified]
             if not xs:
                 continue              # still grandfathered — counted below
-        cool = sample.cooldown_for(cat, pools[cat])
+        # the window frozen at draw time, never today's pool depth (2026-09-28)
+        cool = sample.recorded_cooldown(rot, cat, pools[cat])
         if cool <= 0:
             continue
         recent: dict[str, str] = {}
@@ -8968,9 +9063,10 @@ def check_spec_rotation(d, spec: dict, sample, pools: dict):
                          f"grandfathered]")
     check(per_cat_name, not clashes,
           "; ".join(clashes[:6]) + " — an item was drawn, or hand-substituted, "
-          "inside its OWN category's cooldown window (cooldown_for(cat, "
-          "current pool depth), never the spec's single weakest-category "
-          "scalar). If a target proves undrawable mid-authoring, "
+          "inside its OWN category's cooldown window (the per-category window "
+          "frozen in rotation.cooldowns at draw time, never the spec's single "
+          "weakest-category scalar and never today's pool depth). If a target "
+          "proves undrawable mid-authoring, "
           "`--reroll <category>` — never substitute an item from memory "
           "(exam-blueprint 'Rotation model')")
 
@@ -9405,10 +9501,8 @@ def check_invented_proper_nouns():
         # A composed 聴解's place names come from official recordings — they are
         # not this paper's invented apparatus, and two papers can draw the same
         # official item's 緑市 with nobody having reused anything. Only the
-        # authored half is scanned for those papers.
+        # authored half is scanned (a TTS-authored 聴解 is retired).
         sources = ["言語知識・読解.md"]
-        if ORIGIN.choukai_origin(d) == "tts":
-            sources.append("聴解スクリプト.txt")
         for fn in sources:
             f = d / fn
             if f.is_file():
@@ -9918,8 +10012,9 @@ def check_pool_glyph_inventory():
 # 語彙 第2部. The `paraphrase` entry 「自ずから(自然と)」 has since been deleted;
 # the sibling 「おのずと(自然に)」 stays (20260817_3 drew it — exam-blueprint's
 # "an entry a shipped paper drew is corrected or kept, never removed") and this
-# check flags it, which is the point: the flag is the record that it needs a
-# ruling, not a licence to delete it.
+# check flagged it until the ruling came: since 2026-09-28 it is RETIRED
+# (`pools.json` `retired_entries`) — kept for provenance, never drawn, and no
+# longer read here.
 #
 # WHAT THIS CANNOT DECIDE, said plainly because QA said it first: this check
 # alone does NOT catch the F1 class. The other paper in that class,
@@ -9970,8 +10065,12 @@ def check_pool_gloss_band():
              for s, t in texts.items()}
     pools = json.loads(pools_path.read_text(encoding="utf-8"))
     hits: list[tuple[int, str, str]] = []
+    # A `retired_entries` row is never drawn again, so it tests nothing and needs
+    # no band: retirement IS the ruling this WARN asks for (おのずと(自然に),
+    # 2026-09-28). It stays in the list only so shipped draws still resolve.
+    retired = SAMPLE_ITEMS.retired_map(pools)
     for cat in GLOSS_BAND_CATEGORIES:
-        for e in pools.get(cat, []):
+        for e in SAMPLE_ITEMS.drawable(cat, pools.get(cat, []), pools):
             head = pool_entry_text(e).split("(")[0].split("（")[0].strip()
             head = head.replace("〜", "").replace("～", "")
             if len(head) < 2:
@@ -9985,10 +10084,12 @@ def check_pool_gloss_band():
     hits.sort(key=lambda h: (-h[0], h[1], h[2]))
     shown = "; ".join(f"{cat}:「{head}」({n} sitting{'s' if n > 1 else ''})"
                       for n, cat, head in hits[:12])
+    n_retired = sum(len(retired.get(c) or {}) for c in GLOSS_BAND_CATEGORIES)
     warn(f"{name} ({len(hits)} of "
-         f"{sum(len(pools.get(c, [])) for c in GLOSS_BAND_CATEGORIES)} entries "
-         f"in {len(GLOSS_BAND_CATEGORIES)} tested categories, "
-         f"{len(books)} sittings read)",
+         f"{sum(len(SAMPLE_ITEMS.drawable(c, pools.get(c, []), pools)) for c in GLOSS_BAND_CATEGORIES)} "
+         f"drawable entries in {len(GLOSS_BAND_CATEGORIES)} tested categories"
+         + (f", {n_retired} retired not read" if n_retired else "")
+         + f", {len(books)} sittings read)",
          not hits,
          shown + (f" … and {len(hits) - 12} more" if len(hits) > 12 else "")
          + " — official glosses each of these in EVERY sitting that prints it, "
@@ -10003,6 +10104,69 @@ def check_pool_gloss_band():
            "(20260904_1's 「いつも」) is printed unglossed everywhere and is "
            "invisible here (qa-report-20260914_1 F1; exam-blueprint §\"Both "
            "halves must sit in the N2 band\")")
+
+
+def check_pool_retired_entries():
+    """`pools.json` `retired_entries`: a retirement is a ruling, and it must hold.
+
+    THE MECHANISM (owner ruling 2026-09-28): an off-band entry that a SHIPPED
+    paper drew can be neither deleted (`check_draw_provenance()` must keep
+    resolving that paper's draw) nor corrected in place (no N2-band gloss
+    exists, and inventing one is REPORT-GOI §F10). It is RETIRED instead — left
+    in its category list, named in the top-level `retired_entries` map, and
+    filtered out of every draw and every `cooldown_for()` depth by
+    `sample_items.drawable()`. Founding set: ショップ, おのずと(自然に), そのほか
+    (`qa/open-items-20260914_1.md` #2/#3, `qa/root-cause-20260917_1.md` RC-3).
+
+    THREE FAILS, each the way the map can rot:
+      * a retired key that names no live entry of its category (renamed or
+        deleted — the record now points at nothing and retires nothing);
+      * a record without `on`/`reason`/`drawn_by` — retirement exists BECAUSE a
+        shipped paper drew the entry, so the record must say which; an entry no
+        paper drew is simply deleted (exam-blueprint §"Pool entries stay inside
+        the N2 band"), and `drawn_by` must match the ledger;
+      * a ledger row NOT named in `drawn_by` that holds a retired entry — the
+        sampler drew something it must never draw.
+    """
+    print("\npools.json retired entries (kept for provenance, never drawn)")
+    pools_path = AGENTS / "exam-blueprint" / "references" / "pools.json"
+    if not pools_path.is_file():
+        return skip("retired pool entries are live, recorded and undrawn",
+                    "no pools.json")
+    pools = json.loads(pools_path.read_text(encoding="utf-8"))
+    retired = SAMPLE_ITEMS.retired_map(pools)
+    n = sum(len(v) for v in retired.values())
+    name = f"retired pool entries are live, recorded and undrawn ({n} retired)"
+    if not n:
+        return skip(name, "no `retired_entries` in pools.json")
+    bad = []
+    rows = {str(h.get("test_id")): h for h in ledger_history()}
+    for cat, recs in sorted(retired.items()):
+        live = {pool_entry_text(e) for e in pools.get(cat) or []}
+        for text, rec in recs.items():
+            if text not in live:
+                bad.append(f"{cat}:「{text}」 is retired but is not a {cat} entry")
+                continue
+            if not (isinstance(rec, dict) and rec.get("on") and rec.get("reason")
+                    and isinstance(rec.get("drawn_by"), list) and rec["drawn_by"]):
+                bad.append(f"{cat}:「{text}」 record lacks on/reason/drawn_by")
+                continue
+            for tid in rec["drawn_by"]:
+                got = [pool_entry_text(x)
+                       for x in ((rows.get(str(tid)) or {}).get("items") or {}).get(cat) or []]
+                if text not in got:
+                    bad.append(f"{cat}:「{text}」 drawn_by names {tid}, whose ledger "
+                               f"row does not hold it")
+            for tid, h in rows.items():
+                got = [pool_entry_text(x) for x in (h.get("items") or {}).get(cat) or []]
+                if text in got and tid not in rec["drawn_by"]:
+                    bad.append(f"{cat}:「{text}」 drawn by {tid} after retirement")
+    check(name, not bad,
+          "; ".join(bad) + " — a retired entry stays in its category list so "
+          "shipped draws resolve, is named in `retired_entries` with the paper(s) "
+          "that drew it, and is never drawn again (sample_items.drawable()). "
+          "Never delete the list entry, never invent a gloss "
+          "(exam-blueprint §\"Pool entries stay inside the N2 band\")")
 
 
 def check_moji4_blank_stems(name: str, gt: str, keys: dict[int, int],
@@ -10604,9 +10768,11 @@ def check_legacy_item_repeats(sample):
     hits = []
     for cat in ("kanji_reading", "orthography", "word_formation",
                 "context_words", "paraphrase", "usage"):
-        cool = sample.cooldown_for(cat, pools.get(cat, []))
         seen: dict[str, tuple[int, str]] = {}
         for i, entry in enumerate(hist):
+            # the LATER draw's window, frozen in its ledger row at draw time
+            # (2026-09-28) — never today's pool depth
+            cool = sample.recorded_cooldown(entry, cat, pools.get(cat, []))
             for x in (entry.get("items") or {}).get(cat) or []:
                 t = sample.item_text(x)
                 prev = seen.get(t)
@@ -10998,8 +11164,8 @@ def check_mondai5_prints_nothing(name: str, ct: str, origin: str, bi):
 
 # 問題5-2番 must ANNOUNCE its two questions as 「質問1。…」/「質問2。…」. This is not
 # a formatting preference — it is the only thing that puts answer time between
-# the two questions. `make_choukai_mp3.gap_before_line()` keys the 10 s
-# `GAP_AFTER_SHITSUMON1` off `SHITSUMON2_RE` (`^質問2。`), so a script that speaks
+# the two questions. The retired TTS builder keyed the 10 s
+# `GAP_AFTER_SHITSUMON1` off `^質問2。`, so a script that speaks
 # both questions BARE never reaches the branch and the examinee gets no time at
 # all to answer 質問1: choice 4 of the first read-back runs into the second
 # question at an ordinary ~1 s turn gap.
@@ -14664,11 +14830,27 @@ _KAISETSU_PLACEHOLDER = re.compile(
 # zero in any `ja` pane. 49 of the 102 are one paper, `imported-n2-2024-12`.
 # They are REPORTED and not repaired here: rewriting another paper's pane is an
 # authoring pass in that paper's language, not a gate change.
+# A verdict with an optional LABEL in front of it («「輸入」đúng.», «Câu 2: đúng.»,
+# «警備 đúng.») is still a verdict and nothing else; so is «Không có trong bài.»
+# on a 読解 distractor. The label-free form let 94 such lines through across
+# three papers (RC-5 addendum, 2026-09-28: 94 → 0 after the repair, 0 in any ja
+# pane), so the label and the "not in the text" family are part of the pattern.
+_KAISETSU_TAG = r"(?:[\[［](?:正解|不正解|Đúng|Sai)[\]］]\s*)?"
+_KAISETSU_LABEL = (
+    r"(?:(?:Câu|Phương án|Lựa chọn|Đáp án|Phương án số|PA|Option|選択肢)\s*\d+\s*[:：.、)]?\s*"
+    r"|\d+\s*[:：.、)]\s*"
+    r"|「[^」]*」\s*[:：]?\s*"
+    r"|[^\s:：「」]{1,20}\s*[:：]\s*"
+    r"|[^\s:：「」a-zA-ZÀ-ỹ]{1,20}\s+(?=[ĐđSsKk])"
+    r")?")
+_KAISETSU_VERDICT = (
+    r"(?:là\s+)?(?:đáp án\s+)?(?:Đúng|Sai|Chính xác|Không đúng|Không chính xác"
+    r"|Đáp án đúng|Phù hợp|Không phù hợp|Không có trong bài"
+    r"|Không (?:được )?nhắc(?: đến| tới)?|Không (?:được )?đề cập|Không có"
+    r"|正しい|正解|不正解|誤り|正しくない|適切|不適切)")
 _KAISETSU_VERDICT_ONLY = re.compile(
-    r"^\s*(?:[\[［](?:正解|不正解|Đúng|Sai)[\]］]\s*)?"
-    r"(?:Đúng|Sai|Chính xác|Không đúng|Không chính xác|Đáp án đúng|Phù hợp"
-    r"|Không phù hợp|正しい|正解|不正解|誤り|正しくない|適切|不適切)"
-    r"\s*[。．.!！]?\s*$", re.I)
+    r"^\s*" + _KAISETSU_TAG + _KAISETSU_LABEL + _KAISETSU_VERDICT
+    + r"\s*[。．.!！]?\s*$", re.I)
 
 
 def check_kaisetsu_no_scaffold_placeholders(test_id: str, lang: str, data: dict):
@@ -15072,11 +15254,6 @@ CHOUKAI_VOICE_BALANCE_GRANDFATHERED = {
     "20260818_1", "20260819_1",
 }
 VOICE_MARGIN_GRANDFATHERED: set[str] = set()
-PACING_SHA_GRANDFATHERED: set[str] = set()
-# Emptied 2026-08-21: all 14 papers rebuilt on the two pause ladders (Phase 4).
-# This set was never a policy — it was a to-do wearing an exemption, and a
-# 13-of-14 grandfather set on an audio-freshness check is how the rebuild the
-# whole phase existed for went missing behind a green gate.
 
 
 def check_voice_casting(script_text: str, m, origin: str, test_id: str = ""):
@@ -15629,7 +15806,7 @@ def check_choukai_nondialogue_medium_rotation():
     tests = ROOT / "tests"
     if not tests.is_dir():
         return skip("問題1 non-dialogue medium rotation", "no tests/ on disk")
-    m = load(".agents/choukai-audio/scripts/make_choukai_mp3.py")
+    m = load(".agents/choukai-audio/scripts/choukai_script.py")
     seq = []
     composed = []
     for d in sorted(p for p in tests.iterdir() if p.is_dir()):
@@ -15770,7 +15947,7 @@ def check_choukai_option_set_reuse():
     tests = ROOT / "tests"
     if not tests.is_dir():
         return skip("問題3 option-set reuse", "no tests/ on disk")
-    m = load(".agents/choukai-audio/scripts/make_choukai_mp3.py")
+    m = load(".agents/choukai-audio/scripts/choukai_script.py")
     # Two sequences, because "the previous paper" means the previous paper a
     # candidate could have sat: generated papers run in id order, and the ten
     # imports are the official sittings in their own chronological order (they
@@ -15947,6 +16124,25 @@ def check_choukai_contraction_rate(test_id: str, st: str, m):
          f"Use conversational contractions (てる, とく, ちゃう, なきゃ) in spoken turns (choukai-items.md §Register)", slug="choukai_contraction_rate", test_id=test_id)
 
 
+def check_booklet_layout(d, gt: str, level: str):
+    """A generated 言語知識・読解.md prints the official layout, byte for byte.
+
+    19 of 29 generated papers shipped without the 【文字・語彙】/【文法】/【読解】
+    banners and every one printed instruction lines the official booklet never
+    uses — 問題5's 「次の言葉の使い分けとして…」 came from the scaffold itself
+    (2026-09-28). The lines are a format fact, so they live in the level table
+    and `make assemble` stamps them; this proves nobody retyped one afterwards.
+    Imports are exempt: they print what their sitting printed.
+    Repair: `python3 tools/assemble_paper.py tests/<id> --normalize`.
+    """
+    probs = ASSEMBLE.layout_problems(gt, level)
+    check(f"{d.name}: 言語知識・読解.md is in the official layout (banners, "
+          f"canonical 問題N lines)", not probs,
+          "; ".join(probs[:4]) + (f" … +{len(probs) - 4}" if len(probs) > 4 else "")
+          + " — run `python3 tools/assemble_paper.py tests/"
+          + d.name + " --normalize` (jlpt-exam-structure levels table)")
+
+
 def check_passage_boxes(d):
     """Every 問題9–14 passage must render inside its ruled `.passage-box`.
 
@@ -16015,13 +16211,13 @@ def check_artifact_freshness(d):
 
     Rebuilding a script without regenerating MP3 results in papers speaking superseded
     問題N instructions. mtimes cannot see this (they are checkout-unstable), so
-    make_choukai_mp3.py stamps `script_sha` into 聴解_チャプター.json and
+    compose_choukai.py stamps `script_sha` into 聴解_チャプター.json and
     build_booklet.py stamps `<!-- src_sha: <name>=<sha> -->` into every HTML.
 
-    An external MP3 has no TTS timeline to stamp (write_external_chapters.py
+    An external MP3 has no composed timeline to stamp (write_external_chapters.py
     writes `source: external`), so the audio half is skipped for it — that is
     the one exemption, and it is why the check passes an imported paper whose
-    MP3 came from the source sitting rather than from edge-tts.
+    MP3 came from the source sitting.
     """
     script = d / "聴解スクリプト.txt"
     chapters = d / "聴解_チャプター.json"
@@ -16034,7 +16230,7 @@ def check_artifact_freshness(d):
         want = hashlib.sha1(script.read_bytes()).hexdigest()[:12]
         if data.get("source") == "external":
             skip(f"{d.name}: 聴解.mp3 was built from today's 聴解スクリプト.txt",
-                 "external MP3 (no TTS timeline to stamp)")
+                 "external MP3 (no composed timeline to stamp)")
         else:
             got = data.get("script_sha")
             check(f"{d.name}: 聴解.mp3 was built from today's "
@@ -16042,43 +16238,10 @@ def check_artifact_freshness(d):
                   f"聴解_チャプター.json records {got!r} — run `make mp3 {d.name}`; "
                   f"the shipped audio speaks a superseded script "
                   f"(jlpt-test-generation Invariants)")
-            # …and with today's PACING. script_sha covers the words only: three
-            # documented gaps (問題4 inter-reply, 問題1/2 repeat-of-question, the
-            # 例 answer pause) were wrong in the code for the whole life of the
-            # eight papers, and fixing them leaves every MP3 stale with nothing
-            # else to show it — the constants are not in the script bytes.
-            if data.get("source") == "composed":
-                # The speech is archive audio and the pauses come from the
-                # pacing TABLE via tools/compose_choukai.py; there are no
-                # edge-tts constants in the timeline to hash. script_sha above
-                # still applies and still ran.
-                #
-                # F6 (2026-09-11), `GATE-WRONG`. This branch used to `return`,
-                # and the pacing assertion is not the last thing in this
-                # function — the HTML-vs-Markdown comparison below is. So the
-                # exemption from ONE audio assertion silently took the whole
-                # freshness check with it, for EVERY generated paper, from the
-                # 2026-09-08 composition rework onward. Re-derived before the
-                # repair: of the 37 papers on disk, the 10 `imported-*` were the
-                # only ones that reached `built HTML matches the Markdown it
-                # stamps`; all 27 generated papers exited here. It was noticed
-                # because the line still fires for imports. The exemption is
-                # real and narrow — a composed timeline has no synthesis
-                # constants — and a composed paper's HTML is built from Markdown
-                # by `build_booklet.py`/`build_interactive.py` exactly like any
-                # other paper's, so `skip` the one assertion and fall through.
-                skip(f"{d.name}: 聴解.mp3 was built with today's pacing",
-                     "composed from official clips (no synthesis constants)")
-            else:
-                mk = load(".agents/choukai-audio/scripts/make_choukai_mp3.py")
-                want_p, got_p = mk.pacing_sha(), data.get("pacing_sha")
-                p_name = f"{d.name}: 聴解.mp3 was built with today's pacing (pacing_sha {want_p})"
-                p_ok = (got_p == want_p)
-                p_detail = f"聴解_チャプター.json records {got_p!r} — run `make mp3 {d.name}`; the audio is timed by superseded constants (choukai-audio Part 3 §script_sha)"
-                if d.name in PACING_SHA_GRANDFATHERED:
-                    warn(p_name, p_ok, p_detail + GRANDFATHER_NOTE)
-                else:
-                    check(p_name, p_ok, p_detail)
+            # A `pacing_sha` comparison lived here for Edge-TTS chapters (the
+            # synthesis constants were not in the script bytes). Composed and
+            # external timelines carry no synthesis constants, and a TTS-built
+            # paper is a FAIL in check_tests(), so it was retired 2026-09-28.
 
     # HTML: WARN on a missing stamp (no built HTML carries one yet — the rebuild
     # belongs to the paper-repair pass), FAIL when a stamp is present and stale.
@@ -16244,7 +16407,7 @@ MODEL_ANSWER = load(".agents/exam-model-answer/scripts/build_model_answer.py")
 
 def check_tests():
     g = load(".agents/exam-app/scripts/grade_answers.py")
-    m = load(".agents/choukai-audio/scripts/make_choukai_mp3.py")
+    m = load(".agents/choukai-audio/scripts/choukai_script.py")
     bi = load(".agents/exam-app/scripts/build_interactive.py")
     key_heading = re.compile(r"^#+\s*(解答|【?正解)", re.M)
 
@@ -16307,13 +16470,12 @@ def check_tests():
         lv_shapes = LEVEL.gengo_shapes(level)
         ck_shapes = LEVEL.choukai_shapes(level)
         # The listening half has its own origin since 2026-09-08: a GENERATED
-        # paper's 聴解 is composed from official clips, not synthesized. Every
-        # authoring/register/pacing check below exists to police what an author
-        # or Edge-TTS produced, and the archive is the yardstick they were
-        # measured against — so running them on lifted official audio measures
-        # the yardstick, exactly the reason imports are already exempt.
+        # paper's 聴解 is composed from official clips, not synthesized, and the
+        # Edge-TTS path is retired — its authoring/register/pacing checks went
+        # with it (2026-09-28). `choukai_origin()` still answers "tts" for a
+        # generated paper whose chapters lack `source: composed`; that is a FAIL
+        # below, never a silent path.
         ck_origin = ORIGIN.choukai_origin(d)
-        choukai_authored = origin == "generated" and ck_origin == "tts"
         # Functions that branch on `origin` for 聴解 want the composed half to
         # behave like an import: official structure, official wording.
         ck_arg = "imported" if ck_origin == "composed" else origin
@@ -16366,6 +16528,12 @@ def check_tests():
             continue
 
         gt, ct = gengo.read_text(encoding="utf-8"), choukai.read_text(encoding="utf-8")
+        if origin == "generated":
+            check(f"{d.name}: 聴解 is composed (聴解_チャプター.json `source: "
+                  f"composed`)", ck_origin == "composed",
+                  f"choukai_origin() reads {ck_origin!r} — TTS audio is retired "
+                  f"(choukai-audio Part 0); re-compose with `make mp3 {d.name} "
+                  f"SEED=<rng>`")
         for f, text in ((gengo, gt), (choukai, ct)):
             check(f"{f.name}: answer-key heading present (build_interactive aborts without it)",
                   key_heading.search(text) is not None)
@@ -16477,6 +16645,11 @@ def check_tests():
         check_note_band(d.name, gt, origin)
         check_note_band_reuse(d.name, gt, st_text, origin, ck_origin)
         if origin == "generated":
+            check_booklet_layout(d, gt, level)
+            # Both ran only inside the TTS-authored block and so had been off
+            # for every paper since 2026-09-08; neither is about the audio.
+            check_model_answer_option_sync(d.name, gt, ct, st_text, m, bi)
+            check_moji_longest_key_rate(d.name, gt, keys, bi)
             check_dokkai_key_table_parses(d.name, gt)
             check_dokkai_lengths(d.name, gengo_prose, bi, origin=origin)
             check_dokkai_lexical_load(d.name)
@@ -16618,32 +16791,6 @@ def check_tests():
                                            st + ct[: ccut.start()])
                 check_fabricated_distractors(choukai.name, ct[ccut.start():])
                 check_choukai_kaisetsu_keys(d.name, ct, bi)
-            blocks = [b.strip() for b in re.split(r"\n\s*\n", st) if b.strip()]
-            if ck_origin == "composed":
-                skip(f"{d.name}: 聴解スクリプト.txt passes validate_script",
-                     "composed script mirrors the source sittings, which carry "
-                     "no 例 block — the official script PDFs do not print the "
-                     "practice items, so no transcript of one exists here. The "
-                     "例 AUDIO is present, inside the section preamble clip. "
-                     "This file is a record of the audio, not an input to "
-                     "edge-tts")
-            if choukai_authored:
-                try:
-                    # The 質問1。/質問2。 rule is owned by
-                    # `check_mondai5_question_markers()` here, not by this line:
-                    # `validate_script()` raises one SystemExit for the whole
-                    # script and has no test id, so it cannot grandfather the
-                    # two papers that predate the rule. `make mp3` still refuses
-                    # outright — the default is `True`.
-                    m.validate_script(
-                        blocks,
-                        require_p5_question_markers=(
-                            d.name not in P5_QUESTION_MARKER_GRANDFATHERED))
-                    check(f"聴解スクリプト.txt passes validate_script ({len(blocks)} blocks)", True)
-                except SystemExit as e:
-                    check("聴解スクリプト.txt passes validate_script", False, str(e).replace("\n", " ")[:300])
-                check_script_shape(st, ct, m, d.name)
-                check_example_premarks(ct, st, bi)
             check_mondai5_question_markers(d.name, st, ck_arg)
             # Origin-agnostic on purpose: the founding measurement is that no
             # official sitting does this either, so an import that somehow did
@@ -16652,81 +16799,24 @@ def check_tests():
             check_mondai5_prints_nothing(d.name, ct, ck_arg, bi)
             check_mondai5_enumeration(d.name, st, ct, bi)
             check_voice_casting(st, m, ck_arg, d.name)
-            # ORIGIN-AGNOSTIC and outside the `choukai_authored` gate below: the
-            # defect class starts in an IMPORT and is copied verbatim into every
-            # composed paper that draws the clip, so scoping it to authored
+            # ORIGIN-AGNOSTIC on purpose: the defect class starts in an IMPORT
+            # and is copied verbatim into every composed paper that draws the clip, so scoping it to authored
             # papers would inspect only the copies (qa-report-20260914_1 F4).
             check_choukai_question_repeat(d.name, st, m)
             # ORIGIN-AGNOSTIC too, and for the reason that licenses the FAIL:
             # the ten imported sittings are the corpus that measured 0 of 10, so
             # running them here keeps the yardstick visible instead of assumed.
             check_choukai_duplicate_question_line(d.name)
-            # Register is a GENERATION failure mode: an imported official paper
-            # is the reference these thresholds came from, and its script.md is
-            # partly OCR, so measuring it here would flag the yardstick.
-            if ck_origin == "composed":
-                # Say so out loud. These checks police what an AUTHOR or
-                # edge-tts produced — register, turn shape, section mix, key
-                # length, pacing ladders — and this paper's 聴解 is lifted
-                # official audio, the very corpus every one of those bands was
-                # measured against. A silently absent check is indistinguishable
-                # from one nobody ran (AGENTS.md §0).
-                skip(f"{d.name}: 聴解 authoring/register/pacing checks",
-                     "composed from official clips — these bands were measured "
-                     "ON this corpus, so running them here measures the "
-                     "yardstick (same exemption imported papers get)")
-            if choukai_authored:
-                check_script_register(d.name, st, m)
-                # G16 — section-level, i.e. what item-by-item review cannot see.
-                check_choukai_key_duplication(d.name, ct, st, m, bi)
-                check_choukai_countable_mix(d.name, ct, st, m, bi)
-                check_choukai_volume(d.name, d)
-                check_choukai_same_speaker_lines(d.name, st, m)
-                check_choukai_section_table(d.name, ct, bi)
-                check_choukai_elimination_tokens(d.name, ct, bi)
-                check_choukai_leader_pairs(d.name, ct, bi)
-                check_choukai_setting_adjacency(d.name, ct, bi)
-                check_choukai_decider_question_type_pair(d.name, ct, bi)
-                check_topics_p3_archetype_repeat(d.name, ct, bi)
-                check_choukai_p4_distractor_shapes(d.name, ct, bi)
-                check_choukai_closing_turn_shape(d.name, ct, st, m, bi)
-                check_choukai_opening_frame(d.name, st, m)
-                check_choukai_judgment_mix(d.name, st, ct, m, bi)
-                check_choukai_longest_key_rate(d.name, ct, st, m, bi)
-                check_choukai_key_exclusive_token(d.name, ct, st, m, bi)
-                check_choukai_q1_question_forms(d.name, st, m)
-                check_choukai_decider_position(d.name, ct, bi, st, m)
-                check_choukai_probe_carousel(d.name, st, m)
-                check_choukai_q2_question_mix(d.name, st, m)
-                check_choukai_q4_stimulus_register(d.name, st, m)
-                check_choukai_q4_addressee(d.name, st, m)
-                check_choukai_non_dialogue_item(d.name, st, m)
-                check_choukai_q3_talk_band(d.name, st, m)
-                check_choukai_voice_balance(d.name, st, m)
-                check_choukai_service_formulas(d.name, st, m)
-                check_choukai_contraction_rate(d.name, st, m)
-                check_model_answer_option_sync(d.name, gt, ct, st, m, bi)
-                check_moji_longest_key_rate(d.name, gt, keys, bi)
-                # G17 — the sentences themselves, vs Shin Kanzen 実力養成編.
-                check_choukai_contractions(d.name, st, m)
-                check_choukai_key_paraphrase(d.name, ct, st, m, bi)
-                check_choukai_option_grounding(d.name, ct, st, m, bi)
             check_spec_target_items(d, gt, st, bi, ck_origin)
             # Origin-agnostic: an import's 詳細解説 is written by the same pass, to
             # the same bands, in the same two languages as a generated paper's.
             check_kaisetsu_prose(d.name)
-            if choukai_authored:
-                check_choukai_drawn_medium(d, st)
         else:
             check("聴解スクリプト.txt present", False, "canonical name required")
 
         if (d / "聴解.mp3").is_file():
             check("聴解_チャプター.json accompanies the MP3", (d / "聴解_チャプター.json").is_file(),
                   "re-run make mp3 to regenerate chapter marks")
-            if choukai_authored:
-                # The ladders this measures are edge-tts pacing knobs; composed
-                # audio carries the archive's own turn rhythm.
-                check_choukai_pause_distribution(d.name, d / "聴解.mp3")
         check_artifact_freshness(d)
         check_passage_boxes(d)
 
@@ -16949,7 +17039,6 @@ def main():
         check_practice_mode()
         check_exam_audio_hosting()
         check_every_choukai_finding_declares_repair()
-        check_remediation_state()
         check_pacing()
         check_level_tables()
         check_item_counts()
@@ -16964,6 +17053,7 @@ def main():
         check_pool_word_formation_notation()
         check_pool_glyph_inventory()
         check_pool_gloss_band()
+        check_pool_retired_entries()
         print("\nrotation inputs (why a new test is actually new)")
         check_rotation_inputs()
         check_ledger_draw_counts(load(".agents/exam-blueprint/scripts/sample_items.py"))

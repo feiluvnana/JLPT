@@ -155,8 +155,8 @@ two sets are still authored per language, still capped by the bands below, and
 ## Purpose & Pedagogical Quality
 
 While `解答.html` is for taking the test and grading, `模範解答.html` is for
-**deep post-exam study (復習・学習)**. For every question (all 101 items:
-71 Gengo/Dokkai + 30-31 Choukai), it provides:
+**deep post-exam study (復習・学習)**. For every question (the level table's
+count — N2: 71 Gengo/Dokkai + 30 Choukai), it provides:
 
 1. **Question Stem & Choices**: full context, options, correct-answer badge.
 2. **Reading Passages & Audio Transcripts**: 読解 — full passage text with
@@ -248,33 +248,30 @@ make scaffold-explanations <id>            # -> 詳細解説.json, stems/options
 make scaffold-explanations <id> LANG=vi    # -> 詳細解説.vi.json, an EMPTY skeleton
 ```
 
-**Count the items the scaffold gives you before you write into it.** A
-generated N2 paper is 101 entries and an import is 101 (or 75 + 聴解 for a
-四-question sitting); `check_kaisetsu_item_coverage` now FAILs a short file,
-because every OTHER 詳細解説 line in the gate measures the entries that are
-present and is therefore blind to a missing one. The scaffold shipped a
-100-item file for two papers: `derive_choukai_raw` split a two-question 問題5
-only on literal 「質問1。」/「質問2。」 markers, which official sittings and imports
-carry and this repo's generated scripts (20260828_2 onward) do not, so 問5-2
-came back as ONE entry holding 質問1's four options with `[正解]` on option 1.
-`20260903_1` shipped that way — 100 items, plus a spurious empty `問5-2` card in
-`模範解答.html`, because `build_model_answer`'s `all_choukai_keys` unions the
-derived keys with the markdown ones. Fixed 2026-09-04 in
-`verify_fidelity._split_spoken_block`, which now recovers an unmarked 質問
-positionally (the narration line directly before each option group).
+**Count the items the scaffold gives you before you write into it** — one
+entry per key the paper prints (its era shape in the level table: a current
+N2 paper is 101, an import whatever its sitting printed).
+`check_kaisetsu_item_coverage` FAILs a short file, because every other
+詳細解説 line in the gate measures only the entries that are present.
+
+**Generated paper: the 聴解 entries of both panes are the composer's.** `make
+mp3` writes them from the bank and replaces them on every compose and every
+`REPLAY=1` re-render, so author the 言語知識・読解 entries only; a wrong 聴解
+explanation is a `logs/choukai_bank.json` fix (`choukai-audio` Part 0).
 
 Then complete `why_correct`, `options_analysis` and `points` per item, inside
 the terseness bands. Validate each parses
 (`python3 -c "import json,sys; json.load(open(sys.argv[1]))" tests/<id>/詳細解説.json`),
-run `make check` (it enforces the bands, the parity between the two sets, and
-the option sync against the booklet), then `make model-answer <id>`.
+then `make model-answer <id>` (which also rebuilds `練習.html`, whose model
+answers come from these files) and `make check` (it enforces the bands, the
+parity between the two sets, and the option sync against the booklet).
 
 **Order matters, and so does isolation.** Author `詳細解説.json` first — it owns
 the item keys and the booklet wording the Vietnamese scaffold is generated
 against, so `LANG=vi` refuses to run without it. Then author the Vietnamese set
 **in a context that is not holding the Japanese one**. That is the same reason
-QA runs with fresh eyes (`AGENTS.md` §5): a context that has just written 101
-Japanese explanations will produce Vietnamese ones shaped like them, sentence
+QA runs with fresh eyes (`AGENTS.md` §5): a context that has just written a
+paper's Japanese explanations will produce Vietnamese ones shaped like them, sentence
 for sentence, without ever deciding to translate. Two subagents, one per
 language, reading the paper — not each other — is the shape that survives.
 
@@ -321,13 +318,13 @@ longer matches the booklet/script it was copied from.
 >   returns `QA: PASS` and all question/option/script edits are frozen —
 >   earlier is prohibited because subsequent QA fixes desynchronize the
 >   explanations from the exam.
-> - **Import**: run `make model-answer imported-<slug>` ONLY AFTER all 101
->   keys are verified against the official answer key and `make check` is
+> - **Import**: run `make model-answer imported-<slug>` ONLY AFTER every
+>   key is verified against the official answer key and `make check` is
 >   completely green.
 
 ```bash
-python3 .agents/exam-model-answer/scripts/build_model_answer.py tests/<id>
-make model-answer <id>          # or: make explanation <id>
+make model-answer <id>          # 模範解答.html + 練習.html (alias: make explanation)
+make check
 ```
 
 ## Structure & Architecture

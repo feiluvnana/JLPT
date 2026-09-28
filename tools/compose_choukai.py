@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Compose one test's 聴解 half out of official clips.
 
-Replaces the Edge-TTS path (`.agents/choukai-audio/scripts/make_choukai_mp3.py`)
+Replaced the Edge-TTS path (retired 2026-09-08; its generator is deleted)
 for generated papers. Instead of synthesizing speech from an authored script,
 this draws whole items from `logs/choukai_bank.json` — real recordings from the
 ten imported official sittings — and lays them out with the pacing table's
@@ -71,8 +71,10 @@ SECTIONS = {"問題1": 5, "問題2": 6, "問題3": 5, "問題4": 11, "問題5": 
 # Pauses the composer LAYS DOWN between clips, from choukai-audio/SKILL.md's
 # measured table. The clips carry their own internal rhythm, so these are only
 # the structural gaps between units.
-ANSWER_PAUSE = {"問題1": 12.0, "問題2": 12.0, "問題3": 8.0, "問題4": 8.0,
-                "問題5": 10.0}
+# One owner: the measured answer pauses live in choukai_script.py beside the
+# rest of the 聴解 pacing table (the gate reads them there against the skill).
+sys.path.insert(0, str(ROOT / ".agents" / "choukai-audio" / "scripts"))
+from choukai_script import ANSWER_PAUSE  # noqa: E402
 # NOTE: 問題2's ~20 s option-reading pause is NOT laid down here. It sits
 # inside each 問題2 clip, between the announcer's question and the talk, and is
 # lifted with the item.
@@ -1094,6 +1096,11 @@ def main(argv: list[str] | None = None) -> int:
     test_dir = ROOT / "tests" / args.test_id
     if not test_dir.is_dir():
         sys.exit(f"no such test: {test_dir.relative_to(ROOT)}")
+    # An import's 聴解 half IS its sitting's own recording and transcription;
+    # composing over it would replace an official paper with 29 random clips.
+    if test_dir.name.startswith("imported-"):
+        sys.exit(f"{args.test_id} is an import: its listening half is the sitting's "
+                 f"own audio (external-test-import), never composed")
     # SECTIONS, the pauses and the acceptance bands are N2 measurements; a level
     # without its own calibration has no bank to draw from.
     global BANK_PATH, DRAWS_PATH

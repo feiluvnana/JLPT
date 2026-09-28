@@ -1207,7 +1207,7 @@
   "問4-4": {
     "why_correct": "「行ったきり」＝đi rồi chưa quay lại; đáp lại tự nhiên là hỏi xác nhận.",
     "options_analysis": [
-      "Đúng.",
+      "「行ったきり」= đi rồi chưa về, nên hỏi lại「まだ戻られてないんですか」là tự nhiên.",
       "“Sắp đi ăn trưa à?” hiểu sai thì, câu gốc nói đã đi rồi.",
       "“Đã về rồi à?” ngược nghĩa với「行ったきり」."
     ],
@@ -1244,7 +1244,7 @@
     "why_correct": "「スタッフの分を含めて30個」＝tổng cộng 30 suất, gồm cả nhân viên.",
     "options_analysis": [
       "“Chỉ riêng nhân viên 30 suất” hiểu sai, đó là tổng số.",
-      "Đúng.",
+      "Nhắc lại「全部で30個」khớp「スタッフの分を含めて30個」: tổng cộng 30 suất.",
       "“Suất nhân viên đặt riêng” ngược với yêu cầu gộp chung."
     ],
     "points": [
@@ -1292,7 +1292,7 @@
   "問5-2-1": {
     "why_correct": "Nam nói đo thể lực trước「体力があるか測ってもらおう」＝hội trường 1.",
     "options_analysis": [
-      "Đúng.",
+      "Nam nói「まずは今どれくらい体力があるか測ってもらおう」: đo thể lực ở hội trường 1.",
       "Hội trường 2 (thể dục) được nhắc trước nhưng anh chọn đo thể lực trước.",
       "Hội trường 3 (thực đơn) là lựa chọn của nữ.",
       "Hội trường 4 (tư vấn) cũng là nơi nữ đến trước, không phải nam."
@@ -1308,7 +1308,7 @@
       "Hội trường 1 (đo thể lực) là lựa chọn của nam.",
       "Hội trường 2 (thể dục) không được nữ nhắc đến.",
       "Nữ nhắc hội trường 3 (thực đơn) nhưng đổi ý đi hội trường 4 trước.",
-      "Đúng."
+      "Được nhắc chuyện mất ngủ, nữ nói「そっち先に行ってこよ」: đến gặp bác sĩ ở hội trường 4."
     ],
     "points": [
       "個別《こべつ》に: nghĩa “riêng lẻ”.",

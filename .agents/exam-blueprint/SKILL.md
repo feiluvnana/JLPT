@@ -1,6 +1,6 @@
 ---
 name: exam-blueprint
-description: Single owner of WHAT each exam tests — RANDOM, non-repeating pool sampling of grammar points, vocabulary and kanji; theme assignment plus the already-used-subject list for reading topics and listening scenarios (their subjects are authored, not drawn); and answer-position balance. Use BEFORE authoring any questions, whenever generating a new test, whenever the user asks for "another test", "random questions", "different questions", or says tests repeat, feel stale, or feel textbook-bound. Never let the language model choose items from memory — model choices are heavily biased toward the same famous items and are NOT random; selection must come from scripts/sample_items.py.
+description: Single owner of WHAT each exam tests — RANDOM, non-repeating pool sampling of grammar points, vocabulary and kanji; theme assignment plus the already-used-subject list for 読解 topics (their subjects are authored, not drawn; the 聴解 half is composed, so its draws are inert); and answer-position balance. Use BEFORE authoring any questions, whenever generating a new test, whenever the user asks for "another test", "random questions", "different questions", or says tests repeat, feel stale, or feel textbook-bound. Never let the language model choose items from memory — model choices are heavily biased toward the same famous items and are NOT random; selection must come from scripts/sample_items.py.
 ---
 
 # Exam Blueprint — pool sampling
@@ -97,6 +97,38 @@ preventive-screening uptake is ordinary public-health prose, not the ban list).
 Deleting the entry also disarms the `--reroll-one` no-op below, since the
 rejected string is no longer a candidate at all.
 
+**An off-band entry a shipped paper drew is RETIRED, not deleted and not
+re-glossed** (owner ruling 2026-09-28). Some such entries have no honest
+correction: `ショップ` has no N2-band synonym (店 is the banned N5 core, 店舗 has
+zero hits in all 31 booklets and all three vocabulary authorities),
+`おのずと(自然に)` is glossed by official in every sitting that prints it, and
+`そのほか` is off-band in its HEADWORD, so no parenthetical fixes it
+(`qa/open-items-20260914_1.md` #2/#3, `qa/root-cause-20260917_1.md` RC-3).
+Inventing a gloss is the REPORT-GOI §F10 class, so the third option is:
+
+```json
+"retired_entries": {"paraphrase": {"ショップ": {"on": "2026-09-28", "ruling": "…",
+  "reason": "…", "drawn_by": ["20260807_1"]}, …}}
+```
+
+- A top-level MAP keyed by the entry's exact string — like `quick_response_keys`
+  and `grammar_form_families`, and for the same reason: the entry stays a bare
+  string in its category list, so `check_draw_provenance()`, the ledger and
+  every spec keep resolving it with no edit anywhere.
+- `sample_items.drawable()` filters it out of every draw (full, `--reroll`,
+  `--reroll-one`) and out of `cooldown_for()`'s depth, so a pool's window is
+  sized from what can actually be drawn. `check_pool_gloss_band()` no longer
+  reads it — retirement IS the band ruling that WARN asked for.
+- `drawn_by` names the shipped paper(s) whose ledger row holds it; that is what
+  makes it a retirement rather than a deletion. An entry no shipped paper drew
+  is deleted outright, as above. `check_pool_retired_entries()` FAILs a record
+  naming no live entry, missing `on`/`reason`/`drawn_by`, whose `drawn_by`
+  disagrees with the ledger, or that any OTHER ledger row holds (a retired
+  entry drawn again).
+- Retirement is for pool entries a shipped paper drew and that cannot be
+  corrected. A defective but fixable string is still corrected in place (the
+  `調剤師`, `うっすら(わずかに)` and `つねに(絶えず)` precedents).
+
 **A `quick_response` entry is a SENTENCE, so a defective one is corrected in
 place — it is not the same repair as an undrawable entry.** The 飢饉 rule above
 says *delete and `--reroll`*, and the reason is specific: an `orthography` entry
@@ -118,8 +150,8 @@ alone — 「調剤師」, which is not a Japanese professional title (the licen
 pool sentence produced two defects in two QA rounds, the second one printed and
 SPOKEN. The entry now reads 「薬の説明は、薬剤師からお聞きください。」. When you touch a
 pool sentence, re-read every noun in it against the world, and note the
-paper-side cost: the fix re-synthesises the MP3 and re-labels the invented scene
-(`20260818_1`'s section table said 動物病院の会計, which has no dispensing window).
+paper-side cost (`20260818_1`'s section table said 動物病院の会計, which has no
+dispensing window).
 `check_pool_nonexistent_titles()` now FAILs a pool string naming a title that
 does not exist (調剤師, 看護士, 診療師 …) — a deny-list, so it catches the near
 misses that have shipped, not every possible invention. That is NOT "patch the sentence instead
@@ -182,7 +214,7 @@ a reading (`納める(税金)` is context, `詫びる(謝る)` a synonym).
 from `vocab-n1/n2/n3.json` (never the banned `kanji-n2.json`/KANJIDIC path),
 which enforces Shape/Attested/rule-3 by construction. `openjlpt` (the
 vendored classify/expand corpus) was fully removed the same day — its four
-consuming scripts are deleted, `promote_adjunct.py` remains archived. Any
+consuming scripts are deleted. Any
 further `kanji_reading` growth is now manual: read Shinkanzen/Soumatome (or
 corroborate against the archive) and hand-verify all four rules — no script
 sources or pre-checks candidates anymore. Two `make check` gates that
@@ -380,7 +412,7 @@ the thing being corrected for. **Never re-derive a target from
 | category | helper | rule | archive |
 |---|---|---|---|
 | `paraphrase`, `usage` | `sample_katakana_capped()` | `n` Bernoulli(`KATAKANA_TARGET_RATE`) trials pick the katakana slots, capped at `KATAKANA_CAP` | katakana headword in 3/35 問題5 and 1/35 問題6 items |
-| `kanji_reading` | `sample_kun_capped()` | 訓読み count inside `KUN_FLOOR`–`KUN_CAP` = **1–2 of 5**, both bounds, `--reroll-one` included | five hand-classified sittings run 2/2/1/2/2 |
+| `kanji_reading` | `sample_kun_capped()` | 訓読み count inside `KUN_FLOOR`–`KUN_CAP` = **2–2 of 5** (floor 1 until 2026-09-28), both bounds, `--reroll-one` included; per-slot rate `KUN_TARGET_RATE` = 14/35 | `is_kun_target()` scores 14 of the 35 current-era targets 訓 — exactly 2 in each of the seven sittings |
 | `orthography` | `sample_wago_floor()` | 和語 count drawn from the archive's own histogram `WAGO_DIST` (floor `WAGO_FLOOR`), bare 2-kanji compounds ≤ `COMPOUND_CAP` = 3 | 和語 1–3 and compounds 1–3 in **31 of 31** sittings |
 
 Two things the 2026-08-21 additions record, because both were shipped defects:
@@ -508,8 +540,8 @@ items, one errand, an `exam-qa-review` automatic fail. Four clusters exist
 
 ### The four theme rules
 
-A paper authors 12 reading + 21 listening = 33 themed surfaces against a
-20-value vocabulary, so "one surface per theme" is impossible — uniqueness
+A paper authors 12 reading surfaces (its 21 listening draws are inert — the
+聴解 half is composed) against a 20-value vocabulary, so "one surface per theme" is impossible — uniqueness
 binds only the **headline set** = 問題9 cloze, 問題12 A/B (one surface),
 問題13 長文, 問題14 flyer, 聴解問題5. Five surfaces:
 
@@ -863,11 +895,37 @@ would punish the fix. Never re-sample an authored test to add a stamp — the 13
 papers predating the field are a documented skip, not a defect.
 
 Every spec carries `"rotation": {"recency_source": "ledger", "history_len":
-2, "cooldown": 6}` — `cooldown` is the WEAKEST level actually applied to any
-category that draw (usually set by the thinnest pool, e.g. `grammar_p8`).
+2, "cooldown": 6, "cooldowns": {"paraphrase": 26, …}, "cooldowns_source": …}`
+— `cooldown` is the WEAKEST level actually applied to any category that draw
+(usually set by the thinnest pool, e.g. `grammar_p8`).
 `assert_rotation()` re-checks the claim against the ledger; a red line means
 `draw()` is broken — never lower a cooldown to make it green. Keep every pool
 ≥2.5× the per-test draw; inspect with `sample_items.py --check-depth`.
+
+**A paper's per-category window is FROZEN at draw time** (owner ruling
+2026-09-28, open item #1 of `qa/open-items-20260914_1.md`). `cooldown_for()`
+re-derives a window from the CURRENT pool depth, so before this every rotation
+check judged every shipped paper against today's pool: adding 4 `paraphrase`
+entries moved that window 26 → 27 and FAILed `20260914_1` on 「案外」, drawn
+correctly under 26 weeks earlier — pool growth was blocked by its own gate.
+Now:
+
+- The sampler writes the window each category was PROVED against
+  (`cooldown_for()` at draw time, i.e. what `assert_rotation()` checked) into
+  `rotation.cooldowns` in the spec and `cooldowns` in the ledger row.
+  `--reroll <cat>` replaces that category's window; `--reroll-one` records the
+  SMALLER of the old and new windows (`merge_cooldowns()`), because the kept
+  entries were proved against the old one.
+- Every rotation check (`check_spec_rotation`, `check_spec_errand_rotation`,
+  `check_grammar_cross_category_rotation`, `check_legacy_item_repeats`) reads
+  the frozen window through `sample_items.recorded_cooldown()`, never today's
+  depth; `check_ledger_spec_agreement` requires spec and ledger to record the
+  same map; a spec without it FAILs.
+- The 29 papers drawn before the field existed were BACKFILLED with the window
+  the gate computed on 2026-09-28 (identical for all of them, since it was
+  that day's pool), and say so in `cooldowns_source`. No verdict moved.
+- Never hand-edit a frozen window. It is a record of what was proved, not a
+  knob — a smaller number written to clear a clash is a forged proof.
 
 **2026-08-17: both `assert_rotation()` and `check_spec_rotation()` checked
 every category against ONE spec-wide scalar** — a real bug: anything with a
@@ -1109,15 +1167,13 @@ the official archive each time. `check_draw_provenance()` FAILs any adjunct
 row citing `openjlpt`. The item itself must still clear the N2 band on its
 own merits — a stale citation and an off-level word are different defects.
 
-## Archived growth tooling
+## Growing a pool
 
-`archive/` holds only `promote_adjunct.py` (grows `pools.json` from approved
-staging rows) — no Makefile target, must be moved back into `scripts/` to run.
-`classify_level.py`/`expand_pools.py`/`suggest_pool_additions.py`/
-`fetch_openjlpt.py` were **deleted, not archived** (2026-08-11) — all four
-existed solely to work against the now-deleted `openjlpt` corpus. Growing a
-pool now means an author reading Shinkanzen/Soumatome (or the archive) and
-hand-adding entries — see `archive/README.md`.
+By hand: read Shinkanzen/Soumatome/Hajimete (or the archive), verify the entry
+against the rules above, add it to `references/pools.json`. There is no growth
+script (the `openjlpt` tooling was deleted 2026-08-11, `promote_adjunct.py`
+2026-09-28). Pool growth no longer retro-FAILs a shipped paper: each paper's
+cooldown window is frozen at draw time (§"Rotation model").
 
 ## `scripts/sample_items.py` — usage
 

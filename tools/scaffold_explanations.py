@@ -156,6 +156,16 @@ def _same_modulo_furigana(a: str, b: str) -> bool:
     return norm(a) == norm(b)
 
 
+def _extends_modulo_furigana(stored: str, raw: str) -> bool:
+    """Is `stored` the raw text plus a tail (e.g. 問題3/5's spoken choices)?
+
+    The composer writes a 問題3 item's script WITH its spoken choices; the
+    booklet-derived raw script stops at the question. Treating that as "the
+    source moved" truncated 2–3 scripts per composed paper (2026-09-28)."""
+    norm = lambda t: re.sub(r"\s+", "", _FURIGANA.sub("", t or ""))
+    return bool(norm(raw)) and norm(stored).startswith(norm(raw))
+
+
 def scaffold_test(test_dir: Path, lean: bool = False, merge_existing: bool = True) -> dict:
     test_dir = Path(test_dir)
     gengo_md, choukai_md, script_text = vf.load_sources(test_dir)
@@ -253,7 +263,8 @@ def scaffold_test(test_dir: Path, lean: bool = False, merge_existing: bool = Tru
         stored_script = ex_item.get("script")
         raw_script = raw_info.get("script")
         if stored_script and raw_script:
-            script = stored_script if _same_modulo_furigana(stored_script, raw_script) else raw_script
+            script = (stored_script if _same_modulo_furigana(stored_script, raw_script)
+                      or _extends_modulo_furigana(stored_script, raw_script) else raw_script)
         else:
             script = stored_script or raw_script
         ans_val = exp_info.get("ans", 1)

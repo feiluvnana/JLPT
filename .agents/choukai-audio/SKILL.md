@@ -1,6 +1,6 @@
 ---
 name: choukai-audio
-description: Single owner of the listening audio end to end. Since 2026-09-08 a generated paper's 聴解 is COMPOSED from real recordings — a MIXED pool of official sittings plus hand-declared textbook and mock-exam items (Shin Kanzen, Soumatome, 問題例集, 完全模試) (tools/build_choukai_bank.py + tools/build_textbook_bank.py + tools/compose_choukai.py), not synthesized — Edge-TTS is retired. Exactly one paper is official-only. Use whenever building, fixing or re-drawing a paper's listening half, whenever the clip bank needs rebuilding, whenever an official choukai MP3 needs segmenting or analysis ("learn from this audio"), and whenever pacing needs verification. Do not write ad-hoc TTS loops and do not call make_choukai_mp3.py — it is kept only as the pacing/register evidence the composer is measured against.
+description: Single owner of the listening audio end to end. Since 2026-09-08 a generated paper's 聴解 is COMPOSED from real recordings — a MIXED pool of official sittings plus hand-declared textbook and mock-exam items (Shin Kanzen, Soumatome, 問題例集, 完全模試) (tools/build_choukai_bank.py + tools/build_textbook_bank.py + tools/compose_choukai.py), not synthesized — Edge-TTS is retired. Exactly one paper is official-only. Use whenever building, fixing or re-drawing a paper's listening half, whenever the clip bank needs rebuilding, whenever an official choukai MP3 needs segmenting or analysis ("learn from this audio"), and whenever pacing needs verification. Do not write ad-hoc TTS loops — scripts/choukai_script.py holds only the script grammar and pacing constants the composer and gate read.
 ---
 
 # Choukai Audio (compose → verify → calibrate)
@@ -14,13 +14,15 @@ transcripts, options, keys and explanations.
 
 ```bash
 make number-calls                 # logs/choukai_number_calls.json <- 11 「N番。」
-make choukai-bank                 # logs/choukai_bank.json <- 10 imports + textbooks
-make mp3 <test_id> SEED=<rng>     # compose that paper's whole 聴解 half
+make choukai-bank                 # logs/choukai_bank.json <- imports + archive + textbooks
+make mp3 <test_id> SEED=<rng>     # a NEW draw of that paper's whole 聴解 half
+make mp3 <test_id> REPLAY=1 [NO_AUDIO=1]   # re-render its recorded draw
 ```
 
 `make mp3` runs `tools/compose_choukai.py`, which writes **all** of
 `聴解スクリプト.txt`, `聴解.md`, `聴解.mp3`, `聴解_チャプター.json` and the 30
-choukai entries in both `詳細解説` panes. **Nothing in the listening half is
+choukai entries in both `詳細解説` panes — every one of them OUTPUT, never
+hand-edited. It refuses `imported-*` ids. **Nothing in the listening half is
 authored any more** — there is no 聴解 stage-2 subagent, no dialogue to write,
 no distractors to design.
 
@@ -57,26 +59,13 @@ no distractors to design.
   paper and overwrites that paper's script, booklet, MP3, chapters and both
   詳細解説 panes with it. `avoid_slot`, the figure exclusion and the wear counts
   sit in the same choice, so a composer change re-draws the whole half at one
-  seed too. **To re-render an earlier paper, the command is:**
-
-  ```bash
-  python3 tools/compose_choukai.py <id> --replay --no-audio
-  ```
-
-  `--replay` reads that paper's recorded `clips`/`preambles` out of
-  `logs/choukai_draws.json` and reuses them by construction; `--no-audio` keeps
-  the existing MP3, which is valid exactly because the draw did not move. Add
-  `--replay` without `--no-audio` when the audio itself must be rebuilt.
-  **Founding case, 2026-09-17**: `compose_choukai.py`'s own `--replay` help has
-  said this since the flag existed, this SKILL did not, and two QA documents plus
-  an orchestrator brief therefore all prescribed `make mp3 <id> SEED=<recorded
-  seed>` for the NEW-2 repair of `20260817_1` and `20260818_1`
-  (`qa-report-20260914_1-round2.md` §7). Measured against that day's tree:
-  re-drawing `20260817_1` at its own recorded seed `19054272` moves **15 of 29
-  slots and 3 of 5 preambles**; `20260818_1` at `60629400`, **17 of 29 and 2 of
-  5** —
-  the prescribed command would have re-skinned two shipped papers to fix one word
-  in each.
+  seed too. **To re-render an earlier paper: `make mp3 <id> REPLAY=1
+  NO_AUDIO=1`** (`compose_choukai.py --replay --no-audio`) — it reuses the
+  recorded `clips`/`preambles` from `logs/choukai_draws.json`, and `NO_AUDIO`
+  keeps the MP3, valid exactly because the draw did not move. Drop `NO_AUDIO`
+  when the audio itself must be rebuilt, then `make upload-files TARGET=tests
+  TEST=<id>`. (2026-09-17: a seeded re-run of `20260817_1` at its own recorded
+  seed moved 15 of 29 slots — `qa-report-20260914_1-round2.md` §7.)
 - **After ANY `make mp3` re-run, diff `logs/choukai_draws.json` against the
   previous row and report the number of slots that moved** — never assert that
   one slot moved because only one was intended to. (`20260909_1`'s round-1
@@ -84,7 +73,7 @@ no distractors to design.
   slots had moved, and every downstream reader inherited the false claim —
   qa-report-20260909_1-round2 R2-S1.)
 
-### The five files that own this
+### The files that own this
 
 | File | Owns |
 |---|---|
@@ -297,20 +286,17 @@ measurement that justifies it** — never by widening a band.
 | Part | Status |
 |---|---|
 | 1 — script file format | The block conventions still describe `聴解スクリプト.txt`, which the composer WRITES. Its register rules and banned formulas are now **evidence about official dialogue**, not instructions to an author |
-| 2 — casting / `SPEAKER_MAP` | **Retired.** Voices are the archive's own actors |
-| 3 — synthesis | **The pacing table is live** — `compose_choukai.py` reads those values for the pauses it lays down. The edge-tts machinery around it is retired |
+| 3 — pacing | **Live** — `compose_choukai.py` reads those values for the pauses it lays down, and `make check` diffs the table against them |
 | 4 — calibration | Live, and now partly executable: `tools/choukai_segment.py` implements §1's method |
 
-`.agents/choukai-audio/scripts/make_choukai_mp3.py` **stays in the tree and is
-not called.** `make check` still diffs Part 3's pacing table against its
-constants, which is the mechanism that keeps the table honest — deleting it
-would delete the only automated tie between the documented numbers and code.
+Edge-TTS was retired 2026-09-08 (casting, synthesis and voice rules deleted);
+`scripts/choukai_script.py` keeps only the grammar and pacing constants.
 
 ---
 
 ## Executable & File Paths
 
-- **Composer**: `tools/compose_choukai.py` (via `make mp3 <id> SEED=<rng>`)
+- **Composer**: `tools/compose_choukai.py` (via `make mp3 <id> SEED=<rng>` or `REPLAY=1`)
 - **Clip bank**: `logs/choukai_bank.json` (via `make choukai-bank`)
 - **Draw history**: `logs/choukai_draws.json` — which clips each paper spent
 - **Output**: `tests/<test_id>/聴解.mp3`
@@ -363,7 +349,7 @@ the file it cannot be checked against the archive, and the typo propagated to
 is harvested from `tests/imported-*/聴解スクリプト.txt` by
 `build_choukai_bank.py`, so correcting this doc alone corrects nothing: the
 repair is the imported papers' line 1 → `make choukai-bank` → re-render each
-drawing paper with `--replay --no-audio`. **This is the shape of EVERY upstream
+drawing paper with `make mp3 <id> REPLAY=1 NO_AUDIO=1`. **This is the shape of EVERY upstream
 repair** — a bank fix reaches a shipped paper only by re-rendering it, and only
 `--replay` re-renders it as itself (Part 0 §"A recorded seed does NOT reproduce
 a past paper's draw"; `make mp3 <id> SEED=<recorded seed>` re-draws it instead).
@@ -384,9 +370,8 @@ assumed: all 31 `refs/JLPT_N2_NEW/*/script.md` extracts carry zero SFX/chime
 notations, and the `audio_inspection.md` measurement files show nothing
 consistent with a mixed-in effect. Official N2 choukai audio is the announcer
 plus voice actors and nothing else, in all 31 sittings. **Adding SFX would be
-a fidelity regression** — the synthesis pipeline (per-line TTS →
-`shape_pauses()` → concat → one `loudnorm` pass) has no mixing stage and none
-should be added.
+a fidelity regression** — the composer has no mixing stage and none should be
+added.
 
 ## Register: write people talking, not a template being filled
 
@@ -562,20 +547,18 @@ form:
 - A bare `最もよいものは◯番です。` after any scored `N番。` is FORBIDDEN.
 - `質問1の最もよいものは◯番です。` is FORBIDDEN anywhere; 問題5 has no 例 and
   never carries a reveal.
-- **No authoring annotations** (`（※選択肢3が受付…）`) — Edge-TTS reads them
-  aloud; rationale goes in 聴解.md's 解説 column.
+- **No authoring annotations** (`（※選択肢3が受付…）`); rationale goes in
+  聴解.md's 解説 column.
 
-`make_choukai_mp3.py` hard-fails on all of these before synthesizing.
+`validate_script()` fails on all of these.
 
 ## Block conventions (parser contract)
 
 - Blocks are separated by ONE blank line. **One block = one audio unit.**
 - **One turn = ONE line. Two consecutive lines may never carry the same
-  speaker label.** A gap is inserted between every pair of lines
-  (`turn_gap_jitter()`, median 0.9 s over a five-value ladder — Part 3
-  §"Verify the pause DISTRIBUTION"); a same-speaker pause at a 。 is a within-turn
-  pause instead (official median 0.40 s, p75 0.53; capped at
-  `GAP_WITHIN_TURN_MAX`). Official has **0** consecutive same-label pairs in
+  speaker label.** Official's turn gap is median 0.51 s; a same-speaker pause
+  at a 。 is a within-turn pause instead (official median 0.40 s, p75 0.53 —
+  Part 3). Official has **0** consecutive same-label pairs in
   31 sittings — a same-speaker split turn silently inflates the reaction-turn
   rate without adding a real reaction, since **only the OTHER speaker's turn
   counts as a reaction** (`official_register.md` §7.3). To let one speaker
@@ -593,8 +576,8 @@ form:
 - 問題1/2: repeat the question as the block's last line.
 - 問題3/4/5 spoken choices: one per line, `1、…。` `2、…。` (読点 after the
   digit — the parser keys on `^[1-4]、`).
-- Japanese punctuation only (、。) in spoken lines — an ASCII `,`/`.`
-  mis-times edge-tts's pause (`?` is fine); `make check` rejects them.
+- Japanese punctuation only (、。) in spoken lines (`?` is fine); `make check`
+  rejects an ASCII `,`/`.`.
 
 ## Spoken vs printed choices — do not speak the printed ones
 
@@ -631,19 +614,19 @@ file:
    decider ties the answer to a numbered SLOT, so re-ordering the choice list
    silently re-keys the item.
 
-**A mis-keyed 問題5-2番 is fixed HERE**: re-enumerate so the dialogue
-introduces candidates in the read-back order, replace any ordinal decider
-with the candidate's name, then `make mp3 <test_id>`. `check_mondai5_enumeration()`
+**A mis-keyed composed 問題5-2番 is a bank fix** (`logs/choukai_bank.json`'s
+source, then `make mp3 <id> REPLAY=1 NO_AUDIO=1` — `exam-qa-review` §4 item 4),
+never a hand edit. `check_mondai5_enumeration()`
 fails both rules; `check_mondai5_prints_nothing()` fails a booklet printing
 options under 問題5.
 
 ## Instructions are copied, not re-worded
 
 The 問題N instruction must be **character-for-character** the one in `聴解.md`
-(the script adds only 「では、練習しましょう。」) — take the canonical text from
-`jlpt-exam-structure` §"問題N instruction lines" and paste it into both files.
-The gate compares booklet against SCRIPT, not official wording, so both
-drifting the same way still passes green.
+(the script adds only 「では、練習しましょう。」). A composed paper takes it from
+the source preamble clip; a hand-typed one (an import) copies it from
+`jlpt-exam-structure` §"問題N instruction lines". The gate compares booklet
+against SCRIPT, not official wording.
 
 ## The 例 must be answerable, and its announced number must be the answer
 
@@ -712,15 +695,8 @@ merely *prints* the total. Missing pieces are otherwise SILENT.
 answer time for 質問1 at all** — the branch is never reached, choice 4 of the
 first read-back runs into the second question at an ordinary ~1 s turn gap, and
 nothing about the MP3 looks wrong: every constant is still inside its band,
-because the one that matters is never applied ("…and a constant that is never
-REACHED reads as correct too", Part 3).
-
-**Measured, 2026-09-04, on `tests/20260904_1/聴解.mp3` as shipped:**
-3.01 / 3.04 / 3.01 s between the four spoken choices, then **1.17 s** where 10 s
-belongs; the item's only 10.0 s gap was the end-of-item pause after 質問2. The
-repair was the two prefixes plus `make mp3` — after it, 10.03 s sits between the
-two read-backs and the whole file's pause distribution is otherwise unchanged
-(998 vs 995 gaps; the ~10 s bucket goes 2 → 3, every other bucket identical).
+because the one that matters is never applied (measured on `20260904_1`: 1.17 s
+where 10 s belongs).
 
 The rule shipped broken three times because the code only tested CO-LOCATION —
 「質問1。 without 質問2。」 — so a block with NEITHER marker passed silently while
@@ -731,10 +707,9 @@ for the grandfathered ids in `P5_QUESTION_MARKER_GRANDFATHERED`), and
 `check_mondai5_question_markers` in `make check` is the per-paper line. 26 of
 the 29 papers on disk — 18 generated, all 8 imports — already carried the markers
 when the rule landed; `20260828_2` and `20260903_1` did not, and their audio had
-the same missing pause. **Both were repaired 2026-09-08** — each 問題5-2番 now
-prefixes its two question lines and its `聴解.mp3` was re-synthesised, so both
-pass on merit and `P5_QUESTION_MARKER_GRANDFATHERED` is now **empty**. Keep it
-empty: the repair is two prefixes plus `make mp3`, never a new exemption.
+the same missing pause. **Both were repaired 2026-09-08**, so both pass on
+merit and `P5_QUESTION_MARKER_GRANDFATHERED` is now **empty**. Keep it
+empty — never a new exemption.
 
 Two other consumers read the same marker, which is why the drift was expensive:
 `check_consistency.choukai_p5_2ban_options()` returns `[]` without `^質問1。`,
@@ -752,118 +727,27 @@ plus gendered role pairs:
 `男性職員:` `女性職員:` `男性係員:` `女性係員:` `男性担当者:` `女性担当者:`
 `男性講師:` `女性講師:` `男性専門家:` `女性専門家:` `男性店員:` `女性店員:`
 `男性医者:` `女性医者:` `男性アナウンサー:` `女性アナウンサー:`
-— half or full-width colon. Unlabeled lines = narrator. **An unmapped label does not
-error at synthesis — it silently falls through to the narrator voice.**
-`validate_script()` rejects any label missing from the map; add it to
-`SPEAKER_MAP` *before* using it, choosing a voice that contrasts with the
-other speaker in that item (Part 2). Check by eye for mojibake, stray
-Latin/Cyrillic, and wrong speaker attribution in 例 dialogues — the
-adversarial pass is `exam-qa-review`'s.
+— half or full-width colon. Unlabeled lines = narrator.
+`validate_script()` rejects any label missing from `SPEAKER_MAP`
+(`scripts/choukai_script.py`); add it there *before* banking a source that
+uses it. Check by eye for mojibake, stray Latin/Cyrillic, and wrong speaker
+attribution — the adversarial pass is `exam-qa-review`'s.
 
 ---
 
-# Part 2 — Casting: narration and `SPEAKER_MAP` are one decision
+# Part 3 — Pacing (`scripts/choukai_script.py`)
 
-`SPEAKER_MAP` decides which voice reads a `label:` line; the narration tells
-the examinee who is speaking. Nothing reconciles them — the author does:
+`scripts/choukai_script.py` holds the script grammar (`SPEAKER_MAP`,
+`ITEM_RE`/`SPEAKER_RE`, `EXPECTED_ITEMS`, `NEEDS_EXAMPLE`, `validate_script`,
+`gap_before_line`) and the pacing constants below — no synthesis. The composer
+lays its between-clip pauses from these values, and `make check` diffs this
+table against them.
 
-- **A narration that states a gender must resolve to a voice of that
-  gender.** 「〜の男の人」→`MALE` (Keita); 「〜の女の人」→`FEMALE` (Nanami).
-  Use gendered role labels (`男性職員`, `女性係員`, etc.) whenever a role speaker's
-  gender is mentioned in the situation or prompt.
-- **A two-party item whose two labels resolve to the SAME voice is a
-  defect** — who said the deciding line is the whole task in 問題1/2/5. Cast
-  one male and one female label per item; `男1`/`男2` pitch-splitting is for
-  the three-person conversation only.
-- **Voice balance across each 大問**: turn share between male and female voices
-  should remain balanced (target 40–60% per section; gate WARNs if >70% on one
-  voice, FAILs if >85%).
-- **問題5 needs a three-party item.** `choukai-items.md` §統合理解 requires
-  問題5-1番 to be a ≥3-speaker discussion (official has one every sitting
-  since 2020). edge-tts ships exactly two ja-JP voices, so the working build
-  is **two same-gender labels split by `pitch` plus one of the other
-  gender** — `男1`(+18 Hz) + `男2`(−16 Hz) + `女`, or `女1`/`女2` + `男`. Do
-  **not** spend `rate` on the split (moves difficulty).
-- **Voice separation margin (semitones)**:
-  When two same-gender speakers share an item, pitch separation is measured in semitones:
-  $$\Delta\text{st} = 12 \times \left|\log_2\left(\frac{f_{\text{base}} + \Delta f_1}{f_{\text{base}} + \Delta f_2}\right)\right|$$
-  where $f_{\text{base}} = 210\text{ Hz}$ for female (`NanamiNeural`) and $120\text{ Hz}$ for male (`KeitaNeural`).
-  Target: **$\ge 1.9\text{ st}$**. Gate FAILs if $< 1.0\text{ st}$, and WARNs between
-  $1.0$ and $1.9\text{ st}$. The FAIL edge has been hit once: `20260807_1` 問題5-2番 cast
-  係員(+18 Hz) beside 妻(+16 Hz) — **0.16 st**, inaudible — repaired 2026-08-21 by moving the
-  enumerator to `男性係員` (2.94 st against 夫). Why semitones and not Hz: 18 Hz on a 120 Hz
-  male voice is 2.42 st and plainly audible, 20 Hz on a 210 Hz female voice is 1.57 st and
-  marginal, so the old Hz rule flagged the audible pair and passed the inaudible one
-  (REPORT-CHOUKAI.md §D2; the reversed precedent is noted in `qa/qa-report-20260811_1.md` §6).
-- **Scan the WHOLE block for the narration, not its first line** — 問題5's
-  2番 puts the situation on the block's second line.
-- **Questions must name speakers unambiguously** — if a question says
-  「男の学生は」, the item must contain exactly one male and one female student.
-
-`make check` fails the gender contradiction and low pitch margin, and WARNs on single-voice pairs.
-Read `SPEAKER_MAP` before writing.
-
-## Voice model (matches the official recording)
-
-- **Narrator/announcer = FEMALE** (`ja-JP-NanamiNeural`, rate −10 %) — the
-  official announcer is female in all 31 archive recordings.
-- **Identity comes from `pitch`, difficulty from `rate`.** Two same-gender
-  roles are separated by `pitch` (≤20 Hz on a ~120 Hz male, ~25 Hz on a
-  ~210 Hz female) while `rate` stays on its calibrated value — a rate-only
-  split (男1 +4% vs 男2 −8%) is not a second person to the ear.
-- **Speech rate is verified, not just chosen for contrast** — it decides
-  whether the exam underestimates N2 level. Verified per Part 4 step 5:
-  dialogue (±0–6%) ~378 morae/min; narrator (−10%) ~295. Re-verify any rate
-  change against that step — nothing else checks speech rate.
-
----
-
-# Part 3 — Synthesis (`make_choukai_mp3.py`)
-
-## Execution
-
-Prerequisites: `ffmpeg` on PATH and `pip install edge-tts` (free, no API key).
-
-```bash
-python .agents/choukai-audio/scripts/make_choukai_mp3.py tests/<test_id>/聴解スクリプト.txt
-… --jobs 3             # fewer requests in flight
-```
-
-A cold build (~250 lines → ~45 min of audio) takes about a minute (lines
-synthesize concurrently, `TTS_JOBS = 8`); the floor is the final `loudnorm`
-encode (~35 s). On success `segments/` is deleted; `--keep-segments` keeps
-per-question audio for drilling.
-
-### One engine: edge-tts. Two paid ones were tried and rejected — do not re-run
-
-**ElevenLabs**: every Japanese-native voice is shared-LIBRARY, a free key gets
-`402 paid_plan_required` for all of them, and the 21 reachable premade ids
-are English-native (accented Japanese, rejected on listen). **Gemini TTS**:
-free tier allows ~10 requests/day against a ~250-line script — cannot finish
-one paper (revisit only on a paid tier; prosody looked promising). edge-tts
-stays because it speaks native Japanese AND always finishes. If an engine is
-ever added back: use **one** engine end to end (mixed voices break every
-「男の人は」 question), and **accent is an ear-only check** — no gate hears
-anything.
-
-## `script_sha`: the MP3 says which script it was built from
-
-`聴解_チャプター.json` is
-`{"script_sha": …, "pacing_sha": …, "duration": …, "chapters": […]}`.
-
-- **`script_sha`** — first 12 hex digits of sha1 over `聴解スクリプト.txt`'s
-  raw bytes (`source_sha()`): mechanical evidence the audio on disk speaks
-  the script on disk. Always run `make mp3 <test_id>` when editing a script.
-- **`pacing_sha`** — same 12 hex digits over every `GAP_`/`PAUSE_`/`SHAPE_`
-  constant plus the source of `pause_after`/`gap_before_line`/`shape_pauses`.
-  Exists because `script_sha` covers the WORDS only — a pacing constant fix
-  leaves every existing MP3 stale with nothing to show it, since the
-  constants aren't in the script bytes and mtimes are checkout-unstable.
-  Editing a constant now means `make mp3` for **every** test, or a red gate.
-
-`make check` recomputes both and fails on disagreement. **Never hand-edit the
-sha** — the only way to make it agree is `make mp3 <test_id>`. HTML
-deliverables carry the same 12-hex `<!-- src_sha: … -->` stamps.
+**Composed chapters** (`聴解_チャプター.json`) carry `script_sha` (sha1 over
+`聴解スクリプト.txt`, first 12 hex) and `bank_version`; `make check` fails on
+disagreement. **Never hand-edit a sha** — re-render with
+`make mp3 <test_id> REPLAY=1` (Part 0). HTML deliverables carry the same
+12-hex `<!-- src_sha: … -->` stamps.
 
 ## Pacing table (measured across 31 official sittings — do not guess new values)
 
@@ -894,149 +778,32 @@ median −15.01 [−15.5, −14.3], n=31).
 
 Every constant above sat inside its measured band while the rendered audio was
 still wrong, because a median says nothing about shape. Measured with
-`silencedetect=noise=-35dB:d=0.30` over sub-2 s silences (longer ones are the
-scripted answer pauses, not speech rhythm):
+`silencedetect=noise=-35dB:d=0.30` over sub-2 s silences:
 
 | corpus | median | p75 | p90 | in the 0.5/0.9 s spikes | > 1.05 s |
 |---|---|---|---|---|---|
-| ours, before the ladder (`20260819_1`) | 0.51 s | 0.92 s | 0.93 s | **60%** | **1%** |
 | Shin Kanzen CD2, 17 mock tracks | 0.66 s | 1.04 s | 1.22 s | 19% | 24% |
 | official 7/2025, full MP3 | 0.69 s | 1.00 s | 1.41 s | 20% | 21% |
 
-Every turn gap was exactly `GAP_BETWEEN_LINES` and every within-turn pause was
-capped at `GAP_WITHIN_TURN_MAX`, so the 1.1–1.4 s beat where a speaker thinks —
-**one pause in five in both reference corpora** — did not exist in our audio at
-all. `turn_gap_jitter()` restores it: a **five-value ladder indexed by
-`sha1(line)[0] % 5`**, so a warm cache stays byte-identical to a cold build
-(`make_silences()` pre-creates each value as `_sil_{s:g}.wav`, and a continuous
-jitter would spawn hundreds of tiny WAVs).
-
-**Two ladders, because the turn boundary was only half of it.**
-`turn_gap_jitter()` spreads the gap BETWEEN turns; `WITHIN_TURN_LADDER` spreads
-the same-speaker pause that `shape_pauses()` caps, which was the bigger half —
-every internal pause above `SHAPE_PAUSE_FLOOR` used to be clamped to exactly
-0.5 s. Measured on `20260807_1`: spikes 60% → 46% (turn gap only) → **18%**
-(both).
-
-**Rule:** after any pacing change, verify on the RENDERED MP3 that the two
-spikes hold under 35% and the >1.05 s tail is at least 7%.
-`check_choukai_pause_distribution` in `make check` does exactly that, per paper;
-it is a WARN because it needs the audio and skips when it is absent. A paper
-whose 聴解.mp3 predates the ladders is in `PACING_SHA_GRANDFATHERED` until
-`make mp3 <id>` is re-run.
-
-**Why 7% and not the reference corpora's 17–24%:** only a turn *boundary* may
-exceed the 0.9 s gap — a within-turn pause at or above it makes one speaker
-sound like two — and our papers carry ~120 boundaries against ~480 within-turn
-pauses because our median turn is 27 chars against official's 37
-(`official_register.md` §1). The tail is therefore capped near 9% by SCRIPT SHAPE.
-
-**"…and the way to lift it is fewer, longer turns" is WRONG, and so was the
-sentence this file carried on 2026-09-07 claiming that clearing
-`check_choukai_volume` lifts the tail on its own. Measured, it does the
-opposite.** The tail is
-`turn boundaries above 1.05 s ÷ all sub-2 s pauses`, and only a turn BOUNDARY
-can exceed 1.05 s (`WITHIN_TURN_LADDER` caps the rest). Fewer, longer turns
-therefore shrink the numerator and grow the denominator at the same time:
-repairing `20260811_1` into the volume band cut turns 159 → 124 while its
-mid-turn 。 pauses rose 126 → 179, and the tail went **ok → WARN at 6.2%**
-against the 7% floor. The repair agent measured the ceiling too — deleting every
-mid-turn 。 it had added still only reaches 6.8%. **No script inside the volume
-band can clear a 7% floor.**
-
-So the two checks are in conflict and one of them owns a wrong number. The lever
-is `turn_gap_jitter()`'s ladder, not the script: two of its five rungs (1.15,
-1.40) exceed 1.05 s, so ~40% of turn boundaries land in the tail by
-construction, and the achievable tail follows directly from the turn:pause
-ratio the volume band fixes. **Do not "fix" a paper against the 7% floor by
-adding turns — that breaks the volume gate, which is calibrated against
-official and this one is not.** Treat the WARN as open until the floor is
-re-derived from papers that are inside the volume band; `20260811_1` is the
-first such data point at 6.2%, and `20260903_1` is the second at **6.0%** —
-repaired 2026-09-08 from 163 turns to 102 (5666 spoken chars, 55.5 chars/turn,
-all three volume figures inside the band) and its tail moved the wrong way,
-9% → 6%, exactly as this paragraph predicts. `20260904_3` is the **third**, at
-**6%** (759 sub-2 s pauses, spikes 21%): repaired 2026-09-08 from 179 turns to
-97 (5507 spoken chars, 56.8 chars/turn, all three volume figures and all four
-per-大問 figures inside the band), and its tail went `ok` → WARN on the same
-move. `20260904_2` is the **fourth**, at **6%** (740 sub-2 s pauses, spikes 20%,
-median 0.43 s): repaired from 159 turns to 98 (5410 spoken chars, 55.2
-chars/turn, all three volume figures and all four per-大問 figures inside the
-band), MP3 re-synthesised 2026-09-08. Four papers, four times the same
-direction, and the three most recent cluster on 6% — the floor is what is
-wrong, not the papers. Do not add turns to any of them.
-
-### A gap is only real if the segments around it are trimmed
-
-Every gap is silence inserted BETWEEN segments, so it's a true gap only if
-each segment starts/ends on speech. **TTS engines pad** — edge-tts writes
-~0.22 s lead and ~0.85 s TAIL silence per utterance; unshaved, the measured
-turn gap in shipped audio was ~2 s against a 0.9 s constant and 0.51 s
-official median, and a mid-turn 。 ran ~1 s (twice official's p75).
-`shape_pauses()` fixes both on 24 kHz mono samples: trim leading/trailing
-silence to zero, cap internal pauses above `SHAPE_PAUSE_FLOOR` to
-`GAP_WITHIN_TURN_MAX`. Pauses below the floor are left as the engine produced
-them — a 促音 closure is a real ~0.1 s silence. **Verify a pacing constant on
-the rendered MP3, never in the source** — a constants-only review passed this
-defect on every paper it had.
-
-### …and a constant that is never REACHED reads as correct too
-
-Found 2026-08-13 by measuring `20260813_2`'s rendered MP3 against the archive
-rather than this table. Three documented gaps were not in the audio: 問題4's
-inter-reply gap fell through to `GAP_BETWEEN_LINES` (0.9 s measured, vs the
-official 2.23 s — the branch was gated on `section in ("問題3","問題5")`,
-excluding 問題4), the 問1/2 repeated-question gap likewise measured 0.9 s
-against 2.94 s official (`GAP_AFTER_PRE_QUESTION` only applied at
-`line_index == 1`, never the block's last line), and 例s were getting a full
-answer pause (12 s/8 s of dead air) official never gives them. Both gaps now
-have their own constant (`GAP_BETWEEN_SPOKEN_RESPONSES`,
-`GAP_BEFORE_REPEATED_QUESTION`) and `pause_after()` skips the 例. **The
-lesson: a review that reads the table's value, not whether the branch is
-reachable, passes a constant that's never applied.** `pacing_sha` (above) now
-makes a constants edit without `make mp3` a red gate instead of an invisible
-defect.
+`check_choukai_pause_distribution` in `make check` measures the rendered MP3 per
+paper (spikes under 35%, >1.05 s tail at least 7%); it is a WARN and skips
+when the audio is absent. **Verify a pacing constant on the rendered MP3, never
+in the source.** Evidence and method: `references/official_pacing.md` §6.1.
 
 Three knowing deviations from the archive: (1) 問題5's three pauses aren't
 one value — official runs 1番 ≈8.3 s, 質問1→質問2 =10.0 s, final ≈11.2 s;
-`ANSWER_PAUSE` is one number per 問題, so 10 s is the compromise. (2) 問題5
-2番 runs longer than official because this repo speaks its four choices
-twice where official prints them — do not shave a gap to buy the time back.
-(3) Official reads each spoken choice as 「1、」+ ~1.1 s + text, then ~3.1 s
-before the next number; we speak the whole line as one utterance, so only the
-~3 s inter-choice gap is reproduced.
+`ANSWER_PAUSE` is one number per 問題, so 10 s is the compromise. (2) A
+script that speaks 問題5-2番's four choices twice runs longer than official,
+which prints them — do not shave a gap to buy the time back. (3) Official
+reads each spoken choice as 「1、」+ ~1.1 s + text, then ~3.1 s before the
+next number.
 
-## Engineering rules (each fixed a real bug)
-
-- Synthesize per line → 24 kHz mono WAV → shape pauses → concat WAVs → encode
-  MP3 ONCE with `loudnorm=I=-15:TP=-1.0:LRA=11` — never concat MP3 segments
-  directly. `I=-15` is the official median (replaced `I=-17`, a
-  `volumedetect` mean_volume reading mistaken for LUFS — Part 4 step 1).
-- **Shape each segment as soon as synthesized, before caching**, so a warm
-  cache and cold build are byte-identical.
-- Retry synthesis (3×, backoff); cache by hash of **text + voice + rate +
-  pitch**, never line position — position-keying let a reworded line or
-  remapped speaker silently reuse old audio.
-- **Parse into a plan, then synthesize, then assemble** — the plan pins every
-  segment path/gap up front so parallel tasks never collide.
-- **Silence files are all created before block assembly begins** — lazy
-  creation let two blocks write the same silence file concurrently, the
-  loser getting a truncated (valid but wrong-length) gap.
-- Chapter offsets stay a strictly in-order running sum even though block
-  durations are measured in parallel.
-- **Script validation is a hard gate** — `validate_script()` refuses to
-  build on a missing 例, wrong item count, spoken-aloud answer, authoring
-  annotation, or unmapped speaker label; an unmapped label otherwise falls
-  through silently to the narrator voice.
-- Item detection regex is `^(例。|\d+番。)` — WITH the 。, so a spoken choice
-  「1、…」 is never mistaken for an item.
-
-## Dry-run before synthesis (no network needed)
+## Script validation (no audio needed)
 
 ```bash
 python3 -c "
 import re,pathlib,importlib.util
-s=importlib.util.spec_from_file_location('m','.agents/choukai-audio/scripts/make_choukai_mp3.py')
+s=importlib.util.spec_from_file_location('m','.agents/choukai-audio/scripts/choukai_script.py')
 m=importlib.util.module_from_spec(s); s.loader.exec_module(m)
 b=[x.strip() for x in re.split(r'\n\s*\n', pathlib.Path('tests/<test_id>/聴解スクリプト.txt').read_text(encoding='utf-8')) if x.strip()]
 m.validate_script(b)"
@@ -1058,11 +825,8 @@ section in `NEEDS_EXAMPLE`.
 
 **Open ±1 against the archive**: official measures one MORE pause than this
 table in each of the 12s/8s bands (`official_pacing.md`'s histogram note) —
-corroboration of something not yet identified, not a constant to match. Do
-not restore an 例 pause to force 12/17 without first locating where that
-extra pause sits. Estimated runtime ≈40–45 min; official's 36.6–52.1 min
-(median 43.3) is **not a calibration target** — it varies with content, not
-pacing.
+not a constant to match. Official runtime 36.6–52.1 min (median 43.3) is **not
+a calibration target** — it varies with content, not pacing.
 
 ---
 

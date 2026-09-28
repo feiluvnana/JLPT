@@ -45,7 +45,8 @@ python3 .agents/external-test-import/scripts/init_imported_test.py \
 ## When to use this skill
 
 User provides/points at a PDF (or Markdown dump) of a full or partial exam;
-wants a past paper from `refs/JLPT_N2_NEW/` playable via `make serve`; says
+wants a past paper from the level's archive (`refs/JLPT_N2_NEW/` for N2 —
+level table `paths.archive`) playable via `make serve`; says
 import/convert/ingest/load an external test. **Not** this skill: authoring a
 new mock → `jlpt-test-generation`.
 
@@ -65,8 +66,8 @@ copying PDFs into `tests/`.
    repo's deliverables, transcribing rather than authoring.
 2. **Check the content by hand.** Read the transcription against the source
    and repair what the source's own print/OCR got wrong. This is the gate.
-3. **Model answer, last.** Only once the content is settled and all 101 keys
-   are reconciled against the official key: solve each item from the source,
+3. **Model answer, last.** Only once the content is settled and every key the
+   sitting prints is reconciled against the official key: solve each item from the source,
    confirm the key, then author `詳細解説.json` and `詳細解説.vi.json` (separate
    contexts, written not translated — `exam-model-answer`) and render
    `模範解答.html`.
@@ -75,8 +76,10 @@ There is no fourth step. An import has no authored content to critique, so it
 never runs the generation-side originality, topic-rotation, or
 `exam-qa-review` content-quality passes (`## What not to do`).
 
-Read `jlpt-exam-structure/SKILL.md` before writing any Markdown — counts,
-booklet conventions, and 例 mechanics are identical for imported tests.
+Read `jlpt-exam-structure/SKILL.md` before writing any Markdown — booklet
+conventions and 例 mechanics are identical for imported tests; the item count
+is the sitting's own era shape in `references/levels/<LEVEL>.json` (N2 current
+era 71 + 30).
 
 ### Step 1 — Source → the test itself
 
@@ -93,7 +96,7 @@ python3 .agents/external-test-import/scripts/extract_pdf_text.py <script.pdf> \
 and fails if the folder exists or the slug is invalid. `_extract/` is an
 untracked working cache.
 
-**A sitting already in `refs/JLPT_N2_NEW/` is a shortcut, not an exception.**
+**A sitting already in the archive (`refs/JLPT_<LEVEL>_NEW/`) is a shortcut, not an exception.**
 `make extract-archive` / `make extract-keys` have already written
 `booklet.md` (exact), `key.md` (exact) and `script.md` (**part OCR**) into its
 folder — author from those and use the PDFs to settle disputes.
@@ -110,11 +113,11 @@ existing test for headings, layout and key tables):
 
 | File | Role |
 |------|------|
-| `言語知識・読解.md` | 問題1–14, 71 keys at end under `# 解答…` |
-| `聴解.md` | Booklet options + `# 【正解・解説】` (30 keys) |
+| `言語知識・読解.md` | 問題1–14, every key at end under `# 解答…` |
+| `聴解.md` | Booklet options + `# 【正解・解説】` (every 聴解 key) |
 | `聴解スクリプト.txt` | Spoken-only script (`choukai-audio` block rules) |
 
-**Prefer the external MP3** (official timing) over synthesizing:
+**Audio is the external MP3 or nothing** — there is no synthesis path:
 
 ```bash
 cp "<audio.mp3>" "tests/imported-<slug>/聴解.mp3"
@@ -122,8 +125,10 @@ python3 .agents/external-test-import/scripts/write_external_chapters.py \
   tests/imported-<slug>      # minimal chapters, so make check's MP3⇒chapters rule holds
 ```
 
-Else `make mp3 imported-<slug>`. Either way the script file is still required
-— the gate and the booklet↔script sync read it.
+No MP3 → import the 聴解 half as text only and state the gap in the final
+report. **Never run `make mp3` on an import** — it composes a paper from the
+bank (the composer refuses `imported-*` ids). The script file is still
+required — the gate and the booklet↔script sync read it.
 
 Transcription rules:
 
@@ -144,8 +149,7 @@ Transcription rules:
   instruction as printed and all four passages — never delete passage (4).
 - **問題5 keeps the source's printed 2番 list.** The house rule that 問題5
   prints nothing (`jlpt-exam-structure`) is a GENERATED-paper rule: it is safe
-  there because the MP3 is synthesized from the script, so the choices still
-  get spoken. An import ships the sitting's own MP3, which never reads 2番's
+  there because a composed 問題5-2番 speaks its choices. An import ships the sitting's own MP3, which never reads 2番's
   choices aloud because official prints them — strip the list and the item
   becomes three unlabelled bubble rows. `check_mondai5_prints_nothing()` and
   `verify_fidelity.py` both skip/handle imports for this reason.
@@ -160,7 +164,7 @@ OCR slips, mis-transcribed digits, dropped notes, mojibake. And the source
 print itself can carry an outright typo. Both are yours to fix; nothing else
 is.
 
-1. **Answer-key diff — all 101, mechanically.** Parse the 71 gengo + 30
+1. **Answer-key diff — every key, mechanically.** Parse all gengo and
    choukai keys out of the imported Markdown and diff them against the
    official sheet. Zero mismatches. A spot-check misses a mis-typed digit.
    - **Layout trap on official 聴解 answer grids:** 問題4's 7–11 answers often
@@ -235,7 +239,8 @@ make scaffold-explanations imported-<slug>   # pre-fills stems/options/passages/
 #   why_correct, options_analysis, points — inside the terseness bands
 #   (exam-model-answer)
 python3 .agents/exam-model-answer/scripts/verify_fidelity.py tests/imported-<slug>
-make model-answer imported-<slug>            # -> 模範解答.html
+make model-answer imported-<slug>            # -> 模範解答.html + 練習.html
+make check
 ```
 
 **Solve the item before you explain it — every item, one at a time.**
@@ -289,7 +294,7 @@ desynchronize the explanations from the exam.
 |------|-----------------|
 | Script shape | `choukai-audio` |
 | Booklet HTML | `exam-app` / `make booklet <id>` |
-| TTS MP3 (if no external audio) | `choukai-audio` / `make mp3 <id>` |
+| Audio (external MP3 only) | copy + `write_external_chapters.py`; no synthesis path |
 | Answer sheet + practice page | `exam-app` / `make sheet <id>` (writes 解答.html and 練習.html) |
 | Gate | `make check` |
 | Content check | Step 2 above — not `exam-qa-review` |
@@ -298,8 +303,8 @@ desynchronize the explanations from the exam.
 ## Final report (required)
 
 State: source paths and `tests/imported-<slug>/`; what was extracted vs
-OCR-blocked; whether audio was copied or synthesized; how the 101 keys
-reconciled, and every item where your own solve disagreed with the official
+OCR-blocked; whether audio was copied or is absent; how the keys
+reconciled (count), and every item where your own solve disagreed with the official
 key; **every repair made to the source's own text, and every doubtful line
 left as printed — each of the latter named with the page you image-verified
 it on**; the `make check` result; and anything skipped.

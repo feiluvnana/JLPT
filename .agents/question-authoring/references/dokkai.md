@@ -179,7 +179,7 @@ class QA cannot report and a fix cannot be asked for:
 | `A というより B` | 「というより」 |
 | `A わけではない` | 「わけでは（ない｜ありません）」 |
 | `A では/ほど B が多い（相関）` | evidential frame + [V-た + 集団/期間] では／ほど + 数量の増減 |
-| `〜のは B だ（分裂文）` | 「（の｜ん）は、…（だ｜である｜です｜だった｜のだ｜のである）」で閉じる |
+| `〜のは B だ（分裂文）` | 「（の｜ん｜べき｜〜な／〜い／べき＋こと・点）は、…（だ｜である｜です｜だった｜のだ｜のである）」で閉じる — 「大切なことは」「確かめるべきは」「注目すべき点は」も同じ骨格 |
 
 **分裂文 CROSSES the shape labels, so count the skeleton column separately
 from the shape column.** The row above was added 2026-09-04
@@ -199,6 +199,18 @@ MEASURED over the 29 papers on disk when the row landed: 20260807_1 3,
 all eight official sittings** — so the cap of 2 is inside the archive's own
 behaviour, and `20260807_1` is the single grandfathered id in
 `FINAL_TEMPLATE_GRANDFATHERED`.
+
+**The cleft's head is not only 「の」** (widened 2026-09-28,
+`qa/root-cause-20260917_1.md` RC-4). `20260917_1` round 1 closed three surfaces
+on the cleft while the gate printed 2, because 問題12(A)
+「相手に確かめてもらう**べきは**、…ことである。」 has no 「のは」. The row now also
+reads bare 「べきは」 and 「こと／点」 after an adjectival or べき modifier
+(「大切なことは」「言いたいことは」「注目すべき点は」). A bare V-る／V-た 「〜ことは」
+(「…引き出すことは、上司の大事な役目だ」) evaluates an event and is NOT a cleft;
+「側は」 is a plain topic — count neither in your column either. Re-measured on
+the 13 closings of all 39 papers: officials still **0–1** (2021-12, 2023-07,
+2024-07 at 1), `20260917_1` 2 (問題10(5) + 問題12(A)), `20260807_1` still the only
+paper over 2 — so the cap stays 2 and no id was newly grandfathered.
 
 The last row was added 2026-08-24 (qa-report-20260821_1-round2 NF-2): it is
 where 条件提示 closings pile up by construction, it had no name, and so a paper

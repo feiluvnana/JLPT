@@ -131,7 +131,8 @@ differently, so whichever was on PATH silently changed the furigana output.
 
 Runs on every build; aborts on mojibake, an `<ol>` in the output (stems must
 be bold `**6**`, never `N.` list syntax which restarts numbering), or a
-missing bold stem for any of questions 1–71. Still check by eye that key/
+gap in the bold stem numbers (they must run 1..max contiguously, whatever the
+level's count). Still check by eye that key/
 explanation tables render at the end of both files and furigana sits over
 its base; Cmd-P to preview pagination.
 
@@ -182,9 +183,9 @@ injectors, and it is deliberately NOT a sitting:
   because that is the moment the choice is actually made — finding the practice
   page must not cost you the start of a sitting. `make sheet` writes BOTH pages,
   so the link cannot point at a practice page built from a superseded booklet;
-  `make practice <id>` rebuilds just the practice page, which is what you want
-  after `詳細解説.json` changes (its one source `解答.html` does not have, and a
-  stamped one — `make check` fails a practice page older than its explanations).
+  `make model-answer <id>` rebuilds it too, because `詳細解説.json` is the one
+  source it has that `解答.html` does not (`make check` fails a practice page
+  older than its explanations); `make practice <id>` rebuilds it alone.
 - **One 解説 reveal per question**, injected right after that question's bubble
   row through `radios(after=…)`. Opening it shows 正解: N, the 聴解 script for a
   listening item, and exam-model-answer's own `.explanation-box` — the same

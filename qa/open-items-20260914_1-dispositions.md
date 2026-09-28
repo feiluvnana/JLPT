@@ -18,3 +18,22 @@ are rejected **for this run** and raised to the user in the final report.
 | 6 | `KUN_TARGET_RATE = 12/35` encodes a refuted measurement | **REJECTED (this run)** — owner ruling, and the most load-bearing of the six: correcting 12/35 → 14/35 changes EVERY future draw, and the same recount argues `KUN_FLOOR` should be 2 not 1. `20260917_1` is therefore drawn under the same constant every prior paper was, which keeps it comparable to them. Changing it mid-run would make this paper the only one in the corpus drawn under a third value. |
 | 7a | 聴解 bank expansion to all 31 archive sittings (user directive) | **REJECTED (this run), raised to the user.** `make choukai-wear` still exits non-zero (問題3 textbook half 4.26 uses/clip vs a 4.0 ceiling). This paper composes from the existing bank and spends clips against an already-breached ceiling — stated in the final report. The prescribed fix («grow the pool, never the slot count») is a multi-source banking pass over 21 further sittings; it is not part of generating one paper and the user is asked to sequence it. |
 | 7b | `pools.json` errand-`key` / `grammar_form_families` metadata debt | **REJECTED (this run)** — the coverage WARNs are pre-existing and repo-wide. Consequence accepted and compensated: the two rotation checks they starve are nearly silent, so this run does the errand-identity and form-family reads BY HAND in the stage-3 whole-paper table, as `jlpt-test-generation` §"One topic, one surface" already requires. |
+
+### Row 5 — APPLIED 2026-09-28 (re-scoped per `qa/root-cause-20260917_1.md` RC-5)
+
+The 102 lines were not 22 independent lapses. On the gate's own
+`_KAISETSU_VERDICT_ONLY` they break down as:
+- **29** source lines in `tests/imported-n2-2024-12/詳細解説.vi.json` 聴解. These
+  fed **28 official `2024-12` bank records** (29 bank lines).
+- **53** bank-inherited copies in 21 generated papers.
+- **20** `imported-n2-2024-12` 読解 lines (52–71).
+
+What was done:
+- The 49 source lines were re-solved and written as real Vietnamese reasons.
+- `make choukai-bank` changed only those 28 records' `explanation_vi`.
+- The 53 copies were swapped for the corrected bank line wherever they were
+  still byte-identical (53/53). No `make mp3` was run.
+- `make model-answer` and `make practice` were re-run for all 22 papers.
+
+**Counts: bank 29 → 0, papers 102 → 0, both panes.** The near-verdict lines the
+regex cannot match are listed under RC-5 "Left open".

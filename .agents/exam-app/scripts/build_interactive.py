@@ -1460,7 +1460,7 @@ def mp3_duration_ms(d: Path) -> int | None:
     """How long this test's 聴解.mp3 actually runs, or None if unknowable here.
 
     Two sources, cheapest first: `聴解_チャプター.json`'s own `duration`, which
-    make_choukai_mp3.py writes for every GENERATED test, and ffprobe for the
+    tools/compose_choukai.py writes for every GENERATED test, and ffprobe for the
     imported ones, whose chapter file carries `"duration": null` because the MP3
     came from the archive rather than the assembler. ffprobe is optional on
     purpose — `make sheet` must not grow a binary dependency `make mp3` already
@@ -1712,9 +1712,8 @@ CHOUKAI_SECTION_RE = re.compile(r"^問題(\d+)。$")
 def parse_choukai_scripts(script_path: Path) -> dict:
     """Map each 聴解 item key (問1-1 … 問5-2-2) to its own block of
     `聴解スクリプト.txt` — the narration/dialogue/options actually spoken for
-    that item. Self-contained (no `make_choukai_mp3.py` import): that module
-    requires `edge_tts`, a synthesis-only dependency this read-only display
-    feature must not force on anyone who only wants to view a built test.
+    that item. Self-contained (no `choukai_script.py` import), so this
+    read-only display feature depends on nothing but the file it reads.
     Key numbering mirrors `grade_answers.parse_choukai_keys()` exactly — 例
     blocks are practice items and carry no key, so they are skipped without
     incrementing the ordinal.

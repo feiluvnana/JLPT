@@ -695,7 +695,7 @@
   "why_correct": "「ところが近ごろ…若い世代でふえている」chỉ rõ điều bất ngờ: người trẻ ngày càng sửa đồ cũ để dùng lâu.",
   "options_analysis": [
    "Ngược nội dung bài, không phải xu hướng mua mới mạnh ở người trẻ.",
-   "Không có trong bài.",
+   "Bài chỉ nói「環境への気づかい」, không hề nói hạn chế mua đồ điện.",
    "Không có trong bài, bài không nói xưởng sửa chữa giảm.",
    "Đúng, khớp câu về người trẻ sửa đồ cũ dùng lâu."
   ],
@@ -763,7 +763,7 @@
  "59": {
   "why_correct": "「それぞれが自分の文化の中で…当てはめてしまう」= áp đặt chuẩn mực bản thân lên người khác.",
   "options_analysis": [
-   "Không có trong bài.",
+   "Bài không nhắc thiếu cơ hội tìm hiểu trước; khó là do áp đặt「当たり前」.",
    "Đúng, khớp lý do áp đặt chuẩn mực không tự giác.",
    "Không có trong bài, không phải vấn đề ngôn ngữ.",
    "Không có trong bài, không phải không ai phát biểu."
@@ -779,7 +779,7 @@
   "options_analysis": [
    "Đúng, khớp định nghĩa \"tư thế\" của tác giả.",
    "Ngược ý, không phải học thuộc lòng văn hóa.",
-   "Không có trong bài.",
+   "Bài không khuyên kìm ý kiến trong họp; chỉ nêu va chạm giữa hai kiểu văn hóa.",
    "Ngược ý, đây là điều cơ bản, không phải kỹ năng đặc biệt."
   ],
   "points": [
@@ -790,8 +790,8 @@
  "61": {
   "why_correct": "「同じ重さの負担がかかった場面でも…影響の大きさが違っていました」= cùng gánh nặng, cách nhìn khác nhau tạo ảnh hưởng khác.",
   "options_analysis": [
-   "Không có trong bài.",
-   "Không có trong bài.",
+   "Nghiên cứu giữ nguyên「同じ重さの負担」, không so sánh việc giảm lượng gánh nặng.",
+   "Bài nói về cách「受け取る」, không nói tính cách bẩm sinh.",
    "Đúng, khớp kết quả nghiên cứu.",
    "Ngược ý, không nói stress nhiều hơn tạo cơ hội phát triển."
   ],
@@ -805,7 +805,7 @@
   "why_correct": "「ストレスを敵として遠ざけるのではなく…習慣を整えること」= rèn thói quen nhìn nhận và diễn đạt bằng lời.",
   "options_analysis": [
    "Ngược ý, tác giả không chủ trương né tránh.",
-   "Không có trong bài.",
+   "Bài không nhắc đổi tính cách hay đào tạo chuyên môn; chỉ viết ra giấy.",
    "Đúng, khớp cách xử lý được đề xuất.",
    "Ngược ý, không phải \"quên đi\"."
   ],
@@ -831,9 +831,9 @@
  "64": {
   "why_correct": "「窓の外に緑が見える部屋…集中を保ちやすい」= màu xanh giúp giảm căng thẳng, dễ tập trung.",
   "options_analysis": [
-   "Không có trong bài.",
-   "Không có trong bài.",
-   "Không có trong bài.",
+   "Bài chỉ nói stress thấp, dễ tập trung; không nhắc thời gian dọn phòng.",
+   "Bài không có dữ liệu nào về số lần chuyển nhà.",
+   "Tác động được nêu là tâm lý cá nhân, không nói giao lưu với hàng xóm.",
    "Đúng, khớp tác động giảm căng thẳng, dễ tập trung."
   ],
   "points": [
@@ -898,9 +898,9 @@
  "69": {
   "why_correct": "「声も表情も持たない植物が…何かを伝え合っている」là thông điệp cốt lõi về giao tiếp thực vật.",
   "options_analysis": [
-   "Không có trong bài.",
+   "Bài chỉ nói「農薬の量を減らせるかもしれない」, không nói cần thuốc mới ngay.",
    "Ngược ý, quan sát đã xác nhận điều này.",
-   "Không có trong bài.",
+   "Bài chỉ nói đường rễ hẹp, chậm nhưng ít phụ thuộc gió — không nói quan trọng hơn.",
    "Đúng, khớp thông điệp cốt lõi."
   ],
   "points": [
@@ -991,7 +991,7 @@
   "why_correct": "Trưởng phòng yêu cầu「イベントの企画案を3つ」＝nữ lên phương án sự kiện ở sảnh.",
   "options_analysis": [
    "Ý tưởng quà tặng đã hoàn tất, không còn là việc cần làm.",
-   "Đúng.",
+   "Trưởng phòng nhờ「イベントの企画案を3つくらい」trước buổi họp tháng sau.",
    "Trang trí sảnh do công ty ngoài phụ trách.",
    "Tour ngắm lá đỏ đã được lên kế hoạch sẵn."
   ],
@@ -1055,7 +1055,7 @@
  "問2-5": {
   "why_correct": "「思い切ってスピードを上げて、それが効いた」＝dứt khoát tăng tốc chặng cuối là lý do thắng.",
   "options_analysis": [
-   "Đúng.",
+   "「スピードを上げて、それが効いた」: tăng tốc cuối là lý do thắng.",
    "“Dẫn đầu sớm hơn” là điều tiếc nuối chưa làm được, không phải lý do thắng.",
    "Cô không nói giảm tốc, chỉ nói không tự tin vì gió mạnh, vẫn bám nhóm dẫn đầu.",
    "Dẫn đầu sớm là mục tiêu lần sau, chưa xảy ra ở trận này."
@@ -1070,7 +1070,7 @@
   "options_analysis": [
    "Chỉ mời một giảng viên được đánh giá tích cực, không phải điểm xấu.",
    "Phòng học rộng không gây vấn đề gì.",
-   "Đúng.",
+   "Nam nói nên đặt giờ bắt đầu thong thả hơn vì có người đến muộn do học kéo dài.",
    "Không cần đọc tài liệu trước cũng được đánh giá tích cực."
   ],
   "points": [
@@ -1171,7 +1171,7 @@
   "why_correct": "Câu hỏi lý do vắng mặt; đáp lại tự nhiên là xin lỗi và nêu lý do.",
   "options_analysis": [
    "“Vì sắp thi nên không muốn nghỉ” ngược nghĩa với câu hỏi vì sao nghỉ.",
-   "Đúng.",
+   "Bị hỏi vì sao hay nghỉ tập, xin lỗi rồi nêu lý do「バイトが忙しくて」là đúng trọng tâm.",
    "“Tự tập một mình” không khớp câu hỏi về việc vắng các buổi tập."
   ],
   "points": [
@@ -1291,7 +1291,7 @@
  "問5-2-1": {
   "why_correct": "Nam nói đo thể lực trước「体力があるか測ってもらおう」＝hội trường 1.",
   "options_analysis": [
-   "Đúng.",
+   "Nam nói「まずは今どれくらい体力があるか測ってもらおう」: đo thể lực ở hội trường 1.",
    "Hội trường 2 (thể dục) được nhắc trước nhưng anh chọn đo thể lực trước.",
    "Hội trường 3 (thực đơn) là lựa chọn của nữ.",
    "Hội trường 4 (tư vấn) cũng là nơi nữ đến trước, không phải nam."
@@ -1307,7 +1307,7 @@
    "Hội trường 1 (đo thể lực) là lựa chọn của nam.",
    "Hội trường 2 (thể dục) không được nữ nhắc đến.",
    "Nữ nhắc hội trường 3 (thực đơn) nhưng đổi ý đi hội trường 4 trước.",
-   "Đúng."
+   "Được nhắc chuyện mất ngủ, nữ nói「そっち先に行ってこよ」: đến gặp bác sĩ ở hội trường 4."
   ],
   "points": [
    "個別《こべつ》に: nghĩa “riêng lẻ”.",

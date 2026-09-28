@@ -39,8 +39,10 @@ def choukai_origin(test_dir) -> str:
     聴解 is composed from official clips (`tools/compose_choukai.py`) rather
     than synthesized by Edge-TTS, so the folder name no longer says how the
     audio was made. `聴解_チャプター.json`'s ``source`` field does — the composer
-    stamps ``composed`` there, `make_choukai_mp3.py` writes segment marks with
-    no ``source``, and an import carries the ``external`` stub.
+    stamps ``composed`` there and an import carries the ``external`` stub.
+    ``tts`` is what is left: the retired Edge-TTS generator wrote no
+    ``source``, so it now means "generated, but not composed" — `make check`
+    FAILs it (re-compose with `make mp3`).
 
     Takes a pathlib.Path to the test directory.
     """

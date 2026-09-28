@@ -107,7 +107,7 @@ def parse_script_blocks(
     """`聴解スクリプト.txt` -> ({(問題N, slot): item block}, {問題N: preamble}).
 
     Blocks are separated by one blank line and an item block starts with
-    `N番。`, the same contract `make_choukai_mp3.py`'s parser uses. Everything
+    `N番。`, the same contract `choukai_script.ITEM_RE` encodes. Everything
     in a section that is NOT an item block is that section's preamble text —
     the `問題N。` marker and the instruction — and the composer prints it above
     the items it lifted from the same sitting, so the printed instruction is

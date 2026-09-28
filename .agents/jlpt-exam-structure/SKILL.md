@@ -62,7 +62,7 @@ over all 31 sittings 7/2010–12/2025 (`official_calibration.md` §1):
 | Era | sittings | 言語知識・読解 | 聴解 |
 |---|---|---|---|
 | 7/2010 – 7/2018 | 17 | **75** (5/5/5/7/5/5/12/5/5/5/9/2/3/2) | **32** (5/6/5/12/4) |
-| 12/2018 – 7/2021 | 6 | 72–73 (問3→3, 問9→4, 問11 9↔8) | 30 |
+| 12/2018 – 7/2021 | 5 | 72–73 (問3→3, 問9→4, 問11 9↔8) | 30 |
 | **12/2021 – 12/2025** | **9** | **71** (5/5/3/7/5/5/12/5/4/5/8/2/3/2) | **30** (5/6/5/11/3) |
 
 The repo's **71+30=101 contract dates from 12/2021**, and 問題11's 4×2 shape
@@ -194,9 +194,6 @@ Refresh this table from that output; never retype a row (`AGENTS.md` §4).
 Note:
 - **課題理解 options may be a SET** (e.g. Shin Kanzen 問題紹介 例題1 keys combinations like `1: アイウ`, `2: アウオ`, `3: ウオ`, `4: アウ`).
 - **16% of official 問題1 items are single-speaker** (announcement, 留守番電話 message, 課長からのメッセージ, automated menu) — 25 of 155, §7 of the same output.
-- The two rare frames still carry a **≥1 of 6** authoring quota each
-  (`choukai-items.md` §"Section item mix") even though official runs them at
-  2–6%: the quota exists to break the まず monoculture, not to match the share.
 
 ### Printed options are kana-LEANING — the booklet is not a reading test
 
@@ -217,8 +214,8 @@ both). Measured over 297 official options: mean kanji ratio **0.298**, only
 
 **Why a format fact, not style**: 問題2 gives 20s (`GAP_OPTION_READING`) to
 read four options before the talk starts — kanji there is decoding time
-stolen from listening, converting a 聴解 item into a 漢字 item. Target
-**≤0.35 kanji**, kana on the tested content word rather than grammar.
+stolen from listening, converting a 聴解 item into a 漢字 item. (A composed
+paper prints the source's own options, so this binds only a hand-typed list.)
 **Not gated** — only 2–6 of 31 `booklet.md` extracts expose their 問題1/2
 option blocks to a parser, so no per-sitting distribution exists to
 threshold against; the pooled figure is sound, the per-sitting range isn't.
@@ -247,7 +244,8 @@ the printed list on the grounds official has it — removed knowingly; raise
 it only if QA finds the difficulty wrong.
 
 Mechanically, 問題5 is now shaped exactly like 問題3 (nothing printed,
-choices spoken, 3s between them). Three rules follow:
+choices spoken, 3s between them). Three rules follow — authored-聴解 only (none
+since 2026-09-08), kept because the gate still measures them:
 
 - **No decisive attribute attached to a name** — no 家賃/立地/条件/時間帯/定員
   riding along in the read-back list (`1、夕日通り、海沿いで駅から5分。` is
@@ -261,14 +259,10 @@ choices spoken, 3s between them). Three rules follow:
   order; the resolving line always names an attribute (「鳥が見られる所？」),
   never a `Nつ目` back-reference, in 31 sittings.
 
-  **Consequence**: a mis-keyed 問題5-2番 is fixed by re-enumerating candidates
-  so the dialogue introduces them in the read-back order, then `make mp3
-  <test_id>` — **never by re-ordering the choice list alone**, which
-  silently re-keys the item against a dialogue still saying 「3つ目の方法が
-  ぴったりですね」 (exactly what one repair pass did to `tests/3`).
-  `check_mondai5_enumeration()` fails both halves wherever the script uses
-  ordinal labels; `check_mondai5_prints_nothing()` fails a booklet printing
-  options under 問題5.
+  A composed paper's 問題5 mis-key is a bank fix, never a hand edit
+  (`exam-qa-review` §4 item 4). `check_mondai5_enumeration()` fails both
+  halves wherever a script uses ordinal labels; `check_mondai5_prints_nothing()`
+  fails a booklet printing options under 問題5.
 
 ## Announcer / 例 mechanics (script + booklet must both honor these)
 
@@ -310,10 +304,10 @@ choices spoken, 3s between them). Three rules follow:
 
 ## 問題N instruction lines (canonical — transcribed from `refs/JLPT_N2_NEW/`)
 
-Paste these into BOTH `聴解.md` and `聴解スクリプト.txt`; copy from here, never
-from a previous test — `make check` only proves booklet and script agree with
-EACH OTHER, so both drifting the same way passes green. Transcribed from
-July 2025.
+A composed paper takes them from the source recordings; a hand-typed one
+(an import) copies them from here, never from a previous test — `make check`
+only proves booklet and script agree with EACH OTHER. Transcribed from July
+2025.
 
 | Where | Text |
 |---|---|
@@ -353,8 +347,7 @@ July 2025.
 Two consequences: 読解 passages are 新聞・雑誌の記事/解説/平易な評論 with a
 **clear line of argument** (N1's descriptor says 論理的にやや複雑/抽象度の
 高い文章 — a dense 問題13 is off-level even at the right length); 聴解
-dialogue is **自然に近い** speed, not N1's 自然な speed (check `choukai-audio`
-before touching `SPEAKER_MAP` rate). The 例 column's pre-marked answer must
+dialogue is **自然に近い** speed, not N1's 自然な speed. The 例 column's pre-marked answer must
 equal the announcer's declared number — `make check` compares them.
 
 ## Booklet layout conventions

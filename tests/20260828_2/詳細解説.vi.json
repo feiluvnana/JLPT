@@ -1219,7 +1219,7 @@
   "why_correct": "「スタッフの分を含めて30個」＝tổng cộng 30 suất, gồm cả nhân viên.",
   "options_analysis": [
    "“Chỉ riêng nhân viên 30 suất” hiểu sai, đó là tổng số.",
-   "Đúng.",
+   "Nhắc lại「全部で30個」khớp「スタッフの分を含めて30個」: tổng cộng 30 suất.",
    "“Suất nhân viên đặt riêng” ngược với yêu cầu gộp chung."
   ],
   "points": [
@@ -1231,7 +1231,7 @@
   "why_correct": "「部長抜きでやってくれ」＝cứ họp mà không cần trưởng phòng.",
   "options_analysis": [
    "“Đợi trưởng phòng đến” ngược hẳn yêu cầu không cần chờ.",
-   "Đúng.",
+   "「部長抜きで」= họp không có trưởng phòng; đáp「今日、部長来ないんだ」là hiểu đúng.",
    "“Hủy họp à” hiểu sai, cuộc họp vẫn diễn ra."
   ],
   "points": [

@@ -45,7 +45,8 @@
         "en": "Kanji Reading",
         "part": "文字・語彙",
         "grader_name": "漢字読み (Kanji Reading)",
-        "group_label": null
+        "group_label": null,
+        "instruction": "＿＿の言葉の読み方として最もよいものを、1・2・3・4から一つ選びなさい。"
       },
       {
         "code": "問2",
@@ -54,7 +55,8 @@
         "en": "Orthography",
         "part": "文字・語彙",
         "grader_name": "表記 (Orthography)",
-        "group_label": null
+        "group_label": null,
+        "instruction": "＿＿の言葉を漢字で書くとき、最もよいものを1・2・3・4から一つ選びなさい。"
       },
       {
         "code": "問3",
@@ -63,7 +65,8 @@
         "en": "Word Formation",
         "part": "文字・語彙",
         "grader_name": "語形成 (Word Formation)",
-        "group_label": null
+        "group_label": null,
+        "instruction": "（　）に入れるのに最もよいものを、1・2・3・4から一つ選びなさい。"
       },
       {
         "code": "問4",
@@ -72,7 +75,8 @@
         "en": "Contextual Use",
         "part": "文字・語彙",
         "grader_name": "文脈規定 (Word in Context)",
-        "group_label": null
+        "group_label": null,
+        "instruction": "（　）に入れるのに最もよいものを、1・2・3・4から一つ選びなさい。"
       },
       {
         "code": "問5",
@@ -81,7 +85,8 @@
         "en": "Paraphrases",
         "part": "文字・語彙",
         "grader_name": "言い換え類義 (Paraphrases)",
-        "group_label": null
+        "group_label": null,
+        "instruction": "＿＿の言葉に意味が最も近いものを、1・2・3・4から一つ選びなさい。"
       },
       {
         "code": "問6",
@@ -90,7 +95,8 @@
         "en": "Usage in Context",
         "part": "文字・語彙",
         "grader_name": "用法 (Correct Usage)",
-        "group_label": null
+        "group_label": null,
+        "instruction": "次の言葉の使い方として最もよいものを、1・2・3・4から一つ選びなさい。"
       },
       {
         "code": "問7",
@@ -99,7 +105,8 @@
         "en": "Grammar Form",
         "part": "文法",
         "grader_name": "文法形式の判断 (Grammar Form)",
-        "group_label": null
+        "group_label": null,
+        "instruction": "次の文の（　）に入れるのに最もよいものを、1・2・3・4から一つ選びなさい。"
       },
       {
         "code": "問8",
@@ -108,7 +115,8 @@
         "en": "Sentence Composition",
         "part": "文法",
         "grader_name": "文の組み立て (Sentence Composition ★)",
-        "group_label": null
+        "group_label": null,
+        "instruction": "次の文の ★ に入る最もよいものを、1・2・3・4から一つ選びなさい。"
       },
       {
         "code": "問9",
@@ -117,7 +125,8 @@
         "en": "Text Grammar / Cloze",
         "part": "文法",
         "grader_name": "文章の文法 (Text Grammar / Cloze)",
-        "group_label": "文章の文法"
+        "group_label": "文章の文法",
+        "instruction": "次の文章を読んで、文章全体の内容を考えて、{first}から{last}の中に入る最もよいものを、1・2・3・4から一つ選びなさい。"
       },
       {
         "code": "問10",
@@ -126,7 +135,8 @@
         "en": "Short Passages",
         "part": "読解",
         "grader_name": "内容理解・短文 (Short Passages)",
-        "group_label": null
+        "group_label": null,
+        "instruction": "次の(1)から({passages})の文章を読んで、後の問いに対する答えとして最もよいものを、1・2・3・4から一つ選びなさい。"
       },
       {
         "code": "問11",
@@ -135,7 +145,8 @@
         "en": "Medium Passages",
         "part": "読解",
         "grader_name": "内容理解・中文 (Medium Passages)",
-        "group_label": "中文"
+        "group_label": "中文",
+        "instruction": "次の(1)から({passages})の文章を読んで、後の問いに対する答えとして最もよいものを、1・2・3・4から一つ選びなさい。"
       },
       {
         "code": "問12",
@@ -144,7 +155,8 @@
         "en": "Comparative Reading (A/B)",
         "part": "読解",
         "grader_name": "統合理解 (A/B Comparative Texts)",
-        "group_label": "統合理解"
+        "group_label": "統合理解",
+        "instruction": "次のAとBの文章を読んで、後の問いに対する答えとして最もよいものを、1・2・3・4から一つ選びなさい。"
       },
       {
         "code": "問13",
@@ -153,7 +165,8 @@
         "en": "Long Essay / Thematic",
         "part": "読解",
         "grader_name": "主張理解・長文 (Long Essay)",
-        "group_label": "長文"
+        "group_label": "長文",
+        "instruction": "次の文章を読んで、後の問いに対する答えとして最もよいものを、1・2・3・4から一つ選びなさい。"
       },
       {
         "code": "問14",
@@ -162,7 +175,8 @@
         "en": "Information Retrieval",
         "part": "読解",
         "grader_name": "情報検索 (Information Retrieval)",
-        "group_label": "情報検索"
+        "group_label": "情報検索",
+        "instruction": "右のページは、{source}である。下の問いに対する答えとして最もよいものを、1・2・3・4から一つ選びなさい。"
       }
     ],
     "shapes": {
@@ -219,7 +233,14 @@
       "75": "7/2010 – 7/2018",
       "72": "12/2018 – 7/2021",
       "71": "12/2021 – 12/2025 (current)"
-    }
+    },
+    "banners": {
+      "文字・語彙": "【文字・語彙】",
+      "文法": "【文法】",
+      "読解": "【読解】"
+    },
+    "key_heading": "解答(言語知識・読解)",
+    "instruction_source": "tests/imported-n2-2023-07 … 2025-12 (six current-era sittings, exact booklet transcriptions); {first}/{last}/{passages}/{source} are filled per paper by tools/assemble_paper.py"
   },
   "choukai": {
     "mondai": [

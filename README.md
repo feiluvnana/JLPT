@@ -13,16 +13,17 @@ Repository: <https://github.com/feiluvnana/JLPT> (renamed from `JLPT-N2` on
 Each test is a folder under `tests/<test_id>/` holding a complete sitting:
 
 - `言語知識・読解.html` — Language Knowledge & Reading booklet (A4 print geometry, furigana)
-- `聴解.html` + `聴解.mp3` — Listening booklet and synthesized audio with official pacing
-- `聴解スクリプト.txt` — the narration script the audio is built from
-- `解答.html` — one merged answer sheet: 101 items (71 言語知識・読解 + 30 聴解),
+- `聴解.html` + `聴解.mp3` — Listening booklet and audio composed from real recordings
+- `聴解スクリプト.txt` — the transcript of the clips the audio is cut from
+- `解答.html` — one merged answer sheet: every item (N2: 71 言語知識・読解 + 30 聴解),
   radio bubbles, embedded audio player, **in-page 180-point grading**
 - `採点結果.json` — the grading result, read back by the result screen
 
 Item selection is never left to a language model's memory: grammar points,
-vocabulary, kanji, listening scenarios, and reading topics are drawn by a
-seeded RNG from a non-repeating pool, blended with a fresh web topic harvest,
-and every draw is recorded in `logs/ledger.json` so papers don't repeat.
+vocabulary and kanji are drawn by a seeded RNG from a non-repeating pool and
+recorded in `logs/ledger.json` so papers don't repeat; reading topics are
+authored against an assigned theme and an avoid-list; the listening half is
+composed from banked real recordings.
 Difficulty is calibrated against 31 sittings of real N2 past papers and the
 Shin Kanzen Master textbooks in `refs/`.
 
@@ -32,7 +33,7 @@ Shin Kanzen Master textbooks in `refs/`.
 >
 > | You want | Read |
 > | --- | --- |
-> | The rules, directory layout, file-naming contract, command router | **`AGENTS.md`** |
+> | The rules, **where everything lives** (§2 map), file naming, command router | **`AGENTS.md`** |
 > | To generate a new mock exam | `GENERATE.md` → `.agents/jlpt-test-generation/SKILL.md` |
 > | To import an external PDF / past paper | `IMPORT.md` → `.agents/external-test-import/SKILL.md` |
 > | How any one subsystem works | the 9 skills in `.agents/<name>/SKILL.md` |
@@ -48,13 +49,13 @@ Shin Kanzen Master textbooks in `refs/`.
 | - | --- | --- | --- |
 | 1 | **Python ≥ 3.10** | everything (CI runs 3.12) | **yes** |
 | 2 | `markdown`, `pykakasi` | booklet + answer-sheet rendering, furigana | **yes** |
-| 3 | ~~`edge-tts`~~ | **No longer needed.** `make mp3` composes the listening audio from real recordings in `tests/imported-*` and `refs/` — the official sittings plus the Shin Kanzen and Soumatome CDs (`choukai-audio` Part 0); nothing is synthesized and no internet is required. The package is still listed below only because the retired `make_choukai_mp3.py` imports it at module load | — |
+| 3 | — | Edge-TTS was retired 2026-09-08: `make mp3` composes the audio from real recordings, no internet (`choukai-audio` Part 0) | — |
 | 4 | **ffmpeg** *and* **ffprobe** on `PATH` | `make mp3` — concat, loudness, duration | for listening audio |
 | 5 | `pdfplumber`, `pypdf`, `pdfminer.six` | PDF extraction (`make extract-*`, imports) | for imports/refs |
 | 6 | **GNU Make + a POSIX shell** | the `make` targets use `test -n … \|\| ( … )` | **yes** |
 | 7 | **Git** (no LFS) | Git LFS was removed 2026-08-24. NO binary is in git: the listening MP3s and the 2.6 GB `refs/` archive both come from GitHub Releases — see [Binaries live in Releases](#binaries-live-in-releases) | **yes** |
 | 7b | **`gh`** (GitHub CLI, authenticated) | fetching those binaries and `make upload-files` | for audio/refs |
-| 8 | **Git symlink support** | `.claude/skills/*` are 10 symlinks into `.agents/*` | **yes** |
+| 8 | **Git symlink support** | `.claude/skills/*` are 9 symlinks into `.agents/*` | **yes** |
 | 9 | **Noto Serif CJK JP + Noto Sans CJK JP** | the booklet CSS names these two fonts explicitly | for correct print output |
 | 10 | **Node.js** | one gate check compares the in-page grader with `grade_answers.py` | optional (check skips) |
 | 11 | **poppler** (`pdftoppm`) | `make extract-archive` page rasterisation | optional |
@@ -73,7 +74,7 @@ brew install python git gh ffmpeg node poppler
 brew install --cask font-noto-serif-cjk-jp font-noto-sans-cjk-jp
 
 # 2. Python packages
-python3 -m pip install markdown pykakasi edge-tts pdfplumber pypdf pdfminer.six mutagen
+python3 -m pip install markdown pykakasi pdfplumber pypdf pdfminer.six mutagen
 
 # 3. Clone — 40 MB, no binaries
 git clone https://github.com/feiluvnana/JLPT.git jlpt && cd jlpt
@@ -95,7 +96,7 @@ Two GitHub Releases hold it instead, and `AGENTS.md` §3 owns the rules:
 | Release | Assets | Size |
 | --- | --- | --- |
 | `audio` | one `<test_id>.mp3` per test | ~0.6 GB total |
-| `refs` | `JLPT_N2_NEW.zip`, `Shinkanzen.zip`, `Soumatome.zip` | 1.2 / 1.0 / 0.3 GB |
+| `refs` | one zip per `refs/` folder (`JLPT_N2_NEW.zip`, `Shinkanzen.zip`, …; `logs/upload_manifest.json` lists them) | ~2.6 GB total |
 
 ```bash
 # a single test's listening audio
@@ -108,7 +109,7 @@ gh release download refs -p 'Shinkanzen.zip' -D /tmp && unzip -n /tmp/Shinkanzen
 make upload-files TARGET=all
 ```
 
-What git DOES carry is the part the pipeline actually reads — the 130 `*.md`
+What git DOES carry is the part the pipeline actually reads — the `*.md`
 extracts (`booklet.md`, `script.md`, `key.md`, `audio_inspection.md`, the
 textbook reference extracts) plus `answer_keys.json`, 3.7 MB in all. So a clone
 with no archive still runs every `make` target and passes `make check`, which
@@ -121,7 +122,7 @@ re-run `make extract-*`, read a PDF page directly, or listen to official audio.
 
 ### Recommended: WSL2 + Ubuntu
 
-Everything behaves exactly as it does on macOS, and you avoid all four native
+Everything behaves exactly as it does on macOS, and you avoid the native
 Windows incompatibilities listed under [Native Windows](#native-windows-git-bashmsys2).
 
 ```powershell
@@ -133,7 +134,7 @@ wsl --install -d Ubuntu     # then reboot and open Ubuntu
 sudo apt update
 sudo apt install -y python3 python3-pip make ffmpeg git gh nodejs \
                     poppler-utils fonts-noto-cjk
-pip install markdown pykakasi edge-tts pdfplumber pypdf pdfminer.six mutagen
+pip install markdown pykakasi pdfplumber pypdf pdfminer.six mutagen
 
 # CRLF must stay off — see Troubleshooting
 git config --global core.autocrlf false
@@ -150,17 +151,12 @@ visit <http://127.0.0.1:8765> — WSL2 forwards localhost automatically.
 
 ### Native Windows (Git Bash/MSYS2)
 
-Workable, but two things in the repo assume a Unix host today:
+Workable, but one thing in the repo assumes a Unix host today:
 
-1. **`tools/check_consistency.py:3449`** calls `subprocess.run(["which", "node"])`.
-   Windows has no `which.exe` and the call has no `try/except`, so `make check`
-   aborts with `FileNotFoundError` before the grader-parity check. Run it from
-   **Git Bash** (which provides `which`), or change that line to
-   `shutil.which("node")`.
-2. **The `Makefile` hardcodes `python3`.** The python.org installer only creates
+- **The `Makefile` hardcodes `python3`.** The python.org installer only creates
    `python.exe` / `py.exe`; `python3.exe` exists in the Microsoft Store build.
    Either use the Store build, or add a `python3` shim, or call the scripts
-   directly (`python .agents/exam-app/scripts/build_interactive.py tests/1`).
+   directly (`python .agents/exam-app/scripts/build_interactive.py tests/<id>`).
 
 Then:
 
@@ -174,7 +170,7 @@ winget install ezwinports.make        # or use MSYS2 / choco install make
   *Install for all users*. (`Yu Gothic`, already on Windows, covers the app UI.)
 - **Symlinks** — enable **Developer Mode** (Settings → System → For developers),
   then `git config --global core.symlinks true`, **before cloning**. Without it
-  the 10 files under `.claude/skills/` check out as text stubs containing a path,
+  the 9 files under `.claude/skills/` check out as text stubs containing a path,
   the skills stop resolving, and `make check` fails
   `every skill is symlinked under .claude/skills/`.
 - **Console encoding** — set `PYTHONUTF8=1`. `make check` prints Japanese
@@ -188,7 +184,7 @@ Then run the same Python-package and clone steps as macOS, in Git Bash.
 
 `tools/extract_jlpt_n2_new.py` builds a Swift + Vision OCR helper only when
 `sys.platform == "darwin"`, so `script.md`'s OCR layer can't be regenerated off
-a Mac. This costs you nothing: all 124 extracts are already committed, so you
+a Mac. This costs you nothing: every extract is already committed, so you
 never need to re-run `make extract-archive`.
 
 ---
@@ -197,7 +193,7 @@ never need to re-run `make extract-archive`.
 
 ```bash
 python3 --version                              # ≥ 3.10
-python3 -c "import markdown, pykakasi, edge_tts, pdfplumber, pypdf, pdfminer; print('py deps ok')"
+python3 -c "import markdown, pykakasi, pdfplumber, pypdf, pdfminer; print('py deps ok')"
 ffmpeg -version | head -1 && ffprobe -version | head -1
 gh auth status | head -2                        # for the audio/refs Releases
 make check                                     # read EVERY line, including WARN
@@ -218,16 +214,16 @@ explicitly justified.** Green is the floor, not a verdict on a paper's content.
 
 ```bash
 make serve            # ONE server for every test → http://127.0.0.1:8765 (no test id)
-make sheet 1          # rebuild tests/1/解答.html + 練習.html (exam + practice mode)
-make booklet 1        # rebuild both booklet HTMLs
-make mp3 1 SEED=n     # re-compose tests/1/聴解.mp3 from the clip bank
-make grade 1          # CLI grading → 採点結果.json
+make sheet <id>       # rebuild 解答.html + 練習.html (exam + practice mode)
+make booklet <id>     # rebuild both booklet HTMLs
+make mp3 <id> REPLAY=1  # re-render 聴解 from its recorded draw (SEED=n = a NEW draw)
+make grade <id>       # CLI grading → 採点結果.json
 make check            # the gate
 make pages            # static GitHub Pages build → _site/
 ```
 
-Per-test targets take the id positionally (`make sheet 1`) or as `TEST=1`;
-default is `TEST=1`. `make serve` takes no id — one server covers every test.
+Per-test targets take the id positionally (`make sheet 20260917_1`) or as
+`TEST=…`; always pass one. `make serve` takes no id — one server covers every test.
 
 ### Levels
 
@@ -291,28 +287,30 @@ ledgers are separate.
 make serve
 ```
 
-Opens the test list; pick a test, answer all 101 items with the 聴解 audio
+Opens the test list; pick a test, answer every item with the 聴解 audio
 playing in-page, submit, and the result screen scores it out of 180 with
 per-section pass/fail. Answers land in `ユーザー解答.json`, the result in
 `採点結果.json`.
 
 Each test also opens in **練習モード** — the button under 開始する on the first
-screen. Same paper, all 101 questions on one page, no clock and no score, and a
+screen. Same paper, every question on one page, no clock and no score, and a
 「解説を見る」 button per question that shows that item's model answer and
 explanation (Japanese or Vietnamese). Nothing is saved in practice mode; use the
 exam mode when you want the sitting on record.
 
 ### Generating a new mock exam
 
-Don't improvise it — copy the prompt in **`GENERATE.md`** to an agent. It runs a
-4-stage pipeline (blueprint → 4 parallel authoring sections → build+gate →
-fresh-eyes QA) with a seeded RNG draw and a mandatory adversarial QA pass.
+Don't improvise it — copy the prompt in **`GENERATE.md`** to an agent. It runs
+five stages as separate subagents: blueprint (seeded pool draw) → 3 parallel
+authoring sections (文字・語彙 / 文法 / 読解) → build + gate (the 聴解 half is
+composed from real recordings here) → fresh-eyes QA → model answer (Japanese
+and Vietnamese, written separately).
 
 ### Importing a real past paper
 
 Copy the prompt in **`IMPORT.md`**. Imported tests live in
-`tests/imported-<slug>/` — the `imported-` prefix is what marks a folder as
-external rather than generated.
+`tests/imported-<slug>/`, where the `imported-` prefix marks a folder as
+external and the slug starts with the level (`imported-n2-2025-12`).
 
 ### Publishing
 
@@ -328,19 +326,18 @@ GitHub Actions**. `_site/` is a build artifact: gitignored, never committed.
 
 | Symptom | Cause and fix |
 | --- | --- |
-| `make check` fails **`built HTML matches the Markdown it stamps`** on a clean checkout | CRLF. `.gitattributes` has no `* text=auto`, and Git for Windows defaults to `core.autocrlf=true`, so line endings change the source hash the HTML stamps. `git config --global core.autocrlf false`, then re-clone. |
+| `make check` fails **`built HTML matches the Markdown it stamps`** on a clean checkout | CRLF. There is no `.gitattributes`, and Git for Windows defaults to `core.autocrlf=true`, so line endings change the source hash the HTML stamps. `git config --global core.autocrlf false`, then re-clone. |
 | `make check` fails **`every skill is symlinked under .claude/skills/`** | Symlinks checked out as text stubs. Enable Developer Mode + `core.symlinks true`, then re-clone. |
-| `FileNotFoundError: 'which'` during `make check` | Native Windows shell. Use Git Bash or WSL — see [Native Windows](#native-windows-git-bashmsys2). |
 | `UnicodeEncodeError` while printing 聴解 / 解答 filenames | Windows console code page. `set PYTHONUTF8=1`. |
-| `make mp3` fails immediately | `ffmpeg`/`ffprobe` not on `PATH`, or no internet for the Edge TTS endpoint. |
-| `聴解.mp3` fails the gate as built from a superseded script | The script changed after the audio. `make mp3 <id>` re-synthesizes and rewrites `聴解_チャプター.json`. |
+| `make mp3` fails immediately | `ffmpeg`/`ffprobe` not on `PATH`, `SEED=`/`REPLAY=1` missing, or `refs/JLPT_N2_NEW/` absent (archive clips read from it — `choukai-audio` Part 0). |
+| `聴解.mp3` fails the gate as built from a superseded script | The bank or composer changed after the audio. `make mp3 <id> REPLAY=1` re-renders the recorded draw — never a seeded re-run, which re-draws the paper. |
 | Booklet renders Japanese in the wrong typeface | Noto Serif/Sans CJK JP not installed — the CSS falls back to a generic `serif`. |
 | `refs/` PDFs/MP3s are missing entirely | Expected on a fresh clone — the archive is gitignored and lives in the `refs` release ([Binaries live in Releases](#binaries-live-in-releases)). The `*.md` extracts beside them are tracked and enough for most work. |
 | `tests/*/聴解.mp3` is missing and the player shows nothing | The clone has no binaries. Either `gh release download audio -p '<id>.mp3' -O 'tests/<id>/聴解.mp3'`, or just take the test online — the deployed sheet falls back to the `audio` release URL. |
 | A `make extract-*` or PDF read fails on a missing `refs/` file | Fetch that source's zip: `gh release download refs -p 'JLPT_N2_NEW.zip' -D /tmp && unzip -n /tmp/JLPT_N2_NEW.zip -d refs/`. Never re-source or re-commit the archive. |
 | `make upload-files` dies on `HTTP 404: Not Found (…/releases/assets/<id>)` | The active `gh` account cannot write to this repo — GitHub returns 404, not 403, for an unauthorized asset overwrite. `gh auth status` shows who is active; `gh auth switch --user <owner>` picks the account that owns the repo. |
 | `make check` fails `no exam MP3 is tracked in git` | A `聴解.mp3` is still in the index from before the MP3s were gitignored. `git rm --cached -- 'tests/*/聴解.mp3'` untracks them; the files stay on disk. |
-| `make check` fails `exam MP3(s) are on the `audio` release` | Those MP3s were synthesized but never uploaded, and git no longer carries them — run `make upload-files` and commit `logs/upload_manifest.json`. |
+| `make check` fails `exam MP3(s) are on the `audio` release` | Those MP3s were composed but never uploaded, and git no longer carries them — run `make upload-files` and commit `logs/upload_manifest.json`. |
 | `This repository exceeded its LFS budget` | You are on a pre-2026-08-24 clone. LFS is gone: there is no `.gitattributes`, and `refs/**/*.{pdf,mp3}` plus `tests/**/*.mp3` are gitignored. Never re-add an LFS rule — an exhausted budget makes checkout itself fail. |
 | `skip grader parity — node not installed` | Expected. Install Node.js to enable that check. |
 

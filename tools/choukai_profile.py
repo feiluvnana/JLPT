@@ -86,15 +86,15 @@ FEMALE_BASE_F0 = 210.0
 MALE_BASE_F0 = 120.0
 
 def _load_synth_speaker_map() -> dict[str, dict[str, Any]]:
-    """Resolve every speaker label through the SYNTHESIS script's SPEAKER_MAP.
+    """Resolve every speaker label through the script grammar's SPEAKER_MAP.
 
-    `SPEAKER_MAP` is owned by `.agents/choukai-audio/scripts/make_choukai_mp3.py`
-    — it is what the MP3 is actually rendered with. A hand copy here was the
+    `SPEAKER_MAP` is owned by `.agents/choukai-audio/scripts/choukai_script.py`
+    (the voice/pitch cast the retired Edge-TTS audio was rendered with). A hand copy here was the
     fourth copy of a number this file exists to prevent (REPORT-CHOUKAI.md §D1):
     the copy shipped 2026-08-21 already lagged the labels Phase 4.1 added, so
     voice balance and pitch margins were computed off a map the audio never used.
     """
-    path = ROOT / ".agents" / "choukai-audio" / "scripts" / "make_choukai_mp3.py"
+    path = ROOT / ".agents" / "choukai-audio" / "scripts" / "choukai_script.py"
     spec = importlib.util.spec_from_file_location("_choukai_synth", path)
     mod = importlib.util.module_from_spec(spec)
     sys.modules["_choukai_synth"] = mod

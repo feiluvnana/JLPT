@@ -240,7 +240,21 @@
     "reading_topics": 12
    },
    "harvest_sha": "165eb22f8fd9",
-   "pools_sha": "cea9612d1e0b"
+   "pools_sha": "cea9612d1e0b",
+   "cooldowns": {
+    "kanji_reading": 303,
+    "orthography": 10,
+    "word_formation": 26,
+    "context_words": 195,
+    "paraphrase": 26,
+    "usage": 41,
+    "grammar_p7": 10,
+    "grammar_p8": 4,
+    "quick_response": 12,
+    "listening_scenarios": 11,
+    "reading_topics": 22
+   },
+   "cooldowns_source": "backfilled 2026-09-28 from pool depth at that date (cooldown_for() on pools.json before the 2026-09-28 retirements/additions; the paper predates the field, so this is the window the gate judged it against that day, frozen so later pool growth cannot re-judge it)"
   },
   {
    "test_id": "20260810_1",
@@ -481,7 +495,21 @@
     "reading_topics": 12
    },
    "harvest_sha": "a17048ca5f3c",
-   "pools_sha": "765cbc22bd6d"
+   "pools_sha": "765cbc22bd6d",
+   "cooldowns": {
+    "kanji_reading": 303,
+    "orthography": 10,
+    "word_formation": 26,
+    "context_words": 195,
+    "paraphrase": 26,
+    "usage": 41,
+    "grammar_p7": 10,
+    "grammar_p8": 4,
+    "quick_response": 12,
+    "listening_scenarios": 11,
+    "reading_topics": 22
+   },
+   "cooldowns_source": "backfilled 2026-09-28 from pool depth at that date (cooldown_for() on pools.json before the 2026-09-28 retirements/additions; the paper predates the field, so this is the window the gate judged it against that day, frozen so later pool growth cannot re-judge it)"
   },
   {
    "test_id": "20260810_2",
@@ -716,7 +744,21 @@
     "reading_topics": 12
    },
    "harvest_sha": "bc1b9b9725de",
-   "pools_sha": "cea9612d1e0b"
+   "pools_sha": "cea9612d1e0b",
+   "cooldowns": {
+    "kanji_reading": 303,
+    "orthography": 10,
+    "word_formation": 26,
+    "context_words": 195,
+    "paraphrase": 26,
+    "usage": 41,
+    "grammar_p7": 10,
+    "grammar_p8": 4,
+    "quick_response": 12,
+    "listening_scenarios": 11,
+    "reading_topics": 22
+   },
+   "cooldowns_source": "backfilled 2026-09-28 from pool depth at that date (cooldown_for() on pools.json before the 2026-09-28 retirements/additions; the paper predates the field, so this is the window the gate judged it against that day, frozen so later pool growth cannot re-judge it)"
   },
   {
    "test_id": "20260811_1",
@@ -965,7 +1007,21 @@
     "listening_scenarios": 21,
     "reading_topics": 13
    },
-   "pools_sha": "14a9ce6344cd"
+   "pools_sha": "14a9ce6344cd",
+   "cooldowns": {
+    "kanji_reading": 303,
+    "orthography": 10,
+    "word_formation": 26,
+    "context_words": 195,
+    "paraphrase": 26,
+    "usage": 41,
+    "grammar_p7": 10,
+    "grammar_p8": 4,
+    "quick_response": 12,
+    "listening_scenarios": 11,
+    "reading_topics": 22
+   },
+   "cooldowns_source": "backfilled 2026-09-28 from pool depth at that date (cooldown_for() on pools.json before the 2026-09-28 retirements/additions; the paper predates the field, so this is the window the gate judged it against that day, frozen so later pool growth cannot re-judge it)"
   },
   {
    "test_id": "20260812_1",
@@ -1216,7 +1272,21 @@
     "listening_scenarios": 21,
     "reading_topics": 13
    },
-   "pools_sha": "aadf23081392"
+   "pools_sha": "aadf23081392",
+   "cooldowns": {
+    "kanji_reading": 303,
+    "orthography": 10,
+    "word_formation": 26,
+    "context_words": 195,
+    "paraphrase": 26,
+    "usage": 41,
+    "grammar_p7": 10,
+    "grammar_p8": 4,
+    "quick_response": 12,
+    "listening_scenarios": 11,
+    "reading_topics": 22
+   },
+   "cooldowns_source": "backfilled 2026-09-28 from pool depth at that date (cooldown_for() on pools.json before the 2026-09-28 retirements/additions; the paper predates the field, so this is the window the gate judged it against that day, frozen so later pool growth cannot re-judge it)"
   },
   {
    "test_id": "20260812_2",
@@ -1461,7 +1531,21 @@
     "listening_scenarios": 21,
     "reading_topics": 13
    },
-   "pools_sha": "aadf23081392"
+   "pools_sha": "aadf23081392",
+   "cooldowns": {
+    "kanji_reading": 303,
+    "orthography": 10,
+    "word_formation": 26,
+    "context_words": 195,
+    "paraphrase": 26,
+    "usage": 41,
+    "grammar_p7": 10,
+    "grammar_p8": 4,
+    "quick_response": 12,
+    "listening_scenarios": 11,
+    "reading_topics": 22
+   },
+   "cooldowns_source": "backfilled 2026-09-28 from pool depth at that date (cooldown_for() on pools.json before the 2026-09-28 retirements/additions; the paper predates the field, so this is the window the gate judged it against that day, frozen so later pool growth cannot re-judge it)"
   },
   {
    "test_id": "20260813_1",
@@ -1698,7 +1782,21 @@
     "listening_scenarios": 21,
     "reading_topics": 12
    },
-   "pools_sha": "14a9ce6344cd"
+   "pools_sha": "14a9ce6344cd",
+   "cooldowns": {
+    "kanji_reading": 303,
+    "orthography": 10,
+    "word_formation": 26,
+    "context_words": 195,
+    "paraphrase": 26,
+    "usage": 41,
+    "grammar_p7": 10,
+    "grammar_p8": 4,
+    "quick_response": 12,
+    "listening_scenarios": 11,
+    "reading_topics": 22
+   },
+   "cooldowns_source": "backfilled 2026-09-28 from pool depth at that date (cooldown_for() on pools.json before the 2026-09-28 retirements/additions; the paper predates the field, so this is the window the gate judged it against that day, frozen so later pool growth cannot re-judge it)"
   },
   {
    "test_id": "20260813_2",
@@ -1940,7 +2038,21 @@
     "quick_response": 11,
     "listening_scenarios": 21,
     "reading_topics": 13
-   }
+   },
+   "cooldowns": {
+    "kanji_reading": 303,
+    "orthography": 10,
+    "word_formation": 26,
+    "context_words": 195,
+    "paraphrase": 26,
+    "usage": 41,
+    "grammar_p7": 10,
+    "grammar_p8": 4,
+    "quick_response": 12,
+    "listening_scenarios": 11,
+    "reading_topics": 22
+   },
+   "cooldowns_source": "backfilled 2026-09-28 from pool depth at that date (cooldown_for() on pools.json before the 2026-09-28 retirements/additions; the paper predates the field, so this is the window the gate judged it against that day, frozen so later pool growth cannot re-judge it)"
   },
   {
    "test_id": "20260814_1",
@@ -2175,7 +2287,21 @@
     "listening_scenarios": 21,
     "reading_topics": 12
    },
-   "pools_sha": "aadf23081392"
+   "pools_sha": "aadf23081392",
+   "cooldowns": {
+    "kanji_reading": 303,
+    "orthography": 10,
+    "word_formation": 26,
+    "context_words": 195,
+    "paraphrase": 26,
+    "usage": 41,
+    "grammar_p7": 10,
+    "grammar_p8": 4,
+    "quick_response": 12,
+    "listening_scenarios": 11,
+    "reading_topics": 22
+   },
+   "cooldowns_source": "backfilled 2026-09-28 from pool depth at that date (cooldown_for() on pools.json before the 2026-09-28 retirements/additions; the paper predates the field, so this is the window the gate judged it against that day, frozen so later pool growth cannot re-judge it)"
   },
   {
    "test_id": "20260817_1",
@@ -2414,7 +2540,21 @@
     "listening_scenarios": 21,
     "reading_topics": 12
    },
-   "pools_sha": "aadf23081392"
+   "pools_sha": "aadf23081392",
+   "cooldowns": {
+    "kanji_reading": 303,
+    "orthography": 10,
+    "word_formation": 26,
+    "context_words": 195,
+    "paraphrase": 26,
+    "usage": 41,
+    "grammar_p7": 10,
+    "grammar_p8": 4,
+    "quick_response": 12,
+    "listening_scenarios": 11,
+    "reading_topics": 22
+   },
+   "cooldowns_source": "backfilled 2026-09-28 from pool depth at that date (cooldown_for() on pools.json before the 2026-09-28 retirements/additions; the paper predates the field, so this is the window the gate judged it against that day, frozen so later pool growth cannot re-judge it)"
   },
   {
    "test_id": "20260817_2",
@@ -2651,7 +2791,21 @@
     "listening_scenarios": 21,
     "reading_topics": 12
    },
-   "pools_sha": "14a9ce6344cd"
+   "pools_sha": "14a9ce6344cd",
+   "cooldowns": {
+    "kanji_reading": 303,
+    "orthography": 10,
+    "word_formation": 26,
+    "context_words": 195,
+    "paraphrase": 26,
+    "usage": 41,
+    "grammar_p7": 10,
+    "grammar_p8": 4,
+    "quick_response": 12,
+    "listening_scenarios": 11,
+    "reading_topics": 22
+   },
+   "cooldowns_source": "backfilled 2026-09-28 from pool depth at that date (cooldown_for() on pools.json before the 2026-09-28 retirements/additions; the paper predates the field, so this is the window the gate judged it against that day, frozen so later pool growth cannot re-judge it)"
   },
   {
    "test_id": "20260817_3",
@@ -2888,7 +3042,21 @@
     "listening_scenarios": 21,
     "reading_topics": 12
    },
-   "pools_sha": "cea9612d1e0b"
+   "pools_sha": "cea9612d1e0b",
+   "cooldowns": {
+    "kanji_reading": 303,
+    "orthography": 10,
+    "word_formation": 26,
+    "context_words": 195,
+    "paraphrase": 26,
+    "usage": 41,
+    "grammar_p7": 10,
+    "grammar_p8": 4,
+    "quick_response": 12,
+    "listening_scenarios": 11,
+    "reading_topics": 22
+   },
+   "cooldowns_source": "backfilled 2026-09-28 from pool depth at that date (cooldown_for() on pools.json before the 2026-09-28 retirements/additions; the paper predates the field, so this is the window the gate judged it against that day, frozen so later pool growth cannot re-judge it)"
   },
   {
    "test_id": "20260818_1",
@@ -3125,7 +3293,21 @@
     "listening_scenarios": 21,
     "reading_topics": 12
    },
-   "pools_sha": "aadf23081392"
+   "pools_sha": "aadf23081392",
+   "cooldowns": {
+    "kanji_reading": 303,
+    "orthography": 10,
+    "word_formation": 26,
+    "context_words": 195,
+    "paraphrase": 26,
+    "usage": 41,
+    "grammar_p7": 10,
+    "grammar_p8": 4,
+    "quick_response": 12,
+    "listening_scenarios": 11,
+    "reading_topics": 22
+   },
+   "cooldowns_source": "backfilled 2026-09-28 from pool depth at that date (cooldown_for() on pools.json before the 2026-09-28 retirements/additions; the paper predates the field, so this is the window the gate judged it against that day, frozen so later pool growth cannot re-judge it)"
   },
   {
    "test_id": "20260819_1",
@@ -3360,7 +3542,21 @@
     "quick_response": 11,
     "listening_scenarios": 21,
     "reading_topics": 12
-   }
+   },
+   "cooldowns": {
+    "kanji_reading": 303,
+    "orthography": 10,
+    "word_formation": 26,
+    "context_words": 195,
+    "paraphrase": 26,
+    "usage": 41,
+    "grammar_p7": 10,
+    "grammar_p8": 4,
+    "quick_response": 12,
+    "listening_scenarios": 11,
+    "reading_topics": 22
+   },
+   "cooldowns_source": "backfilled 2026-09-28 from pool depth at that date (cooldown_for() on pools.json before the 2026-09-28 retirements/additions; the paper predates the field, so this is the window the gate judged it against that day, frozen so later pool growth cannot re-judge it)"
   },
   {
    "test_id": "20260821_1",
@@ -3606,7 +3802,21 @@
     "quick_response": 11,
     "listening_scenarios": 21,
     "reading_topics": 12
-   }
+   },
+   "cooldowns": {
+    "kanji_reading": 303,
+    "orthography": 10,
+    "word_formation": 26,
+    "context_words": 195,
+    "paraphrase": 26,
+    "usage": 41,
+    "grammar_p7": 10,
+    "grammar_p8": 4,
+    "quick_response": 12,
+    "listening_scenarios": 11,
+    "reading_topics": 22
+   },
+   "cooldowns_source": "backfilled 2026-09-28 from pool depth at that date (cooldown_for() on pools.json before the 2026-09-28 retirements/additions; the paper predates the field, so this is the window the gate judged it against that day, frozen so later pool growth cannot re-judge it)"
   },
   {
    "test_id": "20260827_1",
@@ -3841,7 +4051,21 @@
     "quick_response": 11,
     "listening_scenarios": 21,
     "reading_topics": 12
-   }
+   },
+   "cooldowns": {
+    "kanji_reading": 303,
+    "orthography": 10,
+    "word_formation": 26,
+    "context_words": 195,
+    "paraphrase": 26,
+    "usage": 41,
+    "grammar_p7": 10,
+    "grammar_p8": 4,
+    "quick_response": 12,
+    "listening_scenarios": 11,
+    "reading_topics": 22
+   },
+   "cooldowns_source": "backfilled 2026-09-28 from pool depth at that date (cooldown_for() on pools.json before the 2026-09-28 retirements/additions; the paper predates the field, so this is the window the gate judged it against that day, frozen so later pool growth cannot re-judge it)"
   },
   {
    "test_id": "20260827_2",
@@ -4075,7 +4299,21 @@
     "quick_response": 11,
     "listening_scenarios": 21,
     "reading_topics": 12
-   }
+   },
+   "cooldowns": {
+    "kanji_reading": 303,
+    "orthography": 10,
+    "word_formation": 26,
+    "context_words": 195,
+    "paraphrase": 26,
+    "usage": 41,
+    "grammar_p7": 10,
+    "grammar_p8": 4,
+    "quick_response": 12,
+    "listening_scenarios": 11,
+    "reading_topics": 22
+   },
+   "cooldowns_source": "backfilled 2026-09-28 from pool depth at that date (cooldown_for() on pools.json before the 2026-09-28 retirements/additions; the paper predates the field, so this is the window the gate judged it against that day, frozen so later pool growth cannot re-judge it)"
   },
   {
    "test_id": "20260828_1",
@@ -4312,7 +4550,21 @@
     "quick_response": 11,
     "listening_scenarios": 21,
     "reading_topics": 12
-   }
+   },
+   "cooldowns": {
+    "kanji_reading": 303,
+    "orthography": 10,
+    "word_formation": 26,
+    "context_words": 195,
+    "paraphrase": 26,
+    "usage": 41,
+    "grammar_p7": 10,
+    "grammar_p8": 4,
+    "quick_response": 12,
+    "listening_scenarios": 11,
+    "reading_topics": 22
+   },
+   "cooldowns_source": "backfilled 2026-09-28 from pool depth at that date (cooldown_for() on pools.json before the 2026-09-28 retirements/additions; the paper predates the field, so this is the window the gate judged it against that day, frozen so later pool growth cannot re-judge it)"
   },
   {
    "test_id": "20260828_2",
@@ -4551,7 +4803,21 @@
     "quick_response": 11,
     "listening_scenarios": 21,
     "reading_topics": 12
-   }
+   },
+   "cooldowns": {
+    "kanji_reading": 303,
+    "orthography": 10,
+    "word_formation": 26,
+    "context_words": 195,
+    "paraphrase": 26,
+    "usage": 41,
+    "grammar_p7": 10,
+    "grammar_p8": 4,
+    "quick_response": 12,
+    "listening_scenarios": 11,
+    "reading_topics": 22
+   },
+   "cooldowns_source": "backfilled 2026-09-28 from pool depth at that date (cooldown_for() on pools.json before the 2026-09-28 retirements/additions; the paper predates the field, so this is the window the gate judged it against that day, frozen so later pool growth cannot re-judge it)"
   },
   {
    "test_id": "20260903_1",
@@ -4795,7 +5061,21 @@
     "quick_response": 11,
     "listening_scenarios": 21,
     "reading_topics": 12
-   }
+   },
+   "cooldowns": {
+    "kanji_reading": 303,
+    "orthography": 10,
+    "word_formation": 26,
+    "context_words": 195,
+    "paraphrase": 26,
+    "usage": 41,
+    "grammar_p7": 10,
+    "grammar_p8": 4,
+    "quick_response": 12,
+    "listening_scenarios": 11,
+    "reading_topics": 22
+   },
+   "cooldowns_source": "backfilled 2026-09-28 from pool depth at that date (cooldown_for() on pools.json before the 2026-09-28 retirements/additions; the paper predates the field, so this is the window the gate judged it against that day, frozen so later pool growth cannot re-judge it)"
   },
   {
    "test_id": "20260904_1",
@@ -5037,7 +5317,21 @@
     "quick_response": 11,
     "listening_scenarios": 21,
     "reading_topics": 12
-   }
+   },
+   "cooldowns": {
+    "kanji_reading": 303,
+    "orthography": 10,
+    "word_formation": 26,
+    "context_words": 195,
+    "paraphrase": 26,
+    "usage": 41,
+    "grammar_p7": 10,
+    "grammar_p8": 4,
+    "quick_response": 12,
+    "listening_scenarios": 11,
+    "reading_topics": 22
+   },
+   "cooldowns_source": "backfilled 2026-09-28 from pool depth at that date (cooldown_for() on pools.json before the 2026-09-28 retirements/additions; the paper predates the field, so this is the window the gate judged it against that day, frozen so later pool growth cannot re-judge it)"
   },
   {
    "test_id": "20260904_2",
@@ -5274,7 +5568,21 @@
     "listening_scenarios": 21,
     "reading_topics": 12
    },
-   "notes": "QA round-1 fix pass, 2026-09-04. listening_scenarios[6] was moved off 「旅館:食事場所の希望確認」(食) by --reroll-one listening_scenarios:6 (final accepted seed 53418667) because its 食 theme headlined 聴解問題5-2番 one paper after 20260904_1 headlined 食 at 問題14 — exam-blueprint rule 4 allows ZERO repeat against the 1-back paper (qa-report-20260904_2 F1, automatic fail). It now reads 「保健センター:生活習慣病予防講座」(睡眠・健康) and the item was RE-AUTHORED from that string: origin reauthored. New deciding lines, quoted from 聴解スクリプト.txt as shipped — 質問1 (男の人): 「そっか。じゃあ、僕はストレッチにしとくよ。土曜の朝なら空いてるし、着替えも道具もいらないっていうのが、いちばん楽でいい。」; 質問2 (女の人): 「うん。先生にも、まず体を動かしなさいって言われてるから、私はプールにする。」 The two questions now track two different people's choices and key DIFFERENT options (1 and 2), and neither speaker's opening preference (男=筋力体操, 女=眠りの講座) survives — F2's requirement that a candidate who hears only the opening line can answer neither. answer_positions.聴解_問題5 was edited by hand from [3,1,1] to [3,1,2] for the same finding; the legality re-measurement is in tests/20260904_2/test_spec.json's spec_notes. quick_response 「…日経新聞…」 was corrected to 「…業界誌…」 in pools.json (F5, a real publication name inside exam fiction) and the corrected string carried here and into the spec so check_draw_provenance() still resolves."
+   "notes": "QA round-1 fix pass, 2026-09-04. listening_scenarios[6] was moved off 「旅館:食事場所の希望確認」(食) by --reroll-one listening_scenarios:6 (final accepted seed 53418667) because its 食 theme headlined 聴解問題5-2番 one paper after 20260904_1 headlined 食 at 問題14 — exam-blueprint rule 4 allows ZERO repeat against the 1-back paper (qa-report-20260904_2 F1, automatic fail). It now reads 「保健センター:生活習慣病予防講座」(睡眠・健康) and the item was RE-AUTHORED from that string: origin reauthored. New deciding lines, quoted from 聴解スクリプト.txt as shipped — 質問1 (男の人): 「そっか。じゃあ、僕はストレッチにしとくよ。土曜の朝なら空いてるし、着替えも道具もいらないっていうのが、いちばん楽でいい。」; 質問2 (女の人): 「うん。先生にも、まず体を動かしなさいって言われてるから、私はプールにする。」 The two questions now track two different people's choices and key DIFFERENT options (1 and 2), and neither speaker's opening preference (男=筋力体操, 女=眠りの講座) survives — F2's requirement that a candidate who hears only the opening line can answer neither. answer_positions.聴解_問題5 was edited by hand from [3,1,1] to [3,1,2] for the same finding; the legality re-measurement is in tests/20260904_2/test_spec.json's spec_notes. quick_response 「…日経新聞…」 was corrected to 「…業界誌…」 in pools.json (F5, a real publication name inside exam fiction) and the corrected string carried here and into the spec so check_draw_provenance() still resolves.",
+   "cooldowns": {
+    "kanji_reading": 303,
+    "orthography": 10,
+    "word_formation": 26,
+    "context_words": 195,
+    "paraphrase": 26,
+    "usage": 41,
+    "grammar_p7": 10,
+    "grammar_p8": 4,
+    "quick_response": 12,
+    "listening_scenarios": 11,
+    "reading_topics": 22
+   },
+   "cooldowns_source": "backfilled 2026-09-28 from pool depth at that date (cooldown_for() on pools.json before the 2026-09-28 retirements/additions; the paper predates the field, so this is the window the gate judged it against that day, frozen so later pool growth cannot re-judge it)"
   },
   {
    "test_id": "20260904_3",
@@ -5515,7 +5823,21 @@
     "quick_response": 11,
     "listening_scenarios": 21,
     "reading_topics": 12
-   }
+   },
+   "cooldowns": {
+    "kanji_reading": 303,
+    "orthography": 10,
+    "word_formation": 26,
+    "context_words": 195,
+    "paraphrase": 26,
+    "usage": 41,
+    "grammar_p7": 10,
+    "grammar_p8": 4,
+    "quick_response": 12,
+    "listening_scenarios": 11,
+    "reading_topics": 22
+   },
+   "cooldowns_source": "backfilled 2026-09-28 from pool depth at that date (cooldown_for() on pools.json before the 2026-09-28 retirements/additions; the paper predates the field, so this is the window the gate judged it against that day, frozen so later pool growth cannot re-judge it)"
   },
   {
    "test_id": "20260907_1",
@@ -7188,7 +7510,21 @@
     "quick_response": 11,
     "listening_scenarios": 21,
     "reading_topics": 12
-   }
+   },
+   "cooldowns": {
+    "kanji_reading": 303,
+    "orthography": 10,
+    "word_formation": 26,
+    "context_words": 195,
+    "paraphrase": 26,
+    "usage": 41,
+    "grammar_p7": 10,
+    "grammar_p8": 4,
+    "quick_response": 12,
+    "listening_scenarios": 11,
+    "reading_topics": 22
+   },
+   "cooldowns_source": "backfilled 2026-09-28 from pool depth at that date (cooldown_for() on pools.json before the 2026-09-28 retirements/additions; the paper predates the field, so this is the window the gate judged it against that day, frozen so later pool growth cannot re-judge it)"
   },
   {
    "test_id": "20260909_1",
@@ -9014,7 +9350,21 @@
     "quick_response": 11,
     "listening_scenarios": 21,
     "reading_topics": 12
-   }
+   },
+   "cooldowns": {
+    "kanji_reading": 303,
+    "orthography": 10,
+    "word_formation": 26,
+    "context_words": 195,
+    "paraphrase": 26,
+    "usage": 41,
+    "grammar_p7": 10,
+    "grammar_p8": 4,
+    "quick_response": 12,
+    "listening_scenarios": 11,
+    "reading_topics": 22
+   },
+   "cooldowns_source": "backfilled 2026-09-28 from pool depth at that date (cooldown_for() on pools.json before the 2026-09-28 retirements/additions; the paper predates the field, so this is the window the gate judged it against that day, frozen so later pool growth cannot re-judge it)"
   },
   {
    "test_id": "20260910_1",
@@ -10857,7 +11207,21 @@
     "quick_response": 11,
     "listening_scenarios": 21,
     "reading_topics": 12
-   }
+   },
+   "cooldowns": {
+    "kanji_reading": 303,
+    "orthography": 10,
+    "word_formation": 26,
+    "context_words": 195,
+    "paraphrase": 26,
+    "usage": 41,
+    "grammar_p7": 10,
+    "grammar_p8": 4,
+    "quick_response": 12,
+    "listening_scenarios": 11,
+    "reading_topics": 22
+   },
+   "cooldowns_source": "backfilled 2026-09-28 from pool depth at that date (cooldown_for() on pools.json before the 2026-09-28 retirements/additions; the paper predates the field, so this is the window the gate judged it against that day, frozen so later pool growth cannot re-judge it)"
   },
   {
    "test_id": "20260911_1",
@@ -12824,7 +13188,21 @@
     "quick_response": 11,
     "listening_scenarios": 21,
     "reading_topics": 12
-   }
+   },
+   "cooldowns": {
+    "kanji_reading": 303,
+    "orthography": 10,
+    "word_formation": 26,
+    "context_words": 195,
+    "paraphrase": 26,
+    "usage": 41,
+    "grammar_p7": 10,
+    "grammar_p8": 4,
+    "quick_response": 12,
+    "listening_scenarios": 11,
+    "reading_topics": 22
+   },
+   "cooldowns_source": "backfilled 2026-09-28 from pool depth at that date (cooldown_for() on pools.json before the 2026-09-28 retirements/additions; the paper predates the field, so this is the window the gate judged it against that day, frozen so later pool growth cannot re-judge it)"
   },
   {
    "test_id": "20260914_1",
@@ -14821,7 +15199,21 @@
     "quick_response": 11,
     "listening_scenarios": 21,
     "reading_topics": 12
-   }
+   },
+   "cooldowns": {
+    "kanji_reading": 303,
+    "orthography": 10,
+    "word_formation": 26,
+    "context_words": 195,
+    "paraphrase": 26,
+    "usage": 41,
+    "grammar_p7": 10,
+    "grammar_p8": 4,
+    "quick_response": 12,
+    "listening_scenarios": 11,
+    "reading_topics": 22
+   },
+   "cooldowns_source": "backfilled 2026-09-28 from pool depth at that date (cooldown_for() on pools.json before the 2026-09-28 retirements/additions; the paper predates the field, so this is the window the gate judged it against that day, frozen so later pool growth cannot re-judge it)"
   },
   {
    "test_id": "20260917_1",
@@ -16743,7 +17135,21 @@
     "quick_response": 11,
     "listening_scenarios": 21,
     "reading_topics": 12
-   }
+   },
+   "cooldowns": {
+    "kanji_reading": 303,
+    "orthography": 10,
+    "word_formation": 26,
+    "context_words": 195,
+    "paraphrase": 26,
+    "usage": 41,
+    "grammar_p7": 10,
+    "grammar_p8": 4,
+    "quick_response": 12,
+    "listening_scenarios": 11,
+    "reading_topics": 22
+   },
+   "cooldowns_source": "backfilled 2026-09-28 from pool depth at that date (cooldown_for() on pools.json before the 2026-09-28 retirements/additions; the paper predates the field, so this is the window the gate judged it against that day, frozen so later pool growth cannot re-judge it)"
   }
  ]
 }

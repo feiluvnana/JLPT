@@ -1,146 +1,171 @@
 #!/usr/bin/env python3
-"""
-Scaffold Section Authoring Templates from tests/<test_id>/test_spec.json.
+"""Scaffold the three stage-2 authoring fragments from `test_spec.json`.
 
-Generates pre-slotted Markdown section templates in tests/<test_id>/_sections/
-with target items and prescribed answer positions already pre-populated.
+Writes `tests/<id>/_sections/`:
+    問1-6_文字語彙.md   問7-9_文法.md   問10-14_読解.md
 
-WHAT IT ACTUALLY EMITS — two files: 問1-6_文字語彙.md and 問7-9_文法.md.
-It does NOT emit a 読解 template (the 問題10-14 author creates
-問10-14_読解.md itself, and its closing-move shapes are assigned by the
-orchestrator per jlpt-test-generation Stage 2, not by this script), and it does
-NOT emit a 聴解 one — since 2026-09-08 there is no 聴解 author at all, because
-`make mp3` composes the whole listening half from banked recordings
-(choukai-audio Part 0). The docstring claimed all four until 2026-09-09.
+Each is a booklet body — canonical `## 問題N` lines (the level table, via
+`assemble_paper.canonical_heading`), one slot per item carrying its drawn
+target — then a literal `<!-- KEY -->` line and that fragment's key table,
+with the **key already filled from `answer_positions`**. Authors write items
+whose correct option sits where the key says; they never choose a position.
+`make assemble <id>` merges the three into `言語知識・読解.md`.
 
-Why this exists:
-Saves ~40% of Stage 2 LLM authoring tokens by removing the need for agents to generate
-repetitive markdown headers, table pipes, and boilerplate from scratch.
+There is no 聴解 fragment: `make mp3` composes the listening half from banked
+recordings (choukai-audio Part 0).
+
+Two defects this replaced (skill audit 2026-09-28): every key cell was written
+as `1` regardless of `answer_positions`, and 問題9 read a `cloze_topic` spec
+key the sampler never writes, so its theme line was always a placeholder.
 
 Usage:
-    python3 tools/scaffold_sections.py tests/20260814_1
-    python3 tools/scaffold_sections.py tests/20260814_1 --overwrite
+    python3 tools/scaffold_sections.py tests/20260928_1 [--overwrite]
 """
+
+from __future__ import annotations
 
 import argparse
 import json
-import re
 import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "tools"))
+from assemble_paper import canonical_heading, _q9_range  # noqa: E402
+import level as LEVEL  # noqa: E402  (on sys.path via assemble_paper)
+
+OPTS = " 1. 選択肢1  2. 選択肢2  3. 選択肢3  4. 選択肢4\n"
+OPTS_V = " 1. 選択肢1\n 2. 選択肢2\n 3. 選択肢3\n 4. 選択肢4\n"
+
+# 大問 → (spec item category, how the slot names its target). N2's generated
+# paper; a new level brings its own row when it is calibrated.
+DRAWN = {
+    1: ("kanji_reading", "例文（下線語 **{t}**）"),
+    2: ("orthography", "例文（下線語 **{t}** のかな書き）"),
+    3: ("word_formation", "例文（（　）に入る接辞「{t}」）"),
+    4: ("context_words", "例文（（　）に入る語「{t}」）"),
+    5: ("paraphrase", "例文（下線語 **{t}**）"),
+    6: ("usage", "**{t}**"),
+    7: ("grammar_p7", "例文（文法「{t}」）"),
+    8: ("grammar_p8", "リード ＿＿ ＿＿ ★ ＿＿ 末尾。（文型「{t}」）"),
+}
+VERTICAL = {6}
+READING_SHAPE = {10: 5, 11: 4}          # passages; 問題11 is 4 × 2 questions
 
 
-def scaffold_sections(test_dir: Path, overwrite: bool = False):
-    test_dir = Path(test_dir)
-    spec_path = test_dir / "test_spec.json"
-    if not spec_path.is_file():
-        print(f"Error: test_spec.json not found in {test_dir}", file=sys.stderr)
-        sys.exit(1)
-
-    spec = json.loads(spec_path.read_text(encoding="utf-8"))
-    items = spec.get("items", {})
-    ans_pos = spec.get("answer_positions", {})
-    sec_dir = test_dir / "_sections"
-    sec_dir.mkdir(parents=True, exist_ok=True)
-
-    # 1. Scaffold 文字・語彙 (問1-6, Q1-30)
-    p_moji = sec_dir / "問1-6_文字語彙.md"
-    if overwrite or not p_moji.exists():
-        lines = ["## 問題1 次の文のアンダーラインの言葉の読み方として最もよいものを、1・2・3・4から一つ選びなさい。\n"]
-        # 問1
-        for i, item_obj in enumerate(items.get("kanji_reading", []), 1):
-            it = item_obj.get("item", item_obj) if isinstance(item_obj, dict) else item_obj
-            pos = ans_pos.get("問題1_語彙", [1, 2, 3, 4, 1])[i-1] if "問題1_語彙" in ans_pos else 1
-            lines.append(f"**{i}** （例文をここに記述: **{it}**）")
-            lines.append(f" 1. 選択肢1  2. 選択肢2  3. 選択肢3  4. 選択肢4\n")
-
-        lines.append("## 問題2 次の文のアンダーラインの言葉を漢字で書くとき、最もよいものを、1・2・3・4から一つ選びなさい。\n")
-        # 問2
-        for i, item_obj in enumerate(items.get("orthography", []), 6):
-            it = item_obj.get("item", item_obj) if isinstance(item_obj, dict) else item_obj
-            pos = ans_pos.get("問題2_語彙", [1, 2, 3, 4, 1])[i-6] if "問題2_語彙" in ans_pos else 1
-            lines.append(f"**{i}** （例文をここに記述: **{it}**）")
-            lines.append(f" 1. 選択肢1  2. 選択肢2  3. 選択肢3  4. 選択肢4\n")
-
-        lines.append("## 問題3 （　）に入れるのに最もよいものを、1・2・3・4から一つ選びなさい。\n")
-        # 問3
-        for i, item_obj in enumerate(items.get("word_formation", []), 11):
-            it = item_obj.get("item", item_obj) if isinstance(item_obj, dict) else item_obj
-            lines.append(f"**{i}** （例文をここに記述: ターゲット接辞「{it}」）")
-            lines.append(f" 1. 選択肢1  2. 選択肢2  3. 選択肢3  4. 選択肢4\n")
-
-        lines.append("## 問題4 （　）に入れるのに最もよいものを、1・2・3・4から一つ選びなさい。\n")
-        # 問4
-        for i, item_obj in enumerate(items.get("context_words", []), 14):
-            it = item_obj.get("item", item_obj) if isinstance(item_obj, dict) else item_obj
-            lines.append(f"**{i}** （例文をここに記述: （　）に入れる語「{it}」）")
-            lines.append(f" 1. 選択肢1  2. 選択肢2  3. 選択肢3  4. 選択肢4\n")
-
-        lines.append("## 問題5 次の言葉の使い分けとして、最も意味が近いものを、1・2・3・4から一つ選びなさい。\n")
-        # 問5
-        for i, item_obj in enumerate(items.get("paraphrase", []), 21):
-            it = item_obj.get("item", item_obj) if isinstance(item_obj, dict) else item_obj
-            lines.append(f"**{i}** （言い換え対象語: **{it}** を含む文）")
-            lines.append(f" 1. 選択肢1  2. 選択肢2  3. 選択肢3  4. 選択肢4\n")
-
-        lines.append("## 問題6 次の言葉の使い方として最もよいものを、1・2・3・4から一つ選びなさい。\n")
-        # 問6
-        for i, item_obj in enumerate(items.get("usage", []), 26):
-            it = item_obj.get("item", item_obj) if isinstance(item_obj, dict) else item_obj
-            lines.append(f"**{i}** **{it}**")
-            lines.append(" 1. 文1\n 2. 文2\n 3. 文3\n 4. 文4\n")
-
-        lines.append("<!-- KEY -->\n## 文字・語彙\n| 問題 | 正解 | 解説 |")
-        lines.append("|---|---|---|")
-        for qn in range(1, 31):
-            lines.append(f"| {qn} | 1 | 解説をここに記述 |")
-
-        p_moji.write_text("\n".join(lines) + "\n", encoding="utf-8")
-        print(f"Scaffolded {p_moji.name}")
-
-    # 2. Scaffold 文法 (問7-9, Q31-51)
-    p_bun = sec_dir / "問7-9_文法.md"
-    if overwrite or not p_bun.exists():
-        lines = ["## 問題7 次の文の（　）に入れるのに最もよいものを、1・2・3・4から一つ選びなさい。\n"]
-        for i, item_obj in enumerate(items.get("grammar_p7", []), 31):
-            it = item_obj.get("item", item_obj) if isinstance(item_obj, dict) else item_obj
-            lines.append(f"**{i}** （例文をここに記述: ターゲット文法「{it}」）")
-            lines.append(f" 1. 選択肢1  2. 選択肢2  3. 選択肢3  4. 選択肢4\n")
-
-        lines.append("## 問題8 次の文の ★ に入る最もよいものを、1・2・3・4から一つ選びなさい。\n")
-        for i, item_obj in enumerate(items.get("grammar_p8", []), 43):
-            it = item_obj.get("item", item_obj) if isinstance(item_obj, dict) else item_obj
-            lines.append(f"**{i}** リード文 ___ ___ ★ ___ 末尾文。（ターゲット文型「{it}」）")
-            lines.append(f" 1. カード1  2. カード2  3. カード3  4. カード4\n")
-
-        lines.append("## 問題9 次の文章を読んで、文章全体の趣旨を踏まえて、48から51の中に入る最もよいものを、1・2・3・4から一つ選びなさい。\n")
-        cloze_topic = spec.get("cloze_topic", {})
-        c_top = cloze_topic.get("topic", "文章の文法テーマ") if isinstance(cloze_topic, dict) else cloze_topic
-        lines.append(f"（問題9 長文: テーマ「{c_top}」約500-700字）\n")
-        for i in range(48, 52):
-            lines.append(f"**{i}**")
-            lines.append(f" 1. 選択肢1  2. 選択肢2  3. 選択肢3  4. 選択肢4\n")
-
-        lines.append("<!-- KEY -->\n## 文法\n| 問題 | 正解 | 解説 |")
-        lines.append("|---|---|---|")
-        for qn in range(31, 52):
-            lines.append(f"| {qn} | 1 | 解説をここに記述 |")
-
-        p_bun.write_text("\n".join(lines) + "\n", encoding="utf-8")
-        print(f"Scaffolded {p_bun.name}")
-
-    print(f"Section scaffolding complete in {sec_dir}")
+def _target(x) -> str:
+    return x.get("item", x) if isinstance(x, dict) else x
 
 
-def main():
-    ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("test_dir", help="Path to tests/<test_id>")
-    ap.add_argument("--overwrite", action="store_true", help="Overwrite existing section scaffolds")
-    args = ap.parse_args()
+def _ranges(level: str) -> dict[int, range]:
+    g = LEVEL.gengo(level)
+    counts = LEVEL.gengo_shapes(level)[g["generated_shape"]]
+    out, q = {}, 1
+    for m, n in zip(g["mondai"], counts):
+        out[int(m["mondai"][2:])] = range(q, q + n)
+        q += n
+    return out
 
-    scaffold_sections(Path(args.test_dir), overwrite=args.overwrite)
+
+def _key(spec: dict, n: int, rng: range) -> list[int | str]:
+    ap = spec.get("answer_positions", {})
+    pos = ap.get(f"問題{n}_語彙") or ap.get(f"問題{n}") or []
+    if len(pos) != len(rng):
+        return ["?"] * len(rng)
+    return pos
+
+
+def _key_table(title: str, spec: dict, rows: list[tuple[int, range]]) -> list[str]:
+    out = [KEY, f"## {title}", "| 問題 | 正解 | 解説 |", "|---|---|---|"]
+    for n, rng in rows:
+        for q, a in zip(rng, _key(spec, n, rng)):
+            out.append(f"| {q} | {a} | 解説をここに記述 |")
+    return out
+
+
+KEY = "<!-- KEY -->"
+
+
+def _drawn_block(spec: dict, n: int, rng: range, level: str) -> list[str]:
+    cat, tmpl = DRAWN[n]
+    drawn = spec.get("items", {}).get(cat, [])
+    out = [canonical_heading(level, n, "", f"## 問題{n}"), ""]
+    for i, q in enumerate(rng):
+        t = _target(drawn[i]) if i < len(drawn) else "（未抽選）"
+        out += [f"**{q}** " + tmpl.format(t=t), OPTS_V if n in VERTICAL else OPTS]
+    return out
+
+
+def scaffold(test_dir: Path, overwrite: bool = False) -> list[Path]:
+    spec = json.loads((test_dir / "test_spec.json").read_text(encoding="utf-8"))
+    level = spec.get("level") or LEVEL.level_of(test_dir.name)
+    r = _ranges(level)
+    sec = test_dir / "_sections"
+    sec.mkdir(parents=True, exist_ok=True)
+    files: dict[str, list[str]] = {}
+
+    moji = []
+    for n in range(1, 7):
+        moji += _drawn_block(spec, n, r[n], level)
+    files["問1-6_文字語彙.md"] = moji + _key_table("文字・語彙", spec, [(n, r[n]) for n in range(1, 7)])
+
+    bun = []
+    for n in (7, 8):
+        bun += _drawn_block(spec, n, r[n], level)
+    first, last = _q9_range(level, None)
+    bun += [canonical_heading(level, 9, "", "## 問題9"), "",
+            "（問題9: 約500〜700字の文章。題材は著者が決める — 他の11面と重ならないこと。"
+            f"空欄は（ {first} ）〜（ {last} ）を本文中に置く）", ""]
+    for q in r[9]:
+        bun += [f"**{q}**", OPTS]
+    files["問7-9_文法.md"] = bun + _key_table("文法", spec, [(n, r[n]) for n in (7, 8, 9)])
+
+    topics = spec.get("items", {}).get("reading_topics", [])
+    doc = ["<!-- reading_topics (theme + avoid) — the orchestrator's allocation says "
+           "which entry feeds which surface: "
+           + "; ".join(f"[{i}] {t.get('theme', t) if isinstance(t, dict) else t}"
+                       for i, t in enumerate(topics)) + " -->", ""]
+    for n in range(10, 15):
+        rng = list(r[n])
+        if n in READING_SHAPE:
+            k = READING_SHAPE[n]
+            per = len(rng) // k
+            block = "\n".join(f"### ({i})" for i in range(1, k + 1))
+            doc += [canonical_heading(level, n, block, f"## 問題{n}"), ""]
+            for i in range(k):
+                doc += [f"### ({i + 1})", "", "（本文）", ""]
+                for q in rng[i * per:(i + 1) * per]:
+                    doc += [f"**{q}** 設問", OPTS_V]
+        else:
+            head = (f"## 問題{n} 右のページは、〈…の案内〉である。" if n == 14 else f"## 問題{n}")
+            doc += [canonical_heading(level, n, "", head), ""]
+            doc += (["A", "", "（本文）", "", "B", "", "（本文）", ""] if n == 12 else ["（本文）", ""])
+            for q in rng:
+                doc += [f"**{q}** 設問", OPTS_V]
+    files["問10-14_読解.md"] = doc + _key_table("読解", spec, [(n, r[n]) for n in range(10, 15)])
+
+    written = []
+    for name, lines in files.items():
+        p = sec / name
+        if p.exists() and not overwrite:
+            print(f"  kept {p.name} (exists; --overwrite to replace)")
+            continue
+        p.write_text("\n".join(lines).rstrip("\n") + "\n", encoding="utf-8")
+        written.append(p)
+        print(f"  scaffolded {p.name}")
+    return written
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
+    ap.add_argument("test_dir", type=Path)
+    ap.add_argument("--overwrite", action="store_true")
+    a = ap.parse_args()
+    if not (a.test_dir / "test_spec.json").is_file():
+        sys.exit(f"no test_spec.json in {a.test_dir} — run `make sample` first")
+    scaffold(a.test_dir, a.overwrite)
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

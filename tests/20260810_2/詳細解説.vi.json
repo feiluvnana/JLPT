@@ -1219,7 +1219,7 @@
   "why_correct": "「部長抜きでやってくれ」＝cứ họp mà không cần trưởng phòng.",
   "options_analysis": [
    "“Đợi trưởng phòng đến” ngược hẳn yêu cầu không cần chờ.",
-   "Đúng.",
+   "「部長抜きで」= họp không có trưởng phòng; đáp「今日、部長来ないんだ」là hiểu đúng.",
    "“Hủy họp à” hiểu sai, cuộc họp vẫn diễn ra."
   ],
   "points": [
@@ -1243,7 +1243,7 @@
   "why_correct": "「返事が曖昧」＝câu trả lời mập mờ; đáp lại là đề nghị hỏi lại làm rõ.",
   "options_analysis": [
    "“Gửi email cảm ơn” không hợp lý vì chưa có câu trả lời rõ ràng.",
-   "Đúng.",
+   "Câu trả lời mập mờ nên trưởng phòng đề nghị「私から聞いてみましょうか」, tự hỏi lại.",
    "“Yên tâm vì đã nhận lời” trái với thông tin còn mập mờ."
   ],
   "points": [

@@ -3309,6 +3309,8 @@
   "ショップ",
   "ガイド(案内)",
   "テクニック(技術)",
+  "テンポ(速さ)",
+  "プラン(計画)",
   "すっきり",
   "そういえば",
   "そのほか",
@@ -6440,5 +6442,39 @@
   "〜上は": "確定条件",
   "〜を通じて": "媒介",
   "〜を通して": "媒介"
+ },
+ "retired_entries": {
+  "paraphrase": {
+   "ショップ": {
+    "on": "2026-09-28",
+    "ruling": "owner ruling 2026-09-28 (qa/open-items-20260914_1.md #2/#3, qa/root-cause-20260917_1.md RC-3): retire, never delete — a shipped paper drew it, so check_draw_provenance() must keep resolving it; no gloss is invented",
+    "reason": "off-band: no N2-band paraphrase exists — 店 is the banned N5 core the shipped item keyed (お店), and 店舗 has zero hits in all 31 booklets and all three vocabulary authorities",
+    "drawn_by": [
+     "20260807_1"
+    ],
+    "also_drawn_then_rerolled_out": [
+     "20260914_1 (paraphrase:0, seeds 81922409/79006482; still listed in its rotation.verified_items)"
+    ]
+   },
+   "おのずと(自然に)": {
+    "on": "2026-09-28",
+    "ruling": "owner ruling 2026-09-28 (qa/open-items-20260914_1.md #2/#3, qa/root-cause-20260917_1.md RC-3): retire, never delete — a shipped paper drew it, so check_draw_provenance() must keep resolving it; no gloss is invented",
+    "reason": "off-band: glossed by official in every sitting that prints it (3 of 3, check_pool_gloss_band); same family as the deleted 自ずから(自然と) (qa-report-20260914_1 F1)",
+    "drawn_by": [
+     "20260817_3"
+    ]
+   },
+   "そのほか": {
+    "on": "2026-09-28",
+    "ruling": "owner ruling 2026-09-28 (qa/open-items-20260914_1.md #2/#3, qa/root-cause-20260917_1.md RC-3): retire, never delete — a shipped paper drew it, so check_draw_provenance() must keep resolving it; no gloss is invented",
+    "reason": "off-band headword: a こそあど compound of N5/N4 morphemes, absent from Hajimete's 2500-word N2 list, in the archive only as 実用文 running prose, never a tested item; its option set is 3+ こそあど options, which 0 of 277 archive option lines carry (QA F5)",
+    "drawn_by": [
+     "20260807_1"
+    ],
+    "also_drawn_then_rerolled_out": [
+     "20260917_1 (--reroll-one paraphrase:2, seed 61458444 -> 公衆)"
+    ]
+   }
+  }
  }
 }

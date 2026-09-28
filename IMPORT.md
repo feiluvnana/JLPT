@@ -1,9 +1,13 @@
 # IMPORT.md — the prompt for importing an external test
 
-Copy everything below the line to the agent, filling in the ⟨⟩ placeholders.
-The **slug** is lowercase letters/digits/hyphens (e.g. `n2-2025-12`); the
-folder will be `tests/imported-⟨slug⟩/`. The script PDF and MP3 are optional —
-delete those lines if you don't have them.
+Copy everything below the line to an agent, filling in the ⟨⟩ placeholders.
+
+- **Slug**: lowercase letters/digits/hyphens, **starting with the level**:
+  `n2-2025-12`, `n1-2025-12`. The folder becomes `tests/imported-⟨slug⟩/`, and
+  the level is read from the slug.
+- The level needs a structure table at `structured` or better (`make levels`);
+  an N1 import is possible once `N1.json` is filled (README "Adding a level").
+- The script PDF, MP3 and key PDF are optional — delete the lines you don't have.
 
 ---
 
@@ -13,50 +17,46 @@ Source files:
 - Booklet PDF: `⟨path/to/booklet.pdf⟩`
 - Listening script PDF (optional): `⟨path/to/script.pdf⟩`
 - Listening audio MP3 (optional): `⟨path/to/audio.mp3⟩`
+- Answer-key PDF (optional): `⟨path/to/key.pdf⟩`
 
-Before your first tool call, read `AGENTS.md` end to end, then read
-`.agents/external-test-import/SKILL.md` end to end — it owns the whole import
-workflow and this prompt does not override any of it.
+**Read first, in full, before your first tool call:** `AGENTS.md`, then
+`.agents/external-test-import/SKILL.md`. That skill owns the workflow; this
+prompt only fixes the order and the stop conditions.
 
-The pipeline is three steps and nothing else:
+**Before step 1:** `tests/imported-⟨slug⟩/` does not exist, and `make levels`
+shows the slug's level at `structured` or `calibrated`. If not, stop and report.
 
-1. **Source → the test itself.** Transcribe the booklet/script/audio into the
-   repo's deliverables. Fidelity over invention: never "improve" an item,
-   never swap a key, keep the source's apparatus (（注N）, （中略）, setting
-   labels, printed URLs), and prefer copying the original MP3 over
-   synthesizing one.
-2. **Check the content by hand.** Diff all 101 keys against the official
-   answer sheet (the sheet wins), check coverage in both directions, and
-   repair what the source's own print/OCR got plainly wrong — only where the
-   correction is determined by the surrounding text or the key.
-   When a line will not resolve, climb the ladder and stop at the first rung
-   that settles it: re-read the extract in context → cross-check the same fact
-   elsewhere in the source → **rasterize the page and read the image
-   yourself**. That last rung is slow and expensive, so spend it only on
-   decisive lines (問題5 統合理解, near-synonym options, anything the official
-   key depends on) — crop to the line at high dpi rather than re-reading whole
-   pages. A line may be left as printed only after you have actually looked at
-   the ink; say which page you verified it on. Finish with `make booklet`,
-   `make sheet` and `make check` (read every line, WARN included). No
-   `exam-qa-review` pass.
-3. **Model answer, last.** Once the content is settled and the gate is green:
-   author `詳細解説.json` (Japanese), then `詳細解説.vi.json` (Vietnamese) **in a
-   separate context** — the two sets are written from the items, never
-   translated from each other, and both stay inside `exam-model-answer`'s
-   terseness bands. Then run `make model-answer imported-⟨slug⟩`.
-   **Solve each item from the source before you explain it, and confirm the
-   official key.** Derive the answer first, then compare with the key, then
-   write — an explanation written backwards from the key will justify a wrong
-   key just as fluently as a right one. If your solve disagrees, re-read, then
-   climb the ladder on the deciding line; if it still disagrees, the source
-   wins (never re-key an official item) and you report the disagreement.
+**Three steps, in order:**
 
-Binding points, from those two files:
+1. **Source → deliverables.** `make init-import SLUG=⟨slug⟩`, then transcribe the
+   booklet, script and audio into the repo's files. Fidelity over invention:
+   never improve an item, never swap a key, keep the source's apparatus
+   (（注N）, （中略）, setting labels, printed URLs), and copy the original MP3.
+   **Never run `make mp3` on an import** — no synthesis path exists; without an
+   MP3 the 聴解 half is text only, and the report says so.
+2. **Verify by hand, then gate.** Reconcile **every** key against the official
+   answer sheet (the sheet wins); the item count is whatever the sitting
+   printed, and it must be one of the level table's era shapes. Check coverage
+   both ways, and repair only what the source's own print/OCR plainly got wrong,
+   and only where the text or the key settles it. For a line that won't resolve,
+   stop at the first rung that settles it: re-read the extract in context →
+   cross-check the same fact elsewhere in the source → rasterize the page and
+   read the ink (decisive lines only, cropped, high dpi). A doubtful line may
+   stay as printed only after you have looked at the ink — say which page.
+   Then `make booklet`, `make sheet`, `make check` (every line, WARN included).
+   No `exam-qa-review` pass.
+3. **Model answer, last.** Author `詳細解説.json` (JA), then `詳細解説.vi.json`
+   (VI) **in a separate context** — written from the items, never translated,
+   both inside `exam-model-answer`'s terseness bands. **Solve each item before
+   you explain it**, then compare with the key: an explanation written backwards
+   from the key justifies a wrong key just as fluently. If your solve still
+   disagrees after climbing the ladder, the source wins — report it, never
+   re-key. Then `make model-answer imported-⟨slug⟩` and `make check` again.
 
-- This is an **import, not a generation**: the folder id must start with
-  `imported-`, and you must never run `sample_items.py` or touch
-  `logs/ledger.json` for it.
-- **Commit** `tests/imported-⟨slug⟩/` when done.
-- **Final report** per `AGENTS.md` §0.7: which skills you read, which steps you
-  ran, how the 101 keys reconciled, every repair you made to the source's own
-  text, every doubtful line you left as printed, and anything you skipped.
+Binding: this is an **import, not a generation** — never run `sample_items.py`,
+never touch `logs/ledger.json`.
+
+**Finish:** commit `tests/imported-⟨slug⟩/`, then report per `AGENTS.md` §0.7:
+skills read, steps run, how the keys reconciled (count and any disagreement),
+every repair to the source's own text, every doubtful line left as printed (with
+its page), and anything skipped.

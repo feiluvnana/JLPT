@@ -1,8 +1,8 @@
 # Makefile for the JLPT Mock Exam Pipeline (N1–N5; N2 calibrated)
 
-.PHONY: help check check-tests goi-profile dokkai-profile choukai-profile grade sheet practice model-answer explanation keyless serve pages preview-pages booklet mp3 sample \
+.PHONY: assemble help check check-tests goi-profile dokkai-profile choukai-profile grade sheet practice model-answer explanation keyless serve pages preview-pages booklet mp3 sample \
        levels init-import extract-pdf extract-archive extract-keys extract-kanji-tables extract-shinkanzen-goi extract-shinkanzen-dokkai extract-shinkanzen \
-       lint-draft lint verify-scramble scaffold-explanations irt \
+       lint-draft lint verify-scramble scaffold-explanations \
        scaffold-sections matrix qa-eval autofix findings repair-plan choukai-bank \
        textbook-bank archive-bank number-calls choukai-wear
 
@@ -10,7 +10,7 @@
 # Equivalent: "make grade TEST=1". `serve` is deliberately NOT here: one server
 # covers every test, so it takes no id. `pages` builds every test by default;
 # "make pages 1" (or TEST=1) narrows it to one.
-TARGET_CMDS := grade sheet practice model-answer explanation keyless booklet mp3 pages sample lint-draft lint verify-scramble scaffold-explanations irt scaffold-sections matrix qa-eval autofix repair-plan upload-files
+TARGET_CMDS := assemble grade sheet practice model-answer explanation keyless booklet mp3 pages sample lint-draft lint verify-scramble scaffold-explanations scaffold-sections matrix qa-eval autofix repair-plan upload-files
 FIRST_GOAL   := $(firstword $(MAKECMDGOALS))
 
 ifneq ($(filter $(FIRST_GOAL),$(TARGET_CMDS)),)
@@ -63,6 +63,7 @@ help:
 	@echo "  make sample 5 SEED=n  Sample question pool -> tests/5/test_spec.json + ledger"
 	@echo "                        (SEED required, from an RNG: python3 -c 'import secrets; print(secrets.randbelow(10**8))')"
 	@echo "  make scaffold-sections 1 Scaffold section authoring templates into tests/1/_sections/"
+	@echo "  make assemble 1        Merge tests/1/_sections/ into 言語知識・読解.md in the official layout"
 	@echo "  make matrix           2x2 Cartesian matrix generator for 問題1 & 問題2"
 	@echo "  make booklet 1        Build booklet HTML for test 1 (言語知識・読解.html & 聴解.html)"
 	@echo "  make mp3 1 SEED=n     Compose listening audio for test 1 from official clips (聴解.mp3)"
@@ -81,7 +82,6 @@ help:
 	@echo "  make autofix 1        Auto-fix conversational contractions and stem formatting"
 	@echo "  make lint 1           Alias for make lint-draft"
 	@echo "  make verify-scramble 1 Permutation & topological validator for 問題8 scrambles"
-	@echo "  make irt 1            Simulate 2PL Item Response Theory (IRT) scaled scores"
 	@echo "  make qa-eval 1        Structured blind-solve evaluator & QA report generator"
 	@echo "  make keyless 1        Blind-solve render for QA: qa/1/keyless.md (no keys)"
 	@echo "  make serve            Serve ALL tests: list -> exam -> result (no test id)"
@@ -154,12 +154,18 @@ matrix:
 booklet:
 	python3 .agents/exam-app/scripts/build_booklet.py tests/$(TEST)/言語知識・読解.md tests/$(TEST)/聴解.md
 
-# `make mp3` composes the listening audio out of official clips. The Edge-TTS
-# synthesizer it replaced is retired — see choukai-audio/SKILL.md Part 5.
-# SEED must be an RNG output, never a number you chose (exam-blueprint).
+# `make mp3` composes the whole listening half out of banked clips (a NEW draw:
+# script, booklet, MP3, chapters and both 詳細解説 panes' 聴解 entries). SEED must
+# be an RNG output, never a number you chose. `REPLAY=1` re-renders the paper's
+# RECORDED draw instead — the only safe rebuild after a bank or renderer fix;
+# add NO_AUDIO=1 to rewrite the text deliverables and keep the MP3.
 mp3:
-	@test -n "$(SEED)" || { echo "SEED= is required: SEED=\$$(python3 -c 'import secrets;print(secrets.randbelow(10**8))')"; exit 1; }
+ifdef REPLAY
+	python3 tools/compose_choukai.py $(TEST) --replay $(if $(NO_AUDIO),--no-audio,)
+else
+	@test -n "$(SEED)" || { echo "SEED= is required for a new draw: SEED=\$$(python3 -c 'import secrets;print(secrets.randbelow(10**8))') — or REPLAY=1 to re-render the recorded one"; exit 1; }
 	python3 tools/compose_choukai.py $(TEST) --seed $(SEED)
+endif
 
 # One writer for logs/choukai_bank.json: this target builds BOTH halves — the
 # official records from the ten imports, then the textbook records
@@ -200,11 +206,20 @@ sheet:
 
 # Just the practice page — for re-rendering after 詳細解説.json changes, which is
 # the one source it has that 解答.html does not.
+# Stage 3: merge the three _sections/ fragments into 言語知識・読解.md in the
+# official layout (banners, canonical 問題N lines, one key heading). Refuses a
+# fragment that still holds scaffold placeholders.
+assemble:
+	python3 tools/assemble_paper.py tests/$(TEST)
+
 practice:
 	python3 .agents/exam-app/scripts/build_practice.py tests/$(TEST)
 
+# 練習.html embeds the same 詳細解説 files, so the two are always rebuilt together
+# — building one alone left the other stale and reddened the final `make check`.
 model-answer:
 	python3 .agents/exam-model-answer/scripts/build_model_answer.py tests/$(TEST)
+	python3 .agents/exam-app/scripts/build_practice.py tests/$(TEST)
 
 explanation: model-answer
 
@@ -222,8 +237,6 @@ lint: lint-draft
 verify-scramble:
 	python3 tools/verify_scramble.py tests/$(TEST)
 
-irt:
-	python3 tools/irt_scorer.py tests/$(TEST)
 
 qa-eval:
 	python3 tools/qa_eval.py tests/$(TEST) --scaffold-report

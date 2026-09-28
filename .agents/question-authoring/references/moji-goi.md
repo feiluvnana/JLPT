@@ -126,28 +126,34 @@ of 頻繁に and **every available answer reads 頻繁**, so a candidate who rea
 correctly finds no correct option (REPORT-GOI §F9; 24 of our 25 okurigana targets
 comply). Gate: `check_moji1_okurigana_exposure`, no exemptions.
 
-## 1–2 of the 5 問題1 targets are 訓読み — a band, not a cap
+## Exactly 2 of the 5 問題1 targets are 訓読み — a band, both bounds
 
 A 訓読み target is one whose okurigana is printed, or a single-kanji 和語 word.
 
-**Evidence base, stated exactly** (this is the one 文字・語彙 number no script can
-re-derive): the archive's underline does not survive the text-layer extract, so
-`goi_profile.py` reports `target=None` for every official 問題1 item. The band
-rests on **five sittings, hand-classified 2026-08-19** (7/2023–12/2025: 2/2/1/2/2
-of 5) plus the calibration table below. **That 2/2/1/2/2 hand classification is
-refuted** (2026-09-17): `sample_items.is_kun_target()` — the classifier the
-sampler and `check_mondai1_reading_type_mix` share — puts **14 of the 35
-current-era targets on the 訓 side (40 %), exactly 2 in every one of the seven
-sittings**, not 12 and never 1. See the calibration table's note: the live
-sampling constant still encodes the refuted figure, and correcting it is a
-pipeline decision, not a doc edit.
-Shin Kanzen's two typeset 語彙 模擬試験 are what would settle it.
+**Evidence base, stated exactly.** The archive's underline does not survive the
+text-layer extract, so `goi_profile.py` reports `target=None` for every official
+問題1 item; the targets are recovered by hand as 語(よみ) pairs from the seven
+current-era `refs/JLPT_N2_NEW/*/booklet.md` 問題1 blocks plus the key in
+`answer_keys.json`, and then classified by `sample_items.is_kun_target()` — the
+classifier the sampler and `check_mondai1_reading_type_mix` share. Result
+(re-derived 2026-09-28): **14 of 35 on the 訓 side (40 %), exactly 2 in every
+sitting** — 12/2022 外れて・勇ましい, 7/2023 乱れて・険しかった, 12/2023 腕・幼い,
+7/2024 絡まって・鮮やか, 12/2024 迷った・背骨, 7/2025 辛い・収まった, 12/2025
+柱・争って. The earlier hand classification 「2/2/1/2/2」 (five sittings,
+2026-08-19) and its 12/35 are refuted by that count.
+
+**Owner ruling 2026-09-28:** `KUN_TARGET_RATE` = 14/35 and `KUN_FLOOR` = 2 (with
+`KUN_CAP` = 2), so every future draw takes exactly two 訓読み targets. Papers
+drawn before the ruling keep their recorded draws; the twelve that hold one
+訓読み target are judged against the floor of 1 they were drawn under
+(`MONDAI1_KUN_FLOOR_PRE_RULING_IDS` in `tools/check_consistency.py`).
 
 **Both bounds, one reason.** Above 2, the 2×2 on-reading grid (清濁/長短) official
 runs in 3–4 of 5 slots stops being exercised and 問題1 measures word recognition
 instead (`20260819_1`: 4 of 5 訓読み, grid in ONE item, `qa-report-20260819_1` F3).
 At 0, word recognition stops being tested at all (`20260817_3`: five on-reading
-compounds, a shape the window never shows). Author to 2.
+compounds, a shape the window never shows). At 1 the paper runs a shape no
+current-era sitting shows. The draw now gives exactly 2.
 
 Enforced at draw time by `sample_kun_capped()` in `sample_items.py` (both bounds,
 including on the `--reroll-one` path) and re-checked by
@@ -302,8 +308,9 @@ table used to run together. By READING TYPE, `is_kun_target()` scores **14 訓 /
 every sitting. By AUTHORING SHAPE, which is what the two-branch rule needs, it is
 **13 field-writable / 22 derivation-shaped**, because 背骨 reads 訓 but is built
 like a 音読み set. This table counts by authoring shape (13/22); it read 12/23
-before, and `check_mondai1_reading_type_mix`'s docstring still restates the
-old 12 — it must follow this table, which owns the number.
+before. The READING-TYPE count (14/35) is what the sampler's `KUN_TARGET_RATE`
+and `check_mondai1_reading_type_mix`'s docstring state since 2026-09-28; the
+AUTHORING-SHAPE count stays here. Two measurements — do not reconcile them.
 
 Both blanket rules are wrong ("every option a dictionary word" fails 22/35;
 "音読み distractors must be non-words" fails ~6). The invariant is directional:

@@ -4,7 +4,7 @@
   "options_analysis": [
    "「ゆしゅつ」= 輸出, xuất khẩu — ngược hướng.",
    "「いにゅう」= 移入, chuyển vào từ vùng khác trong nước.",
-   "「ゆにゅう」đúng.",
+   "「ゆにゅう」: 輸 đọc「ユ」, 入 đọc「ニュウ」— hàng đi từ「海外から」vào trong nước.",
    "「こうにゅう」= 購入, mua bằng tiền, không phải nhập khẩu."
   ],
   "points": [
@@ -16,7 +16,7 @@
   "why_correct": "「片道切符」đọc「かたみちきっぷ」— vé chỉ có giá trị một chiều.",
   "options_analysis": [
    "「おうふくきっぷ」= 往復切符, vé khứ hồi — ngược nghĩa.",
-   "「かたみちきっぷ」đúng.",
+   "「かたみちきっぷ」: 片道 âm Kun「かたみち」(một chiều) + 切符「きっぷ」.",
    "「じょうしゃけん」= 乗車券, tên gọi chung cho vé, không phân biệt chiều.",
    "「かいすうけん」= 回数券, tập vé dùng nhiều lần."
   ],
@@ -31,7 +31,7 @@
    "「さくきょくか」thiếu biến âm xúc, sai.",
    "「さっきょうか」đọc sai nguyên âm của 曲, không tồn tại.",
    "「さくきょうか」mắc cả hai lỗi trên.",
-   "「さっきょくか」đúng."
+   "「さっきょくか」: 作 thành xúc âm「さっ」trước「きょく」, 曲 giữ「キョク」."
   ],
   "points": [
    "作《さっ》曲《きょく》家《か》: nhà soạn nhạc.",
@@ -43,7 +43,7 @@
   "options_analysis": [
    "「ほうざく」đọc đục sai của 作, không tồn tại.",
    "「とうざく」nhầm 豊 sang âm「とう」và còn đọc đục sai.",
-   "「ほうさく」đúng.",
+   "「ほうさく」: 豊「ホウ」+ 作「サク」giữ âm trong, không bị đục.",
    "「とうざく」nhầm 豊 sang「とう」, trùng âm từ 盗作 nhưng sai nghĩa."
   ],
   "points": [
@@ -57,7 +57,7 @@
    "「かげぐち」= 陰口, chỉ khi người đó vắng mặt.",
    "「もんく」= 文句, lời than phiền nói chung.",
    "「ぐち」= 愚痴, lời than vãn, không nhắm vào ai.",
-   "「わるぐち」đúng."
+   "「わるぐち」: 悪「わる」+ 口 biến đục「ぐち」— nói xấu nói chung, khớp câu."
   ],
   "points": [
    "悪口《わるぐち》: nói xấu.",
@@ -68,7 +68,7 @@
   "why_correct": "「きごう」viết 記号 — ký hiệu mang ý nghĩa nhất định.",
   "options_analysis": [
    "「記合」không phải từ có thật.",
-   "「記号」đúng.",
+   "「記号」: 記 (ghi) + 号 (dấu hiệu) = ký hiệu dùng trên bản đồ.",
    "「起号」không phải từ có thật, 起 nghĩa là bắt đầu.",
    "「起合」không phải từ có thật."
   ],
@@ -83,7 +83,7 @@
    "「効い」không tồn tại, 効 đọc「き(く)」khác nghĩa.",
    "「幻い」không tồn tại, 幻 nghĩa là ảo ảnh.",
    "「幽い」không tồn tại, 幽 nghĩa là u tối.",
-   "「幼い」đúng."
+   "「幼い」: 幼 (ấu, nhỏ tuổi) là chữ duy nhất có âm Kun「おさな(い)」."
   ],
   "points": [
    "幼《おさな》い: còn nhỏ.",
@@ -96,7 +96,7 @@
    "「拘さえた」không tồn tại, 拘 nghĩa là ràng buộc.",
    "「抱さえた」không tồn tại, 抱 nghĩa là ôm.",
    "「揚さえた」không tồn tại, 揚 nghĩa là nâng lên.",
-   "「押さえた」đúng."
+   "「押さえた」: 押 (ấn, đè) + okurigana「さえる」= giữ chặt bằng tay."
   ],
   "points": [
    "押《お》さえる: đè giữ.",
@@ -107,7 +107,7 @@
   "why_correct": "「こうりつ」viết 効率 — tỷ lệ giữa công sức và kết quả.",
   "options_analysis": [
    "「効律」không phải từ có thật.",
-   "「効率」đúng.",
+   "「効率」: 効 (hiệu quả) + 率 (tỉ lệ) = hiệu suất, đi với「上がる」.",
    "「校率」không tồn tại, 校 nghĩa là trường học.",
    "「校律」không tồn tại."
   ],
@@ -121,7 +121,7 @@
   "options_analysis": [
    "「下巡」không tồn tại, 巡 nghĩa là tuần tra.",
    "「夏旬」không tồn tại, 夏 không đọc「げ」nghĩa này.",
-   "「下旬」đúng.",
+   "「下旬」: 下 đọc「ゲ」+ 旬 (mười ngày) = mười ngày cuối tháng.",
    "「夏巡」không tồn tại."
   ],
   "points": [
@@ -133,7 +133,7 @@
   "why_correct": "Từ cần điền là 中, tạo 中途 — giữa chừng, chưa kết thúc.",
   "options_analysis": [
    "「前」tạo 前途 — con đường phía trước, hướng ngược 中途.",
-   "「中」đúng.",
+   "「中」: 中途 = giữa chừng, khớp「やめてしまった」bỏ dở.",
    "「後」không kết hợp thành từ có thật với 途.",
    "「初」không kết hợp thành từ có thật với 途."
   ],
@@ -148,7 +148,7 @@
    "「半」tạo 半人口 — chỉ một nửa, khác nghĩa tổng số.",
    "「各」đi với từ chỉ nhiều đơn vị riêng lẻ, không ghép 人口.",
    "「諸」cũng chỉ nhiều khu vực/tổ chức, không ghép số liệu gộp.",
-   "「総」đúng."
+   "「総」: 総人口 = tổng dân số, khớp con số gộp「約一億人」."
   ],
   "points": [
    "総人口《そうじんこう》: tổng dân số.",
@@ -160,7 +160,7 @@
   "options_analysis": [
    "「全」tạo 全域 — toàn bộ phạm vi đã xác định trước.",
    "「狭」tạo 狭域 — phạm vi hẹp, ngược nghĩa hoàn toàn.",
-   "「広」đúng.",
+   "「広」: 広域 = vùng rộng lớn, đi với「にわたって」trải khắp.",
    "「新」không kết hợp thành từ có thật với 域."
   ],
   "points": [
@@ -187,7 +187,7 @@
    "「取り出した」là lấy vật ra từ bên trong, không hợp chủ đề trừu tượng.",
    "「差し出した」là đưa vật ra phía người khác.",
    "「繰り出した」= kéo nhau đi ra/tung ra liên tiếp, không hợp.",
-   "「持ち出した」đúng."
+   "「持ち出した」: 話題を持ち出す là cụm cố định = đưa một chuyện ra bàn."
   ],
   "points": [
    "話題を持《も》ち出《だ》す: nêu chủ đề mới.",
@@ -200,7 +200,7 @@
    "「名場面」chỉ một khoảnh khắc ấn tượng, không phải cả trận.",
    "「好成績」chỉ kết quả tốt, không nói lên thế ngang sức.",
    "「新記録」chỉ kỷ lục con số, không liên quan ngang sức.",
-   "「名勝負」đúng."
+   "「名勝負」: cả trận ngang tài「互角」, hay đến mức「語り継がれる」."
   ],
   "points": [
    "名勝負《めいしょうぶ》: trận đấu để đời.",
@@ -210,7 +210,7 @@
  "17": {
   "why_correct": "「十年連れ添った末に正式に離婚する」— chấm dứt hôn nhân theo pháp lý.",
   "options_analysis": [
-   "「離婚」đúng.",
+   "「離婚」: 「正式に」+ đã chung sống lâu = chấm dứt hôn nhân về pháp lý.",
    "「別居」là sống riêng nhưng vẫn còn hôn nhân.",
    "「再婚」là kết hôn lại sau ly hôn, không khớp tình huống.",
    "「破局」dùng cho người yêu chưa kết hôn, không dùng vợ chồng."
@@ -225,7 +225,7 @@
   "options_analysis": [
    "「発見」là tìm ra thứ đã tồn tại nhưng chưa ai biết.",
    "「発掘」là đào thứ bị chôn vùi lên.",
-   "「発明」đúng.",
+   "「発明」: tạo ra thứ「誰も思いつかなかった」rồi lấy「特許」.",
    "「開発」là phát triển dựa trên công nghệ sẵn có, khác ý tưởng mới."
   ],
   "points": [
@@ -236,7 +236,7 @@
  "19": {
   "why_correct": "「為替レートが大きく変動する」— tỷ giá lên xuống trong ngày.",
   "options_analysis": [
-   "「変動」đúng.",
+   "「変動」: dùng cho số liệu, giá cả lên xuống liên tục như tỷ giá.",
    "「変化」là từ chung, ít dùng cho số liệu kinh tế lên xuống.",
    "「変更」là thay đổi có chủ ý của người, không hợp thị trường.",
    "「異動」chỉ thay đổi vị trí công tác nhân sự."
@@ -250,7 +250,7 @@
   "why_correct": "「以前よりはるかに大きく、見上げるほど」— chênh lệch rất lớn.",
   "options_analysis": [
    "「やや」= chênh lệch nhỏ, mâu thuẫn「phải ngước nhìn」.",
-   "「はるかに」đúng.",
+   "「はるかに」: nhấn khoảng cách so sánh rất lớn, khớp「見上げるほど」.",
    "「わずかに」cũng chỉ chênh lệch nhỏ.",
    "「とても」diễn tả mức tuyệt đối, không hợp cấu trúc so sánh."
   ],
@@ -262,7 +262,7 @@
  "21": {
   "why_correct": "「ゆとり」= dư dả thời gian/tâm trí, gần nghĩa nhất 余裕.",
   "options_analysis": [
-   "「余裕」đúng.",
+   "「余裕」: dư dả thời gian, cùng nghĩa ゆとり, khớp「仕事が少なく」.",
    "「忙しさ」= bận rộn, trái nghĩa hoàn toàn.",
    "「疲れ」= mệt mỏi, không liên quan dư thời gian.",
    "「慌ただしさ」= hối hả, cũng trái nghĩa."
@@ -278,7 +278,7 @@
    "「全員で」= cả nhóm cùng làm chung, ngược ý riêng lẻ.",
    "「どちらか」chỉ một trong hai.",
    "「偶然」= tình cờ, không chỉ chủ thể.",
-   "「それぞれ」đúng."
+   "「それぞれ」: mỗi người một cái riêng, cùng nghĩa おのおの."
   ],
   "points": [
    "おのおの／それぞれ: mỗi người một.",
@@ -289,7 +289,7 @@
   "why_correct": "「もったいない」= tiếc khi lãng phí vật còn giá trị, gần nghĩa 惜しい.",
   "options_analysis": [
    "「悲しい」= đau buồn, không phải cảm giác tiếc.",
-   "「惜しい」đúng.",
+   "「惜しい」: tiếc vì bỏ phí thứ còn dùng được, trùng nghĩa もったいない.",
    "「汚い」= bẩn, không liên quan lãng phí.",
    "「危険だ」= nguy hiểm, không liên quan."
   ],
@@ -304,7 +304,7 @@
    "「無理やり契約させた」là ép buộc, khác lừa bằng lời.",
    "「助けた」= giúp đỡ, trái nghĩa hoàn toàn.",
    "「褒めた」= khen ngợi, không liên quan.",
-   "「うまく信じ込ませた」đúng."
+   "「うまく信じ込ませた」: khéo léo làm người khác tin điều giả — đúng bản chất だます."
   ],
   "points": [
    "だます／うまく信《しん》じ込《こ》ませる: lừa.",
@@ -314,7 +314,7 @@
  "25": {
   "why_correct": "「気候が温暖だ」= ấm áp ôn hòa quanh năm, gần nghĩa あたたかい.",
   "options_analysis": [
-   "「あたたかい」đúng.",
+   "「あたたかい」: 温暖 nói nhiệt độ ấm dễ chịu, あたたかい nói đúng điều đó.",
    "「涼しい」= mát mẻ, không khớp.",
    "「かなり寒い」= khá lạnh, trái nghĩa hoàn toàn.",
    "「湿っぽい」nói về độ ẩm, không nói nhiệt độ."
@@ -328,7 +328,7 @@
   "why_correct": "Câu 2「評価が分かれた」— đánh giá phân tách theo từng người, đúng 分かれる.",
   "options_analysis": [
    "Câu 1 cặp đôi chia tay phải dùng「別れる」(người rời xa người).",
-   "「評価が分かれた」đúng.",
+   "Câu 2: 分かれる = một thứ tách thành nhiều phần; đánh giá chia nhiều luồng.",
    "Câu 3 sắc mặt đổi vì mệt phải dùng「変わる」.",
    "Câu 4 tâm trạng chán nản phải dùng「沈む」."
   ],
@@ -340,7 +340,7 @@
  "27": {
   "why_correct": "Câu 1「税金の負担が軽減した」— gánh nặng thuế giảm nhẹ, đúng 軽減する.",
   "options_analysis": [
-   "「負担が軽減した」đúng.",
+   "Câu 1: 軽減 = làm nhẹ bớt gánh nặng, hợp chủ ngữ「負担」.",
    "Câu 2 số nhân viên giảm phải dùng「減少した」.",
    "Câu 3 tự cắt giảm giờ ngủ phải dùng「削減した」.",
    "Câu 4 nhiệt độ giảm phải dùng「下がった」."
@@ -356,7 +356,7 @@
    "Câu 1「呑気に」mâu thuẫn「素早く」cùng câu.",
    "Câu 2「呑気な雰囲気」mâu thuẫn「みんな緊張している」.",
    "Câu 3 tiến độ công trình chậm, 呑気 vốn tả tính cách người.",
-   "「呑気な性格」đúng."
+   "Câu 4: 呑気 tả tính người vô tư, khớp「細かいことを気にしない」."
   ],
   "points": [
    "呑気《のんき》: vô tư, thong thả.",
@@ -366,7 +366,7 @@
  "29": {
   "why_correct": "Câu 1「トラブルが発生した」— sự cố nghiêm trọng phát sinh, đúng トラブル.",
   "options_analysis": [
-   "「トラブルが発生した」đúng.",
+   "Câu 1: トラブル = sự cố rắc rối phát sinh khi đưa「システム」vào dùng.",
    "Câu 2 lỗi nhỏ tài liệu nên dùng「ミス」, nhẹ hơn.",
    "Câu 3 mưa gây bất tiện nên dùng「面倒」, nhẹ hơn.",
    "Câu 4 トラブル là việc bên ngoài, không dùng cho cảm giác mệt."
@@ -382,7 +382,7 @@
    "Câu 1 bài vở tồn đọng nên dùng「たまっている」.",
    "Câu 2 số sinh viên tăng nên dùng「増えた」.",
    "Câu 3 bận rộn nên dùng「追われて」.",
-   "「川の水があふれた」đúng."
+   "Câu 4: あふれる = nước tràn quá giới hạn — nước sông vượt「堤防」."
   ],
   "points": [
    "あふれる: tràn ra (vượt giới hạn).",
@@ -395,7 +395,7 @@
    "「をよそに」=「bất chấp」, ngược ý tương ứng.",
    "「にとって」nêu góc nhìn, không diễn tả tương ứng.",
    "「のもとで」=「dưới sự quản lý của」.",
-   "「に応じて」đúng."
+   "「に応じて」: 時給 thay đổi tương ứng theo「経験や能力」."
   ],
   "points": [
    "〜に応《おう》じて: tùy theo.",
@@ -408,7 +408,7 @@
    "「において」chỉ nơi chốn, không nối được kiểu này.",
    "「にしたがって」= thay đổi dần, không hợp bắt đầu một lần.",
    "「につけ」=「mỗi khi」, dùng cho lặp lại.",
-   "「にあたって」đúng."
+   "「にあたって」: dùng khi bắt đầu một việc quan trọng, khớp「始める」."
   ],
   "points": [
    "〜にあたって: vào dịp, khi bắt đầu.",
@@ -419,7 +419,7 @@
   "why_correct": "「〜どころか」nhấn mạnh trái ngược hẳn kỳ vọng — món ăn khác hẳn mong đợi.",
   "options_analysis": [
    "「にしては」=「so với điều kiện đó」, không hợp vế sau.",
-   "「どころか」đúng.",
+   "「どころか」: phủ định kỳ vọng「おいしい」, thực tế còn tệ hơn (món sai).",
    "「はもちろん」=「chưa nói đến」, bổ sung chứ không nghịch.",
    "「ばかりに」nêu nguyên nhân nhỏ dẫn hậu quả xấu."
   ],
@@ -434,7 +434,7 @@
    "「げ」cần đi cùng phủ định như「大人げない」.",
    "「だらけ」tả thứ tiêu cực phủ khắp (傷だらけ).",
    "「気味」tả xu hướng ngả về trạng thái xấu.",
-   "「っぽい」đúng."
+   "「っぽい」: 子どもっぽい = trẻ con (chê người lớn), khớp「困ってしまう」."
   ],
   "points": [
    "〜っぽい: có vẻ, mang tính chất.",
@@ -446,7 +446,7 @@
   "options_analysis": [
    "「おそれがある」= khả năng xấu tương lai, không hợp điều đã xảy ra.",
    "「きらいがある」= đánh giá phê phán tính cách.",
-   "「に決まっている」đúng.",
+   "「に決まっている」: suy đoán chắc chắn từ lý do rõ ràng (làm thêm khuya).",
    "「わけがない」=「không thể nào」, ngược hẳn ý khẳng định."
   ],
   "points": [
@@ -458,7 +458,7 @@
   "why_correct": "「〜か〜ないかのうちに」= hai việc gần như đồng thời — ngay khi chuông vừa reo.",
   "options_analysis": [
    "「鳴ろうか鳴るまいか」= phân vân「reo hay không」, khác thời điểm gần.",
-   "「鳴るか鳴らないかのうちに」đúng.",
+   "「鳴るか鳴らないかのうちに」: thể từ điển + thể ない = vừa mới reo là đã.",
    "Mẫu này dùng thể từ điển/ない, câu này dùng thể quá khứ sai.",
    "「〜かどうか」diễn tả không chắc chắn, không nối「のうちに」."
   ],
@@ -470,7 +470,7 @@
  "37": {
   "why_correct": "「〜ながらも」diễn tả nghịch — giữ ý phản đối nhưng vẫn làm theo cấp trên.",
   "options_analysis": [
-   "「ながらも」đúng.",
+   "「ながらも」: V-ます + ながらも = tuy phản đối nhưng vẫn theo cấp trên.",
    "「つつ」thiên về song song đơn thuần, nhượng bộ yếu hơn.",
    "「たところ」=「kết quả sau khi làm」, không mang nghĩa nghịch.",
    "「たばかりに」nêu nguyên nhân dẫn kết quả xấu, ở đây không xấu."
@@ -483,7 +483,7 @@
  "38": {
   "why_correct": "「〜にほかならない」khẳng định nguyên nhân duy nhất — nhờ nỗ lực bền bỉ.",
   "options_analysis": [
-   "「にほかならない」đúng.",
+   "「にほかならない」: = chính là, không gì khác — nguyên nhân duy nhất của 優勝.",
    "「に相違ない」= suy đoán điều chưa rõ.",
    "「にとどまらない」=「không chỉ dừng ở đó」, ngược ý.",
    "「に越したことはない」=「tốt nhất là」, dùng để đề xuất."
@@ -497,7 +497,7 @@
   "why_correct": "「〜一方だ」= xu hướng chỉ tiến một chiều — nhiệt độ tiếp tục tăng.",
   "options_analysis": [
    "「べきだ」= nghĩa vụ, không hợp chủ ngữ vô tri.",
-   "「一方だ」đúng.",
+   "「一方だ」: thể từ điển + 一方だ = cứ ngày càng, khớp nhiệt độ tăng mãi.",
    "「はずがない」=「không thể nào」, ngược cảnh báo chuyên gia.",
    "「つもりだ」= ý chí người nói, không hợp hiện tượng tự nhiên."
   ],
@@ -509,7 +509,7 @@
  "40": {
   "why_correct": "「〜からには」=「đã... thì」— quyết tâm gánh trách nhiệm sau khi nhận việc.",
   "options_analysis": [
-   "「からには」đúng.",
+   "「からには」: V-た + からには = đã nhận thì phải, đi với「最後まで…つもりだ」.",
    "「かというと」dẫn dắt giải thích chủ đề, không diễn tả quyết tâm.",
    "「にしたら」=「đứng từ góc độ của」, không nối sau thể た kiểu này.",
    "「ときたら」diễn tả bất mãn về người/vật được nhắc."
@@ -525,7 +525,7 @@
    "「だらけ」đi với danh từ, không nối thể て động từ.",
    "「きり」= hành động một lần rồi dừng, ngược ý lặp lại.",
    "「まみれ」tả vật chất bám trên người, không nối thể て.",
-   "「ばかり」đúng."
+   "「ばかり」: V-て + ばかり = chỉ toàn làm một việc, khớp「全然勉強しない」."
   ],
   "points": [
    "〜てばかり: chỉ toàn làm (phê phán).",
@@ -537,7 +537,7 @@
   "options_analysis": [
    "「につき」nêu lý do trang trọng, đi với danh từ.",
    "「ところで」là từ chuyển chủ đề.",
-   "「以上は」đúng.",
+   "「以上は」: đã là quy định thì đương nhiên, đi với「しかない」.",
    "「とばかりに」=「như thể muốn nói」, diễn tả dáng vẻ."
   ],
   "points": [
@@ -614,8 +614,8 @@
   "why_correct": "Quyết tâm rồi lại thấy phiền — chuyển ý bất ngờ khớp「ところが」.",
   "options_analysis": [
    "「したがって」dẫn kết quả tất yếu, không hợp đảo chiều cảm xúc.",
-   "「ところが」đúng.",
-   "「いわば」dùng để ví von, không hợp ngữ cảnh.",
+   "「いわば」dùng để ví von, nhưng câu sau nêu cảm xúc thật, không phải so sánh.",
+   "「ところが」: đã quyết tham gia, đến ngày lại thấy ngại — hai vế trái ngược.",
    "「ようするに」tóm tắt ý đã nói, ở đây chưa có gì để tóm tắt."
   ],
   "points": [
@@ -628,7 +628,7 @@
   "why_correct": "Vế sau nói một số người thiếu ý thức — vế trước cần phủ định một phần「わけではない」.",
   "options_analysis": [
    "「に違いない」khẳng định mạnh, mâu thuẫn vế nhượng bộ sau.",
-   "「わけではない」đúng.",
+   "「わけではない」: phủ định một phần「全員が」, rồi「が」nói chỉ một số người.",
    "「どころではない」=「không có tâm trí làm gì」, không hợp.",
    "「てはいられない」thúc giục hành động, không phủ định một phần."
   ],
@@ -640,7 +640,7 @@
  "50": {
   "why_correct": "Sau trải nghiệm dọn rác, suy nghĩ tác giả đã「変わっている」.",
   "options_analysis": [
-   "「変わっている」đúng.",
+   "「変わっている」: khớp câu sau「単なる清掃にとどまらないことに気づかされた」.",
    "「間違っている」mang nghĩa tiêu cực, không hợp mạch cảm xúc tích cực.",
    "「戻っている」= quay về trạng thái cũ, mâu thuẫn sự thay đổi.",
    "「止まっている」= không đổi, mâu thuẫn việc nhận ra điều mới."
@@ -656,7 +656,7 @@
    "「一石二鳥」= một công đôi việc, không liên quan phân vân.",
    "「温故知新」= ôn cũ biết mới, không hợp ngữ cảnh.",
    "「一挙両得」đồng nghĩa 一石二鳥, cũng không hợp.",
-   "「半信半疑」đúng."
+   "「半信半疑」: không chắc「どんな意味を持つのか」, rồi「しかし」lật lại."
   ],
   "points": [
    "半信半疑《はんしんはんぎ》: nửa tin nửa ngờ.",

@@ -3,7 +3,7 @@
 Shared by every agent harness used on this repo (Antigravity, Claude Code, …).
 Claude Code reads it via `CLAUDE.md`, which imports this file.
 
-This repository generates, calibrates, renders, and synthesizes
+This repository generates, calibrates, renders, and composes the audio of
 official-quality JLPT mock exams (primarily N2). Every rule below has exactly
 one owner file; everything else points at it. When two statements disagree,
 the owner wins — and the disagreement is a defect to fix, not to route around.
@@ -28,7 +28,7 @@ weakest-cooldown number instead of each category's own window; see
    It is short on purpose.
 2. **For generating a mock, read `jlpt-test-generation/SKILL.md` end to end
    before ANY generation work** — including partial requests ("just the
-   listening section", "just fix the MP3"). It owns the 4-stage pipeline and
+   listening section", "just fix the MP3"). It owns the 5-stage pipeline and
    the per-stage reading map. **For importing an external PDF/past paper, read
    `external-test-import/SKILL.md` instead** (folder must be
    `tests/imported-<slug>/`).
@@ -61,11 +61,11 @@ not route around it silently.
 - **Claude Code**: the same 9 skills are exposed natively via symlinks in `.claude/skills/<skill_name>` → `.agents/<skill_name>`, so they are auto-discovered and invocable as `/<skill-name>`. `.agents/` remains the single copy — edit files there.
 - **`jlpt-test-generation` is the entry point for generating mocks.** For importing an outside PDF/past paper, read `external-test-import` instead. For any other exam work, read `jlpt-test-generation` first — it routes to the other skills in order.
 - Available Skills:
-  1. `jlpt-test-generation`: End-to-end mock exam generation orchestrator — **read this one first** for generated exams. Owns the 4-stage pass structure and the per-stage reading map.
+  1. `jlpt-test-generation`: End-to-end mock exam generation orchestrator — **read this one first** for generated exams. Owns the 5-stage pass structure and the per-stage reading map.
   2. `jlpt-exam-structure`: Official JLPT exam format facts — section layouts, question counts, timing, booklet printing conventions, answer-key table format.
   3. `exam-blueprint`: WHAT each exam tests — random non-repeating pool sampling (`sample_items.py`), answer-position balance. Runs before any authoring.
-  4. `question-authoring`: HOW to write N2-calibrated items — distractors, item integrity, per-section construction rules (`references/moji-goi.md`, `bunpou.md`, `dokkai.md`, `choukai-items.md`), and calibration against `refs/` (`references/official_calibration.md`).
-  5. `choukai-audio`: The listening audio end to end — **composed from real recordings** since 2026-09-08 (`tools/build_choukai_bank.py` builds the clip bank from the ten imported sittings plus `tools/build_textbook_bank.py`'s hand-declared textbook and mock-exam items (Shin Kanzen / Soumatome / 問題例集 / 完全模試), `tools/compose_choukai.py` draws and assembles a paper's whole 聴解 half), plus the pacing table those pauses come from and the method for measuring official audio. Exactly one paper is official-only; every other paper draws from the MIXED pool. Edge-TTS is retired.
+  4. `question-authoring`: HOW to write N2-calibrated items — distractors, item integrity, per-section construction rules (`references/moji-goi.md`, `bunpou.md`, `dokkai.md`; `choukai-items.md` is retired — evidence only), and calibration against `refs/` (`references/official_calibration.md`).
+  5. `choukai-audio`: The listening audio end to end — **composed from real recordings** since 2026-09-08 (`tools/build_choukai_bank.py` builds the clip bank — official sittings plus hand-declared textbook and mock-exam items; `tools/compose_choukai.py` draws and assembles a paper's whole 聴解 half; the sources are listed in its Part 0), plus the pacing table those pauses come from and the method for measuring official audio. Exactly one paper is official-only; every other paper draws from the MIXED pool. Edge-TTS is retired.
   6. `exam-app`: Rendering and running the exam — booklet HTML (`build_booklet.py`, no PDF), the merged answer sheet `解答.html` with in-page grading (`build_interactive.py`), the untimed practice page `練習.html` (`build_practice.py`), the one server (`serve_sheet.py`), the static GitHub Pages build (`build_pages.py`), and CLI grading (`grade_answers.py`).
   7. `exam-qa-review`: The adversarial content QA pass every generated test must survive AFTER `make check` is green and BEFORE it is served or committed — run it with fresh eyes (a context that did not author the test). It also root-causes every finding back to the skill, script, or gate check that let it through, so the next test does not reproduce it.
   8. `external-test-import`: Import an external exam (PDF booklet ± script PDF ± MP3) into `tests/imported-<slug>/` project format — **use instead of generation** when the source already exists outside the pool pipeline.
@@ -77,26 +77,38 @@ not route around it silently.
 
 ### Root Directories
 
-- `refs/`: Reference input files (scanned PDFs and audio recordings). See §3.
-- `tests/<test_id>/`: Output folder for each exam. **Origin and level are encoded in the folder name:** ids starting with `imported-` are external imports (e.g. `tests/imported-n2-2025-12/`); any other id is **generated** (e.g. `tests/1/`). A generated paper at any level other than N2 carries a level prefix (`tests/n1-20261005_1/`) and an import names its level in the slug (`imported-n1-2025-12`); no prefix means N2. `jlpt-exam-structure/scripts/level.py` is the one parser, and `references/levels/<LEVEL>.json` is that level's structure table (`make levels`). See `external-test-import`.
-- `logs/`: Item coverage ledger (`logs/ledger.json`), topic history
-  (`logs/topics.json`), adjunct staging, and any **remediation state file**
-  (`logs/choukai_remediation_state.json`) — a long repair plan's resumable
-  step list, tracked for the same reason the ledger is: the next run depends
-  on it. A fresh context starts there, then re-derives what it claims by
-  measuring the artifact, never by trusting the flag. `logs/choukai_bank.json`
-  (the clip pool), `logs/choukai_draws.json` (which clips each paper spent, and
-  its per-source mix) and `logs/choukai_number_calls.json` (the 11 harvested
-  「N番。」 spans) are tracked for the same reason — the next draw depends on
-  them. `logs/upload_manifest.json`
-  is tracked for the same reason: it is what stops `make upload-files` from
-  pushing 2.5 GB of unchanged binaries a second time, and a fresh clone that
-  loses it re-uploads the archive. `logs/findings.json` is
-  the gate's `--json` output and is gitignored — it is recomputed in seconds.
-  Each generated test's blueprint lives at `tests/<test_id>/test_spec.json`.
-- `.agents/`: The 9 skills — docs, scripts, and reference data.
-- `tools/`: Repo-level tooling that is not a skill (`check_consistency.py`, the `refs/` archive extractors).
-- `_site/`: **Build output only, gitignored.** The static GitHub Pages copy of the exam app, rebuilt from `tests/` by `make pages` and by CI on push. Never edit or commit it. See `exam-app`.
+```
+AGENTS.md  CLAUDE.md  README.md   rules · Claude notes · setup
+GENERATE.md  IMPORT.md            copy-paste prompts: new mock / import a real paper
+Makefile                          every command (router: §4)
+.agents/<skill>/                  the 9 skills: SKILL.md + scripts/ + references/
+  jlpt-exam-structure/references/levels/<LEVEL>.json   per-level paper shape (level.py)
+  exam-blueprint/references/pools.json                  N2 item pools
+tools/                            repo-level scripts: the gate (check_consistency.py),
+                                  assemble/scaffold, 聴解 composer + clip bank, profilers,
+                                  refs/ extractors, upload
+tests/<test_id>/                  one folder per paper (deliverables: table below)
+logs/                             state the next run depends on (tracked)
+qa/                               QA reports and root-cause tables (tracked)
+refs/                             source archive: *.md extracts tracked, binaries on the
+                                  `refs` release (§3)
+_site/                            GitHub Pages build output (gitignored, `make pages`)
+```
+
+- **Test ids encode origin and level.** `imported-<slug>` is an external
+  import (`imported-n2-2025-12`); anything else is generated. A non-N2 level is
+  a prefix (`n1-20261005_1`, `imported-n1-2025-12`); no prefix means N2.
+  `jlpt-exam-structure/scripts/level.py` is the one parser (`make levels`).
+- **`logs/`** holds `ledger.json` (every pool draw; rotation reads it),
+  `topics.json` (surfaces per paper; the next blueprint's avoid-lists),
+  `choukai_bank.json` / `choukai_draws.json` / `choukai_number_calls.json`
+  (the clip pool and what each paper spent), `upload_manifest.json` (what is
+  already on the releases, so `make upload-files` never re-pushes), and
+  `adjunct_staging.json`. `findings.json` is the gate's `--json` output and is
+  gitignored. A paper's blueprint is `tests/<test_id>/test_spec.json`.
+- **`qa/`** keeps, per paper, `qa-report-<id>[-roundN].md`, `stage3-report-<id>.md`,
+  `root-cause-<id>.md` and allocation tables — the evidence gate messages cite.
+  Run scratch (hand-offs, resume notes) is deleted once the paper ships.
 
 **`tests/` and `logs/` are tracked, on purpose** — they are the working folders
 where exams get built and taken, and the ledger must persist because item
@@ -119,14 +131,14 @@ Inside `tests/<test_id>/` — this table is the single copy; skills point here:
 | ------------------------------------ | -------------------------------------- | -------------------------------------------------------------------------------------- |
 | Language Knowledge & Reading Booklet | `言語知識・読解.html`                  | Rendered from Markdown source `tests/<test_id>/言語知識・読解.md`                      |
 | Listening Booklet                    | `聴解.html`                            | Rendered from Markdown source `tests/<test_id>/聴解.md`                                |
-| Listening TTS Script                 | `聴解スクリプト.txt`                   | Pure official-style narration text                                                     |
-| Listening Audio MP3                  | `聴解.mp3`                             | Synthesized audio generated from the TTS script                                        |
-| Interactive Answer Sheet             | `解答.html`                            | Combined booklet (71 Gengo/Dokkai + 30 Choukai + Audio player); in-page 180pt grading |
-| Practice Page (練習モード)           | `練習.html`                            | The same paper flat — no clock, no grading, one model answer per question. Written by `build_practice.py`, which `make sheet` runs too |
+| Listening Script                     | `聴解スクリプト.txt`                   | Transcript of the composed clips (written by `compose_choukai.py`), or of an import's script PDF |
+| Listening Audio MP3                  | `聴解.mp3`                             | Composed from banked real recordings (`make mp3`), or the import's own MP3 — a release asset, gitignored (§3) |
+| Interactive Answer Sheet             | `解答.html`                            | Combined booklet (N2: 71 Gengo/Dokkai + 30 Choukai + Audio player); in-page 180pt grading |
+| Practice Page (練習モード)           | `練習.html`                            | The same paper flat — no clock, no grading, one model answer per question. Written by `build_practice.py`, which `make sheet` and `make model-answer` run too |
 | Listening Chapter Marks              | `聴解_チャプター.json`                 | Per-問題/per-item offsets in `聴解.mp3`, written by `tools/compose_choukai.py`         |
 | User Answers Record                  | `ユーザー解答.json`                    | Written by `解答.html` on every click; also carries the sitting's `受験状態` (phase + the two clocks) — `exam-app` |
 | Combined Grading Result              | `採点結果.json`                        | Generated on submit from `解答.html` or written by `grade_answers.py`. There is no Markdown report — the result is data, read back by the result screen and by the test list |
-| Model Answer & Detailed Explanation  | `模範解答.html`                        | Comprehensive model answer and explanation document for all 101 items, rendered by `build_model_answer.py` |
+| Model Answer & Detailed Explanation  | `模範解答.html`                        | Comprehensive model answer and explanation document for every item, rendered by `build_model_answer.py` |
 | Model Answer Explanations (JA)        | `詳細解説.json`                        | Hand-authored per-item explanations — the source `模範解答.html` renders (`exam-model-answer`). Also the ONE copy of the exam wording (`stem`/`options`/`passage`/`script`) both language panes print |
 | Model Answer Explanations (VI)        | `詳細解説.vi.json`                     | The Vietnamese pane. Explanations are **written from the items, never translated** from `詳細解説.json` (`exam-model-answer`). It carries no exam wording, with ONE deliberate exception: `passage_translation`, the Vietnamese rendering of a 読解 passage, on the FIRST item of each passage group |
 | Import provenance (imported only)    | `import_meta.json`                     | Written by `external-test-import` for `tests/imported-<slug>/` only — generated tests must not have this file |
@@ -145,7 +157,7 @@ calibrated today; every band in this file and the skills is an N2 measurement.
 PDFs and MP3s; tracking it through Git LFS exhausted the account's LFS budget,
 and an exhausted budget makes the LFS API refuse *every* object — so
 `actions/checkout` itself failed and CI could deploy nothing (2026-08-24;
-`.gitignore` and `.gitattributes` carry the rule, `exam-app/SKILL.md` the CI
+`.gitignore` carries the rule, `exam-app/SKILL.md` the CI
 half). What a clone DOES get in git is the part these rules are measured
 against: every `*.md` extract (`booklet.md`, `script.md`, `key.md`,
 `audio_inspection.md`, the Shinkanzen/Soumatome reference extracts) plus
@@ -155,11 +167,12 @@ page, or listening to audio needs the binaries.
 **Where the binaries live: GitHub Releases, via `make upload-files`.** Two
 tags, both **fixed addresses, reused forever**: `audio` holds one
 `<test_id>.mp3` per test, and
-`refs` holds one zip per top-level `refs/` folder — `JLPT_N2_NEW.zip` (1.2 GB),
-`Shinkanzen.zip` (1.0 GB), `Soumatome.zip` (0.3 GB), stored uncompressed since
-PDFs and MP3s already are. Unzip one into `refs/` and that source's tree is
+`refs` holds one zip per top-level `refs/` folder (`JLPT_N2_NEW.zip`,
+`Shinkanzen.zip`, … — `logs/upload_manifest.json` lists them), stored
+uncompressed since PDFs and MP3s already are. Unzip one into `refs/` and that source's tree is
 back. Never rename a tag: `build_interactive.py` and `build_model_answer.py`
-hard-code `…/releases/download/audio/<test_id>.mp3` as the player's fallback,
+build the player's fallback as `…/releases/download/audio/<test_id>.mp3`
+(`level.audio_release_url()`),
 so a new tag 404s every deployed sheet. **Uploads are incremental and that is
 not optional** — `logs/upload_manifest.json` records each asset's fingerprint,
 so a file goes over the wire once and a zip is rebuilt only when one of its
@@ -305,7 +318,8 @@ partly OCR** — trust rules and mechanics:
 
 Always run from the workspace root. Each command's rules and options live in
 its owner skill — this table is the router, not the manual. Per-test targets
-take the id positionally (`make sheet 1`) or as `TEST=1`; default `TEST=1`.
+take the id positionally (`make sheet 20260917_1`) or as `TEST=…`; always
+pass one (the fallback `TEST=1` names no folder).
 
 **Environment prerequisites and per-OS setup (macOS, Windows/WSL2) are owned by
 `README.md`** — the interpreter and package versions, the external binaries
@@ -323,10 +337,11 @@ restate them here or in a skill; fix them there.
 | `make findings`           | the gate in `--json` mode → `logs/findings.json` (one record per slugged finding: slug, test id, artifact, tier) | (below) |
 | `make repair-plan [<id>] [TIER=B]` | `tools/choukai_repair_plan.py` → `qa/[<id>/]repair-plan.{json,md}` — the 聴解 **and** 読解 work order, grouped by the ARTIFACT each finding declares (the tier follows from it), so a 読解 prose repair is never printed under a `make mp3` rebuild | `exam-qa-review` |
 | `make sample <id> SEED=n` | `sample_items.py` → `test_spec.json` + ledger | `exam-blueprint` |
-| `make scaffold-sections <id>` | `scaffold_sections.py` → scaffolds `_sections/` authoring templates | `question-authoring` |
+| `make scaffold-sections <id>` | `scaffold_sections.py` → the three `_sections/` fragments, canonical headers, key cells pre-filled from `answer_positions` | `jlpt-test-generation` |
 | `make matrix`             | `matrix_helper.py` — **validate only**; both generators are hard-disabled (they had no 音訓 table and emitted kana-skeleton-violating grids — qa-report-20260819_1 F4) | `question-authoring` |
 | `make booklet <id>`       | `build_booklet.py` on both Markdown sources | `exam-app` |
-| `make mp3 <id> SEED=n`    | `tools/compose_choukai.py` — composes the whole 聴解 half from banked clips (script, booklet, MP3, chapters, both 詳細解説 panes). Edge-TTS is retired | `choukai-audio` |
+| `make assemble <id>`      | `tools/assemble_paper.py` — merges the three `_sections/` fragments into `言語知識・読解.md` (banners, canonical 問題N lines, one key heading) | `jlpt-test-generation` |
+| `make mp3 <id> SEED=n \| REPLAY=1 [NO_AUDIO=1]` | `tools/compose_choukai.py` — `SEED` composes a NEW draw of the whole 聴解 half (script, booklet, MP3, chapters, both 詳細解説 panes); `REPLAY=1` re-renders the recorded draw. Refuses `imported-*` | `choukai-audio` |
 | `make choukai-bank [CHECK=1]` | `tools/build_choukai_bank.py` → `logs/choukai_bank.json`; ALL THREE halves of the mixed pool — the ten imported sittings, the textbook items, and the hand-declared archive items | `choukai-audio` |
 | `make textbook-bank`      | `tools/build_textbook_bank.py` — report-only: what the Shin Kanzen / Soumatome half measures, and which declared items the duration/rate guards refuse | `choukai-audio` |
 | `make archive-bank [SCOUT=YYYY-MM]` | `tools/build_archive_bank.py` — report-only: the items hand-declared out of the 21 un-imported `refs/JLPT_N2_NEW/` sittings, and which the §7 acceptance checks refuse. `SCOUT=` prints one sitting's structural pause map, which is how a declaration's `window` is found | `choukai-audio` |
@@ -334,12 +349,11 @@ restate them here or in a skill; fix them there.
 | `make number-calls [CHECK=1]` | `tools/harvest_number_calls.py` → `logs/choukai_number_calls.json` — the 11 official 「N番。」 spans a textbook clip is given | `choukai-audio` |
 | `make sheet <id>`         | `build_interactive.py` → `解答.html` **and** `練習.html` (both modes of one paper) | `exam-app` |
 | `make practice <id>`      | `build_practice.py` → `練習.html` alone — 練習モード: no clock, no grading, a per-question model answer. Re-run after `詳細解説.json` changes | `exam-app` |
-| `make model-answer <id>`  | `build_model_answer.py` → `模範解答.html` | `exam-model-answer` |
+| `make model-answer <id>`  | `build_model_answer.py` → `模範解答.html`, then `build_practice.py` → `練習.html` | `exam-model-answer` |
 | `make scaffold-explanations <id> [LANG=vi]` | `scaffold_explanations.py` → scaffolds `詳細解説.json` (or an empty `詳細解説.<lang>.json`) | `exam-model-answer` |
 | `make lint-draft <id>`    | `lint_draft.py` — fast deterministic pre-lint before QA | `exam-qa-review` |
 | `make autofix <id>`       | `lint_draft.py --fix` — auto-fixes contractions and stem layout | `exam-qa-review` |
 | `make verify-scramble <id>` | `verify_scramble.py` — topological & permutation validator for 問題8 | `question-authoring` |
-| `make irt <id>`           | `irt_scorer.py` — 2PL Item Response Theory scaled score simulation | `exam-app` |
 | `make qa-eval <id>`       | `qa_eval.py` — structured blind-solve evaluator & QA report generator | `exam-qa-review` |
 | `make keyless <id>`       | the QA blind-solve render → `qa/<id>/keyless.md` | `exam-app` |
 | `make serve`              | `serve_sheet.py` — ONE server for every test (no id) | `exam-app` |
@@ -354,9 +368,6 @@ restate them here or in a skill; fix them there.
 | `make extract-shinkanzen` | `tools/extract_shinkanzen_choukai.py` — Shin Kanzen Choukai → Markdown | §3 above |
 | `make extract-hajimete`   | `tools/extract_hajimete.py` — はじめての N2単語 2500 → Markdown | §3 above |
 | `make upload-files [TARGET=tests\|refs\|all [TEST=…]]` | `tools/upload_files.py` — push exam audio (release `audio`) and the `refs/` archive as one zip per folder (release `refs`); uploads each asset **once** and again only when it changes | §3 above |
-
-The pool-growth tooling (classify/promote/expand/suggest/fetch) is parked in
-`.agents/exam-blueprint/archive/` with no make targets — see its README.
 
 ### Consistency Gate (`make check`)
 
@@ -388,14 +399,12 @@ the rule, the incident behind it, and the repair.
 
 ## 5. Pass structure — orchestrate, don't work
 
-The generation pipeline runs as **4 stages + final model-answer step** — blueprint → 3 parallel
-authoring sections → build+gate → fresh-eyes QA → model-answer generation (`make model-answer <id>`),
+The generation pipeline runs as **5 stages** — blueprint → 3 parallel authoring
+sections → build+gate → fresh-eyes QA → model answer (`make model-answer <id>`),
 each a subagent with a bounded reading list, handing off through files on disk only.
-**聴解 is no longer one of the authoring sections**: since 2026-09-08 the whole
-listening half is composed from real recordings at build time by
-`make mp3 <id> SEED=<rng>` (`choukai-audio` Part 0) — the ten imported official
-sittings plus Shin Kanzen and Soumatome items, with exactly one paper kept
-official-only — so there is nothing to author and no 聴解 subagent.
+**聴解 is not an authoring section**: the whole listening half is composed from
+banked real recordings at build time by `make mp3 <id> SEED=<rng>`
+(`choukai-audio` Part 0), so there is no 聴解 subagent.
 `jlpt-test-generation` owns the stage table, the reading map, the prompt
 template, and the fix→re-review loop; read it before any generation work.
 

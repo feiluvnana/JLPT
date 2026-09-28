@@ -942,7 +942,7 @@
    "Phân công trực là việc「今日…決める」, cả nhóm bàn hôm nay, không riêng nữ.",
    "Nội dung khảo sát cũng là việc「みんなで見直す」cả nhóm.",
    "Gửi email do nam đảm nhận「僕から送る」.",
-   "Đúng."
+   "Nam nhờ「ポスターを頼める？」, nữ nhận「了解」: việc của cô là lên mẫu poster trong tuần."
   ],
   "points": [
    "発表会《はっぴょうかい》: nghĩa “buổi báo cáo”.",
@@ -1006,7 +1006,7 @@
   "options_analysis": [
    "Lên tạp chí là chuyện sắp tới, không phải nguyên nhân đã xảy ra.",
    "Nam phủ nhận quảng cáo bằng diễn viên nổi tiếng.",
-   "Đúng.",
+   "Ca sĩ「吉田なつき」giới thiệu trên TV, người xem mua theo nên lan rộng.",
    "Xuất hiện trong phim truyền hình chỉ là mong muốn tương lai."
   ],
   "points": [
@@ -1149,7 +1149,7 @@
   "options_analysis": [
    "“Không có điều hòa cũng được à?” đi ngược nội dung câu hỏi.",
    "“Sao lại không dùng?” giả định sai, câu gốc không hàm ý đó.",
-   "Đúng."
+   "Đồng tình với「欠かせない」: nói không bật điều hòa thì không ngủ được."
   ],
   "points": [
    "熱帯夜《ねったいや》: nghĩa “đêm nóng khó ngủ”.",
@@ -1172,7 +1172,7 @@
   "why_correct": "Câu hỏi lý do vắng mặt; đáp lại tự nhiên là xin lỗi và nêu lý do.",
   "options_analysis": [
    "“Vì sắp thi nên không muốn nghỉ” ngược nghĩa với câu hỏi vì sao nghỉ.",
-   "Đúng.",
+   "Bị hỏi vì sao hay nghỉ tập, xin lỗi rồi nêu lý do「バイトが忙しくて」là đúng trọng tâm.",
    "“Tự tập một mình” không khớp câu hỏi về việc vắng các buổi tập."
   ],
   "points": [
@@ -1292,7 +1292,7 @@
  "問5-2-1": {
   "why_correct": "Nam nói đo thể lực trước「体力があるか測ってもらおう」＝hội trường 1.",
   "options_analysis": [
-   "Đúng.",
+   "Nam nói「まずは今どれくらい体力があるか測ってもらおう」: đo thể lực ở hội trường 1.",
    "Hội trường 2 (thể dục) được nhắc trước nhưng anh chọn đo thể lực trước.",
    "Hội trường 3 (thực đơn) là lựa chọn của nữ.",
    "Hội trường 4 (tư vấn) cũng là nơi nữ đến trước, không phải nam."
@@ -1308,7 +1308,7 @@
    "Hội trường 1 (đo thể lực) là lựa chọn của nam.",
    "Hội trường 2 (thể dục) không được nữ nhắc đến.",
    "Nữ nhắc hội trường 3 (thực đơn) nhưng đổi ý đi hội trường 4 trước.",
-   "Đúng."
+   "Được nhắc chuyện mất ngủ, nữ nói「そっち先に行ってこよ」: đến gặp bác sĩ ở hội trường 4."
   ],
   "points": [
    "個別《こべつ》に: nghĩa “riêng lẻ”.",

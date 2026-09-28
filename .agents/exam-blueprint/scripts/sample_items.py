@@ -137,25 +137,43 @@ KATAKANA_CAP = {"paraphrase": 1, "usage": 1}  # never observed 2 in one section
 # Target per-ITEM probability that a 問題1 draw slot is a 訓読み target, and the
 # hard per-paper ceiling, enforced during the draw by `sample_kun_capped()`
 # (qa-report-20260819_1 F3).
-# `question-authoring/references/moji-goi.md` §問題1 measured 12 訓読み of the 35
-# current-era 問題1 items (34%), and per sitting official runs 2/2/1/2/2 of 5 —
-# never more than TWO. Nothing enforced that: `20260819_1` drew 4 of 5 訓読み
+# MEASURED 2026-09-28 (owner ruling on open item #6 of
+# `qa/open-items-20260914_1.md`): `is_kun_target()` — this file's own
+# classifier, which the gate imports — over the 35 current-era 問題1 targets,
+# recovered as 語(よみ) pairs from the seven tracked
+# `refs/JLPT_N2_NEW/*/booklet.md` 問題1 blocks with the key from
+# `answer_keys.json`, scores **14 訓読み of 35 (40 %), exactly 2 in every
+# sitting**:
+#   12/2022 外れて・勇ましい   7/2023 乱れて・険しかった   12/2023 腕・幼い
+#   7/2024 絡まって・鮮やか    12/2024 迷った・背骨        7/2025 辛い・収まった
+#   12/2025 柱・争って
+# This replaces the earlier 12/35 and its per-sitting 「2/2/1/2/2」, a hand
+# classification of five sittings that the classifier refutes (it never
+# yields 1). Reading TYPE, not authoring shape: 背骨 reads 訓 but is built as a
+# 音読み-shaped (derivation) set, which is why moji-goi.md's authoring table
+# says 13/22 — two measurements, keep both. Official never runs more than
+# TWO. Nothing enforced that: `20260819_1` drew 4 of 5 訓読み
 # (半ば/情け/湯/常に), `20260807_1` drew 4, `20260810_1` and `20260817_2` drew 3.
 # The consequence is not cosmetic — the 2×2 on-reading grid (清濁/長短
 # discrimination) that official exercises in 3–4 of the 5 slots is what 問題1
 # actually discriminates on, and a 訓読み-heavy paper measures word recognition
 # instead. The rate is the archive's, not the pool's own 31% 訓読み share; do not
 # re-derive it from `pools.json`.
-KUN_TARGET_RATE = {"kanji_reading": 12 / 35}
+KUN_TARGET_RATE = {"kanji_reading": 14 / 35}
 KUN_CAP = {"kanji_reading": 2}
 # ...and the FLOOR, added 2026-08-21 (REPORT-GOI.md §F5). A one-sided rule
 # produces the opposite monoculture: with only a ceiling, `20260817_3` drew 0 of
-# 5 訓読み and the gate printed `ok`. Five hand-classified sittings run 2/2/1/2/2,
-# minimum ONE — a paper testing five on-reading compounds stops testing word
-# recognition, which is the other half of what 問題1 measures. Both bounds are
-# enforced by `sample_kun_capped()` and re-checked by
+# 5 訓読み and the gate printed `ok`. A paper testing five on-reading compounds
+# stops testing word recognition, which is the other half of what 問題1
+# measures. It was 1 (from the refuted 2/2/1/2/2); since 2026-09-28 it is 2,
+# the measured minimum — all seven current-era sittings run exactly 2 — so
+# with KUN_CAP = 2 every FUTURE draw takes exactly two 訓読み targets. Papers
+# drawn before the ruling keep their recorded draws (the gate judges them
+# against the floor of 1 they were drawn under, by id:
+# `MONDAI1_KUN_FLOOR_PRE_RULING` in `tools/check_consistency.py`). Both bounds
+# are enforced by `sample_kun_capped()` and re-checked by
 # `check_mondai1_reading_type_mix()`.
-KUN_FLOOR = {"kanji_reading": 1}
+KUN_FLOOR = {"kanji_reading": 2}
 
 # 問題1's reading TRAP, added 2026-09-07 (audit: "vocabulary may be undertuned").
 # A 促音/拗音 in the keyed reading (っ/ゃ/ゅ/ょ) is what the 2×2 清濁/長短 grid
@@ -174,11 +192,11 @@ KUN_FLOOR = {"kanji_reading": 1}
 # and `--reroll-one` paths) and re-checked by `check_mondai1_reading_trap_corpus()`,
 # which imports `has_reading_trap()` from here so the two cannot disagree.
 #
-# THE CURRENT-ERA rate, not the all-era one (2026-09-07). KUN_TARGET_RATE reads
-# the whole archive because its own evidence base is five hand-classified
-# sittings and it has nothing finer; this rate is machine-recoverable from the
-# key column of every sitting, so it can and does follow the era rule — 14/35
-# over 12/2022–12/2025 rather than 54/152 over all 31.
+# THE CURRENT-ERA rate, not the all-era one (2026-09-07). This rate is
+# machine-recoverable from the key column of every sitting, so it follows the
+# era rule — 14/35 over 12/2022–12/2025 rather than 54/152 over all 31. (Since
+# 2026-09-28 KUN_TARGET_RATE is a current-era measurement too, and happens to
+# land on the same 14/35: two different properties, counted separately.)
 TRAP_TARGET_RATE = {"kanji_reading": 14 / 35}
 # NO per-paper floor, and that is measured rather than conceded: official
 # per-paper trap counts run 0,0,0,0,0,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,3,3,
@@ -510,7 +528,7 @@ def sample_kun_capped(rng: random.Random, eligible: list, n: int,
     """`n` entries whose 訓読み count sits inside the archive's BAND.
 
     Same shape as `sample_katakana_capped()`, and for the same reason: the
-    pool's own 訓読み share (31%) is close to the archive's (34%), so an
+    pool's own 訓読み share (31%) is below the archive's (40%, 14/35), so an
     unbounded draw is usually fine and occasionally lands 3 or 4 of 5 — which
     four papers did, with no gate able to see it (qa-report-20260819_1 F3) — or
     ZERO, which `20260817_3` did under the ceiling-only rule (REPORT-GOI §F5).
@@ -1096,6 +1114,40 @@ def all_pools() -> dict:
     return _POOLS_CACHE["val"]
 
 
+# RETIRED ENTRIES (owner ruling 2026-09-28, `qa/open-items-20260914_1.md` #2/#3
+# and `qa/root-cause-20260917_1.md` RC-3). An off-band entry that a SHIPPED paper
+# drew can be neither deleted (`check_draw_provenance()` must still resolve that
+# paper's recorded draw, by string) nor corrected in place (there is no N2-band
+# gloss to put in the parenthetical, and inventing one is the REPORT-GOI §F10
+# class). Retiring it keeps the string in its category list — so every ledger,
+# spec and provenance lookup resolves exactly as before — and takes it out of
+# every future draw and every pool-depth sum.
+#
+# SHAPE: a top-level `retired_entries` map, `{cat: {entry-string: {on, reason,
+# drawn_by, ...}}}`, not a field on the entry. Same reason `quick_response_keys`
+# and `grammar_form_families` are maps: the entries of every non-themed
+# category are bare strings, dozens of readers treat them as strings, and the
+# map needs no entry to change shape. The key is the entry's exact
+# `item_text()`, so a retired entry is named the way the ledger names it.
+def retired_map(pools: dict | None = None) -> dict[str, dict[str, dict]]:
+    """`{category: {entry-string: record}}` from `pools.json`'s `retired_entries`."""
+    pools = all_pools() if pools is None else pools
+    raw = pools.get("retired_entries") or {}
+    return {c: dict(v) for c, v in raw.items() if isinstance(v, dict)}
+
+
+def is_retired(cat: str, entry, pools: dict | None = None) -> bool:
+    return item_text(entry) in (retired_map(pools).get(cat) or {})
+
+
+def drawable(cat: str, pool, pools: dict | None = None) -> list:
+    """`pool` minus its retired entries — what a draw may pick, and what a
+    cooldown window may be sized from. Never use it for provenance: a retired
+    entry is still a pool entry for every lookup of a draw already made."""
+    gone = retired_map(pools).get(cat) or {}
+    return [x for x in pool if item_text(x) not in gone] if gone else list(pool)
+
+
 def shared_space_draw(cat: str, pool) -> float:
     """Entries of `pool` one paper consumes, counting partner categories.
 
@@ -1111,7 +1163,7 @@ def shared_space_draw(cat: str, pool) -> float:
     for x in pool:
         toks |= identity_tokens(x)
     for partner in SHARED_ROTATION_SPACE.get(cat, ()):
-        ppool = all_pools().get(partner) or []
+        ppool = drawable(partner, all_pools().get(partner) or [])
         if not ppool:
             continue
         hits = sum(1 for x in ppool if identity_tokens(x) & toks)
@@ -1148,7 +1200,18 @@ def cooldown_for(cat: str, pool) -> int:
     take the tighter one, so the number this function returns is the number
     `draw()` can keep and `assert_rotation` can prove — never a promise
     bigger than the pool.
+
+    DRAWABLE entries only (2026-09-28): a `retired_entries` row can never be
+    drawn again, so counting it would promise depth the pool does not have.
+
+    THIS IS THE WINDOW FOR A DRAW MADE NOW. A shipped paper is judged against
+    the window frozen into its own record at draw time (`recorded_cooldown()`),
+    never against this function re-run on today's pool — otherwise growing a
+    pool widens every shipped paper's window after the fact (open item #1 of
+    `qa/open-items-20260914_1.md`: +4 `paraphrase` entries moved 26 -> 27 and
+    FAILed `20260807_1`'s 「案外」).
     """
+    pool = drawable(cat, pool)
     n = DRAW[cat]
     pool_size = len(pool)
     if cat in KEIGO_CAP:
@@ -1200,6 +1263,46 @@ def cooldown_for(cat: str, pool) -> int:
         eff = shared_space_draw(cat, pool)
         depth = min(depth, pool_size // max(1, math.ceil(eff)))
     return max(COOLDOWN_FLOOR, depth - COOLDOWN_MARGIN)
+
+
+# FROZEN WINDOWS (owner ruling 2026-09-28, open item #1 of
+# `qa/open-items-20260914_1.md`). The sampler writes the per-category window it
+# enforced — `cooldown_for()` at draw time, the number `assert_rotation()`
+# proved — into `test_spec.json` (`rotation.cooldowns`) and the ledger row
+# (`cooldowns`), and every rotation check judges a paper against THAT. Papers
+# drawn before the field existed carry a backfill equal to what the gate
+# computed on 2026-09-28, marked in `cooldowns_source`, so no verdict moved.
+COOLDOWNS_SOURCE_DRAW = "recorded at draw time"
+
+
+def recorded_cooldown(record: dict | None, cat: str, pool) -> int:
+    """The window a recorded draw is judged against.
+
+    `record` is a spec's `rotation` block or a ledger row — both carry the same
+    `cooldowns` map. Falls back to `cooldown_for()` on today's pool only for a
+    record with no window for `cat` (an authored-theme category, or a record
+    older than the field that nobody backfilled — the gate says which).
+    """
+    v = ((record or {}).get("cooldowns") or {}).get(cat)
+    if isinstance(v, int) and not isinstance(v, bool):
+        return v
+    return cooldown_for(cat, pool)
+
+
+def merge_cooldowns(old: dict | None, drawn: dict[str, int],
+                    whole_category: bool) -> dict[str, int]:
+    """`rotation.cooldowns` after a reroll.
+
+    `--reroll <cat>` redraws the whole category, so its window is the new one.
+    `--reroll-one` keeps entries proved against the OLD window beside one proved
+    against the NEW one, and a single per-category number can only be honest for
+    both as the smaller — the same reasoning as `weakest_cooldown()`.
+    """
+    out = dict((old or {}).get("cooldowns") or {})
+    for cat, cool in drawn.items():
+        prev = out.get(cat)
+        out[cat] = cool if (whole_category or prev is None) else min(prev, cool)
+    return out
 
 
 def carry_legacy(old: dict | None, new_items: list, fresh: dict) -> dict:
@@ -2152,10 +2255,13 @@ def check_pool_depths(pools: dict) -> None:
     """Report pool sizes and headroom multipliers against draw requirements."""
     print("Pool Depth Health Check:")
     for cat, n in DRAW.items():
-        size = len(pools.get(cat, []))
+        # drawable depth: a retired entry can never be drawn again
+        size = len(drawable(cat, pools.get(cat, []), pools))
+        gone = len(pools.get(cat, [])) - size
         ratio = size / n if n > 0 else 0
         status = "OK" if ratio >= 2.5 else "THIN"
-        print(f"  [{status:4s}] {cat:20s}: {size:4d} items / {n:2d} draw ({ratio:5.1f}x headroom)")
+        print(f"  [{status:4s}] {cat:20s}: {size:4d} items / {n:2d} draw ({ratio:5.1f}x headroom)"
+              + (f"  [{gone} retired, not counted]" if gone else ""))
 
 
 def main():
@@ -2317,8 +2423,9 @@ def main():
             cool = None          # authored themes consume no pool cooldown
         else:
             cool_max = cooldown_for(cat, pools[cat])
-            picked, cool = draw(rng, pools[cat], updated_recency,
-                                DRAW[cat], cat, taken_text, cool_max)
+            picked, cool = draw(rng, drawable(cat, pools[cat], pools),
+                                updated_recency, DRAW[cat], cat, taken_text,
+                                cool_max)
             if staging_by_cat:
                 picked = apply_adjunct(rng, cat, picked, staging_by_cat,
                                        taken_text, updated_recency, cool_max)
@@ -2327,17 +2434,26 @@ def main():
         # R7: a reroll re-draws against the CURRENT pool, so the stamp moves
         # with it — the spec records the revision the newest draw used.
         spec["pools_sha"] = pools_sha()
-        spec["rotation"] = carry_legacy(spec.get("rotation"), picked, {
+        old_rot = spec.get("rotation")
+        spec["rotation"] = carry_legacy(old_rot, picked, {
             "recency_source": "ledger",
             "history_len": 0,          # filled in below, once this test's own
                                        # entry can be told from the others
             # a reroll can only make the paper's weakest cooldown weaker
-            "cooldown": weakest_cooldown(cool, spec.get("rotation")),
+            "cooldown": weakest_cooldown(cool, old_rot),
+            # the whole category was redrawn, so its frozen window is the new one
+            "cooldowns": merge_cooldowns(
+                old_rot, {} if cool is None else {cat: cool_max},
+                whole_category=True),
+            "cooldowns_source": (old_rot or {}).get("cooldowns_source")
+                                or COOLDOWNS_SOURCE_DRAW,
         })
         if own_entry is not None:
             own_entry.setdefault("items", {})[cat] = picked
             own_entry["seed"] = spec["seed"]
             own_entry["pools_sha"] = spec["pools_sha"]
+            own_entry["cooldowns"] = spec["rotation"]["cooldowns"]
+            own_entry["cooldowns_source"] = spec["rotation"]["cooldowns_source"]
         for w in check_theme_spread(picked, cat):
             print(f"  WARNING: {cat} draw is theme-heavy — {w}")
         # Only THIS category was freshly drawn — against "now" (the full
@@ -2504,22 +2620,33 @@ def main():
             cool = None          # authored themes consume no pool cooldown
         else:
             cool_max = cooldown_for(cat, pools[cat])
-            picked, cool = draw(rng, pools[cat], updated_recency, 1, cat,
-                                taken_text, cool_max, kept=kept)
+            picked, cool = draw(rng, drawable(cat, pools[cat], pools),
+                                updated_recency, 1, cat, taken_text, cool_max,
+                                kept=kept)
         # No adjunct pass: ADJUNCT_CAP of a 1-item draw is 0 by construction
         # (`int(1 * 0.20)`), so apply_adjunct() would return the pick unchanged.
         spec["items"][cat][idx] = picked[0]
         spec["seed"] = f"{spec.get('seed')}+reroll-one({cat}:{idx},{seed})"
         spec["pools_sha"] = pools_sha()   # R7, same as --reroll
-        spec["rotation"] = carry_legacy(spec.get("rotation"), picked, {
+        old_rot = spec.get("rotation")
+        spec["rotation"] = carry_legacy(old_rot, picked, {
             "recency_source": "ledger",
             "history_len": 0,          # filled in below
-            "cooldown": weakest_cooldown(cool, spec.get("rotation")),
+            "cooldown": weakest_cooldown(cool, old_rot),
+            # kept entries were proved against the OLD window, the new one
+            # against today's: the frozen window is the smaller of the two
+            "cooldowns": merge_cooldowns(
+                old_rot, {} if cool is None else {cat: cool_max},
+                whole_category=False),
+            "cooldowns_source": (old_rot or {}).get("cooldowns_source")
+                                or COOLDOWNS_SOURCE_DRAW,
         })
         if own_entry is not None:
             own_entry.setdefault("items", {})[cat] = spec["items"][cat]
             own_entry["seed"] = spec["seed"]
             own_entry["pools_sha"] = spec["pools_sha"]
+            own_entry["cooldowns"] = spec["rotation"]["cooldowns"]
+            own_entry["cooldowns_source"] = spec["rotation"]["cooldowns_source"]
         for w in check_theme_spread(spec["items"][cat], cat):
             print(f"  WARNING: {cat} draw is theme-heavy — {w}")
         def _shown(x) -> str:
@@ -2550,6 +2677,7 @@ def main():
         taken: set = set()          # cross-category: one item, one 問題 per test
         theme_warns: list[str] = []
         effective_cool = None
+        cooldowns: dict[str, int] = {}   # the frozen per-category windows
         for cat, n in DRAW.items():
             # Themed surfaces are authored, not drawn: what comes back is the
             # theme plus the subjects already used for it, and no pool entry is
@@ -2560,8 +2688,10 @@ def main():
             if cat not in pools:
                 sys.exit(f"category '{cat}' is in DRAW but missing from pools.json")
             cool_max = cooldown_for(cat, pools[cat])
-            picked, cool = draw(rng, pools[cat], recency, n, cat, taken, cool_max)
+            picked, cool = draw(rng, drawable(cat, pools[cat], pools), recency,
+                                n, cat, taken, cool_max)
             effective_cool = cool if effective_cool is None else min(effective_cool, cool)
+            cooldowns[cat] = cool_max
             if staging_by_cat:
                 picked = apply_adjunct(rng, cat, picked, staging_by_cat,
                                        taken, recency, cool_max)
@@ -2584,6 +2714,11 @@ def main():
                 "recency_source": "ledger",
                 "history_len": len(history),
                 "cooldown": effective_cool,
+                # The window each category's picks were PROVED against
+                # (assert_rotation, below) — frozen here so a later pool edit
+                # cannot re-judge this paper (see `recorded_cooldown()`).
+                "cooldowns": cooldowns,
+                "cooldowns_source": COOLDOWNS_SOURCE_DRAW,
             },
             # R7: the pool revision this seed is replayable against.
             "pools_sha": pools_sha(),
@@ -2593,7 +2728,8 @@ def main():
         row = {"test_id": args.test_id, "seed": seed,
                "generated_at": spec["generated_at"],
                "pools_sha": spec["pools_sha"], "items": items,
-               "draw": dict(DRAW)}
+               "draw": dict(DRAW), "cooldowns": dict(cooldowns),
+               "cooldowns_source": COOLDOWNS_SOURCE_DRAW}
         # Replace in place when this id already has a slot (see the re-sampling
         # note where `resample_idx` is computed); append only for a new id.
         if resample_idx is None:

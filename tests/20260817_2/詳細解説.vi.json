@@ -964,7 +964,7 @@
  "問1-3": {
   "why_correct": "Thầy dặn liên hệ email phòng quốc tế trước để được hướng dẫn tiếp.",
   "options_analysis": [
-   "Đúng.",
+   "Thầy đưa địa chỉ và dặn「ここに連絡すれば…返信が来る」: gửi email trước, việc khác chờ hồi âm.",
    "Nộp hồ sơ chỉ diễn ra sau khi đã liên hệ email.",
    "「説明会は特にない」— không có, nên không phải việc cần làm.",
    "Nghe chia sẻ từ người đang hoạt động là bước sau khi được nhận việc."
@@ -1268,7 +1268,7 @@
   "options_analysis": [
    "“Sao đã hết chỗ?” hiểu sai, thông tin gốc không nói hết chỗ.",
    "“Đặt trong tháng này” ngược nghĩa, phải đợi sang tháng sau.",
-   "Đúng."
+   "Chỉ đăng ký được từ tháng sau, nên hẹn「来月になったらすぐ予約しよう」là hợp lý."
   ],
   "points": [
    "〜てからでないと…ない: nghĩa “nếu chưa... thì không thể...”.",

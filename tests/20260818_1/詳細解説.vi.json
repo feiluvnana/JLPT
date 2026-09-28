@@ -1196,7 +1196,7 @@
  "問4-5": {
   "why_correct": "「買い替えるほかない」＝chỉ còn cách mua mới; đáp lại là xác nhận không sửa được.",
   "options_analysis": [
-   "Đúng.",
+   "「買い替えるほかない」nghĩa là không sửa được, khớp với「直せないんですか」.",
    "“Sửa được à, tốt quá” ngược nghĩa với thông báo phải mua mới.",
    "“Chưa biết có sửa được không” mâu thuẫn với câu đã khẳng định chắc chắn."
   ],
@@ -1246,7 +1246,7 @@
   "options_analysis": [
    "“Cuối tuần nào cũng giảm” hiểu sai, chỉ giảm tuần này.",
    "“Ngày thường giảm giá” ngược thông tin gốc.",
-   "Đúng."
+   "「今度の土日に限り」= chỉ cuối tuần này; nhận lời và hẹn thứ Bảy là tự nhiên."
   ],
   "points": [
    "〜に限《かぎ》り: nghĩa “chỉ riêng, giới hạn trong”.",
@@ -1282,7 +1282,7 @@
   "options_analysis": [
    "Dùng khu sự kiện bị gạt vì đã có lịch sử dụng định kỳ.",
    "Nhắc khách rời bàn bị bác vì như đuổi khách, và không đủ nhân viên.",
-   "Đúng.",
+   "Chốt thử cách để khách「進んで席を空けて」, tức phát phiếu giảm giá.",
    "Tăng ghế bị hoãn, chờ xem kết quả phương án kia rồi mới xét."
   ],
   "points": [

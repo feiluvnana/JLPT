@@ -217,14 +217,14 @@ def autofix_split_turns(script_text: str, report: LintReport) -> str:
 
 # Gendered role pairs from `SPEAKER_MAP` (Phase 4.1). A swap is only ever
 # BETWEEN the two spellings of one role, so it can never introduce a label the
-# synthesis map lacks — an unmapped label does not error, it silently falls
-# through to the narrator voice.
-def _synth():
+# speaker map lacks — an unmapped label does not error, it is silently read as
+# narration by every gate that parses turns.
+def _script_grammar():
     spec = importlib.util.spec_from_file_location(
-        "_synth_map", Path(__file__).resolve().parents[1]
-        / ".agents/choukai-audio/scripts/make_choukai_mp3.py")
+        "_choukai_script", Path(__file__).resolve().parents[1]
+        / ".agents/choukai-audio/scripts/choukai_script.py")
     mod = importlib.util.module_from_spec(spec)
-    sys.modules["_synth_map"] = mod
+    sys.modules["_choukai_script"] = mod
     spec.loader.exec_module(mod)
     return mod
 
@@ -269,8 +269,8 @@ def autofix_voice_margin(script_text: str, report: LintReport) -> str:
     one case where the swap would contradict the booklet, and `check_voice_casting`
     FAILs on it rather than warning.
     """
-    smap = _synth().SPEAKER_MAP
-    female = _synth().FEMALE
+    smap = _script_grammar().SPEAKER_MAP
+    female = _script_grammar().FEMALE
     pairs: dict[str, str] = {}
     for label in smap:
         for prefix, other in (("男性", "女性"), ("女性", "男性")):

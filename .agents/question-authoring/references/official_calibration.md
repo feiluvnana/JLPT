@@ -55,7 +55,7 @@ From the official answer-key PDF, which parses cleanly for all 31 sittings.
 | Era | sittings | 言語知識・読解 items | 大問 1–14 counts | 聴解 items | 聴解 1–5 counts |
 |---|---|---|---|---|---|
 | 7/2010 – 7/2018 | 17 | **75** | 5/5/5/7/5/5/12/5/5/5/9/2/3/2 | **32** | 5/6/5/12/4 |
-| 12/2018 – 7/2021 | 6 | 72–73 | 問3→3, 問4 wobbles, 問9→4, 問11 9↔8 | 30 | 5/5–6/5/11/3–4 |
+| 12/2018 – 7/2021 | 5 | 72–73 | 問3→3, 問4 wobbles, 問9→4, 問11 9↔8 | 30 | 5/5–6/5/11/3–4 |
 | **12/2021 – 12/2025** | **9** | **71** | **5/5/3/7/5/5/12/5/4/5/8/2/3/2** | **30** | **5/6/5/11/3** |
 
 - The 2009 guidebook's 小問数目安 matches the 2010–2018 column (75+32=107)
@@ -188,14 +188,18 @@ official 問題1/2/5 TARGET is recoverable by script (`goi_profile.py` reports
 current-era sittings read as images, not a re-derivable measurement. What would
 settle it is Shin Kanzen 語彙's two typeset 模擬試験 (pp.186/188).
 
-Distractors, all 35 current-era items classified:
+Distractors, all 35 current-era items classified by AUTHORING SHAPE (13/22, as
+`moji-goi.md` §問題1 counts it — 背骨 reads 訓 but is built as a derivation set).
+By READING TYPE `is_kun_target()` scores 14/21 — exactly 2 訓 per sitting — and
+that is the number the sampler's `KUN_TARGET_RATE` uses (2026-09-28). The table
+read 12/23 before the 2026-09-17 recount:
 
 | target type | n | what the distractors are |
 |---|---|---|
-| **訓読み** (okurigana printed, or single-kanji) | 12 | **real words, every option, no exception** — same word class/conjugation as the key, usually the same semantic field; frequently don't share the target's kanji. |
-| **音読み compound** | 23 | predominantly non-words: 清濁/長短/ん⇄う manipulations of the key's own on-reading. |
+| **訓読み** (okurigana printed, or single-kanji) | 13 | **real words, every option, no exception** — same word class/conjugation as the key, usually the same semantic field; frequently don't share the target's kanji. |
+| **音読み compound** (incl. 背骨) | 22 | predominantly non-words: 清濁/長短/ん⇄う manipulations of the key's own on-reading. |
 
-**Refinement**: ~5 of 23 音読み sets deliberately mix in real homophone words
+**Refinement**: ~5 of 22 音読み sets deliberately mix in real homophone words
 (握手→拍手, 討論→議論), and one set is four real compounds — so "音読み
 distractors must be non-words" is as wrong as "all four must be dictionary
 words". The invariant is directional: **a 訓読み set may never contain a
@@ -494,7 +498,7 @@ applied, per `exam-qa-review` §6.5's re-run-and-state rule. Re-measured
 
 - Moving the gate's WARN band to 25–30 would flip **all 21** from `ok` to
   WARN — the lowest paper on disk is 30.2.
-- Dropping `DOKKAI_KANJI_CEILING` from 34 to 31 would newly FAIL **17**: every
+- Dropping the gate's FAIL ceiling (`check_consistency.py`'s inline 22–34 % band) from 34 to 31 would newly FAIL **17**: every
   id from 20260821_1 (31.2) down the list above, i.e. all but 20260813_1,
   20260811_1, 20260812_2 and 20260903_1.
 

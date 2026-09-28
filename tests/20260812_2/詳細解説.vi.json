@@ -978,7 +978,7 @@
   "why_correct": "Giáo viên: 「今日はパソコンで資料の検索と整理」＝việc đầu tiên là tìm, sắp xếp tài liệu.",
   "options_analysis": [
    "Chọn đề tài là việc đã xong buổi trước.",
-   "Đúng.",
+   "「今日はパソコンで資料の検索と整理をします」: tìm tài liệu là việc đầu tiên của buổi hôm nay.",
    "Phân người thuyết trình quyết định sau, chưa phải hôm nay.",
    "Nội dung phỏng vấn quyết định vào buổi sau."
   ],
@@ -1107,7 +1107,7 @@
  "問3-3": {
   "why_correct": "「大人でも十分に楽しめる」＝chủ đề là sức hút của sách tranh với người lớn.",
   "options_analysis": [
-   "Đúng.",
+   "Người lớn mua sách tranh cho mình vì lời văn「心に響く」, giúp thư giãn: sức hút với người lớn.",
    "Không có phần nào phân loại chủ đề sách theo sở thích.",
    "“Đọc cùng con” chỉ nhắc như quan niệm cũ, không phải nội dung chính.",
    "Ảnh hưởng đến trẻ em không được đề cập."
@@ -1148,7 +1148,7 @@
   "options_analysis": [
    "“Không có điều hòa cũng được à?” đi ngược nội dung câu hỏi.",
    "“Sao lại không dùng?” giả định sai, câu gốc không hàm ý đó.",
-   "Đúng."
+   "Đồng tình với「欠かせない」: nói không bật điều hòa thì không ngủ được."
   ],
   "points": [
    "熱帯夜《ねったいや》: nghĩa “đêm nóng khó ngủ”.",

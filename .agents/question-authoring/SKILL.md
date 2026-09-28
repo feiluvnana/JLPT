@@ -5,8 +5,10 @@ description: Single owner of how to WRITE JLPT exam items at the correct difficu
 
 # Question Authoring (N2 calibration)
 
-Questions are written to Markdown sources inside `tests/<test_id>/`:
-`言語知識・読解.md` and `聴解.md`.
+Questions are written into the `tests/<test_id>/_sections/` fragments that
+`make scaffold-sections` writes; `make assemble` merges them into
+`言語知識・読解.md`. There is no 聴解 authoring — `make mp3` composes it
+(`choukai-audio` Part 0).
 
 ## Reading map — load this core + exactly ONE section file
 
@@ -19,7 +21,6 @@ section-authoring agent reads this file plus the one row matching its job:
 | 問題1–6 (文字・語彙) | `references/moji-goi.md` |
 | 問題7–9 (文法) | `references/bunpou.md` |
 | 問題10–14 (読解) | `references/dokkai.md` |
-| 聴解 items (booklet options + script grounding) | `references/choukai-items.md` |
 | any calibration number (lengths, counts, bands) | `references/official_calibration.md` |
 | the `refs/` PDFs themselves | `references/reading-reference-pdfs.md` |
 
@@ -44,8 +45,9 @@ fail — `exam-qa-review` §2.5 and `references/level_band_grammar.txt`
 verification in `references/moji-goi.md` — `openjlpt`, the scripted corpus
 this used to read, was removed 2026-08-11). Verify every tested item against
 `refs/Shinkanzen/`; benchmark structure, distractor density, and length
-against `refs/JLPT_N2_NEW/`. Items drawn `"origin": "adjunct"` passed
-`classify_level.py` — treat them like pool items; never swap for memory picks.
+against `refs/JLPT_N2_NEW/`. Items drawn `"origin": "adjunct"` carry their N2
+evidence in `logs/adjunct_staging.json` — treat them like pool items; never
+swap for memory picks.
 
 ## Calibrate to the BAND, not to one paper
 
@@ -95,9 +97,6 @@ makes it noise. Replace it with a real competitor in the key's category:
   conjugation lock and lookup procedure. Both branches legal; a grab-bag
   satisfying neither is forbidden, and when both are empty the TARGET is
   undrawable — report for re-draw, never invent a word.
-- **聴解 問題1–3:** an option nobody says in the dialogue is fabricated
-  noise. Procedure and artifact (dialogue first, options harvested from it,
-  one `N ✗「line」→ reason` line per wrong option): `choukai-items.md`.
 
 Construction-time discipline: draft the key, then three competitors from the
 SAME category, then check each is impossible for a specific, nameable
@@ -123,8 +122,8 @@ line that exists or doesn't:
 
 Ownership and the N2-authoring gate for topics: `exam-blueprint` Part II —
 read before drafting. Binding: the TESTED item is always the sampled pool
-item in `test_spec.json["items"]`; the assigned `reading_topics`/
-`listening_scenarios` entry sets scene and content only. There is no
+item in `test_spec.json["items"]`; the assigned `reading_topics` entry sets
+scene and content only (`listening_scenarios` is an inert draw). There is no
 `origin: web` entry to honor anymore — 問題9 is authored from its own
 assigned entry exactly like 問題10-13, and any invented flavor detail (a
 number, a deadline, a survey figure) is your own invention, N2-simplified
@@ -311,7 +310,6 @@ it before calling any authoring work done.
 | 問題8 uniqueness note | `## 文法` rows 43–47, after the word order | `｜一意性: 24通り中1通り、裸の副詞なし` | this file (#8) |
 | 問題9 category tag | the four 問題9 rows, opening the 解説 cell | four distinct bracketed tags, exactly one `[内容推論]` | `bunpou.md` |
 | 問題14 two-cell quotes | `## 読解` rows 70 and 71 | two distinct `「…」` spans present in the flyer | `dokkai.md` |
-| 聴解 option grounding | `聴解.md` 問題1/2/3 解説 cells | `1 ✗「script line」→ 理由`, one per wrong option | `choukai-items.md` |
 | Marked-span bold+marker | 問題10–14 passage AND its stem, wherever `「…」とあるが` | `①**span**とあるが` — same characters both sides, pointer-sized, gloss outside the bold | `dokkai.md` §"Marked-span quoting" |
 
 `make check` reads the 問題9 tags, 問題14 quote pairs, and marked-span

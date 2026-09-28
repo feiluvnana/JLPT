@@ -104,7 +104,7 @@ strong { font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", 
 def source_sha(path: Path) -> str:
     """First 12 hex digits of sha1 over the file's raw BYTES.
 
-    Same convention `make_choukai_mp3.py` stamps into \u8074\u89e3_\u30c1\u30e3\u30d7\u30bf\u30fc.json as
+    Same convention `tools/compose_choukai.py` stamps into \u8074\u89e3_\u30c1\u30e3\u30d7\u30bf\u30fc.json as
     `script_sha`. NOT an mtime: mtimes are checkout-unstable, so they cannot
     distinguish "rebuilt" from "merely re-checked-out".
     """
@@ -448,7 +448,9 @@ def verify(html_path: Path, src: Path):
     if "言語知識" in src.name:
         nums = {int(m.group(1)) for m in
                 re.finditer(r"<strong>(\d{1,2})(?:</strong>|\s)", html)}
-        missing = [n for n in range(1, 72) if n not in nums]
+        # Contiguous from 1 to the paper's own last number — not 1..71, which
+        # was N2's generated shape and let a 72/75-item import drop its tail.
+        missing = [n for n in range(1, max(nums, default=0) + 1) if n not in nums]
         if missing:
             problems.append(f"no bold stem found for question(s) {missing}")
     if problems:

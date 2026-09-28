@@ -193,6 +193,16 @@ def assemble(test_dir: Path, level: str, allow_placeholders: bool = False) -> st
         if t.count(KEY_MARK) != 1:
             raise LayoutError(f"{f.name}: needs exactly one `{KEY_MARK}` line")
         b, k = t.split(KEY_MARK)
+        # RC-R2-3(a), qa-report-20260928_1-round2: a scaffold orientation
+        # comment rode into 20260928_1's 言語知識・読解.md between 問題9 and
+        # 【読解】, where the 読解 measurements read it as 問題9's closing. The
+        # scaffold no longer writes one; this refuses any that an author left,
+        # because the paper is the one place a note must never ship.
+        note = re.search(r"<!--.*?-->", b + k, re.S)
+        if note:
+            raise LayoutError(f"{f.name}: carries an HTML comment "
+                              f"({note.group(0)[:50]!r}…) — author notes belong "
+                              f"in the stage hand-off, not the paper; delete it")
         if re.search(r"^#+\s*(解答|【?正解)", b, re.M):
             raise LayoutError(f"{f.name}: a fragment must not carry its own key heading")
         bodies.append(b.strip("\n"))

@@ -269,3 +269,29 @@ user's direction: one full round, direct fixes, a scoped re-review at most once
 | R2-F2 問題12(B) foil final | **Fixed** by the 読解 author: 「本人が自分で選んで名札に書いた呼び方は、その日から、互いに口にする名前として使われていく。」 No foil and no named template. 12(A) was re-closed too (「…声をかける側が越える段差の高さそのものである。」, still `というより`), because with 問題9 measured properly, 12(A) and 問題9 shared the timed 〜ている skeleton. The reframe family is exactly 11(1) and 12(A). |
 | R2-F3 stale scaffold comment | **Fixed**: deleted from `言語知識・読解.md` and the fragment, and removed at the source in `tools/scaffold_sections.py` so no future scaffold emits it. |
 | F3 聴解問題2-2番 すくない/少なくない | **Open, pending the user's ear-check** (clip cut at the scratchpad `f3-clip.mp3`). No key depends on it. If the audio says 少なくない, the fix is at the bank source, followed by `make mp3 <id> REPLAY=1` for the three papers. That rewrites the 聴解 詳細解説 entries, so it does not block stage 5's 言語知識・読解 authoring. |
+
+## Root-cause dispositions (2026-09-28, applied before 20260928_2)
+
+| row | disposition | owner file |
+|---|---|---|
+| RC-1 | applied: a key-table citation quotes the cited line itself; an instruction, option row or 問題文 is not a hit. Gate: `check_mondai1_source_citations`, WARN (OCR headword lists look like drill option rows) | `question-authoring/references/moji-goi.md` §"All four readings must RESOLVE" step 3; `tools/check_consistency.py` |
+| RC-2 | applied: `--reroll`/`--reroll-one` require `--reason`; written to `rotation.reroll_log` (spec) and `reroll_log` (ledger row) | `exam-blueprint/SKILL.md` §"`scripts/sample_items.py` — usage"; `sample_items.py` |
+| RC-3 | applied: `grammar_point_identity` (50 entries, 22 目次 numbers, from 目次 pp.3–7 and 索引 pp.217–219) read by the sampler and `check_grammar_point_identity`, cooldown + within-paper; supersedes "one form spelled twice". 15 papers grandfathered, 20260928_1 among them (9課2 に伴って/とともに against 20260909_1) | `exam-blueprint/SKILL.md` §"Mutually exclusive form families"; `sample_items.py`; `pools.json` |
+| RC-4 | applied (doc): third check-6 class (polarity-inverted ink), trace-before-deciding-line read, ear-check at the `聴解_チャプター.json` offset before any repair; repair stays upstream | `exam-qa-review/SKILL.md` §4 check 6; pointer in `choukai-audio/SKILL.md` |
+| RC-5 | applied: anchored 先回り template, cap 1 in `FINAL_TEMPLATE_CAPS`, 0 of 28 papers+imports hit; `check_final_template_caps_documented` keeps doc and code caps equal | `question-authoring/references/dokkai.md` §named templates; `FINAL_TEMPLATE_CAPS` |
+| RC-6 | applied: `check_q14_stem_presupposition`, 0 of 28 hit; doc: borrowed stem shape re-checked against this flyer | `dokkai.md` §"問題14's flyer and its two stems are APPARATUS"; `tools/check_consistency.py` |
+| RC-7 | applied: 〈想定→実は〉 ≤2 across both halves; other MOVEs capped inside 読解 only | `jlpt-test-generation/SKILL.md` §"One topic, one surface", MOVE bullet |
+| RC-8 | closed: the two-evidence inventory (SK headword OR official N2 key, cited) landed in d3e32a5; citation added | `question-authoring/references/bunpou.md` §Inventory; evidence table in `exam-blueprint/SKILL.md` |
+| RC-9 | ok — no change | — |
+| RC-10 | applied: seed token `reroll-one(cat:i,seed,exclude=A|B)` | `exam-blueprint/SKILL.md` §"`scripts/sample_items.py` — usage"; `sample_items.py` |
+| RC-11 | applied: value options in ascending/structured order; key position balanced by choice of error values | `dokkai.md` §問題14 |
+| RC-12 | ok — no change | — |
+| RC-R2-1 | applied with RC-3 (`grammar_point_identity`); `--reroll-one` prints the new entry's identity tokens against the cooldown window before writing | `exam-blueprint/SKILL.md`; `sample_items.py`; `pools.json` |
+| RC-R2-2 | applied (doc only, not gated): any foil-naming final that prefers the alternative is a not-A-but-B member; foil listed in the allocation column | `dokkai.md` §"Build the column BEFORE writing the passages" |
+| RC-R2-3 | applied: (a) scaffold comment removal verified, and `assemble_paper.py` refuses any fragment comment but `<!-- KEY -->`; (b) `passage_prose()` strips comments; (c) `check_no_html_comments` FAILs any comment in `言語知識・読解.md` | `tools/scaffold_sections.py`, `tools/assemble_paper.py`, `tools/check_consistency.py`; `jlpt-test-generation` Stage 3 |
+| RC-R2-4 | applied (folded into RC-5's row: timed clause anchored to the main clause) | `dokkai.md` §named templates |
+
+**F3 closed.** The user's ear-check on 2026-09-28 confirmed 少なくない. The bank
+and every drawing paper already read 「すくなくない」 (fixed in commit f026676).
+`refs/JLPT_N2_NEW/14. N2 12-2023/script.md` L111 keeps the PDF's printed
+「すくない」: it is an extract of the source ink, not a transcript of the audio.

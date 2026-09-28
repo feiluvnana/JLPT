@@ -1215,7 +1215,7 @@ def shared_space_draw(cat: str, pool) -> float:
     """
     all_pools()                     # refresh the (mtime, size) cache key first
     key = (cat, tuple(item_text(x) for x in pool), _POOLS_CACHE.get("key"),
-           len(_KEY_BY_TEXT), len(_FAMILY_BY_TEXT))
+           len(_KEY_BY_TEXT), len(_FAMILY_BY_TEXT), len(_POINT_BY_TEXT))
     if key in _SHARED_DRAW_CACHE:
         return _SHARED_DRAW_CACHE[key]
     total = float(DRAW.get(cat, 0))
@@ -1770,6 +1770,7 @@ def identity_tokens(entry) -> set[str]:
     if k:
         toks.add(KEY_NS + k)
     toks |= grammar_form_tokens(entry)
+    toks |= grammar_point_tokens(entry)
     toks |= lemma_tokens(entry)
     return toks
 
@@ -1798,7 +1799,7 @@ def taken_tokens(entry) -> set[str]:
     k = errand_key(entry)
     return (({t} if t else set()) | ({KEY_NS + k} if k else set())
             | grammar_form_tokens(entry) | form_family_tokens(entry)
-            | lemma_tokens(entry))
+            | grammar_point_tokens(entry) | lemma_tokens(entry))
 
 
 # --- MUTUALLY EXCLUSIVE FORM FAMILIES (F5, qa-report-20260904_1) -----------
@@ -1822,7 +1823,9 @@ def taken_tokens(entry) -> set[str]:
 # into `identity_tokens()`, so a family blocks a second draw inside one paper
 # without also putting the whole family into every member's cross-paper
 # cooldown. The defect is two of a family in ONE 問題8, not a family drawn two
-# papers running.
+# papers running. A family whose members are printed under ONE Shin Kanzen 目次
+# number (媒介 4課4, 確定条件 17課5, …) is ALSO in `grammar_point_identity`
+# below, and that map DOES bind across papers (owner ruling 2026-09-28, RC-3).
 #
 # MEMBERSHIP lives in `pools.json` (`grammar_form_families`), not here; every
 # family is a case where the entries are one form spelled twice — the founding
@@ -1852,6 +1855,54 @@ def form_family_tokens(entry) -> set[str]:
     """`{FAMILY_NS + family}` for an entry in one, else empty."""
     f = form_family(entry)
     return {FAMILY_NS + f} if f else set()
+
+
+# --- GRAMMAR POINT IDENTITY BY SHIN KANZEN 目次 NUMBER (RC-3 + RC-R2-1,
+# qa-report-20260928_1 and its round 2; owner ruling 2026-09-28) -------------
+# OWNER RULING: forms printed under ONE Shin Kanzen N2文法 目次 number are ONE
+# grammar point — for the cross-paper cooldown AND for the within-paper
+# exclusion. So the token goes into BOTH `identity_tokens()` and
+# `taken_tokens()`, which is exactly what `grammar_form_families` deliberately
+# does NOT do (that map stays taken-only, for families that are NOT one heading,
+# e.g. つつ: 2課5 〜つつある / 2課6 〜つつ / 14課4 〜つつ(も)).
+#
+# THE INCIDENT, twice in one paper's repair: `20260928_1` drew 〜を通して for
+# 問題7-36 one paper after `20260917_1` drew 〜を通じて (SK 4課4, printed
+# 「〜を通じて・〜を通して」) — every gate green, because the family map put
+# 媒介 into `taken_tokens()` only (RC-3; 4 within-cooldown pairs over the
+# ledger). The QA reroll then landed on 〜にあたって, 6 draws after
+# `20260907_1` keyed 〜に際して (SK 1課2 「〜に際して・〜にあたって」) — the same
+# class one repair later (RC-R2-1; 3 more within-window transitions).
+#
+# THE DATA is `pools.json`'s top-level `grammar_point_identity` map, {entry
+# string -> 目次 number | [numbers]}, a MAP for the reason every other such
+# table is one (bare-string entries resolved BY STRING by provenance). It was
+# built 2026-09-28 from the 目次 page images (PDF pp.3–7, rendered with
+# pdftoppm — the PDF has no text layer), cross-read against the 索引 (PDF
+# pp.217–219) where one form is headed twice (まい① 22課4 / まい② 24課5): an
+# unglossed pool entry that the book prints under two numbers carries BOTH
+# tokens, so it folds with each heading's partners without chaining the two
+# headings together. Only numbers with 2+ pool entries are listed — a heading
+# with one pool entry adds nothing an entry string does not already.
+POINT_NS = "pt»"
+_POINT_BY_TEXT: dict[str, tuple[str, ...]] = {}
+
+
+def build_point_index(pools: dict) -> dict[str, tuple[str, ...]]:
+    """display string -> Shin Kanzen 目次 number(s), from `pools.json`."""
+    raw = pools.get("grammar_point_identity") or {}
+    out: dict[str, tuple[str, ...]] = {}
+    for t, v in raw.items():
+        vs = [v] if isinstance(v, str) else list(v or [])
+        vs = tuple(str(x) for x in vs if isinstance(x, str) and x.strip())
+        if vs:
+            out[str(t)] = vs
+    return out
+
+
+def grammar_point_tokens(entry) -> set[str]:
+    """`{POINT_NS + 目次 number, …}` for a mapped grammar entry, else empty."""
+    return {POINT_NS + n for n in _POINT_BY_TEXT.get(item_text(entry), ())}
 
 
 def recency_map(history: list) -> dict:
@@ -2406,7 +2457,14 @@ def main():
                          "(e.g. --reroll-one quick_response:8)")
     ap.add_argument("--exclude-theme", action="append", metavar="THEME",
                     help="with --reroll-one on an authored-theme category: a "
-                         "theme a rule forbids for that slot (repeatable)")
+                         "theme a rule forbids for that slot (repeatable). "
+                         "Recorded in the seed string's reroll token (RC-10)")
+    ap.add_argument("--reason", default=None, metavar="RULE: WHY",
+                    help="REQUIRED with --reroll / --reroll-one: the rule the "
+                         "rejected draw breaks, or why it is undrawable "
+                         "(e.g. 'kanji_reading: 捕らえる undrawable — no three "
+                         "real distractors'). Written to rotation.reroll_log in "
+                         "the spec and reroll_log in the ledger row (RC-2)")
     ap.add_argument("--test-id", required=True,
                     help="test id; writes tests/<test_id>/test_spec.json and "
                          "records ledger attribution")
@@ -2438,11 +2496,14 @@ def main():
     check_pool_themes(pools)
     # Built once, read by errand_key() everywhere below (R14). It has to exist
     # before the first recency_map() call, or history resolves without keys.
-    global _KEY_BY_TEXT, _FAMILY_BY_TEXT
+    global _KEY_BY_TEXT, _FAMILY_BY_TEXT, _POINT_BY_TEXT
     _KEY_BY_TEXT = build_key_index(pools)
     # Same timing rule for the mutually-exclusive form families (F5): it feeds
     # `taken_tokens()`, which `draw()` reads on its first pass.
     _FAMILY_BY_TEXT = build_family_index(pools)
+    # ...and for the Shin Kanzen 目次 identity (RC-3/RC-R2-1), which feeds BOTH
+    # `identity_tokens()` (so `recency_map()` below) and `taken_tokens()`.
+    _POINT_BY_TEXT = build_point_index(pools)
     report_key_clusters(pools)
 
     if args.check_depth:
@@ -2452,6 +2513,20 @@ def main():
     if args.reroll and args.reroll_one:
         sys.exit("--reroll and --reroll-one are alternatives: the first redraws "
                  "a whole category, the second one entry of one")
+    # RC-2 (qa-report-20260928_1): `20260928_1` carries four `kanji_reading:1`
+    # rerolls in its seed string and nothing on disk says why — a reroll with no
+    # stated rule cannot be told from seed-shopping. The reason is therefore
+    # REQUIRED on both reroll paths and lands in `rotation.reroll_log` (spec) and
+    # `reroll_log` (ledger row). Ledger rows and specs written before this carry
+    # no log; nothing reads the field as mandatory on old records.
+    reason = (args.reason or "").strip()
+    if (args.reroll or args.reroll_one) and not reason:
+        sys.exit("--reroll / --reroll-one need --reason \"<rule>: <why the draw is "
+                 "illegal or undrawable>\" — a reroll with no stated rule is "
+                 "indistinguishable from seed-shopping (qa-report-20260928_1 RC-2)")
+    if args.exclude_theme and not args.reroll_one:
+        sys.exit("--exclude-theme applies to --reroll-one on an authored-theme "
+                 "category only")
 
     seed = args.seed if args.seed is not None else int(time.time())
     rng = random.Random(seed)
@@ -2588,6 +2663,9 @@ def main():
                                        taken_text, updated_recency, cool_max)
         spec["items"][cat] = picked
         spec["seed"] = f"{spec.get('seed')}+reroll({cat},{seed})"
+        log_rec = {"op": "reroll", "category": cat, "seed": seed,
+                   "reason": reason,
+                   "at": time.strftime("%Y-%m-%d %H:%M:%S")}
         # R7: a reroll re-draws against the CURRENT pool, so the stamp moves
         # with it — the spec records the revision the newest draw used.
         spec["pools_sha"] = pools_sha()
@@ -2605,9 +2683,13 @@ def main():
             "cooldowns_source": (old_rot or {}).get("cooldowns_source")
                                 or COOLDOWNS_SOURCE_DRAW,
         })
+        spec["rotation"]["reroll_log"] = (
+            list((old_rot or {}).get("reroll_log") or []) + [log_rec])
         if own_entry is not None:
             own_entry.setdefault("items", {})[cat] = picked
             own_entry["seed"] = spec["seed"]
+            own_entry["reroll_log"] = (
+                list(own_entry.get("reroll_log") or []) + [log_rec])
             own_entry["pools_sha"] = spec["pools_sha"]
             own_entry["cooldowns"] = spec["rotation"]["cooldowns"]
             own_entry["cooldowns_source"] = spec["rotation"]["cooldowns_source"]
@@ -2788,7 +2870,21 @@ def main():
         # No adjunct pass: ADJUNCT_CAP of a 1-item draw is 0 by construction
         # (`int(1 * 0.20)`), so apply_adjunct() would return the pick unchanged.
         spec["items"][cat][idx] = picked[0]
-        spec["seed"] = f"{spec.get('seed')}+reroll-one({cat}:{idx},{seed})"
+        # RC-10 (qa-report-20260928_1): the hand-passed `--exclude-theme` values
+        # change what the draw can return, so they belong in the replayable
+        # record — before this, only the allocation file said which themes were
+        # barred, and the ledger's seed string could not reproduce the draw.
+        # The rejected entry's own theme is not listed: it is read off the spec.
+        excl = [t for t in (args.exclude_theme or ()) if t]
+        spec["seed"] = (f"{spec.get('seed')}+reroll-one({cat}:{idx},{seed}"
+                        + (f",exclude={'|'.join(excl)}" if excl else "") + ")")
+        log_rec = {"op": "reroll-one", "category": cat, "index": idx,
+                   "seed": seed, "reason": reason,
+                   "out": item_text(replaced) or entry_theme(replaced),
+                   "in": item_text(picked[0]) or entry_theme(picked[0]),
+                   "at": time.strftime("%Y-%m-%d %H:%M:%S")}
+        if excl:
+            log_rec["exclude_themes"] = excl
         spec["pools_sha"] = pools_sha()   # R7, same as --reroll
         old_rot = spec.get("rotation")
         spec["rotation"] = carry_legacy(old_rot, picked, {
@@ -2803,9 +2899,13 @@ def main():
             "cooldowns_source": (old_rot or {}).get("cooldowns_source")
                                 or COOLDOWNS_SOURCE_DRAW,
         })
+        spec["rotation"]["reroll_log"] = (
+            list((old_rot or {}).get("reroll_log") or []) + [log_rec])
         if own_entry is not None:
             own_entry.setdefault("items", {})[cat] = spec["items"][cat]
             own_entry["seed"] = spec["seed"]
+            own_entry["reroll_log"] = (
+                list(own_entry.get("reroll_log") or []) + [log_rec])
             own_entry["pools_sha"] = spec["pools_sha"]
             own_entry["cooldowns"] = spec["rotation"]["cooldowns"]
             own_entry["cooldowns_source"] = spec["rotation"]["cooldowns_source"]
@@ -2829,6 +2929,26 @@ def main():
               f"    in : {_shown(picked[0])}"
               + (f"  (errand key 「{errand_key(picked[0])}」)"
                  if errand_key(picked[0]) else ""))
+        print(f"    why: {reason}")
+        # RC-R2-1 (qa-report-20260928_1-round2): F2's repair of 〜を通して landed
+        # on 〜にあたって, one Shin Kanzen heading (1課2) with 20260907_1's
+        # 〜に際して, and nobody saw it until the next QA round. Print the NEW
+        # entry's identity tokens against the window it was drawn under, BEFORE
+        # the spec is written, so a same-heading landing is visible the moment
+        # it happens — `draw()` refuses inside-window tokens, so a token shown
+        # inside the window here is a sampler bug, not a judgement call.
+        if cool is not None:
+            new_toks = sorted(identity_tokens(picked[0]))
+            print(f"    identity vs the {cool_max}-draw {cat} window "
+                  f"({len(prior_history)} prior paper(s)):")
+            for tok in new_toks:
+                ago = updated_recency.get(tok)
+                where = ("never drawn" if ago is None else
+                         f"last drawn {ago + 1} draw(s) back "
+                         f"({prior_history[-(ago + 1)].get('test_id')})"
+                         + ("  <-- INSIDE THE WINDOW" if ago < cool_max
+                            else ""))
+                print(f"      {tok}: {where}")
         # Only the ONE new entry was drawn against "now"; the kept entries were
         # drawn earlier against a different window (see the full-reroll note
         # above), so verifying the whole category would be the same false

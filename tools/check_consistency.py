@@ -782,6 +782,15 @@ FINDING_REPAIR: dict[str, tuple[str, str]] = {
     # clause with one fact changed), never the passage and never the key.
     "dokkai_banned_stems":            ("stem/option/key-cell", "assisted"),
     "dokkai_q14_stem_target":         ("stem/option/key-cell", "authoring"),
+    # RC-6 (qa-report-20260928_1 F5): drop the presupposed token from the 70/71
+    # stem (or print the flyer line) and re-check the key — one stem, tier A.
+    "q14_stem_presupposition":        ("stem/option/key-cell", "authoring"),
+    # RC-1 (qa-report-20260928_1 F1): re-cite the headword/example line in the
+    # 文字・語彙 key cell — the item itself does not change.
+    "mondai1_source_citations":       ("stem/option/key-cell", "assisted"),
+    # RC-R2-3 (qa-report-20260928_1-round2 R2-F3): delete the comment line from
+    # the paper and its fragment; nothing a candidate reads changes.
+    "md_html_comment":                ("passage prose", "deterministic"),
     "dokkai_overlap_direction":       ("stem/option/key-cell", "authoring"),
     "dokkai_key_rank_spread":         ("stem/option/key-cell", "assisted"),
     "dokkai_option_length_band":      ("stem/option/key-cell", "assisted"),
@@ -2219,6 +2228,9 @@ def passage_scopes(sec: str, n: int) -> list[str]:
     return [sec]
 
 
+HTML_COMMENT = re.compile(r"<!--.*?-->", re.S)
+
+
 def passage_prose(sec: str, bi) -> str:
     """The passage text only: no instruction line, no stems, no option rows.
 
@@ -2230,6 +2242,11 @@ def passage_prose(sec: str, bi) -> str:
     them; the method here is JP chars only (the JP_CHAR class), passage region
     only, （注N） definition lines kept — say so wherever you quote a number.
     """
+    # HTML comments are not prose (RC-R2-3(b), qa-report-20260928_1-round2). A
+    # scaffold note left between 問題9 and 【読解】 was measured AS 問題9's prose
+    # (+48 JP characters) and returned by `passage_final_sentence()` as 問題9's
+    # closing, so no closing-scope check read 問題9 at all on that paper.
+    sec = HTML_COMMENT.sub("", sec)
     keep = []
     for ln in sec.splitlines():
         if re.match(r"^##\s*問題", ln) or re.match(r"^\s*\*\*\d+\*\*", ln):
@@ -2797,6 +2814,36 @@ FINAL_SENTENCE_TEMPLATES = {
     # generated papers = 0; ALL TEN OFFICIAL SITTINGS = 0, so the row needs no
     # grandfathered id and fails no real sitting.
     "〜ていない（不在の残り）": re.compile(r"てい(ない|ません)。?\s*$"),
+    # Added 2026-09-28 (qa-report-20260928_1 F4 → RC-5, anchored per round 2's
+    # RC-R2-4). THE 先回り CLOSING — an artifact as the MAIN clause's subject, a
+    # clause timed to the person's action (前に／たびに／先に), an object, then
+    # V-ている: "the small aid does the person's work before they act". Round 1
+    # of 20260928_1 closed THREE surfaces on it — 11(4) 「ます目のノートは、児童が
+    # 数字を書くたびに、その数字の置き場所を先に示しているのである。」, 12(A)
+    # 「呼び方は、相手の立場を示す札というより、話しかける前に越える段差の高さを
+    # 決めている。」, 12(B) 「名札に書かれた小さな一行が、呼ぶ側の迷いを、声をかける
+    # 前に消している。」 — with every row here silent.
+    # ANCHORED TO THE MAIN CLAUSE (RC-R2-4). The founding regex
+    # `(前に|たびに|先に)[^。]*ている(のである|のだ|のです)?。$` also fires on
+    # 20260928_1 問題9 「乗り換えのたびに見上げてきた板の一枚一枚が、今では…駅の
+    # 地図になってつながっている。」, where たびに sits inside a relative clause on
+    # the subject and つながっている is a resultative state, and on 20260903_1
+    # 問題13's 「事前に」. So: the sentence's FIRST clause must be the matrix
+    # subject 「…は／が、」, the timing marker must follow it, and a を-object must
+    # either follow the marker (11(4), 12(A)) or be set off by 「を、」 before it
+    # (12(B)). An intransitive/resultative 〜ている has no を and does not match.
+    # MEASURED 2026-09-28 over the 13 closings of every paper on disk (18
+    # generated + 10 imported), with HTML comments stripped (RC-R2-3):
+    #   unanchored: 20260821_1 10(5), 20260827_2 11(3), 20260903_1 13,
+    #               20260928_1 9 — 1 each, all false positives read by hand;
+    #   anchored:   0 on every generated paper, 0 on all TEN official sittings.
+    # FOUNDING CASE, anchored, on the three pre-repair strings above: 3 of 3
+    # match, 問題9's does not => ×3 > cap 1 FAILS. Zero ids move, so no
+    # grandfather entry. Cap 1 (FINAL_TEMPLATE_CAPS) because officials show 0.
+    "〈物〉が、〈人の動作〉前に／たびに…、〈対象〉を〔先に〕V-ている（先回り）": re.compile(
+        r"^[^、。]*?(?:は|が)、"
+        r"(?:[^。]*?(?:前に|たびに|先に)[^。]*を|[^。]*を、[^。]*?(?:前に|たびに|先に))"
+        r"[^。]*?ている(?:のである|のだ|のです)?。\s*$"),
 }
 FINAL_TEMPLATE_CAP = 2       # dokkai.md's own per-shape ceiling
 # Per-template overrides of that ceiling, for a skeleton narrow enough that TWO
@@ -2820,6 +2867,7 @@ FINAL_TEMPLATE_CAP = 2       # dokkai.md's own per-shape ceiling
 FINAL_TEMPLATE_CAPS = {
     "〜ていた のだ（後知れ）": 1,
     "〜ていない（不在の残り）": 1,   # 2026-09-09, R2-F1 — see the row's comment
+    "〈物〉が、〈人の動作〉前に／たびに…、〈対象〉を〔先に〕V-ている（先回り）": 1,   # 2026-09-28, RC-5/RC-R2-4 — see the row's comment
 }
 
 
@@ -4919,6 +4967,230 @@ def check_dokkai_q14_stem_target(name: str, body: str):
             check(name_line, False, detail, slug="dokkai_q14_stem_target", test_id=name)
     else:
         warn(name_line, not bad, detail, slug="dokkai_q14_stem_target", test_id=name)
+
+
+# RC-6 (qa-report-20260928_1 F5). The timing / place / method tokens a 問題14
+# stem can presuppose about paying or applying, and the verbs they bind to.
+# 受付/受け付け and 振込/振り込み are spelled both ways in the corpus.
+Q14_PRESUPPOSITION_TOKENS = {
+    "当日": r"当日", "前日": r"前日", "事前": r"事前", "受付で": r"受け?付けで",
+    "窓口で": r"窓口で", "現金で": r"現金で", "振り込み": r"振り?込",
+}
+Q14_PRESUPPOSITION_VERBS = {"払う": r"払", "申し込む": r"申し?込"}
+Q14_PRESUPPOSITION_SPAN = 8     # max characters between token and verb, no 。
+
+
+def check_q14_stem_presupposition(name: str, body: str, bi):
+    """A 問題14 stem may presuppose only what THIS flyer says (RC-6, F5).
+
+    THE RULE (dokkai.md §"問題14's flyer and its two stems are APPARATUS"): a
+    timing, place or method token in a 70/71 stem that sits beside 払う/申し込む
+    (「当日に払う」「窓口で申し込む」) asserts that the flyer says so. Some ONE
+    flyer line must carry that token AND that verb; otherwise the stem invents a
+    condition the candidate cannot find, and the key is argued from a fact that
+    is not on the page.
+
+    THE INCIDENT (qa-report-20260928_1 F5, automatic fail): 20260928_1 問題14-70
+    asked 「田中さんたちが当日に払う料金は…」 while the flyer has 当日 lines
+    (「当日のお願い」, 「当日の受付ではお応えできません」, 「当日の朝…お電話ください」)
+    and not one line that pairs 当日 with 払. The stem shape was borrowed from
+    20260911_1, whose flyer DOES print 「材料費は、当日、受け付けでお支払いください」 —
+    a shape re-used without re-checking it against the new flyer.
+
+    "BESIDE" is ≤ Q14_PRESUPPOSITION_SPAN characters with no 。 between: the
+    first cut paired any token and verb in one stem, and 20260911_1-70 (which
+    both 申し込む a course and asks what is paid 当日) false-fired on 当日+申し込む.
+
+    MEASURED 2026-09-28 over every paper on disk: 0 of 18 generated papers and
+    0 of 10 official sittings fire; the founding stem (pre-repair 70 above)
+    fires on 当日+払う and 20260911_1-70 does not. So this is a FAIL with no
+    grandfathered id.
+
+    THE REPAIR: drop the presupposed token from the stem, or — if the item needs
+    it — print the flyer line that says it; then re-check the key and the three
+    distractors against the changed apparatus.
+    """
+    sec = dokkai_section(body, 14)
+    if not sec:
+        return
+    stems = [(m.group(1), m.group(2).strip())
+             for m in re.finditer(r"^\s*\*\*(\d{2})\*\*\s*(.+)$", sec, re.M)]
+    lines = [ln for ln in passage_prose(sec, bi).splitlines()
+             if ln.strip() and not ln.startswith("## ")]
+    hits = []
+    for q, stem in stems:
+        for vname, vp in Q14_PRESUPPOSITION_VERBS.items():
+            for tname, tp in Q14_PRESUPPOSITION_TOKENS.items():
+                n = Q14_PRESUPPOSITION_SPAN
+                near = re.search(rf"(?:{tp})[^。]{{0,{n}}}(?:{vp})|"
+                                 rf"(?:{vp})[^。]{{0,{n}}}(?:{tp})", stem)
+                if near and not any(re.search(tp, ln) and re.search(vp, ln)
+                                    for ln in lines):
+                    hits.append(f"{q}: 「{near.group(0)}」 ({tname}+{vname})")
+    check(f"{name}: 問題14 stems presuppose only what the flyer prints "
+          f"({len(stems)} stem(s) read)", not hits,
+          "; ".join(hits) + " — no flyer line pairs that token with that verb, "
+          "so the stem asserts a condition the page does not state. Drop the "
+          "token from the stem or print the flyer line, then re-check the key "
+          "(dokkai.md §'問題14's flyer and its two stems are APPARATUS'; RC-6, "
+          "qa-report-20260928_1 F5)", slug="q14_stem_presupposition",
+          test_id=name)
+
+
+# RC-1 (qa-report-20260928_1 F1). Which extract a `<book> L<n>` citation in a
+# 文字・語彙 key cell resolves to — the NEAREST preceding book keyword within
+# CITATION_BOOK_REACH characters wins. Order does not matter; position does.
+CITATION_BOOKS = (
+    (re.compile(r"Soumatome"), "refs/Soumatome/goi_reference.md"),
+    (re.compile(r"Hajimete|vocab_reference"), "refs/Hajimete/vocab_reference.md"),
+    (re.compile(r"kanji_tables|Shinkanzen\s*(?:N2)?[-\s]?漢字"),
+     "refs/Shinkanzen/kanji_tables.md"),
+    (re.compile(r"Shinkanzen\s*(?:N2)?[-\s]?語彙|goi_reference"),
+     "refs/Shinkanzen/goi_reference.md"),
+)
+CITATION_BOOK_REACH = 120
+# An exercise instruction or a printed option row — RC-1's founding predicate.
+CITATION_NOT_A_HIT = re.compile(
+    r"から一つ選びなさい|最もよいもの|^\s*[0-9０-９①-⑩]\s+\S{1,8}\s*$")
+
+
+def check_mondai1_source_citations(name: str, gt: str):
+    """A cited extract line must be a headword or its example, not an exercise.
+
+    THE RULE (moji-goi.md §"All four readings must RESOLVE", step 3): every
+    `<book> L<n>` a 文字・語彙 key cell cites as a reading's evidence must land on
+    the headword line or its example sentence. An exercise instruction, a
+    numbered option row or a 問題文 is not a hit — it proves the word appears in
+    the book's drills, not that the book lists it.
+
+    THE INCIDENT (qa-report-20260928_1 F1 → RC-1; founding case 20260911_1
+    NEW-2): 20260928_1 問題1-2 cited 「Shinkanzen N2-語彙 L259「最もよいもの」」 —
+    `goi_reference.md` L259 is 「1.（ ）に入れるのに最もよいものを、1・2・3・4から
+    一つ選びなさい。」 — and 「ちっとも L1326」, which is the option row 「2 ちっとも」.
+    The gate never opened a cited line, so both read as evidence.
+
+    WARN, not FAIL, deliberately: `CITATION_NOT_A_HIT`'s option-row branch
+    (a digit, a space, ≤8 characters) cannot tell a drill's option row from a
+    numbered headword list in an OCR extract, and 13 resolved citations on disk
+    are too few to calibrate a hard line. A line past the end of its extract
+    also WARNs (a mis-typed number cites nothing).
+
+    MEASURED 2026-09-28: 13 citations across 2 papers (20260917_1, 20260928_1),
+    all 13 resolve to a headword or example line; the two pre-repair founding
+    citations (L259, L1326) both fire; L5929 (辺り), L20720 (何とも), L20794
+    (とても) do not.
+
+    THE REPAIR: re-cite the headword line (paste it in 「」) or the example
+    sentence; if none exists, the reading is a debt, not evidence (step 4).
+    """
+    m = re.search(r"^##\s*文字・語彙.*?(?=^##\s|\Z)", gt, re.M | re.S)
+    stem = f"{name}: 文字・語彙 key citations land on a headword or example line"
+    if not m:
+        return skip(stem, "no 文字・語彙 answer-key table")
+    cache: dict[str, list[str] | None] = {}
+    seen = bad = 0
+    out: list[str] = []
+    missing: set[str] = set()
+    for row in m.group(0).splitlines():
+        rm = re.match(r"^\|\s*(\d+)\s*\|", row)
+        if not rm:
+            continue
+        for cm in re.finditer(r"L(\d{1,6})(?![0-9])", row):
+            pre = row[:cm.start()]
+            best = None
+            for rx, path in CITATION_BOOKS:
+                for bm in rx.finditer(pre):
+                    if best is None or bm.start() > best[0]:
+                        best = (bm.start(), path)
+            if not best or cm.start() - best[0] > CITATION_BOOK_REACH:
+                continue
+            path, n = best[1], int(cm.group(1))
+            if path not in cache:
+                f = ROOT / path
+                cache[path] = (f.read_text(encoding="utf-8").splitlines()
+                               if f.is_file() else None)
+            lines = cache[path]
+            if lines is None:
+                missing.add(path)
+                continue
+            seen += 1
+            line = lines[n - 1] if 0 < n <= len(lines) else None
+            if line is None or CITATION_NOT_A_HIT.search(line):
+                bad += 1
+                out.append(f"item {rm.group(1)} {path} L{n} = "
+                           f"{'<past end of file>' if line is None else repr(line.strip()[:40])}")
+    name_line = f"{stem} ({seen} resolved)"
+    if not seen:
+        return skip(name_line, "no `<book> L<n>` citation resolved"
+                    + (f" (extract(s) missing: {sorted(missing)})" if missing else ""))
+    warn(name_line, not bad,
+         "; ".join(out) + " — an exercise instruction or an option row proves "
+         "the word is in a drill, not that the book lists it. Re-cite the "
+         "headword or example line, pasted in 「」 (moji-goi.md step 3; RC-1, "
+         "qa-report-20260928_1 F1)", slug="mondai1_source_citations",
+         test_id=name)
+
+
+# RC-R2-3(c) (qa-report-20260928_1-round2). The only `<!--` a shipped
+# 言語知識・読解.md may carry are the pipeline's own markers; today none of them
+# survives into the assembled file (`<!-- KEY -->` is consumed by
+# assemble_paper.py, `src_sha` stamps live in the HTML), so the allowance is a
+# guard for a future stamp, not an exemption in use.
+ALLOWED_MD_COMMENT = re.compile(r"<!--\s*(?:KEY|src_sha:[^>]*)\s*-->")
+
+
+def check_no_html_comments(name: str, gt: str):
+    """No HTML comment in a shipped 言語知識・読解.md (RC-R2-3(c)).
+
+    THE INCIDENT (qa-report-20260928_1-round2 R2-F3): `scaffold_sections.py`
+    (commit 1881278) wrote a `<!-- reading_topics (theme + avoid) … -->`
+    orientation note into the 問題10–14 fragment; `assemble_paper.py` carried it
+    into 20260928_1's 言語知識・読解.md between 問題9 and 【読解】. It was
+    invisible in the booklet but shipped in the page source of three HTML
+    builds, carried the PRE-reroll 問題12 theme, and — the part that mattered —
+    `dokkai_closing_scopes()` read it as 問題9's prose, so `passage_final_sentence()`
+    returned the comment as 問題9's closing and no closing check measured 問題9.
+
+    MEASURED 2026-09-28: 0 comments in all 28 言語知識・読解.md files on disk
+    (18 generated, 10 imported), so this FAILs nothing and runs on both origins.
+
+    THE REPAIR: delete the comment from the .md (and its `_sections/` fragment),
+    then `make booklet` / `make sheet`. A note for the author belongs in the
+    stage hand-off, never in the paper.
+    """
+    left = [c for c in HTML_COMMENT.findall(gt) if not ALLOWED_MD_COMMENT.fullmatch(c)]
+    check(f"{name}: 言語知識・読解.md carries no HTML comment", not left,
+          f"{len(left)} comment(s), first: {left[0][:60]!r} — invisible in the "
+          f"booklet but shipped in the page source, and read by the 読解 "
+          f"measurements as prose. Delete it here and in _sections/ "
+          f"(RC-R2-3, qa-report-20260928_1-round2)" if left else "",
+          slug="md_html_comment", test_id=name)
+
+
+def check_final_template_caps_documented():
+    """Every tightened 読解 closing-template cap is the one dokkai.md prints.
+
+    `FINAL_TEMPLATE_CAPS` and dokkai.md's template table are two copies of one
+    rule (a cap-1 row there, an override here). The table prints each cap-1 row
+    as 「`<name>` — **cap N**」, so every key here must appear with its cap, and
+    every **cap N** row there must be a key here — otherwise an author reads a
+    ceiling the gate does not enforce, or the gate FAILs a paper on a ceiling the
+    author was never shown. Added 2026-09-28 with the 先回り row (RC-5).
+    """
+    doc = AGENTS / "question-authoring" / "references" / "dokkai.md"
+    name = (f"dokkai.md's template table prints every FINAL_TEMPLATE_CAPS "
+            f"ceiling ({len(FINAL_TEMPLATE_CAPS)})")
+    if not doc.is_file():
+        return skip(name, "no dokkai.md")
+    rows = dict(re.findall(r"^\|\s*`([^`]+)`\s*—\s*\*\*cap\s*(\d+)\*\*",
+                           doc.read_text(encoding="utf-8"), re.M))
+    bad = [f"{k}: code {v}, doc {rows.get(k)}" for k, v in FINAL_TEMPLATE_CAPS.items()
+           if rows.get(k) != str(v)]
+    bad += [f"{k}: doc cap {v}, not in FINAL_TEMPLATE_CAPS" for k, v in rows.items()
+            if k not in FINAL_TEMPLATE_CAPS]
+    check(name, not bad, "; ".join(bad) + " — spell the key exactly as the "
+          "table row (question-authoring/references/dokkai.md) and keep the two "
+          "caps equal")
 
 
 def check_dokkai_span_rate(name: str, body: str):
@@ -7084,6 +7356,36 @@ def check_pool_grammar_band():
           f"either mis-spelled above or was deleted from the pool without its "
           f"family entry (exam-blueprint §'Mutually exclusive form families')")
 
+    # RC-3 + RC-R2-1 (qa-report-20260928_1 and its round 2). The Shin Kanzen
+    # 目次 identity map rots exactly like the family map above: a renamed entry
+    # silently drops out of its heading, and the cross-paper cooldown goes blind
+    # to it with every gate green. Same two assertions, plus the value shape —
+    # a 目次 number is 「<n>課<m>」, so a typo'd value cannot mint a heading of
+    # its own that nothing else carries.
+    ident = SAMPLE_ITEMS.build_point_index(pools)
+    i_orphan = sorted(t for t in ident if t not in grammar_texts)
+    heads: dict[str, list[str]] = {}
+    for t, ns in ident.items():
+        for n in ns:
+            heads.setdefault(n, []).append(t)
+    i_lone = sorted(n for n, v in heads.items() if len(v) < 2)
+    i_shape = sorted(n for n in heads if not re.fullmatch(r"\d{1,2}課\d{1,2}", n))
+    check(f"every grammar_point_identity key names a pool entry "
+          f"({len(ident)} entr(ies) under {len(heads)} Shin Kanzen 目次 "
+          f"number(s))", not (i_orphan or i_shape),
+          f"orphans {i_orphan}, malformed numbers {i_shape} — a key that "
+          f"matches no `grammar_p7`/`grammar_p8` string cools nothing, so the "
+          f"sampler redraws the same heading under another spelling inside its "
+          f"cooldown, which is how 〜を通じて→〜を通して and 〜に際して→〜にあたって "
+          f"shipped (RC-3 / RC-R2-1, qa-report-20260928_1). Re-spell the key to "
+          f"the pool entry; the value is the 目次 number as 「<n>課<m>」 read off "
+          f"the page image (exam-blueprint §'Mutually exclusive form families')")
+    check("every grammar_point_identity 目次 number has at least two pool "
+          "entries", not i_lone,
+          f"{i_lone} — a heading with one pool entry excludes nothing; its "
+          f"partner is mis-spelled or was deleted without its map entry "
+          f"(RC-3, qa-report-20260928_1)")
+
 
 def pool_errand_clusters() -> dict[str, dict[str, list[str]]]:
     """{category: {errand key: [display strings]}} from pools.json."""
@@ -7881,6 +8183,143 @@ def check_grammar_cross_category_rotation(d, spec: dict, sample, pools: dict):
     if d.name in GRAMMAR_CROSS_ROTATION_GRANDFATHERED:
         return warn(name, not cross, detail + GRANDFATHER_NOTE)
     check(name, not cross, detail)
+
+
+# Papers whose grammar draw lands on a Shin Kanzen 目次 number that a paper
+# inside the drawing category's frozen window already drew under a DIFFERENT
+# pool spelling, measured over every generated spec on disk the day
+# `grammar_point_identity` landed (2026-09-28; RC-3 + RC-R2-1,
+# qa-report-20260928_1 and its round 2). Nothing about these draws was wrong
+# when they were made — the owner ruling widened the predicate afterwards, and a
+# widened predicate grandfathers shipped work BY NAME rather than re-classifying
+# it (the 2026-09-05 おかげで precedent above). Each id WARNs instead of FAILing;
+# a NEW id means the sampler or a hand edit let one through. Clearing one is
+# `--reroll-one grammar_p7|grammar_p8:<index> --reason …` plus re-authoring the
+# item — a decision about that paper, not about this gate.
+#
+# MEASURED 2026-09-28 over all 18 generated specs: 15 fire, 3 do not
+# (20260807_1 has no prior draw; 20260812_1 and 20260910_1 are clean). Two
+# fire IN-PAPER (問題7 + 問題8 on one
+# heading): 20260812_2 9課1 〜にしたがって + 変化推移(〜につれて…ていく), 20260827_2
+# 25課1 〜てしかたがない・てしょうがない + 感情強調(〜てたまらない). The rest fire
+# across papers only; the densest headings are 22課5 (〜に違いない/〜に相違ない/
+# 結果推量(〜にちがいない)), 25課3, 18課2, 17課5 and 22課4/24課5 (〜まい).
+# `20260928_1` — the founding paper — fires on 〜に伴って vs 20260909_1
+# 〜とともに (9課2, 5 back); its round-2 にあたって/に際して pair (R2-F1) no longer
+# fires because 20260907_1 was withdrawn the same day.
+GRAMMAR_POINT_IDENTITY_GRANDFATHERED: set[str] = {
+    "20260812_2",   # IN-PAPER 9課1; and 25課3 vs 20260807_1
+    "20260817_3",   # 10課3 vs 20260812_1; 22課4/24課5 vs 20260812_2
+    "20260818_1",   # 9課1 vs 20260812_2
+    "20260819_1",   # 9課2 vs 20260807_1
+    "20260821_1",   # 25課3, 9課2, 22課4/24課5, 4課4 (〜を通して vs 20260812_1)
+    "20260827_2",   # IN-PAPER 25課1; and 22課5 vs 20260812_1 / 20260817_3
+    "20260903_1",   # 25課3, 18課2, 17課5
+    "20260904_1",   # 13課3, 14課2, 11課2
+    "20260904_2",   # 22課5, 25課1
+    "20260904_3",   # 22課4/24課5
+    "20260909_1",   # 13課3, 9課2
+    "20260911_1",   # 10課3, 22課4/24課5, 17課5
+    "20260914_1",   # 25課3, 18課2 vs 20260903_1
+    "20260917_1",   # 17課5, 25課1, 2課3, 14課2, 4課4 (〜を通じて vs 20260821_1)
+    "20260928_1",   # 9課2 〜に伴って vs 20260909_1 〜とともに
+}
+
+
+def check_grammar_point_identity(d, spec: dict, sample, pools: dict):
+    """One Shin Kanzen N2文法 目次 number is ONE grammar point (RC-3, RC-R2-1).
+
+    THE RULE (owner ruling 2026-09-28; exam-blueprint §"Mutually exclusive form
+    families"): forms printed under one 目次 number — 1課2 〜に際して・〜にあたって,
+    4課4 〜を通じて・〜を通して, 9課1 〜につれて・〜にしたがって, … — count as one
+    point. So (a) one paper may not draw two entries of one number across
+    問題7+問題8, and (b) no entry may sit inside its category's frozen cooldown
+    window of a paper that drew a DIFFERENT entry of the same number, in either
+    grammar category. The data is `pools.json`'s `grammar_point_identity`;
+    `sample.grammar_point_tokens()` reads it, and the sampler folds it into both
+    `identity_tokens()` and `taken_tokens()`, so a hit here means a hand-edited
+    spec or a draw that predates the map.
+
+    THE INCIDENT (qa-report-20260928_1 F2 → RC-3; round 2 R2-F1 → RC-R2-1):
+    `20260928_1` drew 〜を通して one paper after `20260917_1` drew 〜を通じて
+    (4課4) with every gate green — the 媒介 family was taken-only, so the cooldown
+    never saw it (4 within-cooldown pairs over the ledger then). Its QA reroll
+    landed on 〜にあたって, 6 draws after `20260907_1` keyed 〜に際して (1課2), and
+    `make check` again said 「rotation claim holds」.
+
+    WHAT IT DELIBERATELY LEAVES TO OTHER LINES: identical entry strings
+    (`check_spec_rotation`) and pairs that already share a
+    `grammar_form_tokens()` form (`check_grammar_cross_category_rotation`), so
+    each line reports only what its own predicate adds.
+
+    THE REPAIR: `sample_items.py --reroll-one <cat>:<index> --seed <fresh>
+    --reason "<rule>: …"`, read the printed identity tokens against the window,
+    then re-author the item — never a hand substitution.
+    """
+    cats = getattr(sample, "GRAMMAR_FORM_CATS", ("grammar_p7", "grammar_p8"))
+    tok_fn = getattr(sample, "grammar_point_tokens", None)
+    stem = f"{d.name}: no Shin Kanzen 目次 grammar point is drawn twice"
+    if tok_fn is None or not (pools.get("grammar_point_identity") or {}):
+        return skip(stem, "pools.json carries no `grammar_point_identity` map")
+    items = spec.get("items") or {}
+    drawn = [(c, x) for c in cats for x in items.get(c) or []]
+    mine = [(c, x, tok_fn(x)) for c, x in drawn]
+    tagged = sum(1 for *_, t in mine if t)
+    # (a) within the paper, across 問題7 + 問題8
+    by_tok: dict[str, list[str]] = {}
+    for c, x, toks in mine:
+        for t in toks:
+            by_tok.setdefault(t, []).append(f"{c} 「{pool_entry_text(x)}」")
+    inside = {t: v for t, v in by_tok.items() if len(v) > 1}
+    gf = d.name in GRAMMAR_POINT_IDENTITY_GRANDFATHERED
+    (warn if gf else check)(
+          f"{stem} in one paper ({tagged} of {len(drawn)} grammar draws "
+          f"heading-mapped)", not inside,
+          "; ".join(f"{t.split('»', 1)[-1]}: {v}" for t, v in inside.items())
+          + " — one 目次 number is one point, so the paper keys it twice. "
+            "`--reroll-one <cat>:<index> --reason …`, never a hand substitution "
+            "(exam-blueprint §'Mutually exclusive form families'; RC-3, "
+            "qa-report-20260928_1)" + (GRANDFATHER_NOTE if gf else ""),
+          test_id=d.name)
+    # (b) across papers, inside the drawing category's frozen window
+    hist = ledger_history()
+    self_idx = next((i for i, h in enumerate(hist)
+                     if str(h.get("test_id")) == d.name), None)
+    prior = hist[:self_idx] if self_idx is not None else \
+        [h for h in hist if str(h.get("test_id")) != d.name]
+    xname = f"{stem} inside its cooldown ({tagged} heading-mapped draw(s))"
+    if not prior:
+        return skip(xname, "no other draws in the ledger to rotate against")
+    if not tagged:
+        return skip(xname, "no drawn grammar entry carries a "
+                           "`grammar_point_identity` heading")
+    hits = []
+    for c, x, toks in mine:
+        if not toks or c not in pools:
+            continue
+        cool = sample.recorded_cooldown(spec.get("rotation"), c, pools[c])
+        t0 = pool_entry_text(x)
+        f0 = sample.grammar_form_tokens(x)
+        for back, entry in enumerate(reversed(prior[-cool:] if cool > 0 else []), 1):
+            for other in cats:
+                for y in (entry.get("items") or {}).get(other) or []:
+                    t1 = pool_entry_text(y)
+                    if t1 == t0 or (f0 & sample.grammar_form_tokens(y)):
+                        continue      # another line's predicate (docstring)
+                    shared = toks & tok_fn(y)
+                    if shared:
+                        hits.append(
+                            f"{c} 「{t0}」 = {entry.get('test_id')} {other} "
+                            f"「{t1}」 (SK {', '.join(sorted(t.split('»', 1)[-1] for t in shared))}; "
+                            f"{back} draw(s) back, {cool}-draw window)")
+    detail = ("; ".join(sorted(set(hits))) + " — forms printed under one Shin "
+              "Kanzen 目次 number are one grammar point (owner ruling "
+              "2026-09-28). `--reroll-one <cat>:<index> --seed <fresh> --reason "
+              "…`, check the printed identity tokens, then re-author "
+              "(RC-3 / RC-R2-1, qa-report-20260928_1)")
+    if gf:
+        return warn(xname, not hits, detail + GRANDFATHER_NOTE, test_id=d.name)
+    check(xname, not hits, detail, test_id=d.name)
 
 
 # Papers whose 問題1 draw exceeds the official ceiling of 2 訓読み targets in 5,
@@ -9204,6 +9643,10 @@ def check_rotation_inputs():
     # never runs here, so without it `form_family()` resolves to None and
     # check_p8_form_family() would silently pass every spec.
     sample._FAMILY_BY_TEXT = sample.build_family_index(pools)
+    # ...and for the Shin Kanzen 目次 identity (RC-3/RC-R2-1): without it
+    # `grammar_point_tokens()` is empty and check_grammar_point_identity() below
+    # passes everything.
+    sample._POINT_BY_TEXT = sample.build_point_index(pools)
     trap_hits = trap_items = 0
     for d, spec in specs:
         print(f"  {d.name}/test_spec.json")
@@ -9215,6 +9658,7 @@ def check_rotation_inputs():
         check_grammar_cross_category_rotation(d, spec, sample, pools)
         check_p8_form_family(d, spec, sample, pools)
         check_p7_form_family(d, spec, sample, pools)
+        check_grammar_point_identity(d, spec, sample, pools)
         check_mondai1_reading_type_mix(d, spec, sample)
         kr = (spec.get("items") or {}).get("kanji_reading") or []
         trap_items += len(kr)
@@ -16725,6 +17169,7 @@ def check_tests():
             cut = bi.KEY_HEADING.search(body)
             check_no_latin_prose(f.name, body[: cut.start()] if cut else body, origin)
         check_no_real_brand_names(d.name, gt, st_text, origin)
+        check_no_html_comments(d.name, gt)
 
         gcut = bi.KEY_HEADING.search(gt)
         gengo_prose = gt[: gcut.start()] if gcut else gt
@@ -16761,6 +17206,8 @@ def check_tests():
             check_mondai13_closer(d.name, gengo_prose)
             check_dokkai_q10_form_mix(d.name, gengo_prose)
             check_dokkai_q14_stem_target(d.name, gengo_prose)
+            check_q14_stem_presupposition(d.name, gengo_prose, bi)
+            check_mondai1_source_citations(d.name, gt)
             check_dokkai_span_rate(d.name, gengo_prose)
             check_dokkai_register(d.name, gt, origin=origin)
             check_dokkai_sentence_rhythm(d.name, gt, origin=origin)
@@ -17136,6 +17583,7 @@ def main():
         check_filename_contracts()
         check_makefile_help()
         check_kaisetsu_band_doc()
+        check_final_template_caps_documented()
         check_grandfather_sets_are_live()
         check_deployments()
         check_exam_time_limits()

@@ -324,7 +324,12 @@ all four against Shinkanzen/Soumatome **and `refs/Hajimete/vocab_reference.md`**
 (a flat 2500-word N2 list, so it is the fastest of the three to check a headword
 against — `AGENTS.md` §3), per option; (3) a HIT is evidence —
 write the confirmed headword + branch label into the source line
-(`さだまる=定まる[N1, Shinkanzen p.NNN]`), citing whichever source you checked; (4) a
+(`さだまる=定まる[N1, Shinkanzen p.NNN]`), citing whichever source you checked.
+**The cited line must be the headword or its example sentence — paste it in
+「」; an exercise instruction, a numbered option row, or a 問題文 is not a hit**
+(qa-report-20260928_1 RC-1: 「最もよいもの」 cited from an instruction line;
+`check_mondai1_source_citations` WARNs — only a WARN, since an OCR headword list
+looks like a drill option row); (4) a
 MISS is a debt — confirm via 常用漢字表 音訓 or the archive, record
 `やすまる=休まる[常用音訓]`; (5) if no spelling confirms anywhere, the reading is
 invented — delete the option (がいり/そうじる/うんじる have no confirmable spelling);

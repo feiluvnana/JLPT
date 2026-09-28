@@ -164,6 +164,10 @@ make assemble <id> && make autofix <id> && make lint-draft <id> \
 - **`make assemble`** writes `言語知識・読解.md` from the three fragments.
   `python3 tools/assemble_paper.py tests/<id> --check` reports layout drift;
   `--normalize` re-stamps an already-merged paper.
+  It refuses a fragment carrying any HTML comment other than `<!-- KEY -->`;
+  `check_no_html_comments` FAILs any comment in `言語知識・読解.md`, and
+  `passage_prose()` strips comments before measuring (qa-report-20260928_1-round2
+  RC-R2-3: a scaffold comment read as 問題9's final sentence).
 - **`make mp3` writes the entire 聴解 half** — script, booklet, audio, chapters
   and the 聴解 `詳細解説` entries of both panes — by drawing banked clips
   (`choukai-audio` Part 0). It precedes `make booklet`, which renders the
@@ -264,8 +268,13 @@ the DRAWN topic string. Then read it:
   deleted the viewing ritual) and 聴解問題3-1番 (the transcription tool did save
   typing, but the real change was the meetings) — both tagged デジタル化, and
   round 1 could see the echo without being able to file it
-  (qa-report-20260907_1-round2 NEW-1). **Cap: at most two surfaces on one move
-  across the two halves.** Not string-decidable, so no check backs this row.
+  (qa-report-20260907_1-round2 NEW-1). **Cap: 〈想定→実は〉 at most 2 surfaces
+  across both halves (聴解 talks included). Other MOVEs are capped inside 読解
+  by `dokkai.md`'s table and are NOT counted across halves; 聴解 talks are
+  labelled for 〈想定→実は〉 only** — 聴解問題3 monologues are mostly
+  explanatory, so counting 機構の説明 across halves is unsatisfiable against
+  `dokkai.md`'s ≤3 (qa-report-20260928_1 RC-7). Not string-decidable, so no
+  check backs this row.
   **The 読解 side is always the one re-angled** — the 聴解 item is a banked
   recording and nobody here chose its move.
 

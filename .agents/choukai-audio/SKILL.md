@@ -353,6 +353,8 @@ drawing paper with `make mp3 <id> REPLAY=1 NO_AUDIO=1`. **This is the shape of E
 repair** — a bank fix reaches a shipped paper only by re-rendering it, and only
 `--replay` re-renders it as itself (Part 0 §"A recorded seed does NOT reproduce
 a past paper's draw"; `make mp3 <id> SEED=<recorded seed>` re-draws it instead).
+An item-line repair is ear-checked first, at the item's `聴解_チャプター.json`
+offset (`exam-qa-review` §4 check 6 owns the three script-defect classes).
 `check_choukai_script_latin()` WARNs on a Latin run in a paper's script that no
 bank record carries, which is the detector for exactly this class.
 (Booklet HTML says `N2` too — print and speech now agree.)

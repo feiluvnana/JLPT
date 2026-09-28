@@ -687,8 +687,8 @@ plus a pool-defect report, never a hand substitution.
 >    sitting" and therefore safe. **That premise is false and the row is
 >    corrected here: the official half is OCR off a SCANNED script PDF, not a
 >    transcription of the audio.** It is not self-verifying, nothing downstream
->    reads it, and 425 bank records ride on it. Two defect classes, and check 6
->    covers both:
+>    reads it, and 425 bank records ride on it. Three defect classes, and check 6
+>    covers all three:
 >
 >    - **mis-read ink** — the OCR lost a character the page prints correctly.
 >      Founding case: `2022-12:問題2-1` banked 「とても新人とは思えない技力だったよ」.
@@ -703,6 +703,15 @@ plus a pool-defect report, never a hand substitution.
 >      §Step 2.3 (blatant mis-set kanji) and reversible; the key moves either way.
 >      **Do not resolve a suspected script defect by re-running the extractor** —
 >      it will faithfully reproduce the page. Open the page.
+>    - **polarity-inverted ink** — a 〜ない dropped or added, so a line argues
+>      against the speaker's next line. Founding case: `2023-12:問題2-2` banked
+>      「車で来ようとする人も**すくない**と思いますよ」 before the manager's
+>      「駐車場がある施設の方が参加者の数が増える」; the recording says
+>      少なくない (user ear-check 2026-09-28). Three papers shipped it through
+>      two QA passes (qa-report-20260928_1 RC-4). Not string-decidable: **for
+>      every 問題1/2 item, trace the key's reasoning through the lines BEFORE
+>      the deciding one**, not just the deciding line — a line that contradicts
+>      its own speaker's conclusion is this class until the audio says otherwise.
 >
 >    Neither is visible to any machine: the bank builder guards duration and char
 >    rate, `check_choukai_*` compares the script to the composed MP3's
@@ -745,6 +754,12 @@ plus a pool-defect report, never a hand substitution.
 >    yours. Note that the preamble does NOT reach the candidate — it appears in
 >    no `練習.html`, `聴解.html` or `詳細解説.json` — so a finding here is
 >    non-blocking unless it does.
+>
+>    **Ear-check before any repair.** A suspected script defect is settled by the
+>    recording, not by the page: take the item's offset from the paper's
+>    `聴解_チャプター.json` and listen to that span of `聴解.mp3` (or the source
+>    sitting's MP3). With no playback in your environment, record the offset in
+>    the finding and leave it open for the user — do not guess the ink.
 >
 >    **A repair here is upstream, in `tests/imported-<sitting>/聴解スクリプト.txt`,
 >    then `make choukai-bank`, then re-render every paper holding that clip with

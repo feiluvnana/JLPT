@@ -299,10 +299,26 @@ map — a **map, not a `family` field on the entry**, for the same reason
 `check_draw_provenance()` resolves every recorded draw BY STRING, so making them
 objects would orphan the shipped ledger rows that name them.
 
-- `form_family_tokens()` puts the family into **`taken_tokens()` only, not
-  `identity_tokens()`** — one paper may not draw two of a family; two
-  consecutive papers may each draw one. The defect is two in one 問題8.
-- **Membership is "one form spelled twice", not "shares a stem".** Read the
+- **One Shin Kanzen 目次 number is one grammar point — `grammar_point_identity`.**
+  Forms printed under ONE Shin Kanzen N2文法 目次 number (1課-2 〜に際して・
+  〜にあたって, 4課-4 〜を通じて・〜を通して, 13課3 〜というと・〜といえば・
+  〜といったら …) count as one point for the cross-paper cooldown AND the
+  within-paper exclusion. The map is top-level in `pools.json`: each entry's value
+  is a 目次 number, or a list when the book heads it twice (〜まい/〜まいか: 22課4
+  and 24課5). It is built from the 目次/索引 page images, never from memory, and
+  supersedes the older "one form spelled twice" test, which let a cooldown redraw
+  land on the same heading (qa-report-20260928_1 RC-3; round 2 RC-R2-1).
+  Separate numbers stay separate points (〜限り 4課-5; 〜ない限り is not a 5課2
+  form, so `限り(は)` stays a taken-only family). Gate:
+  `check_grammar_point_identity` (in-paper and cross-paper; the 15 papers in
+  `GRAMMAR_POINT_IDENTITY_GRANDFATHERED` WARN), and `check_pool_grammar_band`
+  validates the map. Known pool defect: `〜に決まっている` and `〜にきまっている`
+  are duplicate `grammar_p7` entries, both folded under 22課6.
+- `grammar_form_families` is what is left: forms that are NOT one 目次 number
+  but may not share one paper (the つつ family: 〜つつある / 経過状況(〜つつ…する)).
+  `form_family_tokens()` puts these into **`taken_tokens()` only** — one paper
+  may not draw two; two consecutive papers may each draw one.
+- **Family membership is "one slot, not a shared stem".** Read the
   map itself for today's list; the 2026-09-28 audit added four families, each
   checked against the Shin Kanzen N2 文法 index (book p.208–211): `にしろ`
   (〜としても・にしても・にしろ・にせよ + the paired 〜にしろ〜にしろ /
@@ -1325,6 +1341,16 @@ re-angled one item's invented SETTING instead of redrawing the errand, which is
 not what the rule measures (`qa-report-20260818_1-round2` R2-F2). The sanctioned
 repair now costs one item. **It is still a redraw, not a hand substitution** — the
 index selects WHICH entry leaves, never which entry arrives.
+
+**`--reroll` and `--reroll-one` REQUIRE `--reason "<rule>: <why>"`** — the
+sampler exits without it. The reason lands in the spec's `rotation.reroll_log` and
+the ledger row's `reroll_log` as `{op, category, index, seed, reason, out, in, at,
+exclude_themes}`; a reroll with no stated rule is indistinguishable from
+seed-shopping (qa-report-20260928_1 RC-2). **`--exclude-theme <THEME>`**
+(repeatable, `--reroll-one` only) bars a theme a rule forbids for that slot and is
+recorded in the seed token as `reroll-one(cat:i,seed,exclude=A|B)` (RC-10).
+Before writing, `--reroll-one` prints the new entry's identity tokens against the
+cooldown window — read that line before accepting a grammar redraw (RC-R2-1).
 
 **FIXED 2026-09-07 — `--reroll-one` used to be a NO-OP on an entry the pool had
 never drawn before.** `draw()` weights by `ago(x) + 1` with `ago = 10**9` for a

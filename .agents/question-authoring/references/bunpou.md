@@ -10,7 +10,8 @@ link-table rules are Item integrity #4–8 there). This file adds the
 ## Inventory — N2-evidenced forms only
 
 A form belongs to the 問題7–9 inventory when it has ONE of two kinds of
-evidence (owner decision 2026-09-28 — until then it was the first kind only):
+evidence (owner decision 2026-09-28, qa-report-20260928_1 RC-8 — until then
+it was the first kind only):
 
 1. **A Shin Kanzen N2 文法 headword** — 〜かねない, 〜ざるを得ない,
    〜わけにはいかない, 〜に先立って, 〜を契機に, 〜つつも, 〜ようがない,

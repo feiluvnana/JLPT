@@ -1,11 +1,11 @@
-<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><script>if(window.location.search&&window.location.search.indexOf("screen=result")!==-1){document.documentElement.classList.add("is-result-mode");}</script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet"><title>N2 模擬試験 解答用紙 (imported-n2-2024-07)</title>
-<!-- src_sha: 言語知識・読解.md=cc4003161e1b -->
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><script>if(window.location.search&&window.location.search.indexOf("screen=result")!==-1){document.documentElement.classList.add("is-result-mode");}</script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet"><title>N2 模擬試験 解答用紙 (20260928_2)</title>
+<!-- src_sha: 言語知識・読解.md=81a5cc0f95bf -->
 
-<!-- src_sha: 聴解.md=bf8fab620466 -->
+<!-- src_sha: 聴解.md=45cf4858ee05 -->
 
-<!-- src_sha: 聴解スクリプト.txt=f30094ce8fbc -->
+<!-- src_sha: 聴解スクリプト.txt=7d632868bf49 -->
 
-<!-- src_sha: 聴解_チャプター.json=f9028a4bbca1 -->
+<!-- src_sha: 聴解_チャプター.json=1f843e9b2e9a -->
 <style>
 @page { size: A4; margin: 18mm 16mm 20mm;
   @bottom-center { content: "— " counter(page) " —"; font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", sans-serif;
@@ -722,526 +722,650 @@ html.is-result-mode #where{display:none!important}
   .rs-detail-body{padding:.7em .85em;font-size:10pt}
   .section-title{font-size:13.5pt;padding:.4em .7em;margin:1.5em 0 .8em}
 }
-</style></head><body><div id="bar"><a class="back" href="/">← テスト一覧</a><b id="bar-title">テスト imported-n2-2024-07（受験）</b><span id="tabs"><button id="tab-gengo" type="button" data-label="言語知識・読解" onclick="goTab('gengo')">言語知識・読解</button><button id="tab-choukai" type="button" data-label="聴解" onclick="goTab('choukai')">聴解</button></span><span class="sub" id="where"></span><span class="grow"></span><span id="bar-controls"><span class="sub" id="clock">残り --:--</span> <span class="sub" id="done">解答済み 0 / 101</span> <button onclick="clearAll()">消去</button> <button onclick="finishGengo(false)" id="advance-btn" class="primary" disabled>聴解へ進む</button> <button onclick="submitAll(false)" id="grade-btn" class="primary" disabled>採点する</button></span></div><script>if(document.documentElement.classList.contains("is-result-mode")){document.getElementById("bar-title").textContent="テスト imported-n2-2024-07（採点結果）";}</script><div id="screen-exam"><div class="gate" id="gate-gengo" style="display:none"><h2>言語知識（文字・語彙・文法）・読解</h2><p class="lim">制限時間 <b>105分</b>／全71問</p><p class="note"><span class="warn">開始すると時計が動きます。</span>残り時間が0になった時点で、解答はそのまま自動的に提出されます。<br>提出したあとは、この部分に戻ることはできません。<br>時計はこのタブを見ている間だけ進み、ほかのタブや別のウィンドウに移ると止まります。</p><button class="ui-btn primary" onclick="startSection('gengo')">開始する</button><div class="gate-alt"><p class="alt-note">じっくり復習したいときは<b>練習モード</b>へ。制限時間も採点もなく、全問が1ページに並び、設問ごとに模範解答・解説を開けます。</p><a class="ui-btn" href="練習.html">練習モードで解く（採点・制限時間なし）</a></div></div><div id="section-gengo" style="display:none"><h1 class="section-title">JLPT N2 言語知識（文字・語彙・文法）・読解</h1><h1 class="bk-part">【文字・語彙】</h1>
+</style></head><body><div id="bar"><a class="back" href="/">← テスト一覧</a><b id="bar-title">テスト 20260928_2（受験）</b><span id="tabs"><button id="tab-gengo" type="button" data-label="言語知識・読解" onclick="goTab('gengo')">言語知識・読解</button><button id="tab-choukai" type="button" data-label="聴解" onclick="goTab('choukai')">聴解</button></span><span class="sub" id="where"></span><span class="grow"></span><span id="bar-controls"><span class="sub" id="clock">残り --:--</span> <span class="sub" id="done">解答済み 0 / 101</span> <button onclick="clearAll()">消去</button> <button onclick="finishGengo(false)" id="advance-btn" class="primary" disabled>聴解へ進む</button> <button onclick="submitAll(false)" id="grade-btn" class="primary" disabled>採点する</button></span></div><script>if(document.documentElement.classList.contains("is-result-mode")){document.getElementById("bar-title").textContent="テスト 20260928_2（採点結果）";}</script><div id="screen-exam"><div class="gate" id="gate-gengo" style="display:none"><h2>言語知識（文字・語彙・文法）・読解</h2><p class="lim">制限時間 <b>105分</b>／全71問</p><p class="note"><span class="warn">開始すると時計が動きます。</span>残り時間が0になった時点で、解答はそのまま自動的に提出されます。<br>提出したあとは、この部分に戻ることはできません。<br>時計はこのタブを見ている間だけ進み、ほかのタブや別のウィンドウに移ると止まります。</p><button class="ui-btn primary" onclick="startSection('gengo')">開始する</button><div class="gate-alt"><p class="alt-note">じっくり復習したいときは<b>練習モード</b>へ。制限時間も採点もなく、全問が1ページに並び、設問ごとに模範解答・解説を開けます。</p><a class="ui-btn" href="練習.html">練習モードで解く（採点・制限時間なし）</a></div></div><div id="section-gengo" style="display:none"><h1 class="section-title">JLPT N2 言語知識（文字・語彙・文法）・読解</h1><h1 class="bk-part">【文字・語彙】</h1>
 <h2 class="bk-mondai"><span class="bk-mn">問題1</span> <span class="bk-mi">＿＿の言葉の読み方として最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
-<p><strong class="bk-qn">1</strong> 状況を<strong class="bk-tw">詳細</strong>に書いてください。<br />
-<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">そうざい</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">そうさい</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">しょうざい</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">しょうさい</span></span></span></p>
+<p><strong class="bk-qn">1</strong> 母は細い<strong class="bk-tw">針</strong>に赤い糸を通した。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">はり</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">かぎ</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">すず</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">かま</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_1" value="1"><span>1</span></label><label><input type="radio" name="q_1" value="2"><span>2</span></label><label><input type="radio" name="q_1" value="3"><span>3</span></label><label><input type="radio" name="q_1" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">2</strong> <strong class="bk-tw">分析</strong>には少し時間がかかります。<br />
-<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">ぶんせき</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">ぶんかい</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">ぶんせつ</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">ぶんかつ</span></span></span></p>
+<p><strong class="bk-qn">2</strong> 兄は今、映画の<strong class="bk-tw">制作</strong>をしている。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">ぜいさく</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">せいざく</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">ぜいざく</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">せいさく</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_2" value="1"><span>1</span></label><label><input type="radio" name="q_2" value="2"><span>2</span></label><label><input type="radio" name="q_2" value="3"><span>3</span></label><label><input type="radio" name="q_2" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">3</strong> 髪の毛がくしに<strong class="bk-tw">絡まって</strong>しまって。<br />
-<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">はさまって</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">からまって</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">つまって</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">たまって</span></span></span></p>
+<p><strong class="bk-qn">3</strong> 手術のときに<strong class="bk-tw">輸血</strong>が必要になった。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">ゆうけつ</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">ゆげつ</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">ゆうげつ</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">ゆけつ</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_3" value="1"><span>1</span></label><label><input type="radio" name="q_3" value="2"><span>2</span></label><label><input type="radio" name="q_3" value="3"><span>3</span></label><label><input type="radio" name="q_3" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">4</strong> ここでは<strong class="bk-tw">農薬</strong>をまったく使わずに野菜を栽培している。<br />
-<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">のんやく</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">のうやく</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">のうらく</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">のんらく</span></span></span></p>
+<p><strong class="bk-qn">4</strong> 降りる駅で運賃を<strong class="bk-tw">精算</strong>してください。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">しょうさん</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">せいさん</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">せいざん</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">しょうざん</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_4" value="1"><span>1</span></label><label><input type="radio" name="q_4" value="2"><span>2</span></label><label><input type="radio" name="q_4" value="3"><span>3</span></label><label><input type="radio" name="q_4" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">5</strong> とても<strong class="bk-tw">鮮やか</strong>だったことを覚えています。<br />
-<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">おだやか</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">さわやか</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">あざやか</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">なごやか</span></span></span></p>
+<p><strong class="bk-qn">5</strong> 私たちは川の<strong class="bk-tw">岸</strong>を歩きました。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">がけ</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">きし</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">はま</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">おか</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_5" value="1"><span>1</span></label><label><input type="radio" name="q_5" value="2"><span>2</span></label><label><input type="radio" name="q_5" value="3"><span>3</span></label><label><input type="radio" name="q_5" value="4"><span>4</span></label></div>
 <h2 class="bk-mondai"><span class="bk-mn">問題2</span> <span class="bk-mi">＿＿の言葉を漢字で書くとき、最もよいものを1・2・3・4から一つ選びなさい。</span></h2>
-<p><strong class="bk-qn">6</strong> この会社を<strong class="bk-tw">しぼう</strong>した理由を教えてください。<br />
-<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">希望</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">志望</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">指望</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">貴望</span></span></span></p>
+<p><strong class="bk-qn">6</strong> 長い文章は段落で<strong class="bk-tw">くぎる</strong>と読みやすい。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">駆着る</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">区着る</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">駆切る</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">区切る</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_6" value="1"><span>1</span></label><label><input type="radio" name="q_6" value="2"><span>2</span></label><label><input type="radio" name="q_6" value="3"><span>3</span></label><label><input type="radio" name="q_6" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">7</strong> あの作家の<strong class="bk-tw">たんぺん</strong>小説はとても面白い。<br />
-<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">短編</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">単編</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">短遍</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">単遍</span></span></span></p>
+<p><strong class="bk-qn">7</strong> 部屋の中に人の<strong class="bk-tw">けはい</strong>を感じた。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">化背</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">気背</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">化配</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">気配</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_7" value="1"><span>1</span></label><label><input type="radio" name="q_7" value="2"><span>2</span></label><label><input type="radio" name="q_7" value="3"><span>3</span></label><label><input type="radio" name="q_7" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">8</strong> 桜の花が<strong class="bk-tw">ちって</strong>いくのを眺める。<br />
-<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">消って</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">去って</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">散って</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">失って</span></span></span></p>
+<p><strong class="bk-qn">8</strong> 島を訪れる観光客が<strong class="bk-tw">げきぞう</strong>した。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">激増</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">劇増</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">激憎</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">劇憎</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_8" value="1"><span>1</span></label><label><input type="radio" name="q_8" value="2"><span>2</span></label><label><input type="radio" name="q_8" value="3"><span>3</span></label><label><input type="radio" name="q_8" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">9</strong> このセーターにはとても<strong class="bk-tw">やわらかい</strong>毛糸が使われている。<br />
-<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">伸らかい</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">軽らかい</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">暖らかい</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">柔らかい</span></span></span></p>
+<p><strong class="bk-qn">9</strong> 昨日の試合は<strong class="bk-tw">ひきわけ</strong>でした。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">引き分け</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">弾き分け</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">引き訳</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">弾き訳</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_9" value="1"><span>1</span></label><label><input type="radio" name="q_9" value="2"><span>2</span></label><label><input type="radio" name="q_9" value="3"><span>3</span></label><label><input type="radio" name="q_9" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">10</strong> 最近あまり体調がよくないのは、<strong class="bk-tw">ひろう</strong>のせいだろう。<br />
-<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">疲労</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">病労</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">疲老</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">病老</span></span></span></p>
+<p><strong class="bk-qn">10</strong> 姉は春から銀行に<strong class="bk-tw">しゅうしょく</strong>する。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">蹴織</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">就織</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">就職</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">蹴職</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_10" value="1"><span>1</span></label><label><input type="radio" name="q_10" value="2"><span>2</span></label><label><input type="radio" name="q_10" value="3"><span>3</span></label><label><input type="radio" name="q_10" value="4"><span>4</span></label></div>
 <h2 class="bk-mondai"><span class="bk-mn">問題3</span> <span class="bk-mi">（　）に入れるのに最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
-<p><strong class="bk-qn">11</strong> しょうゆの（　）原料は大豆です。<br />
-<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">主</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">要</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">正</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">本</span></span></span></p>
+<p><strong class="bk-qn">11</strong> 休日の公園は家族（　）でにぎわっていた。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">連れ</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">並み</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">込み</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">付き</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_11" value="1"><span>1</span></label><label><input type="radio" name="q_11" value="2"><span>2</span></label><label><input type="radio" name="q_11" value="3"><span>3</span></label><label><input type="radio" name="q_11" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">12</strong> 子どもたちの読書（　）が進んでいるらしい。<br />
-<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">抜け</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">逃げ</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">別れ</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">離れ</span></span></span></p>
+<p><strong class="bk-qn">12</strong> （　）劇場では、上演中の撮影をお断りしております。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">同</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">他</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">前</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">当</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_12" value="1"><span>1</span></label><label><input type="radio" name="q_12" value="2"><span>2</span></label><label><input type="radio" name="q_12" value="3"><span>3</span></label><label><input type="radio" name="q_12" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">13</strong> 経営の方針については社長が決定（　）を持っている。<br />
-<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">任</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">手</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">権</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">裁</span></span></span></p>
+<p><strong class="bk-qn">13</strong> 駅の改札を出ると、ホテルは（　）正面に見える。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">大</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">超</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">最</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">真</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_13" value="1"><span>1</span></label><label><input type="radio" name="q_13" value="2"><span>2</span></label><label><input type="radio" name="q_13" value="3"><span>3</span></label><label><input type="radio" name="q_13" value="4"><span>4</span></label></div>
 <h2 class="bk-mondai"><span class="bk-mn">問題4</span> <span class="bk-mi">（　）に入れるのに最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
-<p><strong class="bk-qn">14</strong> 両親はおいしい料理で客を（　）のが好きだ。<br />
-<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">もてなす</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">おだてる</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">ゆるす</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">すくう</span></span></span></p>
+<p><strong class="bk-qn">14</strong> 作業する人が増えると、かかる日数はそれに（　）して短くなる。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">比例</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">反比例</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">一致</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">対立</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_14" value="1"><span>1</span></label><label><input type="radio" name="q_14" value="2"><span>2</span></label><label><input type="radio" name="q_14" value="3"><span>3</span></label><label><input type="radio" name="q_14" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">15</strong> その駅は各駅停車の電車は止まりますが、急行電車は（　）します。<br />
-<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">経由</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">直進</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">通過</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">横断</span></span></span></p>
+<p><strong class="bk-qn">15</strong> 電車は駅に近づくと、（　）スピードを落としていった。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">じょじょに</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">とっさに</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">しきりに</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">ひそかに</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_15" value="1"><span>1</span></label><label><input type="radio" name="q_15" value="2"><span>2</span></label><label><input type="radio" name="q_15" value="3"><span>3</span></label><label><input type="radio" name="q_15" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">16</strong> 見た人の記憶に残るような（　）のあるポスターにしたい。<br />
-<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">インパクト</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">プレッシャー</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">チャージ</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">ショック</span></span></span></p>
+<p><strong class="bk-qn">16</strong> 兄は（　）が強く、高校を出るとすぐ親に頼らずに暮らし始めた。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">好奇心</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">依頼心</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">独立心</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">警戒心</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_16" value="1"><span>1</span></label><label><input type="radio" name="q_16" value="2"><span>2</span></label><label><input type="radio" name="q_16" value="3"><span>3</span></label><label><input type="radio" name="q_16" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">17</strong> 地元の選手がオリンピックでメダルを獲得したことがテレビで（　）された。<br />
-<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">通信</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">普及</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">伝言</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">報道</span></span></span></p>
+<p><strong class="bk-qn">17</strong> 薬を飲ませようとすると、うちの猫はいつも私から（　）。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">見回る</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">探し回る</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">走り回る</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">逃げ回る</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_17" value="1"><span>1</span></label><label><input type="radio" name="q_17" value="2"><span>2</span></label><label><input type="radio" name="q_17" value="3"><span>3</span></label><label><input type="radio" name="q_17" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">18</strong> 台風で電車が運休になり通勤や通学で利用する人に（　）影響を与えた。<br />
-<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">大まかな</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">偉大な</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">大げさな</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">多大な</span></span></span></p>
+<p><strong class="bk-qn">18</strong> 祖母の畑でとれた野菜が、段ボール箱で（　）届いた。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">どっさり</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">ぎっしり</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">こってり</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">ずらり</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_18" value="1"><span>1</span></label><label><input type="radio" name="q_18" value="2"><span>2</span></label><label><input type="radio" name="q_18" value="3"><span>3</span></label><label><input type="radio" name="q_18" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">19</strong> 西川さんは転校してきたばかりだが、友達もできて、もうすっかりクラスに（　）いる。<br />
-<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">当てはまって</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">溶け込んで</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">結びついて</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">触れ合って</span></span></span></p>
+<p><strong class="bk-qn">19</strong> 先生の合図で、教室にいた生徒たちが（　）手をあげた。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">ひとりでに</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">いっせいに</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">いちいち</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">やたらに</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_19" value="1"><span>1</span></label><label><input type="radio" name="q_19" value="2"><span>2</span></label><label><input type="radio" name="q_19" value="3"><span>3</span></label><label><input type="radio" name="q_19" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">20</strong> 私は（　）性格なので、時々財布を持たずに買い物に出かけてしまうことがある。<br />
-<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">あつかましい</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">うっとうしい</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">そそっかしい</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">さわがしい</span></span></span></p>
+<p><strong class="bk-qn">20</strong> 花びんを割ったのに、弟は自分は悪くないと最後まで（　）。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">言い出した</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">言い直した</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">言い渡した</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">言い張った</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_20" value="1"><span>1</span></label><label><input type="radio" name="q_20" value="2"><span>2</span></label><label><input type="radio" name="q_20" value="3"><span>3</span></label><label><input type="radio" name="q_20" value="4"><span>4</span></label></div>
 <h2 class="bk-mondai"><span class="bk-mn">問題5</span> <span class="bk-mi">＿＿の言葉に意味が最も近いものを、1・2・3・4から一つ選びなさい。</span></h2>
-<p><strong class="bk-qn">21</strong> 出張の日程は<strong class="bk-tw">おおよそ</strong>決まりました。<br />
-<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">だいたい</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">すべて</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">やっと</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">もう</span></span></span></p>
+<p><strong class="bk-qn">21</strong> シャワーを浴びて、気分が<strong class="bk-tw">すっきり</strong>した。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">さっぱり</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">ぼんやり</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">がっかり</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">のんびり</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_21" value="1"><span>1</span></label><label><input type="radio" name="q_21" value="2"><span>2</span></label><label><input type="radio" name="q_21" value="3"><span>3</span></label><label><input type="radio" name="q_21" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">22</strong> 彼女はとても<strong class="bk-tw">行儀</strong>がいい。<br />
-<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">アイディア</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">サービス</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">マナー</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">イメージ</span></span></span></p>
+<p><strong class="bk-qn">22</strong> 友人の結婚式はとても<strong class="bk-tw">豪華</strong>でした。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">地味</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">ぜいたく</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">にぎやか</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">上品</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_22" value="1"><span>1</span></label><label><input type="radio" name="q_22" value="2"><span>2</span></label><label><input type="radio" name="q_22" value="3"><span>3</span></label><label><input type="radio" name="q_22" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">23</strong> 中西さんは、いつも<strong class="bk-tw">いばっている</strong>。<br />
-<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">眠そうにして</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">偉そうにして</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">暇そうにして</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">嫌そうにして</span></span></span></p>
+<p><strong class="bk-qn">23</strong> 今年の冬は<strong class="bk-tw">わりに</strong>暖かいですね。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">比較的</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">非常に</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">ますます</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">かえって</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_23" value="1"><span>1</span></label><label><input type="radio" name="q_23" value="2"><span>2</span></label><label><input type="radio" name="q_23" value="3"><span>3</span></label><label><input type="radio" name="q_23" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">24</strong> 使わない物は、ここに<strong class="bk-tw">収納して</strong>ください。<br />
-<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">並べて</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">捨てて</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">預けて</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">しまって</span></span></span></p>
+<p><strong class="bk-qn">24</strong> 祖父の話は<strong class="bk-tw">なんとも</strong>不思議だった。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">たぶん</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">少し</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">やはり</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">本当に</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_24" value="1"><span>1</span></label><label><input type="radio" name="q_24" value="2"><span>2</span></label><label><input type="radio" name="q_24" value="3"><span>3</span></label><label><input type="radio" name="q_24" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">25</strong> 横山さんは<strong class="bk-tw">不平</strong>を言うことが多い。<br />
-<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">冗談</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">文句</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">うそ</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">わがまま</span></span></span></p>
+<p><strong class="bk-qn">25</strong> 私の姉はいつも<strong class="bk-tw">陽気</strong>です。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">静か</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">まじめ</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">明るい</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">優しい</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_25" value="1"><span>1</span></label><label><input type="radio" name="q_25" value="2"><span>2</span></label><label><input type="radio" name="q_25" value="3"><span>3</span></label><label><input type="radio" name="q_25" value="4"><span>4</span></label></div>
 <h2 class="bk-mondai"><span class="bk-mn">問題6</span> <span class="bk-mi">次の言葉の使い方として最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
-<p><strong class="bk-qn">26</strong> <strong>共有</strong><br />
-<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">市民ボランティアの<strong class="bk-tw">共有</strong>で、留学生のスピーチコンテストが行われた。</span></span><br />
-<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">大学と企業が<strong class="bk-tw">共有</strong>で新しい技術の研究を行っている。</span></span><br />
-<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">これらの事件には、発生場所に<strong class="bk-tw">共有</strong>の特徴があることが分かった。</span></span><br />
-<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">結婚してから購入した物は、夫婦の<strong class="bk-tw">共有</strong>の財産になる。</span></span></p>
+<p><strong class="bk-qn">26</strong> <strong>もしかしたら</strong><br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">空が暗くなってきたので、<strong class="bk-tw">もしかしたら</strong>夕方から雨が降るかもしれない。</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot"><strong class="bk-tw">もしかしたら</strong>明日の会議に遅れたら、私を待たずに先に始めていてください。</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">駅まで急いで走ったら、<strong class="bk-tw">もしかしたら</strong>最終電車に間に合いました。</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">会議の資料ができたら、<strong class="bk-tw">もしかしたら</strong>私にも一部送ってください。</span></span></p>
 <div class="qa"><label><input type="radio" name="q_26" value="1"><span>1</span></label><label><input type="radio" name="q_26" value="2"><span>2</span></label><label><input type="radio" name="q_26" value="3"><span>3</span></label><label><input type="radio" name="q_26" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">27</strong> <strong>鋭い</strong><br />
-<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">動物たちが自然界で生きていくためには、<strong class="bk-tw">鋭い</strong>感覚が必要だ。</span></span><br />
-<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">弟は記憶が<strong class="bk-tw">鋭くて</strong>、本に載っているたくさんの国名や国旗をすぐに覚えた。</span></span><br />
-<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">赤ちゃんの肌は<strong class="bk-tw">鋭い</strong>から、少しの刺激で赤くなってしまう。</span></span><br />
-<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">運動の能力が<strong class="bk-tw">鋭い</strong>人は、どんなスポーツでもすぐに上達する。</span></span></p>
+<p><strong class="bk-qn">27</strong> <strong>もうかる</strong><br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">父は去年、株で大金を<strong class="bk-tw">もうかって</strong>、新しい車を買った。</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">毎月の給料から少しずつ貯金して、口座に百万円が<strong class="bk-tw">もうかった</strong>。</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">一生懸命勉強したので、第一志望の大学に<strong class="bk-tw">もうかった</strong>。</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">駅前にできたパン屋は、毎日行列ができるほど<strong class="bk-tw">もうかって</strong>いるらしい。</span></span></p>
 <div class="qa"><label><input type="radio" name="q_27" value="1"><span>1</span></label><label><input type="radio" name="q_27" value="2"><span>2</span></label><label><input type="radio" name="q_27" value="3"><span>3</span></label><label><input type="radio" name="q_27" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">28</strong> <strong>はきはき</strong><br />
-<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">よく眠ったので、今日は頭が<strong class="bk-tw">はきはき</strong>としている。</span></span><br />
-<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">ビルの屋上から、遠くの山が<strong class="bk-tw">はきはき</strong>と見える。</span></span><br />
-<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">その学生は、聞かれたことに<strong class="bk-tw">はきはき</strong>と答えた。</span></span><br />
-<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">ミスの原因を<strong class="bk-tw">はきはき</strong>とさせるために、調査が行われた。</span></span></p>
+<p><strong class="bk-qn">28</strong> <strong>頻繁</strong><br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">駅前の広場は、祭りの日に<strong class="bk-tw">頻繁</strong>な人でいっぱいになった。</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">年末は仕事が<strong class="bk-tw">頻繁</strong>で、家族とゆっくり過ごす時間もない。</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">この交差点では、事故が<strong class="bk-tw">頻繁</strong>に起きている。</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">昨日は朝から晩まで、冷たい雨が<strong class="bk-tw">頻繁</strong>に降り続いた。</span></span></p>
 <div class="qa"><label><input type="radio" name="q_28" value="1"><span>1</span></label><label><input type="radio" name="q_28" value="2"><span>2</span></label><label><input type="radio" name="q_28" value="3"><span>3</span></label><label><input type="radio" name="q_28" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">29</strong> <strong>鑑賞</strong><br />
-<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">学校の授業で、工場へ行って自動車を組み立てる様子を<strong class="bk-tw">鑑賞</strong>した。</span></span><br />
-<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">週末、市のコンサートホールでクラシック音楽を<strong class="bk-tw">鑑賞</strong>した。</span></span><br />
-<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">資料を読んで、自然を守るための国の活動について<strong class="bk-tw">鑑賞</strong>した。</span></span><br />
-<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">レストランで、素材の良さを生かした料理を舌でじっくり<strong class="bk-tw">鑑賞</strong>した。</span></span></p>
+<p><strong class="bk-qn">29</strong> <strong>負う</strong><br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">重い荷物を両手に<strong class="bk-tw">負って</strong>、駅の長い階段を上った。</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">今回の事故の責任は、すべて私が<strong class="bk-tw">負う</strong>つもりです。</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">かぜを<strong class="bk-tw">負って</strong>しまい、三日間会社を休むことになった。</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">決勝戦では、相手のチームに一点差で<strong class="bk-tw">負って</strong>しまった。</span></span></p>
 <div class="qa"><label><input type="radio" name="q_29" value="1"><span>1</span></label><label><input type="radio" name="q_29" value="2"><span>2</span></label><label><input type="radio" name="q_29" value="3"><span>3</span></label><label><input type="radio" name="q_29" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">30</strong> <strong>着々</strong><br />
-<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">ベランダが<strong class="bk-tw">着々</strong>と古くなって危険なので、修理を決めた。</span></span><br />
-<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">ゲームに夢中になっていたら、時間が<strong class="bk-tw">着々</strong>とたっていた。</span></span><br />
-<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">来週のパーティーの準備は<strong class="bk-tw">着々</strong>と進んでいるようだ。</span></span><br />
-<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">夕方になって、外は<strong class="bk-tw">着々</strong>と涼しくなってきている。</span></span></p>
+<p><strong class="bk-qn">30</strong> <strong>共感</strong><br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">兄と私は性格が違うが、好きな食べ物は<strong class="bk-tw">共感</strong>している。</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">この部屋は、兄と弟が二人で<strong class="bk-tw">共感</strong>して使っています。</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">友人の話を聞いて、その考え方に深く<strong class="bk-tw">共感</strong>した。</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">冷たい水に手を入れたら、指先にぴりっとした<strong class="bk-tw">共感</strong>があった。</span></span></p>
 <div class="qa"><label><input type="radio" name="q_30" value="1"><span>1</span></label><label><input type="radio" name="q_30" value="2"><span>2</span></label><label><input type="radio" name="q_30" value="3"><span>3</span></label><label><input type="radio" name="q_30" value="4"><span>4</span></label></div>
 <h1 class="bk-part">【文法】</h1>
 <h2 class="bk-mondai"><span class="bk-mn">問題7</span> <span class="bk-mi">次の文の（　）に入れるのに最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
-<p><strong class="bk-qn">31</strong> 卓球クラブの山谷さんは大きな大会で何度も優勝しているのに、「私（　）まだまだですよ。」といつも言っている。<br />
-<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">まで</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">さえ</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">なんか</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">ばかり</span></span></span></p>
+<p><strong class="bk-qn">31</strong> 駅で偶然友人に会い、家まで車で送ってもらえたので、雨の中を歩か（　）。<br />
+<span class="bk-opts bk-c2"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">ずにはいられなかった</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">ずに済んだ</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">ざるを得なかった</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">ずじまいだった</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_31" value="1"><span>1</span></label><label><input type="radio" name="q_31" value="2"><span>2</span></label><label><input type="radio" name="q_31" value="3"><span>3</span></label><label><input type="radio" name="q_31" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">32</strong> 携帯電話を一人一台持つのは当たり前と言われる現代で、私のように携帯電話なしで生活している人は（　）いるのだろうか。<br />
-<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">どうも</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">どれほど</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">どうしても</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">どんなに</span></span></span></p>
+<p><strong class="bk-qn">32</strong> 兄の部屋は物が多すぎて、部屋（　）物置と呼んだほうが近い。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">にしては</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">にかわって</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">というより</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">はおろか</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_32" value="1"><span>1</span></label><label><input type="radio" name="q_32" value="2"><span>2</span></label><label><input type="radio" name="q_32" value="3"><span>3</span></label><label><input type="radio" name="q_32" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">33</strong> 花山市では、きゅうりやトマト、なす（　）夏の野菜が多く生産されている。<br />
-<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">とする</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">に関する</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">といった</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">に沿った</span></span></span></p>
+<p><strong class="bk-qn">33</strong> 試験の結果が気になる（　）、ゆうべはほとんど眠れなかった。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">次第で</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">あまり</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">くせに</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">ものの</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_33" value="1"><span>1</span></label><label><input type="radio" name="q_33" value="2"><span>2</span></label><label><input type="radio" name="q_33" value="3"><span>3</span></label><label><input type="radio" name="q_33" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">34</strong> 彼とは数年前に先輩の結婚式で（　）、ずっと会っていない。<br />
-<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">会ったきり</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">会ったばかりか</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">会っただけに</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">会ったところ</span></span></span></p>
+<p><strong class="bk-qn">34</strong> （市のホームページで）<br />
+市民の皆様からの多くのご要望（　）、来月から中央図書館の開館時間を午後八時まで延長いたします。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">に応えて</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">に比べて</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">に先立って</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">にわたって</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_34" value="1"><span>1</span></label><label><input type="radio" name="q_34" value="2"><span>2</span></label><label><input type="radio" name="q_34" value="3"><span>3</span></label><label><input type="radio" name="q_34" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">35</strong> 近所に子供向けのダンススクールができるらしいので、オープンしたら、娘を体験レッスンに（　）と思っている。<br />
-<span class="bk-opts bk-c2"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">参加してみようか</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">参加させてみようか</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">参加してみてよかった</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">参加させてみてよかった</span></span></span></p>
+<p><strong class="bk-qn">35</strong> （会社で）<br />
+A「来週の会議の資料、もうできた？」<br />
+B「今ちょうど作っている（　）よ。あと一時間ほど待ってくれる？」<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">きりだ</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">ことだ</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">最中だ</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">しまつだ</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_35" value="1"><span>1</span></label><label><input type="radio" name="q_35" value="2"><span>2</span></label><label><input type="radio" name="q_35" value="3"><span>3</span></label><label><input type="radio" name="q_35" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">36</strong> （カメラ屋で）<br />
-客「カメラを海に落としてしまって、電源が入らないんです。中に水が入ってしまったようなのですが…。」<br />
-店員「海水が入った（　）、修理は難しいかもしれませんが、一応見てみますね。」<br />
-<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">のであれば</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">ことであれば</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">のであって</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">ことであって</span></span></span></p>
+<p><strong class="bk-qn">36</strong> 子どものころは、毎日一時間ずつ、母にピアノの練習を（　）が、大人になった今では、そのことに感謝している。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">させた</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">させてあげた</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">させてくれた</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">させられた</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_36" value="1"><span>1</span></label><label><input type="radio" name="q_36" value="2"><span>2</span></label><label><input type="radio" name="q_36" value="3"><span>3</span></label><label><input type="radio" name="q_36" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">37</strong> 母 「引っ越しまでまだ時間があるけど、直前になって慌てないように、（　）荷物の整理を進めておいてね。」<br />
-息子「うん、分かった。」<br />
-<span class="bk-opts bk-c2"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">少しだけでいいのに</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">少しだけならよくても</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">少しずつでいいから</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">少しずつならよく</span></span></span></p>
+<p><strong class="bk-qn">37</strong> 本日は開店十周年を記念して、先着五十名のお客様（　）、特製の買い物袋を差し上げます。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">に限り</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">に際して</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">を通じて</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">をはじめ</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_37" value="1"><span>1</span></label><label><input type="radio" name="q_37" value="2"><span>2</span></label><label><input type="radio" name="q_37" value="3"><span>3</span></label><label><input type="radio" name="q_37" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">38</strong> 1896年の第1回オリンピックに参加した国と地域の数は14だったが、2004年には200を超える（　）。<br />
-<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">べきだった</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">つもりだった</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">ほかなかった</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">までになった</span></span></span></p>
+<p><strong class="bk-qn">38</strong> （会社で）<br />
+取引先の人「こちらが、新しい商品のカタログです。」<br />
+社員「ありがとうございます。さっそく（　）。」<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">ご覧になります</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">拝見します</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">拝見なさいます</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">お目にかかります</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_38" value="1"><span>1</span></label><label><input type="radio" name="q_38" value="2"><span>2</span></label><label><input type="radio" name="q_38" value="3"><span>3</span></label><label><input type="radio" name="q_38" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">39</strong> チームでの仕事をスムーズに進めるには、メンバー同士の十分なコミュニケーション（　）。<br />
-<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">にすぎない</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">が欠かせない</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">のおかげだ</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">とのことだ</span></span></span></p>
+<p><strong class="bk-qn">39</strong> さっき田中さんから電話があって、事故で電車が止まっているため、会議には三十分ほど遅れる（　）。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">ことにしている</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">ようになる</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">ものとする</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">とのことだ</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_39" value="1"><span>1</span></label><label><input type="radio" name="q_39" value="2"><span>2</span></label><label><input type="radio" name="q_39" value="3"><span>3</span></label><label><input type="radio" name="q_39" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">40</strong> 昨日、新しくできた遊園地に行った。電車より車のほうが早いだろうと思って車で行ったら、ひどい渋滞でかえって時間がかかってしまった。やはり電車で（　）。<br />
-<span class="bk-opts bk-c2"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">行けばよかった</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">行くはずだった</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">行かなくて済んだ</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">行きたくてしかたがなかった</span></span></span></p>
+<p><strong class="bk-qn">40</strong> 入院中の祖父は、味が薄いだの量が少ない（　）と、病院の食事に文句ばかり言っている。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">にしろ</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">といい</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">だの</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">につけ</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_40" value="1"><span>1</span></label><label><input type="radio" name="q_40" value="2"><span>2</span></label><label><input type="radio" name="q_40" value="3"><span>3</span></label><label><input type="radio" name="q_40" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">41</strong> 往復2時間の通勤を週に5日、40年間続けたとすると、通勤時間は約2万時間で、2年以上の時間を通勤に使う（　）。<br />
-<span class="bk-opts bk-c2"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">ということにする</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">ということにしている</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">ということになる</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">ということになっている</span></span></span></p>
+<p><strong class="bk-qn">41</strong> 相手を本当に信頼しているから（　）、厳しいことも言えるのだ。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">こそ</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">さえ</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">でも</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">しか</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_41" value="1"><span>1</span></label><label><input type="radio" name="q_41" value="2"><span>2</span></label><label><input type="radio" name="q_41" value="3"><span>3</span></label><label><input type="radio" name="q_41" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">42</strong> （電話で）<br />
-A「お電話ありがとうございます。クロカワ建設営業課でございます。」<br />
-B「高橋さんはいらっしゃいますか。」<br />
-A「失礼ですが、お名前を（　）。」<br />
-<span class="bk-opts bk-c2"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">伺ったらいかがでしょうか</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">伺ってもよろしいでしょうか</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">お伝えしたらいかがでしょうか</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">お伝えしてもよろしいでしょうか</span></span></span></p>
+<p><strong class="bk-qn">42</strong> （家で）<br />
+母「あら、出かけるの？」<br />
+子「うん、郵便局。荷物を出しに行く（　）、駅前の本屋で注文しておいた本を受け取ってくるよ。」<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">ついでに</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">とたんに</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">うえで</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">あげく</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_42" value="1"><span>1</span></label><label><input type="radio" name="q_42" value="2"><span>2</span></label><label><input type="radio" name="q_42" value="3"><span>3</span></label><label><input type="radio" name="q_42" value="4"><span>4</span></label></div>
 <h2 class="bk-mondai"><span class="bk-mn">問題8</span> <span class="bk-mi">次の文の ★ に入る最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
-<p><strong class="bk-qn">43</strong> 「さわら」という魚は、漢字の「鰆」と書く＿＿ ★ ＿＿ ＿＿魚の一つです。<br />
-<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">ように</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">わかる</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">ことから</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">春を代表する</span></span></span></p>
+<p><strong class="bk-qn">43</strong> （友人と）<br />
+A「隣に引っ越してきた人、どこから来たんだろうね。」<br />
+B「あいさつに来たときの＿＿ ＿＿ ★ ＿＿らしいよ。」<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">からすると</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">出身</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">話し方</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">西のほうの</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_43" value="1"><span>1</span></label><label><input type="radio" name="q_43" value="2"><span>2</span></label><label><input type="radio" name="q_43" value="3"><span>3</span></label><label><input type="radio" name="q_43" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">44</strong> 会議での西山さんのプレゼンは、普段はなかなか＿＿ ＿＿ ★ ＿＿素晴らしかった。<br />
-<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">ぐらい</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">課長が</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">褒める</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">褒めることがない</span></span></span></p>
+<p><strong class="bk-qn">44</strong> （友人と）<br />
+A「暑いね。お昼、何にする？」<br />
+B「こんな日は、＿＿ ＿＿ ★ ＿＿よ。」<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">そば屋の</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">限る</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">冷たいざるそばに</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">近所の</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_44" value="1"><span>1</span></label><label><input type="radio" name="q_44" value="2"><span>2</span></label><label><input type="radio" name="q_44" value="3"><span>3</span></label><label><input type="radio" name="q_44" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">45</strong> 同じ気温＿＿ ＿＿ ★ ＿＿は大きく変わる。<br />
-<span class="bk-opts bk-c2"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">感じ方</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">でも</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">温度や風の強さなど</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">によって</span></span></span></p>
+<p><strong class="bk-qn">45</strong> 駅から歩いて五分のこの公園では、＿＿ ＿＿ ★ ＿＿散歩する人の姿が見られる。<br />
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">日も</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">雨の</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">もとより</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">週末は</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_45" value="1"><span>1</span></label><label><input type="radio" name="q_45" value="2"><span>2</span></label><label><input type="radio" name="q_45" value="3"><span>3</span></label><label><input type="radio" name="q_45" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">46</strong> 「山川大学アニメ研究会」は＿＿ ＿＿ ★ 、＿＿できた団体だ。<br />
-<span class="bk-opts bk-c2"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">学生が</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">集まって</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">アニメが</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">好きでたまらないという</span></span></span></p>
+<p><strong class="bk-qn">46</strong> （ニュースで）<br />
+この町では今、住民の意見が、＿＿ ＿＿ ★ ＿＿。<br />
+<span class="bk-opts bk-c2"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">をめぐって</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">名前</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">二つに分かれている</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">来年できる駅の</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_46" value="1"><span>1</span></label><label><input type="radio" name="q_46" value="2"><span>2</span></label><label><input type="radio" name="q_46" value="3"><span>3</span></label><label><input type="radio" name="q_46" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">47</strong> 会社の今井先輩は、自分はミスが多いといつも言っているが、＿＿ ＿＿ ★ ＿＿ように見える。<br />
-<span class="bk-opts bk-c2"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">新人で</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">何でも完璧にできている</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">私からすると</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">わからないことばかりの</span></span></span></p>
+<p><strong class="bk-qn">47</strong> （説明会の案内）<br />
+説明会は、本社ビル三階の大会議室で行います。＿＿ ＿＿ ★ ＿＿ください。<br />
+<span class="bk-opts bk-c2"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">ございませんので</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">なお、</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">電車やバスをご利用</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">駐車場は</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_47" value="1"><span>1</span></label><label><input type="radio" name="q_47" value="2"><span>2</span></label><label><input type="radio" name="q_47" value="3"><span>3</span></label><label><input type="radio" name="q_47" value="4"><span>4</span></label></div>
 <h2 class="bk-mondai"><span class="bk-mn">問題9</span> <span class="bk-mi">次の文章を読んで、文章全体の内容を考えて、48から51の中に入る最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
 <div class="passage-box">
-<p>以下は、留学生がスピーチのために書いた文章である。</p>
-<p>紅葉の異変</p>
-<p>サリム・ソフィア</p>
-<p>私は日本の秋の景色が好きです。秋になって紅葉が始まり、緑だった葉が黄色やオレンジ、赤に変わると、とてもきれいです。秋の紅葉は、日本の四季の変化を感じさせてくれるものです。</p>
-<p>（　48　） ですが、先日テレビで、紅葉がピークを迎える時期が年々遅くなっているというニュースを見ました。中には、1月になってからピークを迎えたところもあるそうで、驚きました。温暖化によって平均気温が上昇していることが大きな原因だそうです。私は、夏が過ぎて気温が下がってくれば、必ず紅葉が始まると思っていました。 （　49　）、そうではありませんでした。紅葉には、条件となる気温の変化があります。</p>
-<p>葉の変色が始まるのは、1日の最低気温が大体8度以下になってからです。秋になっても、最低気温が一定の気温まで下がらなければ、紅葉は（　50　）。その後、さらに寒くなり、5〜6度まで下がると、紅葉は一気に進みます。また、5度以下の日が続くと、最も美しい紅葉が見られると言われています。</p>
-<p>紅葉に起きている異変を知り、このまま温暖化が進むと、日本の秋の景色が変わってしまう可能性もあるのではないかと思いました。もしかしたら、紅葉自体が見られなくなる日も来るかもしれません。紅葉を通して、温暖化が身近な問題であることをより強く（　51　）。</p>
+<p>家が鳴る音</p>
+<p>　木で建てた家に住んでいると、夜、柱や天井のあたりから「パキッ」という乾いた音が聞こえることがある。一回で終わることもあれば、間を置いて二、三度続くこともある。昼間は、話し声や生活の物音に紛れて気づきにくい。（　48　）、家族が寝静まったあとの部屋では、小さな音でも（　49　）。この音は、古い家よりも、建ってから一、二年の新しい家で多く聞かれる。季節によっても回数が違い、空気の乾く冬に特に多い。</p>
+<p>　建てたばかりの家の柱や板には、木が山で育っていたころの水分が、まだいくらか残っている。木は、水分が抜けるにつれて、少しずつ縮もうとする。けれども、柱と板、板と板は、金物や組み方でしっかりつながれている。縮もうとする木は、つながった相手に引き止められ、その間に、つなぎ目には力が少しずつたまっていく。力がある大きさを超えると、つなぎ目がほんのわずかにずれて、たまっていた力が一度に抜ける。あの乾いた音は、そのときに出る（　50　）。</p>
+<p>　冬に音が増えるのも、同じ仕組みによる。暖房で部屋の空気が乾くと、木から抜けていく水分が増え、縮もうとする力も強まる。春になって空気が湿ってくると、音はまた少なくなる。古い家で音が少ないことも、これで説明がつく。何年も人が暮らすうちに、木の水分は部屋の空気とつり合うようになり、木はそれ以上ほとんど縮まなくなる。つなぎ目には、もう、ずれを生むほどの（　51　）。</p>
 </div>
 <p><strong class="bk-qn">48</strong><br />
-<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">そこの紅葉</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">そんな紅葉</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">そちら</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">紅葉</span></span></span></p>
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">そのうえ</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">一方</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">すると</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">要するに</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_48" value="1"><span>1</span></label><label><input type="radio" name="q_48" value="2"><span>2</span></label><label><input type="radio" name="q_48" value="3"><span>3</span></label><label><input type="radio" name="q_48" value="4"><span>4</span></label></div>
 <p><strong class="bk-qn">49</strong><br />
-<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">結局</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">確かに</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">しかし</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">つまり</span></span></span></p>
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">口に合う</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">目を引く</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">耳につく</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">胸を打つ</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_49" value="1"><span>1</span></label><label><input type="radio" name="q_49" value="2"><span>2</span></label><label><input type="radio" name="q_49" value="3"><span>3</span></label><label><input type="radio" name="q_49" value="4"><span>4</span></label></div>
 <p><strong class="bk-qn">50</strong><br />
-<span class="bk-opts bk-c2"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">始まらないのです</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">始まらないためです</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">始まらないのでしょうか</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">始まらないためでしょうか</span></span></span></p>
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">わけだ</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">わけがない</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">わけにはいかない</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">わけではない</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_50" value="1"><span>1</span></label><label><input type="radio" name="q_50" value="2"><span>2</span></label><label><input type="radio" name="q_50" value="3"><span>3</span></label><label><input type="radio" name="q_50" value="4"><span>4</span></label></div>
 <p><strong class="bk-qn">51</strong><br />
-<span class="bk-opts bk-c2"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">感じているからだと思います</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">感じられるところだと思います</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">感じさせることができました</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">感じるようになりました</span></span></span></p>
+<span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">重さがかからない</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">湿気が入らない</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">すきまがない</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">力がたまらない</span></span></span></p>
 <div class="qa"><label><input type="radio" name="q_51" value="1"><span>1</span></label><label><input type="radio" name="q_51" value="2"><span>2</span></label><label><input type="radio" name="q_51" value="3"><span>3</span></label><label><input type="radio" name="q_51" value="4"><span>4</span></label></div>
 <h1 class="bk-part bk-brk">【読解】</h1>
 <h2 class="bk-mondai"><span class="bk-mn">問題10</span> <span class="bk-mi">次の(1)から(5)の文章を読んで、後の問いに対する答えとして最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
 <h3>(1)</h3>
 <div class="passage-box">
-<p>自分の言葉は自分の頭の中にしかなく、相手の言葉は相手の頭の中にしかありません。抽象的な言葉の場合には、まったく同じ意味で使用していることのほうが少ないと言えるでしょう。したがって、議論をする際には、言葉の定義づけ（注）が重要になってきます。相手がどういう意味でその言葉を使用しているのか、自分と同じ意味で使用しているのかを確認することは大切なことです。これは、論理的に会話をするうえでの大前提となるものです。</p>
-<p class="vocab-notes">（注）定義づけ：ここでは、意味を決めること</p>
+<p>こだま染め工房　ご担当者様</p>
+<p>　初めてご連絡いたします。さつき工業広報課の林と申します。<br />
+　弊社は来年3月に創立50年を迎えます。その記念品として、昔ながらの手染めで作られる御社の手ぬぐいを、120本お願いしたいと考えております。<br />
+　御社のホームページには、名前を入れる手ぬぐいは一色で染めると書かれていました。社名をこい青、梅の花の模様を赤で入れたいのですが、二つの色で染めていただくことはできますでしょうか。また、その場合でも、3月1日の記念式典に間に合うかどうかを、あわせて教えていただけますと助かります。<br />
+　よろしくお願いいたします。</p>
+<p>さつき工業　広報課　林</p>
 </div>
-<p><strong class="bk-qn">52</strong> 筆者によると、論理的な会話をするのに必要なことは何か。<br />
-<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">抽象的な言葉をできるだけ使用しないようにする。</span></span><br />
-<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">抽象的な言葉を、正しい意味かどうかを確認してから使用する。</span></span><br />
-<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">同じ言葉を、相手と自分が同じ意味で使用しているかを確認する。</span></span><br />
-<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">相手の知らない言葉は、自分がどういう意味で使用しているかを説明する。</span></span></p>
+<p><strong class="bk-qn">52</strong> このメールで問い合わせていることは何か。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">二つの色で染めてもらえるか、その場合も式典の日までにできるか</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">社名と梅の花の模様を、どちらもこい青一色で染めてもらえるか</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">記念品にする手ぬぐいを、120本より多く作ってもらえるか</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">一色で染めた場合の料金を、注文の前に教えてもらえるか</span></span></p>
 <div class="qa"><label><input type="radio" name="q_52" value="1"><span>1</span></label><label><input type="radio" name="q_52" value="2"><span>2</span></label><label><input type="radio" name="q_52" value="3"><span>3</span></label><label><input type="radio" name="q_52" value="4"><span>4</span></label></div>
 <h3>(2)</h3>
 <div class="passage-box">
-<p>以下は、ある鉄道会社がホームページに掲載したお知らせである。</p>
-<p>トップ＞お知らせ＞定期システム点検実施のお知らせ</p>
-<p>6月の定期システム点検実施のお知らせ</p>
-<p>いつも北坂鉄道をご利用いただきまして、ありがとうございます。</p>
-<p>当社では情報管理システムの安全性向上のため、第4土曜日の夜間にシステム点検を実施しております。</p>
-<p>今月の作業は6月23日（土）午前2時から4時までとなります。この間は、予約システムを休止いたします。インターネットでの特急券予約がご利用いただけなくなりますので、ご注意ください。なお、ホームページ内の時刻表や運賃表は通常どおり閲覧が可能です。</p>
-<p>ご不便をおかけいたしますが、ご理解くださいますようお願い申し上げます。</p>
-<p>北坂鉄道株式会社</p>
+<p>　四十歳を過ぎてから、近所のプールで泳ぎを習い直している。初めのころは、行くたびに、息が苦しくなるまで休まずに泳いでいた。壁に着くとしばらく動けず、体は重く、腕を回すたびに水を飲んだ。<br />
+　半年ほどして、やり方を変えた。今は、プールに入ると、まず十五分ほど壁につかまって顔を水につけ、鼻からゆっくり息を吐く。それを繰り返してから泳ぎ始めると、腕を回しても水を飲まなくなり、手足も力まず（注）に動くようになった。<br />
+　これから泳ぎを覚えようとする大人には、最初の何回かを、水の中で息を吐く練習に使ってみてほしい。</p>
+<p class="vocab-notes">（注）力む：体に、要る以上の力を入れる</p>
 </div>
-<p><strong class="bk-qn">53</strong> このお知らせで伝えたいことは何か。<br />
-<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">6月23日の午前2時から4時までは、インターネットで特急券が予約できない。</span></span><br />
-<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">6月23日の午前2時から4時までは、ホームページで時刻表や運賃表が見られない。</span></span><br />
-<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">6月23日の午前4時以降インターネットで特急券が予約できるようになる。</span></span><br />
-<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">6月23日の午前4時以降、ホームページで時刻表や運賃表が見られるようになる。</span></span></p>
+<p><strong class="bk-qn">53</strong> 筆者の考えに合うのはどれか。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">泳ぎを習う大人は、息が苦しくなるまで泳いで体力をつけるとよい</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">泳ぐ前には、壁につかまって手足を大きく動かしておくとよい</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">泳ぎを習う大人は、初めに水中で息を出すことに慣れるとよい</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">水を飲まないためには、顔を水につけずに泳ぐ練習をするとよい</span></span></p>
 <div class="qa"><label><input type="radio" name="q_53" value="1"><span>1</span></label><label><input type="radio" name="q_53" value="2"><span>2</span></label><label><input type="radio" name="q_53" value="3"><span>3</span></label><label><input type="radio" name="q_53" value="4"><span>4</span></label></div>
 <h3>(3)</h3>
 <div class="passage-box">
-<p>新緑の時期に森を歩くと、地面に小さなロールキャベツ<span class="bk-chu">（注1）</span>状の物体が落ちているのを見かけます。しばしば一か所に大量に落ちていて、とてもよく目立ちます。これはオトシブミという小さな甲虫<span class="bk-chu">（注2）</span>の仲間が、自分の幼虫のためにつくったものです。この虫のメスは、数分の間に産んだ卵を木の葉で丁寧に包んでから地面に落とす習性<span class="bk-chu">（注3）</span>をもちます。中で孵った<span class="bk-chu">（注4）</span>幼虫は、内側からこの巻いた葉を食べて成長します。幼虫にとっては、この葉巻きは隠れ家であるとともに食料なわけです。</p>
-<p class="vocab-notes">（注1）ロールキャベツ：キャベツで肉を包んだ料理<br />
-（注2）甲虫：虫の一種<br />
-（注3）習性：ここでは、特徴的な性質<br />
-（注4）孵った：ここでは、卵から生まれた</p>
+<p>　人に何かを手伝ってもらったとき、私は以前、その場でていねいにお礼を言って終わりにしていた。<br />
+　三年ほど前から、日をおいて、もう一度お礼を言うようにしている。結婚式のスピーチの原稿をいっしょに考えてくれた友人には、式のひと月後に電話をかけ、「最後の一文で、花むこ（注）のおじいさんが笑ってくれたよ」と伝えた。友人は少し黙ってから、「そう、よかった」とだけ言った。<br />
+　最初のお礼を言うとき、私はまだ、その手助けが何につながるのかを知らない。あとから届くお礼は、手を貸した人のもとへ、その手助けの続きを運んでいく。</p>
+<p class="vocab-notes">（注）花むこ：結婚式で、結婚する男の人</p>
 </div>
-<p><strong class="bk-qn">54</strong> オトシブミという虫について、筆者はどのように述べているか。<br />
-<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">食料を木の葉で包んで落とし、幼虫はそれを見つけて食べる。</span></span><br />
-<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">木の葉と卵を落とし、生まれた幼虫は食料をその葉で巻いて隠す。</span></span><br />
-<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">卵を木の葉で包んで落とし、生まれた幼虫はその中でその葉を食べる。</span></span><br />
-<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">落ちている木の葉に卵を産んで包み、幼虫はその中で生まれて育つ。</span></span></p>
+<p><strong class="bk-qn">54</strong> 筆者は、二度目のお礼をどのようなものだと考えているか。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">その場で言えなかったお礼を、あとでていねいに言い直すもの</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">手伝ってくれた相手に、次の頼みごとをしやすくするためのもの</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">相手が忘れないように、同じお礼の言葉を繰り返すもの</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">手を貸した人に、その助けがのちにどうなったかを伝えるもの</span></span></p>
 <div class="qa"><label><input type="radio" name="q_54" value="1"><span>1</span></label><label><input type="radio" name="q_54" value="2"><span>2</span></label><label><input type="radio" name="q_54" value="3"><span>3</span></label><label><input type="radio" name="q_54" value="4"><span>4</span></label></div>
 <h3>(4)</h3>
 <div class="passage-box">
-<p>以下は、ある会社に届いたメールである。</p>
-<p>コイノ株式会社<br />
-営業部　島川英一様</p>
-<p>お世話になっております。JC文具の池西です。</p>
-<p>昨日、商品「軽量ホチキスcx35」の見本が2個届きました。機能性とシンプルなデザインは社内で評価が高く、取り扱い商品に加える方向で検討を進めております。</p>
-<p>同封されていた最新のカタログによると、来月から新色として3色が追加で発売され、全部で5色になるとのことですので、新色の見本も送付していただけないでしょうか。代金が必要な場合は、お支払いします。</p>
-<p>取り扱うことが正式に決定しましたら、まずは5色を20個ずつ注文する予定です。</p>
-<p>よろしくお願いいたします。</p>
-<p>JC文具<br />
-池西秋子　ikenishi_a@jcbungu.co.jp</p>
+<p>　仕事の予定を立てるとき、私たちは作業ごとに、かかる時間を見積もります。資料を作るのに二日、表を直すのに半日、というふうにです。<br />
+　この見積もりに入りやすいのは、自分の手を動かしている時間です。それに比べると、上司の内容確認や取引先からの数字を待つ時間は、その間、手元で何も起こらないため、見積もりに入りにくくなります。待つ時間は、一回ごとには半日ほどでも、一つの仕事の中で何度も繰り返されます。三度待てば、それだけで一日半です。<br />
+　予定がずれ込む（注）とき、その遅れの多くを占めているのは、この待つ時間です。</p>
+<p class="vocab-notes">（注）ずれ込む：予定していた時期より後になる</p>
 </div>
-<p><strong class="bk-qn">55</strong> このメールの用件は何か。<br />
-<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">見本として5色すべての商品を送ってほしい。</span></span><br />
-<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">見本として新色の3個を追加で送ってほしい。</span></span><br />
-<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">見本の代金としていくら支払えばいいか教えてほしい。</span></span><br />
-<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">商品5色を20個ずつ注文できるかどうか教えてほしい。</span></span></p>
+<p><strong class="bk-qn">55</strong> 筆者の説明に合うのはどれか。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">手を動かす作業は、見積もった時間より長くかかることが多い</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">待つ時間は一回ごとが長いので、見積もりに多めに入れておくべきだ</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">上司の確認は、作業を始める前に受けておくほうが早く終わる</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">待つ時間は何も起きないので、予定に数えられにくい</span></span></p>
 <div class="qa"><label><input type="radio" name="q_55" value="1"><span>1</span></label><label><input type="radio" name="q_55" value="2"><span>2</span></label><label><input type="radio" name="q_55" value="3"><span>3</span></label><label><input type="radio" name="q_55" value="4"><span>4</span></label></div>
 <h3>(5)</h3>
 <div class="passage-box">
-<p>競争や出世にはあまり関係のない、たとえばだれかを支えたり育んだり<span class="bk-chu">（注1）</span>する仕事に喜びを感じる人もいるでしょう。仕事はそこそこに<span class="bk-chu">（注2）</span>、趣味に生きることを楽しむ人もいるでしょう。たとえ、受験や就職、あるいは出世などの過酷な<span class="bk-chu">（注3）</span>競争ゲームのただ中<span class="bk-chu">（注4）</span>にあったとしても、そしてそれにある時、敗れてしまったとしても、わたしたちの人生の選択肢はそれだけではないし、「それで終わり」というわけでもありません。視点を変えれば、現代社会にはさまざまな生き方の世界が広がっているのです。</p>
-<p class="vocab-notes">（注1）育む：育てる<br />
-（注2）そこそこに：適度に<br />
-（注3）過酷な：非常に厳しい<br />
-（注4）ただ中：最中</p>
+<p>保護者の皆様</p>
+<p><strong>教科書を教室に置いて帰れるようになります</strong></p>
+<p>　通学かばんが重すぎるという声を多くいただいたため、12月1日から、一部の教科書を教室のロッカーに置いて帰ってよいことにします。<br />
+　ただし、その日の宿題に使う教科書は、必ず持ち帰らせてください。どの教科で宿題が出るかは、担任が毎日、帰りの会で伝え、黒板の右すみにも書いておきます。教科書を学校に置いてきてしまっても、夕方に取りに戻ることはできません。ご家庭でも、朝のうちにひと声かけていただけますよう、お願いします。</p>
+<p>はるの市立すずかけ中学校</p>
 </div>
-<p><strong class="bk-qn">56</strong> 筆者の考えに合うのはどれか。<br />
-<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">他人と競争せずに、自分の生き方を見つければいい。</span></span><br />
-<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">人生の選択肢は多様であり、生き方は一つではない。</span></span><br />
-<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">人生の選択肢が多ければ多いほど、世界が広がっていく。</span></span><br />
-<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">仕事や趣味を通して、さまざまな生き方を知ることができる。</span></span></p>
+<p><strong class="bk-qn">56</strong> このお知らせで伝えたいことは何か。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">どの教科書を置いて帰るかは、それぞれの家庭で決めてよいということ</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">宿題の出る教科を、毎日手紙に書いて家に知らせるということ</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">置いてきた教科書は、夕方に取りに来てほしいということ</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">置いて帰れるが、宿題に使う分は持ち帰らせてほしいということ</span></span></p>
 <div class="qa"><label><input type="radio" name="q_56" value="1"><span>1</span></label><label><input type="radio" name="q_56" value="2"><span>2</span></label><label><input type="radio" name="q_56" value="3"><span>3</span></label><label><input type="radio" name="q_56" value="4"><span>4</span></label></div>
 <h2 class="bk-mondai"><span class="bk-mn">問題11</span> <span class="bk-mi">次の(1)から(4)の文章を読んで、後の問いに対する答えとして最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
 <h3>(1)</h3>
 <div class="passage-box">
-<p>ほとんどの人が、スマホやタブレット<span class="bk-chu">（注1）</span>を通して、大量のSNSやネットニュース<span class="bk-chu">（注2）</span>を毎日見ていることでしょう。多くの人がその膨大な情報を読むことあるいは見ることに、かなりの時間を費やして<span class="bk-chu">（注3）</span>いて、ネット上の情報に追われている印象すら受けます。その結果、じっくり考える時間がどんどん少なくなっているようにも感じられます。</p>
-<p>また、大量の情報がネット上に流されるようになった結果、自分に都合の良い情報にしか接しない人が増えてきています。技術革新<span class="bk-chu">（注4）</span>のおかげではあるのですが、SNSやネットニュースでは、その人の履歴<span class="bk-chu">（注5）</span>から判断して、その人が関心を持っていると思われる情報やニュースが目につくところに流れるような工夫がされています。</p>
-<p><strong class="bk-tw">このような工夫</strong>はとても便利なことで、それによって時間が節約できたりする面は確かにあります。（中略）</p>
-<p>しかし、人々が見たいものだけを見て、信じている情報だけに接すると、発想が固定化してしまい、新しい進化が生まれにくくなってしまいます。また、思想的にも偏りのある考えが生まれやすくなってしまいます。</p>
-<p>そう考えると、この大量情報社会においては、いかに<span class="bk-chu">（注6）</span>うまく情報を処理していくかがとても大事なことがわかります。また、大量の情報を、一部だけ最初から抜き出して把握する<span class="bk-chu">（注7）</span>のではなく、偏りがない形で、大量に処理することも必要です。</p>
-<p class="vocab-notes">（注1）スマホやタブレット：コンピューターの機能を持った小型の電子機器類<br />
-（注2）SNSやネットニュース：ここでは、インターネット上でやり取りされる情報やニュース<br />
-（注3）費やす：使う<br />
-（注4）技術革新：技術の進歩<br />
-（注5）履歴：ここでは、インターネット上の情報の閲覧の記録<br />
-（注6）いかに：どのように<br />
-（注7）把握する：理解する</p>
+<p>　駅前の小さな雑貨店で働いて、今年で十年になる。店の入り口には、雨の日にだけ傘の棚を出し、二十本ほどを並べている。<br />
+　店主は毎晩、店を閉めたあとで、その日に売れた品の数をノートにつけている。天気を一行、書き添える<span class="bk-chu">（注1）</span>のも店主の習慣で、ノートは十年分、事務室の棚に並んでいた。昨年の冬、手の空いた<span class="bk-chu">（注2）</span>夕方に、このノートから傘の売れた数だけを拾い出し、その日の天気と並べてみた。<br />
+　雨の強さと売れた数とは、ほとんど結びついていなかった。朝から一日じゅう降り続いた日でも、傘は二、三本しか出ていない。いちばんよく売れていたのは、朝は晴れていて、昼過ぎから急に降り出した日で、多い日には棚がほとんど空になった。夕方に降り出した日も、それに近い数が売れている。<br />
+　店に立っていると、そのわけはすぐに分かる。昼過ぎに降り出した日には、駅の改札を出てきた人が空を見上げ、少し迷ってから店に駆け込んでくる。晴れた朝に、傘を持たずに家を出た人たちである。反対に、朝から降っている日の客は、入り口で傘を閉じ、しずく<span class="bk-chu">（注3）</span>を切ってから中へ入ってくる。傘の棚の前を通っても、値段を見る人はまずいない。<br />
+　朝から降る日に来る客は、自分の傘を片手に、この店の戸を開けるのだ。</p>
+<p class="vocab-notes">（注1）書き添える：あることのほかに、少し書き加える<br />
+（注2）手が空く：仕事がなくなって、ほかのことができるようになる<br />
+（注3）しずく：上から落ちてくる、水などの小さな粒</p>
 </div>
-<p><strong class="bk-qn">57</strong> <strong class="bk-tw">このような工夫</strong>とはどのようなことか。<br />
-<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">情報を要約して、短時間で大量に見られるようにすること。</span></span><br />
-<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">多くの人が関心を持っている情報を優先的に流すこと。</span></span><br />
-<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">見る人が自分では探せない情報を選んで、提供すること。</span></span><br />
-<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">見る人の興味の傾向に合わせて、情報を提供すること。</span></span></p>
+<p><strong class="bk-qn">57</strong> 筆者によると、ノートを調べて分かったことは何か。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">雨が強い日ほど、店に来る客が増えて傘がよく売れていた</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">夕方に降り出した日は、傘が売れなかった</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">晴れた朝のあとで降り出した日に、傘が多く売れていた</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">冬の雨の日には、丈夫な折りたたみの傘がよく売れていた</span></span></p>
 <div class="qa"><label><input type="radio" name="q_57" value="1"><span>1</span></label><label><input type="radio" name="q_57" value="2"><span>2</span></label><label><input type="radio" name="q_57" value="3"><span>3</span></label><label><input type="radio" name="q_57" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">58</strong> 大量情報社会について、筆者の考えに合うのはどれか。<br />
-<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">発想が固定化しないように、大量の情報を工夫して処理しなければならない。</span></span><br />
-<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">思想的に偏りのある考えでも、工夫してうまく処理しなければならない。</span></span><br />
-<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">必要な情報を選ぶために、大量の情報をうまく処理しなければならない。</span></span><br />
-<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">時間がかかっても、偏りなく大量の情報を処理しなければならない。</span></span></p>
+<p><strong class="bk-qn">58</strong> 筆者は、朝から雨の日に傘が売れないのはなぜだと考えているか。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">雨の日には、駅前を通る人の数そのものが減ってしまうから</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">客が、出かけるときから自分の傘を持っているから</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">店が傘の棚を出すのが遅く、客がそれに気づかないから</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">強い雨の日には、店の傘より丈夫な傘が選ばれるから</span></span></p>
 <div class="qa"><label><input type="radio" name="q_58" value="1"><span>1</span></label><label><input type="radio" name="q_58" value="2"><span>2</span></label><label><input type="radio" name="q_58" value="3"><span>3</span></label><label><input type="radio" name="q_58" value="4"><span>4</span></label></div>
 <h3>(2)</h3>
 <div class="passage-box">
-<p>勉強にしても、仕事にしても、その能率には必ず波があり、それがないようにみえても、波が小さいだけである。つまり、人間は機械のようにいつも同じ調子ではたらいてはいないから、1時間に50個の製品がつくれるから、10時間で500個がつくれる、という具合には計算できない。従って、脳が最も快調にはたらいているときを基準にすると、たいていのときは不調ということになってしまう。</p>
-<p>それでも、全く無計画に勉強や仕事をするわけにもゆかないので、一応はスケジュールを立てる。その際に、快調に脳がはたらいているときの能率を基準にしてスケジュールを立てれば、そのスケジュールの通りにことが進行することは絶対にないといってもいい。その度に、自分の才能に失望していれば、失望しつづけることになる。さし迫った<span class="bk-chu">（注1）</span>難しい状態では、どうしても脳がフル回転して<span class="bk-chu">（注2）</span>いるときを基準にスケジュールを組むので、たいていは不完全な形で終わってしまう。スケジュールをつくるときには、せめて中等度に脳がはたらいているときの能率を基準にする必要がある。スケジュール以上にはかどっても<span class="bk-chu">（注3）</span>誰もこまる人はいない。</p>
-<p>そして、スケジュールにこだわるよりは、脳の変動の波をできるだけ感じとり、能率が悪くても悲観<span class="bk-chu">（注4）</span>せずに、必ず上げ潮のとき<span class="bk-chu">（注5）</span>がくることを期待すればいい。そして、上げ潮のときには自分でもおどろくほどに能率が上がるので、そのときに一気に遅れをとり戻せばいいのである。</p>
-<p class="vocab-notes">（注1）さし迫った：ここでは、時間に余裕がない<br />
-（注2）フル回転する：ここでは、最もはたらく<br />
-（注3）はかどる：順調に進む<br />
-（注4）悲観する：悲しむ<br />
-（注5）上げ潮のとき：調子が上向きになるとき</p>
+<p>　人通りの減った商店街を立て直すには、閉まった店に新しい店を呼び込めばよい。多くの町がそう考え、空いた店に入る人に家賃の半分を出すといった補助を続けてきた。私の家の近くの商店街も、十年ほど前からこのやり方で、十一軒の新しい店を迎えた。<br />
+　ところが、そのうち今も店を開けているのは、三軒しかない。補助の出る三年が過ぎると、家賃を払いきれずに閉める店が続いた。客がまだ少ないのに家賃だけは毎月かかる時期を、新しい店は自分たちだけで乗り切ら<span class="bk-chu">（注1）</span>なければならなかったのである。<br />
+（中略）<br />
+　ただ、同じ十年のあいだに、補助を受けずに始まり、今も続いている店が四軒ある。どれも、古くからある店の一角<span class="bk-chu">（注2）</span>を借りて始めた店である。<br />
+　八十年続くお茶の店のすみでは、若い夫婦が焼き菓子を売っている。家賃は月々わずかで足り、店番<span class="bk-chu">（注3）</span>も二つの店で交代できる。お茶を買いに来た常連<span class="bk-chu">（注4）</span>の客が、帰りに焼き菓子を一つ買っていく。やがて、焼き菓子を目当てに来た若い客が、お茶の葉も買って帰るようになった。場所を貸した店の客が、借りた店の最初の客になってくれたのである。<br />
+　新しい店が生き残るかどうかは、最初の数年に、客を分けてくれる隣がいるかどうかで決まっていた。空いた店に新しい店を呼び込むことより、今ある店の一角を貸し出すことのほうが、商店街の明かりを長くともし<span class="bk-chu">（注5）</span>続ける力になる。</p>
+<p class="vocab-notes">（注1）乗り切る：苦しいときを、なんとか最後まで切りぬける<br />
+（注2）一角：広い場所の中の、一つのすみの部分<br />
+（注3）店番：店にいて、客の相手をしたり、品物を見張ったりすること<br />
+（注4）常連：同じ店などに、いつも来る客<br />
+（注5）ともす：明かりをつける</p>
 </div>
-<p><strong class="bk-qn">59</strong> 筆者によると、スケジュールを立てる際の注意点は何か。<br />
-<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">脳の調子がいいときを基準にしない。</span></span><br />
-<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">いつも脳が同じ調子ではたらけるようにする。</span></span><br />
-<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">能率の変化を考えすぎない。</span></span><br />
-<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">能率が悪くなったときに変更できるようにしておく。</span></span></p>
+<p><strong class="bk-qn">59</strong> 筆者によると、補助を受けて入った新しい店の多くが閉まったのはなぜか。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">補助のお金が少なく、店を開く準備が十分にできなかったから</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">古くからある店と同じ品物を売って、客を取り合ったから</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">客の少ない時期の家賃を、自分たちだけでは払い続けられなかったから</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">新しい店が入ったあとも、商店街の人通りが減り続けたから</span></span></p>
 <div class="qa"><label><input type="radio" name="q_59" value="1"><span>1</span></label><label><input type="radio" name="q_59" value="2"><span>2</span></label><label><input type="radio" name="q_59" value="3"><span>3</span></label><label><input type="radio" name="q_59" value="4"><span>4</span></label></div>
 <p><strong class="bk-qn">60</strong> 筆者の考えに合うのはどれか。<br />
-<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">能率を上げるためには、脳の状態をコントロールするといい。</span></span><br />
-<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">脳の変動の波に合わせて勉強や仕事を進められる方法を探すといい。</span></span><br />
-<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">計画の通りに行かなくても失望せずに、脳の調子が上がるのを待てばいい。</span></span><br />
-<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">計画の通りに勉強や仕事を進めるために、脳の変動の波を小さくすればいい。</span></span></p>
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">空いた店に入る人への家賃の補助は、三年より長く続けるべきである</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">新しい店は、古い店と同じ品物を扱うほうが長く続けやすい</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">古い店が場所を分け、新しい店が客をつかむまで支えるのがよい</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">商店街を立て直すには、まず人通りを増やす催しが要る</span></span></p>
 <div class="qa"><label><input type="radio" name="q_60" value="1"><span>1</span></label><label><input type="radio" name="q_60" value="2"><span>2</span></label><label><input type="radio" name="q_60" value="3"><span>3</span></label><label><input type="radio" name="q_60" value="4"><span>4</span></label></div>
 <h3>(3)</h3>
 <div class="passage-box">
-<p>お祭りの日は町の雰囲気が一変<span class="bk-chu">（注1）</span>して、ふだんひっそりとしている町並み<span class="bk-chu">（注2）</span>がいきいきとしています。そんな町の様子を「祭りがある町」として撮る。神社の境内<span class="bk-chu">（注3）</span>で行われるような祭りであれば、「神社」の風景として撮る。というふうに少し視点を周辺にずらしてみると単なる祭り写真ではない写真に出会えます。祭りの中から自分だけの祭りを探し出すことができるかどうか。写真を見た人から、こういう祭りの見方もあるんだねと言われるような写真が撮れたら「祭りの写真」ではなく<strong class="bk-tw">写真として内容のあるもの</strong>になると思います。</p>
-<p>（中略）</p>
-<p>「もう何年もかけて撮ってるんだけど、いい写真が撮れなくてね」とぼやく<span class="bk-chu">（注4）</span>人がいますが、そういう人は頭の中で思い描いた「上手い写真」の構図<span class="bk-chu">（注5）</span>から離れることができずにいて、すでにいろいろと見慣れている同じような画像を撮らされるだけだからなのです。</p>
-<p>ねらった被写体<span class="bk-chu">（注6）</span>を自分のものにするのだと独占する強引さがないと、被写体が刺激的であるほどその場にふりまわされてしまいます。祭りなら激しい動きに、絶景<span class="bk-chu">（注7）</span>なら色彩にのみこまれて被写体に撮らされているみたいになる。</p>
-<p>被写体に撮らされてしまうような写真は、結局その場の説明でしかない。表現としての写真は自分だけの写真を撮ることになるわけで、それはフィクションでもあるのですから、つねに「私はこう見た」「私はこう撮った」を撮るのです。</p>
-<p class="vocab-notes">（注1）一変する：すっかり変わる<br />
-（注2）町並み：ここでは、町の様子<br />
-（注3）境内：ここでは、敷地内<br />
-（注4）ぼやく：不満を言う<br />
-（注5）構図：画面の構成<br />
-（注6）被写体：写真に撮る対象<br />
-（注7）絶景：素晴らしい景色</p>
+<p>　旅に出るとき、私は長いあいだ、大きなかばんに荷物を詰められるだけ詰めて出かけていました。薬、替えの靴、爪切り。向こうで困ったときのためにと、思いつく物を足していくので、二泊の旅でも、かばんは閉めるのに苦労するほどふくらみました。<br />
+　五年前、旅先の駅の長い階段で、重いかばんを抱えて立ち止まってしまったことがあります。それからは、肩にかけられる小さなかばん一つで出かけるようにしました。着替えと財布と携帯電話のほかは、足りなくなったら向こうで何とかすることにしました。<br />
+　最初の旅で、さっそく爪切りを忘れたことに気づきました。宿の人に尋ねると、「帳場<span class="bk-chu">（注1）</span>の引き出しにありますよ」と貸してくれて、そのまま、近くの漁港で毎朝、開かれる市の話を聞かせてくれました。<br />
+　別の町では、靴ずれ<span class="bk-chu">（注2）</span>がひどくなり、薬屋の場所を八百屋のおかみさん<span class="bk-chu">（注3）</span>に聞きました。すると、自分の家の救急箱からばんそうこう<span class="bk-chu">（注4）</span>を二枚出してくれて、店先で十分ほど、その町の秋の祭りの話になりました。<br />
+　大きなかばんで旅をしていたころは、宿と名所のあいだを行き来するだけで、町の人と話すのは、切符を買うときくらいでした。困ることのないように備えていたので、人に何かを尋ねる理由が、初めから一つもなかったのです。<br />
+　今の旅では、足りない物が一つあるたびに、町の人に声をかける用事が一つ増えます。</p>
+<p class="vocab-notes">（注1）帳場：旅館などで、客の受付や会計をする所<br />
+（注2）靴ずれ：合わない靴で、足の皮がすれて痛むこと<br />
+（注3）おかみさん：店などの主人の妻。また、店を切り回す女の人<br />
+（注4）ばんそうこう：小さな傷をおおうために、はりつける布や紙</p>
 </div>
-<p><strong class="bk-qn">61</strong> <strong class="bk-tw">写真として内容のあるもの</strong>とはどのようなものか。<br />
-<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">祭りの風景から町の人の様子が分かるような写真。</span></span><br />
-<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">祭りに対する撮る人自身の見方が感じられる写真。</span></span><br />
-<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">見る人にとって祭り独特の魅力が感じられる写真。</span></span><br />
-<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">撮る人自身の祭りに対する情熱が伝わってくる写真。</span></span></p>
+<p><strong class="bk-qn">61</strong> 筆者によると、小さなかばんで旅をするようになってから、どのようなことが起きたか。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">旅先で要る物を、そのつど土地の店で買いそろえるようになった</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">荷物が軽くなり、回れる名所の数が増えた</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">宿の人から、次に出かけるとよい町を勧められるようになった</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">持っていない物のことで、土地の人と話すようになった</span></span></p>
 <div class="qa"><label><input type="radio" name="q_61" value="1"><span>1</span></label><label><input type="radio" name="q_61" value="2"><span>2</span></label><label><input type="radio" name="q_61" value="3"><span>3</span></label><label><input type="radio" name="q_61" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">62</strong> 写真を撮ることについて、筆者が言いたいことは何か。<br />
-<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">上手い写真を撮ろうと思っても撮れるものではない。</span></span><br />
-<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">上手い写真が撮れるまで、自分の撮り方を続けるべきだ。</span></span><br />
-<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">自分だけの写真を撮るには、刺激的な対象を探し出すべきだ。</span></span><br />
-<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">自分にしか表現できないものを撮るという気持ちで撮るべきだ。</span></span></p>
+<p><strong class="bk-qn">62</strong> 筆者は、大きなかばんで出かけていたころの旅を、どういうものだったと述べているか。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">荷物が重く、名所を回る時間が短くなってしまう旅</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">備えが整っていて、土地の人に物を尋ねる用のない旅</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">町の人と話すのが苦手で、切符を買うのにも迷っていた旅</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">足りない物を、行く先々の宿の人から借りて回っていた旅</span></span></p>
 <div class="qa"><label><input type="radio" name="q_62" value="1"><span>1</span></label><label><input type="radio" name="q_62" value="2"><span>2</span></label><label><input type="radio" name="q_62" value="3"><span>3</span></label><label><input type="radio" name="q_62" value="4"><span>4</span></label></div>
 <h3>(4)</h3>
 <div class="passage-box">
-<p>何事もそうですが、「できる人」は応用がききます。接客が完全にマニュアル化されているファーストフード店に行っても、やはりスタッフの差は出ます。たまたま時間のかかるメニューを頼んでしまった際の事前説明、セットメニューに関する質問への対応など、ちょっと注意して観察してみると、頭の回転と表現力の差は随所<span class="bk-chu">（注1）</span>に表れてきます。</p>
-<p>（中略）</p>
-<p>もっと高度な判断を求められる仕事の現場はどうでしょう。どんな仕事にも、マニュアルもしくは<span class="bk-chu">（注2）</span>マニュアルに類するような規準があります。その中で「できる人」は、それぞれの仕事にあるマニュアル的なものを咀嚼<span class="bk-chu">（注3）</span>して状況に対応します。これがまさに「仕事力の差」につながります。</p>
-<p>簡単に言えば、「できる人」は勝手に自分で応用してしまうのです。それは本人にとっては良いことであり、暴走<span class="bk-chu">（注4）</span>による失敗は別として、お客にとっても会社や店にとってもプラスに作用することが多いと思います。</p>
-<p>しかし今度は人を率いる<span class="bk-chu">（注5）</span>立場になり、多くの人を育てる番になったとき、今まで意識しなかった壁に突き当たることがあります。</p>
-<p>自分が自然とやってきたことを、なかなかできない人がたくさんいるという事実。これを頭では理解しても、なかなか感覚でキャッチ<span class="bk-chu">（注6）</span>できません。そのため部下への指導が、「マニュアルを越えたものが見えている人の世界」で行われてしまうのです。ところが指導される側は「見えていない世界」の住人ですから、うまく受け取ることができないのは当然です。</p>
-<p class="vocab-notes">（注1）随所：いろいろなところ<br />
-（注2）もしくは：または<br />
-（注3）咀嚼する：十分に理解する<br />
-（注4）暴走：ここでは、周囲の状況を考えないでやること<br />
-（注5）率いる：ここでは、指導する<br />
-（注6）キャッチする：受け取る</p>
+<p>　消防署の通信指令室<span class="bk-chu">（注1）</span>で、火事や急病の通報<span class="bk-chu">（注2）</span>を電話で受ける仕事について、十二年になる。119番の電話を取ると、私はまず「火事ですか、救急ですか」と尋ね、次に場所を聞く。そのあとも、「何階が燃えていますか」「中に残っている人はいますか」と、質問を続ける。<br />
+　この質問の多さには、以前から苦情が届いている。家が燃えているのに、質問ばかりしていてじれったい<span class="bk-chu">（注3）</span>。早く消防車を出してほしいのに、答えている間に火が広がる、という声である。<br />
+　電話をかけてくる人の身になれば、そう感じるのは当然だろう。目の前で煙が上がっているとき、一つの質問に答える十秒は、ふだんの何倍にも長く感じられる。<br />
+（中略）<br />
+　電話のこちら側で、そのあいだに何が起きているかを書いておきたい。火事か救急か、そして場所。この二つが分かった時点で、私は隣の席の係に合図を送り、消防車は車庫を出る。残りの質問は、車が走り出してから聞いているのである。何階が燃えているか、逃げ遅れた<span class="bk-chu">（注4）</span>人がいるか。答えはその場で無線に乗せ、走っている車の中の救急隊や消防隊に伝える。電話口で答えてもらった十秒が、現場での何分かを縮めることもある。<br />
+　苦情を受けてから、私は質問の前に「消防車はもう向かっています」と一言そえるようにした。すると、電話口の声が落ち着き、答えも手短<span class="bk-chu">（注5）</span>になった。<br />
+　電話口で重ねる質問は、消防車の出発を遅らせているわけではない。</p>
+<p class="vocab-notes">（注1）通信指令室：119番の電話を受け、消防車や救急車に出動を命じる部屋<br />
+（注2）通報：事件や事故などを、警察や消防に知らせること<br />
+（注3）じれったい：思うように進まず、いらいらする<br />
+（注4）逃げ遅れる：逃げるのが遅くなって、危ない所に残ってしまう<br />
+（注5）手短：話などを、短くまとめること</p>
 </div>
-<p><strong class="bk-qn">63</strong> 筆者によると、「できる人」とはどのような人か。<br />
-<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">マニュアルの問題点を見つけて改善できる人</span></span><br />
-<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">マニュアルをよく理解し、マニュアルどおりに対応できる人</span></span><br />
-<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">マニュアルをよく理解したうえで、自分が置かれた状況に対応できる人</span></span><br />
-<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">マニュアルがなくても、自分のやり方で状況に対応できる人</span></span></p>
+<p><strong class="bk-qn">63</strong> 筆者によると、消防車が車庫を出るのは、いつか。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">燃えている階と、中に残っている人の有無が分かったとき</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">火事か救急かということと、場所が分かったとき</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">電話をかけてきた人が、質問に最後まで答え終わったとき</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">隣の席の係が、無線で隊員を一人ずつ呼び出したとき</span></span></p>
 <div class="qa"><label><input type="radio" name="q_63" value="1"><span>1</span></label><label><input type="radio" name="q_63" value="2"><span>2</span></label><label><input type="radio" name="q_63" value="3"><span>3</span></label><label><input type="radio" name="q_63" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">64</strong> 筆者によると、「できる人」が人を育てるときに問題になることは何か。<br />
-<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">マニュアルを使わないで、自分の好きなように説明してしまうこと</span></span><br />
-<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">自分ができることは説明できても、できないことはうまく説明できないこと</span></span><br />
-<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">自分ができることだけでなく、できないことまで、相手に期待してしまうこと</span></span><br />
-<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">自分にはできることでも、それをできない人もいることが実感できないこと</span></span></p>
+<p><strong class="bk-qn">64</strong> 質問ばかりでじれったいという苦情について、筆者はそれをどういうものだと考えているか。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">かける人の気持ちとしては当然だが、出発が遅れるという点は当たらない</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">消防の仕事を知らない人の言うことで、取り合う必要のないもの</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">質問の数を今の半分に減らせば、すぐに出なくなる苦情</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">無線の仕組みを新しくすれば、じきに解決できるもの</span></span></p>
 <div class="qa"><label><input type="radio" name="q_64" value="1"><span>1</span></label><label><input type="radio" name="q_64" value="2"><span>2</span></label><label><input type="radio" name="q_64" value="3"><span>3</span></label><label><input type="radio" name="q_64" value="4"><span>4</span></label></div>
 <h2 class="bk-mondai"><span class="bk-mn">問題12</span> <span class="bk-mi">次のAとBの文章を読んで、後の問いに対する答えとして最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
-<h3>A</h3>
+<p><strong>A</strong></p>
 <div class="passage-box">
-<p>新しい商品を企画するとき、いいアイディアがなかなか思いつかないことがある。そんなとき、自分には才能がないからだと思い込み、自信をなくしてしまうのはよくない。アイディアは生まれつきの能力に関係なく、努力次第で誰でも生み出すことができる。</p>
-<p>アイディアは、情報の組み合わせによって生まれることがほとんどだ。そのため、日ごろから情報を集めておくことが有効だ。担当する商品に関連する情報だけを集めていると、似たようなアイディアばかりになってしまう。発想の幅を広げるには、関連する分野以外の情報も頭に入れておくほうがいい。ふだんから視野を広げてさまざまな情報を蓄積しておけば、必ずアイディアの役に立つはずだ。</p>
+<p>　手帳に書いていたメモを、スマートフォンに書くようになった人は多い。いつでも取り出せて、何百件ためても重くならず、言葉を入れれば古いメモもすぐに探し出せる。<br />
+　ただ、書いたメモを後から読み返すことは、紙の手帳のころより減ったと感じる人も多い。紙のメモは、机の上に置いてあるだけで、ほかの用事の途中にふと目に入る。これに対して、端末のメモは、画面を開き、探す言葉を入れて、ようやく姿を見せる。こちらから呼ばなければ、出てこないのである。そして、探す言葉を入れるには、そのメモを書いたこと自体を覚えていなければならない。端末の中のメモは、書いた人がその存在を覚えているあいだだけ、画面に呼び出される。</p>
 </div>
-<h3>B</h3>
+<p><strong>B</strong></p>
 <div class="passage-box">
-<p>新しい商品を企画するには、これまでとは異なるアイディアが必要だ。現在流行している商品の情報を集めるだけでは、他社に勝つことはできないだろう。私はアイディアを生み出すために、一般的に考えられていることとは逆の発想をするようにしている。現在流行している商品が若者向けの物なら高齢者向けにできないかと考えたり、多機能の物なら機能を一つに絞れないかと考えたりするのである。</p>
-<p>アイディアは一部の才能がある人しか生み出せないものだという印象があるせいか、生み出し方を知ろうとしない人が多いと思う。才能がないからといってあきらめるのではなく、思い切って発想を転換してみれば、いいアイディアにつながっていく。</p>
+<p>　スマートフォンにメモを書くようになってから、書いたきり読み返さないメモが増えた、という声をよく聞く。紙の手帳なら、ページをめくるたびにほかのメモも目に入るが、端末ではそうはいかない。<br />
+　だからといって、紙の手帳に戻ることはないと私は思う。私は、メモを書いたら、次の朝の七時に一度だけ通知音が鳴るように設定している。通勤電車の中でそのメモを開き、要らなければ消し、残すものには日づけを書き足す。一件にかかるのは数秒である。これだけで、書いたことをもう一度思い出せる。書いた次の朝に一度開き直すと決めておけば、端末のメモも、手帳のメモと同じように読み返される。</p>
 </div>
-<p><strong class="bk-qn">65</strong> アイディアを生み出すことについて、AとBが共通して述べていることは何か。<br />
-<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">アイディアの生み出し方は、簡単に身につけることができる。</span></span><br />
-<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">多くの情報を得ることで、アイディアを生み出しやすくなる。</span></span><br />
-<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">特別な能力がなくても、アイディアを生み出すことができる。</span></span><br />
-<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">発想のしかたを大きく変えなければ、アイディアは生み出せない。</span></span></p>
+<p><strong class="bk-qn">65</strong> AとBが共通して述べていることは何か。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">スマートフォンのメモは、言葉を入れても探し出せないことが多い</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">メモは、スマートフォンより紙の手帳に書いたほうがよい</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">スマートフォンに書いたメモは、紙に比べて見返されにくい</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">メモを書いたら、次の朝に知らせが鳴るようにしておくとよい</span></span></p>
 <div class="qa"><label><input type="radio" name="q_65" value="1"><span>1</span></label><label><input type="radio" name="q_65" value="2"><span>2</span></label><label><input type="radio" name="q_65" value="3"><span>3</span></label><label><input type="radio" name="q_65" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">66</strong> 新しい商品を企画することについて、AとBはどのようなアドバイスをしているか。<br />
-<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">AもBも、いろいろな分野の情報をできるだけ多く集めるといいと述べている。</span></span><br />
-<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">AもBも、流行している商品について詳しく調べるといいと述べている。</span></span><br />
-<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">Aは関連する分野の他社の商品の情報を集めるといいと述べ、Bは流行に逆らった考え方をするといいと述べている。</span></span><br />
-<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">Aは関連する分野だけでなく、ほかの分野の情報も得るといいと述べ、Bは普通とは反対のことを考えるといいと述べている。</span></span></p>
+<p><strong class="bk-qn">66</strong> スマートフォンのメモについて、AとBはどのように述べているか。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">AもBも、読み返すためには紙の手帳に戻るべきだと述べている</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">Aは読み返す決まりを勧め、Bは読み返されない理由を説明している</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">Aは探す言葉の入れ方を、Bは知らせの鳴らし方を詳しく説明している</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">Aは見返されにくいわけを述べ、Bは見返す決め方を示している</span></span></p>
 <div class="qa"><label><input type="radio" name="q_66" value="1"><span>1</span></label><label><input type="radio" name="q_66" value="2"><span>2</span></label><label><input type="radio" name="q_66" value="3"><span>3</span></label><label><input type="radio" name="q_66" value="4"><span>4</span></label></div>
 <h2 class="bk-mondai"><span class="bk-mn">問題13</span> <span class="bk-mi">次の文章を読んで、後の問いに対する答えとして最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
-<div class="passage-box">
-<p>読むことは、受動的な<span class="bk-chu">（注1）</span>作業だと思っている人は意外に多い。（中略）読んでインプットして、書いてアウトプットする。そうではなくて、両方アウトプットなのだというのが、私の持論<span class="bk-chu">（注2）</span>である。</p>
-<p>そこにある言葉を読む。すると心には、文字以上のものが広がる。たとえば、子どものころ読んだ海外作品に、聞いたこともない料理名が出てくるということが、よくあった。クロスグリのパイだとか、ジンジャークッキーだとか。食べたことのないものを、懸命に想像して味わう。それを食べる主人公の舌を、獲得するわけである。①<strong class="bk-tw">この行為</strong>は、受動ではなく能動<span class="bk-chu">（注3）</span>である。「創る」作業である。本でしか読んだことのない食べものを、大人になってから実際に食べ、「違う」と思った経験を持つ人は、意外に多いのではないだろうか。もちろん違うのは私たちの想像なのだが、しかし自分の頭のなかで創った料理のほうが、断然<span class="bk-chu">（注4）</span>おいしかった、ということは、よくある。</p>
-<p>本を読まない、というのは、だから、私にとって創造の放棄<span class="bk-chu">（注5）</span>である。②<strong class="bk-tw">つまらない本</strong>、相性が悪い本というのはもちろんある。しかしそこで、どこがどんなふうにつまらないのか、どう展開したらおもしろかったのか、自分のどの部分と相性が悪いのか、そんなことを考えていると、つまらない本はおもしろくなるし、相性が悪い本はいつか相性がよくなる日を待とうと思うことができる。私は、おもしろかった本よりつまらなかった本のあらすじを人に話すほうが、ずっと好きだ。どこがどんなふうにつまらなく感じたかを話すのは、それだけ創造の余地<span class="bk-chu">（注6）</span>があるからだろう。</p>
-<p>料理でも、絵画でも、あるいは家事の手順でも、創ることの喜びを知ってしまうと、なかなかそれから離れることができない。読むことの楽しみは、と訊かれれば<span class="bk-chu">（注7）</span>、創ることの自由さだと私は答える。</p>
-<p class="vocab-notes">（注1）受動的な：ここでは、受け取るだけの<br />
-（注2）持論：いつも持っている考え<br />
-（注3）能動：自ら進んで行うこと<br />
-（注4）断然：ずっと<br />
-（注5）〜の放棄：〜を捨てること<br />
-（注6）余地：ここでは、可能性<br />
-（注7）訊く：「聞く」と同じ</p>
+<div class="passage-box"><span class="bk-flow"></span>
+<p>　外国から来て、この市に住んでいる人たちに向けたお知らせを書くのが、市役所での私の仕事です。三年前から、ごみの出し方や健康診断の案内を、「やさしい日本語」で書き直すようにしてきました。難しい言葉を身近な言葉に置き換え、一つ一つの文を短くした日本語のことです。<br />
+　たとえば、「粗大ごみ<span class="bk-chu">（注1）</span>は事前に申し込みのうえ、指定日に排出<span class="bk-chu">（注2）</span>してください」という文は、「大きいごみを出すときは、先に電話をしてください。市が決めた日に出してください」と書き直します。<br />
+　同じ課の先輩からは、こう言われたことがあります。易しい言葉に直すと、元の文にあった細かい条件が抜け落ちて<span class="bk-chu">（注3）</span>しまう。お知らせは決まりを伝えるものなのに、正確さを削ってまで読みやすくするのは筋が違う<span class="bk-chu">（注4）</span>。<br />
+　先輩の言うとおり、書き直しを始めたころの私の文には、抜けがありました。元の決まりでは、一つの辺が三十センチより長い物が粗大ごみに当たります。それを「大きいごみ」とだけ書いたので、ごみ相談の窓口には「このいすは大きいごみですか」という問い合わせが相次ぎました。<br />
+（中略）<br />
+　では、易しい言葉のまま、条件を一つも落とさないためには、どう書けばよいのでしょうか。書き直した文を読み返してみると、抜けが出ていたのは、どれも、一つの文に条件をいくつも詰め込んだところでした。易しい言葉で書いても、文が長くなると、読む人はどこまでが一つの決まりなのかを見失ってしまいます。<br />
+　そこで今は、①<strong class="bk-tw">一つの文には条件を一つだけ</strong>置き、条件が三つあれば、文を三つに分けて番号をつけています。「大きいごみ」には、「一つの辺が三十センチより長い物」と、自分で測れる言葉を添えます。<br />
+　こうして書いたお知らせは、日本語を母語<span class="bk-chu">（注5）</span>とする人たちからも、読みやすくなったと言われるようになりました。窓口への問い合わせも、前より少なくなりました。<br />
+　言葉を易しくするときも、伝える条件の数はそのまま残せます。大事なのは、文の組み立て方です。易しく書くことと、正確に伝えることは、一つのお知らせの中で、互いのじゃまをせずに並び立ちます。</p>
+<p class="vocab-notes">（注1）粗大ごみ：家具や自転車など、ふだんのごみとして出せない大きなごみ<br />
+（注2）排出する：外へ出す。ここでは、ごみを決められた場所に出すこと<br />
+（注3）抜け落ちる：あるはずのものが、いつのまにか入らなくなる<br />
+（注4）筋が違う：物事の道理に合わない<br />
+（注5）母語：生まれてから最初に身につけた言葉</p>
 </div>
-<p><strong class="bk-qn">67</strong> ①<strong class="bk-tw">この行為</strong>とはどういうことか。<br />
-<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">実際に、主人公が食べていた食べものを味わってみること。</span></span><br />
-<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">食べたことのないものを主人公と一緒に食べているところを想像すること。</span></span><br />
-<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">主人公がどんな食べものが好きかを想像してみること。</span></span><br />
-<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">主人公になりきって、食べたことのないものを想像して味わうこと。</span></span></p>
+<p><strong class="bk-qn">67</strong> ①<strong class="bk-tw">一つの文には条件を一つだけ</strong>とあるが、筆者はなぜそうしているのか。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">条件が一つの文に重なると、決まりの切れ目が読み取りにくくなるから</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">短い文のほうが、外国の言葉に置き換える機械にかけやすく、早く配れるから</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">条件の多い決まりは、お知らせに書かずに窓口で説明するから</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">日本語を母語とする人から、長い文は読みにくいと言われたから</span></span></p>
 <div class="qa"><label><input type="radio" name="q_67" value="1"><span>1</span></label><label><input type="radio" name="q_67" value="2"><span>2</span></label><label><input type="radio" name="q_67" value="3"><span>3</span></label><label><input type="radio" name="q_67" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">68</strong> ②<strong class="bk-tw">つまらない本</strong>について、筆者はどのように述べているか。<br />
-<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">つまらなく感じた点についていろいろ考えていると、おもしろくなる。</span></span><br />
-<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">つまらなく感じた理由を考えていると、自分の好みがよく分かってくる。</span></span><br />
-<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">つまらないと思っても、いつか必ず相性がよくなる日がくる。</span></span><br />
-<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">つまらないと思っても、人にあらすじを話すと面白いところが見つけられる。</span></span></p>
+<p><strong class="bk-qn">68</strong> 筆者によると、書き直しを始めたころの文には、どのような問題があったか。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">難しい言葉がまだ残っていて、外国から来た人には読めなかった</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">文を短く切りすぎて、同じ話が何度も繰り返されていた</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">番号の順番が分かりにくく、読み進められなかった</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">大きさの決まりが抜け、何が当てはまるか分からなかった</span></span></p>
 <div class="qa"><label><input type="radio" name="q_68" value="1"><span>1</span></label><label><input type="radio" name="q_68" value="2"><span>2</span></label><label><input type="radio" name="q_68" value="3"><span>3</span></label><label><input type="radio" name="q_68" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">69</strong> 本を読むことについて、筆者はどのように考えているか。<br />
-<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">本を読むことは、料理や絵画より創ることの喜びが大きい。</span></span><br />
-<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">本を読むことは、自由に想像を膨らませる楽しい創造の作業だ。</span></span><br />
-<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">本を読んでたくさん知ることができれば、創ることの喜びも増す。</span></span><br />
-<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">本を読んで想像力を身につければ、生活のなかでも自由に創造が楽しめる。</span></span></p>
+<p><strong class="bk-qn">69</strong> 筆者が最も言いたいことは何か。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">お知らせは決まりを伝えるものなので、易しさより正確さを守るべきだ</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">易しく書き直したお知らせは、元の文と並べて配れば、正確さも守れる</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">文の組み立て方を工夫すれば、易しく書いても決まりを正確に伝えられる</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">難しい言葉を使わずに書けば、問い合わせは自然に減っていく</span></span></p>
 <div class="qa"><label><input type="radio" name="q_69" value="1"><span>1</span></label><label><input type="radio" name="q_69" value="2"><span>2</span></label><label><input type="radio" name="q_69" value="3"><span>3</span></label><label><input type="radio" name="q_69" value="4"><span>4</span></label></div>
-<h2 class="bk-mondai"><span class="bk-mn">問題14</span> <span class="bk-mi">右のページは、ある動画コンテストの募集案内である。下の問いに対する答えとして最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
+<h2 class="bk-mondai"><span class="bk-mn">問題14</span> <span class="bk-mi">右のページは、みずほ市が出している「チャイルドシートの貸し出し」の案内である。下の問いに対する答えとして最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
 <div class="passage-box"><span class="bk-flow bk-flyer"></span>
-<p>春口市「動画コンテスト」<br />
-動画作品募集のご案内</p>
-<p>春口市の魅力をアピールする動画を募集します。受賞した作品は、春口市のホームページで公開し、市の魅力を伝える活動に使用させていただきます。</p>
-<p>1．募集する作品<br />
-以下の①か②のどちらかの部門に応募してください。応募できるのは、一人1作品で、未発表の作品に限ります。<br />
-①緑茶部門　春口市の緑茶をアピールする、20秒から30秒の作品<br />
-②観光部門　春口市の歴史、文化、自然に関する、2分から5分の作品</p>
-<p>2．応募資格　高校生以上の方であれば、どなたでも応募可能です。</p>
-<p>3．選考方法と賞品<br />
-選考は、春口市出身の映像作家である花山洋子氏を委員長とする選考委員会が行います。賞品として、最優秀賞受賞者（①②各1名）に商品券3万円分を、優秀賞受賞者（①②各2名）に商品券1万円分を、応募者全員に記念品を差し上げます。</p>
-<p>4．応募方法<br />
-4月15日（月）から5月10日（金）までの間に、春口市広報課ホームページの応募用ページから必要な情報を送信してください。その後、動画を以下の（1）か（2）のどちらかの方法で送ってください。<br />
-（1）DVDに記録して郵送する場合<br />
-作品をDVDに記録して、5月17日（金）必着で郵送してください。なお、提出されたDVDは返却いたしません。<br />
-（2）インターネットで送信する場合<br />
-応募の受付後1週間以内に動画送信用ページの情報をお知らせするので、5月24日（金）までに送信してください。</p>
-<p>5．応募および問い合わせ先<br />
-春口市役所広報課（市役所3階）<br />
-〒129-9988　春口市東町1丁目1番　電話・FAX 032-451-6879<br />
-ホームページ http://haruguchi-jp.com/video-contest</p>
+<p><strong>みずほ市　チャイルドシートの貸し出しのご案内</strong></p>
+<p>　車に小さな子どもを乗せるときに使うチャイルドシートを、市が貸し出しています。お子さんの体重に合った種類をお選びください。</p>
 <table>
 <thead>
 <tr>
-<th>名前</th>
-<th>職業</th>
-<th>作品の内容</th>
-<th>応募動画の長さ</th>
-<th>応募動画の発表歴</th>
+<th>種類</th>
+<th>使えるお子さん</th>
+<th>貸し出し期間</th>
+<th>料金（1台）</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>ヤンさん</td>
-<td>高校生</td>
-<td>春口市の自然の魅力</td>
-<td>25秒</td>
-<td>なし</td>
+<td>乳児用</td>
+<td>体重10キロ未満（生まれてから1歳ごろまで）</td>
+<td>1年まで</td>
+<td>2,000円</td>
 </tr>
 <tr>
-<td>村木さん</td>
-<td>塾講師</td>
-<td>春口市の緑茶の魅力</td>
-<td>28秒</td>
-<td>なし</td>
+<td>幼児用</td>
+<td>体重9キロ以上18キロ以下（1歳から4歳ごろまで）</td>
+<td>1年まで</td>
+<td>2,000円</td>
 </tr>
 <tr>
-<td>長島さん</td>
-<td>会社員</td>
-<td>春口市の歴史的な建物</td>
-<td>3分45秒</td>
-<td>あり</td>
+<td>学童用</td>
+<td>体重15キロ以上36キロ以下（4歳から小学生まで）</td>
+<td>1年まで</td>
+<td>1,500円</td>
 </tr>
 <tr>
-<td>原田さん</td>
-<td>中学生</td>
-<td>春口市の祭りの文化</td>
-<td>2分15秒</td>
-<td>なし</td>
+<td>短い期間の貸し出し</td>
+<td>上の三つのうち、お子さんに合う一つ</td>
+<td>3週間まで</td>
+<td>500円</td>
 </tr>
 </tbody>
 </table>
+<p><strong>申し込みと受け取り</strong></p>
+<p>・市内にお住まいの方のみ、お申し込みいただけます。<br />
+・1年まで借りる場合は、市役所こども課の窓口でお申し込みください。その場でお渡しします。<br />
+・短い期間の貸し出しは、使い始める日の1週間前までに、こども課へ電話でご予約ください。市民センターの倉庫で、水曜日か土曜日の午前9時から12時までにお受け取りください。<br />
+・受け取りのときは、住所の分かるもの（運転免許証など）をお持ちください。</p>
+<p><strong>料金と保証金</strong></p>
+<p>・料金は、受け取りのときに、受け取る場所でお支払いください。<br />
+・料金のほかに、保証金として、1家庭につき1,000円をお預かりします。何台借りても同じ金額です。<br />
+・保証金は、借りたチャイルドシートを全部お返しいただいたときにお返しします。</p>
+<p><strong>返すとき</strong></p>
+<p>・期間が終わるまでに、受け取った場所へお返しください。<br />
+・取り付け方が分からない方には、受け取りのときに職員がご説明します。</p>
 </div>
-<p><strong class="bk-qn">70</strong> 次の4人は、動画コンテストに応募しようと考えている。現段階で応募条件を満たしているのは誰か。<br />
-<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">ヤンさん</span></span><br />
-<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">村木さん</span></span><br />
-<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">長島さん</span></span><br />
-<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">原田さん</span></span></p>
+<p><strong class="bk-qn">70</strong> みずほ市に住む山下さんは、1歳の息子（体重10キロ）と5歳の娘（体重20キロ）のために、チャイルドシートを1年借りたい。借りるときに払う金額は、全部でいくらか。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">4,500円</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">5,000円</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">5,500円</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">6,000円</span></span></p>
 <div class="qa"><label><input type="radio" name="q_70" value="1"><span>1</span></label><label><input type="radio" name="q_70" value="2"><span>2</span></label><label><input type="radio" name="q_70" value="3"><span>3</span></label><label><input type="radio" name="q_70" value="4"><span>4</span></label></div>
-<p><strong class="bk-qn">71</strong> ローズさんは、動画コンテストに応募しようと考えている。動画は、インターネットで送りたい。ローズさんは、どうしなければならないか。<br />
-<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">5月10日までに応募情報を送信し、17日までに動画を送信する。</span></span><br />
-<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">5月10日までに応募情報を送信し、24日までに動画を送信する。</span></span><br />
-<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">5月10日までに応募情報と動画を送信する。</span></span><br />
-<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">5月24日までに応募情報と動画を送信する。</span></span></p>
-<div class="qa"><label><input type="radio" name="q_71" value="1"><span>1</span></label><label><input type="radio" name="q_71" value="2"><span>2</span></label><label><input type="radio" name="q_71" value="3"><span>3</span></label><label><input type="radio" name="q_71" value="4"><span>4</span></label></div></div><hr class="section-divider" id="section-divider" style="display:none"><div class="gate" id="gate-choukai" style="display:none"><h2>聴解</h2><p class="lim">制限時間 <b>50分</b>／全30問</p><p class="note"><span class="warn">開始すると時計が動きます。</span>残り時間が0になった時点で、解答はそのまま自動的に提出されます。<br>音声は最初から最後まで一続きで流れます。イヤホンなどの準備ができてから開始してください。<br>時計はこのタブを見ている間だけ進み、ほかのタブや別のウィンドウに移ると止まります。</p><button class="ui-btn primary" onclick="startSection('choukai')">開始する</button></div><div id="section-choukai" style="display:none"><h1 class="section-title">JLPT N2 聴解</h1><div id="player"><audio id="au" controls preload="metadata" src="聴解.mp3" data-fallback-src="https://github.com/feiluvnana/JLPT/releases/download/audio/imported-n2-2024-07.mp3"></audio><div class="pctl"><button type="button" onclick="nudge(-10)">◀ 10秒</button><button type="button" onclick="nudge(10)">10秒 ▶</button><label>速度 <select id="rate" onchange="au.playbackRate=+this.value"><option>0.75</option><option selected>1</option><option>1.25</option><option>1.5</option></select></label><span id="chapwrap">章 <select id="chap" onchange="jump(this.value)"></select></span><label class="pick">MP3を選ぶ<input type="file" accept="audio/*" onchange="pick(this)"></label></div><script>window.CHAPTERS = {
-  "duration": null,
-  "chapters": [],
-  "source": "external",
-  "note": "External/official MP3 — no TTS segment marks. Re-run make mp3 to synthesize chapter marks from 聴解スクリプト.txt."
+<p><strong class="bk-qn">71</strong> みずほ市に住む中村さんは、8月に孫が遊びに来る10日間、3歳の孫（体重14キロ）のためにチャイルドシートを借りたい。中村さんは、どうしなければならないか。<br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">使い始める1週間前までに電話で予約し、住所の分かるものを持って、水曜か土曜の午前に市民センターへ取りに行く</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">使い始める1週間前までに市役所の窓口で申し込み、住所の分かるものを見せて、その場で幼児用のものを受け取る</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">使い始める1週間前までに電話で予約し、住所の分かるものを持って、土曜の午後に市民センターの倉庫へ受け取りに行く</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">使い始める1週間前までに電話で予約し、印かんを持って、水曜か土曜の午前に市民センターへ取りに行く</span></span></p>
+<div class="qa"><label><input type="radio" name="q_71" value="1"><span>1</span></label><label><input type="radio" name="q_71" value="2"><span>2</span></label><label><input type="radio" name="q_71" value="3"><span>3</span></label><label><input type="radio" name="q_71" value="4"><span>4</span></label></div></div><hr class="section-divider" id="section-divider" style="display:none"><div class="gate" id="gate-choukai" style="display:none"><h2>聴解</h2><p class="lim">制限時間 <b>50分</b>／全30問</p><p class="note"><span class="warn">開始すると時計が動きます。</span>残り時間が0になった時点で、解答はそのまま自動的に提出されます。<br>音声は最初から最後まで一続きで流れます。イヤホンなどの準備ができてから開始してください。<br>時計はこのタブを見ている間だけ進み、ほかのタブや別のウィンドウに移ると止まります。</p><button class="ui-btn primary" onclick="startSection('choukai')">開始する</button></div><div id="section-choukai" style="display:none"><h1 class="section-title">JLPT N2 聴解</h1><div id="player"><audio id="au" controls preload="metadata" src="聴解.mp3" data-fallback-src="https://github.com/feiluvnana/JLPT/releases/download/audio/20260928_2.mp3"></audio><div class="pctl"><button type="button" onclick="nudge(-10)">◀ 10秒</button><button type="button" onclick="nudge(10)">10秒 ▶</button><label>速度 <select id="rate" onchange="au.playbackRate=+this.value"><option>0.75</option><option selected>1</option><option>1.25</option><option>1.5</option></select></label><span id="chapwrap">章 <select id="chap" onchange="jump(this.value)"></select></span><label class="pick">MP3を選ぶ<input type="file" accept="audio/*" onchange="pick(this)"></label></div><script>window.CHAPTERS = {
+ "duration": 2718.06,
+ "chapters": [
+  {
+   "label": "問題1",
+   "start": 0.0
+  },
+  {
+   "label": "問題1 1番",
+   "start": 171.41
+  },
+  {
+   "label": "問題1 2番",
+   "start": 246.17
+  },
+  {
+   "label": "問題1 3番",
+   "start": 329.91
+  },
+  {
+   "label": "問題1 4番",
+   "start": 428.91
+  },
+  {
+   "label": "問題1 5番",
+   "start": 499.57
+  },
+  {
+   "label": "問題2",
+   "start": 581.27
+  },
+  {
+   "label": "問題2 1番",
+   "start": 616.31
+  },
+  {
+   "label": "問題2 2番",
+   "start": 711.21
+  },
+  {
+   "label": "問題2 3番",
+   "start": 828.45
+  },
+  {
+   "label": "問題2 4番",
+   "start": 946.53
+  },
+  {
+   "label": "問題2 5番",
+   "start": 1070.91
+  },
+  {
+   "label": "問題2 6番",
+   "start": 1204.27
+  },
+  {
+   "label": "問題3",
+   "start": 1286.75
+  },
+  {
+   "label": "問題3 1番",
+   "start": 1491.03
+  },
+  {
+   "label": "問題3 2番",
+   "start": 1558.01
+  },
+  {
+   "label": "問題3 3番",
+   "start": 1655.71
+  },
+  {
+   "label": "問題3 4番",
+   "start": 1757.99
+  },
+  {
+   "label": "問題3 5番",
+   "start": 1840.35
+  },
+  {
+   "label": "問題4",
+   "start": 1937.49
+  },
+  {
+   "label": "問題4 1番",
+   "start": 1986.95
+  },
+  {
+   "label": "問題4 2番",
+   "start": 2017.15
+  },
+  {
+   "label": "問題4 3番",
+   "start": 2049.07
+  },
+  {
+   "label": "問題4 4番",
+   "start": 2079.15
+  },
+  {
+   "label": "問題4 5番",
+   "start": 2115.61
+  },
+  {
+   "label": "問題4 6番",
+   "start": 2143.45
+  },
+  {
+   "label": "問題4 7番",
+   "start": 2171.93
+  },
+  {
+   "label": "問題4 8番",
+   "start": 2205.43
+  },
+  {
+   "label": "問題4 9番",
+   "start": 2240.23
+  },
+  {
+   "label": "問題4 10番",
+   "start": 2273.09
+  },
+  {
+   "label": "問題4 11番",
+   "start": 2300.81
+  },
+  {
+   "label": "問題5",
+   "start": 2337.69
+  },
+  {
+   "label": "問題5 1番",
+   "start": 2365.45
+  },
+  {
+   "label": "問題5 2番",
+   "start": 2550.87
+  }
+ ],
+ "source": "composed",
+ "bank_version": 2,
+ "script_sha": "7d632868bf49"
 }
 ;</script></div><h1 class="bk-part">【聴解】</h1>
 <h2 class="bk-mondai bk-mondai-l"><span class="bk-mn">問題1</span></h2>
 <p class="furi"><ruby>問題<rt>もんだい</rt></ruby>1では、まず<ruby>質問<rt>しつもん</rt></ruby>を<ruby>聞<rt>き</rt></ruby>いてください。それから<ruby>話<rt>はなし</rt></ruby>を<ruby>聞<rt>き</rt></ruby>いて、<ruby>問題<rt>もんだい</rt></ruby><ruby>用紙<rt>ようし</rt></ruby>の1から4の<ruby>中<rt>なか</rt></ruby>から、<ruby>最<rt>もっと</rt></ruby>もよいものを<ruby>一<rt>ひと</rt></ruby>つ<ruby>選<rt>えら</rt></ruby>んでください。</p>
 <p class="furi"><strong>1<ruby>番<rt>ばん</rt></ruby></strong><br />
-<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">シンポジウムのポスターをはる</span></span><br />
-<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">スタッフの<ruby>当日<rt>とうじつ</rt></ruby>の<ruby>予定表<rt>よていひょう</rt></ruby>を<ruby>作<rt>つく</rt></ruby>る</span></span><br />
-<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot"><ruby>当日<rt>とうじつ</rt></ruby><ruby>配<rt>くば</rt></ruby>るしりょうをコピーする</span></span><br />
-<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot"><ruby>発表者<rt>はっぴょうしゃ</rt></ruby>にれんらくする</span></span></p>
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot"><ruby>新幹線<rt>しんかんせん</rt></ruby>のチケットを<ruby>変更<rt>へんこう</rt></ruby>する</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot"><ruby>新幹線<rt>しんかんせん</rt></ruby>の<ruby>時間<rt>じかん</rt></ruby>を<ruby>調<rt>しら</rt></ruby>べる</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">ホテルの<ruby>場所<rt>ばしょ</rt></ruby>を<ruby>確認<rt>かくにん</rt></ruby>する</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">ホテルの<ruby>予約<rt>よやく</rt></ruby>をする</span></span></p>
 <div class="qa"><label><input type="radio" name="q_問1-1" value="1"><span>1</span></label><label><input type="radio" name="q_問1-1" value="2"><span>2</span></label><label><input type="radio" name="q_問1-1" value="3"><span>3</span></label><label><input type="radio" name="q_問1-1" value="4"><span>4</span></label></div>
 <p class="furi"><strong>2<ruby>番<rt>ばん</rt></ruby></strong><br />
 <span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot"><ruby>商品<rt>しょうひん</rt></ruby>に<ruby>値引<rt>ねび</rt></ruby>きシールをはる</span></span><br />
@@ -1250,36 +1374,36 @@ A「失礼ですが、お名前を（　）。」<br />
 <span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot"><ruby>商品<rt>しょうひん</rt></ruby>をレジの<ruby>横<rt>よこ</rt></ruby>のたなにならべる</span></span></p>
 <div class="qa"><label><input type="radio" name="q_問1-2" value="1"><span>1</span></label><label><input type="radio" name="q_問1-2" value="2"><span>2</span></label><label><input type="radio" name="q_問1-2" value="3"><span>3</span></label><label><input type="radio" name="q_問1-2" value="4"><span>4</span></label></div>
 <p class="furi"><strong>3<ruby>番<rt>ばん</rt></ruby></strong><br />
-<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot"><ruby>店<rt>みせ</rt></ruby>で<ruby>一番<rt>いちばん</rt></ruby>の<ruby>人気<rt>にんき</rt></ruby><ruby>料理<rt>りょうり</rt></ruby></span></span><br />
-<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot"><ruby>店<rt>みせ</rt></ruby>の<ruby>中<rt>なか</rt></ruby>の<ruby>様子<rt>ようす</rt></ruby></span></span><br />
-<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot"><ruby>店<rt>みせ</rt></ruby>の<ruby>調理人<rt>ちょうりにん</rt></ruby>の<ruby>様子<rt>ようす</rt></ruby></span></span><br />
-<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot"><ruby>店<rt>みせ</rt></ruby>の<ruby>入り口<rt>いりぐち</rt></ruby>の<ruby>様子<rt>ようす</rt></ruby></span></span></p>
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">ホームページから<ruby>申し込<rt>もうしこ</rt></ruby>む</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">ふりこみ<ruby>先<rt>さき</rt></ruby>を<ruby>確認<rt>かくにん</rt></ruby>する</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot"><ruby>銀行<rt>ぎんこう</rt></ruby>で<ruby>受講料<rt>じゅこうりょう</rt></ruby>を<ruby>支払<rt>しはら</rt></ruby>う</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">クレジットカードを<ruby>作<rt>つく</rt></ruby>る</span></span></p>
 <div class="qa"><label><input type="radio" name="q_問1-3" value="1"><span>1</span></label><label><input type="radio" name="q_問1-3" value="2"><span>2</span></label><label><input type="radio" name="q_問1-3" value="3"><span>3</span></label><label><input type="radio" name="q_問1-3" value="4"><span>4</span></label></div>
 <p class="furi"><strong>4<ruby>番<rt>ばん</rt></ruby></strong><br />
-<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot"><ruby>記念品<rt>きねんひん</rt></ruby>をふくろに<ruby>入<rt>い</rt></ruby>れる</span></span><br />
-<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">かびんをステージの<ruby>上<rt>うえ</rt></ruby>に<ruby>運<rt>はこ</rt></ruby>ぶ</span></span><br />
-<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">いすに<ruby>出席者<rt>しゅっせきしゃ</rt></ruby>の<ruby>名前<rt>なまえ</rt></ruby>の<ruby>紙<rt>かみ</rt></ruby>をはる</span></span><br />
-<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot"><ruby>代表者<rt>だいひょうしゃ</rt></ruby>とあいさつの<ruby>練習<rt>れんしゅう</rt></ruby>をする</span></span></p>
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">アンケートをかいしゅうする</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">テントをかたづける</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot"><ruby>作業用<rt>さぎょうよう</rt></ruby>てぶくろをする</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot"><ruby>机<rt>つくえ</rt></ruby>といすをトラックにのせる</span></span></p>
 <div class="qa"><label><input type="radio" name="q_問1-4" value="1"><span>1</span></label><label><input type="radio" name="q_問1-4" value="2"><span>2</span></label><label><input type="radio" name="q_問1-4" value="3"><span>3</span></label><label><input type="radio" name="q_問1-4" value="4"><span>4</span></label></div>
 <p class="furi"><strong>5<ruby>番<rt>ばん</rt></ruby></strong><br />
-<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot"><ruby>駅前<rt>えきまえ</rt></ruby>で<ruby>自転車<rt>じてんしゃ</rt></ruby>をさがす</span></span><br />
-<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot"><ruby>市役所<rt>しやくしょ</rt></ruby>へ<ruby>自転車<rt>じてんしゃ</rt></ruby>を<ruby>取<rt>と</rt></ruby>りに<ruby>行<rt>い</rt></ruby>く</span></span><br />
-<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot"><ruby>自転車<rt>じてんしゃ</rt></ruby>の<ruby>預<rt>あず</rt></ruby>かり<ruby>場所<rt>ばしょ</rt></ruby>を<ruby>調<rt>しら</rt></ruby>べる</span></span><br />
-<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">けいさつでお<ruby>金<rt>きん</rt></ruby>を<ruby>払<rt>はら</rt></ruby>う</span></span></p>
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">プログラムを<ruby>配<rt>くば</rt></ruby>る</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot"><ruby>訂正<rt>ていせい</rt></ruby>の<ruby>貼り紙<rt>はりがみ</rt></ruby>を<ruby>作<rt>つく</rt></ruby>る</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot"><ruby>時間<rt>じかん</rt></ruby>を<ruby>調整<rt>ちょうせい</rt></ruby>する</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">プログラムを<ruby>作り直<rt>つくりなお</rt></ruby>す</span></span></p>
 <div class="qa"><label><input type="radio" name="q_問1-5" value="1"><span>1</span></label><label><input type="radio" name="q_問1-5" value="2"><span>2</span></label><label><input type="radio" name="q_問1-5" value="3"><span>3</span></label><label><input type="radio" name="q_問1-5" value="4"><span>4</span></label></div>
 <h2 class="bk-mondai bk-mondai-l"><span class="bk-mn">問題2</span></h2>
-<p class="furi"><ruby>問題<rt>もんだい</rt></ruby>2では、まず<ruby>質問<rt>しつもん</rt></ruby>を<ruby>聞<rt>き</rt></ruby>いてください。そのあと、<ruby>問題<rt>もんだい</rt></ruby><ruby>用紙<rt>ようし</rt></ruby>を<ruby>見<rt>み</rt></ruby>てください。<ruby>読<rt>よ</rt></ruby>む<ruby>時間<rt>じかん</rt></ruby>があります。それから<ruby>話<rt>はなし</rt></ruby>を<ruby>聞<rt>き</rt></ruby>いて、<ruby>問題<rt>もんだい</rt></ruby><ruby>用紙<rt>ようし</rt></ruby>の1から4の<ruby>中<rt>なか</rt></ruby>から、<ruby>最<rt>もっと</rt></ruby>もよいものを<ruby>一<rt>ひと</rt></ruby>つ<ruby>選<rt>えら</rt></ruby>んでください。</p>
+<p class="furi"><ruby>問題<rt>もんだい</rt></ruby>2では、まず<ruby>質問<rt>しつもん</rt></ruby>を<ruby>聞<rt>き</rt></ruby>いてください。そのあと、<ruby>問題<rt>もんだい</rt></ruby><ruby>用紙<rt>ようし</rt></ruby>のせんたくしを<ruby>読<rt>よ</rt></ruby>んでください。<ruby>読<rt>よ</rt></ruby>む<ruby>時間<rt>じかん</rt></ruby>があります。それから<ruby>話<rt>はなし</rt></ruby>を<ruby>聞<rt>き</rt></ruby>いて、<ruby>問題<rt>もんだい</rt></ruby><ruby>用紙<rt>ようし</rt></ruby>の1から4の<ruby>中<rt>なか</rt></ruby>から、<ruby>最<rt>もっと</rt></ruby>もよいものを<ruby>一<rt>ひと</rt></ruby>つ<ruby>選<rt>えら</rt></ruby>んでください。</p>
 <p class="furi"><strong>1<ruby>番<rt>ばん</rt></ruby></strong><br />
-<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot"><ruby>母<rt>はは</rt></ruby>といっしょにパン<ruby>屋<rt>や</rt></ruby>をやりたかったから</span></span><br />
-<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot"><ruby>母<rt>はは</rt></ruby>にたのまれたから</span></span><br />
-<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot"><ruby>母<rt>はは</rt></ruby>のゆめをかなえたかったから</span></span><br />
-<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot"><ruby>母<rt>はは</rt></ruby>のパンの<ruby>味<rt>あじ</rt></ruby>を<ruby>残<rt>のこ</rt></ruby>したかったから</span></span></p>
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot"><ruby>人間関係<rt>にんげんかんけい</rt></ruby>が<ruby>難<rt>むずか</rt></ruby>しかったから</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot"><ruby>責任<rt>せきにん</rt></ruby>のある<ruby>仕事<rt>しごと</rt></ruby>をさせてもらえないと<ruby>思<rt>おも</rt></ruby>ったから</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot"><ruby>自分<rt>じぶん</rt></ruby>のスキルを<ruby>認<rt>みと</rt></ruby>めてもらえなかったから</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot"><ruby>男女<rt>だんじょ</rt></ruby>の<ruby>能力<rt>のうりょく</rt></ruby>の<ruby>差<rt>さ</rt></ruby>がありすぎたから</span></span></p>
 <div class="qa"><label><input type="radio" name="q_問2-1" value="1"><span>1</span></label><label><input type="radio" name="q_問2-1" value="2"><span>2</span></label><label><input type="radio" name="q_問2-1" value="3"><span>3</span></label><label><input type="radio" name="q_問2-1" value="4"><span>4</span></label></div>
 <p class="furi"><strong>2<ruby>番<rt>ばん</rt></ruby></strong><br />
-<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">ソファーをもらってくれる<ruby>人<rt>ひと</rt></ruby>をさがす</span></span><br />
-<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">れいぞうこを<ruby>売<rt>う</rt></ruby>る</span></span><br />
-<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot"><ruby>親戚<rt>しんせき</rt></ruby>にひっこしを<ruby>手伝<rt>てつだ</rt></ruby>ってもらう</span></span><br />
-<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot"><ruby>安<rt>やす</rt></ruby>いひっこし<ruby>会社<rt>かいしゃ</rt></ruby>をさがす</span></span></p>
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot"><ruby>夜間<rt>やかん</rt></ruby>の<ruby>時給<rt>じきゅう</rt></ruby>が<ruby>高<rt>たか</rt></ruby>いから</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot"><ruby>友人<rt>ゆうじん</rt></ruby>といっしょに<ruby>働<rt>はたら</rt></ruby>けて<ruby>楽<rt>たの</rt></ruby>しいから</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot"><ruby>自分<rt>じぶん</rt></ruby>の<ruby>都合<rt>つごう</rt></ruby>に<ruby>合<rt>あ</rt></ruby>わせて<ruby>働<rt>はたら</rt></ruby>きやすいから</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot"><ruby>経験<rt>けいけん</rt></ruby>があってなれている<ruby>仕事<rt>しごと</rt></ruby>だから</span></span></p>
 <div class="qa"><label><input type="radio" name="q_問2-2" value="1"><span>1</span></label><label><input type="radio" name="q_問2-2" value="2"><span>2</span></label><label><input type="radio" name="q_問2-2" value="3"><span>3</span></label><label><input type="radio" name="q_問2-2" value="4"><span>4</span></label></div>
 <p class="furi"><strong>3<ruby>番<rt>ばん</rt></ruby></strong><br />
 <span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot"><ruby>残業代<rt>ざんぎょうだい</rt></ruby>のきんがくをもっと<ruby>上<rt>あ</rt></ruby>げてほしい</span></span><br />
@@ -1288,22 +1412,22 @@ A「失礼ですが、お名前を（　）。」<br />
 <span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">パソコンを<ruby>新<rt>あたら</rt></ruby>しくしてほしい</span></span></p>
 <div class="qa"><label><input type="radio" name="q_問2-3" value="1"><span>1</span></label><label><input type="radio" name="q_問2-3" value="2"><span>2</span></label><label><input type="radio" name="q_問2-3" value="3"><span>3</span></label><label><input type="radio" name="q_問2-3" value="4"><span>4</span></label></div>
 <p class="furi"><strong>4<ruby>番<rt>ばん</rt></ruby></strong><br />
-<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">ファッション<ruby>雑誌<rt>ざっし</rt></ruby>を<ruby>参考<rt>さんこう</rt></ruby>にする</span></span><br />
-<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">ファッションのプロに<ruby>服<rt>ふく</rt></ruby>を<ruby>選<rt>えら</rt></ruby>んでもらう</span></span><br />
-<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot"><ruby>毎日<rt>まいにち</rt></ruby>シンプルな<ruby>服<rt>ふく</rt></ruby>を<ruby>着<rt>き</rt></ruby>る</span></span><br />
-<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">リサイクルショップで<ruby>服<rt>ふく</rt></ruby>を<ruby>買<rt>か</rt></ruby>う</span></span></p>
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot"><ruby>給料<rt>きゅうりょう</rt></ruby>がいいかどうか</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot"><ruby>自宅<rt>じたく</rt></ruby>でのきんむが<ruby>可能<rt>かのう</rt></ruby>かどうか</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot"><ruby>海外<rt>かいがい</rt></ruby>で<ruby>働<rt>はたら</rt></ruby>くチャンスがあるかどうか</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot"><ruby>休<rt>やす</rt></ruby>みが<ruby>取<rt>と</rt></ruby>りやすいかどうか</span></span></p>
 <div class="qa"><label><input type="radio" name="q_問2-4" value="1"><span>1</span></label><label><input type="radio" name="q_問2-4" value="2"><span>2</span></label><label><input type="radio" name="q_問2-4" value="3"><span>3</span></label><label><input type="radio" name="q_問2-4" value="4"><span>4</span></label></div>
 <p class="furi"><strong>5<ruby>番<rt>ばん</rt></ruby></strong><br />
-<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">これまでの<ruby>経験<rt>けいけん</rt></ruby>を<ruby>生<rt>い</rt></ruby>かせそうだったから</span></span><br />
-<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot"><ruby>給料<rt>きゅうりょう</rt></ruby>などよいじょうけんがそろっていたから</span></span><br />
-<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot"><ruby>前<rt>まえ</rt></ruby>のしょくばに<ruby>不満<rt>ふまん</rt></ruby>があったから</span></span><br />
-<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot"><ruby>新<rt>あたら</rt></ruby>しい<ruby>分野<rt>ぶんや</rt></ruby>の<ruby>仕事<rt>しごと</rt></ruby>をしてみたかったから</span></span></p>
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot"><ruby>子<rt>こ</rt></ruby>どもの<ruby>安全<rt>あんぜん</rt></ruby>に<ruby>注意<rt>ちゅうい</rt></ruby>すること</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot"><ruby>子<rt>こ</rt></ruby>どもに<ruby>分<rt>わ</rt></ruby>かりやすく<ruby>指示<rt>しじ</rt></ruby>すること</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot"><ruby>子<rt>こ</rt></ruby>どもと<ruby>目<rt>め</rt></ruby>の<ruby>高<rt>たか</rt></ruby>さを<ruby>合<rt>あ</rt></ruby>わせて<ruby>話<rt>はな</rt></ruby>すこと</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot"><ruby>明<rt>あか</rt></ruby>るく<ruby>元気<rt>げんき</rt></ruby>にあいさつすること</span></span></p>
 <div class="qa"><label><input type="radio" name="q_問2-5" value="1"><span>1</span></label><label><input type="radio" name="q_問2-5" value="2"><span>2</span></label><label><input type="radio" name="q_問2-5" value="3"><span>3</span></label><label><input type="radio" name="q_問2-5" value="4"><span>4</span></label></div>
 <p class="furi"><strong>6<ruby>番<rt>ばん</rt></ruby></strong><br />
-<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot"><ruby>高<rt>たか</rt></ruby>いぎじゅつ<ruby>力<rt>ちから</rt></ruby></span></span><br />
-<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot"><ruby>高<rt>たか</rt></ruby>い<ruby>身体<rt>しんたい</rt></ruby><ruby style="min-width:2.50em">能力<rt>のうりょく</rt></ruby></span></span><br />
-<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot"><ruby>強<rt>つよ</rt></ruby>いせいしん<ruby>力<rt>ちから</rt></ruby></span></span><br />
-<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">すぐれたはんだん<ruby>力<rt>ちから</rt></ruby></span></span></p>
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot"><ruby>寝<rt>ね</rt></ruby>てばかりいる</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot"><ruby>散歩<rt>さんぽ</rt></ruby>に<ruby>行<rt>い</rt></ruby>きたがる</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot"><ruby>元気<rt>げんき</rt></ruby>がないが、<ruby>食欲<rt>しょくよく</rt></ruby>がある</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot"><ruby>薬<rt>くすり</rt></ruby>はいやがらずに<ruby>飲<rt>の</rt></ruby>む</span></span></p>
 <div class="qa"><label><input type="radio" name="q_問2-6" value="1"><span>1</span></label><label><input type="radio" name="q_問2-6" value="2"><span>2</span></label><label><input type="radio" name="q_問2-6" value="3"><span>3</span></label><label><input type="radio" name="q_問2-6" value="4"><span>4</span></label></div>
 <h2 class="bk-mondai bk-mondai-l"><span class="bk-mn">問題3</span></h2>
 <p class="furi"><ruby>問題<rt>もんだい</rt></ruby>3では、<ruby>問題<rt>もんだい</rt></ruby><ruby>用紙<rt>ようし</rt></ruby>に<ruby>何<rt>なに</rt></ruby>も<ruby>印刷<rt>いんさつ</rt></ruby>されていません。この<ruby>問題<rt>もんだい</rt></ruby>は、<ruby>全体<rt>ぜんたい</rt></ruby>としてどんな<ruby>内容<rt>ないよう</rt></ruby>かを<ruby>聞<rt>き</rt></ruby>く<ruby>問題<rt>もんだい</rt></ruby>です。<ruby>話<rt>はなし</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>に<ruby>質問<rt>しつもん</rt></ruby>はありません。まず<ruby>話<rt>はなし</rt></ruby>を<ruby>聞<rt>き</rt></ruby>いてください。それから、<ruby>質問<rt>しつもん</rt></ruby>とせんたくしを<ruby>聞<rt>き</rt></ruby>いて、1から4の<ruby>中<rt>なか</rt></ruby>から、<ruby>最<rt>もっと</rt></ruby>もよいものを<ruby>一<rt>ひと</rt></ruby>つ<ruby>選<rt>えら</rt></ruby>んでください。</p>
@@ -1330,26 +1454,26 @@ A「失礼ですが、お名前を（　）。」<br />
 <h2 class="bk-mondai bk-mondai-l"><span class="bk-mn">問題5</span></h2>
 <p class="furi"><ruby>問題<rt>もんだい</rt></ruby>5では、<ruby>長<rt>なが</rt></ruby>めの<ruby>話<rt>はなし</rt></ruby>を<ruby>聞<rt>き</rt></ruby>きます。この<ruby>問題<rt>もんだい</rt></ruby>には<ruby>練習<rt>れんしゅう</rt></ruby>はありません。<ruby>問題<rt>もんだい</rt></ruby><ruby>用紙<rt>ようし</rt></ruby>にメモをとってもかまいません。</p>
 <p class="furi"><strong>1<ruby>番<rt>ばん</rt></ruby></strong><br />
-<ruby>問題<rt>もんだい</rt></ruby><ruby>用紙<rt>ようし</rt></ruby>に<ruby>何<rt>なに</rt></ruby>も<ruby>印刷<rt>いんさつ</rt></ruby>されていません。まず<ruby>話<rt>はなし</rt></ruby>を<ruby>聞<rt>き</rt></ruby>いてください。それから、<ruby>質問<rt>しつもん</rt></ruby>とせんたくしを<ruby>聞<rt>き</rt></ruby>いて、1から4の<ruby>中<rt>なか</rt></ruby>から、<ruby>最<rt>もっと</rt></ruby>もよいものを<ruby>一<rt>ひと</rt></ruby>つ<ruby>選<rt>えら</rt></ruby>んでください。</p>
+<ruby>問題<rt>もんだい</rt></ruby><ruby>用紙<rt>ようし</rt></ruby>に<ruby>何<rt>なに</rt></ruby>も<ruby>印刷<rt>いんさつ</rt></ruby>されていません。まず<ruby>話<rt>はなし</rt></ruby>を<ruby>聞<rt>き</rt></ruby>いてください。それから、<ruby>質問<rt>しつもん</rt></ruby>とせんたくしを<ruby>聞<rt>き</rt></ruby>いて、1から4の<ruby>中<rt>なか</rt></ruby>から、<ruby>最<rt>もっと</rt></ruby>もよいものを<ruby>一<rt>ひと</rt></ruby>つ<ruby>選<rt>えら</rt></ruby>んでください。では、<ruby>始<rt>はじ</rt></ruby>めます。</p>
 <p class="furi"><strong>1<ruby>番<rt>ばん</rt></ruby></strong> <div class="qa"><label><input type="radio" name="q_問5-1" value="1"><span>1</span></label><label><input type="radio" name="q_問5-1" value="2"><span>2</span></label><label><input type="radio" name="q_問5-1" value="3"><span>3</span></label><label><input type="radio" name="q_問5-1" value="4"><span>4</span></label></div></p>
 <p class="bk-memo">― メモ ―</p>
 <p class="furi"><strong>2<ruby>番<rt>ばん</rt></ruby></strong><br />
 まず<ruby>話<rt>はなし</rt></ruby>を<ruby>聞<rt>き</rt></ruby>いてください。それから、<ruby>二<rt>ふた</rt></ruby>つの<ruby>質問<rt>しつもん</rt></ruby>を<ruby>聞<rt>き</rt></ruby>いて、それぞれ<ruby>問題<rt>もんだい</rt></ruby><ruby>用紙<rt>ようし</rt></ruby>の1から4の<ruby>中<rt>なか</rt></ruby>から、<ruby>最<rt>もっと</rt></ruby>もよいものを<ruby>一<rt>ひと</rt></ruby>つ<ruby>選<rt>えら</rt></ruby>んでください。</p>
 <p class="furi"><strong><ruby>質問<rt>しつもん</rt></ruby>1</strong><br />
-<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot"><ruby style="min-width:2.50em">中央<rt>ちゅうおう</rt></ruby><ruby style="min-width:2.50em">会場<rt>かいじょう</rt></ruby></span></span><br />
-<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot"><ruby style="min-width:1.50em">南<rt>みなみ</rt></ruby><ruby style="min-width:2.50em">会場<rt>かいじょう</rt></ruby></span></span><br />
-<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot"><ruby style="min-width:1.50em">東<rt>ひがし</rt></ruby><ruby style="min-width:2.50em">会場<rt>かいじょう</rt></ruby></span></span><br />
-<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot"><ruby>西<rt>にし</rt></ruby><ruby style="min-width:2.50em">会場<rt>かいじょう</rt></ruby></span></span></p>
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot"><ruby>夕日<rt>ゆうひ</rt></ruby><ruby>通<rt>とう</rt></ruby>り</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">にしがおか</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">さくら<ruby>公園<rt>こうえん</rt></ruby></span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot"><ruby>東山<rt>ひがしやま</rt></ruby></span></span></p>
 <div class="qa"><label><input type="radio" name="q_問5-2-1" value="1"><span>1</span></label><label><input type="radio" name="q_問5-2-1" value="2"><span>2</span></label><label><input type="radio" name="q_問5-2-1" value="3"><span>3</span></label><label><input type="radio" name="q_問5-2-1" value="4"><span>4</span></label></div>
 <p class="furi"><strong><ruby>質問<rt>しつもん</rt></ruby>2</strong><br />
-<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot"><ruby style="min-width:2.50em">中央<rt>ちゅうおう</rt></ruby><ruby style="min-width:2.50em">会場<rt>かいじょう</rt></ruby></span></span><br />
-<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot"><ruby style="min-width:1.50em">南<rt>みなみ</rt></ruby><ruby style="min-width:2.50em">会場<rt>かいじょう</rt></ruby></span></span><br />
-<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot"><ruby style="min-width:1.50em">東<rt>ひがし</rt></ruby><ruby style="min-width:2.50em">会場<rt>かいじょう</rt></ruby></span></span><br />
-<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot"><ruby>西<rt>にし</rt></ruby><ruby style="min-width:2.50em">会場<rt>かいじょう</rt></ruby></span></span></p>
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot"><ruby>夕日<rt>ゆうひ</rt></ruby><ruby>通<rt>とう</rt></ruby>り</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">にしがおか</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">さくら<ruby>公園<rt>こうえん</rt></ruby></span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot"><ruby>東山<rt>ひがしやま</rt></ruby></span></span></p>
 <div class="qa"><label><input type="radio" name="q_問5-2-2" value="1"><span>1</span></label><label><input type="radio" name="q_問5-2-2" value="2"><span>2</span></label><label><input type="radio" name="q_問5-2-2" value="3"><span>3</span></label><label><input type="radio" name="q_問5-2-2" value="4"><span>4</span></label></div></div></div><div id="screen-result"></div><script>
-const KEYS = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "問1-1", "問1-2", "問1-3", "問1-4", "問1-5", "問2-1", "問2-2", "問2-3", "問2-4", "問2-5", "問2-6", "問3-1", "問3-2", "問3-3", "問3-4", "問3-5", "問4-1", "問4-2", "問4-3", "問4-4", "問4-5", "問4-6", "問4-7", "問4-8", "問4-9", "問4-10", "問4-11", "問5-1", "問5-2-1", "問5-2-2"], TESTID = "imported-n2-2024-07", LEVEL = "N2";
+const KEYS = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "問1-1", "問1-2", "問1-3", "問1-4", "問1-5", "問2-1", "問2-2", "問2-3", "問2-4", "問2-5", "問2-6", "問3-1", "問3-2", "問3-3", "問3-4", "問3-5", "問4-1", "問4-2", "問4-3", "問4-4", "問4-5", "問4-6", "問4-7", "問4-8", "問4-9", "問4-10", "問4-11", "問5-1", "問5-2-1", "問5-2-2"], TESTID = "20260928_2", LEVEL = "N2";
 const GENGO_KEYS = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71"], CHOUKAI_KEYS = ["問1-1", "問1-2", "問1-3", "問1-4", "問1-5", "問2-1", "問2-2", "問2-3", "問2-4", "問2-5", "問2-6", "問3-1", "問3-2", "問3-3", "問3-4", "問3-5", "問4-1", "問4-2", "問4-3", "問4-4", "問4-5", "問4-6", "問4-7", "問4-8", "問4-9", "問4-10", "問4-11", "問5-1", "問5-2-1", "問5-2-2"];
-const ANSWER_KEY = {"1": 4, "2": 1, "3": 2, "4": 2, "5": 3, "6": 2, "7": 1, "8": 3, "9": 4, "10": 1, "11": 1, "12": 4, "13": 3, "14": 1, "15": 3, "16": 1, "17": 4, "18": 4, "19": 2, "20": 3, "21": 1, "22": 3, "23": 2, "24": 4, "25": 2, "26": 4, "27": 1, "28": 3, "29": 2, "30": 3, "31": 3, "32": 2, "33": 3, "34": 1, "35": 2, "36": 1, "37": 3, "38": 4, "39": 2, "40": 1, "41": 3, "42": 2, "43": 2, "44": 3, "45": 4, "46": 1, "47": 3, "48": 2, "49": 3, "50": 1, "51": 4, "52": 3, "53": 1, "54": 3, "55": 2, "56": 2, "57": 4, "58": 1, "59": 1, "60": 3, "61": 2, "62": 4, "63": 3, "64": 4, "65": 3, "66": 4, "67": 4, "68": 1, "69": 2, "70": 2, "71": 2, "問1-1": 2, "問1-2": 1, "問1-3": 2, "問1-4": 3, "問1-5": 3, "問2-1": 3, "問2-2": 1, "問2-3": 2, "問2-4": 3, "問2-5": 4, "問2-6": 4, "問3-1": 2, "問3-2": 1, "問3-3": 4, "問3-4": 1, "問3-5": 4, "問4-1": 1, "問4-2": 3, "問4-3": 2, "問4-4": 2, "問4-5": 1, "問4-6": 2, "問4-7": 2, "問4-8": 3, "問4-9": 1, "問4-10": 3, "問4-11": 1, "問5-1": 2, "問5-2-1": 1, "問5-2-2": 3}, TAXONOMY = [{"code": "問1", "name": "漢字読み (Kanji Reading)", "section": "言語知識", "mondai": "問題1", "group": null, "keys": ["1", "2", "3", "4", "5"]}, {"code": "問2", "name": "表記 (Orthography)", "section": "言語知識", "mondai": "問題2", "group": null, "keys": ["6", "7", "8", "9", "10"]}, {"code": "問3", "name": "語形成 (Word Formation)", "section": "言語知識", "mondai": "問題3", "group": null, "keys": ["11", "12", "13"]}, {"code": "問4", "name": "文脈規定 (Word in Context)", "section": "言語知識", "mondai": "問題4", "group": null, "keys": ["14", "15", "16", "17", "18", "19", "20"]}, {"code": "問5", "name": "言い換え類義 (Paraphrases)", "section": "言語知識", "mondai": "問題5", "group": null, "keys": ["21", "22", "23", "24", "25"]}, {"code": "問6", "name": "用法 (Correct Usage)", "section": "言語知識", "mondai": "問題6", "group": null, "keys": ["26", "27", "28", "29", "30"]}, {"code": "問7", "name": "文法形式の判断 (Grammar Form)", "section": "言語知識", "mondai": "問題7", "group": null, "keys": ["31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42"]}, {"code": "問8", "name": "文の組み立て (Sentence Composition ★)", "section": "言語知識", "mondai": "問題8", "group": null, "keys": ["43", "44", "45", "46", "47"]}, {"code": "問9", "name": "文章の文法 (Text Grammar / Cloze)", "section": "言語知識", "mondai": "問題9", "group": "文章の文法", "keys": ["48", "49", "50", "51"]}, {"code": "問10", "name": "内容理解・短文 (Short Passages)", "section": "読解", "mondai": "問題10", "group": null, "keys": ["52", "53", "54", "55", "56"]}, {"code": "問11", "name": "内容理解・中文 (Medium Passages)", "section": "読解", "mondai": "問題11", "group": "中文", "keys": ["57", "58", "59", "60", "61", "62", "63", "64"]}, {"code": "問12", "name": "統合理解 (A/B Comparative Texts)", "section": "読解", "mondai": "問題12", "group": "統合理解", "keys": ["65", "66"]}, {"code": "問13", "name": "主張理解・長文 (Long Essay)", "section": "読解", "mondai": "問題13", "group": "長文", "keys": ["67", "68", "69"]}, {"code": "問14", "name": "情報検索 (Information Retrieval)", "section": "読解", "mondai": "問題14", "group": "情報検索", "keys": ["70", "71"]}, {"code": "問題1", "name": "課題理解 (Task Comprehension)", "section": "聴解", "keys": ["問1-1", "問1-2", "問1-3", "問1-4", "問1-5"]}, {"code": "問題2", "name": "ポイント理解 (Point Comprehension)", "section": "聴解", "keys": ["問2-1", "問2-2", "問2-3", "問2-4", "問2-5", "問2-6"]}, {"code": "問題3", "name": "概要理解 (Summary Comprehension)", "section": "聴解", "keys": ["問3-1", "問3-2", "問3-3", "問3-4", "問3-5"]}, {"code": "問題4", "name": "即時応答 (Quick Response)", "section": "聴解", "keys": ["問4-1", "問4-2", "問4-3", "問4-4", "問4-5", "問4-6", "問4-7", "問4-8", "問4-9", "問4-10", "問4-11"]}, {"code": "問題5", "name": "統合理解 (Integrated Comprehension)", "section": "聴解", "keys": ["問5-1", "問5-2-1", "問5-2-2"]}], ADVICE = {"問1": "『新完全マスター単語N2』『新完全マスター漢字N2』の基本語彙・訓読み・複合語の復習を徹底しましょう。", "問2": "『新完全マスター単語N2』『新完全マスター漢字N2』の基本語彙・訓読み・複合語の復習を徹底しましょう。", "問3": "『新完全マスター単語N2』『新完全マスター漢字N2』の基本語彙・訓読み・複合語の復習を徹底しましょう。", "問4": "語彙の文脈的意味やコロケーション（類義語・用法）の精度を高めましょう。単語カードでの例文暗記が効果的です。", "問5": "語彙の文脈的意味やコロケーション（類義語・用法）の精度を高めましょう。単語カードでの例文暗記が効果的です。", "問6": "語彙の文脈的意味やコロケーション（類義語・用法）の精度を高めましょう。単語カードでの例文暗記が効果的です。", "問7": "『新完全マスター文法N2』で機能語の接続・意味の違いおよび文章全体の論理展開（接続詞・指示語）を復習しましょう。", "問8": "『新完全マスター文法N2』で機能語の接続・意味の違いおよび文章全体の論理展開（接続詞・指示語）を復習しましょう。", "問9": "『新完全マスター文法N2』で機能語の接続・意味の違いおよび文章全体の論理展開（接続詞・指示語）を復習しましょう。", "問10": "『新完全マスター読解N2』を活用し、設問のキーワードのスキャニングおよび段落ごとの要旨把握のスキマ時間を増やしましょう。", "問11": "『新完全マスター読解N2』を活用し、設問のキーワードのスキャニングおよび段落ごとの要旨把握のスキマ時間を増やしましょう。", "問12": "『新完全マスター読解N2』を活用し、設問のキーワードのスキャニングおよび段落ごとの要旨把握のスキマ時間を増やしましょう。", "問13": "『新完全マスター読解N2』を活用し、設問のキーワードのスキャニングおよび段落ごとの要旨把握のスキマ時間を増やしましょう。", "問14": "『新完全マスター読解N2』を活用し、設問のキーワードのスキャニングおよび段落ごとの要旨把握のスキマ時間を増やしましょう。", "問題1": "『新完全マスター聴解N2』CD音源によるシャドーイングおよび即時応答（問題4）の定型表現・敬語表現の反復練習を行いましょう。", "問題2": "『新完全マスター聴解N2』CD音源によるシャドーイングおよび即時応答（問題4）の定型表現・敬語表現の反復練習を行いましょう。", "問題3": "『新完全マスター聴解N2』CD音源によるシャドーイングおよび即時応答（問題4）の定型表現・敬語表現の反復練習を行いましょう。", "問題4": "『新完全マスター聴解N2』CD音源によるシャドーイングおよび即時応答（問題4）の定型表現・敬語表現の反復練習を行いましょう。", "問題5": "『新完全マスター聴解N2』CD音源によるシャドーイングおよび即時応答（問題4）の定型表現・敬語表現の反復練習を行いましょう。"};
+const ANSWER_KEY = {"1": 1, "2": 4, "3": 4, "4": 2, "5": 2, "6": 4, "7": 4, "8": 1, "9": 1, "10": 3, "11": 1, "12": 4, "13": 4, "14": 2, "15": 1, "16": 3, "17": 4, "18": 1, "19": 2, "20": 4, "21": 1, "22": 2, "23": 1, "24": 4, "25": 3, "26": 1, "27": 4, "28": 3, "29": 2, "30": 3, "31": 2, "32": 3, "33": 2, "34": 1, "35": 3, "36": 4, "37": 1, "38": 2, "39": 4, "40": 3, "41": 1, "42": 1, "43": 4, "44": 3, "45": 2, "46": 1, "47": 1, "48": 2, "49": 3, "50": 1, "51": 4, "52": 1, "53": 3, "54": 4, "55": 4, "56": 4, "57": 3, "58": 2, "59": 3, "60": 3, "61": 4, "62": 2, "63": 2, "64": 1, "65": 3, "66": 4, "67": 1, "68": 4, "69": 3, "70": 1, "71": 1, "問1-1": 1, "問1-2": 1, "問1-3": 2, "問1-4": 3, "問1-5": 2, "問2-1": 2, "問2-2": 3, "問2-3": 2, "問2-4": 2, "問2-5": 3, "問2-6": 1, "問3-1": 2, "問3-2": 4, "問3-3": 1, "問3-4": 1, "問3-5": 1, "問4-1": 1, "問4-2": 3, "問4-3": 2, "問4-4": 2, "問4-5": 3, "問4-6": 1, "問4-7": 3, "問4-8": 2, "問4-9": 2, "問4-10": 1, "問4-11": 1, "問5-1": 3, "問5-2-1": 1, "問5-2-2": 2}, TAXONOMY = [{"code": "問1", "name": "漢字読み (Kanji Reading)", "section": "言語知識", "mondai": "問題1", "group": null, "keys": ["1", "2", "3", "4", "5"]}, {"code": "問2", "name": "表記 (Orthography)", "section": "言語知識", "mondai": "問題2", "group": null, "keys": ["6", "7", "8", "9", "10"]}, {"code": "問3", "name": "語形成 (Word Formation)", "section": "言語知識", "mondai": "問題3", "group": null, "keys": ["11", "12", "13"]}, {"code": "問4", "name": "文脈規定 (Word in Context)", "section": "言語知識", "mondai": "問題4", "group": null, "keys": ["14", "15", "16", "17", "18", "19", "20"]}, {"code": "問5", "name": "言い換え類義 (Paraphrases)", "section": "言語知識", "mondai": "問題5", "group": null, "keys": ["21", "22", "23", "24", "25"]}, {"code": "問6", "name": "用法 (Correct Usage)", "section": "言語知識", "mondai": "問題6", "group": null, "keys": ["26", "27", "28", "29", "30"]}, {"code": "問7", "name": "文法形式の判断 (Grammar Form)", "section": "言語知識", "mondai": "問題7", "group": null, "keys": ["31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42"]}, {"code": "問8", "name": "文の組み立て (Sentence Composition ★)", "section": "言語知識", "mondai": "問題8", "group": null, "keys": ["43", "44", "45", "46", "47"]}, {"code": "問9", "name": "文章の文法 (Text Grammar / Cloze)", "section": "言語知識", "mondai": "問題9", "group": "文章の文法", "keys": ["48", "49", "50", "51"]}, {"code": "問10", "name": "内容理解・短文 (Short Passages)", "section": "読解", "mondai": "問題10", "group": null, "keys": ["52", "53", "54", "55", "56"]}, {"code": "問11", "name": "内容理解・中文 (Medium Passages)", "section": "読解", "mondai": "問題11", "group": "中文", "keys": ["57", "58", "59", "60", "61", "62", "63", "64"]}, {"code": "問12", "name": "統合理解 (A/B Comparative Texts)", "section": "読解", "mondai": "問題12", "group": "統合理解", "keys": ["65", "66"]}, {"code": "問13", "name": "主張理解・長文 (Long Essay)", "section": "読解", "mondai": "問題13", "group": "長文", "keys": ["67", "68", "69"]}, {"code": "問14", "name": "情報検索 (Information Retrieval)", "section": "読解", "mondai": "問題14", "group": "情報検索", "keys": ["70", "71"]}, {"code": "問題1", "name": "課題理解 (Task Comprehension)", "section": "聴解", "keys": ["問1-1", "問1-2", "問1-3", "問1-4", "問1-5"]}, {"code": "問題2", "name": "ポイント理解 (Point Comprehension)", "section": "聴解", "keys": ["問2-1", "問2-2", "問2-3", "問2-4", "問2-5", "問2-6"]}, {"code": "問題3", "name": "概要理解 (Summary Comprehension)", "section": "聴解", "keys": ["問3-1", "問3-2", "問3-3", "問3-4", "問3-5"]}, {"code": "問題4", "name": "即時応答 (Quick Response)", "section": "聴解", "keys": ["問4-1", "問4-2", "問4-3", "問4-4", "問4-5", "問4-6", "問4-7", "問4-8", "問4-9", "問4-10", "問4-11"]}, {"code": "問題5", "name": "統合理解 (Integrated Comprehension)", "section": "聴解", "keys": ["問5-1", "問5-2-1", "問5-2-2"]}], ADVICE = {"問1": "『新完全マスター単語N2』『新完全マスター漢字N2』の基本語彙・訓読み・複合語の復習を徹底しましょう。", "問2": "『新完全マスター単語N2』『新完全マスター漢字N2』の基本語彙・訓読み・複合語の復習を徹底しましょう。", "問3": "『新完全マスター単語N2』『新完全マスター漢字N2』の基本語彙・訓読み・複合語の復習を徹底しましょう。", "問4": "語彙の文脈的意味やコロケーション（類義語・用法）の精度を高めましょう。単語カードでの例文暗記が効果的です。", "問5": "語彙の文脈的意味やコロケーション（類義語・用法）の精度を高めましょう。単語カードでの例文暗記が効果的です。", "問6": "語彙の文脈的意味やコロケーション（類義語・用法）の精度を高めましょう。単語カードでの例文暗記が効果的です。", "問7": "『新完全マスター文法N2』で機能語の接続・意味の違いおよび文章全体の論理展開（接続詞・指示語）を復習しましょう。", "問8": "『新完全マスター文法N2』で機能語の接続・意味の違いおよび文章全体の論理展開（接続詞・指示語）を復習しましょう。", "問9": "『新完全マスター文法N2』で機能語の接続・意味の違いおよび文章全体の論理展開（接続詞・指示語）を復習しましょう。", "問10": "『新完全マスター読解N2』を活用し、設問のキーワードのスキャニングおよび段落ごとの要旨把握のスキマ時間を増やしましょう。", "問11": "『新完全マスター読解N2』を活用し、設問のキーワードのスキャニングおよび段落ごとの要旨把握のスキマ時間を増やしましょう。", "問12": "『新完全マスター読解N2』を活用し、設問のキーワードのスキャニングおよび段落ごとの要旨把握のスキマ時間を増やしましょう。", "問13": "『新完全マスター読解N2』を活用し、設問のキーワードのスキャニングおよび段落ごとの要旨把握のスキマ時間を増やしましょう。", "問14": "『新完全マスター読解N2』を活用し、設問のキーワードのスキャニングおよび段落ごとの要旨把握のスキマ時間を増やしましょう。", "問題1": "『新完全マスター聴解N2』CD音源によるシャドーイングおよび即時応答（問題4）の定型表現・敬語表現の反復練習を行いましょう。", "問題2": "『新完全マスター聴解N2』CD音源によるシャドーイングおよび即時応答（問題4）の定型表現・敬語表現の反復練習を行いましょう。", "問題3": "『新完全マスター聴解N2』CD音源によるシャドーイングおよび即時応答（問題4）の定型表現・敬語表現の反復練習を行いましょう。", "問題4": "『新完全マスター聴解N2』CD音源によるシャドーイングおよび即時応答（問題4）の定型表現・敬語表現の反復練習を行いましょう。", "問題5": "『新完全マスター聴解N2』CD音源によるシャドーイングおよび即時応答（問題4）の定型表現・敬語表現の反復練習を行いましょう。"};
 // Last 文字・語彙＋文法 question; 読解 starts at the next one. Baked in by
 // grade_answers.gengo_goi_cutoff() because it is era-dependent (51 on a 71- or
 // 72-question paper, 54 on a 75-question one), and the in-page grader must
@@ -1358,7 +1482,7 @@ const GOI_CUTOFF = 51;
 // The level's scoring bands (levels/<LEVEL>.json via level.py): section names,
 // per-section max and cutoff, total max and pass mark. N2: 60/19 ×3, 180, 90.
 const SCORING = {"max": 180, "pass": 90, "sections": [{"name": "言語知識（文字・語彙・文法）", "max": 60, "cutoff": 19}, {"name": "読解", "max": 60, "cutoff": 19}, {"name": "聴解", "max": 60, "cutoff": 19}]};
-const CHOUKAI_SCRIPTS = {"問1-1": "1番。大学で女の学生と男の学生が話しています。男の学生はこの後まず、何をしますか。\n女:中村くん。シンポジウムのポスター、掲示板に貼ってくれたんだね。ありがとう。\n男:えぇ、他に僕がやっておくことってありますか?\n女:マイクとか会場の準備は前日にすればいいし、当日のスタッフ用のスケジュール表、これないから欲しいな。今週中にお願いしていい?\n男:あ、はい。\n女:それから1番大事な当日配る資料、コピーまだなんじゃない？100部だよね？\n男:あ、それなんですけど、発表者の方からの資料まだ全部集まってないんですよ。\n女:そう、みなさんお忙しい方ばかりだから⋯私から発表者に資料を送ってもらうようにすぐに連絡をするから、集まり次第コピーしよう。週明けには出してもらうようにするね。\n男:はい、わかりました。\n男の学生は、この後まず何をしますか。", "問1-2": "2番。スーパーで男の店長と女の店員が話しています。女の店員はこの後まず、何をしますか。\n男:おはようございます、森田さん。今日は一部の商品に割引きシールを付ける作業をやってくれることになってたね。\n女:あ、はい。準備してます。\n男:えっと、忙しい時に悪いんだけど、倉庫に行って南コーヒーの豆、何袋あるか数えてきてくれる?数が少なかったら今日中に注文しないといけないんだ。\n女:あ、わかりました。急ぎですか?\n男:あー、そのシールを貼る作業が終わってからでいいから。袋の数を数えたらメモを私の机の上に置いといて。\n女:わかりました。\n男:お客さんがレジにたくさん並んでるから、私もすぐレジを手伝わなきゃいけなくて。値引シールを付けた商品をレジの横の棚に並べるのは明日の開店前にみんなですればいいから。じゃ、よろしくね。\n女の店員はこの後まず、何をしますか。", "問1-3": "3番。出版社で女の人と男の人が話しています。男の人は何の写真を撮らなければなりませんか。\n女:すみません、雑誌に載せる蕎麦屋の写真を私の代わりに撮りに行ってくれるそうでありがとうございます。\n男:あ、はい。緑駅前の蕎麦屋さんですよね？\n女:はい。えっと、説明しますね。この雑誌では通常はお店で1番の人気料理の写真を撮らせてもらうんですが、今回この写真はお店から提供していただくことになっています。\n男:はい、わかりました。\n女:それから店内の様子の撮影についてはお店に許可をいただいています。お客様が写り込まないように撮影をお願いしますね。調理する人の写真は店によっては掲載しますが、こちらは掲載不可とのことです。\n男:はい。\n女:外から見た入口の写真は天候に左右されるから先日、天気が良い日に済ませてきましたので結構です。よろしくお願いします。\n男:わかりました。\n男の人は何の写真を撮らなければなりませんか。", "問1-4": "4番。日本語学校で女の職員と男の課長が話しています。女の職員はこの後まず、何をしますか。\n女:課長、明日の卒業パーティについてですけど、あとは何をしましょうか。\n男:卒業生の皆さんに渡す記念品は袋に入れてくれた?\n女:まだ届いていないんですよ。\n男:あ、記念品の納品は3時だったね。あと1時間か⋯⋯それじゃ、会場の入り口の花瓶、あれをステージの上に運んでくれる?\n女:はい、花瓶ですね。\n男:それと記念品の到着を待ってる間、出席者の名前を書いた紙を椅子に貼ってくれない？そうだ、忘れないうちに言っとくけど明日の朝一番に卒業生代表のグエンさんと挨拶のリハーサルをお願いね。\n女:はい、わかりました。\n男:あ、花瓶の移動なんだけど、落とすといけないから記念品の準備の後で私と一緒にやりましょうか。\n女:はい。\n女の職員はこの後まず、何をしますか。", "問1-5": "5番。大学で女の学生と男の学生が話しています。女の学生はこの後、何をしますか。\n女:田中くん、聞いて。昨日自転車、駅前に止めてたんだけど、乗って帰ろうとしたら自転車がなくて・・・。置いといた場所の地面に「駐輪禁止区域のため移動しました」って紙が貼られてたんだよ。\n男:駅前は駐輪場以外には停めちゃいけないんだよ。\n女:そうなんだ。どうすればいいの?自転車、警察に取りに行くの？\n男:警察じゃないと思うけど⋯貼られてた紙に預かり場所、書いてなかった？\n女:よく読まなかった。\n男:えーっと、そしたら市役所のホームページに書いてあるから確認して。取りに行くならそれからだよ。\n女:わかった。\n男:確か身分証明書がいるよ。あ、あとお金もいる。自転車受け取る時払うよ。\n女:お金払うの?\n男:うん、自転車の預かり料だよ。\n女の学生はこの後、何をしますか。", "問2-1": "1番。テレビでアナウンサーの女の人がパン屋の店長にインタビューをしています。店長はどうしてパン屋を始めたと言っていますか。\n女:店長の山本さんです。こちらのお店の手作りのパン、大変人気ですが山本さんご自身は以前、会社員をなされていたんですよね?\n男:はい。この店はもともとパン作りが好きな母がやる予定だったんですが、店を出す準備をしている途中で母が病気になってしまいました。母はずっとパン屋をやりたかったので店を諦めることをとても残念がっていたんですよ。それで「やってくれ」と言われたわけじゃないんですが、僕が何とか形にしたいと思いました。\n女:それまでパン作りのご経験はあったんですか?\n男:いえ、全くなくて⋯⋯。パン作りは専門学校で一から勉強しました。卒業する前に母は亡くなりました。\n女:そうでしたか。\n男:母のレベルにはまだまだなんですが、おいしいパンを地元の方に食べてもらえるように頑張っています。\n店長はどうしてパン屋を始めたと言っていますか。", "問2-2": "2番。うちで女の人と男の人が話しています。2人は引っ越しの値段を安くするため、どうすることにしましたか。\n女:引っ越し会社に引越しの見積もりを出してもらったけど予算よりかなり高かったよ。今の時期はどこの会社も高いんだね。荷物の量と移動距離で料金を計算するから荷物を減らせば安くなるって。\n男:そう、んー。大きい荷物を減らそうか。えーっと、大きいものって言ったらソファー、冷蔵庫、本棚だね。\n女:本棚は分解できるよ。ソファーはあまり使ってないし、欲しい人にあげてもいいかもしれないね。\n男:それもそうだね。あ、冷蔵庫は古いし、この際、売って向こうで新しいのを買う?\n女:えー?冷蔵庫はまだ使うよ!あ、そうだ。親戚のおじさんがトラックを持ってるからおじさんに手伝ってもらって、自分たちで荷物を運ぶ?\n男:荷物の積み降ろしって結構大変だよ。やっぱり引っ越し会社に頼んだ方がいいんじゃないかな?\n女:うーん、そうだね。安い引っ越し会社は見つからないだろうし、費用を抑えられるようにあんまり使ってない大きい家具のもらい手を探そうか。\n男:うん、そうだね。\n2人は引っ越しの値段を安くするため、どうすることにしましたか。", "問2-3": "3番。会社で男の人と女の人がアンケートについて話しています。女の人はアンケートに何を書くと言っていますか。\n男:働き方の改善の社内アンケート調査、もう書いた?「改善すべきことがあるか」って聞かれてもすぐ思い浮かばなくて⋯。\n女:そう、残業代のアップも私たち社員が声を上げたから実現したし、言うべきことは言ったほうがいいんじゃない?私は有給とかの休暇の取得申請、もっと簡単に申請できるように改善してほしいんだよね。\n男:あー、そう言うことを書けばいいんだね。\n女:そうそう。私はそうしようと思ってる。あ、そういえば、この間、在宅での勤務を今、週2日可能だけどもっと増やしてほしいって言ってなかった?\n男:そうだ、それを書こう。あと社内のパソコンを新しくしてほしいんだよね。今の古くって。\n女:パソコン、今年度中には買い換えるって聞いたよ。\n男:あ、じゃ、いいね。\n女の人はアンケートに何を書くと言っていますか。", "問2-4": "4番。女の学生と男の学生が毎日着る服について話しています。男の学生は女の学生にどうしたら1番いいと言っていますか。\n女:岡田くん、ファッションの勉強をしているから教えてほしいんだけど…私、毎日どんな服を着たらいいのかわからなくて⋯。ファッション雑誌を見ても自分に似合うかどうかわからないし。\n男:雑誌は参考になると思うけど、そうだね⋯あ、インターネットで毎月、洋服を送ってくれるサービスって知ってる?プロがその人に似合いそうな服を選んで送ってくれるんだよ。気に入ればそのまま買い取れるし、気に入らなければ返せばいいし。\n女:あぁ、それ友達がやってた。でも私は送り返すのも面倒だなと思って。\n男:うーん、僕は毎日シンプルな服を着てるよ。制服化って言うの?白いシャツに黒いズボンっていうスタイル。\n女:そういえば岡田くんって大体いつもそうだね。でも学校の制服みたいに単調にならないのは小物を上手く取り入れてるからなんだね。\n男:そうかな。あ、佐藤さん、リサイクルショップに行ったことある?種類がたくさんあってデザインもいろいろ選べるし、気に入るものがあるかもしれないよ。\n女:中古か⋯ちょっと抵抗あるなぁ。\n男:そう。じゃ、佐藤さんにはやっぱり僕と同じ方法がお勧めだね。\n男の学生は女の学生にどうしたら1番いいと言っていますか。", "問2-5": "5番。テレビでアナウンサーの男の人が女の人にインタビューしています。女の人が今の会社に転職した理由は何ですか。今の会社です。\n男:今日は転職を経験されている会社員の内田さんにお話を伺います。\n女:あ、はい。私は2回転職経験があります。転職というと経験を積んでそれを活かし、より給料の良いところに移っていく人もいますけど、どちらかというと現状に不満や不足を感じて居心地のいい場所を求める人が多いように感じます。私の最初の転職がそうでした。\n男:そうですか。\n女:現在は友人が新しく作った会社に入れてもらったんです。前に勤めてた会社に何か不満があったわけじゃなく、新たな世界を見てみたいと思っていた時だったので。分野は全然違うんですけど、やり甲斐があります。\n男:そういう理由もあるんですね。\n女の人が今の会社に転職した理由は何ですか。", "問2-6": "6番。子供のサッカークラブのコーチがクラブの紹介をしています。コーチはこのサッカークラブでは特にどのような力を持った選手に育てたいと言っていますか。\n男:サッカーで勝つためには、ボールを正確に蹴る高い技術力や足の速さなどの高い身体能力はもちろん、精神力の強さも求められます。また、いつ、どのようにプレーするかを正しく選択する判断力も不可欠です。個人個人に高い技術力や身体能力、精神力があっても適切な判断ができないとチームの勝ちには繋がりません。ですから、このクラブでは特に、この力が身に付くよう選手を育てることに力を入れています。\nコーチはこのサッカークラブでは特にどのような力を持った選手に育てたいと言っていますか。", "問3-1": "1番。ラジオで歯医者が話しています。\n女:歯は毎日の生活と関わっています。歯が健康でものが良く噛めれば、消化を助け、全身に栄養を届けることができます。また、歯があるおかげで発音ができ、会話ができます。この他、体の姿勢やバランスを保ったり、豊かな表情を作ったりなど食べること以外の面でも歯の存在は不可欠ですね。\n歯医者は何について話していますか。\n1、歯の構造。\n2、歯の役割。\n3、歯の正しいケアの仕方。\n4、歯の病気の原因。", "問3-2": "2番。講演会で鉄道の写真家が話しています。\n男:私は鉄道の写真を撮るためにいろいろなところへ行きます。行く先々で鉄道ファンの方に会うと「どうやったらうまく撮れますか?」と聞かれるんですが、私は反対に「写真で何を伝えたいですか?」と尋ねるんです。シャッターを押すタイミングとか列車と風景をどんなバランスで撮るかとか、上手に撮影するテクニックはいろいろあります。けど、少しぐらい下手でも構わないんです。1枚の写真の中に季節感や感動的な風景など何を表現したいかを意識して撮ることで全く違った写真になると思うんです。\n鉄道の写真家が伝えたいことは何ですか。\n1、鉄道の写真を撮る時に大切なこと。\n2、鉄道の写真を撮るのに良い場所。\n3、鉄道の美しさを表現する楽しさ。\n4、鉄道の写真を上手に撮るテクニック。", "問3-3": "3番。テレビで工業デザイナーが話しています。\n女:中学1年の時、視力が悪くなり、メガネが必要になりました。メガネ屋さんに行ったのですが、気に入るメガネが見つかりませんでした。仕方なく1つ買ったんですが、自分の気に入らないメガネをかけるのは耐えられませんでした。同じ頃、友達の家で出されたジュースのコップがすごくきれいな形で感激しました。有名なデザイナーがデザインしたコップだったのですが、ちょっと形を変えるだけでこんなにおしゃれになるんだと驚きました。今思えば、デザインということに初めて興味を持ったのがこの頃でした。\n工業デザイナーは何について話していますか。\n1、メガネを買う人へのアドバイス。\n2、人気があるメガネのデザイン。\n3、おしゃれなデザインのポイント。\n4、デザインを意識し始めたきっかけ。", "問3-4": "4番。ラジオでタレントが話しています。\n男:タレントの仕事を始めて30年が経ちました。ありがたいことにいろんな仕事をいただき、充実した日々を送っています。ただ、仕事が多すぎて、時間管理の必要性を感じます。限られた時間の中でやりたい仕事を全部はできないのだから何をするかの優先順位をつけて、できることを確実に進め、できないことは諦めるということを意識して生活しています。\nタレントは何について話していますか。\n1、時間を上手に使う工夫。\n2、仕事の楽しみ方。\n3、自分の仕事の内容。\n4、自分の計画性のなさ。", "問3-5": "5番。ラジオで俳優が話しています。\n男:みなさんは旅が好きですか。旅といえば、遠いところに行くことだと思う人もいるかもしれませんが、僕は例えば、電車で一駅手前で降りて、いつもと違う道を歩いて帰るのも旅だと思うんです。距離ではなく、移動そのものが重要なんです。目的地に到達するまでのいつもと違った過程を楽しむ。そういうのも旅だと言えるのではないでしょうか。\n俳優は何について話していますか。\n1、旅の思い出。\n2、1人で行く旅の計画。\n3、旅をすることの重要性。\n4、自分が考える旅というもの。", "問4-1": "1番。今日中に漢字20個覚えるなんて、無理に決まってるよ。\n1、頑張ればできるんじゃない?\n2、楽にできるって思ってるんだね。\n3、簡単に覚えられてすごいね。", "問4-2": "2番。課長、明日の会議の資料ですが、ご覧いただけないでしょうか?\n1、資料、見てくれるんですね。\n2、資料は私が作っておきますね。\n3、資料、見ておきます。", "問4-3": "3番。この会社、経験者に限らず応募できるって。\n1、募集は経験が無い人だけなんだ。\n2、経験がなくてもいいんだね。\n3、やっぱり経験が無いといけないのか。", "問4-4": "4番。僕が出張の間、庭の花の水やり、毎日欠かさないでね。\n1、じゃ、やらないでおくね。\n2、忘れないようにするね。\n3、水、毎日やっちゃだめなんだね。", "問4-5": "5番。履歴書の提出、もう少しで締め切りに遅れるところだったよ。\n1、間に合ってよかったね。\n2、遅れちゃったんだ。\n3、あと少しだったのにね。", "問4-6": "6番。前田さん、お客さまへの商品説明はこのパンフレットに沿って話してください。\n1、自由に話していいんですね。\n2、ここに書いてあるように話すんですね。\n3、パンフレットに関係なく話すんですね。", "問4-7": "7番。今日の午後、商品発表会で話すんだけど緊張のあまり食欲もないよ。\n1、随分落ち着いてるんだね。\n2、そんなに緊張しなくても大丈夫だよ。\n3、少しは緊張感持たないとだめだよ。", "問4-8": "8番。今日の会議でのプレゼン、先輩が休みだから私がやらざるを得なくなって…。\n1、プレゼン、やらなくてよくなったの？\n2、プレゼンできてうれしいんだね。\n3、そういうことなら、仕方ないね。", "問4-9": "9番。今日のお昼の定食、食べ応えあったね。\n1、本当、お腹いっぱいになったね。\n2、そうそう、あれじゃ足りない人多いよね。\n3、確かに、量が少なめでちょうどよかったね。", "問4-10": "10番。店長。山田さん、配達の仕事、頼まれたらやらないこともないって言ってました。\n1、他の人を探さないとだめだね。\n2、山田さんに断られたか。\n3、じゃ、お願いしてみようかな。", "問4-11": "11番。来年からの入学先、迷った挙句、初めに思ってたとこにしたよ。\n1、いろいろ悩んだんだね。\n2、すぐに決められたんだね。\n3、少しは迷ったんだね。", "問5-1": "1番。地域のボランティアグループのリーダーとメンバー2人が話しています。\n男1:僕たちが市と協力して定期的にゴミ拾いをしている東公園、ゴミを置いていっちゃう人が多いよね。何か対策を考えて市役所に提案しようと思うんだ。\n女:お菓子の袋とかペットボトルとか、置いていっちゃう人がいるんですよね。\n男1:市の方針でゴミ箱は置かないことになってるからね。\n男2:特にゴミが多いところから対策を考えた方がいいんじゃないですか?ゴミが目立つところに花壇を作るとか。他の公園で花壇を作ったら、その周りはゴミが減ったそうですよ。\n男1:ゴミが多いのはベンチの周りだよね?あそこに花壇を作るのは難しいんじゃないかな。\n男2:じゃ、代わりにベンチをもっと明るい色にして花の絵も描いたらどうですか?きれいでちゃんと手入れされている印象があるとゴミを置いていきにくいと思います。\n男1:なるほど。\n女:私は公園全体を考えた方がいいと思うんですが⋯⋯。「ゴミを持ち帰りましょう」って書いた看板を増やすのはどうですか?\n男1:うーん、既にいくつか立ててあるから今以上に増やす必要ないんじゃないかな?\n女:あと私たちボランティアが見回って、ゴミを持って帰ってもらうように直接声をかけるのも効果があると思いますけど。\n男1:ボランティアの負担が大きくなるのはちょっとね。うーん、まず、ゴミが多いところからなんとかしよう。花壇を作る代わりにっていうアイディアが良さそうだね。市役所の担当者に早速提案してみよう。\n公園のゴミを減らすため、何を市役所に提案することにしましたか。\n1、ベンチの近くに花壇を作ること。\n2、ベンチを塗り直してきれいにすること。\n3、看板を立てること。\n4、公園を見回ること。", "問5-2-1": "2番。港で行われているイベントでアナウンスを聞いた後、女の人と男の人が話しています。\n女1:本日は桜港祭りにお越しいただき、ありがとうございます。会場は4つに分かれています。各会場についてご案内いたします。中央会場では、今朝捕れた魚や貝をその場で焼いてお召し上がりいただけます。こちらは、なくなり次第終了いたします。南会場では、初心者向けの釣り教室を開催しています。道具の貸し出しはもちろん、餌の付け方などもお教えいたします。東会場では、海の生き物が観察できます。地元の海の生き物を間近で見ることができ、お子様も大人の方もお楽しみいただけます。西会場では、新鮮な魚介類を販売しております。是非、お買い求めください。\n女2:新鮮な魚、おいしそう。なくなる前に早く行かない?\n男:え?早速買い物?先に買っちゃうと持って歩くの大変じゃない?\n女2:あ、そっちじゃなくて自分たちで焼いて食べられるって方。買い物は最後にしようよ。\n男:あぁ、じゃ、まずはそこに行こう。それから近くで生き物を観察できるっていうのに行かない?\n女2:いいよ。釣りはいいの?好きでしょ?今日もやりたいんじゃない?\n男:うーん、初心者向けって言ってたから今日はしなくていいかな。\n質問1。2人は最初にどの会場に行きますか。\n質問2。2人は2番目にどの会場に行きますか。", "問5-2-2": "2番。港で行われているイベントでアナウンスを聞いた後、女の人と男の人が話しています。\n女1:本日は桜港祭りにお越しいただき、ありがとうございます。会場は4つに分かれています。各会場についてご案内いたします。中央会場では、今朝捕れた魚や貝をその場で焼いてお召し上がりいただけます。こちらは、なくなり次第終了いたします。南会場では、初心者向けの釣り教室を開催しています。道具の貸し出しはもちろん、餌の付け方などもお教えいたします。東会場では、海の生き物が観察できます。地元の海の生き物を間近で見ることができ、お子様も大人の方もお楽しみいただけます。西会場では、新鮮な魚介類を販売しております。是非、お買い求めください。\n女2:新鮮な魚、おいしそう。なくなる前に早く行かない?\n男:え?早速買い物?先に買っちゃうと持って歩くの大変じゃない?\n女2:あ、そっちじゃなくて自分たちで焼いて食べられるって方。買い物は最後にしようよ。\n男:あぁ、じゃ、まずはそこに行こう。それから近くで生き物を観察できるっていうのに行かない?\n女2:いいよ。釣りはいいの?好きでしょ?今日もやりたいんじゃない?\n男:うーん、初心者向けって言ってたから今日はしなくていいかな。\n質問1。2人は最初にどの会場に行きますか。\n質問2。2人は2番目にどの会場に行きますか。"};
+const CHOUKAI_SCRIPTS = {"問1-1": "1番。会社で、男の人と女の人が話しています。女の人は、最初に何をしなければなりませんか。\n男:鈴木さん、明日の大阪出張、帰りの新幹線は何時になってる？\n女:えー、…夜8時発の最終ですが。\n男:うーん、それだと、家に帰るのに厳しいんだよね。もう1本前のに変更できるかな。\n女:それが、調べたんですが、混んでいて取れなかったんです。\n男:うーん、じゃ、私は、1泊して次の日に帰るよ。ホテル、取れるよね。\n女:はい、どこか空きはあると思います。えーと、どこにしましょうか…。\n男:それは、あとでいいよ。とにかく、あさっての朝一番ので帰りたいから、そっちを先にお願い。\n女:はい、わかりました。\n女の人は、最初に何をしなければなりませんか。", "問1-2": "2番。スーパーで男の店長と女の店員が話しています。女の店員はこの後まず、何をしますか。\n男:おはようございます、森田さん。今日は一部の商品に割引きシールを付ける作業をやってくれることになってたね。\n女:あ、はい。準備してます。\n男:えっと、忙しい時に悪いんだけど、倉庫に行って南コーヒーの豆、何袋あるか数えてきてくれる?数が少なかったら今日中に注文しないといけないんだ。\n女:あ、わかりました。急ぎですか?\n男:あー、そのシールを貼る作業が終わってからでいいから。袋の数を数えたらメモを私の机の上に置いといて。\n女:わかりました。\n男:お客さんがレジにたくさん並んでるから、私もすぐレジを手伝わなきゃいけなくて。値引シールを付けた商品をレジの横の棚に並べるのは明日の開店前にみんなですればいいから。じゃ、よろしくね。\n女の店員はこの後まず、何をしますか。", "問1-3": "3番。男の学生と女の学生が話しています。男の学生はこれからまず何をしますか。\n男:ビジネスの立ち上げ方のセミナーの申し込み、もうやった？\n女:うん、ホームページから申し込みしたよ。\n男:そっか。僕も申し込みたいんだけど、受講料の支払いってクレジットカードが必要じゃない？まだクレジットカード持ってないから…。\n女:ホームページに振り込み先の銀行名と口座番号が書いてあるから振り込みでも払えるよ。確認してみて。\n男:え、そうなの？知らなかった。もう一度ホームページ見てみる。\n女:支払いが済んだ用紙の写真を添付すれば、ホームページから申し込みできるって書いてあったよ。\n男:ありがとう。でもやっぱりクレジットカードがないとこんな時、本当不便だね。\n女:そうだね。\n男:今回のセミナーの申し込みにも間に合うかもしれないから、早速カード作ろうかな。\n女:だけど、クレジットカードは自宅に届くまで2週間くらいはかかるかも。申し込み、今週いっぱいだよ。\n男:そっか。じゃ、今回は間に合わないし、また今度にしよう。\n男の学生はこれからまず何をしますか。", "問1-4": "4番。野球場で市役所の職員がアルバイトの人たちに話しています。アルバイトの人たちはこの後まず何をしますか。\n男:アルバイトの皆さん、お疲れ様です。本日の市民野球大会を無事終えることができました。参加者へのアンケートの実施ならびに回収もありがとうございました。これからテントの片付けを行います。安全の観点から作業の前に作業用手袋をするのを忘れないでください。受付の机と椅子については畳んだテントと一緒にトラックに積み込んでください。よろしくお願いします。\nアルバイトの人たちはこの後まず何をしますか。", "問1-5": "5番。電話で、男の人と女の人が話しています。男の人は、このあとまず何をしますか。\n女:もしもし、インストラクターの山下です。\n男:あ、山下先生、お世話になってます。\n女:来月のプログラムなんですが…あれじゃ、だめなんです。休憩時間がないんですよ。だから、前と後のレッスンの調整が必要で…\n男:それで、他のレッスンの先生との交渉が、必要だったんですよね。\n女:ええ、だから、来月には間に合わないから、今月はそのままということで、お願いしたんです。でも、もう、プログラム印刷しちゃって、会員さんに配布されてますよね。\n男:あー、すいません…。\n女:それは、しかたがないから、とりあえず、貼り紙とかして訂正の案内をしてください。\n男:申し訳ありません。了解しました。\n男の人は、このあとまず何をしますか。", "問2-1": "1番。会社で、女の人が面接を受けています。女の人が前の会社を辞めた理由は、何ですか。\n女:前の会社は、大きな会社でしたし、同級生たちが就職した会社と比べて、待遇は、いいほうでした。人間関係にも問題がなく勤めていたのですが、やはり、やりがいという点で、疑問を持つようになりました。その会社には長く勤めている女性が少なく、女性には、責任のある仕事を任されることがあまりないと感じ、辞めることを決心しました。私は、働き続けることによって、自分自身のスキルアップができて、男女の区別なく、能力を発揮できるような場で、働きたいと思っています。\n女の人が前の会社を辞めた理由は、何ですか。", "問2-2": "2番。大学で、女の学生と男の学生が話しています。男の学生はどうしてアルバイト先をレストランに換えたと言っていますか。\n女:高橋くん、今晩一緒にご飯食べに行かない。\n男:悪い。夜はレストランでウェイターのバイトなんだ。\n女:あれ?高橋くん、塾の講師やってるって言ってなかった?\n男:うん、これから就職の準備で忙しくなるから、今月からバイト換えたんだ。塾は時給もいいし、楽しかったんだけどね。\n女:塾のシフト、減らしてもらえばよかったんじゃない?\n男:塾で一緒に働いていた友達にもそう言われたんだけど、塾って、決まった曜日と時間、あけておかなきゃいけないでしょ。面接が入ったり、先輩と会ったりするから、スケジュールが流動的でも、対応できる方がいいと思って、今のバイト先は、一週間ごとに予定を提出すればいいんだ。\n女:そっか。新しい仕事だと、覚えることも多くて大変そうだね。\n男:まあ、これもいい経験だよ。\n男の学生はどうしてアルバイト先をレストランに換えたと言っていますか。", "問2-3": "3番。会社で男の人と女の人がアンケートについて話しています。女の人はアンケートに何を書くと言っていますか。\n男:働き方の改善の社内アンケート調査、もう書いた?「改善すべきことがあるか」って聞かれてもすぐ思い浮かばなくて⋯。\n女:そう、残業代のアップも私たち社員が声を上げたから実現したし、言うべきことは言ったほうがいいんじゃない?私は有給とかの休暇の取得申請、もっと簡単に申請できるように改善してほしいんだよね。\n男:あー、そう言うことを書けばいいんだね。\n女:そうそう。私はそうしようと思ってる。あ、そういえば、この間、在宅での勤務を今、週2日可能だけどもっと増やしてほしいって言ってなかった?\n男:そうだ、それを書こう。あと社内のパソコンを新しくしてほしいんだよね。今の古くって。\n女:パソコン、今年度中には買い換えるって聞いたよ。\n男:あ、じゃ、いいね。\n女の人はアンケートに何を書くと言っていますか。", "問2-4": "4番。大学で男の学生と卒業した女の先輩が話しています。女の先輩はどんな点から今の会社を選んだと言っていますか。\n男:先輩、僕そろそろ就職のための活動を始めようと思ってるんですけど、みんなどういう基準で会社を選んでるのかなと思って。\n女:大野くんはどんな会社で働きたいと思ってるの？\n男:そうですね。やっぱり給料は高い方がいいですね。\n女:そうなんだね。私は在宅で働ける日があるかを重視したよ。うちの方が集中して仕事ができると思ったんだ。通勤の時間ももったいないし。\n男:へえーそうなんですか。\n女:私の友達は海外で働くチャンスをもらえるかで選んでたな。あと、趣味とか仕事以外の生活を充実させたいからって、休みが柔軟に取れるかどうかを基準にしていた人もいたよ。\n男:そうなんですか？それで、先輩は今どうですか？\n女:うん。イメージした通りのペースで仕事ができて満足してるよ。\n女の先輩はどんな点から今の会社を選んだと言っていますか。", "問2-5": "5番。保育園で、保育園の先生と男の実習生が話しています。先生はこの実習生に対して、何に気を付けてほしいと言っていますか。\n先生:山下さん、今日もお疲れ様でした。二週間の実習も半分終わりましたが、どうですか？\n実習生:はい、最初の頃よりは、緊張しなくなったと思います。でも、子供が危ない目に会わないように、きちんと気を配れているか、不安です。\n先生:子供の安全は、一番大切なことですからね。散歩や外で遊ばせる時、山下さんが注意しているのは見ていてわかりますよ。\n実習生:ありがとうございます。\n先生:指示を出す時も、子供が理解しやすいように、言い方を考えて話していることがわかります。だからこそ、子供と接する時、もう少し低く屈んで話せたら、いいと思いました。\n実習生:はい。\n先生:子供が先生の顔を見上げなくてもいいようにしてみてくださいね。いつも子供や保護者の方に元気に挨拶をしたり、明るく声をかけている姿勢には感心していますよ。続けて頑張ってください。\n実習生:はい、ご指摘いただいた点に気を付けて頑張ります。\n先生はこの実習生に対して、何に気を付けてほしいと言っていますか。", "問2-6": "6番。女の人が、犬を連れて動物病院に来ています。犬は今、どんな様子ですか。\n男:その後、どうですか。\n女:昨日から、やっと少し食べるようになったんですが、まだ…横になってばかりいます。\n男:そうですか。えー、熱はないようですね。お薬はちゃんと飲んでいますか。\n女:はい、無理矢理ですが、毎日飲ませています。\n男:おしっこは、ちゃんと出ていますか。\n女:はい、それはいつも通りだと思いますが、散歩に連れていってもすぐに帰りたがって…。\n男:そうですか…。もうしばらく薬を続けて、様子を見てください。\n犬は今、どんな様子ですか。", "問3-1": "1番。ラジオで歯医者が話しています。\n女:歯は毎日の生活と関わっています。歯が健康でものが良く噛めれば、消化を助け、全身に栄養を届けることができます。また、歯があるおかげで発音ができ、会話ができます。この他、体の姿勢やバランスを保ったり、豊かな表情を作ったりなど食べること以外の面でも歯の存在は不可欠ですね。\n歯医者は何について話していますか。\n1、歯の構造。\n2、歯の役割。\n3、歯の正しいケアの仕方。\n4、歯の病気の原因。", "問3-2": "2番。会社で女の人と男の人が研修について話しています。\n女:昨日のリーダー研修どうでしたか？\n男:ええ、前半が講義で、後半がグループワークでした。講義は一般的な内容でしたね。講義の最後に具体的な例の紹介があると聞いて楽しみにしていたんですが、時間の関係でだいぶ削られたんですよ。後半はグループに分かれていろいろな所属の人と意見交換をしたんですけど、活発な話し合いができて、いろいろな気づきがありました。参加した甲斐があったと思います。\n男の人は自分が受けた研修についてどう言っていますか。\n1、前半も後半も満足した。\n2、前半も後半も期待外れだった。\n3、前半は満足したが、後半は期待外れだった。\n4、前半は期待外れだったが、後半は満足した。", "問3-3": "3番。テレビでアナウンサーの男の人がお菓子屋の人にインタビューしています。\n男:西山町に古くからあるお菓子屋さんにお邪魔しています。小さな店内にはキャンディーやガムなど昔懐かしいお菓子がたくさん並んでいます。こちら、50年前からお店をやっていらっしゃる橋本さんです。先ほども放課後の子供たちが何人もお菓子を買いに来ていましたね。\n女:みんなお小遣いを持って買いに来てくれます。子供たちが笑顔で駆け寄ってきてくれるので、私の方が元気をもらえてありがたいです。\n男:そうですか。\n女:小さかった頃にうちに通ってきてた子が大人になって就職したと報告しに来てくれたり、赤ちゃんを連れて一緒に来てくれたりするんです。それは本当にうれしいですよ。\nお菓子屋の人は何について話していますか。\n1、店をやる喜び。\n2、子供に人気のお菓子。\n3、昔と今のお菓子の違い。\n4、店を長く続ける工夫。", "問3-4": "4番。市民講座で専門家が話しています。\n女:睡眠時間は長いのに昼間眠くてしょうがないという方はいらっしゃいませんか？睡眠時間は長ければいいというものではありません。睡眠によって十分な休養が取れたと感じられることが大切です。それには寝室が静かで暗く、快適な温度や湿度であることや寝る時の服装が体温調整に向いているかなどが関係します。\n専門家は何について話していますか。\n1、良い睡眠を取るための条件。\n2、健康に必要な睡眠時間。\n3、ぐっすり眠られない人の特徴。\n4、睡眠不足の人がかかりやすい病気。", "問3-5": "5番。日本語の先生たちが、ある学生の授業中の態度について話しています。\n男:元気で熱心なのはいいんだけどねえ。\n女:ええ、試験もよくできるし、宿題もきちんと出すんですけどね。\n男:勉強したくてしょうがないんだね、きっと。\n女:そうですねー。周りのことなんか、考えていられないんでしょうね。\n男:1人だったらねー、問題ないんですけどね。\n女:ええ、だれに質問しても先に答えてしまうのがねえ…。\n男:「君の番じゃないからね」って言うと、「はい、わかりました」って、ニコニコ笑って…\n女:そう、今度は1人でブツブツちょっと小さい声で、やっぱり声出して答えているんですものね。\n男:他の学生にしてみりゃ、黙っててほしいだろうしねえ、うるさいって思うだろうし。\nその学生の問題点は、どこにありますか。\n1、先生の質問に全部答えてしまい、黙っていられない\n2、質問してもニコニコ笑っているだけで、答えようとしない\n3、試験結果はいいが、宿題をよく忘れる\n4、となりの学生としゃべってばかりいて、授業に集中しない", "問4-1": "1番。今日中に漢字20個覚えるなんて、無理に決まってるよ。\n1、頑張ればできるんじゃない?\n2、楽にできるって思ってるんだね。\n3、簡単に覚えられてすごいね。", "問4-2": "2番。先週の旅行、雨だったけど、かえって素敵だったよね。\n1、雨で楽しめなかったの？\n2、晴れたほうが良かったのにね。\n3、雨の景色もきれいだったね。", "問4-3": "3番。この会社、経験者に限らず応募できるって。\n1、募集は経験が無い人だけなんだ。\n2、経験がなくてもいいんだね。\n3、やっぱり経験が無いといけないのか。", "問4-4": "4番。木村さん、新しい企画のことで相談に乗っていただけるとありがたいんですが。\n1、ちゃんと話を聞いてもらえたんですね。\n2、構いませんよ。いつがいいですか？\n3、喜んでもらえて私もうれしいです。", "問4-5": "5番。最初は引き受けなきゃよかったかなと思ったんだけど。\n1、やっぱり引き受けないほうがいいでしょう？\n2、やっぱり引き受けたらよかったでしょ？\n3、やっぱり引き受けてよかったでしょ？", "問4-6": "6番。ご用件、お伺いしておきましょうか。\n1、いえ、また出直しますので…。\n2、えー、けっこうだと思います。\n3、そうですねえ。お先に失礼します。", "問4-7": "7番。新しく出たイヤホン、人気があるだけにどの店にも残ってなかったよ。\n1、人気とは関係ないんだね。\n2、人気じゃないのにね。\n3、すごい人気だからね。", "問4-8": "8番。今日のサンプルのミーティングだけど、「部長抜きでやってくれ」って部長からメールが来たよ。\n1、じゃ、部長が来てから始めよう。\n2、今日、部長来ないんだ。\n3、あー、今日はミーティング中止なんだね。", "問4-9": "9番。今日の花火大会は延期にしましょう。この雨じゃ、やむを得ないですよね。\n1、まあ、延期はできないから、仕方ないですよね。\n2、やみそうにありませんからね。\n3、このまま、雨が止まなければ延期するんですね。", "問4-10": "10番。いろいろとご迷惑をおかけして、申し訳ありませんでした。\n1、とんでもないです。こちらこそ。\n2、いつもお世話になっております。\n3、いいえ、おかまいなく。", "問4-11": "11番。ないなあ、この辺にしまったはずなんだけど…。\n1、また？ ちゃんと覚えててよ。\n2、そう？ ちゃんと閉まるはずだよ。\n3、そんなはずないよ。もっとちゃんと探して。", "問5-1": "1番。市のスポーツセンターで職員がイベントについて話しています。\n男1:再来週の親子サッカー教室、参加申し込みの締め切りが今日なんだけど、他のイベントと日が重なってしまったようですね。50組の募集定員のところ20組しか申し込みが来てないんだよ。\n男2:せっかくプロの選手を3人も指導者として呼んでるんですから参加者は多い方がいいですよね。この際、思い切って日程を変えるのはどうでしょうか。\n女:それができればいいんですが、既に申し込んでる方や選手の都合もありますしね。\n男1:そうなんだよな。\n男2:それでしたら締め切りを少し延ばしますか？全然、頑張ります。スーパーとかコンビニにもポスターを掲示してもらって。\n女:それもいいですが、今回は少人数のイベントとしてやったらどうでしょうか。\n男1:どういうこと？\n女:例えば会場ですが、参加者を50組と設定していたので、一番大きい試合用のグラウンドを押さえていましたが、隣の練習用の小さめの運動場も空いています。今の人数なら小さいグラウンドの方が選手と参加者がコミュニケーションしやすいと思うんですよ。スタッフの人数も少なくて済みますし。\n男1:なるほど。それなら早く押さえたほうがいいね。\n女:あと、これはまた別の案なんですが、少人数なら活動の内容を思い切って変えて、試合みたいなこともできるんじゃないですか？\n男2:でも今回は初心者も参加できるイベントということで募集してるんですよ。\n男1:うん。試合は難しいね。選手にもそんなことはお願いしてないから。とにかく今の人数に応じた対応をしよう。あと、ポスターを貼る場所、今回は時間的に厳しいけど次回からは範囲を広げる必要があるね。\n問題に対応するために、何をすることにしましたか。\n1、開催日を変更する。\n2、ポスターを貼る場所を増やす。\n3、会場を変更する。\n4、選手の人数を減らす。", "問5-2-1": "2番。ラジオを聞いて男の人と女の人が話しています。\nアナウンサー:今日は緑市で夕日が楽しめる場所を4ヶ所ご紹介します。1つ目は夕日通り。砂浜に沿って続くこの通りからは、海を夕日が徐々にオレンジ色に染めていく光景が見られます。2つ目は西が丘です。小さな山ですが、上からふもとのお寺が夕日に染まっていく様子を見下ろすことができます。3つ目のさくら公園では、湖に映る夕日を鑑賞できます。湖にいる鳥たちが夕日に照らされる光景に心を打たれます。最後は東山。車で20分ほど上がった所から、海に沈む夕日を眺めることができます。\n男:この週末緑市に旅行にいくし、ちょうどいいね。観光の帰りにも夕日を見にいこうよ。\n女:天気がよさそうだし、2泊するから2回見られるね。夕日が水に映るとキラキラしてきれいだもんね。\n男:どこ？鳥が見られる所？\n女:ううん。海沿いのほう。ホテルからも近いし、1日目の夕方に散歩にいくのにちょうどいいんじゃない？\n男:ああ、いいね。行ってみよう。2日目は午後、美術館にいくよ。お寺の近くっていう所、美術館から近いんじゃない？お寺を入れた夕焼けの写真を撮りに行こうよ。\n女:いいね。高い所から海に沈む夕日を見るのもいいと思うんだけど、そっちはちょっと場所が離れているしね。\n質問1。2人は1日目、どこに夕日を見に行きますか。\n質問2。2人は2日目、どこに夕日を見に行きますか。", "問5-2-2": "2番。ラジオを聞いて男の人と女の人が話しています。\nアナウンサー:今日は緑市で夕日が楽しめる場所を4ヶ所ご紹介します。1つ目は夕日通り。砂浜に沿って続くこの通りからは、海を夕日が徐々にオレンジ色に染めていく光景が見られます。2つ目は西が丘です。小さな山ですが、上からふもとのお寺が夕日に染まっていく様子を見下ろすことができます。3つ目のさくら公園では、湖に映る夕日を鑑賞できます。湖にいる鳥たちが夕日に照らされる光景に心を打たれます。最後は東山。車で20分ほど上がった所から、海に沈む夕日を眺めることができます。\n男:この週末緑市に旅行にいくし、ちょうどいいね。観光の帰りにも夕日を見にいこうよ。\n女:天気がよさそうだし、2泊するから2回見られるね。夕日が水に映るとキラキラしてきれいだもんね。\n男:どこ？鳥が見られる所？\n女:ううん。海沿いのほう。ホテルからも近いし、1日目の夕方に散歩にいくのにちょうどいいんじゃない？\n男:ああ、いいね。行ってみよう。2日目は午後、美術館にいくよ。お寺の近くっていう所、美術館から近いんじゃない？お寺を入れた夕焼けの写真を撮りに行こうよ。\n女:いいね。高い所から海に沈む夕日を見るのもいいと思うんだけど、そっちはちょっと場所が離れているしね。\n質問1。2人は1日目、どこに夕日を見に行きますか。\n質問2。2人は2日目、どこに夕日を見に行きますか。"};
 
 // Where 「← テスト一覧」 and 「テスト一覧へ戻る」 go: the unified server's root, or
 // the static list two levels up on GitHub Pages (which is served from /<repo>/).

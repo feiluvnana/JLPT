@@ -180,6 +180,18 @@ class QA cannot report and a fix cannot be asked for:
 | `A わけではない` | 「わけでは（ない｜ありません）」 |
 | `A では/ほど B が多い（相関）` | evidential frame + [V-た + 集団/期間] では／ほど + 数量の増減 |
 | `〜のは B だ（分裂文）` | 「（の｜ん｜べき｜〜な／〜い／べき＋こと・点）は、…（だ｜である｜です｜だった｜のだ｜のである）」で閉じる — 「大切なことは」「確かめるべきは」「注目すべき点は」も同じ骨格 |
+| `〜ていた のだ（後知れ）` — **cap 1** | 「てい（た｜ました）（のだ｜のです｜のである｜のでした）。」で閉じる |
+| `〜ていない（不在の残り）` — **cap 1** | 「てい（ない｜ません）。」で閉じる |
+| `〈物〉が、〈人の動作〉前に／たびに…、〈対象〉を〔先に〕V-ている（先回り）` — **cap 1** | the MAIN clause's subject is an artifact, a clause timed to the person's action (前に／たびに／先に) follows its first clause 「…は／が、」, the を-object follows the marker (or precedes it as 「…を、」), and the sentence closes 「ている（のである｜のだ｜のです）。」. A たびに inside a relative clause (「…たびに見上げてきた板が」) or a resultative 〜ている state does not count |
+
+Every template is capped at 2 per paper except the three **cap 1** rows, whose
+ceilings live in `FINAL_TEMPLATE_CAPS` (`tools/check_consistency.py`) — each is
+one sentence pattern with one effect, so a second use is a rhyme. The 先回り row's
+founding case is `20260928_1` 11(4)/12(A)/12(B) (qa-report-20260928_1 F4, RC-5;
+officials 0 of 10); its main-clause anchoring is round 2's RC-R2-4 — anchored,
+it hits 0 of 28 papers+imports, unanchored 4, all false. Read 問題12 A against
+B FIRST — that is where the rhyme lands. `check_final_template_caps_documented`
+FAILs when this table's **cap N** rows and `FINAL_TEMPLATE_CAPS` disagree.
 
 **分裂文 CROSSES the shape labels, so count the skeleton column separately
 from the shape column.** The row above was added 2026-09-04
@@ -232,7 +244,14 @@ shape label | final-sentence template** — as the FIRST 読解 step, before any
 passage prose exists, and to reject any plan where one shape label or one
 template appears three times. Every not-A-but-B family member counts as one
 shape: 「AではなくB」「AというよりB」「AよりもB」「AだけではなくB」
-「Aわけではない」 are the same move in five surfaces of grammar.
+「Aわけではない」 are the same move in five surfaces of grammar. **The list is
+not closed: ANY final that names a foil and prefers the alternative is a member**
+— 「AにないBがある」「Aにはない」「Aより」 included — and the allocation column
+lists the foil beside the template. Not gated yet: the one measurement
+(`にはない|にない[^、。]{0,6}(が|を)?(ある|持)` over every paper's 13 finals)
+fires only on `20260928_1` 問題12(B) and on 0 of 10 imports
+(qa-report-20260928_1-round2 RC-R2-2), so this is the author's column and QA's
+read.
 
 ### The rhetorical-MOVE allocation table — filled in before any prose exists
 
@@ -889,13 +908,22 @@ subtraction test (`check_note_band`), the same-paper reuse test
   (`qa-report-20260904_1` F6; repaired to a bare 「千円」). The worked 問題14 pair
   above is the model: every wrong option is a real combination of flyer cells
   with one fact changed, stated in the same form as the key.
+- **Value options are printed in ascending (or otherwise structured) order** —
+  every official value set does. Balance the key position by choosing WHICH real
+  error values to print, never by shuffling (`20260928_1` 問題14-70 printed
+  700 / 1,100 / 1,200 / 800 to pin its key at 2; qa-report-20260928_1 RC-11).
 - **The 解説 cells for 70/71 must each quote the TWO flyer cells the key combines**.
 - **Every WRONG option must contain at least one clause factually FALSE against the flyer** — not merely incomplete. Build wrong options from true combinations with ONE fact changed to something the flyer contradicts.
 
 ### 問題14's flyer and its two stems are APPARATUS — write them, do not re-skin them
 
 The stem SHAPES above are official and are meant to be shared. A stem
-SENTENCE, a flyer sentence, or the flyer's structure is not.
+SENTENCE, a flyer sentence, or the flyer's structure is not. **A stem shape
+borrowed from another paper is re-checked against THIS flyer**: every timing,
+place or method it presupposes (「当日に払う」) needs a flyer line saying so
+(qa-report-20260928_1 F5/RC-6 — automatic fail). Gated by
+`check_q14_stem_presupposition`: a timing/place/method token within 8 characters
+of 払/申し込 in a 70/71 stem must co-occur with it in one flyer line (0 of 28 hit).
 
 **THE TWO INCIDENTS, one QA round apart, both on `20260904_3`:**
 

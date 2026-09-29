@@ -38,7 +38,9 @@ intent.
 paper. Its findings go back to the author context that owns the section, which
 fixes them directly: root-cause the finding, run `make check`, read the diff,
 and after any 問題10–14 edit do the keyed-form re-grep plus the 13-final column
-re-read (Stage 3). The QA report's disposition column records each fix. **A
+re-read (Stage 3). The QA report's disposition column records each fix. A
+re-allocation edits the allocation row AND re-derives that file's per-slot table
+and tallies (qa-report-20260928_2-round2 R2-F2). **A
 second review runs only when a fix changes a key, or replaces an item or
 passage wholesale** (a `--reroll`, a re-themed surface, a re-written passage).
 Even then it is **SCOPED**: one fresh context blind-solves only the replaced
@@ -149,7 +151,13 @@ make scaffold-sections <id>        # -> the three _sections/ fragments
 - **Pre-assign each of the 13 読解/cloze surfaces a closing-move shape** from
   `dokkai.md`'s list before spawning, without exceeding its per-shape cap —
   authors left to choose converge on the same "safe" default (documented 3×).
-  Pass the 読解 and 文法 subagents their assigned shapes.
+  Pass the 読解 and 文法 subagents their assigned shapes. **Before assigning,
+  list the previous paper's final-sentence templates per 大問** (from its
+  allocation file or its finals) and bar each from the same 大問 here
+  (`dokkai.md` §"The named templates", cross-paper bar; gated by
+  `check_dokkai_template_repeat_prev_paper`). A stage-3 or QA re-author brief
+  names the MOVE and the template that are off-limits, not only the subject —
+  qa-report-20260928_2 F2's repair moved 将棋 to 山歩き and kept both.
 
 ## Stage 3 — build + gate
 

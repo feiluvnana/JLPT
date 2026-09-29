@@ -193,6 +193,17 @@ it hits 0 of 28 papers+imports, unanchored 4, all false. Read 問題12 A against
 B FIRST — that is where the rhyme lands. `check_final_template_caps_documented`
 FAILs when this table's **cap N** rows and `FINAL_TEMPLATE_CAPS` disagree.
 
+**Cross-paper bar: a named template the PREVIOUS paper closed a 大問 on may not
+be assigned to that same 大問 in the next paper** (2026-09-29,
+qa-report-20260928_2 F2). The caps above count inside one paper, so three
+consecutive papers closed a 問題10 passage on 相関 (「…ほど…回数が少ない／が多
+かった」: 20260917_1 10(1), 20260928_1 10(5), pre-fix 20260928_2 10(2)) with
+every line green. Read the previous paper's thirteen finals per 大問 before
+filling the template column; a template it used in 問題10 is off-limits for this
+paper's 問題10 (another 大問 is fine). Measured: 0 of 9 consecutive official
+pairs, 7 of 18 generated. `check_dokkai_template_repeat_prev_paper` FAILs a
+repeat for every paper after 20260928_2.
+
 **分裂文 CROSSES the shape labels, so count the skeleton column separately
 from the shape column.** The row above was added 2026-09-04
 (`qa-report-20260904_1` F2) and it is the one template that carries no closing
@@ -618,7 +629,10 @@ A 読解 distractor must be eliminable only by checking it against the
 passage's actual content — never on sight, passage closed, by spotting an
 absolute quantifier or categorical denial (`exam-qa-review`'s ground rules
 already treat this as automatic fail: すべて/まったく/のみ/だけで十分/
-無関係/存在しない). `check_consistency.py` WARNs a candidate for human
+無関係/存在しない, and the zero-quantifier 一つも/一冊も/一度も/一人も/一回も…
+ない・ず plus restrictive 〜にだけ — added 2026-09-29, qa-report-20260928_2 F3:
+56-1 「教科書を一冊も持ち帰らずに…」, 62-1 「名所を一つも見ないまま…」, 69-2
+「…お知らせにだけ使えばよい」; 0 options in all 10 imported sittings). `check_consistency.py` WARNs a candidate for human
 judgment, since it can't tell an on-sight-eliminable use from a
 content-dependent one that merely contains the token (「戸籍謄本も**すべて**
 オンライン提出できる」 is fine — still requires checking the passage).
@@ -629,6 +643,13 @@ Shipped in all 8 prior generated papers before `20260813_2`'s QA caught it.
 - **Do:** 「〜が同居の理想的な解決策だということ」 — plausible until checked
   against what the passage actually argues, so eliminating it requires
   reading.
+
+**One passage sentence must not kill distractors in two items.** When you build
+or rebuild a distractor, list every other option in the same 大問 and do not
+reuse a foil (same actor + same claimed reaction) another item's distractor
+already carries. `20260928_2` 問題13's F3 repair made 69-2 a third
+「日本語を母語とする人には読みにくい」 foil beside 67-4 and 68-2, all killed by one
+line (qa-report-20260928_2-round2 R2-F1). Not gated: human judgement.
 
 ## Length bands & Sentence rhythm — the single copy in this repo
 
@@ -698,14 +719,21 @@ floor in their own reading and still measures **0**, while spending one of the
 paper's ≤2 span-anchored slots. The two shapes are mutually exclusive in this
 gate; pick one per stem.
 
-Write the 指示語 stem with a bare demonstrative and an unbolded, unmarked
-antecedent. The classifier fires on a demonstrative from
+Write the 指示語 stem with a bare demonstrative whose antecedent the STEM itself
+names. The classifier fires on a demonstrative from
 {それ, これ, あれ, どれ, このよう, そのよう, こうし, そうし, これら, それら} followed
 later in the stem by one of {指, どういう, 何, 意味} — so:
 
-- ✅ 「筆者は、**そのような**見守り方を**どういう**ものだと述べているか」 — the
-  shipped `20260904_2` 問題11(4) stem, machine-verified `shijigo`.
-- ✅ 「筆者は、**これら**の変化を**どういう**ものだと考えているか」.
+- **A 問題10–13 stem's 「その／そのような／それ／この…」 that points into the
+  passage needs a marked span or an antecedent in the stem itself** (2026-09-29,
+  qa-report-20260928_2 F6). Official does one or the other every time — 「②**それ**
+  とは何を指すか」「**このような工夫**とはどのようなことか」 — and 0 of the 10
+  imported sittings print a bare demonstrative reaching back into the passage.
+- ✅ 「質問ばかりでじれったいという苦情について、筆者は**それ**を**どういう**ものだと
+  考えているか」 — `20260928_2` 問題11-64 as repaired, machine-verified `shijigo`.
+- 🚫 「筆者は、そのような苦情をどういうものだと考えているか」 (its pre-fix
+  wording) and the older ✅ this list carried, `20260904_2` 問題11(4)
+  「筆者は、そのような見守り方を…」 — both point across the passage at nothing marked.
 - 🚫 「①**それ**とあるが、どういうことか」 — buckets `span`, not `shijigo`.
 - 🚫 「筆者は、**そのこと**をどのようなことだと考えているか」 — buckets `kangae`.
   **「そのこと」 is not in the alternation** and 「どのような」 is not one of the
@@ -794,7 +822,16 @@ All figures from `official_calibration.md` §4 — current era, n=7 sittings,
 - **Where the count is earned**: 問題11 (~5 per passage) and 問題13 (~7). **問題12 and 問題14 get 0** in every current-era paper.
 - **STRICT vocabulary band**:
   - 🚫 **BANNED**: glossing standard N2 or easier vocabulary (選択, 信号, 技術, 準備, 手順, 維持, 継続, 前提, バランス…) with circular definitions.
-  - 🚫 **Operational subtraction test**: delete from the definition every character that appears in the headword; what remains must still explain the concept.
+  - 🚫 **Official-option test, run BEFORE writing any gloss** (2026-09-29,
+    qa-report-20260928_2 F4): grep the headword's stem over the 問題3–5 option
+    lines of every `refs/JLPT_N2_NEW/*/booklet.md`. If official prints it as a
+    vocabulary option there, official treats it as known — do not gloss it
+    (`20260928_2` glossed 駆け込む, 相次ぐ, 詰め込む; official offers all three:
+    7/2023, 12/2010 ×2). The mirror of `exam-qa-review` §2.5's "official glosses
+    what official will not test". Scope is 問題3–5 only: 問題1/2 print distractor
+    spellings (7/2010 問題2 offers 伝達, and 12/2022 glosses 伝達する). Measured
+    that way, 0 true hits in all 10 imported sittings (two substring false
+    positives: 一日中, ごくごく). Not gated yet; a WARN is feasible on this measure.
   - ✅ **TARGETS**: N1-level/rare words, specialized domain jargon, contextual metaphors.
   - **No answer leaks**: a gloss must not give away the answer to a question
     anchored on it. **Operational form, and now gated** (`check_note_answer_leak`,

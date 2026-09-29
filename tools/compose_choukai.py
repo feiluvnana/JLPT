@@ -610,6 +610,8 @@ def draw(bank: dict, seed: int, used: Counter, test_id: str,
         if rec.get("needs_number_call"):
             textbook.setdefault(rec["section"], []).append(rec)
         else:
+            if test_id in OFFICIAL_ONLY_TESTS and rec.get("provenance") == "archive":
+                continue
             official.setdefault((rec["section"], rec["slot"]), []).append(rec)
     if skipped_figure:
         print(f"  note: {len(skipped_figure)} figure item(s) excluded from the "
@@ -972,9 +974,14 @@ def build_audio(index: dict, clips: dict, pres: dict, out_mp3: Path,
         if "path" in rec["audio"]:
             path = ROOT / rec["audio"]["path"]
             if not path.is_file():
-                book = {"soumatome": "Soumatome",
-                        "mondaireishuu": "External"}.get(rec["source"],
-                                                         "Shinkanzen")
+                if rec.get("provenance") == "archive":
+                    book = "JLPT_N2_NEW"
+                else:
+                    book = {"soumatome": "Soumatome",
+                            "mondaireishuu": "External",
+                            "kanzenmoshi": "KanzenMoshi",
+                            "mimikara": "MimikaraOboeru"}.get(rec["source"],
+                                                             "Shinkanzen")
                 sys.exit(
                     f"missing clip audio {rec['audio']['path']} for clip "
                     f"{rec['id']}. The CDs and the 問題例集 MP3 are release "

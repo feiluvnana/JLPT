@@ -89,7 +89,8 @@ defect through.
     問題2 set that is not the stem's inflected form** — printed okurigana then
     selects the key on sight;
   - **a 読解 distractor eliminable by an absolute quantifier or categorical
-    denial** (すべて/まったく/のみ/だけで十分/無関係/存在しない);
+    denial** (すべて/まったく/のみ/だけで十分/無関係/存在しない/一つも・一冊も・
+    一度も・一人も・一回も…ない/〜にだけ — `ABS_QUANT_MARKERS`, WARN);
   - **a 読解 section whose blind-solve strategy score exceeds 45%** (e.g. key is predictable via highest surface/bigram overlap with the passage, or key is consistently the uniquely longest option; paper median overlap margin >0);
   - **a 即時応答 prompt with no defined responder** — an announcement has no
     addressee-reply (e.g. a 火災報知器 prompt);
@@ -441,7 +442,9 @@ plus a pool-defect report, never a hand substitution.
   nearly doubles the figure; a gloss count exceeding in-body count means
   orphaned definitions). **Fail glossing basic N3–N5 or standard N2 words**
   (選択, 信号, 技術, 文化, 質, 準備, 手順, 設計, 現象, 経由, 偏り, 維持, 継続,
-  前提, 細部, バランス) or trivial circular definitions — notes target
+  前提, 細部, バランス), any word official prints as a 問題3–5 option (the
+  procedure is `dokkai.md` §（注N） "Official-option test"),
+  or trivial circular definitions — notes target
   N1+/rare/literary/specialized terms or contextual metaphors only. **Fail
   any `<ruby>` in `言語知識・読解.md`** — N2 kanji get no furigana; over-level
   terms use `（注N）` only. **Fail mismatched passage markers** (`①`/`②`) — every
@@ -486,6 +489,11 @@ plus a pool-defect report, never a hand substitution.
   what nine of eleven shipped papers did (dokkai.md §'読解 keys' rule 2).
   **読解 paraphrasing:** every key in 52–69 must be genuinely paraphrased (no
   LCS ≥15 chars and ≥50% of option; no LCS ≥20 chars; no pure lifts).
+  **A replacement option YOU propose is a new distractor:** before writing it
+  into the report, read it against every option set of its 大問 — it may not
+  reuse another item's foil (same actor + same claimed reaction), or one
+  passage line kills both (`dokkai.md` §"no free eliminations";
+  qa-report-20260928_2-round2 R2-F1, where round 1's own wording did this).
 - **聴解 length/predictability:** the key must not be findable by length in ANY
   section — whole-section uniquely-longest rate ≤35 % (official 28 %), median
   key ÷ distractor-mean ≤1.15 (official 1.00). Both gated

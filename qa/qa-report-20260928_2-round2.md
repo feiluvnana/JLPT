@@ -247,3 +247,7 @@ Themes are distinct. The stems vary: 問い合わせ, 筆者の考え, どのよ
 | R2-F1 69-2 shared foil | **Fixed** by the 読解 author: 69-2 is now 「易しく書き直したお知らせは、元の文と並べて配れば、正確さも守れる」. 68-2 carried the same foil and was rebuilt too, as 「文を短く切りすぎて、同じ話が何度も繰り返されていた」. Keys 67=1, 68=4 and 69=3 are unchanged. |
 | R2-F2 stale allocation tallies | **Fixed**: only the derived tallies were re-derived (主張 2, 条件提示 1, 相関 0, 数えたことの報告 1, 一人称の前後比較 3 at cap). No row changed. |
 | Round-1 RC F1 pool edit | **Applied**: both 懸念 entries were deleted from `pools.json`. |
+
+## Root-cause dispositions (applied 2026-09-29, before 20260929_1)
+
+R2-F1 **applied**: a foil-reuse line in `dokkai.md` §"no free eliminations" and a "QA-proposed replacement is a new distractor" line in `exam-qa-review/SKILL.md` §3. It is not gated. R2-F2 **applied** (the optional sentence): a re-allocation re-derives the allocation file's per-slot table and tallies, in `jlpt-test-generation/SKILL.md` §"The fix loop". Round 1's rows are in `qa-report-20260928_2.md` §"Root-cause dispositions".

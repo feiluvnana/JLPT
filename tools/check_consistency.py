@@ -3010,6 +3010,80 @@ def check_dokkai_final_sentence_templates(test_id: str, body: str, bi):
     check(name, not over, detail)
 
 
+# F2 (qa-report-20260928_2, root-cause row F2). The per-paper cap above cannot
+# see ACROSS papers: 20260917_1 問題10(1), 20260928_1 問題10(5) and pre-fix
+# 20260928_2 問題10(2) all closed on 相関 (「…ほど…回数が少ない／が多かった」),
+# three consecutive papers, same 大問, every line green. dokkai.md §"The named
+# templates" now bars a named template the previous paper closed a 大問 on from
+# that same 大問 of the next paper, and this is its string half.
+# MEASURED 2026-09-29 at `FINAL_SENTENCE_TEMPLATES`' final-sentence scope, per
+# (大問, template), each paper against the one before it (same level):
+#   the 10 official sittings under tests/imported-*: 0 of 9 consecutive pairs;
+#   the 19 generated papers on disk: 7 of 18 pairs (20260812_1, 20260821_1,
+#   20260827_2, 20260903_1, 20260904_3, 20260928_1, 20260928_2).
+# FOUNDING CASE: pre-fix 20260928_2 問題10(2) 「手帳の上では、歩き始めの三十分を
+# ゆっくり歩いた日ほど、山頂までに休んだ回数が少ない。」 matches 相関, and
+# 20260928_1 問題10(5) carries 相関 => FIRES. As shipped, 20260928_2 still
+# repeats 分裂文 (問題10) and わけではない (問題11) against 20260928_1.
+# FORWARD RULE: every generated paper on disk when it landed is named below and
+# reported in one skip line, never re-classified; any later id FAILs.
+TEMPLATE_REPEAT_PREV_PAPER_PRE_RULE = frozenset({
+    "20260807_1", "20260812_1", "20260812_2", "20260817_3", "20260818_1",
+    "20260819_1", "20260821_1", "20260827_2", "20260903_1", "20260904_1",
+    "20260904_2", "20260904_3", "20260909_1", "20260910_1", "20260911_1",
+    "20260914_1", "20260917_1", "20260928_1", "20260928_2",
+})
+
+
+def dokkai_templates_by_daimon(body: str, bi) -> dict[tuple[str, str], list[str]]:
+    """{(大問, template): [surfaces]} over the thirteen closings' final sentences."""
+    out: dict[tuple[str, str], list[str]] = {}
+    for lab, prose in dokkai_closing_scopes(body, bi):
+        fs = passage_final_sentence(prose)
+        if not fs:
+            continue
+        dm = re.match(r"問題\d+", lab).group(0)
+        for tname, pat in FINAL_SENTENCE_TEMPLATES.items():
+            if pat.search(fs):
+                out.setdefault((dm, tname), []).append(lab)
+    return out
+
+
+def check_dokkai_template_repeat_prev_paper():
+    """No 大問 may close on a named template the previous paper closed the same 大問 on."""
+    print("\n読解 final-sentence templates vs the previous paper, per 大問")
+    bi = load(".agents/exam-app/scripts/build_interactive.py")
+    by_level: dict[str, list[tuple[str, dict]]] = {}
+    for d in sorted(p for p in (ROOT / "tests").glob("*") if p.is_dir()):
+        f = d / "言語知識・読解.md"
+        if ORIGIN.is_imported(d.name) or not f.is_file():
+            continue
+        gt = f.read_text(encoding="utf-8")
+        cut = bi.KEY_HEADING.search(gt)
+        by_level.setdefault(LEVEL.level_of(d.name), []).append(
+            (d.name, dokkai_templates_by_daimon(gt[:cut.start()] if cut else gt, bi)))
+    pre = []
+    for papers in by_level.values():
+        for (pid, pm), (tid, cur) in zip(papers, papers[1:]):
+            hits = sorted(k for k in cur if k in pm)
+            if tid in TEMPLATE_REPEAT_PREV_PAPER_PRE_RULE:
+                if hits:
+                    pre.append(f"{tid}←{pid} ×{len(hits)}")
+                continue
+            check(f"{tid}: no 大問 closes on a named template {pid} closed the "
+                  f"same 大問 on ({len(cur)} (大問, template) pairs read)",
+                  not hits,
+                  "; ".join(f"{t} in {dm}: {pid} {pm[(dm, t)]} → {cur[(dm, t)]}"
+                            for dm, t in hits)
+                  + " — re-close the surface onto another template, or move it "
+                  "to another 大問 in the allocation; fix the allocation column "
+                  "first (question-authoring/references/dokkai.md §'The named "
+                  "templates', cross-paper bar; qa-report-20260928_2 F2)")
+    skip(f"{len(TEMPLATE_REPEAT_PREV_PAPER_PRE_RULE)} papers predate the "
+         f"cross-paper template bar",
+         f"not re-classified; measured repeats: {', '.join(pre) or 'none'}")
+
+
 # NF-1 (qa-report-20260821_1-round2). The closing-shape half of the split:
 # `check_dokkai_closing_reframe` above is the whole-passage anti-dodge NET and
 # counts mid-passage hedges by design; `FINAL_SENTENCE_TEMPLATES` reads only
@@ -3250,6 +3324,15 @@ def jp_tail(text: str, n: int) -> str:
 # §"読解 distractors — no free eliminations"). Closed set, matching
 # exam-qa-review's own parenthetical exactly (「全く」 added as the same word's
 # kanji spelling, not a new marker).
+# WIDENED 2026-09-29 (qa-report-20260928_2 F3, GATE-BLIND): the zero-quantifier
+# family 「一つも／一冊も／一度も／一人も／一回も…ない／ず」 and restrictive
+# 「〜にだけ」. FOUNDING CASE, the three pre-fix 20260928_2 options: 56-1
+# 「教科書を一冊も持ち帰らずに登校してよい」, 62-1 「名所を一つも見ないまま帰って
+# くる旅」 (zero-quantifier) and 69-2 「外国から来た人へのお知らせにだけ使えば
+# よい」 (にだけ) — 3 of 3 match. CORPUS RUN over 問52–71 of every paper on disk:
+# all 10 tests/imported-* 0; generated 20260812_2 (60 にだけ), 20260817_3 (57
+# 一度も), 20260818_1 (59 にだけ), 20260827_2 (67 一人も) one each, every other
+# paper 0 (20260928_2 as shipped included). Still WARN: a candidate list.
 ABS_QUANT_MARKERS = {
     "すべて": re.compile(r"すべて"),
     "まったく/全く": re.compile(r"まったく|全く"),
@@ -3257,6 +3340,9 @@ ABS_QUANT_MARKERS = {
     "だけで十分": re.compile(r"だけで十分"),
     "無関係": re.compile(r"無関係"),
     "存在しない": re.compile(r"存在しない"),
+    "一〜も…ない（ゼロ数量）": re.compile(
+        r"一(?:つ|冊|度|人|回)も[^。、]{0,20}?(?:ない|なか|ず|ません)"),
+    "にだけ": re.compile(r"にだけ"),
 }
 ABS_QUANT_QRANGE = range(52, 72)  # 問題10-14, per gengo_option_sets' numbering
 
@@ -17636,6 +17722,7 @@ def main():
         check_pools_sha_replayability()
         check_invented_proper_nouns()
         check_q14_apparatus_reuse()
+        check_dokkai_template_repeat_prev_paper()
         check_topics_notes_quotes()
     check_tests()
     check_grader_parity()

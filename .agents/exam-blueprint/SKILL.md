@@ -61,6 +61,19 @@ N2-Kanji, 日本語総まとめ N2 語彙/漢字, or はじめての N2単語 25
 spelling, so okurigana is part of the item (`労わる` vs the dictionary's
 `労る`). Fix the pool, never just the paper.
 
+**A NEW `usage`/`context_words`/`paraphrase` entry carries its evidence, or it is
+not added** (2026-09-29, qa-report-20260928_2 F1). Write it into the pool change
+and the commit message as `book + line + quoted headword` (e.g.
+`refs/Hajimete/vocab_reference.md` L8300 「一生懸命」), with the line opened and
+read, not a grep total (`exam-qa-review` §2.5 on OCR hits). Founding case:
+懸念 sat in `usage` and `context_words`, 0 hits in the three vocabulary
+extracts and all 31 booklets, and was drawn as 問題6-27's target; both entries were
+deleted on 2026-09-28 (no shipped paper had drawn them). **The existing
+1,719 entries are not made undrawable** — that proposal was rejected as
+disproportionate: absence in OCR extracts is weak evidence, so a missing
+citation says nothing about an entry's band. They are audited when drawn, under
+§2.5. Not gated: string entries have no field to hold the citation.
+
 **An `orthography` entry containing a 表外漢字 is a pool defect — delete it and
 re-draw (`sample_items.py --reroll orthography`), never patch the sentence.**
 問題2 prints all four options, so every glyph in the grid must be standard

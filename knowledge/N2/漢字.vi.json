@@ -13,7 +13,7 @@
     "meaning": "ÁNH — in bóng, chiếu hình (gương, mặt nước, màn ảnh)",
     "usage": "Âm On 「エイ」: 「｜映画《えいが》」 (phim), 「｜反映《はんえい》」 (phản ánh). Âm Kun: 「｜映《うつ》る」 (hiện bóng trong gương, mặt nước — tự động từ), 「映す」 (chiếu, soi — tha động từ).",
     "nuance": "「映った」 đọc 「うつった」; đề đặt 「あたった」, 「ひかった」, 「てった」 làm bẫy. 「映る」 là hình hiện lên trên một bề mặt (gương, mặt nước).",
-    "compare": "「反映」 ghép 「映」 với 「｜反《はん》」 (ngược lại, dội lại); 「映画」 ghép 「映」 với 「｜画《が》」 (tranh vẽ). Bản thân 「映」 là hình hiện lên trên gương, mặt nước, màn ảnh.",
+    "compare": "「反映」 ghép 「映」 với 「｜反《はん》」; 「映画」 ghép 「映」 với 「｜画《が》」. 「映」 là hình hiện lên trên gương, màn ảnh; 「｜照《て》らす」 là rọi ánh sáng vào.",
     "example_notes": [
       "Nhìn bóng mình in trên cửa kính tàu điện, tôi nhận ra cà vạt bị lệch."
     ],
@@ -173,7 +173,7 @@
     "meaning": "SỰ — việc, sự việc",
     "usage": "Âm On 「ジ」: 「｜刑事《けいじ》」 (cảnh sát hình sự), 「｜行事《ぎょうじ》」 (sự kiện, lễ hội định kỳ). Âm Kun 「こと」, thành 「ごと」 khi đứng sau: 「｜見事《みごと》」 (tuyệt vời), 「｜物事《ものごと》」 (mọi việc).",
     "nuance": "「行事」 là 「ぎょうじ」: 「行」 đọc 「ぎょう」, 「事」 đọc 「じ」 — đề cho 「こうじ」, 「ぎょうごと」. 「刑事」 (「けいじ」) ngoài nghĩa \"hình sự\" còn chỉ người: cảnh sát điều tra.",
-    "compare": "",
+    "compare": "「事務」 ghép 「事」 và 「｜務《む》」: việc văn phòng, giấy tờ. 「事」 là việc nói chung; 「務」 là phần việc mình phải đảm nhận (「義務」).",
     "example_notes": [
       "Lễ hội mùa hè là sự kiện quan trọng nhất của thị trấn này."
     ],
@@ -203,7 +203,7 @@
     "meaning": "THỤ — nhận lấy; dự (kỳ thi, khóa học)",
     "usage": "Âm On 「ジュ」: 「｜受講《じゅこう》」 (theo học một khóa), 「｜受験《じゅけん》」 (dự thi). Âm Kun: 「｜受《う》け｜取《と》る」 (nhận lấy), 「｜受付《うけつけ》」 (quầy tiếp tân; việc tiếp nhận).",
     "nuance": "Khi viết 「じゅこう」, đề cho 「授講」, 「受校」, 「授校」. 「授」 (có bộ 「扌」) là trao, dạy — như 「授業」; 「受」 là nhận, học. Chữ sau là 「講」 (bài giảng).",
-    "compare": "",
+    "compare": "「受ける」 là nhận thứ được đưa tới (bài thi, cú điện thoại); 「｜迎《むか》える」 là ra đón người đến.",
     "example_notes": [
       "Tôi nhận bưu kiện mẹ gửi ở bưu điện."
     ],
@@ -213,7 +213,7 @@
     "meaning": "TRÚ, TRỤ — ở, sinh sống",
     "usage": "Âm On 「ジュウ」: 「｜住居《じゅうきょ》」 (chỗ ở), 「｜住所《じゅうしょ》」 (địa chỉ), 「｜住宅《じゅうたく》」 (nhà ở). Âm Kun: 「｜住《す》む」 (sống, cư trú).",
     "nuance": "Khi viết 「じゅうきょ」, đề cho 「住宅」, 「住家」, 「住屋」. 「住宅」 là từ có thật nhưng đọc 「じゅうたく」; chỉ 「住居」 đọc 「じゅうきょ」.",
-    "compare": "",
+    "compare": "「住居」 ghép 「住」 và 「｜居《きょ》」 (ở, chỗ ở). 「住む」 là sinh sống ở một nơi; 「｜居《い》る」 là có mặt, 「｜居間《いま》」 là phòng sinh hoạt chung.",
     "example_notes": [
       "Ông tôi đến giờ vẫn sống ở thị trấn nơi ông sinh ra."
     ],
@@ -223,7 +223,7 @@
     "meaning": "TRỌNG, TRÙNG — nặng, quan trọng; chồng lên",
     "usage": "Âm 「チョウ」: 「｜尊重《そんちょう》」 (tôn trọng), 「｜貴重《きちょう》」 (quý giá). Âm 「ジュウ」: 「｜重大《じゅうだい》」 (trọng đại, nghiêm trọng). Âm Kun: 「｜重《かさ》ねる」 (chồng lên, lặp lại nhiều lần).",
     "nuance": "Bẫy là hai âm On: 「尊重」, 「貴重」 đọc 「ちょう」, không phải 「じゅう」 như 「重大」. Đề cho 「そんじゅう」, 「きじゅう」 làm phương án sai.",
-    "compare": "「重い」 ↔ 「｜軽《かる》い」 (nặng/nhẹ). Âm On khác nhau: 「重」 đọc 「ジュウ」, 「チョウ」; 「軽」 đọc 「ケイ」, như 「｜軽傷《けいしょう》」 (vết thương nhẹ).",
+    "compare": "「重い」 ↔ 「｜軽《かる》い」 (nặng/nhẹ). Âm On khác nhau: 「重」 đọc 「ジュウ」, 「チョウ」; 「軽」 đọc 「ケイ」, như 「｜軽傷《けいしょう》」 (vết thương nhẹ). 「重要」 ghép 「重」 và 「｜要《よう》」 (cần).",
     "example_notes": [
       "Những tấm ảnh chụp trong chuyến du lịch là kỷ niệm quý giá đối với tôi."
     ],
@@ -403,7 +403,7 @@
     "meaning": "LÝ — lý lẽ, quy luật; sắp xếp, xử lý",
     "usage": "Âm On 「リ」 ở cả bốn từ: 「｜管理《かんり》」 (quản lý), 「｜処理《しょり》」 (xử lý), 「｜理解《りかい》」 (hiểu), 「｜物理《ぶつり》」 (vật lý).",
     "nuance": "「処理」 đọc 「しょり」 — 「しょ」 ngắn, không phải 「しょうり」. 「かんり」 viết 「管理」, không phải 「官理」 hay 「管利」. 「理解」 (lý giải) nghĩa là hiểu, không phải giải thích.",
-    "compare": "",
+    "compare": "「処理」 ghép 「｜処《しょ》」 (xử trí) và 「理」. Đề cho 「しゅうり」 (「｜修理《しゅうり》」 — sửa chữa) làm bẫy cho 「しょり」.",
     "example_notes": [
       "Tôi đã xử lý kết quả phiếu khảo sát thu được bằng máy tính."
     ],
@@ -413,7 +413,7 @@
     "meaning": "VI — khác, không giống; sai, trái (quy định)",
     "usage": "Âm On 「イ」: 「｜違反《いはん》」 (vi phạm), 「｜相違《そうい》」 (sự khác nhau). Âm Kun: 「｜違《ちが》い」 (sự khác biệt), 「｜間違《まちが》える」 (nhầm, làm sai).",
     "nuance": "Khi viết 「いはん」, đề cho 「偉判」, 「偉反」, 「違判」. 「偉」 (bộ 「亻」, vĩ đại) nhìn giống 「違」 (bộ 「⻌」); 「判」 cũng đọc 「ハン」 nhưng không đúng ở đây.",
-    "compare": "「違反」 ghép 「違」 và 「｜反《はん》」. 「違」 là khác, trái; 「反」 là ngược lại, chống lại (「反対」).",
+    "compare": "「違反」 ghép 「違」 và 「｜反《はん》」. 「違」 là khác, trái; 「反」 là ngược lại, chống lại (「反対」). 「｜異《い》」 cùng đọc 「イ」, cũng là khác: đề đặt 「違色」 làm bẫy cho 「異色」. 「｜偉《えら》い」 cùng có phần 「韋」.",
     "example_notes": [
       "Hai anh em tính cách hoàn toàn khác nhau."
     ],
@@ -433,7 +433,7 @@
     "meaning": "CẢI — sửa đổi, đổi mới",
     "usage": "Âm On 「カイ」: 「｜改正《かいせい》」 (sửa đổi luật, quy định), 「｜改札《かいさつ》」 (cửa soát vé). Âm Kun: 「｜改《あらた》める」 (sửa lại, đổi), 「｜改《あらた》めて」 (lại lần nữa, vào dịp khác).",
     "nuance": "「改めて」 đọc 「あらためて」; đề cho 「たしかめて」, 「まとめて」, 「ふくめて」 — cùng đuôi 「〜めて」. 「改めて」 = lại lần nữa, vào một dịp khác.",
-    "compare": "",
+    "compare": "「改める」 là sửa lại cho mới, cho đúng; 「｜変《か》わる」 là tự đổi khác. 「｜変更《へんこう》」 là đổi (giờ, kế hoạch) — chữ sau là 「更」, không phải 「改」. 「｜修理《しゅうり》」 là sửa chỗ hỏng.",
     "example_notes": [
       "Luật được sửa đổi nên thủ tục trở nên đơn giản hơn."
     ],
@@ -483,7 +483,7 @@
     "meaning": "NGHIÊN — nghiên cứu, trau dồi",
     "usage": "Âm On 「ケン」: 「｜研修《けんしゅう》」 (khóa đào tạo, tu nghiệp), 「｜研究《けんきゅう》」 (nghiên cứu), 「｜研究室《けんきゅうしつ》」 (phòng nghiên cứu).",
     "nuance": "Khi viết 「けんしゅう」, đề cho 「演習」, 「研習」, 「演修」. 「演習」 là từ có thật nhưng đọc 「えんしゅう」 (bài tập thực hành). Chỉ 「研修」 đúng.",
-    "compare": "",
+    "compare": "「研修」 ghép 「研」 và 「｜修《しゅう》」: khóa đào tạo. Đề đặt 「研習」, 「演修」 làm bẫy cho 「けんしゅう」.",
     "example_notes": [
       "Anh tôi đang nghiên cứu thực vật ở trường đại học."
     ],
@@ -543,7 +543,7 @@
     "meaning": "TẠI — có mặt, tồn tại",
     "usage": "Âm On 「ザイ」: 「｜在籍《ざいせき》」 (có tên trong danh sách: trường, công ty), 「｜現在《げんざい》」 (hiện tại), 「｜在学《ざいがく》」 (đang theo học).",
     "nuance": "Khi viết 「ざいせき」, đề cho 「採籍」, 「在簿」, 「採簿」. 「採」 (hái, chọn) cũng đọc 「サイ」; chữ sau là 「籍」 (hộ tịch), không phải 「簿」.",
-    "compare": "「現在」 ghép 「｜現《げん》」 và 「在」. 「在」 là có mặt, đang ở đó (「在学」); 「現」 là hiện ra, lộ ra.",
+    "compare": "「現在」 ghép 「｜現《げん》」 và 「在」. 「在」 là có mặt, đang ở đó (「在学」); 「現」 là hiện ra, lộ ra. 「｜居《い》る」 cũng là có mặt, ở; 「｜住居《じゅうきょ》」 là chỗ ở.",
     "example_notes": [
       "Hiện nay thị trấn này có khoảng ba mươi nghìn người sinh sống."
     ],
@@ -553,7 +553,7 @@
     "meaning": "TOÁN — tính toán",
     "usage": "Âm On 「サン」: 「｜精算《せいさん》」 (thanh toán phần còn lại, quyết toán), 「｜計算《けいさん》」 (tính toán), 「｜予算《よさん》」 (ngân sách).",
     "nuance": "Khi viết 「せいさん」, đề cho 「請算」, 「製算」, 「制算」 — đều đọc 「セイ」. Đúng là 「精算」. 「予算」 (dự toán) là ngân sách.",
-    "compare": "",
+    "compare": "「精算」 ghép 「｜精《せい》」 (kỹ lưỡng) và 「算」: tính lại cho khớp số tiền.",
     "example_notes": [
       "Ngân sách cho chuyến du lịch là năm mươi nghìn yên mỗi người."
     ],
@@ -633,7 +633,7 @@
     "meaning": "THẮNG — thắng, giành phần hơn",
     "usage": "Âm On 「ショウ」: 「｜圧勝《あっしょう》」 (thắng áp đảo), 「｜優勝《ゆうしょう》」 (vô địch). Âm Kun: 「｜勝《か》つ」 (thắng), 「｜勝手《かって》」 (tự tiện, theo ý mình).",
     "nuance": "「圧勝」 là 「あっしょう」; đề cho 「ゆうしょう」 (「優勝」), 「あっしゅう」, 「ゆうしゅう」. Âm Hán Việt (thắng thủ) không gợi ra nghĩa: 「勝手」 là tự tiện, không hỏi ai.",
-    "compare": "「勝つ」 là thắng, có kết quả; 「｜争《あらそ》う」 là tranh giành, 「｜競《きそ》う」 là so tài — hai chữ này nói việc đua nhau, chưa nói ai thắng. 「優勝」 ghép 「｜優《ゆう》」 (ưu tú, hơn người) và 「勝」: vô địch.",
+    "compare": "「勝つ」 là thắng; 「｜争《あらそ》う」 (tranh giành), 「｜競《きそ》う」 (so tài) chỉ là đua nhau, chưa nói ai thắng. 「優勝」 ghép 「｜優《ゆう》」 và 「勝」: vô địch. 「｜負《ま》ける」 là thua; 「勝負」 là trận phân thắng thua.",
     "example_notes": [
       "Em trai tôi tự ý bỏ việc mà không bàn với gia đình."
     ],
@@ -643,7 +643,7 @@
     "meaning": "TÌNH — tình cảm, cảm xúc; hoàn cảnh",
     "usage": "Âm On 「ジョウ」: 「｜情景《じょうけい》」 (khung cảnh, cảnh tượng), 「｜感情《かんじょう》」 (cảm xúc), 「｜事情《じじょう》」 (hoàn cảnh, lý do), 「｜表情《ひょうじょう》」 (nét mặt).",
     "nuance": "「情景」 là 「じょうけい」; đề cho 「じょけい」, 「じょうえい」, 「じょえい」. Hán Việt lừa: 「表情」 (biểu tình) là nét mặt, không phải biểu tình. 「事情」 (sự tình) là hoàn cảnh, lý do.",
-    "compare": "「情景」 ghép 「情」 và 「｜景《けい》」 (cảnh). 「情」 là tình cảm (「感情」); 「｜気《き》」 là tâm trạng, cảm giác (「気配」).",
+    "compare": "「情景」 ghép 「情」 và 「｜景《けい》」 (cảnh). 「情」 là tình cảm (「感情」); 「｜気《き》」 là tâm trạng, cảm giác (「気配」). 「｜状《じょう》」 cùng đọc 「ジョウ」: 「症状」, 「状況」 dùng 「状」.",
     "example_notes": [
       "Anh ấy vui là hiện ngay ra nét mặt."
     ],
@@ -663,7 +663,7 @@
     "meaning": "THIẾT — xây dựng, thiết lập",
     "usage": "Âm On 「セツ」: 「｜施設《しせつ》」 (cơ sở, công trình), 「｜建設《けんせつ》」 (xây dựng), 「｜設計《せっけい》」 (thiết kế), 「｜設備《せつび》」 (trang thiết bị).",
     "nuance": "「設計」 đọc 「せっけい」 (có 「っ」). Khi viết 「しせつ」, đề cho 「支接」, 「施接」, 「支設」 — chữ đầu là 「施」, chữ sau là 「設」 (bộ 「言」).",
-    "compare": "「設」 và 「｜接《せつ》」 cùng đọc 「セツ」: 「施設」, 「建設」 dùng 「設」 (dựng, đặt); 「面接」, 「直接」 dùng 「接」 (tiếp xúc). Đề cho 「施接」 làm bẫy. 「｜装《そう》」 là trang phục, trang bị (「服装」, 「装置」), không phải xây dựng.",
+    "compare": "「設」 và 「｜接《せつ》」 cùng đọc 「セツ」: 「施設」, 「建設」 dùng 「設」 (dựng, đặt); 「面接」 dùng 「接」 (tiếp xúc) — đề cho 「施接」. 「｜装《そう》」 là trang phục, trang bị (「服装」); 「｜製《せい》」 là làm ra sản phẩm.",
     "example_notes": [
       "Gần ga đang xây một tòa nhà mới."
     ],
@@ -683,7 +683,7 @@
     "meaning": "NHIÊN — như thế, vốn như vậy",
     "usage": "Âm 「ゼン」: 「｜偶然《ぐうぜん》」 (tình cờ), 「｜自然《しぜん》」 (thiên nhiên; tự nhiên), 「｜全然《ぜんぜん》」 (hoàn toàn không). Âm 「ネン」: 「｜天然《てんねん》」 (tự nhiên, không nhân tạo).",
     "nuance": "「偶然」 là 「ぐうぜん」 (「ぐう」 dài); đề cho 「ぐぜん」, 「とつぜん」, 「とぜん」. 「とつぜん」 là 「突然」 (đột nhiên). 「天然」 đọc 「てんねん」, không phải 「てんぜん」.",
-    "compare": "",
+    "compare": "「偶然」 ghép 「｜偶《ぐう》」 và 「然」; nghĩa “tình cờ” là của 「偶」, 「然」 chỉ là “như thế”.",
     "example_notes": [
       "Công viên này vẫn còn giữ được thiên nhiên như ngày xưa."
     ],
@@ -713,7 +713,7 @@
     "meaning": "TƯƠNG, TƯỚNG — lẫn nhau, qua lại; tướng (chức quan)",
     "usage": "Âm 「ソウ」: 「｜相互《そうご》」 (lẫn nhau), 「｜相当《そうとう》」 (tương đương; khá, đáng kể). Âm 「ショウ」: 「｜首相《しゅしょう》」 (thủ tướng). Âm Kun 「あい」: 「｜相手《あいて》」 (đối phương).",
     "nuance": "「相互」 là 「そうご」 — 「ご」 ngắn. Đề cho 「しょうご」, 「しょうごう」, 「そうごう」. 「首相」 mới đọc 「しょう」.",
-    "compare": "",
+    "compare": "「相互」 ghép 「相」 và 「｜互《ご》」: qua lại giữa hai bên. Trong từ này 「相」 đọc 「そう」, nên 「しょうご」 là bẫy.",
     "example_notes": [
       "Người gọi điện đến là một người tôi không quen."
     ],
@@ -743,7 +743,7 @@
     "meaning": "ĐIỀU — điều chỉnh, tra xét; nhịp, trạng thái",
     "usage": "Âm On 「チョウ」: 「｜調査《ちょうさ》」 (điều tra), 「｜調節《ちょうせつ》」 (điều chỉnh mức độ: nhiệt độ, độ cao), 「｜順調《じゅんちょう》」 (suôn sẻ). Âm Kun: 「｜調《しら》べる」 (tra, tìm hiểu).",
     "nuance": "「調節」 là 「ちょうせつ」; 「ちょうせい」 là từ khác (「｜調整《ちょうせい》」) và là bẫy trong đề. Viết 「じゅんちょう」 là 「順調」, không phải 「準調」 hay 「順長」.",
-    "compare": "",
+    "compare": "「調べる」 là tra cứu, điều tra; 「｜観察《かんさつ》」 là nhìn kỹ để hiểu, 「｜視察《しさつ》」 là đến tận nơi xem thực tế. 「｜状況《じょうきょう》」 (tình hình) dùng 「状」, không phải 「調」.",
     "example_notes": [
       "Tôi đã điều chỉnh độ cao của bàn cho vừa với chiều cao của con."
     ],
@@ -753,7 +753,7 @@
     "meaning": "TRỰC — thẳng, ngay thẳng; ngay lập tức",
     "usage": "Âm 「チョク」: 「｜率直《そっちょく》」 (thẳng thắn), 「｜垂直《すいちょく》」 (vuông góc, thẳng đứng). Âm 「ジキ」: 「｜正直《しょうじき》」 (thật thà). Âm Kun: 「｜直《ただ》ちに」 (ngay lập tức).",
     "nuance": "Bẫy chính là hai âm On: 「率直」, 「垂直」 đọc 「ちょく」, còn 「正直」 đọc 「じき」. Đề cho 「そつじき」, 「すいじき」 làm phương án sai.",
-    "compare": "",
+    "compare": "「直す」 là sửa về như cũ; 「｜修理《しゅうり》」 (sửa đồ vật), 「｜修正《しゅうせい》」 (sửa chỗ sai) dùng 「修」.",
     "example_notes": [
       "Nếu có ý kiến, xin cứ nói thẳng thắn."
     ],
@@ -783,7 +783,7 @@
     "meaning": "ĐẦU — ném, quăng; bỏ vào (phiếu, thư)",
     "usage": "Âm On 「トウ」: 「｜投票《とうひょう》」 (bỏ phiếu), 「｜投書《とうしょ》」 (thư gửi báo, gửi ý kiến). Âm Kun: 「｜投《な》げる」 (ném).",
     "nuance": "Khi viết 「とうひょう」, đề cho 「当票」, 「投標」, 「当標」. 「当」 cũng đọc 「トウ」; chữ sau là 「票」 (lá phiếu), không có bộ 「木」 như 「標」.",
-    "compare": "",
+    "compare": "「投げる」 (ném) và 「｜捨《す》てる」 (vứt) đều có bộ 「扌」; đề đặt 「投てられて」 làm bẫy cho 「すてられて」.",
     "example_notes": [
       "Tôi ném quả bóng, con chó liền chạy đi nhặt."
     ],
@@ -793,7 +793,7 @@
     "meaning": "ĐĂNG — leo, trèo lên; bước ra (sân khấu)",
     "usage": "Âm 「トウ」: 「｜登録《とうろく》」 (đăng ký), 「｜登場《とうじょう》」 (xuất hiện, ra mắt). Âm 「ト」: 「｜登山《とざん》」 (leo núi). Âm Kun: 「｜登《のぼ》る」 (leo, trèo).",
     "nuance": "Khi viết 「とうろく」, đề cho 「登緑」, 「答録」, 「答緑」. Chữ sau là 「録」 (bộ 「金」), không phải 「緑」 (màu xanh). 「登山」 đọc 「とざん」, không phải 「とうざん」.",
-    "compare": "",
+    "compare": "「登る」 và 「｜昇《のぼ》る」 cùng đọc 「のぼる」: leo núi (「登山」) viết 「登る」; mặt trời lên viết 「昇る」.",
     "example_notes": [
       "Cuối truyện, bố của nhân vật chính xuất hiện."
     ],
@@ -803,7 +803,7 @@
     "meaning": "ĐẲNG — bằng nhau; bậc, hạng",
     "usage": "Âm On 「トウ」: 「｜平等《びょうどう》」 (bình đẳng), 「｜高等《こうとう》」 (bậc cao), 「｜上等《じょうとう》」 (hảo hạng). Âm Kun: 「｜等《ひと》しい」 (bằng nhau; 「等しく」 = đều nhau).",
     "nuance": "「平等」 đọc 「びょうどう」, không phải 「へいどう」. 「等しく」 là 「ひとしく」; 「やさしく」 là bẫy. 「高等」 (cao đẳng) chỉ bậc cao như 「高等学校」 (trường cấp ba), không phải trường cao đẳng.",
-    "compare": "「等しい」 là hai thứ bằng nhau; 「｜比《くら》べる」 là đặt hai thứ cạnh nhau để so sánh.",
+    "compare": "「等しい」 là hai thứ bằng nhau; 「｜比《くら》べる」 là đặt hai thứ cạnh nhau để so sánh. 「平等」 ghép 「｜平《びょう》」 và 「等」 — đọc 「びょうどう」.",
     "example_notes": [
       "Bốn người chia đều chiếc bánh kem."
     ],
@@ -813,7 +813,7 @@
     "meaning": "NAN, NẠN — khó; tai họa",
     "usage": "Âm On 「ナン」: 「｜避難《ひなん》」 (lánh nạn, sơ tán), 「｜困難《こんなん》」 (khó khăn). Âm Kun: 「｜難《むずか》しい」 (khó), 「｜有《あ》り｜難《がた》い」 (biết ơn, quý hóa).",
     "nuance": "「有り難い」 đọc 「ありがたい」 — 「難」 thành 「がた」. Hán Việt lừa: 「避難」 (tị nạn) là chạy đến nơi an toàn khi có nguy hiểm (thiên tai, hỏa hoạn), không phải xin tị nạn.",
-    "compare": "「難」 và 「｜離《り》」 có cùng phần 「隹」 bên phải. Khi viết 「ひなん」, đề cho 「避離」, 「被離」, 「被難」 — chỉ 「避難」 đúng.",
+    "compare": "「難」 và 「｜離《り》」 có cùng phần 「隹」 bên phải. Khi viết 「ひなん」, đề cho 「避離」, 「被離」, 「被難」 — chỉ 「避難」 đúng. 「｜災難《さいなん》」 ghép 「｜災《さい》」 và 「難」: tai họa, chuyện xui xẻo.",
     "example_notes": [
       "Tuyết dày nên việc đi tiếp lên núi rất khó khăn."
     ],
@@ -823,7 +823,7 @@
     "meaning": "NĂNG — khả năng, năng lực",
     "usage": "Âm On 「ノウ」: 「｜才能《さいのう》」 (tài năng), 「｜能力《のうりょく》」 (năng lực), 「｜可能《かのう》」 (có thể), 「｜機能《きのう》」 (chức năng).",
     "nuance": "「才能」 là 「さいのう」; đề cho 「ざいのう」, 「ぜいのう」, 「せいのう」. 「能」 thì luôn đọc 「のう」 — chỗ khó là chữ đứng trước.",
-    "compare": "「才能」 ghép 「｜才《さい》」 và 「能」. 「能」 là khả năng làm được việc (「能力」); 「才」 là tài năng (「天才」).",
+    "compare": "「才能」 ghép 「｜才《さい》」 và 「能」. 「能」 là khả năng làm được việc (「能力」); 「才」 là tài năng (「天才」). 「｜技術《ぎじゅつ》」 là kỹ thuật, tay nghề học được.",
     "example_notes": [
       "Chiếc điện thoại mới này có nhiều chức năng tiện lợi."
     ],
@@ -843,7 +843,7 @@
     "meaning": "PHẢN — ngược lại, chống lại",
     "usage": "Âm On 「ハン」: 「｜違反《いはん》」 (vi phạm), 「｜反対《はんたい》」 (phản đối; ngược lại), 「｜反映《はんえい》」 (phản ánh), 「｜反省《はんせい》」 (tự kiểm điểm).",
     "nuance": "Khi viết 「いはん」, đề cho 「偉判」, 「偉反」, 「違判」; 「判」 cũng đọc 「ハン」 nhưng không đúng ở đây. 「反省」 (phản tỉnh) là tự nhìn lại lỗi của mình.",
-    "compare": "「違反」 ghép 「｜違《い》」 và 「反」. 「反」 là ngược lại, chống lại (「反対」); 「違」 là khác, trái với (「違う」). 「反映」 ghép 「反」 và 「｜映《えい》」 (hiện bóng): phản ánh.",
+    "compare": "「違反」 ghép 「｜違《い》」 và 「反」. 「反」 là ngược lại, chống lại (「反対」); 「違」 là khác, trái với (「違う」). 「反映」 ghép 「反」 và 「｜映《えい》」 (hiện bóng): phản ánh. 「｜逆《さか》さま」 là lộn ngược.",
     "example_notes": [
       "Chúng tôi lập kế hoạch có phản ánh ý kiến của người dân."
     ],
@@ -853,7 +853,7 @@
     "meaning": "TỈ — so sánh",
     "usage": "Âm On 「ヒ」: 「｜比較《ひかく》」 (so sánh), 「｜比較的《ひかくてき》」 (tương đối). Âm Kun: 「｜比《くら》べる」 (so sánh).",
     "nuance": "「比較的」 là 「ひかくてき」; đề cho 「ひこうてい」, 「ひこてき」, 「ひかてき」. Chữ 「較」 đọc 「かく」, không phải 「こう」 hay 「か」.",
-    "compare": "「比べる」 là đặt hai thứ cạnh nhau để so; 「｜等《ひと》しい」 là hai thứ bằng nhau.",
+    "compare": "「比べる」 là đặt hai thứ cạnh nhau để so; 「｜等《ひと》しい」 là hai thứ bằng nhau. 「比較」 ghép 「比」 và 「｜較《かく》」.",
     "example_notes": [
       "So với Tokyo, vật giá ở thị trấn này rẻ hơn."
     ],
@@ -863,7 +863,7 @@
     "meaning": "BỊ — chuẩn bị sẵn, phòng bị",
     "usage": "Âm On 「ビ」: 「｜準備《じゅんび》」 (chuẩn bị), 「｜設備《せつび》」 (trang thiết bị), 「｜警備《けいび》」 (canh gác, bảo vệ). Âm Kun: 「｜備《そな》える」 (chuẩn bị trước, phòng khi có chuyện; mẫu 「Nに備える」).",
     "nuance": "「警備」 đọc 「けいび」 (「び」 đục), không phải 「けいひ」. 「そなえる」 viết 「備える」; đừng nhầm với 「｜整《ととの》える」 (sắp xếp) hay 「｜控《ひか》える」 (kiềm chế) — các phương án sai trong đề.",
-    "compare": "",
+    "compare": "「備える」 là chuẩn bị sẵn cho việc sắp tới; 「｜防《ふせ》ぐ」 là chặn không cho điều xấu xảy ra.",
     "example_notes": [
       "Để phòng bão, tôi đã mang các chậu cây ngoài ban công vào trong nhà."
     ],
@@ -873,9 +873,59 @@
     "meaning": "PHÓ — gắn vào, kèm theo; trao, gửi",
     "usage": "Âm On 「フ」: 「｜寄付《きふ》」 (quyên góp), 「｜付近《ふきん》」 (vùng lân cận). Âm Kun: 「｜受付《うけつけ》」 (quầy tiếp tân), 「｜付《つ》き｜合《あ》う」 (giao du, qua lại).",
     "nuance": "Khi viết 「きふ」, đề cho 「寄符」, 「貴付」, 「貴符」. Chữ đầu là 「寄」 (gửi), không phải 「貴」; chữ sau là 「付」, không phải 「符」 (bộ 「竹」).",
-    "compare": "",
+    "compare": "「寄付」 ghép 「｜寄《き》」 và 「付」. Đề cho 「貴付」, 「寄符」, 「貴符」 làm bẫy: chữ đầu là 「寄」 (có 「宀」), chữ sau là 「付」.",
     "example_notes": [
       "Quanh khu vực này không có cửa hàng tiện lợi nào cả."
+    ],
+    "quiz": []
+  },
+  "k-0503": {
+    "meaning": "PHỤ — thua; gánh vác, cõng trên lưng",
+    "usage": "Âm On 「フ」: 「｜負担《ふたん》」 (gánh chịu, chi trả), 「｜勝負《しょうぶ》」 (trận phân thắng thua). Âm Kun: 「｜負《ま》ける」 (thua), 「｜背負《せお》う」 (cõng, đeo trên lưng).",
+    "nuance": "「負担」 đọc 「ふたん」: 「負」 là 「ふ」, không đục và không có 「ん」 thừa. Đề cho 「ぶんたん」, 「ぶんてん」, 「ふてん」 làm bẫy.",
+    "compare": "「勝負」 ghép 「｜勝《しょう》」 (thắng) và 「負」 (thua). 「負ける」 là thua, trái nghĩa với 「｜勝《か》つ」.",
+    "example_notes": [
+      "Chơi game với em trai, tôi thua ba ván liền."
+    ],
+    "quiz": []
+  },
+  "k-0506": {
+    "meaning": "BÌNH — bằng phẳng; ngang nhau, công bằng",
+    "usage": "Âm On 「ヘイ」: 「｜公平《こうへい》」 (công bằng), 「｜平気《へいき》」 (thản nhiên, không hề gì). Âm 「ビョウ」: 「｜平等《びょうどう》」 (bình đẳng). Âm Kun: 「｜平《たい》ら」 (bằng phẳng).",
+    "nuance": "「平等」 là 「びょうどう」: 「平」 đọc 「びょう」, không phải 「へい」, và 「等」 có 「う」 dài. Đề cho 「へいど」, 「へいどう」, 「びょうど」 làm bẫy.",
+    "compare": "「平等」 ghép 「平」 và 「｜等《どう》」 (bằng nhau). 「平和」 ghép 「平」 và 「｜和《わ》」 (hòa thuận) — tiếng Việt đảo thứ tự thành \"hòa bình\".",
+    "example_notes": [
+      "Đường quanh đây bằng phẳng nên đi xe đạp cũng nhẹ nhàng."
+    ],
+    "quiz": []
+  },
+  "k-0508": {
+    "meaning": "BIẾN — đổi khác, thay đổi",
+    "usage": "Âm On 「ヘン」: 「｜変更《へんこう》」 (thay đổi giờ, kế hoạch), 「｜変化《へんか》」 (sự biến đổi), 「｜大変《たいへん》」 (vất vả; rất). Âm Kun: 「｜変《か》わる」 (tự đổi khác), 「｜変《か》える」 (làm cho đổi).",
+    "nuance": "Khi viết 「へんこう」, đề cho 「変改」, 「変換」, 「変替」. 「｜変換《へんかん》」 (chuyển đổi) là từ có thật nhưng đọc 「へんかん」; chỉ 「変更」 đọc 「へんこう」.",
+    "compare": "「変更」 ghép 「変」 và 「｜更《こう》」. 「変わる」 là tự đổi khác; 「｜改《あらた》める」 là sửa lại cho mới, cho đúng. 「｜異《い》」 (khác, lạ) ghép với 「変」 thành 「｜異変《いへん》」 (biến cố bất thường).",
+    "example_notes": [
+      "Đèn tín hiệu chuyển từ đỏ sang xanh."
+    ],
+    "quiz": []
+  },
+  "k-0511": {
+    "meaning": "PHỎNG — đến thăm (người, nơi chốn)",
+    "usage": "Âm On 「ホウ」: 「｜訪問《ほうもん》」 (việc đến thăm). Âm Kun: 「｜訪《たず》ねる」 (đến thăm người, nhà), 「｜訪《おとず》れる」 (đến một nơi, ghé thăm).",
+    "nuance": "Hán Việt dễ lừa: 「訪問」 (phỏng vấn) là đến thăm; phỏng vấn xin việc là 「｜面接《めんせつ》」. Khi viết 「おとずれる」, đề cho 「往れる」, 「伺れる」, 「参れる」.",
+    "compare": "「訪ねる」 là đến thăm; 「｜参《まい》る」 là \"đi, đến\" nói khiêm nhường. Đề đặt 「参れる」 làm bẫy cho 「おとずれる」.",
+    "example_notes": [
+      "Tuần trước, tôi đến thăm nhà thầy giáo thời đại học."
+    ],
+    "quiz": []
+  },
+  "k-0515": {
+    "meaning": "PHÒNG — ngăn chặn, ngăn ngừa",
+    "usage": "Âm On 「ボウ」: 「｜防災《ぼうさい》」 (phòng chống thiên tai), 「｜防止《ぼうし》」 (ngăn chặn), 「｜消防《しょうぼう》」 (cứu hỏa). Âm Kun: 「｜防《ふせ》ぐ」 (ngăn, chặn trước).",
+    "nuance": "「防災」 là 「ぼうさい」: 「防」 đọc 「ぼう」 (đục), không phải 「ほう」; 「災」 đọc 「さい」. Đề cho 「ぼうえん」, 「ほうえん」, 「ほうさい」 làm bẫy.",
+    "compare": "「防災」 ghép 「防」 và 「｜災《さい》」 (tai họa). 「防ぐ」 là chặn trước điều xấu; 「｜保護《ほご》」 là che chở, bảo vệ người, vật. 「｜備《そな》える」 là chuẩn bị sẵn; 「防ぐ」 là chặn điều xấu.",
+    "example_notes": [
+      "Để phòng cảm, đi ngoài về là tôi rửa tay."
     ],
     "quiz": []
   },
@@ -883,9 +933,79 @@
     "meaning": "VỌNG — mong muốn, hy vọng",
     "usage": "Âm On 「ボウ」: 「｜希望《きぼう》」 (mong muốn), 「｜志望《しぼう》」 (nguyện vọng: trường, công ty muốn vào), 「｜願望《がんぼう》」 (ước muốn). Âm Kun: 「｜望《のぞ》む」 (mong, mong muốn).",
     "nuance": "「願望」 là 「がんぼう」, không phải 「げんぼう」 hay 「がんぼ」 (「ぼう」 dài). Khi viết 「しぼう」 (chọn trường, công ty) là 「志望」, không phải 「希望」 hay 「指望」.",
-    "compare": "「願望」 ghép 「｜願《がん》」 và 「望」. 「望む」 là mong muốn; 「｜願《ねが》う」 là cầu mong. 「願」 đọc 「がん」, không phải 「げん」.",
+    "compare": "「願望」 ghép 「｜願《がん》」 và 「望」. 「望む」 là mong muốn; 「｜願《ねが》う」 là cầu mong. 「願」 đọc 「がん」, không phải 「げん」. 「志望」 ghép 「｜志《し》」 (chí hướng) và 「望」: nguyện vọng.",
     "example_notes": [
       "Chị tôi đã đỗ vào trường đại học nguyện vọng một."
+    ],
+    "quiz": []
+  },
+  "k-0521": {
+    "meaning": "VỤ — việc phải làm, nhiệm vụ; đảm nhận",
+    "usage": "Âm On 「ム」: 「｜事務《じむ》」 (việc văn phòng, giấy tờ), 「｜義務《ぎむ》」 (nghĩa vụ), 「｜公務員《こうむいん》」 (công chức). Âm Kun: 「｜務《つと》める」 (đảm nhận một vai trò).",
+    "nuance": "「務める」 đọc 「つとめる」: đảm nhận một vai trò, một chức vụ. Đề cho 「まとめる」, 「やめる」, 「さだめる」 — cũng là động từ đuôi 「める」 có thật.",
+    "compare": "「事務」 ghép 「｜事《じ》」 và 「務」. 「事」 là việc, sự việc nói chung; 「務」 là phần việc mình phải gánh (「義務」). 「義務」 ghép 「｜義《ぎ》」 (lẽ phải) và 「務」.",
+    "example_notes": [
+      "Anh trai tôi làm công việc văn phòng ở tòa thị chính."
+    ],
+    "quiz": []
+  },
+  "k-0524": {
+    "meaning": "DIỆN — mặt, bề mặt",
+    "usage": "Âm On 「メン」: 「｜面倒《めんどう》」 (phiền phức), 「｜表面《ひょうめん》」 (bề mặt), 「｜正面《しょうめん》」 (chính diện, phía trước). Âm Kun: 「｜面白《おもしろ》い」 (thú vị).",
+    "nuance": "Khi viết 「めんどう」, đề cho 「面到」, 「免倒」, 「免到」. Chữ đầu là 「面」, không phải 「免」; chữ sau là 「倒」 (có 「亻」 bên trái), không phải 「到」.",
+    "compare": "",
+    "example_notes": [
+      "Ngay trước mặt nhà ga vừa có một khách sạn mới."
+    ],
+    "quiz": []
+  },
+  "k-0529": {
+    "meaning": "DU — dầu",
+    "usage": "Âm On 「ユ」: 「｜石油《せきゆ》」 (dầu mỏ, dầu hỏa), 「｜油断《ゆだん》」 (chủ quan, lơ là). Âm Kun 「あぶら」: 「｜油《あぶら》」 (dầu).",
+    "nuance": "「油断」 là 「ゆだん」: 「油」 đọc 「ゆ」, không phải 「よ」; 「断」 đục thành 「だん」. Đề cho 「よたん」, 「ゆたん」, 「よだん」 làm bẫy.",
+    "compare": "",
+    "example_notes": [
+      "Ở nhà bà tôi, mùa đông dùng lò sưởi dầu."
+    ],
+    "quiz": []
+  },
+  "k-0533": {
+    "meaning": "YẾU, YÊU — cần, cần phải có; đòi hỏi",
+    "usage": "Âm On 「ヨウ」: 「｜要求《ようきゅう》」 (yêu cầu), 「｜必要《ひつよう》」 (cần thiết), 「｜重要《じゅうよう》」 (trọng yếu, quan trọng). Âm Kun: 「｜要《い》る」 (cần).",
+    "nuance": "「要求」 là 「ようきゅう」 — cả hai chữ có 「う」 dài, không có 「っ」. Đề cho 「ようきゅ」, 「よっきゅう」, 「よっきゅ」. 「要る」 (cần) khác 「｜居《い》る」 (ở) dù cùng đọc 「いる」.",
+    "compare": "「重要」 ghép 「｜重《じゅう》」 (nặng, quan trọng) và 「要」 (cần thiết).",
+    "example_notes": [
+      "Đi du lịch nước ngoài thì cần hộ chiếu."
+    ],
+    "quiz": []
+  },
+  "k-0539": {
+    "meaning": "LƯƠNG — tốt, tốt đẹp",
+    "usage": "Âm On 「リョウ」: 「｜善良《ぜんりょう》」 (lương thiện). Âm Kun: 「｜良《よ》い」 (tốt), 「｜仲良《なかよ》し」 (thân nhau, bạn thân).",
+    "nuance": "「善良」 là 「ぜんりょう」: 「善」 đục 「ぜん」, 「良」 là 「りょう」, không phải 「りゅう」. Đề cho 「せんりょう」, 「ぜんりゅう」, 「せんりゅう」 làm bẫy.",
+    "compare": "",
+    "example_notes": [
+      "Con gái tôi và đứa trẻ nhà bên rất thân nhau."
+    ],
+    "quiz": []
+  },
+  "k-0540": {
+    "meaning": "LƯƠNG — mát, mát mẻ",
+    "usage": "Âm On 「リョウ」. Học qua âm Kun: 「｜涼《すず》しい」 (mát), 「｜涼《すず》む」 (hóng mát, tránh nóng).",
+    "nuance": "Khi viết 「すずんだ」, đề cho 「快んだ」, 「冷んだ」, 「清んだ」. Chỉ 「涼んだ」 đúng: bộ 「氵」 bên trái, 「京」 bên phải.",
+    "compare": "「涼しい」 là mát; 「｜快《こころよ》い」 là dễ chịu, vui lòng. Đề đặt 「快んだ」 làm bẫy cho 「すずんだ」.",
+    "example_notes": [
+      "Bộ đồ này vải mỏng nên mặc vào thấy mát."
+    ],
+    "quiz": []
+  },
+  "k-0542": {
+    "meaning": "LỄ — lễ nghĩa, phép lịch sự; lời cảm ơn",
+    "usage": "Âm On 「レイ」: 「｜礼儀《れいぎ》」 (lễ nghi, phép lịch sự), 「｜失礼《しつれい》」 (thất lễ), 「お｜礼《れい》」 (lời cảm ơn, quà cảm ơn).",
+    "nuance": "Khi viết 「れいぎ」, đề cho 「札義」, 「札儀」, 「礼義」. 「礼」 bộ 「礻」, còn 「札」 (tờ tiền) bộ 「木」; chữ sau là 「儀」 (có 「亻」), không phải 「義」.",
+    "compare": "「礼」 là phép lịch sự, lời cảm ơn; 「｜敬《うやま》う」 là kính trọng. Đề đặt 「礼う」 làm bẫy cho 「うやまう」.",
+    "example_notes": [
+      "Tôi cảm ơn người đã chỉ đường cho mình rồi chào tạm biệt."
     ],
     "quiz": []
   },
@@ -899,6 +1019,16 @@
     ],
     "quiz": []
   },
+  "k-0550": {
+    "meaning": "HÒA — hòa thuận, êm ấm; kiểu Nhật",
+    "usage": "Âm On 「ワ」: 「｜平和《へいわ》」 (hòa bình), 「｜和服《わふく》」 (trang phục truyền thống Nhật). Âm Kun: 「｜和《なご》やか」 (êm ấm, vui vẻ hòa thuận).",
+    "nuance": "「和やか」 đọc 「なごやか」. Đề cho 「おだやか」, 「さわやか」, 「にぎやか」 — đều là tính từ đuôi 「やか」 có thật, nên phải nhớ 「和」 là 「なご」.",
+    "compare": "「平和」 ghép 「｜平《へい》」 và 「和」 — tiếng Việt nói \"hòa bình\", đảo thứ tự. 「平」 là bằng phẳng, ngang nhau; 「和」 là hòa thuận.",
+    "example_notes": [
+      "Cứ đến Tết là ông tôi mặc trang phục truyền thống Nhật."
+    ],
+    "quiz": []
+  },
   "k-0552": {
     "meaning": "ÁP — ép, đè; áp lực",
     "usage": "Âm On 「アツ」: 「｜気圧《きあつ》」 (khí áp), 「｜血圧《けつあつ》」 (huyết áp). 「アツ」 thành 「あっ」 trước 「と」, 「しょ」: 「｜圧倒的《あっとうてき》」 (áp đảo), 「｜圧勝《あっしょう》」 (thắng áp đảo).",
@@ -906,6 +1036,56 @@
     "compare": "",
     "example_notes": [
       "Trên núi khí áp thấp nên túi bánh kẹo bị phồng lên."
+    ],
+    "quiz": []
+  },
+  "k-0554": {
+    "meaning": "Y — quần áo, y phục",
+    "usage": "Âm On 「イ」: 「｜衣装《いしょう》」 (trang phục), 「｜衣服《いふく》」 (quần áo), 「｜衣食住《いしょくじゅう》」 (mặc, ăn, ở).",
+    "nuance": "「衣装」 là 「いしょう」: 「装」 ở đây đọc 「しょう」, không phải 「そう」. Đề cho 「いそう」, 「いじょう」, 「いぞう」. 「衣食住」 xếp mặc – ăn – ở; tiếng Việt nói \"ăn, mặc, ở\".",
+    "compare": "「衣装」 ghép 「衣」 và 「｜装《しょう》」. 「衣」 là quần áo; 「装」 là trang phục, trang bị (「服装」, 「装置」).",
+    "example_notes": [
+      "Trước khi mùa đông tới, tôi đổi lại quần áo trong tủ."
+    ],
+    "quiz": []
+  },
+  "k-0555": {
+    "meaning": "VI — vây quanh, bao quanh",
+    "usage": "Âm On 「イ」: 「｜周囲《しゅうい》」 (xung quanh; chu vi), 「｜範囲《はんい》」 (phạm vi). Âm Kun: 「｜囲《かこ》む」 (vây quanh).",
+    "nuance": "「囲まれて」 đọc 「かこまれて」 (bị vây quanh). Đề cho 「つつまれて」, 「はさまれて」, 「つかまれて」. 「周囲」 (Hán Việt: chu vi) ngoài chu vi còn là vùng, người ở xung quanh.",
+    "compare": "",
+    "example_notes": [
+      "Đêm cắm trại, mọi người quây quanh đống lửa và cùng hát."
+    ],
+    "quiz": []
+  },
+  "k-0559": {
+    "meaning": "DỊ — khác, lạ, khác thường",
+    "usage": "Âm On 「イ」: 「｜異色《いしょく》」 (khác lạ, độc đáo), 「｜異常《いじょう》」 (dị thường, bất thường). Âm Kun: 「｜異《こと》なる」 (khác nhau).",
+    "nuance": "Khi viết 「いしょく」, đề cho 「違色」, 「異食」, 「違食」. Chữ đầu là 「異」, không phải 「違」; chữ sau là 「色」 (màu, sắc thái), không phải 「食」.",
+    "compare": "「異」 và 「｜違《ちが》う」 cùng đọc 「イ」 và đều là khác. 「異」 ở trong 「異常」, 「異色」; 「違」 ở trong 「｜違反《いはん》」, 「｜相違《そうい》」. 「｜変《へん》な」 cũng là lạ, nhưng 「変」 gốc là đổi khác so với trước.",
+    "example_notes": [
+      "Động cơ phát ra tiếng lạ nên tôi dừng xe."
+    ],
+    "quiz": []
+  },
+  "k-0561": {
+    "meaning": "VĨ — vĩ đại; đáng khen, có địa vị cao",
+    "usage": "Âm On 「イ」: 「｜偉大《いだい》」 (vĩ đại). Âm Kun: 「｜偉《えら》い」 (giỏi, đáng khen; có địa vị cao).",
+    "nuance": "「偉い」 đọc 「えらい」. Đề cho 「かしこい」, 「すごい」, 「するどい」 — đều là tính từ đuôi 「い」 có thật, nên phải nhớ đúng chữ.",
+    "compare": "「偉」 và 「｜違《い》」 cùng đọc 「イ」 và cùng có phần 「韋」 bên phải: bộ 「亻」 (người) là 「偉」, bộ 「辶」 (đi) là 「違」. 「｜優秀《ゆうしゅう》」 là giỏi hơn người; 「偉い」 là đáng khen, có địa vị.",
+    "example_notes": [
+      "Suốt một tuần ngày nào cũng mang cặp giúp người bạn bị thương, em giỏi thật đấy."
+    ],
+    "quiz": []
+  },
+  "k-0565": {
+    "meaning": "ẨN — giấu, che đi; nấp",
+    "usage": "Âm On 「イン」. Học qua âm Kun: 「｜隠《かく》す」 (giấu — tha động từ), 「｜隠《かく》れる」 (nấp, bị che khuất — tự động từ).",
+    "nuance": "「隠す」 đọc 「かくす」. Đề cho 「もどす」, 「わたす」, 「さがす」 — cũng là động từ đuôi 「す」 có thật, nên dễ chọn nhầm.",
+    "compare": "",
+    "example_notes": [
+      "Em gái tôi giấu sẵn món quà tặng bố sau giá sách."
     ],
     "quiz": []
   },
@@ -919,6 +1099,36 @@
     ],
     "quiz": []
   },
+  "k-0571": {
+    "meaning": "DỊCH, DỊ — trao đổi, buôn bán; dễ",
+    "usage": "Âm 「エキ」: 「｜貿易《ぼうえき》」 (mậu dịch, buôn bán với nước ngoài). Âm 「イ」: 「｜安易《あんい》」 (dễ dãi, qua loa). Âm Kun: 「｜易《やさ》しい」 (dễ).",
+    "nuance": "「貿易」 là 「ぼうえき」: 「易」 đọc 「えき」 ở đây, còn 「い」 là trong 「安易」. Đề cho 「もうえき」, 「もうい」, 「ぼうい」 làm bẫy.",
+    "compare": "「易しい」 (dễ) và 「｜優《やさ》しい」 (hiền, tốt bụng) cùng đọc 「やさしい」. 「｜簡単《かんたん》」 cũng là dễ, đơn giản, nhưng đọc âm On.",
+    "example_notes": [
+      "Mấy câu đầu thì dễ, nhưng nửa sau lại khó."
+    ],
+    "quiz": []
+  },
+  "k-0578": {
+    "meaning": "DIỄN — diễn, biểu diễn; trình bày trước người khác",
+    "usage": "Âm On 「エン」: 「｜演技《えんぎ》」 (diễn xuất), 「｜演習《えんしゅう》」 (bài tập thực hành), 「｜演説《えんぜつ》」 (diễn thuyết).",
+    "nuance": "Khi viết 「えんぎ」, đề cho 「演劇」, 「園技」, 「園劇」. 「｜演劇《えんげき》」 (kịch) là từ có thật nhưng đọc 「えんげき」; chữ đầu là 「演」 (bộ 「氵」), không phải 「園」.",
+    "compare": "「演技」 ghép 「演」 và 「｜技《ぎ》」. 「演」 là diễn; 「技」 là kỹ năng, tay nghề (「技術」).",
+    "example_notes": [
+      "Giờ toán buổi nào cuối giờ cũng có phần làm bài tập."
+    ],
+    "quiz": []
+  },
+  "k-0589": {
+    "meaning": "HÓA — tiền tệ, đồng tiền",
+    "usage": "Âm On 「カ」: 「｜硬貨《こうか》」 (tiền xu), 「｜通貨《つうか》」 (tiền tệ), 「｜貨物《かもつ》」 (hàng hóa chuyên chở).",
+    "nuance": "Khi viết 「こうか」, đề cho 「固貨」, 「硬価」, 「固価」. Chữ đầu là 「硬」, không phải 「固」; chữ sau là 「貨」, không phải 「価」 (giá).",
+    "compare": "「貨」 và 「｜賃《ちん》」 cùng có 「貝」 ở dưới: 「賃」 là tiền thuê, tiền công (「家賃」). 「｜額《がく》」 là số tiền (「金額」), không phải đồng tiền.",
+    "example_notes": [
+      "Gần ga có một đoàn tàu hàng dài đang đỗ."
+    ],
+    "quiz": []
+  },
   "k-0591": {
     "meaning": "GIỚI — ở giữa, làm trung gian",
     "usage": "Âm On 「カイ」: 「｜紹介《しょうかい》」 (giới thiệu), 「｜介護《かいご》」 (chăm sóc người già, người bệnh).",
@@ -929,11 +1139,21 @@
     ],
     "quiz": []
   },
+  "k-0593": {
+    "meaning": "KHOÁI — dễ chịu, thoải mái; vui lòng",
+    "usage": "Âm On 「カイ」: 「｜快適《かいてき》」 (dễ chịu, tiện nghi), 「｜快晴《かいせい》」 (trời quang, nắng đẹp). Âm Kun: 「｜快《こころよ》い」 (dễ chịu; vui lòng).",
+    "nuance": "Khi viết 「こころよく」, đề cho 「希く」, 「敬く」, 「喜く」. Chỉ 「快く」 đúng: 「快」 có bộ 「忄」 (lòng) bên trái.",
+    "compare": "「快」 là dễ chịu, thoải mái (「快適」); 「｜涼《すず》しい」 là mát. Đề đặt 「快んだ」 làm bẫy cho 「すずんだ」.",
+    "example_notes": [
+      "Căn phòng mới đón nắng tốt, ở rất dễ chịu."
+    ],
+    "quiz": []
+  },
   "k-0597": {
     "meaning": "HẠI — tác hại, thiệt hại",
     "usage": "Âm On 「ガイ」: 「｜損害《そんがい》」 (thiệt hại, tổn thất), 「｜被害《ひがい》」 (thiệt hại mình phải chịu), 「｜公害《こうがい》」 (ô nhiễm môi trường), 「｜利害《りがい》」 (lợi ích và thiệt hại).",
     "nuance": "「損害」 là 「そんがい」 (「が」 đục); 「ひがい」 là 「被害」, 「そんかい」 cũng là bẫy. Hán Việt dễ lừa: 「公害」 là ô nhiễm, 「利害」 là lợi và hại, không phải \"lợi hại\" (ghê gớm).",
-    "compare": "「害」 là tác hại gây ra cho người, vật (「被害が出る」). 「｜損《そん》」 là phần mình bị mất: tiền, lợi ích (「損をする」). Hai chữ ghép thành 「損害」.",
+    "compare": "「害」 là tác hại gây ra cho người, vật (「被害が出る」). 「｜損《そん》」 là phần mình bị mất: tiền, lợi ích (「損をする」). Hai chữ ghép thành 「損害」. 「｜災害《さいがい》」 ghép 「｜災《さい》」 (tai ương) và 「害」.",
     "example_notes": [
       "Vì tuyết rơi dày, nông dân vùng này bị thiệt hại lớn."
     ],
@@ -949,6 +1169,26 @@
     ],
     "quiz": []
   },
+  "k-0601": {
+    "meaning": "GIẢO, GIÁC — so sánh hơn kém",
+    "usage": "Âm On 「カク」: 「｜比較《ひかく》」 (so sánh), 「｜比較的《ひかくてき》」 (tương đối).",
+    "nuance": "「比較的」 là 「ひかくてき」: 「較」 đọc 「かく」. Đề cho 「ひこうてい」, 「ひこてき」, 「ひかてき」 — đọc thành 「こう」, 「こ」 hoặc thiếu 「く」.",
+    "compare": "「比較」 ghép 「｜比《ひ》」 và 「較」. Động từ \"so sánh\" là 「｜比《くら》べる」, viết bằng 「比」.",
+    "example_notes": [
+      "Hồi nhỏ, tôi ghét vì lúc nào cũng bị đem ra so với anh trai."
+    ],
+    "quiz": []
+  },
+  "k-0603": {
+    "meaning": "NGẠCH — số tiền, khoản tiền; trán",
+    "usage": "Âm On 「ガク」: 「｜総額《そうがく》」 (tổng số tiền), 「｜金額《きんがく》」 (số tiền). Âm Kun 「ひたい」: 「｜額《ひたい》」 (trán).",
+    "nuance": "「総額」 là 「そうがく」: 「総」 là 「そう」, 「額」 đục 「がく」. Đề cho 「こうがく」, 「そうかく」, 「こうかく」. 「金額」 (kim ngạch) là số tiền nói chung, như giá một món hàng.",
+    "compare": "「額」 là số tiền (「金額」); 「｜貨《か》」 là đồng tiền (「硬貨」, 「通貨」).",
+    "example_notes": [
+      "Chạy xong, mồ hôi chảy ròng trên trán."
+    ],
+    "quiz": []
+  },
   "k-0616": {
     "meaning": "QUẢN — ống; quản lý, trông coi",
     "usage": "Âm On 「カン」: 「｜管理《かんり》」 (quản lý). Âm Kun 「くだ」: 「｜管《くだ》」 (ống: ống nước, ống dẫn).",
@@ -956,6 +1196,76 @@
     "compare": "",
     "example_notes": [
       "Ống nước trong bếp bị tắc mất rồi."
+    ],
+    "quiz": []
+  },
+  "k-0618": {
+    "meaning": "GIẢN — đơn giản, gọn",
+    "usage": "Âm On 「カン」: 「｜簡単《かんたん》」 (đơn giản, dễ), 「｜簡潔《かんけつ》」 (ngắn gọn, súc tích).",
+    "nuance": "Khi viết 「かんけつ」, đề cho 「完決」, 「簡決」, 「完潔」. Chữ đầu là 「簡」 (bộ 「竹」), không phải 「完」; chữ sau là 「潔」 (sạch, gọn), không phải 「決」.",
+    "compare": "「簡単」 là đơn giản, dễ; 「｜易《やさ》しい」 cũng là dễ nhưng đọc âm Kun. 「｜略《りゃく》」 là lược bớt, rút ngắn (「省略」).",
+    "example_notes": [
+      "Máy giặt mới ít nút, cách dùng đơn giản."
+    ],
+    "quiz": []
+  },
+  "k-0621": {
+    "meaning": "HÀM — chứa, bao gồm, tính cả",
+    "usage": "Âm On 「ガン」. Học qua âm Kun: 「｜含《ふく》む」 (chứa, bao gồm), 「｜含《ふく》める」 (tính cả vào).",
+    "nuance": "「含めて」 đọc 「ふくめて」. Đề cho 「さだめて」, 「かためて」, 「まとめて」 — đều là động từ đuôi 「める」 có thật, nên phải nhớ đúng chữ.",
+    "compare": "",
+    "example_notes": [
+      "Tính cả tôi, lớp có năm người nghỉ vì cảm."
+    ],
+    "quiz": []
+  },
+  "k-0628": {
+    "meaning": "KÝ — lại gần, tạt qua; quyên góp, gửi",
+    "usage": "Âm On 「キ」: 「｜寄付《きふ》」 (quyên góp). Âm Kun: 「｜寄《よ》る」 (tạt qua, lại gần), 「｜近寄《ちかよ》る」 (đến gần), 「｜年寄《としよ》り」 (người già).",
+    "nuance": "Khi viết 「きふ」, đề cho 「寄符」, 「貴付」, 「貴符」. Chữ đầu là 「寄」 (có 「宀」 trên đầu), không phải 「貴」 (quý); chữ sau là 「付」, không phải 「符」.",
+    "compare": "「寄付」 ghép 「寄」 và 「｜付《ふ》」 (gắn vào, trao). 「付」 cũng có trong 「｜受付《うけつけ》」 (quầy tiếp tân).",
+    "example_notes": [
+      "Nguy hiểm, xin đừng lại gần khu vực đang thi công."
+    ],
+    "quiz": []
+  },
+  "k-0629": {
+    "meaning": "QUY — quy tắc, luật lệ",
+    "usage": "Âm On 「キ」: 「｜規模《きぼ》」 (quy mô), 「｜規則《きそく》」 (quy tắc, nội quy), 「｜規準《きじゅん》」 (tiêu chuẩn, quy chuẩn).",
+    "nuance": "「規模」 là 「きぼ」: 「規」 là 「き」 (không đục), 「模」 là 「ぼ」 (đục). Đề cho 「ぎぼ」, 「きも」, 「ぎも」 làm bẫy.",
+    "compare": "",
+    "example_notes": [
+      "Theo nội quy ký túc xá này, sau mười giờ tối không được gọi bạn đến."
+    ],
+    "quiz": []
+  },
+  "k-0630": {
+    "meaning": "KỸ — kỹ thuật, kỹ năng, tay nghề",
+    "usage": "Âm On 「ギ」: 「｜技術《ぎじゅつ》」 (kỹ thuật), 「｜演技《えんぎ》」 (diễn xuất), 「｜競技《きょうぎ》」 (thi đấu thể thao).",
+    "nuance": "Khi viết 「えんぎ」, đề cho 「演劇」, 「園技」, 「園劇」: chữ sau là 「技」 (bộ 「扌」 — tay), không phải 「劇」 (kịch).",
+    "compare": "「技」 là kỹ năng học được (「技術」); 「｜能《のう》」 là khả năng làm được (「能力」). 「演技」 ghép 「｜演《えん》」 (diễn) và 「技」.",
+    "example_notes": [
+      "Chị tôi đang học kỹ thuật xây cầu ở đại học."
+    ],
+    "quiz": []
+  },
+  "k-0631": {
+    "meaning": "NGHĨA — đạo nghĩa; ý nghĩa",
+    "usage": "Âm On 「ギ」: 「｜講義《こうぎ》」 (bài giảng), 「｜義務《ぎむ》」 (nghĩa vụ), 「｜意義《いぎ》」 (ý nghĩa), 「｜主義《しゅぎ》」 (chủ nghĩa, lập trường).",
+    "nuance": "Khi viết 「こうぎ」, đề cho 「構義」, 「講議」, 「構議」. Chữ đầu là 「講」 (bộ 「言」), không phải 「構」; chữ sau là 「義」 (không có 「言」), không phải 「議」.",
+    "compare": "「義務」 ghép 「義」 và 「｜務《む》」: 「義」 là lẽ phải, đạo nghĩa; 「務」 là phần việc phải gánh.",
+    "example_notes": [
+      "Nộp thuế là một trong những nghĩa vụ của công dân."
+    ],
+    "quiz": []
+  },
+  "k-0635": {
+    "meaning": "NGHỊCH — ngược chiều, lộn ngược; cãi lại, chống lại",
+    "usage": "Âm On 「ギャク」: 「｜逆《ぎゃく》」 (ngược lại). Âm Kun 「さか」: 「｜逆《さか》さま」 (lộn ngược), 「｜逆《さか》らう」 (làm trái ý, chống lại).",
+    "nuance": "Khi viết 「さからって」, đề cho 「敵らって」, 「拒って」, 「争って」. 「｜争《あらそ》う」 là động từ có thật (tranh giành) nhưng đọc 「あらそう」.",
+    "compare": "「逆」 và 「｜反《はん》」 đều là ngược: 「逆さま」 là lộn ngược; 「｜反対《はんたい》」 là ngược lại, phản đối.",
+    "example_notes": [
+      "Tôi cầm ngược bản đồ nên đi nhầm đường."
     ],
     "quiz": []
   },
@@ -979,6 +1289,16 @@
     ],
     "quiz": []
   },
+  "k-0644": {
+    "meaning": "CƯ — ở, lưu lại một chỗ; chỗ ở",
+    "usage": "Âm On 「キョ」: 「｜住居《じゅうきょ》」 (chỗ ở, nhà ở). Âm Kun: 「｜居《い》る」 (ở, có mặt), 「｜居間《いま》」 (phòng sinh hoạt chung).",
+    "nuance": "Khi viết 「じゅうきょ」, đề cho 「住宅」, 「住家」, 「住屋」. 「｜住宅《じゅうたく》」 là từ có thật nhưng đọc 「じゅうたく」; chỉ 「住居」 đọc 「じゅうきょ」.",
+    "compare": "「住居」 ghép 「｜住《じゅう》」 và 「居」. 「｜住《す》む」 là sinh sống ở một nơi; 「居る」 là có mặt. 「｜在《ざい》」 cũng là có mặt (「現在」, 「在学」).",
+    "example_notes": [
+      "Ăn tối xong, cả nhà tụ lại phòng khách xem ti vi."
+    ],
+    "quiz": []
+  },
   "k-0657": {
     "meaning": "CẠNH — ganh đua, thi đấu",
     "usage": "Âm 「キョウ」: 「｜競争《きょうそう》」 (cạnh tranh), 「｜競技《きょうぎ》」 (môn thi đấu). Âm 「ケイ」: 「｜競馬《けいば》」 (đua ngựa). Âm Kun: 「｜競《きそ》う」 (ganh đua, so tài).",
@@ -989,6 +1309,16 @@
     ],
     "quiz": []
   },
+  "k-0658": {
+    "meaning": "KINH — ngạc nhiên, giật mình",
+    "usage": "Âm On 「キョウ」. Học qua âm Kun: 「｜驚《おどろ》く」 (ngạc nhiên, giật mình), 「｜驚《おどろ》かす」 (làm ai ngạc nhiên).",
+    "nuance": "Khi viết 「おどろかせて」, đề cho 「怖かせて」, 「焦かせて」, 「騒かせて」. 「驚」 có 「馬」 nằm dưới; 「騒」 thì 「馬」 ở bên trái.",
+    "compare": "「驚」 là 「｜敬《けい》」 ở trên và 「馬」 ở dưới. 「敬」 đứng riêng là kính trọng (「敬語」).",
+    "example_notes": [
+      "Nửa đêm có tiếng động lớn, cả nhà giật mình."
+    ],
+    "quiz": []
+  },
   "k-0659": {
     "meaning": "CỰC — cực, tận cùng; điểm cực",
     "usage": "Âm On 「キョク」: 「｜積極的《せっきょくてき》」 (chủ động), 「｜消極的《しょうきょくてき》」 (thụ động, rụt rè), 「｜極端《きょくたん》」 (cực đoan, quá mức), 「｜南極《なんきょく》」 (Nam Cực).",
@@ -996,6 +1326,56 @@
     "compare": "",
     "example_notes": [
       "Em trai tôi tính rụt rè, ít khi tự bắt chuyện với người khác."
+    ],
+    "quiz": []
+  },
+  "k-0662": {
+    "meaning": "NGẪU — tình cờ; số chẵn",
+    "usage": "Âm On 「グウ」: 「｜偶然《ぐうぜん》」 (tình cờ, ngẫu nhiên), 「｜偶数《ぐうすう》」 (số chẵn).",
+    "nuance": "「偶然」 là 「ぐうぜん」 — có 「う」 dài. Đề cho 「ぐぜん」, 「とつぜん」, 「とぜん」; 「｜突然《とつぜん》」 (đột nhiên) là từ có thật nhưng viết bằng chữ khác.",
+    "compare": "「偶然」 ghép 「偶」 (tình cờ) và 「｜然《ぜん》」 (như thế) — nghĩa “tình cờ” nằm ở 「偶」.",
+    "example_notes": [
+      "Trang tôi tình cờ mở ra lại có đúng từ tôi đang tìm."
+    ],
+    "quiz": []
+  },
+  "k-0667": {
+    "meaning": "HỆ — dòng, nhánh cùng loại; hệ thống",
+    "usage": "Âm On 「ケイ」: 「｜系統《けいとう》」 (dòng, nhóm cùng loại), 「｜体系《たいけい》」 (hệ thống). 「体系的に」 là một cách có hệ thống.",
+    "nuance": "Khi viết 「けいとう」, đề cho 「系等」, 「形統」, 「形等」. Chữ đầu là 「系」, không phải 「形」; chữ sau là 「統」 (bộ 「糸」), không phải 「等」.",
+    "compare": "",
+    "example_notes": [
+      "Tôi đang tìm cuốn sách học ngữ pháp tiếng Nhật một cách có hệ thống."
+    ],
+    "quiz": []
+  },
+  "k-0668": {
+    "meaning": "HÌNH — khuôn, mẫu, kiểu",
+    "usage": "Âm On 「ケイ」: 「｜典型的《てんけいてき》」 (điển hình). Âm Kun 「かた」: 「｜型《かた》」 (khuôn, mẫu; kiểu).",
+    "nuance": "Khi viết 「てんけいてき」, đề cho 「点型的」, 「典形的」, 「点形的」. Chữ đầu là 「典」, không phải 「点」; chữ giữa là 「型」 (có 「土」 ở dưới), không phải 「形」.",
+    "compare": "",
+    "example_notes": [
+      "Tôi đang sống cuộc sống điển hình của dân công sở, ngày nào cũng làm đến khuya."
+    ],
+    "quiz": []
+  },
+  "k-0669": {
+    "meaning": "HUỆ — ân huệ, điều tốt được ban cho",
+    "usage": "Âm 「エ」: 「｜知恵《ちえ》」 (trí khôn, mẹo hay). Âm Kun: 「｜恵《めぐ》まれる」 (được ban cho, có sẵn điều tốt: bạn bè, thiên nhiên).",
+    "nuance": "Khi viết 「めぐまれて」, đề cho 「善まれて」, 「幸まれて」, 「喜まれて」 — cả ba chữ đều mang nghĩa tốt nên dễ nhầm; chỉ 「恵」 đọc 「めぐ」.",
+    "compare": "「恵まれる」 là có sẵn điều tốt; 「｜福《ふく》」 là phúc, may mắn (「幸福」).",
+    "example_notes": [
+      "Vùng này được thiên nhiên ban cho nguồn nước sạch."
+    ],
+    "quiz": []
+  },
+  "k-0670": {
+    "meaning": "KÍNH — kính trọng, tôn kính",
+    "usage": "Âm On 「ケイ」: 「｜敬語《けいご》」 (kính ngữ), 「｜敬意《けいい》」 (lòng kính trọng). Âm Kun: 「｜敬《うやま》う」 (kính trọng).",
+    "nuance": "Khi viết 「うやまう」, đề cho 「拝う」, 「礼う」, 「尊う」 — các chữ này đều gần nghĩa tôn kính, nên phải nhớ đúng chữ 「敬」.",
+    "compare": "「敬う」 là kính trọng; 「｜礼《れい》」 là phép lịch sự, lời cảm ơn. 「｜驚《おどろ》く」 có 「敬」 ở trên và 「馬」 ở dưới — nhìn phần dưới để phân biệt.",
+    "example_notes": [
+      "Vào công ty rồi, tôi được đàn anh chỉ cách dùng kính ngữ."
     ],
     "quiz": []
   },
@@ -1019,13 +1399,73 @@
     ],
     "quiz": []
   },
+  "k-0675": {
+    "meaning": "NGHÊNH — đón, ra đón",
+    "usage": "Âm On 「ゲイ」. Học qua âm Kun: 「｜迎《むか》える」 (đón), 「｜出迎《でむか》える」 (ra tận nơi đón), 「｜迎《むか》え」 (việc đón).",
+    "nuance": "Khi viết 「むかえ」, đề cho 「招え」, 「仰え」, 「紹え」. 「迎」 có bộ 「辶」; 「仰」 có phần bên phải giống nhưng mang bộ 「亻」.",
+    "compare": "「迎える」 là đón người đến; 「｜招《まね》く」 là mời người đến. Đề đặt 「招え」 làm bẫy cho 「むかえ」. 「｜受《う》ける」 là nhận vật được đưa tới.",
+    "example_notes": [
+      "Đến ga, ông tôi đã ra đón ở trước cửa soát vé."
+    ],
+    "quiz": []
+  },
+  "k-0678": {
+    "meaning": "KIÊN — vai",
+    "usage": "Âm On 「ケン」. Học qua âm Kun: 「｜肩《かた》」 (vai).",
+    "nuance": "Khi viết 「かた」, đề cho 「腰」 (hông), 「腹」 (bụng), 「背」 (lưng) — đều là bộ phận cơ thể có 「月」. 「肩」 có 「戸」 ở trên.",
+    "compare": "「肩」 là vai; 「｜腕《うで》」 là cánh tay.",
+    "example_notes": [
+      "Tôi đeo chiếc túi nặng trên vai, đi bộ suốt cả ngày."
+    ],
+    "quiz": []
+  },
+  "k-0682": {
+    "meaning": "HIỀM — ghét, không thích",
+    "usage": "Âm 「ゲン」: 「｜機嫌《きげん》」 (tâm trạng). Âm Kun: 「｜嫌《きら》い」 (ghét, không thích), 「｜嫌《いや》」 (không muốn, khó chịu).",
+    "nuance": "Khi viết 「きげん」, đề cho 「機兼」, 「気嫌」, 「気兼」. Chữ đầu là 「機」, không phải 「気」; chữ sau có bộ 「女」: 「嫌」.",
+    "compare": "",
+    "example_notes": [
+      "Anh tôi ghét chỗ đông người, ngày nghỉ hầu như ở nhà."
+    ],
+    "quiz": []
+  },
+  "k-0690": {
+    "meaning": "KHỐ — kho, chỗ cất giữ",
+    "usage": "Âm On 「コ」: 「｜冷蔵庫《れいぞうこ》」 (tủ lạnh), 「｜金庫《きんこ》」 (két sắt), 「｜車庫《しゃこ》」 (nhà để xe).",
+    "nuance": "「冷蔵庫」 là 「れいぞうこ」: 「庫」 là 「こ」 ngắn. Đề cho 「れいぞうこう」, 「れいとうこ」, 「れいとうこう」; 「｜冷凍庫《れいとうこ》」 (tủ đông) là từ có thật nhưng khác chữ.",
+    "compare": "",
+    "example_notes": [
+      "Bố cất xe vào gara rồi mới vào nhà."
+    ],
+    "quiz": []
+  },
+  "k-0693": {
+    "meaning": "HỖ — lẫn nhau, hai bên cùng",
+    "usage": "Âm On 「ゴ」: 「｜相互《そうご》」 (tương hỗ, qua lại). Âm Kun: 「お｜互《たが》い」 (nhau, lẫn nhau).",
+    "nuance": "「相互」 là 「そうご」: 「相」 đọc 「そう」, 「互」 là 「ご」 ngắn. Đề cho 「しょうご」, 「しょうごう」, 「そうごう」 làm bẫy.",
+    "compare": "「相互」 ghép 「｜相《そう》」 và 「互」. 「相」 một mình cũng mang nghĩa qua lại, như trong 「｜相手《あいて》」 (đối phương).",
+    "example_notes": [
+      "Anh tôi và tôi đã giao hẹn không tự ý vào phòng của nhau."
+    ],
+    "quiz": []
+  },
   "k-0695": {
     "meaning": "HỘ — bảo vệ, che chở, chăm sóc",
     "usage": "Âm On 「ゴ」: 「｜介護《かいご》」 (chăm sóc người già, người bệnh), 「｜看護師《かんごし》」 (y tá, điều dưỡng), 「｜保護《ほご》」 (bảo hộ, bảo vệ).",
     "nuance": "「護」 đọc 「ご」 ngắn: 「介護」 là 「かいご」, không phải 「かいごう」. Bẫy chữ giống: 「護」 bộ 「言」, còn 「穫」 (thu hoạch) bộ 「禾」 — đề cho 「看穫」.",
-    "compare": "",
+    "compare": "「保護」 là che chở, bảo vệ người, vật; 「｜防《ふせ》ぐ」 là chặn trước điều xấu (bệnh, tai nạn).",
     "example_notes": [
       "Mẹ tôi làm y tá ở bệnh viện."
+    ],
+    "quiz": []
+  },
+  "k-0696": {
+    "meaning": "CANH, CÁNH — thay cho mới; càng thêm, hơn nữa",
+    "usage": "Âm On 「コウ」: 「｜変更《へんこう》」 (thay đổi). Âm Kun 「さら」: 「｜更《さら》に」 (hơn nữa, càng thêm).",
+    "nuance": "Khi viết 「へんこう」, đề cho 「変改」, 「変換」, 「変替」: chữ sau là 「更」, đọc 「こう」. Đứng trong 「更に」, chữ này đọc 「さら」.",
+    "compare": "「変更」 ghép 「｜変《へん》」 và 「更」. 「｜改《かい》」 cũng là đổi mới (「改正」), nhưng đọc 「カイ」.",
+    "example_notes": [
+      "Về đêm, mưa càng nặng hạt hơn."
     ],
     "quiz": []
   },
@@ -1039,6 +1479,26 @@
     ],
     "quiz": []
   },
+  "k-0702": {
+    "meaning": "HOANG — thô bạo, dữ dội",
+    "usage": "Âm On 「コウ」. Học qua âm Kun: 「｜荒《あら》い」 (thô, mạnh bạo; hơi thở dồn dập), 「｜荒《あ》れる」 (trở nên dữ dội, bị tàn phá).",
+    "nuance": "Khi viết 「あらく」, đề cho 「暴く」, 「激く」, 「雑く」 — đều là chữ mang nghĩa mạnh, thô. 「荒い」 đọc 「あら」, 「荒れる」 đọc 「あ」.",
+    "compare": "「荒い」 là thô, mạnh (lời nói, hơi thở); 「｜乱《みだ》れる」 là rối, mất trật tự (tóc, nhịp sống). Đề cũng đặt 「荒い」 làm bẫy cho 「いきおい」 (「｜勢《いきお》い」: đà, sức mạnh).",
+    "example_notes": [
+      "Người đó ăn nói thô lỗ nhưng thật ra rất hiền."
+    ],
+    "quiz": []
+  },
+  "k-0707": {
+    "meaning": "NGẠNH — cứng, rắn",
+    "usage": "Âm On 「コウ」: 「｜硬貨《こうか》」 (tiền xu). Âm Kun: 「｜硬《かた》い」 (cứng).",
+    "nuance": "Khi viết 「こうか」, đề cho 「固貨」, 「硬価」, 「固価」. Chữ đầu là 「硬」 (bộ 「石」 — đá), không phải 「固」, dù 「｜固《かた》い」 cũng đọc 「かたい」.",
+    "compare": "",
+    "example_notes": [
+      "Ổ bánh mì này để lâu nên đã cứng mất rồi."
+    ],
+    "quiz": []
+  },
   "k-0710": {
     "meaning": "GIẢNG — giảng dạy, bài giảng",
     "usage": "Âm On 「コウ」 ở cả bốn từ: 「｜講義《こうぎ》」 (bài giảng), 「｜講師《こうし》」 (giảng viên, người dạy), 「｜受講《じゅこう》」 (theo học một khóa), 「｜講演《こうえん》」 (bài diễn thuyết).",
@@ -1049,6 +1509,16 @@
     ],
     "quiz": []
   },
+  "k-0713": {
+    "meaning": "CỐT — xương",
+    "usage": "Âm On 「コツ」: 「｜骨折《こっせつ》」 (gãy xương). Âm Kun 「ほね」: 「｜骨《ほね》」 (xương), 「｜背骨《せぼね》」 (xương sống).",
+    "nuance": "「背骨」 là 「せぼね」: 「ほね」 đục thành 「ぼね」. Đề cho 「せほね」, 「せこう」, 「せごう」 làm bẫy. 「骨折」 đọc 「こっせつ」 (có 「っ」).",
+    "compare": "",
+    "example_notes": [
+      "Tôi cho con chó khúc xương còn dính thịt."
+    ],
+    "quiz": []
+  },
   "k-0715": {
     "meaning": "HỖN — trộn lẫn, lẫn lộn",
     "usage": "Âm On 「コン」: 「｜混乱《こんらん》」 (hỗn loạn), 「｜混合《こんごう》」 (hỗn hợp, trộn). Âm Kun: 「｜混《ま》ぜる」 (trộn — tha động từ), 「｜混《ま》じる」 (lẫn vào — tự động từ).",
@@ -1056,6 +1526,76 @@
     "compare": "",
     "example_notes": [
       "Tôi trộn màu vẽ trắng và đỏ để tạo ra màu hồng."
+    ],
+    "quiz": []
+  },
+  "k-0717": {
+    "meaning": "TÁI — lặp lại, một lần nữa",
+    "usage": "Âm 「サイ」: 「｜再度《さいど》」 (lần nữa). Âm 「サ」: 「｜再来週《さらいしゅう》」 (tuần sau nữa). Âm Kun: 「｜再《ふたた》び」 (lại một lần nữa).",
+    "nuance": "「再度」 là 「さいど」: 「再」 không đục, 「度」 ngắn. Đề cho 「さいどう」, 「ざいど」, 「ざいどう」. Trong 「再来週」, 「再」 đọc 「さ」, không phải 「さい」.",
+    "compare": "",
+    "example_notes": [
+      "Thứ bảy tuần sau nữa tôi định chuyển nhà."
+    ],
+    "quiz": []
+  },
+  "k-0718": {
+    "meaning": "TAI — thiên tai, tai ương",
+    "usage": "Âm On 「サイ」: 「｜防災《ぼうさい》」 (phòng chống thiên tai), 「｜火災《かさい》」 (hỏa hoạn), 「｜災難《さいなん》」 (tai họa, chuyện xui xẻo).",
+    "nuance": "「防災」 là 「ぼうさい」: 「災」 đọc 「さい」. Đề cho 「ぼうえん」, 「ほうえん」, 「ほうさい」 làm bẫy. 「災難」 dùng cả cho một ngày gặp toàn chuyện xui.",
+    "compare": "「災難」 ghép 「災」 và 「｜難《なん》」 (khó khăn, tai họa). 「防災」 ghép 「｜防《ぼう》」 (ngăn chặn) và 「災」. 「｜災害《さいがい》」 ghép 「災」 và 「｜害《がい》」 (tổn hại).",
+    "example_notes": [
+      "Vừa đánh rơi ví, vừa bị mưa ướt, hôm nay đúng là xui xẻo."
+    ],
+    "quiz": []
+  },
+  "k-0732": {
+    "meaning": "SÁT — quan sát, dò xét",
+    "usage": "Âm On 「サツ」: 「｜視察《しさつ》」 (thị sát, đi xem thực tế), 「｜観察《かんさつ》」 (quan sát), 「｜警察《けいさつ》」 (cảnh sát).",
+    "nuance": "Khi viết 「しさつ」, đề cho 「診察」, 「視祭」, 「診祭」. 「｜診察《しんさつ》」 (khám bệnh) là từ có thật nhưng đọc 「しんさつ」; 「祭」 (lễ hội) thiếu 「宀」 trên đầu.",
+    "compare": "「観察」 là nhìn kỹ để hiểu; 「｜調《しら》べる」 là tra cứu, điều tra (「調査」).",
+    "example_notes": [
+      "Đứa bé dùng kính lúp quan sát đàn kiến di chuyển."
+    ],
+    "quiz": []
+  },
+  "k-0735": {
+    "meaning": "THAM — tham gia, dự vào; tham khảo",
+    "usage": "Âm On 「サン」: 「｜参照《さんしょう》」 (tham chiếu), 「｜参加《さんか》」 (tham gia), 「｜参考《さんこう》」 (tham khảo), 「｜持参《じさん》」 (mang theo). Âm Kun: 「｜参《まい》る」 (đi, đến — khiêm nhường).",
+    "nuance": "Khi viết 「さんしょう」, đề cho 「賛照」, 「賛考」, 「参考」. 「参考」 là từ có thật nhưng đọc 「さんこう」; chữ đầu là 「参」, không phải 「賛」.",
+    "compare": "「参」 và 「｜賛《さん》」 cùng đọc 「サン」: tham gia dùng 「参」, tán thành (「賛成」) dùng 「賛」. 「参照」 ghép 「参」 và 「｜照《しょう》」. 「｜訪《たず》ねる」 là đến thăm.",
+    "example_notes": [
+      "Tham khảo cuốn sổ ghi chép của bà, lần đầu tiên tôi làm mơ muối."
+    ],
+    "quiz": []
+  },
+  "k-0736": {
+    "meaning": "TÁN, TẢN — tản mát, rải rác; bừa bộn",
+    "usage": "Âm On 「サン」: 「｜散歩《さんぽ》」 (tản bộ, đi dạo), 「｜解散《かいさん》」 (giải tán). Âm Kun: 「｜散《ち》る」 (rụng, tản ra), 「｜散《ち》らかる」 (bừa bộn).",
+    "nuance": "Khi viết 「ちって」, đề cho 「消って」, 「去って」, 「失って」 — đều là chữ gợi nghĩa \"mất đi\". Hoa rụng viết 「散る」.",
+    "compare": "「散らかる」 là đồ đạc vương vãi khắp nơi; 「｜乱《みだ》れる」 là cái đang ngay ngắn bị rối (tóc, hàng lối).",
+    "example_notes": [
+      "Đồ chơi bày ra không cất, cả phòng bừa bộn."
+    ],
+    "quiz": []
+  },
+  "k-0737": {
+    "meaning": "TÁN — đồng ý, tán thành",
+    "usage": "Âm On 「サン」: 「｜賛成《さんせい》」 (tán thành), 「｜賛否《さんぴ》」 (tán thành hay phản đối).",
+    "nuance": "「賛否」 là 「さんぴ」: 「否」 đọc 「ひ」 nhưng sau 「ん」 thành 「ぴ」. Đề cho 「さんふ」, 「さんぷ」, 「さんひ」 làm bẫy.",
+    "compare": "「賛」 và 「｜参《さん》」 cùng đọc 「サン」. 「賛成」 dùng 「賛」; 「参加」, 「参照」 dùng 「参」 — đề đặt 「賛照」 làm bẫy cho 「さんしょう」. 「賛否」 ghép 「賛」 và 「｜否《ひ》」 (không, phản đối): hai nghĩa trái nhau.",
+    "example_notes": [
+      "Một nửa lớp đã tán thành đề xuất của tôi."
+    ],
+    "quiz": []
+  },
+  "k-0742": {
+    "meaning": "CHÍ — chí hướng, ý chí",
+    "usage": "Âm On 「シ」: 「｜志望《しぼう》」 (nguyện vọng — muốn vào trường, công ty nào), 「｜意志《いし》」 (ý chí).",
+    "nuance": "Khi viết 「しぼう」, đề cho 「希望」, 「指望」, 「貴望」. 「｜希望《きぼう》」 (hy vọng) là từ có thật nhưng đọc 「きぼう」.",
+    "compare": "「志望」 ghép 「志」 và 「｜望《ぼう》」. 「志」 là chí hướng; 「望」 là mong muốn (「｜望《のぞ》む」).",
+    "example_notes": [
+      "Anh tôi ý chí mạnh mẽ, đã quyết là nhất định làm đến cùng."
     ],
     "quiz": []
   },
@@ -1079,6 +1619,46 @@
     ],
     "quiz": []
   },
+  "k-0753": {
+    "meaning": "XẢ — vứt, vứt bỏ",
+    "usage": "Âm On 「シャ」: 「｜四捨五入《ししゃごにゅう》」 (làm tròn số). Âm Kun: 「｜捨《す》てる」 (vứt, bỏ).",
+    "nuance": "Khi viết 「すてられて」, đề cho 「拾てられて」, 「投てられて」, 「採てられて」 — đều có bộ 「扌」 (tay). 「拾」 (nhặt) rất giống: phần phải là 「合」, còn 「捨」 là 「舎」.",
+    "compare": "「捨てる」 (vứt) và 「｜拾《ひろ》う」 (nhặt) trái nghĩa, lại giống hình. Đề lấy chữ này làm bẫy cho chữ kia: 「拾てられて」, 「捨った」. 「｜除《のぞ》く」 là loại ra. 「｜投《な》げる」 là ném.",
+    "example_notes": [
+      "Tôi không vứt tạp chí đã đọc xong mà đem cho bạn."
+    ],
+    "quiz": []
+  },
+  "k-0759": {
+    "meaning": "THẬP — nhặt, lượm lên",
+    "usage": "Âm On 「シュウ」. Học qua âm Kun: 「｜拾《ひろ》う」 (nhặt lên).",
+    "nuance": "Khi viết 「ひろった」, đề cho 「採った」, 「捨った」, 「授った」. 「採った」 là từ có thật nhưng đọc 「とった」 (hái, lấy).",
+    "compare": "「拾う」 là nhặt; 「｜捨《す》てる」 là vứt — trái nghĩa, giống hình. Phần phải của 「拾」 là 「合」.",
+    "example_notes": [
+      "Tôi nhặt quả bóng đứa bé bị ngã làm rơi, rồi đưa lại cho nó."
+    ],
+    "quiz": []
+  },
+  "k-0760": {
+    "meaning": "TU — sửa chữa, chỉnh lại; rèn luyện, học",
+    "usage": "Âm On 「シュウ」: 「｜研修《けんしゅう》」 (khóa đào tạo, tập huấn), 「｜修理《しゅうり》」 (sửa chữa), 「｜修正《しゅうせい》」 (sửa lại cho đúng).",
+    "nuance": "Khi viết 「けんしゅう」, đề cho 「演習」, 「研習」, 「演修」. 「｜演習《えんしゅう》」 (bài tập thực hành) là từ có thật nhưng đọc 「えんしゅう」.",
+    "compare": "「研修」 ghép 「｜研《けん》」 (nghiên cứu, mài giũa) và 「修」. 「修理」 là sửa đồ vật; 「修正」 là sửa chỗ sai (bài viết, kế hoạch). 「｜改《あらた》める」 là đổi cho mới; 「｜直《なお》す」 là sửa về như cũ.",
+    "example_notes": [
+      "Tôi đã sửa lại trong bài báo cáo những chỗ thầy chỉ ra."
+    ],
+    "quiz": []
+  },
+  "k-0763": {
+    "meaning": "CHÚC — chúc mừng, ăn mừng",
+    "usage": "Âm On 「シュク」: 「｜祝日《しゅくじつ》」 (ngày lễ). Âm Kun: 「｜祝《いわ》う」 (chúc mừng), 「お｜祝《いわ》い」 (quà mừng, việc chúc mừng).",
+    "nuance": "「祝った」 đọc 「いわった」. Đề cho 「いのった」 (cầu nguyện), 「うらなった」 (bói), 「ねがった」 (cầu mong) — đều là động từ có thật, nên phải nhớ đúng chữ.",
+    "compare": "",
+    "example_notes": [
+      "Ở nước này, ngày giành độc lập là ngày lễ."
+    ],
+    "quiz": []
+  },
   "k-0766": {
     "meaning": "THUẬN — thứ tự, lần lượt; thuận lợi",
     "usage": "Âm On 「ジュン」 ở cả ba từ: 「｜順調《じゅんちょう》」 (suôn sẻ, thuận lợi), 「｜順番《じゅんばん》」 (thứ tự, lượt), 「｜道順《みちじゅん》」 (lộ trình, đường đi).",
@@ -1089,13 +1669,33 @@
     ],
     "quiz": []
   },
+  "k-0768": {
+    "meaning": "XỬ, XỨ — xử trí, đối phó",
+    "usage": "Âm On 「ショ」: 「｜処理《しょり》」 (xử lý), 「｜対処《たいしょ》」 (đối phó, xử trí).",
+    "nuance": "「処理」 là 「しょり」 — ngắn. Đề cho 「しゅり」, 「しょうり」, 「しゅうり」 (「｜修理《しゅうり》」: sửa chữa). Hán Việt dễ lừa: 「対処」 (đối xử) là đối phó với sự việc, không phải đối xử với người.",
+    "compare": "「処理」 ghép 「処」 và 「｜理《り》」. 「処」 là xử trí một việc; 「理」 là lý lẽ, sắp xếp cho có trật tự.",
+    "example_notes": [
+      "Rác nhà bếp tôi xử lý cẩn thận mỗi ngày."
+    ],
+    "quiz": []
+  },
   "k-0772": {
     "meaning": "TRỪ — bỏ đi, loại trừ",
     "usage": "Âm 「ジョ」: 「｜削除《さくじょ》」 (xóa bỏ: dữ liệu, chữ). Âm 「ジ」: 「｜掃除《そうじ》」 (dọn dẹp). Âm Kun: 「｜除《のぞ》く」 (loại ra, trừ ra).",
     "nuance": "Hai âm dễ lẫn: 「削除」 là 「さくじょ」 (đề cho 「さくじ」 làm bẫy), nhưng 「掃除」 là 「そうじ」. 「除いて」 đọc 「のぞいて」; 「はぶいて」 là cách đọc của 「省いて」.",
-    "compare": "「除く」 là loại ra khỏi phạm vi (trừ một khoản khi tính). 「｜省《はぶ》く」 là lược bớt phần không cần (bỏ phần giải thích chi tiết). Đề đặt 「除きます」 làm bẫy cho 「はぶきます」.",
+    "compare": "「除く」 là loại ra khỏi phạm vi; 「｜省《はぶ》く」 là lược phần không cần — đề đặt 「除きます」 làm bẫy cho 「はぶきます」. 「｜捨《す》てる」 là vứt đi hẳn.",
     "example_notes": [
       "Tôi đã xóa những bức ảnh không cần nữa khỏi điện thoại."
+    ],
+    "quiz": []
+  },
+  "k-0774": {
+    "meaning": "SÀNG — sàn nhà; giường, chỗ nằm",
+    "usage": "Âm On 「ショウ」: 「｜起床《きしょう》」 (thức dậy). Âm Kun 「ゆか」: 「｜床《ゆか》」 (sàn nhà). Âm Kun 「とこ」: 「｜床屋《とこや》」 (tiệm cắt tóc), 「｜床《とこ》の｜間《ま》」 (hốc tường trang trí trong phòng kiểu Nhật).",
+    "nuance": "「起床」 là 「きしょう」: 「起」 không đục, 「床」 có 「う」 dài. Đề cho 「ぎしょう」, 「きしょ」, 「ぎしょ」 làm bẫy.",
+    "compare": "",
+    "example_notes": [
+      "Căn phòng này sàn lát gỗ nên có cảm giác ấm cúng."
     ],
     "quiz": []
   },
@@ -1103,9 +1703,39 @@
     "meaning": "CHIÊU — mời, vời đến",
     "usage": "Âm On 「ショウ」: 「｜招待《しょうたい》」 (mời: dự tiệc, đám cưới). Âm Kun: 「｜招《まね》く」 (mời đến).",
     "nuance": "Bẫy chữ giống: 「招」 bộ 「扌」, 「紹」 (trong 「紹介」) bộ 「糸」 — đề cho 「紹待」, 「紹介」. Hán Việt lừa: 「招待」 (chiêu đãi) là mời, không nhất thiết là thết đãi ăn uống.",
-    "compare": "",
+    "compare": "「招く」 là mời người đến; 「｜迎《むか》える」 là ra đón người đến. Đề đặt 「招え」 làm bẫy cho 「むかえ」.",
     "example_notes": [
       "Tôi đã mời thầy giáo đại học đến dự đám cưới."
+    ],
+    "quiz": []
+  },
+  "k-0777": {
+    "meaning": "THĂNG — lên cao, bay lên",
+    "usage": "Âm On 「ショウ」: 「｜上昇《じょうしょう》」 (tăng lên). Âm Kun: 「｜昇《のぼ》る」 (lên cao).",
+    "nuance": "Khi viết 「のぼって」 (mặt trời lên), đề cho 「去って」, 「至って」, 「照って」. 「照って」 cũng nói về mặt trời nhưng đọc 「てって」 (chiếu nắng).",
+    "compare": "「昇る」 và 「｜登《のぼ》る」 cùng đọc 「のぼる」: mặt trời lên, thang máy lên viết 「昇る」; leo núi (「登山」) viết 「登る」.",
+    "example_notes": [
+      "Tôi đi thang máy lên thẳng tầng mười."
+    ],
+    "quiz": []
+  },
+  "k-0779": {
+    "meaning": "CHỨNG — triệu chứng, chứng bệnh",
+    "usage": "Âm On 「ショウ」: 「｜症状《しょうじょう》」 (triệu chứng), 「｜花粉症《かふんしょう》」 (dị ứng phấn hoa).",
+    "nuance": "Khi viết 「しょうじょう」, đề cho 「障情」, 「障状」, 「症情」. Chữ đầu là 「症」 (bộ 「疒」 — bệnh), không phải 「障」; chữ sau là 「状」, không phải 「情」.",
+    "compare": "「症状」 ghép 「症」 và 「｜状《じょう》」 (tình hình). 「症」 có bộ 「疒」 (bệnh); 「状」 thì không.",
+    "example_notes": [
+      "Khi có triệu chứng cảm thì nên nghỉ ngơi sớm."
+    ],
+    "quiz": []
+  },
+  "k-0783": {
+    "meaning": "CHỨNG — bằng chứng, chứng minh",
+    "usage": "Âm On 「ショウ」: 「｜保証《ほしょう》」 (bảo đảm, bảo hành), 「｜証明《しょうめい》」 (chứng minh).",
+    "nuance": "Khi viết 「ほしょう」, đề cho 「補証」, 「保正」, 「補正」. Chữ đầu là 「保」 (giữ), không phải 「補」; chữ sau là 「証」 (bộ 「言」), không phải 「正」. 「｜補正《ほせい》」 là từ khác.",
+    "compare": "",
+    "example_notes": [
+      "Tấm ảnh này chứng minh anh ta đã có mặt ở nơi đó."
     ],
     "quiz": []
   },
@@ -1119,6 +1749,36 @@
     ],
     "quiz": []
   },
+  "k-0785": {
+    "meaning": "CHIẾU — rọi sáng, soi đèn",
+    "usage": "Âm On 「ショウ」: 「｜参照《さんしょう》」 (tham chiếu, xem thêm), 「｜対照《たいしょう》」 (đối chiếu, tương phản). Âm Kun: 「｜照《て》る」 (nắng chiếu), 「｜照《て》らす」 (rọi sáng).",
+    "nuance": "Khi viết 「さんしょう」, đề cho 「賛照」, 「賛考」, 「参考」 — bẫy ở chữ đầu (「賛」) hoặc chữ sau (「考」).",
+    "compare": "「参照」 ghép 「｜参《さん》」 và 「照」. 「参考」 cũng bắt đầu bằng 「参」 nhưng chữ sau là 「考」 (suy nghĩ). 「｜映《うつ》る」 là hình hiện lên (gương, mặt nước); 「照らす」 là rọi ánh sáng vào.",
+    "example_notes": [
+      "Tôi soi đèn pin đi trên con đường đêm tối."
+    ],
+    "quiz": []
+  },
+  "k-0788": {
+    "meaning": "TRẠNG — tình hình; hình dạng",
+    "usage": "Âm On 「ジョウ」: 「｜症状《しょうじょう》」 (triệu chứng), 「｜状況《じょうきょう》」 (tình hình), 「｜現状《げんじょう》」 (hiện trạng).",
+    "nuance": "Khi viết 「しょうじょう」, đề cho 「症情」, 「障情」: chữ sau là 「状」, không phải 「情」 — hai chữ cùng đọc 「じょう」.",
+    "compare": "「状」 và 「｜情《じょう》」 cùng đọc 「ジョウ」: 「症状」, 「状況」 dùng 「状」; 「｜感情《かんじょう》」 (cảm xúc) dùng 「情」. 「症状」 ghép 「｜症《しょう》」 và 「状」. 「｜調子《ちょうし》」 (trạng thái, phong độ) dùng 「調」.",
+    "example_notes": [
+      "Với tình hình hiện nay, khó mà tiếp tục kế hoạch."
+    ],
+    "quiz": []
+  },
+  "k-0793": {
+    "meaning": "XÚC — chạm vào, sờ",
+    "usage": "Âm On 「ショク」. Học qua âm Kun: 「｜触《ふ》れる」 (chạm; tiếp xúc với), 「｜触《さわ》る」 (sờ, chạm tay vào).",
+    "nuance": "Một chữ, hai cách đọc: 「ふれる」 và 「さわる」. Đề cho 「なれた」, 「めぐまれた」, 「あこがれた」 làm bẫy cho 「ふれた」; 「触れる」 còn dùng cho việc tiếp xúc với một nền văn hóa.",
+    "compare": "「触」 là chạm, sờ; 「｜接《せつ》」 là tiếp xúc, nối liền (「接続」, 「面接」).",
+    "example_notes": [
+      "Sờ vào lưng con mèo thấy mềm lắm."
+    ],
+    "quiz": []
+  },
   "k-0796": {
     "meaning": "TÂN — cay; cay đắng",
     "usage": "Âm Kun: 「｜辛《から》い」 (cay). Âm On 「シン」: 「｜辛抱《しんぼう》」 (chịu đựng, nhẫn nại).",
@@ -1126,6 +1786,16 @@
     "compare": "",
     "example_notes": [
       "Món súp cay này chắc trẻ con không ăn nổi."
+    ],
+    "quiz": []
+  },
+  "k-0797": {
+    "meaning": "CHÂM — cây kim; đường lối, phương châm",
+    "usage": "Âm On 「シン」: 「｜方針《ほうしん》」 (phương châm, đường lối). Âm Kun: 「｜針《はり》」 (cây kim).",
+    "nuance": "「針」 đọc 「はり」. Đề cho 「ねじ」 (đinh vít), 「くぎ」 (đinh), 「かぎ」 (chìa khóa) — đều là đồ vật nhỏ có thật.",
+    "compare": "",
+    "example_notes": [
+      "Bà dùng kim chỉ khâu lại chiếc cúc bị tuột cho tôi."
     ],
     "quiz": []
   },
@@ -1139,13 +1809,43 @@
     ],
     "quiz": []
   },
+  "k-0802": {
+    "meaning": "THANH — trong, sạch sẽ",
+    "usage": "Âm On 「セイ」: 「｜清潔《せいけつ》」 (sạch sẽ, vệ sinh), 「｜清書《せいしょ》」 (chép sạch lại). Âm Kun: 「｜清《きよ》い」 (trong sạch).",
+    "nuance": "「清潔」 là 「せいけつ」: 「清」 là 「せい」, 「潔」 là 「けつ」. Đề cho 「せっきつ」, 「せいきつ」, 「せっけつ」 làm bẫy.",
+    "compare": "「清」 và 「｜精《せい》」 cùng đọc 「セイ」 và cùng có 「青」 bên phải: bộ 「氵」 (nước) là 「清」 (sạch); bộ 「米」 là 「精」 (「精神」).",
+    "example_notes": [
+      "Khăn cho con dùng, tôi luôn giữ sạch sẽ."
+    ],
+    "quiz": []
+  },
   "k-0803": {
     "meaning": "THẾ — sức mạnh, khí thế, tư thế",
     "usage": "Âm On 「セイ」: 「｜姿勢《しせい》」 (tư thế; thái độ), 「｜大勢《おおぜい》」 (đông người; 「セイ」 thành 「ぜい」). Âm Kun: 「｜勢《いきお》い」 (khí thế, đà, sức mạnh).",
     "nuance": "「姿勢」 đọc 「しせい」, không phải 「しぜい」. 「いきおい」 viết 「勢い」; đề cho 「乱い」, 「荒い」, 「暴い」. 「大勢」 đọc 「おおぜい」 là đông người, không phải \"đại thế\".",
-    "compare": "Hai chữ đều có bộ 「力」 (sức). 「勢」 là đà, sức mạnh của chuyển động (「勢い」); 「｜勇《いさ》ましい」 là can đảm, hùng dũng. Đề đặt 「勢ましい」 — không có từ này — làm bẫy cho 「いさましい」.",
+    "compare": "「勢」 là đà, sức mạnh (「勢い」); 「｜勇《いさ》ましい」 là hùng dũng — đề đặt 「勢ましい」 làm bẫy cho 「いさましい」. 「｜荒《あら》い」 cũng bị đặt làm bẫy cho 「いきおい」.",
     "example_notes": [
       "Khi dùng máy tính trong thời gian dài, hãy chú ý tư thế."
+    ],
+    "quiz": []
+  },
+  "k-0804": {
+    "meaning": "TINH — tinh thần, tâm trí",
+    "usage": "Âm On 「セイ」: 「｜精算《せいさん》」 (thanh toán, tính lại cho đúng), 「｜精神《せいしん》」 (tinh thần).",
+    "nuance": "Khi viết 「せいさん」, đề cho 「請算」, 「製算」, 「制算」 — cả ba chữ đầu đều đọc 「せい」. Chữ đúng là 「精」 (bộ 「米」).",
+    "compare": "「精」, 「｜清《せい》」 và 「｜製《せい》」 cùng đọc 「セイ」: 「清」 là sạch (「清潔」); 「製」 là làm ra (「製品」). Đề đặt 「製算」 làm bẫy cho 「精算」. 「精算」 ghép 「精」 và 「｜算《さん》」 (tính).",
+    "example_notes": [
+      "Lúc rời khách sạn, tôi thanh toán tiền phòng."
+    ],
+    "quiz": []
+  },
+  "k-0805": {
+    "meaning": "CHẾ — làm ra, chế tạo sản phẩm",
+    "usage": "Âm On 「セイ」: 「｜製造《せいぞう》」 (chế tạo, sản xuất), 「｜製品《せいひん》」 (sản phẩm), 「｜製作《せいさく》」 (chế tác, làm ra).",
+    "nuance": "Khi viết 「せいぞう」, đề cho 「製増」, 「制増」, 「制造」. 「製」 có 「衣」 ở dưới, còn 「制」 thì không; chữ sau là 「造」 (bộ 「辶」), không phải 「増」.",
+    "compare": "「製」 là làm ra sản phẩm (「製品」); 「｜設《せつ》」 là dựng, lập (「設備」). 「｜精《せい》」 cùng đọc 「セイ」 nhưng là tinh thần (「精神」).",
+    "example_notes": [
+      "Cả lớp cùng làm một bộ phim ngắn để chiếu ở lễ hội trường."
     ],
     "quiz": []
   },
@@ -1163,7 +1863,7 @@
     "meaning": "TIẾP — tiếp xúc, nối liền, gặp gỡ",
     "usage": "Âm On 「セツ」 ở cả bốn từ: 「｜密接《みっせつ》」 (mật thiết), 「｜接続《せつぞく》」 (kết nối), 「｜直接《ちょくせつ》」 (trực tiếp), 「｜面接《めんせつ》」 (phỏng vấn).",
     "nuance": "「密接」 đọc 「みっせつ」 (có 「っ」), không phải 「みつせつ」. Hán Việt lừa: 「接続」 (tiếp tục) là kết nối; 「面接」 (diện tiếp) là phỏng vấn.",
-    "compare": "「接」 và 「｜設《せつ》」 cùng đọc 「セツ」: 「面接」, 「直接」 dùng 「接」 (tiếp xúc); 「｜施設《しせつ》」, 「｜建設《けんせつ》」 dùng 「設」 (dựng, đặt). Đề cho 「施接」, 「支接」 làm bẫy.",
+    "compare": "「接」 và 「｜設《せつ》」 cùng đọc 「セツ」: 「面接」, 「直接」 dùng 「接」 (tiếp xúc); 「｜施設《しせつ》」, 「｜建設《けんせつ》」 dùng 「設」 (dựng, đặt). Đề cho 「施接」, 「支接」 làm bẫy. 「｜触《ふ》れる」 là chạm vào.",
     "example_notes": [
       "Tuần sau tôi có buổi phỏng vấn ở công ty mình muốn vào."
     ],
@@ -1173,7 +1873,7 @@
     "meaning": "TRANG — trang phục; trang bị, lắp đặt",
     "usage": "Âm 「ソウ」: 「｜装置《そうち》」 (thiết bị, máy móc), 「｜服装《ふくそう》」 (trang phục, cách ăn mặc). Âm 「ショウ」: 「｜衣装《いしょう》」 (trang phục biểu diễn, quần áo).",
     "nuance": "Hai âm On: 「装置」 đọc 「そう」 (「しょうち」 là bẫy), còn 「衣装」 đọc 「しょう」 (「いそう」 là bẫy). Hán Việt lừa: 「装置」 đọc là \"trang trí\" nhưng nghĩa là thiết bị.",
-    "compare": "「装置」 ghép 「装」 và 「｜置《ち》」 (đặt). 「装」 là trang phục, trang bị thêm (「服装」); 「｜設《せつ》」 là dựng, lập mới (「建設」, 「施設」).",
+    "compare": "「装置」 ghép 「装」 và 「｜置《ち》」 (đặt). 「装」 là trang phục, trang bị thêm (「服装」); 「｜設《せつ》」 là dựng, lập mới (「建設」, 「施設」). 「衣装」 ghép 「｜衣《い》」 (quần áo) và 「装」.",
     "example_notes": [
       "Khi leo núi, hãy chọn trang phục dễ vận động."
     ],
@@ -1203,7 +1903,7 @@
     "meaning": "NHẪM — tiền thuê, tiền công",
     "usage": "Âm On 「チン」 ở cả ba từ: 「｜運賃《うんちん》」 (tiền vé, cước vận chuyển), 「｜家賃《やちん》」 (tiền thuê nhà), 「｜賃貸《ちんたい》」 (cho thuê).",
     "nuance": "Bẫy chữ giống: 「賃」 (tiền thuê) và 「貸」 (cho mượn) chỉ khác phần trên — đề cho 「運貸」. 「運賃」 đọc 「うんちん」, không phải 「うんしん」. 「賃貸」 chứa cả hai chữ.",
-    "compare": "",
+    "compare": "「賃」 và 「｜貨《か》」 cùng có 「貝」 ở dưới: 「賃」 là tiền thuê, tiền công (「家賃」); 「貨」 là đồng tiền (「硬貨」).",
     "example_notes": [
       "Phòng gần ga thì tiền thuê nhà đắt."
     ],
@@ -1253,7 +1953,7 @@
     "meaning": "PHỦ — không, phủ nhận, từ chối",
     "usage": "Âm On 「ヒ」: 「｜否定《ひてい》」 (phủ định), 「｜拒否《きょひ》」 (từ chối, cự tuyệt), 「｜賛否《さんぴ》」 (tán thành hay phản đối; 「ヒ」 thành 「ぴ」).",
     "nuance": "「賛否」 là 「さんぴ」 — sau 「ん」, 「ひ」 thành 「ぴ」; 「さんひ」, 「さんぷ」 là bẫy. 「拒否」 là 「きょひ」 (「きょ」 ngắn), không phải 「きょうひ」.",
-    "compare": "",
+    "compare": "「賛否」 ghép 「｜賛《さん》」 (tán thành) và 「否」 (phủ nhận) — hai nghĩa ngược nhau; trong từ này 「否」 đọc 「ぴ」.",
     "example_notes": [
       "Phủ định ngay ý kiến của người khác là không nên."
     ],
@@ -1283,7 +1983,7 @@
     "meaning": "PHÚC — phúc, hạnh phúc, phúc lợi",
     "usage": "Âm On 「フク」: 「｜幸福《こうふく》」 (hạnh phúc), 「｜福祉《ふくし》」 (phúc lợi xã hội).",
     "nuance": "Bẫy chữ cùng âm 「フク」: 「福祉」 viết 「福」, không phải 「副」 (phó) — đề cho 「副祉」, 「副詞」 (phó từ). Chữ sau cũng dễ sai: 「祉」, không phải 「支」, 「仕」, 「施」.",
-    "compare": "「福」 (bộ 「礻」) là phúc, may mắn; 「富」 (bộ 「宀」) là giàu, của cải. Hai chữ có chung phần 「畐」 nên dễ viết lẫn.",
+    "compare": "「福」 (bộ 「礻」) là phúc, may mắn; 「富」 (bộ 「宀」) là giàu, của cải. Hai chữ có chung phần 「畐」 nên dễ viết lẫn. 「｜恵《めぐ》まれる」 là được có sẵn điều tốt.",
     "example_notes": [
       "Thị trấn này dồn sức vào phúc lợi cho người cao tuổi."
     ],
@@ -1333,7 +2033,7 @@
     "meaning": "ƯU — xuất sắc, ưu tú; dịu dàng",
     "usage": "Âm On 「ユウ」: 「｜優秀《ゆうしゅう》」 (ưu tú, giỏi), 「｜優勝《ゆうしょう》」 (vô địch), 「｜俳優《はいゆう》」 (diễn viên). Âm Kun: 「｜優《すぐ》れる」 (vượt trội, xuất sắc).",
     "nuance": "「優秀」 là 「ゆうしゅう」 — kéo dài ở cả hai chỗ; 「ゆしゅう」, 「ゆうしゅ」 là bẫy. Chữ giống: 「優」 = 「亻」 + 「憂」 (buồn) — đề cho 「俳憂」.",
-    "compare": "「優勝」 ghép 「優」 và 「｜勝《しょう》」: vô địch. 「優」 là giỏi hơn người khác (「優秀」); 「｜勝《か》つ」 là thắng một trận, một đối thủ.",
+    "compare": "「優勝」 ghép 「優」 và 「｜勝《しょう》」: vô địch. 「優」 là giỏi hơn người (「優秀」). 「｜易《やさ》しい」 (dễ) cùng đọc với 「優しい」 (hiền). 「｜偉《えら》い」 là đáng khen, có địa vị.",
     "example_notes": [
       "Đội bóng đá của em trai tôi đã vô địch giải đấu."
     ],
@@ -1353,7 +2053,7 @@
     "meaning": "LOẠN — rối loạn, lộn xộn",
     "usage": "Âm On 「ラン」: 「｜混乱《こんらん》」 (hỗn loạn, rối ren), 「｜乱暴《らんぼう》」 (thô bạo, cẩu thả). Âm Kun: 「｜乱《みだ》れる」 (bị rối, xáo trộn: tóc, nhịp sống, hơi thở).",
     "nuance": "「乱れる」 đọc 「みだれる」; đề đặt 「くずれる」, 「あれる」 làm bẫy. 「こんらん」 là 「混乱」, khác 「｜混雑《こんざつ》」 (đông nghẹt người) — cũng là phương án sai trong đề.",
-    "compare": "「乱れる」 là mất trật tự, rối (tóc, nhịp sống); 「｜破《やぶ》れる」 là rách, thủng (túi, quần áo). Đề từng đặt 「破れて」 làm phương án sai cho 「みだれて」.",
+    "compare": "「乱れる」 là mất trật tự, rối (tóc, nhịp sống); 「｜破《やぶ》れる」 là rách — đề từng đặt 「破れて」 cho 「みだれて」. 「｜荒《あら》い」 là thô, mạnh; 「｜散《ち》らかる」 là vương vãi.",
     "example_notes": [
       "Vì chạy một mạch đến ga nên hơi thở của tôi đang dồn dập."
     ],
@@ -1373,7 +2073,7 @@
     "meaning": "LƯỢC — lược bớt, viết tắt",
     "usage": "Âm On 「リャク」: 「｜省略《しょうりゃく》」 (lược bỏ), 「｜略《りゃく》す」 (viết tắt, gọi tắt; cũng nói 「略する」).",
     "nuance": "「略して」 đọc 「りゃくして」, không phải 「やくして」. Viết 「りゃくして」 là 「略して」; 「省して」, 「縮して」 là bẫy — động từ của 「省」 là 「省く」.",
-    "compare": "「略す」 là rút một tên, một chữ thành dạng ngắn (「スマートフォン」 → 「スマホ」). 「｜省《はぶ》く」 là bỏ hẳn một phần không cần. Hai chữ ghép thành 「省略」.",
+    "compare": "「略す」 là rút một tên, một chữ thành dạng ngắn (「スマートフォン」 → 「スマホ」). 「｜省《はぶ》く」 là bỏ hẳn một phần không cần. Hai chữ ghép thành 「省略」. 「｜簡単《かんたん》」 là đơn giản, dễ.",
     "example_notes": [
       "Trong giấy tờ này, xin hãy ghi địa chỉ đầy đủ, không viết tắt."
     ],
@@ -1393,7 +2093,7 @@
     "meaning": "OẢN — cánh tay",
     "usage": "Học qua âm Kun: 「｜腕《うで》」 (cánh tay), 「｜腕時計《うでどけい》」 (đồng hồ đeo tay). Âm On là 「ワン」.",
     "nuance": "Đề hỏi tên bộ phận cơ thể: 「腕」 là 「うで」; 「こし」, 「かた」, 「ひざ」 là bẫy. Khi viết 「うで」, 「腹」, 「胸」, 「腰」 — cùng bộ 「月」 bên trái — là phương án sai.",
-    "compare": "「腕」 là cả cánh tay; 「｜手《て》」 là bàn tay. Đồng hồ đeo ở cổ tay vẫn gọi là 「腕時計」.",
+    "compare": "「腕」 là cả cánh tay; 「｜手《て》」 là bàn tay. Đồng hồ đeo ở cổ tay vẫn gọi là 「腕時計」. 「｜肩《かた》」 là vai.",
     "example_notes": [
       "Tôi duỗi tay ra, lấy chiếc hộp trên kệ xuống."
     ],

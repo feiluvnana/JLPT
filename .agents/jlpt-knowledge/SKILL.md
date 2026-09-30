@@ -434,6 +434,14 @@ Added by 文法 batch-7 QA (`qa/qa-report-knowledge-N2-文法-B7.md`):
     文法 card (おそらく) keeps its gloss and scenes distinct from it. The gate
     WARNs when a generated meaning item's wrong option prints the headword being
     asked (`check_meaning_lures`).
+40. **(漢字 batch-3 QA)** 漢字 `official_count`: a 問題1 item counts for every
+    kanji of the underlined word. A 問題2 item counts only for a kanji of the key
+    that some option replaces; a kanji printed in all four options is given, not
+    tested (住居 → 居, 変更 → 更, every 〜的). Print the four options of every
+    cited item before counting, and keep the uncounted item in `sources` with
+    「（…すべてが「X」。数えない）」. A gloss must not contain another entry's
+    gloss words either (賛 「力をかす」 made 助's quiz two-answer), and the
+    example scene scan covers every `knowledge/<LEVEL>/*.json`, 文法 stems included.
 
 ## Pronunciation
 

@@ -398,6 +398,13 @@ Added by 文法 batch-7 QA (`qa/qa-report-knowledge-N2-文法-B7.md`):
     furigana on official wrong options that are not words (戻品, 住屋). A gloss
     never contains another entry's headword kanji (直's 「元に戻す」 put 元 on
     元's own meaning quiz).
+35. **(語彙 batch-3 QA)** When a batch adds a headword, grep the live entries'
+    `sources` for its form and move a hit credited to a neighbour (絶える was
+    counting 絶えず's key). Compare an example's FRAME (cause → predicate,
+    subject type), not only its nouns; rule 11's scene check spans the whole
+    knowledge module, 文法 stems included. An entry's own examples satisfy every
+    restriction its prose states, in every language. A Hán Việt false-friend
+    note never contradicts the Vietnamese gloss Hajimete prints.
 
 ## Pronunciation
 

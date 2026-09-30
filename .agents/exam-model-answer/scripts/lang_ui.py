@@ -184,10 +184,14 @@ SWITCHER_JS = """
        "primary": json.dumps(langs.primary())}
 
 
-def _pane(ns: str, key: str) -> str:
-    """One label in every active language, as `.lang-pane` spans."""
-    return "".join(f'<span class="lang-pane" data-lang="{c}">{langs.ui(c, ns).get(key, "")}</span>'
-                   for c in langs.order())
+def pane(ns: str, key: str, **kw) -> str:
+    """One label from namespace `ns`, in every active language, as `.lang-pane`
+    spans (`kw` fills its {placeholders})."""
+    return "".join(f'<span class="lang-pane" data-lang="{c}">'
+                   f'{langs.ui(c, ns).get(key, "").format(**kw)}</span>' for c in langs.order())
+
+
+_pane = pane
 
 
 def header_html(title: str, subtitle: str = "", badge: bool = True,

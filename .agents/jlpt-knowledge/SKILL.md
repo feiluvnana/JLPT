@@ -77,7 +77,7 @@ Every entry:
 | `quiz` | optional | `{stem, options[4], answer}`, `answer` 1-based |
 | `group` | optional | the grouping label a filter and a quiz scope use: Shin Kanzen 課 (`第12課`) or topic (`時間・時期`) |
 | `tags` | optional | free labels (`硬い表現`, `書き言葉`) — one filter |
-| `official_count` | optional | how many official sittings in `refs/JLPT_N2_NEW/` test the point (count the `booklet.md` hits; cite one in `sources`) — badge, filter, sort |
+| `official_count` | optional | how many official sittings in `refs/JLPT_N2_NEW/` test the point (count the `booklet.md` hits; cite one in `sources`) — filter and sort only; cards print no count (owner, 2026-09-30) |
 | `pitch` | optional | an accent override you have CHECKED: `[drop, …]` for the headword reading; on a 漢字 entry `{"<word, markup stripped>": [drop, …]}` for its `words` (§Pronunciation) |
 
 Plus the category's own head fields: 文法 `pattern`, `reading`, `connection`

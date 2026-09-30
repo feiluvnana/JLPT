@@ -135,7 +135,8 @@ def crumbs(level: str, depth: int, trail: list[tuple[str, str | None]]) -> list:
     Relative links, explicit index.html: `make serve`, a Pages subpath, file://."""
     up = "../" * depth
     know = [(portal_label("mod_knowledge"), None if not trail else f"{up}{D.INDEX_HTML}")]
-    return [(esc(level), f"{up}../../{level}/{D.INDEX_HTML}")] + know + trail
+    home = (lang_ui.pane("portal", "crumb_home"), f"{up}../../{D.INDEX_HTML}")
+    return [home, (esc(level), f"{up}../../{level}/{D.INDEX_HTML}")] + know + trail
 
 
 def dup_control(render) -> str:
@@ -321,8 +322,6 @@ def card_html(spec: dict, e: dict, prose: dict, heads: dict, level: str,
     if e.get("group"):
         meta.append(f'<span class="tag grp">{esc(e["group"])}</span>')
     meta += [f'<span class="tag">{esc(t)}</span>' for t in e.get("tags", []) or []]
-    if e.get("official_count"):
-        meta.append(f'<span class="tag off">{label("official_badge", n=int(e["official_count"]))}</span>')
     if meta:
         out.append('<div class="dc-meta">' + "".join(meta) + "</div>")
 
@@ -393,7 +392,7 @@ CSS = r"""
 :root{--primary:#1e3a8a;--card:#ffffff;--soft:#f1f5f9}
 body{margin:0;background:#f8fafc;color:var(--ink);font-family:var(--ui);line-height:1.7}
 ruby rt{font-size:.58em;color:var(--muted);user-select:none}
-.wrap{max-width:60rem;margin:0 auto;padding:1rem 1rem 4rem}
+.wrap{max-width:82em;margin:0 auto;padding:1.8em 1.5em 5em}
 .lead{color:var(--muted);margin:.2rem 0 1rem;font-size:.95rem}
 .tabs{display:flex;gap:.4rem;margin:.4rem 0 1rem;border-bottom:1px solid var(--line)}
 .tab-btn{border:none;background:none;font:inherit;font-weight:700;color:var(--muted);
@@ -847,7 +846,7 @@ def build_parts_index(level: str, spec: dict, cat: D.Category, entries: list[dic
             cards.append(f'<div class="cat off" aria-disabled="true">{inner}</div>')
     name = UI[PRIMARY].get(spec["label"], stem)
     title = f"{level} {name}"
-    body = (lang_ui.header_html(label(spec["label"]), label(spec["desc"]), width="60rem")
+    body = (lang_ui.header_html(f"JLPT {esc(level)} " + label(spec["label"]), label(spec["desc"]))
             + f'<main class="wrap"><p class="lead">{label("parts_lead")}</p>'
             f'<div class="stat">{len(entries)} {label("entries")} · {label("learned")} '
             f'<span class="js-learned-total">0</span> / {len(entries)}</div>'
@@ -937,8 +936,8 @@ def render_cards(level: str, spec: dict, entries: list[dict], prose: dict, heads
                 f'<button type="button" class="ui-btn" id="qz-retry-wrong" data-qz="retry-wrong">{label("quiz_retry_wrong")}</button>'
                 f'<button type="button" class="ui-btn primary" data-qz="setup">{label("quiz_start")}</button>'
                 f'</div></div>')
-    head = label(spec["label"]) + (f' — {fu(part)}' if part else "")
-    body = (lang_ui.header_html(head, label(spec["desc"]), width="60rem")
+    head = f"JLPT {esc(level)} " + label(spec["label"]) + (f' — {fu(part)}' if part else "")
+    body = (lang_ui.header_html(head, label(spec["desc"]))
             + f'<main class="wrap"><nav class="tabs"><button type="button" class="tab-btn" data-tab="study" onclick="setTab(\'study\')">'
             f'{label("tab_study")}</button><button type="button" class="tab-btn" data-tab="quiz" '
             f'onclick="setTab(\'quiz\')">{label("tab_quiz")}</button></nav>'
@@ -983,7 +982,7 @@ def build_index(level: str) -> Path:
         else:
             cards.append(f'<div class="cat off" aria-disabled="true">{inner}</div>')
     title = UI[PRIMARY]["index_title"].format(level=level)
-    body = (lang_ui.header_html(label("index_title", level=level), label("index_lead"), width="60rem")
+    body = (lang_ui.header_html(f"JLPT {esc(level)} " + portal_label("mod_knowledge"), label("index_lead"))
             + f'<main class="wrap"><div class="cats">{"".join(cards)}</div></main>')
     scripts = f"const LEVEL = {js_data(level)};\nconst IDS = {js_data(ids)};\n{INDEX_JS}"
     out = D.level_dir(level) / D.INDEX_HTML

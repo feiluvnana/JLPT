@@ -418,6 +418,15 @@ Added by 文法 batch-7 QA (`qa/qa-report-knowledge-N2-文法-B7.md`):
     whose cards must be assembled into the form does not count (owner ruling,
     2026-10-01, consistent with B7/B9). The distractor tally and the one-line
     scene of every official item keying the form are REQUIRED hand-off columns.
+38. **(文法 batch-10 QA)** Every 文法 distractor is a form with a live entry or an
+    inventory row (にかわって / に比べて had neither). Two conjunctions from the same
+    row of the SK IV-G table (PDF 146) share one kill clause. A required hand-off
+    column names, for every example and stem, the closest example on the cited
+    SK page and the entry's own cited script lines, and how the new one differs
+    (19 frame copies of the entry's own page shipped). The gate WARNs on 形 read
+    かたち after a grammar term (「動詞のて形」 is けい; 「決まった形」 is かたち);
+    `merge_batch.py` lists every quoted form a back-link drops from a live
+    compare, for the reviewer to answer.
 
 ## Pronunciation
 

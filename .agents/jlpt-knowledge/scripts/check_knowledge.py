@@ -642,6 +642,12 @@ RUBY_SUSPECTS = [
      "a clock time read とき — should be じ"),
     (re.compile(r"｜?[一三四六八十百]分《[^》]*ふん》"), "分 after 一/三/四/六/八/十 read ふん — should be ぷん"),
     (re.compile(r"｜?入《いっ》"), "入 read いっ — should be はい/い"),
+    # て/た/ない only after a particle or punctuation (「動詞のて形」): after a verb
+    # stem 形 is a shape (「決まった形」「使った形」) and かたち is right.
+    (re.compile(r"(?:辞書|普通|可能|意向|命令|受身|使役|連用|終止)(?:《[^》]*》)?｜?形《かたち》|"
+                r"(?:(?<=[の・、「はかや＋と（])|(?<=動詞)|(?<=動詞《どうし》))(?:ます|て|た|ない)｜?形《かたち》|"
+                r"(?<![ぁ-ゖ])ます｜?形《かたち》"),
+     "形 after a grammar term read かたち — should be けい (文法 B10 QA)"),
 ]
 
 

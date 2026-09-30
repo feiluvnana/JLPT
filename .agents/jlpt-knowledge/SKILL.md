@@ -411,6 +411,13 @@ Added by 文法 batch-7 QA (`qa/qa-report-knowledge-N2-文法-B7.md`):
     term-meaning quiz puts the competing terms into its stem. Provenance for a
     guide covers the lesson page's own 例, the answer-booklet scripts, a bigram
     scan over all 31 official scripts, and the live category file.
+37. **(文法 batch-9 QA)** An inventory row's `forms` list is a pool label, not
+    evidence: every form an entry keeps has its own hit in refs, and a form with
+    0 hits is cut (に至るまで / に至って were). The tested form is never printed
+    in all four options (that tests the particle, not the point). A 問題8 item
+    whose cards must be assembled into the form does not count (owner ruling,
+    2026-10-01, consistent with B7/B9). The distractor tally and the one-line
+    scene of every official item keying the form are REQUIRED hand-off columns.
 
 ## Pronunciation
 

@@ -2,7 +2,7 @@
   "doc_title": "テスト {test_id}（模範解答・詳細解説）",
   "back": "← 採点結果へ戻る",
   "crumb": "模範解答・解説",
-  "title": "日本語能力試験 {level} 模範解答・詳細解説",
+  "title": "JLPT {level} 模範解答・詳細解説",
   "subtitle": "テスト <strong>{test_id}</strong> ｜ <span>全{n_all}問（言語知識・読解 {n_gengo}問 ＋ 聴解 {n_choukai}問）完全網羅解説集</span>",
   "tab_all": "すべて",
   "tab_goi": "文字・語彙",

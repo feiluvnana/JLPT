@@ -4,9 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>テスト imported-n2-2024-12（模範解答・詳細解説）</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@400;600;700&display=optional" rel="stylesheet">
 <style>
 :root {
   --primary: #1e3a8a;
@@ -47,69 +45,108 @@ ruby rt {
   user-select: none;
 }
 
-/* The page header: ordinary page content under lang_ui's sticky topbar
-   (which carries the breadcrumb, the way back and the language dropdown). */
-header.app-header {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  color: #fff;
-  padding: 0.9rem 1.25rem 1rem;
+/* The page header is lang_ui.header_html() + HEADER_CSS (in 
+/* lang_ui: the one sticky bar. Sized like the exam sheet's original #bar
+   (min-height 3.4em at 11pt ≈ 50px, 1.8em side padding, gradient + shadow) —
+   the owner's call on 2026-09-30, after a 40px slim bar read as too small.
+   --tb-h is its height, for anything that sticks under it (players). */
+/* Site base, identical on every page so moving between them cannot shift or
+   repaint: the scrollbar's gutter is always reserved (a short page and a long
+   one lay out at the same width), the canvas is the pages' own background (no
+   white frame before the body paints), and the chrome uses ONE font stack of
+   its own, whatever --ui a page defines. */
+:root{--tb-h:50px;--tb-font:"Noto Sans JP",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Hiragino Sans","Yu Gothic",sans-serif}
+@media screen{html{scrollbar-gutter:stable;background:#f8fafc}}
+.topbar{position:sticky;top:0;z-index:1000;display:flex;align-items:center;
+  height:var(--tb-h);padding:0 max(1.8em,env(safe-area-inset-right)) 0 max(1.8em,env(safe-area-inset-left));gap:.6em 1.2em;
+  box-sizing:border-box;width:100%;max-width:100%;overflow:hidden;margin:0;
+  background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);color:#e2e8f0;
+  font:500 11pt/1 var(--tb-font);
+  box-shadow:0 4px 14px rgba(0,0,0,.08);border-bottom:1px solid rgba(255,255,255,.08)}
+.topbar .tb-crumbs{flex:1 1 0;min-width:2.5em;display:flex;align-items:center;gap:.45em;
+  white-space:nowrap;overflow:hidden}
+.topbar .tb-crumb{color:#cbd5e1;text-decoration:none;overflow:hidden;text-overflow:ellipsis;
+  min-width:0;flex:0 1 auto;line-height:1.5}
+.topbar a.tb-crumb:hover{color:#fff;text-decoration:underline}
+.topbar .tb-here{color:#fff;font-weight:800;font-size:12.5pt;flex:0 1 auto}
+.topbar .tb-sep{color:#64748b;flex:0 0 auto}
+.topbar .tb-right{flex:0 0 auto;max-width:calc(100% - 2.5em);min-width:0;justify-content:flex-end;display:flex;align-items:center;gap:.5em}
+.topbar .tb-right>*{flex:0 0 auto}
+.topbar .tb-right>.tb-shrink{flex:0 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;
+  white-space:nowrap}
+.topbar .tb-last{flex:0 1 auto}
+/* A page's own compact controls in the bar (right_html): links, buttons, read-outs. */
+.topbar .tb-link,.topbar .tb-btn{display:inline-flex;align-items:center;justify-content:center;
+  box-sizing:border-box;height:32px;min-height:0;padding:0 .85em;margin:0;border-radius:6px;
+  border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:#e2e8f0;
+  font:700 10pt/1 var(--tb-font);text-decoration:none;white-space:nowrap;
+  cursor:pointer;box-shadow:none}
+.topbar .tb-link:hover,.topbar .tb-btn:hover{background:rgba(255,255,255,.18);color:#fff}
+.topbar .tb-btn.primary{background:#2563eb;border-color:#2563eb;color:#fff}
+.topbar .tb-btn.primary:hover{background:#1d4ed8;border-color:#1d4ed8}
+.topbar .tb-btn:disabled,.topbar .tb-btn:disabled:hover{opacity:.45;cursor:not-allowed}
+.topbar .tb-btn.primary:disabled:hover{background:#2563eb}
+.topbar .tb-sub{color:#94a3b8;font-variant-numeric:tabular-nums;white-space:nowrap}
+.topbar .tb-short{display:none}
+.lang-select{font:600 10pt/1 var(--tb-font);color:#0f172a;background:#f8fafc;
+  border:1px solid #cbd5e1;border-radius:6px;height:32px;padding:0 1.6em 0 .6em;cursor:pointer;
+  max-width:9.5em}
+.lang-select:focus-visible{outline:2px solid #60a5fa;outline-offset:1px}
+.lang-select[disabled]{opacity:.6;cursor:default}
+@media (max-width:600px){
+  :root{--tb-h:44px}
+  .topbar{gap:.4em .8em;font-size:10pt;padding:0 .9em}
+  .topbar .tb-here{font-size:11.5pt}
+  .topbar .tb-wide{display:none!important}
+  /* On a phone only the page you are on is spelled out; the crumbs before it
+     stay reachable as a short trail that gives way first. */
+  /* On a phone the trail collapses to one 「‹」 back link to the parent page
+     plus the page you are on — squeezed crumbs read as bare 「› ›」. */
+  .topbar .tb-crumbs>.tb-crumb:not(.tb-last),.topbar .tb-crumbs>.tb-sep{display:none}
+  .topbar .tb-crumbs>a.tb-crumb:nth-last-child(3){display:inline-flex;flex:0 0 auto;
+    font-size:0;width:22px;justify-content:center;text-decoration:none}
+  .topbar .tb-crumbs>a.tb-crumb:nth-last-child(3)::before{content:"‹";font-size:20px;
+    line-height:1;color:#e2e8f0}
+  .topbar .tb-right{gap:.35em}
+  .lang-select{height:30px;font-size:10pt;max-width:6.5em;padding:0 1.1em 0 .4em}
+  .topbar .tb-link,.topbar .tb-btn{height:30px;padding:0 .6em;font-size:10pt}
+  .topbar .tb-long{display:none}
+  .topbar .tb-short{display:inline}
 }
-.header-inner {
-  max-width: 1050px;
-  margin: 0 auto;
+@media print{.topbar{display:none!important}}
+
+/* lang_ui: the page header (scrolls away; only the bar sticks). Every property
+   the host page could otherwise leak in (the booklet's bare h1 rule, a body
+   line-height, a global reset) is set here, so it measures the same everywhere. */
+header.app-header{display:block;box-sizing:border-box;margin:0;border:0;
+  background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);color:#fff;
+  padding:1rem 1.4rem 1.15rem;font:400 16px/1.5 var(--tb-font);text-align:left}
+header.app-header .header-inner{box-sizing:border-box;max-width:82em;margin:0 auto;
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:.2rem 1rem}
+header.app-header .header-badge{display:inline-block;background:rgba(255,255,255,0.12);
+  color:#93c5fd;font:700 0.72rem/1.4 var(--tb-font);padding:0.15rem 0.6rem;border-radius:9999px;
+  letter-spacing:0.04em;margin:0}
+header.app-header h1.title{font:900 1.4rem/1.35 var(--tb-font);margin:0;padding:0;border:0;
+  background:none;color:#ffffff;letter-spacing:normal;text-align:left}
+/* Badge + title on the first row, the subtitle always on its own row: a long
+   subtitle then wraps within its row instead of changing the layout. */
+header.app-header .subtitle{color:#94a3b8;font:400 0.88rem/1.6 var(--tb-font);margin:0;
+  flex:1 1 100%;min-width:0}
+@media screen and (max-width: 54em){
+  header.app-header{padding:.75rem 1rem .85rem}
+  /* A phone stacks badge / title / subtitle on every page, never "title
+     beside the badge when it happens to fit". */
+  header.app-header .header-inner{display:block}
+  header.app-header h1.title{font-size:1.15rem;margin-top:.3rem}
+  header.app-header .subtitle{font-size:.8rem}
 }
-.header-top-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 0.75rem;
-  flex-wrap: wrap;
-}
-.header-back-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  color: #cbd5e1;
-  text-decoration: none;
-  font-size: 0.88rem;
-  font-weight: 700;
-  padding: 0.35rem 0.85rem;
-  border-radius: 6px;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.15);
-  transition: all 0.15s ease;
-}
-.header-back-btn:hover {
-  background: rgba(255,255,255,0.18);
-  color: #ffffff;
-  border-color: rgba(255,255,255,0.3);
-}
-.header-badge {
-  display: inline-block;
-  background: rgba(255,255,255,0.12);
-  color: #93c5fd;
-  font-size: 0.8rem;
-  font-weight: 700;
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
-  letter-spacing: 0.04em;
-}
-h1.title {
-  font-size: 1.35rem;
-  font-weight: 900;
-  margin-bottom: 0.2rem;
-  color: #ffffff;
-}
-@media (max-width: 600px) {
-  header.app-header { padding: 0.7rem 0.9rem 0.8rem; }
-  h1.title { font-size: 1.1rem; }
-  .subtitle { font-size: 0.8rem; }
-}
-.subtitle {
-  color: #94a3b8;
-  font-size: 0.92rem;
-}
+@media print{header.app-header{background:none;color:#000}
+  header.app-header h1.title{color:#000}}
+
+.lang-pane{display:contents}
+body[data-lang="ja"] .lang-pane:not([data-lang="ja"]) { display: none !important; }
+body[data-lang="vi"] .lang-pane:not([data-lang="vi"]) { display: none !important; }),
+   the same block every page opens with. */
 
 /* Section tabs + search: page content, NOT a second sticky bar (the one
    sticky bar is lang_ui's topbar; only the audio player sticks under it). */
@@ -551,12 +588,18 @@ body[data-lang="vi"] .lang-pane:not([data-lang="vi"]) { display: none !important
    (min-height 3.4em at 11pt ≈ 50px, 1.8em side padding, gradient + shadow) —
    the owner's call on 2026-09-30, after a 40px slim bar read as too small.
    --tb-h is its height, for anything that sticks under it (players). */
-:root{--tb-h:50px}
+/* Site base, identical on every page so moving between them cannot shift or
+   repaint: the scrollbar's gutter is always reserved (a short page and a long
+   one lay out at the same width), the canvas is the pages' own background (no
+   white frame before the body paints), and the chrome uses ONE font stack of
+   its own, whatever --ui a page defines. */
+:root{--tb-h:50px;--tb-font:"Noto Sans JP",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Hiragino Sans","Yu Gothic",sans-serif}
+@media screen{html{scrollbar-gutter:stable;background:#f8fafc}}
 .topbar{position:sticky;top:0;z-index:1000;display:flex;align-items:center;
   height:var(--tb-h);padding:0 max(1.8em,env(safe-area-inset-right)) 0 max(1.8em,env(safe-area-inset-left));gap:.6em 1.2em;
   box-sizing:border-box;width:100%;max-width:100%;overflow:hidden;margin:0;
   background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);color:#e2e8f0;
-  font:500 11pt/1 var(--ui,system-ui,sans-serif);
+  font:500 11pt/1 var(--tb-font);
   box-shadow:0 4px 14px rgba(0,0,0,.08);border-bottom:1px solid rgba(255,255,255,.08)}
 .topbar .tb-crumbs{flex:1 1 0;min-width:2.5em;display:flex;align-items:center;gap:.45em;
   white-space:nowrap;overflow:hidden}
@@ -574,7 +617,7 @@ body[data-lang="vi"] .lang-pane:not([data-lang="vi"]) { display: none !important
 .topbar .tb-link,.topbar .tb-btn{display:inline-flex;align-items:center;justify-content:center;
   box-sizing:border-box;height:32px;min-height:0;padding:0 .85em;margin:0;border-radius:6px;
   border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:#e2e8f0;
-  font:700 10pt/1 var(--ui,system-ui,sans-serif);text-decoration:none;white-space:nowrap;
+  font:700 10pt/1 var(--tb-font);text-decoration:none;white-space:nowrap;
   cursor:pointer;box-shadow:none}
 .topbar .tb-link:hover,.topbar .tb-btn:hover{background:rgba(255,255,255,.18);color:#fff}
 .topbar .tb-btn.primary{background:#2563eb;border-color:#2563eb;color:#fff}
@@ -583,7 +626,7 @@ body[data-lang="vi"] .lang-pane:not([data-lang="vi"]) { display: none !important
 .topbar .tb-btn.primary:disabled:hover{background:#2563eb}
 .topbar .tb-sub{color:#94a3b8;font-variant-numeric:tabular-nums;white-space:nowrap}
 .topbar .tb-short{display:none}
-.lang-select{font:600 10pt/1 var(--ui,system-ui,sans-serif);color:#0f172a;background:#f8fafc;
+.lang-select{font:600 10pt/1 var(--tb-font);color:#0f172a;background:#f8fafc;
   border:1px solid #cbd5e1;border-radius:6px;height:32px;padding:0 1.6em 0 .6em;cursor:pointer;
   max-width:9.5em}
 .lang-select:focus-visible{outline:2px solid #60a5fa;outline-offset:1px}
@@ -610,6 +653,37 @@ body[data-lang="vi"] .lang-pane:not([data-lang="vi"]) { display: none !important
 }
 @media print{.topbar{display:none!important}}
 
+/* lang_ui: the page header (scrolls away; only the bar sticks). Every property
+   the host page could otherwise leak in (the booklet's bare h1 rule, a body
+   line-height, a global reset) is set here, so it measures the same everywhere. */
+header.app-header{display:block;box-sizing:border-box;margin:0;border:0;
+  background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);color:#fff;
+  padding:1rem 1.4rem 1.15rem;font:400 16px/1.5 var(--tb-font);text-align:left}
+header.app-header .header-inner{box-sizing:border-box;max-width:82em;margin:0 auto;
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:.2rem 1rem}
+header.app-header .header-badge{display:inline-block;background:rgba(255,255,255,0.12);
+  color:#93c5fd;font:700 0.72rem/1.4 var(--tb-font);padding:0.15rem 0.6rem;border-radius:9999px;
+  letter-spacing:0.04em;margin:0}
+header.app-header h1.title{font:900 1.4rem/1.35 var(--tb-font);margin:0;padding:0;border:0;
+  background:none;color:#ffffff;letter-spacing:normal;text-align:left}
+/* Badge + title on the first row, the subtitle always on its own row: a long
+   subtitle then wraps within its row instead of changing the layout. */
+header.app-header .subtitle{color:#94a3b8;font:400 0.88rem/1.6 var(--tb-font);margin:0;
+  flex:1 1 100%;min-width:0}
+@media screen and (max-width: 54em){
+  header.app-header{padding:.75rem 1rem .85rem}
+  /* A phone stacks badge / title / subtitle on every page, never "title
+     beside the badge when it happens to fit". */
+  header.app-header .header-inner{display:block}
+  header.app-header h1.title{font-size:1.15rem;margin-top:.3rem}
+  header.app-header .subtitle{font-size:.8rem}
+}
+@media print{header.app-header{background:none;color:#000}
+  header.app-header h1.title{color:#000}}
+
+.lang-pane{display:contents}
+body[data-lang="ja"] .lang-pane:not([data-lang="ja"]) { display: none !important; }
+body[data-lang="vi"] .lang-pane:not([data-lang="vi"]) { display: none !important; }
 .trans-title {
   font-size: 0.8rem;
   font-weight: 700;
@@ -636,7 +710,7 @@ footer {
 }
 </style>
 </head>
-<body data-lang="ja">
+<body data-lang="ja"><script>/* lang_ui: early language */(function(){var L=["ja", "vi"],H={"ja": "ja", "vi": "vi"},v=null;try{v=localStorage.getItem("kaisetsuLang")}catch(e){}if(v&&L.indexOf(v)>=0){document.body.dataset.lang=v;document.documentElement.lang=H[v]||v;}})();</script>
 <nav class="topbar" id="topbar" aria-label="breadcrumb"><div class="tb-crumbs"><a class="tb-crumb" href="../../N2/index.html">N2</a><span class="tb-sep" aria-hidden="true">›</span><a class="tb-crumb" href="../../N2/exam/index.html"><span class="lang-pane" data-lang="ja">試験</span><span class="lang-pane" data-lang="vi">Thi thử</span></a><span class="tb-sep" aria-hidden="true">›</span><a class="tb-crumb" href="解答.html?screen=result">imported-n2-2024-12</a><span class="tb-sep" aria-hidden="true">›</span><span class="tb-crumb tb-here tb-last"><span class="lang-pane" data-lang="ja">模範解答・解説</span><span class="lang-pane" data-lang="vi">Đáp án & giải thích</span></span></div><div class="tb-right"><a class="tb-link tb-wide" href="解答.html?screen=result"><span class="lang-pane" data-lang="ja">← 採点結果へ戻る</span><span class="lang-pane" data-lang="vi">← Về kết quả chấm</span></a><select class="lang-select" aria-label="表示言語 / Ngôn ngữ" data-langs="[&quot;ja&quot;, &quot;vi&quot;]"><option value="ja" lang="ja">日本語</option><option value="vi" lang="vi">Tiếng Việt</option></select></div></nav><script>
 /* lang_ui: apply / remember / restore the reader's language. */
 (function(){
@@ -675,12 +749,7 @@ footer {
   window.addEventListener('pageshow', function(e){ if (e.persisted) boot(); });
 })();
 </script>
-<header class="app-header">
-  <div class="header-inner">
-    <h1 class="title"><span class="lang-pane" data-lang="ja">日本語能力試験 N2 模範解答・詳細解説</span><span class="lang-pane" data-lang="vi">JLPT N2 — Đáp án mẫu và giải thích chi tiết</span></h1>
-    <div class="subtitle"><span class="lang-pane" data-lang="ja">テスト <strong>imported-n2-2024-12</strong> ｜ <span>全101問（言語知識・読解 71問 ＋ 聴解 30問）完全網羅解説集</span></span><span class="lang-pane" data-lang="vi">Đề <strong>imported-n2-2024-12</strong> ｜ <span>Giải thích đầy đủ 101 câu (Kiến thức ngôn ngữ・Đọc hiểu 71 câu ＋ Nghe 30 câu)</span></span></div>
-  </div>
-</header>
+<header class="app-header"><div class="header-inner"><span class="header-badge"><span class="lang-pane" data-lang="ja">JLPT 学習ポータル · N1–N5</span><span class="lang-pane" data-lang="vi">CỔNG HỌC JLPT · N1–N5</span></span><h1 class="title"><span class="lang-pane" data-lang="ja">JLPT N2 模範解答・詳細解説</span><span class="lang-pane" data-lang="vi">JLPT N2 — Đáp án mẫu và giải thích chi tiết</span></h1><div class="subtitle"><span class="lang-pane" data-lang="ja">テスト <strong>imported-n2-2024-12</strong> ｜ <span>全101問（言語知識・読解 71問 ＋ 聴解 30問）完全網羅解説集</span></span><span class="lang-pane" data-lang="vi">Đề <strong>imported-n2-2024-12</strong> ｜ <span>Giải thích đầy đủ 101 câu (Kiến thức ngôn ngữ・Đọc hiểu 71 câu ＋ Nghe 30 câu)</span></span></div></div></header>
 
 <div class="sticky-nav">
   <div class="nav-container">

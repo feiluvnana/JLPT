@@ -1,9 +1,11 @@
-"""The site chrome every page shares: ONE sticky top bar, ONE language dropdown.
+"""The site chrome every page shares: ONE sticky top bar, ONE language dropdown,
+ONE page header, ONE font link.
 
 Every page that shows interface text (portal, exam list, 解答.html, 練習.html,
-模範解答.html, the 知識 and ドリル pages) renders its top of screen through
-`topbar_html()` and switches language through the dropdown it contains — no page
-writes its own switch. The two printed booklets are the exception: they are
+模範解答.html, the 知識 and ドリル pages) is built as `head_html()` in <head>,
+`head_css()` in its <style>, then `body_open()` → `topbar_html()` →
+`header_html()` → content, and switches language through the bar's dropdown —
+no page writes its own switch, header or font link. The two printed booklets are the exception: they are
 official-paper replicas, and the exam's wording is Japanese on every page.
 
 Mechanism (unchanged from the segmented control it replaces): every translatable
@@ -55,6 +57,45 @@ def switcher_html(codes: list[str] | None = None, label: str | None = None) -> s
             f' data-langs="{html.escape(json.dumps(codes))}"{dis}>{opts}</select>')
 
 
+# The ONE web-font request every page makes (the booklets included), so the
+# browser's cache holds exactly one stylesheet and one set of font files across
+# the site. `display=optional`, not `swap`: a face that is not ready within the
+# first ~100 ms is skipped for that page view instead of swapping in late, so a
+# navigation never re-lays the bar and header out mid-view (the "flash" the owner
+# saw between screens, 2026-09-30); once cached it is used from the first paint.
+FONT_TAGS = (
+    '<link rel="preconnect" href="https://fonts.googleapis.com">'
+    '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
+    '<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900'
+    '&family=Noto+Serif+JP:wght@400;600;700&display=optional" rel="stylesheet">'
+)
+
+EARLY_MARK = "/* lang_ui: early language */"
+
+
+def head_html() -> str:
+    """What every page's <head> carries for the chrome: the one font link. Put
+    it before the page's own <style>."""
+    return FONT_TAGS
+
+
+def body_open(attrs: str = "", codes: list[str] | None = None) -> str:
+    """`<body data-lang=…>` plus the script that applies the SAVED language
+    before anything under it is parsed. Without it the page paints in the
+    primary language and switches when the bar's script runs — on a large page
+    (解答.html, 模範解答.html) the parser yields in between and the reader sees
+    the Japanese chrome flash first. `codes` = the languages this page offers
+    (default: every active one); `attrs` = the page's other body attributes."""
+    codes = codes or langs.order()
+    hl = {c: langs.html_lang(c) for c in codes}
+    js = (f"{EARLY_MARK}(function(){{var L={json.dumps(codes)},H={json.dumps(hl)},v=null;"
+          f"try{{v=localStorage.getItem({json.dumps(LANG_STORE_KEY)})}}catch(e){{}}"
+          "if(v&&L.indexOf(v)>=0){document.body.dataset.lang=v;"
+          "document.documentElement.lang=H[v]||v;}})();")
+    extra = f" {attrs.strip()}" if attrs.strip() else ""
+    return f'<body data-lang="{codes[0]}"{extra}><script>{js}</script>'
+
+
 def topbar_html(crumbs: list[tuple[str, str | None]], right_html: str = "",
                 codes: list[str] | None = None, label: str | None = None) -> str:
     """The sticky bar, followed by the switcher's script (it must run right
@@ -82,12 +123,18 @@ TOPBAR_CSS = """
    (min-height 3.4em at 11pt ≈ 50px, 1.8em side padding, gradient + shadow) —
    the owner's call on 2026-09-30, after a 40px slim bar read as too small.
    --tb-h is its height, for anything that sticks under it (players). */
-:root{--tb-h:50px}
+/* Site base, identical on every page so moving between them cannot shift or
+   repaint: the scrollbar's gutter is always reserved (a short page and a long
+   one lay out at the same width), the canvas is the pages' own background (no
+   white frame before the body paints), and the chrome uses ONE font stack of
+   its own, whatever --ui a page defines. */
+:root{--tb-h:50px;--tb-font:"Noto Sans JP",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Hiragino Sans","Yu Gothic",sans-serif}
+@media screen{html{scrollbar-gutter:stable;background:#f8fafc}}
 .topbar{position:sticky;top:0;z-index:1000;display:flex;align-items:center;
   height:var(--tb-h);padding:0 max(1.8em,env(safe-area-inset-right)) 0 max(1.8em,env(safe-area-inset-left));gap:.6em 1.2em;
   box-sizing:border-box;width:100%;max-width:100%;overflow:hidden;margin:0;
   background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);color:#e2e8f0;
-  font:500 11pt/1 var(--ui,system-ui,sans-serif);
+  font:500 11pt/1 var(--tb-font);
   box-shadow:0 4px 14px rgba(0,0,0,.08);border-bottom:1px solid rgba(255,255,255,.08)}
 .topbar .tb-crumbs{flex:1 1 0;min-width:2.5em;display:flex;align-items:center;gap:.45em;
   white-space:nowrap;overflow:hidden}
@@ -105,7 +152,7 @@ TOPBAR_CSS = """
 .topbar .tb-link,.topbar .tb-btn{display:inline-flex;align-items:center;justify-content:center;
   box-sizing:border-box;height:32px;min-height:0;padding:0 .85em;margin:0;border-radius:6px;
   border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:#e2e8f0;
-  font:700 10pt/1 var(--ui,system-ui,sans-serif);text-decoration:none;white-space:nowrap;
+  font:700 10pt/1 var(--tb-font);text-decoration:none;white-space:nowrap;
   cursor:pointer;box-shadow:none}
 .topbar .tb-link:hover,.topbar .tb-btn:hover{background:rgba(255,255,255,.18);color:#fff}
 .topbar .tb-btn.primary{background:#2563eb;border-color:#2563eb;color:#fff}
@@ -114,7 +161,7 @@ TOPBAR_CSS = """
 .topbar .tb-btn.primary:disabled:hover{background:#2563eb}
 .topbar .tb-sub{color:#94a3b8;font-variant-numeric:tabular-nums;white-space:nowrap}
 .topbar .tb-short{display:none}
-.lang-select{font:600 10pt/1 var(--ui,system-ui,sans-serif);color:#0f172a;background:#f8fafc;
+.lang-select{font:600 10pt/1 var(--tb-font);color:#0f172a;background:#f8fafc;
   border:1px solid #cbd5e1;border-radius:6px;height:32px;padding:0 1.6em 0 .6em;cursor:pointer;
   max-width:9.5em}
 .lang-select:focus-visible{outline:2px solid #60a5fa;outline-offset:1px}
@@ -194,35 +241,44 @@ def pane(ns: str, key: str, **kw) -> str:
 _pane = pane
 
 
-def header_html(title: str, subtitle: str = "", badge: bool = True,
-                width: str | None = None) -> str:
-    """The module header under the bar — the exam list's gradient block (site
-    badge, title, subtitle), shared so 試験, 知識 and ドリル open the same way.
-    `title`/`subtitle` are already-rendered (pane) markup. `width` aligns the
-    header's content with the page column below it (e.g. "60rem"); it scrolls
-    away with the page, only the bar sticks."""
-    style = f' style="max-width:{html.escape(width)}"' if width else ""
-    b = f'<span class="header-badge">{_pane("portal", "site_badge")}</span>' if badge else ""
+def header_html(title: str, subtitle: str = "") -> str:
+    """The page header under the bar — the same block on EVERY page but the
+    booklets (portal, exam list, 解答.html, 練習.html, 模範解答.html, 知識,
+    ドリル): the site badge, the title (「JLPT N2 …」; the portal root's is the
+    site name), the subtitle, on one 82em column. `title`/`subtitle` are
+    already-rendered (pane) markup. It scrolls away; only the bar sticks. No
+    options on purpose: a per-page width or a missing badge is exactly the
+    difference the owner saw between screens (2026-09-30)."""
+    b = f'<span class="header-badge">{_pane("portal", "site_badge")}</span>'
     sub = f'<div class="subtitle">{subtitle}</div>' if subtitle else ""
-    return (f'<header class="app-header"><div class="header-inner"{style}>{b}'
+    return (f'<header class="app-header"><div class="header-inner">{b}'
             f'<h1 class="title">{title}</h1>{sub}</div></header>')
 
 
 HEADER_CSS = """
-/* lang_ui: the module header (scrolls away; only the bar sticks). */
-header.app-header{background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);
-  color:#fff;padding:1rem 1.4rem 1.15rem}
-header.app-header .header-inner{max-width:82em;margin:0 auto;display:flex;flex-wrap:wrap;
-  align-items:baseline;gap:.2rem 1rem}
+/* lang_ui: the page header (scrolls away; only the bar sticks). Every property
+   the host page could otherwise leak in (the booklet's bare h1 rule, a body
+   line-height, a global reset) is set here, so it measures the same everywhere. */
+header.app-header{display:block;box-sizing:border-box;margin:0;border:0;
+  background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);color:#fff;
+  padding:1rem 1.4rem 1.15rem;font:400 16px/1.5 var(--tb-font);text-align:left}
+header.app-header .header-inner{box-sizing:border-box;max-width:82em;margin:0 auto;
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:.2rem 1rem}
 header.app-header .header-badge{display:inline-block;background:rgba(255,255,255,0.12);
-  color:#93c5fd;font-size:0.72rem;font-weight:700;padding:0.15rem 0.6rem;border-radius:9999px;
-  letter-spacing:0.04em;flex-basis:100%;max-width:max-content;margin-bottom:.35rem}
-header.app-header h1.title{font-size:1.4rem;font-weight:900;margin:0;color:#ffffff;
-  font-family:var(--ui,system-ui,sans-serif)}
-header.app-header .subtitle{color:#94a3b8;font-size:0.88rem;line-height:1.6}
+  color:#93c5fd;font:700 0.72rem/1.4 var(--tb-font);padding:0.15rem 0.6rem;border-radius:9999px;
+  letter-spacing:0.04em;margin:0}
+header.app-header h1.title{font:900 1.4rem/1.35 var(--tb-font);margin:0;padding:0;border:0;
+  background:none;color:#ffffff;letter-spacing:normal;text-align:left}
+/* Badge + title on the first row, the subtitle always on its own row: a long
+   subtitle then wraps within its row instead of changing the layout. */
+header.app-header .subtitle{color:#94a3b8;font:400 0.88rem/1.6 var(--tb-font);margin:0;
+  flex:1 1 100%;min-width:0}
 @media screen and (max-width: 54em){
   header.app-header{padding:.75rem 1rem .85rem}
-  header.app-header h1.title{font-size:1.15rem}
+  /* A phone stacks badge / title / subtitle on every page, never "title
+     beside the badge when it happens to fit". */
+  header.app-header .header-inner{display:block}
+  header.app-header h1.title{font-size:1.15rem;margin-top:.3rem}
   header.app-header .subtitle{font-size:.8rem}
 }
 @media print{header.app-header{background:none;color:#000}
@@ -231,5 +287,6 @@ header.app-header .subtitle{color:#94a3b8;font-size:0.88rem;line-height:1.6}
 
 
 def head_css() -> str:
-    """Everything a page's <style> needs for the chrome: the bar + pane hiding."""
+    """Everything a page's <style> needs for the chrome: site base, the bar, the
+    header and pane hiding."""
     return TOPBAR_CSS + HEADER_CSS + "\n.lang-pane{display:contents}\n" + langs.pane_css()

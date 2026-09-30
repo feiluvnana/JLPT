@@ -48,10 +48,7 @@ ORDER = langs.order()
 UI = langs.ui_table(NS)
 SPLIT_LIMIT = 3_000_000          # bytes: a single page above this is split per 大問 (SKILL.md)
 
-FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
-         '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
-         '<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700'
-         '&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">')
+FONTS = lang_ui.FONT_TAGS   # the one font link every page loads (lang_ui owns it)
 
 
 def esc(s) -> str:
@@ -218,7 +215,7 @@ def page(level: str, title: str, crumbs: list, body: str, scripts: str, stamps: 
 {lang_ui.head_css()}
 {CSS}</style>
 </head>
-<body class="drill" data-lang="{esc(PRIMARY)}">{stamps}
+{lang_ui.body_open('class="drill"')}{stamps}
 {lang_ui.topbar_html(crumbs, label=_ui(PRIMARY, "lang_label"))}
 {body}
 <div id="tip" role="tooltip"></div>

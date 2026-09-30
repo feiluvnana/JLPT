@@ -1,5 +1,7 @@
 {
   "doc_title": "JLPT {level} — Phiếu làm bài đề {id}",
+  "header_title": "JLPT {level} — Làm đề {id}",
+  "header_subtitle": "Chế độ thi, bấm giờ như phòng thi thật ｜ Kiến thức ngôn ngữ・Đọc hiểu {n_gengo} câu ＋ Nghe {n_choukai} câu",
   "crumb_sitting": "{id} (làm bài)",
   "crumb_result": "{id} (kết quả)",
   "tab_in_progress": "đang làm",

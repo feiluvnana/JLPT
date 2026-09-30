@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>N2 知識</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@400;600;700&display=optional" rel="stylesheet">
 <style>
 :root{
   --ink:#0f172a;
@@ -300,12 +300,18 @@ body[data-lang="vi"] .lang-pane:not([data-lang="vi"]) { display: none !important
    (min-height 3.4em at 11pt ≈ 50px, 1.8em side padding, gradient + shadow) —
    the owner's call on 2026-09-30, after a 40px slim bar read as too small.
    --tb-h is its height, for anything that sticks under it (players). */
-:root{--tb-h:50px}
+/* Site base, identical on every page so moving between them cannot shift or
+   repaint: the scrollbar's gutter is always reserved (a short page and a long
+   one lay out at the same width), the canvas is the pages' own background (no
+   white frame before the body paints), and the chrome uses ONE font stack of
+   its own, whatever --ui a page defines. */
+:root{--tb-h:50px;--tb-font:"Noto Sans JP",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Hiragino Sans","Yu Gothic",sans-serif}
+@media screen{html{scrollbar-gutter:stable;background:#f8fafc}}
 .topbar{position:sticky;top:0;z-index:1000;display:flex;align-items:center;
   height:var(--tb-h);padding:0 max(1.8em,env(safe-area-inset-right)) 0 max(1.8em,env(safe-area-inset-left));gap:.6em 1.2em;
   box-sizing:border-box;width:100%;max-width:100%;overflow:hidden;margin:0;
   background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);color:#e2e8f0;
-  font:500 11pt/1 var(--ui,system-ui,sans-serif);
+  font:500 11pt/1 var(--tb-font);
   box-shadow:0 4px 14px rgba(0,0,0,.08);border-bottom:1px solid rgba(255,255,255,.08)}
 .topbar .tb-crumbs{flex:1 1 0;min-width:2.5em;display:flex;align-items:center;gap:.45em;
   white-space:nowrap;overflow:hidden}
@@ -323,7 +329,7 @@ body[data-lang="vi"] .lang-pane:not([data-lang="vi"]) { display: none !important
 .topbar .tb-link,.topbar .tb-btn{display:inline-flex;align-items:center;justify-content:center;
   box-sizing:border-box;height:32px;min-height:0;padding:0 .85em;margin:0;border-radius:6px;
   border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:#e2e8f0;
-  font:700 10pt/1 var(--ui,system-ui,sans-serif);text-decoration:none;white-space:nowrap;
+  font:700 10pt/1 var(--tb-font);text-decoration:none;white-space:nowrap;
   cursor:pointer;box-shadow:none}
 .topbar .tb-link:hover,.topbar .tb-btn:hover{background:rgba(255,255,255,.18);color:#fff}
 .topbar .tb-btn.primary{background:#2563eb;border-color:#2563eb;color:#fff}
@@ -332,7 +338,7 @@ body[data-lang="vi"] .lang-pane:not([data-lang="vi"]) { display: none !important
 .topbar .tb-btn.primary:disabled:hover{background:#2563eb}
 .topbar .tb-sub{color:#94a3b8;font-variant-numeric:tabular-nums;white-space:nowrap}
 .topbar .tb-short{display:none}
-.lang-select{font:600 10pt/1 var(--ui,system-ui,sans-serif);color:#0f172a;background:#f8fafc;
+.lang-select{font:600 10pt/1 var(--tb-font);color:#0f172a;background:#f8fafc;
   border:1px solid #cbd5e1;border-radius:6px;height:32px;padding:0 1.6em 0 .6em;cursor:pointer;
   max-width:9.5em}
 .lang-select:focus-visible{outline:2px solid #60a5fa;outline-offset:1px}
@@ -359,20 +365,29 @@ body[data-lang="vi"] .lang-pane:not([data-lang="vi"]) { display: none !important
 }
 @media print{.topbar{display:none!important}}
 
-/* lang_ui: the module header (scrolls away; only the bar sticks). */
-header.app-header{background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);
-  color:#fff;padding:1rem 1.4rem 1.15rem}
-header.app-header .header-inner{max-width:82em;margin:0 auto;display:flex;flex-wrap:wrap;
-  align-items:baseline;gap:.2rem 1rem}
+/* lang_ui: the page header (scrolls away; only the bar sticks). Every property
+   the host page could otherwise leak in (the booklet's bare h1 rule, a body
+   line-height, a global reset) is set here, so it measures the same everywhere. */
+header.app-header{display:block;box-sizing:border-box;margin:0;border:0;
+  background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);color:#fff;
+  padding:1rem 1.4rem 1.15rem;font:400 16px/1.5 var(--tb-font);text-align:left}
+header.app-header .header-inner{box-sizing:border-box;max-width:82em;margin:0 auto;
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:.2rem 1rem}
 header.app-header .header-badge{display:inline-block;background:rgba(255,255,255,0.12);
-  color:#93c5fd;font-size:0.72rem;font-weight:700;padding:0.15rem 0.6rem;border-radius:9999px;
-  letter-spacing:0.04em;flex-basis:100%;max-width:max-content;margin-bottom:.35rem}
-header.app-header h1.title{font-size:1.4rem;font-weight:900;margin:0;color:#ffffff;
-  font-family:var(--ui,system-ui,sans-serif)}
-header.app-header .subtitle{color:#94a3b8;font-size:0.88rem;line-height:1.6}
+  color:#93c5fd;font:700 0.72rem/1.4 var(--tb-font);padding:0.15rem 0.6rem;border-radius:9999px;
+  letter-spacing:0.04em;margin:0}
+header.app-header h1.title{font:900 1.4rem/1.35 var(--tb-font);margin:0;padding:0;border:0;
+  background:none;color:#ffffff;letter-spacing:normal;text-align:left}
+/* Badge + title on the first row, the subtitle always on its own row: a long
+   subtitle then wraps within its row instead of changing the layout. */
+header.app-header .subtitle{color:#94a3b8;font:400 0.88rem/1.6 var(--tb-font);margin:0;
+  flex:1 1 100%;min-width:0}
 @media screen and (max-width: 54em){
   header.app-header{padding:.75rem 1rem .85rem}
-  header.app-header h1.title{font-size:1.15rem}
+  /* A phone stacks badge / title / subtitle on every page, never "title
+     beside the badge when it happens to fit". */
+  header.app-header .header-inner{display:block}
+  header.app-header h1.title{font-size:1.15rem;margin-top:.3rem}
   header.app-header .subtitle{font-size:.8rem}
 }
 @media print{header.app-header{background:none;color:#000}
@@ -499,8 +514,8 @@ a.cat:hover{border-color:var(--accent);box-shadow:0 2px 8px rgba(37,99,235,.12)}
 }
 </style>
 </head>
-<body data-lang="ja" data-tab="study">
-<!-- src_sha: 文法.json=118c4814c4ec -->
+<body data-lang="ja" data-tab="study"><script>/* lang_ui: early language */(function(){var L=["ja", "vi"],H={"ja": "ja", "vi": "vi"},v=null;try{v=localStorage.getItem("kaisetsuLang")}catch(e){}if(v&&L.indexOf(v)>=0){document.body.dataset.lang=v;document.documentElement.lang=H[v]||v;}})();</script>
+<!-- src_sha: 文法.json=66cca960dcb9 -->
 
 <!-- src_sha: 語彙.json=80216c969544 -->
 
@@ -548,7 +563,7 @@ a.cat:hover{border-color:var(--accent);box-shadow:0 2px 8px rgba(37,99,235,.12)}
   window.addEventListener('pageshow', function(e){ if (e.persisted) boot(); });
 })();
 </script>
-<header class="app-header"><div class="header-inner"><span class="header-badge"><span class="lang-pane" data-lang="ja">JLPT 学習ポータル · N1–N5</span><span class="lang-pane" data-lang="vi">CỔNG HỌC JLPT · N1–N5</span></span><h1 class="title">JLPT N2 <span class="lang-pane" data-lang="ja">知識</span><span class="lang-pane" data-lang="vi">Kiến thức</span></h1><div class="subtitle"><span class="lang-pane" data-lang="ja">分野を選んで、学習カードで覚え、クイズで確かめましょう。</span><span class="lang-pane" data-lang="vi">Chọn một phần, học bằng thẻ ghi nhớ rồi tự kiểm tra bằng câu hỏi.</span></div></div></header><main class="wrap"><div class="cats"><a class="cat" href="文法.html" data-cat="文法"><h2><span class="lang-pane" data-lang="ja">文法</span><span class="lang-pane" data-lang="vi">Ngữ pháp</span></h2><p><span class="lang-pane" data-lang="ja">N2の文法項目：接続・意味・使い方と例文</span><span class="lang-pane" data-lang="vi">Mẫu ngữ pháp N2: cách nối, ý nghĩa, cách dùng và câu ví dụ</span></p><div class="n">97 <span class="lang-pane" data-lang="ja">項目</span><span class="lang-pane" data-lang="vi">mục</span> · <span class="lang-pane" data-lang="ja">覚えた</span><span class="lang-pane" data-lang="vi">Đã nhớ</span> <span class="js-learned">0</span> / 97</div></a><div class="cat off" aria-disabled="true"><h2><span class="lang-pane" data-lang="ja">語彙</span><span class="lang-pane" data-lang="vi">Từ vựng</span></h2><p><span class="lang-pane" data-lang="ja">N2の語彙：読み・品詞・意味と例文</span><span class="lang-pane" data-lang="vi">Từ vựng N2: cách đọc, từ loại, nghĩa và câu ví dụ</span></p><div class="n"><span class="lang-pane" data-lang="ja">準備中</span><span class="lang-pane" data-lang="vi">Sắp có</span></div></div><div class="cat off" aria-disabled="true"><h2><span class="lang-pane" data-lang="ja">漢字</span><span class="lang-pane" data-lang="vi">Chữ Hán</span></h2><p><span class="lang-pane" data-lang="ja">N2の漢字：音読み・訓読みと語例</span><span class="lang-pane" data-lang="vi">Chữ Hán N2: âm On, âm Kun và từ ghép thường gặp</span></p><div class="n"><span class="lang-pane" data-lang="ja">準備中</span><span class="lang-pane" data-lang="vi">Sắp có</span></div></div><div class="cat off" aria-disabled="true"><h2><span class="lang-pane" data-lang="ja">読解</span><span class="lang-pane" data-lang="vi">Đọc hiểu</span></h2><p><span class="lang-pane" data-lang="ja">読解の解き方：問題タイプ別の攻略ガイド</span><span class="lang-pane" data-lang="vi">Cách làm bài đọc hiểu theo từng dạng câu hỏi</span></p><div class="n"><span class="lang-pane" data-lang="ja">準備中</span><span class="lang-pane" data-lang="vi">Sắp có</span></div></div><div class="cat off" aria-disabled="true"><h2><span class="lang-pane" data-lang="ja">聴解</span><span class="lang-pane" data-lang="vi">Nghe hiểu</span></h2><p><span class="lang-pane" data-lang="ja">聴解の解き方：問題タイプ別の攻略ガイド</span><span class="lang-pane" data-lang="vi">Cách làm bài nghe hiểu theo từng dạng câu hỏi</span></p><div class="n"><span class="lang-pane" data-lang="ja">準備中</span><span class="lang-pane" data-lang="vi">Sắp có</span></div></div></div></main>
+<header class="app-header"><div class="header-inner"><span class="header-badge"><span class="lang-pane" data-lang="ja">JLPT 学習ポータル · N1–N5</span><span class="lang-pane" data-lang="vi">CỔNG HỌC JLPT · N1–N5</span></span><h1 class="title">JLPT N2 <span class="lang-pane" data-lang="ja">知識</span><span class="lang-pane" data-lang="vi">Kiến thức</span></h1><div class="subtitle"><span class="lang-pane" data-lang="ja">分野を選んで、学習カードで覚え、クイズで確かめましょう。</span><span class="lang-pane" data-lang="vi">Chọn một phần, học bằng thẻ ghi nhớ rồi tự kiểm tra bằng câu hỏi.</span></div></div></header><main class="wrap"><div class="cats"><a class="cat" href="文法.html" data-cat="文法"><h2><span class="lang-pane" data-lang="ja">文法</span><span class="lang-pane" data-lang="vi">Ngữ pháp</span></h2><p><span class="lang-pane" data-lang="ja">N2の文法項目：接続・意味・使い方と例文</span><span class="lang-pane" data-lang="vi">Mẫu ngữ pháp N2: cách nối, ý nghĩa, cách dùng và câu ví dụ</span></p><div class="n">147 <span class="lang-pane" data-lang="ja">項目</span><span class="lang-pane" data-lang="vi">mục</span> · <span class="lang-pane" data-lang="ja">覚えた</span><span class="lang-pane" data-lang="vi">Đã nhớ</span> <span class="js-learned">0</span> / 147</div></a><div class="cat off" aria-disabled="true"><h2><span class="lang-pane" data-lang="ja">語彙</span><span class="lang-pane" data-lang="vi">Từ vựng</span></h2><p><span class="lang-pane" data-lang="ja">N2の語彙：読み・品詞・意味と例文</span><span class="lang-pane" data-lang="vi">Từ vựng N2: cách đọc, từ loại, nghĩa và câu ví dụ</span></p><div class="n"><span class="lang-pane" data-lang="ja">準備中</span><span class="lang-pane" data-lang="vi">Sắp có</span></div></div><div class="cat off" aria-disabled="true"><h2><span class="lang-pane" data-lang="ja">漢字</span><span class="lang-pane" data-lang="vi">Chữ Hán</span></h2><p><span class="lang-pane" data-lang="ja">N2の漢字：音読み・訓読みと語例</span><span class="lang-pane" data-lang="vi">Chữ Hán N2: âm On, âm Kun và từ ghép thường gặp</span></p><div class="n"><span class="lang-pane" data-lang="ja">準備中</span><span class="lang-pane" data-lang="vi">Sắp có</span></div></div><div class="cat off" aria-disabled="true"><h2><span class="lang-pane" data-lang="ja">読解</span><span class="lang-pane" data-lang="vi">Đọc hiểu</span></h2><p><span class="lang-pane" data-lang="ja">読解の解き方：問題タイプ別の攻略ガイド</span><span class="lang-pane" data-lang="vi">Cách làm bài đọc hiểu theo từng dạng câu hỏi</span></p><div class="n"><span class="lang-pane" data-lang="ja">準備中</span><span class="lang-pane" data-lang="vi">Sắp có</span></div></div><div class="cat off" aria-disabled="true"><h2><span class="lang-pane" data-lang="ja">聴解</span><span class="lang-pane" data-lang="vi">Nghe hiểu</span></h2><p><span class="lang-pane" data-lang="ja">聴解の解き方：問題タイプ別の攻略ガイド</span><span class="lang-pane" data-lang="vi">Cách làm bài nghe hiểu theo từng dạng câu hỏi</span></p><div class="n"><span class="lang-pane" data-lang="ja">準備中</span><span class="lang-pane" data-lang="vi">Sắp có</span></div></div></div></main>
 <script>
 
 window.JLPTKnowledgeStore = (function(){
@@ -595,7 +610,7 @@ window.JLPTKnowledgeStore = (function(){
 })();
 
 const LEVEL = "N2";
-const IDS = {"文法":["g-ni-atatte","g-ippou-da","g-shidai","g-ni-watatte","g-ni-tsurete","g-o-towazu","g-dokoroka","g-wake-dewa-nai","g-monono","g-nagara-mo","g-gatai","g-wake-niwa-ikanai","g-kaneru","g-you-ga-nai","g-sue-ni","g-ni-chigai-nai","g-ni-suginai","g-shika-nai","g-koto-wa-nai","g-zaru-o-enai","g-te-ageru","g-te-morau","g-te-kureru","g-dake","g-ukemi","g-shieki","g-shieki-ukemi","g-okageda","g-keigo-kudasaru","g-keigo-itadaku","g-tte","g-joken","g-toshitara","g-tonaruto","g-you-ni","g-te-kuru","g-te-iku","g-toshite","g-rashii","g-mai","g-mai-24-5","g-uchini","g-ni-taishi-te","g-toha","g-sou-ni-nai","g-hazu","g-bekida","g-koto-ni-naru","g-sura","g-fukugou","g-keigo-o-ni-naru","g-koso","g-keigo-mousu","g-kotodarou","g-toittemo","g-sae","g-tabi-ni","g-ni-oite","g-keigo-ukagau","g-gurai","g-tedemo","g-koto-ni","g-koto-kara","g-tatte","g-kotoda","g-kotoda-26-5","g-karaniha","g-nishiteha","g-towa-iinagara","g-ka-douka","g-keigo-okoshi","g-teshikataganai","g-zu-ni-sumu","g-keigo-mairu","g-mono-da-honshitsu","g-mono-da-chuukoku","g-mono-da-kaisou","g-mono-da-kangai","g-muke-da","g-shidai-da","g-amari","g-warini","g-kiri","g-toshitenai","g-wake-da","g-gachi","g-adv-masaka","g-joshi-mo","g-toshitemo","g-nishitara","g-nishitemonishitemo","g-eru","g-tatokoro","g-kanenai","g-to-iu-koto-da","g-to-iu-koto-ni-naru","g-buri"],"語彙":[],"漢字":[],"読解":[],"聴解":[]};
+const IDS = {"文法":["g-ni-atatte","g-ippou-da","g-shidai","g-ni-watatte","g-ni-tsurete","g-o-towazu","g-dokoroka","g-wake-dewa-nai","g-monono","g-nagara-mo","g-gatai","g-wake-niwa-ikanai","g-kaneru","g-you-ga-nai","g-sue-ni","g-ni-chigai-nai","g-ni-suginai","g-shika-nai","g-koto-wa-nai","g-zaru-o-enai","g-te-ageru","g-te-morau","g-te-kureru","g-dake","g-ukemi","g-shieki","g-shieki-ukemi","g-okageda","g-keigo-kudasaru","g-keigo-itadaku","g-tte","g-joken","g-toshitara","g-tonaruto","g-you-ni","g-te-kuru","g-te-iku","g-toshite","g-rashii","g-mai","g-mai-24-5","g-uchini","g-ni-taishi-te","g-toha","g-sou-ni-nai","g-hazu","g-bekida","g-koto-ni-naru","g-sura","g-fukugou","g-keigo-o-ni-naru","g-koso","g-keigo-mousu","g-kotodarou","g-toittemo","g-sae","g-tabi-ni","g-ni-oite","g-keigo-ukagau","g-gurai","g-tedemo","g-koto-ni","g-koto-kara","g-tatte","g-kotoda","g-kotoda-26-5","g-karaniha","g-nishiteha","g-towa-iinagara","g-ka-douka","g-keigo-okoshi","g-teshikataganai","g-zu-ni-sumu","g-keigo-mairu","g-mono-da-honshitsu","g-mono-da-chuukoku","g-mono-da-kaisou","g-mono-da-kangai","g-muke-da","g-shidai-da","g-amari","g-warini","g-kiri","g-toshitenai","g-wake-da","g-gachi","g-adv-masaka","g-joshi-mo","g-toshitemo","g-nishitara","g-nishitemonishitemo","g-eru","g-tatokoro","g-kanenai","g-to-iu-koto-da","g-to-iu-koto-ni-naru","g-buri","g-keigo-oide","g-toiuto","g-toieba","g-toittara","g-wo-tsuuji-te","g-to-no-koto","g-nomi","g-neba","g-tsuide-ni","g-naidemonai","g-keigo-goran","g-adv-ittai","g-tekaradenaito","g-karatoitte","g-nitotte","g-tai-garu","g-tehajimete","g-te-irai","g-ni-kagira-zu","g-nimokakawarazu","g-mononara","g-dakeni","g-tokorodatta","g-kara-suru-to","g-koto-de","g-to-omou-to","g-utoshiteiru","g-wohajime","g-ni-kagiri","g-hamotoyori","g-ni-kanshi-te","g-nikaketeha","g-ni-sotte","g-nitsukete","g-nikakawarinaku","g-naikotoniha","g-wo-nuki-nishiteha","g-niyotte","g-monodakara","g-nado","g-made","g-nikimatteiru","g-tenaranai","g-naiwakeniikanai","g-ni-sakidatte","g-nikui","g-nara-tomokaku","g-kkonai","g-te-wa-douka","g-to-iu-you-ni"],"語彙":[],"漢字":[],"読解":[],"聴解":[]};
 
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('[data-cat]').forEach(el => {

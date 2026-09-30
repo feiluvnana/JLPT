@@ -73,5 +73,13 @@
   "speed_normal": "Bình thường",
   "speed_slow": "Chậm",
   "pitch_credit": "Nguồn dữ liệu trọng âm",
-  "parts_lead": "Chủ đề này có nhiều mục nên được chia thành từng phần. Mở một phần để học bằng thẻ và làm câu hỏi tự kiểm tra; các mục “Đã nhớ” được ghi chung cho cả chủ đề."
+  "parts_lead": "Chủ đề này có nhiều mục nên được chia thành từng phần. Mở một phần để học bằng thẻ và làm câu hỏi tự kiểm tra; các mục “Đã nhớ” được ghi chung cho cả chủ đề.",
+  "gen_r_stem": "Cách đọc đúng của {w} là gì?",
+  "gen_m_stem": "{w} có nghĩa là gì?",
+  "gen_r_key": "Đáp án: 「{r}」 — đây là cách đọc của 「{w}」.",
+  "gen_meaning": "Nghĩa: {m}",
+  "gen_r_other": "「{d}」 là cách đọc của từ 「{w}」, không phải từ này.",
+  "gen_r_fake": "「{d}」 là lỗi đọc chữ 「{k}」 thành 「{s}」; trong từ này, 「{k}」 đọc là 「{t}」.",
+  "gen_m_key": "Đáp án: “{m}” — đó là nghĩa của {w}.",
+  "gen_m_other": "“{m}” là nghĩa của 「{w}」."
 }

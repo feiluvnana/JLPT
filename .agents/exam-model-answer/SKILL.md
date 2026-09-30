@@ -26,12 +26,16 @@ the ドリル pages, `jlpt-drill`).
 booklets renders its top through `topbar_html(crumbs, right_html, codes)` — ONE
 sticky bar with the breadcrumb and a `<select class="lang-select">`
 (`switcher_html()`; `codes` narrows it to the languages the page has content in,
-one option renders disabled) — plus `head_css()` (bar CSS + `.lang-pane` hiding).
+one option renders disabled) — plus `head_css()` (site base, bar, header CSS +
+`.lang-pane` hiding), `head_html()` (the one font link), `body_open()` (the saved
+language set before the page parses — no primary-language flash) and
+`header_html(title, subtitle)` (the one page header; exam-app §On-screen layout).
 Its `SWITCHER_JS` sets `body[data-lang]`, persists the choice under
 `LANG_STORE_KEY` (re-exported here as `build_model_answer.LANG_STORE_KEY`), and
 fires `langchange` on `document` for text a page writes in JS. Nobody writes a
 switch of their own; `make check` (`check_site_chrome`) FAILs a page without
-exactly one bar and one dropdown, or with the retired `.lang-btn`. No builder or gate check may type a learner code —
+exactly one bar, one dropdown and one header, another font link, a body not
+opened by `body_open()`, or the retired `.lang-btn`. No builder or gate check may type a learner code —
 `make check` (`check_language_registry`) greps for one.
 
 **Add a third language** (replace one: swap its code in `order`, same steps):

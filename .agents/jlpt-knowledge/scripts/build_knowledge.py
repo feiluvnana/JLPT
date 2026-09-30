@@ -51,6 +51,7 @@ import build_model_answer as BMA  # noqa: E402  (apply_furigana, EXPLANATION_CSS
 import lang_ui                    # noqa: E402  (the one sticky bar + language dropdown)
 import app_style                  # noqa: E402
 import local_store                # noqa: E402
+import quiz_gen                   # noqa: E402  (generated 語彙/漢字 quiz items)
 
 # Pitch accent: an optional dataset module (references/pitch/, its own owner).
 # Absent or broken -> no pitch lines at all; the page never guesses one.
@@ -68,10 +69,7 @@ ORDER = langs.order()
 UI = langs.ui_table(NS)
 ITEM_PROSE = ("meaning", "usage", "nuance", "compare")
 
-FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
-         '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
-         '<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700'
-         '&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">')
+FONTS = lang_ui.FONT_TAGS   # the one font link every page loads (lang_ui owns it)
 
 
 def esc(s) -> str:
@@ -383,7 +381,62 @@ def quiz_items(spec: dict, entries: list[dict], prose: dict, heads: dict) -> lis
                         "g": e.get("group", ""), "stem": fu(q.get("stem", "")),
                         "opts": [fu(o) for o in opts], "a": q["answer"],
                         "x": panes(expl), "from": esc(heads.get(e["id"], e["id"]))})
+        for it in GEN.get(e["id"], []):
+            out.append(gen_quiz_item(it, e, ei, prose, heads))
     return out
+
+
+# Generated 語彙/漢字 items (quiz_gen.py): computed ONCE per category over every
+# part by build_category(), so each part page ships the same items the gate checks.
+GEN: dict[str, list[dict]] = {}
+
+
+def _fmt(c: str, key: str, **vals) -> str:
+    """A knowledge.json template, escaped, with pre-rendered HTML spliced into {slots}."""
+    t = esc(UI.get(c, {}).get(key) or UI[PRIMARY].get(key, key))
+    for k, v in vals.items():
+        t = t.replace("{" + k + "}", v)
+    return t
+
+
+def gen_quiz_item(it: dict, e: dict, ei: int, prose: dict, heads: dict) -> dict:
+    """One generated item as the page's quiz data: stem, options and explanation are
+    rendered per language (`.lang-pane`), the key position is the same in every pane."""
+    reading = it.get("reading") or ""
+    word = (fu(f"｜{it['word']}《{reading}》") if reading and reading != it["word"] else esc(it["word"]))
+    shown = f'<b class="gen-hw">{word}</b>'
+    if it["kind"] == "reading":
+        stem = panes(lambda c: _fmt(c, "gen_r_stem", w=shown), tag="span")
+        opts = [esc(o) for o in it["options"]]
+
+        def expl(c):
+            m = prose_for(prose, e["id"], c)[0].get("meaning") or ""
+            ps = [_fmt(c, "gen_r_key", r=esc(it["key"]), w=esc(it["word"]))]
+            if m:
+                ps.append(_fmt(c, "gen_meaning", m=fu(m)))
+            for d in it["distractors"]:
+                if "kanji" in d:
+                    ps.append(_fmt(c, "gen_r_fake", d=esc(d["text"]), k=esc(d["kanji"]),
+                                   s=esc(d["as"]), t=esc(d["is"])))
+                else:
+                    ps.append(_fmt(c, "gen_r_other", d=esc(d["text"]), w=esc(d["word"])))
+            return "".join(f"<p>{p}</p>" for p in ps)
+    else:
+        stem = panes(lambda c: _fmt(c, "gen_m_stem", w=shown), tag="span")
+
+        def pick(text: dict, c: str) -> str:
+            return text[c] if c in it["key"] else text[PRIMARY]
+        opts = [panes(lambda c, o=o: fu(pick(o, c) if isinstance(o, dict) else o), tag="span")
+                for o in it["options"]]
+
+        def expl(c):
+            ps = [_fmt(c, "gen_m_key", w=word, m=fu(pick(it["key"], c)))]
+            for d in it["distractors"]:
+                ps.append(_fmt(c, "gen_m_other", m=fu(pick(d["text"], c)), w=esc(d["word"])))
+            return "".join(f"<p>{p}</p>" for p in ps)
+    return {"qid": it["qid"], "e": ei, "id": e["id"], "g": e.get("group", ""), "stem": stem,
+            "opts": opts, "a": it["answer"], "x": panes(expl),
+            "from": esc(heads.get(e["id"], e["id"]))}
 
 
 # ------------------------------------------------------------------ page chrome
@@ -743,7 +796,7 @@ def page(level: str, title: str, trail: list, body: str,
 {lang_ui.head_css()}
 {CSS}</style>
 </head>
-<body data-lang="{esc(PRIMARY)}" data-tab="study">{stamps}
+{lang_ui.body_open('data-tab="study"')}{stamps}
 {lang_ui.topbar_html(trail)}
 {body}{footer}
 <script>
@@ -788,6 +841,8 @@ def build_category(level: str, spec: dict) -> list[Path]:
     cat = D.locate(level, spec)
     entries, prose = D.load_entries(cat)
     entries = [e for e in entries if isinstance(e.get("id"), str)]
+    GEN.clear()
+    GEN.update(quiz_gen.generate(spec, entries, prose))   # whole category, before any part
     heads = {e["id"]: headword_plain(spec, e, prose) for e in entries}
     # Part pages are build output beside the part data: drop any whose part is gone
     # (or every one, once the category is no longer split).

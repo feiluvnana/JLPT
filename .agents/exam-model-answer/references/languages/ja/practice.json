@@ -1,5 +1,7 @@
 {
   "doc_title": "テスト {test_id}（練習モード）",
+  "header_title": "JLPT {level} 練習モード {test_id}",
+  "header_subtitle": "制限時間なし・採点なし ｜ 全{n_all}問、1問ずつ解説を開けます",
   "bar_title": "テスト {test_id}（練習モード）",
   "back": "← テスト一覧",
   "exam_mode": "試験モードへ",

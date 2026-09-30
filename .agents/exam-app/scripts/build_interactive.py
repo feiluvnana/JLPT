@@ -2019,6 +2019,10 @@ def render_combined(gengo_md: str, choukai_md: str, testid: str, keys: list,
                 f'<button type="button" onclick="submitAll(false)" id="grade-btn" '
                 f'class="tb-btn primary" disabled>{T2("btn_grade")}</button></span>')
     bar = topbar(level, back_href, here, controls)
+    # The page header every screen shares (lang_ui.header_html): it scrolls
+    # away above the gates, the exam and the result; only the bar sticks.
+    header = lang_ui.header_html(T("header_title", level=level, id=testid),
+                                 T("header_subtitle", n_gengo=n_gengo, n_choukai=n_choukai))
 
     body = (
         f'<div id="screen-exam">'
@@ -2047,7 +2051,7 @@ def render_combined(gengo_md: str, choukai_md: str, testid: str, keys: list,
         f'<meta name="viewport" content="width=device-width,initial-scale=1">'
         f'<script>if(window.location.search&&window.location.search.indexOf("screen=result")!==-1){{'
         f'document.documentElement.classList.add("is-result-mode");}}</script>'
-        f'{booklet.FONT_TAGS}'
+        f'{lang_ui.head_html()}'
         f'<title>{title}</title>'
         # Staleness stamps for every source whose CONTENT is baked into this
         # file — the two Markdowns and, because the 聴解 scripts are embedded
@@ -2055,7 +2059,7 @@ def render_combined(gengo_md: str, choukai_md: str, testid: str, keys: list,
         # as 聴解_チャプター.json's script_sha; see booklet.src_sha_comments.
         f'{booklet.src_sha_comments(sources)}'
         f'<style>{booklet.CSS}{booklet.SCREEN_CSS}{EXTRA_CSS}{lang_ui.head_css()}</style></head>'
-        f'<body data-lang="{LANGS_REG.primary()}">{bar}{body}<div id="screen-result"></div>'
+        f'{lang_ui.body_open()}{bar}{header}{body}<div id="screen-result"></div>'
         f'<script>{js}{PLAYER_JS if player else ""}</script>'
         f'</body></html>',
         encoding="utf-8")

@@ -1,5 +1,7 @@
 {
   "doc_title": "Đề {test_id}（Luyện tập）",
+  "header_title": "JLPT {level} — Luyện tập đề {test_id}",
+  "header_subtitle": "Không bấm giờ, không chấm điểm ｜ {n_all} câu, câu nào cũng mở được lời giải riêng",
   "bar_title": "Đề {test_id}（Luyện tập）",
   "back": "← Danh sách đề",
   "exam_mode": "Sang chế độ thi",

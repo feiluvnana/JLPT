@@ -15396,7 +15396,13 @@ def check_site_chrome():
             pages[f"<list {mode}>"] = iv.index_html(mode, [], level="N2")
     except Exception as e:     # noqa: BLE001 — a render that crashes is the finding
         check("the portal and list render", False, f"{type(e).__name__}: {e}")
-    bad = []
+    bad, drift = [], []
+    try:
+        lu = sys.modules.get("lang_ui") or load(".agents/exam-model-answer/scripts/lang_ui.py")
+        fonts, early = lu.FONT_TAGS, lu.EARLY_MARK
+    except Exception as e:     # noqa: BLE001
+        check("lang_ui loads", False, f"{type(e).__name__}: {e}")
+        fonts = early = None
     for name, text in pages.items():
         bars = text.count('<nav class="topbar"')
         sels = text.count('<select class="lang-select"')
@@ -15404,12 +15410,34 @@ def check_site_chrome():
         if bars != 1 or sels != 1 or old:
             bad.append(f"{name} (topbar×{bars}, lang-select×{sels}"
                        f"{', old segmented control' if old else ''})")
+        if fonts is None:
+            continue
+        # The rest of the shared chrome (owner, 2026-09-30: every screen must
+        # open the same way, with no flash between them): ONE lang_ui header,
+        # the ONE font link and no other, and the saved language applied by
+        # the first thing inside <body>.
+        why = []
+        if (n := text.count('<header class="app-header">')) != 1:
+            why.append(f"app-header×{n}")
+        if text.count(fonts) != 1 or text.count("fonts.googleapis.com/css") != 1:
+            why.append("font link is not lang_ui.FONT_TAGS alone")
+        m = re.search(r"<body[^>]*>", text)
+        if not m or not text.startswith(f"<script>{early}", m.end()):
+            why.append("<body> does not open with lang_ui.body_open()")
+        if why:
+            drift.append(f"{name} ({', '.join(why)})")
     check(f"{len(pages)} non-booklet page(s) carry exactly one .topbar and one "
           f".lang-select, and no .lang-btn", not bad,
           f"{len(bad)}: {'; '.join(bad[:5])}{' …' if len(bad) > 5 else ''} — render "
           f"the top of the page through lang_ui.topbar_html() (exam-model-answer "
           f"scripts), merge any sticky bar of the page's own into its right_html, "
           f"and rebuild (make sheet / make model-answer / make knowledge)")
+    check(f"{len(pages)} non-booklet page(s) open with lang_ui.body_open(), load only "
+          f"lang_ui.FONT_TAGS and carry exactly one lang_ui header", not drift,
+          f"{len(drift)}: {'; '.join(drift[:5])}{' …' if len(drift) > 5 else ''} — build "
+          f"the page through lang_ui.head_html() / body_open() / header_html() (no "
+          f"font link, header or header CSS of its own) and rebuild (make sheet / "
+          f"make model-answer / make knowledge / make drill)")
     booklets = [f for f in (ROOT / "tests").glob("*/*.html")
                 if f.name in ("言語知識・読解.html", "聴解.html")
                 and ('<nav class="topbar"' in (t := f.read_text(encoding="utf-8"))

@@ -496,6 +496,9 @@ def build(d: Path, out_dir: Path | None = None, storage: str = "server") -> Path
                         f'{label(langs, "exam_mode")}</button>'),
                     codes=langs)
 
+    header = bi.lang_ui.header_html(label(langs, "header_title", level=level, test_id=d.name),
+                                    label(langs, "header_subtitle", n_all=n_all))
+
     note = (f'<div class="pr-note">{label(langs, "note", n_all=n_all)}'
             f'<div class="pr-note-links">'
             f'<a class="ui-btn" href="模範解答.html">'
@@ -517,7 +520,7 @@ def build(d: Path, out_dir: Path | None = None, storage: str = "server") -> Path
         f'<!DOCTYPE html><html lang="{UI[langs[0]]["html_lang"]}">'
         f'<head><meta charset="utf-8">'
         f'<meta name="viewport" content="width=device-width,initial-scale=1">'
-        f'{bi.booklet.FONT_TAGS}'
+        f'{bi.lang_ui.head_html()}'
         f'<title>{UI[langs[0]]["doc_title"].format(test_id=d.name)}</title>'
         # Same staleness stamps as 解答.html, plus the two explanation sets this
         # page renders: an explanation rewritten after the page was built is
@@ -526,7 +529,7 @@ def build(d: Path, out_dir: Path | None = None, storage: str = "server") -> Path
         f'<style>{bi.booklet.CSS}{bi.booklet.SCREEN_CSS}{bi.app_style.APP_CSS}'
         f'{bi.EXTRA_CSS}{ma.EXPLANATION_CSS}{ma.PASSAGE_TOGGLE_CSS}'
         f'{bi.lang_ui.head_css()}{PRACTICE_CSS}</style></head>'
-        f'<body data-lang="{langs[0]}">{bar}{body}'
+        f'{bi.lang_ui.body_open(codes=langs)}{bar}{header}{body}'
         f'<script>{js}</script></body></html>',
         encoding="utf-8")
 

@@ -566,9 +566,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{doc_title}</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
+{font_tags}
 <style>
 :root {{
   --primary: #1e3a8a;
@@ -609,69 +607,8 @@ ruby rt {{
   user-select: none;
 }}
 
-/* The page header: ordinary page content under lang_ui's sticky topbar
-   (which carries the breadcrumb, the way back and the language dropdown). */
-header.app-header {{
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  color: #fff;
-  padding: 0.9rem 1.25rem 1rem;
-}}
-.header-inner {{
-  max-width: 1050px;
-  margin: 0 auto;
-}}
-.header-top-row {{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 0.75rem;
-  flex-wrap: wrap;
-}}
-.header-back-btn {{
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  color: #cbd5e1;
-  text-decoration: none;
-  font-size: 0.88rem;
-  font-weight: 700;
-  padding: 0.35rem 0.85rem;
-  border-radius: 6px;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.15);
-  transition: all 0.15s ease;
-}}
-.header-back-btn:hover {{
-  background: rgba(255,255,255,0.18);
-  color: #ffffff;
-  border-color: rgba(255,255,255,0.3);
-}}
-.header-badge {{
-  display: inline-block;
-  background: rgba(255,255,255,0.12);
-  color: #93c5fd;
-  font-size: 0.8rem;
-  font-weight: 700;
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
-  letter-spacing: 0.04em;
-}}
-h1.title {{
-  font-size: 1.35rem;
-  font-weight: 900;
-  margin-bottom: 0.2rem;
-  color: #ffffff;
-}}
-@media (max-width: 600px) {{
-  header.app-header {{ padding: 0.7rem 0.9rem 0.8rem; }}
-  h1.title {{ font-size: 1.1rem; }}
-  .subtitle {{ font-size: 0.8rem; }}
-}}
-.subtitle {{
-  color: #94a3b8;
-  font-size: 0.92rem;
-}}
+/* The page header is lang_ui.header_html() + HEADER_CSS (in {topbar_css}),
+   the same block every page opens with. */
 
 /* Section tabs + search: page content, NOT a second sticky bar (the one
    sticky bar is lang_ui's topbar; only the audio player sticks under it). */
@@ -1008,14 +945,9 @@ footer {{
 }}
 </style>
 </head>
-<body data-lang="{default_lang}">
+{body_open}
 {topbar_html}
-<header class="app-header">
-  <div class="header-inner">
-    <h1 class="title">{lbl_title}</h1>
-    <div class="subtitle">{lbl_subtitle}</div>
-  </div>
-</header>
+{header_html}
 
 <div class="sticky-nav">
   <div class="nav-container">
@@ -1509,7 +1441,9 @@ def build_model_answer(test_dir: Path, out_path: Path | None = None) -> Path:
     rendered_html = HTML_TEMPLATE.format(
         explanation_css=EXPLANATION_CSS,
         passage_toggle_css=PASSAGE_TOGGLE_CSS,
-        topbar_css=lang_ui.TOPBAR_CSS,
+        topbar_css=lang_ui.head_css(),
+        font_tags=lang_ui.head_html(),
+        body_open=lang_ui.body_open(codes=langs),
         passage_toggle_js=PASSAGE_TOGGLE_JS,
         test_id=test_id,
         level=level,
@@ -1519,9 +1453,10 @@ def build_model_answer(test_dir: Path, out_path: Path | None = None) -> Path:
         default_lang=default_lang,
         topbar_html=topbar_html,
         lang_strings_json=json.dumps(js_strings, ensure_ascii=False),
-        lbl_title=pane(langs, lambda lg: UI[lg]["title"].format(level=level)),
-        lbl_subtitle=pane(langs, lambda lg: UI[lg]["subtitle"].format(
-            test_id=test_id, n_all=n_all, n_gengo=n_gengo, n_choukai=n_choukai)),
+        header_html=lang_ui.header_html(
+            pane(langs, lambda lg: UI[lg]["title"].format(level=level)),
+            pane(langs, lambda lg: UI[lg]["subtitle"].format(
+                test_id=test_id, n_all=n_all, n_gengo=n_gengo, n_choukai=n_choukai))),
         n_all=n_all, n_goi=n_goi, n_bunpou=n_bunpou, n_dokkai=n_dokkai,
         n_choukai=n_choukai,
         lbl_footer=pane(langs, lambda lg: UI[lg]["footer"].format(level=level)),

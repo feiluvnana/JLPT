@@ -25,7 +25,7 @@ server, the static Pages twin, and grading — all in `.agents/exam-app/scripts/
   colour. Must stay free of bare element selectors (loads on top of the
   booklet stylesheet).
 - `portal_view.py` — the level chooser and module chooser, plus the page shell
-  (lang_ui's sticky bar, the scrolling title header, `PORTAL_CSS`) every portal
+  (lang_ui's sticky bar and header, `PORTAL_CSS`) every portal
   screen and the exam list render through. Labels live in the language
   registry's `portal` namespace (`exam-model-answer/references/languages/<code>/portal.json`),
   one `.lang-pane` per language.
@@ -522,8 +522,19 @@ into it: `解答.html`'s right side is the two section tabs, the 「聴解 ｜ �
 read-out (`#where`), then `#bar-controls` — clock, counter, 消去, 聴解へ進む, 採点する
 (same ids, same gating); its page crumb reads 受験 / 採点結果 by
 `html.is-result-mode`. `練習.html`'s is the read-out, answered count, 解説をすべて開く
-and 試験モードへ. Page titles/heroes (portal, list, 模範解答) are ordinary content
-under it; 模範解答's tabs+search no longer stick.
+and 試験モードへ. 模範解答's tabs+search no longer stick.
+
+**Under the bar, every one of those pages opens with the same header** —
+`lang_ui.header_html(title, subtitle)`: site badge + 「JLPT N2 …」 title (the
+portal root: 「日本語能力試験 学習ポータル」) + subtitle on its own row, one 82em
+column, no options and no header CSS of a page's own (解答.html: 「JLPT N2 試験
+<id>」 above the gates, the exam and the result screen; it scrolls away, the bar
+with the clock sticks). **No flash between screens** (owner, 2026-09-30): each
+page loads `lang_ui.head_html()` (the ONE font link, `display=optional`) and opens
+`<body>` with `lang_ui.body_open()`, which applies the saved language before
+anything under it parses; `head_css()` reserves the scrollbar gutter and paints
+the canvas the pages' background. `make check` (`check_site_chrome`) FAILs a page
+with ≠1 `header.app-header`, another font link, or a body not opened that way.
 
 **解答.html's chrome is bilingual** — gates, bar, dialogs, result screen, player,
 advice — from the registry's `exam` namespace. Markup built in Python is

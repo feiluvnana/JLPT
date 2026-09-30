@@ -1,5 +1,7 @@
 {
   "doc_title": "JLPT {level} 模擬試験 解答用紙 ({id})",
+  "header_title": "JLPT {level} 試験 {id}",
+  "header_subtitle": "本番と同じ制限時間の試験モード ｜ 言語知識・読解 {n_gengo}問 ＋ 聴解 {n_choukai}問",
   "crumb_sitting": "{id}（受験）",
   "crumb_result": "{id}（採点結果）",
   "tab_in_progress": "受験中",

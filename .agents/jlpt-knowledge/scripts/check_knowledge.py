@@ -14,10 +14,14 @@ that does not resolve (a tracked refs/ extract missing = FAIL, a refs/ binary on
 a machine without the archive = skip, as check_refs does), language prose for an
 id the shared file does not have, band breaches, a language file carrying
 shared-material keys, a stale or missing built page, the band table in
-SKILL.md drifting from KNOWLEDGE_BANDS.
+SKILL.md drifting from KNOWLEDGE_BANDS, a generated 語彙/漢字 quiz item (quiz_gen.py)
+that breaks the integrity rules (a distractor that is a valid reading of the
+headword, a meaning distractor from a `related` entry, a key that is not the
+entry's own), the pitch dataset failing to load for a category that needs it.
 WARN: a shared entry with no prose in some active language, quiz answer
 positions unbalanced across a category, a language file for an inactive code,
-a repeated headword.
+a repeated headword, an entry whose generated item was skipped for want of
+safe distractors.
 """
 
 from __future__ import annotations
@@ -32,6 +36,8 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import knowledge_data as D   # noqa: E402
 import langs             # noqa: E402  (knowledge_data put its folder on sys.path)
+import quiz_gen as QG     # noqa: E402  (the generated 語彙/漢字 items)
+PITCH = QG.PITCH
 
 ROOT = D.ROOT
 SKILL_MD = HERE.parent / "SKILL.md"
@@ -384,6 +390,9 @@ def check_category(level: str, spec: dict, check, warn, skip, git_tracks):
              f"position should hold {exp * 0.5:.0f}–{exp * 1.5:.0f}; reorder options, "
              f"never re-key without re-solving")
 
+    if QG.types(spec):
+        check_generated(level, spec, cat, check, warn)
+
     # The built page(s), each stamped with every data file it was made from. A
     # split category is a list page plus one card page per part.
     if cat.layout == "split":
@@ -410,6 +419,99 @@ def check_category(level: str, spec: dict, check, warn, skip, git_tracks):
         check(f"{tag}/: no part page without its part", not stray,
               f"{stray[:4]} — a leftover of a removed part or an un-split category; "
               f"`make knowledge LEVEL={level}` deletes them")
+
+
+def check_generated(level: str, spec: dict, cat: D.Category, check, warn):
+    """The builder's generated 語彙/漢字 items (quiz_gen.py) re-verified against the data —
+    the integrity rules that make generation safe (SKILL.md §Quiz integrity):
+    a reading distractor is never the key, never a reading the vendored dataset lists
+    for the headword, never another same-headword entry's reading; a meaning
+    distractor never comes from this entry, its `related` (either direction) or a
+    same-headword entry, and is that owner's own meaning, differing from the key."""
+    tag = f"knowledge/{level}/{spec['stem']}"
+    entries, prose = D.load_entries(cat)
+    entries = [e for e in entries if isinstance(e.get("id"), str)]
+    if not entries:
+        return
+    kinds = QG.types(spec)
+    if "reading" in kinds:
+        check(f"{tag}: the pitch dataset loads (the reading quiz's integrity check needs it)",
+              QG.dataset_ok() and PITCH is not None,
+              "references/pitch/accents.tsv.gz or pitch.py failed to load — without it no "
+              "reading item can be proved safe, so none is generated")
+    by_id = {e["id"]: e for e in entries}
+    hw = {e["id"]: QG.headword(e, spec) for e in entries}
+    # (word, reading) pairs, walked here from the data rather than taken from the generator
+    same_word: dict[str, set[str]] = {}
+    for e in entries:
+        if spec["headword"] == "kanji":
+            for w in e.get("words") or []:
+                r = QG.kana_of(w)
+                if r:
+                    same_word.setdefault(D.plain(w).strip("〜～"), set()).add(r)
+        else:
+            r = QG.to_hira(QG.clean(str(e.get(spec.get("reading") or "", ""))))
+            if r:
+                same_word.setdefault(hw[e["id"]], set()).add(r)
+    gen = QG.generate(spec, entries, prose)
+    problems, n, seen = [], 0, set()
+    for eid, items in gen.items():
+        e = by_id.get(eid)
+        for it in items:
+            n += 1
+            w = f"{eid} {it['qid']}"
+            if it["qid"] in seen or it["qid"] != QG.qid(eid, it["kind"]):
+                _bad(problems, w, "qid repeated or not <id>#r / <id>#m")
+            seen.add(it["qid"])
+            opts, a = it.get("options") or [], it.get("answer")
+            flat = [o if isinstance(o, str) else D.plain(o.get(langs.primary(), "")) for o in opts]
+            if len(opts) != 4 or len(set(flat)) != 4 or not (isinstance(a, int) and 1 <= a <= 4):
+                _bad(problems, w, f"needs 4 distinct options and an answer 1–4: {flat} / {a!r}")
+                continue
+            if opts[a - 1] != it["key"]:
+                _bad(problems, w, "the keyed option is not the entry's own reading/meaning")
+            ds = [o for i, o in enumerate(opts) if i != a - 1]
+            if it["kind"] == "reading":
+                word, key = it["word"], it["key"]
+                valid = set(same_word.get(word, set()))
+                if PITCH is not None:
+                    valid |= {QG.to_hira(r) for r in PITCH.readings(word)}
+                if key not in same_word.get(word, set()):
+                    _bad(problems, w, f"key 「{key}」 is not a reading the entry gives 「{word}」")
+                for d in ds:
+                    if d == key or d in valid:
+                        _bad(problems, w, f"distractor 「{d}」 is a valid reading of 「{word}」 "
+                             f"(entry data or the vendored UniDic/Open JTalk dataset)")
+            else:
+                mine = QG.meanings(prose, eid)
+                if any(it["key"].get(c) != mine.get(c) for c in it["key"]):
+                    _bad(problems, w, "keyed meaning is not the entry's own `meaning`")
+                banned = {eid} | set(e.get("related") or []) | {
+                    x["id"] for x in entries
+                    if eid in (x.get("related") or []) or hw[x["id"]] == hw[eid]}
+                for d in it["distractors"]:
+                    o = d.get("owner")
+                    if o in banned:
+                        _bad(problems, w, f"meaning distractor from {o}, which is this entry, "
+                             f"a `related` look-alike or a same-headword entry")
+                    theirs = QG.meanings(prose, o) if o in by_id else {}
+                    for c, t in d["text"].items():
+                        if theirs.get(c) != t or D.plain(t).strip() == D.plain(mine.get(c, "")).strip():
+                            _bad(problems, w, f"{c} distractor 「{D.plain(t)}」 is not {o}'s own "
+                                 f"meaning, or equals the key")
+    check(f"{tag}: {n} generated quiz items keep the integrity rules", not problems,
+          "; ".join(problems[:8]) + (f"; … {len(problems) - 8} more" if len(problems) > 8 else "")
+          + " — quiz_gen.py must exclude it (jlpt-knowledge §Quiz integrity); never hand-patch a page")
+    short = []
+    for e in entries:
+        got = {it["kind"] for it in gen.get(e["id"], [])}
+        if "reading" in kinds and "reading" not in got and QG.reading_target(e, spec):
+            short.append(f"{e['id']}#r")
+        if "meaning" in kinds and "meaning" not in got and langs.primary() in QG.meanings(prose, e["id"]):
+            short.append(f"{e['id']}#m")
+    warn(f"{tag}: every entry gets its generated quiz items", not short,
+         f"{len(short)} skipped for want of 3 safe distractors ({short[:6]}) — normal while a "
+         f"category is small; it fills as batches land")
 
 
 def check_index(level: str, check):

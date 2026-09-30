@@ -68,12 +68,7 @@ KNOWLEDGE_DIR = KNOWLEDGE.name   # /knowledge/<LEVEL>/ — the 知識 module
 DRILL_DIR = DRILL.name           # /drill/<LEVEL>/ — the ドリル module
 INDEX = "index.html"
 
-FONT_TAGS = (
-    '<link rel="preconnect" href="https://fonts.googleapis.com">'
-    '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
-    '<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900'
-    '&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">'
-)
+FONT_TAGS = lang_ui.FONT_TAGS   # the one font link (lang_ui owns it)
 
 # The page header and card chrome every portal screen shares — the exam list
 # included (index_view adds only its own list CSS on top). The sticky part is
@@ -236,18 +231,17 @@ def page(*, title_key: str, title_kw: dict, h1: str, subtitle: str, crumbs: list
     p = langs.primary()
     titles = {c: tr(c, title_key, **title_kw) for c in langs.order()}
     js = ATTR_JS % {"titles": json.dumps(titles, ensure_ascii=False)}
-    # The root screen's bar names the site; deeper screens carry the trail
-    # there and keep the site badge in the (scrolling) header instead.
-    trail = crumbs or [(pane("site_badge"), None)]
+    # Bar and header are the same on every screen (lang_ui): the trail in the
+    # bar, the site badge + title + subtitle in the scrolling header.
     return (
         f'<!DOCTYPE html><html lang="{langs.html_lang(p)}"><head><meta charset="utf-8">'
         '<meta name="viewport" content="width=device-width,initial-scale=1">'
-        f'{FONT_TAGS}<title>{html.escape(titles[p])}</title>'
+        f'{lang_ui.head_html()}<title>{html.escape(titles[p])}</title>'
         f'<style>{app_style.APP_CSS}{ma.EXPLANATION_CSS}{lang_ui.head_css()}{PORTAL_CSS}{extra_css}</style>'
-        f'</head><body data-lang="{p}">'
+        f'</head>{lang_ui.body_open()}'
         f'<script>{js}</script>{head_js}'
-        f'{lang_ui.topbar_html(trail, right)}'
-        f'{lang_ui.header_html(h1, subtitle, badge=bool(crumbs))}'
+        f'{lang_ui.topbar_html(crumbs, right)}'
+        f'{lang_ui.header_html(h1, subtitle)}'
         f'<main>{body}</main>'
         f'<script>{tail_js}\npaintAttrs(currentLang());</script>'
         '</body></html>')
@@ -280,7 +274,8 @@ def portal_html(levels: list[dict]) -> str:
             f'<p class="lede">{pane("choose_level_lede")}</p>'
             f'<div class="pt-grid">{"".join(cards)}</div>')
     return page(title_key="doc_title_root", title_kw={}, h1=pane("site_title"),
-                subtitle=pane("site_subtitle"), crumbs=[], body=body)
+                subtitle=pane("site_subtitle"), crumbs=[(pane("crumb_home"), None)],
+                body=body)
 
 
 def _module_card(mod: str, href: str, inner: str, on: bool) -> str:
@@ -318,7 +313,7 @@ def module_html(s: dict) -> str:
             f'<div class="pt-grid mods">{exam}{know}{drill}</div>')
     return page(title_key="doc_title_level", title_kw={"level": lv},
                 h1=pane("level_title", level=lv),
-                subtitle=_status_badge(s["status"]),
+                subtitle=pane("status_" + s["status"]),   # plain text: a pill would make this header taller
                 crumbs=[(pane("crumb_home"), f"../{INDEX}"), (lv, None)], body=body)
 
 

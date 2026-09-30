@@ -275,6 +275,21 @@ Added by batch-4 QA (`qa/qa-report-knowledge-N2-文法-B4.md`):
     most two options may share it — and every もの/こと distractor is spliced in
     both readings. 「よく」「多い」-type frequency words in prose need a count.
 
+Added by batch-5 QA (`qa/qa-report-knowledge-N2-文法-B5.md`):
+
+21. **A quiz never reuses the scene of an official item** — cited or not,
+    whatever its distractors: print every cited item, write its scene in one
+    line, and keep the provenance scan over the listening `script.md` extracts
+    too (a 7/2022 script line was copied word for word).
+22. **Never key a string the archive prints as a wrong option in the same
+    frame** (「お持ちですか」 is a distractor in 12/2011 問題7-44): grep the key
+    among official distractors first.
+23. **No open doubt at hand-off**: any kill defended as "sounds odd", "barely
+    grammatical" or "rarely" is replaced before the batch leaves its author; a
+    reading heuristic in prose ("に → ở") is a claim, kept only with no
+    counterexample. The gate WARNs on the furigana errors that have shipped
+    twice (`check_ruby_suspects`: numeral+時《とき》, 三分《さんふん》-type, 入《いっ》).
+
 ## Pronunciation
 
 - **▶ speech** on every headword reading, every 漢字 `words` compound and every

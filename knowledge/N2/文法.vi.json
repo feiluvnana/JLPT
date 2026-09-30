@@ -2203,5 +2203,380 @@
       "Hai ví dụ cùng khuôn (Hokkaido — khoai tây, Shizuoka — trà) cho ý chung → 「というように」. 「にもかかわらず」 (mặc dù) cần hai vế trái ngược.",
       "Dẫn các câu cổ vũ làm nội dung tiếng hô → 「というように」. 「というより」 (nói đúng hơn là) cần một cách nói được sửa lại, ở đây không có."
     ]
+  },
+  "g-keigo-irassharu": {
+    "meaning": "Ở / đi / đến (tôn kính ngữ); 「〜ていらっしゃる」 = đang… (kính)",
+    "usage": "Tôn kính ngữ của 「いる」, 「行く」 và 「来る」; chủ ngữ là thầy cô, khách, cấp trên. Sau thể て: 「働いていらっしゃる」 là dạng kính của 「働いている」.",
+    "nuance": "Một từ ba nghĩa, ngữ cảnh quyết định: 「研究室にいらっしゃる」 = ở, 「京都へいらっしゃる」 = đi, 「明日こちらにいらっしゃる」 = đến. Không dùng cho việc của mình, và văn viết cứng không dùng kính ngữ với người đọc.",
+    "compare": "「お越しになる」 cũng tôn kính nhưng chỉ nghĩa “đi, đến”. 「参る」 là khiêm nhường: mình đi, mình đến. 「ございます」 thay 「ある」 (vật), còn 「いらっしゃる」 thay 「いる」 (người).",
+    "example_notes": [
+      "Thầy Yamada bây giờ có ở phòng nghiên cứu không ạ?",
+      "Nghe nói tuần sau thầy sẽ đi Kyoto dự hội thảo học thuật.",
+      "Cha của giám đốc đến giờ vẫn ra ruộng làm việc mỗi sáng."
+    ],
+    "quiz": [
+      "Nhân viên hỏi khách từ đâu đến: việc của khách → 「いらっしゃいました」. 「参りました」, 「伺いました」 là khiêm nhường, chỉ cho việc của người nói.",
+      "Người đi dạo là 「先生」, nên 「〜ている」 thành 「〜ていらっしゃる」. 「おる」 là khiêm nhường, biến việc của thầy thành việc phía mình."
+    ]
+  },
+  "g-keigo-nasaru": {
+    "meaning": "Làm (tôn kính ngữ của 「する」): việc người trên, khách làm",
+    "usage": "Thay 「する」 khi chủ ngữ là người được kính trọng: 「何をなさいますか」. Danh từ Hán: 「ご＋名詞＋なさる」 (「ご心配なさる」). Thể ます là 「なさいます」.",
+    "nuance": "Bẫy: 「いたす」 cũng là “làm” nhưng khiêm nhường, cho việc của mình. 「ご出発なさる」 (khách đi) và 「ご案内いたす」 (tôi hướng dẫn) cùng khung, ngược chiều.",
+    "compare": "「お〜になる」 là khuôn tôn kính chung (「お帰りになる」), 「なさる」 thay riêng cho 「する」. 「お〜する」 thì ngược lại: khiêm nhường, việc người nói làm.",
+    "example_notes": [
+      "Cuối tuần anh/chị thường làm gì ạ?",
+      "Nghe nói sáng nào giám đốc cũng chạy bộ.",
+      "Quý khách không cần lo lắng đâu ạ, thủ tục chúng tôi sẽ làm xong cho."
+    ],
+    "quiz": [
+      "Ngày xuất phát là việc của 「お客様」 → 「なさいます」. 「いたします」 cũng là “làm” nhưng khiêm nhường, như thể nhân viên xuất phát.",
+      "Người chơi thể thao là 「部長」 → 「なさっていた」. 「いたしていた」 là khiêm nhường, hạ việc của trưởng phòng xuống như việc của mình."
+    ]
+  },
+  "g-keigo-o-suru": {
+    "meaning": "Khiêm nhường ngữ: “tôi xin (làm)…” — hạ việc của mình",
+    "usage": "「お」 + thể ます bỏ ます + 「する」 (「お持ちする」, 「お送りする」); danh từ Hán: 「ご紹介する」. 「する」 có thể đổi thành 「いたす」: 「ご紹介いたします」.",
+    "nuance": "Chủ ngữ là mình hoặc phía mình, việc hướng tới người kia: mang giúp, gửi, giới thiệu. Bẫy: thêm 「になる」 (「お持ちになる」) là thành tôn kính.",
+    "compare": "「お〜になる」, 「なさる」 là tôn kính: chủ ngữ là khách, người trên. Mẹo: hỏi “ai làm?”. Tôi, phía tôi → 「お〜する」; khách → 「お〜になる」.",
+    "example_notes": [
+      "Trông nặng quá nhỉ. Để tôi mang hành lý giúp cho.",
+      "Tài liệu chi tiết, ngày mai tôi sẽ gửi qua email.",
+      "Từ tháng sau người phụ trách sẽ thay đổi, nên tôi xin giới thiệu người kế nhiệm."
+    ],
+    "quiz": [
+      "Chủ ngữ là 「私ども」 (phía cửa hàng) → 「お届けします」. 「お届けになります」 là tôn kính, tự nâng việc của mình lên.",
+      "「私から」: chính người nói trình bày → 「ご説明します」. 「ご説明になります」 là tôn kính, tự nâng việc của mình; 「ご説明ください」 lại là nhờ người khác giải thích."
+    ]
+  },
+  "g-chau": {
+    "meaning": "Dạng nói tắt của 「てしまう」: lỡ… mất rồi / …xong hết",
+    "usage": "「〜てしまう」 → 「〜ちゃう」, 「〜でしまう」 → 「〜じゃう」 (「読んじゃう」). Quá khứ: 「〜ちゃった」, 「〜じゃった」. Văn viết cứng không dùng dạng rút gọn.",
+    "nuance": "Câu quên ô là “lỡ… mất rồi”; câu đọc sách là “đọc hết luôn”. Bẫy: 「ちゃいけない」 (không được) và 「なくちゃ」 (phải) là dạng rút gọn khác, không phải 「ちゃう」.",
+    "compare": "",
+    "example_notes": [
+      "Á, tôi để quên ô trên tàu mất rồi.",
+      "Cuốn tiểu thuyết mượn hay quá nên tôi đọc hết trong một đêm luôn.",
+      "Không nhanh lên là chuyến xe buýt cuối đi mất đấy."
+    ],
+    "quiz": [
+      "B xin lỗi 「ごめん」 vì bút đã mất → 「なくしちゃった」. 「なくしちゃいけない」 là “không được làm mất”, không trả lời bút đâu rồi.",
+      "Vì 「緊張して」 mà quên điều muốn nói → 「忘れちゃったんだ」. 「忘れなくちゃいけない」 là “phải quên”, không kể chuyện đã xảy ra."
+    ]
+  },
+  "g-adv-sonouchi": {
+    "meaning": "Chẳng bao lâu nữa, rồi sẽ có lúc…; hôm nào đó",
+    "usage": "Phó từ đứng trước một việc sắp tới, không nói ngày cụ thể. Cuối câu: 「〜だろう」, 「〜ようになる」, hay lời rủ, lời dặn có 「〜よ」「〜ね」.",
+    "nuance": "「そのうち飲みに行こう」 như “hôm nào đi uống nhé”: chưa hẹn ngày. Bẫy: có chữ 「うち」 nhưng không phải 「〜うちに」 (nhân lúc còn…).",
+    "compare": "",
+    "example_notes": [
+      "Bây giờ thì bận, nhưng hôm nào đó mình thong thả đi uống một bữa nhé.",
+      "Trời tối sầm lại rồi. Chẳng mấy chốc là mưa sẽ đổ xuống.",
+      "Anh ấy vẫn chưa liên lạc, nhưng tôi nghĩ ít bữa nữa anh ấy sẽ ghé qua."
+    ],
+    "quiz": [
+      "Lời mời 「遊びに来てね」 hướng tới lúc nào đó sau khi dọn xong → 「そのうち」. 「とっくに」, 「さっき」 chỉ quá khứ, trái với lời mời.",
+      "「このまま…続けば」 dẫn tới tương lai 「なるだろう」 → 「そのうち」. 「すでに」 (đã) nói việc đã xảy ra, không hợp với 「だろう」."
+    ]
+  },
+  "g-tsutsuaru": {
+    "meaning": "Đang dần… (một thay đổi đang diễn ra) — cách nói cứng",
+    "usage": "Thể ます bỏ ます + 「つつある」. Gắn với động từ chỉ thay đổi (「暖かくなる」, 「広がる」); văn viết dùng 「つつある」, hội thoại nói 「〜ている」.",
+    "nuance": "“Đang dần”, “ngày một…” khớp tốt. Mấu chốt: thay đổi CHƯA xong — bà đang hồi phục, chưa khỏe hẳn. Bẫy: đừng đọc thành 「つつ」 (vừa… vừa).",
+    "compare": "「つつ」 (không có 「ある」): vừa làm A vừa làm B, cùng chủ ngữ. 「つつある」 chỉ nói một quá trình thay đổi đang tiến triển.",
+    "example_notes": [
+      "Thanh toán không dùng tiền mặt đang dần lan rộng cả trong giới người cao tuổi.",
+      "Sau ca phẫu thuật, thể lực của bà tôi đang hồi phục từng chút một.",
+      "Số người đọc báo giấy đang ngày một ít đi qua từng năm."
+    ],
+    "quiz": [
+      "「ようやく」 + 「立ち直り」: ngành đang dần phục hồi → 「つつある」. 「かねない」 chỉ kết quả xấu có thể xảy ra, trái với 「ようやく」.",
+      "Khách tăng 「につれて」, phố dần đông vui lại → 「取り戻しつつある」. 「おそれがある」 chỉ dùng cho điều xấu, không cho sự đông vui."
+    ]
+  },
+  "g-tsutsu": {
+    "meaning": "Vừa… vừa… — cách nói cứng của 「ながら」",
+    "usage": "Thể ます bỏ ます + 「つつ」. Gắn với động từ hành động có độ dài thời gian (「考える」); hai vế cùng một chủ ngữ.",
+    "nuance": "Nghĩa như 「ながら」, chỉ cứng hơn. Bẫy: 「つつ（も）」 là mẫu khác: nghĩ một đằng làm một nẻo — 「無理だとわかりつつ」 = “biết là quá sức mà vẫn…”.",
+    "compare": "「つつある」 không nói hai việc song song mà nói một thay đổi đang diễn ra (「広まりつつある」). 「つつ、」 + vế sau là “vừa… vừa”.",
+    "example_notes": [
+      "Vừa nghe nhạc, tôi vừa thong thả dạo bước trên bờ biển ban đêm.",
+      "Vừa theo dõi tình trạng bệnh nhân, vừa điều chỉnh liều thuốc.",
+      "Vừa nhận lời khuyên của đàn anh, tôi vừa viết xong bản kế hoạch đầu tiên của mình."
+    ],
+    "quiz": [
+      "Bà vừa xem ảnh vừa kể chuyện, cùng một chủ ngữ → 「見つつ」. 「見たきり」 (xem xong rồi thôi, không làm gì tiếp) trái với việc bà kể chuyện ngay lúc đó.",
+      "Ngắm cảnh và ghi chép cùng lúc → 「つつ」. 「ようがなく」 (không cách nào) trái với cảnh đang 「流れていく」 trước mắt."
+    ]
+  },
+  "g-bakarika": {
+    "meaning": "Không những… mà còn… (thêm một điều nữa, bất ngờ hơn)",
+    "usage": "Danh từ, thể thường + 「ばかりか」; ナ形容詞: 「な」 hoặc 「である」, danh từ: 「だ」 → 「である」. Vế sau hay có 「も」, không là câu nhờ vả, rủ rê.",
+    "nuance": "Tiếng Việt nói được “không những… mà hãy…”, còn sau 「ばかりか」 không có câu yêu cầu. Bẫy: đừng lẫn với 「たばかり」 (vừa mới).",
+    "compare": "",
+    "example_notes": [
+      "Cuốn từ điển này không những nhẹ mà còn có nhiều câu ví dụ.",
+      "Anh ta không những không trả sách đã mượn mà còn đem cho cả người khác mượn.",
+      "Ca sĩ đó không chỉ nổi tiếng trong nước mà cả ở nước ngoài."
+    ],
+    "quiz": [
+      "Học việc nhanh, thêm biết quan tâm, vế sau có 「も」 → 「ばかりか」. 「ものの」 (tuy… nhưng) cần hai vế trái nhau, ở đây đều là lời khen.",
+      "「まで」 cho biết máy bay cũng ngừng, thêm vào tàu điện → 「ばかりか」. 「に限って」 (riêng…) chỉ nói tàu điện, mâu thuẫn với 「飛行機まで」."
+    ]
+  },
+  "g-ni-tomonatte": {
+    "meaning": "Cùng với…, kéo theo…: một bên đổi thì bên kia cũng đổi",
+    "usage": "Danh từ gốc 「〜する」 (「高齢化」, 「移転」) hoặc động từ thể từ điển + 「に伴って」「とともに」; trước danh từ: 「名詞＋に伴う＋名詞」 (「改装に伴う休業」). Cách nói cứng, hai vế đều là thay đổi.",
+    "nuance": "Hai mẫu này không tả từng bước thay đổi mà nhìn cả thay đổi. Vì thế 「移転に伴い、番号が変わる」 hợp: chuyển trụ sở kéo theo một thay đổi.",
+    "compare": "「につれて」 chỉ dùng cho thay đổi một chiều, 「とともに」 dùng cho thay đổi một chiều, 「に伴って」 thì không nhất thiết. Sau 「につれて」 không có hành động chủ ý.",
+    "example_notes": [
+      "Cùng với sự già hóa dân số, ngày càng cần nhiều người làm công việc chăm sóc điều dưỡng.",
+      "Việc tạm nghỉ kinh doanh do sửa sang cửa hàng dự kiến kéo dài ba ngày.",
+      "Cùng với tuổi tác, tôi bắt đầu hay thức dậy sớm."
+    ],
+    "quiz": [
+      "Nóng lên thì kem bán chạy: hai thay đổi đi cùng nhau → 「とともに」. 「かわりに」 (thay vì) là việc này thay việc kia, không phải cả hai cùng xảy ra.",
+      "Chuyển trụ sở kéo theo đổi số điện thoại → 「に伴い」. 「にもかかわらず」 (mặc dù) cần hai vế trái nhau, ở đây không có."
+    ]
+  },
+  "g-ni-ouji-te": {
+    "meaning": "Tùy theo…, cho phù hợp với… (thay đổi để khớp)",
+    "usage": "Danh từ + 「に応じて」; trước danh từ: 「に応じた＋名詞」. Gắn với thứ không cố định, dự đoán sẽ thay đổi (thể lực, tuổi, thời tiết); vế sau là làm, đổi cho hợp.",
+    "nuance": "「｜応《おう》」 Hán Việt là “ứng”: ứng với tình hình mà điều chỉnh. “Tùy theo” khớp tốt. Danh từ phía trước là thứ không cố định, được dự đoán sẽ thay đổi (mức hiểu bài, số giờ làm).",
+    "compare": "「次第だ」: kết quả do cái đó quyết định — “tùy vào…”. Sau 「に応じて」 là việc được điều chỉnh cho khớp: giao bài theo mức hiểu.",
+    "example_notes": [
+      "Ở lớp học thêm này, lượng bài tập được thay đổi tùy theo mức độ hiểu bài của học sinh.",
+      "Tùy theo mùa, thực đơn của quán thay đổi đôi chút.",
+      "Tôi muốn nghĩ ra những dịch vụ phù hợp với mong muốn của từng người dùng."
+    ],
+    "quiz": [
+      "「時給制」: lương trả theo số giờ đã làm → 「に応じて」. 「に関係なく」 (bất kể) trái hẳn với trả lương theo giờ.",
+      "Mang thêm áo khoác để đổi trang phục cho hợp nhiệt độ từng ngày → 「に応じた」. 「を問わない」 (bất kể) là không để ý nhiệt độ, thì chẳng cần thêm áo."
+    ]
+  },
+  "g-ageku": {
+    "meaning": "Sau bao vất vả mãi, rốt cuộc lại… (kết quả đáng tiếc)",
+    "usage": "「名詞＋の」 hoặc thể た + 「あげく」. Gắn với câu nói một tình trạng vất vả kéo dài; vế sau là kết quả rốt cuộc đáng tiếc, ít khi là kết quả tốt.",
+    "nuance": "“Rốt cuộc lại…” mang giọng tiếc, bực. Bẫy: “cuối cùng” tiếng Việt dùng được cả cho thành công, còn chiến thắng sau vất vả thì nói bằng 「末（に）」.",
+    "compare": "「｜末《すえ》に」 cũng sau quá trình vất vả, nhưng vế sau là kết cục hay quyết định, có thể tốt. 「あげく」 nghiêng về kết quả xấu.",
+    "example_notes": [
+      "Bị bắt chờ điện thoại tận ba mươi phút, rốt cuộc lại được bảo là người phụ trách không có ở đó.",
+      "Anh em cãi nhau một hồi, rốt cuộc làm vỡ chiếc bình hoa mẹ vẫn nâng niu.",
+      "Bỏ bao nhiêu tiền sửa đi sửa lại, rốt cuộc chiếc xe vẫn chết máy hẳn."
+    ],
+    "quiz": [
+      "Đi bao nhiêu văn phòng nhà đất, 「結局」 không tìm được → 「あげく」. 「とたん」 (vừa… thì) chỉ một khoảnh khắc, không hợp với 「何軒も」.",
+      "Đi lòng vòng cả tiếng, 「結局」 vẫn phải gọi taxi: kết cục đáng tiếc → 「あげく」. 「とたん」 chỉ khoảnh khắc ngay sau một việc, trái với 「一時間も」."
+    ]
+  },
+  "g-osoregaaru": {
+    "meaning": "E rằng, có nguy cơ (điều xấu xảy ra) — cách nói cứng",
+    "usage": "「名詞＋の」, động từ thể từ điển, thể ない + 「おそれがある」. Nói khả năng xảy ra điều xấu, dùng trong tin tức, bài giải thích; hội thoại nói 「かもしれない」.",
+    "nuance": "“Có nguy cơ”, “e là” khớp tốt. Bẫy: không dùng cho điều tốt — “có khả năng đỗ” không nói bằng 「おそれがある」. Dạng danh từ: 「流出のおそれ」.",
+    "compare": "「かねない」 cũng là kết quả xấu có thể xảy ra, xét từ tình hình hiện tại, và cho thấy nguyên nhân rõ hơn. Gắn sau thể ます bỏ ます.",
+    "example_notes": [
+      "Cây cầu này đã cũ, nếu có động đất lớn thì có nguy cơ sụp đổ.",
+      "Cứ thế này thì e là công trình sẽ không xong kịp hạn.",
+      "Cho rằng thông tin cá nhân của hội viên có nguy cơ bị rò rỉ, công ty đã bắt đầu điều tra."
+    ],
+    "quiz": [
+      "Bản tin cảnh báo điều xấu có thể xảy ra 「二十年後」 → 「おそれがあります」. 「わけがありません」 (không thể nào) trái với lý do 「減り続けており」.",
+      "「熱に弱く」 nên có nguy cơ biến dạng, vì vậy dặn đừng để ngoài nắng → 「変形のおそれがある」. 「変形しにくい」 trái với 「熱に弱く」."
+    ]
+  },
+  "g-koto-wa-ga": {
+    "meaning": "…thì có… thật, nhưng… (công nhận rồi nhấn vế sau)",
+    "usage": "Thể thường (ナ形容詞, danh từ: 「だ」 → 「な」) + 「ことは」 + lặp lại từ đó + 「が」: 「近いことは近いが」, 「楽なことは楽だが」. Công nhận “đúng là vậy”, rồi nhấn vế sau.",
+    "nuance": "Tiếng Việt có đúng lối lặp này: “gần thì có gần”, “đọc thì đọc rồi”. Trọng tâm ở vế sau “nhưng…”. Bẫy: phải lặp lại cùng một từ.",
+    "compare": "「ものの」 cũng là “tuy… nhưng” mà không lặp từ: 「読んだものの、わからない」. 「ことは〜が」 lặp lại để công nhận sự thật đó trước.",
+    "example_notes": [
+      "Gần ga thì có gần thật, nhưng căn phòng này hầu như không có nắng.",
+      "Đăng ký vào phòng tập thì cũng đăng ký rồi, nhưng bận quá nên chưa đi được lần nào.",
+      "Công việc này nhàn thì có nhàn thật, nhưng lương thấp."
+    ],
+    "quiz": [
+      "Thuốc thì đã uống, nhưng 「まだ熱が下がらない」 → 「ことは飲んだが」. 「からには」 (một khi đã…) đòi vế sau là quyết tâm, bổn phận, không phải “vẫn chưa hạ sốt”.",
+      "Viết hết rồi, nhưng 「自信がない」 → 「ことは書いたけど」. 「以上」 (đã… thì phải) cần vế sau là phán đoán, quyết tâm, không phải lời thú nhận."
+    ]
+  },
+  "g-ni-tsuide": {
+    "meaning": "Đứng sau…, chỉ sau… (xếp ngay sau vị trí đầu)",
+    "usage": "Danh từ + 「に次いで」; trước danh từ: 「に次ぐ＋名詞」 (「電子部品に次ぐ輸出品」). Dùng khi xếp hạng: A đứng đầu, B ngay sau A.",
+    "nuance": "「｜次《つ》ぐ」 là “đứng kế tiếp”; chữ 「次」 Hán Việt “thứ” như thứ tự. “Chỉ sau…” khớp tốt. Bẫy: đọc giống 「ついでに」 (nhân tiện) nhưng là từ khác hẳn.",
+    "compare": "",
+    "example_notes": [
+      "Osaka là thành phố có nhiều khách du lịch nước ngoài, chỉ sau Tokyo.",
+      "Ở giải đấu lần này, cô ấy về nhì, chỉ sau người vô địch.",
+      "Ở nước này, ô tô là mặt hàng xuất khẩu quan trọng chỉ sau linh kiện điện tử."
+    ],
+    "quiz": [
+      "Táo 「いちばん多く」, nho ngay sau → 「に次いで」. 「に比べて」 (so với táo thì nho nhiều) trái với việc táo nhiều nhất.",
+      "Năm ngoái cao nhất, năm nay 「二番目」 → 「に次いで」. 「を通じて」 (suốt cả…) nói một khoảng thời gian, không xếp hạng so với 「去年」."
+    ]
+  },
+  "g-mama": {
+    "meaning": "Cứ để nguyên (trạng thái)… mà…; vẫn y như…",
+    "usage": "「名詞＋の」, thể た, thể ない, 「〜い」, 「〜な」 + 「まま」. 「ままにする」「ままにしておく」: cố ý để nguyên, không đụng tới (「亡くなった日のままにしてある」).",
+    "nuance": "Việc B diễn ra khi trạng thái A còn nguyên: bật tivi rồi ngủ, tivi vẫn bật. Bẫy: 「ながら」 là hai hành động cùng lúc; 「たまま」 là một trạng thái được giữ nguyên.",
+    "compare": "「たきり」: sau hành động, việc lẽ ra phải đến không đến, câu sau hay phủ định. 「まま」 chỉ nói trạng thái giữ nguyên khi việc khác xảy ra.",
+    "example_notes": [
+      "Xin đừng mang nguyên giày mà bước lên phòng.",
+      "Căn phòng của bố tôi vẫn được để nguyên như ngày ông mất.",
+      "Cho vào bình nước này thì đồ uống giữ lạnh được nửa ngày."
+    ],
+    "quiz": [
+      "Tiếng vẫn kêu 「朝まで」, tức tivi còn bật khi ngủ → 「つけたまま」. 「消したまま」 là đã tắt, không thể có tiếng suốt đêm.",
+      "Không cho ai địa chỉ, cứ thế chuyển đi → 「まま」. 「ことには」 (nếu không… thì không) đòi vế sau kiểu “không thể…”, trái với 「引っ越してしまった」."
+    ]
+  },
+  "g-okini": {
+    "meaning": "Cách… (một khoảng) lại một lần; cách quãng đều",
+    "usage": "Số lượng chỉ thời gian, khoảng cách + 「おきに」 (「十メートルおきに」); trước danh từ: 「おきの＋名詞」. Việc lặp lại đều đặn theo khoảng đó.",
+    "nuance": "「一日おきに」 là “cách nhật”: ngày có, ngày không, như lịch thứ hai, tư, sáu. Bẫy: đừng dịch nó thành “mỗi ngày” — đó là 「毎日」.",
+    "compare": "「ぶりに」: sau một khoảng trống mới lại…, chỉ một lần quay lại. 「おきに」: lặp đều đặn, lần này nối lần kia theo cùng khoảng cách.",
+    "example_notes": [
+      "Chiếc đồng hồ này cứ mỗi một tiếng lại phát nhạc.",
+      "Hai bên đường, cứ cách mười mét lại trồng một cây anh đào.",
+      "Bà tôi cách một ngày lại đi bơi ở hồ bơi gần nhà."
+    ],
+    "quiz": [
+      "Thứ hai, tư, sáu: đi một ngày, nghỉ một ngày → 「一日おきに」. 「ごとに」 thành “mỗi một ngày”, tức ngày nào cũng đi.",
+      "Từ 6 giờ sáng đến 10 giờ tối, xe chạy đều đặn → 「二十分おきに」. 「ぶりに」 (sau một quãng mới lại) chỉ một lần, không phải lịch chạy cả ngày."
+    ]
+  },
+  "g-katei": {
+    "meaning": "Giả sử (rằng)…, cứ cho là… — đặt giả định để suy tính",
+    "usage": "Thể thường + 「と仮定すると」 (「と仮定すれば」, 「と仮定して」); hoặc + 「とする」 (「とします」, 「としよう」) cuối câu, rồi câu sau suy ra: 「すると」, 「その場合」.",
+    "nuance": "「｜仮定《かてい》」 Hán Việt là “giả định”. 「とする」 đặt giả định thành một câu riêng rồi mới tính tiếp: “Giả sử… . Khi đó…”.",
+    "compare": "「としたら」「とすれば」 gắn giả định vào ngay trong câu. 「かりに」 là phó từ báo trước, có thể đi kèm: 「かりに〜とすると」.",
+    "example_notes": [
+      "Giả sử phương án A được chọn. Khi đó, công trình có thể bắt đầu từ lúc nào?",
+      "Nếu giả định kế hoạch này thất bại thì sẽ thiệt hại khoảng bao nhiêu?",
+      "Giờ hãy giả sử bạn đang ở trên một hòn đảo hoang. Nếu chỉ được mang theo một thứ, bạn sẽ chọn gì?"
+    ],
+    "quiz": [
+      "Coi Trái Đất là quả bóng một mét rồi suy ra cỡ Mặt Trăng → 「と仮定すると」. 「というより」 (nói đúng hơn là) sửa lời, không mở phép suy tính.",
+      "「仮に」 báo một giả định, câu sau 「そのとき…」 suy tiếp từ đó → 「とします」. 「ところです」 (sắp…) kể việc thật sắp xảy ra, không đặt giả định."
+    ]
+  },
+  "g-hodo-wa-nai": {
+    "meaning": "Không gì… bằng… / không đến mức…",
+    "usage": "(1) Danh từ, động từ thể từ điển + 「ほど」 + danh từ + 「はない」 (người: 「いない」). (2) Danh từ, động từ thể từ điển, thể た + 「ほどではない」.",
+    "nuance": "Khuôn (1) trông như phủ định nhưng là lời khen cao nhất: “không gì ngon bằng bia lạnh”. Khuôn (2) hạ mức độ: có sốt, nhưng chưa đến mức đi viện.",
+    "compare": "",
+    "example_notes": [
+      "Không gì ngon bằng cốc bia lạnh uống sau giờ làm.",
+      "Tôi có sốt một chút, nhưng chưa đến mức phải đi bệnh viện.",
+      "Bộ phim truyền hình này hay, nhưng chưa đến mức phải ghi lại mỗi tuần để xem."
+    ],
+    "quiz": [
+      "Tháng chín vẫn nóng, 「が」 báo vế sau hạ mức: không bằng tháng tám → 「ほどではない」. 「ほどだ」 thành “nóng như tháng tám”, mất ý tương phản.",
+      "「人はいない」: không ai bằng anh Tanaka → 「ほど」. 「こそ」 nhấn mạnh chính Tanaka, đi với 「いない」 thì tự mâu thuẫn."
+    ]
+  },
+  "g-ba-yokatta": {
+    "meaning": "Giá mà… thì tốt rồi (tiếc) / sao không… cho rồi (góp ý)",
+    "usage": "Thể ば + 「よかった」 (「〜ばよかったのに」): tiếc việc đã không làm. Thể ば + 「いいのに」 (「〜たらいいのに」): “sao không… đi”, nói về việc nên làm mà không làm.",
+    "nuance": "“Giá mà” khớp tốt với 「ばよかった」; câu 1 nghĩa là đã KHÔNG xem lại. Bẫy: 「よかった」 đứng một mình là “may quá”; thêm thể ば thì thành tiếc nuối.",
+    "compare": "",
+    "example_notes": [
+      "Giá mà trước kỳ thi tôi xem lại thêm một lần nữa.",
+      "Sáng nào chị tôi cũng suýt đi muộn. Sao không dùng hai cái đồng hồ báo thức cho rồi.",
+      "Đến giờ tôi vẫn nghĩ, giá mà lúc đó tôi đã nói thật với cô ấy."
+    ],
+    "quiz": [
+      "Áo 「少し小さかった」, 「やっぱり」: tiếc vì đã không thử → 「みればよかった」. 「みたかいがあった」 (thử thật đáng) trái với việc chưa thử.",
+      "Tàu đông, B góp ý “sao không đi chuyến sớm hơn” → 「乗ればいいのに」. 「乗ったばかりだよ」 (vừa mới lên) không phải lời khuyên, cũng không đáp lại chuyện 「混んでいて」."
+    ]
+  },
+  "g-keigo-o-desu": {
+    "meaning": "Tôn kính ngữ dạng ngắn: (khách, người trên) đang… / có… không ạ",
+    "usage": "「お」 + thể ます bỏ ます + 「です」 (「お帰りですか」, 「お探しですか」); danh từ Hán: 「ご＋名詞＋です」 (「ご出席です」). Chủ ngữ là người được kính trọng.",
+    "nuance": "Bẫy: 「お待ちします」 (tôi xin đợi) và 「お待ちです」 (quý khách đang đợi) cùng gốc, ngược chiều. Kể về người công ty mình với khách thì không nâng: 「中西はただいま外出しております」.",
+    "compare": "「お〜になる」 cùng khung 「お」 + thể ます nhưng kết bằng động từ 「なる」. 「お〜です」 kết bằng 「です」, gọn như câu danh từ: 「お待ちです」 = đang đợi ạ.",
+    "example_notes": [
+      "Thưa thầy, thầy đã về rồi ạ?",
+      "Thầy Yamada có tham dự buổi nghiên cứu tuần sau không ạ?",
+      "Anh/chị đang vội ạ? Xin mời đi trước."
+    ],
+    "quiz": [
+      "Người mệt là 「部長」 → 「お疲れです」, nâng trạng thái của người trên. 「お疲れいたします」 không phải cách nói có thật.",
+      "Hỏi khách hôm nay đi đâu: việc của khách → 「お出かけです」. 「出かけております」 là khiêm nhường, chỉ dùng khi kể về mình hay người phía mình."
+    ]
+  },
+  "g-keigo-gozaimasu": {
+    "meaning": "Có (lịch sự của 「ある」) / là (「でございます」 = 「です」 lịch sự)",
+    "usage": "「ある」 → 「ございます」: 「二階にございます」, 「ございましたら」. 「名詞＋でございます」 thay 「です」: 「担当の田中でございます」, khi tự giới thiệu hay giới thiệu đồ vật với khách.",
+    "nuance": "Đây là lịch sự ngữ (「丁寧語」): không nâng ai, không hạ ai, chỉ làm lời nói lịch sự hơn. Bẫy: thay 「ある」 nên dùng cho vật, nơi chốn; người thì 「いらっしゃる」.",
+    "compare": "「いらっしゃる」 là tôn kính của 「いる」, nói về người. 「ございます」 thay 「ある」 (vật) và 「です」. Nhớ cặp: người → 「いらっしゃる」, đồ vật → 「ございます」.",
+    "example_notes": [
+      "Nhà vệ sinh ở phía cuối tầng hai ạ.",
+      "Tôi là Tanaka, người phụ trách ạ. Rất mong được quý khách giúp đỡ.",
+      "Nếu có câu hỏi gì, xin vui lòng báo cho nhân viên phụ trách."
+    ],
+    "quiz": [
+      "Hàng tồn kho là vật: nói 「ありません」 cho lịch sự hơn → 「ございません」. 「おりません」 là khiêm nhường của 「いる」, dùng cho người, không cho 「在庫」.",
+      "Giới thiệu hiện vật một cách lịch sự, thay 「です」 → 「でございます」. 「にございます」 là “nằm ở…”, chỉ nơi chốn, không nói hiện vật này là gì."
+    ]
+  },
+  "g-adv-doumo": {
+    "meaning": "Hình như, có vẻ (không rõ lắm nhưng cảm thấy vậy)",
+    "usage": "Phó từ đứng trước câu phỏng đoán 「〜ようだ」「〜らしい」「〜みたいだ」; hoặc trước 「〜気がする」, câu phủ định nói cảm giác không rõ ràng.",
+    "nuance": "Từ dễ nhầm: 「どうもありがとう」 là “cảm ơn nhiều”; ở đây là “hình như”, “không hiểu sao”. 「どうも頭が重い」 = “đầu cứ nặng nặng sao ấy”: có cảm giác, không rõ lý do.",
+    "compare": "「まさか」 đi với phỏng đoán phủ định 「〜ないだろう」: “chẳng lẽ”. 「らしい」 đứng cuối câu; 「どうも」 đứng trước, báo câu sau là phỏng đoán.",
+    "example_notes": [
+      "Phòng bên cạnh im lặng suốt. Hình như không có ai ở nhà.",
+      "Từ khi đổi kính mới, không hiểu sao mắt tôi cứ dễ mỏi.",
+      "Từ sáng nay đầu tôi cứ nặng nặng sao ấy."
+    ],
+    "quiz": [
+      "Ga đông người, đoán tàu trễ, cuối câu là 「ようだ」 → 「どうも」. 「まさか」 đi với phủ định 「〜ないだろう」, không hợp với 「遅れているようだ」.",
+      "Nấu đúng công thức mà vị lạ, cuối câu 「気がする」 → 「どうも」. 「めったに」 (hiếm khi) cần câu phủ định, còn 「違う気がする」 là khẳng định."
+    ]
+  },
+  "g-adv-karini": {
+    "meaning": "Giả sử, nếu như (đặt một giả định); dù cho…",
+    "usage": "Phó từ đứng đầu, hô ứng với cuối vế: 「〜たら」「〜ば」「〜とすれば」「〜とする」; hoặc nhượng bộ 「〜ても」「〜としても」 (dù cho có…). Kanji: 「｜仮《かり》に」.",
+    "nuance": "Chữ 「仮」 Hán Việt “giả” như giả định. Bẫy: 「かりに」 chỉ báo trước, không tự tạo điều kiện; cuối vế vẫn cần 「たら」, 「ば」, 「ても」…",
+    "compare": "「と仮定すると」 là mẫu câu làm giả định; 「かりに」 là phó từ đi trước, có thể kết hợp. 「としても」 là “dù cho”; 「かりに〜としても」 = “cho dù giả sử…”.",
+    "example_notes": [
+      "Giả sử bỏ công việc hiện tại thì một thời gian tôi sẽ phải sống bằng tiền tiết kiệm.",
+      "Giả sử máy bay có trễ thì vẫn kịp chuyến nối tiếp.",
+      "Giả sử câu chuyện của anh ta là thật thì hóa ra chúng ta đã bị lừa."
+    ],
+    "quiz": [
+      "Cuối vế là 「としても」: giả định thi trượt mà công sức vẫn không phí → 「かりに」. 「せっかく」 (đã mất công…) đi với 「のに」「のだから」, không mở một giả định.",
+      "Cuối vế là 「あったら」, một giả định → 「かりに」. 「まさか」 đi với phủ định 「〜ないだろう」, không mở giả định cho câu hỏi 「何をしたい」."
+    ]
+  },
+  "g-kagiri": {
+    "meaning": "Hết mức…, tất cả trong phạm vi… (làm hết cỡ có thể)",
+    "usage": "「名詞＋の」, động từ thể từ điển, thể 「ている」 + 「限り」. Với động từ, hay gắn thể 「ている」 hoặc động từ khả năng (「できる限り」). Trước danh từ: 「限りの＋名詞」.",
+    "nuance": "「冷蔵庫にある限りの材料」 = mọi nguyên liệu có trong tủ, 「持てる限りの荷物」 = mang hết mức có thể. Bẫy: 「｜限《かぎ》り」 còn nghĩa khác, 「限り（は）」: “chừng nào còn…”, câu điều kiện.",
+    "compare": "「限り（は）」: “chừng nào còn…”. 「だけ」 cũng là “đến giới hạn”, hay lặp động từ: 「積めるだけ積む」.",
+    "example_notes": [
+      "Hôm lễ hội, quán đó làm takoyaki nhiều hết mức có thể để bán.",
+      "Mẹ dùng hết chỗ nguyên liệu có trong tủ lạnh để nấu bữa tối cho tôi.",
+      "Mang theo tất cả số hành lý có thể mang được, chúng tôi đi đến nơi sơ tán."
+    ],
+    "quiz": [
+      "Bạn cho mượn tất cả số thùng mình có → 「持っている限りの」. 「以上」 thành “nhiều hơn số mình có”, không thể cho mượn được.",
+      "Nhìn khắp tầm mắt đâu cũng là ruộng tuyết → 「見渡す限り」. 「末に」 cần một quá trình vất vả kéo dài, còn 「見渡す」 chỉ là đưa mắt nhìn."
+    ]
+  },
+  "g-kagiri-5-2": {
+    "meaning": "Chừng nào còn… thì (vẫn)…; 「〜ない限り」 = trừ khi…",
+    "usage": "Thể thường hiện tại + 「限り（は）」; ナ形容詞: 「な」/「である」, danh từ: 「である」. Hai vế đều chỉ trạng thái; là câu điều kiện nên vế sau không ở quá khứ.",
+    "nuance": "“Chừng nào còn…”, “miễn là…”. Phủ định 「謝らない限り」 dịch là “trừ khi xin lỗi”. Bẫy: đừng nhầm với 「限りの＋名詞」 nghĩa “hết mức”.",
+    "compare": "「うちに」: nhân lúc trạng thái còn, làm trước khi nó đổi. 「限り（は）」: chừng nào trạng thái còn thì kết quả còn đúng. 「限りの＋名詞」 là nghĩa khác: “hết mức”.",
+    "example_notes": [
+      "Chừng nào còn làm ở công ty này thì không tránh được chuyện chuyển công tác.",
+      "Trừ khi chính anh ta xin lỗi, chắc cô ấy sẽ không tha thứ.",
+      "Chừng nào biển còn êm, con tàu này vẫn chạy ra đảo mỗi ngày."
+    ],
+    "quiz": [
+      "Chừng nào còn ghế trống thì vào không cần đặt trước → 「限り」. 「ばかりに」 (chỉ vì… mà) dẫn tới hậu quả xấu, còn 「入場できます」 là tin tốt.",
+      "Không nhập mật khẩu thì không mở được → 「入力しない限り」. 「あまり」 (vì… quá mức) cần một trạng thái thái quá, không hợp với 「入力しない」."
+    ]
   }
 }

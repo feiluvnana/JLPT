@@ -542,6 +542,39 @@ def check_store_keys(check):
               f"also in {leak} — use JLPTKnowledgeStore")
 
 
+# Readings that have shipped wrong more than once (B3 F11, B5 QA, 2026-09-30):
+# a numeral + 時 read とき, a numeral + 分 read ふん where Japanese says ぷん
+# (一/三/四/六/八/十; 十分 is じゅっぷん as a duration), and 入 read いっ. Each
+# pattern allows the optional ruby group, so both ｜六時《ろくとき》 and
+# 六時《ろくとき》-style markup are seen. A WARN, not a FAIL: 十分《じゅうぶん》
+# ("enough") is right, and a reviewer decides.
+RUBY_SUSPECTS = [
+    (re.compile(r"[0-9０-９一二三四五六七八九十百]+｜?時《[^》]*とき》|時《とき》(?=\S*[0-9０-９])"),
+     "a clock time read とき — should be じ"),
+    (re.compile(r"｜?[一三四六八十百]分《[^》]*ふん》"), "分 after 一/三/四/六/八/十 read ふん — should be ぷん"),
+    (re.compile(r"｜?入《いっ》"), "入 read いっ — should be はい/い"),
+]
+
+
+def check_ruby_suspects(level: str, spec: dict, warn):
+    """WARN on the furigana errors that have shipped twice (RUBY_SUSPECTS)."""
+    cat = D.locate(level, spec)
+    hits = []
+    for part in cat.parts:
+        files = part.lang_files.values() if isinstance(part.lang_files, dict) else part.lang_files
+        for path in [part.shared] + [p for p in files if p]:
+            if not path.is_file():
+                continue
+            text = path.read_text(encoding="utf-8")
+            for rx, why in RUBY_SUSPECTS:
+                for m in rx.finditer(text):
+                    hits.append(f"{_rel(path)}: 「{m.group(0)}」 ({why})")
+    warn(f"knowledge/{level}/{spec['stem']}: no known-bad furigana readings", not hits,
+         "; ".join(hits[:6]) + (f" … and {len(hits) - 6} more" if len(hits) > 6 else "")
+         + " — fix the ruby by hand (jlpt-knowledge §Quiz integrity; exam-model-answer "
+           "furigana pitfalls)")
+
+
 def check_all(check, warn, skip, git_tracks=None):
     git_tracks = git_tracks or _default_git_tracks
     print("\nknowledge module (jlpt-knowledge: knowledge/<LEVEL>/)")
@@ -567,6 +600,7 @@ def check_all(check, warn, skip, git_tracks=None):
             continue
         for spec in D.categories(lv):
             check_category(lv, spec, check, warn, skip, git_tracks)
+            check_ruby_suspects(lv, spec, warn)
         check_index(lv, check)
 
 

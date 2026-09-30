@@ -339,6 +339,19 @@ Added by batch-5 QA (`qa/qa-report-knowledge-N2-文法-B5.md`):
     counterexample. The gate WARNs on the furigana errors that have shipped
     twice (`check_ruby_suspects`: numeral+時《とき》, 三分《さんふん》-type, 入《いっ》).
 
+Added by the 読解/聴解 guide QA (`qa/qa-report-knowledge-N2-読解-G1.md`, `-聴解-G1.md`):
+
+24. **A guide quiz is answerable from its stem plus official exam facts** —
+    never from "this book's method", the card itself or a repo table.
+25. **A listening-style quiz lists only candidates its stem raises**; if the
+    explanation must say 「話に出ていない」, that option is replaced.
+26. **A guide describes the REAL sitting**; a house rule of this site (e.g.
+    mocks print nothing in 問題5) appears only as a labelled aside. A number
+    taken from an owner doc (`jlpt-exam-structure`, `dokkai.md`,
+    `official_register.md`) goes into `sources` with its § and keeps the owner's
+    denominator and caveat; anything said in the audio cites `script.md`. Quiz
+    passages break with `\n` before ［問い］ and each passage part.
+
 ## Pronunciation
 
 - **▶ speech** on every headword reading, every 漢字 `words` compound and every

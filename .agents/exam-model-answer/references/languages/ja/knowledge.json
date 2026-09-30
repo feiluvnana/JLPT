@@ -79,5 +79,9 @@
   "gen_r_other": "「{d}」は「{w}」の読み方です。",
   "gen_r_fake": "「{d}」は「{k}」を「{s}」と読んだ形です。この語の「{k}」は「{t}」と読みます。",
   "gen_m_key": "正解は「{m}」。これが {w} の意味です。",
-  "gen_m_other": "「{m}」は「{w}」の意味です。"
+  "gen_m_other": "「{m}」は「{w}」の意味です。",
+  "cite_official": "JLPT N2 公式問題 {y}年{m}月",
+  "cite_official_script": "JLPT N2 公式問題 {y}年{m}月（聴解スクリプト）",
+  "cite_official_any": "JLPT N2 公式問題",
+  "cite_analysis": "JLPT N2 公式問題の分析"
 }

@@ -79,5 +79,9 @@
   "gen_r_other": "「{d}」 là cách đọc của từ 「{w}」, không phải từ này.",
   "gen_r_fake": "「{d}」 là lỗi đọc chữ 「{k}」 thành 「{s}」; trong từ này, 「{k}」 đọc là 「{t}」.",
   "gen_m_key": "Đáp án: “{m}” — đó là nghĩa của {w}.",
-  "gen_m_other": "“{m}” là nghĩa của 「{w}」."
+  "gen_m_other": "“{m}” là nghĩa của 「{w}」.",
+  "cite_official": "Đề thi JLPT N2 chính thức {m}/{y}",
+  "cite_official_script": "Đề thi JLPT N2 chính thức {m}/{y} (lời thoại phần Nghe)",
+  "cite_official_any": "Đề thi JLPT N2 chính thức",
+  "cite_analysis": "Phân tích các đề JLPT N2 chính thức"
 }

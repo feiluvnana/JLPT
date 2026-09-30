@@ -148,14 +148,59 @@ def dup_control(render) -> str:
     return panes(render, tag="span")
 
 
+# What a learner sees for a `sources[].ref`: the book or exam it IS, never the
+# repo path (the path stays in the tooltip for maintainers). Book titles are
+# proper nouns and print the same in every language.
+BOOK_TITLES = {
+    "Shin_Kanzen_Masuta_N2-Bunpou": "『新完全マスター文法 N2』",
+    "Shin_Kanzen_Masuta_N2-Dokkai": "『新完全マスター読解 N2』",
+    "Shin_Kanzen_Masuta_N2-Choukai": "『新完全マスター聴解 N2』",
+    "Shin_Kanzen_Masuta_N2-Goi": "『新完全マスター語彙 N2』",
+    "Shin_Kanzen_Masuta_N2-Kanji": "『新完全マスター漢字 N2』",
+    "goi_reference": None,          # an extract: named by its folder below
+    "kanji_tables": "『新完全マスター漢字 N2』",
+    "dokkai_reference": "『新完全マスター読解 N2』",
+    "choukai_script": "『新完全マスター聴解 N2』",
+    "vocab_reference": "『はじめての日本語能力試験 N2単語2500』",
+    "はじめての日本語能力試験 N2単語 2500": "『はじめての日本語能力試験 N2単語2500』",
+    "JLPT_N2_Kanzen_Moshi-Taisaku": "『完全模試 N2』",
+    "JLPT_N2_Kanzen_Moshi-Mock Tests": "『完全模試 N2』",
+    "nihongo-soumatome-n2-goi": "『日本語総まとめ N2 語彙』",
+    "nihongo-soumatome-n2-kanji": "『日本語総まとめ N2 漢字』",
+    "nihongo-soumatome-n2-choukai": "『日本語総まとめ N2 聴解』",
+}
+_FOLDER_TITLES = {"Shinkanzen": "『新完全マスター語彙 N2』", "Soumatome": "『日本語総まとめ N2 語彙』",
+                  "Hajimete": "『はじめての日本語能力試験 N2単語2500』"}
+_SITTING = re.compile(r"N2 (\d{1,2})-(\d{4})")
+
+
+def cite_name(ref: str) -> str:
+    """The learner-facing name of a source, as `.lang-pane` markup."""
+    parts = Path(ref).parts
+    stem = Path(ref).stem
+    if "JLPT_N2_NEW" in parts:
+        m = _SITTING.search(" ".join(parts))
+        key = "cite_official_script" if stem == "script" else "cite_official"
+        return label(key, y=m.group(2), m=m.group(1)) if m else label("cite_official_any")
+    if parts and parts[0] in (".agents", "tools"):
+        return label("cite_analysis")
+    title = BOOK_TITLES.get(stem)
+    if title is None:
+        title = next((t for f, t in _FOLDER_TITLES.items() if f in parts), Path(ref).name)
+    return esc(title)
+
+
 def cite(src: dict) -> str:
     ref = str(src.get("ref", ""))
-    txt = Path(ref).name
-    if src.get("page"):
-        txt += f" p.{src['page']}"
+    txt = cite_name(ref)
+    # `page` is the PDF page (the schema's rule, for maintainers); a learner holds
+    # the printed book, so when the note already gives 「本のp.N」 that is the
+    # only page shown, and a bare PDF page is labelled as one.
+    if src.get("page") and "本のp" not in str(src.get("note", "")):
+        txt += f" PDF p.{esc(src['page'])}"
     if src.get("note"):
-        txt += f" — {src['note']}"
-    return f'<span class="cite" title="{esc(ref)}">{fu(txt)}</span>'
+        txt += f" — {fu(src['note'])}"
+    return f'<span class="cite" title="{esc(ref)}">{txt}</span>'
 
 
 def fact_value(v) -> str:

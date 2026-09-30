@@ -1,1 +1,387 @@
-{}
+{
+  "l-overview": {
+    "title": "Tổng quan phần nghe N2: 5 dạng, 30 câu",
+    "body": [
+      "Phần nghe N2 dài khoảng 50 phút, 5 dạng, 30 câu: Mondai 1 (5 câu), Mondai 2 (6), Mondai 3 (5), Mondai 4 (11) và Mondai 5 (3 câu từ 2 bài). Mondai 1 và 2 in sẵn 4 lựa chọn trong đề. Ở Mondai 3, 4, 5 lựa chọn được đọc lên; riêng Mondai 4 chỉ có 3 lựa chọn. Đề thật còn in tên 4 lựa chọn của bài 2 Mondai 5; đề thi thử trên trang này không in.",
+      "Mondai 1 và 2 đọc câu hỏi hai lần, trước và sau đoạn hội thoại, nên lần đầu hãy nghe kỹ để biết mình cần tìm gì. Mondai 3 và 5 thì không có câu hỏi trước bài nói. Ở kỳ thi thật, Mondai 1–4 có câu ví dụ luyện tập, Mondai 5 thì không. Đề thi thử trên trang này không có câu ví dụ, vì kịch bản gốc không in phần đó.",
+      "Sau mỗi câu chỉ có vài giây để chọn: đo trên đề thật, khoảng 12 giây ở Mondai 1–2 và khoảng 8 giây ở Mondai 3–4. Sách 『完全模試』 khuyên: băng chỉ phát một lần, nên tập trung từng câu; phân vân thì đừng mất thời gian, vì sẽ không tập trung được vào câu tiếp theo.",
+      "Sách cũng nhắc hai điều: nghe thật kỹ câu hỏi, và nhớ rằng hội thoại hay lược bỏ chủ ngữ, tân ngữ. Khi không ai nói rõ 'ai làm', hãy dựa vào dạng động từ như 「〜させてもらえる？」 hay 「〜てもらえる？」 (xem các thẻ về 'ai làm')."
+    ],
+    "quiz": [
+      "Trong Mondai 1–4, chỉ Mondai 1 và 2 in 4 lựa chọn trong đề. Mondai 3 và 4 không in gì cả, nên mọi phương án có Mondai 3 hoặc Mondai 4 đều sai.",
+      "Mondai 4 「｜即時応答《そくじおうとう》」 chỉ đọc 3 câu đáp để chọn. Mondai 1, 2 và 3 đều có 4 lựa chọn."
+    ],
+    "example_notes": []
+  },
+  "l-q1-kadai": {
+    "title": "Mondai 1 「｜課題理解《かだいりかい》」: việc phải làm tiếp",
+    "body": [
+      "Mondai 1 có 5 câu. Bạn nghe câu hỏi trước, rồi nghe hội thoại và chọn trong 4 lựa chọn in sẵn việc nhân vật sẽ làm. Trong 31 kỳ thi, câu hỏi hay gặp nhất là 「この｜後《あと》まず｜何《なに》をしますか」 (36,8%) và 「何をしますか」 không có 「まず」 (31,0%). Khoảng 16% là bài một người nói: tin nhắn thoại, thông báo, tổng đài tự động.",
+      "Khi câu hỏi có 「まず」, hội thoại sẽ nêu nhiều việc, và bạn phải xác định việc nào được ưu tiên làm trước (Shin Kanzen, tr.3). Đừng chọn việc được nhắc cuối chỉ vì vừa nghe: trong đề 7/2025, việc đúng được giao ngay đầu, sau đó còn hai việc khác do người khác làm hoặc làm sau.",
+      "Các việc sai hiếm khi bị bác thẳng. Ở đề 7/2025, một việc bị loại vì người khác đang làm (「今加藤さんが確認してるとこ」), một việc người nói tự nhận, một việc hạn đến tuần sau. Sách 『完全模試』 khuyên tập trung vào 'cái gì còn thiếu, chưa đủ', và chú ý khi đối phương bác bỏ hoặc sửa một phần đề nghị.",
+      "Cách làm: mỗi lựa chọn là một việc; nghe đến đâu, gạch việc đã xong, việc người khác làm, việc để sau. Việc còn lại, đúng người được hỏi, mới là đáp án."
+    ],
+    "quiz": [
+      "「まず会場に電話して」 là việc được giao trước tiên. In thiệp đã xong (「もう終わってる」), phong bì thì anh Kimura ghi, còn 「名簿のコピー」 để mai (「明日でいい」)."
+    ],
+    "example_notes": [
+      "Xin chữ ký của trưởng phòng trước, rồi mới nộp cho phòng kế toán nhé.",
+      "Xem trước hội trường xong thì cậu làm giúp mình sơ đồ chỉ đường nhé?",
+      "Để thay đổi đặt chỗ, xin quý khách bấm phím 1."
+    ]
+  },
+  "l-q2-point": {
+    "title": "Mondai 2 「ポイント｜理解《りかい》」: nghe đúng điểm được hỏi",
+    "body": [
+      "Mondai 2 có 6 câu, lựa chọn in sẵn. Trình tự: nghe tình huống và câu hỏi → có khoảng 20 giây đọc 4 lựa chọn (đo trên đề thật: 20,2 giây) → nghe hội thoại hoặc bài nói → nghe lại câu hỏi và chọn.",
+      "Dùng 20 giây đó để biết mình cần nghe gì. Shin Kanzen (tr.47) nhắc chú ý từ để hỏi 「どうして」「何」「どんな」「どう」. Trong 31 kỳ thi, câu hỏi về nội dung, phát ngôn chiếm 37,6%, hỏi lý do 32,6%, còn câu hỏi 「｜一番《いちばん》」 chỉ 5,5%.",
+      "Sách 『完全模試』 khuyên lấy câu hỏi nghe lần đầu làm trục để theo dõi mạch nói, và xác định câu hỏi nói về ai: người nam hay người nữ, nhân viên hay khách. Hội thoại có thể nhắc nhiều lý do, nhưng chỉ một cái trả lời đúng câu hỏi.",
+      "Shin Kanzen (tr.5) lưu ý: trong bài nghe, nội dung đáp án thường được nói bằng cách khác với lựa chọn. Vì vậy đừng chỉ dò lựa chọn có từ giống bài nghe; hãy so ý nghĩa (xem thẻ 「言い換え」)."
+    ],
+    "quiz": [
+      "「駐輪場がなくなっちゃって」: bãi gửi xe không còn, tức không có chỗ để xe. Mưa thì anh đã quen (「もう慣れてた」), sức khỏe là lý do bắt đầu đi xe."
+    ],
+    "example_notes": [
+      "Lý do người phụ nữ thôi không chuyển nhà là gì?",
+      "Người đàn ông không hài lòng về điểm nào của cửa hàng mới?"
+    ]
+  },
+  "l-q3-gaiyou": {
+    "title": "Mondai 3 「｜概要理解《がいようりかい》」: nắm ý chính cả bài",
+    "body": [
+      "Mondai 3 có 5 câu và đề không in gì cả. Không có câu hỏi trước bài nói: bạn nghe bài nói trước, rồi mới nghe câu hỏi và 4 lựa chọn được đọc lên, mỗi lựa chọn cách nhau khoảng 3 giây.",
+      "Vì chưa biết câu hỏi, sách 『完全模試』 khuyên nghe với ba câu hỏi trong đầu: 'nói về cái gì', 'chủ đề là gì', 'người nói muốn nói gì'; chi tiết giải thích không quan trọng lắm. Shin Kanzen (tr.7) thêm: chủ đề thường không được nói gọn trong một câu, phải gom vài từ khóa rồi tự tóm lại.",
+      "Bẫy chính: cả 4 lựa chọn đều nói về cùng bài nói, chỉ đổi một chi tiết. Trong 31 kỳ thi, bài nói chưa bao giờ tự phủ định các lựa chọn sai. Ví dụ đề 7/2025: 'cái hay của du lịch một mình' là đáp án, còn 'nỗi cô đơn khi đi một mình' chỉ là điều người khác hay nói.",
+      "Cách ghi chú: viết từ khóa ngắn theo thứ tự nghe, như ví dụ dưới đây, rồi tự hỏi các ý đó cùng hướng về điều gì."
+    ],
+    "quiz": [
+      "Cả bài nói về việc bãi xe rộng ra và kết quả tốt: đi bộ an toàn hơn. Chi phí không được nhắc; xe đậu trên vỉa hè chỉ là chuyện trước kia."
+    ],
+    "example_notes": [
+      "Ghi chú: bắt đầu từ năm ngoái / số người tham gia tăng gấp đôi / thiếu chỗ"
+    ]
+  },
+  "l-q4-sokuji": {
+    "title": "Mondai 4 「｜即時応答《そくじおうとう》」: đáp ngay câu ngắn",
+    "body": [
+      "Mondai 4 có 11 câu, đề không in gì. Bạn nghe một câu ngắn, rồi ba câu đáp được đọc liền nhau, và chỉ có khoảng 8 giây để chọn câu đáp phù hợp nhất.",
+      "Câu đáp trong đề thật gần như luôn bắt đầu bằng nội dung: chỉ 3,1% mở đầu bằng 「はい」「いいえ」「では」. Ba câu đáp thường là ba thái độ khác nhau. Ví dụ 7/2025, sau 「この量は食べきれないよ」 là: đề nghị ăn giúp, hỏi có gọi thêm món không, và nói lượng vừa đủ; không câu nào nói 'có' hay 'không'.",
+      "Vì vậy phải hiểu ngay câu đầu: ai sẽ làm, người nói nghĩ gì, việc đã xảy ra chưa (các thẻ Shin Kanzen II). Đề 7/2025 có 「会ったきり」: gặp lần đó rồi thôi, tức từ đó đến nay không gặp lại.",
+      "Sách 『完全模試』 lưu ý: hội thoại nơi công sở xuất hiện nhiều, nên hãy làm quen với các câu giao tiếp ngắn. Lời cảm ơn, lời bày tỏ lòng biết ơn có mặt ở cả đáp án đúng lẫn sai, nên cần hiểu mỗi câu dùng trong tình huống nào."
+    ],
+    "quiz": [
+      "Cô đến lúc tiệm vừa mở (「開店と同時に」) mà bánh đã hết, nên câu 2 hợp. 「たくさん買えた」 ngược nghĩa; câu 4 hỏi như thể cô chưa đi."
+    ],
+    "example_notes": [
+      "Tài liệu này có vẻ không kịp tổng hợp xong trước ngày mai đâu."
+    ]
+  },
+  "l-q5-tougou": {
+    "title": "Mondai 5 「｜統合理解《とうごうりかい》」: so sánh nhiều thông tin",
+    "body": [
+      "Mondai 5 là bài dài: 2 bài nghe cho 3 câu trả lời và không có câu luyện tập. Bài 1 có một câu hỏi; bài 2 có hai câu hỏi 「質問1」「質問2」. Đề thật chỉ in tên 4 lựa chọn của bài 2; đề thi thử trên trang này không in gì, mọi lựa chọn đều được đọc lên.",
+      "Sách 『完全模試』 nêu hai dạng hay gặp: cuộc nói chuyện của 3 người (gia đình, bạn bè), hoặc một người nói (chuyên gia, giảng viên, nhân viên cửa hàng) rồi hai người nghe bàn với nhau. Cả 31 kỳ thi đều có bài từ 3 người nói trở lên.",
+      "Với bài có hai câu hỏi: nghe phần giới thiệu, ghi tóm tắt từng lựa chọn; sau đó nghe điều kiện trong hội thoại và đối chiếu. Hai câu hỏi hỏi hai điều khác nhau: ở ví dụ Shin Kanzen (tr.12), 「質問1」 hỏi người nữ, 「質問2」 hỏi người nam; đề 7/2025 hỏi hai người ngắm hoàng hôn ở đâu vào ngày 1 và ngày 2.",
+      "Mẹo ghi chú: mỗi lựa chọn một dòng, kèm đặc điểm ngắn như ví dụ. Sách nhắc để ý ai ở lập trường nào, ý kiến ra sao."
+    ],
+    "quiz": [
+      "Tối ngày thường (bánh mì), sáng cuối tuần (món Nhật), tối thứ Bảy (bánh Âu) đều vướng lịch của cô. Chỉ còn lớp món Trung vào chiều Chủ nhật."
+    ],
+    "example_notes": [
+      "Ghi chú: A gần ga, đắt / B rẻ, cũ / C rộng, xa"
+    ]
+  },
+  "l-shukuyaku": {
+    "title": "Dạng rút gọn 「｜縮約形《しゅくやくけい》」 trong hội thoại",
+    "body": [
+      "Khi nói, động từ thường bị rút gọn: 「〜ている」→「〜てる」, 「〜ておく」→「〜とく」, 「〜てしまう」→「〜ちゃう」, 「〜なければ」→「〜なきゃ」, 「〜ては」→「〜ちゃ」, 「〜ていく」→「〜てく」. Shin Kanzen (tr.16) nói dạng này đặc biệt nhiều khi nói với người thân quen.",
+      "Đây không phải chuyện hiếm: cả 31 kỳ thi N2 đều có. Tính trên 10.000 ký tự hội thoại, riêng 「〜てる」 gần 30 lần, 「って」 hơn 90 lần. Ngay cả nhân viên ở quầy trong đề thật cũng nói rút gọn, nên đừng nghĩ cảnh lịch sự thì không có.",
+      "Giáo trình thường viết dạng đầy đủ, nên lần đầu nghe 「置いとく」 bạn có thể tưởng là một từ lạ. Hãy học thuộc bảng đối chiếu theo cặp (thẻ Shin Kanzen I-2) để vừa nghe là nhận ra dạng gốc."
+    ],
+    "quiz": [
+      "「とっといて」 là 「とっておいて」: 「〜ておく」 rút thành 「〜とく」 (làm sẵn). 「とっていて」 là dạng 「〜ている」, rút gọn sẽ thành 「とってて」."
+    ],
+    "example_notes": [
+      "Mình để sẵn tài liệu trên bàn nhé.",
+      "Phải đi sớm thôi, không thì trễ tàu mất.",
+      "Nghe nói quán đó đóng cửa rồi."
+    ]
+  },
+  "l-iikae": {
+    "title": "Đáp án nói bằng từ khác 「｜言《い》い｜換《か》え」",
+    "body": [
+      "Ở Mondai 1 và 2, lựa chọn đúng có khi tóm lời giải thích dài trong bài nghe bằng một cách nói khác, ngắn gọn hơn; đôi khi gộp lời của hai người thành một (Shin Kanzen, tr.52).",
+      "Ví dụ đề 7/2025, Mondai 2 bài 1: cô sinh viên kể về một nhà xuất bản làm sách chuyên về thực vật và nói 「そこに入りたいんだ」 (muốn vào đó). Đáp án viết 「しゅっぱんしゃで｜働《はたら》く」 (làm việc ở nhà xuất bản): 'muốn vào' đã được nói lại thành 'làm việc'.",
+      "Lựa chọn trong đề thật in khá nhiều kana (「かくにん」「とうろく」); tỉ lệ chữ Hán trung bình chỉ khoảng 0,3. Nếu bạn quen nhận từ qua mặt chữ Hán, hãy luyện nhận từ qua cách đọc kana.",
+      "Cách làm: nghe xong, tự tóm ý bằng lời đơn giản của mình, rồi tìm lựa chọn cùng ý, dù từ ngữ khác."
+    ],
+    "quiz": [
+      "Đi học 「英会話」 (hội thoại tiếng Anh) chính là học ngoại ngữ. Anh học sau giờ làm, vẫn giữ việc, nên 'đổi việc' và 'đi dạy' đều sai."
+    ],
+    "example_notes": [
+      "Bài nghe: 'Tôi lỡ làm đau đầu gối' → lựa chọn: 'vì bị thương'"
+    ]
+  },
+  "l-aizuchi": {
+    "title": "Câu phản hồi ngắn và thái độ người nghe",
+    "body": [
+      "Hội thoại trong đề thật có rất nhiều câu phản hồi ngắn: 16,9% lượt nói chỉ dài tối đa 12 ký tự, như 「はい」「そうですか」「わかりました」「うん」. Chúng ít thông tin mới, nhưng cho biết người nghe đồng ý hay không.",
+      "Mức lịch sự của phản hồi cho biết quan hệ: 「うん」「そうなんだ」 là thân mật (bạn học, gia đình, đồng nghiệp); 「はい」「ええ」 là lịch sự (ở quầy, với trưởng phòng, bác sĩ).",
+      "Shin Kanzen (tr.33) phân biệt: không đồng ý là 「うーん」「でも」「そうかなあ」「そうかしら」「それはそうだけど」「ちょっと」「それはいいよ」; đồng ý là 「うん」「いいね」「そうだね」「なるほど」「｜助《たす》かる」「そうしよう」. Sách lưu ý: việc bị người kia không đồng ý phần lớn là việc không cần làm.",
+      "Shin Kanzen (tr.30) còn nhắc: tiếng 「あ」 ngắn trước khi nói và tiếng 「あー」 thấp, kéo dài cũng mang nghĩa; hãy nghe cả cao độ và độ dài, không chỉ từ ngữ."
+    ],
+    "quiz": [
+      "「そうかなあ」 là tỏ ý nghi ngờ, không đồng ý (Shin Kanzen tr.33). 「助かる」「いいね」「そうしよう」 đều là nhận lời đề nghị."
+    ],
+    "example_notes": [
+      "Nữ: 'Mua ở cửa hàng trước ga thì sao?' Nam: 'Ừm, chỗ đó đắt lắm.'"
+    ]
+  },
+  "l-keshikata": {
+    "title": "Mondai 1: lựa chọn sai bị loại thế nào",
+    "body": [
+      "Trong Mondai 1, việc sai hiếm khi bị bác bằng 「〜ではありません」. Đề thật loại chúng bằng cách: để sau (「その前に」「あとで」「｜後回《あとまわ》し」), không làm được (「難しい」「無理」), đã xong (「もう〜てある」), hoặc giao cho người khác.",
+      "Tính trên 10.000 ký tự hội thoại: để sau 10,6 lần, không làm được 3,5, đã xong 1,9; nói thẳng 'không cần' chỉ khoảng 1 lần, 「〜ではありません」 còn ít hơn. Nghĩa là bạn phải tự suy ra việc nào đã bị loại.",
+      "Shin Kanzen (tr.33) liệt kê cách nói 'không cần làm': 「要らない」「いいよ」「〜なくてもいい」「もう〜てある」「まだ使える」「まだある」「大丈夫だ」. Nghe thấy chúng, gạch việc đó đi.",
+      "Ba câu ví dụ trên thẻ là ba cách loại: để sang tuần sau, đã làm sẵn, người khác làm thay."
+    ],
+    "quiz": [
+      "Mực 「まだ箱に一つ残ってる」 (còn một hộp), rồi 「それより、紙がもうない」: giấy đã hết. Vậy cô mua giấy, không mua mực."
+    ],
+    "example_notes": [
+      "In tờ rơi thì để sang tuần sau nhé.",
+      "Bảng tên đã làm sẵn rồi ạ.",
+      "Nghe nói anh Yamamoto sẽ trực quầy tiếp tân thay."
+    ]
+  },
+  "l-keigo": {
+    "title": "Kính ngữ và câu nhờ: ai làm việc gì",
+    "body": [
+      "Mondai 1 và 4 có những cảnh ở quầy hoặc với cấp trên. Người ở quầy, cấp dưới nói 「はい」「ええ」; bạn bè, gia đình nói 「うん」. Dù vậy, nhân viên quầy trong đề thật vẫn dùng dạng rút gọn, nên đừng chỉ chờ câu kính ngữ đầy đủ.",
+      "Khoảng 16% câu Mondai 1 là một người nói: tin nhắn thoại, lời nhắn của trưởng phòng, tổng đài tự động. Hãy làm quen với câu lịch sự như 「お書きください」 (xin hãy viết) và 「お電話いたします」 (tôi sẽ gọi điện).",
+      "Quan trọng nhất là biết ai làm. Shin Kanzen (tr.19): 「〜させてもらえませんか」「〜させていただけませんか」 là xin phép, người nói làm; 「〜てもらえませんか」「〜ていただけませんか」 là nhờ, người nghe làm; 「〜ましょうか」 là đề nghị giúp, người nói làm.",
+      "Tiếng Nhật hay lược chủ ngữ, nên đôi khi chỉ một chữ 「させて」 quyết định ai làm. Shin Kanzen (tr.33) còn liệt kê câu nhờ, giao việc: 「〜てください」「〜てくれない？」「〜てくれると助かる」「お願い」「頼むよ」."
+    ],
+    "quiz": [
+      "「確認させてもらえますか」 có 「させて」: xin phép cho mình làm, nên người kiểm tra là nhân viên; người nhà chỉ là chủ thẻ. Nếu là 「確認してもらえますか」 thì khách làm."
+    ],
+    "example_notes": [
+      "Xin quý khách vui lòng ghi tên vào tờ giấy này.",
+      "Lát nữa chúng tôi sẽ gọi điện lại cho quý khách."
+    ]
+  },
+  "l-sk-01": {
+    "title": "Shin Kanzen: giới thiệu dạng 「課題理解」",
+    "body": [
+      "Theo Shin Kanzen (tr.2), 「課題理解」 yêu cầu nghe chỉ thị, lời nhờ, lời khuyên trong một đoạn hội thoại, rồi phán đoán từ giờ phải làm gì. Lựa chọn in trong đề, có câu kèm hình minh họa, có câu chỉ có chữ; lựa chọn cũng có thể là một tổ hợp nhiều thứ.",
+      "Ở ví dụ của sách, hai người chuẩn bị lễ hội văn hóa. Bảng chỉ dẫn 'phải mang ra', bàn tiếp tân 'vẫn chưa' → cần chuẩn bị. Micro 'ổn rồi', thùng rác đã xếp, ghế xếp cùng lúc đó → không cần chuẩn bị nữa.",
+      "Sách rút ra: phải nghe ra phần chỉ thị, lời khuyên để hiểu 'việc nên làm'; khi câu hỏi có 「まず」 thì trong nhiều việc phải xác định việc nào được ưu tiên.",
+      "Với lựa chọn tổ hợp, xét từng thứ một: đánh dấu 'cần' hay 'không cần', rồi tìm tổ hợp khớp đúng."
+    ],
+    "quiz": [
+      "Áo mưa mang 「念のため」 (phòng hờ), bình nước 「忘れないで」. Bản đồ xem bằng điện thoại, cơm hộp mua dọc đường nên chưa cho vào túi."
+    ],
+    "example_notes": [
+      "Bàn thì mình khiêng rồi, nhưng đồ uống thì vẫn chưa."
+    ]
+  },
+  "l-sk-02": {
+    "title": "Shin Kanzen: giới thiệu dạng 「ポイント理解」",
+    "body": [
+      "Shin Kanzen (tr.4): 「ポイント理解」 là nghe một đoạn nói, tập trung vào đúng điểm được hỏi. Câu hỏi thường về lý do, mục đích của sự việc, hoặc cảm xúc của người nói.",
+      "Ở ví dụ của sách, người phụ nữ không đi dự tiệc chia tay được. Cô nhắc chuyện bận vì con, con đã khỏi bệnh; nhưng lý do thật đến sau 「実は」: hôm đó cô đi khám sức khỏe tổng quát. Những chuyện nhắc trước đó đều không phải lý do.",
+      "Sách rút ra hai điều: vừa nghe vừa chọn ra thông tin liên quan đến điểm được hỏi; và trong bài nghe, nội dung đáp án thường được nói bằng cách khác với lựa chọn."
+    ],
+    "quiz": [
+      "Lý do thật đứng sau 「ただ」: chó còn nhỏ, không có chỗ gửi. Công việc đã ổn (「落ち着いた」), tiền 「なんとかなる」, và cô rất muốn đi."
+    ],
+    "example_notes": [
+      "Thật ra, hôm đó là đám cưới chị gái tôi, nên tôi phải đi từ sáng."
+    ]
+  },
+  "l-sk-03": {
+    "title": "Shin Kanzen: giới thiệu dạng 「概要理解」",
+    "body": [
+      "Shin Kanzen (tr.6): 「概要理解」 là nghe cả đoạn nói rồi phán đoán chủ đề, ý định hoặc chủ trương của người nói. Không có câu hỏi trước khi nghe; câu hỏi và lựa chọn đến sau.",
+      "Ví dụ của sách là giới thiệu một loại kệ sách trượt. Người nói nêu bất tiện của kệ cố định, rồi nói kệ trượt lấy sách dễ, tận dụng được chỗ, dễ dùng; giá hơi cao. Đáp án là 'ưu điểm của kệ trượt': chi tiết giá cao không đổi ý chính.",
+      "Bài học của sách: phần lớn chủ đề không được nói gọn trong một câu. Hãy nghe các từ khóa và nội dung quan trọng, rồi tự sắp xếp và tóm lại. Để ý cả cách các lựa chọn khác nhau: ở ví dụ, chúng chỉ đổi loại kệ và ưu hay nhược."
+    ],
+    "quiz": [
+      "Bài nêu việc mở cửa đến 9 giờ tối và hai kết quả: nhiều người ghé hơn, sách mượn tăng 20%. Người đi làm, sinh viên chỉ là một phần kết quả đó."
+    ],
+    "example_notes": [
+      "Ghi chú: thời gian đi làm giảm / không tốn tiền quần áo / lo thiếu vận động"
+    ]
+  },
+  "l-sk-04": {
+    "title": "Shin Kanzen: giới thiệu dạng 「即時応答」",
+    "body": [
+      "Shin Kanzen (tr.8): 「即時応答」 là nghe một câu ngắn (câu hỏi, báo tin, lời nhờ…) rồi chọn ngay câu đáp phù hợp.",
+      "Ví dụ 1 của sách: 「〜じゃない」 ở đây mang nghĩa xác nhận, và 「あれ？」 cho thấy người nói thấy lạ vì tình huống khác điều mình nghĩ. Câu đáp đúng giải thích vì sao đổi ý (bị cảm nên về). Ví dụ 2: người kia cảm ơn vì đã nghe mình nói; câu đáp hợp là 'có gì cứ nói, tôi lại nghe'.",
+      "Sách nhấn mạnh: câu rất ngắn, nên phải hiểu ngay ai làm gì; câu đáp cũng phải nghe là hiểu. Biến âm, ngữ điệu, cao độ đều ảnh hưởng đến nghĩa, cần đặc biệt chú ý."
+    ],
+    "quiz": [
+      "「あれ？」 và 「〜んじゃない？」: chị ngạc nhiên vì tưởng anh đang đi công tác. Câu 4 giải thích chuyến đi bị hoãn. Câu 2 là lời tiễn người sắp đi."
+    ],
+    "example_notes": [
+      "Ơ, chị Sato, chị bỏ đồ ngọt rồi cơ mà. Cái bánh đó là sao thế?"
+    ]
+  },
+  "l-sk-05": {
+    "title": "Shin Kanzen: giới thiệu dạng 「統合理解」",
+    "body": [
+      "Shin Kanzen (tr.10): 「統合理解」 là sắp xếp, kết hợp nhiều thông tin để hiểu nội dung. Có hai dạng chính: nghe ý kiến của từ hai người trở lên; hoặc nghe một bài nói rồi nghe ý kiến, đánh giá về nó. Chỉ dạng này không có câu luyện tập ở kỳ thi thật.",
+      "Dạng 1 (ví dụ 5): cả nhà bàn cách bố dùng ngày nghỉ; mỗi đề nghị lần lượt bị gạt, cuối cùng bố đi đá bóng. Vì nhiều người nói nên dễ rối; sách khuyên nhận ra sớm các ý kiến đối lập nhau và sắp xếp chúng.",
+      "Dạng 2 (ví dụ 6): nghe hướng dẫn về 4 tuyến xe buýt, rồi hai người nói điều kiện của mình. 「質問1」 hỏi người nữ, 「質問2」 hỏi người nam. Cần ghi chú thông tin, rồi đối chiếu với điều kiện của từng người."
+    ],
+    "quiz": [
+      "Anh 1 chốt 「それがいい」 cho quán nhậu anh 2 đề xuất. Khách sạn vượt ngân sách, phòng họp không mang đồ ăn vào được, nhà hàng năm ngoái đã đóng cửa."
+    ],
+    "example_notes": [
+      "Ghi chú: anh trai → muốn đi ô tô / em gái → đi tàu thì hơn / mẹ → thời gian là quan trọng"
+    ]
+  },
+  "l-sk-06": {
+    "title": "Phân biệt các âm nghe giống nhau",
+    "body": [
+      "Shin Kanzen (tr.14): nghe nhầm một từ có âm gần giống có thể khiến bạn không hiểu cả câu. Chỗ dễ nhầm: âm đục (dấu 「゛」), 「っ」 nhỏ, 「ゃ」「ゅ」「ょ」 nhỏ, 「ん」 và nguyên âm dài (「おかあさん」「コーヒー」). Cũng cần để ý trọng âm và ngữ điệu.",
+      "Ba cặp trên thẻ: 「おばさん」/「おばあさん」 chỉ khác độ dài nguyên âm; 「｜来《き》て」/「｜切《き》って」 khác ở 「っ」; 「｜自由《じゆう》」/「｜十《じゅう》」 khác ở chỗ 「ゆ」 là một âm riêng hay 「ゅ」 nhỏ ghép vào.",
+      "Khác biệt nằm ở độ dài: 「おばあさん」 dài hơn 「おばさん」 một nhịp, 「きって」 dài hơn 「きて」 một nhịp vì 「っ」 cũng chiếm một nhịp. Một nhịp thừa hay thiếu là một từ khác."
+    ],
+    "quiz": [
+      "「おじいさん」 có nguyên âm dài 「じい」: ông, người đàn ông lớn tuổi. 「おじさん」 âm ngắn mới là chú, bác, anh em của bố mẹ."
+    ],
+    "example_notes": [
+      "「おばさん」 (cô, dì; người phụ nữ trung niên) / 「おばあさん」 (bà; người phụ nữ lớn tuổi)",
+      "「来て」 (hãy đến) / 「切って」 (hãy cắt)",
+      "「自由」 (tự do) / 「十」 (số mười)"
+    ]
+  },
+  "l-sk-07": {
+    "title": "Bảng biến âm và dạng rút gọn",
+    "body": [
+      "Shin Kanzen (tr.16) lập bảng đối chiếu: 「〜ちゃう/〜じゃう」=「〜てしまう/〜でしまう」; 「〜ちゃ/〜じゃ」=「〜ては/〜では」; 「〜なくちゃ/〜なきゃ」=「〜なくては/〜なければ」; 「〜てる」=「〜ている」; 「〜てく」=「〜ていく」; 「〜とく」=「〜ておく」.",
+      "Còn có biến thành 「ん」: 「ら」「る」「れ」「の」「に」 → 「ん」, như 「｜足《た》んない」=「足りない」, 「｜寝《ね》らんない」=「寝られない」. Và thêm âm: 「っ」 (「すっごく」「ばっかり」) hoặc 「ん」 (「あんまり」「おんなじ」).",
+      "Sách nói biến âm đặc biệt nhiều khi nói với người thân quen, tức là trong hội thoại bạn bè, gia đình. Học thuộc bảng theo cặp để vừa nghe là nhận ra dạng gốc."
+    ],
+    "quiz": [
+      "「起きらんない」: 「ら」 của 「起きられない」 biến thành 「ん」, nghĩa là không dậy nổi. Không phải 'không muốn' hay 'không được phép'."
+    ],
+    "example_notes": [
+      "Vội thế thì ngã mất đấy.",
+      "Nghe nói phòng này không được chụp ảnh.",
+      "Trước khi ngủ phải đóng sẵn cửa sổ đã."
+    ]
+  },
+  "l-sk-08": {
+    "title": "Mondai 4: loại câu mở đầu và cặp câu đáp",
+    "body": [
+      "Shin Kanzen (tr.18): nghe câu ngắn → nghe 3 lựa chọn → chọn. Câu đầu thuộc ba nhóm: hỏi, nhờ, đề nghị giúp, xin phép; nêu ý kiến, cảm tưởng, chủ trương, giải thích; xin lỗi, cảm ơn, khen, chào hỏi. Hãy nghe như thể chính bạn đang tham gia cuộc nói chuyện.",
+      "Trang 27 ghép cặp câu mở với câu đáp: hỏi → cung cấp thông tin, khẳng định, phủ định; mời, nhờ, xin phép, đề xuất → nhận hoặc từ chối; phàn nàn → xin lỗi hoặc cãi lại; ý kiến → đồng ý hoặc không; báo tin → cảm tưởng (ngạc nhiên…).",
+      "Tiếp theo: than thở, hỏi ý → khuyên, động viên, đồng cảm; xin lỗi, cảm ơn → đón nhận; khen → khiêm tốn, cảm ơn; chào → chào lại. Ba câu ví dụ trên thẻ lần lượt là nhờ, cảm ơn, khen. Xác định loại câu đầu, rồi loại các câu đáp không đúng cặp."
+    ],
+    "quiz": [
+      "「やらせてもらえませんか」 là xin phép cho mình (người nói) làm trước. Câu không có lời xin lỗi, lời khen, cũng không rủ người nghe cùng làm."
+    ],
+    "example_notes": [
+      "Cậu giữ hộ mình cái ô này một lát được không?",
+      "Hôm trước thật sự nhờ có anh mà tôi đỡ quá.",
+      "Cái áo len đó hợp với cậu lắm."
+    ]
+  },
+  "l-sk-09": {
+    "title": "Hiểu ngay câu đầu tiên ở Mondai 4",
+    "body": [
+      "Shin Kanzen (tr.19): khi nghe câu đầu, chú ý ba điều: ai làm (người nói hay người nghe); người nói nghĩ gì về chủ đề; sự việc đã xảy ra hay chưa. Ngoài ra, cần để ý các cách nói hay dùng trong hội thoại và ngữ điệu.",
+      "Ba câu ví dụ trên thẻ ứng với ba điều đó. Mỗi điều có một thẻ riêng: ai làm, người nói nghĩ gì, đã xảy ra chưa, ngữ điệu, và cách nói hội thoại.",
+      "Đề 7/2025 có câu 「1位に｜迫《せま》る｜勢《いきお》いだったね」: 'khí thế như sắp đuổi kịp hạng nhất'. Vận động viên chưa về nhất, nên đáp án là 'suýt nữa thì được hạng nhất'."
+    ],
+    "quiz": [],
+    "example_notes": [
+      "Mình đưa cậu ra ga nhé? (Ai làm?)",
+      "Phim này khá hay đấy chứ nhỉ? (Người nói nghĩ thế nào?)",
+      "Suýt nữa thì làm đổ cà phê. (Đã xảy ra chưa?)"
+    ]
+  },
+  "l-sk-10": {
+    "title": "Ai làm? Xin phép hay nhờ vả",
+    "body": [
+      "Shin Kanzen (tr.19) chia bảng 'ai làm'. Người nói làm khi xin phép: 「〜させて」 + 「ほしいんだけど」「ください」「もらえる？」「いただけませんか」…, hoặc 「〜ても」 + 「いい？」「いいでしょうか」; và khi đề nghị giúp: 「〜ましょうか」「〜ようか」.",
+      "Người nghe làm khi được nhờ: 「〜て」 + 「ほしいんだけど」「くれない？」「もらえる？」「いただけませんか」, 「〜てくれると助かるんですが」; và khi được đề xuất, chỉ thị: 「〜たらどう？」「〜ばいいんじゃない？」「〜たほうがいいですよ」.",
+      "Mấu chốt: cùng đuôi 「もらえる？」, có 「させて」 thì người nói làm, không có thì người nghe làm. Sách còn lưu ý 「〜ておく」 thường biến thành 「〜とく」「〜といて」, như 「置いといてもらえる？」 là nhờ người nghe để sẵn."
+    ],
+    "quiz": [
+      "「読ませてもらってもいい？」 có 「させて」 và 「〜てもいい？」: xin phép cho mình đọc trước, nên người đọc là người nói. 「田中さん」 chỉ là người làm tài liệu.",
+      "「送っといてもらえる？」 là 「送っておいてもらえる？」, không có 「させて」: nhờ người nghe gửi. 「みんな」 là người nhận, không phải người gửi."
+    ],
+    "example_notes": [
+      "Hôm nay cho tôi về sớm một chút được không ạ? (người nói làm)",
+      "Cậu cất cái hộp này lại lên kệ giúp mình nhé? (người nghe làm)",
+      "Mình pha cà phê nhé? (người nói làm)"
+    ]
+  },
+  "l-sk-11": {
+    "title": "「じゃない」 và 「んじゃない」: nghĩa ngược nhau",
+    "body": [
+      "Shin Kanzen (tr.21): 「これじゃない」 là 「これではない」, nghĩa phủ định, cuối câu hạ giọng. Còn 「これなんじゃない？」 ngược lại, nghĩa là 'chắc là cái này', khẳng định, cuối câu lên giọng.",
+      "Khi có 「と思う」 phía sau, ngữ điệu hai dạng giống nhau, nên phải nghe có 「か」 hay không: 「〜じゃないと思います」 là tôi nghĩ không phải; 「〜んじゃないかと思います」 là tôi nghĩ là phải.",
+      "Các biến thể của 「〜んじゃない」 đều mang nghĩa 'tôi nghĩ là…': 「おいしいんじゃないの？」「行ったんじゃないかな」「できないんじゃないでしょうか」. Thấy 「ない」 đừng vội hiểu là phủ định; hãy nghe có 「ん」 đứng trước không."
+    ],
+    "quiz": [
+      "「着くんじゃないかな」 có 「ん」: đoán là sẽ đến sớm. 「ない」 ở đây không phủ định, nên 'nghĩ là không đến sớm' sai.",
+      "「派手じゃないと思う」 không có 「ん」, không có 「か」: phủ định thật, 'tôi nghĩ không lòe loẹt'."
+    ],
+    "example_notes": [
+      "Cái cặp này hơi nặng đấy chứ? (nghĩ là nặng)",
+      "Tôi nghĩ hôm nay không mưa đâu. (nghĩ là không mưa)"
+    ]
+  },
+  "l-sk-12": {
+    "title": "Việc đã xảy ra hay chưa xảy ra?",
+    "body": [
+      "Shin Kanzen (tr.22): khi nghe ý kiến, báo tin, cảm tưởng, cần xét sự việc có thật sự xảy ra không. Đặc biệt chú ý các cách nói dùng thể た mà thực tế lại chưa xảy ra.",
+      "Đã xảy ra: 「〜て〜た」 (「行ってよかった」), 「thể た + ところだ」 (vừa mới). Chưa xảy ra: 「〜そうだった」「〜そうになった」, 「〜たかった」「〜てほしかった（けど）」, 「つもりだった」, 「thể từ điển + ところだった」, 「〜ようと思っていた（けど）」, 「〜ようとしたら」.",
+      "Nghe thấy thể た, đừng vội kết luận 'đã làm'. Hãy nghe hết đuôi câu: 「ところだった」 hay 「つもりだった」 đổi nghĩa thành 'suýt' hoặc 'định mà không làm'."
+    ],
+    "quiz": [
+      "「転びそうになった」 là suýt ngã: 「〜そうになった」 chỉ việc chưa xảy ra. Vậy người nói không ngã, cũng không bị thương.",
+      "「洗おうと思ってて」: 'định lát nữa rửa'. Dạng 「〜ようと思っていた」 cho biết việc chưa làm, nên đĩa vẫn chưa rửa."
+    ],
+    "example_notes": [
+      "Suýt nữa thì lỡ chuyến tàu cuối. (đã kịp lên tàu)",
+      "Nghỉ hè định leo núi Phú Sĩ vậy mà… (đã không leo)"
+    ]
+  },
+  "l-sk-13": {
+    "title": "Ngữ điệu: hỏi, báo tin hay xác nhận",
+    "body": [
+      "Shin Kanzen (tr.23): cùng một câu, ngữ điệu khác thì nghĩa khác. Phải nghe ra câu đang báo tin, hay đang hỏi đối phương.",
+      "Ví dụ trên thẻ: 「あしたの試合、出ないの」 hạ giọng cuối câu là báo 'mình không đá'; lên giọng là hỏi 'cậu không đá à?'. Lên giọng còn có thể là hỏi lại để xác nhận điều vừa nghe. Còn 「〜って」 hạ giọng là thuật lại tin nghe được.",
+      "Ở Mondai 4 không có chữ để nhìn, nên ngữ điệu cuối câu là manh mối quan trọng: nó quyết định câu đáp phải là trả lời, là cảm tưởng hay là xác nhận."
+    ],
+    "quiz": [
+      "Lên giọng cùng 「え？」 và 「〜って」: hỏi lại tin vừa nghe để xác nhận. Nếu hạ giọng thì mới là thuật lại tin cho người khác."
+    ],
+    "example_notes": [
+      "Ngày mai cậu không đá trận đấu à? (đang hỏi)",
+      "Ngày mai mình không đá trận đấu đâu. (đang báo tin)",
+      "Nghe nói từ tháng sau trưởng phòng chuyển đến Osaka. (thuật lại tin nghe được)"
+    ]
+  },
+  "l-sk-14": {
+    "title": "Cách nói hội thoại cho biết chức năng câu",
+    "body": [
+      "Shin Kanzen (tr.25) luyện nghe câu đầu và đoán ngay chức năng qua cách nói: hỏi, xác nhận (「〜っけ」「〜の？」); đề xuất (「〜たらどう？」「〜たほうがいい」); chỉ thị (「〜なくちゃ」「〜なきゃ」「〜ないと」).",
+      "Tiếp: đề nghị giúp (「〜ましょう（か）」); rủ rê (「〜ませんか」「〜ましょう」); cảm tưởng (「〜といったら」「〜っていったら」「〜なんて」); báo tin (「〜（んだ）って」「〜ちゃう」「〜じゃう」).",
+      "Biết chức năng rồi thì dùng bảng cặp câu (tr.27) để chọn câu đáp: hỏi → cung cấp thông tin; đề xuất → nhận hay từ chối; cảm tưởng → đồng tình hay không."
+    ],
+    "quiz": [
+      "「〜なんて」 cuối câu là bày tỏ cảm tưởng (ngạc nhiên: tận 1 tiếng!). Câu không hỏi lại, không đề xuất, cũng không đề nghị giúp."
+    ],
+    "example_notes": [
+      "Cửa nam của ga là phía nào ấy nhỉ? (xác nhận)",
+      "Mang ô theo thì sao? (đề xuất)",
+      "Để tôi đưa anh ra ga nhé. (đề nghị giúp)"
+    ]
+  }
+}

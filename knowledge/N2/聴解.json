@@ -1,6 +1,1088 @@
 {
- "category": "聴解",
- "level": "N2",
- "kind": "guide",
- "entries": []
+  "category": "聴解",
+  "level": "N2",
+  "kind": "guide",
+  "entries": [
+    {
+      "id": "l-overview",
+      "group": "問題形式",
+      "tags": [
+        "全体"
+      ],
+      "examples": [],
+      "sources": [
+        {
+          "ref": ".agents/jlpt-exam-structure/SKILL.md",
+          "note": "§聴解 — 約50分・30問、問題ごとの問数と印刷物、例の有無、質問を2回読む問題"
+        },
+        {
+          "ref": ".agents/choukai-audio/SKILL.md",
+          "note": "Part 3 ANSWER_PAUSE — 答える時間（公式の実測 12.2秒／8.3秒）"
+        },
+        {
+          "ref": "refs/KanzenMoshi/JLPT_N2_Kanzen_Moshi-Taisaku.pdf",
+          "page": 13,
+          "note": "聴解問題全体に共通するポイント（本のp.11）"
+        }
+      ],
+      "related": [
+        "l-q1-kadai",
+        "l-q2-point",
+        "l-q3-gaiyou",
+        "l-q4-sokuji",
+        "l-q5-tougou"
+      ],
+      "quiz": [
+        {
+          "stem": "問題1〜4のうち、問題｜用紙《ようし》に｜選択肢《せんたくし》が｜印刷《いんさつ》されているのはどれか。",
+          "options": [
+            "問題1と問題2",
+            "問題2と問題3",
+            "問題3と問題4",
+            "問題1と問題4"
+          ],
+          "answer": 1
+        },
+        {
+          "stem": "｜選択肢《せんたくし》が3つしかないのは、どの問題か。",
+          "options": [
+            "問題1",
+            "問題2",
+            "問題3",
+            "問題4"
+          ],
+          "answer": 4
+        }
+      ]
+    },
+    {
+      "id": "l-q1-kadai",
+      "group": "問題形式",
+      "tags": [
+        "問題1"
+      ],
+      "examples": [
+        "先に｜部長《ぶちょう》のサインをもらってから、｜経理《けいり》に出してね。",
+        "｜会場《かいじょう》の｜下見《したみ》が終わったら、｜案内図《あんないず》を作ってくれる？",
+        "ご｜予約《よやく》の｜変更《へんこう》は、1番を押してください。"
+      ],
+      "sources": [
+        {
+          "ref": ".agents/jlpt-exam-structure/SKILL.md",
+          "note": "§問題1 Question Forms — 「この後まず何を」36.8%、「何を」31.0%、一人の話16%"
+        },
+        {
+          "ref": ".agents/choukai-audio/references/official_register.md",
+          "note": "§2.3 正解でない候補の消し方（後回し・できない・済んでいる・他の人）"
+        },
+        {
+          "ref": "refs/KanzenMoshi/JLPT_N2_Kanzen_Moshi-Taisaku.pdf",
+          "page": 13,
+          "note": "問題1【課題理解】の流れと★（本のp.11）"
+        },
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Choukai.pdf",
+          "page": 12,
+          "note": "問題紹介1 例題1の解説 — 「まず」のときは優先するものを判断（本のp.3）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/16. N2 7-2025/script.md",
+          "note": "7/2025 問題1-1番 — ほかの人がしている作業・自分が担当する作業で候補が消える"
+        }
+      ],
+      "related": [
+        "l-sk-01",
+        "l-keshikata",
+        "l-overview"
+      ],
+      "quiz": [
+        {
+          "stem": "男「｜案内状《あんないじょう》の｜印刷《いんさつ》はもう終わってるよ。｜封筒《ふうとう》の｜宛名《あてな》は、午後に木村さんが書くって。｜名簿《めいぼ》のコピーは明日でいいから、まず｜会場《かいじょう》に電話して｜人数《にんずう》を｜伝《つた》えてくれる？」　女の人が最初にすることはどれか。",
+          "options": [
+            "｜案内状《あんないじょう》を｜印刷《いんさつ》する",
+            "｜封筒《ふうとう》に｜宛名《あてな》を書く",
+            "｜会場《かいじょう》に電話する",
+            "｜名簿《めいぼ》をコピーする"
+          ],
+          "answer": 3
+        }
+      ]
+    },
+    {
+      "id": "l-q2-point",
+      "group": "問題形式",
+      "tags": [
+        "問題2"
+      ],
+      "examples": [
+        "女の人が｜引《ひ》っ｜越《こ》しをやめたわけは何か。",
+        "男の人は新しい店のどんな点に｜不満《ふまん》がありますか。"
+      ],
+      "sources": [
+        {
+          "ref": ".agents/jlpt-exam-structure/SKILL.md",
+          "note": "§聴解 表 — 問題2は選択肢を読む時間がある、質問は2回"
+        },
+        {
+          "ref": ".agents/choukai-audio/SKILL.md",
+          "note": "Part 3 GAP_OPTION_READING — 公式の実測 20.22秒"
+        },
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Choukai.pdf",
+          "page": 56,
+          "note": "IV「ポイント理解」問題形式と内容 — 質問の後、話が始まるまで20秒ぐらい（本のp.47）"
+        },
+        {
+          "ref": "tools/choukai_profile.py",
+          "note": "--baseline §3 問題2 質問型 — 内容・発言37.6%、理由32.6%、一番・優先5.5%"
+        },
+        {
+          "ref": "refs/KanzenMoshi/JLPT_N2_Kanzen_Moshi-Taisaku.pdf",
+          "page": 13,
+          "note": "問題2【ポイント理解】の流れと★（本のp.11）"
+        }
+      ],
+      "related": [
+        "l-sk-02",
+        "l-iikae",
+        "l-overview"
+      ],
+      "quiz": [
+        {
+          "stem": "質問「男の人はどうして自転車で｜通勤《つうきん》するのをやめましたか。」　男「｜健康《けんこう》のために始めたんだけどね。会社の近くの｜駐輪場《ちゅうりんじょう》がなくなっちゃって。雨の日がつらいのは、もう｜慣《な》れてたんだけど。」",
+          "options": [
+            "体をこわしたから",
+            "自転車を置けなくなったから",
+            "雨の日がつらいから",
+            "会社が遠くなったから"
+          ],
+          "answer": 2
+        }
+      ]
+    },
+    {
+      "id": "l-q3-gaiyou",
+      "group": "問題形式",
+      "tags": [
+        "問題3"
+      ],
+      "examples": [
+        "メモ：｜去年《きょねん》から始めた／｜参加者《さんかしゃ》が｜倍《ばい》に／｜場所《ばしょ》が｜足《た》りない"
+      ],
+      "sources": [
+        {
+          "ref": ".agents/jlpt-exam-structure/SKILL.md",
+          "note": "§聴解 表・§問題N instruction lines — 問題3は何も印刷されず、話の前に質問がない／§Announcer — 問題3・5の読まれる選択肢の間は約3秒"
+        },
+        {
+          "ref": ".agents/choukai-audio/references/official_register.md",
+          "note": "§2.5 問題3の話は間違いの選択肢を否定しない"
+        },
+        {
+          "ref": "refs/KanzenMoshi/JLPT_N2_Kanzen_Moshi-Taisaku.pdf",
+          "page": 14,
+          "note": "問題3【概要理解】の流れと★（本のp.12）"
+        },
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Choukai.pdf",
+          "page": 16,
+          "note": "問題紹介3 例題3の解説 — 主題は一言で表されない（本のp.7）"
+        }
+      ],
+      "related": [
+        "l-sk-03",
+        "l-overview"
+      ],
+      "quiz": [
+        {
+          "stem": "女「駅前の自転車｜置《お》き｜場《ば》が、先月から広くなりました。｜以前《いぜん》は｜歩道《ほどう》に止める人が多くて、通るのも大変でした。今はお｜年寄《としよ》りやベビーカーの人も、｜安心《あんしん》して歩けます。」　話の｜中心《ちゅうしん》は何か。",
+          "options": [
+            "自転車｜置《お》き｜場《ば》を作る｜費用《ひよう》",
+            "自転車｜置《お》き｜場《ば》が広くなってよくなったこと",
+            "｜歩道《ほどう》に自転車を止める人の数",
+            "ベビーカーで歩くときの注意"
+          ],
+          "answer": 2
+        }
+      ]
+    },
+    {
+      "id": "l-q4-sokuji",
+      "group": "問題形式",
+      "tags": [
+        "問題4"
+      ],
+      "examples": [
+        "この｜資料《しりょう》、あしたまでにまとめきれそうにないんだ。"
+      ],
+      "sources": [
+        {
+          "ref": ".agents/jlpt-exam-structure/SKILL.md",
+          "note": "§聴解 表 — 問題4は11問・3択・何も印刷されない"
+        },
+        {
+          "ref": ".agents/choukai-audio/references/official_register.md",
+          "note": "§2.4 問題4の返事 — 内容から始まる、3つの返事は立場が違う"
+        },
+        {
+          "ref": "tools/choukai_profile.py",
+          "note": "--baseline §5 — はい/いいえ/ではで始まる返事は3.1%"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/16. N2 7-2025/script.md",
+          "note": "7/2025 問題4-4番「食べきれない」・8番「会ったきり」"
+        },
+        {
+          "ref": "refs/KanzenMoshi/JLPT_N2_Kanzen_Moshi-Taisaku.pdf",
+          "page": 14,
+          "note": "問題4【即時応答】の★（本のp.12）"
+        }
+      ],
+      "related": [
+        "l-sk-04",
+        "l-sk-08",
+        "l-sk-09"
+      ],
+      "quiz": [
+        {
+          "stem": "女「駅前のパン屋、｜朝《あさ》7時の｜開店《かいてん》と同時に行ったのに、もう売り切れてたの。」",
+          "options": [
+            "じゃ、たくさん買えたんだね。",
+            "そんなに早く売り切れるんだ。",
+            "7時ならまだ開いてないよね。",
+            "パン屋、7時に行くつもりなの？"
+          ],
+          "answer": 2
+        }
+      ]
+    },
+    {
+      "id": "l-q5-tougou",
+      "group": "問題形式",
+      "tags": [
+        "問題5"
+      ],
+      "examples": [
+        "メモ：A 駅から近い・高い／B 安い・古い／C 広い・遠い"
+      ],
+      "sources": [
+        {
+          "ref": ".agents/jlpt-exam-structure/SKILL.md",
+          "note": "§聴解 表・問題5 shape — 2つの話で3問、練習なし、本番は2番の選択肢（名前）だけ印刷"
+        },
+        {
+          "ref": "tools/choukai_profile.py",
+          "note": "--baseline §6 — 3人以上が話す問題5が31回すべてにある"
+        },
+        {
+          "ref": "refs/KanzenMoshi/JLPT_N2_Kanzen_Moshi-Taisaku.pdf",
+          "page": 14,
+          "note": "問題5【統合理解】の流れ・よく出る問題・★（本のp.12）"
+        },
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Choukai.pdf",
+          "page": 20,
+          "note": "問題紹介5 例題5の解説 — 提案が次々に反対されて消える（本のp.11）"
+        },
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Choukai.pdf",
+          "page": 21,
+          "note": "問題紹介5 例題6の解説 — 説明の情報を整理し、2人の条件に合うものを選ぶ（例題では質問1が女の人、質問2が男の人）（本のp.12）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/16. N2 7-2025/script.md",
+          "note": "7/2025 問題5 — 1番は3人の話し合い、2番は紹介＋2人の会話で質問1（1日目）・質問2（2日目）"
+        }
+      ],
+      "related": [
+        "l-sk-05",
+        "l-overview"
+      ],
+      "quiz": [
+        {
+          "stem": "｜説明《せつめい》「料理教室は4つです。｜和食《わしょく》は土曜の｜朝《あさ》、パンは｜平日《へいじつ》の｜夜《よる》、｜洋菓子《ようがし》は土曜の｜夜《よる》、｜中華《ちゅうか》は日曜の午後です。」　女「｜平日《へいじつ》は仕事で帰りが｜遅《おそ》いし、｜週末《しゅうまつ》の｜朝《あさ》は子どもの｜習《なら》い｜事《ごと》があるの。土曜の｜夜《よる》は、家族で出かけることが多いしね。」　女の人はどの教室に行きますか。",
+          "options": [
+            "｜和食《わしょく》",
+            "パン",
+            "｜洋菓子《ようがし》",
+            "｜中華《ちゅうか》"
+          ],
+          "answer": 4
+        }
+      ]
+    },
+    {
+      "id": "l-shukuyaku",
+      "group": "聞き取りのコツ",
+      "tags": [
+        "全体"
+      ],
+      "examples": [
+        "｜資料《しりょう》、机の上に置いとくね。",
+        "早く出なきゃ、電車に｜遅《おく》れちゃう。",
+        "あの店、もう｜閉《し》まってるって。"
+      ],
+      "sources": [
+        {
+          "ref": ".agents/choukai-audio/references/official_register.md",
+          "note": "§7.6(a) 縮約形 — 公式の会話 1万字あたりの回数"
+        },
+        {
+          "ref": ".agents/choukai-audio/SKILL.md",
+          "note": "§Register rule 3 — 縮約形は31回すべての公式問題に出る（31/31）"
+        },
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Choukai.pdf",
+          "page": 25,
+          "note": "実力養成編 I-2 音の変化や縮約形の表（本のp.16）"
+        }
+      ],
+      "related": [
+        "l-sk-07"
+      ],
+      "quiz": [
+        {
+          "stem": "「会議の前に、コピーとっといてくれる？」の「とっといて」の元の形はどれか。",
+          "options": [
+            "とっていて",
+            "とっておいて",
+            "とってきて",
+            "とってしまって"
+          ],
+          "answer": 2
+        }
+      ]
+    },
+    {
+      "id": "l-iikae",
+      "group": "聞き取りのコツ",
+      "tags": [
+        "問題1",
+        "問題2"
+      ],
+      "examples": [
+        "話「ひざを｜痛《いた》めちゃって」→ ｜選択肢《せんたくし》「けがをしたから」"
+      ],
+      "sources": [
+        {
+          "ref": ".agents/choukai-audio/references/official_register.md",
+          "note": "§7.6(b) 言い換え — Shin Kanzen IV-2"
+        },
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Choukai.pdf",
+          "page": 61,
+          "note": "実力養成編 IV-2 言い換えに注意する（本のp.52）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/16. N2 7-2025/script.md",
+          "note": "7/2025 問題2-1番 — 女の学生「植物専門の本を作ってる出版社があって、そこに入りたい」→ 正解4「しゅっぱんしゃで働く」（入りたい→働く）"
+        },
+        {
+          "ref": ".agents/jlpt-exam-structure/SKILL.md",
+          "note": "§Printed options are kana-LEANING — 公式の選択肢の漢字の割合 0.298"
+        }
+      ],
+      "related": [
+        "l-q2-point",
+        "l-sk-02"
+      ],
+      "quiz": [
+        {
+          "stem": "男「来月から、仕事が終わったあとで、週に2回｜英会話《えいかいわ》の学校に通うことにしたんだ。」　男の人は何を始めますか。",
+          "options": [
+            "外国語を習う",
+            "仕事を変える",
+            "学校で教える",
+            "外国へ行く"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "l-aizuchi",
+      "group": "聞き取りのコツ",
+      "tags": [
+        "問題1",
+        "問題2",
+        "問題5"
+      ],
+      "examples": [
+        "女「駅前の店で買ったら？」男「うーん、あそこは高いからなあ。」"
+      ],
+      "sources": [
+        {
+          "ref": ".agents/choukai-audio/references/official_register.md",
+          "note": "§2.1 短い反応の頻度、§2.2 あいづちの丁寧さと人間関係"
+        },
+        {
+          "ref": "tools/choukai_profile.py",
+          "note": "--baseline §1 — 12字以下の短い反応が発話の16.9%"
+        },
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Choukai.pdf",
+          "page": 42,
+          "note": "実力養成編 III-1 同意しない／同意するを示す表現（本のp.33）"
+        },
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Choukai.pdf",
+          "page": 39,
+          "note": "実力養成編 II-2-C 話す前の短い「あ」と低く長い「あー」（本のp.30）"
+        }
+      ],
+      "related": [
+        "l-keigo",
+        "l-keshikata"
+      ],
+      "quiz": [
+        {
+          "stem": "次のうち、｜相手《あいて》の｜提案《ていあん》に｜同意《どうい》していないことを｜表《あらわ》すのはどれか。",
+          "options": [
+            "そうしよう",
+            "｜助《たす》かる",
+            "そうかなあ",
+            "いいね"
+          ],
+          "answer": 3
+        }
+      ]
+    },
+    {
+      "id": "l-keshikata",
+      "group": "聞き取りのコツ",
+      "tags": [
+        "問題1"
+      ],
+      "examples": [
+        "チラシの｜印刷《いんさつ》は、来週に｜回《まわ》そう。",
+        "｜名札《なふだ》はもう作ってあります。",
+        "｜受付《うけつけ》は山本さんが｜代《か》わってくれるって。"
+      ],
+      "sources": [
+        {
+          "ref": ".agents/choukai-audio/references/official_register.md",
+          "note": "§2.3 How official kills a wrong candidate — 1万字あたり 後回し10.6・できない3.5・済んでいる1.9、はっきりした否定は1.0以下"
+        },
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Choukai.pdf",
+          "page": 42,
+          "note": "実力養成編 III-1 しなくてもいいことを表す表現（本のp.33）"
+        }
+      ],
+      "related": [
+        "l-q1-kadai",
+        "l-sk-01"
+      ],
+      "quiz": [
+        {
+          "stem": "女「プリンターのインク、買ってこようか。」　男「あ、インクならまだ｜箱《はこ》に一つ｜残《のこ》ってるよ。それより、｜紙《かみ》がもうないんだ。」　女の人は何を買いますか。",
+          "options": [
+            "インク",
+            "｜箱《はこ》",
+            "プリンター",
+            "｜紙《かみ》"
+          ],
+          "answer": 4
+        }
+      ]
+    },
+    {
+      "id": "l-keigo",
+      "group": "聞き取りのコツ",
+      "tags": [
+        "問題1",
+        "問題4"
+      ],
+      "examples": [
+        "こちらの｜用紙《ようし》に、お名前をお書きください。",
+        "のちほど、こちらから｜折《お》り｜返《かえ》しお電話いたします。"
+      ],
+      "sources": [
+        {
+          "ref": ".agents/choukai-audio/references/official_register.md",
+          "note": "§2.2 register split（はい/ええ/かしこまりました = 店・上司）、§7.6(a) 店員の会話の縮約形"
+        },
+        {
+          "ref": ".agents/jlpt-exam-structure/SKILL.md",
+          "note": "§問題1 Question Forms — 一人の話（留守番電話・課長からのメッセージ・自動音声）16%"
+        },
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Choukai.pdf",
+          "page": 28,
+          "note": "実力養成編 II-1-A 話し手がする／聞き手がするの表（本のp.19）"
+        },
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Choukai.pdf",
+          "page": 42,
+          "note": "実力養成編 III-1 働きかけの表現（本のp.33）"
+        }
+      ],
+      "related": [
+        "l-sk-10",
+        "l-aizuchi"
+      ],
+      "quiz": [
+        {
+          "stem": "｜客《きゃく》「このカード、家族のなんですけど、使えますか。」　｜店員《てんいん》「はい。お｜支払《しはら》いの前に、カード、｜確認《かくにん》させてもらえますか。」　カードを｜確認《かくにん》するのはだれか。",
+          "options": [
+            "｜店員《てんいん》",
+            "｜客《きゃく》",
+            "｜客《きゃく》の家族",
+            "｜客《きゃく》と｜店員《てんいん》の二人"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "l-sk-01",
+      "group": "SK 問題紹介",
+      "tags": [
+        "問題1"
+      ],
+      "examples": [
+        "テーブルはもう｜運《はこ》んだけど、飲み物がまだなんだ。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Choukai.pdf",
+          "page": 11,
+          "note": "問題紹介1 課題理解（本のp.2）"
+        },
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Choukai.pdf",
+          "page": 12,
+          "note": "問題紹介1 例題1の答えと解説（本のp.3）"
+        }
+      ],
+      "related": [
+        "l-q1-kadai",
+        "l-keshikata"
+      ],
+      "quiz": [
+        {
+          "stem": "（ア ｜地図《ちず》　イ ｜雨具《あまぐ》　ウ ｜弁当《べんとう》　エ ｜水筒《すいとう》）　女「｜地図《ちず》はスマホで見られるから｜要《い》らないね。｜雨具《あまぐ》は、｜晴《は》れの｜予報《よほう》だけど山だから｜念《ねん》のため。お｜弁当《べんとう》は｜途中《とちゅう》で買うとして、｜水筒《すいとう》は忘れないで。」　今、かばんに入れるものはどれですか。",
+          "options": [
+            "ア イ",
+            "イ エ",
+            "イ ウ エ",
+            "ア ウ"
+          ],
+          "answer": 2
+        }
+      ]
+    },
+    {
+      "id": "l-sk-02",
+      "group": "SK 問題紹介",
+      "tags": [
+        "問題2"
+      ],
+      "examples": [
+        "実は、その日は｜姉《あね》の｜結婚式《けっこんしき》で、｜朝《あさ》から出かけるんです。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Choukai.pdf",
+          "page": 13,
+          "note": "問題紹介2 ポイント理解（本のp.4）"
+        },
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Choukai.pdf",
+          "page": 14,
+          "note": "問題紹介2 例題2の答えと解説（本のp.5）"
+        }
+      ],
+      "related": [
+        "l-q2-point",
+        "l-iikae"
+      ],
+      "quiz": [
+        {
+          "stem": "質問「女の人はどうして旅行に行かないのですか。」　女「行きたい気持ちはあるのよ。先月は仕事が忙しかったけど、今はもう｜落《お》ち｜着《つ》いたの。お金もなんとかなるし。ただ、｜飼《か》ってる｜犬《いぬ》がまだ小さくて、｜預《あず》けるところがないのよ。」",
+          "options": [
+            "仕事が忙しいから",
+            "お金がないから",
+            "｜犬《いぬ》を｜預《あず》ける所がないから",
+            "旅行が好きではないから"
+          ],
+          "answer": 3
+        }
+      ]
+    },
+    {
+      "id": "l-sk-03",
+      "group": "SK 問題紹介",
+      "tags": [
+        "問題3"
+      ],
+      "examples": [
+        "メモ：｜通勤《つうきん》時間が｜減《へ》った／｜服代《ふくだい》がかからない／｜運動不足《うんどうぶそく》が心配"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Choukai.pdf",
+          "page": 15,
+          "note": "問題紹介3 概要理解（本のp.6）"
+        },
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Choukai.pdf",
+          "page": 16,
+          "note": "問題紹介3 例題3の答えと解説（本のp.7）"
+        }
+      ],
+      "related": [
+        "l-q3-gaiyou"
+      ],
+      "quiz": [
+        {
+          "stem": "男「この町の図書館は、｜去年《きょねん》から｜夜《よる》9時まで開くようになりました。｜仕事帰《しごとがえ》りに｜寄《よ》る人が増え、学生の勉強の｜場所《ばしょ》にもなっています。本を｜借《か》りる人の数も、前の年より2｜割《わり》多くなりました。」　話の｜中心《ちゅうしん》は何か。",
+          "options": [
+            "図書館の本の選び方",
+            "学生の勉強の仕方",
+            "｜仕事帰《しごとがえ》りの人の生活",
+            "｜開館《かいかん》時間をのばした｜結果《けっか》"
+          ],
+          "answer": 4
+        }
+      ]
+    },
+    {
+      "id": "l-sk-04",
+      "group": "SK 問題紹介",
+      "tags": [
+        "問題4"
+      ],
+      "examples": [
+        "あれ、｜佐藤《さとう》さん、｜甘《あま》いものはやめたはずじゃない。そのケーキ、どうしたの？"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Choukai.pdf",
+          "page": 17,
+          "note": "問題紹介4 即時応答（本のp.8）"
+        },
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Choukai.pdf",
+          "page": 18,
+          "note": "問題紹介4 例題4の答えと解説（本のp.9）"
+        }
+      ],
+      "related": [
+        "l-q4-sokuji",
+        "l-sk-11",
+        "l-sk-13"
+      ],
+      "quiz": [
+        {
+          "stem": "女「あれ？ 田村さん、今週は｜大阪《おおさか》に｜出張《しゅっちょう》だったんじゃない？」",
+          "options": [
+            "ええ、楽しみにしてたんですね。",
+            "気をつけて行ってきてください。",
+            "｜大阪《おおさか》は｜初《はじ》めてなんですか。",
+            "それが、来週に｜延《の》びたんです。"
+          ],
+          "answer": 4
+        }
+      ]
+    },
+    {
+      "id": "l-sk-05",
+      "group": "SK 問題紹介",
+      "tags": [
+        "問題5"
+      ],
+      "examples": [
+        "メモ：兄→車で行きたい／妹→電車がいい／｜母《はは》→時間が大事"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Choukai.pdf",
+          "page": 19,
+          "note": "問題紹介5 統合理解 — 2つのタイプ、練習がない（本のp.10）"
+        },
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Choukai.pdf",
+          "page": 20,
+          "note": "問題紹介5 例題5の解説 — 意見の対立点を早く聞き分ける（本のp.11）"
+        },
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Choukai.pdf",
+          "page": 21,
+          "note": "問題紹介5 例題6の解説 — 情報を整理し、条件に合うものを選ぶ（本のp.12）"
+        }
+      ],
+      "related": [
+        "l-q5-tougou"
+      ],
+      "quiz": [
+        {
+          "stem": "女「今年の｜忘年会《ぼうねんかい》、ホテルでやる？」　男1「｜予算《よさん》を考えると｜厳《きび》しいな。会社の｜会議室《かいぎしつ》は？」　男2「｜会議室《かいぎしつ》だと料理が｜運《はこ》べないですよ。去年のレストランは｜閉店《へいてん》しちゃったし、駅前の｜居酒屋《いざかや》なら安くて広いですよ。」　男1「それがいい。じゃ、｜予約《よやく》を頼むよ。」　｜忘年会《ぼうねんかい》はどこでしますか。",
+          "options": [
+            "｜居酒屋《いざかや》",
+            "ホテル",
+            "｜会議室《かいぎしつ》",
+            "去年のレストラン"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "l-sk-06",
+      "group": "SK 実力養成編 I",
+      "tags": [
+        "音"
+      ],
+      "examples": [
+        "おばさん／おばあさん",
+        "来て（きて）／切って（きって）",
+        "自由（じゆう）／十（じゅう）"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Choukai.pdf",
+          "page": 23,
+          "note": "実力養成編 I-1 似ている音の聞き分け（本のp.14）"
+        }
+      ],
+      "related": [
+        "l-sk-07"
+      ],
+      "quiz": [
+        {
+          "stem": "「きのう、駅でおじいさんに会った」と聞こえた。会ったのはどんな人か。",
+          "options": [
+            "年をとった男の人",
+            "父や｜母《はは》の｜兄弟《きょうだい》",
+            "年をとった女の人",
+            "父や｜母《はは》の｜姉妹《しまい》"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "l-sk-07",
+      "group": "SK 実力養成編 I",
+      "tags": [
+        "音"
+      ],
+      "examples": [
+        "そんなに｜急《いそ》いだら、｜転《ころ》んじゃうよ。",
+        "この部屋、写真｜撮《と》っちゃだめなんだって。",
+        "｜寝《ね》る前に｜窓《まど》、｜閉《し》めとかなきゃ。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Choukai.pdf",
+          "page": 25,
+          "note": "実力養成編 I-2 音の変化や縮約形の表（本のp.16）"
+        }
+      ],
+      "related": [
+        "l-shukuyaku",
+        "l-sk-06"
+      ],
+      "quiz": [
+        {
+          "stem": "「こんなに寒いと、｜朝《あさ》｜起《お》きらんないよ。」の「｜起《お》きらんない」の元の形はどれか。",
+          "options": [
+            "起きたくない",
+            "起きなくていい",
+            "｜起《お》きられない",
+            "起きちゃいけない"
+          ],
+          "answer": 3
+        }
+      ]
+    },
+    {
+      "id": "l-sk-08",
+      "group": "SK 実力養成編 II",
+      "tags": [
+        "問題4"
+      ],
+      "examples": [
+        "この｜傘《かさ》、ちょっと｜預《あず》かってもらえる？",
+        "この間は、本当に助かりました。",
+        "そのセーター、よく｜似合《にあ》ってるね。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Choukai.pdf",
+          "page": 27,
+          "note": "実力養成編 II 問題形式と内容（本のp.18）"
+        },
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Choukai.pdf",
+          "page": 36,
+          "note": "実力養成編 II-2-A 応答のパターン（本のp.27）"
+        }
+      ],
+      "related": [
+        "l-q4-sokuji",
+        "l-sk-09"
+      ],
+      "quiz": [
+        {
+          "stem": "「来週の｜発表《はっぴょう》、私が先にやらせてもらえませんか。」は、どんな｜働《はたら》きの文か。",
+          "options": [
+            "｜謝《あやま》る",
+            "｜褒《ほ》める",
+            "｜許可《きょか》を｜求《もと》める",
+            "｜誘《さそ》う"
+          ],
+          "answer": 3
+        }
+      ]
+    },
+    {
+      "id": "l-sk-09",
+      "group": "SK 実力養成編 II",
+      "tags": [
+        "問題4"
+      ],
+      "examples": [
+        "駅まで｜送《おく》っていこうか。（だれがする？）",
+        "この映画、けっこう｜面白《おもしろ》いんじゃない？（どう思っている？）",
+        "あやうくコーヒーをこぼすところだった。（起こった？）"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Choukai.pdf",
+          "page": 28,
+          "note": "実力養成編 II-1 最初の文を理解する（本のp.19）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/16. N2 7-2025/script.md",
+          "note": "7/2025 問題4-10番「1位に迫る勢いだった」（正解3「あと少しで1位になれそうだった」）"
+        }
+      ],
+      "related": [
+        "l-sk-10",
+        "l-sk-11",
+        "l-sk-12",
+        "l-sk-13",
+        "l-sk-14"
+      ]
+    },
+    {
+      "id": "l-sk-10",
+      "group": "SK 実力養成編 II",
+      "tags": [
+        "問題4"
+      ],
+      "examples": [
+        "今日は早めに｜帰《かえ》らせてもらえませんか。（話し手）",
+        "この｜箱《はこ》、｜棚《たな》に｜戻《もど》しといてくれる？（聞き手）",
+        "コーヒー、いれようか。（話し手）"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Choukai.pdf",
+          "page": 28,
+          "note": "実力養成編 II-1-A「だれがするか」を聞き取る の表（本のp.19）"
+        }
+      ],
+      "related": [
+        "l-sk-09",
+        "l-keigo"
+      ],
+      "quiz": [
+        {
+          "stem": "「田中さんが作った｜資料《しりょう》、先に｜読《よ》ませてもらってもいい？」　｜資料《しりょう》を読むのはだれか。",
+          "options": [
+            "話し手",
+            "聞き手",
+            "話し手と聞き手の二人",
+            "田中さん"
+          ],
+          "answer": 1
+        },
+        {
+          "stem": "「｜会場《かいじょう》の人からもらった｜地図《ちず》、みんなに｜送《おく》っといてもらえる？」　｜地図《ちず》を送るのはだれか。",
+          "options": [
+            "話し手",
+            "｜会場《かいじょう》の人",
+            "みんな",
+            "聞き手"
+          ],
+          "answer": 4
+        }
+      ]
+    },
+    {
+      "id": "l-sk-11",
+      "group": "SK 実力養成編 II",
+      "tags": [
+        "問題4"
+      ],
+      "examples": [
+        "このかばん、少し重いんじゃない？（重いと思う）",
+        "今日は雨じゃないと思うよ。（雨ではないと思う）"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Choukai.pdf",
+          "page": 30,
+          "note": "実力養成編 II-1-B「話し手はどう思っているか」を聞き取る（本のp.21）"
+        }
+      ],
+      "related": [
+        "l-sk-09",
+        "l-sk-13"
+      ],
+      "quiz": [
+        {
+          "stem": "「この道を行けば、駅に早く着くんじゃないかな。」　話し手はどう思っているか。",
+          "options": [
+            "早く着くかどうか知りたい",
+            "駅まで｜送《おく》ってほしい",
+            "早く着くと思う",
+            "早くは着かないと思う"
+          ],
+          "answer": 3
+        },
+        {
+          "stem": "「その｜服《ふく》、｜派手《はで》じゃないと思うけど。」　話し手はどう思っているか。",
+          "options": [
+            "｜派手《はで》だと思う",
+            "｜派手《はで》ではないと思う",
+            "｜派手《はで》な｜服《ふく》がほしい",
+            "｜派手《はで》かどうか聞きたい"
+          ],
+          "answer": 2
+        }
+      ]
+    },
+    {
+      "id": "l-sk-12",
+      "group": "SK 実力養成編 II",
+      "tags": [
+        "問題4"
+      ],
+      "examples": [
+        "あと少しで｜終電《しゅうでん》を｜逃《のが》すところだった。（乗れた）",
+        "｜夏休《なつやす》みに｜富士山《ふじさん》に｜登《のぼ》るつもりだったのに。（｜登《のぼ》っていない）"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Choukai.pdf",
+          "page": 31,
+          "note": "実力養成編 II-1-C「起こったか、起こっていないか」に注意して聞く（本のp.22）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/16. N2 7-2025/script.md",
+          "note": "7/2025 問題4-10番「1位に迫る勢いだった」（正解3）"
+        }
+      ],
+      "related": [
+        "l-sk-09"
+      ],
+      "quiz": [
+        {
+          "stem": "「駅の｜階段《かいだん》で、もう少しで｜転《ころ》びそうになったよ。」　話し手はどうなったか。",
+          "options": [
+            "｜転《ころ》んでけがをした",
+            "｜転《ころ》ばなかった",
+            "これから｜階段《かいだん》を使う",
+            "ほかの人が｜転《ころ》んだ"
+          ],
+          "answer": 2
+        },
+        {
+          "stem": "「そのお｜皿《さら》、あとで｜洗《あら》おうと思ってて……。」　お｜皿《さら》はどうなっているか。",
+          "options": [
+            "もう｜洗《あら》ってある",
+            "ほかの人が｜洗《あら》った",
+            "｜洗《あら》う｜必要《ひつよう》がない",
+            "まだ｜洗《あら》っていない"
+          ],
+          "answer": 4
+        }
+      ]
+    },
+    {
+      "id": "l-sk-13",
+      "group": "SK 実力養成編 II",
+      "tags": [
+        "問題4"
+      ],
+      "examples": [
+        "あしたの｜試合《しあい》、出ないの↗（聞いている）",
+        "あしたの｜試合《しあい》、出ないの↘（｜報告《ほうこく》している）",
+        "｜部長《ぶちょう》、来月から｜大阪《おおさか》だって↘（聞いた話を｜伝《つた》えている）"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Choukai.pdf",
+          "page": 32,
+          "note": "実力養成編 II-1-D イントネーションに注意して聞く（本のp.23）"
+        },
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Choukai.pdf",
+          "page": 33,
+          "note": "実力養成編 II-1-D 例題の答え（本のp.24）"
+        }
+      ],
+      "related": [
+        "l-sk-09",
+        "l-sk-11"
+      ],
+      "quiz": [
+        {
+          "stem": "「え？ 会議、中止になったって↗」　｜文末《ぶんまつ》が上がっている。この文は何をしているか。",
+          "options": [
+            "中止になったことを｜謝《あやま》っている",
+            "会議に｜誘《さそ》っている",
+            "聞いた話を｜確《たし》かめている",
+            "中止を人に｜伝《つた》えている"
+          ],
+          "answer": 3
+        }
+      ]
+    },
+    {
+      "id": "l-sk-14",
+      "group": "SK 実力養成編 II",
+      "tags": [
+        "問題4"
+      ],
+      "examples": [
+        "駅の｜南口《みなみぐち》って、どっちだっけ？（｜確認《かくにん》）",
+        "｜傘《かさ》、持ってったらどう？（｜提案《ていあん》）",
+        "駅まで｜送《おく》りましょうか。（｜申《もう》し｜出《で》）"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Choukai.pdf",
+          "page": 34,
+          "note": "実力養成編 II-1-E 会話でよく使われる表現に注意して聞く の表（本のp.25）"
+        },
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Choukai.pdf",
+          "page": 36,
+          "note": "実力養成編 II-2-A 応答のパターン（本のp.27）"
+        }
+      ],
+      "related": [
+        "l-sk-09",
+        "l-sk-08",
+        "l-shukuyaku"
+      ],
+      "quiz": [
+        {
+          "stem": "「え、ここから駅まで歩いて1時間なんて。」は、どんな｜働《はたら》きの文か。",
+          "options": [
+            "｜感想《かんそう》",
+            "｜確認《かくにん》",
+            "｜提案《ていあん》",
+            "｜申《もう》し｜出《で》"
+          ],
+          "answer": 1
+        }
+      ]
+    }
+  ]
 }

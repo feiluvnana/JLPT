@@ -1,1 +1,338 @@
-{}
+{
+  "r-overview": {
+    "title": "Tổng quan phần Đọc hiểu 「問題10〜14」",
+    "body": [
+      "Phần Đọc hiểu nằm trong bài thi 「言語知識・読解」 dài 105 phút, gồm 5 dạng từ 「問題10」 đến 「問題14」, tổng cộng 20 câu (số 52–71): 「｜短文《たんぶん》」 5 câu, 「｜中文《ちゅうぶん》」 8 câu, 「｜統合理解《とうごうりかい》」 2 câu, 「｜主張理解《しゅちょうりかい》」 3 câu, 「｜情報検索《じょうほうけんさく》」 2 câu. Đây là số câu của đề hiện hành (từ kỳ 12/2021).",
+      "Thời gian gợi ý: 「問題10」 15 phút, 「問題11」 25 phút, 「問題12」 9 phút, 「問題13」 15 phút, 「問題14」 9 phút. Phần chữ – từ vựng và ngữ pháp được gợi ý tổng 30 phút, còn 2 phút cuối để xem lại cả bài. Nghĩa là Đọc hiểu chiếm khoảng 73 phút, nên phải giữ nhịp ngay từ phần đầu.",
+      "Sách 「完全模試」 nêu 6 điểm chung cho mọi dạng Đọc: nắm nội dung mà 「指示語」 chỉ tới; chú ý cách kết câu và nội dung, cả trong bài lẫn trong lựa chọn; theo mạch lập luận qua 「接続詞」; chỗ được nói lại bằng lời khác hoặc lặp lại là điểm quan trọng; ý kiến thường đến sau câu phủ định hay 「逆接」; khoanh tròn, gạch dưới chỗ quan trọng và chỗ chưa hiểu."
+    ],
+    "quiz": [
+      "「問題11」 có 4 bài × 2 câu = 8 câu, nhiều nhất phần Đọc, nên được 25 phút → 1. 「問題10」 5 câu, 「問題13」 3 câu, 「問題14」 chỉ 2 câu."
+    ],
+    "example_notes": []
+  },
+  "r-q10-tanbun": {
+    "title": "「問題10」 Đoạn văn ngắn 「短文」",
+    "body": [
+      "「問題10」 có 5 đoạn văn ngắn, mỗi đoạn 1 câu hỏi (câu 52–56). Sách 「完全模試」 ghi khoảng 200 chữ; đo trên đề thật hiện hành, mỗi đoạn dài 157–334 chữ, trung vị 241. Trong 5 đoạn thường có một email công việc và một thông báo; hai loại này hỏi theo cách riêng (xem thẻ về email, thông báo).",
+      "Câu hỏi thường gặp: 「筆者が最も言いたいことは何か」, 「筆者の考えに合うのはどれか」, 「筆者は（何が／どのように／どんな…）考えているか」. Trên đề thật, khung hỏi ý kiến tác giả (「筆者の考えに合うのはどれか」, 「筆者はどのように考えているか」) chiếm khoảng 3/10 số câu của 「問題10」.",
+      "Mẹo của 「完全模試」: chú ý chủ đề chính của đoạn, rồi so phần cuối câu của các lựa chọn để thấy chúng khác nhau ở đâu. Phần 1 của Shin Kanzen Đọc hiểu (bình luận, giải thích, tùy bút, mỗi bài 1 câu hỏi) chính là bài luyện cho dạng này."
+    ],
+    "quiz": [
+      "Câu cuối: đi dạo ngày mưa có niềm vui riêng, như mùi cỏ ngày nắng không thấy → 2. 3 so hơn kém, bài không chê ngày nắng."
+    ],
+    "example_notes": []
+  },
+  "r-q10-mail": {
+    "title": "Email, thông báo: hỏi mục đích của văn bản",
+    "body": [
+      "Với email, thông báo trong 「問題10」, đề hầu như không hỏi chi tiết mà hỏi văn bản viết ra để làm gì: 8 trong 10 câu dạng này trên đề thật dùng khung như 「このメールで問い合わせていることは何か」, 「このお知らせで伝えたいことは何か」, 「このメールの用件は何か」 (ví dụ đề 7/2025, câu 53).",
+      "Shin Kanzen chia 3 bước: đọc câu hỏi để biết đề hỏi mục đích; lướt cả bài xem đó là loại gì (thư công việc, email, giấy dán, thông báo); dùng hiểu biết về hình thức chuẩn để tìm ngay chỗ nói mục đích, rồi so với lựa chọn. Loại văn bản này không cần hiểu hết từ đầu đến cuối; từ ngữ chưa biết cứ bỏ qua.",
+      "Mẫu thư công việc trong sách: lời chào, lời cảm ơn mở đầu chỉ là 「あいさつ」; 「さて、この度」 mở ra hoàn cảnh; phần chính (nhờ vả, báo cáo) đứng sau 「つきましては」 hoặc 「それに伴って」; 「なお」 thêm thông tin phụ. Trong ví dụ của sách, các lựa chọn sai chính là lời cảm ơn và phần dẫn trước lời nhờ."
+    ],
+    "quiz": [
+      "Sau 「つきましては」 là lời nhờ dùng ảnh cho áp phích → 4. 1 là lời cảm ơn mở đầu, 2 là thông tin phụ sau 「なお」."
+    ],
+    "example_notes": [
+      "Cảm ơn quý vị đã cho chúng tôi tham quan nhà máy hôm trước.",
+      "Vì vậy, quý vị có thể dời buổi họp tháng sau sớm lên một ngày được không ạ?",
+      "Ngoài ra, tài liệu hôm đó phía chúng tôi sẽ chuẩn bị."
+    ]
+  },
+  "r-q11-chubun": {
+    "title": "「問題11」 Đoạn văn vừa 「中文」",
+    "body": [
+      "「問題11」 gồm 4 bài × 2 câu hỏi (câu 57–64); dạng 4 bài có từ kỳ 12/2022. Mỗi bài dài khoảng 507–763 chữ, trung vị 655 (「完全模試」 ghi khoảng 500 chữ, là mức của đề cũ). Lời dẫn đôi khi vẫn in 「(1)から(3)」, hãy đếm số bài thật trên đề.",
+      "Câu hỏi hay gặp theo 「完全模試」: lý do, nguyên nhân (「…はどうして…か」, 「…たのはなぜか」), nghĩa của một cụm (「〇〇とはどういう意味か」), 「筆者の考えによると…何か」, 「筆者が最も言いたいことは何か」. Trên đề thật, 82% câu hỏi có nhắc 「筆者」, và trong 26/28 cặp, câu thứ nhất hỏi về sự việc, lời giải thích viết trong bài.",
+      "Hai mẹo của 「完全模試」: với 「指示語」 (「それ」, 「そのように」, 「このこと」…), nội dung được chỉ thường ở ngay trước hoặc hơi trước đó; với phần gạch dưới, tìm chỗ nói cùng ý bằng lời khác, hoặc ví dụ cụ thể đứng trước. Mỗi câu làm theo 3 bước của Shin Kanzen: lướt nắm cả bài, xem câu hỏi rồi tìm đáp án trong bài, cuối cùng so với lựa chọn."
+    ],
+    "quiz": [],
+    "example_notes": []
+  },
+  "r-q12-tougou": {
+    "title": "「問題12」 Hiểu tổng hợp: so sánh bài A và B",
+    "body": [
+      "「問題12」 cho hai bài A, B cùng một chủ đề (tổng khoảng 532–592 chữ; 「完全模試」 ghi 600 chữ) và 2 câu hỏi. Ở cả 7 đề hiện hành, câu 65 hỏi điểm chung 「AとBが共通して述べていること」, câu 66 hỏi A và B nói thế nào về một điểm, khuyên gì, hay khác nhau ở đâu. Dạng này không có chú thích 「（注）」.",
+      "Theo 「完全模試」, bài thường là lời đánh giá một tác phẩm, sản phẩm, hoặc ý kiến từ hai lập trường tán thành, phản đối. Lựa chọn hay có dạng 「Aは…と述べ、Bは…と述べている」, 「Aは〜的だが、Bは〜的」, 「AもBも…」.",
+      "Cả 「完全模試」 lẫn Shin Kanzen đều dặn: đọc lời dẫn và câu hỏi trước để biết đề hỏi gì, rồi mới đọc bài, vừa đọc vừa để ý điểm chung và điểm khác. Với câu hỏi điểm chung, mỗi lựa chọn phải được kiểm ở cả hai bài; ý chỉ có ở một bài thì không phải điểm chung."
+    ],
+    "quiz": [
+      "Cả A và B đều nói ít trò chuyện với người khác hơn → 3. 1 chỉ A nói, 2 chỉ B nói; không bài nào nói số cuộc họp giảm (4)."
+    ],
+    "example_notes": [
+      "Cả A và B đều nói rằng việc học từ thất bại là quan trọng.",
+      "A coi trọng cách chọn dụng cụ, còn B coi trọng cách chọn người để học."
+    ]
+  },
+  "r-q13-shuchou": {
+    "title": "「問題13」 Hiểu chủ trương: bài dài 「長文」",
+    "body": [
+      "「問題13」 là một bài dài (đề thật 814–1061 chữ, trung vị 904; 「完全模試」 ghi khoảng 900 chữ) với 3 câu hỏi (67–69). Theo 「完全模試」, bài thường là xã luận, bình luận trên báo, chủ đề xã hội, đời người, văn minh, lịch sử, nghệ thuật; Shin Kanzen gọi đó là bài bình luận có mạch lập luận khá rõ.",
+      "Câu cuối (69) hỏi ý kiến, chủ trương của tác giả ở cả 7 đề hiện hành. Hai câu trước thường hỏi chi tiết; ví dụ đề 7/2025: câu 67 hỏi lý do, câu 68 hỏi 「②これとは何か」, câu 69 hỏi 「筆者が言いたいことは何か」. Bài này có nhiều chú thích 「（注）」, khoảng 7.",
+      "Mẹo của 「完全模試」: chú ý những chỗ lộ ra chủ trương như 「〜ではないか」, 「〜と思う」, 「〜気がする」. Xem thêm thẻ về cách nhận ra ý kiến của tác giả."
+    ],
+    "quiz": [
+      "Câu 69, câu cuối, hỏi ý kiến tác giả ở cả 7 đề hiện hành → 2. 「指示語」 hay lý do thuộc hai câu trước, như 67–68 đề 7/2025."
+    ],
+    "example_notes": []
+  },
+  "r-q14-jouhou": {
+    "title": "「問題14」 Tìm thông tin 「情報検索」",
+    "body": [
+      "「問題14」 cho một tài liệu thực dụng (quảng cáo, tờ giới thiệu, thông báo sự kiện hay tuyển người, tạp chí thông tin, văn bản công việc; tính cả bảng và con số thì khoảng 700 chữ, đúng như 「完全模試」 ghi) và 2 câu hỏi (70, 71). Câu hỏi được in trước tài liệu (đề 7/2025 dẫn 「右のページは…」).",
+      "Cả 2 câu đều kể về một người với các điều kiện riêng (7/7 đề), và đáp án luôn phải ghép ít nhất 2 điều kiện trong tài liệu. Câu hỏi đòi một con số (bao nhiêu tiền), một việc phải làm (đăng ký thế nào), hoặc một mục cụ thể (khóa nào), không hỏi kiểu 「正しいものはどれか」.",
+      "Cách làm của Shin Kanzen: đọc lời dẫn để biết loại tài liệu; đọc câu hỏi và lựa chọn để biết cần tìm gì; lấy từ trong đó làm từ khóa dò trong tài liệu. Nhìn phần nổi bật: tiêu đề, mục, chữ to, đậm, nhỏ, gạch dưới, mũi tên, số, khung. 「完全模試」 khuyên nắm sẵn từ hay dùng về thời gian, địa điểm, cách thức, điều kiện."
+    ],
+    "quiz": [
+      "Người lớn 800 yên; dòng 「※」: thứ Bảy trẻ tiểu học miễn phí → 800 yên, chọn 2. 3 (1.200 yên) là bỏ sót dòng 「※」."
+    ],
+    "example_notes": [
+      "Anh Kimura muốn cùng đồng nghiệp ở công ty tham gia vào buổi tối ngày thường, tổng cộng ba người."
+    ]
+  },
+  "r-kasen": {
+    "title": "Câu hỏi về cụm được đánh dấu 「〜とあるが」",
+    "body": [
+      "Ở 「問題11」 và 「問題13」, đề có thể đánh số ①② cho một cụm trong bài rồi hỏi 「①…とあるが、どういうことか」, hoặc hỏi lý do (đề 7/2025 câu 59: 「売れた理由とあるが、筆者はなぜ売れたと考えているか」). Đề thật dùng dạng này 0–3 câu mỗi đề; cụm được đánh dấu thường ngắn, trung vị khoảng 8 chữ.",
+      "Cách làm của Shin Kanzen: đọc kỹ cụm gạch dưới và cả câu chứa nó để nắm nội dung, rồi xem các câu trước, sau để tìm chỗ nói lại cụm đó bằng lời khác. 「完全模試」 bổ sung: chú ý phần diễn đạt khác mà cùng ý, và ví dụ cụ thể nêu ở trước. Chọn xong, đặt đáp án vào chỗ gạch dưới xem câu có thông nghĩa không."
+    ],
+    "quiz": [
+      "Câu trước nói bà nhớ hết chỗ đã gieo hạt, nên 「散らかっている」 chỉ là vẻ ngoài → 1. 2 hiểu theo nghĩa đen, trái với 「見た目だけ」; 3 trái với 「一つ残らず覚えている」."
+    ],
+    "example_notes": []
+  },
+  "r-shijigo": {
+    "title": "Từ chỉ thị 「｜指示語《しじご》」 trong bài đọc",
+    "body": [
+      "「指示語」 là các từ như 「これ・それ・この・その・そのように・このこと」. Đề thật có ít nhất một câu hỏi về chúng mỗi đề (trung bình 1,57), như đề 7/2025 câu 68 「②これとは何か」.",
+      "Theo Shin Kanzen Ngữ pháp (Phần 3, bài 8), trong bài viết, từ chỉ thị thường chỉ từ ngữ hoặc câu đã xuất hiện trước đó. Cơ bản dùng 「そ」; 「こ」 dùng khi người viết muốn cho thấy điều đó gần mình, hoặc khi chỉ lời nói, số liệu mình vừa giới thiệu; 「あ」 thường không dùng, trừ khi hồi tưởng trong bài viết mang tính cá nhân.",
+      "Cách tìm theo Shin Kanzen Đọc hiểu: đọc kỹ câu chứa 「指示語」; xem các câu trước và sau, nhất định phải xem kỹ câu ngay trước; 「完全模試」 cũng nói nội dung thường nằm ngay trước hoặc hơi trước đó. Cuối cùng đặt đáp án vào chỗ 「指示語」 và đọc lại xem có thông nghĩa không."
+    ],
+    "quiz": [
+      "Thay vào 「それをまねしてみよう」: bắt chước việc tự quét đường mỗi sáng → 3. 4 là kết quả của việc đó, không thể bắt chước."
+    ],
+    "example_notes": [
+      "Tôi được đàn anh chỉ cho đường tắt ra ga. Từ đó, buổi sáng của tôi dư ra một chút thời gian.",
+      "Sáu phần mười hội viên mong có lớp học buổi tối. Trước con số đó, từ tháng sau chúng tôi quyết định mở thêm hai lớp buổi tối."
+    ]
+  },
+  "r-hitsusha": {
+    "title": "Tách ý kiến của 「｜筆者《ひっしゃ》」 khỏi sự thật",
+    "body": [
+      "Nhiều câu ở 「問題10」, 「問題11」, 「問題13」 hỏi 「筆者の考え」: 「問題11」 có ít nhất một câu như vậy mỗi đề, còn câu 69 của 「問題13」 luôn hỏi ý kiến. Vì vậy phải tách được câu nêu sự thật, câu dẫn ý người khác và câu nêu ý của chính tác giả.",
+      "Theo Shin Kanzen, câu mang ý kiến thường dùng 「主張表現」: 「〜と思う」, 「〜べきだ」, 「〜だろう」, 「〜なければならない」, 「〜てはいけない」, 「〜のではないか」. Ý người khác thường được dẫn rồi bị bác, như mẫu trong sách Ngữ pháp: 「…と言う人もいるが、わたしはそうは思わない」.",
+      "「完全模試」 thêm hai điểm: chú ý cách kết câu, và ý kiến, chủ trương thường đến ngay sau câu phủ định hoặc 「逆接」."
+    ],
+    "quiz": [
+      "「〜べきだ」 là 「主張表現」 nêu ý người viết → 3. 1 và 4 là sự thật, số liệu; 2 là ý của người khác, qua 「という声もある」."
+    ],
+    "example_notes": [
+      "Dân số thị trấn này đã giảm hai phần mười trong mười năm.",
+      "Người ta nói rằng trẻ em không thể thiếu việc chơi ngoài trời.",
+      "Chẳng phải nên tăng thêm bãi gửi xe đạp trước ga hay sao?"
+    ]
+  },
+  "r-sentakushi": {
+    "title": "Đáp án đúng thường nói lại bài bằng lời khác",
+    "body": [
+      "Shin Kanzen lưu ý: lựa chọn trong câu hỏi thường được viết bằng cách diễn đạt khác với bài. Đo trên đề thật cũng vậy: ở cả 7/7 đề hiện hành, xét trung vị mỗi đề, đáp án đúng trùng chữ với bài ít hơn lựa chọn sai giống bài nhất. Chọn một lựa chọn chỉ vì nó chứa nhiều từ giống bài là rơi vào bẫy.",
+      "Cách so của Shin Kanzen: tự tóm ý của bài trước, rồi mới so với từng lựa chọn. Mỗi lựa chọn sai phải chỉ ra được lý do cụ thể. Trong ví dụ của sách, có lựa chọn sai vì bài không viết như vậy (thêm 「べきだ」 mà bài không có), vì chỉ nói một nửa ý, hoặc vì đảo hai bên được so sánh."
+    ],
+    "quiz": [
+      "「先に電話で知らせておけば」 = 「前もって連絡しておけば」, 「一週間まで待ってもらえる」 = trễ một chút cũng được → 4. 1 đổi thành báo sau khi quá hạn; 3 bỏ điều kiện báo trước."
+    ],
+    "example_notes": [
+      "Bài gốc: Nếu phát tài liệu trước cuộc họp thì thời gian giải thích sẽ ngắn lại.",
+      "Nói lại: Đưa tài liệu trước thì cuộc họp sẽ diễn ra nhanh."
+    ]
+  },
+  "r-chuu": {
+    "title": "Đọc chú thích 「（注）」 và dấu 「（中略）」",
+    "body": [
+      "Bài đọc từ 「問題9」 đến 「問題14」 không có furigana. Từ khó hoặc vượt trình độ được đánh 「（注1）」, 「（注2）」… trong bài và giải nghĩa ngay dưới bài. Chú thích tập trung ở 「問題11」 (khoảng 5 mỗi bài) và 「問題13」 (khoảng 7); 「問題12」 và 「問題14」 không có.",
+      "Nhiều chú thích viết 「ここでは、…」: đó là nghĩa của từ trong chính bài này, có thể khác nghĩa quen thuộc. Ví dụ đề 7/2025: 「成す：ここでは、達成する」, 「メディア：ここでは、テレビや雑誌など」. Hãy đọc câu chứa từ đó theo đúng nghĩa được cho.",
+      "Bài đọc thật là trích từ sách, báo, nên thường có 「（中略）」, nghĩa là một đoạn đã bị lược; đề hiện hành có 2–5 chỗ mỗi đề, trong 「問題11」–「問題13」. Mẹo của 「完全模試」: khi đọc, khoanh tròn hoặc gạch dưới chỗ quan trọng và chỗ chưa hiểu."
+    ],
+    "quiz": [
+      "「ここでは」 báo đây là nghĩa trong chính bài → 1. 2 sai vì nghĩa đầu tiên trong từ điển có thể khác; 3 sai vì chú thích giúp hiểu câu."
+    ],
+    "example_notes": [
+      "Mẹ nhanh tay làm bữa tối bằng chỗ rau còn thừa（注）.",
+      "（注） 「こしらえる」: làm ra (「作る」)."
+    ]
+  },
+  "r-setsuzokushi": {
+    "title": "Từ nối 「｜接続表現《せつぞくひょうげん》」 báo trước câu sau",
+    "body": [
+      "Shin Kanzen Ngữ pháp (Phần 3, bài 10) coi từ nối là manh mối để đoán câu tiếp theo nói gì. Bảng từ nối N2 chia theo việc làm: thêm ý (「しかも」「そのうえ」「さらに」); so sánh (「それに対して」「一方」); nêu khả năng khác (「あるいは」「それとも」); kết quả, kết luận (「そのため」「したがって」「そこで」「すると」「このように」「こうして」); lý do (「なぜなら」「というのは」).",
+      "Nhóm nêu điều trái với dự đoán: 「だが」「ところが」「それなのに」「それでも」. Theo Shin Kanzen Đọc hiểu, sau 「しかし」「だが」「でも」「〜が」 thường là điều tác giả muốn nói. Nhóm bổ sung: nói cách khác (「つまり」「要するに」「いわば」), nói phần còn thiếu (「ただし」「ただ」「もっとも」「なお」). Đổi chủ đề: 「さて」「ところで」.",
+      "「完全模試」 khuyên theo dõi mạch lập luận qua từ nối. Gặp từ nối, hãy đoán trước câu sau thuộc loại nào (kết quả, trái dự đoán, nói lại…), rồi đọc để kiểm tra."
+    ],
+    "quiz": [
+      "Mưa to lên mà trận đấu vẫn chơi đến cuối: việc không đổi dù có sự việc trước → 「それでも」, 4. 「そのため」 cần kết quả thuận, như hoãn trận.",
+      "Shin Kanzen xếp 「ところが」 vào nhóm trái với dự đoán, nêu sự thật bất ngờ → 3. Thêm ý là 「しかも」, nói lại là 「つまり」, nêu lý do là 「なぜなら」."
+    ],
+    "example_notes": [
+      "Công trình trước ga đã bắt đầu. Vì thế, chỗ đón xe buýt đã đổi.",
+      "Hội trường ở xa ga. Tuy vậy, có xe buýt đưa đón miễn phí."
+    ]
+  },
+  "r-sk-01": {
+    "title": "Cách học Phần 1 của Shin Kanzen Đọc hiểu",
+    "body": [
+      "Phần 1 của Shin Kanzen Đọc hiểu dùng bài bình luận, giải thích, tùy bút; bài dài ngắn khác nhau nhưng mỗi bài chỉ một câu hỏi. Đây là bài luyện cho 「内容理解（短文）」 (「問題10」) và là nền để đọc 「中文」. Phần này có hai nửa: hiểu cấu trúc bài văn (nắm ý cả bài) và kỹ thuật giải câu hỏi (đọc đúng từng chi tiết).",
+      "Sách nhắc: đọc văn bản ngoại ngữ mà cứ bị cuốn vào chi tiết thì khó thấy cả bài nói gì; có người trả lời được câu hỏi từng phần nhưng không biết cả bài muốn nói gì. Vì thế sách luyện thói quen đọc để tìm xem tác giả muốn nói gì qua toàn bài.",
+      "Ví dụ nào cũng giải theo một thứ tự. Nửa đầu: 「全体をつかもう」 (đoán chủ đề từ từ khóa, chú ý cấu trúc, tóm ý cả bài), rồi 「選択肢と比べよう」. Nửa sau có 3 bước: đọc bài nắm toàn thể, kể cả khi câu hỏi hỏi chi tiết; xem câu hỏi rồi tìm đáp án trong bài; so với lựa chọn."
+    ],
+    "quiz": [
+      "Lướt cả bài (「イ」), tìm chỗ nói lại quanh phần gạch dưới (「ウ」), rồi so với lựa chọn (「ア」) → 4. 「ア」 cần điều đã tìm ra nên không thể đứng đầu."
+    ],
+    "example_notes": []
+  },
+  "r-sk-02": {
+    "title": "Năm cấu trúc bài văn 「文章のしくみ」",
+    "body": [
+      "Shin Kanzen nêu 5 cấu trúc hay gặp để nắm ý cả bài: 「｜対比《たいひ》」 so với cái khác; 「｜言《い》い｜換《か》え」 nói lại bằng lời khác; 「｜比喩《ひゆ》」 ví von; 「｜疑問提示文《ぎもんていじぶん》」 dùng câu hỏi để nêu vấn đề; 「｜主張表現《しゅちょうひょうげん》」 cho thấy đó là ý kiến của mình. Không phải bài nào cũng có đủ, nhưng năm cấu trúc này rất phổ biến.",
+      "Chúng giúp trả lời câu hỏi về toàn bài như 「この文章の内容として最も適切なものはどれか」, 「筆者が最も言いたいことは何か」. Cách giải mẫu: 「全体をつかもう」 — đoán chủ đề từ từ khóa, bám theo cấu trúc để theo mạch câu, rồi tóm cả bài; sau đó 「選択肢と比べよう」 — so ý vừa tóm với từng lựa chọn. Mỗi cấu trúc có một thẻ riêng."
+    ],
+    "quiz": [
+      "「のだと思う」: vất vả nằm ở lúc phân vân chứ không ở lúc nấu → 2. 1 đổi 「献立を決めておく」 thành nấu sẵn từ tối."
+    ],
+    "example_notes": []
+  },
+  "r-sk-03": {
+    "title": "「対比」: so sánh để làm rõ điều quan trọng",
+    "body": [
+      "Khi giải thích điều quan trọng (A), người viết hay đem so với điều khác (B); đặt cạnh B thì đặc điểm của A rõ ra. Nắm được phép so sánh là thấy được điểm chính của bài, nên hãy nắm chắc hai bên khác nhau ở đâu.",
+      "Dấu hiệu so sánh: 「それに対し」, 「一方」, 「反対に」. Shin Kanzen khuyên khoanh tròn những từ là hai vế được so, và chú ý cả từ nối ngược 「しかし」, 「だが」, 「でも」, 「〜が」: sau chúng thường là điều tác giả muốn nói.",
+      "Bài dài nhiều đoạn cũng thế: chú ý so sánh thì thấy quan hệ giữa các đoạn, và tóm được cả bài theo khung đó. Trong ví dụ 1 của sách, một lựa chọn sai gán đặc điểm của họp thường cho họp trực tuyến, tức là đảo hai bên."
+    ],
+    "quiz": [
+      "Sổ giấy 「手間がかかる」, nhưng sau 「しかし」 là điểm mạnh: viết tay thì nhớ lâu → 4. 1 đảo hai bên, nhanh là của điện thoại; 2 trái với 「手間がかかる」."
+    ],
+    "example_notes": [
+      "Tàu điện hầu như đến đúng giờ. Ngược lại, xe buýt có khi trễ vì đường đông.",
+      "Cuộc sống ở thành phố thì tiện lợi. Mặt khác, ở nông thôn, khoảng cách với hàng xóm gần gũi."
+    ]
+  },
+  "r-sk-04": {
+    "title": "「言い換え」: nói lại bằng lời khác",
+    "body": [
+      "Người viết có thể viết lại một từ, một câu bằng từ ngữ khác cùng nghĩa, hoặc giải thích bằng ví dụ cụ thể. Điều được nói lại để giải thích thường là điểm quan trọng. Lựa chọn trong câu hỏi cũng thường được diễn đạt khác với bài, nên đừng đi tìm chữ giống hệt.",
+      "Dấu hiệu: từ nối 「つまり」, 「すなわち」 (Shin Kanzen khuyên đóng khung chúng) và mẫu 「（A）を（B）と言う／呼ぶ」. Nối các chỗ nói lại cùng một ý bằng một đường, rồi từ đó tóm ý cả bài."
+    ],
+    "quiz": [
+      "Câu sau 「すなわち」 gói lại việc không cắt ngang lời người khác → 1. 2 trái với 「話が終わるまでとっておく」; 3 sai người: người kia được nói đến cuối."
+    ],
+    "example_notes": [
+      "Anh ấy chưa lần nào trễ giờ hẹn. Tức là, anh ấy là người rất nghiêm về giờ giấc.",
+      "Khả năng nghĩ ngay nước đi tiếp theo dù thất bại, ở đây được gọi là 「立ち直る力」 (sức đứng dậy)."
+    ]
+  },
+  "r-sk-05": {
+    "title": "「比喩」: hiểu điều được ví von",
+    "body": [
+      "Ví von là đặt một điều khó vào chuyện đời thường ai cũng biết để giải thích cho dễ hiểu. Nếu trong bài bỗng xuất hiện từ ngữ chẳng liên quan gì đến nội dung trước đó, có thể người viết đang ví von; hãy nắm chắc cái gì được ví với cái gì.",
+      "Cách của Shin Kanzen: lập bảng đối chiếu, mỗi chi tiết của hình ảnh ứng với một ý của chủ đề thật (ví dụ 6: đường núi hiểm trở → luyện tập vất vả, độ cao → trình độ). Hình ảnh ví von không phải chủ đề: lựa chọn chỉ nói về hình ảnh đó (trong sách là leo núi) là lựa chọn sai."
+    ],
+    "quiz": [
+      "Tuyết đầu tan ngay = lúc đầu chưa thấy tiến bộ; rơi mãi thì trắng xóa = học mãi sẽ tích lại → 3. 1 chỉ nói về tuyết, tức hình ảnh ví von."
+    ],
+    "example_notes": [
+      "Lòng tin của con người giống chiếc cốc thủy tinh. Một khi đã vỡ, nó không trở lại hình dạng cũ."
+    ]
+  },
+  "r-sk-06": {
+    "title": "「疑問提示文」: câu hỏi tác giả tự đặt ra",
+    "body": [
+      "Đây là câu dùng dạng câu hỏi để báo bài sắp bàn về điều gì; việc của người đọc là tìm câu trả lời. Có hai loại: câu có từ để hỏi (「なぜ・どうして・いつ・どこで・どのようにして」), và câu có/không, không có từ để hỏi, kết thúc bằng 「〜だろうか。」 hoặc 「〜（の）か。」.",
+      "Câu trả lời có thể rải qua nhiều đoạn: ở ví dụ 7 của Shin Kanzen, câu hỏi nằm ở đoạn 2 và câu trả lời trải qua đoạn 3, 4, 5, đến đoạn 5 mới là kết luận. Lưu ý 「〜のではないか」 vừa có thể là câu nêu vấn đề, vừa có thể là cách nêu ý kiến."
+    ],
+    "quiz": [
+      "Câu trả lời cho 「なぜ…だろうか」 ở cuối: khách thích trò chuyện ngắn với người bán → 1. 2 trái với 「安さではなく」."
+    ],
+    "example_notes": [
+      "Vậy thì, tại sao trẻ con lại muốn đọc đi đọc lại cùng một cuốn sách tranh?",
+      "Dậy sớm có thật sự tốt cho cơ thể không?"
+    ]
+  },
+  "r-sk-07": {
+    "title": "「主張表現」: dấu hiệu ý kiến tác giả",
+    "body": [
+      "Câu nêu chủ trương, ý kiến của tác giả thường dùng 「〜と思う」, 「〜べきだ」, 「〜だろう」, 「〜なければならない」, 「〜てはいけない」, 「〜のではないか」. Cũng quan trọng là đọc ra tác giả đánh giá cao điều gì và đánh giá thấp điều gì.",
+      "Cách làm theo ví dụ 8 của Shin Kanzen: gạch dưới 「主張表現」 ở từng đoạn, rồi dùng phép so sánh trước và sau 「しかし」 để theo mạch ý. Chuyện kể, ví dụ ở đầu bài (trong sách: nghệ sĩ sống lâu) chỉ là ví dụ, không phải điều tác giả muốn nói."
+    ],
+    "quiz": [
+      "Sau 「だが」 là 「私が一番よいと思うのは…いすがあること」 → 1. Thiết kế nổi tiếng (2) và nhiều hiện vật (3) đứng trước 「だが」, không phải điều được đánh giá cao nhất."
+    ],
+    "example_notes": [
+      "Không được chọn nơi sống chỉ vì sự tiện lợi.",
+      "Chẳng phải hơi bất tiện một chút lại vừa hay sao?"
+    ]
+  },
+  "r-sk-08": {
+    "title": "Năm dạng câu hỏi chi tiết của Shin Kanzen",
+    "body": [
+      "Nửa sau của Phần 1 luyện đọc đúng từng phần nhỏ, qua 5 dạng câu hỏi hay ra: hỏi 「指示語」 (「それは何を指しているか」); hỏi 「だれが・何が・何を」; hỏi nghĩa phần gạch dưới (「＿＿とはどういうことか」); hỏi lý do; hỏi ví dụ. Nhận ra dạng câu hỏi thì biết mình cần tìm gì.",
+      "Dạng nào cũng giải theo 3 bước: đọc bài và nắm toàn thể, kể cả khi câu hỏi hỏi chi tiết; xem câu hỏi rồi dùng mẹo đọc của dạng đó để tìm đáp án trong bài; so điều tìm được ở bước 1, 2 với lựa chọn."
+    ],
+    "quiz": [
+      "「なぜ」 hỏi lý do → dạng hỏi lý do, chọn 3. Dù có 「＿＿とあるが」, câu không hỏi nghĩa phần gạch dưới (2) mà hỏi vì sao nói được như vậy."
+    ],
+    "example_notes": []
+  },
+  "r-sk-09": {
+    "title": "Tìm thứ mà 「指示語」 chỉ tới",
+    "body": [
+      "Dạng này hỏi các từ như 「これ・それ・あれ」, 「このこと・そのこと・あのこと」 chỉ cái gì. Thứ tự làm của Shin Kanzen: đọc kỹ câu chứa 「指示語」 để nắm nội dung; xem các câu trước và sau để tìm từ ngữ được chỉ, nhất định phải xem kỹ câu ngay trước.",
+      "Có khi 「指示語」 chỉ tới một 「指示語」 khác: ở ví dụ 9, 「そんなこと」 chỉ 「これ」, 「これ」 lại chỉ việc đáp lại một cách nghiêm túc, nên phải lần ngược từng bậc. Tìm xong, đặt đáp án vào chỗ gạch dưới và đọc xem có thông nghĩa không."
+    ],
+    "quiz": [
+      "Lần ngược: 「そうすること」 ← 「同じようにし」 ← 「これ」 = em gái dùng mặt sau giấy cũ làm giấy ghi chú → 2. 4 chỉ là việc của mẹ, không phải thói quen cả nhà."
+    ],
+    "example_notes": [
+      "Em trai tôi viết nhật ký mỗi tối. Đây là việc em làm liên tục từ hồi tiểu học, không bỏ ngày nào."
+    ]
+  },
+  "r-sk-10": {
+    "title": "Hỏi 「だれが・何が・何を」: tìm chủ ngữ bị ẩn",
+    "body": [
+      "Câu hỏi dạng 「何が＿＿のか」, 「＿＿のは、だれか」, 「何を＿＿のか」, 「何と＿＿のか」 hỏi chủ ngữ hoặc tân ngữ không được viết ra ở phần gạch dưới. Thứ tự làm: đọc kỹ phần gạch dưới để nắm nội dung; nhìn trước và sau để tìm đáp án, rồi đặt nó vào chỗ chủ ngữ, tân ngữ để thử.",
+      "Chú ý trợ từ 「は」 đánh dấu chủ đề: với bài dạng 「Aは〜。〜。〜。Bは〜」, A thường vẫn là chủ ngữ của câu thứ 2, thứ 3 dù không được viết lại. Trong ví dụ 11 của sách, năm câu liền đều có chung chủ ngữ ẩn là người quản lý sân khấu."
+    ],
+    "quiz": [
+      "「兄は」 làm chủ đề; câu sau không có chủ ngữ mới nên người nấu bữa sáng vẫn là anh trai → 1. Bố đi lấy báo, mẹ còn ngủ, nên 4 「家族みんな」 cũng sai."
+    ],
+    "example_notes": [
+      "Bếp trưởng vào quán lúc sáu giờ sáng. Ông rửa rau, nấu nước dùng và bắt đầu chuẩn bị cho buổi trưa."
+    ]
+  },
+  "r-sk-11": {
+    "title": "Hỏi nghĩa của phần gạch dưới",
+    "body": [
+      "Câu hỏi dạng 「＿＿とはどういう意味か」, 「＿＿とは、どういうことか」, 「＿＿とは、だれのことか／何のことか」. Thứ tự: đọc kỹ phần gạch dưới và câu chứa nó để nắm nội dung; nhìn các câu trước và sau để tìm chỗ nói lại phần gạch dưới.",
+      "Ở ví dụ 13 của Shin Kanzen, đáp án nằm trong ví dụ cụ thể ở đoạn 2 chứ không nằm ở câu gạch dưới. Sách cũng chỉ ra một bẫy: lựa chọn nêu nguyên nhân của sự việc, trong khi phần gạch dưới nói về kết quả."
+    ],
+    "quiz": [
+      "Dao được chăm thì bén, cưa bỏ mặc thì gỉ: dụng cụ phản ánh công chăm sóc → 4. 3 hiểu 「正直」 theo nghĩa đen về con người."
+    ],
+    "example_notes": [
+      "Phòng của anh tôi hệt như nhà kho. Kệ nào cũng chất thùng kín, không còn khe hở."
+    ]
+  },
+  "r-sk-12": {
+    "title": "Hỏi lý do: tìm 「｜理由《りゆう》の｜表現《ひょうげん》」",
+    "body": [
+      "Câu hỏi dạng 「〜と言えるのはなぜか」, 「どうして〜か」. Thứ tự: đọc kỹ câu gạch dưới hoặc câu hỏi để nắm nội dung; tìm 「理由の表現」 ở chính câu đó và các câu trước, sau.",
+      "Shin Kanzen liệt kê: nối câu bằng 「〜から」「〜ので」「〜で／て」「〜ため」「〜おかげで」「〜せいで」; từ nối 「だから」「それで」「したがって」「ゆえに」; cuối câu 「〜からだ」「〜ためだ」「〜わけだ」「〜のだ」; cặp hô ứng 「なぜなら〜からだ」「〜ことから〜ことになる」. Khi câu có 「だから」, lý do nằm ở câu trước nó.",
+      "Nếu không có biểu hiện lý do nối thẳng, hãy tìm 「言い換え」, 「指示語」, 「対比」 trong câu gạch dưới hoặc câu hỏi, rồi tìm phần cho biết lý do trong các câu trước và sau."
+    ],
+    "quiz": [
+      "「だから」 đứng trước 「長居してしまう」, nên lý do ở câu trước: cuốn nào cũng có lời giới thiệu → 2. 1 trái với 「本の数は少ない」."
+    ],
+    "example_notes": [
+      "Từ sáng tôi đã bị sốt. Vì vậy, tôi đã nghỉ làm.",
+      "Quán này đông khách từ sáng là vì quán mở cửa lúc bảy giờ."
+    ]
+  }
+}

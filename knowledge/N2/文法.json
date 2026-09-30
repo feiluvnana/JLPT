@@ -85,7 +85,10 @@
           "note": "7/2025 問題7-31 の正解"
         }
       ],
-      "related": [],
+      "related": [
+        "g-kiwa",
+        "g-ni-sakidatte"
+      ],
       "quiz": [
         {
           "stem": "｜海外《かいがい》の｜大学《だいがく》に｜出願《しゅつがん》する（　　）、｜推薦状《すいせんじょう》を｜二通《につう》｜用意《ようい》しなければならない。",
@@ -251,7 +254,10 @@
           "note": "12/2017 問題7-36 の正解（続けるうちに）"
         }
       ],
-      "related": [],
+      "related": [
+        "g-saichuu-da",
+        "g-kagiri-5-2"
+      ],
       "quiz": [
         {
           "stem": "｜雨《あめ》が（　）うちに、｜干《ほ》してある｜洗濯物《せんたくもの》を｜取《と》り｜込《こ》んでおこう。",
@@ -365,7 +371,9 @@
           "note": "7/2017 問題7-42 の正解「取り出そうとしているうちに」は人の意志の「〜ようとする」で、この項目（変化の直前）とは別の用法（回数には数えない）"
         }
       ],
-      "related": [],
+      "related": [
+        "g-adv-imanimo"
+      ],
       "quiz": [
         {
           "stem": "｜三年《さんねん》にわたる｜工事《こうじ》が｜終《お》わり、｜新《あたら》しいトンネルが｜間《ま》もなく｜開通《かいつう》し（　）。",
@@ -551,7 +559,8 @@
       ],
       "related": [
         "g-tekaradenaito",
-        "g-te-irai"
+        "g-te-irai",
+        "g-ue"
       ],
       "quiz": [
         {
@@ -677,7 +686,8 @@
         }
       ],
       "related": [
-        "g-sue-ni"
+        "g-sue-ni",
+        "g-shidai-da"
       ],
       "quiz": [
         {
@@ -796,7 +806,8 @@
         }
       ],
       "related": [
-        "g-tehajimete"
+        "g-tehajimete",
+        "g-denakereba"
       ],
       "quiz": [
         {
@@ -910,7 +921,10 @@
           "note": "12/2014 問題7-33 の正解"
         }
       ],
-      "related": [],
+      "related": [
+        "g-wo-tsuuji-te",
+        "g-nikaketeha"
+      ],
       "quiz": [
         {
           "stem": "この｜作家《さっか》は、｜半世紀《はんせいき》（　　）｜小説《しょうせつ》を｜書《か》き｜続《つづ》けてきた。",
@@ -1071,7 +1085,10 @@
           "note": "7/2015 問題7-41 の正解（使いたいだけ）"
         }
       ],
-      "related": [],
+      "related": [
+        "g-kagiri",
+        "g-joshi-shika"
+      ],
       "quiz": [
         {
           "stem": "｜悔《くや》しいなら、｜泣《な》きたい（　）｜泣《な》けばいい。｜明日《あした》からまた｜頑張《がんば》ろう。",
@@ -1124,7 +1141,8 @@
         }
       ],
       "related": [
-        "g-ni-kagira-zu"
+        "g-ni-kagira-zu",
+        "g-ni-kagiru"
       ],
       "quiz": [
         {
@@ -1290,7 +1308,9 @@
           "note": "7/2024 問題7-34 の選択肢（会ったばかりか：誤答。正解は会ったきり）"
         }
       ],
-      "related": [],
+      "related": [
+        "g-joshi-bakari"
+      ],
       "quiz": [
         {
           "stem": "｜新《あたら》しく｜入《はい》ったアルバイトの｜学生《がくせい》は、｜仕事《しごと》を｜覚《おぼ》えるのが｜早《はや》い（　　）、｜周《まわ》りへの｜気配《きくば》りもできる。",
@@ -1343,7 +1363,8 @@
         }
       ],
       "related": [
-        "g-wohajime"
+        "g-wohajime",
+        "g-ue-6-5"
       ],
       "quiz": [
         {
@@ -1455,7 +1476,8 @@
         }
       ],
       "related": [
-        "g-ni-taishi-te"
+        "g-ni-taishi-te",
+        "g-womegutte"
       ],
       "quiz": [
         {
@@ -1631,7 +1653,10 @@
           "note": "12/2024 問題7-33 の正解（に対して）"
         }
       ],
-      "related": [],
+      "related": [
+        "g-ni-kanshi-te",
+        "g-nitotte"
+      ],
       "quiz": [
         {
           "stem": "この｜店《みせ》は、｜客《きゃく》からのどんな｜小《ちい》さな｜要望《ようぼう》（　）も、すぐに｜対応《たいおう》してくれる。",
@@ -1797,7 +1822,9 @@
           "note": "7/2024 問題7-33 の選択肢（に沿った。正解ではない。12/2013 問題7-34・7/2016 問題7-33 にも選択肢として）"
         }
       ],
-      "related": [],
+      "related": [
+        "g-nikotaete"
+      ],
       "quiz": [
         {
           "stem": "｜引《ひ》っ｜越《こ》しの｜作業《さぎょう》は、｜前《まえ》もって｜決《き》めておいた｜手順《てじゅん》（　）｜進《すす》めたので、｜半日《はんにち》で｜終《お》わった。",
@@ -1960,7 +1987,8 @@
         }
       ],
       "related": [
-        "g-ippou-da"
+        "g-ippou-da",
+        "g-ni-tomonatte"
       ],
       "quiz": [
         {
@@ -2075,7 +2103,8 @@
         }
       ],
       "related": [
-        "g-shidai"
+        "g-shidai",
+        "g-ni-ouji-te"
       ],
       "quiz": [
         {
@@ -2129,7 +2158,9 @@
         }
       ],
       "related": [
-        "g-shidai-da"
+        "g-shidai-da",
+        "g-nikotaete",
+        "g-ni-sonaete"
       ],
       "quiz": [
         {
@@ -2363,7 +2394,11 @@
           "note": "7/2021 問題7-33 の正解"
         }
       ],
-      "related": [],
+      "related": [
+        "g-ni-kagira-zu",
+        "g-nikakawarinaku",
+        "g-ni-yorazu"
+      ],
       "quiz": [
         {
           "stem": "｜当《とう》ジムでは、｜季節《きせつ》（　　）｜室内《しつない》プールをご｜利用《りよう》いただけます。",
@@ -2417,7 +2452,8 @@
       ],
       "related": [
         "g-o-towazu",
-        "g-nimokakawarazu"
+        "g-nimokakawarazu",
+        "g-ni-yorazu"
       ],
       "quiz": [
         {
@@ -2587,7 +2623,11 @@
       ],
       "related": [
         "g-koto-wa-nai",
-        "g-wake-niwa-ikanai"
+        "g-wake-niwa-ikanai",
+        "g-wakeganai",
+        "g-karatoitte",
+        "g-wake-da",
+        "g-naidemonai"
       ],
       "quiz": [
         {
@@ -2925,7 +2965,8 @@
       "related": [
         "g-monono",
         "g-nagara-mo",
-        "g-nikakawarinaku"
+        "g-nikakawarinaku",
+        "g-kuse-ni"
       ],
       "quiz": [
         {
@@ -2983,7 +3024,10 @@
         }
       ],
       "related": [
-        "g-nagara-mo"
+        "g-nagara-mo",
+        "g-nimokakawarazu",
+        "g-towa-iinagara",
+        "g-koto-wa-ga"
       ],
       "quiz": [
         {
@@ -3041,7 +3085,9 @@
         }
       ],
       "related": [
-        "g-monono"
+        "g-monono",
+        "g-nimokakawarazu",
+        "g-towa-iinagara"
       ],
       "quiz": [
         {
@@ -3099,7 +3145,8 @@
         }
       ],
       "related": [
-        "g-towa-iinagara"
+        "g-towa-iinagara",
+        "g-toiuto"
       ],
       "quiz": [
         {
@@ -3212,7 +3259,9 @@
       ],
       "related": [
         "g-joken",
-        "g-tonaruto"
+        "g-tonaruto",
+        "g-toshitemo",
+        "g-katei"
       ],
       "quiz": [
         {
@@ -3376,7 +3425,8 @@
         }
       ],
       "related": [
-        "g-naikotoniha"
+        "g-naikotoniha",
+        "g-nuki-de"
       ],
       "quiz": [
         {
@@ -3440,7 +3490,8 @@
       "related": [
         "g-nishitara",
         "g-nishitemonishitemo",
-        "g-toshitara"
+        "g-toshitara",
+        "g-adv-karini"
       ],
       "quiz": [
         {
@@ -3611,7 +3662,10 @@
           "note": "7/2021 問題7-35 の正解（せいか）"
         }
       ],
-      "related": [],
+      "related": [
+        "g-niyotte",
+        "g-amari"
+      ],
       "quiz": [
         {
           "stem": "｜駅前《えきまえ》に｜大《おお》きな｜駐車場《ちゅうしゃじょう》ができた（　）、｜週末《しゅうまつ》でも｜車《くるま》で｜買《か》い｜物《もの》に｜行《い》きやすくなった。",
@@ -3900,7 +3954,8 @@
       ],
       "related": [
         "g-kaneru",
-        "g-you-ga-nai"
+        "g-you-ga-nai",
+        "g-nikui"
       ],
       "quiz": [
         {
@@ -3960,7 +4015,8 @@
       "related": [
         "g-zaru-o-enai",
         "g-shika-nai",
-        "g-wake-dewa-nai"
+        "g-wake-dewa-nai",
+        "g-naiwakeniikanai"
       ],
       "quiz": [
         {
@@ -4015,7 +4071,9 @@
       ],
       "related": [
         "g-gatai",
-        "g-you-ga-nai"
+        "g-you-ga-nai",
+        "g-kanenai",
+        "g-nikui"
       ],
       "quiz": [
         {
@@ -4361,7 +4419,8 @@
       ],
       "related": [
         "g-nishitara",
-        "g-ni-taishi-te"
+        "g-ni-taishi-te",
+        "g-kara-suru-to"
       ],
       "quiz": [
         {
@@ -4415,7 +4474,10 @@
         }
       ],
       "related": [
-        "g-toshitemo"
+        "g-toshitemo",
+        "g-toshite",
+        "g-nitotte",
+        "g-kara-suru-to"
       ],
       "quiz": [
         {
@@ -4477,7 +4539,8 @@
         }
       ],
       "related": [
-        "g-kiri"
+        "g-kiri",
+        "g-tokoro-da"
       ],
       "quiz": [
         {
@@ -4539,7 +4602,8 @@
         }
       ],
       "related": [
-        "g-tatokoro"
+        "g-tatokoro",
+        "g-mama"
       ],
       "quiz": [
         {
@@ -4660,7 +4724,8 @@
         }
       ],
       "related": [
-        "g-shidai"
+        "g-shidai",
+        "g-ageku"
       ],
       "quiz": [
         {
@@ -4713,7 +4778,9 @@
           "note": "12/2024 問題7-40 の正解（洗濯するところだった）"
         }
       ],
-      "related": [],
+      "related": [
+        "g-tokoro-da"
+      ],
       "quiz": [
         {
           "stem": "｜料理《りょうり》の｜途中《とちゅう》で｜長《なが》い｜電話《でんわ》に｜出《で》ていたので、もう｜少《すこ》しで｜鍋《なべ》を（　）。",
@@ -4770,7 +4837,9 @@
         }
       ],
       "related": [
-        "g-sae"
+        "g-sae",
+        "g-nado",
+        "g-joshi-hodo"
       ],
       "quiz": [
         {
@@ -4824,7 +4893,8 @@
         }
       ],
       "related": [
-        "g-gurai"
+        "g-gurai",
+        "g-toitta"
       ],
       "quiz": [
         {
@@ -4882,7 +4952,8 @@
       ],
       "related": [
         "g-tedemo",
-        "g-sae"
+        "g-sae",
+        "g-made-ni-naru"
       ],
       "quiz": [
         {
@@ -4941,7 +5012,8 @@
         }
       ],
       "related": [
-        "g-joshi-mo"
+        "g-joshi-mo",
+        "g-toshite"
       ],
       "quiz": [
         {
@@ -5003,7 +5075,11 @@
       ],
       "related": [
         "g-sura",
-        "g-koso"
+        "g-koso",
+        "g-gurai",
+        "g-made",
+        "g-joshi-mo",
+        "g-joshi-datte"
       ],
       "quiz": [
         {
@@ -5057,7 +5133,8 @@
         }
       ],
       "related": [
-        "g-tatte"
+        "g-tatte",
+        "g-made"
       ],
       "quiz": [
         {
@@ -5112,7 +5189,8 @@
       ],
       "related": [
         "g-kaneru",
-        "g-eru"
+        "g-eru",
+        "g-osoregaaru"
       ],
       "quiz": [
         {
@@ -5293,7 +5371,13 @@
           "note": "12/2016 問題9-54 の正解（結果に違いない）"
         }
       ],
-      "related": [],
+      "related": [
+        "g-mai",
+        "g-nikimatteiru",
+        "g-adv-masaka",
+        "g-hazu",
+        "g-rashii"
+      ],
       "quiz": [
         {
           "stem": "｜道《みち》が｜濡《ぬ》れている。｜夜《よる》の｜間《あいだ》に｜雨《あめ》が｜降《ふ》った（　　）。",
@@ -5409,7 +5493,9 @@
       "related": [
         "g-mono-da-chuukoku",
         "g-mono-da-kaisou",
-        "g-mono-da-kangai"
+        "g-mono-da-kangai",
+        "g-monodakara",
+        "g-toiumonoda"
       ],
       "quiz": [
         {
@@ -5527,7 +5613,8 @@
         }
       ],
       "related": [
-        "g-shika-nai"
+        "g-shika-nai",
+        "g-nihokanaranai"
       ],
       "quiz": [
         {
@@ -5653,7 +5740,8 @@
       "related": [
         "g-zaru-o-enai",
         "g-wake-niwa-ikanai",
-        "g-ni-suginai"
+        "g-ni-suginai",
+        "g-joshi-shika"
       ],
       "quiz": [
         {
@@ -5712,7 +5800,8 @@
       ],
       "related": [
         "g-kotoda",
-        "g-hazu"
+        "g-hazu",
+        "g-neba"
       ],
       "quiz": [
         {
@@ -5770,7 +5859,8 @@
         "g-kotoda-26-5",
         "g-bekida",
         "g-mono-da-chuukoku",
-        "g-koto-wa-nai"
+        "g-koto-wa-nai",
+        "g-te-wa-douka"
       ],
       "quiz": [
         {
@@ -5883,7 +5973,9 @@
         }
       ],
       "related": [
-        "g-wake-dewa-nai"
+        "g-wake-dewa-nai",
+        "g-kotoda",
+        "g-zu-ni-sumu"
       ],
       "quiz": [
         {
@@ -6002,7 +6094,10 @@
           "note": "7/2024 問題8-46 の選択肢（好きでたまらないという。12/2025 問題8-45 にも）"
         }
       ],
-      "related": [],
+      "related": [
+        "g-tenaranai",
+        "g-naidehairarenai"
+      ],
       "quiz": [
         {
           "stem": "｜引《ひ》っ｜越《こ》してきたばかりで｜知《し》り｜合《あ》いもいないので、｜毎日《まいにち》（　）。",
@@ -6173,7 +6268,8 @@
       ],
       "related": [
         "g-wake-niwa-ikanai",
-        "g-zaru-o-enai"
+        "g-zaru-o-enai",
+        "g-naidehairarenai"
       ],
       "quiz": [
         {
@@ -6232,7 +6328,11 @@
       ],
       "related": [
         "g-shika-nai",
-        "g-wake-niwa-ikanai"
+        "g-wake-niwa-ikanai",
+        "g-naidehairarenai",
+        "g-naiwakeniikanai",
+        "g-neba",
+        "g-zu-ni-sumu"
       ],
       "quiz": [
         {
@@ -6347,7 +6447,8 @@
       ],
       "related": [
         "g-mono-da-honshitsu",
-        "g-mono-da-kaisou"
+        "g-mono-da-kaisou",
+        "g-monogaaru"
       ],
       "quiz": [
         {
@@ -6461,7 +6562,8 @@
       "related": [
         "g-kotoda",
         "g-kotodarou",
-        "g-koto-ni"
+        "g-koto-ni",
+        "g-monogaaru"
       ],
       "quiz": [
         {
@@ -6923,7 +7025,10 @@
         }
       ],
       "related": [
-        "g-to-iu-koto-ni-naru"
+        "g-to-iu-koto-ni-naru",
+        "g-toiumonoda",
+        "g-to-no-koto",
+        "g-rashii"
       ],
       "quiz": [
         {
@@ -7161,7 +7266,10 @@
           "note": "7/2024 問題8-43 の選択肢（ことから）"
         }
       ],
-      "related": [],
+      "related": [
+        "g-tokoro-kara",
+        "g-koto-de"
+      ],
       "quiz": [
         {
           "stem": "｜足跡《あしあと》が｜残《のこ》っていた（　　）、｜夜《よる》の｜間《あいだ》に｜動物《どうぶつ》が｜畑《はたけ》に｜入《はい》ったことがわかった。",
@@ -7378,7 +7486,8 @@
         }
       ],
       "related": [
-        "g-tokoro-da"
+        "g-tokoro-da",
+        "g-joshi-bakari"
       ],
       "quiz": [
         {
@@ -7439,7 +7548,8 @@
         }
       ],
       "related": [
-        "g-toshitara"
+        "g-toshitara",
+        "g-nara-tomokaku"
       ],
       "quiz": [
         {
@@ -7693,7 +7803,8 @@
       "related": [
         "g-shieki-ukemi",
         "g-shieki",
-        "g-te-morau"
+        "g-te-morau",
+        "g-jita-doushi"
       ],
       "quiz": [
         {
@@ -7755,7 +7866,8 @@
       ],
       "related": [
         "g-shieki-ukemi",
-        "g-ukemi"
+        "g-ukemi",
+        "g-keigo-sasete-itadaku"
       ],
       "quiz": [
         {
@@ -7942,7 +8054,8 @@
       "related": [
         "g-te-kureru",
         "g-te-ageru",
-        "g-keigo-itadaku"
+        "g-keigo-itadaku",
+        "g-ukemi"
       ],
       "quiz": [
         {
@@ -8188,7 +8301,10 @@
       ],
       "related": [
         "g-keigo-mairu",
-        "g-keigo-ukagau"
+        "g-keigo-ukagau",
+        "g-keigo-irassharu",
+        "g-keigo-oide",
+        "g-keigo-o-ni-naru"
       ],
       "quiz": [
         {
@@ -8309,7 +8425,8 @@
       ],
       "related": [
         "g-keigo-o-ni-naru",
-        "g-keigo-o-suru"
+        "g-keigo-o-suru",
+        "g-keigo-itasu"
       ],
       "quiz": [
         {
@@ -8368,9 +8485,7 @@
       ],
       "related": [
         "g-keigo-itadaku",
-        "g-te-kureru",
-        "g-keigo-ukagau",
-        "g-keigo-mairu"
+        "g-te-kureru"
       ],
       "quiz": [
         {
@@ -8430,7 +8545,11 @@
       "related": [
         "g-keigo-ukagau",
         "g-keigo-mousu",
-        "g-keigo-okoshi"
+        "g-keigo-okoshi",
+        "g-keigo-goran",
+        "g-keigo-nasaru",
+        "g-keigo-o-desu",
+        "g-keigo-o-suru"
       ],
       "quiz": [
         {
@@ -8560,7 +8679,9 @@
       "related": [
         "g-keigo-mousu",
         "g-keigo-mairu",
-        "g-keigo-o-ni-naru"
+        "g-keigo-o-ni-naru",
+        "g-keigo-okoshi",
+        "g-keigo-uketamawaru"
       ],
       "quiz": [
         {
@@ -8618,7 +8739,9 @@
       ],
       "related": [
         "g-keigo-okoshi",
-        "g-keigo-ukagau"
+        "g-keigo-ukagau",
+        "g-keigo-irassharu",
+        "g-keigo-oide"
       ],
       "quiz": [
         {
@@ -8680,7 +8803,8 @@
       ],
       "related": [
         "g-keigo-ukagau",
-        "g-keigo-o-ni-naru"
+        "g-keigo-o-ni-naru",
+        "g-keigo-zonjiru"
       ],
       "quiz": [
         {
@@ -8942,7 +9066,9 @@
       ],
       "related": [
         "g-keigo-kudasaru",
-        "g-te-morau"
+        "g-te-morau",
+        "g-keigo-goran",
+        "g-keigo-sasete-itadaku"
       ],
       "quiz": [
         {
@@ -9001,7 +9127,8 @@
       ],
       "related": [
         "g-keigo-o-ni-naru",
-        "g-keigo-nasaru"
+        "g-keigo-nasaru",
+        "g-keigo-itasu"
       ],
       "quiz": [
         {
@@ -9251,7 +9378,10 @@
         }
       ],
       "related": [
-        "g-ni-chigai-nai"
+        "g-ni-chigai-nai",
+        "g-adv-ittai",
+        "g-adv-osoraku",
+        "g-adv-doumo"
       ],
       "quiz": [
         {
@@ -9593,7 +9723,8 @@
       ],
       "related": [
         "g-katei",
-        "g-toshitemo"
+        "g-toshitemo",
+        "g-adv-tatoe"
       ],
       "quiz": [
         {
@@ -9698,7 +9829,10 @@
           "note": "12/2016 問題7-36 の正解"
         }
       ],
-      "related": [],
+      "related": [
+        "g-adv-mamonaku",
+        "g-adv-itsunomani"
+      ],
       "quiz": [
         {
           "stem": "｜引《ひ》っ｜越《こ》しの｜片付《かたづ》けが｜終《お》わったら、（　　）｜新《あたら》しい｜家《いえ》に｜遊《あそ》びに｜来《き》てね。",
@@ -10302,7 +10436,10 @@
           "note": "7/2012 問題8-46 の選択肢（一人で行っちゃった）"
         }
       ],
-      "related": [],
+      "related": [
+        "g-nakya",
+        "g-teru-toku"
+      ],
       "quiz": [
         {
           "stem": "A「｜私《わたし》が｜貸《か》したペン、どうしたの？」B「ごめん、どこかでなくし（　　）。」",
@@ -10431,7 +10568,8 @@
       ],
       "related": [
         "g-toha",
-        "g-tatte"
+        "g-tatte",
+        "g-souda-denbun"
       ],
       "quiz": [
         {
@@ -10556,7 +10694,9 @@
         }
       ],
       "related": [
-        "g-tedemo"
+        "g-tedemo",
+        "g-joshi-datte",
+        "g-tte"
       ],
       "quiz": [
         {
@@ -10680,7 +10820,8 @@
       ],
       "related": [
         "g-zaru-o-enai",
-        "g-bekida"
+        "g-bekida",
+        "g-nakya"
       ],
       "quiz": [
         {
@@ -11231,7 +11372,9 @@
           "note": "7/2023 問題7-38 の正解（約5年ぶりだ）"
         }
       ],
-      "related": [],
+      "related": [
+        "g-okini"
+      ],
       "quiz": [
         {
           "stem": "｜二《に》か｜月《げつ》｜入院《にゅういん》していた｜祖父《そふ》が、｜今日《きょう》、｜二《に》か｜月《げつ》（　）｜家《いえ》に｜帰《かえ》ってきた。",
@@ -11339,7 +11482,9 @@
           "note": "7/2022 問題8-43 の選択肢（たびに）"
         }
       ],
-      "related": [],
+      "related": [
+        "g-nitsukete"
+      ],
       "quiz": [
         {
           "stem": "この｜店《みせ》は｜行《い》く（　　）メニューが｜変《か》わっていて、｜飽《あ》きない。",
@@ -11608,7 +11753,10 @@
           "note": "12/2016 問題7-43 の正解（見られそうにない）"
         }
       ],
-      "related": [],
+      "related": [
+        "g-kkonai",
+        "g-souda-youtai"
+      ],
       "quiz": [
         {
           "stem": "この｜渋滞《じゅうたい》では、｜約束《やくそく》の｜時間《じかん》に（　）。｜少《すこ》し｜遅《おく》れると｜連絡《れんらく》しておこう。",
@@ -11721,7 +11869,8 @@
         }
       ],
       "related": [
-        "g-to-iu-koto-ni-naru"
+        "g-to-iu-koto-ni-naru",
+        "g-you-ni"
       ],
       "quiz": [
         {
@@ -11888,7 +12037,9 @@
           "note": "7/2023 問題8-44 の選択肢（ほどの…重さはない）"
         }
       ],
-      "related": [],
+      "related": [
+        "g-joshi-hodo"
+      ],
       "quiz": [
         {
           "stem": "｜九月《くがつ》に｜入《はい》っても｜暑《あつ》い｜日《ひ》が｜続《つづ》いているが、｜八月《はちがつ》の｜暑《あつ》さ（　　）。",
@@ -12424,7 +12575,8 @@
         }
       ],
       "related": [
-        "g-koto-ni-naru"
+        "g-koto-ni-naru",
+        "g-to-iu-you-ni"
       ],
       "quiz": [
         {
@@ -12607,7 +12759,9 @@
       ],
       "related": [
         "g-ni-chigai-nai",
-        "g-bekida"
+        "g-bekida",
+        "g-wakeganai",
+        "g-kkonai"
       ],
       "quiz": [
         {
@@ -12843,7 +12997,9 @@
       ],
       "related": [
         "g-ni-chigai-nai",
-        "g-to-iu-koto-da"
+        "g-to-iu-koto-da",
+        "g-adv-doumo",
+        "g-souda-youtai"
       ],
       "quiz": [
         {
@@ -12918,7 +13074,8 @@
       "related": [
         "g-souda-denbun",
         "g-rashii",
-        "g-sou-ni-nai"
+        "g-sou-ni-nai",
+        "g-adv-imanimo"
       ],
       "quiz": [
         {
@@ -13038,7 +13195,8 @@
       ],
       "related": [
         "g-wake-da",
-        "g-to-iu-koto-da"
+        "g-to-iu-koto-da",
+        "g-koto-ni-naru"
       ],
       "quiz": [
         {

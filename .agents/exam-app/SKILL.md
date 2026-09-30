@@ -513,8 +513,9 @@ the list must not destroy the field being typed into.
 
 **One sticky bar per page, and it is exam-model-answer's `lang_ui.topbar_html()`**
 (2026-09-30): breadcrumb left (level › module › page, relative links), the
-page's own compact controls, then the language dropdown — ~40px desktop, 36px
-phone, one line at 375px (crumbs ellipsize, `tb-wide` controls drop, `tb-long`/
+page's own compact controls, then the language dropdown — the original `#bar`'s
+size (≈50px desktop, 44px phone, 1.8em side padding; the owner rejected a 40px
+slim bar as too small, 2026-09-30), one line at 375px (crumbs ellipsize, `tb-wide` controls drop, `tb-long`/
 `tb-short` labels swap), hidden in print. Every page but the two booklets carries
 exactly one (`make check`, `check_site_chrome`). The sheet's old `#bar` is merged
 into it: `解答.html`'s right side is the two section tabs, the 「聴解 ｜ 問題2」

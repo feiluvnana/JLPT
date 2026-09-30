@@ -1528,7 +1528,7 @@ function updateSpy(){
 function fitPlayer(){
   // The player sticks directly under the ONE bar (lang_ui's topbar, which the
   // sheet's timer/section bar merged into). Measure rather than guess: its
-  // height changes with the viewport (40px desktop, 36px phone).
+  // height changes with the viewport (50px desktop, 44px phone).
   const bar = document.getElementById('topbar'), p = document.getElementById('player');
   if (bar && p && bar.offsetHeight) p.style.top = bar.offsetHeight + 'px';
 }

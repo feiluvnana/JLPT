@@ -24,7 +24,7 @@ also works opened from disk.
 
 The chrome is bilingual through the language registry (`langs.py`, namespace
 `portal`): every label ships one `.lang-pane` per active language and
-`body[data-lang]` shows one. The top of every screen is lang_ui's ONE slim
+`body[data-lang]` shows one. The top of every screen is lang_ui's ONE
 sticky bar (breadcrumb + language dropdown, `lang_ui.topbar_html`), whose
 switcher remembers the choice under `lang_ui.LANG_STORE_KEY` — one preference
 across portal, knowledge, drill, exam, practice and model answer. The title and

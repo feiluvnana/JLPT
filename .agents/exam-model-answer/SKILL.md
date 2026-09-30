@@ -24,7 +24,7 @@ the ドリル pages, `jlpt-drill`).
 
 **One switcher: `scripts/lang_ui.py`** (dependency-free). Every page but the two
 booklets renders its top through `topbar_html(crumbs, right_html, codes)` — ONE
-slim sticky bar with the breadcrumb and a `<select class="lang-select">`
+sticky bar with the breadcrumb and a `<select class="lang-select">`
 (`switcher_html()`; `codes` narrows it to the languages the page has content in,
 one option renders disabled) — plus `head_css()` (bar CSS + `.lang-pane` hiding).
 Its `SWITCHER_JS` sets `body[data-lang]`, persists the choice under

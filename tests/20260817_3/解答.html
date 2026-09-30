@@ -580,20 +580,23 @@ html.is-result-mode #where{display:none!important}
   .section-title{font-size:13.5pt;padding:.4em .7em;margin:1.5em 0 .8em}
 }
 
-/* lang_ui: the one sticky bar. Slim on purpose — it must never cost reading room.
+/* lang_ui: the one sticky bar. Sized like the exam sheet's original #bar
+   (min-height 3.4em at 11pt ≈ 50px, 1.8em side padding, gradient + shadow) —
+   the owner's call on 2026-09-30, after a 40px slim bar read as too small.
    --tb-h is its height, for anything that sticks under it (players). */
-:root{--tb-h:40px}
-.topbar{position:sticky;top:0;z-index:1000;display:flex;align-items:center;gap:.8em;
-  height:var(--tb-h);padding:0 max(12px,env(safe-area-inset-right)) 0 max(12px,env(safe-area-inset-left));
+:root{--tb-h:50px}
+.topbar{position:sticky;top:0;z-index:1000;display:flex;align-items:center;
+  height:var(--tb-h);padding:0 max(1.8em,env(safe-area-inset-right)) 0 max(1.8em,env(safe-area-inset-left));gap:.6em 1.2em;
   box-sizing:border-box;width:100%;max-width:100%;overflow:hidden;margin:0;
-  background:rgba(15,23,42,.94);color:#e2e8f0;font:500 13px/1 var(--ui,system-ui,sans-serif);
-  -webkit-backdrop-filter:saturate(1.4) blur(6px);backdrop-filter:saturate(1.4) blur(6px)}
+  background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);color:#e2e8f0;
+  font:500 11pt/1 var(--ui,system-ui,sans-serif);
+  box-shadow:0 4px 14px rgba(0,0,0,.08);border-bottom:1px solid rgba(255,255,255,.08)}
 .topbar .tb-crumbs{flex:1 1 0;min-width:2.5em;display:flex;align-items:center;gap:.45em;
   white-space:nowrap;overflow:hidden}
 .topbar .tb-crumb{color:#cbd5e1;text-decoration:none;overflow:hidden;text-overflow:ellipsis;
   min-width:0;flex:0 1 auto;line-height:1.5}
 .topbar a.tb-crumb:hover{color:#fff;text-decoration:underline}
-.topbar .tb-here{color:#fff;font-weight:700;flex:0 1 auto}
+.topbar .tb-here{color:#fff;font-weight:800;font-size:12.5pt;flex:0 1 auto}
 .topbar .tb-sep{color:#64748b;flex:0 0 auto}
 .topbar .tb-right{flex:0 0 auto;max-width:calc(100% - 2.5em);min-width:0;justify-content:flex-end;display:flex;align-items:center;gap:.5em}
 .topbar .tb-right>*{flex:0 0 auto}
@@ -602,9 +605,9 @@ html.is-result-mode #where{display:none!important}
 .topbar .tb-last{flex:0 1 auto}
 /* A page's own compact controls in the bar (right_html): links, buttons, read-outs. */
 .topbar .tb-link,.topbar .tb-btn{display:inline-flex;align-items:center;justify-content:center;
-  box-sizing:border-box;height:28px;min-height:0;padding:0 .75em;margin:0;border-radius:6px;
+  box-sizing:border-box;height:32px;min-height:0;padding:0 .85em;margin:0;border-radius:6px;
   border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:#e2e8f0;
-  font:600 12.5px/1 var(--ui,system-ui,sans-serif);text-decoration:none;white-space:nowrap;
+  font:700 10pt/1 var(--ui,system-ui,sans-serif);text-decoration:none;white-space:nowrap;
   cursor:pointer;box-shadow:none}
 .topbar .tb-link:hover,.topbar .tb-btn:hover{background:rgba(255,255,255,.18);color:#fff}
 .topbar .tb-btn.primary{background:#2563eb;border-color:#2563eb;color:#fff}
@@ -613,21 +616,28 @@ html.is-result-mode #where{display:none!important}
 .topbar .tb-btn.primary:disabled:hover{background:#2563eb}
 .topbar .tb-sub{color:#94a3b8;font-variant-numeric:tabular-nums;white-space:nowrap}
 .topbar .tb-short{display:none}
-.lang-select{font:600 12.5px/1 var(--ui,system-ui,sans-serif);color:#0f172a;background:#f8fafc;
-  border:1px solid #cbd5e1;border-radius:6px;height:28px;padding:0 1.6em 0 .6em;cursor:pointer;
+.lang-select{font:600 10pt/1 var(--ui,system-ui,sans-serif);color:#0f172a;background:#f8fafc;
+  border:1px solid #cbd5e1;border-radius:6px;height:32px;padding:0 1.6em 0 .6em;cursor:pointer;
   max-width:9.5em}
 .lang-select:focus-visible{outline:2px solid #60a5fa;outline-offset:1px}
 .lang-select[disabled]{opacity:.6;cursor:default}
 @media (max-width:600px){
-  :root{--tb-h:36px}
-  .topbar{gap:.5em;font-size:12px;padding:0 8px}
+  :root{--tb-h:44px}
+  .topbar{gap:.4em .8em;font-size:10pt;padding:0 .9em}
+  .topbar .tb-here{font-size:11.5pt}
   .topbar .tb-wide{display:none!important}
   /* On a phone only the page you are on is spelled out; the crumbs before it
      stay reachable as a short trail that gives way first. */
-  .topbar .tb-crumb:not(.tb-last){max-width:5.5em;flex-shrink:4}
+  /* On a phone the trail collapses to one 「‹」 back link to the parent page
+     plus the page you are on — squeezed crumbs read as bare 「› ›」. */
+  .topbar .tb-crumbs>.tb-crumb:not(.tb-last),.topbar .tb-crumbs>.tb-sep{display:none}
+  .topbar .tb-crumbs>a.tb-crumb:nth-last-child(3){display:inline-flex;flex:0 0 auto;
+    font-size:0;width:22px;justify-content:center;text-decoration:none}
+  .topbar .tb-crumbs>a.tb-crumb:nth-last-child(3)::before{content:"‹";font-size:20px;
+    line-height:1;color:#e2e8f0}
   .topbar .tb-right{gap:.35em}
-  .lang-select{height:26px;font-size:12px;max-width:6em;padding:0 1.1em 0 .35em}
-  .topbar .tb-link,.topbar .tb-btn{height:26px;padding:0 .5em;font-size:12px}
+  .lang-select{height:30px;font-size:10pt;max-width:6.5em;padding:0 1.1em 0 .4em}
+  .topbar .tb-link,.topbar .tb-btn{height:30px;padding:0 .6em;font-size:10pt}
   .topbar .tb-long{display:none}
   .topbar .tb-short{display:inline}
 }
@@ -2517,7 +2527,7 @@ function updateSpy(){
 function fitPlayer(){
   // The player sticks directly under the ONE bar (lang_ui's topbar, which the
   // sheet's timer/section bar merged into). Measure rather than guess: its
-  // height changes with the viewport (40px desktop, 36px phone).
+  // height changes with the viewport (50px desktop, 44px phone).
   const bar = document.getElementById('topbar'), p = document.getElementById('player');
   if (bar && p && bar.offsetHeight) p.style.top = bar.offsetHeight + 'px';
 }

@@ -8,6 +8,11 @@ on:
       - '.agents/exam-app/**'
       - '.agents/exam-model-answer/**'
       - '.agents/jlpt-exam-structure/**'
+      - '.agents/jlpt-knowledge/**'
+      - '.agents/jlpt-drill/**'
+      - 'knowledge/**'
+      - 'logs/choukai_bank.json'
+      - 'logs/choukai_draws.json'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 

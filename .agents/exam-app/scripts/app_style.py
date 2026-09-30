@@ -3,8 +3,9 @@
 Screen 1 (the test list) is built by `serve_sheet.py`; screens 2 and 3 (the exam
 and its result) are built into 解答.html by `build_interactive.py`. They are
 different files produced by different scripts, which is exactly how two "the
-same" designs drift apart, so both import `APP_CSS` from here: the sticky `#bar`,
-the buttons, the tables, the badges, the verdict colours are defined once.
+same" designs drift apart, so both import `APP_CSS` from here: the buttons, the
+tables, the badges, the verdict colours are defined once. (The one sticky bar
+every page carries is exam-model-answer's `lang_ui.TOPBAR_CSS`.)
 
 Keep this module dependency-free (no markdown, no booklet import) — `make serve`
 must start even if the authoring dependencies are not installed.
@@ -24,131 +25,14 @@ APP_CSS = """
   --ui:"Noto Sans JP",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Hiragino Sans","Yu Gothic",sans-serif;
   --serif:"Noto Serif JP","Yu Mincho",serif;
 }
-/* The bar spans the full window on every screen, so the scrollbar sits ON its
-   right edge — the horizontal padding has to clear it or it covers 採点する. */
-#bar{
-  position:sticky;
-  top:0;
-  z-index:99;
-  background:linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  color:#ffffff;
-  box-sizing:border-box;
-  min-height:3.4em;
-  padding:0 1.8em;
-  display:flex;
-  flex-wrap:nowrap;
-  gap:.6em 1.2em;
-  align-items:center;
-  font-family:var(--ui);
-  font-size:11pt;
-  box-shadow:0 4px 14px rgba(0,0,0,0.08);
-  border-bottom:1px solid rgba(255,255,255,0.08);
-}
-#bar b{
-  font-size:12.5pt;
-  font-weight:800;
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
-  min-width:0;
-  max-width:20em;
-  color:#ffffff;
-}
-#bar .sub{
-  font-size:9.5pt;
-  color:#94a3b8;
-  font-variant-numeric:tabular-nums;
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
-  min-width:0;
-}
-#bar .grow{
-  flex:1 1 auto;
-  min-width:.5em;
-}
+/* The sticky bar itself is lang_ui.TOPBAR_CSS (exam-model-answer) — ONE bar on
+   every page. This is the sheet's solving-controls group inside it. */
 #bar-controls{
   display:flex;
   flex-wrap:nowrap;
   align-items:center;
   gap:.55em;
   flex:0 0 auto;
-}
-/* The bar's own buttons — hence `:not(.lang-btn)`, here and in the mobile block
-   below. 練習.html drops exam-model-answer's segmented language control
-   (.lang-switch/.lang-btn, styled in build_model_answer.EXPLANATION_CSS) into
-   this bar, and an id-level rule here outranks every class rule that control
-   brings with it: the pill came out as two bar buttons. A control imported with
-   its own styling opts out, rather than having that styling restated here —
-   restating it is the copy that would drift. */
-#bar button:not(.lang-btn){
-  font-size:10pt;
-  font-weight:700;
-  padding:.3em .85em;
-  cursor:pointer;
-  border-radius:6px;
-  border:1px solid rgba(255,255,255,0.2);
-  background:rgba(255,255,255,0.1);
-  color:#ffffff;
-  font-family:var(--ui);
-  white-space:nowrap;
-  line-height:1.35;
-  min-height:34px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  transition:all .15s ease;
-}
-#bar button:not(.lang-btn):hover{
-  background:rgba(255,255,255,0.2);
-  border-color:rgba(255,255,255,0.35);
-}
-/* 採点する stays disabled until every item is answered (build_interactive's
-   updateCounter). It must READ disabled, not just refuse the click. */
-#bar button:disabled{
-  opacity:.45;
-  cursor:not-allowed;
-  box-shadow:none;
-}
-#bar button:disabled:hover{
-  background:rgba(255,255,255,0.1);
-  border-color:rgba(255,255,255,0.2);
-}
-#bar button.primary:disabled,
-#bar button.primary:disabled:hover{
-  background:var(--accent);
-  border-color:var(--accent);
-}
-#bar button.primary{
-  background:var(--accent);
-  color:#ffffff;
-  border-color:var(--accent);
-  box-shadow:0 2px 6px rgba(37,99,235,0.3);
-}
-#bar button.primary:hover{
-  background:var(--accent-hover);
-  border-color:var(--accent-hover);
-}
-#bar a.back{
-  display:inline-flex;
-  align-items:center;
-  gap:.35em;
-  color:#cbd5e1;
-  text-decoration:none;
-  font-size:10pt;
-  font-weight:700;
-  white-space:nowrap;
-  flex:0 0 auto;
-  padding:.3em .75em;
-  border-radius:6px;
-  background:rgba(255,255,255,0.08);
-  border:1px solid rgba(255,255,255,0.15);
-  transition:all .15s ease;
-}
-#bar a.back:hover{
-  background:rgba(255,255,255,0.18);
-  color:#ffffff;
-  border-color:rgba(255,255,255,0.3);
 }
 .ui-btn{
   display:inline-flex;
@@ -334,40 +218,10 @@ APP_CSS = """
   font-family:var(--ui);
 }
 @media screen and (max-width: 48em){
-  #bar{
-    padding:.5em .9em;
-    gap:.4em .8em;
-    flex-wrap:wrap;
-    font-size:10pt;
-  }
-  #bar b{
-    max-width:12em;
-    font-size:11.5pt;
-  }
-  #bar .sub{
-    font-size:9pt;
-  }
-  #bar-controls{
-    gap:.4em;
-  }
-  #bar button:not(.lang-btn){
-    font-size:9.5pt;
-    padding:.3em .7em;
-    min-height:34px;
-  }
   .ui-btn{
     font-size:10pt;
     padding:.4em .9em;
     min-height:36px;
-  }
-}
-@media screen and (max-width: 32em){
-  #bar b{
-    max-width:8.5em;
-    font-size:10.5pt;
-  }
-  #where{
-    display:none;
   }
 }
 """

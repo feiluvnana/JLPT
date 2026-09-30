@@ -2,8 +2,6 @@
   "module": "知識",
   "index_title": "{level} 知識",
   "index_lead": "分野を選んで、学習カードで覚え、クイズで確かめましょう。",
-  "back_portal": "← モジュール選択",
-  "back_index": "← 知識一覧",
   "cat_grammar": "文法",
   "cat_vocab": "語彙",
   "cat_kanji": "漢字",

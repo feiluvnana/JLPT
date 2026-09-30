@@ -159,6 +159,30 @@ comparable length and register, and answer positions balanced across the
 category (the gate WARNs outside ½–1½ × n/4). The explanation says why the key
 fits and what rules the strongest distractor out — never 「文脈に合わない」.
 
+Seven rules from the first batch's QA (`qa/qa-report-knowledge-N2-文法-B0.md`,
+2026-09-30), each one because the defect shipped through a green gate:
+
+1. **Splice every distractor** into the stem and name the words that kill it.
+   A kill that rests on an unstated assumption goes INTO the stem as a clause
+   (「歩いて帰る（ことはない）」 was a second answer until the stem said no taxi
+   ran).
+2. **No form-only keys.** ≥3 of 4 options attach grammatically to the printed
+   form before the blank; at most one 接続-only elimination per item, else each
+   option carries its own connector. Never argue the key by form alone.
+3. **Provenance scan** before hand-off: every 10-char window of examples and
+   stems against `refs/**/*.md` and `tests/imported-*`, AND against the cited
+   Shin Kanzen page's numbered examples — the same scenario + predicate is a copy
+   with new nouns; change the scenario.
+4. **`official_count` is confirmed hit by hit** in booklet.md + the key, never
+   copied from the inventory's `sittings_tested` (wrong for 8 of 20 points:
+   ありがたい counted as がたい, ばかりだ as 一方だ, …).
+5. **接続 and meaning copied literally** from the cited page, optional (な)/である
+   included; a two-reading form (ことはない, ながら) shows THIS entry's reading in
+   every example.
+6. **Learner-language panes quote every Japanese word in 「」**, parenthesised
+   lists included; only grammar labels (thể ます, ナ形容詞) stay bare.
+7. **QA extracts stem + options only, no entry ids, shuffled**, then solves.
+
 ## Pronunciation
 
 - **▶ speech** on every headword reading, every 漢字 `words` compound and every
@@ -191,7 +215,9 @@ speech rate in `jlpt-knowledge/v1/設定.json` — a prefix
 `scripts/build_knowledge.py` renders every card and quiz item to HTML in Python —
 furigana via `build_model_answer.apply_furigana()`, one `.lang-pane` per active
 language (`langs.pane_css()`), chrome labels from `languages/<code>/knowledge.json`
-— and embeds them as data; the page inserts cards lazily and filters over a
+— and embeds them as data. The top of every page is exam-model-answer's
+`lang_ui.topbar_html()`: one sticky bar, breadcrumb level › 知識 › category (›
+part), language dropdown right (`crumbs()`); no page writes its own switch; the page inserts cards lazily and filters over a
 small index. A language without prose for an entry shows the primary prose under
 a one-line note, and an entry with no prose still shows its shared material:
 never a blank card. Each page stamps `<!-- src_sha: … -->` for every data file it

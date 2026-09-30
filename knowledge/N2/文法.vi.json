@@ -16,7 +16,7 @@
   },
   "g-ippou-da": {
     "meaning": "Ngày càng… (cứ đi theo một chiều, không dừng lại)",
-    "usage": "Gắn sau động từ thể từ điển chỉ sự thay đổi (増える, 減る). 「｜一方《いっぽう》」 Hán Việt là \"nhất phương\" — một hướng: sự việc cứ tiến theo một chiều, thường là chiều xấu.",
+    "usage": "Gắn sau động từ thể từ điển chỉ sự thay đổi (「増える」, 「減る」). 「｜一方《いっぽう》」 Hán Việt là \"nhất phương\" — một hướng: sự việc cứ tiến theo một chiều, thường là chiều xấu.",
     "nuance": "Chỉ gắn sau động từ mang nghĩa thay đổi; 「食べる一方だ」 là sai. Đừng nhầm với 「｜一方《いっぽう》で」 (mặt khác, trong khi đó) — cùng chữ nhưng là từ nối chỉ sự đối lập.",
     "compare": "「につれて」 nối hai sự thay đổi: A đổi kéo theo B đổi (\"càng… càng\"). 「一方だ」 chỉ nói một sự thay đổi, đứng cuối câu và nhấn mạnh rằng nó không dừng lại.",
     "example_notes": [
@@ -25,13 +25,13 @@
       "Chứng hay quên của ông tôi ngày càng nặng, nên cả nhà cùng để mắt chăm sóc ông."
     ],
     "quiz": [
-      "Thiếu người nên giờ làm thêm cứ tăng mãi — xu hướng một chiều → 「一方だ」. 「ものだ」 nói lẽ thường chung, không nói một tình trạng cụ thể.",
+      "Từ khi có nhà máy ở thượng nguồn, nước sông cứ bẩn dần → 「一方だ」. 「ところだ」 là \"sắp sửa\", không hợp với thay đổi đã kéo dài từ 「できてから」.",
       "Tuổi tăng thì thể lực giảm — hai thay đổi song song → 「につれて」. 「とたんに」 (vừa… thì) cần thể た và chỉ một khoảnh khắc."
     ]
   },
   "g-shidai": {
     "meaning": "Ngay khi (việc gì đó xong) là sẽ… — cách nói trang trọng",
-    "usage": "Gắn sau thể ます bỏ ます (届き, 終わり). Vế sau là ý định, lời hứa hay yêu cầu: \"sẽ liên lạc\", \"xin hãy…\". Hay gặp trong thông báo, email công việc, lời nhân viên với khách.",
+    "usage": "Gắn sau thể ます bỏ ます (「届き」, 「終わり」). Vế sau là ý định, lời hứa hay yêu cầu: \"sẽ liên lạc\", \"xin hãy…\". Hay gặp trong thông báo, email công việc, lời nhân viên với khách.",
     "nuance": "Tiếng Việt \"ngay khi… thì\" dùng được cho chuyện đã qua, còn 「次第」 thì không: 「着き次第、電話した」 là sai. Nó chỉ dùng cho việc chưa xảy ra nhưng chắc chắn sẽ xảy ra.",
     "compare": "「｜末《すえ》に」 cũng là \"sau khi\", nhưng gắn sau thể た hoặc 「名詞＋の」 và kể kết quả của một quá trình dài vất vả. 「次第」 nhìn về tương lai, vế sau diễn ra ngay lập tức.",
     "example_notes": [
@@ -46,7 +46,7 @@
   },
   "g-ni-watatte": {
     "meaning": "Suốt / trải dài khắp (cả một khoảng thời gian, không gian)",
-    "usage": "Gắn sau danh từ chỉ phạm vi: thời gian (30年, 半世紀), khoảng cách (5キロ), số lần (全10回), nhấn mạnh phạm vi đó rộng. Trước danh từ dùng 「にわたる」; 「にわたり」 là dạng viết.",
+    "usage": "Gắn sau danh từ chỉ phạm vi: thời gian (「30年」, 「半世紀」), khoảng cách (「5キロ」), số lần (「全10回」), nhấn mạnh phạm vi đó rộng. Trước danh từ dùng 「にわたる」; 「にわたり」 là dạng viết.",
     "nuance": "Gốc là động từ 「｜渡《わた》る」 (băng qua), nên hãy hình dung phủ kín từ đầu đến cuối. Không dùng với một thời điểm: 「3時にわたって」 là sai, vì nó cần một khoảng có bề rộng.",
     "compare": "",
     "example_notes": [
@@ -61,7 +61,7 @@
   },
   "g-ni-tsurete": {
     "meaning": "Càng… càng… / A thay đổi thì B cũng thay đổi theo",
-    "usage": "Gắn sau danh từ hoặc động từ thể từ điển chỉ sự thay đổi (高くなる, 発展, 近づく). Vế sau cũng là một thay đổi diễn ra dần dần, hay có 「〜ていく」「〜てくる」. 「につれ」 là dạng viết.",
+    "usage": "Gắn sau danh từ hoặc động từ thể từ điển chỉ sự thay đổi (「高くなる」, 「発展」, 「近づく」). Vế sau cũng là một thay đổi diễn ra dần dần, hay có 「〜ていく」「〜てくる」. 「につれ」 là dạng viết.",
     "nuance": "\"Càng… càng\" tiếng Việt dùng rất rộng, còn 「につれて」 đòi cả hai vế là quá trình thay đổi dần dần. Vế sau không được là ý chí hay yêu cầu (「〜しよう」「〜してください」).",
     "compare": "「｜一方《いっぽう》だ」 đứng cuối câu, chỉ nói một sự thay đổi cứ tiếp diễn. 「につれて」 đứng giữa câu, nối hai sự thay đổi có liên quan: A đổi thì B đổi theo.",
     "example_notes": [
@@ -76,7 +76,7 @@
   },
   "g-o-towazu": {
     "meaning": "Bất kể / không phân biệt (A hay B)",
-    "usage": "Gắn sau danh từ bao gồm nhiều loại: 男女, 昼夜, 季節, 国籍, 経験の有無; hay gặp trong tin tuyển dụng. 「｜問《と》う」 là \"hỏi\" (Hán Việt \"vấn\"): 「｜不問《ふもん》」 = \"bất vấn\", không hỏi đến.",
+    "usage": "Gắn sau danh từ bao gồm nhiều loại: 「男女」, 「昼夜」, 「季節」, 「国籍」, 「経験の有無」; hay gặp trong tin tuyển dụng. 「｜問《と》う」 là \"hỏi\" (Hán Việt \"vấn\"): 「｜不問《ふもん》」 = \"bất vấn\", không hỏi đến.",
     "nuance": "Danh từ đứng trước phải chứa nhiều khả năng. \"Bất kể trời mưa\" nói được trong tiếng Việt, nhưng 「雨を問わず」 là sai — phải nói 「天候を問わず」 (bất kể thời tiết).",
     "compare": "",
     "example_notes": [
@@ -131,14 +131,14 @@
     ],
     "quiz": [
       "Quyết chạy mỗi sáng mà chỉ được ba ngày — trái mong đợi, sau thể た → 「ものの」. 「だけに」 (chính vì… nên càng) cho kết quả đúng như dự đoán.",
-      "Mua áo rồi mà chưa mặc lần nào; sau 「買った」 → 「ものの」. 「ながら」 cũng là \"tuy\", nhưng gắn sau thể ます (「買いながら」), không sau thể た."
+      "Đỗ vòng đầu nhưng không vào được công ty mong muốn — trái kỳ vọng → 「ものの」. 「とたん」 chỉ một khoảnh khắc, không chứa cả quá trình trượt phỏng vấn."
     ]
   },
   "g-nagara-mo": {
     "meaning": "Tuy… nhưng / dù… vẫn (trái với điều trạng thái đó gợi ra)",
-    "usage": "Gắn sau thể ます bỏ ます (知り), tính từ (小さい), hoặc danh từ (thêm được 「であり」). Vế trước là trạng thái, vế sau khác với điều nó gợi ra. Có 「も」 thì tương phản rõ hơn.",
-    "nuance": "Bẫy lớn nhất: 「ながら」 học từ N5 là \"vừa… vừa\". Khi vế trước là trạng thái (知る, 小さい, 新人) hoặc có 「も」, nó là \"tuy… nhưng\". Hãy xem vế sau có trái ngược không.",
-    "compare": "「ものの」 gắn sau thể thường, thường là thể た, kể việc đã làm mà không thành. 「ながら（も）」 gắn sau thể ます hay danh từ, hợp với động từ trạng thái (知る, 思う) và tính từ.",
+    "usage": "Gắn sau thể ます bỏ ます (「知り」), tính từ (「小さい」), hoặc danh từ (thêm được 「であり」). Vế trước là trạng thái, vế sau khác với điều nó gợi ra. Có 「も」 thì tương phản rõ hơn.",
+    "nuance": "Bẫy lớn nhất: 「ながら」 học từ N5 là \"vừa… vừa\". Khi vế trước là trạng thái (「知る」, 「小さい」, 「新人」) hoặc có 「も」, nó là \"tuy… nhưng\". Hãy xem vế sau có trái ngược không.",
+    "compare": "「ものの」 gắn sau thể thường, thường là thể た, kể việc đã làm mà không thành. 「ながら（も）」 gắn sau thể ます hay danh từ, hợp với động từ trạng thái (「知る」, 「思う」) và tính từ.",
     "example_notes": [
       "Tuy biết là có hại cho sức khỏe, tôi vẫn không bỏ được thói ăn khuya.",
       "Quán này tuy nhỏ nhưng là quán nổi tiếng, có cả khách từ xa tìm đến.",
@@ -146,21 +146,21 @@
     ],
     "quiz": [
       "「言い」 là thể ます; than phiền mà vẫn giúp em — trái ngược → 「ながらも」. 「つつある」 (đang dần) kết thúc câu, không nối sang vế sau.",
-      "「であり」＋「ながら」 là dạng cố định: là giám đốc mà vẫn tự quét dọn → 「ながら」. 「ものの」 phải gắn sau 「である」, không gắn sau 「であり」."
+      "Là giáo viên tiếng Nhật mà hay đọc sai chữ Hán — trái điều nghề nghiệp gợi ra → 「でありながら」. 「である以上」 (đã là… thì phải) dẫn tới bổn phận."
     ]
   },
   "g-gatai": {
     "meaning": "Khó mà… được (về mặt tâm lý, cảm xúc)",
-    "usage": "Gắn sau thể ます bỏ ます, thường với động từ suy nghĩ, cảm xúc, lời nói: 信じる, 許す, 理解する, 忘れる. Chữ viết là 「｜難《がた》い」 — Hán Việt \"nan\" như \"nan giải\", tức là \"khó\".",
+    "usage": "Gắn sau thể ます bỏ ます, thường với động từ suy nghĩ, cảm xúc, lời nói: 「信じる」, 「許す」, 「理解する」, 「忘れる」. Chữ viết là 「｜難《がた》い」 — Hán Việt \"nan\" như \"nan giải\", tức là \"khó\".",
     "nuance": "Không dùng cho việc không làm nổi vì thiếu sức, thiếu khả năng: 「重くて持ちがたい」 là sai, phải nói 「持てない」. 「がたい」 là trong lòng không chấp nhận, không tin nổi.",
     "compare": "「かねる」 là không làm vì lập trường (hay dùng để từ chối lịch sự). 「ようがない」 là không có cách nào. 「がたい」 là khó về tâm lý: làm được, nhưng lòng không chấp nhận.",
     "example_notes": [
-      "Thật khó tin là bạn thân lại nói dối như vậy.",
+      "Tác phẩm nào cũng tuyệt vời, khó mà phân định hơn kém.",
       "Thái độ vô lễ của anh ta thật khó mà tha thứ được.",
       "Quyết định của giám đốc là điều mà nhân viên khó lòng chấp nhận."
     ],
     "quiz": [
-      "Người nghiêm túc như vậy mà thất hứa thì khó tin → 「信じがたい」. 「かねない」 (có thể xảy ra điều xấu) thành \"có khi tin mất\" — sai nghĩa.",
+      "Chương trình chiếu mười năm sắp kết thúc, lòng không chấp nhận nổi → 「信じがたい」. 「がちだ」 (hay có xu hướng) nói việc lặp lại, không phải cú sốc.",
       "Ngày nghỉ việc, lòng không nỡ rời công ty → 「離れがたい」. 「かけの」 là \"đang dở dang\" (「読みかけの本」), không diễn tả cảm xúc lưu luyến."
     ]
   },
@@ -172,7 +172,7 @@
     "example_notes": [
       "Tôi không thể cứ để đàn anh khao mãi được, nên hôm nay để tôi trả.",
       "Vì là ngày trước kỳ thi nên dù bạn rủ, tôi cũng không thể đi chơi được.",
-      "Vì đi ô tô đến nên dù được mời rượu, tôi cũng không thể uống, thật khó xử."
+      "Vì đi ô tô đến nên dù được mời rượu tôi cũng không thể uống, đành uống trà suốt buổi."
     ],
     "quiz": [
       "Sách mượn của bạn, tự ý cho người khác mượn là trái đạo lý → 「わけにはいかない」. 「ほかない」 (đành phải) thành \"đành cho mượn\" — ngược ý.",
@@ -183,7 +183,7 @@
     "meaning": "Không thể (làm) — cách từ chối lịch sự, vì lập trường",
     "usage": "Gắn sau thể ます bỏ ます. Người nói có thể làm nhưng vì lập trường, quy định nên không làm; hay dùng khi từ chối khách: 「お答えしかねます」. 「見かねて」 = không nỡ đứng nhìn.",
     "nuance": "Bẫy: 「かねる」 = không thể, còn 「かねない」 = có thể (xảy ra điều xấu). Thêm 「ない」 không biến nó thành \"có thể làm\". Cũng không dùng khi thiếu năng lực.",
-    "compare": "「がたい」 là khó chấp nhận về cảm xúc (信じがたい). 「ようがない」 là hoàn toàn không có cách. 「かねる」 nhấn vào lập trường người nói, thường là lời từ chối nhã nhặn.",
+    "compare": "「がたい」 là khó chấp nhận về cảm xúc (「信じがたい」). 「ようがない」 là hoàn toàn không có cách. 「かねる」 nhấn vào lập trường người nói, thường là lời từ chối nhã nhặn.",
     "example_notes": [
       "Thành thật xin lỗi, nhưng chúng tôi không thể trả lời câu hỏi đó.",
       "Bị nói bất ngờ như vậy, việc quan trọng thế tôi không thể quyết ngay được.",
@@ -197,7 +197,7 @@
   "g-you-ga-nai": {
     "meaning": "Không có cách nào để (làm)…",
     "usage": "Gắn sau thể ます bỏ ます. 「よう」 ở đây là \"cách làm\". Dùng khi muốn làm mà không có phương tiện, thông tin hay cơ hội; cũng để nói cảm xúc lớn không tả nổi: 「表しようがない」.",
-    "nuance": "\"Không có cách nào\" khớp tốt với tiếng Việt. Chỗ hay sai là cách nối: với する phải là 「説明しようがない」 (し＋ようがない), không phải 「説明するようがない」.",
+    "nuance": "\"Không có cách nào\" khớp tốt với tiếng Việt. Chỗ hay sai là cách nối: với 「する」 phải là 「説明しようがない」 (「し」＋「ようがない」), không phải 「説明するようがない」.",
     "compare": "「がたい」 là khó chấp nhận về cảm xúc. 「かねる」 là không làm vì lập trường. 「ようがない」 là khách quan không có phương pháp — dù muốn cũng chịu.",
     "example_notes": [
       "Không có bản đồ, cũng không có điện thoại, nên tôi không có cách nào tra đường ra ga.",
@@ -206,7 +206,7 @@
     ],
     "quiz": [
       "Không thấy mặt thủ phạm nên không có cách giải thích → 「説明しようがない」. 「ざるを得ない」 là \"buộc phải\", và phải nối 「説明せざる…」.",
-      "Không biết cách liên lạc nên muốn cảm ơn cũng chịu → 「言いようがない」. 「かねない」 (có thể gây điều xấu) không hợp với mong muốn 「言いたくても」."
+      "Người nhặt ví đi mà không để lại tên, muốn cảm ơn cũng chịu → 「言いようがない」. 「かねない」 (e là xảy ra điều xấu) không hợp với 「言いたくても」."
     ]
   },
   "g-sue-ni": {
@@ -226,13 +226,13 @@
   },
   "g-ni-chigai-nai": {
     "meaning": "Chắc chắn là… (người nói tin chắc, dựa vào dấu hiệu)",
-    "usage": "Gắn sau thể thường (ナ形容詞, danh từ bỏ 「だ」: 「メモに違いない」). Người nói tin chắc dựa vào một dấu hiệu: đèn còn sáng, đường ướt. Hội thoại hay nói nhẹ hơn: 「きっと〜だ」.",
-    "nuance": "Đây là niềm tin chắc chủ quan, dựa vào cảm nhận hay dấu hiệu, khác 「はずだ」 vốn suy ra từ lý lẽ. Không dùng cho việc của chính mình mà mình đã biết rõ.",
+    "usage": "Gắn sau thể thường (ナ形容詞, danh từ bỏ 「だ」: 「田中さんのものに違いない」). Người nói tin chắc dựa vào một dấu hiệu: đèn còn sáng, đường ướt. Hội thoại hay nói nhẹ hơn: 「きっと〜だ」.",
+    "nuance": "Niềm tin chắc của người nói dựa trên dấu hiệu trước mắt; 「はずだ」 thì suy ra từ lý lẽ, kiến thức (lịch trình, quy tắc). Không dùng cho việc mình đã biết rõ.",
     "compare": "",
     "example_notes": [
       "Đèn trong phòng đang sáng, nên chắc chắn chị tôi đã về rồi.",
       "Đã luyện tập nhiều đến thế thì chắc chắn buổi diễn chính thức cũng sẽ suôn sẻ.",
-      "Nhìn cách viết chữ này thì chắc chắn là tờ ghi chú của anh Tanaka."
+      "Nhìn nét chữ thì tờ ghi chú trên bàn chắc chắn là của anh Tanaka."
     ],
     "quiz": [
       "Đường ướt là dấu hiệu, nên người nói tin chắc đêm qua mưa → 「に違いない」. 「ことはない」 sau thể た thành \"chưa từng mưa\", mâu thuẫn với đường ướt.",
@@ -250,8 +250,8 @@
       "Tôi chẳng qua chỉ làm việc được nhờ, vậy mà được cảm ơn nhiều thế này nên thấy bất ngờ."
     ],
     "quiz": [
-      "Xưng là dân chuyên nghiệp, thực ra chỉ là nhân viên vẽ cho vui — hạ thấp → 「にすぎない」. 「わけではない」 sau danh từ cần 「な」/「の」.",
-      "Lỡ chuyến xe buýt cuối nên chỉ còn cách đi bộ về → 「しかない」. 「にすぎない」 là \"chẳng qua chỉ là\", đánh giá mức độ, không phải lựa chọn."
+      "Tự xưng chuyên nghiệp, thực ra chỉ là nhân viên vẽ cho vui — hạ thấp → 「にすぎない」. 「どころではない」 là \"không phải lúc để…\", không nói thân phận.",
+      "Hết xe buýt, không có taxi — không còn lựa chọn → 「しかない」. 「ことはない」 thành \"không cần đi bộ\", vô lý khi chẳng còn phương tiện."
     ]
   },
   "g-shika-nai": {
@@ -265,7 +265,7 @@
       "Nếu là trường đại học có người thầy mình ngưỡng mộ đang dạy thì chỉ có thi vào đó thôi."
     ],
     "quiz": [
-      "Quên ví nên không còn cách nào ngoài nhịn bữa trưa → 「よりほかない」. 「わけにはいかない」 thành \"không thể nhịn\", ngược với hoàn cảnh.",
+      "Quên ví, lại không có ai để vay — ngoài nhịn đói không còn cách nào → 「よりほかない」. 「ことはない」 thành \"không cần nhịn\", trái với hoàn cảnh.",
       "Hẹn với đối tác quan trọng thì không thể đến muộn → 「わけにはいかない」. 「しかない」 thành \"chỉ còn cách đến muộn\", mâu thuẫn với 「だから」."
     ]
   },
@@ -277,7 +277,7 @@
     "example_notes": [
       "Lỗi nhỏ thôi mà, không cần bận tâm nhiều thế đâu.",
       "Đọc sách hướng dẫn là hiểu, nên không cần nhờ đến chuyên gia.",
-      "Dù là buổi phỏng vấn đầu tiên, nếu chuẩn bị kỹ thì không cần phải căng thẳng."
+      "Thời gian còn nhiều, không cần vội đưa ra câu trả lời."
     ],
     "quiz": [
       "Trượt một lần thì không cần buồn đến thế — lời an ủi, có 「次があるじゃないか」 → 「ことはない」. 「しかない」 mâu thuẫn với câu động viên.",
@@ -286,17 +286,17 @@
   },
   "g-zaru-o-enai": {
     "meaning": "Đành phải / buộc phải (dù không muốn)",
-    "usage": "Gắn sau thể ない bỏ 「ない」 (引き受け → 引き受けざるを得ない); riêng する → 「せざるを得ない」. Dùng khi hoàn cảnh ép buộc: không muốn mà hết lựa chọn. Hơi cứng.",
+    "usage": "Gắn sau thể ない bỏ 「ない」 (「引き受け」 → 「引き受けざるを得ない」); riêng 「する」 → 「せざるを得ない」. Dùng khi hoàn cảnh ép buộc: không muốn mà hết lựa chọn. Hơi cứng.",
     "nuance": "Cấu tạo: 「ざる」 là phủ định kiểu cổ (= ない), 「｜得《え》ない」 là không thể → \"không thể không làm\". Lỗi hay gặp là nối sai: 「しざるを得ない」 là sai, phải là 「せざるを得ない」.",
     "compare": "「しかない」 cũng là chỉ còn cách, nhưng trung tính, có khi tích cực. 「ざるを得ない」 luôn mang ý miễn cưỡng. 「わけにはいかない」 thì ngược lại: không thể LÀM vì đạo lý.",
     "example_notes": [
       "Nếu trưởng phòng trực tiếp nhờ thì tôi đành phải nhận.",
-      "Nếu không đủ người tham gia, sự kiện buộc phải hủy.",
+      "Nếu không đủ năm người tham gia, chúng tôi buộc phải hủy chuyến tham quan.",
       "Bằng chứng đã đầy đủ đến mức này thì chắc anh ta cũng phải thừa nhận sai lầm của mình."
     ],
     "quiz": [
-      "Không đặt được hội trường nên buộc phải đổi lịch; 「変更せ」 là する trước ざる → 「ざるを得ない」. 「ずにはいられない」 là không kìm được cảm xúc.",
-      "Xe buýt ít nên buộc phải đi ô tô; 「使わ」 là thể ない bỏ ない → 「ざるを得ない」. 「しかない」 đúng nghĩa nhưng phải gắn sau thể từ điển: 「使うしかない」."
+      "Không đặt được hội trường nên buộc phải đổi lịch; 「変更せ」 là 「する」 trước 「ざる」 → 「ざるを得ない」. 「ずにはいられない」 là không kìm được cảm xúc.",
+      "Xe buýt mỗi ngày chỉ hai chuyến nên đi làm đành phải dùng ô tô → 「ざるを得ない」. 「なくて済む」 là \"khỏi phải dùng\", ngược với lý do xe buýt quá ít."
     ]
   }
 }

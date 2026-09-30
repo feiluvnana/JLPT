@@ -18,8 +18,9 @@ What is rendered where (jlpt-knowledge/SKILL.md §Page):
   embeds them as data. The page inserts cards 50 at a time as the reader
   scrolls, so a 2,500-card category opens as fast as a 20-card one, and filters
   and search run over a small per-entry index instead of the DOM.
-- Language: the registry (langs.order()) decides the panes and the segmented
-  control; the choice is the site-wide LANG_STORE_KEY. No language code is
+- Language: the registry (langs.order()) decides the panes; the page's top is
+  lang_ui's one sticky bar (breadcrumb level › 知識 › category, and the language
+  dropdown), whose choice is the site-wide LANG_STORE_KEY. No language code is
   written in this file.
 - Progress (覚えた, quiz history) goes through local_store.JLPTKnowledgeStore — the
   one place its localStorage keys are spelled.
@@ -46,7 +47,8 @@ sys.path.insert(0, str(ROOT / ".agents" / "exam-app" / "scripts"))
 
 import knowledge_data as D            # noqa: E402
 import langs                      # noqa: E402
-import build_model_answer as BMA  # noqa: E402  (apply_furigana, LANG_* , EXPLANATION_CSS)
+import build_model_answer as BMA  # noqa: E402  (apply_furigana, EXPLANATION_CSS)
+import lang_ui                    # noqa: E402  (the one sticky bar + language dropdown)
 import app_style                  # noqa: E402
 import local_store                # noqa: E402
 
@@ -118,13 +120,22 @@ def panes(render, tag: str = "div") -> str:
     return "".join(f'<{tag} class="lang-pane" data-lang="{c}">{render(c)}</{tag}>' for c in ORDER)
 
 
-def lang_switch() -> str:
-    if len(ORDER) < 2:
-        return ""
-    return ('<div class="lang-switch" role="group">' + "".join(
-        f'<button type="button" class="lang-btn" data-lang="{c}" '
-        f'onclick="setLang(\'{c}\')">{esc(langs.name(c))}</button>' for c in ORDER)
-        + "</div>")
+def portal_label(key: str, **fmt) -> str:
+    """A portal-namespace label (the module's own name, 知識) in every language —
+    the breadcrumb names the module the way the portal's module chooser does."""
+    def one(c):
+        s = langs.ui(c, "portal").get(key) or langs.ui(PRIMARY, "portal").get(key, key)
+        return esc(s.format(**fmt) if fmt else s)
+    return "".join(f'<span class="lang-pane" data-lang="{c}">{one(c)}</span>' for c in ORDER)
+
+
+def crumbs(level: str, depth: int, trail: list[tuple[str, str | None]]) -> list:
+    """level › 知識 › … for a page `depth` folders below knowledge/<LEVEL>/
+    (0: the index and the category pages, 1: a split category's part pages).
+    Relative links, explicit index.html: `make serve`, a Pages subpath, file://."""
+    up = "../" * depth
+    know = [(portal_label("mod_knowledge"), None if not trail else f"{up}{D.INDEX_HTML}")]
+    return [(esc(level), f"{up}../../{level}/{D.INDEX_HTML}")] + know + trail
 
 
 def dup_control(render) -> str:
@@ -382,7 +393,6 @@ CSS = r"""
 :root{--primary:#1e3a8a;--card:#ffffff;--soft:#f1f5f9}
 body{margin:0;background:#f8fafc;color:var(--ink);font-family:var(--ui);line-height:1.7}
 ruby rt{font-size:.58em;color:var(--muted);user-select:none}
-#bar a.back{white-space:nowrap}
 .wrap{max-width:60rem;margin:0 auto;padding:1rem 1rem 4rem}
 .lead{color:var(--muted);margin:.2rem 0 1rem;font-size:.95rem}
 .tabs{display:flex;gap:.4rem;margin:.4rem 0 1rem;border-bottom:1px solid var(--line)}
@@ -399,7 +409,7 @@ body[data-tab="study"] #quiz, body[data-tab="quiz"] #study{display:none}
 .seg button+button{border-left:1px solid var(--line)}
 .seg button.active{background:var(--accent);color:#fff;font-weight:700}
 .stat{color:var(--muted);font-size:.88rem;font-variant-numeric:tabular-nums;margin:.2rem 0 .6rem}
-.dcard{background:var(--card);border:1px solid #e2e8f0;border-radius:10px;padding:1rem 1.1rem;margin:0 0 .9rem;
+.dcard{scroll-margin-top:calc(var(--tb-h) + .6rem);background:var(--card);border:1px solid #e2e8f0;border-radius:10px;padding:1rem 1.1rem;margin:0 0 .9rem;
   box-shadow:0 1px 3px rgba(0,0,0,.03);scroll-margin-top:4.5rem}
 .dcard.learned{border-left:4px solid #059669}
 .dcard.flash{box-shadow:0 0 0 3px rgba(37,99,235,.35)}
@@ -489,15 +499,14 @@ a.cat:hover{border-color:var(--accent);box-shadow:0 2px 8px rgba(37,99,235,.12)}
   .hw{font-size:1.2rem}
 }
 @media print{
-  #bar,.tabs,.controls,.learn-btn,.more,#quiz,.say{display:none!important}
+  .tabs,.controls,.learn-btn,.more,#quiz,.say{display:none!important}
   .pm{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   body{background:#fff}
-  .dcard{box-shadow:none;break-inside:avoid;page-break-inside:avoid}
+  .dcard{scroll-margin-top:calc(var(--tb-h) + .6rem);box-shadow:none;break-inside:avoid;page-break-inside:avoid}
 }
 """
 
 PAGE_JS = r"""
-function setLang(c){ applyLang(c, LANGS, true); }
 function ctlValue(name){ const el = document.querySelector('[data-ctl="'+name+'"]'); return el ? el.value : ''; }
 function syncCtl(src){
   document.querySelectorAll('[data-ctl="'+src.dataset.ctl+'"]').forEach(el => { if (el !== src) el.value = src.value; });
@@ -705,7 +714,6 @@ document.addEventListener('click', ev => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  applyLang(savedLang(LANGS), LANGS, false);
   setTab('study'); refresh(); paintHeader();
   const s = document.getElementById('sentinel');
   if (s && 'IntersectionObserver' in window) {
@@ -722,8 +730,9 @@ def js_data(obj) -> str:
     return json.dumps(obj, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
 
 
-def page(level: str, title: str, bar_back: str, bar_back_label: str, body: str,
+def page(level: str, title: str, trail: list, body: str,
          stamps: str, scripts: str, footer: str = "") -> str:
+    """`trail` = the breadcrumb (see crumbs()); the bar is lang_ui's."""
     return f"""<!DOCTYPE html>
 <html lang="{esc(langs.html_lang(PRIMARY))}">
 <head>
@@ -732,16 +741,13 @@ def page(level: str, title: str, bar_back: str, bar_back_label: str, body: str,
 <title>{esc(title)}</title>
 {FONTS}
 <style>{app_style.APP_CSS}{BMA.EXPLANATION_CSS}
-{langs.pane_css()}
+{lang_ui.head_css()}
 {CSS}</style>
 </head>
 <body data-lang="{esc(PRIMARY)}" data-tab="study">{stamps}
-<div id="bar"><a class="back" href="{esc(bar_back)}">{bar_back_label}</a>
-<b>{esc(title)}</b><span class="grow"></span>{lang_switch()}</div>
+{lang_ui.topbar_html(trail)}
 {body}{footer}
 <script>
-const LANGS = {js_data(ORDER)};
-{BMA.LANG_SWITCH_JS}
 {local_store.KNOWLEDGE_STORE_JS}
 {scripts}
 </script>
@@ -793,34 +799,24 @@ def build_category(level: str, spec: dict) -> list[Path]:
             old.unlink()
     if cat.layout != "split":
         return [render_cards(level, spec, entries, prose, heads, D.page_path(level, spec["stem"]),
-                             D.INDEX_HTML, label("back_index"), cat.sources())]
+                             crumbs(level, 0, [(label(spec["label"]), None)]), cat.sources())]
     where = {e["id"]: e["_part"] for e in entries}
     outs = []
     for part in cat.parts:
         mine = [e for e in entries if e["_part"] == part.name]
         elsewhere = {i: f"{p}.html" for i, p in where.items() if p != part.name}
+        trail = crumbs(level, 1, [(label(spec["label"]), f"../{D.page_path(level, spec['stem']).name}"),
+                                  (fu(part_label(part)), None)])
         outs.append(render_cards(level, spec, mine, prose, heads,
                                  D.part_page_path(level, spec["stem"], part.name),
-                                 f"../{D.page_path(level, spec['stem']).name}", back_category(spec),
-                                 D.part_page_sources(cat, part), part=part_label(part),
+                                 trail, D.part_page_sources(cat, part), part=part_label(part),
                                  elsewhere=elsewhere))
     outs.append(build_parts_index(level, spec, cat, entries))
     return outs
 
 
-def back_category(spec: dict) -> str:
-    """「← 語彙」 in every language: the arrow plus that language's category name."""
-    def one(c):
-        return esc("← " + (UI.get(c, {}).get(spec["label"]) or UI[PRIMARY].get(spec["label"], spec["stem"])))
-    if len(ORDER) == 1:
-        return one(ORDER[0])
-    return "".join(f'<span class="lang-pane" data-lang="{c}">{one(c)}</span>' for c in ORDER)
-
-
 PARTS_JS = r"""
-function setLang(c){ applyLang(c, LANGS, true); }
 document.addEventListener('DOMContentLoaded', () => {
-  applyLang(savedLang(LANGS), LANGS, false);
   const got = window.JLPTKnowledgeStore.learned(LEVEL, CAT);
   let total = 0;
   document.querySelectorAll('[data-part]').forEach(el => {
@@ -860,16 +856,17 @@ def build_parts_index(level: str, spec: dict, cat: D.Category, entries: list[dic
                f"const PIDS = {js_data(pids)};\n{PARTS_JS}")
     out = D.page_path(level, stem)
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(page(level, title, D.INDEX_HTML, label("back_index"), body,
+    out.write_text(page(level, title, crumbs(level, 0, [(label(spec["label"]), None)]), body,
                         D.src_sha_comments(level, D.category_page_sources(cat)), scripts),
                    encoding="utf-8")
     return out
 
 
 def render_cards(level: str, spec: dict, entries: list[dict], prose: dict, heads: dict,
-                 out: Path, back: str, back_label: str, sources: list[Path],
+                 out: Path, trail: list, sources: list[Path],
                  part: str | None = None, elsewhere: dict | None = None) -> Path:
-    """The study + quiz page over `entries` (a whole category, or one part of it)."""
+    """The study + quiz page over `entries` (a whole category, or one part of it);
+    `trail` is its breadcrumb (crumbs())."""
     PitchUse.dataset = False
     E = [{"id": e["id"], "g": e.get("group", ""), "t": e.get("tags", []) or [],
           "oc": int(e.get("official_count") or 0),
@@ -950,16 +947,14 @@ def render_cards(level: str, spec: dict, entries: list[dict], prose: dict, heads
                f"const E = {js_data(E)};\nconst Q = {js_data(Q)};\nconst L = {js_data(L)};\n"
                f"const T = {js_data(token_table())}, TOK = /\\ue000(\\w+)\\ue001/g;\n{PAGE_JS}")
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(page(level, title, back, back_label, body,
+    out.write_text(page(level, title, trail, body,
                         D.src_sha_comments(level, sources), scripts, pitch_footer()),
                    encoding="utf-8")
     return out
 
 
 INDEX_JS = r"""
-function setLang(c){ applyLang(c, LANGS, true); }
 document.addEventListener('DOMContentLoaded', () => {
-  applyLang(savedLang(LANGS), LANGS, false);
   document.querySelectorAll('[data-cat]').forEach(el => {
     const ids = IDS[el.dataset.cat] || [], got = window.JLPTKnowledgeStore.learned(LEVEL, el.dataset.cat);
     const n = ids.filter(id => got[id]).length;
@@ -994,7 +989,7 @@ def build_index(level: str) -> Path:
     out.parent.mkdir(parents=True, exist_ok=True)
     # Back to the portal's module chooser for this level, as an explicit file and
     # relative, so it works from `make serve`, a Pages repo subpath and file://.
-    out.write_text(page(level, title, f"../../{level}/{D.INDEX_HTML}", label("back_portal"), body,
+    out.write_text(page(level, title, crumbs(level, 0, []), body,
                         D.src_sha_comments(level, sources), scripts), encoding="utf-8")
     return out
 

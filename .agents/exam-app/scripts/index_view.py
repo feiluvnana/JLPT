@@ -54,7 +54,8 @@ SHEET = "解答.html"
 
 INDEX_CSS = """
 /* Header, breadcrumb, <main> and .lede are portal_view.PORTAL_CSS — the list
-   renders through portal_view.page() like every portal screen. */
+   renders through portal_view.page() like every portal screen; the sticky bar
+   is lang_ui's topbar. */
 /* Equal card height. Meter uses display:contents so the track shares a row with
    the status chip (left-aligned); the lbl sits on the row under the track —
    flex + align-items:center was optically centering the whole meter block and
@@ -348,6 +349,11 @@ function render(tests){
   if (hits) hits.innerHTML = QUERY ? T('list_hits', {n: shown.length}) : '';
 }
 
+// lang_ui's dropdown: panes switch by CSS, but a card's title= is plain text in
+// the language it was rendered in — re-render the list (the search box is outside
+// #cards, so what is being typed survives).
+window.onPortalLang = function(){ if (TESTS.length) render(TESTS); };
+
 function setQuery(v){
   QUERY = String(v || '').trim().toLowerCase();
   render(TESTS);
@@ -515,5 +521,5 @@ def index_html(mode: str = "server", tests: list | None = None,
                 (level, f"../{portal_view.INDEX}"), (P("crumb_exam"), None)],
         body=body, extra_css=INDEX_CSS,
         head_js=f'<script>window.LIST_MODE = "{mode}";</script>{boot}',
-        right=f'<span class="sub" id="counts">{P("list_loading")}</span>',
+        right=f'<span class="tb-sub tb-shrink" id="counts">{P("list_loading")}</span>',
         tail_js=index_js(level) + "\nrefreshList();")

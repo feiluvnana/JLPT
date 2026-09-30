@@ -1,0 +1,4 @@
+{
+ "_doc": "Which 知識 (jlpt-knowledge) categories a weak 大問 points the learner to, per level, keyed by the 大問's `part` in the level table (jlpt-exam-structure references/levels/<LEVEL>.json; 聴解 大問 use the part 聴解). Values are knowledge category stems; a category with no entries yet is not linked. Read by drill_data.knowledge_links() for 進捗's weak-area links.",
+ "N2": {"文字・語彙": ["語彙", "漢字"], "文法": ["文法"], "読解": ["読解"], "聴解": ["聴解"]}
+}

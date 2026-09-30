@@ -219,6 +219,7 @@ make booklet <id>     # rebuild both booklet HTMLs
 make mp3 <id> REPLAY=1  # re-render 聴解 from its recorded draw (SEED=n = a NEW draw)
 make grade <id>       # CLI grading → 採点結果.json
 make knowledge        # rebuild the 知識 (knowledge) pages → knowledge/<LEVEL>/ (LEVEL=N2)
+make drill            # rebuild the ドリル (drill) pages → drill/<LEVEL>/ (after any test / clip-bank change)
 make check            # the gate
 make pages            # static GitHub Pages build → _site/
 ```

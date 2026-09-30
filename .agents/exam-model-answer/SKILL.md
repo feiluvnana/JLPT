@@ -1,6 +1,6 @@
 ---
 name: exam-model-answer
-description: Single owner of generating the model answer and comprehensive explanation deliverable (模範解答.html). Generates a complete, interactive, concise explanation document for every question in an exam (71 Language Knowledge & Reading questions + 30-31 Listening questions), in Japanese AND Vietnamese behind an in-page segmented control — the two EXPLANATION sets independently written, never translated from one another (the 読解 passage itself is the one field the Vietnamese pane does translate). Explains why the correct answer is right (with evidence, grammar rules, dictionary definitions, passage quotes, listening script evidence) and why each distractor option is incorrect. Use whenever generating 模範解答.html for a test, updating question explanations, reviewing model answers, or explaining exam solutions.
+description: Single owner of generating the model answer and comprehensive explanation deliverable (模範解答.html). Generates a complete, interactive, concise explanation document for every question in an exam (71 Language Knowledge & Reading questions + 30-31 Listening questions), in Japanese AND Vietnamese behind the site's language dropdown — the two EXPLANATION sets independently written, never translated from one another (the 読解 passage itself is the one field the Vietnamese pane does translate). Explains why the correct answer is right (with evidence, grammar rules, dictionary definitions, passage quotes, listening script evidence) and why each distractor option is incorrect. Use whenever generating 模範解答.html for a test, updating question explanations, reviewing model answers, or explaining exam solutions.
 ---
 
 # Exam Model Answer & Explanation (模範解答・詳細解説)
@@ -15,10 +15,23 @@ renders, one per registry language: `詳細解説.json` (Japanese) and
 
 Which languages exist is data, listed once in `references/languages/` and read
 through `scripts/langs.py`: `index.json` (`primary` = `ja`, the exam's own
-language; `order` = the active set, segmented-control order), and per language
+language; `order` = the active set, dropdown order), and per language
 `<code>/meta.json` (`name`, `html_lang`, `length_factor`, `required`) plus one
 UI-string file per page family (`model_answer.json`, `practice.json`,
-`portal.json`, `knowledge.json`). No builder or gate check may type a learner code —
+`portal.json`, `knowledge.json`, `exam.json` — 解答.html's chrome, incl. the
+per-大問 `advice` table, whose keys `langs.check()` also compares; `drill.json` —
+the ドリル pages, `jlpt-drill`).
+
+**One switcher: `scripts/lang_ui.py`** (dependency-free). Every page but the two
+booklets renders its top through `topbar_html(crumbs, right_html, codes)` — ONE
+slim sticky bar with the breadcrumb and a `<select class="lang-select">`
+(`switcher_html()`; `codes` narrows it to the languages the page has content in,
+one option renders disabled) — plus `head_css()` (bar CSS + `.lang-pane` hiding).
+Its `SWITCHER_JS` sets `body[data-lang]`, persists the choice under
+`LANG_STORE_KEY` (re-exported here as `build_model_answer.LANG_STORE_KEY`), and
+fires `langchange` on `document` for text a page writes in JS. Nobody writes a
+switch of their own; `make check` (`check_site_chrome`) FAILs a page without
+exactly one bar and one dropdown, or with the retired `.lang-btn`. No builder or gate check may type a learner code —
 `make check` (`check_language_registry`) greps for one.
 
 **Add a third language** (replace one: swap its code in `order`, same steps):
@@ -26,7 +39,7 @@ UI-string file per page family (`model_answer.json`, `practice.json`,
 1. Copy `languages/vi/` to `languages/<code>/`; set `meta.json` (`code`, `name`,
    `html_lang`, `length_factor`; leave `required` out) and rewrite every string
    in the namespace files for that reader. Add `<code>` to `order`.
-2. Rebuild (`make model-answer <id>`): every page grows the segment and falls
+2. Rebuild (`make model-answer <id>`): every dropdown grows the option and falls
    back cleanly — explanation boxes to the booklet 解説, passages to the
    Japanese — until `詳細解説.<code>.json` exists.
 3. The gate then WARNs, per paper, on the missing file, parity, bands (ja ×
@@ -41,8 +54,8 @@ UI-string file per page family (`model_answer.json`, `practice.json`,
 
 ## One rewrite per language
 
-**The page ships the explanations in every registry language behind one
-segmented control** (2026-08-25; Japanese and Vietnamese today). Every label
+**The page ships the explanations in every registry language behind the one
+language dropdown** (2026-08-25; Japanese and Vietnamese today). Every label
 the page prints outside the exam's own wording lives once per language in the
 registry (`build_model_answer.UI` is derived from it).
 
@@ -70,8 +83,8 @@ therefore carries **only** `why_correct`, `options_analysis` and `points`; a `st
 has an owner, and the gate FAILs it.
 
 The page falls back cleanly: a language with no `詳細解説.<code>.json` on disk
-gets no segment, and with none at all the page renders exactly the
-single-language page it always did, segmented control and all suppressed.
+gets no dropdown option, and with none at all the page renders the
+single-language page (the dropdown shows one disabled option).
 
 ## Length: the terseness bands
 
@@ -165,9 +178,9 @@ padding, and that is the whole point of the cap.
 `模範解答.html` is no longer the only page that prints these explanations:
 exam-app's `練習.html` (練習モード) reveals ONE of them per question, on demand,
 while the reader is still solving the paper. It does that by importing this
-skill's own renderer — `explanation_box_html()`, `EXPLANATION_CSS`, plus
-`LANG_SWITCH_JS` and `LANG_STORE_KEY` for the two panes and the remembered
-language — never by formatting explanation prose itself.
+skill's own renderer — `explanation_box_html()`, `EXPLANATION_CSS`, plus `lang_ui` for the
+dropdown and the remembered language — never by formatting explanation prose
+itself.
 
 Since 2026-09-10 it imports the 読解 **原文 / 訳 toggle** the same way:
 `ptext_switch_html()`, `PASSAGE_TOGGLE_CSS` and `PASSAGE_TOGGLE_JS`, all three

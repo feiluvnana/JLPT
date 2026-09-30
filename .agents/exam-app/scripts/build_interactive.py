@@ -36,6 +36,13 @@ ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import local_store  # noqa: E402
 import portal_view  # noqa: E402  (the site's URL layout: where the list lives)
+# The language registry and the site's one sticky bar + language dropdown. Every
+# interface string on this page (gates, bar, dialogs, result screen, advice)
+# lives in the registry's `exam` namespace, one copy per language; the exam's
+# own wording (stems, options, passages, scripts, section names) stays Japanese.
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "exam-model-answer" / "scripts"))
+import langs as LANGS_REG  # noqa: E402
+import lang_ui  # noqa: E402
 # The exam level's structure table — 大問 labels, scoring bands, repo URL.
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "jlpt-exam-structure" / "scripts"))
 import level as LEVEL  # noqa: E402
@@ -89,6 +96,53 @@ EXAMPLE_PREMARK = re.compile(r"\*\*[（(]([1-4])[)）]\*\*")
 INLINE_OPT = re.compile(r"(?<![^\s（(])([1-4])\.\s*\S")
 
 
+NS = "exam"
+
+
+def tr(code: str, key: str, **kw) -> str:
+    """One language's `exam` string (the primary's when that one lacks it — the
+    gate FAILs a missing key, so this is only a render-time safety net)."""
+    s = LANGS_REG.ui(code, NS).get(key)
+    if s is None:
+        s = LANGS_REG.ui(LANGS_REG.primary(), NS).get(key, key)
+    for k, v in kw.items():
+        s = s.replace("{" + k + "}", str(v))
+    return s
+
+
+def T(key: str, **kw) -> str:
+    """An interface label in every active language, one `.lang-pane` each —
+    `body[data-lang]` (lang_ui's dropdown) shows one, so switching is CSS."""
+    return "".join(f'<span class="lang-pane" data-lang="{c}">{tr(c, key, **kw)}</span>'
+                   for c in LANGS_REG.order())
+
+
+def T2(key: str) -> str:
+    """A bar label with a phone-width short form (`<key>_short`)."""
+    return (f'<span class="tb-long">{T(key)}</span>'
+            f'<span class="tb-short">{T(key + "_short")}</span>')
+
+
+def exam_strings() -> str:
+    """{code: the whole `exam` namespace} as JSON, for what the page builds in
+    JS: markup through P() (every language, CSS-switched), plain text — a
+    confirm(), a title attribute, the clock — through S() (the language on
+    screen, repainted on `langchange`)."""
+    return json.dumps({c: LANGS_REG.ui(c, NS) for c in LANGS_REG.order()},
+                      ensure_ascii=False)
+
+
+def topbar(level: str, list_href: str, here: str, right_html: str = "",
+           codes: list | None = None) -> str:
+    """The sticky bar of both solving pages (解答.html here, 練習.html in
+    build_practice): level › 試験 (the list) › this page, then the page's own
+    controls and the language dropdown — lang_ui's bar, the old #bar merged in."""
+    return lang_ui.topbar_html(
+        [(level, f"../../{level}/{portal_view.INDEX}"),
+         (portal_view.pane("crumb_exam"), list_href),
+         (here, None)], right_html, codes)
+
+
 def option_run(text: str) -> int | None:
     """How many options this ONE line lists, when it lists several.
 
@@ -107,21 +161,25 @@ def option_run(text: str) -> int | None:
 # The chrome shared with screen 1 (the test list) lives in app_style.py — see the
 EXTRA_CSS = app_style.APP_CSS + """
 html.is-result-mode #screen-exam{display:none!important}
+/* The crumb that names this page: 受験 on screen 2, 採点結果 on screen 3. */
+#bar-title .bt-result,html.is-result-mode #bar-title .bt-exam{display:none}
+html.is-result-mode #bar-title .bt-result{display:inline}
 html.is-result-mode #screen-result{display:block!important}
 html.is-result-mode #bar-controls{display:none!important}
 html.is-result-mode #where{display:none!important}
 /* 残り時間 — the section countdown. Ticks only while this tab is visible AND
    focused (see clockRunning); red under five minutes, amber while frozen. */
 #clock{font-variant-numeric:tabular-nums;font-weight:700;color:#e2e8f0}
+#bar-controls{gap:.45em}
 #clock.paused{color:#f59e0b}
 #clock.low{color:#fca5a5}
 /* The two sections as tabs. During a sitting they are INDICATORS, not
    navigation: the future one is out of reach and the finished one is closed
    for good. They become real buttons only on a graded paper (PHASE 'done'). */
 #tabs{display:flex;gap:.3em;flex:0 0 auto}
-#tabs button{font-size:9.5pt;font-weight:700;padding:.28em .7em;border-radius:6px;
+#tabs button{font:700 12px/1 var(--ui);padding:0 .6em;height:26px;border-radius:6px;
   border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.06);
-  color:#cbd5e1;white-space:nowrap;min-height:30px;cursor:default}
+  color:#cbd5e1;white-space:nowrap;cursor:default}
 #tabs button.active{background:#2563eb;border-color:#2563eb;color:#ffffff}
 #tabs button.finished{color:#64748b}
 #tabs button.clickable{cursor:pointer}
@@ -170,7 +228,7 @@ html.is-result-mode #where{display:none!important}
 .opt{display:flex;align-items:flex-start;gap:.5em;margin:.15em 0}
 .opt .b{flex:0 0 auto;margin-top:.25em}
 #done{font-variant-numeric:tabular-nums}
-#player{position:sticky;top:3.4em;z-index:98;background:#1e293b;color:#ffffff;
+#player{position:sticky;top:var(--tb-h);z-index:98;background:#1e293b;color:#ffffff;
   border-bottom:1px solid rgba(255,255,255,0.1);
   padding:.9em 1.2em;font-family:var(--ui);box-shadow:0 4px 12px rgba(0,0,0,0.1)}
 #player audio{width:100%;height:36px;display:block}
@@ -196,8 +254,8 @@ html.is-result-mode #where{display:none!important}
 #player.noaudio .pctl button:hover,#player.noaudio .pctl select:hover{background:#fee2e2}
 #player.noaudio .pctl select option{background:#ffffff;color:#7f1d1d}
 #player.noaudio .pctl .pick{color:#b91c1c;text-decoration:underline}
-#player.noaudio::after{content:"聴解.mp3 を読み込めません。「MP3を選ぶ」から指定してください。";
-  display:block;font-size:9.5pt;color:#991b1b;margin-top:.3em}
+.noaudio-msg{display:none}
+#player.noaudio .noaudio-msg{display:block;font-size:9.5pt;color:#991b1b;margin-top:.3em}
 .section-divider{margin:3.5em 0;border:0;border-top:2px dashed #cbd5e1}
 .section-title{font-size:15pt;font-weight:800;background:linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
   color:#ffffff;padding:.55em 1em;margin:2em 0 1.2em;border-radius:8px;
@@ -262,7 +320,7 @@ html.is-result-mode #where{display:none!important}
 .rs-script{margin:.6em 0 0;padding:.75em .95em;background:#ffffff;
   border:1px solid #e2e8f0;border-radius:8px;font-size:10pt;line-height:1.7}
 .rs-script p{margin:.2em 0}
-@media print{#bar,#player,.rs-nav{display:none}.qa label{border-color:#666}}
+@media print{#player,.rs-nav{display:none}.qa label{border-color:#666}}
 @media screen{
   body{max-width:none;margin:0;padding:0;background:#f8fafc}
   #screen-exam,#screen-result{max-width:62em;margin:1.5em auto 4em;background:#ffffff;
@@ -309,7 +367,7 @@ function pick(inp){
     document.getElementById('chapwrap').style.display = 'none';
     return;
   }
-  sel.insertAdjacentHTML('beforeend', '<option value="">— 選択 —</option>');
+  sel.insertAdjacentHTML('beforeend', '<option value="">—</option>');
   // compose_choukai writes {label, start} with no `type`: 「問題2」 is a 大問
   // header, 「問題2 3番」 an item. An explicit `type` still wins.
   const isSec = c => c.type ? c.type === 'section' : !/番|質問/.test(c.label);
@@ -355,6 +413,34 @@ const GOI_CUTOFF = %(goi_cutoff)s;
 // per-section max and cutoff, total max and pass mark. N2: 60/19 ×3, 180, 90.
 const SCORING = %(scoring)s;
 const CHOUKAI_SCRIPTS = %(choukai_scripts)s;
+
+/* Interface strings, every language (the registry's `exam` namespace). P() is
+   markup — one .lang-pane per language, so the dropdown switches it by CSS and
+   nothing has to be rebuilt; S() is plain text in the language on screen, for
+   what cannot hold markup (dialogs, title attributes, the clock), repainted on
+   lang_ui's `langchange`. The exam's own wording is not in here. */
+const EXAM_STR = %(exam_str)s, EXAM_ORDER = %(exam_order)s, EXAM_PRIMARY = %(exam_primary)s;
+function _fillStr(code, key, vars){
+  const t = EXAM_STR[code] || {}, p = EXAM_STR[EXAM_PRIMARY] || {};
+  let s = t[key] != null ? t[key] : (p[key] != null ? p[key] : key);
+  for (const k in (vars || {})) s = s.split('{' + k + '}').join(String(vars[k]));
+  return s;
+}
+function uiLang(){ return typeof currentLang === 'function' ? currentLang() : EXAM_PRIMARY; }
+function S(key, vars){ return _fillStr(uiLang(), key, vars); }
+function P(key, vars){
+  return EXAM_ORDER.map(c => '<span class="lang-pane" data-lang="' + c + '">'
+    + _fillStr(c, key, vars) + '</span>').join('');
+}
+/* A weak 大問's advice, per language by 大問 code; the result document's own
+   (Japanese, from the level table) is the fallback. */
+function adviceHtml(code, fallback){
+  return EXAM_ORDER.map(c => {
+    const a = (EXAM_STR[c] || {}).advice || {};
+    return '<span class="lang-pane" data-lang="' + c + '">'
+      + escapeHtml(a[code] || fallback || '') + '</span>';
+  }).join('');
+}
 
 // Where 「← テスト一覧」 and 「テスト一覧へ戻る」 go: this level's exam list, one
 // relative link in both deployments (build-time list_href()).
@@ -412,7 +498,7 @@ const StoreServer = {
     try {
       const r = await queuePost('submit', {answers: payload, result: res});
       const data = r.ok ? await r.json() : null;
-      if (data && data.success) return {saved: true, message: data.message};
+      if (data && data.success) return {saved: true, message: P('saved_server', {id: TESTID})};
     } catch(e){}
     return {saved: false, message: ''};
   }
@@ -431,8 +517,7 @@ const StoreLocal = {
     // before the verdict — && would skip the result on a failed answers write.
     const wroteAnswers = window.JLPTStore.setAnswers(TESTID, payload);
     const wroteResult = window.JLPTStore.setResult(TESTID, res);
-    return (wroteAnswers && wroteResult) ? {saved: true,
-                 message: 'このブラウザに保存しました（テスト一覧に反映されます）。'}
+    return (wroteAnswers && wroteResult) ? {saved: true, message: P('saved_local')}
               : {saved: false, message: ''};
   }
 };
@@ -442,7 +527,6 @@ const STORE = STORAGE === 'local' ? StoreLocal : StoreServer;
 // the two graders write the SAME 採点結果.json shape, and make check proves it.
 const SEC_GENGO = SCORING.sections[0].name, SEC_DOKKAI = SCORING.sections[1].name,
       SEC_CHOUKAI = SCORING.sections[2].name;
-const EXAM_TITLE = "テスト " + TESTID + "（受験）", RESULT_TITLE = "テスト " + TESTID + "（採点結果）";
 
 function state(){
   const o = {};
@@ -484,26 +568,28 @@ function updateCounter(ans){
   for (const k of CHOUKAI_KEYS){ if (ans[k] !== undefined) cCount++; }
   // The readout follows the phase: during 言語知識・読解 the 聴解 count is noise,
   // and on a graded paper both halves are open again.
-  document.getElementById('done').textContent =
-    PHASE === 'gengo'   ? "言語知識・読解 " + gCount + " / " + GENGO_KEYS.length
-  : PHASE === 'choukai' ? "聴解 " + cCount + " / " + CHOUKAI_KEYS.length
-  : "計 " + (gCount + cCount) + " / " + KEYS.length;
+  const [lbl, n, t] =
+    PHASE === 'gengo'   ? ['count_gengo', gCount, GENGO_KEYS.length]
+  : PHASE === 'choukai' ? ['count_choukai', cCount, CHOUKAI_KEYS.length]
+  : ['count_all', gCount + cCount, KEYS.length];
+  document.getElementById('done').innerHTML =
+    '<span class="tb-long">' + P(lbl) + ' </span>' + n + ' / ' + t;
   // Advancing or grading BY HAND needs the section complete: a partial submit
   // scales a raw count nobody produced, and an unanswered item is not a wrong
   // answer. The clock is the one thing allowed to submit an incomplete section
   // — see timeUp(). Both handlers re-check; this is the visible half.
-  gateButton('advance-btn', unansweredIn('gengo', ans).length,
-             "聴解へ進む", "問が未解答です。" + GENGO_KEYS.length + "問すべてに答えると聴解へ進めます。");
+  gateButton('advance-btn', unansweredIn('gengo', ans).length, 'btn_advance', 'hint_advance',
+             GENGO_KEYS.length);
   gateButton('grade-btn',
              PHASE === 'done' ? (KEYS.length - gCount - cCount)
                               : unansweredIn('choukai', ans).length,
-             "採点する", "問が未解答です。すべて解答すると採点できます。");
+             'btn_grade', 'hint_grade', KEYS.length);
 }
-function gateButton(id, missing, label, hint){
+function gateButton(id, missing, label, hint, total){
   const btn = document.getElementById(id);
   if (!btn) return;
   btn.disabled = missing > 0;
-  btn.title = missing > 0 ? missing + hint : label;
+  btn.title = missing > 0 ? S(hint, {n: missing, t: total}) : S(label);
 }
 function refresh(){
   const ans = state();
@@ -543,8 +629,7 @@ function clearAll(){
   // The escape hatch, and the only way back into a sitting you have left: it
   // resets the CLOCKS and the phase as well as the answers, because a half-run
   // countdown with no answers under it is not a state anyone can finish from.
-  if (!confirm("すべての解答と受験状態（残り時間・提出済みの部分）を消去して、"
-             + "最初からやり直しますか？")) return;
+  if (!confirm(S('confirm_clear'))) return;
   document.querySelectorAll('input[type=radio]').forEach(r=>{
     r.checked = false; r.disabled = false;
   });
@@ -643,11 +728,11 @@ function computeResult(ans){
 }
 
 /* ------------------------------------------------------- screen 3: 採点結果 */
-function rating(p){ return p >= 80 ? "優 (Strong)" : p >= 60 ? "良 (Fair)" : "要強化 (Weak)"; }
+function rating(p){ return P(p >= 80 ? 'rate_strong' : p >= 60 ? 'rate_fair' : 'rate_weak'); }
 
 function chip(label, d){
   const cls = d.user === null ? 'na' : (d.is_correct ? 'ok' : 'ng');
-  const body = d.user === null ? '未解答'
+  const body = d.user === null ? P('rs_unanswered')
              : (d.is_correct ? String(d.user) : d.user + ' → ' + d.correct);
   return '<span class="chip ' + cls + '"><i>' + label + '</i>' + body + '</span>';
 }
@@ -737,7 +822,8 @@ function scriptBlockHtml(text, label){
   if (!text) return '';
   const lines = text.split("\\n").map(l => l.trim()).filter(l => l.length > 0);
   const formatted = lines.map(l => '<p>' + escapeHtml(l) + '</p>').join('');
-  return '<div class="rs-script"><p class="rs-script-label">🎧 ' + escapeHtml(label) + '</p>'
+  // `label` is interface markup (P()), not text: it is not escaped.
+  return '<div class="rs-script"><p class="rs-script-label">🎧 ' + label + '</p>'
     + formatted + '</div>';
 }
 
@@ -803,15 +889,15 @@ function computeChoukaiGroups(){
 
 function detailMetaHtml(key, d){
   const cls = d.user === null ? 'na' : (d.is_correct ? 'ok' : 'ng');
-  const verdict = d.user === null ? '未解答'
-                : (d.is_correct ? '正解' : '不正解');
+  const verdict = P(d.user === null ? 'rs_unanswered'
+                  : (d.is_correct ? 'rs_correct' : 'rs_wrong'));
   const user = d.user === null ? '—' : String(d.user);
   const correct = d.correct === null || d.correct === undefined ? '—' : String(d.correct);
   return '<div class="rs-detail-meta">'
-    + '<span><b>設問 ' + key + '</b></span>'
+    + '<span><b>' + P('rs_item', {k: key}) + '</b></span>'
     + '<span class="tag ' + cls + '">' + verdict + '</span>'
-    + '<span>あなたの答え: <b>' + user + '</b></span>'
-    + '<span>正解: <b>' + correct + '</b></span>'
+    + '<span>' + P('rs_your') + ' <b>' + user + '</b></span>'
+    + '<span>' + P('rs_key') + ' <b>' + correct + '</b></span>'
     + '</div>';
 }
 
@@ -821,12 +907,11 @@ function itemDetailHtml(key, d){
   let note = '';
   const isChoukai = !/^\\d+$/.test(key);
   if (isChoukai){
-    script = scriptBlockHtml(CHOUKAI_SCRIPTS[key], '聴解スクリプト');
-    note = '<p class="rs-detail-note">聴解の音声は「解答に戻ってやり直す」から'
-      + '受験画面のプレイヤーで確認できます。</p>';
+    script = scriptBlockHtml(CHOUKAI_SCRIPTS[key], P('rs_script'));
+    note = '<p class="rs-detail-note">' + P('rs_audio_note') + '</p>';
   }
   if (!body && !isChoukai){
-    body = '<p>（この設問の問題文を画面から取得できませんでした。）</p>';
+    body = '<p>' + P('rs_no_stem') + '</p>';
   }
   const bodyBlock = body ? '<div class="rs-detail-body">' + body + '</div>' : '';
   return '<div class="rs-item" id="rs-item-' + key + '">'
@@ -841,7 +926,7 @@ function itemDetailHtml(key, d){
 function groupMemberHtml(key, d, ownHtml){
   const isChoukai = !/^\\d+$/.test(key);
   if (!ownHtml && !isChoukai){
-    ownHtml = '<p>（この設問の問題文を画面から取得できませんでした。）</p>';
+    ownHtml = '<p>' + P('rs_no_stem') + '</p>';
   }
   const bodyBlock = ownHtml ? '<div class="rs-detail-body">' + ownHtml + '</div>' : '';
   return '<div class="rs-item rs-group-item" id="rs-item-' + key + '">'
@@ -852,7 +937,7 @@ function groupMemberHtml(key, d, ownHtml){
 
 function groupHeaderLabel(keys){
   if (!keys || !keys.length) return '';
-  if (keys.length === 1) return '設問 ' + keys[0];
+  if (keys.length === 1) return P('rs_item', {k: keys[0]});
   const first = keys[0], last = keys[keys.length - 1];
   if (/^\\d+$/.test(first)){
     // The 大問 and its short label come from the level table (TAXONOMY's
@@ -866,9 +951,9 @@ function groupHeaderLabel(keys){
       const nth = Math.floor(t.keys.indexOf(first) / per) + 1;
       sub = '（' + t.mondai + ' ' + t.group + (of > 1 ? ' (' + nth + ')' : '') + '）';
     }
-    return '設問 ' + first + ' 〜 ' + last + sub;
+    return P('rs_items_range', {a: first, b: last}) + sub;
   }
-  return '設問 ' + keys.join(' ・ ') + '（問題5 2番 共通）';
+  return P('rs_item', {k: keys.join(' ・ ')}) + P('rs_items_m5');
 }
 
 function gengoGroupHtml(group, detailFor){
@@ -893,25 +978,24 @@ function choukaiGroupHtml(group, detailFor){
   }
   const title = groupHeaderLabel(group.keys);
   const sharedHtml = scriptBlockHtml(
-    CHOUKAI_SCRIPTS[group.keys[0]], '聴解スクリプト（質問1・質問2 共通）');
+    CHOUKAI_SCRIPTS[group.keys[0]], P('rs_script_shared'));
   const members = group.keys.map(k =>
     groupMemberHtml(k, detailFor(k), extractQuestionHtml(k))
   ).join('');
   return '<div class="rs-group">'
     + '<div class="rs-group-title">' + title + '</div>'
     + '<div class="rs-group-shared">' + sharedHtml
-    + '<p class="rs-detail-note">聴解の音声は「解答に戻ってやり直す」から'
-    + '受験画面のプレイヤーで確認できます。</p></div>'
+    + '<p class="rs-detail-note">' + P('rs_audio_note') + '</p></div>'
     + members + '</div>';
 }
 
 function buildAllDetailsHtml(res){
   const L = [];
-  L.push('<h3>言語知識・読解 — 設問詳細</h3>');
+  L.push('<h3>' + P('rs_detail_gengo') + '</h3>');
   for (const g of computeGengoGroups()){
     L.push(gengoGroupHtml(g, k => res.detail_gengo[k] || {}));
   }
-  L.push('<h3>聴解 — 設問詳細</h3>');
+  L.push('<h3>' + P('rs_detail_choukai') + '</h3>');
   for (const g of computeChoukaiGroups()){
     L.push(choukaiGroupHtml(g, k => res.detail_choukai[k] || {}));
   }
@@ -928,11 +1012,11 @@ function setCheckExpanded(on, res){
       panel.dataset.built = '1';
     }
     panel.hidden = false;
-    btn.textContent = '詳細を折りたたむ';
+    btn.innerHTML = P('rs_collapse');
     btn.setAttribute('aria-expanded', 'true');
   } else {
     panel.hidden = true;
-    btn.textContent = 'すべての設問詳細を展開';
+    btn.innerHTML = P('rs_expand');
     btn.setAttribute('aria-expanded', 'false');
   }
 }
@@ -948,32 +1032,38 @@ function bindResultExpand(res){
 
 function resultHtml(res, msg, saved){
   const s = res.summary, cls = s.passed ? 'pass' : 'fail';
+  const verdict = P(s.passed ? 'rs_pass' : 'rs_fail');
   const L = [];
 
-  // Screen 3 carries the same sticky #bar as screens 1 and 2, so its own
+  // Screen 3 carries the same sticky topbar as screens 1 and 2, so its own
   // buttons belong at the END of the page — after the report you came to read.
-  L.push('<h1>JLPT ' + LEVEL + ' 模擬試験 採点結果（テスト ' + res.test_id + '）</h1>');
+  // Section names, 大問 codes and 大問 names are the exam's own labels (the
+  // result document's data) and stay as they are; everything around them is
+  // the reader's language.
+  L.push('<h1>' + P('rs_title', {level: LEVEL, id: res.test_id}) + '</h1>');
   L.push('<p class="rs-saved' + (saved ? ' ok' : '') + '">' + msg + '</p>');
   L.push('<div class="rs-head ' + cls + '">'
-    + '<span class="rs-verdict">' + (s.passed ? '合格 (PASS)' : '不合格 (FAIL)') + '</span>'
+    + '<span class="rs-verdict">' + verdict + '</span>'
     + '<span class="rs-score">' + s.total_scaled_score
     + ' <small>/ ' + s.max_scaled_score + '</small></span>');
   if (!s.passed){
     const why = [];
     if (!s.overall_threshold_passed){
-      why.push('総合点 (' + s.total_scaled_score + '点) が合格ライン (90点) に届いていません。');
+      why.push(P('rs_why_total', {s: s.total_scaled_score, p: SCORING.pass}));
     }
     const failed = Object.keys(s.sections).filter(k => !s.sections[k].passed_cutoff);
     if (failed.length){
-      why.push('基準点未達のセクションがあります: ' + failed.join('、') + ' (各19点以上が必要)。');
+      const cuts = [...new Set(failed.map(k => s.sections[k].cutoff))].join('/');
+      why.push(P('rs_why_sections', {list: failed.join('、'), c: cuts}));
     }
-    L.push('<p class="rs-why"><b>判定理由:</b> ' + why.join(' ') + '</p>');
+    L.push('<p class="rs-why"><b>' + P('rs_why') + '</b> ' + why.join(' ') + '</p>');
   }
   L.push('</div>');
 
-  L.push('<h2>1. 得点サマリー (得点等化スケールスコア 換算)</h2>');
-  L.push('<div class="ui-table-wrap"><table class="ui-table"><thead><tr><th>セクション</th><th>素点</th><th>換算得点</th>'
-    + '<th>基準点</th><th>判定</th></tr></thead><tbody>');
+  L.push('<h2>' + P('rs_h_summary') + '</h2>');
+  L.push('<div class="ui-table-wrap"><table class="ui-table"><thead><tr><th>' + P('rs_th_section')
+    + '</th><th>' + P('rs_th_raw') + '</th><th>' + P('rs_th_scaled') + '</th>'
+    + '<th>' + P('rs_th_cutoff') + '</th><th>' + P('rs_th_verdict') + '</th></tr></thead><tbody>');
   let si = 0;
   for (const name in s.sections){
     const d = s.sections[name];
@@ -981,18 +1071,20 @@ function resultHtml(res, msg, saved){
     L.push('<tr><td>' + name + '</td>'
       + '<td class="n">' + d.raw_correct + ' / ' + d.raw_total + '</td>'
       + '<td class="n"><b>' + d.scaled_score + '</b> / ' + band.max + '</td>'
-      + '<td class="n">' + d.cutoff + '点</td>'
-      + '<td>' + (d.passed_cutoff ? '基準点クリア' : '基準点未達') + '</td></tr>');
+      + '<td class="n">' + P('rs_points', {n: d.cutoff}) + '</td>'
+      + '<td>' + P(d.passed_cutoff ? 'rs_cutoff_ok' : 'rs_cutoff_ng') + '</td></tr>');
   }
-  L.push('<tr><td><b>総合計</b></td><td class="n">-</td>'
+  L.push('<tr><td><b>' + P('rs_total') + '</b></td><td class="n">-</td>'
     + '<td class="n"><b>' + s.total_scaled_score + '</b> / ' + SCORING.max + '</td>'
-    + '<td class="n">' + SCORING.pass + '点</td><td><b>'
-    + (s.passed ? '合格 (PASS)' : '不合格 (FAIL)') + '</b></td></tr>');
+    + '<td class="n">' + P('rs_points', {n: SCORING.pass}) + '</td><td><b>'
+    + verdict + '</b></td></tr>');
   L.push('</tbody></table></div>');
 
-  L.push('<h2>2. 大問別（問題形式別）詳細分析</h2>');
-  L.push('<div class="ui-table-wrap"><table class="ui-table"><thead><tr><th>分野</th><th>問題</th><th>大問名</th><th>正解率</th>'
-    + '<th>正解数 / 問題数</th><th>評価</th></tr></thead><tbody>');
+  L.push('<h2>' + P('rs_h_taxonomy') + '</h2>');
+  L.push('<div class="ui-table-wrap"><table class="ui-table"><thead><tr><th>' + P('rs_th_area')
+    + '</th><th>' + P('rs_th_mondai') + '</th><th>' + P('rs_th_name') + '</th><th>'
+    + P('rs_th_rate') + '</th><th>' + P('rs_th_count') + '</th><th>' + P('rs_th_rating')
+    + '</th></tr></thead><tbody>');
   for (const code in res.taxonomy_stats){
     const t = res.taxonomy_stats[code];
     L.push('<tr' + (t.percentage < 60 ? ' class="weak"' : '') + '>'
@@ -1003,16 +1095,26 @@ function resultHtml(res, msg, saved){
   }
   L.push('</tbody></table></div>');
 
-  L.push('<h2>3. 全設問解答チェック表</h2>');
+  // The weak 大問 (under 60%%) with their study advice — the result document
+  // carries each one's Japanese advice; every language's own is picked by code.
+  const weak = res.weak_areas || [];
+  L.push('<h3>' + P('rs_h_advice') + '</h3>');
+  if (!weak.length) L.push('<p class="rs-hint">' + P('rs_no_weak') + '</p>');
+  for (const w of weak){
+    L.push('<div class="rs-advice"><b>' + escapeHtml(w.code) + ' ' + escapeHtml(w.name)
+      + '（' + Number(w.percentage).toFixed(1) + '%%）</b>' + adviceHtml(w.code, w.advice) + '</div>');
+  }
+
+  L.push('<h2>' + P('rs_h_check') + '</h2>');
   L.push('<div class="rs-check-tools">'
     + '<button type="button" class="ui-btn" id="rs-expand-btn" aria-expanded="false">'
-    + 'すべての設問詳細を展開</button>'
-    + '<p class="rs-hint">展開すると全' + KEYS.length + '問の問題文・選択肢・正誤が一覧で表示されます。</p>'
+    + P('rs_expand') + '</button>'
+    + '<p class="rs-hint">' + P('rs_expand_hint', {n: KEYS.length}) + '</p>'
     + '</div>');
   const maxQ = GENGO_KEYS.length;
-  L.push('<h3>言語知識・読解 (1 〜 ' + maxQ + ')</h3><div class="rs-grid">');
+  L.push('<h3>' + P('rs_grid_gengo', {n: maxQ}) + '</h3><div class="rs-grid">');
   for (let q = 1; q <= maxQ; q++){ L.push(chip(String(q), res.detail_gengo[String(q)])); }
-  L.push('</div><h3>聴解</h3><div class="rs-grid">');
+  L.push('</div><h3>' + P('rs_grid_choukai') + '</h3><div class="rs-grid">');
   for (const k of CHOUKAI_KEYS){ L.push(chip(k, res.detail_choukai[k])); }
   L.push('</div>');
   L.push('<div id="rs-all-detail" class="rs-all-detail" hidden></div>');
@@ -1020,11 +1122,11 @@ function resultHtml(res, msg, saved){
   // On GitHub Pages the result only exists inside this browser, so the way to
   // get 採点結果.json onto a disk has to be on the screen that shows it.
   L.push('<div class="rs-nav">'
-    + '<button class="ui-btn primary" onclick="goList()">← テスト一覧へ戻る</button>'
-    + '<button class="ui-btn" onclick="showScreen(\\'exam\\')">解答に戻ってやり直す</button>'
-    + '<button class="ui-btn" onclick="location.href=\\'模範解答.html\\'">模範解答・解説</button>'
+    + '<button class="ui-btn primary" onclick="goList()">' + P('rs_nav_list') + '</button>'
+    + '<button class="ui-btn" onclick="showScreen(\\'exam\\')">' + P('rs_nav_retry') + '</button>'
+    + '<button class="ui-btn" onclick="location.href=\\'模範解答.html\\'">' + P('rs_nav_model') + '</button>'
     + (STORAGE === 'local'
-        ? '<button class="ui-btn" onclick="downloadCurrent()">採点結果を保存（JSON）</button>'
+        ? '<button class="ui-btn" onclick="downloadCurrent()">' + P('rs_nav_download') + '</button>'
         : '')
     + '</div>');
 
@@ -1035,14 +1137,14 @@ function goList(){ location.href = LIST_HREF; }
 
 function showScreen(name){
   const exam = name === 'exam';
-  document.documentElement.classList.remove('is-result-mode');
+  // Also what the bar's page crumb reads (受験 / 採点結果, CSS-switched).
+  document.documentElement.classList.toggle('is-result-mode', !exam);
   document.getElementById('screen-exam').style.display = exam ? 'block' : 'none';
   document.getElementById('screen-result').style.display = exam ? 'none' : 'block';
   // The bar itself never goes away — it is the same chrome on all three screens.
   // Only the solving controls (counter, 消去, 採点する) belong to screen 2.
   document.getElementById('bar-controls').style.display = exam ? '' : 'none';
   document.getElementById('where').style.display = exam ? '' : 'none';
-  document.getElementById('bar-title').textContent = exam ? EXAM_TITLE : RESULT_TITLE;
   if (exam){ render(); updateSpy(); }
   const audio = document.getElementById('au');
   if (!exam && audio) audio.pause();
@@ -1062,10 +1164,9 @@ function showResult(res, msg, saved){
   showScreen('result');
 }
 
-function reportGap(missing, lead){
-  alert(missing.length + lead
-        + "（未解答: " + missing.slice(0, 8).join("、")
-        + (missing.length > 8 ? " …" : "") + "）");
+function reportGap(missing, lead, total){
+  alert(S(lead, {n: missing.length, t: total})
+        + S('gap_list', {list: missing.slice(0, 8).join("、") + (missing.length > 8 ? " …" : "")}));
   const first = document.querySelector(
     '#screen-exam input[name="q_' + CSS.escape(missing[0]) + '"]');
   if (first) first.scrollIntoView({block: 'center'});
@@ -1079,10 +1180,8 @@ async function finishGengo(auto){
   if (PHASE !== 'gengo') return;
   if (!auto){
     const missing = unansweredIn('gengo');
-    if (missing.length) return reportGap(missing,
-      "問が未解答です。" + GENGO_KEYS.length + "問すべてに答えてから聴解へ進んでください。");
-    if (!confirm("言語知識（文字・語彙・文法）・読解を提出して聴解に進みます。\\n"
-               + "提出したあとは、この部分に戻ることはできません。\\n\\nよろしいですか？")) return;
+    if (missing.length) return reportGap(missing, 'gap_advance', GENGO_KEYS.length);
+    if (!confirm(S('confirm_advance'))) return;
   }
   clockFreeze();
   PHASE = 'choukai';
@@ -1100,10 +1199,8 @@ async function submitAll(auto){
   if (!auto){
     const missing = PHASE === 'done' ? KEYS.filter(k => ans[k] === undefined)
                                      : unansweredIn('choukai', ans);
-    if (missing.length) return reportGap(missing,
-      "問が未解答です。すべての設問に解答してから採点してください。");
-    if (PHASE === 'choukai'
-        && !confirm("聴解を提出して採点します。\\n\\nよろしいですか？")) return;
+    if (missing.length) return reportGap(missing, 'gap_grade', KEYS.length);
+    if (PHASE === 'choukai' && !confirm(S('confirm_grade'))) return;
   }
   clockFreeze();
   clearTimeout(_saveTimer);     // a pending debounced save must not land after the result
@@ -1135,7 +1232,7 @@ function downloadResult(res, answers){
   }
   dl("採点結果.json", res);
   dl("ユーザー解答.json", answers);
-  return "採点結果.json および ユーザー解答.json としてダウンロードしました。";
+  return P('saved_download');
 }
 
 /* ========================================================== 受験フェーズと時計
@@ -1213,11 +1310,13 @@ function clockText(ms){
 function clockPaint(){
   const el = document.getElementById('clock');
   if (!el) return;
-  if (PHASE === 'done'){ el.textContent = '採点済み'; el.className = 'sub'; return; }
+  if (PHASE === 'done'){ el.textContent = S('clock_graded'); el.className = 'tb-sub'; return; }
   const ms = clockLeft(PHASE), frozen = TICK_FROM === null;
-  el.textContent = '残り ' + clockText(ms)
-                 + (!STARTED[PHASE] ? '（未開始）' : frozen ? '（停止中）' : '');
-  el.className = 'sub' + (STARTED[PHASE] && frozen ? ' paused' : '')
+  // The state suffix gives way on a phone; the colour (amber = frozen) stays.
+  const state = !STARTED[PHASE] ? S('clock_not_started') : frozen ? S('clock_paused') : '';
+  el.innerHTML = escapeHtml(S('clock_left', {t: clockText(ms)}))
+               + (state ? '<span class="tb-long">' + escapeHtml(state) + '</span>' : '');
+  el.className = 'tb-sub' + (STARTED[PHASE] && frozen ? ' paused' : '')
                + (ms <= LOW_MS ? ' low' : '');
 }
 function clockSync(){
@@ -1246,11 +1345,10 @@ async function timeUp(){
   LEFT[sec] = 0;
   try {
     if (sec === 'gengo'){
-      alert("言語知識（文字・語彙・文法）・読解の時間が終了しました。\\n"
-          + "解答はそのまま提出され、聴解に進みます。");
+      alert(S('alert_time_gengo'));
       await finishGengo(true);
     } else {
-      alert("聴解の時間が終了しました。\\nこれまでの解答で採点します。");
+      alert(S('alert_time_choukai'));
       await submitAll(true);
     }
   } finally { EXPIRING = false; }
@@ -1302,9 +1400,9 @@ function render(){
   setSectionEnabled('gengo', openG);
   setSectionEnabled('choukai', openC);
   paintTab('tab-gengo', openG, PHASE === 'choukai',
-           done ? '' : PHASE === 'gengo' ? '受験中' : '提出済み');
+           done ? '' : P(PHASE === 'gengo' ? 'tab_in_progress' : 'tab_submitted'));
   paintTab('tab-choukai', openC, false,
-           done ? '' : PHASE === 'gengo' ? 'この後' : '受験中');
+           done ? '' : P(PHASE === 'gengo' ? 'tab_next' : 'tab_in_progress'));
   show('advance-btn', PHASE === 'gengo' && STARTED.gengo);
   show('grade-btn', done || (PHASE === 'choukai' && STARTED.choukai));
   updateCounter(state());
@@ -1359,7 +1457,7 @@ async function boot(){
     showScreen('result');
     const saved = await STORE.loadResult();
     if (saved) {
-      showResult(saved, '保存済みの採点結果です。', true);
+      showResult(saved, P('saved_earlier'), true);
     } else {
       await restore();
       showScreen('exam');
@@ -1375,6 +1473,12 @@ async function boot(){
 
 document.addEventListener('change', e=>{ if(e.target.type==='radio') refresh(); });
 window.addEventListener('DOMContentLoaded', boot);
+/* lang_ui's dropdown: markup is CSS-switched; repaint what S() wrote as text. */
+document.addEventListener('langchange', ()=>{
+  document.title = S('doc_title', {level: LEVEL, id: TESTID});
+  if (document.getElementById('done')) updateCounter(state());
+  clockPaint();
+});
 """
 
 
@@ -1410,7 +1514,7 @@ function initSpy(){
 function updateSpy(){
   const where = document.getElementById('where');
   if (!where || !SPOTS.length) return;
-  const bar = document.getElementById('bar');
+  const bar = document.getElementById('topbar');
   const edge = (bar ? bar.offsetHeight : 0) + 8;
   let sec = '', q = '';
   for (const s of SPOTS){
@@ -1422,9 +1526,10 @@ function updateSpy(){
 }
 
 function fitPlayer(){
-  // The player sticks directly under the bar. Measure rather than guess: the
-  // bar's height depends on the font and on whether its controls wrap.
-  const bar = document.getElementById('bar'), p = document.getElementById('player');
+  // The player sticks directly under the ONE bar (lang_ui's topbar, which the
+  // sheet's timer/section bar merged into). Measure rather than guess: its
+  // height changes with the viewport (40px desktop, 36px phone).
+  const bar = document.getElementById('topbar'), p = document.getElementById('player');
   if (bar && p && bar.offsetHeight) p.style.top = bar.offsetHeight + 'px';
 }
 """
@@ -1548,26 +1653,23 @@ def gate(sec: str, title: str, limit_ms: int, count: int) -> str:
     rather than sit the paper must not have to start the clock to find that out.
     `make sheet` writes both pages, so the link is never dead.
     """
-    extra = ("音声は最初から最後まで一続きで流れます。イヤホンなどの準備ができてから"
-             "開始してください。" if sec == "choukai" else
-             "提出したあとは、この部分に戻ることはできません。")
+    # `title` is the section's own name (exam wording, Japanese); everything
+    # around it is interface text, one .lang-pane per language.
+    extra = T("gate_extra_choukai" if sec == "choukai" else "gate_extra_gengo")
     practice = ("" if sec != "gengo" else
                 f'<div class="gate-alt">'
-                f'<p class="alt-note">じっくり復習したいときは<b>練習モード</b>へ。'
-                f'制限時間も採点もなく、全問が1ページに並び、'
-                f'設問ごとに模範解答・解説を開けます。</p>'
+                f'<p class="alt-note">{T("gate_practice_note")}</p>'
                 f'<a class="ui-btn" href="{PRACTICE_HREF}">'
-                f'練習モードで解く（採点・制限時間なし）</a></div>')
+                f'{T("gate_practice_btn")}</a></div>')
     return (f'<div class="gate" id="gate-{sec}" style="display:none">'
             f'<h2>{title}</h2>'
-            f'<p class="lim">制限時間 <b>{limit_ms // 60_000}分</b>／全{count}問</p>'
-            f'<p class="note"><span class="warn">開始すると時計が動きます。</span>'
-            f'残り時間が0になった時点で、解答はそのまま自動的に提出されます。<br>'
+            f'<p class="lim">{T("gate_limit", m=limit_ms // 60_000, n=count)}</p>'
+            f'<p class="note"><span class="warn">{T("gate_warn")}</span>'
+            f'{T("gate_auto")}<br>'
             f'{extra}<br>'
-            f'時計はこのタブを見ている間だけ進み、ほかのタブや別のウィンドウに移ると'
-            f'止まります。</p>'
+            f'{T("gate_focus")}</p>'
             f'<button class="ui-btn primary" onclick="startSection(\'{sec}\')">'
-            f'開始する</button>'
+            f'{T("gate_start")}</button>'
             f'{practice}</div>')
 
 
@@ -1787,16 +1889,17 @@ def player_html(d: Path) -> str:
         '<div id="player">'
         f'<audio id="au" controls preload="metadata" src="聴解.mp3" data-fallback-src="{fallback_url}"></audio>'
         '<div class="pctl">'
-        '<button type="button" onclick="nudge(-10)">◀ 10秒</button>'
-        '<button type="button" onclick="nudge(10)">10秒 ▶</button>'
-        '<label>速度 <select id="rate" onchange="au.playbackRate=+this.value">'
+        f'<button type="button" onclick="nudge(-10)">{T("player_back10")}</button>'
+        f'<button type="button" onclick="nudge(10)">{T("player_fwd10")}</button>'
+        f'<label>{T("player_speed")} <select id="rate" onchange="au.playbackRate=+this.value">'
         '<option>0.75</option><option selected>1</option>'
         '<option>1.25</option><option>1.5</option></select></label>'
-        '<span id="chapwrap">章 <select id="chap" onchange="jump(this.value)">'
+        f'<span id="chapwrap">{T("player_chapter")} <select id="chap" onchange="jump(this.value)">'
         '</select></span>'
-        '<label class="pick">MP3を選ぶ'
+        f'<label class="pick">{T("player_pick")}'
         '<input type="file" accept="audio/*" onchange="pick(this)"></label>'
         '</div>'
+        f'<div class="noaudio-msg">{T("player_noaudio")}</div>'
         f'<script>window.CHAPTERS = {data};</script>'
         '</div>')
 
@@ -1835,6 +1938,9 @@ def grading_data(gam, gids: list, ckeys: dict, combined_keys: dict,
         "scoring": json.dumps(LEVEL.scoring(level), ensure_ascii=False),
         "advice": json.dumps(gam.advice_for(level), ensure_ascii=False),
         "choukai_scripts": json.dumps(choukai_scripts or {}, ensure_ascii=False),
+        "exam_str": exam_strings(),
+        "exam_order": json.dumps(LANGS_REG.order()),
+        "exam_primary": json.dumps(LANGS_REG.primary()),
     }
 
 
@@ -1884,34 +1990,35 @@ def render_combined(gengo_md: str, choukai_md: str, testid: str, keys: list,
         raise ValueError(f"unknown storage backend: {storage}")
     back_href = list_href(gdata["level"])
 
-    title = f"N2 模擬試験 解答用紙 ({testid})"
-    # The SAME bar as screen 1's, so the app reads as one thing. Opened as a bare
-    # file (no server, no Pages deployment) that link is dead, which is the same
-    # trade-off as the /api/ POSTs.
-    # The two sections are TABS in the bar. During a sitting they are
-    # indicators — render() paints 受験中 / この後 / 提出済み onto them and only a
-    # graded paper makes them clickable — so the bar always says which half of
-    # the exam you are in and what has already been handed in.
-    tabs = ('<span id="tabs">'
+    level = gdata["level"]
+    title = tr(LANGS_REG.primary(), "doc_title", level=level, id=testid)
+    # ONE sticky bar (lang_ui.topbar_html) — the old #bar merged into it. Left:
+    # level › 試験 (this level's list) › this paper, whose crumb reads 受験 on
+    # screen 2 and 採点結果 on screen 3 (CSS on html.is-result-mode). Right: the
+    # two sections as TABS — during a sitting they are indicators; render()
+    # paints 受験中 / この後 / 提出済み onto them and only a graded paper makes
+    # them clickable — the 「聴解 ｜ 問題2」 read-out, then the solving controls
+    # (clock, counter, 消去, 聴解へ進む, 採点する), then the language dropdown.
+    # Opened as a bare file the crumb links are dead, the same trade-off as
+    # the /api/ POSTs.
+    tabs = ('<span id="tabs" class="tb-wide">'
             '<button id="tab-gengo" type="button" data-label="言語知識・読解" '
             'onclick="goTab(\'gengo\')">言語知識・読解</button>'
             '<button id="tab-choukai" type="button" data-label="聴解" '
             'onclick="goTab(\'choukai\')">聴解</button></span>')
-    bar = (f'<div id="bar"><a class="back" href="{back_href}">← テスト一覧</a>'
-           f'<b id="bar-title">テスト {testid}（受験）</b>'
-           f'{tabs}'
-           f'<span class="sub" id="where"></span>'
-           f'<span class="grow"></span>'
-           f'<span id="bar-controls">'
-           f'<span class="sub" id="clock">残り --:--</span> '
-           f'<span class="sub" id="done">解答済み 0 / 101</span> '
-           f'<button onclick="clearAll()">消去</button> '
-           f'<button onclick="finishGengo(false)" id="advance-btn" class="primary" '
-           f'disabled>聴解へ進む</button> '
-           f'<button onclick="submitAll(false)" id="grade-btn" class="primary" '
-           f'disabled>採点する</button></span></div>'
-           f'<script>if(document.documentElement.classList.contains("is-result-mode")){{'
-           f'document.getElementById("bar-title").textContent="テスト {testid}（採点結果）";}}</script>')
+    here = (f'<span id="bar-title"><span class="bt-exam">{T("crumb_sitting", id=testid)}</span>'
+            f'<span class="bt-result">{T("crumb_result", id=testid)}</span></span>')
+    controls = (f'{tabs}'
+                f'<span class="tb-sub tb-shrink tb-wide" id="where"></span>'
+                f'<span id="bar-controls">'
+                f'<span class="tb-sub" id="clock">{T("clock_left", t="--:--")}</span>'
+                f'<span class="tb-sub" id="done"></span>'
+                f'<button type="button" class="tb-btn" onclick="clearAll()">{T2("btn_clear")}</button>'
+                f'<button type="button" onclick="finishGengo(false)" id="advance-btn" '
+                f'class="tb-btn primary" disabled>{T2("btn_advance")}</button>'
+                f'<button type="button" onclick="submitAll(false)" id="grade-btn" '
+                f'class="tb-btn primary" disabled>{T2("btn_grade")}</button></span>')
+    bar = topbar(level, back_href, here, controls)
 
     body = (
         f'<div id="screen-exam">'
@@ -1936,7 +2043,7 @@ def render_combined(gengo_md: str, choukai_md: str, testid: str, keys: list,
     if storage == "local":
         js = local_store.LOCAL_STORE_JS + js
     out_path.write_text(
-        f'<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8">'
+        f'<!DOCTYPE html><html lang="{LANGS_REG.html_lang(LANGS_REG.primary())}"><head><meta charset="utf-8">'
         f'<meta name="viewport" content="width=device-width,initial-scale=1">'
         f'<script>if(window.location.search&&window.location.search.indexOf("screen=result")!==-1){{'
         f'document.documentElement.classList.add("is-result-mode");}}</script>'
@@ -1947,8 +2054,8 @@ def render_combined(gengo_md: str, choukai_md: str, testid: str, keys: list,
         # for the result screen, 聴解スクリプト.txt. Same 12-hex sha1 convention
         # as 聴解_チャプター.json's script_sha; see booklet.src_sha_comments.
         f'{booklet.src_sha_comments(sources)}'
-        f'<style>{booklet.CSS}{booklet.SCREEN_CSS}{EXTRA_CSS}</style></head>'
-        f'<body>{bar}{body}<div id="screen-result"></div>'
+        f'<style>{booklet.CSS}{booklet.SCREEN_CSS}{EXTRA_CSS}{lang_ui.head_css()}</style></head>'
+        f'<body data-lang="{LANGS_REG.primary()}">{bar}{body}<div id="screen-result"></div>'
         f'<script>{js}{PLAYER_JS if player else ""}</script>'
         f'</body></html>',
         encoding="utf-8")

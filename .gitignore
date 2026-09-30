@@ -58,3 +58,9 @@ tests/**/*.mp3
 # rebuilt from the MP3 on any miss, and the MP3s themselves are out of git
 # (AGENTS.md §3), so a fresh clone has nothing to cache against anyway.
 tools/.cache/
+
+# ドリル module pages (make drill): ~16 MB of build output derived entirely from
+# tracked inputs (tests/, logs/choukai_bank.json, knowledge/). `make pages` —
+# and so the Pages CI — rebuilds them; committing them would re-add a 16 MB
+# snapshot to history on every test or 知識 change.
+drill/

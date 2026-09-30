@@ -88,10 +88,6 @@ PRACTICE_CSS = """
    (EXPLANATION_CSS, PASSAGE_TOGGLE_CSS) read for their accent colour and their
    UI face; this page's own face is app_style's --ui. */
 :root{--primary:#1e3a8a;--font-sans:var(--ui)}
-/* The switch is exam-model-answer's control, styling and all (EXPLANATION_CSS);
-   all this page says is where it sits and which UI face it inherits — its
-   .lang-btn rules use font-family:inherit, and the booklet body font is 明朝. */
-#bar .lang-switch{flex:0 0 auto;font-family:var(--ui)}
 .pr-note{font-family:var(--ui);font-size:10pt;line-height:1.8;color:#334155;
   background:#f1f5f9;border:1px solid #cbd5e1;border-left:4px solid #2563eb;
   border-radius:0 8px 8px 0;padding:.9em 1.1em;margin:0 0 1.6em}
@@ -137,7 +133,7 @@ PRACTICE_CSS = """
 .pr-tr{border:1px solid #1a1a1a;background:#fff;margin:10px 0 16px;
   padding:10px 16px;overflow-x:auto;font-family:var(--ui);line-height:1.95}
 @media print{
-  .pr-btn,.pr-verdict,.pr-note,#bar,.pr-ptext{display:none}
+  .pr-btn,.pr-verdict,.pr-note,.pr-ptext{display:none}
 }
 @media screen and (max-width:48em){
   .pr{margin-left:.2em}
@@ -146,19 +142,17 @@ PRACTICE_CSS = """
 """
 
 PRACTICE_JS = """
-const ANS = %(answers)s, LANGS = %(langs)s, TOTAL = %(total)d;
+const ANS = %(answers)s, TOTAL = %(total)d;
 const PR = {};
 
 /* The 読解 訳 belongs to the learner-language editions — its control only
-   exists in those panes — so changing edition puts every passage back to 原文
-   rather than leaving a group whose chosen pane the new edition does not render. */
-function setLang(lang){
-  applyLang(lang, LANGS, true);
-  resetPassageText();
-}
+   exists in those panes — so changing edition (lang_ui's dropdown fires
+   `langchange`) puts every passage back to 原文 rather than leaving a group
+   whose chosen pane the new edition does not render. */
 function resetPassageText(){
   document.querySelectorAll('.passage-tr').forEach(b => { b.dataset.ptext = 'src'; });
 }
+document.addEventListener('langchange', resetPassageText);
 
 /* The reveal. Everything it changes is an attribute the CSS reads — the two
    button labels and both verdict chips ship as markup, one .lang-pane per
@@ -212,7 +206,6 @@ document.addEventListener('change', e => {
 
 window.addEventListener('DOMContentLoaded', ()=>{
   document.querySelectorAll('.pr').forEach(p => { PR[p.dataset.q] = p; });
-  if (LANGS.length > 1) applyLang(savedLang(LANGS), LANGS, false);
   countAnswered();
   fitPlayer();
   initSpy();
@@ -483,36 +476,31 @@ def build(d: Path, out_dir: Path | None = None, storage: str = "server") -> Path
     n_all = len(gids) + len(cused)
     player = bi.player_html(d)
 
-    list_href = bi.list_href(bi.LEVEL.declared_level(d) or bi.LEVEL.level_of(d.name))
-    lang_switch = ""
-    if len(langs) > 1:
-        lang_switch = '<span class="lang-switch">' + "".join(
-            f'<button class="lang-btn" data-lang="{lg}" '
-            f'onclick="setLang(\'{lg}\')">{ma.LANG_NAME[lg]}</button>'
-            for lg in langs) + '</span>'
-
-    bar = (f'<div id="bar">'
-           f'<a class="back" href="{list_href}">{label(langs, "back")}</a>'
-           f'<b id="bar-title">{label(langs, "bar_title", test_id=d.name)}</b>'
-           f'<span class="sub" id="where"></span>'
-           f'<span class="grow"></span>'
-           f'<span id="bar-controls">'
-           f'{lang_switch}'
-           f'<span class="sub">{label(langs, "answered")} '
-           f'<b id="done">0 / {n_all}</b></span> '
-           f'<button type="button" aria-expanded="false" onclick="toggleAll(this)">'
-           f'<span class="pr-lbl show">{label(langs, "open_all")}</span>'
-           f'<span class="pr-lbl hide">{label(langs, "close_all")}</span></button> '
-           f'<button type="button" onclick="location.href=\'解答.html\'">'
-           f'{label(langs, "exam_mode")}</button>'
-           f'</span></div>')
+    level = bi.LEVEL.declared_level(d) or bi.LEVEL.level_of(d.name)
+    list_href = bi.list_href(level)
+    # The ONE sticky bar (lang_ui.topbar_html): the old #bar merged into it —
+    # breadcrumb on the left (level › 試験 › this paper), the 「聴解 ｜ 問題2」
+    # read-out, the answered count and the two actions on the right, then the
+    # language dropdown (only the languages this paper has explanations in).
+    bar = bi.topbar(level, list_href,
+                    label(langs, "bar_title", test_id=d.name),
+                    right_html=(
+                        f'<span class="tb-sub tb-shrink tb-wide" id="where"></span>'
+                        f'<span class="tb-sub"><span class="tb-long">{label(langs, "answered")} </span>'
+                        f'<b id="done">0 / {n_all}</b></span>'
+                        f'<button type="button" class="tb-btn tb-wide" aria-expanded="false" '
+                        f'onclick="toggleAll(this)">'
+                        f'<span class="pr-lbl show">{label(langs, "open_all")}</span>'
+                        f'<span class="pr-lbl hide">{label(langs, "close_all")}</span></button>'
+                        f'<button type="button" class="tb-btn" onclick="location.href=\'解答.html\'">'
+                        f'{label(langs, "exam_mode")}</button>'),
+                    codes=langs)
 
     note = (f'<div class="pr-note">{label(langs, "note", n_all=n_all)}'
             f'<div class="pr-note-links">'
             f'<a class="ui-btn" href="模範解答.html">'
             f'{label(langs, "model_answer")}</a></div></div>')
 
-    level = bi.LEVEL.declared_level(d) or bi.LEVEL.level_of(d.name)
     body = (f'<div id="screen-exam">{note}'
             f'<h1 class="section-title">JLPT {level} 言語知識（文字・語彙・文法）・読解</h1>'
             f'{gengo_body}'
@@ -521,9 +509,8 @@ def build(d: Path, out_dir: Path | None = None, storage: str = "server") -> Path
             f'{player}{choukai_body}</div>')
 
     js = (PRACTICE_JS % {"answers": json.dumps(answers, ensure_ascii=False),
-                         "langs": json.dumps(langs),
                          "total": n_all}
-          + ma.LANG_SWITCH_JS + ma.PASSAGE_TOGGLE_JS
+          + ma.PASSAGE_TOGGLE_JS
           + bi.CHROME_JS + (bi.PLAYER_JS if player else ""))
 
     out.write_text(
@@ -538,7 +525,7 @@ def build(d: Path, out_dir: Path | None = None, storage: str = "server") -> Path
         f'{bi.booklet.src_sha_comments([gengo_src, choukai_src, d / "聴解スクリプト.txt", d / "聴解_チャプター.json"] + [ma.kaisetsu_path(d, lg) for lg in ma.LANGS])}'
         f'<style>{bi.booklet.CSS}{bi.booklet.SCREEN_CSS}{bi.app_style.APP_CSS}'
         f'{bi.EXTRA_CSS}{ma.EXPLANATION_CSS}{ma.PASSAGE_TOGGLE_CSS}'
-        f'{PRACTICE_CSS}</style></head>'
+        f'{bi.lang_ui.head_css()}{PRACTICE_CSS}</style></head>'
         f'<body data-lang="{langs[0]}">{bar}{body}'
         f'<script>{js}</script></body></html>',
         encoding="utf-8")

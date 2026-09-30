@@ -136,6 +136,9 @@ LEXICAL = load("tools/lexical_profile.py")
 # The knowledge module's checks (schema, bands, sources, page freshness) are owned
 # by jlpt-knowledge; the gate only calls them with its own reporters.
 KNOWLEDGE = load(".agents/jlpt-knowledge/scripts/check_knowledge.py")
+# The drill module's checks (pages built, chrome, store keys, no authored data) are
+# owned by jlpt-drill, called the same way.
+DRILL = load(".agents/jlpt-drill/scripts/check_drill.py")
 
 
 # One record per emitted finding, for `--json` (REPORT-CHOUKAI.md §5.0). A finding
@@ -502,11 +505,15 @@ def check_deployments():
                             or LEVEL.level_of(d.parent.name))
         for page in (d, d.parent / "練習.html"):
             if page.is_file():
-                back = re.search(r'<a class="back" href="([^"]*)"',
-                                 page.read_text(encoding="utf-8"))
+                # The way back is a crumb of the ONE sticky bar (lang_ui):
+                # level › 試験 (this link) › the page.
+                bar = re.search(r'<nav class="topbar".*?</nav>',
+                                page.read_text(encoding="utf-8"), re.S)
+                hrefs = re.findall(r'<a class="tb-crumb[^"]*" href="([^"]*)"',
+                                   bar.group(0)) if bar else []
                 check(f"{d.parent.name}: {page.name} links back to its level's exam list",
-                      bool(back) and back.group(1) == want,
-                      f"href={back.group(1) if back else None!r}, want {want!r} — "
+                      want in hrefs,
+                      f"topbar crumbs {hrefs}, want {want!r} — "
                       f"run make sheet {d.parent.name}")
         mode = re.search(r'const STORAGE = "(\w+)"', html)
         check(f"{d.parent.name}: 解答.html is the server build",
@@ -15323,10 +15330,17 @@ def check_language_registry():
           f"carrying exactly the primary's keys, each string rewritten for that "
           f"reader (exam-model-answer §'Languages — one registry')")
     builders = [AGENTS / "exam-model-answer" / "scripts" / "build_model_answer.py",
-                AGENTS / "exam-app" / "scripts" / "build_practice.py"]
+                AGENTS / "exam-model-answer" / "scripts" / "lang_ui.py",
+                AGENTS / "exam-app" / "scripts" / "build_practice.py",
+                AGENTS / "exam-app" / "scripts" / "build_interactive.py",
+                AGENTS / "exam-app" / "scripts" / "portal_view.py",
+                AGENTS / "exam-app" / "scripts" / "index_view.py"]
     know = AGENTS / "jlpt-knowledge" / "scripts"
     if know.is_dir():
         builders += sorted(know.glob("*.py"))
+    drill = AGENTS / "jlpt-drill" / "scripts"
+    if drill.is_dir():
+        builders += sorted(drill.glob("*.py"))
     hits = []
     for f in builders:
         if not f.is_file():
@@ -15343,6 +15357,86 @@ def check_language_registry():
           f" — iterate langs.order()/langs.learners(), reach content files through "
           f"langs.content_path() and pane CSS through langs.pane_css(). A literal "
           f"is a spot a new or replaced language silently skips")
+
+
+def check_site_chrome():
+    """ONE sticky bar and ONE language dropdown on every page but the booklets.
+
+    THE RULE (user, 2026-09-30; exam-model-answer §"Languages — one registry",
+    exam-app §On-screen layout): every page that prints interface text renders
+    its top of screen through `lang_ui.topbar_html()` — breadcrumb left, the
+    language `<select class="lang-select">` right — and no page writes its own
+    switch. The segmented `.lang-switch/.lang-btn` control it replaced shipped
+    on four page families in four slightly different copies, and a page that
+    grows a second sticky bar stacks two bars over the reading room. The two
+    printed booklets (言語知識・読解.html, 聴解.html) are official-paper replicas
+    and carry neither. Also here: 解答.html's weak-area advice per language
+    (`exam` namespace `advice`, keyed by 大問 code) covers every code the level
+    tables advise on, and the primary's is the level table's own text — the
+    result document keeps the Japanese, the page picks each language's by code.
+    """
+    print("\nsite chrome (lang_ui: one sticky bar, one language dropdown)")
+    pages: dict[str, str] = {}
+    for d in sorted((ROOT / "tests").glob("*")):
+        for name in ("解答.html", "練習.html", "模範解答.html"):
+            f = d / name
+            if f.is_file():
+                pages[str(f.relative_to(ROOT))] = f.read_text(encoding="utf-8")
+    for top in ("knowledge", "drill"):
+        for f in sorted((ROOT / top).rglob("*.html")) if (ROOT / top).is_dir() else []:
+            pages[str(f.relative_to(ROOT))] = f.read_text(encoding="utf-8")
+    try:
+        pv = load(".agents/exam-app/scripts/portal_view.py")
+        iv = load(".agents/exam-app/scripts/index_view.py")
+        summ = pv.level_summaries([{"id": "x", "level": "N2"}])
+        pages["<portal />"] = pv.portal_html(summ)
+        for sm in summ:
+            pages[f"<portal /{sm['level']}/>"] = pv.module_html(sm)
+        for mode in ("server", "local"):
+            pages[f"<list {mode}>"] = iv.index_html(mode, [], level="N2")
+    except Exception as e:     # noqa: BLE001 — a render that crashes is the finding
+        check("the portal and list render", False, f"{type(e).__name__}: {e}")
+    bad = []
+    for name, text in pages.items():
+        bars = text.count('<nav class="topbar"')
+        sels = text.count('<select class="lang-select"')
+        old = "lang-btn" in text or "lang-switch" in text
+        if bars != 1 or sels != 1 or old:
+            bad.append(f"{name} (topbar×{bars}, lang-select×{sels}"
+                       f"{', old segmented control' if old else ''})")
+    check(f"{len(pages)} non-booklet page(s) carry exactly one .topbar and one "
+          f".lang-select, and no .lang-btn", not bad,
+          f"{len(bad)}: {'; '.join(bad[:5])}{' …' if len(bad) > 5 else ''} — render "
+          f"the top of the page through lang_ui.topbar_html() (exam-model-answer "
+          f"scripts), merge any sticky bar of the page's own into its right_html, "
+          f"and rebuild (make sheet / make model-answer / make knowledge)")
+    booklets = [f for f in (ROOT / "tests").glob("*/*.html")
+                if f.name in ("言語知識・読解.html", "聴解.html")
+                and ('<nav class="topbar"' in (t := f.read_text(encoding="utf-8"))
+                     or 'class="lang-select"' in t)]
+    check("the printed booklets carry no topbar or language dropdown", not booklets,
+          f"{[str(f.relative_to(ROOT)) for f in booklets[:3]]} — the booklets are "
+          f"official-paper replicas, Japanese only")
+
+    if _LANG_REGISTRY_ERROR is not None:
+        return
+    gaps = []
+    for lvf in sorted((AGENTS / "jlpt-exam-structure" / "references" / "levels").glob("*.json")):
+        table = json.loads(lvf.read_text(encoding="utf-8")).get("advice") or []
+        want = {c: a["text"] for a in table for c in a["codes"]}
+        for lg in _LANG_ORDER:
+            have = LANGS.ui(lg, "exam").get("advice") or {}
+            miss = sorted(set(want) - set(have))
+            if miss:
+                gaps.append(f"{lg}: {lvf.stem} {miss}")
+            if lg == PRIMARY:
+                drift = sorted(c for c in want if c in have and have[c] != want[c])
+                if drift:
+                    gaps.append(f"{lg}: {lvf.stem} {drift} differ from the level table")
+    check("解答.html's weak-area advice exists in every language for every advised 大問",
+          not gaps, f"{'; '.join(gaps[:4])} — add it to languages/<code>/exam.json "
+          f"`advice` (the primary's copies the level table's `advice` text; a "
+          f"learner language's is written for that reader)")
 
 
 def check_kaisetsu_band_doc():
@@ -17864,6 +17958,7 @@ def main():
         check_filename_contracts()
         check_makefile_help()
         check_language_registry()
+        check_site_chrome()
         check_kaisetsu_band_doc()
         check_final_template_caps_documented()
         check_grandfather_sets_are_live()
@@ -17921,6 +18016,7 @@ def main():
         check_dokkai_template_repeat_prev_paper()
         check_topics_notes_quotes()
         KNOWLEDGE.check_all(check, warn, skip, git_tracks)
+        DRILL.check_all(check, warn, skip, git_tracks)
     check_tests()
     check_grader_parity()
 

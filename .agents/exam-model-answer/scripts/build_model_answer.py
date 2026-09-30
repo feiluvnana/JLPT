@@ -78,6 +78,7 @@ CHOUKAI_TAXONOMY = choukai_taxonomy_for()
 # suppressed. LANGS is the order the segments appear in.
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import langs as LANG_REG  # noqa: E402
+import lang_ui  # noqa: E402  (the site's one sticky bar + language dropdown)
 
 LANGS = LANG_REG.order()
 PRIMARY = LANG_REG.primary()
@@ -371,34 +372,11 @@ def parse_choukai_scripts(script_text: str):
     return blocks
 
 
-# Where the reader's language choice is remembered, and the generic half of the
-# switch that writes it. Both are shared with exam-app's 練習.html, which offers
-# the same two panes over the same explanation markup — one preference, so a
-# reader who picked Tiếng Việt on the practice page does not have to pick it
-# again on the model answer. Single-braced: injected through HTML_TEMPLATE's
-# {lang_switch_js} placeholder rather than living inside that .format() string.
-LANG_STORE_KEY = "kaisetsuLang"
-
-LANG_SWITCH_JS = """
-/* Flip the page to `lang`: `body[data-lang]` is what the CSS reads, so no JS
-   text substitution happens here and a label cannot go missing. Returns the
-   language actually applied (langs[0] when the argument is not on offer). */
-function applyLang(lang, langs, persist){
-  if (!langs.includes(lang)) lang = langs[0];
-  document.body.dataset.lang = lang;
-  document.documentElement.lang = lang;
-  document.querySelectorAll('.lang-btn').forEach(b => {
-    b.classList.toggle('active', b.dataset.lang === lang);
-  });
-  if (persist){ try { localStorage.setItem('%s', lang); } catch (e) {} }
-  return lang;
-}
-function savedLang(langs){
-  let s = null;
-  try { s = localStorage.getItem('%s'); } catch (e) {}
-  return langs.includes(s) ? s : langs[0];
-}
-""" % (LANG_STORE_KEY, LANG_STORE_KEY)
+# Where the reader's language choice is remembered: ONE key for the whole site,
+# owned by lang_ui (the switcher every page renders through topbar_html()).
+# Re-exported under its old name because exam-app's 練習.html and the gate read
+# it from here.
+LANG_STORE_KEY = lang_ui.LANG_STORE_KEY
 
 
 # The explanation box, and the language switch that flips between its two
@@ -487,29 +465,6 @@ EXPLANATION_CSS = """
    one line per active language, so adding one adds its rule. */
 .lang-pane { display: contents; }
 """ + LANG_REG.pane_css() + """
-
-.lang-switch {
-  display: inline-flex;
-  background: rgba(255,255,255,0.12);
-  border-radius: 9999px;
-  padding: 0.18rem;
-  gap: 0.15rem;
-}
-.lang-btn {
-  border: none;
-  background: transparent;
-  color: #bfdbfe;
-  font-family: inherit;
-  font-size: 0.8rem;
-  font-weight: 700;
-  padding: 0.28rem 0.85rem;
-  border-radius: 9999px;
-  cursor: pointer;
-  transition: all 0.15s ease;
-  white-space: nowrap;
-}
-.lang-btn:hover { color: #fff; }
-.lang-btn.active { background: #fff; color: var(--primary); }
 """
 
 
@@ -654,12 +609,12 @@ ruby rt {{
   user-select: none;
 }}
 
-/* Modern Top Header */
+/* The page header: ordinary page content under lang_ui's sticky topbar
+   (which carries the breadcrumb, the way back and the language dropdown). */
 header.app-header {{
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
   color: #fff;
-  padding: 1.5rem 1.25rem 1.6rem;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+  padding: 0.9rem 1.25rem 1rem;
 }}
 .header-inner {{
   max-width: 1050px;
@@ -703,21 +658,26 @@ header.app-header {{
   letter-spacing: 0.04em;
 }}
 h1.title {{
-  font-size: 1.7rem;
+  font-size: 1.35rem;
   font-weight: 900;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.2rem;
   color: #ffffff;
+}}
+@media (max-width: 600px) {{
+  header.app-header {{ padding: 0.7rem 0.9rem 0.8rem; }}
+  h1.title {{ font-size: 1.1rem; }}
+  .subtitle {{ font-size: 0.8rem; }}
 }}
 .subtitle {{
   color: #94a3b8;
   font-size: 0.92rem;
 }}
 
-/* Sticky Sub-navigation Bar */
+/* Section tabs + search: page content, NOT a second sticky bar (the one
+   sticky bar is lang_ui's topbar; only the audio player sticks under it). */
 .sticky-nav {{
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  position: relative;
+  z-index: 1;
   background: #ffffff;
   border-bottom: 1px solid var(--border-color);
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
@@ -997,7 +957,7 @@ h1.title {{
 /* Sticky Audio Player */
 #sticky-audio {{
   position: sticky;
-  top: 3.5rem;
+  top: calc(var(--tb-h) + 0.4rem);
   z-index: 95;
   background: #1e293b;
   color: #fff;
@@ -1019,8 +979,9 @@ h1.title {{
   white-space: nowrap;
 }}
 
-.header-right {{ display: inline-flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }}
-/* .lang-pane / .lang-switch / .lang-btn: see EXPLANATION_CSS above. */
+.q-card, .section-banner {{ scroll-margin-top: calc(var(--tb-h) + 4rem); }}
+/* .lang-pane: see EXPLANATION_CSS above; the bar and dropdown: lang_ui.TOPBAR_CSS. */
+{topbar_css}
 .trans-title {{
   font-size: 0.8rem;
   font-weight: 700;
@@ -1042,23 +1003,15 @@ footer {{
 @media print {{
   header.app-header, .sticky-nav, .tab-group, .search-box, #sticky-audio, .script-audio-jump {{ display: none !important; }}
   .ptext-switch {{ display: none !important; }}
-  .lang-switch {{ display: none !important; }}
   body {{ background: #fff; color: #000; font-size: 10pt; }}
   .q-card {{ page-break-inside: avoid; border: 1px solid #ccc; box-shadow: none; margin-bottom: 1.2cm; }}
 }}
 </style>
 </head>
 <body data-lang="{default_lang}">
-
+{topbar_html}
 <header class="app-header">
   <div class="header-inner">
-    <div class="header-top-row">
-      <a href="解答.html?screen=result" class="header-back-btn">{lbl_back}</a>
-      <div class="header-right">
-        {lang_switch_html}
-        <span class="header-badge">JLPT {level} MODEL ANSWER &amp; EXPLANATION</span>
-      </div>
-    </div>
     <h1 class="title">{lbl_title}</h1>
     <div class="subtitle">{lbl_subtitle}</div>
   </div>
@@ -1093,14 +1046,11 @@ footer {{
 <script>
 /* The only labels JS owns: three strings that live in attributes or in text it
    writes at runtime, so they cannot ship as .lang-pane markup. Everything else
-   on the page is rendered in both languages and switched by CSS. */
+   on the page is rendered in both languages and switched by CSS; the dropdown
+   (lang_ui, in the topbar) fires `langchange` and this repaints the three. */
 const LANG_STRINGS = {lang_strings_json};
-const LANGS = {langs_json};
 
-{lang_switch_js}
-
-function setLang(lang, persist) {{
-  lang = applyLang(lang, LANGS, persist);
+function paintLangStrings(lang) {{
   const s = LANG_STRINGS[lang] || {{}};
   document.title = s.doc_title || document.title;
   const search = document.getElementById('searchInput');
@@ -1111,9 +1061,8 @@ function setLang(lang, persist) {{
 
 {passage_toggle_js}
 
-(function initLang() {{
-  setLang(savedLang(LANGS), false);
-}})();
+document.addEventListener('langchange', e => paintLangStrings(e.detail.lang));
+paintLangStrings(currentLang());
 
 function filterSection(sec, btn) {{
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -1536,11 +1485,20 @@ def build_model_answer(test_dir: Path, out_path: Path | None = None) -> Path:
         """
 
     default_lang = langs[0]
-    lang_switch_html = ""
-    if len(langs) > 1:
-        lang_switch_html = '<div class="lang-switch">' + "".join(
-            f'<button class="lang-btn" data-lang="{lg}" onclick="setLang(\'{lg}\', true)">'
-            f'{LANG_NAME[lg]}</button>' for lg in langs) + '</div>'
+    # The one sticky bar (lang_ui): level › 試験 › this test's result › here,
+    # every link relative (the test sits two folders below the site root). The
+    # dropdown offers only the languages this paper has explanations in.
+    portal = lambda key, **kw: "".join(
+        f'<span class="lang-pane" data-lang="{c}">'
+        f'{LANG_REG.ui(c, "portal").get(key, key).format(**kw)}</span>' for c in LANG_REG.order())
+    topbar_html = lang_ui.topbar_html(
+        [(level, f"../../{level}/index.html"),
+         (portal("crumb_exam"), f"../../{level}/exam/index.html"),
+         (html.escape(test_id), "解答.html?screen=result"),
+         (pane(langs, lambda lg: UI[lg]["crumb"]), None)],
+        right_html=(f'<a class="tb-link tb-wide" href="解答.html?screen=result">'
+                    f'{pane(langs, lambda lg: UI[lg]["back"])}</a>'),
+        codes=langs)
 
     js_strings = {lg: {"doc_title": UI[lg]["doc_title"].format(test_id=test_id),
                        "search_placeholder": UI[lg]["search_placeholder"],
@@ -1551,7 +1509,7 @@ def build_model_answer(test_dir: Path, out_path: Path | None = None) -> Path:
     rendered_html = HTML_TEMPLATE.format(
         explanation_css=EXPLANATION_CSS,
         passage_toggle_css=PASSAGE_TOGGLE_CSS,
-        lang_switch_js=LANG_SWITCH_JS,
+        topbar_css=lang_ui.TOPBAR_CSS,
         passage_toggle_js=PASSAGE_TOGGLE_JS,
         test_id=test_id,
         level=level,
@@ -1559,10 +1517,8 @@ def build_model_answer(test_dir: Path, out_path: Path | None = None) -> Path:
         doc_title=UI[default_lang]["doc_title"].format(test_id=test_id),
         search_placeholder=UI[default_lang]["search_placeholder"],
         default_lang=default_lang,
-        lang_switch_html=lang_switch_html,
+        topbar_html=topbar_html,
         lang_strings_json=json.dumps(js_strings, ensure_ascii=False),
-        langs_json=json.dumps(langs),
-        lbl_back=pane(langs, lambda lg: UI[lg]["back"]),
         lbl_title=pane(langs, lambda lg: UI[lg]["title"].format(level=level)),
         lbl_subtitle=pane(langs, lambda lg: UI[lg]["subtitle"].format(
             test_id=test_id, n_all=n_all, n_gengo=n_gengo, n_choukai=n_choukai)),

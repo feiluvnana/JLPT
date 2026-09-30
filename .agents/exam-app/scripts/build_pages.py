@@ -24,7 +24,7 @@ It is `make serve`'s URL tree, file for file:
     _site/<LEVEL>/index.html           module chooser (試験 / 知識 / ドリル), every level
     _site/<LEVEL>/exam/index.html      that level's test list + its manifest
     _site/knowledge/<LEVEL>/**/*.html  the built 知識 pages, copied (no JSON)
-    _site/drill/<LEVEL>/**/*.html      the built ドリル pages (reserved; none yet)
+    _site/drill/<LEVEL>/**/*.html      the ドリル pages, BUILT here (build_drill; drill/ is gitignored)
     _site/tests/<id>/解答.html         screens 2 and 3, storage=local
     _site/tests/<id>/聴解.mp3          the audio the player streams
 
@@ -50,6 +50,10 @@ import build_interactive  # noqa: E402
 import index_view         # noqa: E402
 import portal_view        # noqa: E402
 import serve_sheet        # noqa: E402
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "jlpt-drill" / "scripts"))
+import build_drill        # noqa: E402
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "jlpt-exam-structure" / "scripts"))
+import level as LEVEL     # noqa: E402
 
 MARKER = ".nojekyll"      # also our "this directory is a build output" flag
 AUDIO = "聴解.mp3"
@@ -204,7 +208,7 @@ def build_site(out: Path, test_id: str | None = None, with_audio: bool = True,
 def copy_module(out: Path, src: Path) -> int:
     """A module's built pages, `<module>/<LEVEL>/**/*.html` → `_site/<module>/…`.
 
-    Used for the 知識 module (`knowledge/`) and the reserved ドリル module
+    Used for the 知識 module (`knowledge/`) and the ドリル module (`drill/`)
     (`drill/`, absent until its builder lands). Only the HTML, sub-folders
     included (a split 知識 category builds one page per part under
     `<stem>/`): the pages are self-contained (their builder bakes the data in),
@@ -226,6 +230,11 @@ def write_portal(out: Path, manifest: list[dict]) -> None:
     renders per request, baked once. Every level gets its module chooser and
     exam list, including a level with nothing yet: its cards say 準備中."""
     n_know = copy_module(out, portal_view.KNOWLEDGE)
+    # The ドリル pages are build output (gitignored, ~16 MB): every tracked input
+    # — tests/, logs/choukai_bank.json, knowledge/ — is on the CI checkout, so
+    # the site builds them fresh instead of shipping a committed snapshot.
+    for lv in LEVEL.available():
+        build_drill.build(lv)
     n_drill = copy_module(out, portal_view.DRILL)
     summaries = portal_view.level_summaries(manifest, portal_view.KNOWLEDGE, portal_view.DRILL)
     (out / portal_view.INDEX).write_text(portal_view.portal_html(summaries),

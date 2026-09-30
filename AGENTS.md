@@ -58,7 +58,7 @@ not route around it silently.
 
 - Skills are located in `.agents/<skill_name>/SKILL.md`.
 - Before performing any specialized task, **read the corresponding `SKILL.md` file** (they are plain Markdown — open them with whatever file-reading tool your harness provides).
-- **Claude Code**: the same 10 skills are exposed natively via symlinks in `.claude/skills/<skill_name>` → `.agents/<skill_name>`, so they are auto-discovered and invocable as `/<skill-name>`. `.agents/` remains the single copy — edit files there.
+- **Claude Code**: the same 11 skills are exposed natively via symlinks in `.claude/skills/<skill_name>` → `.agents/<skill_name>`, so they are auto-discovered and invocable as `/<skill-name>`. `.agents/` remains the single copy — edit files there.
 - **`jlpt-test-generation` is the entry point for generating mocks.** For importing an outside PDF/past paper, read `external-test-import` instead. For any other exam work, read `jlpt-test-generation` first — it routes to the other skills in order.
 - Available Skills:
   1. `jlpt-test-generation`: End-to-end mock exam generation orchestrator — **read this one first** for generated exams. Owns the 5-stage pass structure and the per-stage reading map.
@@ -69,8 +69,9 @@ not route around it silently.
   6. `exam-app`: Rendering and running the exam — booklet HTML (`build_booklet.py`, no PDF), the merged answer sheet `解答.html` with in-page grading (`build_interactive.py`), the untimed practice page `練習.html` (`build_practice.py`), the one server (`serve_sheet.py`), the static GitHub Pages build (`build_pages.py`), and CLI grading (`grade_answers.py`).
   7. `exam-qa-review`: The adversarial content QA pass every generated test must survive AFTER `make check` is green and BEFORE it is served or committed — run it with fresh eyes (a context that did not author the test). It also root-causes every finding back to the skill, script, or gate check that let it through, so the next test does not reproduce it.
   8. `external-test-import`: Import an external exam (PDF booklet ± script PDF ± MP3) into `tests/imported-<slug>/` project format — **use instead of generation** when the source already exists outside the pool pipeline.
-  9. `exam-model-answer`: Model answer & explanation generator — builds `模範解答.html` explaining every item (why the correct option is chosen and why each distractor is wrong) across Language Knowledge, Reading, and Listening. Two languages behind one segmented control (Japanese + Vietnamese), each **written**, not translated from the other, and each field inside the skill's terseness bands.
+  9. `exam-model-answer`: Model answer & explanation generator — builds `模範解答.html` explaining every item (why the correct option is chosen and why each distractor is wrong) across Language Knowledge, Reading, and Listening. One explanation set per registry language (today Japanese + Vietnamese) behind the site's language dropdown, each **written**, not translated from the other, and each field inside the skill's terseness bands.
   10. `jlpt-knowledge`: The knowledge module (知識) — per-level study cards + self-check quizzes (文法, 語彙, 漢字, 読解/聴解 guides) under `knowledge/<LEVEL>/`, sourced from `refs/` with original examples and per-language prose written independently; `make knowledge` builds the pages, progress stays per browser.
+  11. `jlpt-drill`: The drill module (ドリル) — practice on the REAL items already in the repo: 大問別練習 (question-type practice), 聴解トレーニング (clip-by-clip listening on the tests' own audio), 復習ノート (mistake notebook, Leitner 1/3/7/14/30 days), 進捗 (progress dashboard) and 読解ライブラリ (reading library) under `drill/<LEVEL>/`; authors no content — items and explanations are read from `詳細解説` and the clip bank; `make drill` builds the pages, the record stays per browser.
 
 ---
 
@@ -82,7 +83,7 @@ not route around it silently.
 AGENTS.md  CLAUDE.md  README.md   rules · Claude notes · setup
 GENERATE.md  IMPORT.md            copy-paste prompts: new mock / import a real paper
 Makefile                          every command (router: §4)
-.agents/<skill>/                  the 10 skills: SKILL.md + scripts/ + references/
+.agents/<skill>/                  the 11 skills: SKILL.md + scripts/ + references/
   jlpt-exam-structure/references/levels/<LEVEL>.json   per-level paper shape (level.py)
   exam-blueprint/references/pools.json                  N2 item pools
 tools/                            repo-level scripts: the gate (check_consistency.py),
@@ -90,8 +91,9 @@ tools/                            repo-level scripts: the gate (check_consistenc
                                   refs/ extractors, upload
 tests/<test_id>/                  one folder per paper (deliverables: table below)
 knowledge/<LEVEL>/                the knowledge module (知識): <category>.json + <category>.<code>.json → <category>.html (tracked; jlpt-knowledge)
-drill/<LEVEL>/                    RESERVED for the ドリル module (大問別練習, 聴解トレーニング, 復習ノート, …); served and
-                                  linked by the portal, disabled until its builder writes index.html
+drill/<LEVEL>/                    the drill module (ドリル): built pages only — 大問別練習, 聴解トレーニング, 復習ノート,
+                                  進捗, 読解ライブラリ, all baked from tests/ + logs/ (GITIGNORED build
+                                  output — make drill / make pages build it; jlpt-drill)
 logs/                             state the next run depends on (tracked)
 qa/                               QA reports and root-cause tables (tracked)
 refs/                             source archive: *.md extracts tracked, binaries on the
@@ -363,6 +365,7 @@ restate them here or in a skill; fix them there.
 | `make serve`              | `serve_sheet.py` — ONE server for every test (no id) | `exam-app` |
 | `make grade <id>`         | `grade_answers.py --test-dir tests/<id>` | `exam-app` |
 | `make knowledge [LEVEL=N2]` | `build_knowledge.py` → `knowledge/<LEVEL>/<category>.html` (a split category: `<category>/<part>.html` too) + `index.html` | `jlpt-knowledge` |
+| `make drill [LEVEL=N2]`   | `build_drill.py` → `drill/<LEVEL>/index.html` + one page per tool (大問別練習 and 読解ライブラリ: one page per 大問 under `<tool>/`) | `jlpt-drill` |
 | `make pages [<id>]`       | `build_pages.py` — static GitHub Pages site → `_site/` | `exam-app` |
 | `make preview-pages`      | serves `_site/` locally | `exam-app` |
 | `make init-import SLUG=…` | `init_imported_test.py` — scaffold `tests/imported-<slug>/` | `external-test-import` |
@@ -416,7 +419,7 @@ template, and the fix loop (one full QA round, then direct fixes); read it befor
 **Model answer generation (`make model-answer <id>`) MUST always be the final step**
 (for both generated exams and imported exams) — run only after QA/fidelity verification
 has passed and all questions, options, and keys are locked. The page carries TWO
-explanation sets behind an in-page segmented control — `詳細解説.json` (Japanese)
+explanation sets behind the site's language dropdown — `詳細解説.json` (Japanese)
 and `詳細解説.vi.json` (Vietnamese) — **authored in separate contexts, one per
 language, and written from the items rather than translated from each other**
 (`exam-model-answer`). Both panes print the exam's own wording, stored once,

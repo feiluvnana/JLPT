@@ -47,12 +47,12 @@ ruby rt {
   user-select: none;
 }
 
-/* Modern Top Header */
+/* The page header: ordinary page content under lang_ui's sticky topbar
+   (which carries the breadcrumb, the way back and the language dropdown). */
 header.app-header {
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
   color: #fff;
-  padding: 1.5rem 1.25rem 1.6rem;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+  padding: 0.9rem 1.25rem 1rem;
 }
 .header-inner {
   max-width: 1050px;
@@ -96,21 +96,26 @@ header.app-header {
   letter-spacing: 0.04em;
 }
 h1.title {
-  font-size: 1.7rem;
+  font-size: 1.35rem;
   font-weight: 900;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.2rem;
   color: #ffffff;
+}
+@media (max-width: 600px) {
+  header.app-header { padding: 0.7rem 0.9rem 0.8rem; }
+  h1.title { font-size: 1.1rem; }
+  .subtitle { font-size: 0.8rem; }
 }
 .subtitle {
   color: #94a3b8;
   font-size: 0.92rem;
 }
 
-/* Sticky Sub-navigation Bar */
+/* Section tabs + search: page content, NOT a second sticky bar (the one
+   sticky bar is lang_ui's topbar; only the audio player sticks under it). */
 .sticky-nav {
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  position: relative;
+  z-index: 1;
   background: #ffffff;
   border-bottom: 1px solid var(--border-color);
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
@@ -513,34 +518,11 @@ h1.title {
 body[data-lang="ja"] .lang-pane:not([data-lang="ja"]) { display: none !important; }
 body[data-lang="vi"] .lang-pane:not([data-lang="vi"]) { display: none !important; }
 
-.lang-switch {
-  display: inline-flex;
-  background: rgba(255,255,255,0.12);
-  border-radius: 9999px;
-  padding: 0.18rem;
-  gap: 0.15rem;
-}
-.lang-btn {
-  border: none;
-  background: transparent;
-  color: #bfdbfe;
-  font-family: inherit;
-  font-size: 0.8rem;
-  font-weight: 700;
-  padding: 0.28rem 0.85rem;
-  border-radius: 9999px;
-  cursor: pointer;
-  transition: all 0.15s ease;
-  white-space: nowrap;
-}
-.lang-btn:hover { color: #fff; }
-.lang-btn.active { background: #fff; color: var(--primary); }
-
 
 /* Sticky Audio Player */
 #sticky-audio {
   position: sticky;
-  top: 3.5rem;
+  top: calc(var(--tb-h) + 0.4rem);
   z-index: 95;
   background: #1e293b;
   color: #fff;
@@ -562,8 +544,62 @@ body[data-lang="vi"] .lang-pane:not([data-lang="vi"]) { display: none !important
   white-space: nowrap;
 }
 
-.header-right { display: inline-flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
-/* .lang-pane / .lang-switch / .lang-btn: see EXPLANATION_CSS above. */
+.q-card, .section-banner { scroll-margin-top: calc(var(--tb-h) + 4rem); }
+/* .lang-pane: see EXPLANATION_CSS above; the bar and dropdown: lang_ui.TOPBAR_CSS. */
+
+/* lang_ui: the one sticky bar. Slim on purpose — it must never cost reading room.
+   --tb-h is its height, for anything that sticks under it (players). */
+:root{--tb-h:40px}
+.topbar{position:sticky;top:0;z-index:1000;display:flex;align-items:center;gap:.8em;
+  height:var(--tb-h);padding:0 max(12px,env(safe-area-inset-right)) 0 max(12px,env(safe-area-inset-left));
+  box-sizing:border-box;width:100%;max-width:100%;overflow:hidden;margin:0;
+  background:rgba(15,23,42,.94);color:#e2e8f0;font:500 13px/1 var(--ui,system-ui,sans-serif);
+  -webkit-backdrop-filter:saturate(1.4) blur(6px);backdrop-filter:saturate(1.4) blur(6px)}
+.topbar .tb-crumbs{flex:1 1 0;min-width:2.5em;display:flex;align-items:center;gap:.45em;
+  white-space:nowrap;overflow:hidden}
+.topbar .tb-crumb{color:#cbd5e1;text-decoration:none;overflow:hidden;text-overflow:ellipsis;
+  min-width:0;flex:0 1 auto;line-height:1.5}
+.topbar a.tb-crumb:hover{color:#fff;text-decoration:underline}
+.topbar .tb-here{color:#fff;font-weight:700;flex:0 1 auto}
+.topbar .tb-sep{color:#64748b;flex:0 0 auto}
+.topbar .tb-right{flex:0 0 auto;max-width:calc(100% - 2.5em);min-width:0;justify-content:flex-end;display:flex;align-items:center;gap:.5em}
+.topbar .tb-right>*{flex:0 0 auto}
+.topbar .tb-right>.tb-shrink{flex:0 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;
+  white-space:nowrap}
+.topbar .tb-last{flex:0 1 auto}
+/* A page's own compact controls in the bar (right_html): links, buttons, read-outs. */
+.topbar .tb-link,.topbar .tb-btn{display:inline-flex;align-items:center;justify-content:center;
+  box-sizing:border-box;height:28px;min-height:0;padding:0 .75em;margin:0;border-radius:6px;
+  border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:#e2e8f0;
+  font:600 12.5px/1 var(--ui,system-ui,sans-serif);text-decoration:none;white-space:nowrap;
+  cursor:pointer;box-shadow:none}
+.topbar .tb-link:hover,.topbar .tb-btn:hover{background:rgba(255,255,255,.18);color:#fff}
+.topbar .tb-btn.primary{background:#2563eb;border-color:#2563eb;color:#fff}
+.topbar .tb-btn.primary:hover{background:#1d4ed8;border-color:#1d4ed8}
+.topbar .tb-btn:disabled,.topbar .tb-btn:disabled:hover{opacity:.45;cursor:not-allowed}
+.topbar .tb-btn.primary:disabled:hover{background:#2563eb}
+.topbar .tb-sub{color:#94a3b8;font-variant-numeric:tabular-nums;white-space:nowrap}
+.topbar .tb-short{display:none}
+.lang-select{font:600 12.5px/1 var(--ui,system-ui,sans-serif);color:#0f172a;background:#f8fafc;
+  border:1px solid #cbd5e1;border-radius:6px;height:28px;padding:0 1.6em 0 .6em;cursor:pointer;
+  max-width:9.5em}
+.lang-select:focus-visible{outline:2px solid #60a5fa;outline-offset:1px}
+.lang-select[disabled]{opacity:.6;cursor:default}
+@media (max-width:600px){
+  :root{--tb-h:36px}
+  .topbar{gap:.5em;font-size:12px;padding:0 8px}
+  .topbar .tb-wide{display:none!important}
+  /* On a phone only the page you are on is spelled out; the crumbs before it
+     stay reachable as a short trail that gives way first. */
+  .topbar .tb-crumb:not(.tb-last){max-width:5.5em;flex-shrink:4}
+  .topbar .tb-right{gap:.35em}
+  .lang-select{height:26px;font-size:12px;max-width:6em;padding:0 1.1em 0 .35em}
+  .topbar .tb-link,.topbar .tb-btn{height:26px;padding:0 .5em;font-size:12px}
+  .topbar .tb-long{display:none}
+  .topbar .tb-short{display:inline}
+}
+@media print{.topbar{display:none!important}}
+
 .trans-title {
   font-size: 0.8rem;
   font-weight: 700;
@@ -585,23 +621,52 @@ footer {
 @media print {
   header.app-header, .sticky-nav, .tab-group, .search-box, #sticky-audio, .script-audio-jump { display: none !important; }
   .ptext-switch { display: none !important; }
-  .lang-switch { display: none !important; }
   body { background: #fff; color: #000; font-size: 10pt; }
   .q-card { page-break-inside: avoid; border: 1px solid #ccc; box-shadow: none; margin-bottom: 1.2cm; }
 }
 </style>
 </head>
 <body data-lang="ja">
-
+<nav class="topbar" id="topbar" aria-label="breadcrumb"><div class="tb-crumbs"><a class="tb-crumb" href="../../N2/index.html">N2</a><span class="tb-sep" aria-hidden="true">›</span><a class="tb-crumb" href="../../N2/exam/index.html"><span class="lang-pane" data-lang="ja">試験</span><span class="lang-pane" data-lang="vi">Thi thử</span></a><span class="tb-sep" aria-hidden="true">›</span><a class="tb-crumb" href="解答.html?screen=result">20260928_2</a><span class="tb-sep" aria-hidden="true">›</span><span class="tb-crumb tb-here tb-last"><span class="lang-pane" data-lang="ja">模範解答・解説</span><span class="lang-pane" data-lang="vi">Đáp án & giải thích</span></span></div><div class="tb-right"><a class="tb-link tb-wide" href="解答.html?screen=result"><span class="lang-pane" data-lang="ja">← 採点結果へ戻る</span><span class="lang-pane" data-lang="vi">← Về kết quả chấm</span></a><select class="lang-select" aria-label="表示言語 / Ngôn ngữ" data-langs="[&quot;ja&quot;, &quot;vi&quot;]"><option value="ja" lang="ja">日本語</option><option value="vi" lang="vi">Tiếng Việt</option></select></div></nav><script>
+/* lang_ui: apply / remember / restore the reader's language. */
+(function(){
+  var KEY = "kaisetsuLang";
+  function offered(sel){
+    try { return JSON.parse(sel.getAttribute('data-langs')) || []; } catch (e) { return []; }
+  }
+  function applyLang(lang, persist){
+    var sel = document.querySelector('.lang-select');
+    var list = sel ? offered(sel) : ["ja", "vi"];
+    if (list.indexOf(lang) < 0) lang = list[0];
+    document.body.dataset.lang = lang;
+    document.documentElement.lang = {"ja": "ja", "vi": "vi"}[lang] || lang;
+    document.querySelectorAll('.lang-select').forEach(function(s){ s.value = lang; });
+    if (persist){ try { localStorage.setItem(KEY, lang); } catch (e) {} }
+    try { document.dispatchEvent(new CustomEvent('langchange', {detail: {lang: lang}})); } catch (e) {}
+    return lang;
+  }
+  function savedLang(){
+    try { return localStorage.getItem(KEY); } catch (e) { return null; }
+  }
+  if (window.applyLang) return;          /* one switcher per page */
+  window.applyLang = applyLang;
+  window.currentLang = function(){ return document.body.dataset.lang || "ja"; };
+  document.addEventListener('change', function(ev){
+    if (ev.target && ev.target.classList && ev.target.classList.contains('lang-select'))
+      applyLang(ev.target.value, true);
+  });
+  function boot(){ return applyLang(savedLang() || document.body.dataset.lang || "ja", false); }
+  /* This script sits right after the dropdown (topbar_html), so the language is
+     applied before the rest of the page paints; DOMContentLoaded fires the
+     event once more for listeners registered further down the page. */
+  if (document.querySelector('.lang-select')) boot();
+  document.addEventListener('DOMContentLoaded', boot);
+  /* Coming back through the history cache must show the language chosen since. */
+  window.addEventListener('pageshow', function(e){ if (e.persisted) boot(); });
+})();
+</script>
 <header class="app-header">
   <div class="header-inner">
-    <div class="header-top-row">
-      <a href="解答.html?screen=result" class="header-back-btn"><span class="lang-pane" data-lang="ja">← 採点結果へ戻る</span><span class="lang-pane" data-lang="vi">← Về kết quả chấm</span></a>
-      <div class="header-right">
-        <div class="lang-switch"><button class="lang-btn" data-lang="ja" onclick="setLang('ja', true)">日本語</button><button class="lang-btn" data-lang="vi" onclick="setLang('vi', true)">Tiếng Việt</button></div>
-        <span class="header-badge">JLPT N2 MODEL ANSWER &amp; EXPLANATION</span>
-      </div>
-    </div>
     <h1 class="title"><span class="lang-pane" data-lang="ja">日本語能力試験 N2 模範解答・詳細解説</span><span class="lang-pane" data-lang="vi">JLPT N2 — Đáp án mẫu và giải thích chi tiết</span></h1>
     <div class="subtitle"><span class="lang-pane" data-lang="ja">テスト <strong>20260928_2</strong> ｜ <span>全101問（言語知識・読解 71問 ＋ 聴解 30問）完全網羅解説集</span></span><span class="lang-pane" data-lang="vi">Đề <strong>20260928_2</strong> ｜ <span>Giải thích đầy đủ 101 câu (Kiến thức ngôn ngữ・Đọc hiểu 71 câu ＋ Nghe 30 câu)</span></span></div>
   </div>
@@ -4515,33 +4580,11 @@ footer {
 <script>
 /* The only labels JS owns: three strings that live in attributes or in text it
    writes at runtime, so they cannot ship as .lang-pane markup. Everything else
-   on the page is rendered in both languages and switched by CSS. */
+   on the page is rendered in both languages and switched by CSS; the dropdown
+   (lang_ui, in the topbar) fires `langchange` and this repaints the three. */
 const LANG_STRINGS = {"ja": {"doc_title": "テスト 20260928_2（模範解答・詳細解説）", "search_placeholder": "問題番号・キーワード検索...", "audio_ready": "準備完了", "audio_playing": "再生中: "}, "vi": {"doc_title": "Đề 20260928_2（Đáp án mẫu・Giải thích chi tiết）", "search_placeholder": "Tìm theo số câu hoặc từ khoá...", "audio_ready": "Sẵn sàng", "audio_playing": "Đang phát: "}};
-const LANGS = ["ja", "vi"];
 
-
-/* Flip the page to `lang`: `body[data-lang]` is what the CSS reads, so no JS
-   text substitution happens here and a label cannot go missing. Returns the
-   language actually applied (langs[0] when the argument is not on offer). */
-function applyLang(lang, langs, persist){
-  if (!langs.includes(lang)) lang = langs[0];
-  document.body.dataset.lang = lang;
-  document.documentElement.lang = lang;
-  document.querySelectorAll('.lang-btn').forEach(b => {
-    b.classList.toggle('active', b.dataset.lang === lang);
-  });
-  if (persist){ try { localStorage.setItem('kaisetsuLang', lang); } catch (e) {} }
-  return lang;
-}
-function savedLang(langs){
-  let s = null;
-  try { s = localStorage.getItem('kaisetsuLang'); } catch (e) {}
-  return langs.includes(s) ? s : langs[0];
-}
-
-
-function setLang(lang, persist) {
-  lang = applyLang(lang, LANGS, persist);
+function paintLangStrings(lang) {
   const s = LANG_STRINGS[lang] || {};
   document.title = s.doc_title || document.title;
   const search = document.getElementById('searchInput');
@@ -4557,9 +4600,8 @@ function setPassageText(btn, mode) {
 }
 
 
-(function initLang() {
-  setLang(savedLang(LANGS), false);
-})();
+document.addEventListener('langchange', e => paintLangStrings(e.detail.lang));
+paintLangStrings(currentLang());
 
 function filterSection(sec, btn) {
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));

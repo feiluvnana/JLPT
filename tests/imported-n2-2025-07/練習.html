@@ -192,131 +192,14 @@ hr { border: none; border-top: 1px dashed #999; margin: 22px 0; }
   --ui:"Noto Sans JP",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Hiragino Sans","Yu Gothic",sans-serif;
   --serif:"Noto Serif JP","Yu Mincho",serif;
 }
-/* The bar spans the full window on every screen, so the scrollbar sits ON its
-   right edge — the horizontal padding has to clear it or it covers 採点する. */
-#bar{
-  position:sticky;
-  top:0;
-  z-index:99;
-  background:linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  color:#ffffff;
-  box-sizing:border-box;
-  min-height:3.4em;
-  padding:0 1.8em;
-  display:flex;
-  flex-wrap:nowrap;
-  gap:.6em 1.2em;
-  align-items:center;
-  font-family:var(--ui);
-  font-size:11pt;
-  box-shadow:0 4px 14px rgba(0,0,0,0.08);
-  border-bottom:1px solid rgba(255,255,255,0.08);
-}
-#bar b{
-  font-size:12.5pt;
-  font-weight:800;
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
-  min-width:0;
-  max-width:20em;
-  color:#ffffff;
-}
-#bar .sub{
-  font-size:9.5pt;
-  color:#94a3b8;
-  font-variant-numeric:tabular-nums;
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
-  min-width:0;
-}
-#bar .grow{
-  flex:1 1 auto;
-  min-width:.5em;
-}
+/* The sticky bar itself is lang_ui.TOPBAR_CSS (exam-model-answer) — ONE bar on
+   every page. This is the sheet's solving-controls group inside it. */
 #bar-controls{
   display:flex;
   flex-wrap:nowrap;
   align-items:center;
   gap:.55em;
   flex:0 0 auto;
-}
-/* The bar's own buttons — hence `:not(.lang-btn)`, here and in the mobile block
-   below. 練習.html drops exam-model-answer's segmented language control
-   (.lang-switch/.lang-btn, styled in build_model_answer.EXPLANATION_CSS) into
-   this bar, and an id-level rule here outranks every class rule that control
-   brings with it: the pill came out as two bar buttons. A control imported with
-   its own styling opts out, rather than having that styling restated here —
-   restating it is the copy that would drift. */
-#bar button:not(.lang-btn){
-  font-size:10pt;
-  font-weight:700;
-  padding:.3em .85em;
-  cursor:pointer;
-  border-radius:6px;
-  border:1px solid rgba(255,255,255,0.2);
-  background:rgba(255,255,255,0.1);
-  color:#ffffff;
-  font-family:var(--ui);
-  white-space:nowrap;
-  line-height:1.35;
-  min-height:34px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  transition:all .15s ease;
-}
-#bar button:not(.lang-btn):hover{
-  background:rgba(255,255,255,0.2);
-  border-color:rgba(255,255,255,0.35);
-}
-/* 採点する stays disabled until every item is answered (build_interactive's
-   updateCounter). It must READ disabled, not just refuse the click. */
-#bar button:disabled{
-  opacity:.45;
-  cursor:not-allowed;
-  box-shadow:none;
-}
-#bar button:disabled:hover{
-  background:rgba(255,255,255,0.1);
-  border-color:rgba(255,255,255,0.2);
-}
-#bar button.primary:disabled,
-#bar button.primary:disabled:hover{
-  background:var(--accent);
-  border-color:var(--accent);
-}
-#bar button.primary{
-  background:var(--accent);
-  color:#ffffff;
-  border-color:var(--accent);
-  box-shadow:0 2px 6px rgba(37,99,235,0.3);
-}
-#bar button.primary:hover{
-  background:var(--accent-hover);
-  border-color:var(--accent-hover);
-}
-#bar a.back{
-  display:inline-flex;
-  align-items:center;
-  gap:.35em;
-  color:#cbd5e1;
-  text-decoration:none;
-  font-size:10pt;
-  font-weight:700;
-  white-space:nowrap;
-  flex:0 0 auto;
-  padding:.3em .75em;
-  border-radius:6px;
-  background:rgba(255,255,255,0.08);
-  border:1px solid rgba(255,255,255,0.15);
-  transition:all .15s ease;
-}
-#bar a.back:hover{
-  background:rgba(255,255,255,0.18);
-  color:#ffffff;
-  border-color:rgba(255,255,255,0.3);
 }
 .ui-btn{
   display:inline-flex;
@@ -502,40 +385,10 @@ hr { border: none; border-top: 1px dashed #999; margin: 22px 0; }
   font-family:var(--ui);
 }
 @media screen and (max-width: 48em){
-  #bar{
-    padding:.5em .9em;
-    gap:.4em .8em;
-    flex-wrap:wrap;
-    font-size:10pt;
-  }
-  #bar b{
-    max-width:12em;
-    font-size:11.5pt;
-  }
-  #bar .sub{
-    font-size:9pt;
-  }
-  #bar-controls{
-    gap:.4em;
-  }
-  #bar button:not(.lang-btn){
-    font-size:9.5pt;
-    padding:.3em .7em;
-    min-height:34px;
-  }
   .ui-btn{
     font-size:10pt;
     padding:.4em .9em;
     min-height:36px;
-  }
-}
-@media screen and (max-width: 32em){
-  #bar b{
-    max-width:8.5em;
-    font-size:10.5pt;
-  }
-  #where{
-    display:none;
   }
 }
 
@@ -548,131 +401,14 @@ hr { border: none; border-top: 1px dashed #999; margin: 22px 0; }
   --ui:"Noto Sans JP",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Hiragino Sans","Yu Gothic",sans-serif;
   --serif:"Noto Serif JP","Yu Mincho",serif;
 }
-/* The bar spans the full window on every screen, so the scrollbar sits ON its
-   right edge — the horizontal padding has to clear it or it covers 採点する. */
-#bar{
-  position:sticky;
-  top:0;
-  z-index:99;
-  background:linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  color:#ffffff;
-  box-sizing:border-box;
-  min-height:3.4em;
-  padding:0 1.8em;
-  display:flex;
-  flex-wrap:nowrap;
-  gap:.6em 1.2em;
-  align-items:center;
-  font-family:var(--ui);
-  font-size:11pt;
-  box-shadow:0 4px 14px rgba(0,0,0,0.08);
-  border-bottom:1px solid rgba(255,255,255,0.08);
-}
-#bar b{
-  font-size:12.5pt;
-  font-weight:800;
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
-  min-width:0;
-  max-width:20em;
-  color:#ffffff;
-}
-#bar .sub{
-  font-size:9.5pt;
-  color:#94a3b8;
-  font-variant-numeric:tabular-nums;
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
-  min-width:0;
-}
-#bar .grow{
-  flex:1 1 auto;
-  min-width:.5em;
-}
+/* The sticky bar itself is lang_ui.TOPBAR_CSS (exam-model-answer) — ONE bar on
+   every page. This is the sheet's solving-controls group inside it. */
 #bar-controls{
   display:flex;
   flex-wrap:nowrap;
   align-items:center;
   gap:.55em;
   flex:0 0 auto;
-}
-/* The bar's own buttons — hence `:not(.lang-btn)`, here and in the mobile block
-   below. 練習.html drops exam-model-answer's segmented language control
-   (.lang-switch/.lang-btn, styled in build_model_answer.EXPLANATION_CSS) into
-   this bar, and an id-level rule here outranks every class rule that control
-   brings with it: the pill came out as two bar buttons. A control imported with
-   its own styling opts out, rather than having that styling restated here —
-   restating it is the copy that would drift. */
-#bar button:not(.lang-btn){
-  font-size:10pt;
-  font-weight:700;
-  padding:.3em .85em;
-  cursor:pointer;
-  border-radius:6px;
-  border:1px solid rgba(255,255,255,0.2);
-  background:rgba(255,255,255,0.1);
-  color:#ffffff;
-  font-family:var(--ui);
-  white-space:nowrap;
-  line-height:1.35;
-  min-height:34px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  transition:all .15s ease;
-}
-#bar button:not(.lang-btn):hover{
-  background:rgba(255,255,255,0.2);
-  border-color:rgba(255,255,255,0.35);
-}
-/* 採点する stays disabled until every item is answered (build_interactive's
-   updateCounter). It must READ disabled, not just refuse the click. */
-#bar button:disabled{
-  opacity:.45;
-  cursor:not-allowed;
-  box-shadow:none;
-}
-#bar button:disabled:hover{
-  background:rgba(255,255,255,0.1);
-  border-color:rgba(255,255,255,0.2);
-}
-#bar button.primary:disabled,
-#bar button.primary:disabled:hover{
-  background:var(--accent);
-  border-color:var(--accent);
-}
-#bar button.primary{
-  background:var(--accent);
-  color:#ffffff;
-  border-color:var(--accent);
-  box-shadow:0 2px 6px rgba(37,99,235,0.3);
-}
-#bar button.primary:hover{
-  background:var(--accent-hover);
-  border-color:var(--accent-hover);
-}
-#bar a.back{
-  display:inline-flex;
-  align-items:center;
-  gap:.35em;
-  color:#cbd5e1;
-  text-decoration:none;
-  font-size:10pt;
-  font-weight:700;
-  white-space:nowrap;
-  flex:0 0 auto;
-  padding:.3em .75em;
-  border-radius:6px;
-  background:rgba(255,255,255,0.08);
-  border:1px solid rgba(255,255,255,0.15);
-  transition:all .15s ease;
-}
-#bar a.back:hover{
-  background:rgba(255,255,255,0.18);
-  color:#ffffff;
-  border-color:rgba(255,255,255,0.3);
 }
 .ui-btn{
   display:inline-flex;
@@ -858,59 +594,33 @@ hr { border: none; border-top: 1px dashed #999; margin: 22px 0; }
   font-family:var(--ui);
 }
 @media screen and (max-width: 48em){
-  #bar{
-    padding:.5em .9em;
-    gap:.4em .8em;
-    flex-wrap:wrap;
-    font-size:10pt;
-  }
-  #bar b{
-    max-width:12em;
-    font-size:11.5pt;
-  }
-  #bar .sub{
-    font-size:9pt;
-  }
-  #bar-controls{
-    gap:.4em;
-  }
-  #bar button:not(.lang-btn){
-    font-size:9.5pt;
-    padding:.3em .7em;
-    min-height:34px;
-  }
   .ui-btn{
     font-size:10pt;
     padding:.4em .9em;
     min-height:36px;
   }
 }
-@media screen and (max-width: 32em){
-  #bar b{
-    max-width:8.5em;
-    font-size:10.5pt;
-  }
-  #where{
-    display:none;
-  }
-}
 
 html.is-result-mode #screen-exam{display:none!important}
+/* The crumb that names this page: 受験 on screen 2, 採点結果 on screen 3. */
+#bar-title .bt-result,html.is-result-mode #bar-title .bt-exam{display:none}
+html.is-result-mode #bar-title .bt-result{display:inline}
 html.is-result-mode #screen-result{display:block!important}
 html.is-result-mode #bar-controls{display:none!important}
 html.is-result-mode #where{display:none!important}
 /* 残り時間 — the section countdown. Ticks only while this tab is visible AND
    focused (see clockRunning); red under five minutes, amber while frozen. */
 #clock{font-variant-numeric:tabular-nums;font-weight:700;color:#e2e8f0}
+#bar-controls{gap:.45em}
 #clock.paused{color:#f59e0b}
 #clock.low{color:#fca5a5}
 /* The two sections as tabs. During a sitting they are INDICATORS, not
    navigation: the future one is out of reach and the finished one is closed
    for good. They become real buttons only on a graded paper (PHASE 'done'). */
 #tabs{display:flex;gap:.3em;flex:0 0 auto}
-#tabs button{font-size:9.5pt;font-weight:700;padding:.28em .7em;border-radius:6px;
+#tabs button{font:700 12px/1 var(--ui);padding:0 .6em;height:26px;border-radius:6px;
   border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.06);
-  color:#cbd5e1;white-space:nowrap;min-height:30px;cursor:default}
+  color:#cbd5e1;white-space:nowrap;cursor:default}
 #tabs button.active{background:#2563eb;border-color:#2563eb;color:#ffffff}
 #tabs button.finished{color:#64748b}
 #tabs button.clickable{cursor:pointer}
@@ -959,7 +669,7 @@ html.is-result-mode #where{display:none!important}
 .opt{display:flex;align-items:flex-start;gap:.5em;margin:.15em 0}
 .opt .b{flex:0 0 auto;margin-top:.25em}
 #done{font-variant-numeric:tabular-nums}
-#player{position:sticky;top:3.4em;z-index:98;background:#1e293b;color:#ffffff;
+#player{position:sticky;top:var(--tb-h);z-index:98;background:#1e293b;color:#ffffff;
   border-bottom:1px solid rgba(255,255,255,0.1);
   padding:.9em 1.2em;font-family:var(--ui);box-shadow:0 4px 12px rgba(0,0,0,0.1)}
 #player audio{width:100%;height:36px;display:block}
@@ -985,8 +695,8 @@ html.is-result-mode #where{display:none!important}
 #player.noaudio .pctl button:hover,#player.noaudio .pctl select:hover{background:#fee2e2}
 #player.noaudio .pctl select option{background:#ffffff;color:#7f1d1d}
 #player.noaudio .pctl .pick{color:#b91c1c;text-decoration:underline}
-#player.noaudio::after{content:"聴解.mp3 を読み込めません。「MP3を選ぶ」から指定してください。";
-  display:block;font-size:9.5pt;color:#991b1b;margin-top:.3em}
+.noaudio-msg{display:none}
+#player.noaudio .noaudio-msg{display:block;font-size:9.5pt;color:#991b1b;margin-top:.3em}
 .section-divider{margin:3.5em 0;border:0;border-top:2px dashed #cbd5e1}
 .section-title{font-size:15pt;font-weight:800;background:linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
   color:#ffffff;padding:.55em 1em;margin:2em 0 1.2em;border-radius:8px;
@@ -1051,7 +761,7 @@ html.is-result-mode #where{display:none!important}
 .rs-script{margin:.6em 0 0;padding:.75em .95em;background:#ffffff;
   border:1px solid #e2e8f0;border-radius:8px;font-size:10pt;line-height:1.7}
 .rs-script p{margin:.2em 0}
-@media print{#bar,#player,.rs-nav{display:none}.qa label{border-color:#666}}
+@media print{#player,.rs-nav{display:none}.qa label{border-color:#666}}
 @media screen{
   body{max-width:none;margin:0;padding:0;background:#f8fafc}
   #screen-exam,#screen-result{max-width:62em;margin:1.5em auto 4em;background:#ffffff;
@@ -1163,29 +873,6 @@ html.is-result-mode #where{display:none!important}
 body[data-lang="ja"] .lang-pane:not([data-lang="ja"]) { display: none !important; }
 body[data-lang="vi"] .lang-pane:not([data-lang="vi"]) { display: none !important; }
 
-.lang-switch {
-  display: inline-flex;
-  background: rgba(255,255,255,0.12);
-  border-radius: 9999px;
-  padding: 0.18rem;
-  gap: 0.15rem;
-}
-.lang-btn {
-  border: none;
-  background: transparent;
-  color: #bfdbfe;
-  font-family: inherit;
-  font-size: 0.8rem;
-  font-weight: 700;
-  padding: 0.28rem 0.85rem;
-  border-radius: 9999px;
-  cursor: pointer;
-  transition: all 0.15s ease;
-  white-space: nowrap;
-}
-.lang-btn:hover { color: #fff; }
-.lang-btn.active { background: #fff; color: var(--primary); }
-
 .passage-head {
   display: flex;
   align-items: center;
@@ -1233,14 +920,66 @@ body[data-lang="vi"] .lang-pane:not([data-lang="vi"]) { display: none !important
   box-shadow: 0 1px 2px rgba(15,23,42,0.12);
 }
 
+/* lang_ui: the one sticky bar. Slim on purpose — it must never cost reading room.
+   --tb-h is its height, for anything that sticks under it (players). */
+:root{--tb-h:40px}
+.topbar{position:sticky;top:0;z-index:1000;display:flex;align-items:center;gap:.8em;
+  height:var(--tb-h);padding:0 max(12px,env(safe-area-inset-right)) 0 max(12px,env(safe-area-inset-left));
+  box-sizing:border-box;width:100%;max-width:100%;overflow:hidden;margin:0;
+  background:rgba(15,23,42,.94);color:#e2e8f0;font:500 13px/1 var(--ui,system-ui,sans-serif);
+  -webkit-backdrop-filter:saturate(1.4) blur(6px);backdrop-filter:saturate(1.4) blur(6px)}
+.topbar .tb-crumbs{flex:1 1 0;min-width:2.5em;display:flex;align-items:center;gap:.45em;
+  white-space:nowrap;overflow:hidden}
+.topbar .tb-crumb{color:#cbd5e1;text-decoration:none;overflow:hidden;text-overflow:ellipsis;
+  min-width:0;flex:0 1 auto;line-height:1.5}
+.topbar a.tb-crumb:hover{color:#fff;text-decoration:underline}
+.topbar .tb-here{color:#fff;font-weight:700;flex:0 1 auto}
+.topbar .tb-sep{color:#64748b;flex:0 0 auto}
+.topbar .tb-right{flex:0 0 auto;max-width:calc(100% - 2.5em);min-width:0;justify-content:flex-end;display:flex;align-items:center;gap:.5em}
+.topbar .tb-right>*{flex:0 0 auto}
+.topbar .tb-right>.tb-shrink{flex:0 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;
+  white-space:nowrap}
+.topbar .tb-last{flex:0 1 auto}
+/* A page's own compact controls in the bar (right_html): links, buttons, read-outs. */
+.topbar .tb-link,.topbar .tb-btn{display:inline-flex;align-items:center;justify-content:center;
+  box-sizing:border-box;height:28px;min-height:0;padding:0 .75em;margin:0;border-radius:6px;
+  border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:#e2e8f0;
+  font:600 12.5px/1 var(--ui,system-ui,sans-serif);text-decoration:none;white-space:nowrap;
+  cursor:pointer;box-shadow:none}
+.topbar .tb-link:hover,.topbar .tb-btn:hover{background:rgba(255,255,255,.18);color:#fff}
+.topbar .tb-btn.primary{background:#2563eb;border-color:#2563eb;color:#fff}
+.topbar .tb-btn.primary:hover{background:#1d4ed8;border-color:#1d4ed8}
+.topbar .tb-btn:disabled,.topbar .tb-btn:disabled:hover{opacity:.45;cursor:not-allowed}
+.topbar .tb-btn.primary:disabled:hover{background:#2563eb}
+.topbar .tb-sub{color:#94a3b8;font-variant-numeric:tabular-nums;white-space:nowrap}
+.topbar .tb-short{display:none}
+.lang-select{font:600 12.5px/1 var(--ui,system-ui,sans-serif);color:#0f172a;background:#f8fafc;
+  border:1px solid #cbd5e1;border-radius:6px;height:28px;padding:0 1.6em 0 .6em;cursor:pointer;
+  max-width:9.5em}
+.lang-select:focus-visible{outline:2px solid #60a5fa;outline-offset:1px}
+.lang-select[disabled]{opacity:.6;cursor:default}
+@media (max-width:600px){
+  :root{--tb-h:36px}
+  .topbar{gap:.5em;font-size:12px;padding:0 8px}
+  .topbar .tb-wide{display:none!important}
+  /* On a phone only the page you are on is spelled out; the crumbs before it
+     stay reachable as a short trail that gives way first. */
+  .topbar .tb-crumb:not(.tb-last){max-width:5.5em;flex-shrink:4}
+  .topbar .tb-right{gap:.35em}
+  .lang-select{height:26px;font-size:12px;max-width:6em;padding:0 1.1em 0 .35em}
+  .topbar .tb-link,.topbar .tb-btn{height:26px;padding:0 .5em;font-size:12px}
+  .topbar .tb-long{display:none}
+  .topbar .tb-short{display:inline}
+}
+@media print{.topbar{display:none!important}}
+
+.lang-pane{display:contents}
+body[data-lang="ja"] .lang-pane:not([data-lang="ja"]) { display: none !important; }
+body[data-lang="vi"] .lang-pane:not([data-lang="vi"]) { display: none !important; }
 /* --primary and --font-sans are what exam-model-answer's imported rules
    (EXPLANATION_CSS, PASSAGE_TOGGLE_CSS) read for their accent colour and their
    UI face; this page's own face is app_style's --ui. */
 :root{--primary:#1e3a8a;--font-sans:var(--ui)}
-/* The switch is exam-model-answer's control, styling and all (EXPLANATION_CSS);
-   all this page says is where it sits and which UI face it inherits — its
-   .lang-btn rules use font-family:inherit, and the booklet body font is 明朝. */
-#bar .lang-switch{flex:0 0 auto;font-family:var(--ui)}
 .pr-note{font-family:var(--ui);font-size:10pt;line-height:1.8;color:#334155;
   background:#f1f5f9;border:1px solid #cbd5e1;border-left:4px solid #2563eb;
   border-radius:0 8px 8px 0;padding:.9em 1.1em;margin:0 0 1.6em}
@@ -1286,13 +1025,50 @@ body[data-lang="vi"] .lang-pane:not([data-lang="vi"]) { display: none !important
 .pr-tr{border:1px solid #1a1a1a;background:#fff;margin:10px 0 16px;
   padding:10px 16px;overflow-x:auto;font-family:var(--ui);line-height:1.95}
 @media print{
-  .pr-btn,.pr-verdict,.pr-note,#bar,.pr-ptext{display:none}
+  .pr-btn,.pr-verdict,.pr-note,.pr-ptext{display:none}
 }
 @media screen and (max-width:48em){
   .pr{margin-left:.2em}
   .pr-btn{min-height:36px;font-size:10pt}
 }
-</style></head><body data-lang="ja"><div id="bar"><a class="back" href="../../N2/exam/index.html"><span class="lang-pane" data-lang="ja">← テスト一覧</span><span class="lang-pane" data-lang="vi">← Danh sách đề</span></a><b id="bar-title"><span class="lang-pane" data-lang="ja">テスト imported-n2-2025-07（練習モード）</span><span class="lang-pane" data-lang="vi">Đề imported-n2-2025-07（Luyện tập）</span></b><span class="sub" id="where"></span><span class="grow"></span><span id="bar-controls"><span class="lang-switch"><button class="lang-btn" data-lang="ja" onclick="setLang('ja')">日本語</button><button class="lang-btn" data-lang="vi" onclick="setLang('vi')">Tiếng Việt</button></span><span class="sub"><span class="lang-pane" data-lang="ja">解答</span><span class="lang-pane" data-lang="vi">Đã chọn</span> <b id="done">0 / 101</b></span> <button type="button" aria-expanded="false" onclick="toggleAll(this)"><span class="pr-lbl show"><span class="lang-pane" data-lang="ja">解説をすべて開く</span><span class="lang-pane" data-lang="vi">Mở tất cả giải thích</span></span><span class="pr-lbl hide"><span class="lang-pane" data-lang="ja">解説をすべて閉じる</span><span class="lang-pane" data-lang="vi">Đóng tất cả giải thích</span></span></button> <button type="button" onclick="location.href='解答.html'"><span class="lang-pane" data-lang="ja">試験モードへ</span><span class="lang-pane" data-lang="vi">Sang chế độ thi</span></button></span></div><div id="screen-exam"><div class="pr-note"><span class="lang-pane" data-lang="ja">練習モードです。制限時間も採点もありません。全101問が1ページに並んでいます。各設問の「解説を見る」で、その設問の模範解答と解説だけを開けます。解答はどこにも保存されません（再読み込みで消えます）。</span><span class="lang-pane" data-lang="vi">Chế độ luyện tập: không giới hạn thời gian, không chấm điểm. Toàn bộ 101 câu nằm trên một trang. Bấm 「Xem giải thích」 ở mỗi câu để mở đáp án mẫu và giải thích của riêng câu đó. Lựa chọn của bạn không được lưu ở đâu cả (tải lại trang là mất).</span><div class="pr-note-links"><a class="ui-btn" href="模範解答.html"><span class="lang-pane" data-lang="ja">模範解答をまとめて見る</span><span class="lang-pane" data-lang="vi">Xem toàn bộ đáp án mẫu</span></a></div></div><h1 class="section-title">JLPT N2 言語知識（文字・語彙・文法）・読解</h1><h1 class="bk-part">【文字・語彙】</h1>
+</style></head><body data-lang="ja"><nav class="topbar" id="topbar" aria-label="breadcrumb"><div class="tb-crumbs"><a class="tb-crumb" href="../../N2/index.html">N2</a><span class="tb-sep" aria-hidden="true">›</span><a class="tb-crumb" href="../../N2/exam/index.html"><span class="lang-pane" data-lang="ja">試験</span><span class="lang-pane" data-lang="vi">Thi thử</span></a><span class="tb-sep" aria-hidden="true">›</span><span class="tb-crumb tb-here tb-last"><span class="lang-pane" data-lang="ja">テスト imported-n2-2025-07（練習モード）</span><span class="lang-pane" data-lang="vi">Đề imported-n2-2025-07（Luyện tập）</span></span></div><div class="tb-right"><span class="tb-sub tb-shrink tb-wide" id="where"></span><span class="tb-sub"><span class="tb-long"><span class="lang-pane" data-lang="ja">解答</span><span class="lang-pane" data-lang="vi">Đã chọn</span> </span><b id="done">0 / 101</b></span><button type="button" class="tb-btn tb-wide" aria-expanded="false" onclick="toggleAll(this)"><span class="pr-lbl show"><span class="lang-pane" data-lang="ja">解説をすべて開く</span><span class="lang-pane" data-lang="vi">Mở tất cả giải thích</span></span><span class="pr-lbl hide"><span class="lang-pane" data-lang="ja">解説をすべて閉じる</span><span class="lang-pane" data-lang="vi">Đóng tất cả giải thích</span></span></button><button type="button" class="tb-btn" onclick="location.href='解答.html'"><span class="lang-pane" data-lang="ja">試験モードへ</span><span class="lang-pane" data-lang="vi">Sang chế độ thi</span></button><select class="lang-select" aria-label="表示言語 / Ngôn ngữ" data-langs="[&quot;ja&quot;, &quot;vi&quot;]"><option value="ja" lang="ja">日本語</option><option value="vi" lang="vi">Tiếng Việt</option></select></div></nav><script>
+/* lang_ui: apply / remember / restore the reader's language. */
+(function(){
+  var KEY = "kaisetsuLang";
+  function offered(sel){
+    try { return JSON.parse(sel.getAttribute('data-langs')) || []; } catch (e) { return []; }
+  }
+  function applyLang(lang, persist){
+    var sel = document.querySelector('.lang-select');
+    var list = sel ? offered(sel) : ["ja", "vi"];
+    if (list.indexOf(lang) < 0) lang = list[0];
+    document.body.dataset.lang = lang;
+    document.documentElement.lang = {"ja": "ja", "vi": "vi"}[lang] || lang;
+    document.querySelectorAll('.lang-select').forEach(function(s){ s.value = lang; });
+    if (persist){ try { localStorage.setItem(KEY, lang); } catch (e) {} }
+    try { document.dispatchEvent(new CustomEvent('langchange', {detail: {lang: lang}})); } catch (e) {}
+    return lang;
+  }
+  function savedLang(){
+    try { return localStorage.getItem(KEY); } catch (e) { return null; }
+  }
+  if (window.applyLang) return;          /* one switcher per page */
+  window.applyLang = applyLang;
+  window.currentLang = function(){ return document.body.dataset.lang || "ja"; };
+  document.addEventListener('change', function(ev){
+    if (ev.target && ev.target.classList && ev.target.classList.contains('lang-select'))
+      applyLang(ev.target.value, true);
+  });
+  function boot(){ return applyLang(savedLang() || document.body.dataset.lang || "ja", false); }
+  /* This script sits right after the dropdown (topbar_html), so the language is
+     applied before the rest of the page paints; DOMContentLoaded fires the
+     event once more for listeners registered further down the page. */
+  if (document.querySelector('.lang-select')) boot();
+  document.addEventListener('DOMContentLoaded', boot);
+  /* Coming back through the history cache must show the language chosen since. */
+  window.addEventListener('pageshow', function(e){ if (e.persisted) boot(); });
+})();
+</script><div id="screen-exam"><div class="pr-note"><span class="lang-pane" data-lang="ja">練習モードです。制限時間も採点もありません。全101問が1ページに並んでいます。各設問の「解説を見る」で、その設問の模範解答と解説だけを開けます。解答はどこにも保存されません（再読み込みで消えます）。</span><span class="lang-pane" data-lang="vi">Chế độ luyện tập: không giới hạn thời gian, không chấm điểm. Toàn bộ 101 câu nằm trên một trang. Bấm 「Xem giải thích」 ở mỗi câu để mở đáp án mẫu và giải thích của riêng câu đó. Lựa chọn của bạn không được lưu ở đâu cả (tải lại trang là mất).</span><div class="pr-note-links"><a class="ui-btn" href="模範解答.html"><span class="lang-pane" data-lang="ja">模範解答をまとめて見る</span><span class="lang-pane" data-lang="vi">Xem toàn bộ đáp án mẫu</span></a></div></div><h1 class="section-title">JLPT N2 言語知識（文字・語彙・文法）・読解</h1><h1 class="bk-part">【文字・語彙】</h1>
 <h2 class="bk-mondai"><span class="bk-mn">問題1</span> <span class="bk-mi">＿＿の言葉の読み方として最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
 <p><strong class="bk-qn">1</strong> 素晴らしい<strong class="bk-tw">才能</strong>を発揮した。<br />
 <span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">ぜいのう</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">ざいのう</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">せいのう</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">さいのう</span></span></span></p>
@@ -1859,7 +1635,7 @@ body[data-lang="vi"] .lang-pane:not([data-lang="vi"]) { display: none !important
 <span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">12月7日までにホームページか電話で空きを確認し申し込む。</span></span><br />
 <span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">12月7日までに電話で空きを確認し申し込む。</span></span></p>
 <div class="qa"><label><input type="radio" name="q_71" value="1"><span>1</span></label><label><input type="radio" name="q_71" value="2"><span>2</span></label><label><input type="radio" name="q_71" value="3"><span>3</span></label><label><input type="radio" name="q_71" value="4"><span>4</span></label></div>
-<div class="pr" data-q="71"><button type="button" class="pr-btn" aria-expanded="false" onclick="toggleExp(this)"><span class="pr-lbl show"><span class="lang-pane" data-lang="ja">解説を見る</span><span class="lang-pane" data-lang="vi">Xem giải thích</span></span><span class="pr-lbl hide"><span class="lang-pane" data-lang="ja">解説を閉じる</span><span class="lang-pane" data-lang="vi">Ẩn giải thích</span></span></button><span class="pr-verdict" data-state="none"><span class="chip ok pv ok"><span class="lang-pane" data-lang="ja">正解</span><span class="lang-pane" data-lang="vi">Đúng</span></span><span class="chip ng pv ng"><span class="lang-pane" data-lang="ja">不正解</span><span class="lang-pane" data-lang="vi">Sai</span></span></span><div class="pr-panel" hidden><div class="pr-ans"><span class="lang-pane" data-lang="ja">正解: </span><span class="lang-pane" data-lang="vi">Đáp án: </span>4</div><span class="lang-pane" data-lang="ja"><div class="explanation-box"> <div class="exp-heading">詳細解説</div> <div class="exp-section-title">【正解の理由・根拠】</div> <div class="exp-content">④は<ruby>受付<rt>うけつけ</rt></ruby><ruby>期間<rt>きかん</rt></ruby><ruby>超過<rt>ちょうか</rt></ruby>。「<ruby>定員<rt>ていいん</rt></ruby>に<ruby>達<rt>たっ</rt></ruby>していなければ<ruby>講座開始<rt>かいし</rt></ruby>の3<ruby>日前<rt>にちまえ</rt></ruby>までなら<ruby>申<rt>もう</rt></ruby>し<ruby>込<rt>こ</rt></ruby>み<ruby>可能<rt>かのう</rt></ruby>です」。</div> <div class="exp-section-title">【各選択肢の解説】</div> <ul class="exp-options-list"> <li class="furi"><strong>1.</strong> <span class="opt-tag-wrong">[不正解]</span> ホームページも<ruby>可<rt>か</rt></ruby>とし<ruby>期限<rt>きげん</rt></ruby>も誤り。</li><li><strong>2.</strong> <span class="opt-tag-wrong">[不正解]</span> 期限が12月5日でなく12月7日が正しい。</li><li class="furi"><strong>3.</strong> <span class="opt-tag-wrong">[不正解]</span> <ruby>電話限定<rt>げんてい</rt></ruby>なのにホームページも可とし誤り。</li><li class="furi"><strong>4.</strong> <span class="opt-tag-correct">[正解]</span> <ruby>電話<rt>でんわ</rt></ruby>で<ruby>確認<rt>かくにん</rt></ruby>する<ruby>規定<rt>きてい</rt></ruby>に<ruby>一致<rt>いっち</rt></ruby>。</li> </ul> <div class="exp-section-title">【重要語彙・文法ポイント】</div><div><span class="vocab-pill"><ruby>受付期間<rt>うけつけきかん</rt></ruby><ruby>超過<rt>ちょうか</rt></ruby><ruby>後<rt>ご</rt></ruby>の<ruby>特例規定<rt>とくれいきてい</rt></ruby>を<ruby>正確<rt>せいかく</rt></ruby>に読む。</span><span class="vocab-pill">「開始の3日前まで」＝12/10の3日前＝12/7。</span></div> </div></span><span class="lang-pane" data-lang="vi"><div class="explanation-box"> <div class="exp-heading">Giải thích chi tiết</div> <div class="exp-section-title">【Lý do chọn đáp án đúng】</div> <div class="exp-content">「受付期間」đã qua → chưa đủ số lượng thì đăng ký đến 3 ngày trước, qua điện thoại.</div> <div class="exp-section-title">【Phân tích từng lựa chọn】</div> <ul class="exp-options-list"> <li><strong>1.</strong> <span class="opt-tag-wrong">[Sai]</span> Ngày hạn sai, phương thức sai vì chỉ được qua điện thoại.</li><li><strong>2.</strong> <span class="opt-tag-wrong">[Sai]</span> Phương thức đúng nhưng ngày hạn sai.</li><li><strong>3.</strong> <span class="opt-tag-wrong">[Sai]</span> Ngày hạn đúng nhưng phương thức sai — chỉ nhận qua điện thoại.</li><li><strong>4.</strong> <span class="opt-tag-correct">[Đúng]</span> Hạn 7/12 (3 ngày trước khai giảng), qua điện thoại.</li> </ul> <div class="exp-section-title">【Từ vựng・Ngữ pháp cần nhớ】</div><div><span class="vocab-pill">「定員に達していなければ」: nếu chưa đủ số lượng.</span><span class="vocab-pill">3日前: 3 ngày trước khai giảng.</span></div> </div></span></div></div><hr class="section-divider"><h1 class="section-title">JLPT N2 聴解</h1><div id="player"><audio id="au" controls preload="metadata" src="聴解.mp3" data-fallback-src="https://github.com/feiluvnana/JLPT/releases/download/audio/imported-n2-2025-07.mp3"></audio><div class="pctl"><button type="button" onclick="nudge(-10)">◀ 10秒</button><button type="button" onclick="nudge(10)">10秒 ▶</button><label>速度 <select id="rate" onchange="au.playbackRate=+this.value"><option>0.75</option><option selected>1</option><option>1.25</option><option>1.5</option></select></label><span id="chapwrap">章 <select id="chap" onchange="jump(this.value)"></select></span><label class="pick">MP3を選ぶ<input type="file" accept="audio/*" onchange="pick(this)"></label></div><script>window.CHAPTERS = {
+<div class="pr" data-q="71"><button type="button" class="pr-btn" aria-expanded="false" onclick="toggleExp(this)"><span class="pr-lbl show"><span class="lang-pane" data-lang="ja">解説を見る</span><span class="lang-pane" data-lang="vi">Xem giải thích</span></span><span class="pr-lbl hide"><span class="lang-pane" data-lang="ja">解説を閉じる</span><span class="lang-pane" data-lang="vi">Ẩn giải thích</span></span></button><span class="pr-verdict" data-state="none"><span class="chip ok pv ok"><span class="lang-pane" data-lang="ja">正解</span><span class="lang-pane" data-lang="vi">Đúng</span></span><span class="chip ng pv ng"><span class="lang-pane" data-lang="ja">不正解</span><span class="lang-pane" data-lang="vi">Sai</span></span></span><div class="pr-panel" hidden><div class="pr-ans"><span class="lang-pane" data-lang="ja">正解: </span><span class="lang-pane" data-lang="vi">Đáp án: </span>4</div><span class="lang-pane" data-lang="ja"><div class="explanation-box"> <div class="exp-heading">詳細解説</div> <div class="exp-section-title">【正解の理由・根拠】</div> <div class="exp-content">④は<ruby>受付<rt>うけつけ</rt></ruby><ruby>期間<rt>きかん</rt></ruby><ruby>超過<rt>ちょうか</rt></ruby>。「<ruby>定員<rt>ていいん</rt></ruby>に<ruby>達<rt>たっ</rt></ruby>していなければ<ruby>講座開始<rt>かいし</rt></ruby>の3<ruby>日前<rt>にちまえ</rt></ruby>までなら<ruby>申<rt>もう</rt></ruby>し<ruby>込<rt>こ</rt></ruby>み<ruby>可能<rt>かのう</rt></ruby>です」。</div> <div class="exp-section-title">【各選択肢の解説】</div> <ul class="exp-options-list"> <li class="furi"><strong>1.</strong> <span class="opt-tag-wrong">[不正解]</span> ホームページも<ruby>可<rt>か</rt></ruby>とし<ruby>期限<rt>きげん</rt></ruby>も誤り。</li><li><strong>2.</strong> <span class="opt-tag-wrong">[不正解]</span> 期限が12月5日でなく12月7日が正しい。</li><li class="furi"><strong>3.</strong> <span class="opt-tag-wrong">[不正解]</span> <ruby>電話限定<rt>げんてい</rt></ruby>なのにホームページも可とし誤り。</li><li class="furi"><strong>4.</strong> <span class="opt-tag-correct">[正解]</span> <ruby>電話<rt>でんわ</rt></ruby>で<ruby>確認<rt>かくにん</rt></ruby>する<ruby>規定<rt>きてい</rt></ruby>に<ruby>一致<rt>いっち</rt></ruby>。</li> </ul> <div class="exp-section-title">【重要語彙・文法ポイント】</div><div><span class="vocab-pill"><ruby>受付期間<rt>うけつけきかん</rt></ruby><ruby>超過<rt>ちょうか</rt></ruby><ruby>後<rt>ご</rt></ruby>の<ruby>特例規定<rt>とくれいきてい</rt></ruby>を<ruby>正確<rt>せいかく</rt></ruby>に読む。</span><span class="vocab-pill">「開始の3日前まで」＝12/10の3日前＝12/7。</span></div> </div></span><span class="lang-pane" data-lang="vi"><div class="explanation-box"> <div class="exp-heading">Giải thích chi tiết</div> <div class="exp-section-title">【Lý do chọn đáp án đúng】</div> <div class="exp-content">「受付期間」đã qua → chưa đủ số lượng thì đăng ký đến 3 ngày trước, qua điện thoại.</div> <div class="exp-section-title">【Phân tích từng lựa chọn】</div> <ul class="exp-options-list"> <li><strong>1.</strong> <span class="opt-tag-wrong">[Sai]</span> Ngày hạn sai, phương thức sai vì chỉ được qua điện thoại.</li><li><strong>2.</strong> <span class="opt-tag-wrong">[Sai]</span> Phương thức đúng nhưng ngày hạn sai.</li><li><strong>3.</strong> <span class="opt-tag-wrong">[Sai]</span> Ngày hạn đúng nhưng phương thức sai — chỉ nhận qua điện thoại.</li><li><strong>4.</strong> <span class="opt-tag-correct">[Đúng]</span> Hạn 7/12 (3 ngày trước khai giảng), qua điện thoại.</li> </ul> <div class="exp-section-title">【Từ vựng・Ngữ pháp cần nhớ】</div><div><span class="vocab-pill">「定員に達していなければ」: nếu chưa đủ số lượng.</span><span class="vocab-pill">3日前: 3 ngày trước khai giảng.</span></div> </div></span></div></div><hr class="section-divider"><h1 class="section-title">JLPT N2 聴解</h1><div id="player"><audio id="au" controls preload="metadata" src="聴解.mp3" data-fallback-src="https://github.com/feiluvnana/JLPT/releases/download/audio/imported-n2-2025-07.mp3"></audio><div class="pctl"><button type="button" onclick="nudge(-10)"><span class="lang-pane" data-lang="ja">◀ 10秒</span><span class="lang-pane" data-lang="vi">◀ 10 giây</span></button><button type="button" onclick="nudge(10)"><span class="lang-pane" data-lang="ja">10秒 ▶</span><span class="lang-pane" data-lang="vi">10 giây ▶</span></button><label><span class="lang-pane" data-lang="ja">速度</span><span class="lang-pane" data-lang="vi">Tốc độ</span> <select id="rate" onchange="au.playbackRate=+this.value"><option>0.75</option><option selected>1</option><option>1.25</option><option>1.5</option></select></label><span id="chapwrap"><span class="lang-pane" data-lang="ja">章</span><span class="lang-pane" data-lang="vi">Đoạn</span> <select id="chap" onchange="jump(this.value)"></select></span><label class="pick"><span class="lang-pane" data-lang="ja">MP3を選ぶ</span><span class="lang-pane" data-lang="vi">Chọn tệp MP3</span><input type="file" accept="audio/*" onchange="pick(this)"></label></div><div class="noaudio-msg"><span class="lang-pane" data-lang="ja">聴解.mp3 を読み込めません。「MP3を選ぶ」から指定してください。</span><span class="lang-pane" data-lang="vi">Không tải được 聴解.mp3. Hãy bấm 「Chọn tệp MP3」 để chọn tệp audio trên máy.</span></div><script>window.CHAPTERS = {
   "duration": null,
   "chapters": [],
   "source": "external",
@@ -1991,19 +1767,17 @@ body[data-lang="vi"] .lang-pane:not([data-lang="vi"]) { display: none !important
 <span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot"><ruby>東山<rt>ひがしやま</rt></ruby></span></span></p>
 <div class="qa"><label><input type="radio" name="q_問5-2-2" value="1"><span>1</span></label><label><input type="radio" name="q_問5-2-2" value="2"><span>2</span></label><label><input type="radio" name="q_問5-2-2" value="3"><span>3</span></label><label><input type="radio" name="q_問5-2-2" value="4"><span>4</span></label></div>
 <div class="pr" data-q="問5-2-2"><button type="button" class="pr-btn" aria-expanded="false" onclick="toggleExp(this)"><span class="pr-lbl show"><span class="lang-pane" data-lang="ja">解説を見る</span><span class="lang-pane" data-lang="vi">Xem giải thích</span></span><span class="pr-lbl hide"><span class="lang-pane" data-lang="ja">解説を閉じる</span><span class="lang-pane" data-lang="vi">Ẩn giải thích</span></span></button><span class="pr-verdict" data-state="none"><span class="chip ok pv ok"><span class="lang-pane" data-lang="ja">正解</span><span class="lang-pane" data-lang="vi">Đúng</span></span><span class="chip ng pv ng"><span class="lang-pane" data-lang="ja">不正解</span><span class="lang-pane" data-lang="vi">Sai</span></span></span><div class="pr-panel" hidden><div class="pr-ans"><span class="lang-pane" data-lang="ja">正解: </span><span class="lang-pane" data-lang="vi">Đáp án: </span>2</div><div class="pr-script"><span class="pr-script-label"><span class="lang-pane" data-lang="ja">音声スクリプト</span><span class="lang-pane" data-lang="vi">Lời thoại audio</span></span>ラジオを聞いて男の人と女の人が話しています。<br>アナウンサー:今日は緑市で夕日が楽しめる場所を4ヶ所ご紹介します。1つ目は夕日通り。砂浜に沿って続くこの通りからは、海を夕日が徐々にオレンジ色に染めていく光景が見られます。2つ目は西が丘です。小さな山ですが、上からふもとのお寺が夕日に染まっていく様子を見下ろすことができます。3つ目のさくら公園では、湖に映る夕日を鑑賞できます。湖にいる鳥たちが夕日に照らされる光景に心を打たれます。最後は東山。車で20分ほど上がった所から、海に沈む夕日を眺めることができます。<br>男:この週末緑市に旅行にいくし、ちょうどいいね。観光の帰りにも夕日を見にいこうよ。<br>女:天気がよさそうだし、2泊するから2回見られるね。夕日が水に映るとキラキラしてきれいだもんね。<br>男:どこ？鳥が見られる所？<br>女:ううん。海沿いのほう。ホテルからも近いし、1日目の夕方に散歩にいくのにちょうどいいんじゃない？<br>男:ああ、いいね。行ってみよう。2日目は午後、美術館にいくよ。お寺の近くっていう所、美術館から近いんじゃない？お寺を入れた夕焼けの写真を撮りに行こうよ。<br>女:いいね。高い所から海に沈む夕日を見るのもいいと思うんだけど、そっちはちょっと場所が離れているしね。</div><span class="lang-pane" data-lang="ja"><div class="explanation-box"> <div class="exp-heading">詳細解説</div> <div class="exp-section-title">【正解の理由・聞き取りポイント】</div> <div class="exp-content">男は「2<ruby>日目<rt>にちめ</rt></ruby>は<ruby>午後<rt>ごご</rt></ruby>、<ruby>美術館<rt>びじゅつかん</rt></ruby>にいくよ。お<ruby>寺<rt>てら</rt></ruby>の<ruby>近<rt>ちか</rt></ruby>くっていう<ruby>所<rt>ところ</rt></ruby>、美術館から<ruby>近<rt>ちか</rt></ruby>いんじゃない？」と<ruby>西<rt>にし</rt></ruby>が<ruby>丘<rt>おか</rt></ruby>を<ruby>選<rt>えら</rt></ruby>ぶ。</div> <div class="exp-section-title">【各選択肢の解説】</div> <ul class="exp-options-list"> <li class="furi"><strong>1.</strong> <span class="opt-tag-wrong">[不正解]</span> <ruby>夕日通<rt>ゆうひどお</rt></ruby>りは1<ruby>日目<rt>にちめ</rt></ruby>に<ruby>行<rt>い</rt></ruby>く<ruby>場所<rt>ばしょ</rt></ruby>と<ruby>既<rt>すで</rt></ruby>に<ruby>決<rt>き</rt></ruby>まった。</li><li class="furi"><strong>2.</strong> <span class="opt-tag-correct">[正解]</span> お<ruby>寺<rt>てら</rt></ruby>の<ruby>見<rt>み</rt></ruby>える<ruby>西<rt>にし</rt></ruby>が<ruby>丘<rt>おか</rt></ruby>が<ruby>美術館<rt>びじゅつかん</rt></ruby>に<ruby>近<rt>ちか</rt></ruby>く正しい。</li><li class="furi"><strong>3.</strong> <span class="opt-tag-wrong">[不正解]</span> さくら<ruby>公園<rt>こうえん</rt></ruby>は<ruby>候補<rt>こうほ</rt></ruby>に<ruby>挙<rt>あ</rt></ruby>がっていない。</li><li class="furi"><strong>4.</strong> <span class="opt-tag-wrong">[不正解]</span> <ruby>東山<rt>ひがしやま</rt></ruby>は「<ruby>場所<rt>ばしょ</rt></ruby>が<ruby>離<rt>はな</rt></ruby>れている」と<ruby>退<rt>しりぞ</rt></ruby>けられた。</li> </ul> <div class="exp-section-title">【重要表現・リスニングポイント】</div><div><span class="vocab-pill"><ruby>美術館<rt>びじゅつかん</rt></ruby>からの<ruby>近<rt>ちか</rt></ruby>さが2<ruby>日目<rt>にちめ</rt></ruby>の<ruby>決<rt>き</rt></ruby>め<ruby>手<rt>て</rt></ruby>。</span><span class="vocab-pill"><ruby>質問<rt>しつもん</rt></ruby>1と2で<ruby>選<rt>えら</rt></ruby>ぶ<ruby>場所<rt>ばしょ</rt></ruby>を<ruby>混同<rt>こんどう</rt></ruby>しない。</span></div> </div></span><span class="lang-pane" data-lang="vi"><div class="explanation-box"> <div class="exp-heading">Giải thích chi tiết</div> <div class="exp-section-title">【Lý do đúng・Điểm cần nghe ra】</div> <div class="exp-content">「お寺の近くっていう所、美術館から近い」→ nơi gần chùa, gần bảo tàng được chọn cho ngày 2.</div> <div class="exp-section-title">【Phân tích từng lựa chọn】</div> <ul class="exp-options-list"> <li><strong>1.</strong> <span class="opt-tag-wrong">[Sai]</span> 夕日通り đã chọn cho ngày 1, không lặp lại.</li><li><strong>2.</strong> <span class="opt-tag-correct">[Đúng]</span> Nơi ngắm chùa từ cao, gần bảo tàng — chính là にしがおか.</li><li><strong>3.</strong> <span class="opt-tag-wrong">[Sai]</span> さくら公園 là nơi ngắm hồ, không được nhắc ở đây.</li><li><strong>4.</strong> <span class="opt-tag-wrong">[Sai]</span> 東山 bị từ chối vì hơi xa, không hợp lịch chiều ngày 2.</li> </ul> <div class="exp-section-title">【Mẫu câu・Điểm nghe cần nhớ】</div><div><span class="vocab-pill">夕焼け: ráng chiều, cảnh hoàng hôn.</span><span class="vocab-pill">見下ろす: nhìn xuống từ trên cao.</span></div> </div></span></div></div></div><script>
-const ANS = {"1": 4, "2": 2, "3": 3, "4": 1, "5": 3, "6": 4, "7": 1, "8": 3, "9": 2, "10": 4, "11": 3, "12": 1, "13": 4, "14": 3, "15": 2, "16": 4, "17": 1, "18": 1, "19": 4, "20": 2, "21": 2, "22": 4, "23": 1, "24": 3, "25": 3, "26": 2, "27": 1, "28": 2, "29": 4, "30": 3, "31": 2, "32": 3, "33": 1, "34": 4, "35": 3, "36": 2, "37": 3, "38": 1, "39": 4, "40": 3, "41": 1, "42": 2, "43": 3, "44": 4, "45": 2, "46": 1, "47": 2, "48": 2, "49": 3, "50": 4, "51": 1, "52": 1, "53": 4, "54": 3, "55": 4, "56": 4, "57": 1, "58": 3, "59": 2, "60": 3, "61": 2, "62": 2, "63": 2, "64": 1, "65": 2, "66": 3, "67": 1, "68": 4, "69": 3, "70": 3, "71": 4, "問1-1": 2, "問1-2": 3, "問1-3": 3, "問1-4": 3, "問1-5": 2, "問2-1": 4, "問2-2": 1, "問2-3": 3, "問2-4": 1, "問2-5": 2, "問2-6": 4, "問3-1": 4, "問3-2": 3, "問3-3": 1, "問3-4": 1, "問3-5": 4, "問4-1": 2, "問4-2": 3, "問4-3": 1, "問4-4": 1, "問4-5": 2, "問4-6": 2, "問4-7": 3, "問4-8": 1, "問4-9": 2, "問4-10": 3, "問4-11": 2, "問5-1": 3, "問5-2-1": 1, "問5-2-2": 2}, LANGS = ["ja", "vi"], TOTAL = 101;
+const ANS = {"1": 4, "2": 2, "3": 3, "4": 1, "5": 3, "6": 4, "7": 1, "8": 3, "9": 2, "10": 4, "11": 3, "12": 1, "13": 4, "14": 3, "15": 2, "16": 4, "17": 1, "18": 1, "19": 4, "20": 2, "21": 2, "22": 4, "23": 1, "24": 3, "25": 3, "26": 2, "27": 1, "28": 2, "29": 4, "30": 3, "31": 2, "32": 3, "33": 1, "34": 4, "35": 3, "36": 2, "37": 3, "38": 1, "39": 4, "40": 3, "41": 1, "42": 2, "43": 3, "44": 4, "45": 2, "46": 1, "47": 2, "48": 2, "49": 3, "50": 4, "51": 1, "52": 1, "53": 4, "54": 3, "55": 4, "56": 4, "57": 1, "58": 3, "59": 2, "60": 3, "61": 2, "62": 2, "63": 2, "64": 1, "65": 2, "66": 3, "67": 1, "68": 4, "69": 3, "70": 3, "71": 4, "問1-1": 2, "問1-2": 3, "問1-3": 3, "問1-4": 3, "問1-5": 2, "問2-1": 4, "問2-2": 1, "問2-3": 3, "問2-4": 1, "問2-5": 2, "問2-6": 4, "問3-1": 4, "問3-2": 3, "問3-3": 1, "問3-4": 1, "問3-5": 4, "問4-1": 2, "問4-2": 3, "問4-3": 1, "問4-4": 1, "問4-5": 2, "問4-6": 2, "問4-7": 3, "問4-8": 1, "問4-9": 2, "問4-10": 3, "問4-11": 2, "問5-1": 3, "問5-2-1": 1, "問5-2-2": 2}, TOTAL = 101;
 const PR = {};
 
 /* The 読解 訳 belongs to the learner-language editions — its control only
-   exists in those panes — so changing edition puts every passage back to 原文
-   rather than leaving a group whose chosen pane the new edition does not render. */
-function setLang(lang){
-  applyLang(lang, LANGS, true);
-  resetPassageText();
-}
+   exists in those panes — so changing edition (lang_ui's dropdown fires
+   `langchange`) puts every passage back to 原文 rather than leaving a group
+   whose chosen pane the new edition does not render. */
 function resetPassageText(){
   document.querySelectorAll('.passage-tr').forEach(b => { b.dataset.ptext = 'src'; });
 }
+document.addEventListener('langchange', resetPassageText);
 
 /* The reveal. Everything it changes is an attribute the CSS reads — the two
    button labels and both verdict chips ship as markup, one .lang-pane per
@@ -2057,31 +1831,11 @@ document.addEventListener('change', e => {
 
 window.addEventListener('DOMContentLoaded', ()=>{
   document.querySelectorAll('.pr').forEach(p => { PR[p.dataset.q] = p; });
-  if (LANGS.length > 1) applyLang(savedLang(LANGS), LANGS, false);
   countAnswered();
   fitPlayer();
   initSpy();
   window.addEventListener('resize', fitPlayer);
 });
-
-/* Flip the page to `lang`: `body[data-lang]` is what the CSS reads, so no JS
-   text substitution happens here and a label cannot go missing. Returns the
-   language actually applied (langs[0] when the argument is not on offer). */
-function applyLang(lang, langs, persist){
-  if (!langs.includes(lang)) lang = langs[0];
-  document.body.dataset.lang = lang;
-  document.documentElement.lang = lang;
-  document.querySelectorAll('.lang-btn').forEach(b => {
-    b.classList.toggle('active', b.dataset.lang === lang);
-  });
-  if (persist){ try { localStorage.setItem('kaisetsuLang', lang); } catch (e) {} }
-  return lang;
-}
-function savedLang(langs){
-  let s = null;
-  try { s = localStorage.getItem('kaisetsuLang'); } catch (e) {}
-  return langs.includes(s) ? s : langs[0];
-}
 
 function setPassageText(btn, mode) {
   const box = btn.closest('.passage-tr');
@@ -2113,7 +1867,7 @@ function initSpy(){
 function updateSpy(){
   const where = document.getElementById('where');
   if (!where || !SPOTS.length) return;
-  const bar = document.getElementById('bar');
+  const bar = document.getElementById('topbar');
   const edge = (bar ? bar.offsetHeight : 0) + 8;
   let sec = '', q = '';
   for (const s of SPOTS){
@@ -2125,9 +1879,10 @@ function updateSpy(){
 }
 
 function fitPlayer(){
-  // The player sticks directly under the bar. Measure rather than guess: the
-  // bar's height depends on the font and on whether its controls wrap.
-  const bar = document.getElementById('bar'), p = document.getElementById('player');
+  // The player sticks directly under the ONE bar (lang_ui's topbar, which the
+  // sheet's timer/section bar merged into). Measure rather than guess: its
+  // height changes with the viewport (40px desktop, 36px phone).
+  const bar = document.getElementById('topbar'), p = document.getElementById('player');
   if (bar && p && bar.offsetHeight) p.style.top = bar.offsetHeight + 'px';
 }
 
@@ -2144,7 +1899,7 @@ function pick(inp){
     document.getElementById('chapwrap').style.display = 'none';
     return;
   }
-  sel.insertAdjacentHTML('beforeend', '<option value="">— 選択 —</option>');
+  sel.insertAdjacentHTML('beforeend', '<option value="">—</option>');
   // compose_choukai writes {label, start} with no `type`: 「問題2」 is a 大問
   // header, 「問題2 3番」 an item. An explicit `type` still wins.
   const isSec = c => c.type ? c.type === 'section' : !/番|質問/.test(c.label);

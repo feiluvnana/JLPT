@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><script>if(window.location.search&&window.location.search.indexOf("screen=result")!==-1){document.documentElement.classList.add("is-result-mode");}</script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet"><title>N2 模擬試験 解答用紙 (20260819_1)</title>
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><script>if(window.location.search&&window.location.search.indexOf("screen=result")!==-1){document.documentElement.classList.add("is-result-mode");}</script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet"><title>JLPT N2 模擬試験 解答用紙 (20260819_1)</title>
 <!-- src_sha: 言語知識・読解.md=cb6eff191bdf -->
 
 <!-- src_sha: 聴解.md=95a9b8cae012 -->
@@ -188,131 +188,14 @@ hr { border: none; border-top: 1px dashed #999; margin: 22px 0; }
   --ui:"Noto Sans JP",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Hiragino Sans","Yu Gothic",sans-serif;
   --serif:"Noto Serif JP","Yu Mincho",serif;
 }
-/* The bar spans the full window on every screen, so the scrollbar sits ON its
-   right edge — the horizontal padding has to clear it or it covers 採点する. */
-#bar{
-  position:sticky;
-  top:0;
-  z-index:99;
-  background:linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  color:#ffffff;
-  box-sizing:border-box;
-  min-height:3.4em;
-  padding:0 1.8em;
-  display:flex;
-  flex-wrap:nowrap;
-  gap:.6em 1.2em;
-  align-items:center;
-  font-family:var(--ui);
-  font-size:11pt;
-  box-shadow:0 4px 14px rgba(0,0,0,0.08);
-  border-bottom:1px solid rgba(255,255,255,0.08);
-}
-#bar b{
-  font-size:12.5pt;
-  font-weight:800;
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
-  min-width:0;
-  max-width:20em;
-  color:#ffffff;
-}
-#bar .sub{
-  font-size:9.5pt;
-  color:#94a3b8;
-  font-variant-numeric:tabular-nums;
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
-  min-width:0;
-}
-#bar .grow{
-  flex:1 1 auto;
-  min-width:.5em;
-}
+/* The sticky bar itself is lang_ui.TOPBAR_CSS (exam-model-answer) — ONE bar on
+   every page. This is the sheet's solving-controls group inside it. */
 #bar-controls{
   display:flex;
   flex-wrap:nowrap;
   align-items:center;
   gap:.55em;
   flex:0 0 auto;
-}
-/* The bar's own buttons — hence `:not(.lang-btn)`, here and in the mobile block
-   below. 練習.html drops exam-model-answer's segmented language control
-   (.lang-switch/.lang-btn, styled in build_model_answer.EXPLANATION_CSS) into
-   this bar, and an id-level rule here outranks every class rule that control
-   brings with it: the pill came out as two bar buttons. A control imported with
-   its own styling opts out, rather than having that styling restated here —
-   restating it is the copy that would drift. */
-#bar button:not(.lang-btn){
-  font-size:10pt;
-  font-weight:700;
-  padding:.3em .85em;
-  cursor:pointer;
-  border-radius:6px;
-  border:1px solid rgba(255,255,255,0.2);
-  background:rgba(255,255,255,0.1);
-  color:#ffffff;
-  font-family:var(--ui);
-  white-space:nowrap;
-  line-height:1.35;
-  min-height:34px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  transition:all .15s ease;
-}
-#bar button:not(.lang-btn):hover{
-  background:rgba(255,255,255,0.2);
-  border-color:rgba(255,255,255,0.35);
-}
-/* 採点する stays disabled until every item is answered (build_interactive's
-   updateCounter). It must READ disabled, not just refuse the click. */
-#bar button:disabled{
-  opacity:.45;
-  cursor:not-allowed;
-  box-shadow:none;
-}
-#bar button:disabled:hover{
-  background:rgba(255,255,255,0.1);
-  border-color:rgba(255,255,255,0.2);
-}
-#bar button.primary:disabled,
-#bar button.primary:disabled:hover{
-  background:var(--accent);
-  border-color:var(--accent);
-}
-#bar button.primary{
-  background:var(--accent);
-  color:#ffffff;
-  border-color:var(--accent);
-  box-shadow:0 2px 6px rgba(37,99,235,0.3);
-}
-#bar button.primary:hover{
-  background:var(--accent-hover);
-  border-color:var(--accent-hover);
-}
-#bar a.back{
-  display:inline-flex;
-  align-items:center;
-  gap:.35em;
-  color:#cbd5e1;
-  text-decoration:none;
-  font-size:10pt;
-  font-weight:700;
-  white-space:nowrap;
-  flex:0 0 auto;
-  padding:.3em .75em;
-  border-radius:6px;
-  background:rgba(255,255,255,0.08);
-  border:1px solid rgba(255,255,255,0.15);
-  transition:all .15s ease;
-}
-#bar a.back:hover{
-  background:rgba(255,255,255,0.18);
-  color:#ffffff;
-  border-color:rgba(255,255,255,0.3);
 }
 .ui-btn{
   display:inline-flex;
@@ -498,59 +381,33 @@ hr { border: none; border-top: 1px dashed #999; margin: 22px 0; }
   font-family:var(--ui);
 }
 @media screen and (max-width: 48em){
-  #bar{
-    padding:.5em .9em;
-    gap:.4em .8em;
-    flex-wrap:wrap;
-    font-size:10pt;
-  }
-  #bar b{
-    max-width:12em;
-    font-size:11.5pt;
-  }
-  #bar .sub{
-    font-size:9pt;
-  }
-  #bar-controls{
-    gap:.4em;
-  }
-  #bar button:not(.lang-btn){
-    font-size:9.5pt;
-    padding:.3em .7em;
-    min-height:34px;
-  }
   .ui-btn{
     font-size:10pt;
     padding:.4em .9em;
     min-height:36px;
   }
 }
-@media screen and (max-width: 32em){
-  #bar b{
-    max-width:8.5em;
-    font-size:10.5pt;
-  }
-  #where{
-    display:none;
-  }
-}
 
 html.is-result-mode #screen-exam{display:none!important}
+/* The crumb that names this page: 受験 on screen 2, 採点結果 on screen 3. */
+#bar-title .bt-result,html.is-result-mode #bar-title .bt-exam{display:none}
+html.is-result-mode #bar-title .bt-result{display:inline}
 html.is-result-mode #screen-result{display:block!important}
 html.is-result-mode #bar-controls{display:none!important}
 html.is-result-mode #where{display:none!important}
 /* 残り時間 — the section countdown. Ticks only while this tab is visible AND
    focused (see clockRunning); red under five minutes, amber while frozen. */
 #clock{font-variant-numeric:tabular-nums;font-weight:700;color:#e2e8f0}
+#bar-controls{gap:.45em}
 #clock.paused{color:#f59e0b}
 #clock.low{color:#fca5a5}
 /* The two sections as tabs. During a sitting they are INDICATORS, not
    navigation: the future one is out of reach and the finished one is closed
    for good. They become real buttons only on a graded paper (PHASE 'done'). */
 #tabs{display:flex;gap:.3em;flex:0 0 auto}
-#tabs button{font-size:9.5pt;font-weight:700;padding:.28em .7em;border-radius:6px;
+#tabs button{font:700 12px/1 var(--ui);padding:0 .6em;height:26px;border-radius:6px;
   border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.06);
-  color:#cbd5e1;white-space:nowrap;min-height:30px;cursor:default}
+  color:#cbd5e1;white-space:nowrap;cursor:default}
 #tabs button.active{background:#2563eb;border-color:#2563eb;color:#ffffff}
 #tabs button.finished{color:#64748b}
 #tabs button.clickable{cursor:pointer}
@@ -599,7 +456,7 @@ html.is-result-mode #where{display:none!important}
 .opt{display:flex;align-items:flex-start;gap:.5em;margin:.15em 0}
 .opt .b{flex:0 0 auto;margin-top:.25em}
 #done{font-variant-numeric:tabular-nums}
-#player{position:sticky;top:3.4em;z-index:98;background:#1e293b;color:#ffffff;
+#player{position:sticky;top:var(--tb-h);z-index:98;background:#1e293b;color:#ffffff;
   border-bottom:1px solid rgba(255,255,255,0.1);
   padding:.9em 1.2em;font-family:var(--ui);box-shadow:0 4px 12px rgba(0,0,0,0.1)}
 #player audio{width:100%;height:36px;display:block}
@@ -625,8 +482,8 @@ html.is-result-mode #where{display:none!important}
 #player.noaudio .pctl button:hover,#player.noaudio .pctl select:hover{background:#fee2e2}
 #player.noaudio .pctl select option{background:#ffffff;color:#7f1d1d}
 #player.noaudio .pctl .pick{color:#b91c1c;text-decoration:underline}
-#player.noaudio::after{content:"聴解.mp3 を読み込めません。「MP3を選ぶ」から指定してください。";
-  display:block;font-size:9.5pt;color:#991b1b;margin-top:.3em}
+.noaudio-msg{display:none}
+#player.noaudio .noaudio-msg{display:block;font-size:9.5pt;color:#991b1b;margin-top:.3em}
 .section-divider{margin:3.5em 0;border:0;border-top:2px dashed #cbd5e1}
 .section-title{font-size:15pt;font-weight:800;background:linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
   color:#ffffff;padding:.55em 1em;margin:2em 0 1.2em;border-radius:8px;
@@ -691,7 +548,7 @@ html.is-result-mode #where{display:none!important}
 .rs-script{margin:.6em 0 0;padding:.75em .95em;background:#ffffff;
   border:1px solid #e2e8f0;border-radius:8px;font-size:10pt;line-height:1.7}
 .rs-script p{margin:.2em 0}
-@media print{#bar,#player,.rs-nav{display:none}.qa label{border-color:#666}}
+@media print{#player,.rs-nav{display:none}.qa label{border-color:#666}}
 @media screen{
   body{max-width:none;margin:0;padding:0;background:#f8fafc}
   #screen-exam,#screen-result{max-width:62em;margin:1.5em auto 4em;background:#ffffff;
@@ -722,7 +579,100 @@ html.is-result-mode #where{display:none!important}
   .rs-detail-body{padding:.7em .85em;font-size:10pt}
   .section-title{font-size:13.5pt;padding:.4em .7em;margin:1.5em 0 .8em}
 }
-</style></head><body><div id="bar"><a class="back" href="../../N2/exam/index.html">← テスト一覧</a><b id="bar-title">テスト 20260819_1（受験）</b><span id="tabs"><button id="tab-gengo" type="button" data-label="言語知識・読解" onclick="goTab('gengo')">言語知識・読解</button><button id="tab-choukai" type="button" data-label="聴解" onclick="goTab('choukai')">聴解</button></span><span class="sub" id="where"></span><span class="grow"></span><span id="bar-controls"><span class="sub" id="clock">残り --:--</span> <span class="sub" id="done">解答済み 0 / 101</span> <button onclick="clearAll()">消去</button> <button onclick="finishGengo(false)" id="advance-btn" class="primary" disabled>聴解へ進む</button> <button onclick="submitAll(false)" id="grade-btn" class="primary" disabled>採点する</button></span></div><script>if(document.documentElement.classList.contains("is-result-mode")){document.getElementById("bar-title").textContent="テスト 20260819_1（採点結果）";}</script><div id="screen-exam"><div class="gate" id="gate-gengo" style="display:none"><h2>言語知識（文字・語彙・文法）・読解</h2><p class="lim">制限時間 <b>105分</b>／全71問</p><p class="note"><span class="warn">開始すると時計が動きます。</span>残り時間が0になった時点で、解答はそのまま自動的に提出されます。<br>提出したあとは、この部分に戻ることはできません。<br>時計はこのタブを見ている間だけ進み、ほかのタブや別のウィンドウに移ると止まります。</p><button class="ui-btn primary" onclick="startSection('gengo')">開始する</button><div class="gate-alt"><p class="alt-note">じっくり復習したいときは<b>練習モード</b>へ。制限時間も採点もなく、全問が1ページに並び、設問ごとに模範解答・解説を開けます。</p><a class="ui-btn" href="練習.html">練習モードで解く（採点・制限時間なし）</a></div></div><div id="section-gengo" style="display:none"><h1 class="section-title">JLPT N2 言語知識（文字・語彙・文法）・読解</h1><h1 class="bk-part">【文字・語彙】</h1>
+
+/* lang_ui: the one sticky bar. Slim on purpose — it must never cost reading room.
+   --tb-h is its height, for anything that sticks under it (players). */
+:root{--tb-h:40px}
+.topbar{position:sticky;top:0;z-index:1000;display:flex;align-items:center;gap:.8em;
+  height:var(--tb-h);padding:0 max(12px,env(safe-area-inset-right)) 0 max(12px,env(safe-area-inset-left));
+  box-sizing:border-box;width:100%;max-width:100%;overflow:hidden;margin:0;
+  background:rgba(15,23,42,.94);color:#e2e8f0;font:500 13px/1 var(--ui,system-ui,sans-serif);
+  -webkit-backdrop-filter:saturate(1.4) blur(6px);backdrop-filter:saturate(1.4) blur(6px)}
+.topbar .tb-crumbs{flex:1 1 0;min-width:2.5em;display:flex;align-items:center;gap:.45em;
+  white-space:nowrap;overflow:hidden}
+.topbar .tb-crumb{color:#cbd5e1;text-decoration:none;overflow:hidden;text-overflow:ellipsis;
+  min-width:0;flex:0 1 auto;line-height:1.5}
+.topbar a.tb-crumb:hover{color:#fff;text-decoration:underline}
+.topbar .tb-here{color:#fff;font-weight:700;flex:0 1 auto}
+.topbar .tb-sep{color:#64748b;flex:0 0 auto}
+.topbar .tb-right{flex:0 0 auto;max-width:calc(100% - 2.5em);min-width:0;justify-content:flex-end;display:flex;align-items:center;gap:.5em}
+.topbar .tb-right>*{flex:0 0 auto}
+.topbar .tb-right>.tb-shrink{flex:0 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;
+  white-space:nowrap}
+.topbar .tb-last{flex:0 1 auto}
+/* A page's own compact controls in the bar (right_html): links, buttons, read-outs. */
+.topbar .tb-link,.topbar .tb-btn{display:inline-flex;align-items:center;justify-content:center;
+  box-sizing:border-box;height:28px;min-height:0;padding:0 .75em;margin:0;border-radius:6px;
+  border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:#e2e8f0;
+  font:600 12.5px/1 var(--ui,system-ui,sans-serif);text-decoration:none;white-space:nowrap;
+  cursor:pointer;box-shadow:none}
+.topbar .tb-link:hover,.topbar .tb-btn:hover{background:rgba(255,255,255,.18);color:#fff}
+.topbar .tb-btn.primary{background:#2563eb;border-color:#2563eb;color:#fff}
+.topbar .tb-btn.primary:hover{background:#1d4ed8;border-color:#1d4ed8}
+.topbar .tb-btn:disabled,.topbar .tb-btn:disabled:hover{opacity:.45;cursor:not-allowed}
+.topbar .tb-btn.primary:disabled:hover{background:#2563eb}
+.topbar .tb-sub{color:#94a3b8;font-variant-numeric:tabular-nums;white-space:nowrap}
+.topbar .tb-short{display:none}
+.lang-select{font:600 12.5px/1 var(--ui,system-ui,sans-serif);color:#0f172a;background:#f8fafc;
+  border:1px solid #cbd5e1;border-radius:6px;height:28px;padding:0 1.6em 0 .6em;cursor:pointer;
+  max-width:9.5em}
+.lang-select:focus-visible{outline:2px solid #60a5fa;outline-offset:1px}
+.lang-select[disabled]{opacity:.6;cursor:default}
+@media (max-width:600px){
+  :root{--tb-h:36px}
+  .topbar{gap:.5em;font-size:12px;padding:0 8px}
+  .topbar .tb-wide{display:none!important}
+  /* On a phone only the page you are on is spelled out; the crumbs before it
+     stay reachable as a short trail that gives way first. */
+  .topbar .tb-crumb:not(.tb-last){max-width:5.5em;flex-shrink:4}
+  .topbar .tb-right{gap:.35em}
+  .lang-select{height:26px;font-size:12px;max-width:6em;padding:0 1.1em 0 .35em}
+  .topbar .tb-link,.topbar .tb-btn{height:26px;padding:0 .5em;font-size:12px}
+  .topbar .tb-long{display:none}
+  .topbar .tb-short{display:inline}
+}
+@media print{.topbar{display:none!important}}
+
+.lang-pane{display:contents}
+body[data-lang="ja"] .lang-pane:not([data-lang="ja"]) { display: none !important; }
+body[data-lang="vi"] .lang-pane:not([data-lang="vi"]) { display: none !important; }</style></head><body data-lang="ja"><nav class="topbar" id="topbar" aria-label="breadcrumb"><div class="tb-crumbs"><a class="tb-crumb" href="../../N2/index.html">N2</a><span class="tb-sep" aria-hidden="true">›</span><a class="tb-crumb" href="../../N2/exam/index.html"><span class="lang-pane" data-lang="ja">試験</span><span class="lang-pane" data-lang="vi">Thi thử</span></a><span class="tb-sep" aria-hidden="true">›</span><span class="tb-crumb tb-here tb-last"><span id="bar-title"><span class="bt-exam"><span class="lang-pane" data-lang="ja">20260819_1（受験）</span><span class="lang-pane" data-lang="vi">20260819_1 (làm bài)</span></span><span class="bt-result"><span class="lang-pane" data-lang="ja">20260819_1（採点結果）</span><span class="lang-pane" data-lang="vi">20260819_1 (kết quả)</span></span></span></span></div><div class="tb-right"><span id="tabs" class="tb-wide"><button id="tab-gengo" type="button" data-label="言語知識・読解" onclick="goTab('gengo')">言語知識・読解</button><button id="tab-choukai" type="button" data-label="聴解" onclick="goTab('choukai')">聴解</button></span><span class="tb-sub tb-shrink tb-wide" id="where"></span><span id="bar-controls"><span class="tb-sub" id="clock"><span class="lang-pane" data-lang="ja">残り --:--</span><span class="lang-pane" data-lang="vi">Còn --:--</span></span><span class="tb-sub" id="done"></span><button type="button" class="tb-btn" onclick="clearAll()"><span class="tb-long"><span class="lang-pane" data-lang="ja">消去</span><span class="lang-pane" data-lang="vi">Xoá bài</span></span><span class="tb-short"><span class="lang-pane" data-lang="ja">消去</span><span class="lang-pane" data-lang="vi">Xoá</span></span></button><button type="button" onclick="finishGengo(false)" id="advance-btn" class="tb-btn primary" disabled><span class="tb-long"><span class="lang-pane" data-lang="ja">聴解へ進む</span><span class="lang-pane" data-lang="vi">Sang phần Nghe</span></span><span class="tb-short"><span class="lang-pane" data-lang="ja">聴解へ</span><span class="lang-pane" data-lang="vi">Nghe →</span></span></button><button type="button" onclick="submitAll(false)" id="grade-btn" class="tb-btn primary" disabled><span class="tb-long"><span class="lang-pane" data-lang="ja">採点する</span><span class="lang-pane" data-lang="vi">Nộp & chấm điểm</span></span><span class="tb-short"><span class="lang-pane" data-lang="ja">採点</span><span class="lang-pane" data-lang="vi">Chấm</span></span></button></span><select class="lang-select" aria-label="表示言語 / Ngôn ngữ" data-langs="[&quot;ja&quot;, &quot;vi&quot;]"><option value="ja" lang="ja">日本語</option><option value="vi" lang="vi">Tiếng Việt</option></select></div></nav><script>
+/* lang_ui: apply / remember / restore the reader's language. */
+(function(){
+  var KEY = "kaisetsuLang";
+  function offered(sel){
+    try { return JSON.parse(sel.getAttribute('data-langs')) || []; } catch (e) { return []; }
+  }
+  function applyLang(lang, persist){
+    var sel = document.querySelector('.lang-select');
+    var list = sel ? offered(sel) : ["ja", "vi"];
+    if (list.indexOf(lang) < 0) lang = list[0];
+    document.body.dataset.lang = lang;
+    document.documentElement.lang = {"ja": "ja", "vi": "vi"}[lang] || lang;
+    document.querySelectorAll('.lang-select').forEach(function(s){ s.value = lang; });
+    if (persist){ try { localStorage.setItem(KEY, lang); } catch (e) {} }
+    try { document.dispatchEvent(new CustomEvent('langchange', {detail: {lang: lang}})); } catch (e) {}
+    return lang;
+  }
+  function savedLang(){
+    try { return localStorage.getItem(KEY); } catch (e) { return null; }
+  }
+  if (window.applyLang) return;          /* one switcher per page */
+  window.applyLang = applyLang;
+  window.currentLang = function(){ return document.body.dataset.lang || "ja"; };
+  document.addEventListener('change', function(ev){
+    if (ev.target && ev.target.classList && ev.target.classList.contains('lang-select'))
+      applyLang(ev.target.value, true);
+  });
+  function boot(){ return applyLang(savedLang() || document.body.dataset.lang || "ja", false); }
+  /* This script sits right after the dropdown (topbar_html), so the language is
+     applied before the rest of the page paints; DOMContentLoaded fires the
+     event once more for listeners registered further down the page. */
+  if (document.querySelector('.lang-select')) boot();
+  document.addEventListener('DOMContentLoaded', boot);
+  /* Coming back through the history cache must show the language chosen since. */
+  window.addEventListener('pageshow', function(e){ if (e.persisted) boot(); });
+})();
+</script><div id="screen-exam"><div class="gate" id="gate-gengo" style="display:none"><h2>言語知識（文字・語彙・文法）・読解</h2><p class="lim"><span class="lang-pane" data-lang="ja">制限時間 <b>105分</b>／全71問</span><span class="lang-pane" data-lang="vi">Thời gian <b>105 phút</b> / 71 câu</span></p><p class="note"><span class="warn"><span class="lang-pane" data-lang="ja">開始すると時計が動きます。</span><span class="lang-pane" data-lang="vi">Bấm bắt đầu là đồng hồ chạy. </span></span><span class="lang-pane" data-lang="ja">残り時間が0になった時点で、解答はそのまま自動的に提出されます。</span><span class="lang-pane" data-lang="vi">Khi đồng hồ về 0, bài làm tự động được nộp nguyên trạng.</span><br><span class="lang-pane" data-lang="ja">提出したあとは、この部分に戻ることはできません。</span><span class="lang-pane" data-lang="vi">Đã nộp thì không quay lại phần này được nữa.</span><br><span class="lang-pane" data-lang="ja">時計はこのタブを見ている間だけ進み、ほかのタブや別のウィンドウに移ると止まります。</span><span class="lang-pane" data-lang="vi">Đồng hồ chỉ chạy khi bạn đang xem tab này; chuyển sang tab hay cửa sổ khác thì đồng hồ dừng.</span></p><button class="ui-btn primary" onclick="startSection('gengo')"><span class="lang-pane" data-lang="ja">開始する</span><span class="lang-pane" data-lang="vi">Bắt đầu</span></button><div class="gate-alt"><p class="alt-note"><span class="lang-pane" data-lang="ja">じっくり復習したいときは<b>練習モード</b>へ。制限時間も採点もなく、全問が1ページに並び、設問ごとに模範解答・解説を開けます。</span><span class="lang-pane" data-lang="vi">Muốn ôn kỹ thì dùng <b>chế độ luyện tập</b>: không giới hạn thời gian, không chấm điểm, cả đề nằm trên một trang và câu nào cũng mở được đáp án mẫu kèm giải thích.</span></p><a class="ui-btn" href="練習.html"><span class="lang-pane" data-lang="ja">練習モードで解く（採点・制限時間なし）</span><span class="lang-pane" data-lang="vi">Làm ở chế độ luyện tập (không bấm giờ, không chấm)</span></a></div></div><div id="section-gengo" style="display:none"><h1 class="section-title">JLPT N2 言語知識（文字・語彙・文法）・読解</h1><h1 class="bk-part">【文字・語彙】</h1>
 <h2 class="bk-mondai"><span class="bk-mn">問題1</span> <span class="bk-mi">＿＿の言葉の読み方として最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>
 <p><strong class="bk-qn">1</strong> 先輩は大勢の前で短い<strong class="bk-tw">演説</strong>をした。<br />
 <span class="bk-opts bk-c4"><span class="bk-o"><span class="bk-on">1</span><span class="bk-ot">えんせつ</span></span><span class="bk-o"><span class="bk-on">2</span><span class="bk-ot">えんぜい</span></span><span class="bk-o"><span class="bk-on">3</span><span class="bk-ot">えんぜつ</span></span><span class="bk-o"><span class="bk-on">4</span><span class="bk-ot">えんせい</span></span></span></p>
@@ -1226,7 +1176,7 @@ B「用心深い彼女（　）、道が混むのを見越して早めに家を�
 <span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">郷土博物館と市立美術館</span></span><br />
 <span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">旧丸屋商家と港町資料館</span></span><br />
 <span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">郷土博物館と港町資料館</span></span></p>
-<div class="qa"><label><input type="radio" name="q_71" value="1"><span>1</span></label><label><input type="radio" name="q_71" value="2"><span>2</span></label><label><input type="radio" name="q_71" value="3"><span>3</span></label><label><input type="radio" name="q_71" value="4"><span>4</span></label></div></div><hr class="section-divider" id="section-divider" style="display:none"><div class="gate" id="gate-choukai" style="display:none"><h2>聴解</h2><p class="lim">制限時間 <b>50分</b>／全30問</p><p class="note"><span class="warn">開始すると時計が動きます。</span>残り時間が0になった時点で、解答はそのまま自動的に提出されます。<br>音声は最初から最後まで一続きで流れます。イヤホンなどの準備ができてから開始してください。<br>時計はこのタブを見ている間だけ進み、ほかのタブや別のウィンドウに移ると止まります。</p><button class="ui-btn primary" onclick="startSection('choukai')">開始する</button></div><div id="section-choukai" style="display:none"><h1 class="section-title">JLPT N2 聴解</h1><div id="player"><audio id="au" controls preload="metadata" src="聴解.mp3" data-fallback-src="https://github.com/feiluvnana/JLPT/releases/download/audio/20260819_1.mp3"></audio><div class="pctl"><button type="button" onclick="nudge(-10)">◀ 10秒</button><button type="button" onclick="nudge(10)">10秒 ▶</button><label>速度 <select id="rate" onchange="au.playbackRate=+this.value"><option>0.75</option><option selected>1</option><option>1.25</option><option>1.5</option></select></label><span id="chapwrap">章 <select id="chap" onchange="jump(this.value)"></select></span><label class="pick">MP3を選ぶ<input type="file" accept="audio/*" onchange="pick(this)"></label></div><script>window.CHAPTERS = {
+<div class="qa"><label><input type="radio" name="q_71" value="1"><span>1</span></label><label><input type="radio" name="q_71" value="2"><span>2</span></label><label><input type="radio" name="q_71" value="3"><span>3</span></label><label><input type="radio" name="q_71" value="4"><span>4</span></label></div></div><hr class="section-divider" id="section-divider" style="display:none"><div class="gate" id="gate-choukai" style="display:none"><h2>聴解</h2><p class="lim"><span class="lang-pane" data-lang="ja">制限時間 <b>50分</b>／全30問</span><span class="lang-pane" data-lang="vi">Thời gian <b>50 phút</b> / 30 câu</span></p><p class="note"><span class="warn"><span class="lang-pane" data-lang="ja">開始すると時計が動きます。</span><span class="lang-pane" data-lang="vi">Bấm bắt đầu là đồng hồ chạy. </span></span><span class="lang-pane" data-lang="ja">残り時間が0になった時点で、解答はそのまま自動的に提出されます。</span><span class="lang-pane" data-lang="vi">Khi đồng hồ về 0, bài làm tự động được nộp nguyên trạng.</span><br><span class="lang-pane" data-lang="ja">音声は最初から最後まで一続きで流れます。イヤホンなどの準備ができてから開始してください。</span><span class="lang-pane" data-lang="vi">Audio phát liền một mạch từ đầu đến cuối. Hãy chuẩn bị tai nghe xong rồi mới bắt đầu.</span><br><span class="lang-pane" data-lang="ja">時計はこのタブを見ている間だけ進み、ほかのタブや別のウィンドウに移ると止まります。</span><span class="lang-pane" data-lang="vi">Đồng hồ chỉ chạy khi bạn đang xem tab này; chuyển sang tab hay cửa sổ khác thì đồng hồ dừng.</span></p><button class="ui-btn primary" onclick="startSection('choukai')"><span class="lang-pane" data-lang="ja">開始する</span><span class="lang-pane" data-lang="vi">Bắt đầu</span></button></div><div id="section-choukai" style="display:none"><h1 class="section-title">JLPT N2 聴解</h1><div id="player"><audio id="au" controls preload="metadata" src="聴解.mp3" data-fallback-src="https://github.com/feiluvnana/JLPT/releases/download/audio/20260819_1.mp3"></audio><div class="pctl"><button type="button" onclick="nudge(-10)"><span class="lang-pane" data-lang="ja">◀ 10秒</span><span class="lang-pane" data-lang="vi">◀ 10 giây</span></button><button type="button" onclick="nudge(10)"><span class="lang-pane" data-lang="ja">10秒 ▶</span><span class="lang-pane" data-lang="vi">10 giây ▶</span></button><label><span class="lang-pane" data-lang="ja">速度</span><span class="lang-pane" data-lang="vi">Tốc độ</span> <select id="rate" onchange="au.playbackRate=+this.value"><option>0.75</option><option selected>1</option><option>1.25</option><option>1.5</option></select></label><span id="chapwrap"><span class="lang-pane" data-lang="ja">章</span><span class="lang-pane" data-lang="vi">Đoạn</span> <select id="chap" onchange="jump(this.value)"></select></span><label class="pick"><span class="lang-pane" data-lang="ja">MP3を選ぶ</span><span class="lang-pane" data-lang="vi">Chọn tệp MP3</span><input type="file" accept="audio/*" onchange="pick(this)"></label></div><div class="noaudio-msg"><span class="lang-pane" data-lang="ja">聴解.mp3 を読み込めません。「MP3を選ぶ」から指定してください。</span><span class="lang-pane" data-lang="vi">Không tải được 聴解.mp3. Hãy bấm 「Chọn tệp MP3」 để chọn tệp audio trên máy.</span></div><script>window.CHAPTERS = {
  "duration": 2618.7,
  "chapters": [
   {
@@ -1496,6 +1446,34 @@ const GOI_CUTOFF = 51;
 const SCORING = {"max": 180, "pass": 90, "sections": [{"name": "言語知識（文字・語彙・文法）", "max": 60, "cutoff": 19}, {"name": "読解", "max": 60, "cutoff": 19}, {"name": "聴解", "max": 60, "cutoff": 19}]};
 const CHOUKAI_SCRIPTS = {"問1-1": "1番。大学でダンスサークルの男の学生と女の学生が話しています。男の学生は今日何をしますか。\n男:おはようございます。\n女:おはよう。ちょうどよかった。頼みたいことがあるんだけど。\n男:あー、そのポスター、来週のサークルの紹介でやるダンスのお知らせですね。新入生勧誘のための、掲示板に貼るんですか。\n女:うん。その前に学生課で掲示の許可をもらわないといけないから、今から行くんだ。\n男:そうなんですか。後で貼るの手伝いましょうか。\n女:これは一人で大丈夫。別にチラシも作ってあるんだけど、それを今日、大学の中で配る予定なんだ。その時何人か必要だから、手伝ってくれる。\n男:はい、分かりました。僕たちのダンスを見て、新入生がたくさん入ってくれるといいですね。\n女:そうだね。\n男の学生は今日何をしますか。", "問1-2": "2番。電話で、男の人と女の人が話しています。男の人は、このあとまず何をしますか。\n女:もしもし、インストラクターの山下です。\n男:あ、山下先生、お世話になってます。\n女:来月のプログラムなんですが…あれじゃ、だめなんです。休憩時間がないんですよ。だから、前と後のレッスンの調整が必要で…\n男:それで、他のレッスンの先生との交渉が、必要だったんですよね。\n女:ええ、だから、来月には間に合わないから、今月はそのままということで、お願いしたんです。でも、もう、プログラム印刷しちゃって、会員さんに配布されてますよね。\n男:あー、すいません…。\n女:それは、しかたがないから、とりあえず、貼り紙とかして訂正の案内をしてください。\n男:申し訳ありません。了解しました。\n男の人は、このあとまず何をしますか。", "問1-3": "3番。出版社で女の人と男の人が話しています。男の人は何の写真を撮らなければなりませんか。\n女:すみません、雑誌に載せる蕎麦屋の写真を私の代わりに撮りに行ってくれるそうでありがとうございます。\n男:あ、はい。緑駅前の蕎麦屋さんですよね？\n女:はい。えっと、説明しますね。この雑誌では通常はお店で1番の人気料理の写真を撮らせてもらうんですが、今回この写真はお店から提供していただくことになっています。\n男:はい、わかりました。\n女:それから店内の様子の撮影についてはお店に許可をいただいています。お客様が写り込まないように撮影をお願いしますね。調理する人の写真は店によっては掲載しますが、こちらは掲載不可とのことです。\n男:はい。\n女:外から見た入口の写真は天候に左右されるから先日、天気が良い日に済ませてきましたので結構です。よろしくお願いします。\n男:わかりました。\n男の人は何の写真を撮らなければなりませんか。", "問1-4": "4番。大学の日本語の授業で先生が話しています。留学生は今日の授業で最初に何をしますか。\n女:前回は日本の社会で関心があることをグループ発表のテーマに決めましたね。この後は必要な資料を調べた上で日本人の大学生にインタビューし、発表原稿を書いていきます。発表ではグループで担当を決めて全員が話すようにしますが、これは原稿をまとめる時に決めましょう。今日はパソコンで資料の検索と整理をします。次回はインタビューの内容を決めますのでそれまでに資料の整理を終わらせておきましょう。では、作業に取り掛かってください。\n留学生は今日の授業で最初に何をしますか。", "問1-5": "5番。旅行先のホテルで男の人と女の人が話しています。男の人は今から何をしますか。\n女:あー、今日もう帰るんだー。旅行楽しかったね。\n男:うん。帰りの電車まではまだ時間あるからさ、それまで何しようか。\n女:まず……公園、どうかな。\n男:でも天気、あんまりよくないからね。\n女:たしかに。あ、でも公園の中に美術館があるよ。ここ、いいんじゃない？\n男:それより僕はやっぱりあの海、最後にもう一度見たいなあ。それと、昨日閉まってた店。\n女:海は公園の3つ先のバス停でしょ？　わたしだけ公園前で降りるから、ちょっと足を伸ばして見てくれば？　昨日の店は駅前だったから、後で電車に乗る前に一緒に見ようよ。\n男:うん、じゃ、チェックアウトして、フロントに荷物預けて、出かけよう。\n女:ん？　駅で預けたら？　公園方面へのバス、駅からだし。\n男:そうか。じゃ、そうしよう。\n男の人は今から何をしますか。", "問2-1": "1番。会社の昼休みに、男の人と女の人が、あるアナウンサーについて話しています。男の人はこのアナウンサーのどんな点が最も良いと言っていますか。男の人です。\n男:ね、今テレビに映ってるアナウンサー人気があるよね。\n女:うん、いつも柔らかい表情で親しみやすい雰囲気を出してるよね。\n男:うん、それに、声も落ち着いていて、聞き取りやすいと言われてるみたいだね。僕は声や雰囲気っていうよりは、討論番組で司会している時の進行の仕方に感心させられるよ。\n女:そう?この間、スポーツ選手にインタビューしてたの見たけど、その時は、選手が答えにくそうで、質問の仕方がどうなのかなーって思ったんだよね。\n男:得意不得意があるのかな。僕がよく見る番組ではゲストが言いたい放題言っても、うまい具合に対応してるんだよね。自分が会議なんかで司会するときの参考にしたいって思うことが多いんだ。\n女:へえ、そうなんだね。\n男の人はこのアナウンサーのどんな点が最も良いと言っていますか。", "問2-2": "2番。うちで女の人と男の人が話しています。2人は引っ越しの値段を安くするため、どうすることにしましたか。\n女:引っ越し会社に引越しの見積もりを出してもらったけど予算よりかなり高かったよ。今の時期はどこの会社も高いんだね。荷物の量と移動距離で料金を計算するから荷物を減らせば安くなるって。\n男:そう、んー。大きい荷物を減らそうか。えーっと、大きいものって言ったらソファー、冷蔵庫、本棚だね。\n女:本棚は分解できるよ。ソファーはあまり使ってないし、欲しい人にあげてもいいかもしれないね。\n男:それもそうだね。あ、冷蔵庫は古いし、この際、売って向こうで新しいのを買う?\n女:えー?冷蔵庫はまだ使うよ!あ、そうだ。親戚のおじさんがトラックを持ってるからおじさんに手伝ってもらって、自分たちで荷物を運ぶ?\n男:荷物の積み降ろしって結構大変だよ。やっぱり引っ越し会社に頼んだ方がいいんじゃないかな?\n女:うーん、そうだね。安い引っ越し会社は見つからないだろうし、費用を抑えられるようにあんまり使ってない大きい家具のもらい手を探そうか。\n男:うん、そうだね。\n2人は引っ越しの値段を安くするため、どうすることにしましたか。", "問2-3": "3番。病院で、医者と女の人が話しています。女の人の肩の具合はどうですか。\n医者:その後、いかがですか。\n女:あのー、ゆっくりとなら、手を上にあげられるようになりました。\n医者:横に伸ばすと、どうですか。\n女:あ、それはまだ痛いです。\n医者:腕を後ろに回すことは？\n女:それは、まだ全然できませんが、もう痛くて眠れないというのは、なくなりました。\n医者:そうですか。少しずつよくなってきていますね。もう、テープは貼らなくてもいいと思います。お風呂に入ったとき、肩を、こういうふうに、ゆっくりマッサージしてみてください。じゃ、また来週来てください。\n女の人の肩の具合はどうですか。", "問2-4": "4番。テレビで医者が話しています。夏の暑い時の食事で大切なことは何だと言っていますか。\n医者:毎日こう暑い日が続くと、食欲も衰えてしまいますね。お腹が空いたら食べようでは、体が食事を受け付けるリズムが掴めないので、決まった時間に朝昼晩、毎日食べること。私は、このことが暑い夏を健康に過ごすためには大切なことだと思います。暑いときは手軽で冷たいものや、喉の通りが良いものを好んで食べがちですが、そのようなものばかり食べていると、胃腸の働きが弱まってしまいますよ。\n夏の暑い時の食事で大切なことは何と言っていますか。", "問2-5": "5番。会社の会議で課長が話しています。会社で今年度から始める健康のための取り組みは何ですか。今年度から始める取り組みです。\n男:我が社では三年前から社員の健康維持を目的とした取り組みを続けています。今年度は4つの取り組み。1ヶ月に歩いた距離の合計を競う、ウォーキングコンテストの実施、体操動画の公開、運動用品の支給、食事のアドバイスを行い、皆さんの健康を支えます。このうち、歩行距離を競うことは、昨年末の社員へのアンケート結果を受けて新たに採用になりました。食事に運動に、これからも健康第一で頑張りましょう。\n会社で今年度から始める健康のための取り組みは何ですか。", "問2-6": "6番。シンポジウムで大学の先生が共同研究の話をしています。先生はこの研究の中で何が1番難しかったと言っていますか。\n女:気候の変化を正確に予測するためには海の温度を測ることが大切です。しかも多くの場所で海の表面だけでなく、深さ1000メートルとか2000メートルのところの温度を測る必要があるのです。そのための計測器の開発が非常に難しかったんです。そして、さらに困難だったのはいくつもの国から協力してもらうこと。それが実現して、ようやく世界中のデータを研究のために使えるようになりました。データは膨大な量となり、分析には時間もかかりますが、かなり正確な予測が行われるようになりました。\n先生はこの研究の中で何が1番難しかったと言っていますか。", "問3-1": "1番。学校の事務室で事務の人と学生が話しています。\n男:あの、ジョンです。事務に来るようにという掲示を見てきました。\n女:あ、はい、ジョンさんですね。\n男:あのう、なんでしょうか?授業料は先日支払いましたけど。それとも奨学金のことですか?\n女:あっ、奨学金はまだなんですけど。\n男:あ、はい。\n女:あの、ジョンさん、金曜日の佐藤先生の授業を取っていますよね。\n男:はい。\n女:その、先生が明後日の金曜日、急にご都合が悪くなり、日程を変更したいというご連絡があったんですが。\n男:あ、はい。\n女:あの来週の金曜日に三時間続けて授業をなさりたいそうなんですが、大丈夫ですか?\n男:あっ、はい。金曜日は、先生の授業だけですから。\n女:そうですか。他の学生も問題ないそうですから、じゃあそういうことでお願いします。\n男:はい。\n事務の人の話の内容は何でしたか。\n1、担当教師の変更について。\n2、奨学金の結果について。\n3、授業料の支払いについて。\n4、授業の日程の変更について。", "問3-2": "2番。テレビで男の人が話しています。\n男:最近は、結婚の申し込みや大きな頼み事などの大切な話を、直接言うよりもメールで伝えるほうがいいという若い人もいるようです。なぜ顔の見えないメールのほうがいいのでしょうか。ゆっくり会う時間がない、話すのが苦手で書いたほうがうまく伝えられるという人もいるでしょう。しかし、もっと積極的な理由もあるようです。言葉は言ったらすぐに消えてしまいますが、メールは後から何度も読み返すことができて、しっかりと残ります。それで、メールの文章は責任のある言葉だと感じられるようです。\n男の人は何について話していますか。\n1、結婚を申し込むときの手段。\n2、大切な話にメールを使う理由。\n3、メールの長所と短所。\n4、メールの文章の書き方。", "問3-3": "3番。スケート選手が話しています。\n女:わたしは子供のころはスピードスケートをやっていました。でも、スピードスケートはだれが速かったかを数字で決めるので、速さだけに頼るというのに限界を感じるようになりました。でも、フィギュアスケートは技術力と美しさで勝負するものですから、その人のスケートがきれいかどうかということは、人によって評価が変わりますし、わたし自身の気持ちが入っているときは、高い点がもらえるんです。ですから自分を表現するという意味で、満足感もあります。それに、着る服や音楽もとてもきれいで、そこからその選手の性格や国の文化がわかるのも、楽しみのひとつですね。\nスケート選手は何について話していますか。\n1、スピードスケートを始めた理由。\n2、スピードスケートに必要な要素。\n3、フィギュアスケートの評価方法。\n4、フィギュアスケートの魅力。", "問3-4": "4番。テレビで、料理研究家が話しています。\n男:この番組をご覧の皆さんの中には、小学生のお子さんをお持ちの方もいらっしゃると思いますが、お子さんは料理ができますか？私は、子供が料理をした方がいいと思っています。料理することを通して、子供が順を追って、物事を進めることを覚えるでしょう。また、足りない材料を違うもので代用するなどして、工夫する力を身につけていくことができます。さらに、親子で料理をすれば、コミュニケーションも深まりますよね。これらの経験は将来きっとお子さんの財産になるはずですよ。\n料理研究家は何について話していますか。\n1、子供に家庭の味を伝えることの大切さ。\n2、子どものコミュニケーション能力を高める方法。\n3、子どもと楽しく料理をするための工夫。\n4、子どもに料理をさせることのメリット。", "問3-5": "5番。ラジオで俳優が話しています。\n男:みなさんは旅が好きですか。旅といえば、遠いところに行くことだと思う人もいるかもしれませんが、僕は例えば、電車で一駅手前で降りて、いつもと違う道を歩いて帰るのも旅だと思うんです。距離ではなく、移動そのものが重要なんです。目的地に到達するまでのいつもと違った過程を楽しむ。そういうのも旅だと言えるのではないでしょうか。\n俳優は何について話していますか。\n1、旅の思い出。\n2、1人で行く旅の計画。\n3、旅をすることの重要性。\n4、自分が考える旅というもの。", "問4-1": "1番。森さん、明日もアルバイトに来てもらえると助かるんだけど…\n1、来られる人、見つかったんですね。\n2、6時以降なら、できますが。\n3、いえ、気にしないでください。", "問4-2": "2番。課長。こちら、春の新商品の企画書なんですが、ご覧いただけますか？\n1、すぐ、ご覧になりますよ。\n2、じゃ、今持ってきますね。\n3、いつまでに見ればいいですか？", "問4-3": "3番。お忙しいところ、すみません。ご相談したいことがあるんですが、今ちょっとよろしいでしょうか。\n1、ええ、おかまいなく。何でしょう？\n2、ええ、どういたしまして。何でしょう？\n3、ええ、かまいませんよ。何でしょう？", "問4-4": "4番。英語の勉強、し直そうと思ってるの。書くのはともかくとして会話ぐらいはね。\n1、そうだね。書く練習は必要だよね。\n2、そうだね。話せると楽しいもんね。\n3、そうだね。会話なんて勉強しなくてもね。", "問4-5": "5番。このコース料理、ちょっと忙しかったんだね。\n1、何か追加で注文する?\n2、満足したってこと?\n3、量が多くて、食べ切れないよね。", "問4-6": "6番。文化祭での僕たちのイベント、森先輩のアドバイスなしには成功しなかったよね。\n1、森先輩はアドバイスしてくれたよ。\n2、本当、森先輩に感謝しなくちゃね。\n3、だから成功しなかったんだね。", "問4-7": "7番。あのー、できたらこの荷物、ここで夕方まで預かっといてほしいんですけど。\n1、そうですか。じゃ、よろしくお願いします。\n2、わかりました。何時に取りに来ますか。\n3、じゃ、できたらご連絡します。", "問4-8": "8番。山田課長、佐藤さん転んで骨折したけど、入院せずに済むそうです。\n1、入院しなくていいんですね。\n2、入院するんですか。大変ですね。\n3、入院するかどうかわからないですね。", "問4-9": "9番。先生、希望の会社に就職できるかどうか不安でしたが、なんとかなりました。\n1、それは心配ですね。\n2、そうですか。よかったですね。\n3、まだ諦めちゃだめですよ。", "問4-10": "10番。店長。山田さん、配達の仕事、頼まれたらやらないこともないって言ってました。\n1、他の人を探さないとだめだね。\n2、山田さんに断られたか。\n3、じゃ、お願いしてみようかな。", "問4-11": "11番。うわぁ、見て、この北海道ツアー、安い。休みさえあれば絶対行くのにね。\n1、今休むのは難しいよね。\n2、いいなあ、旅行に行くんだね。\n3、本当、料金が安ければね。", "問5-1": "1番。市民センターで、上司と職員2人が子供向けのイベントの企画について話しています。\n男1:ええ、今年の秋、小学生向けのイベントを行うことになりました。場所はうちの大ホールで子供達がみて楽しめる物にしたいと思います。初めての試みですが、何かいいアイディアはありますか。\n男2:子供むけのクラシックコンサートはどうですか。前に見たことがあるんですが…。市民オーケストラが楽器を紹介もしながら演奏してくれるんですよ。何人か舞台にあげて楽器の体験もさせてくれました。\n男1:面白そうですね。\n男2:あとは最近人気の手品師を呼ぶのもいいと思います。手品を見せてくれた後、2、3人の子供と一緒に舞台の上で手品をしたりするそうですよ。\n女:でも、どちらも舞台に上がりたい子が皆上がれるわけじゃないですよね。人形劇はどうですか。会場の子供達とやり取りしたり、皆で一緒に歌ったりする人形劇をやっている団体がありますよ。\n男1:ああ、全員が劇に参加できるんですね。\n女:それか、市内のバレー団に来てもらうのはどうですか。普段、なかなか見られないですよね。私、子供の時に見て感動したんです。\n男2:うーん、僕も子供の時にみましたが、セリフがないから、そんなに興味が持てなかったです。\n男1:そういう子も結構いるかもしれませんね。うーん、そうですね。一部の子供だけ舞台に上がるより客席から皆が声を出して参加できるっていうのがいいですね。そこに連絡してみましょう。\n今年のイベントとしてどの企画を進めることにしましたか。\n1、クラシックコンサート。\n2、手品。\n3、人形劇。\n4、バレー。", "問5-2-1": "2番。ラジオを聞いて男の人と女の人が話しています。\nアナウンサー:今日は緑市で夕日が楽しめる場所を4ヶ所ご紹介します。1つ目は夕日通り。砂浜に沿って続くこの通りからは、海を夕日が徐々にオレンジ色に染めていく光景が見られます。2つ目は西が丘です。小さな山ですが、上からふもとのお寺が夕日に染まっていく様子を見下ろすことができます。3つ目のさくら公園では、湖に映る夕日を鑑賞できます。湖にいる鳥たちが夕日に照らされる光景に心を打たれます。最後は東山。車で20分ほど上がった所から、海に沈む夕日を眺めることができます。\n男:この週末緑市に旅行にいくし、ちょうどいいね。観光の帰りにも夕日を見にいこうよ。\n女:天気がよさそうだし、2泊するから2回見られるね。夕日が水に映るとキラキラしてきれいだもんね。\n男:どこ？鳥が見られる所？\n女:ううん。海沿いのほう。ホテルからも近いし、1日目の夕方に散歩にいくのにちょうどいいんじゃない？\n男:ああ、いいね。行ってみよう。2日目は午後、美術館にいくよ。お寺の近くっていう所、美術館から近いんじゃない？お寺を入れた夕焼けの写真を撮りに行こうよ。\n女:いいね。高い所から海に沈む夕日を見るのもいいと思うんだけど、そっちはちょっと場所が離れているしね。\n質問1。2人は1日目、どこに夕日を見に行きますか。\n質問2。2人は2日目、どこに夕日を見に行きますか。", "問5-2-2": "2番。ラジオを聞いて男の人と女の人が話しています。\nアナウンサー:今日は緑市で夕日が楽しめる場所を4ヶ所ご紹介します。1つ目は夕日通り。砂浜に沿って続くこの通りからは、海を夕日が徐々にオレンジ色に染めていく光景が見られます。2つ目は西が丘です。小さな山ですが、上からふもとのお寺が夕日に染まっていく様子を見下ろすことができます。3つ目のさくら公園では、湖に映る夕日を鑑賞できます。湖にいる鳥たちが夕日に照らされる光景に心を打たれます。最後は東山。車で20分ほど上がった所から、海に沈む夕日を眺めることができます。\n男:この週末緑市に旅行にいくし、ちょうどいいね。観光の帰りにも夕日を見にいこうよ。\n女:天気がよさそうだし、2泊するから2回見られるね。夕日が水に映るとキラキラしてきれいだもんね。\n男:どこ？鳥が見られる所？\n女:ううん。海沿いのほう。ホテルからも近いし、1日目の夕方に散歩にいくのにちょうどいいんじゃない？\n男:ああ、いいね。行ってみよう。2日目は午後、美術館にいくよ。お寺の近くっていう所、美術館から近いんじゃない？お寺を入れた夕焼けの写真を撮りに行こうよ。\n女:いいね。高い所から海に沈む夕日を見るのもいいと思うんだけど、そっちはちょっと場所が離れているしね。\n質問1。2人は1日目、どこに夕日を見に行きますか。\n質問2。2人は2日目、どこに夕日を見に行きますか。"};
 
+/* Interface strings, every language (the registry's `exam` namespace). P() is
+   markup — one .lang-pane per language, so the dropdown switches it by CSS and
+   nothing has to be rebuilt; S() is plain text in the language on screen, for
+   what cannot hold markup (dialogs, title attributes, the clock), repainted on
+   lang_ui's `langchange`. The exam's own wording is not in here. */
+const EXAM_STR = {"ja": {"doc_title": "JLPT {level} 模擬試験 解答用紙 ({id})", "crumb_sitting": "{id}（受験）", "crumb_result": "{id}（採点結果）", "tab_in_progress": "受験中", "tab_next": "この後", "tab_submitted": "提出済み", "clock_left": "残り {t}", "clock_not_started": "（未開始）", "clock_paused": "（停止中）", "clock_graded": "採点済み", "count_gengo": "言語知識・読解", "count_choukai": "聴解", "count_all": "計", "btn_clear": "消去", "btn_clear_short": "消去", "btn_advance": "聴解へ進む", "btn_advance_short": "聴解へ", "btn_grade": "採点する", "btn_grade_short": "採点", "hint_advance": "{n}問が未解答です。{t}問すべてに答えると聴解へ進めます。", "hint_grade": "{n}問が未解答です。すべて解答すると採点できます。", "confirm_clear": "すべての解答と受験状態（残り時間・提出済みの部分）を消去して、最初からやり直しますか？", "confirm_advance": "言語知識（文字・語彙・文法）・読解を提出して聴解に進みます。\n提出したあとは、この部分に戻ることはできません。\n\nよろしいですか？", "confirm_grade": "聴解を提出して採点します。\n\nよろしいですか？", "gap_advance": "{n}問が未解答です。{t}問すべてに答えてから聴解へ進んでください。", "gap_grade": "{n}問が未解答です。すべての設問に解答してから採点してください。", "gap_list": "（未解答: {list}）", "alert_time_gengo": "言語知識（文字・語彙・文法）・読解の時間が終了しました。\n解答はそのまま提出され、聴解に進みます。", "alert_time_choukai": "聴解の時間が終了しました。\nこれまでの解答で採点します。", "gate_limit": "制限時間 <b>{m}分</b>／全{n}問", "gate_warn": "開始すると時計が動きます。", "gate_auto": "残り時間が0になった時点で、解答はそのまま自動的に提出されます。", "gate_extra_gengo": "提出したあとは、この部分に戻ることはできません。", "gate_extra_choukai": "音声は最初から最後まで一続きで流れます。イヤホンなどの準備ができてから開始してください。", "gate_focus": "時計はこのタブを見ている間だけ進み、ほかのタブや別のウィンドウに移ると止まります。", "gate_start": "開始する", "gate_practice_note": "じっくり復習したいときは<b>練習モード</b>へ。制限時間も採点もなく、全問が1ページに並び、設問ごとに模範解答・解説を開けます。", "gate_practice_btn": "練習モードで解く（採点・制限時間なし）", "player_back10": "◀ 10秒", "player_fwd10": "10秒 ▶", "player_speed": "速度", "player_chapter": "章", "player_pick": "MP3を選ぶ", "player_noaudio": "聴解.mp3 を読み込めません。「MP3を選ぶ」から指定してください。", "saved_server": "tests/{id}/ に採点結果.json と ユーザー解答.json を保存しました。", "saved_local": "このブラウザに保存しました（テスト一覧に反映されます）。", "saved_download": "採点結果.json および ユーザー解答.json としてダウンロードしました。", "saved_earlier": "保存済みの採点結果です。", "rs_title": "JLPT {level} 模擬試験 採点結果（テスト {id}）", "rs_pass": "合格", "rs_fail": "不合格", "rs_why": "判定理由:", "rs_why_total": "総合点 ({s}点) が合格ライン ({p}点) に届いていません。", "rs_why_sections": "基準点未達のセクションがあります: {list} (各{c}点以上が必要)。", "rs_h_summary": "1. 得点サマリー (得点等化スケールスコア 換算)", "rs_th_section": "セクション", "rs_th_raw": "素点", "rs_th_scaled": "換算得点", "rs_th_cutoff": "基準点", "rs_th_verdict": "判定", "rs_points": "{n}点", "rs_cutoff_ok": "基準点クリア", "rs_cutoff_ng": "基準点未達", "rs_total": "総合計", "rs_h_taxonomy": "2. 大問別（問題形式別）詳細分析", "rs_th_area": "分野", "rs_th_mondai": "問題", "rs_th_name": "大問名", "rs_th_rate": "正解率", "rs_th_count": "正解数 / 問題数", "rs_th_rating": "評価", "rate_strong": "優", "rate_fair": "良", "rate_weak": "要強化", "rs_h_advice": "要強化の大問と学習アドバイス", "rs_no_weak": "正解率60%未満の大問はありません。", "rs_h_check": "3. 全設問解答チェック表", "rs_expand": "すべての設問詳細を展開", "rs_collapse": "詳細を折りたたむ", "rs_expand_hint": "展開すると全{n}問の問題文・選択肢・正誤が一覧で表示されます。", "rs_grid_gengo": "言語知識・読解 (1 〜 {n})", "rs_grid_choukai": "聴解", "rs_unanswered": "未解答", "rs_detail_gengo": "言語知識・読解 — 設問詳細", "rs_detail_choukai": "聴解 — 設問詳細", "rs_item": "設問 {k}", "rs_items_range": "設問 {a} 〜 {b}", "rs_items_m5": "（問題5 2番 共通）", "rs_correct": "正解", "rs_wrong": "不正解", "rs_your": "あなたの答え:", "rs_key": "正解:", "rs_script": "聴解スクリプト", "rs_script_shared": "聴解スクリプト（質問1・質問2 共通）", "rs_audio_note": "聴解の音声は「解答に戻ってやり直す」から受験画面のプレイヤーで確認できます。", "rs_no_stem": "（この設問の問題文を画面から取得できませんでした。）", "rs_nav_list": "← テスト一覧へ戻る", "rs_nav_retry": "解答に戻ってやり直す", "rs_nav_model": "模範解答・解説", "rs_nav_download": "採点結果を保存（JSON）", "advice": {"問1": "『新完全マスター単語N2』『新完全マスター漢字N2』の基本語彙・訓読み・複合語の復習を徹底しましょう。", "問2": "『新完全マスター単語N2』『新完全マスター漢字N2』の基本語彙・訓読み・複合語の復習を徹底しましょう。", "問3": "『新完全マスター単語N2』『新完全マスター漢字N2』の基本語彙・訓読み・複合語の復習を徹底しましょう。", "問4": "語彙の文脈的意味やコロケーション（類義語・用法）の精度を高めましょう。単語カードでの例文暗記が効果的です。", "問5": "語彙の文脈的意味やコロケーション（類義語・用法）の精度を高めましょう。単語カードでの例文暗記が効果的です。", "問6": "語彙の文脈的意味やコロケーション（類義語・用法）の精度を高めましょう。単語カードでの例文暗記が効果的です。", "問7": "『新完全マスター文法N2』で機能語の接続・意味の違いおよび文章全体の論理展開（接続詞・指示語）を復習しましょう。", "問8": "『新完全マスター文法N2』で機能語の接続・意味の違いおよび文章全体の論理展開（接続詞・指示語）を復習しましょう。", "問9": "『新完全マスター文法N2』で機能語の接続・意味の違いおよび文章全体の論理展開（接続詞・指示語）を復習しましょう。", "問10": "『新完全マスター読解N2』を活用し、設問のキーワードのスキャニングおよび段落ごとの要旨把握のスキマ時間を増やしましょう。", "問11": "『新完全マスター読解N2』を活用し、設問のキーワードのスキャニングおよび段落ごとの要旨把握のスキマ時間を増やしましょう。", "問12": "『新完全マスター読解N2』を活用し、設問のキーワードのスキャニングおよび段落ごとの要旨把握のスキマ時間を増やしましょう。", "問13": "『新完全マスター読解N2』を活用し、設問のキーワードのスキャニングおよび段落ごとの要旨把握のスキマ時間を増やしましょう。", "問14": "『新完全マスター読解N2』を活用し、設問のキーワードのスキャニングおよび段落ごとの要旨把握のスキマ時間を増やしましょう。", "問題1": "『新完全マスター聴解N2』CD音源によるシャドーイングおよび即時応答（問題4）の定型表現・敬語表現の反復練習を行いましょう。", "問題2": "『新完全マスター聴解N2』CD音源によるシャドーイングおよび即時応答（問題4）の定型表現・敬語表現の反復練習を行いましょう。", "問題3": "『新完全マスター聴解N2』CD音源によるシャドーイングおよび即時応答（問題4）の定型表現・敬語表現の反復練習を行いましょう。", "問題4": "『新完全マスター聴解N2』CD音源によるシャドーイングおよび即時応答（問題4）の定型表現・敬語表現の反復練習を行いましょう。", "問題5": "『新完全マスター聴解N2』CD音源によるシャドーイングおよび即時応答（問題4）の定型表現・敬語表現の反復練習を行いましょう。"}}, "vi": {"doc_title": "JLPT {level} — Phiếu làm bài đề {id}", "crumb_sitting": "{id} (làm bài)", "crumb_result": "{id} (kết quả)", "tab_in_progress": "đang làm", "tab_next": "làm sau", "tab_submitted": "đã nộp", "clock_left": "Còn {t}", "clock_not_started": " (chưa bắt đầu)", "clock_paused": " (tạm dừng)", "clock_graded": "Đã chấm", "count_gengo": "Kiến thức & Đọc", "count_choukai": "Nghe", "count_all": "Tổng", "btn_clear": "Xoá bài", "btn_clear_short": "Xoá", "btn_advance": "Sang phần Nghe", "btn_advance_short": "Nghe →", "btn_grade": "Nộp & chấm điểm", "btn_grade_short": "Chấm", "hint_advance": "Còn {n} câu chưa chọn đáp án. Làm đủ {t} câu thì mới sang được phần Nghe.", "hint_grade": "Còn {n} câu chưa chọn đáp án. Làm đủ tất cả thì mới chấm được.", "confirm_clear": "Xoá toàn bộ đáp án đã chọn và trạng thái bài thi (thời gian còn lại, phần đã nộp) để làm lại từ đầu?", "confirm_advance": "Bạn sẽ nộp phần Kiến thức ngôn ngữ (chữ, từ vựng, ngữ pháp) – Đọc hiểu và chuyển sang phần Nghe.\nĐã nộp thì không quay lại phần này được nữa.\n\nBạn chắc chắn chứ?", "confirm_grade": "Nộp phần Nghe và chấm điểm cả bài?\n\nBạn chắc chắn chứ?", "gap_advance": "Còn {n} câu chưa chọn đáp án. Hãy làm đủ {t} câu rồi hãy sang phần Nghe.", "gap_grade": "Còn {n} câu chưa chọn đáp án. Hãy làm hết tất cả các câu rồi hãy chấm.", "gap_list": " (câu chưa làm: {list})", "alert_time_gengo": "Đã hết giờ phần Kiến thức ngôn ngữ – Đọc hiểu.\nBài làm được nộp nguyên trạng và bạn chuyển sang phần Nghe.", "alert_time_choukai": "Đã hết giờ phần Nghe.\nBài sẽ được chấm theo những đáp án bạn đã chọn.", "gate_limit": "Thời gian <b>{m} phút</b> / {n} câu", "gate_warn": "Bấm bắt đầu là đồng hồ chạy. ", "gate_auto": "Khi đồng hồ về 0, bài làm tự động được nộp nguyên trạng.", "gate_extra_gengo": "Đã nộp thì không quay lại phần này được nữa.", "gate_extra_choukai": "Audio phát liền một mạch từ đầu đến cuối. Hãy chuẩn bị tai nghe xong rồi mới bắt đầu.", "gate_focus": "Đồng hồ chỉ chạy khi bạn đang xem tab này; chuyển sang tab hay cửa sổ khác thì đồng hồ dừng.", "gate_start": "Bắt đầu", "gate_practice_note": "Muốn ôn kỹ thì dùng <b>chế độ luyện tập</b>: không giới hạn thời gian, không chấm điểm, cả đề nằm trên một trang và câu nào cũng mở được đáp án mẫu kèm giải thích.", "gate_practice_btn": "Làm ở chế độ luyện tập (không bấm giờ, không chấm)", "player_back10": "◀ 10 giây", "player_fwd10": "10 giây ▶", "player_speed": "Tốc độ", "player_chapter": "Đoạn", "player_pick": "Chọn tệp MP3", "player_noaudio": "Không tải được 聴解.mp3. Hãy bấm 「Chọn tệp MP3」 để chọn tệp audio trên máy.", "saved_server": "Đã lưu 採点結果.json và ユーザー解答.json vào tests/{id}/.", "saved_local": "Đã lưu trong trình duyệt này (danh sách đề sẽ cập nhật theo).", "saved_download": "Đã tải xuống 採点結果.json và ユーザー解答.json.", "saved_earlier": "Đây là kết quả chấm đã lưu trước đó.", "rs_title": "Kết quả chấm đề thi thử JLPT {level} (đề {id})", "rs_pass": "ĐỖ", "rs_fail": "TRƯỢT", "rs_why": "Lý do:", "rs_why_total": "Tổng điểm ({s} điểm) chưa đạt mức đỗ ({p} điểm).", "rs_why_sections": "Có phần chưa đạt điểm liệt: {list} (mỗi phần cần từ {c} điểm trở lên).", "rs_h_summary": "1. Tóm tắt điểm (quy đổi sang thang điểm chuẩn)", "rs_th_section": "Phần thi", "rs_th_raw": "Số câu đúng", "rs_th_scaled": "Điểm quy đổi", "rs_th_cutoff": "Điểm liệt", "rs_th_verdict": "Đánh giá", "rs_points": "{n} điểm", "rs_cutoff_ok": "Qua điểm liệt", "rs_cutoff_ng": "Dưới điểm liệt", "rs_total": "Tổng cộng", "rs_h_taxonomy": "2. Phân tích theo từng dạng câu hỏi (大問)", "rs_th_area": "Phần", "rs_th_mondai": "Mondai", "rs_th_name": "Dạng câu hỏi", "rs_th_rate": "Tỉ lệ đúng", "rs_th_count": "Đúng / Tổng", "rs_th_rating": "Mức", "rate_strong": "Tốt", "rate_fair": "Khá", "rate_weak": "Cần củng cố", "rs_h_advice": "Dạng câu cần củng cố và gợi ý ôn tập", "rs_no_weak": "Không có dạng câu nào dưới 60% — bạn làm đều tay ở mọi dạng.", "rs_h_check": "3. Bảng đối chiếu từng câu", "rs_expand": "Mở chi tiết tất cả các câu", "rs_collapse": "Thu gọn chi tiết", "rs_expand_hint": "Mở ra sẽ thấy đề, lựa chọn và đúng/sai của cả {n} câu trên một trang.", "rs_grid_gengo": "Kiến thức & Đọc (1 – {n})", "rs_grid_choukai": "Nghe", "rs_unanswered": "Bỏ trống", "rs_detail_gengo": "Kiến thức & Đọc — chi tiết từng câu", "rs_detail_choukai": "Nghe — chi tiết từng câu", "rs_item": "Câu {k}", "rs_items_range": "Câu {a} – {b}", "rs_items_m5": " (dùng chung bài nghe Mondai 5, câu 2)", "rs_correct": "Đúng", "rs_wrong": "Sai", "rs_your": "Bạn chọn:", "rs_key": "Đáp án:", "rs_script": "Lời thoại bài nghe", "rs_script_shared": "Lời thoại bài nghe (dùng chung cho câu hỏi 1 và 2)", "rs_audio_note": "Muốn nghe lại audio, bấm 「Quay lại làm bài」 rồi dùng trình phát ở màn hình làm bài.", "rs_no_stem": "(Không lấy được nội dung câu hỏi này từ trang.)", "rs_nav_list": "← Về danh sách đề", "rs_nav_retry": "Quay lại làm bài", "rs_nav_model": "Đáp án mẫu & giải thích", "rs_nav_download": "Lưu kết quả (JSON)", "advice": {"問1": "Ôn lại cách đọc chữ Hán: âm On/âm Kun của từ cơ bản và từ ghép. Sách 『新完全マスター漢字N2』 và 『新完全マスター単語N2』 là chỗ bắt đầu tốt; mỗi ngày đọc to một trang từ ghép.", "問2": "Tập viết đúng chữ Hán cho từ đã biết cách đọc: phân biệt các chữ cùng âm, na ná hình dạng. Chép tay từ ghép trong 『新完全マスター漢字N2』 hiệu quả hơn chỉ nhìn.", "問3": "Học các tiền tố, hậu tố hay gặp (〜率, 〜化, 未〜, 再〜…) và cách chúng ghép với từ. Gom theo nhóm hậu tố trong 『新完全マスター単語N2』 sẽ dễ nhớ hơn.", "問4": "Luyện chọn từ hợp ngữ cảnh: học từ theo cụm đi kèm (collocation) chứ đừng học từ đơn lẻ. Ghi thẻ từ kèm một câu ví dụ ngắn cho mỗi từ.", "問5": "Luyện tìm từ đồng nghĩa, cách nói tương đương: với mỗi từ mới, ghi thêm một cách nói dễ hơn có cùng nghĩa, rồi tự kiểm tra ngược lại.", "問6": "Dạng cách dùng từ: đọc kỹ cả câu, xem từ đó có đi với trợ từ, động từ, ngữ cảnh ấy không. Học từ qua 2–3 câu ví dụ có sắc thái khác nhau.", "問7": "Ôn mẫu ngữ pháp N2 theo cách nối (接続) và ý nghĩa, nhất là các mẫu dễ nhầm với nhau. 『新完全マスター文法N2』 có bảng so sánh rất tiện.", "問8": "Dạng sắp xếp câu (★): tìm cặp từ chắc chắn đi liền nhau trước (mẫu ngữ pháp, trợ từ + động từ), rồi mới ghép phần còn lại.", "問9": "Ngữ pháp trong đoạn văn: chú ý từ nối (接続詞) và từ chỉ định (こそあど) để theo dõi mạch văn. Đọc cả đoạn trước khi chọn đáp án.", "問10": "Đọc đoạn ngắn: tìm câu chốt ý của tác giả (thường ở cuối) và gạch từ khoá của câu hỏi trước khi đọc. Luyện với 『新完全マスター読解N2』.", "問11": "Đọc đoạn vừa: tóm tắt ý chính của từng đoạn trong một dòng khi đọc, rồi đối chiếu với câu hỏi. Đừng chọn đáp án chỉ vì trùng chữ với bài.", "問12": "Đọc so sánh (A và B): ghi nhanh quan điểm của từng bài về cùng một vấn đề, xem hai bài giống và khác nhau ở đâu.", "問13": "Đọc bài dài (nêu quan điểm): theo dõi lập luận của tác giả qua các từ nối như しかし, つまり; ý kiến chính thường nằm ở đoạn cuối.", "問14": "Tìm thông tin: đọc câu hỏi và điều kiện trước, rồi chỉ dò phần liên quan trong tờ thông báo/bảng biểu. Không cần đọc hết từ đầu.", "問題1": "Nghe hiểu nhiệm vụ: chú ý việc người đó sẽ làm ĐẦU TIÊN hoặc TIẾP THEO; phương án bị gạt đi giữa chừng là bẫy. Luyện với CD của 『新完全マスター聴解N2』.", "問題2": "Nghe hiểu ý chính: đọc kỹ câu hỏi trong thời gian chờ để biết cần nghe lý do hay điểm gì; lý do được nhắc đến trước thường chưa phải đáp án.", "問題3": "Nghe khái quát: không có câu hỏi trước, nên hãy nghe xem người nói muốn nói gì nhất. Tập tóm tắt mỗi bài nghe bằng một câu.", "問題4": "Phản xạ nhanh: học thuộc các câu đáp quen thuộc và kính ngữ trong hội thoại hằng ngày; luyện shadowing để quen tốc độ.", "問題5": "Nghe tổng hợp: ghi chú nhanh từng lựa chọn và điều kiện của mỗi người khi nghe; câu hỏi 1 và 2 thường hỏi về hai người khác nhau."}}}, EXAM_ORDER = ["ja", "vi"], EXAM_PRIMARY = "ja";
+function _fillStr(code, key, vars){
+  const t = EXAM_STR[code] || {}, p = EXAM_STR[EXAM_PRIMARY] || {};
+  let s = t[key] != null ? t[key] : (p[key] != null ? p[key] : key);
+  for (const k in (vars || {})) s = s.split('{' + k + '}').join(String(vars[k]));
+  return s;
+}
+function uiLang(){ return typeof currentLang === 'function' ? currentLang() : EXAM_PRIMARY; }
+function S(key, vars){ return _fillStr(uiLang(), key, vars); }
+function P(key, vars){
+  return EXAM_ORDER.map(c => '<span class="lang-pane" data-lang="' + c + '">'
+    + _fillStr(c, key, vars) + '</span>').join('');
+}
+/* A weak 大問's advice, per language by 大問 code; the result document's own
+   (Japanese, from the level table) is the fallback. */
+function adviceHtml(code, fallback){
+  return EXAM_ORDER.map(c => {
+    const a = (EXAM_STR[c] || {}).advice || {};
+    return '<span class="lang-pane" data-lang="' + c + '">'
+      + escapeHtml(a[code] || fallback || '') + '</span>';
+  }).join('');
+}
+
 // Where 「← テスト一覧」 and 「テスト一覧へ戻る」 go: this level's exam list, one
 // relative link in both deployments (build-time list_href()).
 const LIST_HREF = "../../N2/exam/index.html";
@@ -1552,7 +1530,7 @@ const StoreServer = {
     try {
       const r = await queuePost('submit', {answers: payload, result: res});
       const data = r.ok ? await r.json() : null;
-      if (data && data.success) return {saved: true, message: data.message};
+      if (data && data.success) return {saved: true, message: P('saved_server', {id: TESTID})};
     } catch(e){}
     return {saved: false, message: ''};
   }
@@ -1571,8 +1549,7 @@ const StoreLocal = {
     // before the verdict — && would skip the result on a failed answers write.
     const wroteAnswers = window.JLPTStore.setAnswers(TESTID, payload);
     const wroteResult = window.JLPTStore.setResult(TESTID, res);
-    return (wroteAnswers && wroteResult) ? {saved: true,
-                 message: 'このブラウザに保存しました（テスト一覧に反映されます）。'}
+    return (wroteAnswers && wroteResult) ? {saved: true, message: P('saved_local')}
               : {saved: false, message: ''};
   }
 };
@@ -1582,7 +1559,6 @@ const STORE = STORAGE === 'local' ? StoreLocal : StoreServer;
 // the two graders write the SAME 採点結果.json shape, and make check proves it.
 const SEC_GENGO = SCORING.sections[0].name, SEC_DOKKAI = SCORING.sections[1].name,
       SEC_CHOUKAI = SCORING.sections[2].name;
-const EXAM_TITLE = "テスト " + TESTID + "（受験）", RESULT_TITLE = "テスト " + TESTID + "（採点結果）";
 
 function state(){
   const o = {};
@@ -1624,26 +1600,28 @@ function updateCounter(ans){
   for (const k of CHOUKAI_KEYS){ if (ans[k] !== undefined) cCount++; }
   // The readout follows the phase: during 言語知識・読解 the 聴解 count is noise,
   // and on a graded paper both halves are open again.
-  document.getElementById('done').textContent =
-    PHASE === 'gengo'   ? "言語知識・読解 " + gCount + " / " + GENGO_KEYS.length
-  : PHASE === 'choukai' ? "聴解 " + cCount + " / " + CHOUKAI_KEYS.length
-  : "計 " + (gCount + cCount) + " / " + KEYS.length;
+  const [lbl, n, t] =
+    PHASE === 'gengo'   ? ['count_gengo', gCount, GENGO_KEYS.length]
+  : PHASE === 'choukai' ? ['count_choukai', cCount, CHOUKAI_KEYS.length]
+  : ['count_all', gCount + cCount, KEYS.length];
+  document.getElementById('done').innerHTML =
+    '<span class="tb-long">' + P(lbl) + ' </span>' + n + ' / ' + t;
   // Advancing or grading BY HAND needs the section complete: a partial submit
   // scales a raw count nobody produced, and an unanswered item is not a wrong
   // answer. The clock is the one thing allowed to submit an incomplete section
   // — see timeUp(). Both handlers re-check; this is the visible half.
-  gateButton('advance-btn', unansweredIn('gengo', ans).length,
-             "聴解へ進む", "問が未解答です。" + GENGO_KEYS.length + "問すべてに答えると聴解へ進めます。");
+  gateButton('advance-btn', unansweredIn('gengo', ans).length, 'btn_advance', 'hint_advance',
+             GENGO_KEYS.length);
   gateButton('grade-btn',
              PHASE === 'done' ? (KEYS.length - gCount - cCount)
                               : unansweredIn('choukai', ans).length,
-             "採点する", "問が未解答です。すべて解答すると採点できます。");
+             'btn_grade', 'hint_grade', KEYS.length);
 }
-function gateButton(id, missing, label, hint){
+function gateButton(id, missing, label, hint, total){
   const btn = document.getElementById(id);
   if (!btn) return;
   btn.disabled = missing > 0;
-  btn.title = missing > 0 ? missing + hint : label;
+  btn.title = missing > 0 ? S(hint, {n: missing, t: total}) : S(label);
 }
 function refresh(){
   const ans = state();
@@ -1683,8 +1661,7 @@ function clearAll(){
   // The escape hatch, and the only way back into a sitting you have left: it
   // resets the CLOCKS and the phase as well as the answers, because a half-run
   // countdown with no answers under it is not a state anyone can finish from.
-  if (!confirm("すべての解答と受験状態（残り時間・提出済みの部分）を消去して、"
-             + "最初からやり直しますか？")) return;
+  if (!confirm(S('confirm_clear'))) return;
   document.querySelectorAll('input[type=radio]').forEach(r=>{
     r.checked = false; r.disabled = false;
   });
@@ -1783,11 +1760,11 @@ function computeResult(ans){
 }
 
 /* ------------------------------------------------------- screen 3: 採点結果 */
-function rating(p){ return p >= 80 ? "優 (Strong)" : p >= 60 ? "良 (Fair)" : "要強化 (Weak)"; }
+function rating(p){ return P(p >= 80 ? 'rate_strong' : p >= 60 ? 'rate_fair' : 'rate_weak'); }
 
 function chip(label, d){
   const cls = d.user === null ? 'na' : (d.is_correct ? 'ok' : 'ng');
-  const body = d.user === null ? '未解答'
+  const body = d.user === null ? P('rs_unanswered')
              : (d.is_correct ? String(d.user) : d.user + ' → ' + d.correct);
   return '<span class="chip ' + cls + '"><i>' + label + '</i>' + body + '</span>';
 }
@@ -1877,7 +1854,8 @@ function scriptBlockHtml(text, label){
   if (!text) return '';
   const lines = text.split("\n").map(l => l.trim()).filter(l => l.length > 0);
   const formatted = lines.map(l => '<p>' + escapeHtml(l) + '</p>').join('');
-  return '<div class="rs-script"><p class="rs-script-label">🎧 ' + escapeHtml(label) + '</p>'
+  // `label` is interface markup (P()), not text: it is not escaped.
+  return '<div class="rs-script"><p class="rs-script-label">🎧 ' + label + '</p>'
     + formatted + '</div>';
 }
 
@@ -1943,15 +1921,15 @@ function computeChoukaiGroups(){
 
 function detailMetaHtml(key, d){
   const cls = d.user === null ? 'na' : (d.is_correct ? 'ok' : 'ng');
-  const verdict = d.user === null ? '未解答'
-                : (d.is_correct ? '正解' : '不正解');
+  const verdict = P(d.user === null ? 'rs_unanswered'
+                  : (d.is_correct ? 'rs_correct' : 'rs_wrong'));
   const user = d.user === null ? '—' : String(d.user);
   const correct = d.correct === null || d.correct === undefined ? '—' : String(d.correct);
   return '<div class="rs-detail-meta">'
-    + '<span><b>設問 ' + key + '</b></span>'
+    + '<span><b>' + P('rs_item', {k: key}) + '</b></span>'
     + '<span class="tag ' + cls + '">' + verdict + '</span>'
-    + '<span>あなたの答え: <b>' + user + '</b></span>'
-    + '<span>正解: <b>' + correct + '</b></span>'
+    + '<span>' + P('rs_your') + ' <b>' + user + '</b></span>'
+    + '<span>' + P('rs_key') + ' <b>' + correct + '</b></span>'
     + '</div>';
 }
 
@@ -1961,12 +1939,11 @@ function itemDetailHtml(key, d){
   let note = '';
   const isChoukai = !/^\d+$/.test(key);
   if (isChoukai){
-    script = scriptBlockHtml(CHOUKAI_SCRIPTS[key], '聴解スクリプト');
-    note = '<p class="rs-detail-note">聴解の音声は「解答に戻ってやり直す」から'
-      + '受験画面のプレイヤーで確認できます。</p>';
+    script = scriptBlockHtml(CHOUKAI_SCRIPTS[key], P('rs_script'));
+    note = '<p class="rs-detail-note">' + P('rs_audio_note') + '</p>';
   }
   if (!body && !isChoukai){
-    body = '<p>（この設問の問題文を画面から取得できませんでした。）</p>';
+    body = '<p>' + P('rs_no_stem') + '</p>';
   }
   const bodyBlock = body ? '<div class="rs-detail-body">' + body + '</div>' : '';
   return '<div class="rs-item" id="rs-item-' + key + '">'
@@ -1981,7 +1958,7 @@ function itemDetailHtml(key, d){
 function groupMemberHtml(key, d, ownHtml){
   const isChoukai = !/^\d+$/.test(key);
   if (!ownHtml && !isChoukai){
-    ownHtml = '<p>（この設問の問題文を画面から取得できませんでした。）</p>';
+    ownHtml = '<p>' + P('rs_no_stem') + '</p>';
   }
   const bodyBlock = ownHtml ? '<div class="rs-detail-body">' + ownHtml + '</div>' : '';
   return '<div class="rs-item rs-group-item" id="rs-item-' + key + '">'
@@ -1992,7 +1969,7 @@ function groupMemberHtml(key, d, ownHtml){
 
 function groupHeaderLabel(keys){
   if (!keys || !keys.length) return '';
-  if (keys.length === 1) return '設問 ' + keys[0];
+  if (keys.length === 1) return P('rs_item', {k: keys[0]});
   const first = keys[0], last = keys[keys.length - 1];
   if (/^\d+$/.test(first)){
     // The 大問 and its short label come from the level table (TAXONOMY's
@@ -2006,9 +1983,9 @@ function groupHeaderLabel(keys){
       const nth = Math.floor(t.keys.indexOf(first) / per) + 1;
       sub = '（' + t.mondai + ' ' + t.group + (of > 1 ? ' (' + nth + ')' : '') + '）';
     }
-    return '設問 ' + first + ' 〜 ' + last + sub;
+    return P('rs_items_range', {a: first, b: last}) + sub;
   }
-  return '設問 ' + keys.join(' ・ ') + '（問題5 2番 共通）';
+  return P('rs_item', {k: keys.join(' ・ ')}) + P('rs_items_m5');
 }
 
 function gengoGroupHtml(group, detailFor){
@@ -2033,25 +2010,24 @@ function choukaiGroupHtml(group, detailFor){
   }
   const title = groupHeaderLabel(group.keys);
   const sharedHtml = scriptBlockHtml(
-    CHOUKAI_SCRIPTS[group.keys[0]], '聴解スクリプト（質問1・質問2 共通）');
+    CHOUKAI_SCRIPTS[group.keys[0]], P('rs_script_shared'));
   const members = group.keys.map(k =>
     groupMemberHtml(k, detailFor(k), extractQuestionHtml(k))
   ).join('');
   return '<div class="rs-group">'
     + '<div class="rs-group-title">' + title + '</div>'
     + '<div class="rs-group-shared">' + sharedHtml
-    + '<p class="rs-detail-note">聴解の音声は「解答に戻ってやり直す」から'
-    + '受験画面のプレイヤーで確認できます。</p></div>'
+    + '<p class="rs-detail-note">' + P('rs_audio_note') + '</p></div>'
     + members + '</div>';
 }
 
 function buildAllDetailsHtml(res){
   const L = [];
-  L.push('<h3>言語知識・読解 — 設問詳細</h3>');
+  L.push('<h3>' + P('rs_detail_gengo') + '</h3>');
   for (const g of computeGengoGroups()){
     L.push(gengoGroupHtml(g, k => res.detail_gengo[k] || {}));
   }
-  L.push('<h3>聴解 — 設問詳細</h3>');
+  L.push('<h3>' + P('rs_detail_choukai') + '</h3>');
   for (const g of computeChoukaiGroups()){
     L.push(choukaiGroupHtml(g, k => res.detail_choukai[k] || {}));
   }
@@ -2068,11 +2044,11 @@ function setCheckExpanded(on, res){
       panel.dataset.built = '1';
     }
     panel.hidden = false;
-    btn.textContent = '詳細を折りたたむ';
+    btn.innerHTML = P('rs_collapse');
     btn.setAttribute('aria-expanded', 'true');
   } else {
     panel.hidden = true;
-    btn.textContent = 'すべての設問詳細を展開';
+    btn.innerHTML = P('rs_expand');
     btn.setAttribute('aria-expanded', 'false');
   }
 }
@@ -2088,32 +2064,38 @@ function bindResultExpand(res){
 
 function resultHtml(res, msg, saved){
   const s = res.summary, cls = s.passed ? 'pass' : 'fail';
+  const verdict = P(s.passed ? 'rs_pass' : 'rs_fail');
   const L = [];
 
-  // Screen 3 carries the same sticky #bar as screens 1 and 2, so its own
+  // Screen 3 carries the same sticky topbar as screens 1 and 2, so its own
   // buttons belong at the END of the page — after the report you came to read.
-  L.push('<h1>JLPT ' + LEVEL + ' 模擬試験 採点結果（テスト ' + res.test_id + '）</h1>');
+  // Section names, 大問 codes and 大問 names are the exam's own labels (the
+  // result document's data) and stay as they are; everything around them is
+  // the reader's language.
+  L.push('<h1>' + P('rs_title', {level: LEVEL, id: res.test_id}) + '</h1>');
   L.push('<p class="rs-saved' + (saved ? ' ok' : '') + '">' + msg + '</p>');
   L.push('<div class="rs-head ' + cls + '">'
-    + '<span class="rs-verdict">' + (s.passed ? '合格 (PASS)' : '不合格 (FAIL)') + '</span>'
+    + '<span class="rs-verdict">' + verdict + '</span>'
     + '<span class="rs-score">' + s.total_scaled_score
     + ' <small>/ ' + s.max_scaled_score + '</small></span>');
   if (!s.passed){
     const why = [];
     if (!s.overall_threshold_passed){
-      why.push('総合点 (' + s.total_scaled_score + '点) が合格ライン (90点) に届いていません。');
+      why.push(P('rs_why_total', {s: s.total_scaled_score, p: SCORING.pass}));
     }
     const failed = Object.keys(s.sections).filter(k => !s.sections[k].passed_cutoff);
     if (failed.length){
-      why.push('基準点未達のセクションがあります: ' + failed.join('、') + ' (各19点以上が必要)。');
+      const cuts = [...new Set(failed.map(k => s.sections[k].cutoff))].join('/');
+      why.push(P('rs_why_sections', {list: failed.join('、'), c: cuts}));
     }
-    L.push('<p class="rs-why"><b>判定理由:</b> ' + why.join(' ') + '</p>');
+    L.push('<p class="rs-why"><b>' + P('rs_why') + '</b> ' + why.join(' ') + '</p>');
   }
   L.push('</div>');
 
-  L.push('<h2>1. 得点サマリー (得点等化スケールスコア 換算)</h2>');
-  L.push('<div class="ui-table-wrap"><table class="ui-table"><thead><tr><th>セクション</th><th>素点</th><th>換算得点</th>'
-    + '<th>基準点</th><th>判定</th></tr></thead><tbody>');
+  L.push('<h2>' + P('rs_h_summary') + '</h2>');
+  L.push('<div class="ui-table-wrap"><table class="ui-table"><thead><tr><th>' + P('rs_th_section')
+    + '</th><th>' + P('rs_th_raw') + '</th><th>' + P('rs_th_scaled') + '</th>'
+    + '<th>' + P('rs_th_cutoff') + '</th><th>' + P('rs_th_verdict') + '</th></tr></thead><tbody>');
   let si = 0;
   for (const name in s.sections){
     const d = s.sections[name];
@@ -2121,18 +2103,20 @@ function resultHtml(res, msg, saved){
     L.push('<tr><td>' + name + '</td>'
       + '<td class="n">' + d.raw_correct + ' / ' + d.raw_total + '</td>'
       + '<td class="n"><b>' + d.scaled_score + '</b> / ' + band.max + '</td>'
-      + '<td class="n">' + d.cutoff + '点</td>'
-      + '<td>' + (d.passed_cutoff ? '基準点クリア' : '基準点未達') + '</td></tr>');
+      + '<td class="n">' + P('rs_points', {n: d.cutoff}) + '</td>'
+      + '<td>' + P(d.passed_cutoff ? 'rs_cutoff_ok' : 'rs_cutoff_ng') + '</td></tr>');
   }
-  L.push('<tr><td><b>総合計</b></td><td class="n">-</td>'
+  L.push('<tr><td><b>' + P('rs_total') + '</b></td><td class="n">-</td>'
     + '<td class="n"><b>' + s.total_scaled_score + '</b> / ' + SCORING.max + '</td>'
-    + '<td class="n">' + SCORING.pass + '点</td><td><b>'
-    + (s.passed ? '合格 (PASS)' : '不合格 (FAIL)') + '</b></td></tr>');
+    + '<td class="n">' + P('rs_points', {n: SCORING.pass}) + '</td><td><b>'
+    + verdict + '</b></td></tr>');
   L.push('</tbody></table></div>');
 
-  L.push('<h2>2. 大問別（問題形式別）詳細分析</h2>');
-  L.push('<div class="ui-table-wrap"><table class="ui-table"><thead><tr><th>分野</th><th>問題</th><th>大問名</th><th>正解率</th>'
-    + '<th>正解数 / 問題数</th><th>評価</th></tr></thead><tbody>');
+  L.push('<h2>' + P('rs_h_taxonomy') + '</h2>');
+  L.push('<div class="ui-table-wrap"><table class="ui-table"><thead><tr><th>' + P('rs_th_area')
+    + '</th><th>' + P('rs_th_mondai') + '</th><th>' + P('rs_th_name') + '</th><th>'
+    + P('rs_th_rate') + '</th><th>' + P('rs_th_count') + '</th><th>' + P('rs_th_rating')
+    + '</th></tr></thead><tbody>');
   for (const code in res.taxonomy_stats){
     const t = res.taxonomy_stats[code];
     L.push('<tr' + (t.percentage < 60 ? ' class="weak"' : '') + '>'
@@ -2143,16 +2127,26 @@ function resultHtml(res, msg, saved){
   }
   L.push('</tbody></table></div>');
 
-  L.push('<h2>3. 全設問解答チェック表</h2>');
+  // The weak 大問 (under 60%) with their study advice — the result document
+  // carries each one's Japanese advice; every language's own is picked by code.
+  const weak = res.weak_areas || [];
+  L.push('<h3>' + P('rs_h_advice') + '</h3>');
+  if (!weak.length) L.push('<p class="rs-hint">' + P('rs_no_weak') + '</p>');
+  for (const w of weak){
+    L.push('<div class="rs-advice"><b>' + escapeHtml(w.code) + ' ' + escapeHtml(w.name)
+      + '（' + Number(w.percentage).toFixed(1) + '%）</b>' + adviceHtml(w.code, w.advice) + '</div>');
+  }
+
+  L.push('<h2>' + P('rs_h_check') + '</h2>');
   L.push('<div class="rs-check-tools">'
     + '<button type="button" class="ui-btn" id="rs-expand-btn" aria-expanded="false">'
-    + 'すべての設問詳細を展開</button>'
-    + '<p class="rs-hint">展開すると全' + KEYS.length + '問の問題文・選択肢・正誤が一覧で表示されます。</p>'
+    + P('rs_expand') + '</button>'
+    + '<p class="rs-hint">' + P('rs_expand_hint', {n: KEYS.length}) + '</p>'
     + '</div>');
   const maxQ = GENGO_KEYS.length;
-  L.push('<h3>言語知識・読解 (1 〜 ' + maxQ + ')</h3><div class="rs-grid">');
+  L.push('<h3>' + P('rs_grid_gengo', {n: maxQ}) + '</h3><div class="rs-grid">');
   for (let q = 1; q <= maxQ; q++){ L.push(chip(String(q), res.detail_gengo[String(q)])); }
-  L.push('</div><h3>聴解</h3><div class="rs-grid">');
+  L.push('</div><h3>' + P('rs_grid_choukai') + '</h3><div class="rs-grid">');
   for (const k of CHOUKAI_KEYS){ L.push(chip(k, res.detail_choukai[k])); }
   L.push('</div>');
   L.push('<div id="rs-all-detail" class="rs-all-detail" hidden></div>');
@@ -2160,11 +2154,11 @@ function resultHtml(res, msg, saved){
   // On GitHub Pages the result only exists inside this browser, so the way to
   // get 採点結果.json onto a disk has to be on the screen that shows it.
   L.push('<div class="rs-nav">'
-    + '<button class="ui-btn primary" onclick="goList()">← テスト一覧へ戻る</button>'
-    + '<button class="ui-btn" onclick="showScreen(\'exam\')">解答に戻ってやり直す</button>'
-    + '<button class="ui-btn" onclick="location.href=\'模範解答.html\'">模範解答・解説</button>'
+    + '<button class="ui-btn primary" onclick="goList()">' + P('rs_nav_list') + '</button>'
+    + '<button class="ui-btn" onclick="showScreen(\'exam\')">' + P('rs_nav_retry') + '</button>'
+    + '<button class="ui-btn" onclick="location.href=\'模範解答.html\'">' + P('rs_nav_model') + '</button>'
     + (STORAGE === 'local'
-        ? '<button class="ui-btn" onclick="downloadCurrent()">採点結果を保存（JSON）</button>'
+        ? '<button class="ui-btn" onclick="downloadCurrent()">' + P('rs_nav_download') + '</button>'
         : '')
     + '</div>');
 
@@ -2175,14 +2169,14 @@ function goList(){ location.href = LIST_HREF; }
 
 function showScreen(name){
   const exam = name === 'exam';
-  document.documentElement.classList.remove('is-result-mode');
+  // Also what the bar's page crumb reads (受験 / 採点結果, CSS-switched).
+  document.documentElement.classList.toggle('is-result-mode', !exam);
   document.getElementById('screen-exam').style.display = exam ? 'block' : 'none';
   document.getElementById('screen-result').style.display = exam ? 'none' : 'block';
   // The bar itself never goes away — it is the same chrome on all three screens.
   // Only the solving controls (counter, 消去, 採点する) belong to screen 2.
   document.getElementById('bar-controls').style.display = exam ? '' : 'none';
   document.getElementById('where').style.display = exam ? '' : 'none';
-  document.getElementById('bar-title').textContent = exam ? EXAM_TITLE : RESULT_TITLE;
   if (exam){ render(); updateSpy(); }
   const audio = document.getElementById('au');
   if (!exam && audio) audio.pause();
@@ -2202,10 +2196,9 @@ function showResult(res, msg, saved){
   showScreen('result');
 }
 
-function reportGap(missing, lead){
-  alert(missing.length + lead
-        + "（未解答: " + missing.slice(0, 8).join("、")
-        + (missing.length > 8 ? " …" : "") + "）");
+function reportGap(missing, lead, total){
+  alert(S(lead, {n: missing.length, t: total})
+        + S('gap_list', {list: missing.slice(0, 8).join("、") + (missing.length > 8 ? " …" : "")}));
   const first = document.querySelector(
     '#screen-exam input[name="q_' + CSS.escape(missing[0]) + '"]');
   if (first) first.scrollIntoView({block: 'center'});
@@ -2219,10 +2212,8 @@ async function finishGengo(auto){
   if (PHASE !== 'gengo') return;
   if (!auto){
     const missing = unansweredIn('gengo');
-    if (missing.length) return reportGap(missing,
-      "問が未解答です。" + GENGO_KEYS.length + "問すべてに答えてから聴解へ進んでください。");
-    if (!confirm("言語知識（文字・語彙・文法）・読解を提出して聴解に進みます。\n"
-               + "提出したあとは、この部分に戻ることはできません。\n\nよろしいですか？")) return;
+    if (missing.length) return reportGap(missing, 'gap_advance', GENGO_KEYS.length);
+    if (!confirm(S('confirm_advance'))) return;
   }
   clockFreeze();
   PHASE = 'choukai';
@@ -2240,10 +2231,8 @@ async function submitAll(auto){
   if (!auto){
     const missing = PHASE === 'done' ? KEYS.filter(k => ans[k] === undefined)
                                      : unansweredIn('choukai', ans);
-    if (missing.length) return reportGap(missing,
-      "問が未解答です。すべての設問に解答してから採点してください。");
-    if (PHASE === 'choukai'
-        && !confirm("聴解を提出して採点します。\n\nよろしいですか？")) return;
+    if (missing.length) return reportGap(missing, 'gap_grade', KEYS.length);
+    if (PHASE === 'choukai' && !confirm(S('confirm_grade'))) return;
   }
   clockFreeze();
   clearTimeout(_saveTimer);     // a pending debounced save must not land after the result
@@ -2275,7 +2264,7 @@ function downloadResult(res, answers){
   }
   dl("採点結果.json", res);
   dl("ユーザー解答.json", answers);
-  return "採点結果.json および ユーザー解答.json としてダウンロードしました。";
+  return P('saved_download');
 }
 
 /* ========================================================== 受験フェーズと時計
@@ -2353,11 +2342,13 @@ function clockText(ms){
 function clockPaint(){
   const el = document.getElementById('clock');
   if (!el) return;
-  if (PHASE === 'done'){ el.textContent = '採点済み'; el.className = 'sub'; return; }
+  if (PHASE === 'done'){ el.textContent = S('clock_graded'); el.className = 'tb-sub'; return; }
   const ms = clockLeft(PHASE), frozen = TICK_FROM === null;
-  el.textContent = '残り ' + clockText(ms)
-                 + (!STARTED[PHASE] ? '（未開始）' : frozen ? '（停止中）' : '');
-  el.className = 'sub' + (STARTED[PHASE] && frozen ? ' paused' : '')
+  // The state suffix gives way on a phone; the colour (amber = frozen) stays.
+  const state = !STARTED[PHASE] ? S('clock_not_started') : frozen ? S('clock_paused') : '';
+  el.innerHTML = escapeHtml(S('clock_left', {t: clockText(ms)}))
+               + (state ? '<span class="tb-long">' + escapeHtml(state) + '</span>' : '');
+  el.className = 'tb-sub' + (STARTED[PHASE] && frozen ? ' paused' : '')
                + (ms <= LOW_MS ? ' low' : '');
 }
 function clockSync(){
@@ -2386,11 +2377,10 @@ async function timeUp(){
   LEFT[sec] = 0;
   try {
     if (sec === 'gengo'){
-      alert("言語知識（文字・語彙・文法）・読解の時間が終了しました。\n"
-          + "解答はそのまま提出され、聴解に進みます。");
+      alert(S('alert_time_gengo'));
       await finishGengo(true);
     } else {
-      alert("聴解の時間が終了しました。\nこれまでの解答で採点します。");
+      alert(S('alert_time_choukai'));
       await submitAll(true);
     }
   } finally { EXPIRING = false; }
@@ -2442,9 +2432,9 @@ function render(){
   setSectionEnabled('gengo', openG);
   setSectionEnabled('choukai', openC);
   paintTab('tab-gengo', openG, PHASE === 'choukai',
-           done ? '' : PHASE === 'gengo' ? '受験中' : '提出済み');
+           done ? '' : P(PHASE === 'gengo' ? 'tab_in_progress' : 'tab_submitted'));
   paintTab('tab-choukai', openC, false,
-           done ? '' : PHASE === 'gengo' ? 'この後' : '受験中');
+           done ? '' : P(PHASE === 'gengo' ? 'tab_next' : 'tab_in_progress'));
   show('advance-btn', PHASE === 'gengo' && STARTED.gengo);
   show('grade-btn', done || (PHASE === 'choukai' && STARTED.choukai));
   updateCounter(state());
@@ -2499,7 +2489,7 @@ async function boot(){
     showScreen('result');
     const saved = await STORE.loadResult();
     if (saved) {
-      showResult(saved, '保存済みの採点結果です。', true);
+      showResult(saved, P('saved_earlier'), true);
     } else {
       await restore();
       showScreen('exam');
@@ -2515,6 +2505,12 @@ async function boot(){
 
 document.addEventListener('change', e=>{ if(e.target.type==='radio') refresh(); });
 window.addEventListener('DOMContentLoaded', boot);
+/* lang_ui's dropdown: markup is CSS-switched; repaint what S() wrote as text. */
+document.addEventListener('langchange', ()=>{
+  document.title = S('doc_title', {level: LEVEL, id: TESTID});
+  if (document.getElementById('done')) updateCounter(state());
+  clockPaint();
+});
 
 /* --------------------------------------------------- where am I in the paper
    The bar names the section and 大問 you are currently reading, from scroll
@@ -2541,7 +2537,7 @@ function initSpy(){
 function updateSpy(){
   const where = document.getElementById('where');
   if (!where || !SPOTS.length) return;
-  const bar = document.getElementById('bar');
+  const bar = document.getElementById('topbar');
   const edge = (bar ? bar.offsetHeight : 0) + 8;
   let sec = '', q = '';
   for (const s of SPOTS){
@@ -2553,9 +2549,10 @@ function updateSpy(){
 }
 
 function fitPlayer(){
-  // The player sticks directly under the bar. Measure rather than guess: the
-  // bar's height depends on the font and on whether its controls wrap.
-  const bar = document.getElementById('bar'), p = document.getElementById('player');
+  // The player sticks directly under the ONE bar (lang_ui's topbar, which the
+  // sheet's timer/section bar merged into). Measure rather than guess: its
+  // height changes with the viewport (40px desktop, 36px phone).
+  const bar = document.getElementById('topbar'), p = document.getElementById('player');
   if (bar && p && bar.offsetHeight) p.style.top = bar.offsetHeight + 'px';
 }
 
@@ -2572,7 +2569,7 @@ function pick(inp){
     document.getElementById('chapwrap').style.display = 'none';
     return;
   }
-  sel.insertAdjacentHTML('beforeend', '<option value="">— 選択 —</option>');
+  sel.insertAdjacentHTML('beforeend', '<option value="">—</option>');
   // compose_choukai writes {label, start} with no `type`: 「問題2」 is a 大問
   // header, 「問題2 3番」 an item. An explicit `type` still wins.
   const isSec = c => c.type ? c.type === 'section' : !/番|質問/.test(c.label);

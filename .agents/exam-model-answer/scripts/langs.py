@@ -8,7 +8,8 @@ Adding a third language, or replacing Vietnamese, is a data change:
     references/languages/index.json        {"primary": "ja", "order": [...]}
     references/languages/<code>/meta.json  code, name, html_lang, length_factor
     references/languages/<code>/<ns>.json  UI strings, one file per page family
-                                           (model_answer, practice, portal, knowledge)
+                                           (model_answer, practice, portal, knowledge,
+                                           exam — 解答.html's chrome, drill)
 
 plus that language's content files (``詳細解説.<code>.json``,
 ``knowledge/<LEVEL>/<category>.<code>.json``). Until they exist the pages fall back
@@ -33,7 +34,7 @@ LANG_DIR = Path(__file__).resolve().parents[1] / "references" / "languages"
 # The UI namespaces a language folder must carry — one per page family. A
 # namespace a language lacks is a FAIL in the gate (check_language_registry),
 # because the page would print the primary language's label in its place.
-NAMESPACES = ("model_answer", "practice", "portal", "knowledge")
+NAMESPACES = ("model_answer", "practice", "portal", "knowledge", "exam", "drill")
 
 
 @lru_cache(maxsize=None)
@@ -171,6 +172,16 @@ def check() -> list[str]:
                 out.append(f"{c}/{ns}.json: missing {sorted(want - have)}")
             if have - want:
                 out.append(f"{c}/{ns}.json: keys the primary does not define {sorted(have - want)}")
+            # A value may itself be a table (exam.json `advice`, keyed by 大問
+            # code): its keys are held to the primary's the same way.
+            for k in sorted(want & have):
+                pv, cv = ui(p, ns)[k], ui(c, ns)[k]
+                if isinstance(pv, dict) or isinstance(cv, dict):
+                    pk = set(pv) if isinstance(pv, dict) else set()
+                    ck = set(cv) if isinstance(cv, dict) else set()
+                    if pk != ck:
+                        out.append(f"{c}/{ns}.json `{k}`: keys differ from the primary's "
+                                   f"(missing {sorted(pk - ck)}, extra {sorted(ck - pk)})")
     return out
 
 

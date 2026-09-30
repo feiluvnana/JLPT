@@ -4,7 +4,7 @@
        levels init-import extract-pdf extract-archive extract-keys extract-kanji-tables extract-shinkanzen-goi extract-shinkanzen-dokkai extract-shinkanzen \
        lint-draft lint verify-scramble scaffold-explanations \
        scaffold-sections matrix qa-eval autofix findings repair-plan choukai-bank \
-       textbook-bank archive-bank number-calls choukai-wear knowledge
+       textbook-bank archive-bank number-calls choukai-wear knowledge drill
 
 # Positional test-id argument: "make grade 1", "make sheet 2", "make sample 5".
 # Equivalent: "make grade TEST=1". `serve` is deliberately NOT here: one server
@@ -102,6 +102,7 @@ help:
 	@echo "  make serve            Serve ALL tests: levels -> modules -> list -> exam (no id)"
 	@echo "  make grade 1          Grade test 1 (reads tests/1/ユーザー解答*.json)"
 	@echo "  make knowledge [LEVEL=N2]  Build the knowledge module: knowledge/<LEVEL>/<category>.html + index.html"
+	@echo "  make drill [LEVEL=N2]  Build the drill module: drill/<LEVEL>/index.html + one page per tool"
 	@echo "  make pages            Build the static GitHub Pages site into _site/ (all tests)"
 	@echo "  make pages 1          Same, only test 1"
 	@echo "  make preview-pages    Serve _site/ locally to check the Pages build"
@@ -270,6 +271,12 @@ serve:
 # fails a page whose src_sha stamps no longer match its data.
 knowledge:
 	python3 .agents/jlpt-knowledge/scripts/build_knowledge.py --level $(LEVEL)
+
+# The drill module (jlpt-drill): 大問別練習, 聴解トレーニング, 復習ノート, 進捗, 読解ライブラリ,
+# baked from tests/*/詳細解説*.json + logs/choukai_bank.json. Re-run after any test or
+# clip-bank change; the gate WARNs on a page older than the data it bakes.
+drill:
+	python3 .agents/jlpt-drill/scripts/build_drill.py --level $(LEVEL)
 
 grade:
 	python3 .agents/exam-app/scripts/grade_answers.py --test-dir tests/$(TEST)

@@ -1,6 +1,7 @@
 {
   "doc_title": "Đề {test_id}（Đáp án mẫu・Giải thích chi tiết）",
   "back": "← Về kết quả chấm",
+  "crumb": "Đáp án & giải thích",
   "title": "JLPT {level} — Đáp án mẫu và giải thích chi tiết",
   "subtitle": "Đề <strong>{test_id}</strong> ｜ <span>Giải thích đầy đủ {n_all} câu (Kiến thức ngôn ngữ・Đọc hiểu {n_gengo} câu ＋ Nghe {n_choukai} câu)</span>",
   "tab_all": "Tất cả",

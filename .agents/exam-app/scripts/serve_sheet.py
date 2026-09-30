@@ -8,7 +8,7 @@ ONE server for every test in tests/ — the portal and the exam app:
   screen 2  GET  /tests/<id>/解答.html      the exam itself (built by build_interactive.py)
   screen 3  (in page, after 「採点する」)     the result view, with a 「一覧へ戻る」 button
   知識      GET  /knowledge/<LEVEL>/…       the knowledge module, static files built into knowledge/
-  ドリル    GET  /drill/<LEVEL>/…           the drill module, static files built into drill/ (reserved)
+  ドリル    GET  /drill/<LEVEL>/…           the drill module, static files built into drill/ (make drill)
 
 The URL tree is the Pages build's (`_site/`) file tree, link for link; every
 link the pages carry is relative, so the two deployments resolve alike.
@@ -41,7 +41,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[3]
 TESTS = ROOT / "tests"
 KNOWLEDGE = ROOT / "knowledge"
-DRILL = ROOT / "drill"      # reserved for the ドリル module; absent until it is built
+DRILL = ROOT / "drill"      # the ドリル module (make drill); absent until built
 # The ONLY three trees on the web. The server's cwd is the whole repo, so a path
 # outside these (refs/, logs/, .git/…) must 404 — see _served().
 SERVED_ROOTS = (TESTS, KNOWLEDGE, DRILL)

@@ -2,8 +2,6 @@
   "module": "Kiến thức",
   "index_title": "Kiến thức {level}",
   "index_lead": "Chọn một phần, học bằng thẻ ghi nhớ rồi tự kiểm tra bằng câu hỏi.",
-  "back_portal": "← Chọn phần học",
-  "back_index": "← Danh sách phần kiến thức",
   "cat_grammar": "Ngữ pháp",
   "cat_vocab": "Từ vựng",
   "cat_kanji": "Chữ Hán",

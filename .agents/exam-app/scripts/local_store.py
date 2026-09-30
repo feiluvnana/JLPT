@@ -139,3 +139,74 @@ window.JLPTKnowledgeStore = (function(){
 })();
 """ % {"prefix": KNOWLEDGE_PREFIX, "learned": KNOWLEDGE_LEARNED_JSON, "history": KNOWLEDGE_HISTORY_JSON,
        "prefs": KNOWLEDGE_PREFS_JSON}
+
+
+# `window.JLPTDrillStore` — the drill module's per-browser record
+# (jlpt-drill/SKILL.md §Store). Same rule again: the ONLY place its keys are
+# spelled, under its OWN prefix so `JLPTStore.ids()` never lists it as a test.
+# It is localStorage in BOTH deployments — `make serve` included: a drill
+# attempt is not a sitting, so it has no file on disk. Two documents:
+#
+#   jlpt-drill/v1/attempts.json  {"<itemId>": [{"t": ms, "ok": 0|1, "choice": n, "tool": "practice"|"listening"}, ...]}
+#   jlpt-drill/v1/srs.json       {"<itemId or knowledgeId>": {"box": 1..5, "due": ms, "n"?: quiz tries seen}}
+#
+# `<itemId>` is `<test_id>:<key>` (`20260929_1:33`, `imported-n2-2025-12:問1-1`);
+# a knowledgeId is `知識:<LEVEL>:<category>:<entry id>#<n>` (the 知識 quiz item).
+# Exam answers/results stay in JLPTStore and 知識 history in JLPTKnowledgeStore —
+# read, never copied here. Leitner: box b is reviewed every INTERVALS[b-1] days;
+# right moves up one box (5 stays 5), wrong goes back to box 1.
+DRILL_PREFIX = "jlpt-drill/v1"
+DRILL_ATTEMPTS_JSON = "attempts.json"
+DRILL_SRS_JSON = "srs.json"
+DRILL_INTERVALS_DAYS = (1, 3, 7, 14, 30)
+DRILL_ATTEMPTS_KEEP = 20          # newest attempts kept per item
+
+DRILL_STORE_JS = """
+window.JLPTDrillStore = (function(){
+  var PREFIX = "%(prefix)s", ATTEMPTS = "%(attempts)s", SRS = "%(srs)s";
+  var INTERVALS = %(intervals)s, KEEP = %(keep)d, DAY = 86400000;
+  function key(name){ return PREFIX + '/' + name; }
+  function read(name){
+    try { var o = JSON.parse(localStorage.getItem(key(name)) || 'null');
+          return (o && typeof o === 'object') ? o : {}; } catch (e){ return {}; }
+  }
+  function write(name, obj){
+    try { localStorage.setItem(key(name), JSON.stringify(obj)); return true; } catch (e){ return false; }
+  }
+  // One Leitner step. `known` = the item is already under review (or is a known
+  // mistake being reviewed): a right answer then moves it up a box. A right
+  // answer to an item never missed does not enrol it.
+  function step(srs, id, ok, known, now){
+    var cur = srs[id];
+    if (!ok){ srs[id] = {box: 1, due: now + INTERVALS[0] * DAY}; return srs[id]; }
+    if (!cur && !known) return null;
+    var box = Math.min((cur ? cur.box : 1) + 1, INTERVALS.length);
+    srs[id] = {box: box, due: now + INTERVALS[box - 1] * DAY};
+    return srs[id];
+  }
+  return {
+    PREFIX: PREFIX, INTERVALS: INTERVALS, DAY: DAY, key: key,
+    attempts: function(){ return read(ATTEMPTS); },
+    srs: function(){ return read(SRS); },
+    // An answer given in a drill tool: kept, and the item's review box moved.
+    record: function(id, ok, choice, tool, review){
+      var now = Date.now(), a = read(ATTEMPTS), list = a[id] || [];
+      list.push({t: now, ok: ok ? 1 : 0, choice: choice, tool: tool});
+      a[id] = list.slice(-KEEP); write(ATTEMPTS, a);
+      var s = read(SRS), r = step(s, id, ok, !!review, now); write(SRS, s);
+      return r;
+    },
+    // A review made outside the drill tools (a 知識 card): moves the box only.
+    review: function(id, ok, extra){
+      var s = read(SRS), r = step(s, id, ok, true, Date.now());
+      if (r && extra) for (var k in extra) r[k] = extra[k];
+      write(SRS, s); return r;
+    },
+    forget: function(id){ var s = read(SRS); delete s[id]; write(SRS, s); },
+    clear: function(){
+      try { localStorage.removeItem(key(ATTEMPTS)); localStorage.removeItem(key(SRS)); } catch (e){}
+    }
+  };
+})();
+""" % {"prefix": DRILL_PREFIX, "attempts": DRILL_ATTEMPTS_JSON, "srs": DRILL_SRS_JSON,
+       "intervals": list(DRILL_INTERVALS_DAYS), "keep": DRILL_ATTEMPTS_KEEP}

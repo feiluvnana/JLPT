@@ -13,7 +13,7 @@ server, the static Pages twin, and grading — all in `.agents/exam-app/scripts/
 | `build_booklet.py` | Markdown → booklet HTML (`言語知識・読解.html`, `聴解.html`); shared CSS, `render_body()` (the one render chain) and ruby/furigana helpers |
 | `build_interactive.py` | Markdown → `解答.html`, the merged sheet with in-page grading; also the `--keyless` QA render |
 | `build_practice.py` | Markdown → `練習.html`, 練習モード: the same paper flat, no clock, no grading, one model answer per question |
-| `serve_sheet.py` | the ONE local server: portal, test list, exam, results, saved into `tests/<id>/`; also serves `knowledge/` and the reserved `drill/` |
+| `serve_sheet.py` | the ONE local server: portal, test list, exam, results, saved into `tests/<id>/`; also serves `knowledge/` and `drill/` (built by `jlpt-knowledge` / `jlpt-drill`) |
 | `build_pages.py` | the static GitHub Pages build into `_site/` |
 | `grade_answers.py` | CLI grading twin: scaled scores, pass/fail, `採点結果.json` |
 | `app_style.py`, `portal_view.py`, `index_view.py`, `local_store.py` | shared modules |
@@ -25,10 +25,10 @@ server, the static Pages twin, and grading — all in `.agents/exam-app/scripts/
   colour. Must stay free of bare element selectors (loads on top of the
   booklet stylesheet).
 - `portal_view.py` — the level chooser and module chooser, plus the page shell
-  (header, breadcrumb, language switch, `PORTAL_CSS`) every portal screen and
-  the exam list render through. Labels live in the language registry's `portal`
-  namespace (`exam-model-answer/references/languages/<code>/portal.json`), one
-  `.lang-pane` per language, remembered under `build_model_answer.LANG_STORE_KEY`.
+  (lang_ui's sticky bar, the scrolling title header, `PORTAL_CSS`) every portal
+  screen and the exam list render through. Labels live in the language
+  registry's `portal` namespace (`exam-model-answer/references/languages/<code>/portal.json`),
+  one `.lang-pane` per language.
 - `index_view.py` — the exam list's CSS/cards/actions, fed the same test objects
   by `/api/tests?level=` or a baked manifest. `make check` fails if `INDEX_CSS`
   or `PORTAL_CSS` is defined anywhere but its owner.
@@ -44,8 +44,8 @@ server, the static Pages twin, and grading — all in `.agents/exam-app/scripts/
 - `build_practice.py` imports the sheet's own `strip_key()`,
   `inject_gengo()`/`inject_choukai()` (through their `after=` hook),
   `render_bodies()`, `player_html()`, `PLAYER_JS` and `CHROME_JS`, and
-  exam-model-answer's `explanation_box_html()`/`EXPLANATION_CSS`/
-  `LANG_SWITCH_JS`, plus its registry-derived `LANGS`/`PRIMARY`/`UI`/
+  exam-model-answer's `explanation_box_html()`/`EXPLANATION_CSS` and
+  `lang_ui` (the bar + dropdown), plus its registry-derived `LANGS`/`PRIMARY`/`UI`/
   `LANG_NAME`/`load_details()`/`kaisetsu_path()` — its own labels come from
   the registry's `practice.json` (exam-model-answer §"Languages — one
   registry"). It formats no exam text and no explanation prose of its own
@@ -173,7 +173,7 @@ deployments (`portal_view.py`):
 | URL (= `_site/` file) | Screen |
 | - | - |
 | `/` (`index.html`) | level chooser — N1–N5 cards: status (`level.py`: calibrated / structured / scaffold, `none` without a table), test count, 知識 availability. A level with nothing is disabled (「準備中」), never hidden |
-| `/<LEVEL>/` (`<LEVEL>/index.html`) | module chooser — three cards: 試験 (→ `exam/`), 知識 (→ `../knowledge/<LEVEL>/`, built by `jlpt-knowledge`; its categories counted by `knowledge_data.summary()`, a category shown only with ≥1 entry) and ドリル (→ `../drill/<LEVEL>/`, path reserved for the drill module — 大問別練習, 聴解トレーニング, 復習ノート, 進捗ダッシュボード, 読解ライブラリ — whose builder is not written yet); a module with nothing (no tests / no `index.html`) is disabled 「準備中」, never hidden |
+| `/<LEVEL>/` (`<LEVEL>/index.html`) | module chooser — three cards: 試験 (→ `exam/`), 知識 (→ `../knowledge/<LEVEL>/`, built by `jlpt-knowledge`; its categories counted by `knowledge_data.summary()`, a category shown only with ≥1 entry) and ドリル (→ `../drill/<LEVEL>/`, built by `jlpt-drill` — 大問別練習, 聴解トレーニング, 復習ノート, 進捗ダッシュボード, 読解ライブラリ); a module with nothing (no tests / no `index.html`) is disabled 「準備中」, never hidden |
 | `/<LEVEL>/exam/` (`<LEVEL>/exam/index.html`) | screen 1 below, that level only, with a breadcrumb back |
 
 **Every link is relative** and names `index.html` — Pages serves from
@@ -511,14 +511,36 @@ the list must not destroy the field being typed into.
 
 ## On-screen layout — one design across three screens
 
+**One sticky bar per page, and it is exam-model-answer's `lang_ui.topbar_html()`**
+(2026-09-30): breadcrumb left (level › module › page, relative links), the
+page's own compact controls, then the language dropdown — ~40px desktop, 36px
+phone, one line at 375px (crumbs ellipsize, `tb-wide` controls drop, `tb-long`/
+`tb-short` labels swap), hidden in print. Every page but the two booklets carries
+exactly one (`make check`, `check_site_chrome`). The sheet's old `#bar` is merged
+into it: `解答.html`'s right side is the two section tabs, the 「聴解 ｜ 問題2」
+read-out (`#where`), then `#bar-controls` — clock, counter, 消去, 聴解へ進む, 採点する
+(same ids, same gating); its page crumb reads 受験 / 採点結果 by
+`html.is-result-mode`. `練習.html`'s is the read-out, answered count, 解説をすべて開く
+and 試験モードへ. Page titles/heroes (portal, list, 模範解答) are ordinary content
+under it; 模範解答's tabs+search no longer stick.
+
+**解答.html's chrome is bilingual** — gates, bar, dialogs, result screen, player,
+advice — from the registry's `exam` namespace. Markup built in Python is
+`.lang-pane`s (`T()`); JS builds markup with `P()` (every language, CSS-switched)
+and plain text (confirm/alert, `title=`, the clock) with `S()` (the language on
+screen), repainted on the switcher's `langchange` event. The weak-大問 advice
+under the 大問 table is picked per language by 大問 code (`exam.json` `advice`);
+`採点結果.json` keeps the Japanese `advice` unchanged. Exam wording — stems,
+options, passages, scripts, section names, 大問 names — stays Japanese.
+
 Screens 2–3 keep the booklets' centered 60em measure, moved onto
 `#screen-exam`/`#screen-result` so the bar spans the window like screen 1.
 Screen 1's `<main>` is wider (80em) for cards — don't widen the exam/result
 columns to match, and don't use `width:100vw` (includes the scrollbar,
 shoves 採点する off-screen). All inside `@media screen`. `initSpy()`/
 `updateSpy()` track the nearest heading above the bar (「聴解 ｜ 問題2」);
-`fitPlayer()` measures the bar and sets the player's sticky offset — never
-hard-code it.
+`fitPlayer()` measures the bar (`#topbar`) and sets the player's sticky offset —
+never hard-code it.
 
 **Bubbles** look like マークシート ovals (`.qa label`, CSS only): a tall oval
 with its digit, filled solid when chosen; the radio is transparent over it, so

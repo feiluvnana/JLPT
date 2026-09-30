@@ -303,10 +303,19 @@ def order_keys(spec: dict, entries: list[dict], level: str) -> dict[str, tuple]:
             first[g] = k
     rank = {g: n for n, g in enumerate(sorted(first, key=lambda g: first[g]))}
     rk = spec.get("reading")
+
+    def _say(e):   # 漢字 has no reading field: its first 音 (else 訓) reading sorts it
+        if rk:
+            return str(e.get(rk, ""))
+        for f in ("on", "kun"):
+            v = e.get(f)
+            if isinstance(v, list) and v:
+                return str(v[0])
+        return ""
     for i, e in loose:
         g = e.get("group") if isinstance(e.get("group"), str) else ""
         out[e["id"]] = (i, rank.get(g, len(rank)), 0, 0, 0, g if g not in rank else "",
-                        _gojuon(str(e.get(rk, "")) if rk else ""), e["id"])
+                        _gojuon(_say(e)), e["id"])
     return out
 
 

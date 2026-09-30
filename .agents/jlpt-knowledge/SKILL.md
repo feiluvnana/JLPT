@@ -136,7 +136,11 @@ group filter lists its groups in the same order; the quiz alone shuffles.
   words (`v-o-*`) after every numbered one, grouped under their `group` label
   (labels in the order of their first numbered word, others after), then by
   `reading` in gojūon order.
-- **漢字 — `"order": "id"`**: the Shin Kanzen 漢字 number (`k-NNNN`).
+- **漢字 — `"order": "id"`**: the Shin Kanzen 漢字 number (`k-NNNN`); a kanji the
+  official papers test that SK's 1,046 do not number is `kx-<kanji>` (the inventory's
+  id), after every numbered one, grouped under `group` 「SK漢字外（公式）」, then by its
+  first 音 (else 訓) reading in gojūon order. Check the SK 目次 first: 39 numbers are
+  missing from the OCR, and an inventory `kx-` that SK does number (求 = 640) is `k-NNNN`.
 - **読解 / 聴解 guides — `"order": "id"`**: the official-format guides first, in
   the inventory's order (overview, 問題10…14 / 問題1…5, then the skill guides),
   then the Shin Kanzen lessons by number (`r-sk-NN`, `l-sk-NN`), then Soumatome

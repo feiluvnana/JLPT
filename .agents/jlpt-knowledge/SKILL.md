@@ -391,6 +391,13 @@ Added by 文法 batch-7 QA (`qa/qa-report-knowledge-N2-文法-B7.md`):
     conjunctions both barred from a wish/intent main clause share one kill
     clause (rule 16). Quote a page's restriction exactly (p.194 bans contractions
     in 硬い文章; it does not say they are conversation-only).
+34. **(漢字 batch-2 QA)** Run the example-overlap check (shared content tokens,
+    not only 10-char windows) over every refs extract AND the category's other
+    cards — it caught 10 copies the window scan missed. Call a Hán Việt reading
+    a trap only when it is itself a Vietnamese word with another meaning. No
+    furigana on official wrong options that are not words (戻品, 住屋). A gloss
+    never contains another entry's headword kanji (直's 「元に戻す」 put 元 on
+    元's own meaning quiz).
 
 ## Pronunciation
 

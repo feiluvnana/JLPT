@@ -46,6 +46,46 @@
       "official_count": 2
     },
     {
+      "id": "k-0011",
+      "kanji": "映",
+      "on": [
+        "エイ"
+      ],
+      "kun": [
+        "うつ.る",
+        "うつ.す"
+      ],
+      "words": [
+        "｜映画《えいが》",
+        "｜反映《はんえい》",
+        "｜映《うつ》る"
+      ],
+      "examples": [
+        "｜電車《でんしゃ》の｜窓《まど》に**｜映《うつ》った**｜自分《じぶん》の｜姿《すがた》を｜見《み》て、ネクタイが｜曲《ま》がっているのに｜気《き》づいた。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 141,
+          "note": "別冊1 学習漢字リスト No.11（別冊p.8）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/10. N2 12-2019/booklet.md",
+          "note": "12/2019 問題1-4 映った"
+        }
+      ],
+      "related": [
+        "k-0491",
+        "k-0027"
+      ],
+      "quiz": [],
+      "group": "ステップ1 第1回〜第14回",
+      "tags": [
+        "問題1 読み"
+      ],
+      "official_count": 1
+    },
+    {
       "id": "k-0018",
       "kanji": "下",
       "on": [
@@ -85,13 +125,406 @@
           "note": "12/2020 問題1-5 下降"
         }
       ],
-      "related": [],
+      "related": [
+        "k-0088"
+      ],
       "quiz": [],
       "group": "ステップ1 第1回〜第14回",
       "tags": [
         "問題1 読み"
       ],
       "official_count": 2
+    },
+    {
+      "id": "k-0020",
+      "kanji": "火",
+      "on": [
+        "カ"
+      ],
+      "kun": [
+        "ひ"
+      ],
+      "words": [
+        "｜火事《かじ》",
+        "｜火山《かざん》",
+        "｜強火《つよび》"
+      ],
+      "examples": [
+        "｜昨夜《さくや》、｜近所《きんじょ》で**｜火事《かじ》**があったが、けが｜人《にん》は｜出《で》なかった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 142,
+          "note": "別冊1 学習漢字リスト No.20（別冊p.9）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/8. N2 12-2017/booklet.md",
+          "note": "12/2017 問題1-3 強火"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "ステップ1 第1回〜第14回",
+      "tags": [
+        "問題1 読み"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0027",
+      "kanji": "画",
+      "on": [
+        "ガ",
+        "カク"
+      ],
+      "kun": [],
+      "words": [
+        "｜計画《けいかく》",
+        "｜企画《きかく》",
+        "｜画家《がか》",
+        "｜映画《えいが》"
+      ],
+      "examples": [
+        "｜文化祭《ぶんかさい》で｜何《なに》をするか、クラスで**｜企画《きかく》**を｜立《た》てた。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 142,
+          "note": "別冊1 学習漢字リスト No.27（別冊p.9）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/9. N2 12-2018/booklet.md",
+          "note": "12/2018 問題1-2 企画"
+        }
+      ],
+      "related": [
+        "k-0011"
+      ],
+      "quiz": [],
+      "group": "ステップ1 第1回〜第14回",
+      "tags": [
+        "問題1 読み"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0032",
+      "kanji": "開",
+      "on": [
+        "カイ"
+      ],
+      "kun": [
+        "ひら.く",
+        "あ.く",
+        "あ.ける"
+      ],
+      "words": [
+        "｜開催《かいさい》",
+        "｜開通《かいつう》",
+        "｜開《あ》ける"
+      ],
+      "examples": [
+        "｜新《あたら》しい｜道路《どうろ》が**｜開通《かいつう》**して、｜駅《えき》まで｜早《はや》く｜行《い》けるようになった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 142,
+          "note": "別冊1 学習漢字リスト No.32（別冊p.9–10）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/1. N2 12-2010/booklet.md",
+          "note": "12/2010 問題2-6 開催"
+        }
+      ],
+      "related": [
+        "k-0259",
+        "k-0598"
+      ],
+      "quiz": [],
+      "group": "ステップ1 第1回〜第14回",
+      "tags": [
+        "問題2 表記"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0034",
+      "kanji": "外",
+      "on": [
+        "ガイ",
+        "ゲ"
+      ],
+      "kun": [
+        "そと",
+        "はず.す",
+        "はず.れる"
+      ],
+      "words": [
+        "｜外出《がいしゅつ》",
+        "｜意外《いがい》",
+        "｜外科《げか》",
+        "｜外《はず》れる"
+      ],
+      "examples": [
+        "｜足《あし》のけがで、｜近《ちか》くの**｜外科《げか》**に｜通《かよ》っている。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 143,
+          "note": "別冊1 学習漢字リスト No.34（別冊p.10）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/13. N2 12-2022/booklet.md",
+          "note": "12/2022 問題1-3 外れて"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "ステップ1 第1回〜第14回",
+      "tags": [
+        "問題1 読み"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0037",
+      "kanji": "間",
+      "on": [
+        "カン",
+        "ケン"
+      ],
+      "kun": [
+        "あいだ",
+        "ま"
+      ],
+      "words": [
+        "｜世間《せけん》",
+        "｜人間《にんげん》",
+        "｜期間《きかん》",
+        "｜間違《まちが》い"
+      ],
+      "examples": [
+        "｜夏休《なつやす》みの**｜期間《きかん》**は、｜図書館《としょかん》が｜夜《よる》まで｜開《あ》いている。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 143,
+          "note": "別冊1 学習漢字リスト No.37（別冊p.10）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/13. N2 12-2022/booklet.md",
+          "note": "12/2022 問題1-4 世間"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "ステップ1 第1回〜第14回",
+      "tags": [
+        "問題1 読み"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0042",
+      "kanji": "気",
+      "on": [
+        "キ",
+        "ケ"
+      ],
+      "kun": [],
+      "words": [
+        "｜陽気《ようき》",
+        "｜空気《くうき》",
+        "｜気配《けはい》",
+        "｜気付《きづ》く"
+      ],
+      "examples": [
+        "｜祖母《そぼ》は**｜陽気《ようき》**な｜性格《せいかく》で、いつも｜笑《わら》っている。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 143,
+          "note": "別冊1 学習漢字リスト No.42（別冊p.10）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/10. N2 12-2019/booklet.md",
+          "note": "12/2019 問題2-8 陽気"
+        }
+      ],
+      "related": [
+        "k-0043",
+        "k-0340",
+        "k-0415"
+      ],
+      "quiz": [],
+      "group": "ステップ1 第1回〜第14回",
+      "tags": [
+        "問題2 表記"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0043",
+      "kanji": "起",
+      "on": [
+        "キ"
+      ],
+      "kun": [
+        "お.きる",
+        "お.こる",
+        "お.こす"
+      ],
+      "words": [
+        "｜起床《きしょう》",
+        "｜起《お》きる",
+        "｜起《お》こる",
+        "｜起《お》こす"
+      ],
+      "examples": [
+        "｜事故《じこ》が**｜起《お》こった**｜原因《げんいん》を、｜今《いま》｜調《しら》べている。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 143,
+          "note": "別冊1 学習漢字リスト No.43（別冊p.10）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/16. N2 7-2025/booklet.md",
+          "note": "7/2025 問題1-4 起床"
+        }
+      ],
+      "related": [
+        "k-0042"
+      ],
+      "quiz": [],
+      "group": "ステップ1 第1回〜第14回",
+      "tags": [
+        "問題1 読み"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0047",
+      "kanji": "急",
+      "on": [
+        "キュウ"
+      ],
+      "kun": [
+        "いそ.ぐ"
+      ],
+      "words": [
+        "｜至急《しきゅう》",
+        "｜急行《きゅうこう》",
+        "｜急速《きゅうそく》",
+        "｜急《いそ》ぐ"
+      ],
+      "examples": [
+        "｜発車《はっしゃ》の｜時刻《じこく》が｜近《ちか》かったので、ホームまで**｜急《いそ》いだ**。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 144,
+          "note": "別冊1 学習漢字リスト No.47（別冊p.11）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/2. N2 7-2011/booklet.md",
+          "note": "7/2011 問題1-5 至急"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "ステップ1 第1回〜第14回",
+      "tags": [
+        "問題1 読み"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0052",
+      "kanji": "強",
+      "on": [
+        "キョウ",
+        "ゴウ"
+      ],
+      "kun": [
+        "つよ.い"
+      ],
+      "words": [
+        "｜強化《きょうか》",
+        "｜強引《ごういん》",
+        "｜強火《つよび》",
+        "｜強気《つよき》"
+      ],
+      "examples": [
+        "｜店員《てんいん》に**｜強引《ごういん》**にすすめられて、｜高《たか》い｜服《ふく》を｜買《か》ってしまった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 144,
+          "note": "別冊1 学習漢字リスト No.52（別冊p.11）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/8. N2 12-2017/booklet.md",
+          "note": "12/2017 問題1-3 強火"
+        }
+      ],
+      "related": [
+        "k-0127"
+      ],
+      "quiz": [],
+      "group": "ステップ1 第1回〜第14回",
+      "tags": [
+        "問題1 読み"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0067",
+      "kanji": "見",
+      "on": [
+        "ケン"
+      ],
+      "kun": [
+        "み.る",
+        "み.える",
+        "み.せる"
+      ],
+      "words": [
+        "｜見学《けんがく》",
+        "｜意見《いけん》",
+        "｜見《み》｜逃《のが》す",
+        "｜見《み》える"
+      ],
+      "examples": [
+        "｜社会科《しゃかいか》の｜授業《じゅぎょう》で、パン｜工場《こうじょう》を**｜見学《けんがく》**した。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 145,
+          "note": "別冊1 学習漢字リスト No.67（別冊p.12）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/10. N2 12-2019/booklet.md",
+          "note": "12/2019 問題2-9 見逃して"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "ステップ1 第1回〜第14回",
+      "tags": [
+        "問題2 表記"
+      ],
+      "official_count": 1
     },
     {
       "id": "k-0070",
@@ -131,6 +564,125 @@
         "問題1 読み"
       ],
       "official_count": 2
+    },
+    {
+      "id": "k-0072",
+      "kanji": "元",
+      "on": [
+        "ゲン",
+        "ガン"
+      ],
+      "kun": [
+        "もと"
+      ],
+      "words": [
+        "｜地元《じもと》",
+        "｜元気《げんき》",
+        "｜元日《がんじつ》",
+        "｜足元《あしもと》"
+      ],
+      "examples": [
+        "**｜足元《あしもと》**が｜暗《くら》いので、｜気《き》をつけて｜歩《ある》いてください。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 145,
+          "note": "別冊1 学習漢字リスト No.72（別冊p.12）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/2. N2 12-2011/booklet.md",
+          "note": "12/2011 問題1-1 地元"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "ステップ1 第1回〜第14回",
+      "tags": [
+        "問題1 読み"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0086",
+      "kanji": "行",
+      "on": [
+        "コウ",
+        "ギョウ"
+      ],
+      "kun": [
+        "い.く",
+        "ゆ.く",
+        "おこな.う"
+      ],
+      "words": [
+        "｜行事《ぎょうじ》",
+        "｜行動《こうどう》",
+        "｜通行《つうこう》",
+        "｜行《おこな》う"
+      ],
+      "examples": [
+        "｜日本《にほん》では、｜車《くるま》は｜道路《どうろ》の｜左側《ひだりがわ》を**｜通行《つうこう》**する。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 146,
+          "note": "別冊1 学習漢字リスト No.86（別冊p.13）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/6. N2 7-2015/booklet.md",
+          "note": "7/2015 問題1-4 行事"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "ステップ1 第1回〜第14回",
+      "tags": [
+        "問題1 読み"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0088",
+      "kanji": "降",
+      "on": [
+        "コウ"
+      ],
+      "kun": [
+        "お.りる",
+        "お.ろす",
+        "ふ.る"
+      ],
+      "words": [
+        "｜下降《かこう》",
+        "｜以降《いこう》",
+        "｜降《お》りる",
+        "｜降《ふ》る"
+      ],
+      "examples": [
+        "バスを**｜降《お》りる**ときは、｜前《まえ》のドアから｜出《で》てください。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 146,
+          "note": "別冊1 学習漢字リスト No.88（別冊p.13）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/11. N2 12-2020/booklet.md",
+          "note": "12/2020 問題1-5 下降"
+        }
+      ],
+      "related": [
+        "k-0018"
+      ],
+      "quiz": [],
+      "group": "ステップ1 第1回〜第14回",
+      "tags": [
+        "問題1 読み"
+      ],
+      "official_count": 1
     },
     {
       "id": "k-0117",
@@ -174,6 +726,157 @@
       "official_count": 2
     },
     {
+      "id": "k-0127",
+      "kanji": "弱",
+      "on": [
+        "ジャク"
+      ],
+      "kun": [
+        "よわ.い"
+      ],
+      "words": [
+        "｜弱点《じゃくてん》",
+        "｜弱《よわ》い"
+      ],
+      "examples": [
+        "｜数学《すうがく》が**｜弱点《じゃくてん》**なので、｜毎日《まいにち》｜問題《もんだい》を｜解《と》いている。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 149,
+          "note": "別冊1 学習漢字リスト No.127（別冊p.16）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/12. N2 7-2021/booklet.md",
+          "note": "7/2021 問題2-10 弱点"
+        }
+      ],
+      "related": [
+        "k-0052"
+      ],
+      "quiz": [],
+      "group": "ステップ1 第1回〜第14回",
+      "tags": [
+        "問題2 表記"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0128",
+      "kanji": "手",
+      "on": [
+        "シュ"
+      ],
+      "kun": [
+        "て"
+      ],
+      "words": [
+        "｜握手《あくしゅ》",
+        "｜運転手《うんてんしゅ》",
+        "｜手間《てま》",
+        "｜相手《あいて》"
+      ],
+      "examples": [
+        "この｜料理《りょうり》は**｜手間《てま》**がかかるが、とてもおいしい。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 149,
+          "note": "別冊1 学習漢字リスト No.128（別冊p.16）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/14. N2 7-2023/booklet.md",
+          "note": "7/2023 問題1-5 握手"
+        }
+      ],
+      "related": [
+        "k-1046"
+      ],
+      "quiz": [],
+      "group": "ステップ1 第1回〜第14回",
+      "tags": [
+        "問題1 読み"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0132",
+      "kanji": "受",
+      "on": [
+        "ジュ"
+      ],
+      "kun": [
+        "う.ける"
+      ],
+      "words": [
+        "｜受講《じゅこう》",
+        "｜受験《じゅけん》",
+        "｜受《う》け｜取《と》る",
+        "｜受付《うけつけ》"
+      ],
+      "examples": [
+        "｜郵便局《ゆうびんきょく》で、｜母《はは》からの｜小包《こづつみ》を**｜受《う》け｜取《と》った**。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 149,
+          "note": "別冊1 学習漢字リスト No.132（別冊p.16）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/15. N2 12-2024/booklet.md",
+          "note": "12/2024 問題2-9 受講"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "ステップ1 第1回〜第14回",
+      "tags": [
+        "問題2 表記"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0139",
+      "kanji": "住",
+      "on": [
+        "ジュウ"
+      ],
+      "kun": [
+        "す.む",
+        "す.まう"
+      ],
+      "words": [
+        "｜住居《じゅうきょ》",
+        "｜住所《じゅうしょ》",
+        "｜住宅《じゅうたく》",
+        "｜住《す》む"
+      ],
+      "examples": [
+        "｜祖父《そふ》は、｜生《う》まれた｜町《まち》に｜今《いま》も**｜住《す》んで**いる。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 149,
+          "note": "別冊1 学習漢字リスト No.139（別冊p.16–17）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/13. N2 7-2022/booklet.md",
+          "note": "7/2022 問題2-8 住居"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "ステップ1 第1回〜第14回",
+      "tags": [
+        "問題2 表記"
+      ],
+      "official_count": 1
+    },
+    {
       "id": "k-0140",
       "kanji": "重",
       "on": [
@@ -209,13 +912,92 @@
           "note": "12/2016 問題1-1 貴重"
         }
       ],
-      "related": [],
+      "related": [
+        "k-0356"
+      ],
       "quiz": [],
       "group": "ステップ1 第1回〜第14回",
       "tags": [
         "問題1 読み"
       ],
       "official_count": 2
+    },
+    {
+      "id": "k-0141",
+      "kanji": "出",
+      "on": [
+        "シュツ"
+      ],
+      "kun": [
+        "で.る",
+        "だ.す"
+      ],
+      "words": [
+        "｜出世《しゅっせ》",
+        "｜出場《しゅつじょう》",
+        "｜出来事《できごと》",
+        "｜引《ひ》き｜出《だ》し"
+      ],
+      "examples": [
+        "｜兄《あに》は｜来月《らいげつ》のマラソン｜大会《たいかい》に**｜出場《しゅつじょう》**する。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 150,
+          "note": "別冊1 学習漢字リスト No.141（別冊p.17）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/1. N2 7-2010/booklet.md",
+          "note": "7/2010 問題2-7 出世"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "ステップ1 第1回〜第14回",
+      "tags": [
+        "問題2 表記"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0144",
+      "kanji": "書",
+      "on": [
+        "ショ"
+      ],
+      "kun": [
+        "か.く"
+      ],
+      "words": [
+        "｜領収書《りょうしゅうしょ》",
+        "｜書店《しょてん》",
+        "｜書類《しょるい》",
+        "｜書《か》く"
+      ],
+      "examples": [
+        "｜駅前《えきまえ》の**｜書店《しょてん》**で、｜旅行《りょこう》のガイドブックを｜買《か》った。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 150,
+          "note": "別冊1 学習漢字リスト No.144（別冊p.17）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/8. N2 12-2017/booklet.md",
+          "note": "12/2017 問題2-9 領収書"
+        }
+      ],
+      "related": [
+        "k-0336"
+      ],
+      "quiz": [],
+      "group": "ステップ1 第1回〜第14回",
+      "tags": [
+        "問題2 表記"
+      ],
+      "official_count": 1
     },
     {
       "id": "k-0153",
@@ -257,6 +1039,44 @@
         "問題2 表記"
       ],
       "official_count": 2
+    },
+    {
+      "id": "k-0160",
+      "kanji": "人",
+      "on": [
+        "ジン",
+        "ニン"
+      ],
+      "kun": [
+        "ひと"
+      ],
+      "words": [
+        "｜求人《きゅうじん》",
+        "｜人生《じんせい》",
+        "｜本人《ほんにん》",
+        "｜人通《ひとどお》り"
+      ],
+      "examples": [
+        "この｜書類《しょるい》は、**｜本人《ほんにん》**が｜窓口《まどぐち》に｜出《だ》してください。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 151,
+          "note": "別冊1 学習漢字リスト No.160（別冊p.18）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/8. N2 12-2017/booklet.md",
+          "note": "12/2017 問題1-5 求人"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "ステップ1 第1回〜第14回",
+      "tags": [
+        "問題1 読み"
+      ],
+      "official_count": 1
     },
     {
       "id": "k-0163",
@@ -306,6 +1126,351 @@
       "official_count": 3
     },
     {
+      "id": "k-0190",
+      "kanji": "大",
+      "on": [
+        "ダイ",
+        "タイ"
+      ],
+      "kun": [
+        "おお",
+        "おお.きい",
+        "おお.いに"
+      ],
+      "words": [
+        "｜大幅《おおはば》",
+        "｜大会《たいかい》",
+        "｜大通《おおどお》り",
+        "｜大体《だいたい》"
+      ],
+      "examples": [
+        "｜駅《えき》の｜前《まえ》の**｜大通《おおどお》り**は、｜朝《あさ》はいつも｜車《くるま》が｜多《おお》い。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 153,
+          "note": "別冊1 学習漢字リスト No.190（別冊p.20）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/5. N2 7-2014/booklet.md",
+          "note": "7/2014 問題1-1 大幅"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "ステップ1 第1回〜第14回",
+      "tags": [
+        "問題1 読み"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0193",
+      "kanji": "短",
+      "on": [
+        "タン"
+      ],
+      "kun": [
+        "みじか.い"
+      ],
+      "words": [
+        "｜短編《たんぺん》",
+        "｜短所《たんしょ》",
+        "｜短期《たんき》",
+        "｜短《みじか》い"
+      ],
+      "examples": [
+        "｜夏休《なつやす》みに、｜英語《えいご》の**｜短期《たんき》**コースに｜通《かよ》った。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 153,
+          "note": "別冊1 学習漢字リスト No.193（別冊p.20）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/15. N2 7-2024/booklet.md",
+          "note": "7/2024 問題2-7 短編"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "ステップ1 第1回〜第14回",
+      "tags": [
+        "問題2 表記"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0195",
+      "kanji": "地",
+      "on": [
+        "チ",
+        "ジ"
+      ],
+      "kun": [],
+      "words": [
+        "｜地元《じもと》",
+        "｜地味《じみ》",
+        "｜地方《ちほう》",
+        "｜地図《ちず》"
+      ],
+      "examples": [
+        "｜姉《あね》は**｜地味《じみ》**な｜色《いろ》の｜服《ふく》が｜好《す》きだ。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 154,
+          "note": "別冊1 学習漢字リスト No.195（別冊p.21）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/2. N2 12-2011/booklet.md",
+          "note": "12/2011 問題1-1 地元"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "ステップ1 第1回〜第14回",
+      "tags": [
+        "問題1 読み"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0199",
+      "kanji": "中",
+      "on": [
+        "チュウ"
+      ],
+      "kun": [
+        "なか"
+      ],
+      "words": [
+        "｜世《よ》の｜中《なか》",
+        "｜中心《ちゅうしん》",
+        "｜中身《なかみ》",
+        "｜一日中《いちにちじゅう》"
+      ],
+      "examples": [
+        "｜財布《さいふ》の**｜中身《なかみ》**を｜確《たし》かめたら、｜千円《せんえん》しかなかった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 154,
+          "note": "別冊1 学習漢字リスト No.199（別冊p.21）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/4. N2 7-2013/booklet.md",
+          "note": "7/2013 問題1-1 世の中"
+        }
+      ],
+      "related": [
+        "k-0421"
+      ],
+      "quiz": [],
+      "group": "ステップ1 第1回〜第14回",
+      "tags": [
+        "問題1 読み"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0218",
+      "kanji": "度",
+      "on": [
+        "ド",
+        "タク"
+      ],
+      "kun": [
+        "たび"
+      ],
+      "words": [
+        "｜再度《さいど》",
+        "｜年度《ねんど》",
+        "｜温度《おんど》",
+        "｜支度《したく》"
+      ],
+      "examples": [
+        "｜出《で》かける**｜支度《したく》**に｜時間《じかん》がかかって、バスに｜遅《おく》れた。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 155,
+          "note": "別冊1 学習漢字リスト No.218（別冊p.22）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/9. N2 12-2018/booklet.md",
+          "note": "12/2018 問題1-3 再度"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "ステップ1 第1回〜第14回",
+      "tags": [
+        "問題1 読み"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0245",
+      "kanji": "疲",
+      "on": [
+        "ヒ"
+      ],
+      "kun": [
+        "つか.れる"
+      ],
+      "words": [
+        "｜疲労《ひろう》",
+        "｜疲《つか》れる",
+        "｜疲《つか》れ"
+      ],
+      "examples": [
+        "｜長《なが》い｜会議《かいぎ》が｜続《つづ》いて、みんな**｜疲《つか》れた**｜顔《かお》をしていた。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 157,
+          "note": "別冊1 学習漢字リスト No.245（別冊p.24）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/15. N2 7-2024/booklet.md",
+          "note": "7/2024 問題2-10 疲労"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "ステップ1 第1回〜第14回",
+      "tags": [
+        "問題2 表記"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0249",
+      "kanji": "品",
+      "on": [
+        "ヒン"
+      ],
+      "kun": [
+        "しな"
+      ],
+      "words": [
+        "｜返品《へんぴん》",
+        "｜商品《しょうひん》",
+        "｜上品《じょうひん》",
+        "｜品物《しなもの》"
+      ],
+      "examples": [
+        "｜祖母《そぼ》はいつも**｜上品《じょうひん》**な｜話《はな》し｜方《かた》をする。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 157,
+          "note": "別冊1 学習漢字リスト No.249（別冊p.24）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/12. N2 7-2021/booklet.md",
+          "note": "7/2021 問題2-7 返品"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "ステップ1 第1回〜第14回",
+      "tags": [
+        "問題2 表記"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0256",
+      "kanji": "分",
+      "on": [
+        "ブン",
+        "フン",
+        "ブ"
+      ],
+      "kun": [
+        "わ.ける",
+        "わ.かれる",
+        "わ.かる"
+      ],
+      "words": [
+        "｜分析《ぶんせき》",
+        "｜部分《ぶぶん》",
+        "｜気分《きぶん》",
+        "｜分《わ》かれる"
+      ],
+      "examples": [
+        "｜道《みち》が｜二《ふた》つに**｜分《わ》かれて**いる｜所《ところ》で、｜右《みぎ》に｜曲《ま》がった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 157,
+          "note": "別冊1 学習漢字リスト No.256（別冊p.24）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/15. N2 7-2024/booklet.md",
+          "note": "7/2024 問題1-2 分析"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "ステップ1 第1回〜第14回",
+      "tags": [
+        "問題1 読み"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0259",
+      "kanji": "閉",
+      "on": [
+        "ヘイ"
+      ],
+      "kun": [
+        "と.じる",
+        "し.める",
+        "し.まる"
+      ],
+      "words": [
+        "｜密閉《みっぺい》",
+        "｜閉会《へいかい》",
+        "｜閉《と》じる",
+        "｜閉《し》める"
+      ],
+      "examples": [
+        "｜大会《たいかい》の｜最後《さいご》に、**｜閉会《へいかい》**のあいさつがあった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 158,
+          "note": "別冊1 学習漢字リスト No.259（別冊p.25）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/8. N2 7-2017/booklet.md",
+          "note": "7/2017 問題1-3 密閉"
+        }
+      ],
+      "related": [
+        "k-0032"
+      ],
+      "quiz": [],
+      "group": "ステップ1 第1回〜第14回",
+      "tags": [
+        "問題1 読み"
+      ],
+      "official_count": 1
+    },
+    {
       "id": "k-0262",
       "kanji": "返",
       "on": [
@@ -347,6 +1512,81 @@
         "問題2 表記"
       ],
       "official_count": 2
+    },
+    {
+      "id": "k-0274",
+      "kanji": "味",
+      "on": [
+        "ミ"
+      ],
+      "kun": [
+        "あじ",
+        "あじ.わう"
+      ],
+      "words": [
+        "｜趣味《しゅみ》",
+        "｜意味《いみ》",
+        "｜味方《みかた》",
+        "｜味《あじ》わう"
+      ],
+      "examples": [
+        "｜旅行先《りょこうさき》で、その｜土地《とち》の｜料理《りょうり》をゆっくり**｜味《あじ》わった**。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 158,
+          "note": "別冊1 学習漢字リスト No.274（別冊p.25–26）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/10. N2 7-2019/booklet.md",
+          "note": "7/2019 問題2-6 趣味"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "ステップ1 第1回〜第14回",
+      "tags": [
+        "問題2 表記"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0283",
+      "kanji": "薬",
+      "on": [
+        "ヤク"
+      ],
+      "kun": [
+        "くすり"
+      ],
+      "words": [
+        "｜農薬《のうやく》",
+        "｜薬品《やくひん》",
+        "｜薬局《やっきょく》",
+        "｜薬《くすり》"
+      ],
+      "examples": [
+        "｜駅前《えきまえ》の**｜薬局《やっきょく》**は、｜夜《よる》｜十時《じゅうじ》まで｜開《あ》いている。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 159,
+          "note": "別冊1 学習漢字リスト No.283（別冊p.26）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/15. N2 7-2024/booklet.md",
+          "note": "7/2024 問題1-4 農薬"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "ステップ1 第1回〜第14回",
+      "tags": [
+        "問題1 読み"
+      ],
+      "official_count": 1
     },
     {
       "id": "k-0293",
@@ -393,6 +1633,641 @@
       "official_count": 3
     },
     {
+      "id": "k-0305",
+      "kanji": "違",
+      "on": [
+        "イ"
+      ],
+      "kun": [
+        "ちが.う",
+        "ちが.える"
+      ],
+      "words": [
+        "｜違反《いはん》",
+        "｜相違《そうい》",
+        "｜違《ちが》い",
+        "｜間違《まちが》える"
+      ],
+      "examples": [
+        "｜兄《あに》と｜弟《おとうと》は、｜性格《せいかく》がまったく**｜違《ちが》う**。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 161,
+          "note": "別冊1 学習漢字リスト No.305（別冊p.28）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/10. N2 12-2019/booklet.md",
+          "note": "12/2019 問題2-6 違反"
+        }
+      ],
+      "related": [
+        "k-0491"
+      ],
+      "quiz": [],
+      "group": "ステップ2 第15回",
+      "tags": [
+        "問題2 表記"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0319",
+      "kanji": "果",
+      "on": [
+        "カ"
+      ],
+      "kun": [
+        "は.たす"
+      ],
+      "words": [
+        "｜結果《けっか》",
+        "｜効果《こうか》",
+        "｜果《は》たす",
+        "｜果物《くだもの》"
+      ],
+      "examples": [
+        "｜試験《しけん》の**｜結果《けっか》**は、｜来週《らいしゅう》わかる。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 162,
+          "note": "別冊1 学習漢字リスト No.319（別冊p.29）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/4. N2 7-2013/booklet.md",
+          "note": "7/2013 問題2-9 果たす"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "ステップ2 第15回",
+      "tags": [
+        "問題2 表記"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0322",
+      "kanji": "改",
+      "on": [
+        "カイ"
+      ],
+      "kun": [
+        "あらた.める"
+      ],
+      "words": [
+        "｜改正《かいせい》",
+        "｜改札《かいさつ》",
+        "｜改《あらた》める",
+        "｜改《あらた》めて"
+      ],
+      "examples": [
+        "｜法律《ほうりつ》が**｜改正《かいせい》**されて、｜手続《てつづ》きが｜簡単《かんたん》になった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 162,
+          "note": "別冊1 学習漢字リスト No.322（別冊p.29）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/4. N2 7-2013/booklet.md",
+          "note": "7/2013 問題1-3 改めて"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "ステップ2 第15回",
+      "tags": [
+        "問題1 読み"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0335",
+      "kanji": "願",
+      "on": [
+        "ガン"
+      ],
+      "kun": [
+        "ねが.う"
+      ],
+      "words": [
+        "｜願望《がんぼう》",
+        "｜願《ねが》う",
+        "｜願《ねが》い"
+      ],
+      "examples": [
+        "｜家族《かぞく》みんなが｜元気《げんき》でいられるように**｜願《ねが》って**いる。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 163,
+          "note": "別冊1 学習漢字リスト No.335（別冊p.30）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/7. N2 12-2016/booklet.md",
+          "note": "12/2016 問題1-5 願望"
+        }
+      ],
+      "related": [
+        "k-0516"
+      ],
+      "quiz": [],
+      "group": "ステップ2 第16回",
+      "tags": [
+        "問題1 読み"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0336",
+      "kanji": "記",
+      "on": [
+        "キ"
+      ],
+      "kun": [],
+      "words": [
+        "｜記憶《きおく》",
+        "｜記事《きじ》",
+        "｜記入《きにゅう》",
+        "｜暗記《あんき》"
+      ],
+      "examples": [
+        "アンケートの｜答《こた》えを、｜鉛筆《えんぴつ》で**｜記入《きにゅう》**した。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 163,
+          "note": "別冊1 学習漢字リスト No.336（別冊p.30）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/13. N2 7-2022/booklet.md",
+          "note": "7/2022 問題1-1 記憶"
+        }
+      ],
+      "related": [
+        "k-0144"
+      ],
+      "quiz": [],
+      "group": "ステップ2 第16回",
+      "tags": [
+        "問題1 読み"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0340",
+      "kanji": "機",
+      "on": [
+        "キ"
+      ],
+      "kun": [],
+      "words": [
+        "｜機嫌《きげん》",
+        "｜機会《きかい》",
+        "｜機能《きのう》",
+        "｜飛行機《ひこうき》"
+      ],
+      "examples": [
+        "｜留学《りゅうがく》は、｜外国語《がいこくご》を｜使《つか》うよい**｜機会《きかい》**になった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 163,
+          "note": "別冊1 学習漢字リスト No.340（別冊p.30）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/14. N2 7-2023/booklet.md",
+          "note": "7/2023 問題2-9 機嫌"
+        }
+      ],
+      "related": [
+        "k-0042"
+      ],
+      "quiz": [],
+      "group": "ステップ2 第16回",
+      "tags": [
+        "問題2 表記"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0356",
+      "kanji": "軽",
+      "on": [
+        "ケイ"
+      ],
+      "kun": [
+        "かる.い"
+      ],
+      "words": [
+        "｜軽傷《けいしょう》",
+        "｜軽《かる》い",
+        "｜気軽《きがる》"
+      ],
+      "examples": [
+        "｜近《ちか》くに｜来《き》たら、**｜気軽《きがる》**に｜寄《よ》ってください。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 164,
+          "note": "別冊1 学習漢字リスト No.356（別冊p.31）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/10. N2 12-2019/booklet.md",
+          "note": "12/2019 問題1-2 軽傷"
+        }
+      ],
+      "related": [
+        "k-0140"
+      ],
+      "quiz": [],
+      "group": "ステップ2 第17回",
+      "tags": [
+        "問題1 読み"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0362",
+      "kanji": "研",
+      "on": [
+        "ケン"
+      ],
+      "kun": [],
+      "words": [
+        "｜研修《けんしゅう》",
+        "｜研究《けんきゅう》",
+        "｜研究室《けんきゅうしつ》"
+      ],
+      "examples": [
+        "｜兄《あに》は｜大学《だいがく》で｜植物《しょくぶつ》の**｜研究《けんきゅう》**をしている。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 164,
+          "note": "別冊1 学習漢字リスト No.362（別冊p.31）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/14. N2 12-2023/booklet.md",
+          "note": "12/2023 問題2-7 研修"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "ステップ2 第17回",
+      "tags": [
+        "問題2 表記"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0365",
+      "kanji": "現",
+      "on": [
+        "ゲン"
+      ],
+      "kun": [
+        "あらわ.れる",
+        "あらわ.す"
+      ],
+      "words": [
+        "｜現象《げんしょう》",
+        "｜現金《げんきん》",
+        "｜現代《げんだい》",
+        "｜現《あらわ》れる"
+      ],
+      "examples": [
+        "｜約束《やくそく》の｜時間《じかん》を｜過《す》ぎてから、｜彼《かれ》はやっと**｜現《あらわ》れた**。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 164,
+          "note": "別冊1 学習漢字リスト No.365（別冊p.31）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/6. N2 12-2015/booklet.md",
+          "note": "12/2015 問題1-4 現象"
+        }
+      ],
+      "related": [
+        "k-0784",
+        "k-0386"
+      ],
+      "quiz": [],
+      "group": "ステップ2 第17回",
+      "tags": [
+        "問題1 読み"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0369",
+      "kanji": "向",
+      "on": [
+        "コウ"
+      ],
+      "kun": [
+        "む.く",
+        "む.ける",
+        "む.かう",
+        "む.こう"
+      ],
+      "words": [
+        "｜傾向《けいこう》",
+        "｜方向《ほうこう》",
+        "｜向《む》かう",
+        "｜向《む》こう"
+      ],
+      "examples": [
+        "この｜部屋《へや》の｜窓《まど》は、｜南《みなみ》の**｜方向《ほうこう》**を｜向《む》いている。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 164,
+          "note": "別冊1 学習漢字リスト No.369（別冊p.31–32）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/16. N2 7-2025/booklet.md",
+          "note": "7/2025 問題2-7 傾向"
+        }
+      ],
+      "related": [
+        "k-0672"
+      ],
+      "quiz": [],
+      "group": "ステップ2 第17回",
+      "tags": [
+        "問題2 表記"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0380",
+      "kanji": "座",
+      "on": [
+        "ザ"
+      ],
+      "kun": [
+        "すわ.る"
+      ],
+      "words": [
+        "｜即座《そくざ》",
+        "｜座席《ざせき》",
+        "｜座《すわ》る"
+      ],
+      "examples": [
+        "｜映画館《えいがかん》の**｜座席《ざせき》**は、｜前《まえ》から｜三《さん》｜列目《れつめ》だった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 165,
+          "note": "別冊1 学習漢字リスト No.380（別冊p.32）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/4. N2 12-2013/booklet.md",
+          "note": "12/2013 問題2-9 即座に"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "ステップ2 第18回",
+      "tags": [
+        "問題2 表記"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0381",
+      "kanji": "才",
+      "on": [
+        "サイ"
+      ],
+      "kun": [],
+      "words": [
+        "｜才能《さいのう》",
+        "｜天才《てんさい》"
+      ],
+      "examples": [
+        "｜彼女《かのじょ》は｜子《こ》どものころから、｜音楽《おんがく》の**｜才能《さいのう》**があった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 165,
+          "note": "別冊1 学習漢字リスト No.381（別冊p.32）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/16. N2 7-2025/booklet.md",
+          "note": "7/2025 問題1-1 才能"
+        }
+      ],
+      "related": [
+        "k-0484"
+      ],
+      "quiz": [],
+      "group": "ステップ2 第18回",
+      "tags": [
+        "問題1 読み"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0383",
+      "kanji": "細",
+      "on": [
+        "サイ"
+      ],
+      "kun": [
+        "ほそ.い",
+        "こま.かい"
+      ],
+      "words": [
+        "｜詳細《しょうさい》",
+        "｜細《こま》かい",
+        "｜細《ほそ》い"
+      ],
+      "examples": [
+        "｜説明書《せつめいしょ》の**｜細《こま》かい**｜字《じ》が｜読《よ》めなくて、｜眼鏡《めがね》をかけた。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 165,
+          "note": "別冊1 学習漢字リスト No.383（別冊p.32）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/15. N2 7-2024/booklet.md",
+          "note": "7/2024 問題1-1 詳細"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "ステップ2 第18回",
+      "tags": [
+        "問題1 読み"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0386",
+      "kanji": "在",
+      "on": [
+        "ザイ"
+      ],
+      "kun": [
+        "あ.る"
+      ],
+      "words": [
+        "｜在籍《ざいせき》",
+        "｜現在《げんざい》",
+        "｜在学《ざいがく》"
+      ],
+      "examples": [
+        "**｜現在《げんざい》**、この｜町《まち》には｜約《やく》｜三万《さんまん》｜人《にん》が｜住《す》んでいる。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 166,
+          "note": "別冊1 学習漢字リスト No.386（別冊p.33）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/8. N2 12-2017/booklet.md",
+          "note": "12/2017 問題2-6 在籍"
+        }
+      ],
+      "related": [
+        "k-0365"
+      ],
+      "quiz": [],
+      "group": "ステップ2 第18回",
+      "tags": [
+        "問題2 表記"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0389",
+      "kanji": "算",
+      "on": [
+        "サン"
+      ],
+      "kun": [],
+      "words": [
+        "｜精算《せいさん》",
+        "｜計算《けいさん》",
+        "｜予算《よさん》"
+      ],
+      "examples": [
+        "｜旅行《りょこう》の**｜予算《よさん》**は、｜一人《ひとり》｜五万《ごまん》｜円《えん》だ。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 166,
+          "note": "別冊1 学習漢字リスト No.389（別冊p.33）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/9. N2 12-2018/booklet.md",
+          "note": "12/2018 問題2-10 精算"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "ステップ2 第18回",
+      "tags": [
+        "問題2 表記"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0393",
+      "kanji": "指",
+      "on": [
+        "シ"
+      ],
+      "kun": [
+        "さ.す",
+        "ゆび"
+      ],
+      "words": [
+        "｜指摘《してき》",
+        "｜指定《してい》",
+        "｜目指《めざ》す",
+        "｜指《ゆび》"
+      ],
+      "examples": [
+        "｜大学《だいがく》｜合格《ごうかく》を**｜目指《めざ》して**、｜毎日《まいにち》｜勉強《べんきょう》している。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 166,
+          "note": "別冊1 学習漢字リスト No.393（別冊p.33）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/6. N2 12-2015/booklet.md",
+          "note": "12/2015 問題2-9 指摘"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "ステップ2 第18回",
+      "tags": [
+        "問題2 表記"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0394",
+      "kanji": "師",
+      "on": [
+        "シ"
+      ],
+      "kun": [],
+      "words": [
+        "｜講師《こうし》",
+        "｜教師《きょうし》",
+        "｜医師《いし》"
+      ],
+      "examples": [
+        "｜祖父《そふ》は、その｜村《むら》でただ｜一人《ひとり》の**｜医師《いし》**だった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 166,
+          "note": "別冊1 学習漢字リスト No.394（別冊p.33）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/6. N2 7-2015/booklet.md",
+          "note": "7/2015 問題2-8 講師"
+        }
+      ],
+      "related": [
+        "k-0710"
+      ],
+      "quiz": [],
+      "group": "ステップ2 第18回",
+      "tags": [
+        "問題2 表記"
+      ],
+      "official_count": 1
+    },
+    {
       "id": "k-0398",
       "kanji": "治",
       "on": [
@@ -429,7 +2304,8 @@
         }
       ],
       "related": [
-        "k-0641"
+        "k-0641",
+        "k-1033"
       ],
       "quiz": [],
       "group": "ステップ2 第19回",
@@ -437,6 +2313,45 @@
         "問題1 読み"
       ],
       "official_count": 2
+    },
+    {
+      "id": "k-0400",
+      "kanji": "失",
+      "on": [
+        "シツ"
+      ],
+      "kun": [
+        "うしな.う"
+      ],
+      "words": [
+        "｜損失《そんしつ》",
+        "｜失業《しつぎょう》",
+        "｜失敗《しっぱい》",
+        "｜失《うしな》う"
+      ],
+      "examples": [
+        "｜工場《こうじょう》が｜閉《し》まり、｜多《おお》くの｜人《ひと》が**｜失業《しつぎょう》**した。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 166,
+          "note": "別冊1 学習漢字リスト No.400（別冊p.33）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/14. N2 7-2023/booklet.md",
+          "note": "7/2023 問題2-10 損失"
+        }
+      ],
+      "related": [
+        "k-0847"
+      ],
+      "quiz": [],
+      "group": "ステップ2 第19回",
+      "tags": [
+        "問題2 表記"
+      ],
+      "official_count": 1
     },
     {
       "id": "k-0401",
@@ -529,6 +2444,313 @@
       "official_count": 3
     },
     {
+      "id": "k-0411",
+      "kanji": "助",
+      "on": [
+        "ジョ"
+      ],
+      "kun": [
+        "たす.ける",
+        "たす.かる"
+      ],
+      "words": [
+        "｜援助《えんじょ》",
+        "｜助手《じょしゅ》",
+        "｜助《たす》ける",
+        "｜助《たす》かる"
+      ],
+      "examples": [
+        "｜道《みち》に｜迷《まよ》っていたら、｜親切《しんせつ》な｜人《ひと》が｜案内《あんない》してくれて**｜助《たす》かった**。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 167,
+          "note": "別冊1 学習漢字リスト No.411（別冊p.34）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/5. N2 12-2014/booklet.md",
+          "note": "12/2014 問題2-7 援助"
+        }
+      ],
+      "related": [
+        "k-0641"
+      ],
+      "quiz": [],
+      "group": "ステップ2 第19回",
+      "tags": [
+        "問題2 表記"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0414",
+      "kanji": "勝",
+      "on": [
+        "ショウ"
+      ],
+      "kun": [
+        "か.つ"
+      ],
+      "words": [
+        "｜圧勝《あっしょう》",
+        "｜優勝《ゆうしょう》",
+        "｜勝《か》つ",
+        "｜勝手《かって》"
+      ],
+      "examples": [
+        "｜弟《おとうと》は、｜家族《かぞく》に｜相談《そうだん》しないで**｜勝手《かって》**に｜仕事《しごと》を｜辞《や》めてしまった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 167,
+          "note": "別冊1 学習漢字リスト No.414（別冊p.34）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/5. N2 7-2014/booklet.md",
+          "note": "7/2014 問題1-4 圧勝"
+        }
+      ],
+      "related": [
+        "k-0441",
+        "k-0657",
+        "k-1006"
+      ],
+      "quiz": [],
+      "group": "ステップ2 第19回",
+      "tags": [
+        "問題1 読み"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0415",
+      "kanji": "情",
+      "on": [
+        "ジョウ"
+      ],
+      "kun": [],
+      "words": [
+        "｜情景《じょうけい》",
+        "｜感情《かんじょう》",
+        "｜事情《じじょう》",
+        "｜表情《ひょうじょう》"
+      ],
+      "examples": [
+        "｜彼《かれ》は、うれしい｜気持《きも》ちがすぐ**｜表情《ひょうじょう》**に｜出《で》る。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 167,
+          "note": "別冊1 学習漢字リスト No.415（別冊p.34）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/12. N2 12-2021/booklet.md",
+          "note": "12/2021 問題1-1 情景"
+        }
+      ],
+      "related": [
+        "k-0671",
+        "k-0042"
+      ],
+      "quiz": [],
+      "group": "ステップ2 第19回",
+      "tags": [
+        "問題1 読み"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0421",
+      "kanji": "真",
+      "on": [
+        "シン"
+      ],
+      "kun": [
+        "ま"
+      ],
+      "words": [
+        "｜真剣《しんけん》",
+        "｜写真《しゃしん》",
+        "｜真《ま》っ｜先《さき》",
+        "｜真《ま》ん｜中《なか》"
+      ],
+      "examples": [
+        "｜地震《じしん》のとき、｜母《はは》は**｜真《ま》っ｜先《さき》**に｜子《こ》どもの｜部屋《へや》へ｜走《はし》った。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 168,
+          "note": "別冊1 学習漢字リスト No.421（別冊p.35）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/4. N2 12-2013/booklet.md",
+          "note": "12/2013 問題2-6 真剣"
+        }
+      ],
+      "related": [
+        "k-0199"
+      ],
+      "quiz": [],
+      "group": "ステップ2 第20回",
+      "tags": [
+        "問題2 表記"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0432",
+      "kanji": "設",
+      "on": [
+        "セツ"
+      ],
+      "kun": [],
+      "words": [
+        "｜施設《しせつ》",
+        "｜建設《けんせつ》",
+        "｜設計《せっけい》",
+        "｜設備《せつび》"
+      ],
+      "examples": [
+        "｜駅《えき》の｜近《ちか》くに、｜新《あたら》しいビルを**｜建設《けんせつ》**している。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 168,
+          "note": "別冊1 学習漢字リスト No.432（別冊p.35）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/16. N2 7-2025/booklet.md",
+          "note": "7/2025 問題2-10 施設"
+        }
+      ],
+      "related": [
+        "k-0813",
+        "k-0825"
+      ],
+      "quiz": [],
+      "group": "ステップ2 第20回",
+      "tags": [
+        "問題2 表記"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0438",
+      "kanji": "選",
+      "on": [
+        "セン"
+      ],
+      "kun": [
+        "えら.ぶ"
+      ],
+      "words": [
+        "｜抽選《ちゅうせん》",
+        "｜選手《せんしゅ》",
+        "｜選挙《せんきょ》",
+        "｜選《えら》ぶ"
+      ],
+      "examples": [
+        "｜弟《おとうと》は、サッカーの**｜選手《せんしゅ》**になるのが｜夢《ゆめ》だ。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 169,
+          "note": "別冊1 学習漢字リスト No.438（別冊p.36）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/9. N2 7-2018/booklet.md",
+          "note": "7/2018 問題1-5 抽選"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "ステップ2 第21回",
+      "tags": [
+        "問題1 読み"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0439",
+      "kanji": "然",
+      "on": [
+        "ゼン",
+        "ネン"
+      ],
+      "kun": [],
+      "words": [
+        "｜偶然《ぐうぜん》",
+        "｜自然《しぜん》",
+        "｜全然《ぜんぜん》",
+        "｜天然《てんねん》"
+      ],
+      "examples": [
+        "この｜公園《こうえん》には、｜昔《むかし》のままの**｜自然《しぜん》**が｜残《のこ》っている。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 169,
+          "note": "別冊1 学習漢字リスト No.439（別冊p.36）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/10. N2 7-2019/booklet.md",
+          "note": "7/2019 問題1-2 偶然"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "ステップ2 第21回",
+      "tags": [
+        "問題1 読み"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0440",
+      "kanji": "組",
+      "on": [
+        "ソ"
+      ],
+      "kun": [
+        "く.む",
+        "くみ"
+      ],
+      "words": [
+        "｜組織《そしき》",
+        "｜番組《ばんぐみ》",
+        "｜組《く》む",
+        "｜組《く》み｜立《た》てる"
+      ],
+      "examples": [
+        "｜父《ちち》と｜二人《ふたり》で、｜本棚《ほんだな》を**｜組《く》み｜立《た》てた**。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 169,
+          "note": "別冊1 学習漢字リスト No.440（別冊p.36）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/3. N2 12-2012/booklet.md",
+          "note": "12/2012 問題2-9 組織"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "ステップ2 第21回",
+      "tags": [
+        "問題2 表記"
+      ],
+      "official_count": 1
+    },
+    {
       "id": "k-0441",
       "kanji": "争",
       "on": [
@@ -562,7 +2784,8 @@
         }
       ],
       "related": [
-        "k-0657"
+        "k-0657",
+        "k-0414"
       ],
       "quiz": [],
       "group": "ステップ2 第21回",
@@ -571,6 +2794,44 @@
         "問題2 表記"
       ],
       "official_count": 2
+    },
+    {
+      "id": "k-0442",
+      "kanji": "相",
+      "on": [
+        "ソウ",
+        "ショウ"
+      ],
+      "kun": [
+        "あい"
+      ],
+      "words": [
+        "｜相互《そうご》",
+        "｜相当《そうとう》",
+        "｜首相《しゅしょう》",
+        "｜相手《あいて》"
+      ],
+      "examples": [
+        "｜電話《でんわ》の**｜相手《あいて》**は、｜知《し》らない｜人《ひと》だった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 169,
+          "note": "別冊1 学習漢字リスト No.442（別冊p.36）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/1. N2 7-2010/booklet.md",
+          "note": "7/2010 問題1-1 相互"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "ステップ2 第21回",
+      "tags": [
+        "問題1 読み"
+      ],
+      "official_count": 1
     },
     {
       "id": "k-0446",
@@ -614,6 +2875,45 @@
         "問題2 表記"
       ],
       "official_count": 2
+    },
+    {
+      "id": "k-0462",
+      "kanji": "置",
+      "on": [
+        "チ"
+      ],
+      "kun": [
+        "お.く"
+      ],
+      "words": [
+        "｜装置《そうち》",
+        "｜位置《いち》",
+        "｜物置《ものおき》",
+        "｜置《お》く"
+      ],
+      "examples": [
+        "｜会議《かいぎ》の｜前《まえ》に、いすと｜机《つくえ》の**｜位置《いち》**を｜直《なお》した。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 170,
+          "note": "別冊1 学習漢字リスト No.462（別冊p.37）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/3. N2 7-2012/booklet.md",
+          "note": "7/2012 問題1-1 装置"
+        }
+      ],
+      "related": [
+        "k-0825"
+      ],
+      "quiz": [],
+      "group": "ステップ2 第22回",
+      "tags": [
+        "問題1 読み"
+      ],
+      "official_count": 1
     },
     {
       "id": "k-0466",
@@ -807,6 +3107,80 @@
       "official_count": 2
     },
     {
+      "id": "k-0475",
+      "kanji": "投",
+      "on": [
+        "トウ"
+      ],
+      "kun": [
+        "な.げる"
+      ],
+      "words": [
+        "｜投票《とうひょう》",
+        "｜投書《とうしょ》",
+        "｜投《な》げる"
+      ],
+      "examples": [
+        "｜犬《いぬ》にボールを**｜投《な》げる**と、｜走《はし》って｜取《と》りに｜行《い》った。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 171,
+          "note": "別冊1 学習漢字リスト No.475（別冊p.38）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/14. N2 12-2023/booklet.md",
+          "note": "12/2023 問題2-9 投票"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "ステップ2 第22回",
+      "tags": [
+        "問題2 表記"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0477",
+      "kanji": "登",
+      "on": [
+        "トウ",
+        "ト"
+      ],
+      "kun": [
+        "のぼ.る"
+      ],
+      "words": [
+        "｜登録《とうろく》",
+        "｜登場《とうじょう》",
+        "｜登山《とざん》",
+        "｜登《のぼ》る"
+      ],
+      "examples": [
+        "｜物語《ものがたり》の｜最後《さいご》に、｜主人公《しゅじんこう》の｜父《ちち》が**｜登場《とうじょう》**する。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 171,
+          "note": "別冊1 学習漢字リスト No.477（別冊p.38）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/2. N2 7-2011/booklet.md",
+          "note": "7/2011 問題2-8 登録"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "ステップ2 第23回",
+      "tags": [
+        "問題2 表記"
+      ],
+      "official_count": 1
+    },
+    {
       "id": "k-0478",
       "kanji": "等",
       "on": [
@@ -843,7 +3217,9 @@
           "note": "12/2023 問題1-5 平等"
         }
       ],
-      "related": [],
+      "related": [
+        "k-0492"
+      ],
       "quiz": [],
       "group": "ステップ2 第23回",
       "tags": [
@@ -851,6 +3227,196 @@
         "問題2 表記"
       ],
       "official_count": 3
+    },
+    {
+      "id": "k-0481",
+      "kanji": "難",
+      "on": [
+        "ナン"
+      ],
+      "kun": [
+        "かた.い",
+        "むずか.しい"
+      ],
+      "words": [
+        "｜避難《ひなん》",
+        "｜困難《こんなん》",
+        "｜難《むずか》しい",
+        "｜有《あ》り｜難《がた》い"
+      ],
+      "examples": [
+        "｜雪《ゆき》が｜深《ふか》くて、｜山《やま》を｜進《すす》むのは**｜困難《こんなん》**だった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 172,
+          "note": "別冊1 学習漢字リスト No.481（別冊p.39）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/15. N2 12-2024/booklet.md",
+          "note": "12/2024 問題2-7 避難"
+        }
+      ],
+      "related": [
+        "k-1025"
+      ],
+      "quiz": [],
+      "group": "ステップ2 第23回",
+      "tags": [
+        "問題2 表記"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0484",
+      "kanji": "能",
+      "on": [
+        "ノウ"
+      ],
+      "kun": [],
+      "words": [
+        "｜才能《さいのう》",
+        "｜能力《のうりょく》",
+        "｜可能《かのう》",
+        "｜機能《きのう》"
+      ],
+      "examples": [
+        "この｜新《あたら》しい｜電話《でんわ》には、｜便利《べんり》な**｜機能《きのう》**がたくさんある。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 172,
+          "note": "別冊1 学習漢字リスト No.484（別冊p.39）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/16. N2 7-2025/booklet.md",
+          "note": "7/2025 問題1-1 才能"
+        }
+      ],
+      "related": [
+        "k-0381"
+      ],
+      "quiz": [],
+      "group": "ステップ2 第23回",
+      "tags": [
+        "問題1 読み"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0485",
+      "kanji": "農",
+      "on": [
+        "ノウ"
+      ],
+      "kun": [],
+      "words": [
+        "｜農薬《のうやく》",
+        "｜農業《のうぎょう》",
+        "｜農家《のうか》",
+        "｜農村《のうそん》"
+      ],
+      "examples": [
+        "｜祖父母《そふぼ》は、｜米《こめ》を｜作《つく》る**｜農家《のうか》**だ。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 172,
+          "note": "別冊1 学習漢字リスト No.485（別冊p.39）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/15. N2 7-2024/booklet.md",
+          "note": "7/2024 問題1-4 農薬"
+        }
+      ],
+      "related": [
+        "k-0919"
+      ],
+      "quiz": [],
+      "group": "ステップ2 第23回",
+      "tags": [
+        "問題1 読み"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0491",
+      "kanji": "反",
+      "on": [
+        "ハン"
+      ],
+      "kun": [],
+      "words": [
+        "｜違反《いはん》",
+        "｜反対《はんたい》",
+        "｜反映《はんえい》",
+        "｜反省《はんせい》"
+      ],
+      "examples": [
+        "｜住民《じゅうみん》の｜意見《いけん》を**｜反映《はんえい》**した｜計画《けいかく》をつくる。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 172,
+          "note": "別冊1 学習漢字リスト No.491（別冊p.39）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/10. N2 12-2019/booklet.md",
+          "note": "12/2019 問題2-6 違反"
+        }
+      ],
+      "related": [
+        "k-0305",
+        "k-0011"
+      ],
+      "quiz": [],
+      "group": "ステップ2 第23回",
+      "tags": [
+        "問題2 表記"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "k-0492",
+      "kanji": "比",
+      "on": [
+        "ヒ"
+      ],
+      "kun": [
+        "くら.べる"
+      ],
+      "words": [
+        "｜比較《ひかく》",
+        "｜比較的《ひかくてき》",
+        "｜比《くら》べる"
+      ],
+      "examples": [
+        "｜東京《とうきょう》と**｜比《くら》べて**、この｜町《まち》は｜物価《ぶっか》が｜安《やす》い。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 172,
+          "note": "別冊1 学習漢字リスト No.492（別冊p.39）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/11. N2 12-2020/booklet.md",
+          "note": "12/2020 問題1-4 比較的"
+        }
+      ],
+      "related": [
+        "k-0478"
+      ],
+      "quiz": [],
+      "group": "ステップ2 第23回",
+      "tags": [
+        "問題1 読み"
+      ],
+      "official_count": 1
     },
     {
       "id": "k-0497",
@@ -907,6 +3473,44 @@
       "official_count": 5
     },
     {
+      "id": "k-0501",
+      "kanji": "付",
+      "on": [
+        "フ"
+      ],
+      "kun": [
+        "つ.ける",
+        "つ.く"
+      ],
+      "words": [
+        "｜寄付《きふ》",
+        "｜付近《ふきん》",
+        "｜受付《うけつけ》",
+        "｜付《つ》き｜合《あ》う"
+      ],
+      "examples": [
+        "この**｜付近《ふきん》**には、コンビニが｜一軒《いっけん》もない。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 173,
+          "note": "別冊1 学習漢字リスト No.501（別冊p.40）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/4. N2 12-2013/booklet.md",
+          "note": "12/2013 問題2-8 寄付"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "ステップ2 第24回",
+      "tags": [
+        "問題2 表記"
+      ],
+      "official_count": 1
+    },
+    {
       "id": "k-0516",
       "kanji": "望",
       "on": [
@@ -939,7 +3543,9 @@
           "note": "12/2016 問題1-5 願望"
         }
       ],
-      "related": [],
+      "related": [
+        "k-0335"
+      ],
       "quiz": [],
       "group": "ステップ2 第25回",
       "tags": [
@@ -1190,7 +3796,9 @@
           "note": "7/2013 問題1-4 拡充"
         }
       ],
-      "related": [],
+      "related": [
+        "k-0032"
+      ],
       "quiz": [],
       "group": "ステップ3 第32回",
       "tags": [
@@ -1312,7 +3920,9 @@
         }
       ],
       "related": [
-        "k-0398"
+        "k-0398",
+        "k-1033",
+        "k-0411"
       ],
       "quiz": [],
       "group": "ステップ3 第33回",
@@ -1356,7 +3966,8 @@
         }
       ],
       "related": [
-        "k-0441"
+        "k-0441",
+        "k-0414"
       ],
       "quiz": [],
       "group": "ステップ3 第34回",
@@ -1437,7 +4048,9 @@
           "note": "12/2021 問題1-1 情景"
         }
       ],
-      "related": [],
+      "related": [
+        "k-0415"
+      ],
       "quiz": [],
       "group": "ステップ3 第34回",
       "tags": [
@@ -1481,7 +4094,8 @@
         }
       ],
       "related": [
-        "k-0895"
+        "k-0895",
+        "k-0369"
       ],
       "quiz": [],
       "group": "ステップ3 第34回",
@@ -1607,7 +4221,9 @@
           "note": "7/2015 問題2-8 講師"
         }
       ],
-      "related": [],
+      "related": [
+        "k-0394"
+      ],
       "quiz": [],
       "group": "ステップ3 第36回",
       "tags": [
@@ -1906,7 +4522,9 @@
           "note": "12/2015 問題1-4 現象"
         }
       ],
-      "related": [],
+      "related": [
+        "k-0365"
+      ],
       "quiz": [],
       "group": "ステップ3 第39回",
       "tags": [
@@ -2125,7 +4743,9 @@
           "note": "7/2014 問題2-7 接続"
         }
       ],
-      "related": [],
+      "related": [
+        "k-0432"
+      ],
       "quiz": [],
       "group": "ステップ3 第40回",
       "tags": [
@@ -2165,7 +4785,10 @@
           "note": "7/2012 問題1-1 装置"
         }
       ],
-      "related": [],
+      "related": [
+        "k-0432",
+        "k-0462"
+      ],
       "quiz": [],
       "group": "ステップ3 第40回",
       "tags": [
@@ -2213,7 +4836,8 @@
         }
       ],
       "related": [
-        "k-0597"
+        "k-0597",
+        "k-0400"
       ],
       "quiz": [],
       "group": "ステップ3 第41回",
@@ -2431,7 +5055,8 @@
         }
       ],
       "related": [
-        "k-0699"
+        "k-0699",
+        "k-0485"
       ],
       "quiz": [],
       "group": "ステップ3 第44回",
@@ -2865,7 +5490,9 @@
           "note": "12/2024 問題1-1 優秀"
         }
       ],
-      "related": [],
+      "related": [
+        "k-0414"
+      ],
       "quiz": [],
       "group": "ステップ3 第48回",
       "tags": [
@@ -3012,7 +5639,8 @@
         }
       ],
       "related": [
-        "k-0894"
+        "k-0894",
+        "k-0481"
       ],
       "quiz": [],
       "group": "ステップ3 第48回",
@@ -3065,6 +5693,88 @@
         "問題2 表記"
       ],
       "official_count": 3
+    },
+    {
+      "id": "k-1033",
+      "kanji": "療",
+      "on": [
+        "リョウ"
+      ],
+      "kun": [],
+      "words": [
+        "｜治療《ちりょう》",
+        "｜医療《いりょう》"
+      ],
+      "examples": [
+        "この｜島《しま》では｜医者《いしゃ》が｜少《すく》なく、**｜医療《いりょう》**が｜足《た》りていない。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 202,
+          "note": "別冊1 学習漢字リスト No.1033（別冊p.69）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/1. N2 12-2010/booklet.md",
+          "note": "12/2010 問題1-4 治療"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/7. N2 7-2016/booklet.md",
+          "note": "7/2016 問題1-1 治療"
+        }
+      ],
+      "related": [
+        "k-0398",
+        "k-0641"
+      ],
+      "quiz": [],
+      "group": "ステップ3 第49回〜第53回",
+      "tags": [
+        "問題1 読み"
+      ],
+      "official_count": 2
+    },
+    {
+      "id": "k-1046",
+      "kanji": "腕",
+      "on": [
+        "ワン"
+      ],
+      "kun": [
+        "うで"
+      ],
+      "words": [
+        "｜腕《うで》",
+        "｜腕時計《うでどけい》"
+      ],
+      "examples": [
+        "**｜腕《うで》**を｜伸《の》ばして、｜棚《たな》の｜上《うえ》の｜箱《はこ》を｜取《と》った。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Kanji.pdf",
+          "page": 202,
+          "note": "別冊1 学習漢字リスト No.1046（別冊p.69）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/14. N2 12-2023/booklet.md",
+          "note": "12/2023 問題1-1 腕"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/6. N2 7-2015/booklet.md",
+          "note": "7/2015 問題2-9 腕"
+        }
+      ],
+      "related": [
+        "k-0128"
+      ],
+      "quiz": [],
+      "group": "ステップ3 第49回〜第53回",
+      "tags": [
+        "問題1 読み",
+        "問題2 表記"
+      ],
+      "official_count": 2
     }
   ]
 }

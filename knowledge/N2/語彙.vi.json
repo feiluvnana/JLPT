@@ -83,7 +83,7 @@
     "meaning": "Đáng tin cậy, có thể trông cậy được, khiến người khác yên tâm",
     "usage": "Tả người: 「頼もしい人」, 「頼もしい存在」, 「頼もしい部下」, 「とても頼もしかった」. Dùng khi ai đó giúp đỡ, gánh vác khiến mình an tâm.",
     "nuance": "Điền từ: đề đặt 「たくましい」「輝かしい」「親しい」, 「したしかった」「なつかしかった」 làm phương án sai. Manh mối: người đó giúp mọi người, làm việc không sai sót.",
-    "compare": "「頼もしい」 là tính từ tả người đáng tin. 「頼る」 là động từ \"dựa vào\": 「親に頼る」. Cùng chữ 「頼」 nhưng đọc khác: 「たのもしい」 và 「たよる」.",
+    "compare": "「頼もしい」 là tính từ tả người đáng tin. 「頼る」 là động từ \"dựa vào\": 「親に頼る」. 「｜心強《こころづよ》い」: cảm giác yên tâm của mình vì có chỗ dựa: 「仲間がいて心強い」.",
     "example_notes": [
       "Đêm bão, nhìn tấm lưng bố đi kiểm tra quanh nhà, tôi thấy bố thật đáng tin cậy.",
       "Đội trưởng mới tuy trẻ nhưng rất đáng tin cậy."
@@ -123,7 +123,7 @@
     "meaning": "Hiểu lầm, hiểu sai về người khác hay sự việc",
     "usage": "「誤解する」, 「〜だと誤解される」 (bị hiểu lầm là…), 「誤解を招く」, 「誤解を与える」, 「誤解が解ける」. Từ gần: 「｜勘違《かんちが》い」. Hán Việt \"ngộ giải\".",
     "nuance": "Điền từ: 「冷たい人だとよく（　）される」 → 「誤解」; phương án sai 「観測」「決意」「承認」. Thể bị động 「誤解される」: bị hiểu lầm.",
-    "compare": "",
+    "compare": "「誤解」: danh từ, hiểu lầm ý người khác hay sự việc: 「誤解を招く」. 「｜誤《あやま》る」: động từ, làm sai, chọn sai: 「道を誤る」, 「使い方を誤る」.",
     "example_notes": [
       "Bài báo đó sai sự thật, e rằng sẽ khiến người đọc hiểu lầm.",
       "Tôi hiểu lầm người ở đầu dây là chị gái nên đã lỡ nói điều thất lễ."
@@ -143,7 +143,7 @@
     "meaning": "Chắc chắn, bền, khó hỏng (đồ vật, nhà cửa)",
     "usage": "「頑丈な本棚」, 「頑丈な家」, 「頑丈な箱」, 「頑丈に作る」, 「このいすは頑丈だ」. Tả độ bền vật lý của đồ vật, công trình.",
     "nuance": "Đề thi coi là sai khi dùng cho tính cách (「頑丈で、なかなか意見を変えない」), cách quản lý (「頑丈に管理して」) hay quan hệ (「頑丈な信頼関係」). Câu đúng: ghế 「頑丈で…壊れません」.",
-    "compare": "",
+    "compare": "「頑丈」: đồ vật, nhà cửa chắc chắn, khó hỏng: 「頑丈な本棚」. 「｜頑固《がんこ》」: tính người cứng đầu, không chịu đổi ý. Tính cách thì dùng 「頑固」, không dùng 「頑丈」.",
     "example_notes": [
       "Vì sẽ để nhiều sách nặng nên tôi đã chọn một giá sách chắc chắn.",
       "Căn chòi ông tôi dựng đến nay đã năm mươi năm mà vẫn chắc chắn."
@@ -182,7 +182,7 @@
     "meaning": "Viện trợ, giúp đỡ bằng tiền bạc hay vật chất",
     "usage": "「援助する」, 「援助を受ける」, 「学費の援助」, 「親に援助してもらう」, 「食料を援助する」. Hán Việt \"viện trợ\" (「援」 viện, 「助」 trợ).",
     "nuance": "Bẫy chữ viết: đề thi đã gài 「補助」「援財」「補財」. 「補助」 là từ có thật nhưng không phải chữ của 「えんじょ」.",
-    "compare": "",
+    "compare": "「援助」: giúp người, nước đang khó khăn bằng tiền hay vật chất: 「経済的な援助」. 「｜寄付《きふ》」: tặng tiền, đồ vật cho tổ chức, trường học, xã hội: 「図書館に本を寄付する」.",
     "example_notes": [
       "Nước đó đã viện trợ lương thực cho nước láng giềng bị lũ lớn.",
       "Tổ chức đó hỗ trợ việc học của trẻ em ở nước ngoài."
@@ -202,7 +202,7 @@
     "meaning": "Hối thúc, giục (trả tiền, trả đồ, làm việc còn chậm)",
     "usage": "「催促する」, 「〜を催促する」, 「催促の電話」, 「何度も催促される」, 「返事を催促する」.",
     "nuance": "Không phải \"thúc đẩy, khuyến khích\". Đề thi coi là sai: 「注意を催促している」, 「異文化交流の催促のために」, 「食欲が催促された」. Câu đúng: quên trả tiền nhà thì 「催促の電話」 gọi đến.",
-    "compare": "",
+    "compare": "「催促」: giục người kia làm nhanh việc còn chưa làm: 「支払いを催促する」. 「｜要求《ようきゅう》」: đòi hỏi điều mình cho là đương nhiên: 「〜ように要求する」.",
     "example_notes": [
       "Tôi đã giục đối tác thanh toán tiền hàng nhưng vẫn chưa thấy tiền về.",
       "Bị hối thúc mãi, cuối cùng tôi mới nộp bản báo cáo."
@@ -340,7 +340,7 @@
     "meaning": "Sức sống, không khí sôi động tràn đầy năng lượng",
     "usage": "Danh từ: 「活気がある」, 「活気が出る」, 「活気にあふれる」, 「活気を取り戻す」. Tả nơi chốn, tập thể: 「町」「商店街」「会議」.",
     "nuance": "Điền từ: 「町が（　）にあふれている」 → 「活気」. Đề đặt 「活発」「活躍」「活動」 — cùng chữ 「活」 nên dễ lẫn.",
-    "compare": "「活気」: không khí sôi động của một nơi: 「活気のある町」. 「｜和《なご》やか」: không khí êm ấm, hòa thuận. 「｜陽気《ようき》」: tính người, âm nhạc tươi vui, hoạt bát: 「陽気な人」.",
+    "compare": "「活気」: không khí sôi động của một nơi: 「活気のある町」. 「｜活発《かっぱつ》」: người, hoạt động năng nổ: 「活発な議論」. 「｜和《なご》やか」: không khí êm ấm, hòa thuận. 「｜陽気《ようき》」: tính người, âm nhạc tươi vui.",
     "example_notes": [
       "Nhân viên trẻ tăng lên, các cuộc họp cũng sôi nổi hẳn.",
       "Để khu phố mua sắm lấy lại sức sống, các chủ tiệm trẻ đã mở những cửa hàng mới."
@@ -380,7 +380,7 @@
     "meaning": "Sự phỏng đoán, ước đoán sơ bộ",
     "usage": "「見当がつく」 (đoán ra được), 「見当がつかない」 (không đoán nổi), 「見当をつける」 (ước chừng trước).",
     "nuance": "Điền từ: 「どのくらいの価値があるのか（　）がつかない」 → 「見当」. Phương án sai: 「発想」「仮定」「目印」. Nhớ cụm cố định 「見当がつく」.",
-    "compare": "",
+    "compare": "「見当」: đoán chừng, ước lượng đại khái: 「見当がつかない」. 「｜予測《よそく》」: dự đoán chuyện sắp tới, thường dựa vào dữ liệu: 「将来を予測する」.",
     "example_notes": [
       "Viên cảnh sát hình sự đã đoán được đại khái hung thủ là ai.",
       "Tôi ước chừng đi bộ đến ga mất khoảng mười phút rồi ra khỏi nhà."
@@ -830,7 +830,7 @@
     "meaning": "Lại một lần nữa (vào dịp khác); (cảm nhận) lại, rõ hơn trước",
     "usage": "Phó từ: 「改めて連絡する」 (liên lạc lại sau), 「改めて話し合う」, 「改めて感じる」 (lại thấm thía).",
     "nuance": "Đọc 「あらためて」. Đề thi đã gài 「たしかめて」「まとめて」「ふくめて」 — cùng đuôi 「〜めて」 nên dễ lẫn.",
-    "compare": "",
+    "compare": "「改めて」: phó từ, lại một lần nữa, vào dịp khác: 「改めて連絡する」. 「｜改《あらた》める」: động từ, sửa cách làm, lối sống cho tốt hơn: 「やり方を改める」.",
     "example_notes": [
       "Hôm nay không có thời gian, việc này để dịp khác chúng ta bàn lại nhé.",
       "Bị ốm, tôi lại một lần nữa thấm thía sức khỏe quan trọng thế nào."
@@ -880,7 +880,7 @@
     "meaning": "Gật đầu (tỏ ý đồng ý hay đã hiểu)",
     "usage": "「黙ってうなずく」, 「うなずきながら聞く」, 「うなずくだけ」. Không nói thành lời, chỉ ra hiệu bằng đầu.",
     "nuance": "Điền từ: không nói gì nhưng tỏ ý đồng ý bằng cách （　） → 「うなずく」. Đề đặt 「ふりむく」 (quay lại), 「にらむ」 (lườm), 「かがむ」 (cúi khom).",
-    "compare": "",
+    "compare": "「うなずく」: gật đầu, không phát ra tiếng: 「黙ってうなずく」. 「うなる」: phát ra tiếng trầm trong cổ, thú gầm gừ, người rên. Cùng mở đầu 「うな」 nên dễ lẫn.",
     "example_notes": [
       "Nghe thầy nói, các sinh viên gật đầu thật mạnh nhiều lần.",
       "Đừng chỉ gật đầu, hãy trả lời cho rõ ràng."
@@ -1010,7 +1010,7 @@
     "meaning": "Dáng vẻ bên ngoài, cách ăn mặc lúc đó",
     "usage": "「動きやすい格好」, 「ちゃんとした格好で行く」, 「そんな格好で出かける」. Từ liên quan: 「かっこいい」 (ngầu, đẹp), 「かっこ悪い」.",
     "nuance": "Đọc 「かっこう」, có 「っ」 nhỏ và trường âm. Đề thi dùng khung 「ちゃんとした（　）で行く」 và đặt 「様子」「容姿」「外見」 làm phương án nhiễu: đáp án là 「格好」.",
-    "compare": "「格好」: bộ dạng, cách ăn mặc lúc đó: 「動きやすい格好」. 「スタイル」: vóc dáng cơ thể, hay phong cách, lối sống: 「スタイルがいい」, 「生活のスタイル」.",
+    "compare": "「格好」: bộ dạng, cách ăn mặc lúc đó: 「動きやすい格好」. 「スタイル」: vóc dáng, hay phong cách, lối sống: 「スタイルがいい」. 「｜姿勢《しせい》」: tư thế giữ người khi đứng, ngồi: 「姿勢がいい」.",
     "example_notes": [
       "Nếu leo núi thì hãy đến với trang phục dễ vận động.",
       "Em trai tôi mùa đông cũng chỉ quần jean với áo phông."
@@ -1020,7 +1020,7 @@
     "meaning": "Vóc dáng; phong cách, lối (sống, viết)",
     "usage": "「スタイルがいい」 (dáng đẹp), 「独特のスタイル」, 「生活のスタイル」, 「ライフスタイル」.",
     "nuance": "Điền từ: cách làm việc, nghỉ ngơi mà mọi người chọn, tức 「生活の（　）」 → 「スタイル」. Đề đặt 「ポーズ」「ブランド」「シリーズ」.",
-    "compare": "「スタイル」: vóc dáng cơ thể, hay một phong cách, lối sống: 「スタイルがいい」. 「｜格好《かっこう》」: bộ dạng, cách ăn mặc lúc đó: 「動きやすい格好」.",
+    "compare": "「スタイル」: vóc dáng, hay phong cách, lối sống: 「スタイルがいい」. 「｜格好《かっこう》」: bộ dạng, cách ăn mặc lúc đó. 「｜姿勢《しせい》」: tư thế giữ người khi đứng, ngồi: 「姿勢を正す」.",
     "example_notes": [
       "Mặc chiếc áo khoác này vào trông dáng người đẹp hẳn.",
       "Nhà văn này nổi tiếng với lối viết độc đáo, chồng những câu ngắn lên nhau."
@@ -1190,7 +1190,7 @@
     "meaning": "(Người, âm nhạc) hoạt bát, rộn ràng; (danh từ) tiết trời",
     "usage": "ナ形容詞: 「陽気な人」, 「陽気な音楽」. Danh từ: 「春の陽気」, 「陽気がいい」 (trời đẹp). Hán Việt \"dương khí\", nhưng nghĩa khác tiếng Việt.",
     "nuance": "Viết: 「陽」 (dương) + 「気」. Đề thi đã gài 「揚起」「揚気」「陽起」: 「揚」 và 「起」 cũng đọc 「よう」, 「き」.",
-    "compare": "「陽気」: tính người hay âm nhạc tươi vui, hoạt bát: 「陽気な人」. 「｜活気《かっき》」: không khí sôi động của một nơi, một tập thể: 「活気のある町」.",
+    "compare": "「陽気」: tính người hay âm nhạc tươi vui: 「陽気な人」. 「｜活発《かっぱつ》」: người, hoạt động năng nổ, sôi nổi: 「活発な議論」. 「｜活気《かっき》」: không khí sôi động của một nơi: 「活気のある町」.",
     "example_notes": [
       "Người hàng xóm mới là người vui tính, gặp lúc nào cũng chào to.",
       "Bị tiết trời xuân dễ chịu rủ rê, tôi đi dạo tới tận công viên."
@@ -1220,7 +1220,7 @@
     "meaning": "Nghiêng đi; (việc làm ăn) sa sút, đi xuống",
     "usage": "「〜が傾く」: 「車が傾く」, 「経営が傾く」, 「会社が傾く」. Hán Việt 「傾」 là \"khuynh\".",
     "nuance": "Đọc 「かたむく」. Đề thi đã gài 「きずついて」「かわいて」「ういて」. Viết: đề gài 「頃」 (trông giống 「傾」), 「倒」, 「到」.",
-    "compare": "「傾く」: động từ, vật nghiêng, làm ăn sa sút: 「経営が傾く」. 「｜傾向《けいこう》」: danh từ, xu hướng: 「〜傾向がある」. Cùng chữ 「傾」.",
+    "compare": "「傾く」: vật nghiêng, việc làm ăn sa sút: 「経営が傾く」. 「｜衰《おとろ》える」: sức lực, trí nhớ yếu dần: 「体力が衰える」. 「｜傾向《けいこう》」: danh từ, xu hướng: 「〜傾向がある」, cùng chữ 「傾」.",
     "example_notes": [
       "Vì chỉ chất hàng một bên, chiếc xe tải bị nghiêng.",
       "Từ khi ông chủ đột ngột qua đời, việc kinh doanh của nhà trọ ấy sa sút dần."
@@ -1236,6 +1236,186 @@
       "Tôi có xu hướng nói nhanh mỗi khi hồi hộp."
     ]
   },
+  "v-0988": {
+    "meaning": "Nằm ườn, nằm lăn ra ở nhà mà không làm gì",
+    "usage": "Đi với 「する」: 「ソファーでごろごろする」, 「ベッドでごろごろしている」, 「一日中ごろごろする」.",
+    "nuance": "Điền từ trong đề: dậy sớm quá nên nằm lì trên giường thêm → 「ごろごろ」. Nhiễu 「ぶらぶら」 (đi lang thang), 「ゆらゆら」 (đung đưa), 「うろうろ」 (đi quanh quẩn).",
+    "compare": "「ごろごろ」 tả việc nằm ườn ra, không làm gì: 「ソファーでごろごろする」. 「のんびり」 tả nhịp sống, tâm trạng thong thả, không vội: 「のんびり過ごす」.",
+    "example_notes": [
+      "Con trai tôi vừa thi xong là nằm ườn ở nhà, chẳng học hành gì.",
+      "Đồ đạc dọn nhà còn chưa sắp xếp xong, đâu phải lúc để nằm ườn ra đó."
+    ]
+  },
+  "v-0999": {
+    "meaning": "(Thú) gầm gừ; (người) rên rỉ vì đau",
+    "usage": "Tự động từ: 「犬がうなる」, 「痛みでうなる」. Danh từ 「うなり声」: tiếng gầm gừ, tiếng rên.",
+    "nuance": "",
+    "compare": "「うなる」: phát ra tiếng trầm trong cổ — thú gầm gừ, người rên. 「うなずく」: gật đầu, không phát ra tiếng. Hai từ cùng mở đầu bằng 「うな」 nên dễ lẫn.",
+    "example_notes": [
+      "Hai con mèo gườm nhau, phát ra tiếng gầm gừ trầm thấp.",
+      "Đau răng dữ quá, bố tôi rên rỉ suốt cả đêm."
+    ]
+  },
+  "v-1001": {
+    "meaning": "Chèo (thuyền, ghe) cho đi tới",
+    "usage": "Tha động từ, cái thuyền đi với 「を」: 「ボートをこぐ」, 「舟をこぐ」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Đang chèo thuyền trên hồ thì gió bỗng mạnh lên.",
+      "Hai người thay phiên nhau chèo thuyền sang tận bờ bên kia."
+    ]
+  },
+  "v-1010": {
+    "meaning": "Mờ nhạt, lờ mờ, chỉ vừa đủ nhận ra",
+    "usage": "ナ形容詞: 「かすかな音」, 「かすかに見える」, 「かすかに聞こえる」, 「かすかに覚えている」.",
+    "nuance": "Tả thứ tai, mắt, trí nhớ chỉ vừa bắt được. Đề thi coi là sai khi dùng cho lượng ít: ít tiền trong ví, thời gian ngắn, sinh nhật sớm hơn chút.",
+    "compare": "「かすか」: rất nhỏ, rất mờ, khó nhận ra bằng tai mắt: 「かすかに見える」. 「あいまい」: nội dung, thái độ không rõ ràng: 「あいまいな返事」.",
+    "example_notes": [
+      "Từ phòng bên vẳng sang tiếng đàn piano khe khẽ.",
+      "Về thị trấn nơi tôi sống đến năm ba tuổi, tôi chỉ còn nhớ lờ mờ."
+    ]
+  },
+  "v-1016": {
+    "meaning": "Đến thăm (một nơi); (mùa, cơ hội) đến",
+    "usage": "「〜を訪れる」: 「京都を訪れる」, 「母校を訪れる」. Với mùa, cơ hội thì 「〜が訪れる」: 「春が訪れる」, 「チャンスが訪れる」.",
+    "nuance": "Viết: 「訪」 (phỏng, như trong 「訪問」). Đề thi đã gài 「往れる」「伺れる」「参れる」 — ba chữ cũng mang ý đi, đến nên dễ chọn nhầm.",
+    "compare": "",
+    "example_notes": [
+      "Mười năm sau khi tốt nghiệp, tôi mới trở lại thăm trường cũ.",
+      "Cơ hội thì không biết lúc nào sẽ đến."
+    ]
+  },
+  "v-1021": {
+    "meaning": "Kế hoạch, dự định cụ thể cho một việc",
+    "usage": "「プランを考える」, 「旅行のプラン」, 「〜するプラン」. Từ gốc tiếng Anh \"plan\".",
+    "nuance": "Câu thay thế trong đề: 「プラン」＝「計画」. Phương án nhiễu: 「理由」「情報」「特徴」.",
+    "compare": "",
+    "example_notes": [
+      "Chỉ riêng việc chốt kế hoạch chi tiết cho đám cưới, hai chúng tôi đã mất tới nửa năm.",
+      "Tôi đã bàn với ngân hàng về kế hoạch mở một cửa hàng mới."
+    ]
+  },
+  "v-1030": {
+    "meaning": "Không ngờ, tình cờ (điều mình không hề nghĩ tới)",
+    "usage": "Phó từ: 「思いがけず〜した」, 「思いがけず会う」. Dạng tính từ: 「思いがけない」 (「思いがけない出来事」).",
+    "nuance": "Đề thi hỏi dạng 「思いがけない」: câu thay thế 「思いがけない」＝「意外な」; nhiễu 「おもしろい」「悲しい」「ふしぎな」.",
+    "compare": "",
+    "example_notes": [
+      "Bài văn tôi gửi dự thi rồi quên béng, vậy mà không ngờ lại đoạt giải.",
+      "Đang đi dạo thì gặp mưa, thế là tình cờ tôi bước vào một quán cà phê cũ."
+    ]
+  },
+  "v-1034": {
+    "meaning": "(Thay đổi) nhiều, với mức độ lớn",
+    "usage": "ナ形容詞; dạng 「大幅に」 + động từ thay đổi: 「大幅に上がる」, 「大幅に遅れる」, 「大幅に減らす」. 「大幅な値上げ」.",
+    "nuance": "Đọc 「おおはば」: cả hai chữ đọc theo âm Nhật. Đề thi đã gài 「おおふく」「だいはば」「だいふく」.",
+    "compare": "「大幅」 nói về độ lớn của thay đổi: 「大幅に減る」. 「｜急激《きゅうげき》」 nói về sự đột ngột: thay đổi mạnh trong thời gian ngắn: 「急激に増える」.",
+    "example_notes": [
+      "Vì tàu ngừng chạy nên cuộc họp bắt đầu trễ rất nhiều.",
+      "Nhờ đưa máy mới vào, chúng tôi đã rút ngắn thời gian làm việc đáng kể."
+    ]
+  },
+  "v-1037": {
+    "meaning": "Danh lam, nơi nổi tiếng được nhiều người đến ngắm",
+    "usage": "「観光名所」, 「桜の名所」, 「〜の名所」, 「名所を回る」. Hán Việt \"danh sở\".",
+    "nuance": "Điền từ trong đề: nơi đây là （　） hoa anh đào nên mùa xuân nhiều người đến ngắm → 「名所」. Nhiễu 「要所」「実地」「現場」.",
+    "compare": "",
+    "example_notes": [
+      "Cây cầu cổ ấy giờ đã trở thành danh thắng tiêu biểu của thị trấn.",
+      "Hòn đảo này có nhiều cảnh đẹp khiến người ta muốn chụp ảnh, như ngọn hải đăng cũ."
+    ]
+  },
+  "v-1070": {
+    "meaning": "Sự mệt mỏi, mỏi mệt (của cơ thể, của mắt)",
+    "usage": "「疲労がたまる」, 「目の疲労」, 「疲労を回復する」, 「疲労する」. Hán Việt \"bì lao\".",
+    "nuance": "Viết: 「疲」 (mệt) + 「労」 (nhọc). Đề thi đã gài 「病労」「疲老」「病老」 — 「病」 cũng mang ý ốm mệt, 「老」 cùng âm 「ろう」.",
+    "compare": "「疲労」: danh từ, sự mệt mỏi của cơ thể, tinh thần: 「疲労がたまる」. 「くたくた」, 「ぐったり」: từ tượng hình tả dáng người mệt rã rời, rũ ra: 「くたくたになる」, 「ぐったりする」.",
+    "example_notes": [
+      "Vì cứ đọc chữ nhỏ mãi nên mắt tôi mỏi rã rời.",
+      "Chạy marathon xong, chân tôi vẫn còn mỏi nên leo cầu thang thật khổ sở."
+    ]
+  },
+  "v-1073": {
+    "meaning": "Hơi, một chút (mức độ nhẹ)",
+    "usage": "Phó từ đứng trước tính từ, động từ: 「やや大きい」, 「やや遠い」, 「やや高い」.",
+    "nuance": "Câu thay thế trong đề: 「やや」＝「少し」. Nhiễu 「絶対」「もっと」「たぶん」 — 「もっと」 là so sánh hơn nữa, còn 「やや」 chỉ mức nhẹ.",
+    "compare": "",
+    "example_notes": [
+      "Đôi giày này hơi rộng so với chân tôi.",
+      "Hôm nay trông anh ấy có vẻ hơi kém tươi tỉnh hơn mọi khi."
+    ]
+  },
+  "v-1080": {
+    "meaning": "Suy yếu, yếu dần đi (sức khỏe, trí nhớ, sức mạnh)",
+    "usage": "Tự động từ: 「体力が衰える」, 「記憶力が衰える」, 「筋肉が衰える」, 「勢いが衰える」. Hán Việt 「衰」 là \"suy\".",
+    "nuance": "Điền từ trong đề: trí nhớ （　） nên khó nhớ điều mới; không vận động thì cơ bắp dần （　） → 「衰える」. Nhiễu gồm 「傷む」「散る」「かれる」「潰れる」「欠ける」「尽きる」.",
+    "compare": "「衰える」: sức lực, trí nhớ yếu dần theo thời gian: 「体力が衰える」. 「｜傾《かたむ》く」: vật bị nghiêng, hoặc việc làm ăn sa sút: 「経営が傾く」. Tiếng Việt đều có thể nói \"đi xuống\" nên dễ lẫn.",
+    "example_notes": [
+      "Đến tối, sức mạnh của cơn bão vẫn không hề yếu đi.",
+      "Bà tôi đã ngoài chín mươi mà tính tò mò vẫn không hề giảm đi chút nào."
+    ]
+  },
+  "v-1082": {
+    "meaning": "Vừa phải, đúng mức, không nhiều không ít",
+    "usage": "ナ形容詞: 「適度な運動」, 「適度な休憩」, 「適度に保つ」. Hán Việt \"thích độ\": mức độ thích hợp.",
+    "nuance": "Điền từ trong đề: thay vì thỉnh thoảng vận động mạnh, nên mỗi ngày vận động （　） → 「適度な」. Nhiễu 「簡略な」「好調な」「対等な」.",
+    "compare": "",
+    "example_notes": [
+      "Giữ độ ẩm trong phòng ở mức vừa phải thì họng khó bị đau.",
+      "Nghỉ ngơi vừa phải giữa giờ làm thì sự tập trung được duy trì lâu."
+    ]
+  },
+  "v-1098": {
+    "meaning": "Tầm nhìn của mắt; tầm hiểu biết, cách nhìn nhận",
+    "usage": "「視野が広い／狭い」, 「視野を広げる」, 「視野に入る」. Hán Việt \"thị dã\".",
+    "nuance": "Điền từ trong đề: người đứng đầu tổ chức cần có （　） rộng → 「視野」. Ba nhiễu cùng chữ 「視」: 「視界」 (khoảng mắt thấy được), 「視線」 (ánh mắt), 「視察」 (thị sát).",
+    "compare": "",
+    "example_notes": [
+      "Khi lái xe, tôi để ý cả những chiếc xe đạp lọt vào rìa tầm nhìn.",
+      "Làm việc với người nhiều nước, tôi mới nhận ra tầm nhìn của mình hẹp đến thế nào."
+    ]
+  },
+  "v-1110": {
+    "meaning": "Đi kèm theo, kéo theo (nguy hiểm, trách nhiệm, đau đớn)",
+    "usage": "「〜を伴う」: 「危険を伴う」, 「痛みを伴う」, 「責任を伴う」; 「〜を伴って」: kèm theo. Hán Việt 「伴」 là \"bạn\" (bạn đồng hành).",
+    "nuance": "Đọc 「ともなう」. Đề thi đã gài 「はらう」「あつかう」「すくう」 — cùng đuôi 「う」. Viết: 「伴って」 từng là phương án sai cho 「従って」 (làm theo).",
+    "compare": "",
+    "example_notes": [
+      "Công việc này đi kèm trách nhiệm, nhưng bù lại cũng rất đáng làm.",
+      "Cơn bão đang tiến đến, kéo theo mưa to và gió mạnh."
+    ]
+  },
+  "v-1123": {
+    "meaning": "Gánh nặng; việc gánh chịu (chi phí, công việc)",
+    "usage": "「負担がかかる」, 「負担が大きい」, 「費用を負担する」, 「負担を減らす」.",
+    "nuance": "Đọc 「ふたん」: 「負」 là 「ふ」, 「担」 là 「たん」. Đề thi đã gài 「ぶんてん」「ふてん」「ぶんたん」.",
+    "compare": "",
+    "example_notes": [
+      "Chi phí chuyển nhà khi chuyển công tác sẽ được công ty trả giúp một nửa.",
+      "Một mình nhận cùng lúc ba việc phụ trách thì gánh nặng quá lớn."
+    ]
+  },
+  "v-1133": {
+    "meaning": "Xoa bóp, nắn bóp (vai, chân)",
+    "usage": "Tha động từ: 「肩をもむ」, 「足をもむ」, 「ふくらはぎをもむ」. Từ gần nghĩa: 「マッサージ」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Ngâm mình trong bồn tắm, tôi thong thả xoa bóp đôi chân mỏi vì đi bộ nhiều.",
+      "Xoa bóp bắp chân thì chân dễ bớt phù."
+    ]
+  },
+  "v-1141": {
+    "meaning": "Da, làn da của người",
+    "usage": "「肌が乾燥する」, 「肌が荒れる」, 「肌にやさしい」, 「肌の手入れ」. 「素肌」: làn da mộc, không trang điểm.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Đi bơi biển mà không bôi kem chống nắng, da tôi đỏ rực lên.",
+      "Da tôi yếu nên khi dùng chất tẩy rửa lúc nào tôi cũng đeo găng tay."
+    ]
+  },
   "v-1147": {
     "meaning": "Sự kích thích (lên cơ thể, giác quan hay tinh thần)",
     "usage": "「刺激が強い」, 「刺激を受ける」, 「〜を刺激する」, 「想像力が刺激される」, 「好奇心を刺激する」.",
@@ -1246,14 +1426,144 @@
       "Được thành công của đối thủ thúc đẩy, anh ấy cũng bắt đầu chạy bộ mỗi sáng."
     ]
   },
+  "v-1151": {
+    "meaning": "Độ bóng, vẻ óng ánh trên bề mặt (lông, da, đồ da)",
+    "usage": "「つやがある」, 「つやが出る」, 「つやがなくなる」, 「髪のつや」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Vì ngày nào cũng chải nên lông con chó nhà tôi bóng mượt.",
+      "Đánh xi đôi giày da cũ thì nó bóng lên."
+    ]
+  },
+  "v-1155": {
+    "meaning": "Đột ngột và mạnh, thay đổi dồn dập trong thời gian ngắn",
+    "usage": "ナ形容詞, đi với động từ tăng, giảm, thay đổi: 「急激に増える」, 「急激に下がる」, 「急激な変化」.",
+    "nuance": "Nói về sự thay đổi của con số, tình hình. Đề thi coi là sai khi dùng cho việc chuẩn bị gấp rút, bánh mì bán hết nhanh, người hâm mộ ùa tới vây quanh.",
+    "compare": "「急激」: con số, tình hình thay đổi mạnh trong thời gian ngắn: 「急激に上がる」. 「｜大幅《おおはば》」: mức thay đổi lớn, không nói nhanh hay chậm. 「たちまち」: phó từ, sự việc xảy ra ngay tức thì: 「たちまち売り切れる」.",
+    "example_notes": [
+      "Về đêm nhiệt độ hạ đột ngột, đường sá đóng băng hết.",
+      "Đồng yên tăng giá đột ngột khiến các công ty xuất khẩu gặp khó."
+    ]
+  },
+  "v-1158": {
+    "meaning": "Tư thế của cơ thể; thái độ đối với một việc",
+    "usage": "「姿勢がいい／悪い」, 「姿勢を正す」, 「前向きな姿勢」, 「〜に対する姿勢」. Hán Việt \"tư thế\", thêm nghĩa \"thái độ\".",
+    "nuance": "Đọc 「しせい」: hai âm không có 「っ」, 「せ」 không đục. Đề thi đã gài 「しぜい」「しっぜい」「しっせい」.",
+    "compare": "「姿勢」: tư thế giữ người khi đứng, ngồi; thái độ với một việc: 「姿勢がいい」. 「スタイル」: vóc dáng, hay phong cách, lối sống. 「｜格好《かっこう》」: bộ dạng, cách ăn mặc. Thân hình vạm vỡ thì đề thi dùng 「体格」.",
+    "example_notes": [
+      "Tôi chụp ảnh đây, mọi người đứng thẳng người lên nhé.",
+      "Công ty đang tỏ thái độ tích cực trong việc giải quyết vấn đề."
+    ]
+  },
   "v-1163": {
     "meaning": "Liên tiếp xuất hiện, xảy ra hết cái này đến cái khác",
     "usage": "Chủ ngữ là nhiều người hay nhiều sự việc cùng loại: 「気分が悪くなる人が続出する」, 「けがをする人が続出」, 「トラブルが続出する」.",
     "nuance": "Không phải \"tiếp tục\" hay \"đi ra\". Đề thi coi là sai: 「乗客が続出してきた」, 「せきが続出して」, 「番組に5年間続出」, 「天気の悪い日が続出」.",
-    "compare": "「続出」: nhiều chuyện cùng loại xảy ra liên tiếp: 「けがをする人が続出する」. 「｜生《しょう》じる」: một vấn đề phát sinh, một lần cũng được. 「｜継続《けいぞく》」: một việc được duy trì tiếp.",
+    "compare": "「続出」: nhiều chuyện cùng loại xảy ra liên tiếp: 「けが人が続出する」. 「｜相次《あいつ》ぐ」: động từ gần nghĩa. 「｜生《しょう》じる」: một vấn đề phát sinh, một lần cũng được. 「｜継続《けいぞく》」: một việc được duy trì tiếp.",
     "example_notes": [
       "Máy chơi game mới rất được ưa chuộng, hết cửa hàng này đến cửa hàng khác bán hết hàng.",
       "Đề quá khó nên người tham gia bỏ cuộc giữa chừng liên tiếp."
+    ]
+  },
+  "v-1191": {
+    "meaning": "Thật là, quả thực (nhấn mạnh mức độ)",
+    "usage": "Phó từ đứng trước tính từ: 「実に複雑だ」, 「実にわかりやすい」, 「実に美しい」. Hán Việt \"thực\".",
+    "nuance": "",
+    "compare": "「実に」: nhấn mạnh mức độ, \"thật là\": 「実に複雑だ」. 「｜現《げん》に」: nêu sự thật đang thấy làm bằng chứng, \"thực tế là\". Cả hai đều dịch được là \"thực\" nên dễ lẫn.",
+    "example_notes": [
+      "Vấn đề này thật là phức tạp, không dễ gì tìm ra câu trả lời.",
+      "Lời giải thích của anh ấy thật dễ hiểu, ai trong hội trường cũng gật gù."
+    ]
+  },
+  "v-1193": {
+    "meaning": "Sửa đổi, thay đổi cho tốt hơn (cách làm, cách ghi, lối sống)",
+    "usage": "Tha động từ: 「やり方を改める」, 「表示を改める」, 「生活を改める」. Hán Việt 「改」 là \"cải\" (cải cách).",
+    "nuance": "",
+    "compare": "「改める」: sửa cách làm, lối sống cho tốt hơn. 「｜改正《かいせい》」: sửa luật, quy chế. 「｜訂正《ていせい》」: sửa chỗ sai. 「｜改《あらた》めて」: phó từ, lại một lần nữa.",
+    "example_notes": [
+      "Sau khi nhận phàn nàn từ khách, cửa hàng đã sửa lại cách tiếp nhận.",
+      "Nhà ga đã đổi cách ghi trên bảng chỉ dẫn để người nước ngoài cũng hiểu được."
+    ]
+  },
+  "v-1196": {
+    "meaning": "Nối đuôi nhau xảy ra, dồn dập kéo đến",
+    "usage": "Tự động từ: 「〜が相次ぐ」, 「事故が相次ぐ」; dạng 「相次いで」 + động từ: 「相次いで届く」.",
+    "nuance": "Điền từ trong đề: mấy tháng nay game mới （　） ra mắt → 「相次いで」. Nhiễu 「間もなく」「ぐんぐん」「すいすい」.",
+    "compare": "「相次ぐ」 là động từ, có dạng 「相次いで」 đứng trước động từ khác. 「｜続出《ぞくしゅつ》」 là danh từ + 「する」: 「けが人が続出する」. Nghĩa gần nhau: nhiều việc xảy ra liên tiếp.",
+    "example_notes": [
+      "Về loại thuốc mới, điện thoại hỏi thăm gọi đến liên tục.",
+      "Tháng này, tin báo kết hôn của đồng nghiệp trong công ty liên tiếp gửi đến."
+    ]
+  },
+  "v-1208": {
+    "meaning": "Bỏ sót, không nhận ra; bỏ lỡ (cơ hội, chương trình)",
+    "usage": "Tha động từ: 「異常を見逃す」, 「チャンスを見逃す」, 「番組を見逃す」. 「見逃せない」: không thể bỏ qua.",
+    "nuance": "Viết: 「見」 + 「逃」 (chạy trốn, như 「逃げる」). Đề thi đã gài 「見延して」「見欠して」「見去して」.",
+    "compare": "",
+    "example_notes": [
+      "Để không bỏ sót bất thường nhỏ nào khi khám, bác sĩ xem đi xem lại hình chụp nhiều lần.",
+      "Cơ hội mua được với giá này thì không thể bỏ lỡ."
+    ]
+  },
+  "v-1209": {
+    "meaning": "Tung tích, nơi đang ở của người hay vật đã đi mất",
+    "usage": "「行方がわからない」, 「行方を捜す」, 「行方不明」 (mất tích). Đọc đặc biệt: 「ゆくえ」.",
+    "nuance": "Chỉ nơi của người, vật đã biến mất. Đề thi coi là sai khi dùng cho điểm đến của xe buýt, phía trước mặt, hay nơi mình hay tới vào chủ nhật.",
+    "compare": "",
+    "example_notes": [
+      "Tôi đi hỏi khắp hàng xóm về tung tích con mèo biến mất lúc đi dạo.",
+      "Chiếc mũ bị gió thổi bay, rốt cuộc không biết đã đi đâu."
+    ]
+  },
+  "v-1213": {
+    "meaning": "Làm sai, nhầm (cách dùng, đường đi, phán đoán)",
+    "usage": "「使い方を誤る」, 「道を誤る」, 「判断を誤る」, 「誤った情報」 (thông tin sai). Hán Việt 「誤」 là \"ngộ\".",
+    "nuance": "Câu thay thế trong đề: 「あやまった」＝「正しくない」; nhiễu 「古い」「秘密の」「必要のない」. Cùng âm với 「謝る」 (xin lỗi) — phân biệt bằng chữ.",
+    "compare": "「誤る」: động từ, làm sai, chọn sai: 「道を誤る」. 「｜誤解《ごかい》」: danh từ, hiểu lầm ý người khác hay sự việc: 「誤解を招く」, 「誤解される」.",
+    "example_notes": [
+      "Dùng sai cách thì dụng cụ tiện lợi cũng thành nguồn gây thương tích.",
+      "Đi nhầm đường trên núi, chúng tôi xuống núi trễ tận hai tiếng so với dự định."
+    ]
+  },
+  "v-1216": {
+    "meaning": "Làm cho chảy, trôi đi; mở, phát (nhạc, thông báo)",
+    "usage": "Tha động từ, cặp với 「流れる」: 「水を流す」, 「汗を流す」, 「涙を流す」, 「音楽を流す」, 「放送を流す」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Nước lạnh uống sau khi đổ mồ hôi thật sự rất ngon.",
+      "Ở sân bay, người ta phát đi phát lại thông báo chuyến bay khởi hành trễ."
+    ]
+  },
+  "v-1236": {
+    "meaning": "Diễn thuyết, bài diễn văn trước đông người (chính trị)",
+    "usage": "「演説する」, 「演説を聞く」, 「国会での演説」, 「就任演説」. Hán Việt \"diễn thuyết\".",
+    "nuance": "Câu đúng trong đề: thủ tướng phát biểu ở quốc hội. Đề thi coi là sai khi dùng cho lời phát biểu ở lễ tốt nghiệp, sau trận đấu, trong họp báo.",
+    "compare": "",
+    "example_notes": [
+      "Trong bài diễn thuyết dài một tiếng, chính trị gia đó đã phê phán cách dùng tiền thuế.",
+      "Nhiều người dân đã nghe bài diễn văn nhậm chức của tổng thống ở quảng trường."
+    ]
+  },
+  "v-1242": {
+    "meaning": "Sửa đổi luật, quy chế cho phù hợp",
+    "usage": "「法律を改正する」, 「規則を改正する」, 「憲法改正」. Hán Việt \"cải chính\", nhưng tiếng Việt \"cải chính\" là sửa tin sai — nghĩa ấy tiếng Nhật là 「訂正」.",
+    "nuance": "Điền từ trong đề: luật được （　） nên thủ tục khác hẳn trước → 「改正」. Nhiễu 「改造」「転換」「交換」.",
+    "compare": "「改正」: sửa luật, quy chế: 「法律を改正する」. 「｜改《あらた》める」: sửa cách làm, lối sống cho tốt hơn. 「｜訂正《ていせい》」: sửa chỗ sai trong chữ, số, lời nói.",
+    "example_notes": [
+      "Về việc có sửa đổi hiến pháp hay không, ý kiến người dân đang chia rẽ.",
+      "Công ty dự định sửa đổi nội quy lao động vào tháng Tư năm sau."
+    ]
+  },
+  "v-1247": {
+    "meaning": "Giấu, che giấu (đồ vật, cảm xúc, sự thật)",
+    "usage": "Tha động từ, cặp với 「隠れる」: 「〜を隠す」, 「本当のことを隠す」, 「驚きを隠せない」 (không giấu nổi sự ngạc nhiên).",
+    "nuance": "Đọc 「かくす」. Đề thi đã gài 「もどす」「わたす」「さがす」 — cùng đuôi 「す」.",
+    "compare": "",
+    "example_notes": [
+      "Tên trộm đã giấu số đá quý lấy cắp dưới lớp đất trong vườn.",
+      "Cô ấy đọc bức thư với vẻ không giấu nổi sự ngạc nhiên."
     ]
   },
   "v-1248": {
@@ -1266,6 +1576,16 @@
       "Chị gái tôi phải lo hai đứa con nhỏ mà ngày nào cũng đi làm."
     ]
   },
+  "v-1251": {
+    "meaning": "Đòi hỏi, yêu cầu người khác phải làm, phải đáp ứng",
+    "usage": "「〜を要求する」, 「〜ように要求する」, 「〜が要求される」 (năng lực được đòi hỏi). Hán Việt \"yêu cầu\".",
+    "nuance": "Đọc 「ようきゅう」: cả hai âm đều dài, không có 「っ」. Đề thi đã gài 「ようきゅ」「よっきゅう」「よっきゅ」.",
+    "compare": "「要求」: đòi bên kia làm điều mình cho là đương nhiên: 「支払いを要求する」. 「｜催促《さいそく》」: giục làm nhanh việc người kia còn chưa làm. 「ニーズ」: nhu cầu của khách, của xã hội.",
+    "example_notes": [
+      "Tôi bị người nhà bên yêu cầu cắt cành cây trong vườn.",
+      "Email bất ngờ gửi đến đòi tôi trả một khoản phí mà tôi không hề biết."
+    ]
+  },
   "v-1253": {
     "meaning": "Khoảng chừng, xấp xỉ; đại khái",
     "usage": "Trước con số: 「およそ20分」, 「およそ10万人」. Trước động từ: 「およそわかった」 (hiểu đại khái). Từ cùng nghĩa: 「おおよそ」.",
@@ -1274,6 +1594,56 @@
     "example_notes": [
       "Nhà máy này có khoảng 300 người làm việc.",
       "Nghe giải thích một lần, tôi đã hiểu đại khái nội dung câu chuyện."
+    ]
+  },
+  "v-1256": {
+    "meaning": "Cống hiến, đóng góp vào sự phát triển chung",
+    "usage": "「〜に貢献する」: 「地域に貢献する」, 「研究に貢献する」, 「発展に貢献する」. Hán Việt \"cống hiến\".",
+    "nuance": "Câu đúng trong đề: góp phần vào an toàn khu vực. Đề thi coi là sai khi dùng cho lời thầy ảnh hưởng đời mình, thuốc giúp giảm đau, kinh nghiệm giúp xin việc.",
+    "compare": "「貢献」: góp sức, góp công cho xã hội, cho một lĩnh vực. 「｜寄付《きふ》」: tặng tiền, đồ vật cho một tổ chức: 「図書館に本を寄付する」.",
+    "example_notes": [
+      "Nhà nghiên cứu này nhiều năm qua đã đóng góp vào việc cải tạo giống lúa.",
+      "Phân loại rác khi bỏ cũng góp phần bảo vệ môi trường."
+    ]
+  },
+  "v-1257": {
+    "meaning": "Quyên tặng tiền, đồ vật cho một tổ chức hay nơi cần",
+    "usage": "「〜に寄付する」, 「寄付を集める」, 「寄付金」. Từ gần nghĩa: 「募金」 (quyên góp tiền).",
+    "nuance": "Viết: 「寄」 + 「付」. Đề thi đã gài 「寄符」「貴付」「貴符」 — 「貴」 cùng âm 「き」, 「符」 cùng âm 「ふ」.",
+    "compare": "「寄付」: cho tiền, đồ vật cho tổ chức, trường học, xã hội: 「図書館に本を寄付する」. 「｜援助《えんじょ》」: giúp người, nước đang khó khăn bằng tiền hay vật chất: 「経済的な援助」. 「｜貢献《こうけん》」: góp sức, góp công: 「発展に貢献する」.",
+    "example_notes": [
+      "Một công ty đã tặng thành phố khu đất nhà máy cũ, nay nơi đó đã thành công viên.",
+      "Ông tôi đã tặng toàn bộ sách cũ sưu tầm được cho thư viện thị trấn."
+    ]
+  },
+  "v-1258": {
+    "meaning": "Bình đẳng, đối xử không phân biệt ai",
+    "usage": "Danh từ và ナ形容詞: 「平等な社会」, 「男女平等」, 「平等に分ける」, 「不平等」. Hán Việt \"bình đẳng\".",
+    "nuance": "Đọc 「びょうどう」: 「平」 đọc 「びょう」, không phải 「へい」. Đề thi đã gài 「へいど」「びょうど」「へいどう」.",
+    "compare": "「平等」: quyền lợi, cách đối xử như nhau với mọi người: 「平等な社会」. 「｜等《ひと》しい」: bằng nhau về lượng, giá trị: 「〜に等しい」, 「等しく分ける」.",
+    "example_notes": [
+      "Ở đất nước này, mọi người được xem là bình đẳng trước pháp luật.",
+      "Trong thi đấu thể thao, cần có luật lệ công bằng cho cả hai đội."
+    ]
+  },
+  "v-1266": {
+    "meaning": "Dự đoán trước điều sẽ xảy ra (dựa trên dữ liệu, tình hình)",
+    "usage": "「予測する」, 「予測がつく／つかない」, 「将来を予測する」. Hán Việt \"dự trắc\"; tiếng Việt nói \"dự đoán\".",
+    "nuance": "Điền từ trong đề: từ nhiều dữ liệu, （　） dân số Nhật mười năm sau → 「予測」. Nhiễu cùng chữ 「予」: 「予報」 (dự báo), 「予感」 (linh cảm), 「予習」 (học trước).",
+    "compare": "「予測」: dự đoán điều sắp xảy ra, thường dựa trên dữ liệu: 「将来を予測する」. 「｜見当《けんとう》」: đoán chừng, ước lượng đại khái: 「見当がつく」, 「見当をつける」. Cả hai đều dịch được là \"đoán\".",
+    "example_notes": [
+      "Trận đấu ai thắng ai thua, đến phút cuối vẫn hoàn toàn không đoán được.",
+      "Dự đoán chính xác khi nào động đất lớn xảy ra là việc khó."
+    ]
+  },
+  "v-1270": {
+    "meaning": "Nghiêm trọng, trầm trọng, đáng lo ngại",
+    "usage": "ナ形容詞: 「深刻な問題」, 「深刻な状況」, 「深刻な悩み」, 「深刻になる」. Hán Việt \"thâm khắc\".",
+    "nuance": "Không mang nghĩa \"sâu sắc\" tốt đẹp: đề thi coi là sai 「深刻な愛情」, và khi dùng cho cách học, cách sống với gia đình. Câu thay thế: 「深刻な」＝「重大な」.",
+    "compare": "",
+    "example_notes": [
+      "Ô nhiễm không khí ngày càng nghiêm trọng, có hôm không thể vận động ngoài trời.",
+      "Biết tình hình kinh doanh của công ty nghiêm trọng hơn mình tưởng, các nhân viên đều sửng sốt."
     ]
   },
   "v-1272": {
@@ -1286,24 +1656,254 @@
       "Hồi còn là sinh viên, tôi chưa hiểu sự khắc nghiệt của cuộc đời."
     ]
   },
+  "v-1273": {
+    "meaning": "Làm cho (ai) giật mình, ngạc nhiên",
+    "usage": "Tha động từ ứng với 「驚く」: 「人を驚かす」, 「みんなを驚かす」. Dạng 「驚かせる」 cũng dùng: 「驚かせてしまって」.",
+    "nuance": "Viết: 「驚」 như trong 「驚く」. Đề thi đã gài 「怖かせて」「焦かせて」「騒かせて」 — chữ của sợ, sốt ruột, ồn ào.",
+    "compare": "",
+    "example_notes": [
+      "Tôi hét to từ phía sau làm em trai giật mình.",
+      "Tôi khẽ mở cửa để không làm con chó đang ngủ giật mình."
+    ]
+  },
+  "v-1274": {
+    "meaning": "Nhu cầu (của khách hàng, người dùng, xã hội)",
+    "usage": "「ニーズが高まる」, 「ニーズに応える」, 「ニーズに対応する」, 「客のニーズ」. Từ gốc tiếng Anh \"needs\".",
+    "nuance": "Điền từ trong đề: cung cấp dịch vụ đáp ứng （　） của khách → 「ニーズ」. Nhiễu 「ストライキ」「セールス」「エコノミー」.",
+    "compare": "「ニーズ」: nhu cầu mà người bán, cơ quan phải nắm để đáp ứng. 「｜要求《ようきゅう》」: điều một người nói ra và đòi bên kia làm: 「支払いを要求する」.",
+    "example_notes": [
+      "Người sống một mình tăng lên nên nhu cầu tủ lạnh cỡ nhỏ đang cao lên.",
+      "Để biết nhu cầu của người cao tuổi, thị trấn đã làm một cuộc khảo sát."
+    ]
+  },
+  "v-1285": {
+    "meaning": "Đi lấy tin, phỏng vấn thu thập tư liệu (báo chí, viết sách)",
+    "usage": "「〜を取材する」, 「取材に来る」, 「取材を受ける」. Người làm: phóng viên, nhà văn.",
+    "nuance": "Chỉ việc thu thập tin cho báo, đài, sách. Đề thi coi là sai khi dùng cho hỏi bạn phạm vi thi, tra giờ mở cửa, tìm bản đồ trên mạng.",
+    "compare": "「取材」: đi gặp, hỏi để lấy tin. 「｜報道《ほうどう》」: đưa tin ra công chúng. 「｜中継《ちゅうけい》」: phát hình ảnh, âm thanh từ nơi diễn ra đến người xem.",
+    "example_notes": [
+      "Phóng viên báo đã đến lấy tin về người dân thị trấn đang chuẩn bị lễ hội.",
+      "Cuốn sách này được viết dựa trên những câu chuyện tác giả mất ba năm đi tìm hiểu, phỏng vấn."
+    ]
+  },
+  "v-1286": {
+    "meaning": "Đưa tin, việc báo đài truyền tin tức cho công chúng",
+    "usage": "「報道する」, 「報道によると」, 「テレビで報道される」, 「報道番組」. Hán Việt \"báo đạo\"; tiếng Việt nói \"đưa tin\".",
+    "nuance": "Điền từ trong đề: tin vận động viên địa phương giành huy chương được （　） trên tivi → 「報道」. Nhiễu 「通信」「普及」「伝言」.",
+    "compare": "「報道」: đưa tin tức ra công chúng. 「｜取材《しゅざい》」: bước trước đó, đi hỏi để lấy tin. 「｜中継《ちゅうけい》」: phát trực tiếp từ nơi diễn ra sự việc.",
+    "example_notes": [
+      "Theo tin báo đài, có ba người bị thương.",
+      "Bị đưa tin sai sự thật, nam diễn viên đó đã phản đối tòa báo."
+    ]
+  },
+  "v-1287": {
+    "meaning": "Tiếp sóng, phát hình ảnh từ hiện trường đến người xem",
+    "usage": "「中継する」, 「生中継」 (truyền hình trực tiếp), 「衛星中継」, 「〜から中継される」. Hán Việt \"trung kế\".",
+    "nuance": "Điền từ trong đề: lễ khai mạc Olympic được （　） từ hội trường ra khắp thế giới → 「中継」. Nhiễu 「普及」「接続」「分配」.",
+    "compare": "「中継」: phát hình ảnh từ nơi diễn ra đến người xem. 「｜報道《ほうどう》」: đưa tin, bằng hình thức nào cũng được. 「｜取材《しゅざい》」: đi hỏi, ghi chép để lấy tin.",
+    "example_notes": [
+      "Lễ hội pháo hoa hằng năm được đài truyền hình địa phương phát sóng trực tiếp.",
+      "Qua buổi phát sóng từ đỉnh núi, cảnh mặt trời mọc đã được giới thiệu."
+    ]
+  },
+  "v-1288": {
+    "meaning": "Đính chính, sửa lại chỗ sai (chữ, số, lời nói)",
+    "usage": "「訂正する」, 「誤りを訂正する」, 「発言を訂正する」, 「訂正を出す」. Hán Việt \"đính chính\", nghĩa như tiếng Việt.",
+    "nuance": "Điền từ trong đề: bản thảo sai chữ Hán nên （　） bằng bút đỏ → 「訂正」. Nhiễu 「交換」「改訂」「変換」. 「訂正」 cũng từng là nhiễu cho 「改善」 (thói quen sinh hoạt).",
+    "compare": "「訂正」: sửa chỗ sai: 「数字を訂正する」. 「｜改正《かいせい》」: sửa luật, quy chế: 「法律を改正する」. 「｜改《あらた》める」: đổi cách làm cho tốt hơn: 「やり方を改める」.",
+    "example_notes": [
+      "Ghi nhầm số điện thoại trong đơn đăng ký, tôi gạch hai nét rồi sửa lại.",
+      "Sửa lại lời mình đã lỡ nói ra là việc cần can đảm."
+    ]
+  },
+  "v-1304": {
+    "meaning": "Chiếm (một phần, một tỉ lệ, một chỗ)",
+    "usage": "「〜を占める」: 「半分を占める」, 「大半を占める」, 「８割を占める」, 「部屋を占める」. Hán Việt 「占」 là \"chiếm\".",
+    "nuance": "Đọc 「しめる」 — cùng âm với 「閉める」 (đóng). Đề thi đã gài 「つめる」「せめる」「うめる」.",
+    "compare": "",
+    "example_notes": [
+      "Chiếc ghế sofa lớn chiếm gần hết căn phòng chật.",
+      "Trong cuộc họp, ý kiến phản đối kế hoạch chiếm đa số."
+    ]
+  },
+  "v-1312": {
+    "meaning": "Thực tế là, bằng chứng là (sự thật đã thấy rõ)",
+    "usage": "Phó từ, đứng đầu câu sau, nêu sự thật làm bằng chứng cho câu trước: 「〜。現に、〜」.",
+    "nuance": "",
+    "compare": "「現に」: nêu sự thật đã xảy ra để chứng minh: 「現に、熱が下がった」. 「｜実《じつ》に」: chỉ nhấn mạnh mức độ, \"thật là\": 「実に複雑だ」.",
+    "example_notes": [
+      "Thuốc này rất hiệu nghiệm. Thực tế là tôi cũng hạ sốt chỉ sau một đêm.",
+      "Ngày mưa hay xảy ra tai nạn. Bằng chứng là tháng trước trước nhà ga cũng đã xảy ra hai vụ."
+    ]
+  },
   "v-1330": {
     "meaning": "Hiền hậu, điềm đạm (tính cách con người)",
     "usage": "「温厚な人」, 「温厚な人柄」, 「温厚な上司」, 「〜は温厚で…」. Hán Việt \"ôn hậu\", nghĩa gần tiếng Việt.",
     "nuance": "Chỉ tả con người. Đề thi coi là sai: 「温厚な歓迎」, 「温厚なコート」, 「温厚なスープ」. Khung 「上司は（　）で、怒ったのを見たことがない」 có 「温暖」 là phương án nhiễu.",
-    "compare": "「温厚」 là tính cách của một người. 「｜和《なご》やか」 là bầu không khí khi nhiều người ở bên nhau: 「和やかな雰囲気」, 「和やかに話す」.",
+    "compare": "「温厚」 là tính cách hiền hậu, ít nổi giận của một người. 「｜和《なご》やか」 là bầu không khí êm ấm khi nhiều người ở bên nhau. 「｜冷静《れいせい》」 là giữ bình tĩnh, không để cảm xúc chi phối: 「冷静に対応する」.",
     "example_notes": [
       "Thầy chủ nhiệm mới hiền hậu và kiên nhẫn lắng nghe học sinh nói.",
       "Nhờ ông cửa hàng trưởng hiền hậu mà không khí trong tiệm rất dễ chịu."
+    ]
+  },
+  "v-1332": {
+    "meaning": "Năng động, nhanh nhẹn; (hoạt động, trao đổi) sôi nổi",
+    "usage": "ナ形容詞: 「活発な子ども」, 「活発な議論」, 「活動が活発だ」, 「活発に話し合う」. Hán Việt \"hoạt bát\"; tiếng Nhật dùng cả cho hoạt động, thảo luận.",
+    "nuance": "Điền từ trong đề: người dự họp tích cực tham gia, trao đổi ý kiến （　） → 「活発に」. Nhiễu 「円満に」「機敏に」「濃厚に」.",
+    "compare": "「活発」: ナ形容詞, người, hoạt động năng nổ, sôi nổi: 「活発に話し合う」. 「｜陽気《ようき》」: tính người, âm nhạc vui tươi, rộn ràng: 「陽気な人」. 「｜活気《かっき》」: danh từ, không khí sôi động của một nơi: 「活気のある町」.",
+    "example_notes": [
+      "Ở khu vực này, hoạt động tình nguyện của người dân rất sôi nổi.",
+      "Hồi nhỏ tôi rất hiếu động, lúc nào cũng chạy nhảy ngoài trời."
+    ]
+  },
+  "v-1333": {
+    "meaning": "Cố chấp, khăng khăng không chịu đổi ý",
+    "usage": "Danh từ và ナ形容詞, nói về tính người: 「頑固な人」, 「頑固な性格」, 「頑固な職人」. Hán Việt \"ngoan cố\".",
+    "nuance": "Chỉ tính cách con người. Đề thi coi là sai khi dùng cho nắp chai vặn không ra, cơ thể khỏe ít ốm, hàng phòng thủ vững chắc.",
+    "compare": "「頑固」: tính người cứng đầu, không chịu đổi ý. 「わがまま」: chỉ muốn làm theo ý mình, không nghĩ tới người khác. 「｜頑丈《がんじょう》」: đồ vật chắc chắn, khó hỏng: 「頑丈な箱」. \"Bướng\" gần cả hai từ đầu.",
+    "example_notes": [
+      "Chủ tiệm là một người thợ cố chấp, vẫn giữ nguyên cách làm từ xưa.",
+      "Em trai tôi có tính cứng đầu, đã nói ra là không chịu nghe ai."
+    ]
+  },
+  "v-1342": {
+    "meaning": "Trơ trẽn, mặt dày, không biết ngại",
+    "usage": "「厚かましい人」, 「厚かましい態度」, 「厚かましい要求」, 「厚かましいお願い」. Từ gần nghĩa: 「図々しい」.",
+    "nuance": "Viết: 「厚」 (dày — dễ nhớ như \"mặt dày\"). Đề thi đã gài 「圧」「熱」「暑」, đều đọc 「あつ」. Đề còn đặt 「あつかましい」 làm nhiễu cho 「そそっかしい」 (hấp tấp, hay quên).",
+    "compare": "「厚かましい」: không biết ngại, tự nhiên nhờ vả hay chen vào: 「厚かましいお願い」. 「わがまま」: chỉ muốn làm theo ý mình, không nghĩ tới người khác: 「わがままを言う」.",
+    "example_notes": [
+      "Trước thái độ trơ trẽn của gã đàn ông chen ngang hàng, mọi người xung quanh đều ngán ngẩm.",
+      "Thật là lời nhờ vả quá đáng, nhưng cho tôi ở nhờ thêm một đêm nữa được không ạ?"
+    ]
+  },
+  "v-1346": {
+    "meaning": "Luộm thuộm, bê bối, không có nề nếp",
+    "usage": "「だらしない格好」, 「だらしない性格」, 「お金にだらしない」 (tiêu tiền không có chừng mực).",
+    "nuance": "Nói về cách sống, ăn mặc của người. Đề thi coi là sai khi dùng cho vị súp nhạt, cỏ mọc um tùm, kiến thức nghèo nàn. Từng là nhiễu cho 「勝手な」＝「わがままな」.",
+    "compare": "",
+    "example_notes": [
+      "Không được đi phỏng vấn trong bộ dạng luộm thuộm, áo sơ mi chưa cài cúc.",
+      "Bố tôi tiêu tiền không có chừng mực, trước ngày lĩnh lương ví lúc nào cũng rỗng."
+    ]
+  },
+  "v-1349": {
+    "meaning": "Hèn hạ, dùng cách không đàng hoàng",
+    "usage": "Danh từ và ナ形容詞: 「ひきょうな手段」, 「ひきょうな人」, 「〜のはひきょうだ」.",
+    "nuance": "Câu thay thế trong đề: 「ひきょうな」＝「ずるい」. Nhiễu 「危ない」「厳しい」「しつこい」.",
+    "compare": "「ひきょう」: hèn hạ, không làm đàng hoàng, như nói xấu sau lưng. 「ずるい」: khôn lỏi, gian lận để mình được lợi. Đề thi coi hai từ tương đương.",
+    "example_notes": [
+      "Nói xấu người ta lúc người ta không có mặt là hèn hạ.",
+      "Có những kẻ hèn hạ, thấy sắp thua là định đổi luật."
+    ]
+  },
+  "v-1351": {
+    "meaning": "Điển hình, tiêu biểu cho một loại",
+    "usage": "ナ形容詞: 「典型的な例」, 「典型的なパターン」, 「典型的な〜の作り」. Hán Việt \"điển hình\", nghĩa như tiếng Việt.",
+    "nuance": "Viết: 「典」 (điển) + 「型」 (khuôn). Đề thi đã gài 「点型的」「典形的」「点形的」 — 「点」 cùng âm 「てん」, 「形」 cùng âm 「けい」.",
+    "compare": "",
+    "example_notes": [
+      "Tòa nhà này mang lối kiến trúc nhà nông điển hình của Nhật ngày xưa.",
+      "Triệu chứng điển hình của bệnh này là sốt cao và ho."
     ]
   },
   "v-1357": {
     "meaning": "(Cảm giác) dễ chịu, khoan khoái; vui lòng (nhận lời)",
     "usage": "「快い風」, 「快い気分」. Dạng 「快く」 khi nhận lời người khác: 「快く引き受ける」, 「快く応じる」, 「相談に快く乗る」. Hán Việt 「快」 là \"khoái\".",
     "nuance": "Đề thi coi là sai: 「快くもらっていきます」, 「快く遊びに来てください」, 「快く打ち明けられる」. Viết: 「希く」「敬く」「喜く」 đều sai.",
-    "compare": "",
+    "compare": "「快い」: cảm giác dễ chịu từ gió, âm thanh: 「快い風」; 「快く」: vui lòng nhận lời. 「すっきり」: đi với 「する」, hết mệt, hết bực nên thấy nhẹ nhõm: 「頭がすっきりする」.",
     "example_notes": [
       "Mở cửa sổ ra, làn gió buổi sáng dễ chịu thổi vào.",
       "Khi tôi nhờ mang giúp món hành lý nặng, người hàng xóm vui vẻ giúp ngay."
+    ]
+  },
+  "v-1362": {
+    "meaning": "Yên tâm, vững dạ vì có người hay thứ để dựa vào",
+    "usage": "「〜がいて心強い」, 「〜があるので心強い」, 「心強い味方」.",
+    "nuance": "Là cảm giác yên tâm vì có chỗ dựa, không phải tính mạnh mẽ. Đề thi coi là sai khi dùng cho người cứng rắn không khóc, tiếng Anh khá giỏi, người kiên trì.",
+    "compare": "「心強い」: cảm giác của mình, yên tâm vì có chỗ dựa: 「仲間がいて心強い」. 「｜頼《たの》もしい」: nhận xét về người kia, đáng tin cậy: 「頼もしい人」.",
+    "example_notes": [
+      "Vì đã mua bảo hiểm nên có phải nhập viện đột xuất tôi cũng yên tâm.",
+      "Khi có thiên tai, có hàng xóm sẵn sàng giúp đỡ nhau thật vững dạ."
+    ]
+  },
+  "v-1393": {
+    "meaning": "Sự xấu hổ, điều đáng ngượng, mất mặt",
+    "usage": "「恥をかく」 (bị xấu hổ, mất mặt), 「恥をかかせる」 (làm ai mất mặt), 「〜は恥ではない」. Hán Việt \"sỉ\" (liêm sỉ).",
+    "nuance": "Đọc 「はじ」, âm cuối đục. Đề thi đã gài 「はし」「はず」「はす」.",
+    "compare": "",
+    "example_notes": [
+      "Hỏi người khác điều mình không biết không phải là điều đáng xấu hổ.",
+      "Để không làm bố mẹ mất mặt, tôi cư xử đàng hoàng trong buổi lễ."
+    ]
+  },
+  "v-1396": {
+    "meaning": "(Nói, trả lời) rõ ràng, dứt khoát, lanh lợi",
+    "usage": "「はきはき（と）答える」, 「はきはき話す」, 「はきはきしている」.",
+    "nuance": "Chỉ cách nói năng, đối đáp. Đề thi coi là sai khi dùng cho đầu óc tỉnh táo, núi xa trông rõ, làm rõ nguyên nhân — tiếng Việt đều nói \"rõ\" nên dễ bị bẫy.",
+    "compare": "",
+    "example_notes": [
+      "Cô bé làm thêm mới chào hỏi rõ ràng, lanh lợi nên được khách khen.",
+      "Khi nói điện thoại, hãy nói rõ ràng để người kia dễ nghe."
+    ]
+  },
+  "v-1397": {
+    "meaning": "Sạch sẽ, hợp vệ sinh",
+    "usage": "ナ形容詞: 「清潔な部屋」, 「清潔に保つ」, 「清潔にしておく」. Trái nghĩa: 「不潔」.",
+    "nuance": "Đọc 「せいけつ」: 「清」 là 「せい」, 「潔」 là 「けつ」, không có 「っ」. Đề thi đã gài 「せっきつ」「せいきつ」「せっけつ」. Hán Việt \"thanh khiết\"; ở thẻ này nhớ nghĩa \"sạch sẽ\".",
+    "compare": "",
+    "example_notes": [
+      "Trước khi nấu ăn phải rửa tay cho sạch sẽ.",
+      "Y tá dặn tôi lúc nào cũng phải giữ sạch vùng quanh vết thương."
+    ]
+  },
+  "v-1399": {
+    "meaning": "Bình tĩnh, tỉnh táo, không để cảm xúc chi phối",
+    "usage": "ナ形容詞: 「冷静に話し合う」, 「冷静な判断」, 「冷静に行動する」. Hán Việt \"lãnh tĩnh\".",
+    "nuance": "Nói về thái độ của người. Đề thi coi là sai khi dùng cho nền kinh tế ổn định lại, nằm nghỉ chờ hạ sốt, mặt biển lặng sóng.",
+    "compare": "「冷静」: lúc có chuyện vẫn giữ bình tĩnh, không để cảm xúc chi phối: 「冷静に対応する」. 「｜温厚《おんこう》」: tính tình hiền hậu, ít khi nổi giận. Tiếng Việt \"điềm đạm\" gần cả hai nên dễ lẫn.",
+    "example_notes": [
+      "Đừng để cảm xúc lấn át, hãy bình tĩnh bàn bạc với nhau.",
+      "Chính lúc đội đang bị dẫn điểm, huấn luyện viên càng cần phán đoán bình tĩnh."
+    ]
+  },
+  "v-1412": {
+    "meaning": "Quý giá, quý báu, có giá trị lớn",
+    "usage": "ナ形容詞: 「貴重な時間」, 「貴重な体験」, 「貴重な資料」. 「貴重品」: đồ vật quý giá. Hán Việt \"quý trọng\".",
+    "nuance": "Đọc 「きちょう」: 「貴」 là 「き」, 「重」 là 「ちょう」. Đề thi đã gài 「きじゅう」「きっじゅう」「きっちょう」.",
+    "compare": "",
+    "example_notes": [
+      "Ở thị trấn giữa sa mạc, nước vô cùng quý giá.",
+      "Cảm ơn anh chị đã dành thời gian quý báu dù đang bận rộn."
+    ]
+  },
+  "v-1413": {
+    "meaning": "Giản dị, đạm bạc, không xa hoa",
+    "usage": "Danh từ và ナ形容詞: 「質素な生活」, 「質素な食事」, 「質素に暮らす」. Trái nghĩa: 「ぜいたく」.",
+    "nuance": "Nói về cách sống, bữa ăn, đồ dùng không tốn kém. Đề thi coi là sai khi dùng cho câu văn dễ hiểu, giá tour rẻ, kinh nghiệm ít.",
+    "compare": "",
+    "example_notes": [
+      "Dù đã lên làm giám đốc, bữa trưa của ông ấy vẫn đạm bạc, chỉ hai nắm cơm.",
+      "Căn phòng ở ngôi chùa ấy bày biện giản dị, chỉ có một chiếc bàn."
+    ]
+  },
+  "v-1420": {
+    "meaning": "Dễ dãi, làm cho tiện mà không suy nghĩ kỹ",
+    "usage": "ナ形容詞: 「安易な方法」, 「安易に考える」, 「安易に決める」. Hán Việt \"an dị\".",
+    "nuance": "Điền từ trong đề: chưa biết thật giả, không kiểm tra mà đã （　） tin → 「安易に」. Nhiễu 「率直に」「柔軟に」「短気に」.",
+    "compare": "",
+    "example_notes": [
+      "Dù khó cũng không được dựa vào cách làm dễ dãi.",
+      "Không nên chọn việc một cách dễ dãi chỉ vì nó được ưa chuộng."
+    ]
+  },
+  "v-1427": {
+    "meaning": "Đáng thương, tội nghiệp",
+    "usage": "ナ形容詞: 「あわれな声」, 「あわれな姿」, 「あわれに思う」.",
+    "nuance": "Câu thay thế trong đề: 「あわれな」＝「かわいそうな」. Nhiễu 「たいくつな」「おかしな」「不安な」.",
+    "compare": "",
+    "example_notes": [
+      "Chú chim non bị thương không bay được đang kêu những tiếng thảm thương.",
+      "Chỉ mình anh ấy không được ra sân, dáng ngồi chờ trên ghế dự bị trông thật tội nghiệp."
     ]
   },
   "v-1428": {
@@ -1314,6 +1914,16 @@
     "example_notes": [
       "Đội này nhiều cầu thủ trẻ nên còn ít kinh nghiệm thi đấu những trận lớn.",
       "Hộp cơm này ít màu sắc nên tôi thêm vài quả cà chua bi."
+    ]
+  },
+  "v-1431": {
+    "meaning": "Mâu thuẫn, trước sau không khớp nhau",
+    "usage": "「矛盾する」, 「〜と矛盾している」, 「矛盾がある」. Hán Việt \"mâu thuẫn\".",
+    "nuance": "Hai lời nói, hai sự việc không khớp nhau. Đề thi coi là sai khi dùng cho làm trái quyết định chung, mùa hai bán cầu ngược nhau, người hiền mà nghe nhạc rock.",
+    "compare": "",
+    "example_notes": [
+      "Vừa nói \"sức khỏe là trên hết\" vừa uống rượu mỗi tối là mâu thuẫn.",
+      "Số liệu trong hai tài liệu mâu thuẫn nhau, không biết bên nào đúng."
     ]
   },
   "v-o-eikyuuni": {
@@ -1346,6 +1956,16 @@
       "Học kỹ thuật chụp ảnh xong, tôi chụp cả cảnh đêm cũng đẹp."
     ]
   },
+  "v-o-kouchou": {
+    "meaning": "(Doanh số, thành tích, phong độ) đang tốt, thuận lợi",
+    "usage": "「売れ行きが好調だ」, 「好調が続く」, 「チームは好調だ」. Ngược nghĩa: 「｜不調《ふちょう》」.",
+    "nuance": "Viết: đề đã gài 「快調」「好長」「快長」. Điền từ: 「売れ行きが（　）なので、生産量を増やす」 → 「好調」; phương án sai 「温厚」「円満」「適切」.",
+    "compare": "「好調」: trạng thái đang tốt (bán chạy, thắng liên tiếp). 「順調」: một quá trình diễn ra suôn sẻ đúng dự định: 「順調に進む」.",
+    "example_notes": [
+      "Từ khi trưởng phòng mới đến, phòng kinh doanh liên tục làm ăn tốt.",
+      "Năm nay đội đang có phong độ tốt, thắng năm trận liền từ đầu mùa."
+    ]
+  },
   "v-o-yutaka": {
     "meaning": "Dồi dào, phong phú, đầy đủ",
     "usage": "「自然が豊かだ」, 「豊かな自然」, 「水が豊か」, 「経験の豊かな人」. Ngược nghĩa: 「｜乏《とぼ》しい」.",
@@ -1354,6 +1974,26 @@
     "example_notes": [
       "Đi dạo trong rừng, giữa màu xanh bạt ngàn, lòng tôi thấy bình yên.",
       "Được một bác sĩ giàu kinh nghiệm khám cho, tôi thấy yên tâm."
+    ]
+  },
+  "v-o-aimai": {
+    "meaning": "Mập mờ, không rõ ràng, không dứt khoát",
+    "usage": "ナ形容詞: 「あいまいな返事」, 「あいまいな言い方」, 「あいまいな態度」, 「時間があいまいだ」.",
+    "nuance": "Câu thay thế trong đề: 「あいまいだった」＝「はっきりしなかった」. Ở câu điền từ, nhiễu có 「地味」「かすか」「鈍感」「軟弱」「質素」「ささやか」.",
+    "compare": "「あいまい」: nội dung, thái độ không rõ ràng: 「あいまいな返事」. 「かすか」: âm thanh, hình ảnh rất nhỏ, rất mờ, khó nhận ra: 「かすかに見える」.",
+    "example_notes": [
+      "Giờ tập trung ghi không rõ ràng nên vài người đến muộn.",
+      "Sách hướng dẫn viết mập mờ nên tôi không biết phải lắp bộ phận nào trước."
+    ]
+  },
+  "v-o-awatadashii": {
+    "meaning": "Tất bật, vội vã, không có lúc ngơi tay",
+    "usage": "「あわただしい毎日」, 「あわただしい雰囲気」, 「あわただしい日程」, 「あわただしく出かける」.",
+    "nuance": "Tả không khí, nhịp sống, hành động vội vàng. Đề thi coi là sai khi dùng cho nhiệt độ đổi thất thường, người hay quên đồ, thị trấn phát triển nhanh.",
+    "compare": "「あわただしい」: lúc, việc tất bật vội vã: 「あわただしい毎日」. 「そそっかしい」: tính người hấp tấp, hay sơ ý. 「じたばた」: cuống cuồng loay hoay khi có chuyện gấp.",
+    "example_notes": [
+      "Cuối năm, cửa hàng nào cũng chìm trong không khí tất bật.",
+      "Dù ngày nào cũng tất bật, mỗi tuần tôi vẫn dành thời gian đọc cuốn sách mình thích."
     ]
   },
   "v-o-izen": {
@@ -1376,6 +2016,16 @@
       "Dùng điện thoại trong giờ thi là vi phạm quy chế."
     ]
   },
+  "v-o-iraira": {
+    "meaning": "Bực bội, sốt ruột, cáu kỉnh",
+    "usage": "Đi với 「する」: 「いらいらする」, 「いらいらしている」, 「いらいらして〜」.",
+    "nuance": "Điền từ trong đề: đang vội mà kẹt xe không nhúc nhích nên （　） → 「いらいら」. Nhiễu 「わくわく」 (háo hức), 「すっきり」 (sảng khoái), 「うっかり」 (lơ đễnh).",
+    "compare": "",
+    "example_notes": [
+      "Thua trận, anh tôi bực bội suốt cả ngày.",
+      "Cứ thiếu ngủ liên tục là tôi dễ cáu, lỡ trút giận lên người nhà."
+    ]
+  },
   "v-o-intai": {
     "meaning": "Giải nghệ, rút khỏi sự nghiệp hay vị trí lâu năm",
     "usage": "「現役を引退する」, 「選手が引退する」, 「医者を引退する」, 「今回限りで引退する」. Hán Việt \"dẫn thoái\".",
@@ -1394,6 +2044,16 @@
     "example_notes": [
       "Hồi nhỏ, cứ đến mùa hè năm nào tôi cũng về chơi nhà bà.",
       "Đã là sinh viên rồi mà cách nghĩ của em tôi vẫn còn non nớt."
+    ]
+  },
+  "v-o-osoraku": {
+    "meaning": "Có lẽ, nhiều khả năng là (khi đoán)",
+    "usage": "Phó từ, cuối câu là lời đoán: 「おそらく〜だろう」, 「おそらく〜と思う」. Chữ Hán: 「恐らく」.",
+    "nuance": "Câu thay thế trong đề: 「おそらく」＝「たぶん」. Nhiễu 「当然」「やはり」「絶対」.",
+    "compare": "",
+    "example_notes": [
+      "Nếu có ga mới thì có lẽ giá đất quanh đây sẽ tăng.",
+      "Đèn phòng bên đã tắt, có lẽ họ đã ra ngoài rồi."
     ]
   },
   "v-o-kakujuu": {
@@ -1470,7 +2130,7 @@
     "meaning": "Mệt rã rời, kiệt sức",
     "usage": "「くたくたに疲れる」, 「くたくただ」, 「くたくたになる」. Câu thay thế trong đề: 「くたくたになった」＝「ひどく疲れた」.",
     "nuance": "Khi hỏi điền từ 「（　）疲れた」, đề thi đặt 「かさかさに」「ぶくぶくに」「ふさふさに」 bên cạnh — chỉ 「くたくたに」 đi với 「疲れる」.",
-    "compare": "",
+    "compare": "「くたくた」: mệt rã rời sau khi làm nhiều: 「くたくたになる」. 「ぐったり」: đi với 「する」, người rũ ra không còn sức, cả khi ốm: 「熱でぐったりする」. 「｜疲労《ひろう》」: danh từ, sự mệt mỏi: 「疲労がたまる」.",
     "example_notes": [
       "Mệt rã rời nên tôi lăn ra ngủ mà không ăn tối.",
       "Chơi với bọn trẻ từ sáng đến tối, người tôi mệt rã rời."
@@ -1484,6 +2144,16 @@
     "example_notes": [
       "Từ khi bố nghỉ hưu, bố mẹ tôi sống ở một thị trấn gần biển.",
       "Ở thị trấn này, người từ nhiều nước sống cùng nhau."
+    ]
+  },
+  "v-o-guttari": {
+    "meaning": "Rũ rượi, mệt lả người không còn sức",
+    "usage": "Đi với 「する」: 「ぐったりする」, 「ぐったりしている」, 「疲れてぐったりする」.",
+    "nuance": "Điền từ trong đề: hè nóng gắt, đi làm về mệt đến mức （　） → 「ぐったり」. Nhiễu 「しっかり」「すっきり」「ぎっしり」.",
+    "compare": "「ぐったり」: đi với 「する」, người rũ ra không còn sức, cả khi ốm: 「熱でぐったりする」. 「くたくた」: mệt rã rời sau khi làm nhiều: 「くたくたになる」. 「｜疲労《ひろう》」: danh từ, sự mệt mỏi: 「疲労がたまる」.",
+    "example_notes": [
+      "Sốt cao ba ngày liền, con trai tôi mệt lả người.",
+      "Sau khi tiêm, chú mèo con rũ ra một lúc nhưng rồi nhanh chóng khỏe lại."
     ]
   },
   "v-o-kewashii": {
@@ -1516,6 +2186,16 @@
       "Nếu uống thuốc mà cơ thể có thay đổi gì, hãy báo ngay."
     ]
   },
+  "v-o-jitabata": {
+    "meaning": "Cuống cuồng, luống cuống loay hoay khi có chuyện gấp",
+    "usage": "Đi với 「する」: 「じたばたする」, 「今さらじたばたしても」.",
+    "nuance": "Câu thay thế trong đề: 「じたばたしても」＝「慌てても」. Nhiễu 「心配しても」「緊張しても」「悩んでも」: đều là lo trong lòng, còn 「じたばた」 là cuống lên.",
+    "compare": "「じたばた」: cuống lên, loay hoay vô ích khi có chuyện gấp. 「あわただしい」: việc bận dồn dập, phải làm vội vàng: 「あわただしい毎日」.",
+    "example_notes": [
+      "Phát hiện mất ví, tôi cuống cả lên, nhưng hóa ra nó nằm dưới đáy túi.",
+      "Tự nhiên có khách đến, mẹ tôi cuống cuồng dọn dẹp và đi chợ."
+    ]
+  },
   "v-o-juunan": {
     "meaning": "Linh hoạt, mềm dẻo (suy nghĩ, cách xử lý)",
     "usage": "「柔軟な思考」, 「柔軟に考える」, 「柔軟に対応する」, 「柔軟に変える」. Hán Việt \"nhu nhuyễn\".",
@@ -1546,6 +2226,26 @@
       "Mùa xuân đến gần, ngày cứ dài dần ra."
     ]
   },
+  "v-o-sukkiri": {
+    "meaning": "Sảng khoái, nhẹ nhõm, dễ chịu (trong người, trong đầu)",
+    "usage": "Đi với 「する」: 「頭がすっきりする」, 「気分がすっきりする」, 「すっきりした気分」.",
+    "nuance": "Điền từ trong đề: bỏ đồ thừa, dọn lại căn phòng bừa bộn thì tâm trạng （　） → 「すっきり」. Nhiễu 「ぎっしり」「ぶらぶら」「きらきら」.",
+    "compare": "「すっきり」: đi với 「する」, hết mệt, hết bực nên thấy nhẹ nhõm: 「気分がすっきりする」. 「｜快《こころよ》い」: tính từ, dễ chịu vì gió, âm thanh: 「快い風」; còn là vui lòng nhận lời. Cả hai đều dịch là \"dễ chịu\".",
+    "example_notes": [
+      "Hạ sốt rồi, cuối cùng người tôi cũng thấy nhẹ nhõm.",
+      "Vấn đề day dứt bấy lâu đã được giải quyết, tôi thấy nhẹ cả người."
+    ]
+  },
+  "v-o-zurui": {
+    "meaning": "Gian, khôn lỏi, ăn gian để mình được lợi",
+    "usage": "「ずるい人」, 「ずるいやり方」, 「〜なんてずるい」.",
+    "nuance": "Đề thi đặt 「ずるい」 làm đáp án thay cho 「ひきょうな」. 「ずるい」 cũng từng là cách đọc nhiễu cho 「憎い」 và 「幼い」.",
+    "compare": "「ずるい」: khôn lỏi, gian lận để mình được lợi: 「後から出すのはずるい」. 「ひきょう」: hèn hạ, không dám làm đàng hoàng: 「陰で悪口を言うのはひきょうだ」.",
+    "example_notes": [
+      "Oẳn tù tì mà ra sau người ta thì ăn gian quá.",
+      "Lén xem sách giáo khoa trong giờ kiểm tra là chuyện gian lận."
+    ]
+  },
   "v-o-setsuyaku": {
     "meaning": "Tiết kiệm, dùng ít đi để không lãng phí",
     "usage": "「電気代を節約する」, 「水を節約する」, 「食費を節約する」, 「時間を節約する」. Hán Việt \"tiết ước\"; tiếng Việt nói \"tiết kiệm\".",
@@ -1560,7 +2260,7 @@
     "meaning": "Hấp tấp, hay sơ ý quên trước quên sau",
     "usage": "「そそっかしい人」, 「そそっかしい性格」, 「そそっかしくて〜」. Ví dụ: quên mang ví, đi nhầm giày.",
     "nuance": "Cả hai lần đề thi hỏi từ này (quên ví khi đi mua đồ) đều đặt 「あつかましい」 (trơ tráo) làm phương án nhiễu. Đừng nhầm hai từ dài đuôi 「〜しい」.",
-    "compare": "",
+    "compare": "「そそっかしい」: tính người hấp tấp, hay sơ ý quên đồ. 「あわただしい」: lúc, việc tất bật vội vã: 「あわただしい毎日」. Đề thi coi là sai khi dùng 「あわただしい」 cho người hay quên đồ.",
     "example_notes": [
       "Tôi hay hấp tấp nên trước khi gửi email bao giờ cũng kiểm tra lại địa chỉ người nhận.",
       "Anh tôi hấp tấp đến mức từng đi ra ngoài với hai chiếc giày khác nhau."
@@ -1580,7 +2280,7 @@
     "meaning": "Trong chớp mắt, (thay đổi) xảy ra tức thì",
     "usage": "「たちまち増える」, 「たちまち広まる」, 「たちまち売り切れる」, 「たちまち〜になった」.",
     "nuance": "Câu thay thế trong đề: 「たちまち」＝「すぐに」. Phương án sai 「次第に」 là \"dần dần\" — ngược nghĩa.",
-    "compare": "「たちまち」: thay đổi đến gần như tức thì, chủ thể là vật, tình hình. 「さっさと」: một người làm cho mau xong: 「さっさと帰る」. 「｜一気《いっき》に」: làm liền một mạch: 「一気に読む」.",
+    "compare": "「たちまち」: thay đổi đến gần như tức thì, chủ thể là vật, tình hình. 「さっさと」: một người làm cho mau xong. 「｜一気《いっき》に」: làm liền một mạch. 「｜急激《きゅうげき》」: con số, tình hình thay đổi mạnh: 「急激に増える」.",
     "example_notes": [
       "Cửa hàng vừa được giới thiệu trên tivi là khách tăng vọt ngay.",
       "Vừa thấy trời tối sầm là lập tức mưa như trút."
@@ -1630,7 +2330,7 @@
     "meaning": "Thong thả, thư thái, không vội vàng",
     "usage": "「のんびり過ごす」, 「のんびり暮らす」, 「のんびりする」, 「のんびりした性格」 (tính thong thả).",
     "nuance": "Đề thi đặt 「のろのろ」 cạnh 「のんびり」: 「のろのろ」 chỉ chậm chạp, lề mề. Nghỉ ngơi thư giãn ở nhà cuối tuần là 「のんびり」.",
-    "compare": "",
+    "compare": "「のんびり」: nhịp sống, tâm trạng thong thả, không vội: 「のんびり過ごす」. 「ごろごろ」: nằm ườn ra, không làm việc gì: 「ソファーでごろごろする」.",
     "example_notes": [
       "Bố tôi nói sau khi nghỉ hưu muốn sống thong thả ở quê.",
       "Chị tôi tính thong thả, dù sắp đến giờ hẹn cũng chẳng mấy vội."
@@ -1650,7 +2350,7 @@
     "meaning": "Bằng nhau, ngang nhau; như nhau với mọi người",
     "usage": "「AとBは等しい」, 「大きさが等しい」, 「〜に等しい」. Dạng 「等しく」: như nhau, không phân biệt: 「等しく分ける」, 「誰に対しても等しく接する」.",
     "nuance": "Đọc 「ひとしい」: đề đã cho 「やさしく」「したしく」「きびしく」. Viết: đề đã gài 「並しい」「似しい」「比しい」.",
-    "compare": "",
+    "compare": "「等しい」: bằng nhau về lượng, giá trị: 「〜に等しい」, 「等しく分ける」. 「｜平等《びょうどう》」: quyền lợi, cách đối xử như nhau với mọi người: 「平等な社会」, 「男女平等」.",
     "example_notes": [
       "Số tiền quyên được đã chia đều cho tất cả người tham gia.",
       "Một kilômét bằng 1000 mét."
@@ -1700,20 +2400,10 @@
     "meaning": "Ích kỷ, bướng, chỉ muốn theo ý mình",
     "usage": "「わがままな人」, 「わがままを言う」, 「わがままが通らない」 (sự ích kỷ không được chấp nhận). Gần nghĩa với 「勝手な」.",
     "nuance": "Câu thay thế trong đề: 「勝手な」＝「わがままな」. Phương án sai là 「いじわるな」 (xấu tính), 「だらしない」, 「なさけない」.",
-    "compare": "",
+    "compare": "「わがまま」: chỉ muốn làm theo ý mình, không nghĩ tới người khác. 「｜頑固《がんこ》」: cứng đầu, đã nghĩ gì là không đổi. 「｜厚《あつ》かましい」: mặt dày, không biết ngại khi nhờ vả, chen vào.",
     "example_notes": [
       "Trước cả những đòi hỏi tùy hứng của khách, nhân viên vẫn đáp ứng mà không tỏ vẻ khó chịu.",
       "Chuyến đi cả nhóm cùng đi nên ý muốn riêng của một người không được đâu."
-    ]
-  },
-  "v-o-kouchou": {
-    "meaning": "(Doanh số, thành tích, phong độ) đang tốt, thuận lợi",
-    "usage": "「売れ行きが好調だ」, 「好調が続く」, 「チームは好調だ」. Ngược nghĩa: 「｜不調《ふちょう》」.",
-    "nuance": "Viết: đề đã gài 「快調」「好長」「快長」. Điền từ: 「売れ行きが（　）なので、生産量を増やす」 → 「好調」; phương án sai 「温厚」「円満」「適切」.",
-    "compare": "「好調」: trạng thái đang tốt (bán chạy, thắng liên tiếp). 「順調」: một quá trình diễn ra suôn sẻ đúng dự định: 「順調に進む」.",
-    "example_notes": [
-      "Từ khi trưởng phòng mới đến, phòng kinh doanh liên tục làm ăn tốt.",
-      "Năm nay đội đang có phong độ tốt, thắng năm trận liền từ đầu mùa."
     ]
   }
 }

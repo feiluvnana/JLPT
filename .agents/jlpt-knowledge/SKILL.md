@@ -427,6 +427,13 @@ Added by 文法 batch-7 QA (`qa/qa-report-knowledge-N2-文法-B7.md`):
     かたち after a grammar term (「動詞のて形」 is けい; 「決まった形」 is かたち);
     `merge_batch.py` lists every quoted form a back-link drops from a live
     compare, for the reviewer to answer.
+39. **(語彙 batch-4 QA)** Before writing an example, scan the official 読解
+    passages and 聴解 scripts for the CLAIM it would make, and grep the whole
+    module (open batches too) for its scene. Never reuse an official 問題6 misuse
+    sentence with the right word put back. A 語彙 card for a word that also has a
+    文法 card (おそらく) keeps its gloss and scenes distinct from it. The gate
+    WARNs when a generated meaning item's wrong option prints the headword being
+    asked (`check_meaning_lures`).
 
 ## Pronunciation
 

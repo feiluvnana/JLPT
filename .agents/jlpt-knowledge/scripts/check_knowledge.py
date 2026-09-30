@@ -719,6 +719,28 @@ def check_related_symmetry(level: str, spec: dict, warn):
          f"entry in every language (jlpt-knowledge §Quiz integrity rule 28)")
 
 
+def check_meaning_lures(level: str, spec: dict, warn):
+    """Rule 34: on a generated meaning item, no wrong option may print the very
+    headword being asked about (直's gloss 「元に戻す」 showed 元 on 元's own item —
+    漢字 B2 QA). Only what a learner is actually shown counts: the item's word
+    against its distractors' text, in the primary language."""
+    if "meaning" not in QG.types(spec):
+        return
+    entries, prose = D.load_entries(D.locate(level, spec))
+    hits = []
+    for items in QG.generate(spec, entries, prose).values():
+        for it in items:
+            if it["kind"] != "meaning" or not it.get("word"):
+                continue
+            for d in it["distractors"]:
+                t = d["text"].get(langs.primary(), "") if isinstance(d.get("text"), dict) else ""
+                if it["word"] in D.plain(t):
+                    hits.append(f"{it['word']} ← {d.get('word')}'s gloss")
+    warn(f"knowledge/{level}/{spec['stem']}: no meaning item shows its own headword in a wrong option",
+         not hits, f"{len(hits)}: {hits[:6]} — reword the distractor's gloss so it does not "
+         f"contain that headword (jlpt-knowledge §Quiz integrity rule 34)")
+
+
 def check_all(check, warn, skip, git_tracks=None):
     git_tracks = git_tracks or _default_git_tracks
     print("\nknowledge module (jlpt-knowledge: knowledge/<LEVEL>/)")
@@ -747,6 +769,7 @@ def check_all(check, warn, skip, git_tracks=None):
             check_ruby_suspects(lv, spec, warn)
             check_prose_citations(lv, spec, warn)
             check_related_symmetry(lv, spec, warn)
+            check_meaning_lures(lv, spec, warn)
         check_index(lv, check)
 
 

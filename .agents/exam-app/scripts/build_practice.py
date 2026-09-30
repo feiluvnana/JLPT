@@ -17,11 +17,12 @@ page, built from the same Markdown by the same injectors:
     submitted;
   * one 解説 button per question, revealing THAT item's model answer: the
     correct option, why it is right and what each distractor gets wrong, in
-    Japanese or Vietnamese. The box is rendered by exam-model-answer's own
-    `explanation_box_html()` out of 詳細解説.json / 詳細解説.vi.json — this
+    every registry language. The box is rendered by exam-model-answer's own
+    `explanation_box_html()` out of 詳細解説.json / 詳細解説.<code>.json — this
     script formats no explanation prose of its own, so the two study surfaces
     (模範解答.html and this page) cannot disagree about an item;
-  * a 原文 / 訳 toggle over each 読解 passage, in the Vietnamese edition only —
+  * a 原文 / 訳 toggle over each 読解 passage, in the learner-language editions
+    only —
     exam-model-answer's own control (`ptext_switch_html`, `PASSAGE_TOGGLE_CSS`,
     `PASSAGE_TOGGLE_JS`) over its own `passage_translation`.
 
@@ -69,51 +70,12 @@ OUT_NAME = "練習.html"
 # Every label this page prints outside the exam's own wording and outside the
 # explanation box, once per language — the same arrangement as
 # build_model_answer.UI, which owns the labels INSIDE the box (and whose
-# `ans_badge` this page reuses rather than retyping).
-UI = {
-    "ja": {
-        "html_lang": "ja",
-        "doc_title": "テスト {test_id}（練習モード）",
-        "bar_title": "テスト {test_id}（練習モード）",
-        "back": "← テスト一覧",
-        "exam_mode": "試験モードへ",
-        "model_answer": "模範解答をまとめて見る",
-        "answered": "解答",
-        "show": "解説を見る",
-        "hide": "解説を閉じる",
-        "open_all": "解説をすべて開く",
-        "close_all": "解説をすべて閉じる",
-        "correct": "正解",
-        "wrong": "不正解",
-        "script_title": "音声スクリプト",
-        "pending": "この設問の解説はまだ用意されていません。",
-        "note": "練習モードです。制限時間も採点もありません。"
-                "全{n_all}問が1ページに並んでいます。各設問の「解説を見る」で、"
-                "その設問の模範解答と解説だけを開けます。"
-                "解答はどこにも保存されません（再読み込みで消えます）。",
-    },
-    "vi": {
-        "html_lang": "vi",
-        "doc_title": "Đề {test_id}（Luyện tập）",
-        "bar_title": "Đề {test_id}（Luyện tập）",
-        "back": "← Danh sách đề",
-        "exam_mode": "Sang chế độ thi",
-        "model_answer": "Xem toàn bộ đáp án mẫu",
-        "answered": "Đã chọn",
-        "show": "Xem giải thích",
-        "hide": "Ẩn giải thích",
-        "open_all": "Mở tất cả giải thích",
-        "close_all": "Đóng tất cả giải thích",
-        "correct": "Đúng",
-        "wrong": "Sai",
-        "script_title": "Lời thoại audio",
-        "pending": "Giải thích cho câu này chưa được soạn.",
-        "note": "Chế độ luyện tập: không giới hạn thời gian, không chấm điểm. "
-                "Toàn bộ {n_all} câu nằm trên một trang. Bấm 「Xem giải thích」 ở "
-                "mỗi câu để mở đáp án mẫu và giải thích của riêng câu đó. "
-                "Lựa chọn của bạn không được lưu ở đâu cả (tải lại trang là mất).",
-    },
-}
+# `ans_badge` this page reuses rather than retyping). The strings live in the
+# learner-language registry (exam-model-answer references/languages/<code>/
+# practice.json); `html_lang` comes from that language's meta.json.
+LANG_REG = ma.LANG_REG
+UI = {lg: {"html_lang": LANG_REG.html_lang(lg), **LANG_REG.ui(lg, "practice")}
+      for lg in ma.LANGS}
 
 # `#screen-exam` is reused as the container id ON PURPOSE: this page is the exam
 # screen with the phase machine taken out, so the sheet's own layout, radio
@@ -170,7 +132,7 @@ PRACTICE_CSS = """
    and the translation replaces them in place. The translation panel is NOT a
    `.passage-box` — the booklet prints exactly 14 of those per paper and
    `make check` counts them in this file — so it borrows the look and keeps its
-   own class. Vietnamese prose, so the UI face, not 明朝. */
+   own class. Learner-language prose, so the UI face, not 明朝. */
 .pr-ptext{display:flex;justify-content:flex-end;margin:10px 0 -4px}
 .pr-tr{border:1px solid #1a1a1a;background:#fff;margin:10px 0 16px;
   padding:10px 16px;overflow-x:auto;font-family:var(--ui);line-height:1.95}
@@ -187,15 +149,15 @@ PRACTICE_JS = """
 const ANS = %(answers)s, LANGS = %(langs)s, TOTAL = %(total)d;
 const PR = {};
 
-/* The 読解 訳 belongs to the Vietnamese edition — its control only exists in
-   that pane — so changing edition puts every passage back to 原文 rather than
-   leaving a group whose chosen pane the new edition does not render. */
+/* The 読解 訳 belongs to the learner-language editions — its control only
+   exists in those panes — so changing edition puts every passage back to 原文
+   rather than leaving a group whose chosen pane the new edition does not render. */
 function setLang(lang){
   applyLang(lang, LANGS, true);
   resetPassageText();
 }
 function resetPassageText(){
-  document.querySelectorAll('.passage-vi').forEach(b => { b.dataset.ptext = 'src'; });
+  document.querySelectorAll('.passage-tr').forEach(b => { b.dataset.ptext = 'src'; });
 }
 
 /* The reveal. Everything it changes is an attribute the CSS reads — the two
@@ -312,7 +274,7 @@ def explain_block(key: str, ans: int | None, details: dict, langs: list,
         script_html = ('<div class="pr-script"><span class="pr-script-label">'
                        + label(langs, "script_title") + '</span>'
                        + ma.apply_furigana(script) + '</div>')
-    if (details.get("ja") or {}).get(key):
+    if (details.get(ma.PRIMARY) or {}).get(key):
         box = ma.explanation_box_html(details, key, ans, "", langs,
                                       choukai=choukai)
     else:
@@ -335,20 +297,11 @@ def explain_block(key: str, ans: int | None, details: dict, langs: list,
 
 
 def load_details(d: Path) -> dict:
-    """{lang: 詳細解説 data} for whichever sets exist, exactly as
-    build_model_answer loads them — `ja` owns the exam wording, every other
+    """{lang: 詳細解説 data} for whichever sets exist — build_model_answer's own
+    loader, so the two study pages cannot disagree about which files a
+    language reads. The primary set owns the exam wording, every other
     language carries prose only."""
-    out = {}
-    for lg in ma.LANGS:
-        f = d / ("詳細解説.json" if lg == "ja" else f"詳細解説.{lg}.json")
-        if not f.is_file():
-            continue
-        try:
-            out[lg] = json.loads(f.read_text(encoding="utf-8"))
-        except json.JSONDecodeError as exc:
-            print(f"  ! {f.name} did not parse; its pane falls back to the "
-                  f"booklet 解説: {exc}")
-    return out
+    return ma.load_details(d)
 
 
 PASSAGE_OPEN = '<div class="passage-box">'
@@ -397,22 +350,23 @@ def passage_group_leaders(ja: dict) -> dict[int, int]:
 def inject_passage_translations(body: str, details: dict, langs: list) -> str:
     """Wrap each 読解 passage group in exam-model-answer's 原文 / 訳 toggle.
 
-    The Vietnamese edition of 模範解答.html already ships both texts behind a
+    A learner-language edition of 模範解答.html already ships both texts behind a
     per-group control, and a 読解 learner wants the same thing while actually
     working the paper. Same mechanism, one copy: the markup is
-    `ma.ptext_switch_html()`, the state is `.passage-vi[data-ptext]`, the CSS is
+    `ma.ptext_switch_html()`, the state is `.passage-tr[data-ptext]`, the CSS is
     `ma.PASSAGE_TOGGLE_CSS` and the handler `ma.PASSAGE_TOGGLE_JS`. Three
     differences from that page, all deliberate:
 
       * **The default is 原文.** 模範解答.html is read after the answers are out,
-        so the translation is what a Vietnamese reader wants first; here the
+        so the translation is what a learner reader wants first; here the
         questions are still being solved, and hiding the Japanese they ask about
         would be handing over the passage rather than the answer to it.
       * **The source is not duplicated into the Japanese pane.** That page
         renders one `.passage-box` per group and can afford a pane each; this
         one prints the BOOKLET's boxes — exactly 14 per paper, counted in this
         file by `make check` (`check_passage_boxes`) — so the boxes stay put and
-        only the control and the translation panel are `.lang-pane[data-lang=vi]`.
+        only the control and the translation panel are wrapped in a
+        `.lang-pane` — one per learner language that has translated the group.
       * **A group's boxes are wrapped together.** 問題12 prints A and B as two
         boxes but is ONE 詳細解説 group with one translation covering both, so
         the toggle spans the run and the translation replaces both boxes.
@@ -420,10 +374,10 @@ def inject_passage_translations(body: str, details: dict, langs: list) -> str:
     A group with no `passage_translation` yet (a paper mid-pipeline) is left
     exactly as the booklet rendered it: no control, no empty pane.
     """
-    ja = details.get("ja")
-    if "vi" not in langs or not ja:
+    ja = details.get(ma.PRIMARY)
+    learners = [lg for lg in langs if lg != ma.PRIMARY]
+    if not learners or not ja:
         return body
-    vi = details.get("vi") or {}
     leaders = passage_group_leaders(ja)
     spans = passage_box_spans(body)
     if not spans:
@@ -439,16 +393,28 @@ def inject_passage_translations(body: str, details: dict, langs: list) -> str:
         else:
             runs.append([lead, [i]])
 
-    switch = ('<span class="lang-pane" data-lang="vi"><div class="pr-ptext">'
-              + ma.ptext_switch_html("vi") + '</div></span>')
     out, cursor, seen = [], 0, set()
     for lead, idxs in runs:
         if lead is None or lead in seen:
             continue
-        tr = ((vi.get(str(lead)) or {}).get("passage_translation") or "").strip()
-        if not tr:
+        # Per learner language: the control and the translation exist only in
+        # the panes of the languages that have authored this group's
+        # translation, so a language still without one shows the booklet box
+        # alone — never an empty 訳.
+        trs = {lg: (((details.get(lg) or {}).get(str(lead)) or {})
+                    .get("passage_translation") or "").strip() for lg in learners}
+        trs = {lg: t for lg, t in trs.items() if t}
+        if not trs:
             continue
         seen.add(lead)
+        switch = "".join(
+            f'<span class="lang-pane" data-lang="{lg}"><div class="pr-ptext">'
+            + ma.ptext_switch_html(lg) + '</div></span>' for lg in trs)
+        panels = "".join(
+            f'<span class="lang-pane" data-lang="{lg}">'
+            f'<div class="ptext-pane" data-ptext="tr">'
+            f'<div class="pr-tr">{ma.format_passage_text(t)}</div>'
+            f'</div></span>' for lg, t in trs.items())
         start, end = spans[idxs[0]][0], spans[idxs[-1]][1]
         if len(idxs) > 1:
             # 問題12 prints its two texts as `A` / `B` label paragraphs OUTSIDE
@@ -460,12 +426,9 @@ def inject_passage_translations(body: str, details: dict, langs: list) -> str:
                 start = lbl.start()
         out.append(body[cursor:start])
         out.append(
-            f'<div class="passage-vi" data-ptext="src">{switch}'
+            f'<div class="passage-tr" data-ptext="src">{switch}'
             f'<div class="ptext-pane" data-ptext="src">{body[start:end]}</div>'
-            f'<span class="lang-pane" data-lang="vi">'
-            f'<div class="ptext-pane" data-ptext="tr">'
-            f'<div class="pr-tr">{ma.format_passage_text(tr)}</div>'
-            f'</div></span></div>')
+            f'{panels}</div>')
         cursor = end
     out.append(body[cursor:])
     return "".join(out)
@@ -474,14 +437,14 @@ def inject_passage_translations(body: str, details: dict, langs: list) -> str:
 def build(d: Path, out_dir: Path | None = None, storage: str = "server") -> Path:
     """Write one test's 練習.html. Returns the path written.
 
-    `storage` picks nothing about answers — practice keeps no record — only
-    where 「テスト一覧」 points, which differs between `make serve` and the Pages
-    build exactly as it does for the sheet (build_interactive.LIST_HREF).
+    `storage` picks nothing — practice keeps no record, and 「テスト一覧」 is the
+    same relative link to this level's exam list in both deployments
+    (build_interactive.list_href). Kept so both builders take one signature.
     """
     gengo_src, choukai_src = d / "言語知識・読解.md", d / "聴解.md"
     if not gengo_src.is_file() or not choukai_src.is_file():
         sys.exit(f"Missing source markdowns in {d}")
-    if storage not in bi.LIST_HREF:
+    if storage not in bi.STORAGES:
         raise ValueError(f"unknown deployment: {storage}")
 
     graw = gengo_src.read_text(encoding="utf-8")
@@ -493,14 +456,14 @@ def build(d: Path, out_dir: Path | None = None, storage: str = "server") -> Path
     answers.update(ckeys)
 
     details = load_details(d)
-    langs = [lg for lg in ma.LANGS if lg in details] or ["ja"]
+    langs = [lg for lg in ma.LANGS if lg in details] or [ma.PRIMARY]
 
     scripts = bi.parse_choukai_scripts(d / "聴解スクリプト.txt")
 
     def script_for(key: str) -> str:
         # 詳細解説.json owns the wording where it has it; the .txt is the
         # fallback, and the same precedence 模範解答.html uses.
-        stored = (details.get("ja") or {}).get(key) or {}
+        stored = (details.get(ma.PRIMARY) or {}).get(key) or {}
         return stored.get("script") or scripts.get(key, "")
 
     def after(key: str) -> str:
@@ -520,7 +483,7 @@ def build(d: Path, out_dir: Path | None = None, storage: str = "server") -> Path
     n_all = len(gids) + len(cused)
     player = bi.player_html(d)
 
-    list_href = bi.LIST_HREF[storage]
+    list_href = bi.list_href(bi.LEVEL.declared_level(d) or bi.LEVEL.level_of(d.name))
     lang_switch = ""
     if len(langs) > 1:
         lang_switch = '<span class="lang-switch">' + "".join(
@@ -572,7 +535,7 @@ def build(d: Path, out_dir: Path | None = None, storage: str = "server") -> Path
         # Same staleness stamps as 解答.html, plus the two explanation sets this
         # page renders: an explanation rewritten after the page was built is
         # exactly the drift `make check` (check_artifact_freshness) must catch.
-        f'{bi.booklet.src_sha_comments([gengo_src, choukai_src, d / "聴解スクリプト.txt", d / "聴解_チャプター.json", d / "詳細解説.json", d / "詳細解説.vi.json"])}'
+        f'{bi.booklet.src_sha_comments([gengo_src, choukai_src, d / "聴解スクリプト.txt", d / "聴解_チャプター.json"] + [ma.kaisetsu_path(d, lg) for lg in ma.LANGS])}'
         f'<style>{bi.booklet.CSS}{bi.booklet.SCREEN_CSS}{bi.app_style.APP_CSS}'
         f'{bi.EXTRA_CSS}{ma.EXPLANATION_CSS}{ma.PASSAGE_TOGGLE_CSS}'
         f'{PRACTICE_CSS}</style></head>'
@@ -580,7 +543,7 @@ def build(d: Path, out_dir: Path | None = None, storage: str = "server") -> Path
         f'<script>{js}</script></body></html>',
         encoding="utf-8")
 
-    pending = [k for k in gids + cused if not (details.get("ja") or {}).get(k)]
+    pending = [k for k in gids + cused if not (details.get(ma.PRIMARY) or {}).get(k)]
     if pending:
         print(f"  ! {len(pending)} question(s) have no 詳細解説 entry yet and "
               f"reveal 「解説はまだ用意されていません」: {pending[:6]} — author the "
@@ -601,7 +564,7 @@ def main():
                     "one page, no clock, no grading, one model answer per "
                     "question behind a button.")
     ap.add_argument("test_dir", help="tests/<test_id>")
-    ap.add_argument("--storage", choices=sorted(bi.LIST_HREF), default="server",
+    ap.add_argument("--storage", choices=bi.STORAGES, default="server",
                     help="which deployment's 「テスト一覧」 link to write: "
                          "'server' for make serve (default), 'local' for the "
                          "GitHub Pages build. Answers are never stored either way")

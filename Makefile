@@ -4,7 +4,7 @@
        levels init-import extract-pdf extract-archive extract-keys extract-kanji-tables extract-shinkanzen-goi extract-shinkanzen-dokkai extract-shinkanzen \
        lint-draft lint verify-scramble scaffold-explanations \
        scaffold-sections matrix qa-eval autofix findings repair-plan choukai-bank \
-       textbook-bank archive-bank number-calls choukai-wear
+       textbook-bank archive-bank number-calls choukai-wear knowledge
 
 # Positional test-id argument: "make grade 1", "make sheet 2", "make sample 5".
 # Equivalent: "make grade TEST=1". `serve` is deliberately NOT here: one server
@@ -47,8 +47,9 @@ SLUG ?=
 # per-test targets need nothing. See `make levels`.
 LEVEL ?= N2
 # Explanation language for `make scaffold-explanations`. `ja` scaffolds
-# 詳細解説.json (stems, options, passages pre-filled); anything else scaffolds an
-# EMPTY 詳細解説.<lang>.json — that set is written from the items, never
+# 詳細解説.json (stems, options, passages pre-filled); any other language in the
+# registry (.agents/exam-model-answer/references/languages/index.json) scaffolds
+# an EMPTY 詳細解説.<lang>.json — that set is written from the items, never
 # translated from the Japanese one (exam-model-answer).
 #
 # LANG is also the LOCALE environment variable, so `LANG ?= ja` inherited the
@@ -98,8 +99,9 @@ help:
 	@echo "  make verify-scramble 1 Permutation & topological validator for 問題8 scrambles"
 	@echo "  make qa-eval 1        Structured blind-solve evaluator & QA report generator"
 	@echo "  make keyless 1        Blind-solve render for QA: qa/1/keyless.md (no keys)"
-	@echo "  make serve            Serve ALL tests: list -> exam -> result (no test id)"
+	@echo "  make serve            Serve ALL tests: levels -> modules -> list -> exam (no id)"
 	@echo "  make grade 1          Grade test 1 (reads tests/1/ユーザー解答*.json)"
+	@echo "  make knowledge [LEVEL=N2]  Build the knowledge module: knowledge/<LEVEL>/<category>.html + index.html"
 	@echo "  make pages            Build the static GitHub Pages site into _site/ (all tests)"
 	@echo "  make pages 1          Same, only test 1"
 	@echo "  make preview-pages    Serve _site/ locally to check the Pages build"
@@ -262,6 +264,12 @@ keyless:
 
 serve:
 	python3 .agents/exam-app/scripts/serve_sheet.py
+
+# The knowledge module (jlpt-knowledge): every category page of the level + its index,
+# built from knowledge/<LEVEL>/*.json. Re-run after any knowledge JSON edit; the gate
+# fails a page whose src_sha stamps no longer match its data.
+knowledge:
+	python3 .agents/jlpt-knowledge/scripts/build_knowledge.py --level $(LEVEL)
 
 grade:
 	python3 .agents/exam-app/scripts/grade_answers.py --test-dir tests/$(TEST)

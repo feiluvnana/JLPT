@@ -133,6 +133,9 @@ CHOUKAI = load("tools/choukai_profile.py")
 # sitting, which all 23 generated papers did (audit 2026-09-07). Owner of the
 # measurement: `tools/lexical_profile.py`; this file owns the thresholds.
 LEXICAL = load("tools/lexical_profile.py")
+# The knowledge module's checks (schema, bands, sources, page freshness) are owned
+# by jlpt-knowledge; the gate only calls them with its own reporters.
+KNOWLEDGE = load(".agents/jlpt-knowledge/scripts/check_knowledge.py")
 
 
 # One record per emitted finding, for `--json` (REPORT-CHOUKAI.md §5.0). A finding
@@ -420,19 +423,58 @@ def check_deployments():
     src = {f.name: f.read_text(encoding="utf-8")
            for f in scripts.glob("*.py")}
 
-    for name in ("index_view.py", "local_store.py", "build_pages.py"):
+    for name in ("portal_view.py", "index_view.py", "local_store.py", "build_pages.py"):
         check(f"{name} present", name in src, "the static build needs it")
-    if not {"index_view.py", "local_store.py", "build_pages.py"} <= set(src):
+    if not {"portal_view.py", "index_view.py", "local_store.py", "build_pages.py"} <= set(src):
         return
 
-    # Screen 1 is rendered ONCE. serve_sheet.py used to hold its own copy of the
-    # cards and CSS; a second copy is how the two lists stop looking alike.
+    # The portal (level chooser → module chooser) and the exam list are each
+    # rendered ONCE. serve_sheet.py used to hold its own copy of the cards and
+    # CSS; a second copy is how the two deployments stop looking alike.
     for name in ("serve_sheet.py", "build_pages.py"):
-        check(f"{name} imports the shared test list", "index_view" in src[name],
-              "render screen 1 through index_view, never a private copy")
-    owners = [n for n, t in src.items() if "INDEX_CSS = " in t]
-    check("only index_view.py defines the list stylesheet", owners == ["index_view.py"],
-          f"also defined in {[o for o in owners if o != 'index_view.py']}")
+        check(f"{name} imports the shared portal and test list",
+              "portal_view" in src[name] and "index_view" in src[name],
+              "render / , /<LEVEL>/ and /<LEVEL>/exam/ through portal_view + "
+              "index_view, never a private copy")
+    check("index_view renders through portal_view's page shell",
+          "portal_view.page(" in src["index_view.py"],
+          "the list must share the portal's header, breadcrumb and language switch")
+    for const, owner in (("INDEX_CSS = ", "index_view.py"), ("PORTAL_CSS = ", "portal_view.py")):
+        owners = [n for n, t in src.items() if const in t]
+        check(f"only {owner} defines {const.split()[0]}", owners == [owner],
+              f"also defined in {[o for o in owners if o != owner]}")
+    check("the exam list has no level switcher (the level is chosen upstream)",
+          "LEVEL_KEY" not in src["index_view.py"] and "lv-btn" not in src["index_view.py"],
+          "exam-app §The three screens: level chooser → module chooser → list")
+
+    # One URL layout, both deployments (exam-app §Two deployments): the server
+    # routes the trees the Pages build writes, and serves exactly tests/ + knowledge/ + drill/.
+    ss = load(".agents/exam-app/scripts/serve_sheet.py")
+    pv, iv = ss.portal_view, ss.index_view     # the very modules the server renders with
+    check("serve_sheet serves exactly tests/, knowledge/ and drill/",
+          [p.name for p in ss.SERVED_ROOTS] == ["tests", "knowledge", "drill"],
+          f"SERVED_ROOTS={[str(p) for p in ss.SERVED_ROOTS]} — the cwd is the whole repo")
+    routes = {"/": "html", "/N2": "redirect", "/N2/": "html",
+              "/N2/exam": "redirect", "/N2/exam/index.html": "html", "/N6/": None}
+    got = {r: (ss.portal_page(r) or (None,))[0] for r in routes}
+    check("serve_sheet routes / , /<LEVEL>/ and /<LEVEL>/exam/", got == routes, f"got {got}")
+    summ = pv.level_summaries([{"id": "x", "level": "N2"}])
+    pages = [pv.portal_html(summ)] + [pv.module_html(s) for s in summ]
+    pages += [iv.index_html(m, [], level=lv) for m in ("server", "local")
+              for lv in pv.LEVELS]
+    absolute = sorted({h for p in pages for h in re.findall(r'href="(/[^"]*)"', p)})
+    check("portal and list pages link relatively (Pages serves from /<repo>/)",
+          not absolute, f"absolute hrefs {absolute}")
+    check("every level is on the level chooser (a level with nothing is disabled, "
+          "never hidden)",
+          [s["level"] for s in summ] == list(pv.LEVELS)
+          and all(f'data-level="{lv}"' in pages[0] for lv in pv.LEVELS),
+          f"levels {[s['level'] for s in summ]}")
+    mods = {m: all(f'data-module="{m}"' in pv.module_html(s) for s in summ)
+            for m in ("exam", "knowledge", "drill")}
+    check("every module chooser offers 試験, 知識 and ドリル (a module with nothing is "
+          "disabled, never hidden)", all(mods.values()),
+          f"cards present per module: {mods} — portal_view.module_html")
 
     # The sheet writes these keys and the list reads them. One definition, in
     # local_store.py; anything else spelling out the prefix is a second copy.
@@ -449,10 +491,23 @@ def check_deployments():
     # even carry the localStorage code, or a future edit could write both.
     bi = load(".agents/exam-app/scripts/build_interactive.py")
     check("build_interactive knows both backends and defaults to the server one",
-          set(bi.LIST_HREF) == {"server", "local"} and bi.LIST_HREF["server"] == "/",
-          f"LIST_HREF={bi.LIST_HREF}")
+          set(bi.STORAGES) == {"server", "local"} and bi.STORAGES[0] == "server",
+          f"STORAGES={bi.STORAGES}")
+    check("the sheet's back link is the level's exam list, relative",
+          bi.list_href("N2") == pv.exam_href("N2", 2) == "../../N2/exam/index.html",
+          f"list_href('N2')={bi.list_href('N2')!r}")
     for d in sorted((ROOT / "tests").glob("*/解答.html")):
         html = d.read_text(encoding="utf-8")
+        want = bi.list_href(LEVEL.declared_level(d.parent)
+                            or LEVEL.level_of(d.parent.name))
+        for page in (d, d.parent / "練習.html"):
+            if page.is_file():
+                back = re.search(r'<a class="back" href="([^"]*)"',
+                                 page.read_text(encoding="utf-8"))
+                check(f"{d.parent.name}: {page.name} links back to its level's exam list",
+                      bool(back) and back.group(1) == want,
+                      f"href={back.group(1) if back else None!r}, want {want!r} — "
+                      f"run make sheet {d.parent.name}")
         mode = re.search(r'const STORAGE = "(\w+)"', html)
         check(f"{d.parent.name}: 解答.html is the server build",
               bool(mode) and mode.group(1) == "server",
@@ -856,7 +911,7 @@ FINDING_REPAIR: dict[str, tuple[str, str]] = {
     # A mis-tag is never repaired by moving the tag: the entry is stale prose
     # from an earlier revision, so the item is re-solved and the entry rewritten.
     "kaisetsu_tag_key":               ("詳細解説.json",        "authoring"),
-    # The Vietnamese 読解 passage translation. Repaired in the vi file alone —
+    # A learner-language 読解 passage translation. Repaired in that file alone —
     # the paper is frozen by the time this runs, so it may never be "fixed" by
     # touching a passage, and it is authoring, not a cut-to-band edit.
     "kaisetsu_passage_translation":   ("詳細解説.<lang>.json", "authoring"),
@@ -869,7 +924,7 @@ FINDING_REPAIR: dict[str, tuple[str, str]] = {
     # writing the analysis — never by deleting the line, which breaks parity.
     # The file it lands in is named by the check, so declare the ja artifact.
     "kaisetsu_placeholder":           ("詳細解説.json",        "authoring"),
-    "kaisetsu_vi_furigana":           ("詳細解説.<lang>.json", "authoring"),
+    "kaisetsu_learner_furigana":      ("詳細解説.<lang>.json", "authoring"),
 }
 
 # The tier is a pure function of the artifact a repair touches (§5.0), so two
@@ -14684,16 +14739,42 @@ def check_choukai_script_latin():
 # it. Furigana 《…》 and the [正解]/[不正解] tag are stripped before counting, so
 # ruby markup can never push a line over.
 #
-# Vietnamese runs longer than Japanese for the same content — Vietnamese writes
-# in words where Japanese writes in kanji — so its caps are the Japanese ones
-# ×1.8, rounded. That factor is a DESIGN ALLOWANCE, not a measurement — nothing
-# had been authored in Vietnamese when it was set. Re-measure it against the
-# first few papers that are, and change the number here if they disagree; this
-# constant is its only owner.
-KAISETSU_BANDS = {
-    "ja": {"why": 90, "opt": 50, "point": 45},
-    "vi": {"why": 160, "opt": 90, "point": 80},
-}
+# Every other language is DERIVED, never typed: its caps are the Japanese ones
+# × that language's `length_factor` from the learner-language registry
+# (exam-model-answer references/languages/<code>/meta.json), rounded to the
+# nearest 10. Vietnamese runs longer than Japanese for the same content — it
+# writes in words where Japanese writes in kanji — so its factor is 1.8. That
+# factor is a DESIGN ALLOWANCE, not a measurement — nothing had been authored in
+# Vietnamese when it was set. Re-measure it against the first few papers that
+# are, and change it in meta.json if they disagree; the Japanese numbers below
+# and each language's factor are the only owners.
+sys.path.insert(0, str(AGENTS / "exam-model-answer" / "scripts"))
+import langs as LANGS  # noqa: E402  (the learner-language registry)
+
+try:
+    _LANG_ORDER = LANGS.order()
+    _LANG_REGISTRY_ERROR = None
+except Exception as _exc:                          # check_language_registry FAILs it
+    _LANG_ORDER, _LANG_REGISTRY_ERROR = ["ja"], _exc
+PRIMARY = _LANG_ORDER[0]
+LEARNERS = _LANG_ORDER[1:]
+
+_PRIMARY_BANDS = {"why": 90, "opt": 50, "point": 45}
+_PRIMARY_ITEM_BUDGET = 210
+
+
+def _scaled_band(n: int, lang: str) -> int:
+    f = 1.0 if lang == PRIMARY else LANGS.length_factor(lang)
+    return n if f == 1.0 else int(round(n * f / 10) * 10)
+
+
+def _kaisetsu_file(test_id: str, lang: str) -> Path:
+    """tests/<id>/詳細解説.json for the primary, 詳細解説.<code>.json otherwise."""
+    return LANGS.content_path(ROOT / "tests" / test_id / "詳細解説.json", lang)
+
+
+KAISETSU_BANDS = {lg: {k: _scaled_band(v, lg) for k, v in _PRIMARY_BANDS.items()}
+                  for lg in _LANG_ORDER}
 KAISETSU_POINTS_RANGE = (2, 4)   # both languages: fewer is under-filled, more is a lecture
 
 # The per-field caps above are a CEILING, and a ceiling is not a target. The
@@ -14705,7 +14786,8 @@ KAISETSU_POINTS_RANGE = (2, 4)   # both languages: fewer is under-filled, more i
 # Measured mean was 421 authored characters per item. The budget is half of it.
 # An item that spends it well reads like: one sentence of evidence, one clause
 # of reason per option, two glosses — about 140 characters, comfortably inside.
-KAISETSU_ITEM_BUDGET = {"ja": 210, "vi": 380}   # vi = ja x1.8, the same allowance
+KAISETSU_ITEM_BUDGET = {lg: _scaled_band(_PRIMARY_ITEM_BUDGET, lg)
+                        for lg in _LANG_ORDER}   # ja x length_factor, the same allowance
 
 # Every paper on disk was authored before the bands existed and every one of them
 # breaches them — that is the finding the measurement above records, not a reason
@@ -14725,9 +14807,9 @@ KAISETSU_ITEM_BUDGET = {"ja": 210, "vi": 380}   # vi = ja x1.8, the same allowan
 # exists, so this set staying empty is itself checked, not just claimed.
 KAISETSU_LENGTH_GRANDFATHERED = set()
 
-# The same 20 papers ship no Vietnamese pane yet. Same rule: delete an id when
-# that paper's 詳細解説.vi.json is authored.
-KAISETSU_VI_GRANDFATHERED = set(KAISETSU_LENGTH_GRANDFATHERED)
+# The same papers ship no learner-language pane yet. Same rule: delete an id when
+# that paper's 詳細解説.<code>.json panes are authored.
+KAISETSU_LEARNER_GRANDFATHERED = set(KAISETSU_LENGTH_GRANDFATHERED)
 
 
 def _load_build_model_answer():
@@ -14768,7 +14850,7 @@ def check_kaisetsu_length(test_id: str, lang: str, data: dict):
     """詳細解説 prose must stay inside the terseness bands (KAISETSU_BANDS)."""
     band = KAISETSU_BANDS[lang]
     budget = KAISETSU_ITEM_BUDGET[lang]
-    fname = "詳細解説.json" if lang == "ja" else f"詳細解説.{lang}.json"
+    fname = _kaisetsu_file(test_id, lang).name
     over, n_pts_bad, over_budget = [], [], []
     lo, hi = KAISETSU_POINTS_RANGE
     for key, item in sorted(data.items()):
@@ -14819,6 +14901,10 @@ def check_kaisetsu_length(test_id: str, lang: str, data: dict):
     if test_id in KAISETSU_LENGTH_GRANDFATHERED:
         return warn(name, not detail, detail + GRANDFATHER_NOTE,
                     slug="kaisetsu_length", test_id=test_id)
+    if not LANGS.required(lang):
+        return warn(name, not detail, detail + f" — WARN because the registry "
+                    f"does not mark {lang} required yet",
+                    slug="kaisetsu_length", test_id=test_id)
     check(name, not detail, detail, slug="kaisetsu_length", test_id=test_id)
 
 
@@ -14842,18 +14928,30 @@ _JA_RUN = re.compile(r"[ぁ-んァ-ヶ一-龥々]{12,}")
 
 
 def check_kaisetsu_languages(test_id: str, ja: dict):
-    """The non-`ja` panes: present, in parity with `ja`, and not a paste of it."""
-    for lang in ("vi",):
-        fname = f"詳細解説.{lang}.json"
-        path = ROOT / "tests" / test_id / fname
+    """The learner-language panes: present, in parity with the primary, and not a paste of it.
+
+    One pass per learner language in the registry. A language whose meta.json
+    is not yet `"required": true` (one just added) WARNs on every finding here
+    instead of failing — its pages fall back cleanly until the content exists
+    (exam-model-answer §"Languages — one registry").
+    """
+    for lang in LEARNERS:
+        path = _kaisetsu_file(test_id, lang)
+        fname = path.name
+        soft = not LANGS.required(lang)
         name = f"{test_id}: {fname} present and in parity with 詳細解説.json"
         if not path.is_file():
-            miss = (f"no {fname} — 模範解答.html renders its segmented control only "
-                    f"when the second set exists, so this paper ships one language. "
+            miss = (f"no {fname} — 模範解答.html renders a language's segment only "
+                    f"when its set exists, so this paper ships without "
+                    f"{LANGS.name(lang)}. "
                     f"Author it with `make scaffold-explanations {test_id} LANG={lang}` "
                     f"and write it FROM THE ITEMS, never by translating 詳細解説.json "
                     f"(exam-model-answer)")
-            if test_id in KAISETSU_VI_GRANDFATHERED:
+            if soft:
+                warn(name, False, miss + " — WARN because the registry does not "
+                     f"mark {lang} required yet", slug="kaisetsu_language",
+                     test_id=test_id)
+            elif test_id in KAISETSU_LEARNER_GRANDFATHERED:
                 warn(name, False, miss + GRANDFATHER_NOTE,
                      slug="kaisetsu_language", test_id=test_id)
             else:
@@ -14885,7 +14983,7 @@ def check_kaisetsu_languages(test_id: str, ja: dict):
             # has exactly one copy, in 詳細解説.json, so the two panes cannot
             # drift. A translation is authored prose about the passage, not the
             # passage — the same status as `why_correct`. It is the one field of
-            # the vi set that may be long, and it renders in the passage box
+            # a learner set that may be long, and it renders in the passage box
             # rather than the explanation box.
             dupes = [f for f in ("stem", "options", "passage", "script") if f in item]
             if dupes:
@@ -14920,14 +15018,19 @@ def check_kaisetsu_languages(test_id: str, ja: dict):
                             f"{', '.join(pasted[:4])}{' …' if len(pasted) > 4 else ''}")
 
         detail = " | ".join(problems)
-        if test_id in KAISETSU_VI_GRANDFATHERED and detail:
+        if soft and detail:
+            warn(name, False, detail + f" — WARN because the registry does not "
+                 f"mark {lang} required yet", slug="kaisetsu_language",
+                 test_id=test_id)
+        elif test_id in KAISETSU_LEARNER_GRANDFATHERED and detail:
             warn(name, False, detail + GRANDFATHER_NOTE,
                  slug="kaisetsu_language", test_id=test_id)
         else:
             check(name, not detail, detail, slug="kaisetsu_language", test_id=test_id)
 
-        if not detail or test_id not in KAISETSU_VI_GRANDFATHERED:
+        if not detail or test_id not in KAISETSU_LEARNER_GRANDFATHERED:
             check_kaisetsu_length(test_id, lang, data)
+
 
 
 # A grandfather entry that is no longer needed is invisible: `warn(name, True)`
@@ -14953,7 +15056,7 @@ def check_grandfather_sets_are_live():
             data = json.loads(path.read_text(encoding="utf-8"))
         except json.JSONDecodeError:
             continue
-        band, budget = KAISETSU_BANDS["ja"], KAISETSU_ITEM_BUDGET["ja"]
+        band, budget = KAISETSU_BANDS[PRIMARY], KAISETSU_ITEM_BUDGET[PRIMARY]
         lo, hi = KAISETSU_POINTS_RANGE
         breaches = False
         for item in data.values():
@@ -14970,17 +15073,18 @@ def check_grandfather_sets_are_live():
                     or any(_kaisetsu_len(x) > band["point"] for x in pts)):
                 breaches = True
                 break
-        if not breaches and (ROOT / "tests" / tid / "詳細解説.vi.json").is_file():
+        if not breaches and all(_kaisetsu_file(tid, lg).is_file()
+                                for lg in LEARNERS if LANGS.required(lg)):
             stale.append(tid)
     warn(f"no repaired paper is still grandfathered ({len(KAISETSU_LENGTH_GRANDFATHERED)} entries)",
          not stale,
          f"{', '.join(stale)} now pass(es) on merit — delete the id from "
-         f"KAISETSU_LENGTH_GRANDFATHERED (and so from KAISETSU_VI_GRANDFATHERED, "
+         f"KAISETSU_LENGTH_GRANDFATHERED (and so from KAISETSU_LEARNER_GRANDFATHERED, "
          f"which is derived from it). Leaving it downgrades that paper's next "
          f"regression from FAIL to WARN")
 
 
-# A `points` entry in the Vietnamese pane hands the reader a Japanese word to
+# A `points` entry in a learner-language pane hands the reader a Japanese word to
 # LEARN — 「代理」: người làm thay — so it must carry the reading. Elsewhere in
 # that pane the Japanese is a quote the reader can match against the passage
 # printed above, and ruby on it is noise; the rule is deliberately narrow
@@ -14988,7 +15092,7 @@ def check_grandfather_sets_are_live():
 #
 # WARN, not FAIL: the reading has to be right, and a wrong one is a worse defect
 # than a missing one, so this points at work to do rather than blocking on it.
-_VI_POINT_TERM = re.compile(r"[一-龥々]{2,}")
+_LEARNER_POINT_TERM = re.compile(r"[一-龥々]{2,}")
 
 
 def check_kaisetsu_wording_matches_source(test_id: str, ja: dict):
@@ -15087,18 +15191,18 @@ def check_kaisetsu_wording_matches_source(test_id: str, ja: dict):
 
 
 def check_kaisetsu_passage_translation(test_id: str, ja: dict):
-    """Every 読解 passage group carries a Vietnamese translation.
+    """Every 読解 passage group carries a translation, in every learner language.
 
-    THE REQUIREMENT (2026-09-07): the Vietnamese edition of 模範解答.html
-    translates the 読解 passages, so a learner reading the VI pane reads the
-    passage in Vietnamese instead of falling back to Japanese.
+    THE REQUIREMENT (2026-09-07): each learner-language edition of 模範解答.html
+    (Vietnamese first) translates the 読解 passages, so a learner reading that
+    pane reads the passage in their language instead of falling back to Japanese.
 
     WHERE IT LIVES: on the FIRST item of each passage group, in
     `passage_translation`. A passage is shared by 2-3 items and the renderer
     prints it once per group, so one translation per group is the whole
     requirement — a copy on a second item of the same group is a second thing to
     drift, which is the defect `詳細解説.json`-owns-the-wording exists to prevent.
-    `scaffold_explanations.py --lang vi` writes the empty slots in the right
+    `scaffold_explanations.py --lang <code>` writes the empty slots in the right
     places; `build_model_answer.py` falls back to printing the Japanese source
     when one is empty, so an unauthored translation degrades rather than blanks.
 
@@ -15106,11 +15210,16 @@ def check_kaisetsu_passage_translation(test_id: str, ja: dict):
     across every paper on disk and a FAIL would block repairs that have nothing
     to do with it. It becomes a FAIL when the corpus is through.
     """
-    path = ROOT / "tests" / test_id / "詳細解説.vi.json"
+    for lang in LEARNERS:
+        _check_passage_translation_one(test_id, ja, lang)
+
+
+def _check_passage_translation_one(test_id: str, ja: dict, lang: str):
+    path = _kaisetsu_file(test_id, lang)
     if not path.is_file() or not ja:
         return
     try:
-        vi = json.loads(path.read_text(encoding="utf-8"))
+        tr_set = json.loads(path.read_text(encoding="utf-8"))
     except json.JSONDecodeError:
         return
     prev, leaders = None, []
@@ -15124,22 +15233,28 @@ def check_kaisetsu_passage_translation(test_id: str, ja: dict):
     if not leaders:
         return
     missing = [k for k in leaders
-               if not ((vi.get(k) or {}).get("passage_translation") or "").strip()]
-    warn(f"{test_id}: 詳細解説.vi.json translates every 読解 passage "
+               if not ((tr_set.get(k) or {}).get("passage_translation") or "").strip()]
+    warn(f"{test_id}: {path.name} translates every 読解 passage "
          f"({len(leaders) - len(missing)}/{len(leaders)} groups)",
          not missing,
          f"{len(missing)} passage group(s) with no `passage_translation`: "
-         f"{', '.join(missing[:10])}{' …' if len(missing) > 10 else ''} — the VI "
-         f"pane falls back to printing the Japanese passage for these. Scaffold "
-         f"the slots with `make scaffold-explanations {test_id} LANG=vi` and "
+         f"{', '.join(missing[:10])}{' …' if len(missing) > 10 else ''} — the "
+         f"{LANGS.name(lang)} pane falls back to printing the Japanese passage for "
+         f"these. Scaffold the slots with `make scaffold-explanations {test_id} "
+         f"LANG={lang}` and "
          f"translate the passage; it is authored prose, so it does NOT trip the "
          f"exam-wording rule (exam-model-answer)",
          slug="kaisetsu_passage_translation", test_id=test_id)
 
 
-def check_kaisetsu_vi_points_furigana(test_id: str):
-    """Vietnamese `points` must gloss the reading of the Japanese words they teach."""
-    path = ROOT / "tests" / test_id / "詳細解説.vi.json"
+def check_kaisetsu_learner_points_furigana(test_id: str):
+    """Learner-language `points` must gloss the reading of the Japanese words they teach."""
+    for lang in LEARNERS:
+        _check_points_furigana_one(test_id, lang)
+
+
+def _check_points_furigana_one(test_id: str, lang: str):
+    path = _kaisetsu_file(test_id, lang)
     if not path.is_file():
         return
     try:
@@ -15153,21 +15268,81 @@ def check_kaisetsu_vi_points_furigana(test_id: str):
             continue
         for pt in item.get("points") or []:
             ruby += len(re.findall(r"《[^》]+》", pt or ""))
-            for m in _VI_POINT_TERM.finditer(re.sub(r"《[^》]*》", "", pt or "")):
+            for m in _LEARNER_POINT_TERM.finditer(re.sub(r"《[^》]*》", "", pt or "")):
                 terms += 1
                 if len(bare) < 6:
                     bare.append(f"{key}「{m.group(0)}」")
     if not terms:
         return
     covered = ruby / terms
-    warn(f"{test_id}: 詳細解説.vi.json points gloss their Japanese readings "
+    warn(f"{test_id}: {path.name} points gloss their Japanese readings "
          f"({ruby}/{terms} = {covered:.0%})",
          covered >= 0.5,
-         f"only {ruby} of {terms} kanji terms in the Vietnamese `points` carry a "
-         f"《reading》 — e.g. {', '.join(bare)}. A points entry hands the reader a "
-         f"word to learn, and a Vietnamese speaker cannot read it without the "
+         f"only {ruby} of {terms} kanji terms in the {LANGS.name(lang)} `points` "
+         f"carry a 《reading》 — e.g. {', '.join(bare)}. A points entry hands the "
+         f"reader a word to learn, and a learner cannot read it without the "
          f"kana. Add the reading, hand-authored and verified (exam-model-answer)",
-         slug="kaisetsu_vi_furigana", test_id=test_id)
+         slug="kaisetsu_learner_furigana", test_id=test_id)
+
+
+def check_language_registry():
+    """The learner-language registry is sound, and no builder routes around it.
+
+    THE RULE (2026-09-30, exam-model-answer §"Languages — one registry"): the
+    languages the site prints prose in are listed ONCE, in
+    `.agents/exam-model-answer/references/languages/`, and every page and gate
+    check iterates `langs.order()` / `langs.learners()`. Until then "vi" was
+    typed ~60 times across build_model_answer.py, build_practice.py and this
+    file — a `UI = {"ja": …, "vi": …}` dict per page, CSS like
+    `body[data-lang="ja"] .lang-pane[data-lang="vi"]`, `詳細解説.vi.json`
+    literals and `for lang in ("vi",)` loops — so adding a third language meant
+    finding every one of them, and missing one printed a page that silently
+    ignored the new language in that spot.
+
+    Two halves: `langs.check()` (index/meta well-formed, every namespace's keys
+    equal to the primary's — a missing key would print the primary's label in
+    its place), and a literal grep of the builders for any learner code, so the
+    rule cannot quietly regress. The REPAIR for a grep hit is to iterate the
+    registry, never to add the code to an allow-list.
+
+    The one exemption is a line that says, in a comment, `not a language code`:
+    a two-letter code can collide with an unrelated key — the level tables'
+    English-gloss field is `"en"`, found by adding a trial `en` language
+    (2026-09-30). The marker states that the literal is not a language choice;
+    putting it on a line that IS one is routing around this check.
+    """
+    print("\nlearner-language registry (exam-model-answer references/languages/)")
+    if _LANG_REGISTRY_ERROR is not None:
+        return check("the language registry loads", False,
+                     f"{_LANG_REGISTRY_ERROR} — fix references/languages/index.json")
+    probs = LANGS.check()
+    check(f"the language registry is sound ({', '.join(_LANG_ORDER)}; primary {PRIMARY})",
+          not probs,
+          f"{'; '.join(probs)} — every language folder needs meta.json and one "
+          f"<namespace>.json per page family ({', '.join(LANGS.NAMESPACES)}) "
+          f"carrying exactly the primary's keys, each string rewritten for that "
+          f"reader (exam-model-answer §'Languages — one registry')")
+    builders = [AGENTS / "exam-model-answer" / "scripts" / "build_model_answer.py",
+                AGENTS / "exam-app" / "scripts" / "build_practice.py"]
+    know = AGENTS / "jlpt-knowledge" / "scripts"
+    if know.is_dir():
+        builders += sorted(know.glob("*.py"))
+    hits = []
+    for f in builders:
+        if not f.is_file():
+            continue
+        for n, line in enumerate(f.read_text(encoding="utf-8").splitlines(), 1):
+            if "not a language code" in line:
+                continue
+            for lg in LEARNERS:
+                if (f'"{lg}"' in line or f"'{lg}'" in line or f".{lg}.json" in line):
+                    hits.append(f"{f.relative_to(ROOT)}:{n} ({lg})")
+    check(f"no builder hard-codes a learner-language code ({len(builders)} file(s) read)",
+          not hits,
+          f"{len(hits)} literal(s): {', '.join(hits[:8])}{' …' if len(hits) > 8 else ''}"
+          f" — iterate langs.order()/langs.learners(), reach content files through "
+          f"langs.content_path() and pane CSS through langs.pane_css(). A literal "
+          f"is a spot a new or replaced language silently skips")
 
 
 def check_kaisetsu_band_doc():
@@ -15180,34 +15355,53 @@ def check_kaisetsu_band_doc():
     """
     print("\n詳細解説 terseness bands ↔ exam-model-answer/SKILL.md")
     doc = (ROOT / ".agents/exam-model-answer/SKILL.md").read_text(encoding="utf-8")
-    rows = {
-        "why": r"\|\s*`why_correct`\s*\|\s*≤\s*(\d+)\s*\|\s*≤\s*(\d+)\s*\|",
-        "opt": r"\|\s*each `options_analysis` entry\s*\|\s*≤\s*(\d+)\s*\|\s*≤\s*(\d+)\s*\|",
-        "point": r"\|\s*each `points` entry\s*\|\s*≤\s*(\d+)\s*\|\s*≤\s*(\d+)\s*\|",
-    }
-    for field, pat in rows.items():
-        m = re.search(pat, doc)
-        if not m:
+    # One column per ACTIVE language, in registry order, each header cell naming
+    # its code — `| Field | Japanese (`ja`) | Vietnamese (`vi`) |`. A language
+    # added to or dropped from the registry changes the table's shape, and this
+    # says so rather than silently checking the old two columns.
+    hdr = re.search(r"^\|\s*Field\s*\|(.*)\|\s*$", doc, re.M)
+    cols = re.findall(r"\(`([\w-]+)`\)", hdr.group(1)) if hdr else []
+    # A REQUIRED language's column is mandatory; one just added to the registry
+    # (not yet required) may lag the doc by a WARN, like the rest of its content.
+    need = [lg for lg in _LANG_ORDER if LANGS.required(lg)]
+    fix = (f"give it one `Name (`code`)` column per language in "
+           f"references/languages/index.json `order`, in that order, filled from "
+           f"KAISETSU_BANDS (primary × each length_factor)")
+    check(f"SKILL.md band table has a column per required language {need}",
+          cols == [lg for lg in _LANG_ORDER if lg in cols] and set(need) <= set(cols),
+          f"the header names {cols or 'no language codes'} — {fix}")
+    lagging = [lg for lg in _LANG_ORDER if lg not in cols and lg not in need]
+    warn(f"SKILL.md band table covers every registry language {_LANG_ORDER}",
+         not lagging, f"no column for {lagging} — {fix}")
+
+    def cells(label: str) -> list[int] | None:
+        m = re.search(r"^\|\s*" + label + r"[^|]*\|(.*)$", doc, re.M)
+        return [int(x) for x in re.findall(r"≤\s*(\d+)", m.group(1))] if m else None
+
+    rows = {"why": r"`why_correct`", "opt": r"each `options_analysis` entry",
+            "point": r"each `points` entry"}
+    for field, label in rows.items():
+        got = cells(label)
+        if not got:
             check(f"SKILL.md states the {field} band", False,
                   "the band table row is missing or reworded — it is the copy the "
                   "author reads; keep it parseable or the constant is unchecked")
             continue
-        want = (KAISETSU_BANDS["ja"][field], KAISETSU_BANDS["vi"][field])
-        got = (int(m.group(1)), int(m.group(2)))
+        want = [KAISETSU_BANDS[lg][field] for lg in cols]
         check(f"SKILL.md {field} band matches KAISETSU_BANDS {want}", got == want,
               f"doc says {got} — KAISETSU_BANDS is the owner; refresh the table from it")
-    m = re.search(r"\|\s*\*\*whole item\*\*[^|]*\|\s*≤\s*(\d+)\s*\|\s*≤\s*(\d+)\s*\|", doc)
-    want = (KAISETSU_ITEM_BUDGET["ja"], KAISETSU_ITEM_BUDGET["vi"])
+    got = cells(r"\*\*whole item\*\*")
+    want = [KAISETSU_ITEM_BUDGET[lg] for lg in cols]
     check(f"SKILL.md item budget matches KAISETSU_ITEM_BUDGET {want}",
-          bool(m) and (int(m.group(1)), int(m.group(2))) == want,
-          f"doc says {m.groups() if m else 'nothing parseable'} — the budget is the "
+          got == want,
+          f"doc says {got if got else 'nothing parseable'} — the budget is the "
           f"row that actually shortens a paper; it must be stated and must match")
     lo, hi = KAISETSU_POINTS_RANGE
-    m = re.search(r"\|\s*number of `points`\s*\|\s*(\d+)–(\d+)\s*\|\s*(\d+)–(\d+)\s*\|", doc)
+    m = re.search(r"^\|\s*number of `points`\s*\|(.*)$", doc, re.M)
+    got = [tuple(map(int, x)) for x in re.findall(r"(\d+)–(\d+)", m.group(1))] if m else []
     check(f"SKILL.md points count matches KAISETSU_POINTS_RANGE {lo}–{hi}",
-          bool(m) and (int(m.group(1)), int(m.group(2))) == (lo, hi)
-          and (int(m.group(3)), int(m.group(4))) == (lo, hi),
-          f"doc says {m.groups() if m else 'nothing parseable'}")
+          got == [(lo, hi)] * len(cols),
+          f"doc says {got or 'nothing parseable'}")
 
 
 # The 解説 must argue for the option the KEY names. `check_choukai_kaisetsu_keys`
@@ -15461,7 +15655,7 @@ def check_kaisetsu_no_scaffold_placeholders(test_id: str, lang: str, data: dict)
     clear this check — `check_kaisetsu_languages` enforces per-option parity, so
     an emptied line fails there instead, which is the same defect louder.
     """
-    fname = "詳細解説.json" if lang == "ja" else f"詳細解説.{lang}.json"
+    fname = _kaisetsu_file(test_id, lang).name
     hits, bare, total = [], [], 0
     for key, item in sorted(data.items()):
         if not isinstance(item, dict):
@@ -15483,7 +15677,7 @@ def check_kaisetsu_no_scaffold_placeholders(test_id: str, lang: str, data: dict)
           f"shipped 100% placeholder panes through a green gate. Re-solve each "
           f"item and say why THAT option is wrong, from the item; deleting the "
           f"line instead breaks per-option parity "
-          f"(exam-model-answer §'Two languages, two rewrites')",
+          f"(exam-model-answer §'One rewrite per language')",
           slug="kaisetsu_placeholder", test_id=test_id)
     warn(f"{test_id}: {fname} option analyses all carry a REASON", not bare,
          f"{len(bare)} of {total} are a bare verdict and nothing else: "
@@ -15495,7 +15689,7 @@ def check_kaisetsu_no_scaffold_placeholders(test_id: str, lang: str, data: dict)
          f"and the verdict-token list can never be complete. Re-solve the item "
          f"and say, in this pane's own language, what in the stem/script makes "
          f"that option right or wrong — do not translate the other pane "
-         f"(exam-model-answer §'Two languages, two rewrites'; "
+         f"(exam-model-answer §'One rewrite per language'; "
          f"qa-report-20260914_1-round2)")
 
 
@@ -15531,14 +15725,14 @@ def check_kaisetsu_prose(test_id: str):
     if canon:
         check_kaisetsu_item_coverage(test_id, ja, canon)
         check_kaisetsu_tag_keys(test_id, ja, canon)
-    check_kaisetsu_length(test_id, "ja", ja)
+    check_kaisetsu_length(test_id, PRIMARY, ja)
     # Gated on the paper having REACHED the model-answer stage: between
     # `make scaffold-explanations` and `make model-answer`, a file full of the
     # scaffold's own pre-filled lines is exactly what the pipeline should hold.
     if (td / "模範解答.html").is_file():
-        check_kaisetsu_no_scaffold_placeholders(test_id, "ja", ja)
-        for lang in ("vi",):
-            p = td / f"詳細解説.{lang}.json"
+        check_kaisetsu_no_scaffold_placeholders(test_id, PRIMARY, ja)
+        for lang in LEARNERS:
+            p = _kaisetsu_file(test_id, lang)
             if p.is_file():
                 try:
                     check_kaisetsu_no_scaffold_placeholders(
@@ -15550,7 +15744,7 @@ def check_kaisetsu_prose(test_id: str):
              "no 模範解答.html — the paper has not reached the model-answer "
              "stage, and a scaffolded file is legal until it does")
     check_kaisetsu_languages(test_id, ja)
-    check_kaisetsu_vi_points_furigana(test_id)
+    check_kaisetsu_learner_points_furigana(test_id)
     check_kaisetsu_passage_translation(test_id, ja)
     check_kaisetsu_wording_matches_source(test_id, ja)
 
@@ -16843,8 +17037,9 @@ def check_artifact_freshness(d):
                     "解答.html": ["言語知識・読解.md", "聴解.md", "聴解スクリプト.txt",
                                   "聴解_チャプター.json"],
                     "練習.html": ["言語知識・読解.md", "聴解.md", "聴解スクリプト.txt",
-                                  "聴解_チャプター.json", "詳細解説.json",
-                                  "詳細解説.vi.json"]}
+                                  "聴解_チャプター.json"]
+                                 + [_kaisetsu_file(d.name, lg).name
+                                    for lg in _LANG_ORDER]}
     for html_name, srcs in html_sources.items():
         page = d / html_name
         if not page.is_file():
@@ -17668,6 +17863,7 @@ def main():
         check_skills()
         check_filename_contracts()
         check_makefile_help()
+        check_language_registry()
         check_kaisetsu_band_doc()
         check_final_template_caps_documented()
         check_grandfather_sets_are_live()
@@ -17724,6 +17920,7 @@ def main():
         check_q14_apparatus_reuse()
         check_dokkai_template_repeat_prev_paper()
         check_topics_notes_quotes()
+        KNOWLEDGE.check_all(check, warn, skip, git_tracks)
     check_tests()
     check_grader_parity()
 

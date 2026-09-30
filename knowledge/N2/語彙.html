@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>N2 語彙</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0f172a;
+  --line:#cbd5e1;
+  --muted:#64748b;
+  --accent:#2563eb;
+  --accent-hover:#1d4ed8;
+  --ui:"Noto Sans JP",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Hiragino Sans","Yu Gothic",sans-serif;
+  --serif:"Noto Serif JP","Yu Mincho",serif;
+}
+/* The bar spans the full window on every screen, so the scrollbar sits ON its
+   right edge — the horizontal padding has to clear it or it covers 採点する. */
+#bar{
+  position:sticky;
+  top:0;
+  z-index:99;
+  background:linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color:#ffffff;
+  box-sizing:border-box;
+  min-height:3.4em;
+  padding:0 1.8em;
+  display:flex;
+  flex-wrap:nowrap;
+  gap:.6em 1.2em;
+  align-items:center;
+  font-family:var(--ui);
+  font-size:11pt;
+  box-shadow:0 4px 14px rgba(0,0,0,0.08);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+#bar b{
+  font-size:12.5pt;
+  font-weight:800;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  min-width:0;
+  max-width:20em;
+  color:#ffffff;
+}
+#bar .sub{
+  font-size:9.5pt;
+  color:#94a3b8;
+  font-variant-numeric:tabular-nums;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  min-width:0;
+}
+#bar .grow{
+  flex:1 1 auto;
+  min-width:.5em;
+}
+#bar-controls{
+  display:flex;
+  flex-wrap:nowrap;
+  align-items:center;
+  gap:.55em;
+  flex:0 0 auto;
+}
+/* The bar's own buttons — hence `:not(.lang-btn)`, here and in the mobile block
+   below. 練習.html drops exam-model-answer's segmented language control
+   (.lang-switch/.lang-btn, styled in build_model_answer.EXPLANATION_CSS) into
+   this bar, and an id-level rule here outranks every class rule that control
+   brings with it: the pill came out as two bar buttons. A control imported with
+   its own styling opts out, rather than having that styling restated here —
+   restating it is the copy that would drift. */
+#bar button:not(.lang-btn){
+  font-size:10pt;
+  font-weight:700;
+  padding:.3em .85em;
+  cursor:pointer;
+  border-radius:6px;
+  border:1px solid rgba(255,255,255,0.2);
+  background:rgba(255,255,255,0.1);
+  color:#ffffff;
+  font-family:var(--ui);
+  white-space:nowrap;
+  line-height:1.35;
+  min-height:34px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  transition:all .15s ease;
+}
+#bar button:not(.lang-btn):hover{
+  background:rgba(255,255,255,0.2);
+  border-color:rgba(255,255,255,0.35);
+}
+/* 採点する stays disabled until every item is answered (build_interactive's
+   updateCounter). It must READ disabled, not just refuse the click. */
+#bar button:disabled{
+  opacity:.45;
+  cursor:not-allowed;
+  box-shadow:none;
+}
+#bar button:disabled:hover{
+  background:rgba(255,255,255,0.1);
+  border-color:rgba(255,255,255,0.2);
+}
+#bar button.primary:disabled,
+#bar button.primary:disabled:hover{
+  background:var(--accent);
+  border-color:var(--accent);
+}
+#bar button.primary{
+  background:var(--accent);
+  color:#ffffff;
+  border-color:var(--accent);
+  box-shadow:0 2px 6px rgba(37,99,235,0.3);
+}
+#bar button.primary:hover{
+  background:var(--accent-hover);
+  border-color:var(--accent-hover);
+}
+#bar a.back{
+  display:inline-flex;
+  align-items:center;
+  gap:.35em;
+  color:#cbd5e1;
+  text-decoration:none;
+  font-size:10pt;
+  font-weight:700;
+  white-space:nowrap;
+  flex:0 0 auto;
+  padding:.3em .75em;
+  border-radius:6px;
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.15);
+  transition:all .15s ease;
+}
+#bar a.back:hover{
+  background:rgba(255,255,255,0.18);
+  color:#ffffff;
+  border-color:rgba(255,255,255,0.3);
+}
+.ui-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  font-size:10pt;
+  font-weight:600;
+  padding:0 1.1em;
+  height:38px;
+  min-height:38px;
+  max-height:38px;
+  line-height:36px;
+  border-radius:6px;
+  text-decoration:none;
+  border:1px solid var(--line);
+  background:#ffffff;
+  color:var(--ink);
+  cursor:pointer;
+  font-family:var(--ui);
+  box-sizing:border-box;
+  vertical-align:middle;
+  -webkit-appearance:none;
+  appearance:none;
+  transition:all .15s ease;
+}
+.ui-btn:hover{
+  background:#f8fafc;
+  border-color:#94a3b8;
+  color:var(--ink);
+}
+.ui-btn.primary{
+  background:var(--accent);
+  border-color:var(--accent);
+  color:#ffffff;
+  font-weight:700;
+  box-shadow:0 2px 6px rgba(37,99,235,0.2);
+}
+.ui-btn.primary:hover{
+  background:var(--accent-hover);
+  border-color:var(--accent-hover);
+  color:#ffffff;
+}
+.ui-btn.danger{
+  background:#ffffff;
+  border-color:#fca5a5;
+  color:#991b1b;
+}
+.ui-btn.danger:hover{
+  background:#fef2f2;
+  border-color:#f87171;
+}
+.ui-table-wrap{
+  width:100%;
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+  margin:.6em 0;
+  border-radius:8px;
+  border:1px solid var(--line);
+}
+.ui-table{
+  border-collapse:collapse;
+  width:100%;
+  font-size:10pt;
+  margin:0;
+  font-family:var(--ui);
+}
+.ui-table th,.ui-table td{
+  border:1px solid #e2e8f0;
+  padding:.55em .8em;
+  text-align:left;
+  vertical-align:middle;
+}
+.ui-table th{
+  background:#f1f5f9;
+  font-weight:700;
+  color:#1e293b;
+  border-bottom:2px solid #cbd5e1;
+}
+.ui-table tr{
+  transition:background .1s ease;
+}
+.ui-table tbody tr:hover{
+  background:#f8fafc;
+}
+.ui-table td.n{
+  text-align:right;
+  font-variant-numeric:tabular-nums;
+}
+.ui-table tr.weak td{
+  background:#fffbeb;
+  color:#92400e;
+}
+.badge{
+  font-size:9.5pt;
+  font-weight:700;
+  padding:.22em .75em;
+  border-radius:9999px;
+  border:1px solid;
+  white-space:nowrap;
+  font-variant-numeric:tabular-nums;
+  font-family:var(--ui);
+  display:inline-flex;
+  align-items:center;
+  letter-spacing:.02em;
+}
+.badge.pass{
+  background:#ecfdf5;
+  border-color:#a7f3d0;
+  color:#065f46;
+}
+.badge.fail{
+  background:#fef2f2;
+  border-color:#fecaca;
+  color:#991b1b;
+}
+.badge.none{
+  background:#f8fafc;
+  border-color:var(--line);
+  color:#64748b;
+}
+.badge.warn{
+  background:#fffbeb;
+  border-color:#fde68a;
+  color:#92400e;
+}
+.chip{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.35em;
+  font-size:9.5pt;
+  font-weight:700;
+  padding:.22em .6em;
+  border-radius:6px;
+  border:1px solid;
+  font-family:var(--ui);
+  font-variant-numeric:tabular-nums;
+  min-height:30px;
+  transition:all .15s ease;
+}
+.chip i{
+  font-style:normal;
+  font-size:8.5pt;
+  opacity:.8;
+}
+.chip.ok{
+  background:#ecfdf5;
+  border-color:#a7f3d0;
+  color:#065f46;
+}
+.chip.ng{
+  background:#fef2f2;
+  border-color:#fecaca;
+  color:#991b1b;
+}
+.chip.na{
+  background:#f8fafc;
+  border-color:var(--line);
+  color:#64748b;
+}
+.meter .track{
+  height:8px;
+  border-radius:9999px;
+  background:#e2e8f0;
+  overflow:hidden;
+  text-align:left;
+}
+.meter .fill{
+  height:100%;
+  border-radius:9999px;
+  background:var(--accent);
+  transition:width .3s ease;
+}
+.meter .fill.done{
+  background:#059669;
+}
+.meter .lbl{
+  font-size:9.5pt;
+  color:var(--muted);
+  margin-top:.35em;
+  text-align:left;
+  font-variant-numeric:tabular-nums;
+  font-family:var(--ui);
+}
+@media screen and (max-width: 48em){
+  #bar{
+    padding:.5em .9em;
+    gap:.4em .8em;
+    flex-wrap:wrap;
+    font-size:10pt;
+  }
+  #bar b{
+    max-width:12em;
+    font-size:11.5pt;
+  }
+  #bar .sub{
+    font-size:9pt;
+  }
+  #bar-controls{
+    gap:.4em;
+  }
+  #bar button:not(.lang-btn){
+    font-size:9.5pt;
+    padding:.3em .7em;
+    min-height:34px;
+  }
+  .ui-btn{
+    font-size:10pt;
+    padding:.4em .9em;
+    min-height:36px;
+  }
+}
+@media screen and (max-width: 32em){
+  #bar b{
+    max-width:8.5em;
+    font-size:10.5pt;
+  }
+  #where{
+    display:none;
+  }
+}
+
+/* Explanation Box */
+.explanation-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 1rem 1.15rem;
+  margin-top: 0.75rem;
+}
+.exp-heading {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+.exp-section-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin: 0.75rem 0 0.3rem;
+}
+.exp-content {
+  font-size: 0.92rem;
+  line-height: 1.8;
+  color: #334155;
+}
+.exp-options-list {
+  list-style: none;
+  margin-top: 0.35rem;
+}
+.exp-options-list li {
+  padding: 0.35rem 0;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+.exp-options-list li:last-child {
+  border-bottom: none;
+}
+.opt-tag-correct {
+  display: inline-block;
+  color: #065f46;
+  background: #d1fae5;
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-right: 0.35rem;
+}
+.opt-tag-wrong {
+  display: inline-block;
+  color: #991b1b;
+  background: #fee2e2;
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-right: 0.35rem;
+}
+.vocab-pill {
+  display: inline-block;
+  background: #e0f2fe;
+  color: #0369a1;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  margin: 0.2rem 0.25rem 0.2rem 0;
+}
+
+/* --- language switching -----------------------------------------------------
+   ONE mechanism for the whole page: every bilingual string ships both panes and
+   `body[data-lang]` hides the other. No JS text substitution, so a label cannot
+   go missing when a new one is added — it is either in UI[lang] or it is not
+   rendered at all. A single-language page emits no .lang-pane wrappers. The
+   per-language hide rules are generated from the registry (langs.pane_css()),
+   one line per active language, so adding one adds its rule. */
+.lang-pane { display: contents; }
+body[data-lang="ja"] .lang-pane:not([data-lang="ja"]) { display: none !important; }
+body[data-lang="vi"] .lang-pane:not([data-lang="vi"]) { display: none !important; }
+
+.lang-switch {
+  display: inline-flex;
+  background: rgba(255,255,255,0.12);
+  border-radius: 9999px;
+  padding: 0.18rem;
+  gap: 0.15rem;
+}
+.lang-btn {
+  border: none;
+  background: transparent;
+  color: #bfdbfe;
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.28rem 0.85rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+.lang-btn:hover { color: #fff; }
+.lang-btn.active { background: #fff; color: var(--primary); }
+
+body[data-lang="ja"] .lang-pane:not([data-lang="ja"]) { display: none !important; }
+body[data-lang="vi"] .lang-pane:not([data-lang="vi"]) { display: none !important; }
+
+*{box-sizing:border-box}
+:root{--primary:#1e3a8a;--card:#ffffff;--soft:#f1f5f9}
+body{margin:0;background:#f8fafc;color:var(--ink);font-family:var(--ui);line-height:1.7}
+ruby rt{font-size:.58em;color:var(--muted);user-select:none}
+#bar a.back{white-space:nowrap}
+.wrap{max-width:60rem;margin:0 auto;padding:1rem 1rem 4rem}
+.lead{color:var(--muted);margin:.2rem 0 1rem;font-size:.95rem}
+.tabs{display:flex;gap:.4rem;margin:.4rem 0 1rem;border-bottom:1px solid var(--line)}
+.tab-btn{border:none;background:none;font:inherit;font-weight:700;color:var(--muted);
+  padding:.55rem 1rem;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-1px}
+.tab-btn.active{color:var(--primary);border-bottom-color:var(--accent)}
+body[data-tab="study"] #quiz, body[data-tab="quiz"] #study{display:none}
+.controls{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.8rem}
+.controls input[type=search],.controls select{font:inherit;font-size:.92rem;border:1px solid var(--line);
+  border-radius:6px;padding:.45rem .6rem;background:#fff;color:var(--ink);min-height:38px}
+.controls input[type=search]{flex:1 1 16rem;min-width:0}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.seg button{border:none;background:#fff;font:inherit;font-size:.88rem;padding:.4rem .75rem;cursor:pointer;color:var(--ink)}
+.seg button+button{border-left:1px solid var(--line)}
+.seg button.active{background:var(--accent);color:#fff;font-weight:700}
+.stat{color:var(--muted);font-size:.88rem;font-variant-numeric:tabular-nums;margin:.2rem 0 .6rem}
+.dcard{background:var(--card);border:1px solid #e2e8f0;border-radius:10px;padding:1rem 1.1rem;margin:0 0 .9rem;
+  box-shadow:0 1px 3px rgba(0,0,0,.03);scroll-margin-top:4.5rem}
+.dcard.learned{border-left:4px solid #059669}
+.dcard.flash{box-shadow:0 0 0 3px rgba(37,99,235,.35)}
+.dc-head{display:flex;justify-content:space-between;align-items:flex-start;gap:.8rem}
+.dc-title{display:flex;flex-wrap:wrap;align-items:baseline;gap:.2rem .8rem}
+.hw{font-family:var(--serif);font-size:1.35rem;font-weight:700;color:#0f172a}
+.rd{color:var(--muted);font-size:.95rem}
+.learn-btn{flex:0 0 auto;font:inherit;font-size:.82rem;font-weight:700;border:1px solid var(--line);background:#fff;
+  color:var(--muted);border-radius:9999px;padding:.25rem .8rem;cursor:pointer;min-height:32px}
+.learn-btn[aria-pressed="true"]{background:#ecfdf5;border-color:#a7f3d0;color:#065f46}
+.dc-facts,.dc-prose{margin:.5rem 0 0}
+.dc-facts div,.dc-prose div{display:grid;grid-template-columns:6.5em 1fr;gap:.6rem;padding:.12rem 0}
+.dc-facts dt,.dc-prose dt{font-size:.8rem;font-weight:700;color:var(--primary);padding-top:.2rem}
+.dc-facts dd,.dc-prose dd{margin:0}
+.dc-prose .pr-meaning dd{font-weight:700}
+.dc-meta{display:flex;flex-wrap:wrap;gap:.3rem;margin:.45rem 0 0}
+.tag{font-size:.75rem;background:var(--soft);color:#334155;border-radius:4px;padding:.05rem .45rem}
+.tag.grp{background:#e0e7ff;color:#3730a3}
+.tag.off{background:#fef3c7;color:#92400e}
+.fb-note{font-size:.8rem;color:#92400e;background:#fffbeb;border-radius:4px;padding:.2rem .5rem;margin:.5rem 0 0}
+.dc-body p{margin:.5rem 0}
+.dc-lbl{font-size:.8rem;font-weight:700;color:var(--primary)}
+.dc-ex{margin-top:.6rem}
+.dc-ex ol{margin:.25rem 0 0;padding-left:1.4rem}
+.dc-ex li{margin:.3rem 0}
+.ex-ja{font-family:var(--serif)}
+.ex-note{font-size:.88rem;color:#475569}
+.dc-rel,.dc-src{margin-top:.5rem;font-size:.82rem}
+.dc-rel a{margin-right:.6rem;color:var(--accent)}
+.cite{color:var(--muted);margin-right:.7rem}
+.dc-hist{font-size:.78rem;color:var(--muted);margin-top:.3rem}
+.dc-hist:empty{display:none}
+.more{text-align:center;margin:1rem 0}
+.empty{color:var(--muted);text-align:center;padding:2rem 0}
+/* pronunciation: ▶ buttons appear only once a Japanese voice is found (body.tts) */
+.say,.tts-only{display:none}
+body.tts .say{display:inline-flex}
+body.tts .tts-only{display:inline-flex}
+.say{align-items:center;justify-content:center;width:1.7em;height:1.7em;margin:0 .3em;vertical-align:middle;
+  border:1px solid var(--line);border-radius:9999px;background:#fff;color:var(--accent);font-size:.7rem;cursor:pointer;padding:0}
+.say:hover{border-color:var(--accent)}
+.pitch{display:inline-flex;align-items:stretch;margin-right:.35em;line-height:1.35;padding:1px 0;font-size:.95rem}
+.pm{border:0 solid var(--pitch,#b91c1c);padding:0 .04em}
+.pm.h{border-top-width:2px}
+.pm.l{border-bottom-width:2px}
+.pm.up{border-left-width:2px}
+.pm.dn{border-right-width:2px}
+.pm.tail{min-width:.5em}
+.kw{display:inline-flex;align-items:center;margin:0 .9em .2em 0;flex-wrap:wrap}
+.kw .pitch{margin-left:.3em}
+footer.credit{max-width:60rem;margin:0 auto;padding:0 1rem 2rem;color:var(--muted);font-size:.75rem}
+/* quiz */
+.qbox{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:1.1rem 1.2rem}
+.qhead{display:flex;justify-content:space-between;color:var(--muted);font-size:.85rem;font-variant-numeric:tabular-nums}
+.qstem{font-family:var(--serif);font-size:1.12rem;margin:.6rem 0 .9rem}
+.qopts{display:grid;gap:.5rem}
+.qopt{text-align:left;font:inherit;font-family:var(--serif);border:1px solid var(--line);background:#fff;border-radius:8px;
+  padding:.6rem .8rem;cursor:pointer;color:var(--ink)}
+.qopt:hover:not(:disabled){border-color:var(--accent)}
+.qopt:disabled{cursor:default}
+.qopt.right{background:#ecfdf5;border-color:#34d399}
+.qopt.wrong{background:#fef2f2;border-color:#f87171}
+.qopt b{font-family:var(--ui);margin-right:.5rem;color:var(--muted)}
+.verdict{margin-top:.9rem}
+.verdict .v{font-weight:800}
+.verdict .v.ok{color:#065f46}.verdict .v.ng{color:#991b1b}
+.verdict .from{font-size:.85rem;margin-top:.4rem}
+.qsetup{display:grid;gap:.7rem;background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:1.1rem 1.2rem}
+.qsetup .row{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+.qsetup .row>.k{min-width:6em;font-weight:700;font-size:.88rem;color:var(--primary)}
+.qresult{text-align:center}
+.qresult .big{font-size:2rem;font-weight:800;font-variant-numeric:tabular-nums}
+.qactions{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:flex-end;margin-top:.9rem}
+.qresult .qactions{justify-content:center}
+/* index */
+.cats{display:grid;grid-template-columns:repeat(auto-fill,minmax(16rem,1fr));gap:.9rem}
+.cat{display:block;background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:1rem 1.1rem;color:inherit;
+  text-decoration:none;transition:all .15s ease}
+a.cat:hover{border-color:var(--accent);box-shadow:0 2px 8px rgba(37,99,235,.12)}
+.cat.off{opacity:.6}
+.cat h2{margin:0 0 .2rem;font-size:1.2rem}
+.cat p{margin:0;color:var(--muted);font-size:.88rem}
+.cat .n{margin-top:.6rem;font-size:.85rem;font-variant-numeric:tabular-nums}
+@media (max-width:40em){
+  .wrap{padding:.8rem .75rem 3rem}
+  .dc-facts div,.dc-prose div{grid-template-columns:1fr;gap:0}
+  .hw{font-size:1.2rem}
+}
+@media print{
+  #bar,.tabs,.controls,.learn-btn,.more,#quiz,.say{display:none!important}
+  .pm{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:#fff}
+  .dcard{box-shadow:none;break-inside:avoid;page-break-inside:avoid}
+}
+</style>
+</head>
+<body data-lang="ja" data-tab="study">
+<!-- src_sha: 語彙.json=80216c969544 -->
+
+<!-- src_sha: 語彙.ja.json=5f36b2ea2906 -->
+
+<!-- src_sha: 語彙.vi.json=5f36b2ea2906 -->
+
+<div id="bar"><a class="back" href="index.html"><span class="lang-pane" data-lang="ja">← 知識一覧</span><span class="lang-pane" data-lang="vi">← Danh sách phần kiến thức</span></a>
+<b>N2 語彙</b><span class="grow"></span><div class="lang-switch" role="group"><button type="button" class="lang-btn" data-lang="ja" onclick="setLang('ja')">日本語</button><button type="button" class="lang-btn" data-lang="vi" onclick="setLang('vi')">Tiếng Việt</button></div></div>
+<main class="wrap"><p class="lead"><span class="lang-pane" data-lang="ja">N2の語彙：読み・品詞・意味と例文</span><span class="lang-pane" data-lang="vi">Từ vựng N2: cách đọc, từ loại, nghĩa và câu ví dụ</span></p><nav class="tabs"><button type="button" class="tab-btn" data-tab="study" onclick="setTab('study')"><span class="lang-pane" data-lang="ja">学習</span><span class="lang-pane" data-lang="vi">Học</span></button><button type="button" class="tab-btn" data-tab="quiz" onclick="setTab('quiz')"><span class="lang-pane" data-lang="ja">クイズ</span><span class="lang-pane" data-lang="vi">Kiểm tra</span></button></nav><section id="study"><p class="empty"><span class="lang-pane" data-lang="ja">この分野は準備中です。</span><span class="lang-pane" data-lang="vi">Phần này đang được biên soạn.</span></p></section><section id="quiz"><p class="empty"><span class="lang-pane" data-lang="ja">この分野のクイズはまだありません。</span><span class="lang-pane" data-lang="vi">Phần này chưa có câu hỏi.</span></p></section></main>
+<script>
+const LANGS = ["ja","vi"];
+
+/* Flip the page to `lang`: `body[data-lang]` is what the CSS reads, so no JS
+   text substitution happens here and a label cannot go missing. Returns the
+   language actually applied (langs[0] when the argument is not on offer). */
+function applyLang(lang, langs, persist){
+  if (!langs.includes(lang)) lang = langs[0];
+  document.body.dataset.lang = lang;
+  document.documentElement.lang = lang;
+  document.querySelectorAll('.lang-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.lang === lang);
+  });
+  if (persist){ try { localStorage.setItem('kaisetsuLang', lang); } catch (e) {} }
+  return lang;
+}
+function savedLang(langs){
+  let s = null;
+  try { s = localStorage.getItem('kaisetsuLang'); } catch (e) {}
+  return langs.includes(s) ? s : langs[0];
+}
+
+
+window.JLPTKnowledgeStore = (function(){
+  var PREFIX = "jlpt-knowledge/v1", LEARNED = "覚えた.json", HISTORY = "クイズ履歴.json", PREFS = "設定.json";
+  function key(level, cat, name){ return PREFIX + '/' + level + '/' + cat + '/' + name; }
+  function read(level, cat, name){
+    try {
+      var raw = localStorage.getItem(key(level, cat, name));
+      var o = raw ? JSON.parse(raw) : null;
+      return (o && typeof o === 'object') ? o : {};
+    } catch (e){ return {}; }
+  }
+  function write(level, cat, name, obj){
+    try { localStorage.setItem(key(level, cat, name), JSON.stringify(obj)); return true; }
+    catch (e){ return false; }
+  }
+  return {
+    PREFIX: PREFIX, key: key,
+    learned: function(level, cat){ return read(level, cat, LEARNED); },
+    setLearned: function(level, cat, id, on){
+      var o = read(level, cat, LEARNED);
+      if (on) o[id] = 1; else delete o[id];
+      write(level, cat, LEARNED, o);
+      return o;
+    },
+    history: function(level, cat){ return read(level, cat, HISTORY); },
+    // Level-independent preferences (the speech rate) — one key for the module.
+    prefs: function(){
+      try { var o = JSON.parse(localStorage.getItem(PREFIX + '/' + PREFS) || 'null');
+            return (o && typeof o === 'object') ? o : {}; } catch (e){ return {}; }
+    },
+    setPrefs: function(o){
+      try { localStorage.setItem(PREFIX + '/' + PREFS, JSON.stringify(o)); } catch (e){}
+    },
+    record: function(level, cat, qid, ok){
+      var o = read(level, cat, HISTORY);
+      var h = o[qid] || {n: 0, ok: 0, last: 0};
+      h.n += 1; if (ok) h.ok += 1; h.last = ok ? 1 : 0;
+      o[qid] = h;
+      write(level, cat, HISTORY, o);
+      return h;
+    }
+  };
+})();
+
+const LEVEL = "N2", CAT = "語彙", PAGE = 50, RATE_SLOW = 0.7;
+const E = [];
+const Q = [];
+const L = {"quiz_correct":"<span class=\"lang-pane\" data-lang=\"ja\">正解<\/span><span class=\"lang-pane\" data-lang=\"vi\">Đúng rồi<\/span>","quiz_wrong":"<span class=\"lang-pane\" data-lang=\"ja\">不正解<\/span><span class=\"lang-pane\" data-lang=\"vi\">Chưa đúng<\/span>","quiz_answer_is":"<span class=\"lang-pane\" data-lang=\"ja\">正解：<\/span><span class=\"lang-pane\" data-lang=\"vi\">Đáp án:<\/span>","quiz_next":"<span class=\"lang-pane\" data-lang=\"ja\">次へ<\/span><span class=\"lang-pane\" data-lang=\"vi\">Câu tiếp theo<\/span>","quiz_finish":"<span class=\"lang-pane\" data-lang=\"ja\">結果を見る<\/span><span class=\"lang-pane\" data-lang=\"vi\">Xem kết quả<\/span>","quiz_from":"<span class=\"lang-pane\" data-lang=\"ja\">項目<\/span><span class=\"lang-pane\" data-lang=\"vi\">Thuộc mục<\/span>","quiz_history":"<span class=\"lang-pane\" data-lang=\"ja\">これまでの正答<\/span><span class=\"lang-pane\" data-lang=\"vi\">Số lần đúng trước đây<\/span>"};
+const T = {"learned":"<span class=\"lang-pane\" data-lang=\"ja\">覚えた<\/span><span class=\"lang-pane\" data-lang=\"vi\">Đã nhớ<\/span>","field_examples":"<span class=\"lang-pane\" data-lang=\"ja\">例文<\/span><span class=\"lang-pane\" data-lang=\"vi\">Câu ví dụ<\/span>","field_sources":"<span class=\"lang-pane\" data-lang=\"ja\">出典<\/span><span class=\"lang-pane\" data-lang=\"vi\">Nguồn<\/span>","field_related":"<span class=\"lang-pane\" data-lang=\"ja\">関連<\/span><span class=\"lang-pane\" data-lang=\"vi\">Liên quan<\/span>","field_reading":"<span class=\"lang-pane\" data-lang=\"ja\">読み<\/span><span class=\"lang-pane\" data-lang=\"vi\">Cách đọc<\/span>","field_connection":"<span class=\"lang-pane\" data-lang=\"ja\">接続<\/span><span class=\"lang-pane\" data-lang=\"vi\">Cách nối<\/span>","field_pos":"<span class=\"lang-pane\" data-lang=\"ja\">品詞<\/span><span class=\"lang-pane\" data-lang=\"vi\">Từ loại<\/span>","field_on":"<span class=\"lang-pane\" data-lang=\"ja\">音読み<\/span><span class=\"lang-pane\" data-lang=\"vi\">Âm On<\/span>","field_kun":"<span class=\"lang-pane\" data-lang=\"ja\">訓読み<\/span><span class=\"lang-pane\" data-lang=\"vi\">Âm Kun<\/span>","field_words":"<span class=\"lang-pane\" data-lang=\"ja\">語例<\/span><span class=\"lang-pane\" data-lang=\"vi\">Từ ghép<\/span>","field_meaning":"<span class=\"lang-pane\" data-lang=\"ja\">意味<\/span><span class=\"lang-pane\" data-lang=\"vi\">Ý nghĩa<\/span>","field_usage":"<span class=\"lang-pane\" data-lang=\"ja\">使い方<\/span><span class=\"lang-pane\" data-lang=\"vi\">Cách dùng<\/span>","field_nuance":"<span class=\"lang-pane\" data-lang=\"ja\">注意点<\/span><span class=\"lang-pane\" data-lang=\"vi\">Cần chú ý<\/span>","field_compare":"<span class=\"lang-pane\" data-lang=\"ja\">比較<\/span><span class=\"lang-pane\" data-lang=\"vi\">Phân biệt<\/span>","say_aria":"読み上げ / Nghe phát âm"}, TOK = /\ue000(\w+)\ue001/g;
+
+function setLang(c){ applyLang(c, LANGS, true); }
+function ctlValue(name){ const el = document.querySelector('[data-ctl="'+name+'"]'); return el ? el.value : ''; }
+function syncCtl(src){
+  document.querySelectorAll('[data-ctl="'+src.dataset.ctl+'"]').forEach(el => { if (el !== src) el.value = src.value; });
+}
+const S = window.JLPTKnowledgeStore;
+let learned = S.learned(LEVEL, CAT);
+let hist = S.history(LEVEL, CAT);
+const state = {status: 'all', list: [], shown: 0};
+
+function histText(id){
+  let n = 0, ok = 0;
+  Q.forEach(q => { if (q.id === id && hist[q.qid]) { n += hist[q.qid].n; ok += hist[q.qid].ok; } });
+  return n ? L.quiz_history + ' ' + ok + ' / ' + n : '';
+}
+function paintCard(el){
+  const id = el.dataset.id, on = !!learned[id];
+  el.classList.toggle('learned', on);
+  const b = el.querySelector('.learn-btn'); if (b) b.setAttribute('aria-pressed', on ? 'true' : 'false');
+  const h = el.querySelector('.dc-hist'); if (h) h.innerHTML = histText(id);
+}
+function learnedCount(){ return E.filter(e => learned[e.id]).length; }
+function paintHeader(){
+  document.querySelectorAll('.js-learned').forEach(x => x.textContent = learnedCount());
+}
+/* The search index is the card's own text (headword, ruby readings, examples,
+   every language's prose — not its related links or citations), derived on
+   first use rather than shipped twice. */
+function searchText(e){
+  if (e.s === undefined) e.s = e.html.replace(/<div class="dc-(rel|src)">.*?<\/div>/g, ' ')
+                                     .replace(/\ue000\w+\ue001/g, ' ').replace(/<[^>]*>/g, ' ')
+                                     .replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+                                     .replace(/&quot;/g, '"').replace(/&#x27;/g, "'").toLowerCase();
+  return e.s;
+}
+function matches(e, q, g, t, o){
+  if (g && e.g !== g) return false;
+  if (t && !(e.t || []).includes(t)) return false;
+  if (o === 'yes' && !(e.oc > 0)) return false;
+  if (state.status === 'todo' && learned[e.id]) return false;
+  if (state.status === 'done' && !learned[e.id]) return false;
+  if (q) { const s = searchText(e); for (const w of q.split(/\s+/)) if (w && s.indexOf(w) < 0) return false; }
+  return true;
+}
+function refresh(){
+  if (!document.getElementById('cards')) return;          // an empty (準備中) category
+  const q = (ctlValue('q') || '').trim().toLowerCase();
+  const g = ctlValue('group'), t = ctlValue('tag'), o = ctlValue('official'), so = ctlValue('sort');
+  let list = E.map((e, i) => i).filter(i => matches(E[i], q, g, t, o));
+  if (so === 'official') list.sort((a, b) => (E[b].oc || 0) - (E[a].oc || 0) || a - b);
+  state.list = list; state.shown = 0;
+  document.getElementById('cards').innerHTML = '';
+  more();
+  document.querySelectorAll('.js-hits').forEach(x => x.textContent = list.length);
+  document.getElementById('nomatch').hidden = list.length > 0 || E.length === 0;
+}
+function more(until){
+  const box = document.getElementById('cards');
+  if (!box) return;
+  const end = Math.min(state.list.length, Math.max(state.shown + PAGE, until || 0));
+  const frag = document.createElement('div');
+  frag.innerHTML = state.list.slice(state.shown, end).map(i => E[i].html.replace(TOK, (m, k) => T[k] || '')).join('');
+  Array.from(frag.children).forEach(el => { paintCard(el); box.appendChild(el); });
+  state.shown = end;
+  document.getElementById('more').hidden = state.shown >= state.list.length;
+}
+function goTo(id){
+  let pos = state.list.findIndex(i => E[i].id === id);
+  if (pos < 0) {
+    document.querySelectorAll('[data-ctl]:not([data-ctl^="qz-"])').forEach(el => { el.value = el.tagName === 'SELECT' ? el.options[0].value : ''; });
+    setStatus('all', true); refresh();
+    pos = state.list.findIndex(i => E[i].id === id);
+  }
+  if (pos < 0) return;
+  if (pos >= state.shown) more(pos + 1);
+  setTab('study');
+  const el = document.getElementById('e-' + id);
+  if (el) { el.scrollIntoView({block: 'start'}); el.classList.add('flash'); setTimeout(() => el.classList.remove('flash'), 1400); }
+}
+function setStatus(s, quiet){
+  state.status = s;
+  document.querySelectorAll('[data-status]').forEach(b => b.classList.toggle('active', b.dataset.status === s));
+  if (!quiet) refresh();
+}
+function setTab(t){
+  document.body.dataset.tab = t;
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === t));
+}
+document.addEventListener('click', ev => {
+  const lb = ev.target.closest('.learn-btn');
+  if (lb) { const id = lb.dataset.id; learned = S.setLearned(LEVEL, CAT, id, !learned[id]);
+            paintCard(lb.closest('.dcard')); paintHeader(); return; }
+  const go = ev.target.closest('[data-goto]');
+  if (go) { ev.preventDefault(); goTo(go.dataset.goto); }
+});
+document.addEventListener('input', ev => {
+  if (ev.target.dataset && ev.target.dataset.ctl) { syncCtl(ev.target); if (!ev.target.dataset.ctl.startsWith('qz-')) refresh(); }
+});
+document.addEventListener('change', ev => {
+  if (ev.target.dataset && ev.target.dataset.ctl) { syncCtl(ev.target); if (!ev.target.dataset.ctl.startsWith('qz-')) refresh(); }
+});
+
+
+/* ---- speech (browser speechSynthesis; the text is already kana) ---- */
+const TTS = {voice: null, rate: 1};
+function pickVoice(){
+  if (!('speechSynthesis' in window)) return;
+  const vs = window.speechSynthesis.getVoices() || [];
+  const v = vs.find(x => /^ja[-_]JP$/i.test(x.lang)) || vs.find(x => /^ja\b/i.test(x.lang));
+  if (v) { TTS.voice = v; document.body.classList.add('tts'); }
+}
+function say(text){
+  if (!TTS.voice || !text) return;
+  const s = window.speechSynthesis; s.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'ja-JP'; u.voice = TTS.voice; u.rate = TTS.rate; s.speak(u);
+}
+function setRate(r, persist){
+  TTS.rate = r;
+  document.querySelectorAll('[data-rate]').forEach(b => b.classList.toggle('active', parseFloat(b.dataset.rate) === r));
+  if (persist) { const p = S.prefs(); p.rate = r; S.setPrefs(p); }
+}
+document.addEventListener('click', ev => {
+  const b = ev.target.closest('.say'); if (b) { ev.preventDefault(); ev.stopPropagation(); say(b.dataset.say); }
+}, true);
+document.addEventListener('DOMContentLoaded', () => {
+  const r = parseFloat(S.prefs().rate); setRate(r === RATE_SLOW ? RATE_SLOW : 1, false);
+  if ('speechSynthesis' in window) {
+    pickVoice();
+    const s = window.speechSynthesis;
+    if (s.addEventListener) s.addEventListener('voiceschanged', pickVoice); else s.onvoiceschanged = pickVoice;
+  }
+});
+
+/* ---- quiz ---- */
+const qz = {pool: [], i: 0, score: 0, wrong: [], answered: false, last: []};
+function shuffle(a){ for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+function quizPool(){
+  const g = ctlValue('qz-group'), st = ctlValue('qz-status'), n = ctlValue('qz-n');
+  let p = Q.map((q, i) => i).filter(i => {
+    const q = Q[i];
+    if (g && q.g !== g) return false;
+    if (st === 'todo' && learned[q.id]) return false;
+    if (st === 'missed' && !(hist[q.qid] && hist[q.qid].last === 0)) return false;
+    return true;
+  });
+  shuffle(p);
+  if (n !== 'all') p = p.slice(0, parseInt(n, 10));
+  return p;
+}
+function quizView(which){
+  ['qz-setup', 'qz-run', 'qz-done'].forEach(id => { const el = document.getElementById(id); if (el) el.hidden = id !== which; });
+}
+function startQuiz(pool){
+  qz.pool = pool || quizPool(); qz.i = 0; qz.score = 0; qz.wrong = [];
+  document.getElementById('qz-nomatch').hidden = qz.pool.length > 0;
+  if (!qz.pool.length) return;
+  quizView('qz-run'); showQ();
+}
+function showQ(){
+  const q = Q[qz.pool[qz.i]]; qz.answered = false;
+  document.getElementById('qz-pos').textContent = (qz.i + 1) + ' / ' + qz.pool.length;
+  document.getElementById('qz-score').textContent = qz.score;
+  document.getElementById('qz-stem').innerHTML = q.stem;
+  document.getElementById('qz-opts').innerHTML = q.opts.map((o, k) =>
+    '<button type="button" class="qopt" data-k="' + (k + 1) + '"><b>' + (k + 1) + '</b>' + o + '</button>').join('');
+  document.getElementById('qz-verdict').hidden = true;
+  document.getElementById('qz-next').hidden = true;
+}
+function choose(k){
+  if (qz.answered) return; qz.answered = true;
+  const q = Q[qz.pool[qz.i]], ok = k === q.a;
+  if (ok) qz.score++; else qz.wrong.push(qz.pool[qz.i]);
+  hist = Object.assign({}, hist); hist[q.qid] = S.record(LEVEL, CAT, q.qid, ok);
+  document.querySelectorAll('#qz-opts .qopt').forEach(b => {
+    const kk = parseInt(b.dataset.k, 10); b.disabled = true;
+    if (kk === q.a) b.classList.add('right'); else if (kk === k) b.classList.add('wrong');
+  });
+  const v = document.getElementById('qz-verdict');
+  v.innerHTML = '<div class="v ' + (ok ? 'ok' : 'ng') + '">' + (ok ? L.quiz_correct : L.quiz_wrong)
+    + (ok ? '' : ' — ' + L.quiz_answer_is + ' ' + q.a) + '</div>'
+    + '<div class="exp-content">' + q.x + '</div>'
+    + '<div class="from">' + L.quiz_from + ': <a href="#e-' + q.id + '" data-goto="' + q.id + '">' + q.from + '</a></div>';
+  v.hidden = false;
+  document.getElementById('qz-score').textContent = qz.score;
+  const nx = document.getElementById('qz-next');
+  nx.innerHTML = qz.i + 1 < qz.pool.length ? L.quiz_next : L.quiz_finish; nx.hidden = false;
+  document.querySelectorAll('.dcard[data-id="' + q.id + '"]').forEach(paintCard);
+}
+function nextQ(){
+  if (qz.i + 1 < qz.pool.length) { qz.i++; showQ(); return; }
+  qz.last = qz.pool.slice();
+  document.getElementById('qz-final').textContent = qz.score + ' / ' + qz.pool.length;
+  document.getElementById('qz-retry-wrong').hidden = !qz.wrong.length;
+  quizView('qz-done');
+}
+document.addEventListener('click', ev => {
+  const o = ev.target.closest('.qopt'); if (o) { choose(parseInt(o.dataset.k, 10)); return; }
+  const a = ev.target.closest('[data-qz]'); if (!a) return;
+  const act = a.dataset.qz;
+  if (act === 'start') startQuiz();
+  else if (act === 'next') nextQ();
+  else if (act === 'quit' || act === 'setup') quizView('qz-setup');
+  else if (act === 'retry') startQuiz(shuffle(qz.last.slice()));
+  else if (act === 'retry-wrong') startQuiz(shuffle(qz.wrong.slice()));
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  applyLang(savedLang(LANGS), LANGS, false);
+  setTab('study'); refresh(); paintHeader();
+  const s = document.getElementById('sentinel');
+  if (s && 'IntersectionObserver' in window) {
+    new IntersectionObserver(es => { if (es.some(x => x.isIntersecting) && state.shown < state.list.length) more(); },
+                             {rootMargin: '800px'}).observe(s);
+  }
+  if (location.hash.startsWith('#e-')) goTo(decodeURIComponent(location.hash.slice(3)));
+});
+
+</script>
+</body>
+</html>

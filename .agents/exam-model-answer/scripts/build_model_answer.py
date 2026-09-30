@@ -43,7 +43,8 @@ def gengo_taxonomy_for(max_q: int | None = None, level: str = LEVEL.DEFAULT_LEVE
     counts = shapes.get(max_q, shapes[g["generated_shape"]])
     tax, q = {}, 1
     for m, n in zip(g["mondai"], counts):
-        tax[m["code"]] = {"mondai": m["mondai"], "name": m["name"], "en": m["en"],
+        tax[m["code"]] = {"mondai": m["mondai"], "name": m["name"],
+                          "en": m["en"],  # not a language code: the level table's English-gloss field
                           "range": (q, q + n - 1), "section": m["part"]}
         q += n
     return tax
@@ -54,99 +55,65 @@ GENGO_TAXONOMY = gengo_taxonomy_for()
 
 
 def choukai_taxonomy_for(level: str = LEVEL.DEFAULT_LEVEL) -> dict:
-    return {m["code"]: {"name": m["name"], "en": m["en"], "section": "聴解"}
+    return {m["code"]: {"name": m["name"], "section": "聴解",
+                        "en": m["en"]}  # not a language code: the level table's English-gloss field
             for m in LEVEL.choukai(level)["mondai"]}
 
 
 CHOUKAI_TAXONOMY = choukai_taxonomy_for()
 
 # ---------------------------------------------------------------- languages
-# 模範解答.html carries the explanation set in TWO languages, switched in-page by
-# a segmented control. The two sets are INDEPENDENTLY AUTHORED, never translated
-# from one another (exam-model-answer/SKILL.md "Two languages, two rewrites") —
-# a Vietnamese learner needs a different explanation of a Japanese item than a
-# Japanese-reading one does, and a sentence-for-sentence translation reproduces
-# the source's framing instead of the reader's.
+# 模範解答.html carries the explanation set in every registry language, switched
+# in-page by a segmented control. The sets are INDEPENDENTLY AUTHORED, never
+# translated from one another (exam-model-answer/SKILL.md "One rewrite
+# per language") — a Vietnamese learner needs a different explanation of a
+# Japanese item than a Japanese-reading one does, and a sentence-for-sentence
+# translation reproduces the source's framing instead of the reader's.
 #
-# `ja` is required; `vi` renders only when 詳細解説.vi.json exists, so a paper
-# still mid-migration prints exactly the page it printed before, switcher and
-# all suppressed. LANGS is the order the segments appear in.
-LANGS = ["ja", "vi"]
+# WHICH languages is not this file's business: the learner-language registry
+# (references/languages/, read through langs.py) lists them, their names and
+# every label below. The primary language (詳細解説.json) is required; every
+# other one renders only when its 詳細解説.<code>.json exists, so a paper still
+# mid-authoring prints exactly the page it printed before, switcher and all
+# suppressed. LANGS is the order the segments appear in.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import langs as LANG_REG  # noqa: E402
 
-LANG_NAME = {"ja": "日本語", "vi": "Tiếng Việt"}
+LANGS = LANG_REG.order()
+PRIMARY = LANG_REG.primary()
 
-# Every label the page prints outside the exam's own wording lives here, once
-# per language — so a label cannot be typed twice and drift.
-UI = {
-    "ja": {
-        "html_lang": "ja",
-        "doc_title": "テスト {test_id}（模範解答・詳細解説）",
-        "back": "← 採点結果へ戻る",
-        "title": "日本語能力試験 {level} 模範解答・詳細解説",
-        "subtitle": "テスト <strong>{test_id}</strong> ｜ <span>全{n_all}問（言語知識・読解 {n_gengo}問 ＋ 聴解 {n_choukai}問）完全網羅解説集</span>",
-        "tab_all": "すべて",
-        "tab_goi": "文字・語彙",
-        "tab_bunpou": "文法",
-        "tab_dokkai": "読解",
-        "tab_choukai": "聴解",
-        "search_placeholder": "問題番号・キーワード検索...",
-        "passage_title": "本文 / 資料",
-        "passage_tr_title": "本文の訳",
-        "passage_src_btn": "原文",
-        "passage_tr_btn": "訳",
-        "script_title": "音声スクリプト",
-        "play_btn": "音声再生",
-        "audio_label": "聴解音声",
-        "audio_ready": "準備完了",
-        "audio_playing": "再生中: ",
-        "ans_badge": "正解: ",
-        "q_num": "第 {n} 問",
-        "q_type_choukai": "聴解セクション",
-        "exp_heading": "詳細解説",
-        "why_title": "【正解の理由・根拠】",
-        "why_title_choukai": "【正解の理由・聞き取りポイント】",
-        "options_title": "【各選択肢の解説】",
-        "points_title": "【重要語彙・文法ポイント】",
-        "points_title_choukai": "【重要表現・リスニングポイント】",
-        "tag_correct": "[正解]",
-        "tag_wrong": "[不正解]",
-        "footer": "JLPT {level} Mock Exam Model Answer &amp; Comprehensive Explanation (模範解答.html)",
-    },
-    "vi": {
-        "html_lang": "vi",
-        "doc_title": "Đề {test_id}（Đáp án mẫu・Giải thích chi tiết）",
-        "back": "← Về kết quả chấm",
-        "title": "JLPT {level} — Đáp án mẫu và giải thích chi tiết",
-        "subtitle": "Đề <strong>{test_id}</strong> ｜ <span>Giải thích đầy đủ {n_all} câu (Kiến thức ngôn ngữ・Đọc hiểu {n_gengo} câu ＋ Nghe {n_choukai} câu)</span>",
-        "tab_all": "Tất cả",
-        "tab_goi": "Chữ Hán・Từ vựng",
-        "tab_bunpou": "Ngữ pháp",
-        "tab_dokkai": "Đọc hiểu",
-        "tab_choukai": "Nghe",
-        "search_placeholder": "Tìm theo số câu hoặc từ khoá...",
-        "passage_title": "Đoạn văn / Tư liệu",
-        "passage_tr_title": "Bản dịch đoạn văn",
-        "passage_src_btn": "Nguyên văn",
-        "passage_tr_btn": "Bản dịch",
-        "script_title": "Lời thoại audio",
-        "play_btn": "Phát audio",
-        "audio_label": "Audio phần nghe",
-        "audio_ready": "Sẵn sàng",
-        "audio_playing": "Đang phát: ",
-        "ans_badge": "Đáp án: ",
-        "q_num": "Câu {n}",
-        "q_type_choukai": "Phần nghe",
-        "exp_heading": "Giải thích chi tiết",
-        "why_title": "【Lý do chọn đáp án đúng】",
-        "why_title_choukai": "【Lý do đúng・Điểm cần nghe ra】",
-        "options_title": "【Phân tích từng lựa chọn】",
-        "points_title": "【Từ vựng・Ngữ pháp cần nhớ】",
-        "points_title_choukai": "【Mẫu câu・Điểm nghe cần nhớ】",
-        "tag_correct": "[Đúng]",
-        "tag_wrong": "[Sai]",
-        "footer": "Đề thi thử JLPT {level} — Đáp án mẫu và giải thích chi tiết (模範解答.html)",
-    },
-}
+LANG_NAME = {lg: LANG_REG.name(lg) for lg in LANGS}
+
+# Every label the page prints outside the exam's own wording, once per language
+# (references/languages/<code>/model_answer.json) — so a label cannot be typed
+# twice and drift. `html_lang` comes from that language's meta.json.
+UI = {lg: {"html_lang": LANG_REG.html_lang(lg), **LANG_REG.ui(lg, "model_answer")}
+      for lg in LANGS}
+
+
+def kaisetsu_path(test_dir: Path, lang: str) -> Path:
+    """`詳細解説.json` for the primary language, `詳細解説.<code>.json` otherwise."""
+    return LANG_REG.content_path(Path(test_dir) / "詳細解説.json", lang)
+
+
+def load_details(test_dir: Path) -> dict:
+    """{lang: 詳細解説 data} for every registry language whose file exists.
+
+    The primary set owns the exam-derived wording (stem/options/passage/script)
+    as well as its own prose; every other language's file carries ONLY authored
+    prose, so the booklet's wording has exactly one copy and cannot drift
+    between panes. 練習.html loads through here too.
+    """
+    details = {}
+    for lg in LANGS:
+        fpath = kaisetsu_path(test_dir, lg)
+        if not fpath.is_file():
+            continue
+        try:
+            details[lg] = json.loads(fpath.read_text(encoding="utf-8"))
+        except Exception as exc:
+            print(f"  ! {fpath.name} did not parse, its pane will fall back to the booklet 解説: {exc}")
+    return details
 
 
 def pane(langs: list, render) -> str:
@@ -515,10 +482,11 @@ EXPLANATION_CSS = """
    ONE mechanism for the whole page: every bilingual string ships both panes and
    `body[data-lang]` hides the other. No JS text substitution, so a label cannot
    go missing when a new one is added — it is either in UI[lang] or it is not
-   rendered at all. A single-language page emits no .lang-pane wrappers. */
+   rendered at all. A single-language page emits no .lang-pane wrappers. The
+   per-language hide rules are generated from the registry (langs.pane_css()),
+   one line per active language, so adding one adds its rule. */
 .lang-pane { display: contents; }
-body[data-lang="ja"] .lang-pane[data-lang="vi"],
-body[data-lang="vi"] .lang-pane[data-lang="ja"] { display: none !important; }
+""" + LANG_REG.pane_css() + """
 
 .lang-switch {
   display: inline-flex;
@@ -546,10 +514,10 @@ body[data-lang="vi"] .lang-pane[data-lang="ja"] { display: none !important; }
 
 
 # --- 読解 passage: 原文 / 訳 toggle, per group (2026-09-08) --------------------
-# The VI pane ships BOTH the source passage and its translation, and a two-button
+# A learner-language pane ships BOTH the source passage and its translation, and a two-button
 # control picks which one shows. Same mechanism as the page-wide language switch,
 # one level down: the state is a data attribute on the group
-# (`.passage-vi[data-ptext]`), CSS hides the other pane, and no JS writes text —
+# (`.passage-tr[data-ptext]`), CSS hides the other pane, and no JS writes text —
 # so the control cannot get out of step with what is rendered. Per-group on
 # purpose: a reader checks the Japanese of ONE passage without losing the
 # translation on the other twelve. A group with no translation authored yet
@@ -601,10 +569,10 @@ PASSAGE_TOGGLE_CSS = """
   white-space: nowrap;
 }
 .ptext-btn:hover { color: var(--primary); }
-.passage-vi[data-ptext="src"] .ptext-pane[data-ptext="tr"],
-.passage-vi[data-ptext="tr"] .ptext-pane[data-ptext="src"] { display: none !important; }
-.passage-vi[data-ptext="src"] .ptext-btn[data-ptext="src"],
-.passage-vi[data-ptext="tr"] .ptext-btn[data-ptext="tr"] {
+.passage-tr[data-ptext="src"] .ptext-pane[data-ptext="tr"],
+.passage-tr[data-ptext="tr"] .ptext-pane[data-ptext="src"] { display: none !important; }
+.passage-tr[data-ptext="src"] .ptext-btn[data-ptext="src"],
+.passage-tr[data-ptext="tr"] .ptext-btn[data-ptext="tr"] {
   background: #fff;
   color: var(--primary);
   box-shadow: 0 1px 2px rgba(15,23,42,0.12);
@@ -615,7 +583,7 @@ PASSAGE_TOGGLE_CSS = """
 # Shared with 練習.html for the same reason the CSS is.
 PASSAGE_TOGGLE_JS = """
 function setPassageText(btn, mode) {
-  const box = btn.closest('.passage-vi');
+  const box = btn.closest('.passage-tr');
   if (box) box.dataset.ptext = mode;
 }
 """
@@ -1340,18 +1308,9 @@ def build_model_answer(test_dir: Path, out_path: Path | None = None) -> Path:
     # exam-derived wording — stem/options/passage/script — as well as its own
     # prose; every other language's file carries ONLY the authored prose, so the
     # booklet's wording has exactly one copy and cannot drift between panes.
-    details = {}
-    for lg in LANGS:
-        fname = "詳細解説.json" if lg == "ja" else f"詳細解説.{lg}.json"
-        fpath = test_dir / fname
-        if not fpath.is_file():
-            continue
-        try:
-            details[lg] = json.loads(fpath.read_text(encoding="utf-8"))
-        except Exception as exc:
-            print(f"  ! {fname} did not parse, its pane will fall back to the booklet 解説: {exc}")
-    langs = [lg for lg in LANGS if lg in details] or ["ja"]
-    detailed_data = details.get("ja", {})
+    details = load_details(test_dir)
+    langs = [lg for lg in LANGS if lg in details] or [PRIMARY]
+    detailed_data = details.get(PRIMARY, {})
     if len(langs) > 1:
         print(f"  languages: {', '.join(langs)}")
 
@@ -1425,20 +1384,20 @@ def build_model_answer(test_dir: Path, out_path: Path | None = None) -> Path:
             passage_html = ""
             passage_text = detail.get("passage") if "passage" in detail else raw_q.get("passage")
             if passage_text and passage_text != prev_passage_text:
-                # The Vietnamese pane translates the passage; the Japanese pane
-                # prints it. `passage_translation` lives in 詳細解説.vi.json on
+                # A learner-language pane translates the passage; the primary
+                # pane prints it. `passage_translation` lives in 詳細解説.<code>.json on
                 # the group's FIRST item — it is authored prose, not the exam
                 # wording 詳細解説.json owns, which is why it has its own field
                 # name and does not trip check_kaisetsu_languages' paste rule.
-                # The VI pane ships BOTH texts behind a per-group 原文/訳 toggle
-                # (2026-09-08): the translation is what a Vietnamese reader wants
+                # That pane ships BOTH texts behind a per-group 原文/訳 toggle
+                # (2026-09-08): the translation is what a learner reader wants
                 # by default, but 読解 study means checking a claim against the
                 # Japanese the question actually asks about, and scrolling to the
                 # other language pane loses the explanation with it.
                 def _passage_pane(lg, _txt=passage_text, _q=q_num):
                     src_html = (f'<div class="passage-title">{UI[lg]["passage_title"]}</div>'
                                 + format_passage_text(_txt))
-                    if lg == "ja":
+                    if lg == PRIMARY:
                         return src_html
                     tr = ((details.get(lg) or {}).get(str(_q)) or {}).get("passage_translation")
                     if not tr:
@@ -1447,7 +1406,7 @@ def build_model_answer(test_dir: Path, out_path: Path | None = None) -> Path:
                         # no toggle, because there is nothing to toggle to.
                         return src_html
                     return (
-                        '<div class="passage-vi" data-ptext="tr">'
+                        '<div class="passage-tr" data-ptext="tr">'
                         '<div class="passage-head"><div class="passage-title">'
                         f'<span class="ptext-pane" data-ptext="src">{UI[lg]["passage_title"]}</span>'
                         f'<span class="ptext-pane" data-ptext="tr">{UI[lg]["passage_tr_title"]}</span>'
@@ -1470,13 +1429,17 @@ def build_model_answer(test_dir: Path, out_path: Path | None = None) -> Path:
 
             explanation_html = explanation_box_html(details, str(q_num), ans_val,
                                                     raw_kaisetsu, langs)
+            # The 大問 name in the primary pane, its English gloss in every other.
+            gloss = tax_info["en"]  # not a language code: the level table's English-gloss field
+            type_label = pane(langs, lambda lg: tax_info["mondai"] + " " + (
+                tax_info["name"] if lg == PRIMARY else gloss))
 
             card_html = f"""
             <div class="q-card" id="q-{q_num}" data-section="{sec_code}">
               <div class="q-header">
                 <div class="q-meta">
                   <span class="q-num-badge">{pane(langs, lambda lg: UI[lg]["q_num"].format(n=q_num))}</span>
-                  <span class="q-type-badge">{pane(langs, lambda lg: tax_info["mondai"] + " " + (tax_info["name"] if lg == "ja" else tax_info["en"]))}</span>
+                  <span class="q-type-badge">{type_label}</span>
                 </div>
                 <div class="q-ans-badge">{pane(langs, lambda lg: UI[lg]["ans_badge"])}{ans_val}</div>
               </div>

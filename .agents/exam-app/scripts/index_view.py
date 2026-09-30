@@ -1,24 +1,32 @@
-"""Screen 1 — the test list, ONE implementation for both deployments.
+"""The exam list — `/<LEVEL>/exam/`, ONE implementation for both deployments.
 
 The list exists twice over: `serve_sheet.py` serves it from disk (`make serve`),
-and `build_pages.py` bakes it into a static `index.html` for GitHub Pages, where
-progress lives in localStorage instead. Rendering it twice in two languages is
-exactly how "the same" screen drifts, so the markup lives here once, in JS, and
-both deployments feed it the SAME array of test objects:
+and `build_pages.py` bakes it into a static `<LEVEL>/exam/index.html` for GitHub
+Pages, where progress lives in localStorage instead. Rendering it twice in two
+languages is exactly how "the same" screen drifts, so the markup lives here
+once, in JS, and both deployments feed it the SAME array of test objects:
 
     {id, origin, level, answered, total, has_sheet, has_audio,
      result: {passed, total_scaled_score, max_scaled_score, graded_at} | null}
 
 `serve_sheet.py` produces that array in Python (`progress_of()`) and hands it
-over `GET /api/tests`; the Pages build bakes a manifest of the static half
-(`id/origin/level/has_sheet/has_audio`) and the page fills in the progress half from
-localStorage. Only the *source* differs — the cards, the CSS and the actions are
-this file.
+over `GET /api/tests?level=`; the Pages build bakes a manifest of the static half
+(`id/origin/level/has_sheet/has_audio`) and the page fills in the progress half
+from localStorage. Only the *source* differs — the cards, the CSS and the actions
+are this file.
 
-The cards are not a flat list: they hang under two collapsible `<details>`
-groups keyed on `origin` (imported past papers vs generated mocks), both shut on
-load, plus a search box that filters on id/origin/level (`n1`, `N2`) and
-force-opens whichever group holds a hit. Every card carries its exam level.
+The level is chosen upstream, on the portal's level chooser (portal_view.py);
+this page shows one level and a breadcrumb back to that level's module chooser.
+It renders through `portal_view.page()`, so header, breadcrumb and language
+switch are the portal's own, and its labels are the portal namespace's `list_*`
+strings (langs.py) — both languages in the markup, `body[data-lang]` picks one.
+
+The cards hang under two collapsible `<details>` groups keyed on `origin`
+(imported past papers vs generated mocks), both shut on load, plus a search box
+that filters on id/origin and force-opens whichever group holds a hit.
+
+Every link out of the page is relative (`../../tests/<id>/解答.html`): the page
+sits two folders below the site root in both deployments.
 
 Keep it dependency-free (see app_style.py): `make serve` must start without the
 authoring dependencies installed.
@@ -33,8 +41,8 @@ from pathlib import Path
 # directory is on the path.
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-import app_style      # noqa: E402
 import local_store    # noqa: E402
+import portal_view    # noqa: E402
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "jlpt-exam-structure" / "scripts"))
 import level as LEVEL  # noqa: E402
 
@@ -45,49 +53,8 @@ QUESTION_COUNT = LEVEL.total_items()
 SHEET = "解答.html"
 
 INDEX_CSS = """
-*{box-sizing:border-box}
-body{margin:0;background:#f8fafc;color:var(--ink);font-family:var(--ui)}
-header.app-header{
-  background:linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  color:#fff;
-  padding:1.6rem 1.4rem 1.8rem;
-  box-shadow:0 4px 14px rgba(0,0,0,0.06);
-}
-.header-inner{
-  max-width:82em;
-  margin:0 auto;
-}
-.header-top-row{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:1rem;
-  margin-bottom:0.65rem;
-  flex-wrap:wrap;
-}
-.header-badge{
-  display:inline-block;
-  background:rgba(255,255,255,0.12);
-  color:#93c5fd;
-  font-size:0.8rem;
-  font-weight:700;
-  padding:0.25rem 0.75rem;
-  border-radius:9999px;
-  letter-spacing:0.04em;
-}
-h1.title{
-  font-size:1.75rem;
-  font-weight:900;
-  margin:0 0 0.35rem;
-  color:#ffffff;
-}
-.subtitle{
-  color:#94a3b8;
-  font-size:0.92rem;
-}
-/* Wider than exam/result (60em): cards with many action buttons need the room. */
-main{max-width:82em;margin:0 auto;padding:1.8em 1.5em 5em}
-.lede{margin:0 0 1.6em;font-size:10.5pt;color:var(--muted);line-height:1.6}
+/* Header, breadcrumb, <main> and .lede are portal_view.PORTAL_CSS — the list
+   renders through portal_view.page() like every portal screen. */
 /* Equal card height. Meter uses display:contents so the track shares a row with
    the status chip (left-aligned); the lbl sits on the row under the track —
    flex + align-items:center was optically centering the whole meter block and
@@ -152,22 +119,7 @@ code{background:#f1f5f9;padding:.15em .45em;border-radius:4px;font-size:9.5pt;bo
 .group .g-body .card{margin-bottom:.8em}
 .group .g-body .card:last-child{margin-bottom:0}
 .group .g-empty{padding:.4em .2em;color:var(--muted);font-size:10pt}
-/* Level switcher: one segment per JLPT level plus すべて. A level with no test
-   on disk yet stays visible but disabled — the portal covers N1–N5, and a
-   greyed N1 says "coming" where a missing one would say "not supported". */
-.levels{display:flex;flex-wrap:wrap;gap:.45em;margin:0 0 1.1em}
-.lv-btn{font-family:var(--ui);font-size:10.5pt;font-weight:700;cursor:pointer;
-  padding:.45em 1em;border-radius:9999px;border:1px solid #cbd5e1;background:#fff;
-  color:#334155;display:inline-flex;align-items:center;gap:.45em;
-  font-variant-numeric:tabular-nums}
-.lv-btn .n{font-size:8.5pt;font-weight:700;color:#64748b;background:#f1f5f9;
-  border-radius:9999px;padding:.05em .55em}
-.lv-btn:hover:not([disabled]){border-color:var(--accent)}
-.lv-btn.on{background:var(--accent);border-color:var(--accent);color:#fff}
-.lv-btn.on .n{background:rgba(255,255,255,.22);color:#fff}
-.lv-btn[disabled]{opacity:.45;cursor:default}
 @media screen and (max-width: 54em){
-  main{padding:1.2em 1em 4em}
   .card{grid-template-columns:1fr auto;grid-template-rows:auto auto auto auto auto;
     column-gap:.8em;row-gap:.45em;height:auto;min-height:auto;max-height:none;
     padding:1em 1.1em;overflow:visible}
@@ -190,14 +142,41 @@ code{background:#f1f5f9;padding:.15em .45em;border-radius:4px;font-size:9.5pt;bo
 
 
 # --------------------------------------------------------------- the shared view
+# Labels come from the language registry (portal namespace, `list_*` keys):
+# T() returns one `.lang-pane` per language for markup, so switching language is
+# CSS alone; T1() is the current language, for what cannot hold markup
+# (title=, confirm(), alert()).
 INDEX_JS = """
 var MODE = window.LIST_MODE || 'server';
+var LEVEL = %(level)s;
 var TOTAL = %(total)d, SHEET = %(sheet)s;
+var STR = %(strings)s, STR_ORDER = %(order)s;
 
 function esc(s){
   return String(s).replace(/[&<>"']/g, function(c){
     return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
   });
+}
+function fill(s, vars){
+  return String(s).replace(/\\{(\\w+)\\}/g, function(m, k){
+    return vars && vars[k] !== undefined ? vars[k] : m;
+  });
+}
+function str(lang, key){
+  var t = STR[lang] || {};
+  return t[key] !== undefined ? t[key] : (STR[STR_ORDER[0]] || {})[key] || key;
+}
+function T(key, vars){           // markup: one pane per language (vars are escaped)
+  var ev = {};
+  for (var k in (vars || {})) ev[k] = esc(vars[k]);
+  if (STR_ORDER.length < 2) return fill(str(STR_ORDER[0], key), ev);
+  return STR_ORDER.map(function(c){
+    return '<span class="lang-pane" data-lang="' + c + '">' + fill(str(c, key), ev) + '</span>';
+  }).join('');
+}
+function T1(key, vars){          // plain text in the language on screen now
+  var lang = document.body.dataset.lang || STR_ORDER[0];
+  return fill(str(lang, key), vars);
 }
 
 /* -------------------------------------------------------------- the two sources
@@ -234,21 +213,24 @@ function localTests(){
   });
 }
 
+// The page is /<LEVEL>/exam/, two folders below the site root, in BOTH
+// deployments — every link out of it is relative, so Pages' /<repo>/ subpath
+// and a server root resolve the same way.
+var ROOT_REL = '../../';
+
 async function loadTests(){
   if (MODE === 'local') return localTests();
-  var r = await fetch('/api/tests', {cache: 'no-store'});   // never a stale list
+  var r = await fetch(ROOT_REL + 'api/tests?level=' + encodeURIComponent(LEVEL),
+                      {cache: 'no-store'});   // never a stale list
   return (await r.json()).tests || [];
 }
 
 function sheetHref(id){
-  // Pages is served from a repo subpath (/<repo>/), so every link is relative.
-  var base = MODE === 'local' ? 'tests/' : '/tests/';
-  return base + encodeURIComponent(id) + '/' + encodeURIComponent(SHEET);
+  return ROOT_REL + 'tests/' + encodeURIComponent(id) + '/' + encodeURIComponent(SHEET);
 }
 
 function explanationHref(id){
-  var base = MODE === 'local' ? 'tests/' : '/tests/';
-  return base + encodeURIComponent(id) + '/模範解答.html';
+  return ROOT_REL + 'tests/' + encodeURIComponent(id) + '/模範解答.html';
 }
 
 /* ------------------------------------------------------------------- the cards */
@@ -257,8 +239,8 @@ function meterHtml(t){
   var fill = t.answered >= t.total ? 'fill done' : 'fill';
   return '<div class="meter"><div class="track">'
        + '<div class="' + fill + '" style="width:' + ratio + '%%"></div></div>'
-       + '<div class="lbl">解答済み ' + t.answered + ' / ' + t.total
-       + '（' + ratio + '%%）</div></div>';
+       + '<div class="lbl">' + T('list_answered', {a: t.answered, t: t.total, p: ratio})
+       + '</div></div>';
 }
 
 function originBadgeHtml(t){
@@ -269,11 +251,11 @@ function originBadgeHtml(t){
 }
 
 function badgeHtml(t){
-  if (!t.has_sheet) return '<span class="badge warn">解答.html 未生成</span>';
-  if (!t.result) return '<span class="badge none">未採点</span>';
+  if (!t.has_sheet) return '<span class="badge warn">' + T('list_no_sheet') + '</span>';
+  if (!t.result) return '<span class="badge none">' + T('list_ungraded') + '</span>';
   var cls = t.result.passed ? 'pass' : 'fail';
-  var label = t.result.passed ? '合格' : '不合格';
-  return '<span class="badge ' + cls + '">' + label + ' '
+  var label = T(t.result.passed ? 'list_pass' : 'list_fail');
+  return '<span class="badge ' + cls + '">' + label + '&nbsp;'
        + esc(t.result.total_scaled_score) + ' / ' + esc(t.result.max_scaled_score) + '</span>';
 }
 
@@ -281,25 +263,26 @@ function cardHtml(t){
   var id = esc(t.id), base = sheetHref(t.id), expHref = explanationHref(t.id), acts = [];
   if (!t.has_sheet){
     acts.push('<a class="ui-btn" href="#" onclick="return false" '
-            + 'title="make sheet ' + id + ' を実行">受験する</a>');
+            + 'title="' + esc(T1('list_run_sheet', {id: t.id})) + '">' + T('list_take') + '</a>');
   } else if (t.result){
     // Already graded: the result view is the default destination, but the exam
     // is one click away and keeps the saved answers, so it can be redone.
-    acts.push('<a class="ui-btn primary" href="' + base + '?screen=result">結果を見る</a>');
-    acts.push('<a class="ui-btn" href="' + base + '">もう一度解く</a>');
+    acts.push('<a class="ui-btn primary" href="' + base + '?screen=result">'
+            + T('list_view_result') + '</a>');
+    acts.push('<a class="ui-btn" href="' + base + '">' + T('list_retry') + '</a>');
   } else {
     acts.push('<a class="ui-btn primary" href="' + base + '">'
-            + (t.answered ? '続きから' : '受験する') + '</a>');
+            + T(t.answered ? 'list_resume' : 'list_take') + '</a>');
   }
   if (t.has_explanation){
-    acts.push('<a class="ui-btn" href="' + expHref + '">解説を見る</a>');
+    acts.push('<a class="ui-btn" href="' + expHref + '">' + T('list_explanation') + '</a>');
   }
   // Clear progress whenever either store holds something — graded or mid-exam.
   if (t.result || t.answered){
     acts.push('<button type="button" class="ui-btn danger" data-clear="' + id
-            + '">結果を削除</button>');
+            + '">' + T('list_clear') + '</button>');
   }
-  return '<div class="card"><h2 title="テスト ' + id + '">テスト ' + id + '</h2>'
+  return '<div class="card"><h2 title="' + id + '">' + T('list_test', {id: t.id}) + '</h2>'
        + '<span class="origin">' + originBadgeHtml(t) + '</span>'
        + meterHtml(t)
        + '<span class="status">' + badgeHtml(t) + '</span>'
@@ -310,11 +293,12 @@ function cardHtml(t){
    Origin already decides the badge, so it decides the grouping too — the two
    halves of tests/ (imported past papers, generated mocks) are what a reader
    actually picks between. Each group is a <details>, shut on load: twenty cards
-   opened flat is a scroll, two summary lines is a choice. */
+   opened flat is a scroll, two summary lines is a choice. The level is chosen
+   upstream (the portal's level chooser), so this list only ever holds one. */
 var GROUPS = [
-  {key: 'imported',  label: '公式過去問（imported）',
+  {key: 'imported',  label: 'list_group_imported',
    test: function(t){ return t.origin === 'imported'; }},
-  {key: 'generated', label: '模擬試験（generated）',
+  {key: 'generated', label: 'list_group_generated',
    test: function(t){ return t.origin !== 'imported'; }}
 ];
 var TESTS = [];            // last rendered list, kept by render() itself
@@ -325,34 +309,7 @@ var QUERY = '';
    no toggle event. */
 var OPEN = {imported: false, generated: false};
 
-/* The level switcher. Every card carries its level (level.py, off the folder
-   name); the choice survives reloads per browser. */
-var LEVELS = ['N1', 'N2', 'N3', 'N4', 'N5'];
-// Deliberately outside local_store's STORAGE_PREFIX namespace, or
-// JLPTStore.ids() would list it as a test.
-var LEVEL_KEY = 'jlpt-list/level';
-var LEVEL_SEL = 'all';
-try { LEVEL_SEL = localStorage.getItem(LEVEL_KEY) || 'all'; } catch (e) {}
-
-function matchesLevel(t){ return LEVEL_SEL === 'all' || (t.level || 'N2') === LEVEL_SEL; }
-
-function levelBarHtml(tests){
-  function n(lv){ return tests.filter(function(t){ return (t.level || 'N2') === lv; }).length; }
-  function btn(key, label, count){
-    return '<button type="button" class="lv-btn' + (LEVEL_SEL === key ? ' on' : '') + '"'
-         + ' data-level="' + key + '"' + (count ? '' : ' disabled title="まだテストがありません"')
-         + ' aria-pressed="' + (LEVEL_SEL === key) + '">' + label
-         + '<span class="n">' + count + '</span></button>';
-  }
-  return btn('all', 'すべて', tests.length)
-       + LEVELS.map(function(lv){ return btn(lv, lv, n(lv)); }).join('');
-}
-
-function setLevel(lv){
-  LEVEL_SEL = lv;
-  try { localStorage.setItem(LEVEL_KEY, lv); } catch (e) {}
-  render(TESTS);
-}
+function matchesLevel(t){ return (t.level || 'N2') === LEVEL; }
 
 function matchesQuery(t){
   if (!QUERY) return true;
@@ -367,32 +324,28 @@ function groupHtml(g, tests){
   var open = ((QUERY && tests.length) || OPEN[g.key]) ? ' open' : '';
   var body = tests.length
     ? tests.map(cardHtml).join('')
-    : '<div class="g-empty">該当するテストはありません。</div>';
+    : '<div class="g-empty">' + T('list_g_empty') + '</div>';
   return '<details class="group" data-group="' + g.key + '"' + open + '>'
-       + '<summary><span class="g-name">' + g.label + '</span>'
-       + '<span class="g-count">' + tests.length + ' 件</span>'
-       + '<span class="g-sub">採点済み ' + graded + ' 件</span></summary>'
+       + '<summary><span class="g-name">' + T(g.label) + '</span>'
+       + '<span class="g-count">' + T('list_g_count', {n: tests.length}) + '</span>'
+       + '<span class="g-sub">' + T('list_g_graded', {n: graded}) + '</span></summary>'
        + '<div class="g-body">' + body + '</div></details>';
 }
 
 function render(tests){
+  tests = tests.filter(matchesLevel);
   TESTS = tests;     // the search re-renders from here — one assignment, one place
-  // A remembered level with nothing on disk any more falls back to すべて.
-  if (LEVEL_SEL !== 'all' && !tests.some(function(t){ return (t.level || 'N2') === LEVEL_SEL; }))
-    LEVEL_SEL = 'all';
-  var bar = document.getElementById('levels');
-  if (bar) bar.innerHTML = levelBarHtml(tests);
-  var shown = tests.filter(matchesQuery).filter(matchesLevel);
+  var shown = tests.filter(matchesQuery);
   var body = tests.length
     ? GROUPS.map(function(g){ return groupHtml(g, shown.filter(g.test)); }).join('')
-    : '<div class="empty">tests/ にテストがありません。'
-      + '<code>make sheet &lt;test_id&gt;</code> で解答用紙を生成してください。</div>';
+    : '<div class="empty">' + T('list_empty')
+      + (MODE === 'local' ? '' : '<br><code>make sheet &lt;test_id&gt;</code>') + '</div>';
   document.getElementById('cards').innerHTML = body;
   var graded = tests.filter(function(t){ return t.result; }).length;
-  document.getElementById('counts').textContent =
-    'テスト ' + tests.length + ' 件 / 採点済み ' + graded + ' 件';
+  document.getElementById('counts').innerHTML =
+    T('list_counts', {n: tests.length, g: graded});
   var hits = document.getElementById('hits');
-  if (hits) hits.textContent = QUERY ? shown.length + ' 件が一致' : '';
+  if (hits) hits.innerHTML = QUERY ? T('list_hits', {n: shown.length}) : '';
 }
 
 function setQuery(v){
@@ -404,35 +357,35 @@ async function refreshList(){
   try { render(await loadTests()); }
   catch (e){
     document.getElementById('cards').innerHTML =
-      '<div class="empty">テスト一覧を読み込めませんでした: ' + esc(e) + '</div>';
+      '<div class="empty">' + T('list_load_fail', {e: String(e)}) + '</div>';
   }
 }
 
 /* ------------------------------------------------------------------- actions */
 async function clearTestProgress(id){
-  if (!confirm('テスト「' + id + '」の採点結果と保存済みの解答を削除しますか？\\n'
-             + 'この操作は元に戻せません。')) return;
+  if (!confirm(T1('list_confirm_clear', {id: id}))) return;
   if (MODE === 'local'){
     window.JLPTStore.clear(id);
     return refreshList();
   }
   try {
-    var r = await fetch('/api/tests/' + encodeURIComponent(id) + '/clear', {
+    var r = await fetch(ROOT_REL + 'api/tests/' + encodeURIComponent(id) + '/clear', {
       method: 'POST', headers: {'Content-Type': 'application/json'}, body: '{}'
     });
     var data = await r.json();
     if (!r.ok || !data.success){
-      alert((data && data.error) || '削除に失敗しました。');
+      alert((data && data.error) || T1('list_clear_failed'));
       return;
     }
     refreshList();
   } catch (e){
-    alert('削除に失敗しました: ' + e);
+    alert(T1('list_clear_failed') + ' ' + e);
   }
 }
 
 /* Pages has no disk, so the list is where answers leave and re-enter the
-   browser: one JSON holding every test's 解答 and 採点結果. */
+   browser: one JSON holding every test's 解答 and 採点結果 — every test this
+   browser holds, whatever its level, so one backup still restores everything. */
 function exportAll(){
   var out = {};
   (window.PAGES_TESTS || []).map(function(t){ return t.id; })
@@ -442,7 +395,7 @@ function exportAll(){
       var a = window.JLPTStore.answers(id), r = window.JLPTStore.result(id);
       if (a || r) out[id] = {"ユーザー解答.json": a, "採点結果.json": r};
     });
-  if (!Object.keys(out).length){ alert('保存された解答はありません。'); return; }
+  if (!Object.keys(out).length){ alert(T1('list_nothing_saved')); return; }
   var a = document.createElement('a');
   a.href = URL.createObjectURL(new Blob([JSON.stringify(out, null, 2)],
                                         {type: 'application/json'}));
@@ -457,7 +410,7 @@ function importAll(input){
   reader.onload = function(){
     var data;
     try { data = JSON.parse(reader.result); }
-    catch (e){ alert('JSON を読み込めませんでした: ' + e); return; }
+    catch (e){ alert(T1('list_json_fail', {e: String(e)})); return; }
     var n = 0;
     for (var id in data){
       var rec = data[id] || {};
@@ -466,7 +419,7 @@ function importAll(input){
       n++;
     }
     input.value = '';
-    alert(n + ' 件のテストを読み込みました。');
+    alert(T1('list_imported_n', {n: n}));
     refreshList();
   };
   reader.readAsText(f);
@@ -477,8 +430,6 @@ document.addEventListener('click', function(ev){
   if (!el || !el.closest) return;
   var btn = el.closest('[data-clear]');
   if (btn){ clearTestProgress(btn.getAttribute('data-clear')); return; }
-  var lv = el.closest('[data-level]');
-  if (lv && !lv.disabled){ setLevel(lv.getAttribute('data-level')); return; }
   if (el.closest('#q-clear')){
     var box = document.getElementById('q');
     if (box){ box.value = ''; box.focus(); }
@@ -500,85 +451,69 @@ window.addEventListener('pageshow', refreshList);
 """
 
 
-def index_js() -> str:
-    return INDEX_JS % {"total": QUESTION_COUNT, "sheet": json.dumps(SHEET, ensure_ascii=False)}
+def index_js(level: str) -> str:
+    return INDEX_JS % {"total": QUESTION_COUNT,
+                       "sheet": json.dumps(SHEET, ensure_ascii=False),
+                       "level": json.dumps(level),
+                       "strings": portal_view.js_strings("list_"),
+                       "order": json.dumps(portal_view.langs.order())}
 
 
-GROUP_NOTE = ('上のボタンでレベル（N1〜N5）を切り替えられます。'
-              'テストは<b>公式過去問（imported）</b>と<b>模擬試験（generated）</b>の'
-              '2グループに分かれています。見出しをクリックすると開きます。'
-              '検索欄に入力すると、一致したテストを含むグループが自動で開きます。')
-
-LEDE_SERVER = ('受験するテストを選んでください。'
-               '解答は選択するたびに保存され、採点結果は 採点結果.json に残ります。'
-               '「結果を削除」で採点結果と解答の両方を消せます。<br>' + GROUP_NOTE)
-LEDE_LOCAL = ('受験するテストを選んでください。解答と採点結果は'
-              '<b>このブラウザ内（localStorage）にのみ</b>保存されます。'
-              '別の端末やブラウザには引き継がれず、閲覧データを消去すると失われるため、'
-              '残しておきたい結果は「バックアップを保存」で書き出してください。<br>'
-              + GROUP_NOTE)
-
-# Static shell, outside #cards: re-rendering the list must not blow away the box
-# the user is typing in (or its focus and caret).
-SEARCHBAR = ('<div class="searchbar">'
-             '<input id="q" type="search" autocomplete="off" spellcheck="false" '
-             'aria-label="テストを検索" '
-             'placeholder="テストを検索（テスト ID / レベル / imported / generated）">'
-             '<button type="button" class="ui-btn" id="q-clear">クリア</button>'
-             '<span class="hits" id="hits"></span>'
-             '</div>')
-
-TOOLS_LOCAL = ('<div class="tools">'
-               '<button type="button" class="ui-btn" onclick="exportAll()">'
-               'バックアップを保存</button>'
-               '<label class="ui-btn">バックアップを読み込む'
-               '<input type="file" accept="application/json,.json" '
-               'onchange="importAll(this)"></label>'
-               '<span class="note">全テストの解答・採点結果を 1 つの JSON で入出力します。</span>'
-               '</div>')
+P = portal_view.pane
 
 
-FONT_TAGS = (
-    '<link rel="preconnect" href="https://fonts.googleapis.com">'
-    '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
-    '<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">'
-)
+def _lede(local: bool) -> str:
+    return (f'<p class="lede">{P("list_lede_local" if local else "list_lede_server")}'
+            f'<br>{P("list_group_note")}</p>')
 
 
-def index_html(mode: str = "server", tests: list | None = None) -> str:
-    """Screen 1 for either deployment.
+def _searchbar() -> str:
+    # Static shell, outside #cards: re-rendering the list must not blow away the
+    # box the user is typing in (or its focus and caret).
+    return ('<div class="searchbar">'
+            '<input id="q" type="search" autocomplete="off" spellcheck="false" '
+            f'{portal_view.i18n_attrs("aria-label", "list_search_label")} '
+            f'{portal_view.i18n_attrs("placeholder", "list_search_placeholder")}>'
+            f'<button type="button" class="ui-btn" id="q-clear">{P("list_search_clear")}</button>'
+            '<span class="hits" id="hits"></span>'
+            '</div>')
 
-    ``mode='server'``: an empty shell that fetches ``/api/tests`` — the disk stays
-    the source of truth and the list is never cached.
-    ``mode='local'``: the same shell plus a baked manifest, filled in from
-    localStorage by the same JS.
+
+def _tools_local() -> str:
+    return ('<div class="tools">'
+            f'<button type="button" class="ui-btn" onclick="exportAll()">{P("list_backup_save")}</button>'
+            f'<label class="ui-btn">{P("list_backup_load")}'
+            '<input type="file" accept="application/json,.json" '
+            'onchange="importAll(this)"></label>'
+            f'<span class="note">{P("list_backup_note")}</span>'
+            '</div>')
+
+
+def index_html(mode: str = "server", tests: list | None = None,
+               level: str = LEVEL.DEFAULT_LEVEL) -> str:
+    """The exam list of ONE level, `/<LEVEL>/exam/` in either deployment.
+
+    ``mode='server'``: an empty shell that fetches ``/api/tests?level=`` — the
+    disk stays the source of truth and the list is never cached.
+    ``mode='local'``: the same shell plus a baked manifest (this level's tests),
+    filled in from localStorage by the same JS.
     """
     if mode not in ("server", "local"):
         raise ValueError(f"unknown list mode: {mode}")
+    level = LEVEL.normalize(level)
     local = mode == "local"
+    mine = [t for t in (tests or []) if (t.get("level") or LEVEL.DEFAULT_LEVEL) == level]
     boot = (f'<script>{local_store.LOCAL_STORE_JS}\n'
-            f'window.PAGES_TESTS = {json.dumps(tests or [], ensure_ascii=False)};</script>'
+            f'window.PAGES_TESTS = {json.dumps(mine, ensure_ascii=False)};</script>'
             if local else '')
-    return (
-        '<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8">'
-        '<meta name="viewport" content="width=device-width,initial-scale=1">'
-        f'{FONT_TAGS}'
-        '<title>JLPT 模擬試験 — テスト一覧</title>'
-        f'<style>{app_style.APP_CSS}{INDEX_CSS}</style></head><body>'
-        f'<script>window.LIST_MODE = "{mode}";</script>{boot}'
-        '<header class="app-header">'
-        '<div class="header-inner">'
-        '<div class="header-top-row">'
-        '<span class="header-badge">JLPT MOCK EXAM PORTAL · N1–N5</span>'
-        '<span class="sub" id="counts" style="color:#94a3b8;font-size:0.85rem;font-variant-numeric:tabular-nums;">読み込み中…</span>'
-        '</div>'
-        '<h1 class="title">日本語能力試験 模擬試験</h1>'
-        '<div class="subtitle">公式過去問アーカイブ ＆ 精選模擬試験プラットフォーム ｜ 全問詳細解説付き</div>'
-        '</div></header>'
-        f'<main><p class="lede">{LEDE_LOCAL if local else LEDE_SERVER}</p>'
-        f'{TOOLS_LOCAL if local else ""}'
-        '<div class="levels" id="levels" role="group" aria-label="レベル"></div>'
-        f'{SEARCHBAR}'
-        '<div id="cards"></div></main>'
-        f'<script>{index_js()}</script>'
-        '<script>refreshList();</script></body></html>')
+    body = (f'{_lede(local)}{_tools_local() if local else ""}{_searchbar()}'
+            '<div id="cards"></div>')
+    return portal_view.page(
+        title_key="doc_title_exam", title_kw={"level": level},
+        h1=P("exam_title", level=level), subtitle=P("exam_subtitle"),
+        crumbs=[(P("crumb_home"), f"../../{portal_view.INDEX}"),
+                (level, f"../{portal_view.INDEX}"), (P("crumb_exam"), None)],
+        body=body, extra_css=INDEX_CSS,
+        head_js=f'<script>window.LIST_MODE = "{mode}";</script>{boot}',
+        right=f'<span class="sub" id="counts">{P("list_loading")}</span>',
+        tail_js=index_js(level) + "\nrefreshList();")

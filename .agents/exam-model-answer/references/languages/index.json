@@ -1,0 +1,5 @@
+{
+  "_doc": "The learner-language registry — the ONE list of languages the site renders prose in (model answers, practice reveals, knowledge pages, portal chrome). Loaded by .agents/exam-model-answer/scripts/langs.py; nothing else may list language codes. `primary` is the exam's own language: it owns the Japanese wording and its content files carry no language suffix where the owning skill says so. `order` is the active set, in segmented-control order. Add a language: copy languages/ja/ to languages/<code>/, rewrite every string for that reader, add <code> to `order`. Replace one: swap its code in `order`. exam-model-answer/SKILL.md §'Languages — one registry'.",
+  "primary": "ja",
+  "order": ["ja", "vi"]
+}

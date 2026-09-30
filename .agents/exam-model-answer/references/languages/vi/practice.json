@@ -1,0 +1,17 @@
+{
+  "doc_title": "Đề {test_id}（Luyện tập）",
+  "bar_title": "Đề {test_id}（Luyện tập）",
+  "back": "← Danh sách đề",
+  "exam_mode": "Sang chế độ thi",
+  "model_answer": "Xem toàn bộ đáp án mẫu",
+  "answered": "Đã chọn",
+  "show": "Xem giải thích",
+  "hide": "Ẩn giải thích",
+  "open_all": "Mở tất cả giải thích",
+  "close_all": "Đóng tất cả giải thích",
+  "correct": "Đúng",
+  "wrong": "Sai",
+  "script_title": "Lời thoại audio",
+  "pending": "Giải thích cho câu này chưa được soạn.",
+  "note": "Chế độ luyện tập: không giới hạn thời gian, không chấm điểm. Toàn bộ {n_all} câu nằm trên một trang. Bấm 「Xem giải thích」 ở mỗi câu để mở đáp án mẫu và giải thích của riêng câu đó. Lựa chọn của bạn không được lưu ở đâu cả (tải lại trang là mất)."
+}

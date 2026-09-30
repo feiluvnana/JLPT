@@ -58,7 +58,7 @@ not route around it silently.
 
 - Skills are located in `.agents/<skill_name>/SKILL.md`.
 - Before performing any specialized task, **read the corresponding `SKILL.md` file** (they are plain Markdown — open them with whatever file-reading tool your harness provides).
-- **Claude Code**: the same 9 skills are exposed natively via symlinks in `.claude/skills/<skill_name>` → `.agents/<skill_name>`, so they are auto-discovered and invocable as `/<skill-name>`. `.agents/` remains the single copy — edit files there.
+- **Claude Code**: the same 10 skills are exposed natively via symlinks in `.claude/skills/<skill_name>` → `.agents/<skill_name>`, so they are auto-discovered and invocable as `/<skill-name>`. `.agents/` remains the single copy — edit files there.
 - **`jlpt-test-generation` is the entry point for generating mocks.** For importing an outside PDF/past paper, read `external-test-import` instead. For any other exam work, read `jlpt-test-generation` first — it routes to the other skills in order.
 - Available Skills:
   1. `jlpt-test-generation`: End-to-end mock exam generation orchestrator — **read this one first** for generated exams. Owns the 5-stage pass structure and the per-stage reading map.
@@ -70,6 +70,7 @@ not route around it silently.
   7. `exam-qa-review`: The adversarial content QA pass every generated test must survive AFTER `make check` is green and BEFORE it is served or committed — run it with fresh eyes (a context that did not author the test). It also root-causes every finding back to the skill, script, or gate check that let it through, so the next test does not reproduce it.
   8. `external-test-import`: Import an external exam (PDF booklet ± script PDF ± MP3) into `tests/imported-<slug>/` project format — **use instead of generation** when the source already exists outside the pool pipeline.
   9. `exam-model-answer`: Model answer & explanation generator — builds `模範解答.html` explaining every item (why the correct option is chosen and why each distractor is wrong) across Language Knowledge, Reading, and Listening. Two languages behind one segmented control (Japanese + Vietnamese), each **written**, not translated from the other, and each field inside the skill's terseness bands.
+  10. `jlpt-knowledge`: The knowledge module (知識) — per-level study cards + self-check quizzes (文法, 語彙, 漢字, 読解/聴解 guides) under `knowledge/<LEVEL>/`, sourced from `refs/` with original examples and per-language prose written independently; `make knowledge` builds the pages, progress stays per browser.
 
 ---
 
@@ -81,13 +82,16 @@ not route around it silently.
 AGENTS.md  CLAUDE.md  README.md   rules · Claude notes · setup
 GENERATE.md  IMPORT.md            copy-paste prompts: new mock / import a real paper
 Makefile                          every command (router: §4)
-.agents/<skill>/                  the 9 skills: SKILL.md + scripts/ + references/
+.agents/<skill>/                  the 10 skills: SKILL.md + scripts/ + references/
   jlpt-exam-structure/references/levels/<LEVEL>.json   per-level paper shape (level.py)
   exam-blueprint/references/pools.json                  N2 item pools
 tools/                            repo-level scripts: the gate (check_consistency.py),
                                   assemble/scaffold, 聴解 composer + clip bank, profilers,
                                   refs/ extractors, upload
 tests/<test_id>/                  one folder per paper (deliverables: table below)
+knowledge/<LEVEL>/                the knowledge module (知識): <category>.json + <category>.<code>.json → <category>.html (tracked; jlpt-knowledge)
+drill/<LEVEL>/                    RESERVED for the ドリル module (大問別練習, 聴解トレーニング, 復習ノート, …); served and
+                                  linked by the portal, disabled until its builder writes index.html
 logs/                             state the next run depends on (tracked)
 qa/                               QA reports and root-cause tables (tracked)
 refs/                             source archive: *.md extracts tracked, binaries on the
@@ -140,7 +144,7 @@ Inside `tests/<test_id>/` — this table is the single copy; skills point here:
 | Combined Grading Result              | `採点結果.json`                        | Generated on submit from `解答.html` or written by `grade_answers.py`. There is no Markdown report — the result is data, read back by the result screen and by the test list |
 | Model Answer & Detailed Explanation  | `模範解答.html`                        | Comprehensive model answer and explanation document for every item, rendered by `build_model_answer.py` |
 | Model Answer Explanations (JA)        | `詳細解説.json`                        | Hand-authored per-item explanations — the source `模範解答.html` renders (`exam-model-answer`). Also the ONE copy of the exam wording (`stem`/`options`/`passage`/`script`) both language panes print |
-| Model Answer Explanations (VI)        | `詳細解説.vi.json`                     | The Vietnamese pane. Explanations are **written from the items, never translated** from `詳細解説.json` (`exam-model-answer`). It carries no exam wording, with ONE deliberate exception: `passage_translation`, the Vietnamese rendering of a 読解 passage, on the FIRST item of each passage group |
+| Model Answer Explanations (VI)        | `詳細解説.vi.json`                     | The Vietnamese pane. Explanations are **written from the items, never translated** from `詳細解説.json` (`exam-model-answer`). It carries no exam wording, with ONE deliberate exception: `passage_translation`, the Vietnamese rendering of a 読解 passage, on the FIRST item of each passage group . Any other learner language follows the same contract as `詳細解説.<code>.json`, its code taken from the language registry (`exam-model-answer` §"Languages — one registry") |
 | Import provenance (imported only)    | `import_meta.json`                     | Written by `external-test-import` for `tests/imported-<slug>/` only — generated tests must not have this file |
 
 ---
@@ -358,6 +362,7 @@ restate them here or in a skill; fix them there.
 | `make keyless <id>`       | the QA blind-solve render → `qa/<id>/keyless.md` | `exam-app` |
 | `make serve`              | `serve_sheet.py` — ONE server for every test (no id) | `exam-app` |
 | `make grade <id>`         | `grade_answers.py --test-dir tests/<id>` | `exam-app` |
+| `make knowledge [LEVEL=N2]` | `build_knowledge.py` → `knowledge/<LEVEL>/<category>.html` (a split category: `<category>/<part>.html` too) + `index.html` | `jlpt-knowledge` |
 | `make pages [<id>]`       | `build_pages.py` — static GitHub Pages site → `_site/` | `exam-app` |
 | `make preview-pages`      | serves `_site/` locally | `exam-app` |
 | `make init-import SLUG=…` | `init_imported_test.py` — scaffold `tests/imported-<slug>/` | `external-test-import` |

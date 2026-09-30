@@ -11,14 +11,20 @@ the browser's localStorage under keys that spell out the very files they stand
 in for — local_store.py owns that key schema and is the only place it is
 written down.
 
-Everything else is shared, not copied: the test list is `index_view.py` (the
-same cards `make serve` renders, fed from localStorage instead of `/api/tests`),
-and the sheets come from `build_interactive.build()`.
+Everything else is shared, not copied: the level and module choosers are
+`portal_view.py` and the test list is `index_view.py` (the same pages `make
+serve` renders, the list fed from localStorage instead of `/api/tests`), and
+the sheets come from `build_interactive.build()`.
 
-Output tree (default `_site/`, gitignored — CI builds it, nothing commits it):
+Output tree (default `_site/`, gitignored — CI builds it, nothing commits it).
+It is `make serve`'s URL tree, file for file:
 
     _site/.nojekyll                    Pages must not run Jekyll over this
-    _site/index.html                   screen 1, with the deployed-tests manifest
+    _site/index.html                   level chooser (N1–N5)
+    _site/<LEVEL>/index.html           module chooser (試験 / 知識 / ドリル), every level
+    _site/<LEVEL>/exam/index.html      that level's test list + its manifest
+    _site/knowledge/<LEVEL>/**/*.html  the built 知識 pages, copied (no JSON)
+    _site/drill/<LEVEL>/**/*.html      the built ドリル pages (reserved; none yet)
     _site/tests/<id>/解答.html         screens 2 and 3, storage=local
     _site/tests/<id>/聴解.mp3          the audio the player streams
 
@@ -42,6 +48,7 @@ TESTS = ROOT / "tests"
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import build_interactive  # noqa: E402
 import index_view         # noqa: E402
+import portal_view        # noqa: E402
 import serve_sheet        # noqa: E402
 
 MARKER = ".nojekyll"      # also our "this directory is a build output" flag
@@ -188,12 +195,51 @@ def build_site(out: Path, test_id: str | None = None, with_audio: bool = True,
         manifest.append(entry)
         copied += n_bytes
 
-    (out / "index.html").write_text(index_view.index_html("local", manifest),
-                                    encoding="utf-8")
-    print(f"  {out / 'index.html'}  ({len(manifest)} test(s) listed)")
+    write_portal(out, manifest)
     if copied:
         print(f"  copied {copied / 1e6:.0f} MB of audio")
     return manifest
+
+
+def copy_module(out: Path, src: Path) -> int:
+    """A module's built pages, `<module>/<LEVEL>/**/*.html` → `_site/<module>/…`.
+
+    Used for the 知識 module (`knowledge/`) and the reserved ドリル module
+    (`drill/`, absent until its builder lands). Only the HTML, sub-folders
+    included (a split 知識 category builds one page per part under
+    `<stem>/`): the pages are self-contained (their builder bakes the data in),
+    and the JSON beside them is authoring source, not a deliverable."""
+    n = 0
+    for lv in portal_view.LEVELS:
+        base = src / lv
+        pages = sorted(base.rglob("*.html")) if base.is_dir() else []
+        for p in pages:
+            dest = out / src.name / lv / p.relative_to(base)
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(p, dest)
+            n += 1
+    return n
+
+
+def write_portal(out: Path, manifest: list[dict]) -> None:
+    """The portal's three levels of index pages — the same views `make serve`
+    renders per request, baked once. Every level gets its module chooser and
+    exam list, including a level with nothing yet: its cards say 準備中."""
+    n_know = copy_module(out, portal_view.KNOWLEDGE)
+    n_drill = copy_module(out, portal_view.DRILL)
+    summaries = portal_view.level_summaries(manifest, portal_view.KNOWLEDGE, portal_view.DRILL)
+    (out / portal_view.INDEX).write_text(portal_view.portal_html(summaries),
+                                         encoding="utf-8")
+    for s in summaries:
+        lv = s["level"]
+        (out / lv / portal_view.EXAM_DIR).mkdir(parents=True, exist_ok=True)
+        (out / lv / portal_view.INDEX).write_text(portal_view.module_html(s),
+                                                  encoding="utf-8")
+        (out / lv / portal_view.EXAM_DIR / portal_view.INDEX).write_text(
+            index_view.index_html("local", manifest, level=lv), encoding="utf-8")
+    counts = ", ".join(f"{s['level']} {s['tests']}" for s in summaries)
+    print(f"  {out / portal_view.INDEX}  (portal; tests per level: {counts}; "
+          f"{n_know} knowledge page(s), {n_drill} drill page(s))")
 
 
 def main():

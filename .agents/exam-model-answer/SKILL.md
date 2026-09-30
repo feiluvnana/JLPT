@@ -6,15 +6,45 @@ description: Single owner of generating the model answer and comprehensive expla
 # Exam Model Answer & Explanation (模範解答・詳細解説)
 
 This skill owns generating `tests/<test_id>/模範解答.html` — the model
-answer and in-depth explanation deliverable — and the two explanation sets it
-renders: `詳細解説.json` (Japanese) and `詳細解説.vi.json` (Vietnamese).
+answer and in-depth explanation deliverable — and the explanation sets it
+renders, one per registry language: `詳細解説.json` (Japanese) and
+`詳細解説.<code>.json` per learner language — today `詳細解説.vi.json`
+(Vietnamese).
 
-## Two languages, two rewrites
+## Languages — one registry
 
-**The page ships the explanations in TWO languages behind one segmented
-control** (2026-08-25): Japanese in `詳細解説.json`, Vietnamese in
-`詳細解説.vi.json`. Every label the page prints outside the exam's own wording
-lives once per language in `build_model_answer.UI`.
+Which languages exist is data, listed once in `references/languages/` and read
+through `scripts/langs.py`: `index.json` (`primary` = `ja`, the exam's own
+language; `order` = the active set, segmented-control order), and per language
+`<code>/meta.json` (`name`, `html_lang`, `length_factor`, `required`) plus one
+UI-string file per page family (`model_answer.json`, `practice.json`,
+`portal.json`, `knowledge.json`). No builder or gate check may type a learner code —
+`make check` (`check_language_registry`) greps for one.
+
+**Add a third language** (replace one: swap its code in `order`, same steps):
+
+1. Copy `languages/vi/` to `languages/<code>/`; set `meta.json` (`code`, `name`,
+   `html_lang`, `length_factor`; leave `required` out) and rewrite every string
+   in the namespace files for that reader. Add `<code>` to `order`.
+2. Rebuild (`make model-answer <id>`): every page grows the segment and falls
+   back cleanly — explanation boxes to the booklet 解説, passages to the
+   Japanese — until `詳細解説.<code>.json` exists.
+3. The gate then WARNs, per paper, on the missing file, parity, bands (ja ×
+   `length_factor`), passage translations and `points` furigana — it does not
+   FAIL an un-`required` language. Author the sets (`make
+   scaffold-explanations <id> LANG=<code>`, written from the items like every
+   set), declare `explanation_<code>` on the hand-declared 聴解 bank items, and
+   set `"required": true` once the fleet is through: from then on those WARNs
+   are FAILs, as they are for `vi` today.
+4. Add the language's column to the band table below (the gate reads the
+   header's codes).
+
+## One rewrite per language
+
+**The page ships the explanations in every registry language behind one
+segmented control** (2026-08-25; Japanese and Vietnamese today). Every label
+the page prints outside the exam's own wording lives once per language in the
+registry (`build_model_answer.UI` is derived from it).
 
 **The two sets are WRITTEN, not translated. This is the rule, not a preference.**
 A sentence-for-sentence translation of the Japanese pane is a defect, and the
@@ -32,16 +62,16 @@ a translation one sentence at a time.
 
 What is NOT rewritten, in either pane: **the exam's own wording.** The stem,
 the options, the reading passage and the listening script are stored ONCE, in
-`詳細解説.json`, and both panes print them identically above the explanation —
+`詳細解説.json`, and every pane prints them identically above the explanation —
 the reader always sees the original question first, in Japanese, whichever
-language they are reading the explanation in. `詳細解説.vi.json` therefore
-carries **only** `why_correct`, `options_analysis` and `points`; a `stem`,
+language they are reading the explanation in. A learner file (`詳細解説.vi.json`)
+therefore carries **only** `why_correct`, `options_analysis` and `points`; a `stem`,
 `options`, `passage` or `script` key in it is a second copy of text that already
 has an owner, and the gate FAILs it.
 
-The page falls back cleanly: with no `詳細解説.vi.json` on disk it renders
-exactly the single-language page it always did, segmented control and all
-suppressed.
+The page falls back cleanly: a language with no `詳細解説.<code>.json` on disk
+gets no segment, and with none at all the page renders exactly the
+single-language page it always did, segmented control and all suppressed.
 
 ## Length: the terseness bands
 
@@ -55,7 +85,7 @@ not find out why option 2 is wrong any better from 170 characters than from 50.
 Furigana `《…》` and the `[正解]`/`[不正解]` tag are stripped before counting, so
 ruby markup can never push a line over.
 
-| Field | Japanese | Vietnamese |
+| Field | Japanese (`ja`) | Vietnamese (`vi`) |
 | ----- | -------- | ---------- |
 | **whole item** (`why_correct` + all options + all points) | ≤ 210 | ≤ 380 |
 | `why_correct` | ≤ 90 | ≤ 160 |
@@ -85,11 +115,12 @@ the headroom is not slack; it is what lets the paper survive its own maintenance
 
 `check_consistency.py`'s `KAISETSU_BANDS` and `KAISETSU_ITEM_BUDGET` **own these
 numbers** and the gate asserts this table against them — change one and the other
-fails, so edit the constant and refresh the table from it. Vietnamese runs longer
-than Japanese for the same content (words where Japanese writes kanji), so both
-its caps and its budget are the Japanese ones ×1.8; that factor is a design
-allowance, not a measurement, and is due a re-measure once several papers are
-authored in it.
+fails, so edit the constant and refresh the table from it. Every learner
+language's caps and budget are DERIVED: the Japanese ones × its registry
+`length_factor`, rounded to 10. Vietnamese runs longer than Japanese for the
+same content (words where Japanese writes kanji), so its factor is 1.8; that
+factor is a design allowance, not a measurement, and is due a re-measure once
+several papers are authored in it.
 
 ### The one defect the gate cannot see: prose that outlived its item
 
@@ -143,7 +174,9 @@ Since 2026-09-10 it imports the 読解 **原文 / 訳 toggle** the same way:
 module-level here (the CSS and the handler were lifted OUT of `HTML_TEMPLATE`
 for exactly that reason) and rendered over the same `passage_translation`.
 
-What that costs you: those seven names are now an interface. Renaming one, or
+What that costs you: those seven names are now an interface — and so are the
+registry-derived `LANGS`, `PRIMARY`, `UI`, `LANG_NAME`, `load_details()` and
+`kaisetsu_path()` it reads languages and files through. Renaming one, or
 moving a rule out of `EXPLANATION_CSS`/`PASSAGE_TOGGLE_CSS` back into
 `HTML_TEMPLATE`, changes a page
 this skill does not own — so keep the box's markup and its styling together in
@@ -203,7 +236,8 @@ count — N2: 71 Gengo/Dokkai + 30 Choukai), it provides:
      were measured: the wider rule this replaces ("every Japanese word quoted
      in the Vietnamese pane") was met by NONE of them — 0 ruby spans outside
      `points` across all four — and a rule nothing meets is not a rule. The
-     narrow one is checked; see `check_kaisetsu_vi_points_furigana`.
+     narrow one is checked, for every learner language; see
+     `check_kaisetsu_learner_points_furigana`.
      **pykakasi is a first draft, never the answer** — `詳細解説.json`
      furigana is hand-authored (`apply_furigana()` only converts existing
      `《…》` markup into `<ruby>`, it computes nothing). Check pykakasi
@@ -245,7 +279,7 @@ count — N2: 71 Gengo/Dokkai + 30 Choukai), it provides:
 
 ```bash
 make scaffold-explanations <id>            # -> 詳細解説.json, stems/options/passages pre-populated
-make scaffold-explanations <id> LANG=vi    # -> 詳細解説.vi.json, an EMPTY skeleton
+make scaffold-explanations <id> LANG=vi    # -> 詳細解説.vi.json, an EMPTY skeleton (any registry code)
 ```
 
 **Count the items the scaffold gives you before you write into it** — one
@@ -254,7 +288,7 @@ N2 paper is 101, an import whatever its sitting printed).
 `check_kaisetsu_item_coverage` FAILs a short file, because every other
 詳細解説 line in the gate measures only the entries that are present.
 
-**Generated paper: the 聴解 entries of both panes are the composer's.** `make
+**Generated paper: the 聴解 entries of every pane are the composer's.** `make
 mp3` writes them from the bank and replaces them on every compose and every
 `REPLAY=1` re-render, so author the 言語知識・読解 entries only; a wrong 聴解
 explanation is a `logs/choukai_bank.json` fix (`choukai-audio` Part 0).
@@ -346,9 +380,9 @@ carries it. Grouping is by passage TEXT, not by 大問: 問題10's five passages
 in one 大問 and must stay five boxes. A current paper has **13 groups** (問題9 +
 問題10×5 + 問題11×4 + 問題12 + 問題13 + 問題14).
 
-**The Vietnamese pane translates the passage.** The `ja` pane prints the source;
-the `vi` pane prints `passage_translation` from `詳細解説.vi.json`, under the
-heading 「Bản dịch đoạn văn」.
+**Every learner pane translates the passage.** The `ja` pane prints the source;
+a learner pane prints `passage_translation` from its `詳細解説.<code>.json`
+(Vietnamese: under the heading 「Bản dịch đoạn văn」).
 
 - It lives on the **first item of each group only.** One passage, one
   translation — a copy on a second item of the same group is a second thing to
@@ -367,7 +401,7 @@ heading 「Bản dịch đoạn văn」.
 - It is the one vi field that may be long: the terseness bands cap explanation
   fields, and a passage translation is not one.
 
-**In the `vi` pane the box carries a 原文 / 訳 toggle, per group (2026-09-08).**
+**In each learner pane the box carries a 原文 / 訳 toggle, per group (2026-09-08).**
 The translation is what a Vietnamese reader wants by default, so `Bản dịch` is
 selected on load and the printed page is unchanged. But 読解 study means checking
 a claim against the Japanese the question actually asks about — and the page-wide
@@ -379,7 +413,7 @@ BOTH texts and a two-button control picks which shows.
   passage without losing the translation on the other twelve, and nothing is
   persisted — the next visit starts on the translation again.
 - **It reuses the language switch's mechanism one level down**: state is a data
-  attribute on the group (`.passage-vi[data-ptext]`), CSS hides the inactive
+  attribute on the group (`.passage-tr[data-ptext]`), CSS hides the inactive
   `.ptext-pane`, and `setPassageText()` writes that attribute and nothing else.
   No JS substitutes text, so the control cannot get out of step with what is
   rendered — the same reason `pane()` ships both languages as markup.

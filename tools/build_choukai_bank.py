@@ -5,7 +5,8 @@
 `compose_choukai_mp3.py` cuts against. One record per item SLOT per sitting,
 carrying the audio offsets plus the exact wording that already exists on disk:
 the script block from `聴解スクリプト.txt`, the stem/options/script/explanation
-fields from `詳細解説.json` and `詳細解説.vi.json`, and the key parsed by
+fields from `詳細解説.json` and every learner language's `詳細解説.<code>.json`
+(the registry, `langs.py`), and the key parsed by
 `exam-app`'s own `parse_choukai_keys`.
 
 Offsets, not audio
@@ -72,6 +73,10 @@ from build_textbook_bank import (  # noqa: E402
     figure_dependent as figure_dependent_options)
 from choukai_segment import (  # noqa: E402
     NotSegmented, hint_from_script, segment, slots_for)
+# The learner-language registry: which 詳細解説.<code>.json panes an imported
+# sitting's prose is banked from, under `explanation_<code>`.
+sys.path.insert(0, str(ROOT / ".agents" / "exam-model-answer" / "scripts"))
+import langs as LANGS  # noqa: E402
 
 BANK_PATH = ROOT / "logs" / "choukai_bank.json"
 BANK_VERSION = 2
@@ -215,7 +220,6 @@ def build_sitting(test_dir: Path) -> list[dict]:
     audio = test_dir / "聴解.mp3"
     script_path = test_dir / "聴解スクリプト.txt"
     kaisetsu_path = test_dir / "詳細解説.json"
-    kaisetsu_vi_path = test_dir / "詳細解説.vi.json"
     booklet = test_dir / "聴解.md"
 
     for required in (audio, script_path, kaisetsu_path, booklet):
@@ -225,8 +229,11 @@ def build_sitting(test_dir: Path) -> list[dict]:
     script_text = script_path.read_text(encoding="utf-8")
     blocks, preamble_text = parse_script_blocks(script_path)
     kaisetsu = json.loads(kaisetsu_path.read_text(encoding="utf-8"))
-    kaisetsu_vi = (json.loads(kaisetsu_vi_path.read_text(encoding="utf-8"))
-                   if kaisetsu_vi_path.is_file() else {})
+    learner_kaisetsu = {}
+    for lg in LANGS.learners():
+        lp = LANGS.content_path(kaisetsu_path, lg)
+        learner_kaisetsu[LANGS.content_field(lg)] = (
+            json.loads(lp.read_text(encoding="utf-8")) if lp.is_file() else {})
     keys = GRADE.parse_choukai_keys(booklet)
     kaisetsu_cells = parse_kaisetsu_cells(booklet)
 
@@ -320,8 +327,8 @@ def build_sitting(test_dir: Path) -> list[dict]:
                 "script": blocks[(section, slot)],
                 "answers": {i: keys[i] for i in ids},
                 "explanation": exp_block,
-                "explanation_vi": {i: kaisetsu_vi[i] for i in ids
-                                   if i in kaisetsu_vi},
+                **{field: {i: data[i] for i in ids if i in data}
+                   for field, data in learner_kaisetsu.items()},
                 "kaisetsu_cell": {i: kaisetsu_cells[i] for i in ids
                                   if i in kaisetsu_cells},
             })

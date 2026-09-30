@@ -12,13 +12,13 @@ Usage:
     python3 tools/scaffold_explanations.py tests/20260814_1
     python3 tools/scaffold_explanations.py tests/20260814_1 --overwrite
     python3 tools/scaffold_explanations.py tests/20260814_1 --lean
-    python3 tools/scaffold_explanations.py tests/20260814_1 --lang vi
+    python3 tools/scaffold_explanations.py tests/20260814_1 --lang <code>   # any registry learner
 
 Outputs:
-    tests/<test_id>/詳細解説.json        (--lang ja, the default)
-    tests/<test_id>/詳細解説.<lang>.json (any other language)
+    tests/<test_id>/詳細解説.json        (--lang <primary>, the default)
+    tests/<test_id>/詳細解説.<lang>.json (any other registry language)
 
-A non-`ja` scaffold is deliberately EMPTY and carries no exam wording — no
+A non-primary scaffold is deliberately EMPTY and carries no exam wording — no
 stem, no options, no passage, no script. 詳細解説.json is the single copy of
 the booklet's own text; a second copy would be one more surface for it to drift
 on, and `verify_fidelity.py` only knows how to police one. The author reads the
@@ -26,7 +26,7 @@ wording out of 詳細解説.json (or the booklet) and writes the prose here.
 
 It is also NOT a translation template: the empty fields are there to be written
 from the item, not from the Japanese pane beside them (exam-model-answer
-"Two languages, two rewrites").
+"One rewrite per language").
 
 EVERY PRE-FILLED `options_analysis` LINE MUST BE REPLACED BEFORE
 `make model-answer`. The `ja` scaffold does not leave those slots empty — it
@@ -53,6 +53,10 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+# The learner-language registry decides which --lang values exist and which file
+# each one writes (exam-model-answer §"Languages — one registry").
+sys.path.insert(0, str(ROOT / ".agents" / "exam-model-answer" / "scripts"))
+import langs as LANGS  # noqa: E402
 VERIFY_SCRIPT = ROOT / ".agents/exam-model-answer/scripts/verify_fidelity.py"
 
 _spec = importlib.util.spec_from_file_location("verify_fidelity", VERIFY_SCRIPT)
@@ -348,7 +352,11 @@ def main():
     ap.add_argument("test_dir", help="Path to tests/<test_id>")
     ap.add_argument("--overwrite", action="store_true", help="Overwrite the existing file instead of merging into it")
     ap.add_argument("--lean", action="store_true", help="Exclude duplicate stem/options/passage/script (build_model_answer will pull from source markdown)")
-    ap.add_argument("--lang", default="ja", help="Explanation language (default ja -> 詳細解説.json; anything else -> 詳細解説.<lang>.json)")
+    ap.add_argument("--lang", default=LANGS.primary(), choices=LANGS.order(),
+                    help=f"Explanation language, one of the registry's {LANGS.order()} "
+                         f"(default {LANGS.primary()} -> 詳細解説.json; any other -> "
+                         f"詳細解説.<lang>.json). A new language is added to the "
+                         f"registry first (exam-model-answer §'Languages — one registry')")
     ap.add_argument("--stdout", action="store_true", help="Print JSON to stdout without writing file")
     args = ap.parse_args()
 
@@ -357,8 +365,8 @@ def main():
         print(f"Error: Directory not found: {test_dir}", file=sys.stderr)
         sys.exit(1)
 
-    lang = args.lang.strip().lower()
-    dest_file = test_dir / ("詳細解説.json" if lang == "ja" else f"詳細解説.{lang}.json")
+    lang = args.lang
+    dest_file = LANGS.content_path(test_dir / "詳細解説.json", lang)
     if dest_file.exists() and not args.overwrite and not args.stdout:
         print(f"File already exists: {dest_file}. Merging while preserving existing explanations...")
 
@@ -369,7 +377,7 @@ def main():
         except Exception:
             existing = {}
 
-    if lang == "ja":
+    if lang == LANGS.primary():
         data = scaffold_test(test_dir, lean=args.lean, merge_existing=not args.overwrite)
     else:
         data = scaffold_secondary(test_dir, existing)

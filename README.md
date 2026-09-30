@@ -36,7 +36,7 @@ Shin Kanzen Master textbooks in `refs/`.
 > | The rules, **where everything lives** (§2 map), file naming, command router | **`AGENTS.md`** |
 > | To generate a new mock exam | `GENERATE.md` → `.agents/jlpt-test-generation/SKILL.md` |
 > | To import an external PDF / past paper | `IMPORT.md` → `.agents/external-test-import/SKILL.md` |
-> | How any one subsystem works | the 9 skills in `.agents/<name>/SKILL.md` |
+> | How any one subsystem works | the 10 skills in `.agents/<name>/SKILL.md` |
 >
 > If this file and an owner file ever disagree, **the owner wins** — and the
 > disagreement is a defect to fix, not to route around.
@@ -55,7 +55,7 @@ Shin Kanzen Master textbooks in `refs/`.
 | 6 | **GNU Make + a POSIX shell** | the `make` targets use `test -n … \|\| ( … )` | **yes** |
 | 7 | **Git** (no LFS) | Git LFS was removed 2026-08-24. NO binary is in git: the listening MP3s and the 2.6 GB `refs/` archive both come from GitHub Releases — see [Binaries live in Releases](#binaries-live-in-releases) | **yes** |
 | 7b | **`gh`** (GitHub CLI, authenticated) | fetching those binaries and `make upload-files` | for audio/refs |
-| 8 | **Git symlink support** | `.claude/skills/*` are 9 symlinks into `.agents/*` | **yes** |
+| 8 | **Git symlink support** | `.claude/skills/*` are 10 symlinks into `.agents/*` | **yes** |
 | 9 | **Noto Serif CJK JP + Noto Sans CJK JP** | the booklet CSS names these two fonts explicitly | for correct print output |
 | 10 | **Node.js** | one gate check compares the in-page grader with `grade_answers.py` | optional (check skips) |
 | 11 | **poppler** (`pdftoppm`) | `make extract-archive` page rasterisation | optional |
@@ -170,7 +170,7 @@ winget install ezwinports.make        # or use MSYS2 / choco install make
   *Install for all users*. (`Yu Gothic`, already on Windows, covers the app UI.)
 - **Symlinks** — enable **Developer Mode** (Settings → System → For developers),
   then `git config --global core.symlinks true`, **before cloning**. Without it
-  the 9 files under `.claude/skills/` check out as text stubs containing a path,
+  the 10 files under `.claude/skills/` check out as text stubs containing a path,
   the skills stop resolving, and `make check` fails
   `every skill is symlinked under .claude/skills/`.
 - **Console encoding** — set `PYTHONUTF8=1`. `make check` prints Japanese
@@ -218,6 +218,7 @@ make sheet <id>       # rebuild 解答.html + 練習.html (exam + practice mode)
 make booklet <id>     # rebuild both booklet HTMLs
 make mp3 <id> REPLAY=1  # re-render 聴解 from its recorded draw (SEED=n = a NEW draw)
 make grade <id>       # CLI grading → 採点結果.json
+make knowledge        # rebuild the 知識 (knowledge) pages → knowledge/<LEVEL>/ (LEVEL=N2)
 make check            # the gate
 make pages            # static GitHub Pages build → _site/
 ```
@@ -340,6 +341,13 @@ GitHub Actions**. `_site/` is a build artifact: gitignored, never committed.
 | `make check` fails `exam MP3(s) are on the `audio` release` | Those MP3s were composed but never uploaded, and git no longer carries them — run `make upload-files` and commit `logs/upload_manifest.json`. |
 | `This repository exceeded its LFS budget` | You are on a pre-2026-08-24 clone. LFS is gone: there is no `.gitattributes`, and `refs/**/*.{pdf,mp3}` plus `tests/**/*.mp3` are gitignored. Never re-add an LFS rule — an exhausted budget makes checkout itself fail. |
 | `skip grader parity — node not installed` | Expected. Install Node.js to enable that check. |
+
+---
+
+## Third-party data
+
+- Pitch accent (knowledge module): UniDic 3.1.1 + Open JTalk 1.11 dictionary,
+  BSD-3-Clause — `.agents/jlpt-knowledge/references/pitch/`.
 
 ---
 

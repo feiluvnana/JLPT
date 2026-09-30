@@ -95,6 +95,8 @@ ITEMS_PATH = (ROOT / ".agents" / "choukai-audio" / "references"
               / "archive_items.json")
 sys.path.insert(0, str(ROOT / ".agents" / "jlpt-exam-structure" / "scripts"))
 import level as _LEVEL  # noqa: E402
+sys.path.insert(0, str(ROOT / ".agents" / "exam-model-answer" / "scripts"))
+import langs as LANGS  # noqa: E402  (learner-language registry)
 ARCHIVE_DIR = _LEVEL.archive_dir("N2")   # the clip bank is N2's (level table paths)
 ANSWER_KEYS = ARCHIVE_DIR / "answer_keys.json"
 
@@ -516,12 +518,21 @@ def build_one(spec: dict) -> dict:
                 f"situation + question lines once furigana is stripped")
     payload["script"] = exp_script
 
-    vi = dict(spec.get("explanation_vi") or {})
-    if len(vi.get("options_analysis") or []) != len(options):
-        raise Refused(
-            f"{item_id}: the Vietnamese pane analyses "
-            f"{len(vi.get('options_analysis') or [])} options, not "
-            f"{len(options)}")
+    # One `explanation_<code>` per learner language; a REQUIRED one
+    # (langs.required) must be declared, one just added to the registry may be
+    # absent (its pane falls back on the composed paper).
+    learner = {}
+    for lg in LANGS.learners():
+        f = LANGS.content_field(lg)
+        if f not in spec and not LANGS.required(lg):
+            continue
+        pane = dict(spec.get(f) or {})
+        if len(pane.get("options_analysis") or []) != len(options):
+            raise Refused(
+                f"{item_id}: the {LANGS.name(lg)} pane analyses "
+                f"{len(pane.get('options_analysis') or [])} options, not "
+                f"{len(options)}")
+        learner[f] = {key: pane}
     if len(payload.get("options_analysis") or []) != len(options):
         raise Refused(
             f"{item_id}: the Japanese pane analyses "
@@ -552,7 +563,7 @@ def build_one(spec: dict) -> dict:
         "script": script,
         "answers": {key: official_key},
         "explanation": {key: payload},
-        "explanation_vi": {key: vi},
+        **learner,
         "kaisetsu_cell": {key: spec.get("kaisetsu_cell", "")},
         "measured": {"span": round(span, 3), "chars": chars, "lines": lines_n,
                      "rate": round(rate, 4), "lufs": round(lufs, 2)},

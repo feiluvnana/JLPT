@@ -73,3 +73,69 @@ window.JLPTStore = (function(){
   };
 })();
 """ % {"prefix": STORAGE_PREFIX, "answers": ANSWERS_JSON, "result": RESULT_JSON}
+
+
+# `window.JLPTKnowledgeStore` — the knowledge module's per-browser progress
+# (jlpt-knowledge/SKILL.md §Progress). Same rule as JLPTStore: this is the ONLY
+# place its keys are spelled. It lives under its OWN prefix, not under
+# STORAGE_PREFIX, so `JLPTStore.ids()` — which lists every `jlpt-mock/v1/<id>/`
+# as a test — can never mistake a knowledge category for a paper. The keys again
+# read like the files they would be:
+#
+#   jlpt-knowledge/v1/<LEVEL>/<category>/覚えた.json      {"<entry id>": 1, ...}
+#   jlpt-knowledge/v1/<LEVEL>/<category>/クイズ履歴.json  {"<entry id>#<n>": {"n": tries,
+#                                                      "ok": correct, "last": 0|1}}
+#   jlpt-knowledge/v1/設定.json                           {"rate": 1 | 0.7}  (読み上げの速さ)
+#
+# `<n>` is the quiz item's 1-based index inside its entry, so the history of an
+# entry's first question survives the entries around it being reordered.
+KNOWLEDGE_PREFIX = "jlpt-knowledge/v1"
+KNOWLEDGE_LEARNED_JSON = "覚えた.json"
+KNOWLEDGE_HISTORY_JSON = "クイズ履歴.json"
+KNOWLEDGE_PREFS_JSON = "設定.json"
+
+KNOWLEDGE_STORE_JS = """
+window.JLPTKnowledgeStore = (function(){
+  var PREFIX = "%(prefix)s", LEARNED = "%(learned)s", HISTORY = "%(history)s", PREFS = "%(prefs)s";
+  function key(level, cat, name){ return PREFIX + '/' + level + '/' + cat + '/' + name; }
+  function read(level, cat, name){
+    try {
+      var raw = localStorage.getItem(key(level, cat, name));
+      var o = raw ? JSON.parse(raw) : null;
+      return (o && typeof o === 'object') ? o : {};
+    } catch (e){ return {}; }
+  }
+  function write(level, cat, name, obj){
+    try { localStorage.setItem(key(level, cat, name), JSON.stringify(obj)); return true; }
+    catch (e){ return false; }
+  }
+  return {
+    PREFIX: PREFIX, key: key,
+    learned: function(level, cat){ return read(level, cat, LEARNED); },
+    setLearned: function(level, cat, id, on){
+      var o = read(level, cat, LEARNED);
+      if (on) o[id] = 1; else delete o[id];
+      write(level, cat, LEARNED, o);
+      return o;
+    },
+    history: function(level, cat){ return read(level, cat, HISTORY); },
+    // Level-independent preferences (the speech rate) — one key for the module.
+    prefs: function(){
+      try { var o = JSON.parse(localStorage.getItem(PREFIX + '/' + PREFS) || 'null');
+            return (o && typeof o === 'object') ? o : {}; } catch (e){ return {}; }
+    },
+    setPrefs: function(o){
+      try { localStorage.setItem(PREFIX + '/' + PREFS, JSON.stringify(o)); } catch (e){}
+    },
+    record: function(level, cat, qid, ok){
+      var o = read(level, cat, HISTORY);
+      var h = o[qid] || {n: 0, ok: 0, last: 0};
+      h.n += 1; if (ok) h.ok += 1; h.last = ok ? 1 : 0;
+      o[qid] = h;
+      write(level, cat, HISTORY, o);
+      return h;
+    }
+  };
+})();
+""" % {"prefix": KNOWLEDGE_PREFIX, "learned": KNOWLEDGE_LEARNED_JSON, "history": KNOWLEDGE_HISTORY_JSON,
+       "prefs": KNOWLEDGE_PREFS_JSON}

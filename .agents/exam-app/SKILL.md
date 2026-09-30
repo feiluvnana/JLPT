@@ -13,10 +13,10 @@ server, the static Pages twin, and grading — all in `.agents/exam-app/scripts/
 | `build_booklet.py` | Markdown → booklet HTML (`言語知識・読解.html`, `聴解.html`); shared CSS, `render_body()` (the one render chain) and ruby/furigana helpers |
 | `build_interactive.py` | Markdown → `解答.html`, the merged sheet with in-page grading; also the `--keyless` QA render |
 | `build_practice.py` | Markdown → `練習.html`, 練習モード: the same paper flat, no clock, no grading, one model answer per question |
-| `serve_sheet.py` | the ONE local server: test list, exam, results, saved into `tests/<id>/` |
+| `serve_sheet.py` | the ONE local server: portal, test list, exam, results, saved into `tests/<id>/`; also serves `knowledge/` and the reserved `drill/` |
 | `build_pages.py` | the static GitHub Pages build into `_site/` |
 | `grade_answers.py` | CLI grading twin: scaled scores, pass/fail, `採点結果.json` |
-| `app_style.py`, `index_view.py`, `local_store.py` | shared modules |
+| `app_style.py`, `portal_view.py`, `index_view.py`, `local_store.py` | shared modules |
 
 ## Shared modules — one copy of everything
 
@@ -24,9 +24,14 @@ server, the static Pages twin, and grading — all in `.agents/exam-app/scripts/
   never in either script — two copies drift, and no gate sees a drifted
   colour. Must stay free of bare element selectors (loads on top of the
   booklet stylesheet).
-- `index_view.py` — screen 1's CSS/cards/actions, fed the same test objects
-  by `/api/tests` or a baked manifest. `make check` fails if `INDEX_CSS` is
-  defined anywhere else.
+- `portal_view.py` — the level chooser and module chooser, plus the page shell
+  (header, breadcrumb, language switch, `PORTAL_CSS`) every portal screen and
+  the exam list render through. Labels live in the language registry's `portal`
+  namespace (`exam-model-answer/references/languages/<code>/portal.json`), one
+  `.lang-pane` per language, remembered under `build_model_answer.LANG_STORE_KEY`.
+- `index_view.py` — the exam list's CSS/cards/actions, fed the same test objects
+  by `/api/tests?level=` or a baked manifest. `make check` fails if `INDEX_CSS`
+  or `PORTAL_CSS` is defined anywhere but its owner.
 - `local_store.py` — `window.JLPTStore`, the ONLY place the localStorage key
   schema is written.
 - `build_interactive.render_bodies()` calls `build_booklet.render_body()` for
@@ -40,7 +45,10 @@ server, the static Pages twin, and grading — all in `.agents/exam-app/scripts/
   `inject_gengo()`/`inject_choukai()` (through their `after=` hook),
   `render_bodies()`, `player_html()`, `PLAYER_JS` and `CHROME_JS`, and
   exam-model-answer's `explanation_box_html()`/`EXPLANATION_CSS`/
-  `LANG_SWITCH_JS`. It formats no exam text and no explanation prose of its own
+  `LANG_SWITCH_JS`, plus its registry-derived `LANGS`/`PRIMARY`/`UI`/
+  `LANG_NAME`/`load_details()`/`kaisetsu_path()` — its own labels come from
+  the registry's `practice.json` (exam-model-answer §"Languages — one
+  registry"). It formats no exam text and no explanation prose of its own
   — 練習モード is the same paper and the same explanations, laid out differently.
 
 ## Execution
@@ -157,18 +165,31 @@ level's count). Still check by eye that key/
 explanation tables render at the end of both files and furigana sits over
 its base; Cmd-P to preview pagination.
 
-## The three screens
+## The three screens (behind the portal)
+
+Entering the site is two portal screens before the list, identical in both
+deployments (`portal_view.py`):
+
+| URL (= `_site/` file) | Screen |
+| - | - |
+| `/` (`index.html`) | level chooser — N1–N5 cards: status (`level.py`: calibrated / structured / scaffold, `none` without a table), test count, 知識 availability. A level with nothing is disabled (「準備中」), never hidden |
+| `/<LEVEL>/` (`<LEVEL>/index.html`) | module chooser — three cards: 試験 (→ `exam/`), 知識 (→ `../knowledge/<LEVEL>/`, built by `jlpt-knowledge`; its categories counted by `knowledge_data.summary()`, a category shown only with ≥1 entry) and ドリル (→ `../drill/<LEVEL>/`, path reserved for the drill module — 大問別練習, 聴解トレーニング, 復習ノート, 進捗ダッシュボード, 読解ライブラリ — whose builder is not written yet); a module with nothing (no tests / no `index.html`) is disabled 「準備中」, never hidden |
+| `/<LEVEL>/exam/` (`<LEVEL>/exam/index.html`) | screen 1 below, that level only, with a breadcrumb back |
+
+**Every link is relative** and names `index.html` — Pages serves from
+`/<repo>/`; `make check` fails an absolute `href="/…"` on any portal page.
 
 `解答.html` merges the problem booklet and radio bubbles into one
 deliverable: answer **inside the booklet**, press 「採点する」, the 180-point
 result appears immediately. `make serve` (no test id) covers every test; the
 same screens ship as a static Pages site — only where answers are kept differs.
 The paper's other mode, 練習.html, is its own page and not one of these three —
-see 練習モード below.
+see 練習モード below. Both link back to their level's list,
+`../../<LEVEL>/exam/index.html` (`build_interactive.list_href()`).
 
 | # | Screen | Where it lives | What it does |
 | - | ------ | -------------- | ------------ |
-| 1 | テスト一覧 | `GET /` — `serve_sheet.py` | every test in `tests/`, answered count, last score, origin badge (`imported`/`generated`), under two collapsed `<details>` groups + a search box |
+| 1 | テスト一覧 | `GET /<LEVEL>/exam/` — `serve_sheet.py` | that level's tests, answered count, last score, origin badge (`imported`/`generated`), under two collapsed `<details>` groups + a search box |
 | 2 | 受験 | `GET /tests/<id>/解答.html` | the exam, in two timed phases (below); each click autosaves |
 | 3 | 採点結果 | same page, `#screen-result` | rendered on 「採点する」 or fetched from `採点結果.json` |
 
@@ -197,7 +218,7 @@ injectors, and it is deliberately NOT a sitting:
 | Clock | 105分 / 50分, auto-submits at 00:00 | none |
 | Score | 180 points, once, when 聴解 goes in | none — nothing is added up |
 | Model answer | after grading (or in `模範解答.html`) | one button per question, any time |
-| 読解 passage | Japanese only | 原文 / 訳 toggle per passage, in the VI edition |
+| 読解 passage | Japanese only | 原文 / 訳 toggle per passage, in the learner-language editions |
 | Record kept | `ユーザー解答.json` + `採点結果.json` | **nothing** |
 
 - **The way in is a button under 言語知識・読解's 開始する button** (`gate()`),
@@ -213,20 +234,23 @@ injectors, and it is deliberately NOT a sitting:
   markup `模範解答.html` prints, in both languages behind the same
   `.lang-pane` mechanism and the same stored preference
   (`build_model_answer.LANG_STORE_KEY`). No explanation prose is formatted here.
-- **One 原文 / 訳 toggle per 読解 passage, in the Vietnamese edition only**
+- **One 原文 / 訳 toggle per 読解 passage, in the learner-language editions only**
   (2026-09-10). Studying a passage means reading it, and a learner who is
-  working the paper in Tiếng Việt should not have to open `模範解答.html` to see
-  what it says. So the control is exam-model-answer's own — `ptext_switch_html()`,
+  working the paper in Tiếng Việt (or any registry learner language) should not
+  have to open `模範解答.html` to see what it says. So the control is exam-model-answer's own — `ptext_switch_html()`,
   `PASSAGE_TOGGLE_CSS`, `PASSAGE_TOGGLE_JS`, over the `passage_translation` that
-  already lives on the first item of each group in `詳細解説.vi.json` (AGENTS.md
-  §2). One mechanism, one copy; nothing about the VI file changes. Four things
+  already lives on the first item of each group in `詳細解説.<code>.json`
+  (AGENTS.md §2). One mechanism, one copy; nothing about the learner files
+  changes. Four things
   are this page's own and none of them may be re-decided quietly:
   - **原文 is the default.** `模範解答.html` opens on the translation because its
     answers are already out; here the questions are still live, and opening on
     the 訳 would hand over the passage the item is asking about.
-  - **The toggle is VI-only, and the Japanese edition is untouched** — the
-    control and the translation pane are `.lang-pane[data-lang="vi"]`, the
-    booklet's own box is not wrapped in a pane at all. Switching edition resets
+  - **The toggle is learner-editions-only, and the Japanese edition is
+    untouched** — the control and the translation pane sit in one
+    `.lang-pane[data-lang="<code>"]` per learner language that has translated
+    that group, inside a `.passage-tr` wrapper; the booklet's own box is not
+    wrapped in a pane at all. Switching edition resets
     every passage to 原文 (`resetPassageText()`), so no group is ever left
     showing a pane the current edition does not render.
   - **The booklet's boxes are moved, never copied.** A paper prints exactly 14
@@ -321,8 +345,8 @@ cannot drift. Change the exam's timing there first, never in the builder.
 大問 map and era shapes, the 聴解 labels, section names, per-section max and
 cutoff, total and pass mark (N2: 60/19 ×3, 180, 90), the study advice and the
 「JLPT N2」 titles. `level.py` resolves a test's level from its folder name
-(`n1-…`, `imported-n1-…`; bare = N2), and the test list shows it on every card
-and offers an N1–N5 switcher. The audio-release fallback URL is `level.REPO`.
+(`n1-…`, `imported-n1-…`; bare = N2); the portal's level chooser routes by it
+and the list shows it on every card. The audio-release fallback URL is `level.REPO`.
 
 **聴解's clock is never shorter than its audio.** The recording IS that section
 and an official one can run past 50 minutes (imported-n2-2025-12 is 51.4), so
@@ -399,10 +423,13 @@ what the QA report header must name. Not a deliverable: lands in
 ## Serving (`serve_sheet.py`) — five things it must keep doing
 
 1. **One server, every test** — no arguments, serves the whole `tests/`
-   tree; routes `/`, `/api/tests`, `/tests/<id>/…`, `POST /api/tests/<id>/
-   {answers,submit,clear}`. Only paths under `tests/` are reachable.
-2. **Screen 1 reads the disk, never a cache** — `GET /api/tests` carries
-   `Cache-Control: no-store`.
+   tree; routes `/`, `/<LEVEL>/`, `/<LEVEL>/exam/` (rendered per request; a
+   folder URL without its slash redirects), `/api/tests[?level=]`,
+   `/tests/<id>/…`, `/knowledge/<LEVEL>/…`, `/drill/<LEVEL>/…`, `POST /api/tests/<id>/
+   {answers,submit,clear}`. Only paths under `tests/`, `knowledge/` and `drill/`
+   (`SERVED_ROOTS`) are reachable.
+2. **The portal and the list read the disk, never a cache** — the pages and
+   `GET /api/tests` carry `Cache-Control: no-store`.
 3. **Range requests** — `聴解.mp3` is ~30MB and `<audio>` re-requests with
    `Range:` on every seek; the handler answers `206 Partial Content` itself
    and advertises `Accept-Ranges: bytes`.
@@ -417,7 +444,9 @@ Same three screens, two storage backends, never two apps:
 
 | | `make serve` (local) | GitHub Pages (`make pages`) |
 | - | - | - |
-| Screen 1 | `serve_sheet.py`, `GET /api/tests` reads disk | `_site/index.html`, progress from localStorage |
+| Portal | `/`, `/<LEVEL>/` rendered per request | `_site/index.html`, `_site/<LEVEL>/index.html`, baked |
+| Screen 1 | `/<LEVEL>/exam/`, `GET /api/tests?level=` reads disk | `_site/<LEVEL>/exam/index.html`, progress from localStorage |
+| 知識 / ドリル | `knowledge/<LEVEL>/*`, `drill/<LEVEL>/*` served as files | every `*.html` under them (sub-folders included) copied to `_site/knowledge/<LEVEL>/`, `_site/drill/<LEVEL>/` (`copy_module`) |
 | Screens 2–3 | `解答.html`, `--storage server` | `_site/.../解答.html`, `--storage local` |
 | Answers | `ユーザー解答.json` via `POST /api/…` | `localStorage[jlpt-mock/v1/<id>/…]` |
 | Result | `採点結果.json` via `POST /api/…` | `localStorage[…]` |
@@ -463,6 +492,10 @@ test's two documents, and how answers move between browsers. Say so on the
 page: clearing site data loses the lot.
 
 ### Screen 1 groups the cards — collapsed by default
+
+The list holds one level (chosen upstream — there is no level switcher) and its
+labels are the `portal` namespace's `list_*` strings, both languages in the
+markup (JS builds panes; `title=`/`confirm()` use the language on screen).
 
 `origin` already decides the badge, so it decides the grouping: 公式過去問
 (`imported-*`) and 模擬試験 (everything else) are two `<details>`, **shut on
@@ -583,7 +616,10 @@ Booklets: `verify()` on every build. Sheet: 101 radio groups, every expected
 key present, no shared group name, 4 options per gengo question and 3 for
 問題4 (393 inputs total), no emoji in report labels, and the in-page grader
 matching `grade_answers.py`'s `採点結果.json` field for field. Deployments:
-both screen-1 renderers go through `index_view`; the localStorage prefix
+both deployments render the portal through `portal_view` and the list through
+`index_view`, the server routes the Pages tree and serves exactly `tests/` +
+`knowledge/` + `drill/`, every module chooser carries all three cards, portal links are relative, every sheet/practice page links back to
+its level's list; the localStorage prefix
 lives in exactly one module; every `解答.html` is the server build; `_site/`
 is gitignored with `.nojekyll`.
 

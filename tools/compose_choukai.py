@@ -14,7 +14,7 @@ What it writes, all from the drawn records:
     聴解.mp3            the composed audio, one loudnorm pass
     聴解_チャプター.json  real per-問題/per-item offsets
     詳細解説.json        the 30 choukai entries, merged in beside 問1-71
-    詳細解説.vi.json     the same, Vietnamese pane
+    詳細解説.<code>.json the same, for every learner language in the registry
 
 Two kinds of clip, two placement rules
 --------------------------------------
@@ -64,6 +64,11 @@ ROOT = Path(__file__).resolve().parent.parent
 # level the test id names; these are N2's.
 sys.path.insert(0, str(ROOT / ".agents" / "jlpt-exam-structure" / "scripts"))
 import level as LEVEL  # noqa: E402
+# The learner-language registry: which 詳細解説 panes the composer writes 聴解
+# entries into, and the bank field each one's prose rides in
+# (`explanation_<code>`; exam-model-answer §"Languages — one registry").
+sys.path.insert(0, str(ROOT / ".agents" / "exam-model-answer" / "scripts"))
+import langs as LANGS  # noqa: E402
 BANK_PATH = LEVEL.path(LEVEL.DEFAULT_LEVEL, "choukai_bank")
 DRAWS_PATH = LEVEL.path(LEVEL.DEFAULT_LEVEL, "choukai_draws")
 
@@ -264,18 +269,23 @@ def resolve(rec: dict, section: str, slot: int) -> dict:
     """One drawn record placed in one slot — the fields every renderer reads.
 
     An OFFICIAL record already carries `script`, `answers`, `explanation`,
-    `explanation_vi` and `kaisetsu_cell` keyed `問N-M`, and because it is
+    `explanation_<code>` per learner language and `kaisetsu_cell` keyed
+    `問N-M`, and because it is
     slot-preserved those keys are already this slot's. A TEXTBOOK record cannot
     carry them: it is slot-free, so the `問N-M` key is only known once the draw
     places it, and its transcript is banked without the 「N番。」 the composer
     prepends. This is the one place that difference is resolved; everything
     downstream sees the same shape.
     """
+    # A learner language a record carries no prose for (a language added to the
+    # registry after the bank was declared) contributes nothing: that pane
+    # falls back and the gate WARNs, rather than the draw failing.
+    fields = [LANGS.content_field(lg) for lg in LANGS.learners()]
     if not rec.get("needs_number_call"):
         return {"record": rec, "section": section, "slot": slot,
                 "script": rec["script"], "answers": rec["answers"],
                 "explanation": rec["explanation"],
-                "explanation_vi": rec["explanation_vi"],
+                **{f: rec.get(f) or {} for f in fields},
                 "kaisetsu_cell": rec["kaisetsu_cell"]}
     lines = rec["script_lines"]
     key = f"問{section[-1]}-{slot}"
@@ -284,7 +294,8 @@ def resolve(rec: dict, section: str, slot: int) -> dict:
         "script": "\n".join([f"{slot}番。{lines[0]}"] + lines[1:]),
         "answers": {key: rec["answer"]},
         "explanation": {key: dict(rec["explanation_payload"])},
-        "explanation_vi": {key: dict(rec["explanation_vi_payload"])},
+        **{f: ({key: dict(rec[f + "_payload"])} if f + "_payload" in rec else {})
+           for f in fields},
         "kaisetsu_cell": {key: rec["kaisetsu_cell_text"]},
     }
 
@@ -1076,16 +1087,24 @@ def build_audio(index: dict, clips: dict, pres: dict, out_mp3: Path,
 # ---------------------------------------------------------------- explanations
 
 def merge_explanations(test_dir: Path, index: dict, clips: dict) -> None:
-    """Replace the 30 choukai entries in both panes, leaving 問1-71 untouched."""
-    for name, field in (("詳細解説.json", "explanation"),
-                        ("詳細解説.vi.json", "explanation_vi")):
-        path = test_dir / name
+    """Replace the 30 choukai entries in every pane, leaving 問1-71 untouched.
+
+    One pane per registry language. A learner file that does not exist yet is
+    created only when the drawn clips carry prose in that language — a language
+    just added to the registry must not grow a file holding 聴解 entries alone.
+    """
+    items = ordered_items(index, clips)
+    for lg in LANGS.order():
+        field = LANGS.content_field(lg)
+        path = LANGS.content_path(test_dir / "詳細解説.json", lg)
+        if not path.is_file() and not any(item.get(field) for item in items):
+            continue
         data = (json.loads(path.read_text(encoding="utf-8"))
                 if path.is_file() else {})
         for key in [k for k in data if k.startswith("問")]:
             del data[key]
-        for item in ordered_items(index, clips):
-            data.update(item[field])
+        for item in items:
+            data.update(item.get(field) or {})
         path.write_text(
             json.dumps(data, ensure_ascii=False, indent=1) + "\n",
             encoding="utf-8")

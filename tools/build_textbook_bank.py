@@ -100,6 +100,8 @@ sys.path.insert(0, str(ROOT / "tools"))
 
 from choukai_segment import (  # noqa: E402
     EXT_BELOW_LUFS, EXT_CAP_DBFS, FRAME_MS, expected_gaps, measure)
+sys.path.insert(0, str(ROOT / ".agents" / "exam-model-answer" / "scripts"))
+import langs as LANGS  # noqa: E402  (learner-language registry)
 
 ITEMS_PATH = (ROOT / ".agents" / "choukai-audio" / "references"
               / "textbook_items.json")
@@ -575,11 +577,20 @@ def build_one(spec: dict) -> dict:
 
     payload = dict(spec["explanation"])
     payload.update({"stem": stem, "options": options, "script": script})
-    vi = dict(spec["explanation_vi"])
-    if len(vi.get("options_analysis") or []) != len(options):
-        raise Refused(
-            f"{spec['id']}: the Vietnamese pane analyses "
-            f"{len(vi.get('options_analysis') or [])} options, not {len(options)}")
+    # One `explanation_<code>` per learner language. A REQUIRED language
+    # (langs.required) must be declared on every item; one just added to the
+    # registry may be absent, and its pane then falls back on the composed paper.
+    learner = {}
+    for lg in LANGS.learners():
+        f = LANGS.content_field(lg)
+        if f not in spec and not LANGS.required(lg):
+            continue
+        pane = dict(spec[f])
+        if len(pane.get("options_analysis") or []) != len(options):
+            raise Refused(
+                f"{spec['id']}: the {LANGS.name(lg)} pane analyses "
+                f"{len(pane.get('options_analysis') or [])} options, not {len(options)}")
+        learner[f + "_payload"] = pane
 
     return {
         "id": spec["id"],
@@ -613,7 +624,7 @@ def build_one(spec: dict) -> dict:
         "script_lines": list(spec["script_lines"]),
         "answer": answer,
         "explanation_payload": payload,
-        "explanation_vi_payload": vi,
+        **learner,
         "kaisetsu_cell_text": spec.get("kaisetsu_cell", ""),
         "measured": {"span": round(span, 3), "chars": chars, "lines": lines,
                      "rate": round(rate, 4),

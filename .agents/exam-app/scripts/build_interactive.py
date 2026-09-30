@@ -35,6 +35,7 @@ ROOT = Path(__file__).resolve().parents[3]
 # time rather than sniffed at runtime.
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import local_store  # noqa: E402
+import portal_view  # noqa: E402  (the site's URL layout: where the list lives)
 # The exam level's structure table — 大問 labels, scoring bands, repo URL.
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "jlpt-exam-structure" / "scripts"))
 import level as LEVEL  # noqa: E402
@@ -355,8 +356,8 @@ const GOI_CUTOFF = %(goi_cutoff)s;
 const SCORING = %(scoring)s;
 const CHOUKAI_SCRIPTS = %(choukai_scripts)s;
 
-// Where 「← テスト一覧」 and 「テスト一覧へ戻る」 go: the unified server's root, or
-// the static list two levels up on GitHub Pages (which is served from /<repo>/).
+// Where 「← テスト一覧」 and 「テスト一覧へ戻る」 go: this level's exam list, one
+// relative link in both deployments (build-time list_href()).
 const LIST_HREF = %(list_href)s;
 
 /* ---------------------------------------------------------------- the store
@@ -1837,11 +1838,20 @@ def grading_data(gam, gids: list, ckeys: dict, combined_keys: dict,
     }
 
 
-# Where the sheet's 「← テスト一覧」 points, per deployment. The unified server
-# serves the list at its root; GitHub Pages serves the whole site from /<repo>/,
-# where an absolute `/` would leave the site altogether, so the static build
-# links relatively out of tests/<id>/.
-LIST_HREF = {"server": "/", "local": "../../index.html"}
+# The two answer stores a sheet can be built for (local_store.py); exactly one
+# is live per build.
+STORAGES = ("server", "local")
+
+
+def list_href(level: str) -> str:
+    """Where 「← テスト一覧」 points: this test's level's exam list.
+
+    ONE relative link for both deployments — `make serve` and the Pages build
+    lay the site out identically (exam-app §Two deployments), and Pages serves
+    it from /<repo>/, where an absolute `/` would leave the site. A sheet sits
+    at tests/<id>/, two folders below the root: `../../N2/exam/index.html`.
+    """
+    return portal_view.exam_href(level, depth=2)
 
 
 def render_bodies(gengo_md: str, choukai_md: str) -> tuple[str, str]:
@@ -1870,9 +1880,9 @@ def render_combined(gengo_md: str, choukai_md: str, testid: str, keys: list,
     n_choukai = len(keys) - n_gengo
     gengo_body, choukai_body = render_bodies(gengo_md, choukai_md)
 
-    if storage not in LIST_HREF:
+    if storage not in STORAGES:
         raise ValueError(f"unknown storage backend: {storage}")
-    list_href = LIST_HREF[storage]
+    back_href = list_href(gdata["level"])
 
     title = f"N2 模擬試験 解答用紙 ({testid})"
     # The SAME bar as screen 1's, so the app reads as one thing. Opened as a bare
@@ -1887,7 +1897,7 @@ def render_combined(gengo_md: str, choukai_md: str, testid: str, keys: list,
             'onclick="goTab(\'gengo\')">言語知識・読解</button>'
             '<button id="tab-choukai" type="button" data-label="聴解" '
             'onclick="goTab(\'choukai\')">聴解</button></span>')
-    bar = (f'<div id="bar"><a class="back" href="{list_href}">← テスト一覧</a>'
+    bar = (f'<div id="bar"><a class="back" href="{back_href}">← テスト一覧</a>'
            f'<b id="bar-title">テスト {testid}（受験）</b>'
            f'{tabs}'
            f'<span class="sub" id="where"></span>'
@@ -1919,7 +1929,7 @@ def render_combined(gengo_md: str, choukai_md: str, testid: str, keys: list,
 
     js = SCRIPT % {"keys": json.dumps(keys, ensure_ascii=False), "testid": testid,
                    "storage": storage,
-                   "list_href": json.dumps(list_href, ensure_ascii=False), **gdata}
+                   "list_href": json.dumps(back_href, ensure_ascii=False), **gdata}
     js += CHROME_JS
     # The localStorage backend is a shared snippet, included only where it is the
     # live one — a server build must not even be able to write a second copy.
@@ -2096,7 +2106,7 @@ def main():
     ap = argparse.ArgumentParser(
         description="Build the combined problem+answer sheet (解答.html) for one test.")
     ap.add_argument("test_dir", help="tests/<test_id>")
-    ap.add_argument("--storage", choices=sorted(LIST_HREF), default="server",
+    ap.add_argument("--storage", choices=STORAGES, default="server",
                     help="where answers and results are kept: 'server' writes "
                          "ユーザー解答.json/採点結果.json into the test folder via "
                          "make serve (default); 'local' keeps the same two "

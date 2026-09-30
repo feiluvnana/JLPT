@@ -670,12 +670,16 @@ def check_ruby_suspects(level: str, spec: dict, warn):
 # language files are read here). Found by the B4, B5 and 漢字 B1 QA rounds.
 PROSE_CITES = re.compile(r"(?<![0-9])(?:1[0-2]|[1-9])/20[0-9]{2}(?![0-9])|本のp\.?[0-9]|この本|(?<![A-Za-z])SK(?![A-Za-z])")
 
+GUIDE_CITES = re.compile(r"新完全マスター|完全模試|総まとめ|Shin ?Kanzen|Soumatome|本のp|この本|例題|"
+                         r"第[0-9０-９一二三]部|(?<![A-Za-z])SK(?![A-Za-z])|\\btr\\. ?[0-9]|[Vv]í dụ [0-9]+ (?:của|trong) sách|Trang [0-9]")
+
 
 def check_prose_citations(level: str, spec: dict, warn):
-    # Items only: a guide may state exam history (「12/2022から問題11は4文章」) —
-    # that is content about the format, not a citation of where a claim came from.
-    if spec.get("kind") != "item":
-        return
+    # A guide may state exam history (「12/2022から問題11は4文章」) and point at a
+    # paper that is ON this site, so dates are allowed there; a book, page,
+    # part or 例題 number never is (読解 G2 QA: 105 live guide paragraphs cited
+    # 『完全模試』 / "Shin Kanzen (tr.N)" / 「第1部」).
+    rx = PROSE_CITES if spec.get("kind") == "item" else GUIDE_CITES
     cat = D.locate(level, spec)
     hits = []
     for part in cat.parts:
@@ -686,7 +690,7 @@ def check_prose_citations(level: str, spec: dict, warn):
             for eid, pr in D.read_json(path).items():
                 for field, v in pr.items():
                     for t in (v if isinstance(v, list) else [v]):
-                        m = PROSE_CITES.search(str(t))
+                        m = rx.search(str(t))
                         if m:
                             hits.append(f"{_rel(path)} {eid}.{field}: 「{m.group(0)}」")
     warn(f"knowledge/{level}/{spec['stem']}: prose names no source", not hits,

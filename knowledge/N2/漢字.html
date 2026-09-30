@@ -723,9 +723,8 @@ function matches(e, q, g, t, o){
 function refresh(){
   if (!document.getElementById('cards')) return;          // an empty (準備中) category
   const q = (ctlValue('q') || '').trim().toLowerCase();
-  const g = ctlValue('group'), t = ctlValue('tag'), o = ctlValue('official'), so = ctlValue('sort');
-  let list = E.map((e, i) => i).filter(i => matches(E[i], q, g, t, o));
-  if (so === 'official') list.sort((a, b) => (E[b].oc || 0) - (E[a].oc || 0) || a - b);
+  const g = ctlValue('group'), t = ctlValue('tag'), o = ctlValue('official');
+  const list = E.map((e, i) => i).filter(i => matches(E[i], q, g, t, o));   // E is in book order
   state.list = list; state.shown = 0;
   document.getElementById('cards').innerHTML = '';
   more();

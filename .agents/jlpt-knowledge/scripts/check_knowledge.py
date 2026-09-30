@@ -17,7 +17,12 @@ shared-material keys, a stale or missing built page, the band table in
 SKILL.md drifting from KNOWLEDGE_BANDS, a generated 語彙/漢字 quiz item (quiz_gen.py)
 that breaks the integrity rules (a distractor that is a valid reading of the
 headword, a meaning distractor from a `related` entry, a key that is not the
-entry's own), the pitch dataset failing to load for a category that needs it.
+entry's own), the pitch dataset failing to load for a category that needs it,
+and book order (SKILL §Book order): a category without an `order` rule, an entry
+without a book-order key (文法: a valid `book` its inventory row assigns), two
+entries on one key unless categories.json `book_splits` documents the split, a
+`group` label the `book` key does not imply, a built page whose cards are not
+listed in book order.
 WARN: a shared entry with no prose in some active language, quiz answer
 positions unbalanced across a category, a language file for an inactive code,
 a repeated headword, an entry whose generated item was skipped for want of
@@ -57,7 +62,7 @@ ARCHIVE_BINARY = (".pdf", ".mp3", ".rar", ".wav", ".m4a", ".zip")
 
 # Keys a shared entry may carry beyond its category's `fields`.
 SHARED_COMMON = {"id", "examples", "sources", "related", "quiz", "group", "tags", "official_count",
-                 "pitch"}
+                 "pitch", "book"}
 PROSE_KEYS = {"item": {"meaning", "usage", "nuance", "compare", "example_notes", "quiz"},
               "guide": {"title", "body", "example_notes", "quiz"}}
 
@@ -393,6 +398,8 @@ def check_category(level: str, spec: dict, check, warn, skip, git_tracks):
     if QG.types(spec):
         check_generated(level, spec, cat, check, warn)
 
+    check_book_order(level, spec, entries, check)
+
     # The built page(s), each stamped with every data file it was made from. A
     # split category is a list page plus one card page per part.
     if cat.layout == "split":
@@ -412,6 +419,16 @@ def check_category(level: str, spec: dict, check, warn, skip, git_tracks):
         check(f"{name} matches the data it stamps", not stale,
               f"{len(stale)} file(s) changed since the build ({stale[:4]}) — run "
               f"`make knowledge LEVEL={level}`; the JSON is the single source of truth")
+        if cat.layout == "split" and page == D.page_path(level, stem):
+            continue                     # the parts list: it holds no cards
+        mine = [e for e in entries if cat.layout != "split" or e.get("_part") == page.stem]
+        want_ids = [e["id"] for e in D.book_sorted(spec, mine, level) if isinstance(e.get("id"), str)]
+        shown = page_card_ids(page)
+        check(f"{name} lists its cards in book order", shown == want_ids,
+              (f"page order differs from book order at card {next((i for i, (a, b) in enumerate(zip(shown, want_ids)) if a != b), min(len(shown), len(want_ids))) + 1}"
+               if shown is not None else "no card list (`const E = [...]`) found in the page")
+              + f" — run `make knowledge LEVEL={level}`; the builder sorts by knowledge_data.book_sorted "
+                f"and nothing on the page may reorder cards (SKILL §Book order)")
     sub = D.level_dir(level) / stem
     built = {pg for pg, _ in pages}
     stray = [_rel(h) for h in (sorted(sub.glob("*.html")) if sub.is_dir() else []) if h not in built]
@@ -419,6 +436,78 @@ def check_category(level: str, spec: dict, check, warn, skip, git_tracks):
         check(f"{tag}/: no part page without its part", not stray,
               f"{stray[:4]} — a leftover of a removed part or an un-split category; "
               f"`make knowledge LEVEL={level}` deletes them")
+
+
+_PAGE_E = re.compile(r"^const E = (\[.*\]);$", re.M)
+
+
+def page_card_ids(page: Path) -> list[str] | None:
+    """The ids of the cards a built page embeds, in the order it lists them."""
+    m = _PAGE_E.search(page.read_text(encoding="utf-8"))
+    if not m:
+        return None
+    try:
+        return [c.get("id") for c in json.loads(m.group(1))]
+    except (ValueError, AttributeError):
+        return None
+
+
+def check_book_order(level: str, spec: dict, entries: list[dict], check):
+    """SKILL §Book order: every entry has a key, keys are unique unless a documented
+    same-number split, and (文法) the `book` key is one the inventory assigns and
+    implies the entry's `group` label."""
+    tag = f"knowledge/{level}/{spec['stem']}"
+    how = spec.get("order")
+    check(f"{tag}: categories.json declares its book order", how in ("book", "id"),
+          f"`order` is {how!r} — \"book\" (a `book` field per entry) or \"id\" (with `order_series`); "
+          f"every category is listed in the order of its book, never a custom one")
+    if how not in ("book", "id") or not entries:
+        return
+    keys = D.order_keys(spec, entries, level)
+    nokey = [e["_where"] for e in entries if isinstance(e.get("id"), str) and e["id"] not in keys]
+    rule = ("a valid `book` [section, lesson, item(, split)] copied from its inventory row"
+            if how == "book" else f"an id matching `order_series` {spec.get('order_series')}")
+    check(f"{tag}: every entry has a book-order key", not nokey,
+          f"{len(nokey)} without one ({nokey[:5]}) — needs {rule} (SKILL §Book order)")
+    if how != "book":
+        return
+    probs = []
+    splits = spec.get("book_splits") or {}
+    rows = D.inventory_rows(level, spec["stem"])
+    inv_by_id = {r["id"]: r["book"] for r in rows if D.valid_book(r.get("book"))}
+    inv_keys = {tuple(b[:3]) for b in inv_by_id.values()}
+    by_triple: dict[tuple, list[dict]] = {}
+    for e in entries:
+        b = e.get("book")
+        if not D.valid_book(b):
+            continue
+        t = tuple(b[:3])
+        by_triple.setdefault(t, []).append(e)
+        want = D.book_group(spec, b)
+        if want is None:
+            probs.append(f"{e['_where']}: section {b[0]} is not in categories.json `book_sections`")
+        elif e.get("group") != want:
+            probs.append(f"{e['_where']}: `group` 「{e.get('group')}」 but `book` {b} is 「{want}」")
+        if inv_keys and t not in inv_keys:
+            probs.append(f"{e['_where']}: `book` {b} is no position the inventory assigns")
+        ib = inv_by_id.get(e.get("id"))
+        if ib and (b[:3] != ib[:3] or (len(ib) == 4 and b != ib)):
+            probs.append(f"{e['_where']}: `book` {b} but its inventory row says {ib}")
+        if len(b) == 4 and "-".join(map(str, t)) not in splits:
+            probs.append(f"{e['_where']}: split key {b} — {'-'.join(map(str, t))} is not in `book_splits`")
+    for t, es in by_triple.items():
+        if len(es) < 2:
+            continue
+        name = "-".join(map(str, t))
+        subs = [e["book"][3] if len(e["book"]) == 4 else None for e in es]
+        if name not in splits or None in subs or len(set(subs)) != len(subs):
+            probs.append(f"{', '.join(e.get('id', '?') for e in es)} share book {list(t)} — one entry per "
+                         f"position, unless a same-number split listed in categories.json `book_splits` "
+                         f"with a distinct 4th element each")
+    check(f"{tag}: `book` keys are unique, inventory-backed and match `group`", not probs,
+          "; ".join(probs[:8]) + (f"; … {len(probs) - 8} more" if len(probs) > 8 else "")
+          + " — the key is derived once from the Shin Kanzen 目次 (inventory `book`); fix the "
+            "entry, never the page (SKILL §Book order)")
 
 
 def check_generated(level: str, spec: dict, cat: D.Category, check, warn):

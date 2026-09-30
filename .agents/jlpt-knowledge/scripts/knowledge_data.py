@@ -212,6 +212,110 @@ def summary(level: str) -> dict[str, int]:
             for spec in categories(level)}
 
 
+# --- book order: the ONE order a category's cards are listed in ---------------
+# jlpt-knowledge/SKILL.md §Book order. categories.json `order` says how a key is
+# read: "book" = the entry's shared `book` field [section, lesson, item(, split)];
+# "id" = off the id through `order_series`. The builder sorts every page by it and
+# the gate FAILs an entry without a key and a page listed in any other order.
+INVENTORY_DIR = CATEGORIES_JSON.parent / "inventory"
+_INV: dict[str, dict] = {}
+NO_KEY = (99, 0, 0, 0, 0, "", "", "")      # sorts last; the gate FAILs every such entry
+
+
+def inventory(level: str) -> dict:
+    """references/inventory/<LEVEL>.json ({} when the level has none), read once."""
+    if level not in _INV:
+        p = INVENTORY_DIR / f"{level}.json"
+        try:
+            _INV[level] = read_json(p) if p.is_file() else {}
+        except (OSError, ValueError):
+            _INV[level] = {}
+    return _INV[level]
+
+
+def inventory_rows(level: str, stem: str) -> list[dict]:
+    rows = inventory(level).get(stem, {})
+    rows = rows.get("entries", []) if isinstance(rows, dict) else []
+    return [r for r in rows if isinstance(r, dict) and isinstance(r.get("id"), str)]
+
+
+def valid_book(v) -> bool:
+    """[section, lesson, item] or [section, lesson, item, split]: ints, section/item/split >= 1."""
+    return (isinstance(v, list) and len(v) in (3, 4)
+            and all(isinstance(x, int) and not isinstance(x, bool) for x in v)
+            and v[0] >= 1 and v[1] >= 0 and v[2] >= 1 and (len(v) == 3 or v[3] >= 1))
+
+
+def book_group(spec: dict, book) -> str | None:
+    """The `group` label a book key implies (categories.json `book_sections`)."""
+    if not valid_book(book):
+        return None
+    fmt = (spec.get("book_sections") or {}).get(str(book[0]))
+    if not isinstance(fmt, str):
+        return None
+    lesson = book[1]
+    letter = "ABCDEFGHIJ"[lesson - 1] if 1 <= lesson <= 10 else "?"
+    return fmt.replace("{n}", str(lesson)).replace("{L}", letter)
+
+
+def _gojuon(s: str) -> str:
+    s = plain(s or "")
+    return "".join(chr(ord(c) - 0x60) if 0x30A1 <= ord(c) <= 0x30F6 else c for c in s)
+
+
+def order_keys(spec: dict, entries: list[dict], level: str) -> dict[str, tuple]:
+    """{id: sortable key} for every entry that HAS a book-order key (see module note)."""
+    out: dict[str, tuple] = {}
+    how = spec.get("order")
+    ids = [e for e in entries if isinstance(e.get("id"), str)]
+    if how == "book":
+        for e in ids:
+            b = e.get("book")
+            if valid_book(b):
+                out[e["id"]] = (0, *b, *([0] * (4 - len(b))), "", "", e["id"])
+        return out
+    if how != "id":
+        return out
+    series = [s for s in spec.get("order_series") or [] if isinstance(s, str)]
+    inv = {r["id"]: i for i, r in enumerate(inventory_rows(level, spec["stem"]))}
+    pats = [(i, re.compile(s)) for i, s in enumerate(series) if s != "inventory"]
+    inv_rank = series.index("inventory") if "inventory" in series else None
+    loose = []                                  # (series rank, entry): unnumbered ids
+    for e in ids:
+        eid = e["id"]
+        for i, rx in pats:
+            m = rx.fullmatch(eid) or (rx.match(eid) if not rx.groups else None)
+            if m:
+                if rx.groups:
+                    out[eid] = (i, int(m.group(1)), 0, 0, 0, "", "", eid)
+                else:
+                    loose.append((i, e))
+                break
+        else:
+            if inv_rank is not None and eid in inv:
+                out[eid] = (inv_rank, inv[eid], 0, 0, 0, "", "", eid)
+    # unnumbered: under their group label, groups in the order of their first numbered
+    # entry (a label no numbered entry uses comes after), then by reading in gojūon order
+    first: dict[str, tuple] = {}
+    for e in ids:
+        k, g = out.get(e["id"]), e.get("group")
+        if k and isinstance(g, str) and (g not in first or k < first[g]):
+            first[g] = k
+    rank = {g: n for n, g in enumerate(sorted(first, key=lambda g: first[g]))}
+    rk = spec.get("reading")
+    for i, e in loose:
+        g = e.get("group") if isinstance(e.get("group"), str) else ""
+        out[e["id"]] = (i, rank.get(g, len(rank)), 0, 0, 0, g if g not in rank else "",
+                        _gojuon(str(e.get(rk, "")) if rk else ""), e["id"])
+    return out
+
+
+def book_sorted(spec: dict, entries: list[dict], level: str) -> list[dict]:
+    """`entries` in book order (stable; an entry without a key goes last)."""
+    keys = order_keys(spec, entries, level)
+    return sorted(entries, key=lambda e: keys.get(e.get("id"), NO_KEY))
+
+
 # --- plain text: what the bands count and the search box matches -------------
 FURIGANA = re.compile(r"｜?([^｜《》]+?)《([^》]*)》")
 

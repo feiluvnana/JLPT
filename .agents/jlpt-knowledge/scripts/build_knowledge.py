@@ -13,6 +13,10 @@ self-contained (inline CSS/JS; the Google Fonts link the other pages use) so the
 same files work from `make serve`, the Pages build and file://.
 
 What is rendered where (jlpt-knowledge/SKILL.md §Page):
+- Cards are listed in BOOK ORDER (knowledge_data.book_sorted, SKILL §Book order),
+  and nothing on the page reorders them: search and the filters only narrow the
+  list, and the group filter lists its groups in the same order. The quiz alone
+  shuffles.
 - Python renders every card and every quiz item to HTML once — furigana through
   exam-model-answer's apply_furigana(), every language as a `.lang-pane` — and
   embeds them as data. The page inserts cards 50 at a time as the reader
@@ -605,9 +609,8 @@ function matches(e, q, g, t, o){
 function refresh(){
   if (!document.getElementById('cards')) return;          // an empty (準備中) category
   const q = (ctlValue('q') || '').trim().toLowerCase();
-  const g = ctlValue('group'), t = ctlValue('tag'), o = ctlValue('official'), so = ctlValue('sort');
-  let list = E.map((e, i) => i).filter(i => matches(E[i], q, g, t, o));
-  if (so === 'official') list.sort((a, b) => (E[b].oc || 0) - (E[a].oc || 0) || a - b);
+  const g = ctlValue('group'), t = ctlValue('tag'), o = ctlValue('official');
+  const list = E.map((e, i) => i).filter(i => matches(E[i], q, g, t, o));   // E is in book order
   state.list = list; state.shown = 0;
   document.getElementById('cards').innerHTML = '';
   more();
@@ -840,7 +843,10 @@ def build_category(level: str, spec: dict) -> list[Path]:
     語彙 as one page would embed ~11 MB) plus the category page listing the parts."""
     cat = D.locate(level, spec)
     entries, prose = D.load_entries(cat)
-    entries = [e for e in entries if isinstance(e.get("id"), str)]
+    # Book order (SKILL §Book order): every page lists its cards in the order of the
+    # book the category follows, whatever order the data files hold them in. No
+    # control reorders them — search and filters only narrow the list.
+    entries = D.book_sorted(spec, [e for e in entries if isinstance(e.get("id"), str)], level)
     GEN.clear()
     GEN.update(quiz_gen.generate(spec, entries, prose))   # whole category, before any part
     heads = {e["id"]: headword_plain(spec, e, prose) for e in entries}
@@ -944,7 +950,6 @@ def render_cards(level: str, spec: dict, entries: list[dict], prose: dict, heads
         ctl.append(select("tag", [("", "filter_tag_all", "")] + [(t, None, t) for t in tags]))
     if has_oc:
         ctl.append(select("official", [("", "filter_official_all", ""), ("yes", "filter_official", "")]))
-        ctl.append(select("sort", [("", "sort_default", ""), ("official", "sort_official", "")]))
     ctl.append(seg_status())
     ctl.append(f'<span class="seg tts-only" role="group" aria-label="{esc(UI[PRIMARY].get("speed", ""))}">'
                + "".join(f'<button type="button" data-rate="{r}" onclick="setRate({r}, true)">{label(k)}</button>'

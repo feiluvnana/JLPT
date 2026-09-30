@@ -518,8 +518,8 @@ def practice_page(level: str, m: dict, items: list, passages: dict, sources: lis
                       "op": [BMA.apply_furigana(o) for o in it.options],
                       "x": explanation_html(it.prose, it.key, it.answer, False)})
     n_off = sum(1 for i in items if i.origin == "official")
-    body = (f'<main class="dr-wrap"><h1>{mondai_label(m)}</h1>'
-            f'<p class="dr-lead">{label("practice_page_lead")}</p>'
+    body = (lang_ui.header_html(mondai_label(m), label("practice_page_lead"), width="60rem")
+            + f'<main class="dr-wrap">'
             f'<p class="dr-note">{label("pool_counts", n=len(items), o=n_off, m=len(items) - n_off)} '
             f'<span id="pq-mine"></span></p>'
             f'<section id="pq-setup" class="dr-box">'
@@ -612,8 +612,8 @@ def practice_hub(level: str, gp: D.GengoPool, cp: D.ChoukaiPool, sources: list[P
             f'<a class="dr-card" href="{esc(D.LISTENING)}.html?mondai={esc(m["code"])}" '
             f'data-code="{esc(m["code"])}">{inner}</a>' if n else f'<div class="dr-card off">{inner}</div>')
     sec_label = {"言語知識": "sec_gengo", "読解": "sec_dokkai", "聴解": "sec_choukai"}
-    body = (f'<main class="dr-wrap"><h1>{label("tool_practice")}</h1>'
-            f'<p class="dr-lead">{label("tool_practice_desc")}</p>'
+    body = (lang_ui.header_html(label("tool_practice"), label("tool_practice_desc"), width="60rem")
+            + f'<main class="dr-wrap">'
             f'<div class="dr-box" id="deeplink" hidden></div>'
             + "".join(f'<h2>{label(sec_label[s])}</h2><div class="dr-grid">{"".join(cs)}</div>'
                       for s, cs in cards.items())
@@ -827,8 +827,8 @@ def listening_page(level: str, cp: D.ChoukaiPool, sources: list[Path]) -> str:
     mondai = [(m["code"], None) for m in D.choukai_mondai(level)]
     n_off = sum(1 for c in cp.clips if c.origin == "official")
     rates = "".join(f'<button type="button" data-rate="{r}">{r}×</button>' for r in (0.75, 0.9, 1, 1.1, 1.25))
-    body = (f'<main class="dr-wrap"><h1>{label("tool_listening")}</h1>'
-            f'<p class="dr-lead">{label("listening_lead")}</p>'
+    body = (lang_ui.header_html(label("tool_listening"), label("listening_lead"), width="60rem")
+            + f'<main class="dr-wrap">'
             f'<p class="dr-note">{label("clip_counts", n=len(cp.clips), o=n_off, m=len(cp.clips) - n_off)}</p>'
             f'<section id="lt-setup" class="dr-box">'
             + chips("mondai", [("", "f_all")] + mondai, "f_mondai")
@@ -1009,8 +1009,8 @@ def review_page(level: str, gp: D.GengoPool, cp: D.ChoukaiPool, sources: list[Pa
              + "".join(f'<div class="tile"><div class="l">{label("box_n", n=b)} · {label("every_days", n=d)}</div>'
                        f'<div class="v" id="t-box{b}">0</div></div>'
                        for b, d in enumerate(local_store.DRILL_INTERVALS_DAYS, 1)) + '</div>')
-    body = (f'<main class="dr-wrap"><h1>{label("tool_review")}</h1>'
-            f'<p class="dr-lead">{label("review_lead")}</p>{tiles}'
+    body = (lang_ui.header_html(label("tool_review"), label("review_lead"), width="60rem")
+            + f'<main class="dr-wrap">{tiles}'
             + chips("when", [("due", "review_show_due"), ("all", "review_show_all")], "f_show")
             + chips("src", [("", "f_all"), ("exam", "src_exam"), ("drill", "src_drill"), ("knowledge", "src_knowledge")], "f_source")
             + f'<div id="rv-groups"></div>'
@@ -1168,8 +1168,8 @@ def progress_page(level: str, gp: D.GengoPool, cp: D.ChoukaiPool, sources: list[
     tiles = "".join(f'<div class="tile"><div class="l">{label(k)}</div><div class="v" id="{i}">—</div></div>'
                     for i, k in (("p-tests", "p_tests"), ("p-best", "p_best"), ("p-drill", "p_drill"),
                                  ("p-drillacc", "p_drillacc"), ("p-due", "p_due")))
-    body = (f'<main class="dr-wrap"><h1>{label("tool_progress")}</h1>'
-            f'<p class="dr-lead">{label("progress_lead")}</p><div class="tiles">{tiles}</div>'
+    body = (lang_ui.header_html(label("tool_progress"), label("progress_lead"), width="60rem")
+            + f'<main class="dr-wrap"><div class="tiles">{tiles}</div>'
             f'<h2>{label("chart_trend")}</h2><div class="viz" id="p-trend"></div>'
             f'<h2>{label("chart_sections")}</h2><div class="viz" id="p-sections"></div>'
             f'<h2>{label("chart_mondai")}</h2><div class="viz" id="p-mondai"></div>'
@@ -1254,8 +1254,8 @@ def library_page(level: str, m: dict, passages: list, items: dict, sources: list
             f'<a href="{esc(prac)}">{label("practice_these")}</a></div>'
             f'{passage_block(p, mondai_label(m))}'
             f'<details><summary>{label("show_questions")}</summary>{"".join(qs)}</details></article>')
-    body = (f'<main class="dr-wrap"><h1>{mondai_label(m)}</h1>'
-            f'<p class="dr-lead">{label("library_page_lead")}</p>'
+    body = (lang_ui.header_html(mondai_label(m), label("library_page_lead"), width="60rem")
+            + f'<main class="dr-wrap">'
             + chips("origin", [("", "f_all"), ("official", "origin_official"), ("mock", "origin_mock")], "f_origin")
             + chips("len", [("", "f_all")] + [(k, k) for _, _, k in LENGTH_BINS], "f_length")
             + f'<p class="dr-note" id="lib-n"></p>{"".join(blocks)}</main>')
@@ -1277,8 +1277,8 @@ def library_hub(level: str, gp: D.GengoPool, sources: list[Path]) -> str:
                  f'<div class="n">{label("translated_n", n=sum(1 for p in ps if p.translations))}</div>')
         cards.append(f'<a class="dr-card" href="{esc(D.LIBRARY)}/{esc(m["code"])}.html">{inner}</a>'
                      if ps else f'<div class="dr-card off">{inner}</div>')
-    body = (f'<main class="dr-wrap"><h1>{label("tool_library")}</h1>'
-            f'<p class="dr-lead">{label("tool_library_desc")}</p><div class="dr-grid">{"".join(cards)}</div></main>')
+    body = (lang_ui.header_html(label("tool_library"), label("tool_library_desc"), width="60rem")
+            + f'<main class="dr-wrap"><div class="dr-grid">{"".join(cards)}</div></main>')
     title = f"{level} {_ui(PRIMARY, 'tool_library')}"
     return page(level, title, crumbs(level, 0, (label("tool_library"), None)), body, "",
                 stamp_list(sources), "../../")
@@ -1303,8 +1303,8 @@ def index_page(level: str, gp: D.GengoPool, cp: D.ChoukaiPool, sources: list[Pat
         f'<a class="dr-card" href="{esc(stem)}.html" data-tool="{esc(stem)}"><h3>{label(lk)}</h3>'
         f'<p>{label(dk)}</p><div class="n">{stat.get(stem, "")}<span class="js-live"></span></div></a>'
         for stem, lk, dk in D.TOOLS)
-    body = (f'<main class="dr-wrap"><h1>{label("index_title", level=level)}</h1>'
-            f'<p class="dr-lead">{label("index_lead")}</p><div class="dr-grid">{cards}</div>'
+    body = (lang_ui.header_html(label("index_title", level=level), label("index_lead"), width="60rem")
+            + f'<main class="dr-wrap"><div class="dr-grid">{cards}</div>'
             f'<p class="dr-note">{label("store_note")}</p></main>')
     title = _ui(PRIMARY, "index_title").format(level=level)
     cr = [(esc(level), f"../../{level}/{D.INDEX_HTML}"), (label("module"), None)]

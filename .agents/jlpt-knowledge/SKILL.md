@@ -183,6 +183,43 @@ Seven rules from the first batch's QA (`qa/qa-report-knowledge-N2-文法-B0.md`,
    lists included; only grammar labels (thể ます, ナ形容詞) stay bare.
 7. **QA extracts stem + options only, no entry ids, shuffled**, then solves.
 
+Added by batch-2 QA (`qa/qa-report-knowledge-N2-文法-B2.md`):
+
+8. **Every distractor competes on the tested meaning**, and at most one per item
+   dies by a pure syntax rule (three ✗ in one clause is a one-choice item). A
+   kill is a meaning contradiction with a quoted stem word, or a rule printed on
+   the cited page — never an invented usage restriction. The "printed form" of
+   rule 2 includes any particle right before the blank.
+9. **No unsourced contrastive or pragmatic claim** in any language's prose
+   (「〜は謙遜に使う」, 「最も硬い」): it is on a cited page or countable in the
+   archive, or it is cut.
+10. **Counting**: 問題8 cards count; a hit whose keyed string is another entry's
+    headword belongs to THAT entry, not this one.
+11. **No example shares scene + predicate with any quiz stem in the category**,
+    and a distractor the author had to defend in the report is replaced before
+    hand-off.
+
+Added by batch-1 and batch-3 QA (`qa/qa-report-knowledge-N2-文法-B1.md`, `-B3.md`):
+
+12. **What counts as an official hit** (tightens rule 4): a 問題7/問題9 key that
+    carries the form AND whose options contrast it, or a 問題8 card that holds the
+    form as a unit. Never count an inflection nearly every sentence has (受身・使役
+    verbs, ば/たら cards), potential/spontaneous られる, a look-alike that is a
+    separate SK point, or a form printed only in a 問題8 stem. List the sittings
+    counted in the author's report. (Regex counts had ukemi at 18; hand-read: 8.)
+13. **Provenance covers every page that treats the point** (extends rule 3): its
+    練習 items, 〔復習〕 lines, the other headwords on the same page, the IV tables
+    and 第3部 cross-references — four of seven B1 copies came from a page other
+    than the cited one — and every official item cited in `sources` (a quiz may
+    not reuse its scenario together with one of its distractors). Pick a scenario
+    SK does not use first, then the predicate.
+14. **A 敬語 distractor is never a misuse natives commonly produce**
+    (「社長がお越しいただき」, 二重敬語) — that is a second answer; use a form that
+    does not exist (お越しする, 参られる). A distractor killed only because it
+    "sounds odd" is replaced by default.
+15. **A 接続 or restriction stated in any language's prose matches the cited
+    page's wording**, never a paraphrase that widens or narrows it.
+
 ## Pronunciation
 
 - **▶ speech** on every headword reading, every 漢字 `words` compound and every

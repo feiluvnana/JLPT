@@ -184,6 +184,48 @@ SWITCHER_JS = """
        "primary": json.dumps(langs.primary())}
 
 
+def _pane(ns: str, key: str) -> str:
+    """One label in every active language, as `.lang-pane` spans."""
+    return "".join(f'<span class="lang-pane" data-lang="{c}">{langs.ui(c, ns).get(key, "")}</span>'
+                   for c in langs.order())
+
+
+def header_html(title: str, subtitle: str = "", badge: bool = True,
+                width: str | None = None) -> str:
+    """The module header under the bar — the exam list's gradient block (site
+    badge, title, subtitle), shared so 試験, 知識 and ドリル open the same way.
+    `title`/`subtitle` are already-rendered (pane) markup. `width` aligns the
+    header's content with the page column below it (e.g. "60rem"); it scrolls
+    away with the page, only the bar sticks."""
+    style = f' style="max-width:{html.escape(width)}"' if width else ""
+    b = f'<span class="header-badge">{_pane("portal", "site_badge")}</span>' if badge else ""
+    sub = f'<div class="subtitle">{subtitle}</div>' if subtitle else ""
+    return (f'<header class="app-header"><div class="header-inner"{style}>{b}'
+            f'<h1 class="title">{title}</h1>{sub}</div></header>')
+
+
+HEADER_CSS = """
+/* lang_ui: the module header (scrolls away; only the bar sticks). */
+header.app-header{background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);
+  color:#fff;padding:1rem 1.4rem 1.15rem}
+header.app-header .header-inner{max-width:82em;margin:0 auto;display:flex;flex-wrap:wrap;
+  align-items:baseline;gap:.2rem 1rem}
+header.app-header .header-badge{display:inline-block;background:rgba(255,255,255,0.12);
+  color:#93c5fd;font-size:0.72rem;font-weight:700;padding:0.15rem 0.6rem;border-radius:9999px;
+  letter-spacing:0.04em;flex-basis:100%;max-width:max-content;margin-bottom:.35rem}
+header.app-header h1.title{font-size:1.4rem;font-weight:900;margin:0;color:#ffffff;
+  font-family:var(--ui,system-ui,sans-serif)}
+header.app-header .subtitle{color:#94a3b8;font-size:0.88rem;line-height:1.6}
+@media screen and (max-width: 54em){
+  header.app-header{padding:.75rem 1rem .85rem}
+  header.app-header h1.title{font-size:1.15rem}
+  header.app-header .subtitle{font-size:.8rem}
+}
+@media print{header.app-header{background:none;color:#000}
+  header.app-header h1.title{color:#000}}
+"""
+
+
 def head_css() -> str:
     """Everything a page's <style> needs for the chrome: the bar + pane hiding."""
-    return TOPBAR_CSS + "\n.lang-pane{display:contents}\n" + langs.pane_css()
+    return TOPBAR_CSS + HEADER_CSS + "\n.lang-pane{display:contents}\n" + langs.pane_css()

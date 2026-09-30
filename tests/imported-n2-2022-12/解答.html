@@ -643,6 +643,25 @@ html.is-result-mode #where{display:none!important}
 }
 @media print{.topbar{display:none!important}}
 
+/* lang_ui: the module header (scrolls away; only the bar sticks). */
+header.app-header{background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);
+  color:#fff;padding:1rem 1.4rem 1.15rem}
+header.app-header .header-inner{max-width:82em;margin:0 auto;display:flex;flex-wrap:wrap;
+  align-items:baseline;gap:.2rem 1rem}
+header.app-header .header-badge{display:inline-block;background:rgba(255,255,255,0.12);
+  color:#93c5fd;font-size:0.72rem;font-weight:700;padding:0.15rem 0.6rem;border-radius:9999px;
+  letter-spacing:0.04em;flex-basis:100%;max-width:max-content;margin-bottom:.35rem}
+header.app-header h1.title{font-size:1.4rem;font-weight:900;margin:0;color:#ffffff;
+  font-family:var(--ui,system-ui,sans-serif)}
+header.app-header .subtitle{color:#94a3b8;font-size:0.88rem;line-height:1.6}
+@media screen and (max-width: 54em){
+  header.app-header{padding:.75rem 1rem .85rem}
+  header.app-header h1.title{font-size:1.15rem}
+  header.app-header .subtitle{font-size:.8rem}
+}
+@media print{header.app-header{background:none;color:#000}
+  header.app-header h1.title{color:#000}}
+
 .lang-pane{display:contents}
 body[data-lang="ja"] .lang-pane:not([data-lang="ja"]) { display: none !important; }
 body[data-lang="vi"] .lang-pane:not([data-lang="vi"]) { display: none !important; }</style></head><body data-lang="ja"><nav class="topbar" id="topbar" aria-label="breadcrumb"><div class="tb-crumbs"><a class="tb-crumb" href="../../N2/index.html">N2</a><span class="tb-sep" aria-hidden="true">›</span><a class="tb-crumb" href="../../N2/exam/index.html"><span class="lang-pane" data-lang="ja">試験</span><span class="lang-pane" data-lang="vi">Thi thử</span></a><span class="tb-sep" aria-hidden="true">›</span><span class="tb-crumb tb-here tb-last"><span id="bar-title"><span class="bt-exam"><span class="lang-pane" data-lang="ja">imported-n2-2022-12（受験）</span><span class="lang-pane" data-lang="vi">imported-n2-2022-12 (làm bài)</span></span><span class="bt-result"><span class="lang-pane" data-lang="ja">imported-n2-2022-12（採点結果）</span><span class="lang-pane" data-lang="vi">imported-n2-2022-12 (kết quả)</span></span></span></span></div><div class="tb-right"><span id="tabs" class="tb-wide"><button id="tab-gengo" type="button" data-label="言語知識・読解" onclick="goTab('gengo')">言語知識・読解</button><button id="tab-choukai" type="button" data-label="聴解" onclick="goTab('choukai')">聴解</button></span><span class="tb-sub tb-shrink tb-wide" id="where"></span><span id="bar-controls"><span class="tb-sub" id="clock"><span class="lang-pane" data-lang="ja">残り --:--</span><span class="lang-pane" data-lang="vi">Còn --:--</span></span><span class="tb-sub" id="done"></span><button type="button" class="tb-btn" onclick="clearAll()"><span class="tb-long"><span class="lang-pane" data-lang="ja">消去</span><span class="lang-pane" data-lang="vi">Xoá bài</span></span><span class="tb-short"><span class="lang-pane" data-lang="ja">消去</span><span class="lang-pane" data-lang="vi">Xoá</span></span></button><button type="button" onclick="finishGengo(false)" id="advance-btn" class="tb-btn primary" disabled><span class="tb-long"><span class="lang-pane" data-lang="ja">聴解へ進む</span><span class="lang-pane" data-lang="vi">Sang phần Nghe</span></span><span class="tb-short"><span class="lang-pane" data-lang="ja">聴解へ</span><span class="lang-pane" data-lang="vi">Nghe →</span></span></button><button type="button" onclick="submitAll(false)" id="grade-btn" class="tb-btn primary" disabled><span class="tb-long"><span class="lang-pane" data-lang="ja">採点する</span><span class="lang-pane" data-lang="vi">Nộp & chấm điểm</span></span><span class="tb-short"><span class="lang-pane" data-lang="ja">採点</span><span class="lang-pane" data-lang="vi">Chấm</span></span></button></span><select class="lang-select" aria-label="表示言語 / Ngôn ngữ" data-langs="[&quot;ja&quot;, &quot;vi&quot;]"><option value="ja" lang="ja">日本語</option><option value="vi" lang="vi">Tiếng Việt</option></select></div></nav><script>

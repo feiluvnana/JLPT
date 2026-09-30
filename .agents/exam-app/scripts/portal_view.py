@@ -81,17 +81,6 @@ FONT_TAGS = (
 PORTAL_CSS = """
 *{box-sizing:border-box}
 body{margin:0;background:#f8fafc;color:var(--ink);font-family:var(--ui);--primary:#1e3a8a}
-header.app-header{
-  background:linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  color:#fff;padding:1rem 1.4rem 1.15rem;
-}
-.header-inner{max-width:82em;margin:0 auto;display:flex;flex-wrap:wrap;align-items:baseline;
-  gap:.2rem 1rem}
-.header-badge{display:inline-block;background:rgba(255,255,255,0.12);color:#93c5fd;
-  font-size:0.72rem;font-weight:700;padding:0.15rem 0.6rem;border-radius:9999px;
-  letter-spacing:0.04em;flex-basis:100%;max-width:max-content;margin-bottom:.35rem}
-h1.title{font-size:1.4rem;font-weight:900;margin:0;color:#ffffff}
-.subtitle{color:#94a3b8;font-size:0.88rem}
 main{max-width:82em;margin:0 auto;padding:1.8em 1.5em 5em}
 .lede{margin:0 0 1.6em;font-size:10.5pt;color:var(--muted);line-height:1.6}
 h2.section{font-size:13pt;font-weight:800;color:#0f172a;margin:0 0 .4em}
@@ -119,9 +108,6 @@ a.pt-card:hover{border-color:var(--accent);box-shadow:0 6px 18px rgba(37,99,235,
 .pt-cats span{font-size:9pt;background:#eef2ff;border:1px solid #c7d2fe;color:#3730a3;
   border-radius:6px;padding:.05em .5em}
 @media screen and (max-width: 54em){
-  header.app-header{padding:.75rem 1rem .85rem}
-  h1.title{font-size:1.15rem}
-  .subtitle{font-size:.8rem}
   main{padding:1.2em 1em 4em}
   .pt-grid,.pt-grid.mods{grid-template-columns:1fr}
   .pt-card{min-height:0}
@@ -253,7 +239,6 @@ def page(*, title_key: str, title_kw: dict, h1: str, subtitle: str, crumbs: list
     # The root screen's bar names the site; deeper screens carry the trail
     # there and keep the site badge in the (scrolling) header instead.
     trail = crumbs or [(pane("site_badge"), None)]
-    badge = f'<span class="header-badge">{pane("site_badge")}</span>' if crumbs else ""
     return (
         f'<!DOCTYPE html><html lang="{langs.html_lang(p)}"><head><meta charset="utf-8">'
         '<meta name="viewport" content="width=device-width,initial-scale=1">'
@@ -262,10 +247,7 @@ def page(*, title_key: str, title_kw: dict, h1: str, subtitle: str, crumbs: list
         f'</head><body data-lang="{p}">'
         f'<script>{js}</script>{head_js}'
         f'{lang_ui.topbar_html(trail, right)}'
-        '<header class="app-header"><div class="header-inner">'
-        f'{badge}'
-        f'<h1 class="title">{h1}</h1><div class="subtitle">{subtitle}</div>'
-        '</div></header>'
+        f'{lang_ui.header_html(h1, subtitle, badge=bool(crumbs))}'
         f'<main>{body}</main>'
         f'<script>{tail_js}\npaintAttrs(currentLang());</script>'
         '</body></html>')

@@ -847,8 +847,8 @@ def build_parts_index(level: str, spec: dict, cat: D.Category, entries: list[dic
             cards.append(f'<div class="cat off" aria-disabled="true">{inner}</div>')
     name = UI[PRIMARY].get(spec["label"], stem)
     title = f"{level} {name}"
-    body = (f'<main class="wrap"><p class="lead">{label(spec["desc"])}</p>'
-            f'<p class="lead">{label("parts_lead")}</p>'
+    body = (lang_ui.header_html(label(spec["label"]), label(spec["desc"]), width="60rem")
+            + f'<main class="wrap"><p class="lead">{label("parts_lead")}</p>'
             f'<div class="stat">{len(entries)} {label("entries")} · {label("learned")} '
             f'<span class="js-learned-total">0</span> / {len(entries)}</div>'
             f'<div class="cats">{"".join(cards)}</div></main>')
@@ -937,8 +937,9 @@ def render_cards(level: str, spec: dict, entries: list[dict], prose: dict, heads
                 f'<button type="button" class="ui-btn" id="qz-retry-wrong" data-qz="retry-wrong">{label("quiz_retry_wrong")}</button>'
                 f'<button type="button" class="ui-btn primary" data-qz="setup">{label("quiz_start")}</button>'
                 f'</div></div>')
-    body = (f'<main class="wrap"><p class="lead">{label(spec["desc"])}</p>'
-            f'<nav class="tabs"><button type="button" class="tab-btn" data-tab="study" onclick="setTab(\'study\')">'
+    head = label(spec["label"]) + (f' — {fu(part)}' if part else "")
+    body = (lang_ui.header_html(head, label(spec["desc"]), width="60rem")
+            + f'<main class="wrap"><nav class="tabs"><button type="button" class="tab-btn" data-tab="study" onclick="setTab(\'study\')">'
             f'{label("tab_study")}</button><button type="button" class="tab-btn" data-tab="quiz" '
             f'onclick="setTab(\'quiz\')">{label("tab_quiz")}</button></nav>'
             f'<section id="study">{study}</section><section id="quiz">{quiz}</section></main>')
@@ -982,8 +983,8 @@ def build_index(level: str) -> Path:
         else:
             cards.append(f'<div class="cat off" aria-disabled="true">{inner}</div>')
     title = UI[PRIMARY]["index_title"].format(level=level)
-    body = (f'<main class="wrap"><h1 class="hw">{label("index_title", level=level)}</h1>'
-            f'<p class="lead">{label("index_lead")}</p><div class="cats">{"".join(cards)}</div></main>')
+    body = (lang_ui.header_html(label("index_title", level=level), label("index_lead"), width="60rem")
+            + f'<main class="wrap"><div class="cats">{"".join(cards)}</div></main>')
     scripts = f"const LEVEL = {js_data(level)};\nconst IDS = {js_data(ids)};\n{INDEX_JS}"
     out = D.level_dir(level) / D.INDEX_HTML
     out.parent.mkdir(parents=True, exist_ok=True)

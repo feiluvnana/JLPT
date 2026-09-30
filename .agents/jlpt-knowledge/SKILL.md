@@ -405,6 +405,12 @@ Added by 文法 batch-7 QA (`qa/qa-report-knowledge-N2-文法-B7.md`):
     knowledge module, 文法 stems included. An entry's own examples satisfy every
     restriction its prose states, in every language. A Hán Việt false-friend
     note never contradicts the Vietnamese gloss Hajimete prints.
+36. **(聴解 guide batch-3 QA)** An archive count states its denominator, and the
+    denominator equals the key count (a 問題3 tally was published as 83/103 and
+    51/64 from incomplete extractions; the real figure is 111 of 154). A
+    term-meaning quiz puts the competing terms into its stem. Provenance for a
+    guide covers the lesson page's own 例, the answer-booklet scripts, a bigram
+    scan over all 31 official scripts, and the live category file.
 
 ## Pronunciation
 

@@ -671,7 +671,8 @@ def check_ruby_suspects(level: str, spec: dict, warn):
 PROSE_CITES = re.compile(r"(?<![0-9])(?:1[0-2]|[1-9])/20[0-9]{2}(?![0-9])|本のp\.?[0-9]|この本|(?<![A-Za-z])SK(?![A-Za-z])")
 
 GUIDE_CITES = re.compile(r"新完全マスター|完全模試|総まとめ|Shin ?Kanzen|Soumatome|本のp|この本|例題|"
-                         r"第[0-9０-９一二三]部|(?<![A-Za-z])SK(?![A-Za-z])|\\btr\\. ?[0-9]|[Vv]í dụ [0-9]+ (?:của|trong) sách|Trang [0-9]")
+                         r"第[0-9０-９一二三]部|(?<![A-Za-z])SK(?![A-Za-z])|(?<![A-Za-z])tr\. ?[0-9]|"
+                         r"[Vv]í dụ[^.。]{0,12}(?:của|trong) sách|[Ss]ách (?:nói|viết|ghi)|Trang [0-9]")
 
 
 def check_prose_citations(level: str, spec: dict, warn):
@@ -696,6 +697,20 @@ def check_prose_citations(level: str, spec: dict, warn):
     warn(f"knowledge/{level}/{spec['stem']}: prose names no source", not hits,
          "; ".join(hits[:6]) + (f" … and {len(hits) - 6} more" if len(hits) > 6 else "")
          + " — citations belong in `sources`; say 「問題1で」, never the sitting or book")
+
+
+def check_related_symmetry(level: str, spec: dict, warn):
+    """Rule 28: look-alikes are linked BOTH ways, each side with a `compare` —
+    a one-way link leaves one card silent about the word it can be confused
+    with (語彙 B2 QA found 9 such links into a new batch)."""
+    if spec.get("kind") != "item":
+        return
+    entries, _ = D.load_entries(D.locate(level, spec))
+    rel = {e["id"]: set(e.get("related") or []) for e in entries if isinstance(e, dict) and "id" in e}
+    one_way = sorted(f"{a} → {b}" for a, bs in rel.items() for b in bs if b in rel and a not in rel[b])
+    warn(f"knowledge/{level}/{spec['stem']}: every `related` link goes both ways", not one_way,
+         f"{len(one_way)} one-way: {one_way[:6]} — add the back-link and a `compare` on the other "
+         f"entry in every language (jlpt-knowledge §Quiz integrity rule 28)")
 
 
 def check_all(check, warn, skip, git_tracks=None):
@@ -725,6 +740,7 @@ def check_all(check, warn, skip, git_tracks=None):
             check_category(lv, spec, check, warn, skip, git_tracks)
             check_ruby_suspects(lv, spec, warn)
             check_prose_citations(lv, spec, warn)
+            check_related_symmetry(lv, spec, warn)
         check_index(lv, check)
 
 

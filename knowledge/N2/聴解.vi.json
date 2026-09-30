@@ -383,5 +383,404 @@
       "Mang ô theo thì sao? (đề xuất)",
       "Để tôi đưa anh ra ga nhé. (đề nghị giúp)"
     ]
+  },
+  "l-sk-15": {
+    "title": "Chọn câu đáp: đúng cặp, lời gián tiếp, giọng nói",
+    "body": [
+      "Ở Mondai 4 「｜即時応答《そくじおうとう》」, bạn nghe một câu ngắn rồi chọn câu đáp. Hãy xét câu đáp theo ba bước: câu đáp có đúng cặp với câu mở đầu không; câu đáp gián tiếp thật ra muốn nói gì; và giọng nói cao hay thấp, ngắn hay dài làm nghĩa đổi ra sao.",
+      "Bước 1: hội thoại đi theo những cặp cơ bản, như hỏi → cung cấp thông tin; mời, nhờ, xin phép → nhận lời hoặc từ chối; khen → khiêm tốn hoặc cảm ơn. Câu ví dụ 1 trên thẻ là cặp hỏi → cung cấp thông tin (xem thẻ 「｜応答《おうとう》のパターン」).",
+      "Bước 2: câu đáp thật có khi trông như lạc đề. Nói 'ngày kia phải nộp bài' là để người kia tự hiểu 'mình không đi được'. Cách đáp gián tiếp này đặc biệt hay dùng khi câu trả lời làm người kia tiếc, như từ chối hay phản bác. Vì vậy đừng chỉ chờ 「はい」 hay 「いいえ」.",
+      "Bước 3: cùng một câu, nói khác đi thì nghĩa khác. Tiếng 「うーん」「あー」 thấp, kéo dài trước khi nói thường báo trước một điều đáng tiếc với người nghe, như không đồng ý hay từ chối. Ví dụ 3 trên thẻ là như vậy."
+    ],
+    "quiz": [],
+    "example_notes": [
+      "'Cuộc họp bắt đầu lúc mấy giờ ấy nhỉ?' '3 giờ đấy.' (hỏi → cung cấp thông tin)",
+      "'Mai cả nhóm đi biển không?' 'Ngày kia là hạn nộp bài tập rồi.' (từ chối gián tiếp)",
+      "'Ừm…, không biết nữa.' (tiếng 'ừm' thấp, kéo dài → không đồng ý)"
+    ]
+  },
+  "l-sk-16": {
+    "title": "Cặp câu mở – câu đáp và câu giao tiếp cố định",
+    "body": [
+      "Trong hội thoại, câu mở đầu và câu đáp gắn với nhau theo những cặp cơ bản. Ở Mondai 4, việc đầu tiên là xác định câu mở thuộc loại nào, rồi loại các câu đáp không đúng cặp.",
+      "Các cặp: hỏi → thông tin, khẳng định, phủ định; mời, nhờ, xin phép, đề xuất → nhận hoặc từ chối; phàn nàn, nhắc nhở → xin lỗi hoặc cãi lại; ý kiến → đồng ý hay không; báo tin → cảm tưởng, tỏ ý đã hiểu; than thở, hỏi ý → khuyên, động viên, đồng cảm; xin lỗi, cảm ơn → đón nhận; khen, mời mọc → khiêm tốn, cảm ơn, từ chối, khách sáo; chào → chào lại.",
+      "Có những câu giao tiếp cố định kèm câu đáp: 「お｜変《か》わりありませんか」 → 「おかげさまで」「｜相変《あいか》わらずです」; 「お｜世話《せわ》になりました」「｜助《たす》かりました」 → 「どういたしまして」「｜構《かま》いません」; mời ăn 「お｜口《くち》に｜合《あ》うかどうか」 → 「お｜構《かま》いなく」 (khách sáo). Nghe là biết ngay chức năng câu.",
+      "Chú ý 「｜結構《けっこう》です」: 「（それで）結構です」 là nhận lời, còn 「（いいえ、）結構です」 là từ chối. 「とんでもないです」 là lời khiêm tốn. Hãy học những câu này theo chức năng, đừng dịch từng chữ."
+    ],
+    "quiz": [
+      "「おいしいですね」 là lời khen món chủ nhà làm, nên đáp bằng cảm ơn, khiêm tốn: câu 2. Câu 1, 3 hiểu nhầm thành phàn nàn; câu 4 là nhận lời mời."
+    ],
+    "example_notes": [
+      "'Tôi mở cửa sổ được không?' 'Vâng, anh cứ tự nhiên.' (xin phép → nhận lời)",
+      "'Nghe nói từ tháng sau phòng mình có người mới đến đấy.' 'Ồ, không biết là người thế nào nhỉ.' (báo tin → cảm tưởng)",
+      "'Dạo này toàn tăng ca, mệt quá.' 'Đừng cố quá sức nhé.' (than thở → động viên)"
+    ]
+  },
+  "l-sk-17": {
+    "title": "Câu đáp gián tiếp: từ chối mà không nói 'không'",
+    "body": [
+      "Ví dụ: được rủ 「｜一緒《いっしょ》に｜行《い》きませんか」, người nữ đáp 「ちょっと、｜熱《ねつ》があるんです」. Câu này không nói đi hay không, nhưng khiến người kia tự nghĩ 'bị sốt thì không ra ngoài được'. Đó là từ chối gián tiếp, và vẫn đúng cặp mời → từ chối.",
+      "Kiểu đáp này đặc biệt hay dùng khi câu trả lời làm người nghe tiếc, như từ chối hay phản bác. Vì vậy ở Mondai 4, câu đáp đúng có thể chỉ nêu một lý do hay một hoàn cảnh.",
+      "Đề thật cũng vậy: trong 973 câu đáp Mondai 4 được đo, 13% là câu đáp dạng câu hỏi, không phải câu trả lời thẳng.",
+      "Cách luyện: nghe câu đáp rồi tự hỏi 'câu này dẫn đến kết luận gì?'. Ba câu ví dụ trên thẻ đều không có 「いいえ」: dậy sớm → không đi nhậu; còn việc gấp → khó nhận thêm; hành lý nặng → không muốn đi bộ. Nếu chỉ chờ nghe 'có' hay 'không', bạn sẽ bỏ lỡ loại câu đáp này."
+    ],
+    "quiz": [
+      "Cô không nói 「｜手伝《てつだ》えません」 mà nêu việc làm thêm cả ngày: từ chối gián tiếp. Không có 「すみません」; câu kết bằng 「〜んです」 là câu kể, không phải câu hỏi."
+    ],
+    "example_notes": [
+      "'Tối nay đi nhậu không?' 'Sáng mai mình phải dậy sớm.' (từ chối)",
+      "'Việc này cậu làm xong trong hôm nay giúp được không?' 'Mình còn ba việc gấp khác nữa…' (muốn từ chối)",
+      "'Mình đi bộ ra ga nhé?' 'Cái hành lý này khá nặng đấy.' (phản đối)"
+    ]
+  },
+  "l-sk-18": {
+    "title": "Giọng cao thấp, dài ngắn cũng mang nghĩa",
+    "body": [
+      "Cùng một câu, nói cao hay thấp, ngắn hay dài có thể đổi nghĩa. Cũng cần chú ý tiếng 「あ」 ngắn hay 「あー」 thấp, kéo dài mà người nói phát ra trước khi vào câu.",
+      "Ví dụ: 「そうですね」 nhấn mạnh âm đầu là đồng ý; 「そうですねえ」 kéo dài, hạ thấp ở cuối là nghi ngờ, không đồng ý. Được rủ đi xem phim Chủ nhật, 「あ、｜日曜日《にちようび》ですか」 chỉ là hỏi lại; 「あー、日曜日ですかー」 kéo dài là từ chối.",
+      "Tiếng 「うーん」「あー」 thấp và dài thường được dùng khi người nói sắp báo một điều đáng tiếc, như không đồng ý hay từ chối. Ở Mondai 2 cũng vậy: 「ああ」 giọng cao và 「あー」 thấp, kéo dài là manh mối cho biết câu đáp khẳng định hay phủ định.",
+      "Chữ viết không cho thấy điều này, nên phải luyện bằng tai: khi nghe băng, để ý âm đầu câu và cách người nói kéo dài cuối câu."
+    ],
+    "quiz": [
+      "「そうですねえ」 kéo dài, hạ cuối câu là nghi ngờ, không đồng ý: cô thấy 10 giờ khó. Đồng ý thì nhấn âm đầu. Cô không nói giờ nào, cũng không hỏi lại."
+    ],
+    "example_notes": [
+      "'A, hay đấy. Đi thôi, đi thôi.' (tiếng 'a' cao → tích cực)",
+      "'À…, đồ cay thì mình hơi…' (tiếng 'à' thấp, kéo dài → từ chối)",
+      "'Đúng vậy.' (nhấn mạnh âm đầu → đồng ý)"
+    ]
+  },
+  "l-sk-20": {
+    "title": "Mondai 1: trình tự nghe và kiểu câu hỏi",
+    "body": [
+      "「｜課題理解《かだいりかい》」 là nghe một đoạn nói có chỉ thị, lời khuyên, rồi hiểu từ giờ phải làm gì. Lựa chọn in sẵn trong đề, bằng chữ hoặc hình minh họa, nên bạn vừa nhìn lựa chọn vừa nghe.",
+      "Trình tự: nghe câu giới thiệu tình huống và câu hỏi → nghe hội thoại → nghe lại câu hỏi → chọn trong các lựa chọn in sẵn. Nghĩa là câu hỏi được đọc hai lần, trước và sau bài nói.",
+      "Ở N2, câu hỏi là việc mình nên làm trong cảnh đời thường, như 'Hai người sẽ chuẩn bị gì?', 'Nữ sinh viên trước tiên sẽ làm gì?'. Hai câu ví dụ trên thẻ cũng là kiểu hỏi 'cho gì vào', 'nộp gì'.",
+      "Mẹo: lần nghe câu hỏi đầu tiên, xác định ai làm và hỏi điều gì (việc đầu tiên, đồ cần mang, giấy cần nộp). Nhìn 4 lựa chọn trong lúc nghe để biết cần bắt thông tin nào."
+    ],
+    "quiz": [
+      "Ở Mondai 1, câu hỏi được đọc trước bài nói và đọc lại sau bài nói. Mondai 3 và bài 1 của Mondai 5 thì chỉ có câu hỏi sau bài nói."
+    ],
+    "example_notes": [
+      "Người đàn ông sẽ cho gì vào túi du lịch?",
+      "Sinh viên sẽ nộp gì ở quầy tiếp tân?"
+    ]
+  },
+  "l-sk-21": {
+    "title": "Mondai 1: việc phải làm và việc không cần làm",
+    "body": [
+      "Có ba nhóm cách nói giúp biết việc nào phải làm. Nhóm 1 là lời tác động đến người nghe (nhờ, chỉ thị, đề xuất): 「〜てください」「〜てくれない？」「〜てくれると｜助《たす》かる」「お｜願《ねが》い」「｜頼《たの》むよ」.",
+      "Nhóm 2 cho biết có cần hay không. Phải làm: 「〜なきゃ」「〜が｜要《い》る」「〜は、まだ」「〜ないと｜困《こま》る」「〜たほうが」. Không cần: 「要らない」「いいよ」「〜なくてもいい」「もう〜てある」「まだ｜使《つか》える」「まだある」「｜大丈夫《だいじょうぶ》だ」. Hỏi hoặc nói tình trạng cũng là cách báo gián tiếp là cần, như ví dụ 3 trên thẻ.",
+      "Nhóm 3 là đồng ý hay không (xem thẻ về câu phản hồi ngắn). Lưu ý: việc bị người kia không đồng ý, phần lớn là việc không cần làm.",
+      "Bẫy: thứ đã được nói 'phải mua' vẫn có thể bị gạch sau đó. Ví dụ: hai người nói 'phải mua phô mai và bánh mì', nhưng rồi nhớ ra phô mai vẫn còn, nên chỉ mua bánh mì. Hãy nghe hết rồi mới chọn."
+    ],
+    "quiz": [
+      "「｜名刺《めいし》は、今日頼まないと間に合わない」. Đồng phục do phòng tổng vụ chuẩn bị, ghế còn trong kho, chìa khóa tủ 「まだいい」 vì tháng sau mới dùng."
+    ],
+    "example_notes": [
+      "Tài liệu cho cuộc họp ngày mai, phải photo sẵn 10 bản mới được. (việc phải làm)",
+      "Ô thì có cái ô gấp rồi nên không sao. (việc không cần làm)",
+      "Ơ, ghim bấm hết sạch rồi nhỉ. (nói tình trạng để báo là cần)"
+    ]
+  },
+  "l-sk-22": {
+    "title": "Mondai 1: tìm việc làm trước tiên",
+    "body": [
+      "Khi câu hỏi là 'việc làm đầu tiên là gì', hãy nghe những cách nói chỉ việc đầu tiên và thứ tự. Trong 31 kỳ thi, kiểu hỏi 「この｜後《あと》/これから＋まず＋何を」 chiếm 36,8% câu Mondai 1, nhiều nhất trong các kiểu hỏi.",
+      "Bốn nhóm cách nói: việc đầu tiên 「まず」「｜最初《さいしょ》に」「はじめに」; thứ tự 「それから」「〜｜前《まえ》に」「〜後で」「〜てから」「〜たら」「〜ないうちに」; lúc nào làm 「｜先《さき》に」「｜今《いま》すぐ」「｜急《いそ》いで」「後で」「｜後回《あとまわ》し」; phương án khác 「それより」「やっぱり」.",
+      "Ví dụ: người đàn ông định phơi đồ xong mới đi đổ rác, nhưng người nữ nói 「先にお願い」, nên việc đầu tiên thành đổ rác. Một lời 「先に」 hay 「その前に」 có thể đảo cả thứ tự đã nói.",
+      "Lưu ý: chữ 「まず」 trong hội thoại đề thật không nhiều, trung vị 5,5 lần trên 10.000 ký tự (từ 0 đến 19,1). Đừng chỉ chờ 「まず」; hãy nghe cả 「その前に」「先に」「〜てから」."
+    ],
+    "quiz": [
+      "「その前に、グラウンドに｜線《せん》を引いといて」: kẻ vạch trước khi phát đồng phục. Bóng 「もう｜積《つ》んである」, nước thì phát khi trận đấu đã bắt đầu."
+    ],
+    "example_notes": [
+      "Trong lúc nước chưa sôi thì thái sẵn rau đi.",
+      "Trả lời email để sau cũng được, gọi điện trước đi.",
+      "Thôi, để mưa tạnh rồi hẵng đi mua đồ."
+    ]
+  },
+  "l-sk-23": {
+    "title": "Mondai 1: chỉ nghe thông tin hợp điều kiện",
+    "body": [
+      "Có câu Mondai 1 cho điều kiện ngay trong câu giới thiệu tình huống, như 'bạn đi bằng ô tô'. Khi đó, chỉ cần nghe những thông tin hợp với điều kiện ấy; thông tin không liên quan thì không cần ghi.",
+      "Ví dụ: số báo danh của bạn là A1028. Người hướng dẫn nói cả giờ phỏng vấn của nhóm P và phòng thi của các số khác, nhưng bạn chỉ cần phần 'nhóm A' và phần 'hai số cuối 21–30'. Các thông tin còn lại không liên quan đến đáp án.",
+      "Đề thật có kiểu hỏi 「どの｜番号《ばんごう》を｜押《お》せばいいですか」 (bấm số nào), và có những bài chỉ một người nói, như tổng đài tự động. Đó chính là loại bài nghe theo điều kiện.",
+      "Mẹo: nhớ kỹ điều kiện của mình. Nghe đến phần dành cho nhóm khác thì bỏ qua; nghe đúng nhóm của mình thì tập trung vào câu ngay sau đó."
+    ],
+    "quiz": [
+      "Đi ô tô thì nghe phần 「お｜車《くるま》の｜方《かた》」: đỗ ở bãi tầng hầm trước, rồi mới lên quầy tầng 3. Cửa bắc, cửa chính là cho người đi tàu, xe buýt."
+    ],
+    "example_notes": [
+      "Bạn không có thẻ hội viên. (điều kiện)",
+      "Quý khách không có thẻ xin mời đến quầy ở tầng 2. (thông tin hợp điều kiện)"
+    ]
+  },
+  "l-sk-24": {
+    "title": "Mondai 1: tự gom các điều kiện rồi tính",
+    "body": [
+      "Có khi điều kiện không nằm trong câu giới thiệu tình huống mà được nói rải rác trong hội thoại. Bạn phải tự nghe từng điều kiện rồi sắp xếp lại.",
+      "Ví dụ: xe buýt ra sân bay mất gần 30 phút, người nữ muốn đến lúc 10 rưỡi, nhân viên khuyên đi sớm hơn khoảng 15 phút cho yên tâm. Gộp cả ba điều đó mới ra đáp án: chuyến 9 giờ 45. Chuyến 10 giờ mà cô định đi lúc đầu là lựa chọn sai.",
+      "Ví dụ đó có ba loại điều kiện: thời gian cần (mất bao lâu), mốc giờ (muốn đến lúc mấy giờ), và lời khuyên của người kia. Hai câu ví dụ trên thẻ là hai loại đầu: một câu nói thời gian đi, một câu nói giờ đóng quầy.",
+      "Mẹo: ghi mỗi điều kiện kèm con số (20 phút, trước 10 phút), rồi tính ngược từ mốc giờ. Đừng chọn ngay con số vừa nghe: một lựa chọn sai có thể chính là kết quả khi quên mất một điều kiện."
+    ],
+    "quiz": [
+      "3 giờ trừ 30 phút để nguội, trừ 40 phút nướng: 1 giờ 50. Chọn 2 giờ 20 là quên để nguội; 2 giờ 30 là quên thời gian nướng."
+    ],
+    "example_notes": [
+      "Từ ga đến hội trường đi bộ mất khoảng 20 phút.",
+      "Quầy tiếp tân đóng 10 phút trước giờ bắt đầu."
+    ]
+  },
+  "l-sk-26": {
+    "title": "Mondai 2: trình tự và 20 giây đọc lựa chọn",
+    "body": [
+      "「ポイント｜理解《りかい》」 là nghe để lấy thông tin về một điểm cụ thể. Câu hỏi có trước bài nói, và lựa chọn in sẵn trong đề.",
+      "Trình tự: nghe tình huống và câu hỏi → đọc lựa chọn trong đề → nghe bài nói → nghe lại câu hỏi → chọn. Ở kỳ thi thật, sau câu hỏi có khoảng 20 giây rồi bài nói mới bắt đầu (đo trên đề thật: 20,22 giây).",
+      "Dùng 20 giây đó để đọc lựa chọn và nghĩ xem cần nghe gì. Chú ý từ để hỏi 「どうして」「｜何《なに》」「どんな」「どう」 để nghe đúng câu hỏi. Hai câu trên thẻ đều hỏi lý do; câu thứ hai có 「｜一番《いちばん》」, tức chỉ hỏi lý do chính.",
+      "Nhịp độ đo trên 31 kỳ thi: sau mỗi câu Mondai 1–2 có khoảng 12 giây để chọn, Mondai 3–4 khoảng 8 giây; ở Mondai 3 và 5, các lựa chọn được đọc cách nhau khoảng 3 giây. Chỉ Mondai 2 có thời gian đọc lựa chọn trước bài nói."
+    ],
+    "quiz": [
+      "20 giây đọc lựa chọn nằm giữa câu hỏi và bài nói. 12 và 8 giây là thời gian chọn sau mỗi câu; 3 giây là quãng giữa các lựa chọn đọc lên."
+    ],
+    "example_notes": [
+      "Lý do người đàn ông đến họp muộn là gì?",
+      "Lý do chính khiến người phụ nữ chọn cửa hàng này là gì?"
+    ]
+  },
+  "l-sk-27": {
+    "title": "Mondai 2: giữ hay bỏ thông tin theo ý người nói",
+    "body": [
+      "Khi bài nói nhắc đến điều liên quan câu hỏi, phải xét nó có phải đáp án không, dựa vào ý người nói. Người nói phủ định thì bỏ; thông tin được khẳng định hoặc chưa bị phủ định rõ thì ghi lại, nghe hết rồi mới chọn.",
+      "Không đồng ý: 「まさか」「たいしたことない」「それほどでも」「ただ」「だって」. Đồng ý: 「そうでしょ」「ほんとにね」「もちろん」「よくわかったね」. Câu đáp gián tiếp cũng tính: được mời bánh mà đáp 'mình đang ăn kiêng' là từ chối.",
+      "Đuôi câu 「〜し」「〜けど」「〜から」 cũng là manh mối, nhưng phải xét cùng nội dung. Ví dụ, hỏi có mua máy từ điển điện tử không: 「ちょっと｜高《たか》いけどね」 là vẫn muốn mua, còn 「ちょっと高いから……」 bỏ lửng là không mua. Tự 「けど」 không mang nghĩa phủ định.",
+      "Cách ghi: mỗi lựa chọn đánh ○ khi người nói xác nhận, × khi bị bác, để trống khi chưa rõ. Lựa chọn còn ○ sau khi nghe hết mới là đáp án."
+    ],
+    "quiz": [
+      "Lý do thật ở sau 「実は」: tan làm muộn, không kịp giờ học. 「まさか」 bác chuyện thầy nghiêm, 「それほどでもない」 bác học phí, luyện tập thì 「｜平気《へいき》」."
+    ],
+    "example_notes": [
+      "'Cuối tuần đi leo núi không?' 'Trời cũng có vẻ đẹp nữa.' (tích cực)",
+      "'Vào thử quán cà phê kia không?' 'Giờ đang đông mà…' (tiêu cực)",
+      "Làm gì có chuyện. Không thể đắt đến thế đâu. (không đồng ý)"
+    ]
+  },
+  "l-sk-28": {
+    "title": "Mondai 2: đáp án tóm ý bằng từ khác",
+    "body": [
+      "Lựa chọn có khi tóm lời giải thích dài trong bài nói bằng một cách nói khác, ngắn gọn hơn; cũng có khi gộp lời của hai người thành một ý.",
+      "Ví dụ: người đàn ông than lời trưởng phòng 'lúc nào cũng không rõ ràng', 'hiểu tốt hay xấu đều được'. Đáp án gói lại trong một từ: 「あいまいだ」 (mơ hồ). Ví dụ trên thẻ cũng thế: ba ý dài thành 「｜気軽《きがる》に｜始《はじ》められる」.",
+      "Khi câu hỏi có một từ then chốt, chú ý câu 「〜というのは」 giải thích từ đó. Ví dụ: hỏi khi nào nên chườm lạnh; bác sĩ nói đau cấp tính thì chườm lạnh, rồi 「｜急性《きゅうせい》というのは」 giải thích bằng ví dụ trẹo chân, đột nhiên đau lưng. Đáp án là 「｜突然《とつぜん》｜痛《いた》みを｜感《かん》じたとき」.",
+      "Bẫy: lựa chọn lặp đúng từ trong bài nghe chưa chắc là đáp án. Hãy so ý nghĩa, không so mặt chữ (xem thẻ 「｜言《い》い｜換《か》え」)."
+    ],
+    "quiz": [
+      "Sau 「でも」: hàng xóm tốt, lúc khó là giúp ngay, tức 'được người xung quanh giúp'. Tiền nhà đắt hơn, xa ga, ít siêu thị đều là điểm chưa tốt."
+    ],
+    "example_notes": [
+      "Bài nghe: 'Không cần tiền, không cần dụng cụ, nghĩ ra là làm được ngay' → lựa chọn: 'có thể bắt đầu một cách dễ dàng'"
+    ]
+  },
+  "l-sk-29": {
+    "title": "Mondai 2: nhặt phần quan trọng giữa nhiều thông tin",
+    "body": [
+      "Phần trả lời trực tiếp câu hỏi thường có thể nhận ra nhờ một số cách nói. Tập trung vào phần đó là nắm được ý chính. Có ba nhóm.",
+      "Thứ nhất, cách nói cùng nghĩa với từ trong câu hỏi. Câu hỏi nói 「｜予定《よてい》を｜変《か》えたいとき」, bài nói nói 「日にちを｜変更《へんこう》なさる｜場合《ばあい》」: đáp án có thể nằm ngay trước hoặc sau câu đó.",
+      "Thứ hai, từ chỉ điều quan trọng nhất: 「｜一番《いちばん》」「｜最《もっと》も」「｜特《とく》に」「｜中《なか》でも」; và công nhận một phần rồi mới nói điều quan trọng: 「もちろん〜が」「たしかに〜が」「それは〜が」「どれも〜が」. Thứ ba, điều đặc biệt muốn nói: 「｜実《じつ》は」「それが」「やはり」「それよりもっと」「それより」「｜実際《じっさい》には」.",
+      "Ví dụ: một bài về cách phát biểu nêu nhiều điểm (chọn từ dễ, nói chậm ở chỗ quan trọng, nhìn người nghe), rồi mới nói rằng những điều ấy dĩ nhiên quan trọng, nhưng quan trọng nhất là nội dung phải hay. Phần trước 「が」 chỉ là điều được công nhận; đáp án ở phía sau."
+    ],
+    "quiz": [
+      "Sau 「もちろん大切ですが、中でも一番大事なのは」 là đáp án: không rời chỗ khi dùng lửa. Dựng lều chỉ được công nhận; dây và rác là ý phụ."
+    ],
+    "example_notes": [
+      "Câu hỏi 'khi muốn thay đổi lịch' → bài nói 'trường hợp quý khách muốn đổi ngày thì…'",
+      "Điều nào cũng quan trọng, nhưng điều tôi đặc biệt muốn các bạn lưu ý là uống nước thường xuyên.",
+      "Đúng là giá rẻ thật, nhưng tôi chọn là vì nhân viên giải thích rất tận tình."
+    ]
+  },
+  "l-sk-31": {
+    "title": "Mondai 3: đoán nội dung từ câu giới thiệu",
+    "body": [
+      "「｜概要理解《がいようりかい》」 là nghe một bài nói trọn vẹn rồi hiểu nội dung tổng thể: chủ đề, ý định hay chủ trương của người nói. Không có câu hỏi trước bài nói.",
+      "Trình tự: nghe câu giới thiệu tình huống → nghe bài nói → nghe câu hỏi và các lựa chọn → chọn. Câu hỏi và lựa chọn chỉ được đọc lên sau bài nói, đề không in gì.",
+      "Câu giới thiệu cho biết cảnh nào, ai nói, nên giúp đoán nội dung; hãy nghe thật kỹ. Ví dụ: 'nhân viên cửa hàng nói về sản phẩm mới' → sẽ giới thiệu sản phẩm, như ưu điểm. Hai câu ví dụ trên thẻ cũng theo cách đó.",
+      "Ở 「公式過去問の2025年7月・問題3」, câu giới thiệu thường chỉ cho biết nơi và người nói, như 「｜市民講座《しみんこうざ》で｜専門家《せんもんか》が｜話《はな》しています」. Nhưng có câu nói luôn cả chủ đề: 「2025年12月・問題3の2番」 là 「｜研修《けんしゅう》について｜話《はな》しています」. Câu hỏi sẽ là: người nói giải thích về điều gì, chủ trương gì, hay hành động có ý định gì."
+    ],
+    "quiz": [],
+    "example_notes": [
+      "Nhân viên nhà ga đang thông báo ở sân ga. → thông báo tàu trễ, đổi tàu",
+      "Y tá đang nói chuyện ở bệnh viện. → những lưu ý trước khi xét nghiệm, v.v."
+    ]
+  },
+  "l-sk-32": {
+    "title": "Mondai 3: phân biệt ví dụ và từ bao quát",
+    "body": [
+      "Khi nghe, hãy nghĩ xem các từ xuất hiện có quan hệ gì với nhau; như vậy dễ nắm chủ đề hơn. Khi hai từ cùng loại đứng cạnh nhau, có thể có một từ bao quát gom chúng lại.",
+      "Khi tìm chủ đề, từ bao quát quan trọng hơn ví dụ. Nghe một từ mà bạn thấy là ví dụ, hãy tự hỏi: từ bao quát của nó là gì?",
+      "Cùng một từ có thể là ví dụ hoặc từ bao quát, tùy từ đi cùng. Chẳng hạn 'gạo' là từ bao quát của các giống gạo, nhưng lại là ví dụ của 'lương thực chính' bên cạnh bánh mì, mì sợi. Ví dụ 2 trên thẻ cũng vậy với 'thể thao'.",
+      "Ghi chú không cần chép hết: bỏ điều ai cũng biết, viết tắt từ dài. Đề thật dùng đúng kiểu này. Ở 「公式過去問の2025年12月・問題3の1番」, bài nói liệt kê lợi ích của việc dọn phòng, đáp án là 「｜片付《かたづ》けの｜効果《こうか》」; bài 4 về xà phòng bánh, đáp án là 「｜固形石《こけいせっ》けんのいいところ」."
+    ],
+    "quiz": [
+      "Ấm người, minh mẫn, ít ăn vặt, trò chuyện gia đình là các ví dụ; gom lại là 'lợi ích của ăn sáng'. Câu 1 rộng quá; câu 3, 4 chỉ lấy một ví dụ."
+    ],
+    "example_notes": [
+      "Dọn dẹp, giặt giũ, nấu ăn… Việc nhà việc nào cũng tốn thời gian. (từ bao quát = việc nhà)",
+      "Các môn thể thao như bóng đá, bóng chày (thể thao = từ bao quát) / các sở thích như thể thao, âm nhạc (thể thao = ví dụ)"
+    ]
+  },
+  "l-sk-33": {
+    "title": "Mondai 3: nối từ khóa để thấy cấu trúc bài",
+    "body": [
+      "Từ khóa là những từ bạn thấy quan trọng trong bài nói. Nối chúng với nhau sẽ thấy cấu trúc của bài, và từ đó thấy trọng tâm.",
+      "Ví dụ: bài nói mở đầu bằng hai từ đối lập 'người dạy' và 'người học', rồi hỏi 'người học gọi là gì?'. Sau đó là các cách gọi 「｜児童《じどう》」「｜生徒《せいと》」「｜学生《がくせい》」 theo từng cấp học. Vậy trọng tâm là 'cách gọi người học', không phải quan hệ thầy trò.",
+      "Mẹo: ghi từ khóa thành sơ đồ, như ví dụ trên thẻ: một từ ở đầu, các nhánh bên dưới. Ở ví dụ trên, từ gom được các nhánh ('người học') chính là trọng tâm.",
+      "Ở 「公式過去問の2025年12月・問題3の2番」, người đàn ông kể về buổi tập huấn: nửa đầu là bài giảng (phần ví dụ anh mong chờ bị cắt bớt), nửa sau là thảo luận nhóm sôi nổi. Đáp án gộp cả hai nhánh: 'nửa đầu hụt hẫng, nửa sau hài lòng'."
+    ],
+    "quiz": [
+      "Bạn bè, người trên, đối tác là ba nhánh; gom lại là 'cách viết thư khác nhau tùy người nhận'. Câu 1, 2, 3 mỗi câu chỉ lấy một nhánh."
+    ],
+    "example_notes": [
+      "Ghi chú: cách liên lạc → điện thoại = chỉ có giọng / email = chữ còn lưu lại / gặp nói chuyện = thấy mặt nhau"
+    ]
+  },
+  "l-sk-34": {
+    "title": "Mondai 3: nối các câu để tóm chủ đề",
+    "body": [
+      "Lần này đơn vị lớn hơn từ khóa: nối các câu với nhau để tóm chủ đề. Hãy nghe xem mỗi câu làm gì: nêu tình trạng, nêu lý do, hay nêu ý kiến.",
+      "Ví dụ: mở đầu 'nghe nói ô tô bán chậm đi' (tình trạng), sau đó là ý kiến người không mua, có 「から」: đi tàu, xe đạp là đủ; tốn tiền xăng, tiền gửi xe. Chủ đề là 'lý do ô tô bán chậm', dù giữa chừng có nói ưu điểm của ô tô.",
+      "Mẫu của ví dụ đó: câu đầu nêu một tình trạng, các câu sau dùng 「から」 nêu lý do → chủ đề là lý do của tình trạng ấy. Ví dụ trên thẻ đi theo đúng mẫu này.",
+      "Ở 「公式過去問の2025年7月・問題3の5番」, phát thanh viên kể chuyện trồng lúa không dùng thuốc nông nghiệp → cỏ dại mọc → robot nhỏ khuấy nước ruộng → đỡ công nhổ cỏ. Nối các câu lại, đáp án là 「｜米作《こめづく》りでのロボットの｜活用《かつよう》」 (ứng dụng robot trong trồng lúa)."
+    ],
+    "quiz": [
+      "Câu đầu nêu tình trạng (người tự trồng rau tăng), tiếp theo là lý do, cuối cùng vẫn 'tiếp tục tăng'. Sâu bọ, rau tươi ngon chỉ là từng ý nhỏ."
+    ],
+    "example_notes": [
+      "Cuối tuần, người ta tụ tập ở công viên trước ga. (tình trạng) → vì hoa đẹp / vì có quầy hàng rong (lý do) → chủ đề: lý do người ta tụ tập ở công viên"
+    ]
+  },
+  "l-sk-35": {
+    "title": "Mondai 3: tách ý người nói khỏi ý kiến chung",
+    "body": [
+      "Người nói có khi nêu ý mình bằng cách đặt nó cạnh ý kiến chung hoặc ý người khác. Mẫu: 「〜と｜言《い》われています」「〜と言う｜人《ひと》もいます」「〜こともあります」 → 「しかし」「けれども」「〜が」 → 「〜ではないでしょうか」「〜と｜思《おも》われます」「〜と｜考《かんが》えます」.",
+      "Phần trước 「しかし」 là ý chung; ý của người nói nằm sau. Có bài không hề có 「と思います」, nhưng vì 「しかし」 đặt nó đối lập với ý chung nên vẫn biết đó là chủ trương; cuối bài còn có 「〜ではないでしょうか」.",
+      "Đề thật gài bẫy đúng chỗ này. Ở 「公式過去問の2025年7月・問題3の1番」, người nói kể có người bảo 'đi một mình thì buồn', rồi nói về cái hay của việc tự đi theo nhịp mình. Lựa chọn 1 'nỗi buồn khi đi một mình' lấy lại lời người khác; đáp án là lựa chọn 4 'cái hay của du lịch một mình'.",
+      "Trong 31 kỳ thi, bài nói Mondai 3 không bác bỏ các lựa chọn sai; chúng là ý của người khác hoặc chi tiết bị lệch. Vì vậy đừng hỏi 'điều gì được nhắc tới', mà hỏi 'người nói chủ trương gì'."
+    ],
+    "quiz": [
+      "Sau 「しかし」 là ý người nói: xếp hình trong nhà cũng nuôi óc suy nghĩ. Câu 1 là ý người khác; 「たしかに」 công nhận chơi ngoài tốt, nên câu 2 sai."
+    ],
+    "example_notes": [
+      "Người ta hay nói rằng cho trẻ dùng điện thoại thông minh là còn quá sớm. Nhưng tôi cho rằng việc cha mẹ và con cùng học cách dùng mới là quan trọng hơn."
+    ]
+  },
+  "l-sk-36": {
+    "title": "Mondai 3: đoán ý định từ những câu mở đầu",
+    "body": [
+      "Những điều khó nói như nhờ vả hay từ chối, trong tiếng Nhật ít khi được nói thẳng. Người nói thường giải thích hoàn cảnh của mình để người nghe tự suy ra.",
+      "Có những câu báo trước: 「〜（のこと）なんだけど」 báo chủ đề; 「（｜質問《しつもん》・｜相談《そうだん》・お｜願《ねが》い）があるんですけど」 báo ý định; 「〜よね」「〜だっけ」 xác nhận tình hình; 「｜実《じつ》は」「それが」 mở đầu điều khó nói. Nghe chúng trước để nắm chủ đề.",
+      "Ví dụ: cô gái gọi điện, nói 「お願いがあるんだけど」, hỏi lại 'cậu từng nói đã mua CD đó nhỉ', kể cả câu lạc bộ sẽ hát, rồi hỏi CD có bản chỉ có piano không. Cô không hề nói 'cho mình mượn', nhưng nối các câu lại thì ý định là mượn CD.",
+      "Cách làm: nghe thấy 「お願い」 hay 「相談」 ở đầu thì ghi lại, rồi xem những câu sau hướng đến việc gì."
+    ],
+    "quiz": [
+      "「お願いがあるんだけど」, hỏi cô biết tiếng Trung, mai có khách Trung Quốc mà anh chỉ biết chào: anh cần phiên dịch. Tự học thì 「｜無理《むり》」; chào thì anh đã biết."
+    ],
+    "example_notes": [
+      "Chuyện buổi nhậu ngày mai ấy mà… (báo chủ đề)",
+      "Tôi có chút chuyện muốn bàn với anh. (báo ý định)",
+      "Chuyện là, cái hẹn ngày mai, mình không thu xếp được nữa rồi. (nói điều khó nói)"
+    ]
+  },
+  "l-sk-38": {
+    "title": "Mondai 5: hai dạng bài 「｜統合理解《とうごうりかい》」",
+    "body": [
+      "「統合理解」 là nghe một bài nói dài, so sánh và tổng hợp nhiều thông tin rồi chọn. Có hai dạng, và ở cả hai, câu hỏi chỉ đến sau bài nói. Dạng này kết hợp các kỹ năng của những dạng trước.",
+      "Dạng 1: tình huống → hai người trở lên nói chuyện → câu hỏi và lựa chọn (đề không in) → chọn. Dạng 2: tình huống → hai loại bài nói (một bài giới thiệu, rồi một cuộc trò chuyện) → hai câu hỏi → chọn trong các lựa chọn in trong đề.",
+      "Trong đề thật hiện nay, Mondai 5 gồm bài 1 và bài 2, cho 3 câu trả lời; bài 2 có hai câu hỏi 「｜質問《しつもん》1」「質問2」. Đề thật chỉ in 4 lựa chọn của bài 2, và đó chỉ là tên (tên địa điểm, món hàng…); hai câu hỏi dùng chung danh sách ấy. Mondai 5 cũng là phần duy nhất không có câu luyện tập.",
+      "(Riêng đề thi thử trên trang này không in gì ở Mondai 5: mọi lựa chọn đều được đọc lên.)"
+    ],
+    "quiz": [
+      "Bài 2 có hai câu hỏi 「質問1」「質問2」, nên một bài nghe cho hai đáp án. Bài 1 chỉ có một câu hỏi; cả Mondai 5 có 3 câu trả lời."
+    ],
+    "example_notes": []
+  },
+  "l-sk-39": {
+    "title": "Mondai 5: sắp xếp ý kiến của nhiều người",
+    "body": [
+      "Dạng này không có câu hỏi trước, nên vừa nghe vừa phải đoán điểm nào sẽ bị hỏi. Trước hết nắm 'đang nói về chuyện gì', rồi xếp từng ý kiến: tán thành hay phản đối.",
+      "Ví dụ: cả nhà bàn có đổi ti vi không. Con muốn đổi, mẹ nghiêng về đổi, bố lần lượt phản đối. Ý phản đối cuối của bố không bị ai phản đối lại, và mẹ chốt 'khi nào không xem được hẳn thì tính'. Vậy là dùng tiếp ti vi cũ.",
+      "Mẹo: ghi ý kiến theo từng người (bảng mỗi người một cột), và xem ý phản đối cuối cùng có bị ai phản đối tiếp không. Đề xuất còn đứng được khi không ai bác nữa là ứng viên cho đáp án.",
+      "Ở 「公式過去問の2025年12月・問題5の1番」, tiệm bánh mì bàn cách đối phó giá bột tăng: tăng giá, làm bánh nhỏ lại, rút giờ mở cửa, đổi loại bột. Chủ tiệm bác giờ mở cửa và loại bột, rồi chốt cách 'khách dễ chấp nhận', tức làm bánh nhỏ lại, điều ông đã nghiêng về từ trước."
+    ],
+    "quiz": [
+      "Chủ nhật nhiều người đi làm, tối Chủ nhật thì hôm sau là thứ Hai; trưa thứ Bảy quán không nhận đoàn. Còn tối thứ Bảy thì cả ba đồng ý."
+    ],
+    "example_notes": [
+      "Ghi chú: chủ đề = nơi đi du lịch của công ty / Yamada → suối nước nóng là được / Sato → xa (phản đối) / trưởng phòng → nếu là suối nước nóng gần thì được (tán thành)"
+    ]
+  },
+  "l-sk-40": {
+    "title": "Mondai 5: bài giới thiệu rồi cuộc trò chuyện",
+    "body": [
+      "Dạng này có hai loại bài nói: một bài giới thiệu (như nhân viên giải thích các lựa chọn), rồi cuộc trò chuyện của hai người về nó. Ở bài đầu, vừa nhìn lựa chọn vừa ghi điểm chính; ở bài sau, nghe xem ý hai người khác nhau thế nào.",
+      "Ví dụ: nhân viên giới thiệu 4 suất ăn trưa. Người nam muốn ăn nhiều, chọn cơm và thịt → suất D. Người nữ muốn mì Ý, hỏi lại có kèm salad không rồi quyết → suất C. Hai câu hỏi hỏi về hai người khác nhau.",
+      "Ở 「公式過去問の2025年12月・問題5の2番」: giới thiệu 4 loại xe đạp, rồi một cặp nói chuyện. Người nữ phân vân giữa xe đi xa không mệt và xe có giỏ to, cuối cùng nói 「1番安定性が高いの」: ở đây 「｜一番《いちばん》」 là 'nhất' (ổn định nhất, xe 3), không phải xe số 1. Câu chốt gọi đặc điểm, không gọi số thứ tự.",
+      "Đề thật in tên 4 lựa chọn của bài 2, và hai câu hỏi dùng chung danh sách đó. (Riêng đề thi thử trên trang này không in; lựa chọn được đọc lên.) Mẹo: mỗi lựa chọn một dòng, kèm một hai đặc điểm, như ví dụ trên thẻ."
+    ],
+    "quiz": [
+      "Cô ngủ nghiêng (gối 2; gối 1 cho người nằm ngửa), sợ nóng (gối 4), nhưng 「夏はもうすぐ終わるし」 nên chọn gối dễ ngủ: gối 2. Gối giặt được là ý người nam."
+    ],
+    "example_notes": [
+      "Ghi chú: 1 đi thăm các chùa, đi bộ nhiều / 2 đi thuyền, ngắm cảnh / 3 trải nghiệm nấu ăn, hơi đắt / 4 ngắm cảnh đêm, về muộn"
+    ]
+  },
+  "l-sm-03": {
+    "title": "Nghe đúng âm: 「っ」, âm dài và dạng rút gọn",
+    "body": [
+      "Có hay không có 「っ」, có hay không có âm kéo dài, là thành từ khác hoặc cảnh dùng khác. Ví dụ 「しゅちょう」 (chủ trương) / 「しゅっちょう」 (đi công tác), 「じこ」 (tai nạn) / 「じっこう」 (thực hiện).",
+      "Mệnh lệnh và nhờ vả cũng chỉ khác một 「っ」: 「｜待《ま》て」 là thể mệnh lệnh (đứng lại!), 「待って」 là thể nhờ (đợi đã). Cũng cần chú ý 「ゃゅょ」 nhỏ, dấu 「゛」, 「し」/「ち」, 「す」/「つ」: 「しゅるい」 (chủng loại) / 「しょるい」 (giấy tờ), 「しりょう」 (tài liệu) / 「ちりょう」 (điều trị).",
+      "Các dạng rút gọn khi nói: 「ら・り・る・れ・に・の」→「ん」 (「わかんない」), 「ている」→「てる」, 「ておく」→「とく」, 「てあげる」→「たげる」, 「ては」→「ちゃ」, 「では」→「じゃ」, 「ければ」→「けりゃ」, 「と」→「って」, 「ても」→「たって」, 「でも」→「だって」.",
+      "Hai dạng dễ hiểu nhầm: 「〜たって」 ở đây là 「〜ても」 (dù có… đi nữa), không phải 'đã… rồi'; 「〜たげる」 là 「〜てあげる」 (làm cho ai), không phải thể quá khứ."
+    ],
+    "quiz": [
+      "「〜てあげる」 rút thành 「〜たげる」, nên 「｜送《おく》ったげる」 là 「送ってあげる」 (gửi cho bạn). Chữ 「た」 ở đây không phải thể quá khứ, nên 「送ってあげた」 sai."
+    ],
+    "example_notes": [
+      "「いしょう」 (trang phục) / 「いっしょう」 (cả đời)",
+      "Không nhanh lên thì không kịp đâu. (=「急がなければ」)",
+      "Có nhờ bao nhiêu đi nữa thì không được vẫn là không được. (=「頼んでも」)"
+    ]
+  },
+  "l-sm-04": {
+    "title": "Ai làm? Cho nhận, bị động phiền, sai khiến",
+    "body": [
+      "Có ba cấu trúc dễ nghe nhầm. Thứ nhất là cho nhận: 「AがBにしてさしあげる」「AがBにしてくださる」 → A làm; 「AがBにしていただく」 → B làm. Vậy câu nhờ 「Aさん、Bさんにしていただいて」 nghĩa là nhờ A thu xếp để B làm.",
+      "Thứ hai là bị động phiền: 'A làm, B khổ' → 「BがAにされる」. Ví dụ: mưa rơi, tôi khổ → 「｜雨《あめ》に｜降《ふ》られた」; nhân viên nghỉ việc, cửa hàng trưởng khổ → 「｜店員《てんいん》に｜辞《や》められた」. Người bị phiền là chủ ngữ.",
+      "Thứ ba là sai khiến chỉ sự thay đổi cảm xúc: 'A làm gì đó, B thay đổi cảm xúc' → 「AはBを〜させる」, như 「｜笑《わら》わせた」 (làm cho cười), 「｜安心《あんしん》させた」 (làm cho yên tâm). Ở đây A không bắt B làm gì cả.",
+      "Khi nghe, luôn hỏi 'ai làm hành động này?'. Khi chủ ngữ bị lược, dạng động từ là manh mối (xem các thẻ về 'ai làm')."
+    ],
+    "quiz": [
+      "「木村さん、…｜案内《あんない》してさしあげて」: dạng 「AがBにしてさしあげる」, A là anh Kimura, nên Kimura dẫn khách đi xem. Khách là người được dẫn, người nam chỉ ra lời nhờ.",
+      "「｜部長《ぶちょう》に｜説明《せつめい》していただいて」: dạng 「〜にしていただく」, người trước 「に」 làm, nên trưởng phòng giải thích. Sato chỉ lo thu xếp."
+    ],
+    "example_notes": [
+      "Nhờ trưởng phòng xem giúp tài liệu thì sao? (người xem là trưởng phòng)",
+      "Trên chuyến tàu chật cứng, tôi bị một người lạ giẫm lên chân. (người bị phiền là người nói)",
+      "Ngày nào con gái cũng gọi điện, làm người cha sống ở xa vui lòng."
+    ]
+  },
+  "l-sm-05": {
+    "title": "Kính ngữ hay gặp trong bài nghe",
+    "body": [
+      "Những kính ngữ hay nghe trong bài nghe. Tôn kính ngữ (hành động của người khác): 「｜召《め》す」 = mặc, bị cảm; 「召し｜上《あ》がる」 = ăn, uống, hút thuốc; 「｜見《み》える」「お見えになる」 = đến; 「おいでだ」「おいでになる」 = ở, đến, đi; 「お｜越《こ》しだ」「お越しになる」 = đến.",
+      "Khiêm nhường ngữ (hành động của mình): 「｜存《ぞん》じる」 = biết; 「｜申《もう》す」 = nói; 「申し上げる」 = làm (「お｜願《ねが》い申し上げます」); 「｜拝見《はいけん》する」 = xem, 「｜拝読《はいどく》する」 = đọc, 「｜拝借《はいしゃく》する」 = mượn.",
+      "Bẫy: 「お見えになる」 có chữ 「見」 nhưng nghĩa là 'đến', không phải 'xem'. 「おいでになる」 có thể là ở, đến hoặc đi, phải dựa vào ngữ cảnh.",
+      "Ở 「公式過去問の2025年7月・問題4の9番」, người tổ chức nói 「｜本日《ほんじつ》は｜商品説明会《しょうひんせつめいかい》へお越しいただきありがとうございます」 (cảm ơn đã đến). Câu đáp đúng là 「ご｜招待《しょうたい》、｜感謝《かんしゃ》申し上げます」. Câu 「おいでいただき、ありがとうございます」 là lời của người mời, không hợp vai khách."
+    ],
+    "quiz": [
+      "「お見えになる」 là tôn kính ngữ của 「｜来《く》る」: giảng viên vừa đến hội trường. Dù có chữ 「見」, nó không có nghĩa 'xem' hay 'cho xem'."
+    ],
+    "example_notes": [
+      "Nghe nói tháng sau thầy sẽ sang Mỹ để nghiên cứu.",
+      "Em đã đọc cuốn sách mới của thầy."
+    ]
   }
 }

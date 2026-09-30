@@ -925,12 +925,24 @@ body[data-lang="vi"] .lang-pane:not([data-lang="vi"]) { display: none !important
    the owner's call on 2026-09-30, after a 40px slim bar read as too small.
    --tb-h is its height, for anything that sticks under it (players). */
 /* Site base, identical on every page so moving between them cannot shift or
-   repaint: the scrollbar's gutter is always reserved (a short page and a long
-   one lay out at the same width), the canvas is the pages' own background (no
+   repaint: the page scrollbar never takes layout width — the native one is
+   hidden and OVERLAY_SCROLL_JS draws a thin thumb OVER the content (the owner's
+   call, 2026-09-30: a reserved gutter still read as a jitter between pages with
+   and without a scrollbar), the canvas is the pages' own background (no
    white frame before the body paints), and the chrome uses ONE font stack of
    its own, whatever --ui a page defines. */
 :root{--tb-h:50px;--tb-font:"Noto Sans JP",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Hiragino Sans","Yu Gothic",sans-serif}
-@media screen{html{scrollbar-gutter:stable;background:#f8fafc}}
+@media screen{html{scrollbar-width:none;background:#f8fafc}
+  html::-webkit-scrollbar{width:0;height:0;display:none}}
+/* The overlay page scrollbar (OVERLAY_SCROLL_JS): fixed over the right edge,
+   visible while scrolling or when the pointer nears the edge, never in layout. */
+.ov-sb{position:fixed;top:0;right:0;bottom:0;width:14px;z-index:2000;pointer-events:none}
+.ov-sb .ov-th{position:absolute;top:0;right:3px;width:6px;border-radius:4px;
+  background:rgba(15,23,42,.38);opacity:0;transition:opacity .35s,width .12s,right .12s;
+  pointer-events:auto;cursor:default;touch-action:none}
+.ov-sb.on .ov-th{opacity:1}
+.ov-sb .ov-th:hover,.ov-sb.drag .ov-th{width:9px;right:2px;background:rgba(15,23,42,.55)}
+@media print{.ov-sb{display:none}}
 .topbar{position:sticky;top:0;z-index:1000;display:flex;align-items:center;
   height:var(--tb-h);padding:0 max(1.8em,env(safe-area-inset-right)) 0 max(1.8em,env(safe-area-inset-left));gap:.6em 1.2em;
   box-sizing:border-box;width:100%;max-width:100%;overflow:hidden;margin:0;
@@ -1111,6 +1123,60 @@ body[data-lang="vi"] .lang-pane:not([data-lang="vi"]) { display: none !important
   document.addEventListener('DOMContentLoaded', boot);
   /* Coming back through the history cache must show the language chosen since. */
   window.addEventListener('pageshow', function(e){ if (e.persisted) boot(); });
+})();
+
+/* lang_ui: a page scrollbar that floats over the content instead of taking a
+   gutter. Scrolling stays native (wheel, trackpad, keys, touch); this only
+   draws and drags the thumb. Loaded once per page, from topbar_html(). */
+(function(){
+  if (window.__ovsb) return; window.__ovsb = 1;
+  var d = document.documentElement, bar = document.createElement('div'),
+      th = document.createElement('div'), hide = 0, drag = null;
+  bar.className = 'ov-sb'; bar.setAttribute('aria-hidden', 'true');
+  th.className = 'ov-th'; bar.appendChild(th);
+  function geo(){
+    var vh = window.innerHeight, sh = d.scrollHeight;
+    return {vh: vh, sh: sh, h: Math.max(32, vh * vh / Math.max(sh, 1))};
+  }
+  function show(){
+    bar.classList.add('on'); clearTimeout(hide);
+    hide = setTimeout(function(){ if (!drag) bar.classList.remove('on'); }, 1000);
+  }
+  function upd(reveal){
+    var g = geo();
+    if (g.sh <= g.vh + 1){ bar.style.display = 'none'; return; }
+    bar.style.display = '';
+    var st = window.scrollY || d.scrollTop || 0;
+    th.style.height = g.h + 'px';
+    th.style.transform = 'translateY(' + ((g.vh - g.h) * st / (g.sh - g.vh)) + 'px)';
+    if (reveal) show();
+  }
+  th.addEventListener('pointerdown', function(e){
+    drag = {y: e.clientY, st: window.scrollY || 0};
+    try { th.setPointerCapture(e.pointerId); } catch (x) {}
+    bar.classList.add('drag'); show(); e.preventDefault();
+  });
+  th.addEventListener('pointermove', function(e){
+    if (!drag) return;
+    var g = geo();
+    window.scrollTo(0, drag.st + (e.clientY - drag.y) * (g.sh - g.vh) / Math.max(g.vh - g.h, 1));
+  });
+  function end(){ if (drag){ drag = null; bar.classList.remove('drag'); show(); } }
+  th.addEventListener('pointerup', end); th.addEventListener('pointercancel', end);
+  window.addEventListener('scroll', function(){ upd(true); }, {passive: true});
+  window.addEventListener('resize', function(){ upd(false); });
+  /* Long pages render their content after first paint (知識 cards, 模範解答):
+     re-measure once everything is in, and once more after late layout. */
+  window.addEventListener('load', function(){ upd(false); setTimeout(function(){ upd(false); }, 600); });
+  document.addEventListener('mousemove', function(e){
+    if (e.clientX >= window.innerWidth - 18) upd(true);
+  }, {passive: true});
+  function mount(){
+    document.body.appendChild(bar); upd(false);
+    if (window.ResizeObserver) new ResizeObserver(function(){ upd(false); }).observe(document.body);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mount);
+  else mount();
 })();
 </script><header class="app-header"><div class="header-inner"><span class="header-badge"><span class="lang-pane" data-lang="ja">JLPT 学習ポータル · N1–N5</span><span class="lang-pane" data-lang="vi">CỔNG HỌC JLPT · N1–N5</span></span><h1 class="title"><span class="lang-pane" data-lang="ja">JLPT N2 練習モード imported-n2-2021-12</span><span class="lang-pane" data-lang="vi">JLPT N2 — Luyện tập đề imported-n2-2021-12</span></h1><div class="subtitle"><span class="lang-pane" data-lang="ja">制限時間なし・採点なし ｜ 全101問、1問ずつ解説を開けます</span><span class="lang-pane" data-lang="vi">Không bấm giờ, không chấm điểm ｜ 101 câu, câu nào cũng mở được lời giải riêng</span></div></div></header><div id="screen-exam"><div class="pr-note"><span class="lang-pane" data-lang="ja">練習モードです。制限時間も採点もありません。全101問が1ページに並んでいます。各設問の「解説を見る」で、その設問の模範解答と解説だけを開けます。解答はどこにも保存されません（再読み込みで消えます）。</span><span class="lang-pane" data-lang="vi">Chế độ luyện tập: không giới hạn thời gian, không chấm điểm. Toàn bộ 101 câu nằm trên một trang. Bấm 「Xem giải thích」 ở mỗi câu để mở đáp án mẫu và giải thích của riêng câu đó. Lựa chọn của bạn không được lưu ở đâu cả (tải lại trang là mất).</span><div class="pr-note-links"><a class="ui-btn" href="模範解答.html"><span class="lang-pane" data-lang="ja">模範解答をまとめて見る</span><span class="lang-pane" data-lang="vi">Xem toàn bộ đáp án mẫu</span></a></div></div><h1 class="section-title">JLPT N2 言語知識（文字・語彙・文法）・読解</h1><h1 class="bk-part">【文字・語彙】</h1>
 <h2 class="bk-mondai"><span class="bk-mn">問題1</span> <span class="bk-mi">＿＿の言葉の読み方として最もよいものを、1・2・3・4から一つ選びなさい。</span></h2>

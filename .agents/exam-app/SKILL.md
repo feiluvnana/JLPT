@@ -532,7 +532,7 @@ column, no options and no header CSS of a page's own (解答.html: 「JLPT N2 �
 with the clock sticks). **No flash between screens** (owner, 2026-09-30): each
 page loads `lang_ui.head_html()` (the ONE font link, `display=optional`) and opens
 `<body>` with `lang_ui.body_open()`, which applies the saved language before
-anything under it parses; `head_css()` reserves the scrollbar gutter and paints
+anything under it parses; `head_css()` hides the native page scrollbar (lang_ui draws an overlay thumb, so a scrollbar never takes layout width — owner, 2026-09-30) and paints
 the canvas the pages' background. `make check` (`check_site_chrome`) FAILs a page
 with ≠1 `header.app-header`, another font link, or a body not opened that way.
 

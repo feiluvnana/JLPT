@@ -373,6 +373,25 @@ Added by the 漢字 batch-1 QA (`qa/qa-report-knowledge-N2-漢字-B1.md`):
     item-category prose (`check_prose_citations`); the generator never gives two
     kanji the same reading-quiz compound.
 
+Added by 文法 batch-7 QA (`qa/qa-report-knowledge-N2-文法-B7.md`):
+
+31. **An official distractor attests a sense only when eliminating it requires
+    that sense** — never for `official_count`. An official 読解 passage's claim
+    counts as a scene (rule 21). Read bigram pairs with 2 shared bigrams, not
+    only ≥3.
+32. **Prose quotes no textbook or official sentence either** — the provenance
+    scan covers prose fields, not just examples and stems. Adverb distractors
+    come from the SK 呼応 table (PDF 159) or die on a quoted stem word;
+    わざわざ / かなり / せっかく do not compete on their own. The author hands in a
+    per-item distractor tally (option, kill reason, killing stem words, page).
+33. **(文法 batch-8 QA)** Print EVERY official item that keys the form — not only
+    the cited ones — and write its scene before writing a stem; a quiz never
+    shares 3 of its 4 options with an official 問題7 option set. Rule 11 is
+    category-wide: grep the merged file and open batches for your scene. Two
+    conjunctions both barred from a wish/intent main clause share one kill
+    clause (rule 16). Quote a page's restriction exactly (p.194 bans contractions
+    in 硬い文章; it does not say they are conversation-only).
+
 ## Pronunciation
 
 - **▶ speech** on every headword reading, every 漢字 `words` compound and every

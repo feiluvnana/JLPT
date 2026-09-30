@@ -123,9 +123,11 @@ def _kanji_readings(e: dict) -> list[str]:
     return list(dict.fromkeys(clean(x) for x in out if clean(x) and _HIRA.match(clean(x))))
 
 
-def reading_target(e: dict, spec: dict) -> tuple[str, str, str] | None:
+def reading_target(e: dict, spec: dict, taken: set | None = None) -> tuple[str, str, str] | None:
     """(word shown, its reading, markup source) — or None when a reading item makes no sense
-    (a kana-only word shows its own answer)."""
+    (a kana-only word shows its own answer). For 漢字, `taken` = compounds another
+    entry's reading item already shows: one is avoided when the entry has another
+    word, so 永 and 久 do not both ask 永久 (漢字 B1 QA F8)."""
     if spec["headword"] == "kanji":
         k = str(e.get("kanji", ""))
         ws = []
@@ -135,7 +137,8 @@ def reading_target(e: dict, spec: dict) -> tuple[str, str, str] | None:
                 ws.append((pw, r, w))
         if not ws:
             return None
-        return min(ws, key=lambda t: _h(e["id"], "word", t[0]))
+        fresh = [t for t in ws if t[0] not in (taken or set())]
+        return min(fresh or ws, key=lambda t: _h(e["id"], "word", t[0]))
     word, r = headword(e, spec), clean(to_hira(str(e.get(spec.get("reading") or "", ""))))
     if not (_KANJI.search(word) and r and _HIRA.match(r)):
         return None
@@ -212,8 +215,8 @@ def _rank(q: str, key: str, cands):
     return sorted(cands, key=lambda t: score(t[0]))
 
 
-def _reading_item(e, spec, pairs, by_kanji):
-    tgt = reading_target(e, spec)
+def _reading_item(e, spec, pairs, by_kanji, taken=None):
+    tgt = reading_target(e, spec, taken)
     if not tgt or PITCH is None:
         return None
     word, key, src = tgt
@@ -313,10 +316,12 @@ def generate(spec: dict, entries: list[dict], prose: dict) -> dict[str, list[dic
             if len(k) == 1:
                 by_kanji.setdefault(k, {"id": e["id"], "readings": _kanji_readings(e)})
     items = {k: [] for k in kinds}
-    for e in entries:
+    taken: set = set()          # compounds already shown, claimed in id order (stable)
+    for e in sorted(entries, key=lambda x: x["id"]):
         if "reading" in kinds:
-            it = _reading_item(e, spec, pairs, by_kanji)
+            it = _reading_item(e, spec, pairs, by_kanji, taken)
             if it:
+                taken.add(it["word"])
                 items["reading"].append(it)
         if "meaning" in kinds:
             it = _meaning_item(e, spec, entries, prose)

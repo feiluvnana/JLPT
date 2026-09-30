@@ -362,6 +362,17 @@ Added by the 語彙 batch-1 QA (`qa/qa-report-knowledge-N2-語彙-B1.md`):
     affix (〜離れ), never the base word. Sitting dates are source names too —
     none in prose.
 
+Added by the 漢字 batch-1 QA (`qa/qa-report-knowledge-N2-漢字-B1.md`):
+
+29. **A gloss never borrows a sense from a compound's other kanji** (厚 glossed
+    "đậm, nồng" from 濃厚 made 濃's meaning quiz two-answer); kanji that form a
+    compound together, or share a gloss word, go in `related`. Hán Việt uses the
+    dictionary reading, the everyday one only as "(quen đọc …)". A distractor
+    named as "in the exam" is quoted from the printed options.
+30. The gate WARNs on a sitting date, 「本のp.」, 「この本」 or 「SK」 inside
+    item-category prose (`check_prose_citations`); the generator never gives two
+    kanji the same reading-quiz compound.
+
 ## Pronunciation
 
 - **▶ speech** on every headword reading, every 漢字 `words` compound and every

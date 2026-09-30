@@ -664,6 +664,36 @@ def check_ruby_suspects(level: str, spec: dict, warn):
            "furigana pitfalls)")
 
 
+# Prose never names its source (SKILL §Quiz integrity rules 18/28): a sitting date
+# 「7/2019」, a book-page tag 「（本のp.43）」「SK」 or 「この本」 inside a learner's
+# text. Citations live in `sources` (whose notes may carry dates — only the
+# language files are read here). Found by the B4, B5 and 漢字 B1 QA rounds.
+PROSE_CITES = re.compile(r"(?<![0-9])(?:1[0-2]|[1-9])/20[0-9]{2}(?![0-9])|本のp\.?[0-9]|この本|(?<![A-Za-z])SK(?![A-Za-z])")
+
+
+def check_prose_citations(level: str, spec: dict, warn):
+    # Items only: a guide may state exam history (「12/2022から問題11は4文章」) —
+    # that is content about the format, not a citation of where a claim came from.
+    if spec.get("kind") != "item":
+        return
+    cat = D.locate(level, spec)
+    hits = []
+    for part in cat.parts:
+        files = part.lang_files.values() if isinstance(part.lang_files, dict) else part.lang_files
+        for path in files:
+            if not path or not path.is_file():
+                continue
+            for eid, pr in D.read_json(path).items():
+                for field, v in pr.items():
+                    for t in (v if isinstance(v, list) else [v]):
+                        m = PROSE_CITES.search(str(t))
+                        if m:
+                            hits.append(f"{_rel(path)} {eid}.{field}: 「{m.group(0)}」")
+    warn(f"knowledge/{level}/{spec['stem']}: prose names no source", not hits,
+         "; ".join(hits[:6]) + (f" … and {len(hits) - 6} more" if len(hits) > 6 else "")
+         + " — citations belong in `sources`; say 「問題1で」, never the sitting or book")
+
+
 def check_all(check, warn, skip, git_tracks=None):
     git_tracks = git_tracks or _default_git_tracks
     print("\nknowledge module (jlpt-knowledge: knowledge/<LEVEL>/)")
@@ -690,6 +720,7 @@ def check_all(check, warn, skip, git_tracks=None):
         for spec in D.categories(lv):
             check_category(lv, spec, check, warn, skip, git_tracks)
             check_ruby_suspects(lv, spec, warn)
+            check_prose_citations(lv, spec, warn)
         check_index(lv, check)
 
 

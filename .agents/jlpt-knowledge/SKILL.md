@@ -352,6 +352,16 @@ Added by the 読解/聴解 guide QA (`qa/qa-report-knowledge-N2-読解-G1.md`, `
     denominator and caveat; anything said in the audio cites `script.md`. Quiz
     passages break with `\n` before ［問い］ and each passage part.
 
+Added by the 語彙 batch-1 QA (`qa/qa-report-knowledge-N2-語彙-B1.md`):
+
+27. **Every SENSE in a `meaning` or an example is on a cited page or in a cited
+    official item** (a "skilful" 鮮やか and a "worn-out shirt" くたくた had none).
+28. **Before hand-off the author dumps `quiz_gen.generate()` and reads every
+    meaning item**; any distractor that also glosses the key word goes into
+    `related` (both ways, with `compare`). A 問題3 語形成 key counts for the
+    affix (〜離れ), never the base word. Sitting dates are source names too —
+    none in prose.
+
 ## Pronunciation
 
 - **▶ speech** on every headword reading, every 漢字 `words` compound and every

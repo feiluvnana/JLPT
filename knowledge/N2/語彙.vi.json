@@ -4102,7 +4102,7 @@
     "meaning": "Sự kiện, hoạt động chung của trường, địa phương, công ty",
     "usage": "「学校の行事」, 「行事に参加する」, 「祭りの行事」, 「会社の行事」.",
     "nuance": "Đọc 「ぎょうじ」: 「行」 đọc 「ぎょう」, 「事」 đọc 「じ」. Đề thi đã cho 「ぎょうごと」「こうごと」「こうじ」 làm phương án sai.",
-    "compare": "",
+    "compare": "「イベント」 là từ ngoại lai \"event\": buổi tổ chức có người dự, không nhất thiết theo lệ như 「行事」.",
     "example_notes": [
       "Ở thị trấn này, mùa thu năm nào cũng tổ chức lễ hội có từ ngày xưa.",
       "Cuối năm công ty có nhiều sự kiện, gần như tuần nào cũng có tiệc nhậu."
@@ -7032,7 +7032,7 @@
     "meaning": "Đều đặn, vững vàng từng bước (công việc tiến triển)",
     "usage": "「着々と進む」, 「着々と進める」, 「準備が着々と進んでいる」, 「着々と力をつける」. Nói về kế hoạch, công việc tiến dần tới đích.",
     "nuance": "Đề thi coi là sai: 「着々と古くなって」, 「時間が着々とたっていた」, 「着々と涼しくなって」. Điền từ: đề đặt 「すらすら」「続々と」「ぐんぐん」「慎重に」 cạnh 「着々と」.",
-    "compare": "「着々と」: công việc, kế hoạch tiến từng bước. 「徐々に」: thay đổi dần dần, cả trong tự nhiên: 「日が徐々に長くなる」. 「順調」: suôn sẻ, không trục trặc. 「こつこつ」: người bền bỉ cố gắng từng chút.",
+    "compare": "「着々と」: kế hoạch tiến từng bước. 「徐々に」: đổi dần, cả trong tự nhiên: 「日が徐々に長くなる」. 「順調」: suôn sẻ. 「こつこつ」: bền bỉ từng chút. 「｜続々《ぞくぞく》と」: người, vật kéo đến liên tiếp.",
     "example_notes": [
       "Anh ấy đang từng bước nâng cao sức lực để chuẩn bị cho giải đấu.",
       "Mỗi ngày viết một chút, bản luận văn đang đều đặn tiến gần tới hoàn thành."
@@ -7485,6 +7485,52 @@
       "Em trai tôi mùa đông cũng chỉ quần jean với áo phông."
     ]
   },
+  "v-0807": {
+    "meaning": "Đồ đạc, vật dụng của một người",
+    "usage": "「｜持《も》ち｜物《もの》を｜確《たし》かめる」, 「｜持《も》ち｜物《もの》に｜名前《なまえ》を｜書《か》く」, 「｜旅行《りょこう》の｜持《も》ち｜物《もの》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Trước chuyến đi, tôi kiểm tra từng món đồ mang theo."
+    ]
+  },
+  "v-0808": {
+    "meaning": "Mặc, đeo lên người; học được, nắm vững (kỹ năng)",
+    "usage": "Nghĩa 1: 「ネクタイを｜身《み》につける」 (đeo, mặc lên người). Nghĩa 2: 「｜会話力《かいわりょく》を｜身《み》につける」, 「｜技術《ぎじゅつ》を｜身《み》につける」. Đi với 「を」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Hôm phỏng vấn, anh tôi đeo chiếc cà vạt mới rồi ra khỏi nhà.",
+      "Trong thời gian du học, tôi đã học được tiếng nói và tập quán của nơi đó một cách tự nhiên."
+    ]
+  },
+  "v-0809": {
+    "meaning": "Khiếu thẩm mỹ, óc cảm nhận tinh tế",
+    "usage": "「センスがいい」, 「センスが｜悪《わる》い」, 「センスのある｜人《ひと》」. Nói về gu ăn mặc, màu sắc, cách chọn đồ.",
+    "nuance": "",
+    "compare": "「センス」 ở đây là \"gu\", \"khiếu thẩm mỹ\", không phải \"giác quan\": 「センスがいい」 = có gu. 「ダサい」 là tính từ chê người, đồ không có gu: 「ダサい｜服《ふく》」.",
+    "example_notes": [
+      "Phòng của chị tôi chọn đồ nội thất rất có gu nên thấy dễ chịu."
+    ]
+  },
+  "v-0810": {
+    "meaning": "Quê mùa, lỗi mốt, kém sành điệu",
+    "usage": "「｜服《ふく》がダサい」, 「ダサいデザイン」, 「ダサい｜色《いろ》の｜組《く》み｜合《あ》わせ」.",
+    "nuance": "",
+    "compare": "「ダサい」 gắn cho món đồ, kiểu ăn mặc (quê, lỗi mốt): 「｜服装《ふくそう》がダサい」. Muốn nói người đó chọn đồ kém thì dùng danh từ 「センス」 (gu): 「センスが｜悪《わる》い」.",
+    "example_notes": [
+      "Tôi bị bạn cười là \"cách phối màu đó quê quá\"."
+    ]
+  },
+  "v-0811": {
+    "meaning": "Chưa thật ổn, còn thiếu chút nữa",
+    "usage": "「いまひとつ〜ない」 (đi với phủ định): chưa thật…, còn thiếu chút. Đồng nghĩa 「いまいち」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Bài hát mới không tệ nhưng chưa thật đọng lại trong lòng."
+    ]
+  },
   "v-0812": {
     "meaning": "Vóc dáng; phong cách, lối (sống, viết)",
     "usage": "「スタイルがいい」 (dáng đẹp), 「独特のスタイル」, 「生活のスタイル」, 「ライフスタイル」.",
@@ -7495,11 +7541,65 @@
       "Nhà văn này nổi tiếng với lối viết độc đáo, chồng những câu ngắn lên nhau."
     ]
   },
+  "v-0813": {
+    "meaning": "Chỗ dưới chân, quanh chân; phần chân (giày dép)",
+    "usage": "「｜足元《あしもと》に｜気《き》をつける」, 「｜足元《あしもと》がすべる」, 「｜足元《あしもと》のおしゃれ」. Viết 「｜足下《あしもと》」 cũng được.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Bậc đá sau mưa dễ trơn chân."
+    ]
+  },
+  "v-0814": {
+    "meaning": "Vòng eo, phần eo",
+    "usage": "「ウエストがきつい」, 「ウエストが｜細《こま》い」, 「ウエストを｜測《はか》る」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Vóc người thay đổi nên eo chiếc quần mua năm ngoái không còn vừa nữa."
+    ]
+  },
+  "v-0815": {
+    "meaning": "Vẻ bề ngoài, trông bề ngoài",
+    "usage": "「｜見《み》た｜目《め》がいい」, 「｜見《み》た｜目《め》が〜のようだ」, 「｜見《み》た｜目《め》は〜が」. Gần nghĩa với 「｜外見《がいけん》」「｜見《み》かけ」.",
+    "nuance": "",
+    "compare": "「｜見《み》た｜目《め》」 và 「｜外見《がいけん》」 đều là vẻ bề ngoài nhìn thấy. Trong đề dùng từ, 「｜外見《がいけん》」 từng bị dùng sai cho mặt ngoài của cửa sổ hay vẻ đang giận.",
+    "example_notes": [
+      "Tòa nhà ga mới trông bề ngoài cứ như một con tàu lớn."
+    ]
+  },
+  "v-0816": {
+    "meaning": "Ánh mắt, sự chú ý của người xung quanh",
+    "usage": "「｜人目《ひとめ》を｜引《ひ》く」, 「｜人目《ひとめ》が｜気《き》になる」, 「｜人目《ひとめ》を｜気《き》にする」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Vì để ý ánh mắt người xung quanh nên tôi không dám hát to."
+    ]
+  },
+  "v-0817": {
+    "meaning": "Màu sắc, sắc màu (tổng thể các màu)",
+    "usage": "「｜色彩《しきさい》が｜豊《ゆた》かだ」, 「｜明《あか》るい｜色彩《しきさい》」, 「｜色彩《しきさい》の｜美《うつく》しい｜絵《え》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tranh của họa sĩ này đẹp ở màu sắc dùng xanh và vàng."
+    ]
+  },
+  "v-0818": {
+    "meaning": "Lộng lẫy, tươi tắn (màu sắc, trang phục)",
+    "usage": "「｜華《はな》やかな｜色《いろ》」, 「｜華《はな》やかな｜服《ふく》」, 「｜華《はな》やかなドレス」, 「｜華《はな》やかになる」. Dạng 「な」 trước danh từ.",
+    "nuance": "",
+    "compare": "「｜華《はな》やか」 chữ 華 HOA như \"hoa lệ\": lộng lẫy, nổi bật: 「｜華《はな》やかなドレス」. 「｜鮮《あざ》やか」 chữ 鮮 TIÊN (tươi): màu tươi, rõ nét: 「｜鮮《あざ》やかな｜赤《あか》」. Cùng đuôi 「〜やか」, đọc 「はなやか」/「あざやか」.",
+    "example_notes": [
+      "Trong đám cưới có nhiều người mặc váy hoa lộng lẫy."
+    ]
+  },
   "v-0819": {
     "meaning": "(Màu sắc, hình ảnh) tươi, rực rỡ, nổi bật",
     "usage": "「鮮やかな色」, 「鮮やかな赤」, 「色が鮮やかだ」, 「鮮やかに咲く」 (nở rực rỡ). Hán Việt 「鮮」 là \"tiên\" (tươi), như 「新鮮」.",
     "nuance": "Nhiều từ cùng đuôi 「〜やか」: khi hỏi cách đọc, đề thi đặt 「おだやか」「さわやか」「なごやか」 cạnh 「あざやか」. Viết: 「照やか」「晴やか」「濃やか」 đều sai.",
-    "compare": "「鮮やか」 tả màu sắc, hình ảnh tươi và nổi bật. 「｜和《なご》やか」 tả bầu không khí giữa người với người êm ấm, vui vẻ: 「和やかな雰囲気」.",
+    "compare": "「鮮やか」 tả màu sắc, hình ảnh tươi và nổi bật. 「｜和《なご》やか」 tả bầu không khí giữa người với người êm ấm, vui vẻ: 「和やかな雰囲気」. 「｜華《はな》やか」 (HOA như \"hoa lệ\"): lộng lẫy, nổi bật.",
     "example_notes": [
       "Sang thu, lá cây trên núi chuyển sang màu đỏ rực.",
       "Mưa vừa tạnh, trên trời hiện ra một cầu vồng rực rỡ."
@@ -7515,6 +7615,61 @@
       "Ý kiến cả lớp mãi không thống nhất được nên cuộc bàn bạc kéo dài."
     ]
   },
+  "v-0821": {
+    "meaning": "Cỡ tự do, một cỡ cho nhiều người mặc",
+    "usage": "「フリーサイズの｜服《ふく》」, 「フリーサイズです」. Dùng cho quần áo.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Chiếc áo này là cỡ tự do nên cả chị lẫn tôi đều mặc được."
+    ]
+  },
+  "v-0822": {
+    "meaning": "Quá rộng, thùng thình (quần áo, giày)",
+    "usage": "「ぶかぶかだ」, 「ぶかぶかの｜靴《くつ》」, 「ぶかぶかの｜服《ふく》」, 「ぶかぶかする」.",
+    "nuance": "Câu thay thế trong đề: 「ぶかぶか」＝「｜大《おお》きすぎる」, hai lần đều vậy. Phương án sai: 「｜小《ちい》さすぎる」「｜派手《はで》すぎる」「｜地味《じみ》すぎる」「とても｜重《おも》い」「とても｜軽《かる》い」.",
+    "compare": "",
+    "example_notes": [
+      "Chiếc áo khoác cũ của anh tôi nhường lại, tay dài nên rộng thùng thình."
+    ]
+  },
+  "v-0823": {
+    "meaning": "Vải (để may đồ); bột nhào (làm bánh)",
+    "usage": "Nghĩa 1: 「｜厚《あつ》い｜生地《きじ》」, 「｜生地《きじ》が｜薄《うす》い」, 「｜上等《じょうとう》な｜生地《きじ》」. Nghĩa 2: 「パンの｜生地《きじ》」, 「ピザの｜生地《きじ》」.",
+    "nuance": "",
+    "compare": "「｜生地《きじ》」 Hán Việt SINH ĐỊA nhưng đọc 「きじ」 và không phải \"sinh địa\": là vải để may (và bột nhào): 「パンの｜生地《きじ》」. 「｜布《ぬの》」: vải nói chung. 「｜綿《めん》」 (MIÊN): bông, cotton.",
+    "example_notes": [
+      "Loại vải này mỏng và nhẹ nên rất hợp để may áo sơ mi mùa hè.",
+      "Tôi dùng tay cán tròn đế bột pizza rồi xếp rau lên trên."
+    ]
+  },
+  "v-0824": {
+    "meaning": "Bông, cotton; vải cotton",
+    "usage": "「｜綿《めん》の｜服《ふく》」, 「｜綿《めん》のシャツ」. Đồng nghĩa 「コットン」. Đọc 「めん」.",
+    "nuance": "",
+    "compare": "「｜綿《めん》」 (MIÊN) đọc 「めん」, cùng nghĩa 「コットン」: sợi bông, vải cotton. 「｜生地《きじ》」 là vải để may nói chung, chưa nói chất liệu: 「｜厚《あつ》い｜生地《きじ》」.",
+    "example_notes": [
+      "Tôi chọn áo lót cho em bé loại làm bằng cotton mềm."
+    ]
+  },
+  "v-0825": {
+    "meaning": "Đặt may riêng, làm theo đơn đặt hàng",
+    "usage": "「オーダーメイドの｜靴《くつ》」, 「オーダーメイドで｜作《つく》る」, 「オーダーメイドのスーツ」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Cửa hàng này cũng bán cả xe đạp đặt làm riêng theo vóc người khách."
+    ]
+  },
+  "v-0826": {
+    "meaning": "Kính râm, kính mát",
+    "usage": "「サングラスをかける」, 「サングラスを｜外《はず》す」, 「サングラスが｜欠《か》かせない」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Khi lái xe tôi đeo kính râm để chống chói."
+    ]
+  },
   "v-0827": {
     "meaning": "(Nút, quai) bị sút ra, rời ra; (vết bẩn, cơn đau) mất đi",
     "usage": "「ボタンが取れる」, 「持ち手が取れる」, 「汚れが取れる」 (vết bẩn sạch đi), 「痛みが取れる」 (hết đau).",
@@ -7523,6 +7678,33 @@
     "example_notes": [
       "Quai của chiếc túi cũ bị sút ra nên tôi đã mang đi sửa.",
       "Dùng nước rửa chuyên dụng thì vết cháy ở nồi đã sạch hẳn."
+    ]
+  },
+  "v-0828": {
+    "meaning": "Yukata, kimono vải cotton mỏng",
+    "usage": "「｜浴衣《ゆかた》を｜着《き》る」, 「｜浴衣姿《ゆかたすがた》」, 「｜浴衣《ゆかた》で｜出《で》かける」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Được bà dạy cách mặc, tôi đã có thể tự mặc yukata một mình."
+    ]
+  },
+  "v-0829": {
+    "meaning": "Sự kiện, buổi tổ chức (có người tham dự)",
+    "usage": "「イベントを｜開《ひら》く」, 「イベントに｜参加《さんか》する」, 「イベントの｜準備《じゅんび》」.",
+    "nuance": "",
+    "compare": "「イベント」 là từ ngoại lai \"event\": buổi tổ chức có người đến dự: 「イベントを｜開《ひら》く」. 「｜行事《ぎょうじ》」 (HÀNH SỰ) là việc làm theo lệ, đúng dịp hằng năm: 「｜学校《がっこう》｜行事《ぎょうじ》」.",
+    "example_notes": [
+      "Trong sự kiện của khu phố mua sắm, học sinh cấp ba địa phương đã biểu diễn trống."
+    ]
+  },
+  "v-0830": {
+    "meaning": "Thần tượng (người nổi tiếng được người hâm mộ yêu quý)",
+    "usage": "「アイドルのコンサート」, 「アイドルのファン」, 「アイドルグループ」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Anh tôi chỉ toàn nghe nhạc của nhóm thần tượng mới ra mắt."
     ]
   },
   "v-0831": {
@@ -7535,24 +7717,170 @@
       "Bài hát vừa dứt, những bó hoa từ hàng ghế khán giả được ném lên sân khấu."
     ]
   },
+  "v-0832": {
+    "meaning": "Phấn khích, hưng phấn, bị kích động",
+    "usage": "「｜興奮《こうふん》する」, 「｜興奮《こうふん》して｜目《め》が｜覚《さ》める」, 「｜興奮《こうふん》を｜抑《おさ》える」, 「｜興奮《こうふん》した｜声《こえ》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Sáng hôm lần đầu đi máy bay, tôi phấn khích đến mức tỉnh dậy trước năm giờ."
+    ]
+  },
+  "v-0833": {
+    "meaning": "Lần lượt, nối tiếp nhau (người, vật kéo đến)",
+    "usage": "「｜続々《ぞくぞく》と｜集《あつ》まる」, 「｜続々《ぞくぞく》と｜届《とど》く」, 「｜続々《ぞくぞく》と｜現《あらわ》れる」. Luôn đi kèm 「と」.",
+    "nuance": "Đề điền từ: câu nói công trình tiến đúng kế hoạch cần 「｜着々《ちゃくちゃく》と」; 「｜続々《ぞくぞく》と」 là phương án nhiễu, vì nó nói người, vật kéo đến chứ không nói tiến độ.",
+    "compare": "「｜続々《ぞくぞく》と」 (TỤC TỤC): người, vật kéo đến hết lượt này tới lượt khác. Đừng lẫn với 「｜着々《ちゃくちゃく》と」 cũng lặp chữ: việc tiến từng bước theo kế hoạch. 「｜相次《あいつ》ぐ」 là động từ, 「｜続出《ぞくしゅつ》」 là danh từ + 「する」.",
+    "example_notes": [
+      "Từ khi cây cầu bắc qua con sông này, nhà mới lần lượt mọc lên ở bờ bên kia."
+    ]
+  },
+  "v-0834": {
+    "meaning": "Kịch, nghệ thuật diễn kịch; vở diễn",
+    "usage": "「｜演劇《えんげき》を｜見《み》る」, 「｜演劇《えんげき》を｜見《み》に｜行《い》く」, 「｜演劇《えんげき》が｜上演《じょうえん》される」. Cũng gọi 「｜芝居《しばい》」.",
+    "nuance": "Câu viết chữ 「｜素晴《すば》らしいえんぎ」: đáp án 「｜演技《えんぎ》」, còn 「｜演劇《えんげき》」 là phương án nhiễu.",
+    "compare": "「｜演劇《えんげき》」 (DIỄN KỊCH) như \"kịch\" tiếng Việt. 「｜演技《えんぎ》」 (DIỄN KỸ) là diễn xuất — chỉ khác chữ sau, đề viết chữ đặt hai từ cạnh nhau. 「｜劇場《げきじょう》」 (KỊCH TRƯỜNG): nhà hát.",
+    "example_notes": [
+      "Ngay cả ở hội quán một thị trấn nhỏ, mỗi năm cũng có một lần diễn kịch."
+    ]
+  },
+  "v-0835": {
+    "meaning": "Nhà hát, rạp hát",
+    "usage": "「｜劇場《げきじょう》に｜行《い》く」, 「｜劇場《げきじょう》で｜見《み》る」.",
+    "nuance": "",
+    "compare": "「｜劇場《げきじょう》」 (KỊCH TRƯỜNG): chữ 場 TRƯỜNG chỉ nơi chốn, nên là tòa nhà để diễn. 「｜演劇《えんげき》」 (DIỄN KỊCH) là bộ môn, vở kịch: 「｜演劇《えんげき》を｜見《み》る」.",
+    "example_notes": [
+      "Nhà hát ba tầng ấy, ngay cả buổi trưa ngày thường ghế khán giả cũng gần như kín chỗ."
+    ]
+  },
+  "v-0836": {
+    "meaning": "Diễn viên (sân khấu, màn ảnh)",
+    "usage": "「｜役者《やくしゃ》になる」, 「｜好《す》きな｜役者《やくしゃ》」, 「｜役者《やくしゃ》が｜出《で》る」.",
+    "nuance": "",
+    "compare": "「｜役者《やくしゃ》」 Hán Việt DỊCH GIẢ nhưng không phải \"dịch giả\" (người dịch): là diễn viên. 「｜主役《しゅやく》」 (CHỦ DỊCH): vai chính. 「｜演技《えんぎ》」: cách diễn.",
+    "example_notes": [
+      "Diễn viên ấy giỏi truyền đạt cảm xúc nhân vật chỉ bằng giọng nói."
+    ]
+  },
+  "v-0837": {
+    "meaning": "Vai chính, người đóng vai chính",
+    "usage": "「｜主役《しゅやく》を｜演《えん》じる」, 「｜主役《しゅやく》に｜選《えら》ばれる」, 「｜主役《しゅやく》は〜だ」.",
+    "nuance": "",
+    "compare": "「｜主役《しゅやく》」 (CHỦ DỊCH): vai chính mà diễn viên đóng: 「｜主役《しゅやく》に｜選《えら》ばれる」. 「｜主人公《しゅじんこう》」 Hán Việt CHỦ NHÂN CÔNG, không phải \"chủ nhân\": nhân vật chính của truyện. 「｜役者《やくしゃ》」: người đóng.",
+    "example_notes": [
+      "Tôi đỗ buổi thử vai và được chọn làm vai chính của vở diễn mới."
+    ]
+  },
+  "v-0838": {
+    "meaning": "Lời thoại trong phim, kịch; lời nói, cách nói với ai đó",
+    "usage": "Nghĩa 1: 「セリフを｜覚《おぼ》える」, 「セリフを｜言《い》う」 (lời thoại phim, kịch). Nghĩa 2: 「そんなセリフ」 (cách nói như vậy với người khác).",
+    "nuance": "",
+    "compare": "Lời thoại nhân vật nói là 「セリフ」. 「｜演技《えんぎ》」 (DIỄN KỸ) là toàn bộ cách nhập vai, cả lời lẫn điệu bộ: 「｜演技《えんぎ》がうまい」.",
+    "example_notes": [
+      "Cô bé đóng vai chính đã nói hết ba trang lời thoại ngay buổi tập đầu tiên.",
+      "Câu nói tệ hại của người bạn khiến không khí lúc đó đóng băng."
+    ]
+  },
   "v-0839": {
     "meaning": "Diễn xuất, cách diễn của diễn viên",
     "usage": "「自然な演技」, 「演技がうまい」, 「演技が話題になる」. Hán Việt \"diễn kỹ\"; tiếng Việt nói \"diễn xuất\". Cũng chỉ sự giả vờ, đóng kịch trước mặt người khác.",
     "nuance": "Viết: 「演」 (diễn) + 「技」 (kỹ). Đề thi đã gài 「演劇」 (vở kịch) và 「園技」「園劇」 — 「園」 cùng âm 「えん」.",
-    "compare": "",
+    "compare": "「｜演劇《えんげき》」 (DIỄN KỊCH): vở kịch. 「｜役者《やくしゃ》」 (DỊCH GIẢ) không phải \"dịch giả\" mà là người diễn. 「セリフ」: phần lời.",
     "example_notes": [
       "Trong phim này, diễn xuất tự nhiên của diễn viên nhí được nhiều người bàn tán.",
       "Trên sân khấu tôi căng thẳng, không diễn được như lúc tập."
+    ]
+  },
+  "v-0840": {
+    "meaning": "Dàn nhạc giao hưởng, dàn nhạc",
+    "usage": "「オーケストラの｜演奏《えんそう》」, 「オーケストラを｜聴《き》く」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Những ngày nghỉ, ông tôi vừa nghe nhạc của dàn nhạc giao hưởng vừa đọc sách."
+    ]
+  },
+  "v-0841": {
+    "meaning": "Nhịp điệu, tiết tấu",
+    "usage": "「リズムに｜合《あ》わせる」, 「リズムを｜取《と》る」, 「リズムがいい」, 「｜生活《せいかつ》のリズム」.",
+    "nuance": "Câu điền từ 「｜栄養《えいよう》の（　）」: đáp án 「バランス」; 「リズム」 là phương án nhiễu.",
+    "compare": "Tiếng Việt hay gọi chung là \"nhịp\", nhưng 「リズム」 là kiểu lặp của phách mạnh nhẹ: 「リズムを｜取《と》る」, còn 「テンポ」 là tốc độ nhanh chậm: 「テンポが｜速《はや》い」.",
+    "example_notes": [
+      "Cô giáo vừa giữ nhịp vừa chơi chậm bản nhạc cho chúng tôi xem."
     ]
   },
   "v-0842": {
     "meaning": "Thưởng thức, ngắm nghía tác phẩm nghệ thuật",
     "usage": "「作品を鑑賞する」, 「映画を鑑賞する」, 「音楽鑑賞」, 「芸術鑑賞」.",
     "nuance": "Đối tượng là nghệ thuật: tranh, nhạc, phim, vườn cảnh. Đề thi coi là sai khi dùng cho tham quan nhà máy lắp ráp, tìm hiểu tài liệu, hay nếm món ăn.",
-    "compare": "",
+    "compare": "「｜作品《さくひん》」 (TÁC PHẨM): tranh, nhạc, phim… là thứ được thưởng thức.",
     "example_notes": [
       "Ở bảo tàng mỹ thuật, tôi thong thả thưởng thức tác phẩm của một họa sĩ nổi tiếng.",
       "Khu vườn này được làm để ngồi trong phòng khách kiểu Nhật mà ngắm."
+    ]
+  },
+  "v-0843": {
+    "meaning": "Nghệ sĩ (người sáng tạo ra cái đẹp)",
+    "usage": "「｜有名《ゆうめい》な｜芸術家《げいじゅつか》」, 「｜芸術家《げいじゅつか》になる」, 「｜芸術家《げいじゅつか》の｜作品《さくひん》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Chú tôi mê vẽ nên bỏ việc và chọn con đường nghệ sĩ."
+    ]
+  },
+  "v-0844": {
+    "meaning": "Đạo diễn (phim)",
+    "usage": "「｜映画監督《えいがかんとく》」, 「｜監督《かんとく》の｜作品《さくひん》」, 「この｜監督《かんとく》の｜映画《えいが》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Nghe nói vị đạo diễn ấy khi chọn diễn viên mới nhất định cho đọc kịch bản."
+    ]
+  },
+  "v-0845": {
+    "meaning": "Tóm tắt nội dung, cốt truyện đại cương",
+    "usage": "「あらすじを｜読《よ》む」, 「あらすじを｜話《はな》す」, 「｜映画《えいが》のあらすじ」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Cuốn truyện tranh này có cốt truyện ngắn nên dễ kể cho cả trẻ nhỏ."
+    ]
+  },
+  "v-0846": {
+    "meaning": "Tầm thường, quá quen thuộc, đâu cũng có",
+    "usage": "「ありふれた｜話《はなし》」, 「ありふれた｜名前《なまえ》」, 「ありふれた｜言葉《ことば》」. Luôn đứng trước danh từ.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Thư của cô ấy toàn là những lời cảm ơn quen thuộc ở đâu cũng có."
+    ]
+  },
+  "v-0847": {
+    "meaning": "Ngớ ngẩn, nực cười",
+    "usage": "「ばかばかしい｜話《はなし》」, 「ばかばかしいストーリー」, 「ばかばかしくて｜笑《わら》う」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Nghiêm túc bàn xem nếu trúng xổ số thì làm gì, tôi thấy thật nực cười."
+    ]
+  },
+  "v-0848": {
+    "meaning": "Chán, buồn tẻ, nhàm chán",
+    "usage": "「｜退屈《たいくつ》だ」, 「｜退屈《たいくつ》な｜話《はなし》」, 「｜退屈《たいくつ》する」, 「｜退屈《たいくつ》で｜眠《ねむ》くなる」.",
+    "nuance": "Câu thay thế trong đề: 「たいくつな」 là phương án nhiễu của câu 「あわれな｜人生《じんせい》」 (đáp án 「かわいそうな」).",
+    "compare": "",
+    "example_notes": [
+      "Bị bắt chờ một tiếng trong phòng chờ chẳng có gì để xem, tôi chán hết sức."
+    ]
+  },
+  "v-0849": {
+    "meaning": "Nhân vật; một người nào đó (được nhắc tới)",
+    "usage": "Nghĩa 1: 「｜登場人物《とうじょうじんぶつ》」, 「｜人物《じんぶつ》が｜描《えが》かれる」. Nghĩa 2: 「あの｜人物《じんぶつ》」 (người được nhắc đến).",
+    "nuance": "",
+    "compare": "「｜人物《じんぶつ》」 (NHÂN VẬT) giống \"nhân vật\" tiếng Việt, nhưng còn chỉ một người ngoài đời: 「あの｜人物《じんぶつ》」. 「｜主人公《しゅじんこう》」: nhân vật chính của truyện.",
+    "example_notes": [
+      "Tôi thử vẽ ra sơ đồ quan hệ cho toàn bộ nhân vật trong bộ phim truyền hình.",
+      "Tôi hỏi cả hàng xóm mà vẫn không biết người ấy là ai."
     ]
   },
   "v-0850": {
@@ -7579,7 +7907,7 @@
     "meaning": "Nhịp độ, tốc độ (của nhạc, lời nói, câu chuyện)",
     "usage": "「テンポが速い」, 「ゆっくりしたテンポ」, 「テンポを合わせる」, 「テンポの速い曲」. Mượn từ tiếng Ý \"tempo\".",
     "nuance": "Câu thay thế trong đề: 「テンポ」＝「速さ」. Các phương án sai là 「長さ」「高さ」「明るさ」「大きさ」 — nhớ rằng đây là tốc độ, không phải độ dài hay độ cao của âm.",
-    "compare": "",
+    "compare": "Tiếng Việt gọi cả hai là \"nhịp\", nhưng 「リズム」 là kiểu lặp phách mạnh nhẹ.",
     "example_notes": [
       "Thầy nói với nhịp chậm rãi nên dễ nghe.",
       "Khi tập nhảy, trước hết học động tác với nhịp chậm."
@@ -7605,6 +7933,179 @@
       "Tranh của cô ấy chỉ được đánh giá đúng sau khi cô mất."
     ]
   },
+  "v-0855": {
+    "meaning": "Cảm tưởng, cảm nghĩ sau khi xem, đọc, trải nghiệm",
+    "usage": "「｜感想《かんそう》を｜聞《き》く」, 「｜感想《かんそう》を｜述《の》べる」, 「｜感想文《かんそうぶん》」.",
+    "nuance": "",
+    "compare": "「｜感想《かんそう》」 = \"cảm tưởng\": nói điều mình cảm thấy. 「｜批評《ひひょう》」 = \"phê bình\": chỉ ra chỗ hay chỗ dở: 「｜厳《きび》しい｜批評《ひひょう》」. Cả hai trùng nghĩa Hán Việt.",
+    "example_notes": [
+      "Ở buổi họp đọc sách, mỗi người lần lượt nói cảm tưởng về cuốn tiểu thuyết mình đã đọc."
+    ]
+  },
+  "v-0856": {
+    "meaning": "Giải, phần thưởng (cho người có thành tích)",
+    "usage": "「｜賞《しょう》をもらう」, 「｜賞《しょう》を｜取《と》る」, 「｜受賞《じゅしょう》する」, 「｜大賞《たいしょう》」. Đứng sau tên lĩnh vực: 「｜文学賞《ぶんがくしょう》」.",
+    "nuance": "Câu điền hậu tố 「｜文学《ぶんがく》（　）」: đáp án 「｜賞《しょう》」; phương án: 「位」「号」「段」.",
+    "compare": "",
+    "example_notes": [
+      "Khi cuốn tiểu thuyết đầu tay của tôi đoạt giải, mẹ khóc vì vui."
+    ]
+  },
+  "v-0857": {
+    "meaning": "Sách vở, sách (nói chung)",
+    "usage": "「｜書物《しょもつ》に｜親《した》しむ」, 「｜書物《しょもつ》を｜読《よ》む」. Gần nghĩa 「｜書籍《しょせき》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Trong phòng lưu trữ, những cuốn sách từ hơn một trăm năm trước được cất giữ cẩn thận."
+    ]
+  },
+  "v-0858": {
+    "meaning": "Sách tranh, truyện tranh minh họa",
+    "usage": "「｜絵本《えほん》を｜読《よ》む」, 「｜子《こ》どもの｜絵本《えほん》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi nhớ mỗi tối trước khi ngủ mẹ đọc cho tôi một cuốn truyện tranh khác nhau."
+    ]
+  },
+  "v-0859": {
+    "meaning": "Tác phẩm (văn, tranh, nhạc…)",
+    "usage": "「｜作品《さくひん》を｜仕上《しあ》げる」, 「｜作品《さくひん》を｜読《よ》む」, 「｜作品《さくひん》が｜売《う》れる」, 「｜名作《めいさく》」.",
+    "nuance": "",
+    "compare": "「｜作品《さくひん》」 (TÁC PHẨM) như tiếng Việt: thứ được sáng tác ra. 「｜鑑賞《かんしょう》」 (GIÁM THƯỞNG) là thưởng thức tác phẩm ấy: 「｜音楽《おんがく》を｜鑑賞《かんしょう》する」.",
+    "example_notes": [
+      "Tôi hoàn thành tác phẩm gửi triển lãm mất đến tận khuya."
+    ]
+  },
+  "v-0860": {
+    "meaning": "Tác giả (người viết ra cuốn sách)",
+    "usage": "「｜本《ほん》の｜著者《ちょしゃ》」, 「｜著者《ちょしゃ》のサイン｜会《かい》」, 「｜著者《ちょしゃ》の｜考《かんが》え」.",
+    "nuance": "",
+    "compare": "「｜著者《ちょしゃ》」 (TRỨ GIẢ) là người viết một cuốn sách cụ thể: 「｜本《ほん》の｜著者《ちょしゃ》」. 「｜書《か》き｜手《て》」 là người viết nói chung, cặp với 「｜読《よ》み｜手《て》」.",
+    "example_notes": [
+      "Cuối sách có in lời chào ngắn của tác giả."
+    ]
+  },
+  "v-0861": {
+    "meaning": "Người viết (văn bản, bài)",
+    "usage": "「｜書《か》き｜手《て》の｜気持《きも》ち」, 「｜書《か》き｜手《て》」⇔「｜読《よ》み｜手《て》」, 「｜書《か》き｜手《て》によって｜違《ちが》う」.",
+    "nuance": "",
+    "compare": "「｜書《か》き｜手《て》」 ghép 「｜書《か》く」 + 「｜手《て》」 (người làm), cùng kiểu 「｜読《よ》み｜手《て》」「｜話《はな》し｜手《て》」. 「｜著者《ちょしゃ》」 (TRỨ GIẢ): tác giả cuốn sách.",
+    "example_notes": [
+      "Cùng một câu chuyện, ấn tượng người đọc nhận được cũng khác nhau tùy người viết."
+    ]
+  },
+  "v-0862": {
+    "meaning": "Bút danh",
+    "usage": "「ペンネームで｜書《か》く」, 「ペンネームを｜使《つか》う」. Đối lập 「｜本名《ほんみょう》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Cô ấy đăng thơ bằng bút danh chứ không dùng tên thật."
+    ]
+  },
+  "v-0863": {
+    "meaning": "Nhân vật chính (của truyện, phim)",
+    "usage": "「｜物語《ものがたり》の｜主人公《しゅじんこう》」, 「｜主人公《しゅじんこう》が｜活躍《かつやく》する」, 「｜主人公《しゅじんこう》になる」. Nữ chính: 「ヒロイン」, nam chính: 「ヒーロー」.",
+    "nuance": "",
+    "compare": "「｜主人公《しゅじんこう》」 Hán Việt CHỦ NHÂN CÔNG, không phải \"chủ nhân\": nhân vật chính của truyện. 「｜主役《しゅやく》」 (CHỦ DỊCH): vai chính khi diễn. 「｜人物《じんぶつ》」: mọi người xuất hiện trong truyện.",
+    "example_notes": [
+      "Truyện tranh này có nhân vật chính là một cậu bé bệnh, mỗi tập lại đi đến một thị trấn khác."
+    ]
+  },
+  "v-0864": {
+    "meaning": "Sự lãng mạn, chất mộng mơ",
+    "usage": "「ロマンがある」, 「ロマンを｜感《かん》じる」, 「ロマンティックな」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Hồi nhỏ, mỗi lần xem sách ảnh về vũ trụ tôi lại cảm thấy một nỗi lãng mạn."
+    ]
+  },
+  "v-0865": {
+    "meaning": "Tiểu sử, truyện kể quãng đời của một người",
+    "usage": "「｜伝記《でんき》を｜読《よ》む」, 「｜偉人《いじん》の｜伝記《でんき》」, 「｜伝記《でんき》から｜学《まな》ぶ」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Đọc tiểu sử nhà phát minh, tôi cảm động trước thái độ không bỏ cuộc dù thất bại."
+    ]
+  },
+  "v-0866": {
+    "meaning": "Cuộc đời, đời người",
+    "usage": "「｜人生《じんせい》を｜送《おく》る」, 「｜自分《じぶん》の｜人生《じんせい》」, 「｜人生《じんせい》に｜満足《まんぞく》する」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Ông tôi nói rằng ông hài lòng với cuộc đời mình, kể cả những thất bại."
+    ]
+  },
+  "v-0867": {
+    "meaning": "Thần thoại",
+    "usage": "「｜神話《しんわ》の｜世界《せかい》」, 「｜神話《しんわ》を｜読《よ》む」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Đọc trước thần thoại của nước đó trước chuyến đi thì di tích trông thú vị hơn nhiều."
+    ]
+  },
+  "v-0868": {
+    "meaning": "Thời trung thế, thời Trung cổ",
+    "usage": "「｜中世《ちゅうせい》に｜興味《きょうみ》を｜持《も》つ」, 「｜中世《ちゅうせい》の｜人々《ひとびと》」. Liên quan: 「｜古代《こだい》」 (thời cổ đại).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Từ những bức bích họa còn lại trong tu viện, ta hình dung được cuộc sống của người thời Trung cổ."
+    ]
+  },
+  "v-0869": {
+    "meaning": "Văn minh, nền văn minh",
+    "usage": "「｜古代文明《こだいぶんめい》」, 「｜世界《せかい》の｜文明《ぶんめい》」, 「｜文明《ぶんめい》が｜栄《さか》える」. Dạng tính từ: 「｜文明的《ぶんめいてき》な」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Bên bờ một con sông lớn, một nền văn minh cổ đã ra đời."
+    ]
+  },
+  "v-0870": {
+    "meaning": "Trung thực với nguyên bản; trung thành",
+    "usage": "Nghĩa 1: 「｜原文《げんぶん》に｜忠実《ちゅうじつ》だ」, 「｜事実《じじつ》に｜忠実《ちゅうじつ》に｜書《か》く」. Nghĩa 2: 「｜忠実《ちゅうじつ》な｜部下《ぶか》」. Trước danh từ: 「｜忠実《ちゅうじつ》な」; trước động từ: 「｜忠実《ちゅうじつ》に」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Bản dịch này cố bám sát nguyên văn nên thành ra tiếng Nhật thiếu tự nhiên.",
+      "Anh ấy từ xưa là cấp dưới trung thành, nên tôi không thể tin anh lại phản bội giám đốc."
+    ]
+  },
+  "v-0871": {
+    "meaning": "Kỳ lạ, lạ lùng (khác thường, khó hiểu)",
+    "usage": "「｜奇妙《きみょう》な｜話《はなし》」, 「｜奇妙《きみょう》な｜形《かたち》」, 「｜奇妙《きみょう》な｜感《かん》じ」, 「｜奇妙《きみょう》だ」.",
+    "nuance": "Câu thay thế trong đề: 「｜奇妙《きみょう》な」＝「｜変《へん》な」. Phương án sai: 「にぎやかな」「｜大《おお》きな」「｜嫌《いや》な」.",
+    "compare": "",
+    "example_notes": [
+      "Trong rừng, tôi thấy mấy hòn đá hình thù kỳ lạ xếp thành hàng."
+    ]
+  },
+  "v-0872": {
+    "meaning": "Bối cảnh (của sự việc); phông nền, hậu cảnh",
+    "usage": "Nghĩa 1: 「｜事件《じけん》の｜背景《はいけい》」, 「｜背景《はいけい》を｜調《しら》べる」, 「｜社会的《しゃかいてき》｜背景《はいけい》」. Nghĩa 2: 「〜を｜背景《はいけい》に」 (lấy làm phông), 「｜背景《はいけい》の｜絵《え》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Đằng sau việc rạp chiếu phim cũ của thị trấn đóng cửa dường như là sự sụt giảm khách.",
+      "Phía sau sân khấu có bức tranh lớn vẽ thị trấn lúc hoàng hôn làm phông nền."
+    ]
+  },
+  "v-0873": {
+    "meaning": "Thực tế, điều đang có thật",
+    "usage": "「｜実際《じっさい》に〜する」, 「｜実際《じっさい》の〜」, 「｜実際《じっさい》には」. 「｜実際《じっさい》に」 đối lập với suy đoán hay tưởng tượng.",
+    "nuance": "Câu thay thế trong đề: 「｜実際《じっさい》には」 là phương án nhiễu của câu 「｜依然《いぜん》として」 (đáp án 「｜相変《あいか》わらず」).",
+    "compare": "「｜実際《じっさい》」 (THỰC TẾ) như \"thực tế\": 「｜実際《じっさい》に｜使《つか》ってみる」. 「｜現《げん》に」 (HIỆN) không phải \"hiện nay\": đưa sự thật ra làm bằng chứng: 「｜現《げん》に｜熱《ねつ》が｜下《さ》がった」.",
+    "example_notes": [
+      "Tôi đã nghe nói rồi, nhưng khi thật sự dùng thử thì tiện hơn dự đoán."
+    ]
+  },
   "v-0874": {
     "meaning": "Lời phàn nàn, bất mãn; câu chữ trong một đoạn văn",
     "usage": "Nghĩa 1: 「文句を言う」, 「文句ばかり言う」, 「文句がある」. Nghĩa 2: 「ポスターの文句」, 「歌の文句」 (câu chữ, lời).",
@@ -7613,6 +8114,89 @@
     "example_notes": [
       "Ngày nào em trai tôi cũng phàn nàn về món ăn bữa tối.",
       "Câu chữ trên tấm áp phích này ngắn nên dễ nhớ."
+    ]
+  },
+  "v-0875": {
+    "meaning": "Rốt cuộc liệu…? (câu hỏi); quả nhiên, đúng như dự đoán",
+    "usage": "Nghĩa 1: 「｜果《は》たして〜のだろうか」 (đặt câu hỏi, băn khoăn thật sự có không). Nghĩa 2: 「｜果《は》たして、〜た」 (đúng như đã nghĩ).",
+    "nuance": "",
+    "compare": "「｜果《は》たして」 chữ 果 QUẢ: nghĩa 2 như \"quả nhiên\", nhưng nghĩa 1 mở câu hỏi nghi ngờ: 「｜果《は》たして〜のだろうか」. 「｜案《あん》の｜定《じょう》」 chỉ có nghĩa \"quả nhiên\".",
+    "example_notes": [
+      "Liệu hàng người xếp trước tiệm ấy có đáng để chờ không?",
+      "Tôi đã nghĩ \"anh ấy chắc chắn sẽ đến muộn\" và quả nhiên anh đến trễ ba mươi phút."
+    ]
+  },
+  "v-0876": {
+    "meaning": "Ý tưởng, cách nghĩ ra (cái mới)",
+    "usage": "「｜発想《はっそう》がいい」, 「｜発想《はっそう》が｜生《う》まれる」, 「｜発想《はっそう》を｜変《か》える」.",
+    "nuance": "Câu điền từ 「（　）がつかない」: đáp án 「｜見当《けんとう》」; 「｜発想《はっそう》」 là phương án nhiễu.",
+    "compare": "「｜発想《はっそう》」 (PHÁT TƯỞNG) không có trong tiếng Việt: nảy ra ý tưởng: 「｜発想《はっそう》を｜変《か》える」. 「｜空想《くうそう》」 (KHÔNG TƯỞNG): mơ chuyện không có thật. 「｜連想《れんそう》」 (LIÊN TƯỞNG) như tiếng Việt.",
+    "example_notes": [
+      "Từ ý tưởng tận dụng chính chỗ cụt, một kiểu cửa hàng mới đã ra đời."
+    ]
+  },
+  "v-0877": {
+    "meaning": "Nguồn gốc, xuất xứ (của tên, từ, phong tục)",
+    "usage": "「｜名前《なまえ》の｜由来《ゆらい》」, 「〜に｜由来《ゆらい》する」, 「｜由来《ゆらい》を｜調《しら》べる」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Một cụ già trong vùng đã kể cho tôi nguồn gốc tên của lễ hội."
+    ]
+  },
+  "v-0878": {
+    "meaning": "Tưởng tượng viển vông, mơ tưởng (không có thật)",
+    "usage": "「｜空想《くうそう》の｜世界《せかい》」, 「｜空想《くうそう》する」, 「｜空想《くうそう》にふける」.",
+    "nuance": "",
+    "compare": "「｜空想《くうそう》」 (KHÔNG TƯỞNG) là danh từ, 「｜空想《くうそう》する」: mơ tưởng chuyện không có thật, không phải tính từ \"không tưởng\". 「｜発想《はっそう》」: nghĩ ra ý mới. 「｜連想《れんそう》」 (LIÊN TƯỞNG) như tiếng Việt.",
+    "example_notes": [
+      "Hồi nhỏ tôi thường ngồi một mình trong vườn và mơ tưởng chuyện bay trên trời."
+    ]
+  },
+  "v-0879": {
+    "meaning": "Liên tưởng, nghĩ liên hệ sang điều khác",
+    "usage": "「〜から〜を｜連想《れんそう》する」, 「〜を｜連想《れんそう》させる」.",
+    "nuance": "",
+    "compare": "「｜連想《れんそう》」 (LIÊN TƯỞNG) dùng như \"liên tưởng\", có dạng 「〜を｜連想《れんそう》させる」: 「｜夏《なつ》を｜連想《れんそう》させる」. 「｜空想《くうそう》」: mơ chuyện không có thật. 「｜発想《はっそう》」: nghĩ ra ý tưởng.",
+    "example_notes": [
+      "Cứ nhìn hoàng hôn đỏ, không hiểu sao tôi lại liên tưởng đến một bài đồng dao cũ."
+    ]
+  },
+  "v-0880": {
+    "meaning": "Cách hiểu, diễn giải (ý nghĩa của văn bản, sự việc)",
+    "usage": "「｜解釈《かいしゃく》する」, 「｜本《ほん》の｜解釈《かいしゃく》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Điều khoản luật nếu hiểu sai sẽ thành vấn đề lớn."
+    ]
+  },
+  "v-0881": {
+    "meaning": "Phát hành, ấn hành (sách báo; thẻ, biên lai)",
+    "usage": "Nghĩa 1: 「｜雑誌《ざっし》を｜発行《はっこう》する」, 「｜新作《しんさく》が｜発行《はっこう》される」. Nghĩa 2: 「｜領収書《りょうしゅうしょ》を｜発行《はっこう》する」, 「カードを｜発行《はっこう》する」.",
+    "nuance": "Câu điền từ về việc thể hiện thành quả luyện tập: đáp án 「｜発揮《はっき》」; 「｜発行《はっこう》」 là phương án nhiễu.",
+    "compare": "",
+    "example_notes": [
+      "Tạp chí này phát hành mỗi tháng một lần, vào thứ Tư đầu tiên.",
+      "Thẻ đã hết hạn thì cần phát hành lại thẻ mới."
+    ]
+  },
+  "v-0882": {
+    "meaning": "Sáng tạo ra, tạo ra (cái mới, tác phẩm)",
+    "usage": "「｜名作《めいさく》を｜生《う》み｜出《だ》す」 (tạo ra kiệt tác). Đi với 「を」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Sự sáng tạo của một kỹ sư đã tạo ra công việc mới và nhiều chỗ làm."
+    ]
+  },
+  "v-0883": {
+    "meaning": "Người ham đọc sách, mọt sách",
+    "usage": "「｜読書家《どくしょか》だ」, 「｜読書家《どくしょか》の｜友人《ゆうじん》」. Cùng kiểu với 「｜勉強家《べんきょうか》」「｜努力家《どりょくか》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Cậu được gọi là mọt sách số một của lớp ấy, giờ nghỉ cũng không ngẩng mặt khỏi sách."
     ]
   },
   "v-0888": {
@@ -7958,7 +8542,7 @@
     "meaning": "Liên tiếp xuất hiện, xảy ra hết cái này đến cái khác",
     "usage": "Chủ ngữ là nhiều người hay nhiều sự việc cùng loại: 「気分が悪くなる人が続出する」, 「けがをする人が続出」, 「トラブルが続出する」.",
     "nuance": "Không phải \"tiếp tục\" hay \"đi ra\". Đề thi coi là sai: 「乗客が続出してきた」, 「せきが続出して」, 「番組に5年間続出」, 「天気の悪い日が続出」.",
-    "compare": "「続出」: nhiều chuyện cùng loại xảy ra liên tiếp: 「けが人が続出する」. 「｜相次《あいつ》ぐ」: động từ gần nghĩa. 「｜生《しょう》じる」: một vấn đề phát sinh, một lần cũng được. 「｜継続《けいぞく》」: một việc được duy trì tiếp.",
+    "compare": "「続出」: nhiều chuyện cùng loại xảy ra liên tiếp: 「けが人が続出する」. 「｜相次《あいつ》ぐ」: động từ gần nghĩa. 「｜生《しょう》じる」: phát sinh, một lần cũng được. 「｜継続《けいぞく》」: duy trì tiếp. 「｜続々《ぞくぞく》と」: người, vật kéo đến.",
     "example_notes": [
       "Máy chơi game mới rất được ưa chuộng, hết cửa hàng này đến cửa hàng khác bán hết hàng.",
       "Đề quá khó nên người tham gia bỏ cuộc giữa chừng liên tiếp."
@@ -7998,7 +8582,7 @@
     "meaning": "Nối đuôi nhau xảy ra, dồn dập kéo đến",
     "usage": "Tự động từ: 「〜が相次ぐ」, 「事故が相次ぐ」; dạng 「相次いで」 + động từ: 「相次いで届く」.",
     "nuance": "Điền từ trong đề: mấy tháng nay game mới （　） ra mắt → 「相次いで」. Nhiễu 「間もなく」「ぐんぐん」「すいすい」.",
-    "compare": "「相次ぐ」 là động từ, có dạng 「相次いで」 đứng trước động từ khác. 「｜続出《ぞくしゅつ》」 là danh từ + 「する」: 「けが人が続出する」. Nghĩa gần nhau: nhiều việc xảy ra liên tiếp.",
+    "compare": "「相次ぐ」 là động từ, có dạng 「相次いで」 đứng trước động từ khác. 「｜続出《ぞくしゅつ》」 là danh từ + 「する」: 「けが人が続出する」. Nghĩa gần nhau: nhiều việc xảy ra liên tiếp. 「｜続々《ぞくぞく》と」 (TỤC TỤC): người, vật kéo đến.",
     "example_notes": [
       "Về loại thuốc mới, điện thoại hỏi thăm gọi đến liên tục.",
       "Tháng này, tin báo kết hôn của đồng nghiệp trong công ty liên tiếp gửi đến."
@@ -8268,7 +8852,7 @@
     "meaning": "Thực tế là, bằng chứng là (sự thật đã thấy rõ)",
     "usage": "Phó từ, đứng đầu câu sau, nêu sự thật làm bằng chứng cho câu trước: 「〜。現に、〜」.",
     "nuance": "",
-    "compare": "「現に」: nêu sự thật đã xảy ra để chứng minh: 「現に、熱が下がった」. 「｜実《じつ》に」: chỉ nhấn mạnh mức độ, \"thật là\": 「実に複雑だ」.",
+    "compare": "「現に」: nêu sự thật đã xảy ra để chứng minh: 「現に、熱が下がった」. 「｜実《じつ》に」: chỉ nhấn mạnh mức độ, \"thật là\": 「実に複雑だ」. 「｜実際《じっさい》」 = \"thực tế\": việc có thật, chưa mang ý làm bằng chứng.",
     "example_notes": [
       "Thuốc này rất hiệu nghiệm. Thực tế là tôi cũng hạ sốt chỉ sau một đêm.",
       "Ngày mưa hay xảy ra tai nạn. Bằng chứng là tháng trước trước nhà ga cũng đã xảy ra hai vụ."
@@ -8588,7 +9172,7 @@
     "meaning": "Vẻ bề ngoài, ngoại hình (của người hay của vật)",
     "usage": "「外見で判断する」, 「外見を気にする」, 「外見に自信がない」, 「外見はよくないが…」.",
     "nuance": "Đề thi coi là sai khi muốn nói mặt ngoài của cửa sổ, bề mặt của mặt trăng, hay vẻ đang giận của một người.",
-    "compare": "「外見」: vẻ ngoài nhìn thấy, cả của đồ vật: 「りんごの外見」. 「｜格好《かっこう》」: cách ăn mặc lúc đó: 「ちゃんとした格好」. 「｜容姿《ようし》」: dung mạo của người.",
+    "compare": "「外見」: vẻ ngoài nhìn thấy, cả của đồ vật: 「りんごの外見」. 「｜格好《かっこう》」: cách ăn mặc lúc đó: 「ちゃんとした格好」. 「｜容姿《ようし》」: dung mạo của người. 「｜見《み》た｜目《め》」 là từ thuần Nhật, cùng nghĩa với 「外見」 (NGOẠI KIẾN).",
     "example_notes": [
       "Ông tôi không để ý đến vẻ ngoài, mấy năm nay vẫn mặc mãi một chiếc áo khoác.",
       "Táo ở cửa hàng này tuy vẻ ngoài không đẹp nhưng vị không thua gì táo đắt tiền."
@@ -8598,7 +9182,7 @@
     "meaning": "Vải, tấm vải",
     "usage": "「厚い布」, 「丈夫な布」, 「布を広げる」, 「布でできている」 (làm bằng vải).",
     "nuance": "Đề viết chữ: 「ぬの」 → 「布」; nhiễu 「袋」「衣」「帯」.",
-    "compare": "",
+    "compare": "「｜生地《きじ》」 Hán Việt SINH ĐỊA nhưng đọc 「きじ」: vải để may, cũng là bột nhào làm bánh.",
     "example_notes": [
       "Để may rèm cửa, tôi đã mua ba mét vải dày ở cửa hàng.",
       "Chiếc lều này làm bằng loại vải bền, không thấm nước mưa."
@@ -8877,7 +9461,7 @@
     "meaning": "Quả nhiên, đúng như đã đoán trước",
     "usage": "Đặt đầu câu hay đầu vế: 「案の定、遅れてきた」, 「案の定、失敗した」.",
     "nuance": "Câu hỏi diễn đạt lại chọn 「やっぱり」 làm từ cùng nghĩa với 「案の定」.",
-    "compare": "「｜案《あん》の｜定《じょう》」: đúng như đã đoán, không có ý khen. 「さすが」: \"đúng là … có khác\", kèm ý khâm phục: 「さすがだ」.",
+    "compare": "「｜案《あん》の｜定《じょう》」: đúng như đã đoán, không có ý khen. 「さすが」: \"đúng là … có khác\", kèm ý khâm phục: 「さすがだ」. 「｜果《は》たして」 ngoài nghĩa \"quả nhiên\" còn mở câu hỏi nghi ngờ.",
     "example_notes": [
       "Em trai leo núi mà không chuẩn bị gì, đúng như dự liệu, giữa đường thì hết nước uống nên rất khốn đốn.",
       "Tôi vốn nghĩ hai người đó tính cách không hợp, đúng như dự đoán, tiệm họ cùng mở đã dẹp sau nửa năm."
@@ -10161,10 +10745,10 @@
     ]
   },
   "v-o-hihyou": {
-    "meaning": "Phê bình, nhận xét chỉ ra chỗ hay chỗ dở (của tác phẩm, bài viết…)",
+    "meaning": "Phê bình, nhận xét chỉ ra chỗ hay chỗ dở (của bài viết, phim, tranh…)",
     "usage": "「批評を書く」, 「批評を受ける」 (nhận lời phê bình), 「映画の批評」 (bài phê bình phim).",
     "nuance": "Hán Việt \"phê bình\"; trong tiếng Việt từ này hay mang nghĩa chê trách lỗi, còn 「批評」 nói cả điểm hay lẫn điểm dở.",
-    "compare": "「批評」: nêu ra điểm hay, điểm dở: 「厳しい批評」. 「｜評価《ひょうか》」: xét xem tốt xấu, giá trị đến đâu: 「高く評価する」.",
+    "compare": "「批評」: nêu ra điểm hay, điểm dở: 「厳しい批評」. 「｜評価《ひょうか》」: xét xem tốt xấu, giá trị đến đâu: 「高く評価する」. 「｜感想《かんそう》」 = \"cảm tưởng\", không cần chấm hay dở.",
     "example_notes": [
       "Tôi nhờ tiền bối đọc bài viết của mình và nhận được những lời phê bình khắt khe.",
       "Người đầu bếp ghi lại từng lời nhận xét của khách để vận dụng vào việc tạo thực đơn mới."

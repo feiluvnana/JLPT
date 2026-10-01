@@ -200,7 +200,7 @@
     "meaning": "Thế hệ, lớp người sinh ra cùng một khoảng thời gian",
     "usage": "「若い世代」, 「親の世代」, 「同じ世代の人」, 「世代が違う」. 「｜世代交代《せだいこうたい》」: chuyển giao thế hệ (lớp sau thay lớp trước). Hán Việt \"thế đại\".",
     "nuance": "Chỉ nhóm người cùng lứa, không phải tuổi hay quãng đời. Đề thi coi là sai: 「世代を取っている」 (lớn tuổi), 「英語の先生の世代の方が長い」 (thời gian làm nghề), 「充実した世代を送りたい」.",
-    "compare": "",
+    "compare": "「年代」: ngoài lứa tuổi còn chỉ một giai đoạn (「〜年代」). 「世代」: lớp người sinh cùng thời.",
     "example_notes": [
       "Bài hát này được cả thế hệ cha mẹ lẫn thế hệ trẻ yêu thích.",
       "Ở công ty của bố tôi, giám đốc đã nhường lại cho con trai, việc chuyển giao thế hệ đang diễn ra."
@@ -2089,7 +2089,7 @@
     "meaning": "Mua cái mới thay cho cái cũ",
     "usage": "Cũng viết 「買い替える」. Danh từ: 「｜買《か》い｜換《か》え」.",
     "nuance": "",
-    "compare": "",
+    "compare": "「替える」: đổi sang cái, người khác (「担当を替える」). 「買い換える」: bỏ đồ cũ, mua đồ mới thay vào.",
     "example_notes": [
       "Tôi đã thay chiếc tủ lạnh dùng mười lăm năm bằng một cái mới tốn ít tiền điện hơn."
     ]
@@ -2221,6 +2221,189 @@
       "Bớt đi một chiếc giá sách, căn phòng có được một khoảng rộng."
     ]
   },
+  "v-0242": {
+    "meaning": "Hiện tại, bây giờ (thời điểm đang nói)",
+    "usage": "Hán Việt \"hiện tại\". Đứng trước danh từ: 「現在の会社」; hoặc đầu câu như trạng từ: 「現在、工事中」.",
+    "nuance": "",
+    "compare": "「過去」: quá khứ. 「今日（こんにち）」: thời đại ngày nay. 「ただ今」: ngay lúc này (khi nói). 「現在」: chính thời điểm hiện tại.",
+    "example_notes": [
+      "Bảo tàng mỹ thuật này hiện đang đóng cửa để sửa chữa tòa nhà.",
+      "Bố tôi làm ở công ty hiện tại đã được hai mươi năm."
+    ]
+  },
+  "v-0243": {
+    "meaning": "Quá khứ, những gì đã qua",
+    "usage": "Hán Việt \"quá khứ\", nghĩa như tiếng Việt: 「過去の記録」, 「過去最高」.",
+    "nuance": "",
+    "compare": "「現在」 là lúc này; 「過去」 là thời gian trước đó.",
+    "example_notes": [
+      "Xem lại số liệu trong quá khứ thì con sông này cứ trăm năm lại tràn bờ ba lần."
+    ]
+  },
+  "v-0244": {
+    "meaning": "Năm tháng, quãng thời gian dài nhiều năm",
+    "usage": "Đọc là 「ねんげつ」. Hay đi với 「長い」, 「〜年の」: 「長い年月をかける」.",
+    "nuance": "Trong 「年月日（ねんがっぴ）」 (ngày tháng năm) chữ 「年月」 lại đọc khác, đừng nhầm.",
+    "compare": "「月日（つきひ）」: ngày tháng trôi qua. 「年月」: chặng thời gian kéo dài nhiều năm.",
+    "example_notes": [
+      "Cây cột trong nhà bà tôi có màu sẫm, cho thấy dấu vết của trăm năm."
+    ]
+  },
+  "v-0245": {
+    "meaning": "Ngày tháng (trôi qua), thời gian dần qua",
+    "usage": "Đọc là 「つきひ」: 「月日がたつ」, 「月日を重ねる」.",
+    "nuance": "",
+    "compare": "「年月（ねんげつ）」 nhấn vào độ dài nhiều năm; 「月日」 nói chuyện ngày qua ngày, thời gian cứ trôi.",
+    "example_notes": [
+      "Ngày tháng qua đi, bộ mặt thị trấn cũng đổi khác hẳn."
+    ]
+  },
+  "v-0246": {
+    "meaning": "Ngày giờ (diễn ra một việc)",
+    "usage": "Hán Việt \"nhật thời\". 「試合の日時」, 「日時が変わる」. Từ liên quan: 「｜日程《にってい》」 (lịch trình).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Vì mưa lớn nên ngày giờ trận đấu đã thay đổi."
+    ]
+  },
+  "v-0247": {
+    "meaning": "Ngày nay, thời đại bây giờ",
+    "usage": "「今日の社会」, 「今日では〜」: nói về thời đại, xã hội hiện nay.",
+    "nuance": "Cùng chữ 「今日」: đọc 「きょう」 là \"hôm nay\"; đọc 「こんにち」 là \"ngày nay\".",
+    "compare": "「現在」: thời điểm hiện tại. 「今日（こんにち）」: thời đại này, khác với ngày xưa.",
+    "example_notes": [
+      "Điện, thứ hiếm thấy trăm năm trước, ngày nay nhà nào cũng có."
+    ]
+  },
+  "v-0248": {
+    "meaning": "Niên đại, những năm (một giai đoạn); lứa tuổi",
+    "usage": "① Giai đoạn lịch sử: 「〜年代」, 「建てられた年代」 (Hán Việt \"niên đại\"). ② Lứa tuổi gần nhau: 「同じ年代」, 「幅広い年代」.",
+    "nuance": "",
+    "compare": "「世代」: lớp người sinh cùng thời. 「年代」: ngoài lứa tuổi còn chỉ một giai đoạn thời gian.",
+    "example_notes": [
+      "Không ai biết rõ ngôi chùa này được xây vào niên đại nào.",
+      "Trong dàn hợp xướng này, người đủ mọi lứa tuổi từ hai mươi đến bảy mươi cùng hát với nhau."
+    ]
+  },
+  "v-0249": {
+    "meaning": "Trong (một) năm, tính theo năm",
+    "usage": "「年間の会費」 (hội phí cả năm), 「年間〜人」. Sau con số: 「三年間」 (trong ba năm).",
+    "nuance": "",
+    "compare": "「年中」: quanh năm, lúc nào cũng. 「年間」: khoảng thời gian một năm làm đơn vị tính.",
+    "example_notes": [
+      "Câu lạc bộ thể thao này giảm hai mươi phần trăm nếu đóng gộp hội phí cả năm."
+    ]
+  },
+  "v-0250": {
+    "meaning": "Quanh năm, suốt cả năm; hầu như mọi lúc",
+    "usage": "Danh từ: 「年中無休」 (mở cửa quanh năm). Phó từ: 「年中〜している」 (lúc nào cũng làm…).",
+    "nuance": "",
+    "compare": "「年間」: một năm làm đơn vị. 「年中」: suốt năm không ngớt, hay lúc nào cũng thế.",
+    "example_notes": [
+      "Phần trên cao của ngọn núi này quanh năm còn tuyết.",
+      "Con mèo nhà tôi lúc nào cũng chỉ nằm ngủ trên ghế sô pha."
+    ]
+  },
+  "v-0251": {
+    "meaning": "Năm nay",
+    "usage": "Hán Việt \"bản niên\": 「本年の〜」, 「本年度」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Nhân viên mới năm nay nhiều hơn năm ngoái mười người."
+    ]
+  },
+  "v-0252": {
+    "meaning": "Ban ngày, trong ngày (lúc mặt trời còn lên)",
+    "usage": "「日中の暑さ」, 「日中は〜」. Đọc là 「にっちゅう」.",
+    "nuance": "Đề thay thế từ: đáp án là 「昼間」, các lựa chọn sai gồm 「平日」「休日」「夜間」.",
+    "compare": "「夜間」: ban đêm. 「日中」: khoảng từ sáng đến chiều tối.",
+    "example_notes": [
+      "Mùa hè, để tránh cái nóng ban ngày, người ta làm ruộng từ sáng sớm."
+    ]
+  },
+  "v-0253": {
+    "meaning": "Ban đêm, trong đêm",
+    "usage": "「夜間の外出」, 「夜間は〜」 (vào ban đêm thì…).",
+    "nuance": "",
+    "compare": "「日中」: ban ngày. 「夜間」: khoảng thời gian về đêm.",
+    "example_notes": [
+      "Bãi đậu xe này ban đêm đóng cổng nên không lấy xe ra được."
+    ]
+  },
+  "v-0254": {
+    "meaning": "Bây giờ, lúc này; (「ただいま」) câu chào khi về đến",
+    "usage": "「ただ今、〜しております」, 「ただ今の時刻」. Chào khi về nhà: 「ただいま」.",
+    "nuance": "",
+    "compare": "「現在」: thời điểm hiện tại nói chung. 「ただ今」: đúng lúc đang nói.",
+    "example_notes": [
+      "Bây giờ là ba giờ mười phút chiều."
+    ]
+  },
+  "v-0255": {
+    "meaning": "Lúc nãy, vừa nãy",
+    "usage": "「先ほどの〜」, 「先ほど〜しました」. Trái nghĩa: 「｜後《のち》ほど」 (lát nữa).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tài liệu phát lúc nãy có một chỗ sai."
+    ]
+  },
+  "v-0256": {
+    "meaning": "Sắp tới, trong vài ngày tới",
+    "usage": "Đọc là 「ちかぢか」. Dùng cho việc đã có dự định: 「近々〜する予定だ」.",
+    "nuance": "Không dùng cho việc chỉ vài phút nữa là tới.",
+    "compare": "「やがて」: ít lâu sau thì tự nhiên thành ra vậy. 「いずれ」: rồi sẽ có ngày. 「近々」: việc đã định, sắp diễn ra.",
+    "example_notes": [
+      "Chị tôi sắp cưới nên giờ đang bận chuẩn bị."
+    ]
+  },
+  "v-0257": {
+    "meaning": "Hôm sau, dịp khác (không phải hôm nay)",
+    "usage": "Hán Việt \"hậu nhật\": 「後日、連絡します」, 「後日改めて」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Về tình hình lúc xảy ra tai nạn, sau đó cảnh sát đã liên lạc lại."
+    ]
+  },
+  "v-0258": {
+    "meaning": "Chẳng mấy chốc, ít lâu sau",
+    "usage": "「やがて〜になる・〜した」: theo thời gian, sự việc chuyển dần sang trạng thái mới.",
+    "nuance": "",
+    "compare": "「近々」: việc đã định trong ít ngày tới. 「いずれ」: không biết khi nào nhưng rồi sẽ. 「やがて」: không lâu sau thì thành ra như vậy.",
+    "example_notes": [
+      "Hạt giống gieo trong vườn nảy mầm, chẳng mấy chốc đã nở những bông hoa nhỏ."
+    ]
+  },
+  "v-0259": {
+    "meaning": "Rồi thì, một ngày nào đó (chưa rõ lúc nào)",
+    "usage": "「いずれ〜する」, 「いずれは」: nói chắc chắn rồi sẽ xảy ra.",
+    "nuance": "",
+    "compare": "「やがて」: ít lâu sau. 「近々」: sắp tới theo dự định. 「いずれ」: không rõ bao giờ nhưng sớm muộn cũng vậy.",
+    "example_notes": [
+      "Dù có nói dối thì rồi sự thật cũng sẽ lộ ra thôi."
+    ]
+  },
+  "v-0260": {
+    "meaning": "Từ nay về sau, từ giờ trở đi",
+    "usage": "Hán Việt \"kim hậu\": 「今後の予定」, 「今後は〜」, 「今後とも」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Từ nay về sau, con đường này sẽ không được đi xe đạp nữa."
+    ]
+  },
+  "v-0261": {
+    "meaning": "Đã (xảy ra, xong) rồi, trước thời điểm đó",
+    "usage": "「すでに〜た・〜ている」. Viết kanji: 「既に」.",
+    "nuance": "",
+    "compare": "「とっくに」: xong từ rất lâu rồi. 「すでに」: trước thời điểm đang nói thì đã như vậy.",
+    "example_notes": [
+      "Chuyện đó thì tôi đã nghe trưởng phòng nói rồi."
+    ]
+  },
   "v-0262": {
     "meaning": "Trước, từ trước khi việc chính diễn ra",
     "usage": "「あらかじめ知らせる」, 「あらかじめ予約する」, 「あらかじめ〜ておく」 (làm sẵn từ trước). Cùng nghĩa: 「事前に」.",
@@ -2229,6 +2412,61 @@
     "example_notes": [
       "Trước khi đến quán mới, tôi đã xem trước vị trí trên bản đồ.",
       "Hôm đó sẽ đông, nên đặt chỗ trước thì hơn."
+    ]
+  },
+  "v-0263": {
+    "meaning": "(Cách làm, thứ) lâu nay vẫn dùng, từ trước đến nay",
+    "usage": "Hán Việt \"tòng lai\": 「従来のやり方」, 「従来の製品」, 「従来どおり」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Nghe nói pin mới dùng lâu gấp đôi loại trước nay."
+    ]
+  },
+  "v-0264": {
+    "meaning": "(Ngày, sáng, năm) tiếp theo, kế đó",
+    "usage": "Luôn đứng trước danh từ chỉ thời gian: 「あくる日」, 「あくる朝」, 「あくる年」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Từ hôm sau ngày đi du lịch về, tôi lại quay về nếp dậy sớm."
+    ]
+  },
+  "v-0265": {
+    "meaning": "Nhất thời, tạm trong một lúc",
+    "usage": "Hán Việt \"nhất thời\", nghĩa gần tiếng Việt: 「一時よくなる」, 「一時的な」. Còn đọc 「いっとき」.",
+    "nuance": "Cùng cách viết với 「一時（いちじ）」 = một giờ (giờ đồng hồ).",
+    "compare": "「いったん」: dừng hay quay lại một bước rồi mới tiếp. 「一時」: tình trạng chỉ kéo dài ít lâu.",
+    "example_notes": [
+      "Bệnh của ông tôi có lúc đã đỡ, nhưng sang đông lại nặng lên."
+    ]
+  },
+  "v-0266": {
+    "meaning": "Cả đời, suốt đời",
+    "usage": "Danh từ: 「一生をささげる」 (dâng cả đời cho…). Phó từ: 「一生〜ない」 (cả đời không…).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Ông tôi đã dành trọn đời cho nghề biển.",
+      "Bà tôi cả đời chưa từng rời khỏi ngôi làng nơi mình sinh ra."
+    ]
+  },
+  "v-0267": {
+    "meaning": "Vĩnh viễn, mãi mãi",
+    "usage": "Hán Việt \"vĩnh viễn\": 「永遠に続く・残る」, 「永遠の〜」.",
+    "nuance": "",
+    "compare": "「永久に」: mãi về sau. 「永遠に」: không có điểm kết, nghĩa gần như cùng 「永久に」.",
+    "example_notes": [
+      "Không ai có thể sống mãi mãi."
+    ]
+  },
+  "v-0268": {
+    "meaning": "Rạng sáng, lúc trời hửng sáng",
+    "usage": "「夜明けを待つ」, 「夜明け前」. Gần nghĩa: 「明け方」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Trời vừa rạng sáng, ngư dân đã ra khơi."
     ]
   },
   "v-0269": {
@@ -2241,14 +2479,270 @@
       "Ngày nghỉ, tôi cứ lỡ dậy muộn."
     ]
   },
+  "v-0270": {
+    "meaning": "Dựa, tựa vào; (đồ ăn) nặng bụng, khó tiêu",
+    "usage": "① 「柱・いすにもたれる」. ② 「胃がもたれる」: ăn xong thấy nặng bụng.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Ở trạm xe buýt, một người đàn ông trông mệt mỏi đứng tựa vào cột.",
+      "Ăn đồ chiên lúc khuya nên đến sáng bụng vẫn còn nặng."
+    ]
+  },
+  "v-0271": {
+    "meaning": "Tươi, mới (vừa hái, vừa làm xong)",
+    "usage": "Tính từ đuôi な: 「フレッシュな果物」, 「フレッシュな牛乳」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tiệm này làm bánh bằng trái cây tươi gửi từ nhà vườn."
+    ]
+  },
+  "v-0272": {
+    "meaning": "Sản phẩm làm từ sữa (phô mai, bơ…)",
+    "usage": "Hán Việt \"nhũ chế phẩm\". 「乳製品をとる」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Có người ăn các món làm từ sữa như sữa tươi, phô mai là bị đau bụng."
+    ]
+  },
+  "v-0273": {
+    "meaning": "Đồ cần rửa (chén bát, quần áo); việc rửa",
+    "usage": "「洗い物をする」 (rửa chén), 「洗い物がたまる」 (đồ rửa dồn lại).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Sau bữa tiệc, chén bát cần rửa chất đống trong bếp."
+    ]
+  },
+  "v-0274": {
+    "meaning": "Thiếu, khuyết; bỏ qua không làm (việc vẫn làm đều)",
+    "usage": "Hay dùng dạng phủ định: 「欠かさない・欠かさず」 (không bỏ bữa nào, đều đặn); 「欠かせない」 (không thể thiếu).",
+    "nuance": "Đề thay thế từ: 「欠かせない」 được đổi thành 「ないと困る」. Đề điền từ: các lựa chọn sai là 「空けない」「離さない」「奪わない」.",
+    "compare": "",
+    "example_notes": [
+      "Ông chủ tiệm này không bao giờ quên mài dao trước khi nấu.",
+      "Muốn đội thắng thì không thể thiếu sức của anh ấy."
+    ]
+  },
+  "v-0275": {
+    "meaning": "Giao, phát (thư, hàng) đến tận nơi",
+    "usage": "Hán Việt \"phối đạt\". 「新聞配達」 (phát báo), 「配達される」, 「配達日」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Cuốn sách tôi đặt dự kiến sẽ được giao vào sáng mai."
+    ]
+  },
+  "v-0276": {
+    "meaning": "Tít, đầu đề (bài báo, mục tin)",
+    "usage": "「新聞の見出し」, 「見出しをつける」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Nhìn dòng tít lớn trên báo, tôi mới biết sân bay đã đóng cửa vì tuyết."
+    ]
+  },
+  "v-0277": {
+    "meaning": "(Đi với phủ định) tuyệt nhiên không, hoàn toàn không",
+    "usage": "「一切〜ない」: không một chút nào, không có ngoại lệ. Làm danh từ thì là \"tất cả\": 「一切を任せる」.",
+    "nuance": "",
+    "compare": "「さっぱり〜ない」: chẳng … gì cả. 「一切〜ない」: không có một trường hợp nào, tuyệt đối không.",
+    "example_notes": [
+      "Tiệm này hoàn toàn không dùng bột ngọt trong món ăn."
+    ]
+  },
+  "v-0278": {
+    "meaning": "Lúc rảnh xen giữa hai việc",
+    "usage": "「〜の合間に」: 「授業の合間」, 「仕事の合間」.",
+    "nuance": "",
+    "compare": "「間（ま）」: thời gian còn lại trước khi làm gì, hay khoảng ngừng. 「合間」: khoảng trống chen giữa hai việc.",
+    "example_notes": [
+      "Bà tôi tranh thủ lúc nghỉ giữa buổi làm vườn để uống trà dưới gốc cây."
+    ]
+  },
+  "v-0279": {
+    "meaning": "Gọn gàng, mau lẹ (xử lý công việc)",
+    "usage": "「てきぱき（と）働く・片付ける」, 「てきぱきした人」.",
+    "nuance": "",
+    "compare": "「さっさと」: làm nhanh cho xong, không chần chừ. 「てきぱき」: vừa nhanh vừa khéo, xử lý việc này sang việc khác gọn gàng.",
+    "example_notes": [
+      "Nhân viên quầy tiếp nhận ở bệnh viện hướng dẫn bệnh nhân rất gọn gàng, mau lẹ."
+    ]
+  },
+  "v-0280": {
+    "meaning": "Thời gian còn lại (trước khi làm gì); chỗ ngừng",
+    "usage": "Đọc là 「ま」: 「まだ間がある」 (vẫn còn thời gian), 「間をあける・置く」 (ngừng một chút).",
+    "nuance": "Cùng chữ 「間」 nhưng đọc 「あいだ」 hay 「かん」 thì nghĩa khác; nghĩa này đọc 「ま」.",
+    "compare": "「合間」: lúc rảnh chen giữa hai việc. 「間」: thời gian còn lại, hoặc chỗ ngừng ngắn.",
+    "example_notes": [
+      "Anh ấy ngừng một lúc rồi mới khẽ trả lời."
+    ]
+  },
+  "v-0281": {
+    "meaning": "Vùng xung quanh (một địa điểm)",
+    "usage": "Hán Việt \"chu biên\": 「駅の周辺」, 「周辺地域」.",
+    "nuance": "",
+    "compare": "「周囲」: vòng quanh một vật, chu vi; hoặc người xung quanh. 「周辺」: khu vực gần một nơi.",
+    "example_notes": [
+      "Loài chim này làm tổ trong những khu rừng quanh hồ."
+    ]
+  },
+  "v-0282": {
+    "meaning": "Xung quanh, chu vi; những người xung quanh",
+    "usage": "① 「家の周囲」, 「周囲〜キロ」 (chu vi). ② 「周囲の人・目」: người chung quanh mình.",
+    "nuance": "",
+    "compare": "「周辺」: khu vực gần một nơi. 「世間」: rộng tới người đời, xã hội. 「周囲」: vòng quanh vật, hay người bên cạnh.",
+    "example_notes": [
+      "Hồ này có chu vi khoảng mười cây số.",
+      "Anh ấy bất chấp mọi người xung quanh phản đối, một mình sang học đại học ở nước ngoài."
+    ]
+  },
+  "v-0283": {
+    "meaning": "Còn (… nữa)",
+    "usage": "Đặt trước số lượng: 「あと五分」 (còn năm phút), 「あと少し」, 「あと一人」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Còn một chút nữa là tới ga, cố đi tiếp nào."
+    ]
+  },
+  "v-0284": {
+    "meaning": "Lướt qua nhau (người, xe từ hai phía)",
+    "usage": "「〜とすれ違う」: người, xe đi ngược hướng rồi đi qua bên cạnh.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Trên con đường núi hẹp, lúc đi ngược chiều với xe tải lớn tôi thấy sợ."
+    ]
+  },
+  "v-0285": {
+    "meaning": "Bò",
+    "usage": "「床をはう」, 「はって進む」. Em bé bò: 「はいはい」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Em bé bò khắp phòng đến chỗ mẹ."
+    ]
+  },
+  "v-0286": {
+    "meaning": "Thay (cái đang dùng) bằng cái khác, đổi",
+    "usage": "「AをBに替える」, 「担当を替える」. Cách viết gần: 「換える」.",
+    "nuance": "",
+    "compare": "「買い換える」: mua cái mới thay cái cũ. 「替える」: đổi sang cái khác, người khác, không nhất thiết phải mua.",
+    "example_notes": [
+      "Khách gọi điện yêu cầu đổi người phụ trách."
+    ]
+  },
+  "v-0287": {
+    "meaning": "Chỉnh đốn, làm cho ngay ngắn; chuẩn bị đầy đủ",
+    "usage": "① 「呼吸・形を整える」. ② 「準備を整える」 (chuẩn bị sẵn sàng). Tự động từ: 「整う」.",
+    "nuance": "",
+    "compare": "「備える」: lo sẵn cho việc sắp tới. 「整える」: sắp xếp cho đâu ra đấy, hoặc gom cho đủ thứ cần.",
+    "example_notes": [
+      "Trước khi thuyết trình, tôi hít sâu để điều hòa hơi thở.",
+      "Thị trấn đang chuẩn bị sẵn sàng đón khách du lịch nước ngoài."
+    ]
+  },
+  "v-0288": {
+    "meaning": "(Đi với phủ định) không … cho ra hồn, không đủ",
+    "usage": "「ろくに〜ない」. Trước danh từ: 「ろくな〜ない」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Trên đường đêm không có đèn, tôi gần như chẳng thấy gì dưới chân."
+    ]
+  },
+  "v-0289": {
+    "meaning": "Sự rõ ràng, có nhịp (mạnh nhẹ, căng chùng)",
+    "usage": "「めりはりをつける」, 「めりはりがきく」, 「めりはりのある生活」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Bộ phim này có cảnh lặng, cảnh dữ dội xen nhau rõ ràng nên xem đến cuối không chán."
+    ]
+  },
+  "v-0290": {
+    "meaning": "Bao nhiêu lần, hết lần này đến lần khác",
+    "usage": "「何度も〜する」.",
+    "nuance": "Đề thay thế từ: là đáp án đúng cho 「たびたび」 và 「再三」.",
+    "compare": "",
+    "example_notes": [
+      "Cây cầu cũ này cứ mỗi lần mưa lớn lại bị cuốn trôi, đã nhiều lần như vậy."
+    ]
+  },
+  "v-0291": {
+    "meaning": "Hầu như, gần như (hết, trọn)",
+    "usage": "「ほぼ同じ」, 「ほぼ完成した」, 「ほぼ満員」.",
+    "nuance": "Đề thay thế từ: đáp án là 「だいたい」; sai là 「すべて」「すぐに」「やっと」.",
+    "compare": "「およそ」: khoảng chừng, đứng trước con số. 「ほぼ」: trạng thái gần như đầy đủ.",
+    "example_notes": [
+      "Ghế trong hội trường gần như kín hết."
+    ]
+  },
+  "v-0292": {
+    "meaning": "Ghé qua, rẽ vào nơi khác trên đường đi",
+    "usage": "「寄り道をする」, 「〜に寄り道する」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Trên đường đi công tác về, tôi rẽ qua một chút, dạo bộ ở thị trấn ven biển."
+    ]
+  },
+  "v-0293": {
+    "meaning": "Thực phẩm, cái để ăn (nói chung)",
+    "usage": "Đọc là 「しょくもつ」: 「食物が不足する」, 「食物繊維」.",
+    "nuance": "Hán Việt là \"thực vật\" nhưng nghĩa là đồ ăn; \"thực vật\" (cây cỏ) tiếng Nhật là 「｜植物《しょくぶつ》」.",
+    "compare": "",
+    "example_notes": [
+      "Ở hòn đảo này, hầu hết lương thực đều chở bằng tàu đến."
+    ]
+  },
+  "v-0294": {
+    "meaning": "Thông gió, đổi không khí trong phòng",
+    "usage": "Hán Việt \"hoán khí\". 「換気をする」, 「部屋を換気する」. Quạt thông gió: 「換気扇」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Phòng họp đông người nên cứ mỗi lần nghỉ giải lao lại mở cho thông gió."
+    ]
+  },
   "v-0295": {
     "meaning": "Tạm làm một bước rồi mới tiếp; một khi đã (làm gì)",
     "usage": "Nghĩa 1: 「いったん家に帰る」, 「いったん電源を切る」, 「いったん戻る」. Nghĩa 2: 「いったん決めたら」, 「いったん〜と」 (một khi đã…).",
     "nuance": "Không phải \"một lần\" để đếm. Đề thi coi là sai: 「いったんも行ったことがない」, 「いったんしか会っていない」, 「１週間にいったん」. Câu đúng: 「いったん戻ったが、すぐにまた出かけた」.",
-    "compare": "「いったん」: tạm làm một bước rồi tiếp, hoặc một khi đã: 「いったん決めたら」. 「ひとたび」: một khi đã… thì…, cách nói cứng hơn: 「ひとたび聞くと」.",
+    "compare": "「いったん」: tạm làm một bước rồi tiếp, hoặc một khi đã: 「いったん決めたら」. 「ひとたび」: một khi đã… thì…, cách nói cứng hơn: 「ひとたび聞くと」. 「一時」: tình trạng chỉ kéo dài ít lâu.",
     "example_notes": [
       "Nếu màn hình bị đơ, xin hãy tạm tắt nguồn máy tính đã.",
       "Việc gì một khi đã quyết, tôi định làm đến cùng."
+    ]
+  },
+  "v-0296": {
+    "meaning": "Chỗ, dây phơi đồ",
+    "usage": "「物干しに干す」, 「物干し台」. Cây sào phơi: 「物干しざお」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Trời nắng nên tôi phơi chăn lên chỗ phơi ngoài ban công."
+    ]
+  },
+  "v-0297": {
+    "meaning": "Bàn ăn",
+    "usage": "「食卓を囲む」 (quây quần bên bàn ăn), 「食卓に並ぶ」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Bữa tối ngày nghỉ, cả nhà quây quần bên bàn ăn."
+    ]
+  },
+  "v-0298": {
+    "meaning": "Để sau, gác lại làm sau",
+    "usage": "「〜を後回しにする」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Cứ gác việc phiền phức lại làm sau, đến sát hạn thì khốn đốn."
     ]
   },
   "v-0299": {
@@ -2261,6 +2755,15 @@
       "Vì không đủ thời gian thuyết trình, tôi đã bỏ bớt ba trang slide."
     ]
   },
+  "v-0300": {
+    "meaning": "Biến (ước mơ, nguyện vọng) thành hiện thực",
+    "usage": "Tha động từ: 「夢・願い・望みをかなえる」.",
+    "nuance": "",
+    "compare": "「かなう」: tự động từ, ước mơ thành sự thật: 「夢がかなう」. 「かなえる」: tha động từ, người ta làm cho nó thành: 「夢をかなえる」.",
+    "example_notes": [
+      "Cả nhà đã cùng thực hiện mong muốn \"được nhìn biển một lần nữa\" của mẹ đang nằm viện."
+    ]
+  },
   "v-0301": {
     "meaning": "Điều chỉnh tăng giảm cho vừa mức (nhiệt độ, âm lượng, độ cao)",
     "usage": "「温度を調節する」, 「音量を調節する」, 「高さを調節する」, 「〜に合わせて調節する」. Hán Việt \"điều tiết\".",
@@ -2271,6 +2774,70 @@
       "Tôi chỉnh âm lượng micro để hàng ghế cuối cũng nghe được."
     ]
   },
+  "v-0302": {
+    "meaning": "Thong thả, chậm rãi; (quần áo) rộng rãi",
+    "usage": "① 「ゆったり（と）過ごす」, 「ゆったりした気分」. ② 「ゆったりした服」 (rộng, không bó).",
+    "nuance": "",
+    "compare": "「のんびり」: sống chậm, không vội. 「ゆったり」: còn dùng cho đồ vật có kích thước rộng rãi.",
+    "example_notes": [
+      "Ở lữ quán này có thể vừa ngắm biển vừa thong thả uống trà.",
+      "Có vẻ bố tôi giờ đã lớn tuổi nên mặc quần rộng thấy dễ chịu."
+    ]
+  },
+  "v-0303": {
+    "meaning": "Mua bán",
+    "usage": "「〜の売り買い」, 「売り買いする」.",
+    "nuance": "",
+    "compare": "「貿易」: mua bán với nước ngoài. 「売り買い」: việc mua và bán nói chung, trong nước hay ngoài nước đều được.",
+    "example_notes": [
+      "Ở chợ này, từ xưa việc mua bán cá đã rất tấp nập."
+    ]
+  },
+  "v-0304": {
+    "meaning": "Hình dung lại, nhớ ra (hình ảnh trong đầu)",
+    "usage": "「〜の顔・景色を思い浮かべる」. Tự động từ: 「思い浮かぶ」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Nhắm mắt hình dung cảnh biển là thấy lòng dịu lại."
+    ]
+  },
+  "v-0305": {
+    "meaning": "Lời nói một mình, sự lẩm bẩm",
+    "usage": "「独り言をつぶやく・言う」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Người ngồi bên cạnh đang lẩm bẩm gì đó một mình trước máy tính."
+    ]
+  },
+  "v-0306": {
+    "meaning": "Phòng tắm",
+    "usage": "「風呂場の掃除」, 「風呂場で〜」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Sàn phòng tắm ướt làm tôi suýt trượt chân."
+    ]
+  },
+  "v-0307": {
+    "meaning": "Ngửi, hít (mùi)",
+    "usage": "「においをかぐ」. Kanji: 「嗅ぐ」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Con chó vừa ngửi mặt đất vừa thong thả đi."
+    ]
+  },
+  "v-0308": {
+    "meaning": "Giấc ngủ lúc mới vào (dễ hay khó ngủ)",
+    "usage": "「寝つきがいい」 (dễ ngủ), 「寝つきが悪い」 (khó ngủ). Trái nghĩa: 「寝起き」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Hôm nào ban ngày vận động nhiều là tối dễ ngủ."
+    ]
+  },
   "v-0309": {
     "meaning": "Cẩn thận, để ý giữ an toàn trước nguy hiểm",
     "usage": "「〜に用心する」, 「火の元に用心する」, 「知らない人に用心する」. Tính từ liên quan: 「｜用心深《ようじんぶか》い」 (thận trọng). Câu thay thế trong đề: 「用心する」＝「注意する」「気をつける」.",
@@ -2279,6 +2846,15 @@
     "example_notes": [
       "Những ngày không khí khô, xin hãy hết sức cẩn thận với nguồn lửa.",
       "Tôi cảnh giác với cuộc gọi từ số lạ và không nghe máy ngay."
+    ]
+  },
+  "v-0310": {
+    "meaning": "Lời nhắn, tin nhắn; thông điệp",
+    "usage": "「メッセージを送る・残す」, 「〜からのメッセージ」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Về đến nhà thì thấy trên bàn có lời nhắn của mẹ."
     ]
   },
   "v-0319": {
@@ -2325,7 +2901,7 @@
     "meaning": "(Người) làm nhanh cho xong việc, không lề mề",
     "usage": "Đi với hành động của người: 「さっさと帰る」, 「さっさと片付ける」, 「さっさと〜しなさい」 (mau mà làm đi). Có thể nói 「さっさとする」.",
     "nuance": "Chỉ tả cách một người hành động. Đề thi đã dùng câu sai 「さっさと雨が降り出した」, 「さっさと壊れた」: mưa hay đồ vật hỏng thì không dùng 「さっさと」.",
-    "compare": "「さっさと」: một người làm cho xong việc, không chần chừ. 「たちまち」: thay đổi đến ngay, cả với mưa, đồ vật. 「｜一気《いっき》に」: làm liền một mạch. 「｜至急《しきゅう》」: việc gấp, cần làm ngay.",
+    "compare": "「さっさと」: một người làm cho xong việc, không chần chừ. 「たちまち」: thay đổi đến ngay, cả với mưa, đồ vật. 「｜一気《いっき》に」: làm liền một mạch. 「｜至急《しきゅう》」: việc gấp, cần làm ngay. 「てきぱき」: nhanh, khéo.",
     "example_notes": [
       "Cuộc họp vừa xong là anh ấy về ngay mất.",
       "Quần áo phơi khô rồi thì mình gấp cho xong luôn đi."
@@ -2625,7 +3201,7 @@
     "meaning": "「〜ない」: hoàn toàn không…; 「〜する」: khoan khoái, thoáng người",
     "usage": "「さっぱりわからない」, 「さっぱり覚えていない」, 「さっぱり釣れない」; 「さっぱりする」 (khoan khoái, sạch sẽ dễ chịu sau khi tắm, sau khi được làm sạch).",
     "nuance": "Nghĩa \"hoàn toàn không\" cần vế phủ định đi sau. Đề điền từ: tắm xong cả người lẫn tâm trạng （　） → 「さっぱり」; 「きっぱり」 là phương án sai.",
-    "compare": "「さっぱりする」: khoan khoái vì sạch mồ hôi, bụi bẩn. 「すっきり」: nhẹ nhõm vì hết mệt, hết vướng bận: 「気分がすっきりする」. 「きっぱり」: thái độ dứt khoát: 「きっぱり断る」.",
+    "compare": "「さっぱりする」: khoan khoái vì sạch mồ hôi, bụi bẩn. 「すっきり」: nhẹ nhõm vì hết mệt, hết vướng bận: 「気分がすっきりする」. 「きっぱり」: thái độ dứt khoát: 「きっぱり断る」. 「一切〜ない」: tuyệt nhiên không.",
     "example_notes": [
       "Câu cá ngoài sông cả ngày mà chẳng câu được con nào.",
       "Được nha sĩ làm sạch răng xong, trong miệng thấy sạch sẽ, khoan khoái hẳn."
@@ -3265,7 +3841,7 @@
     "meaning": "Chuẩn bị sẵn từ trước cho việc sắp tới hoặc có thể xảy ra",
     "usage": "Việc sắp tới đứng trước 「に」: 「地震に備える」, 「台風に備えて」, 「試験に備えて」. Hán Việt 「備」 là \"bị\", như trong \"chuẩn bị\" (「準備」).",
     "nuance": "Đọc 「そなえる」; đề thi đã cho 「ととのえて」「たくわえて」「かかえて」. Viết: 「準える」「整える」「控える」 đều là phương án sai.",
-    "compare": "「備える」: chuẩn bị sẵn (trữ nước, thay lốp, ôn bài): 「地震に備える」. 「用心」: cẩn thận đề phòng: 「火の元に用心する」. 「あらかじめ」: phó từ \"sẵn từ trước\": 「あらかじめ予約する」. 「｜蓄《たくわ》える」: để dành dần cho sau.",
+    "compare": "「備える」: chuẩn bị sẵn (trữ nước, thay lốp, ôn bài): 「地震に備える」. 「用心」: đề phòng: 「火の元に用心する」. 「あらかじめ」: \"sẵn từ trước\": 「あらかじめ予約する」. 「｜蓄《たくわ》える」: để dành dần cho sau. 「整える」: sắp cho đủ.",
     "example_notes": [
       "Để phòng tuyết lớn, tôi đã thay lốp xe sang loại dùng cho mùa đông.",
       "Để chuẩn bị cho kỳ thi ngày mai, tối nay tôi đi ngủ sớm."
@@ -3684,7 +4260,7 @@
     "meaning": "Khoảng chừng, xấp xỉ; đại khái",
     "usage": "Trước con số: 「およそ20分」, 「およそ10万人」. Trước động từ: 「およそわかった」 (hiểu đại khái). Từ cùng nghĩa: 「おおよそ」.",
     "nuance": "Câu thay thế trong đề: 「およそ」＝「だいたい」. Phương án sai 「ぴったり」 là \"vừa đúng\" — ngược nghĩa.",
-    "compare": "",
+    "compare": "「およそ」: khoảng chừng, trước con số. 「ほぼ」: gần như đầy đủ: 「ほぼ満員」.",
     "example_notes": [
       "Nhà máy này có khoảng 300 người làm việc.",
       "Nghe giải thích một lần, tôi đã hiểu đại khái nội dung câu chuyện."
@@ -3754,7 +4330,7 @@
     "meaning": "Thiên hạ, người đời, xã hội quanh mình",
     "usage": "「世間の注目を集める」, 「世間の目を気にする」 (để ý con mắt người đời), 「世間で話題になる」, 「世間の厳しさ」. Hán Việt \"thế gian\".",
     "nuance": "Đọc 「せけん」, không phải 「せかん」. Đề thi coi là sai: 「数学の世間」 (giới toán học), 「動物の世間」, 「よりよい世間の実現」.",
-    "compare": "「世間」: thiên hạ, người đời quanh mình: 「世間の目を気にする」. 「｜世《よ》の｜中《なか》」: cuộc đời, xã hội nói chung: 「世の中の役に立つ」. 「｜世間知《せけんし》らず」: người chưa trải sự đời.",
+    "compare": "「世間」: thiên hạ, người đời quanh mình: 「世間の目を気にする」. 「｜世《よ》の｜中《なか》」: cuộc đời, xã hội nói chung: 「世の中の役に立つ」. 「｜世間知《せけんし》らず」: người chưa trải sự đời. 「周囲」: người bên cạnh.",
     "example_notes": [
       "Thiên hạ đã bắt đầu kỳ nghỉ dài, còn tôi thì ngày nào cũng đi làm.",
       "Hồi còn là sinh viên, tôi chưa hiểu sự khắc nghiệt của cuộc đời."
@@ -4104,7 +4680,7 @@
     "meaning": "Mãi mãi, vĩnh viễn về sau",
     "usage": "「永久に残る」, 「永久に続く」, 「永久に〜わけではない」 (không phải mãi mãi…). Hán Việt 「永久」 là \"vĩnh cửu\". Từ gần: 「｜永遠《えいえん》に」.",
     "nuance": "Đọc 「えいきゅう」. Đề thi hỏi cách viết đã gài 「延久」「延及」「永及」, và cả 「永遠」 — cùng nghĩa nhưng đọc 「えいえん」.",
-    "compare": "「永久に」: kéo dài mãi về sau. 「依然」: đến giờ vẫn như cũ, chưa thay đổi: 「依然として高い」.",
+    "compare": "「永久に」: kéo dài mãi về sau. 「依然」: đến giờ vẫn như cũ, chưa thay đổi: 「依然として高い」. 「永遠に」: nghĩa gần như cùng 「永久に」.",
     "example_notes": [
       "Tôi muốn giữ mãi bức ảnh này làm kỷ niệm của gia đình.",
       "Lòng tin một khi đã mất có lẽ sẽ không bao giờ trở lại."
@@ -4114,7 +4690,7 @@
     "meaning": "(Ước mơ, nguyện vọng) thành hiện thực",
     "usage": "Chủ ngữ là ước mơ: 「夢がかなう」, 「願いがかなう」. Khi mình làm cho nó thành hiện thực: 「夢をかなえる」.",
     "nuance": "Đề thi coi là sai: 「苦労がかない」, 「天気予報がかない」, 「イベントが無事かなった」 — công sức, dự báo, sự kiện không làm chủ ngữ cho 「かなう」.",
-    "compare": "",
+    "compare": "「かなう」: tự động từ, ước mơ thành sự thật. 「かなえる」: tha động từ: 「夢をかなえる」.",
     "example_notes": [
       "Ước mơ từ hồi tiểu học đã thành hiện thực, năm nay tôi trở thành phi công.",
       "Tôi đã mua bùa hộ mệnh ở đền để mong điều ước thành hiện thực."
@@ -5550,7 +6126,7 @@
     "meaning": "Đã từ lâu rồi (việc đã xong từ trước)",
     "usage": "Đi với việc đã xong: 「とっくに帰った」, 「とっくに出ていた」, 「とっくに読み終わった」. Gần nghĩa với 「既に」「もう」.",
     "nuance": "Câu thay thế: 「とっくに」＝「ずっと前に」. Đề thi coi là sai: 「とっくに大きいお寺があった」, 「とっくに遅い」, 「とっくに鳴りっぱなし」.",
-    "compare": "",
+    "compare": "「すでに」: trước thời điểm đó đã như vậy. 「とっくに」: xong từ rất lâu rồi.",
     "example_notes": [
       "Tôi vội đến ga nhưng chuyến tàu cuối đã chạy từ lâu rồi.",
       "Cuốn sách đó thì tôi đọc xong từ lâu rồi."
@@ -5670,7 +6246,7 @@
     "meaning": "Thong thả, thư thái, không vội vàng",
     "usage": "「のんびり過ごす」, 「のんびり暮らす」, 「のんびりする」, 「のんびりした性格」 (tính thong thả).",
     "nuance": "Đề thi đặt 「のろのろ」 cạnh 「のんびり」: 「のろのろ」 chỉ chậm chạp, lề mề. Nghỉ ngơi thư giãn ở nhà cuối tuần là 「のんびり」.",
-    "compare": "「のんびり」: nhịp sống, tâm trạng thong thả, không vội: 「のんびり過ごす」. 「ごろごろ」: nằm ườn ra, không làm việc gì: 「ソファーでごろごろする」.",
+    "compare": "「のんびり」: nhịp sống, tâm trạng thong thả, không vội: 「のんびり過ごす」. 「ごろごろ」: nằm ườn ra, không làm việc gì: 「ソファーでごろごろする」. 「ゆったり」: thư thả, cả quần áo rộng rãi.",
     "example_notes": [
       "Bố tôi nói sau khi nghỉ hưu muốn sống thong thả ở quê.",
       "Chị tôi tính thong thả, dù sắp đến giờ hẹn cũng chẳng mấy vội."
@@ -5870,7 +6446,7 @@
     "meaning": "Mậu dịch, buôn bán trao đổi hàng hóa quốc tế",
     "usage": "「貿易摩擦」 (cọ xát mậu dịch), 「自由貿易」, 「貿易相手国」 (nước đối tác mậu dịch).",
     "nuance": "",
-    "compare": "",
+    "compare": "「貿易」: mua bán với nước ngoài. 「売り買い」: mua bán nói chung, trong hay ngoài nước.",
     "example_notes": [
       "Nhật Bản nhập khẩu phần lớn dầu mỏ từ nước ngoài thông qua hoạt động ngoại thương mậu dịch.",
       "Mối quan hệ giữa hai nước trở nên xấu đi khiến cho kim ngạch giao thương buôn bán sụt giảm mạnh."

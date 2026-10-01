@@ -627,7 +627,9 @@
           "note": "7/2022 問題6-28 の見出し語"
         }
       ],
-      "related": [],
+      "related": [
+        "v-0248"
+      ],
       "quiz": [],
       "group": "第1章 人と人との関係／家族",
       "tags": [
@@ -6034,7 +6036,9 @@
           "note": "見出し語 No.227「買い換（替）える」（＋買い換（替）え）"
         }
       ],
-      "related": [],
+      "related": [
+        "v-0286"
+      ],
       "quiz": [],
       "group": "第2章 暮らし／買い物",
       "tags": [
@@ -6379,6 +6383,574 @@
       "official_count": 1
     },
     {
+      "id": "v-0242",
+      "word": "現在",
+      "reading": "げんざい",
+      "pos": "名詞",
+      "examples": [
+        "この｜美術館《びじゅつかん》は、**｜現在《げんざい》**、｜建物《たてもの》の｜修理《しゅうり》のため｜休館《きゅうかん》している。",
+        "｜父《ちち》は、**｜現在《げんざい》**の｜会社《かいしゃ》に｜勤《つと》めて｜二十年《にじゅうねん》になる。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 53,
+          "note": "見出し語 No.242"
+        }
+      ],
+      "related": [
+        "v-0243",
+        "v-0247",
+        "v-0254"
+      ],
+      "quiz": [],
+      "group": "第2章 暮らし／時を表す言葉",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-0243",
+      "word": "過去",
+      "reading": "かこ",
+      "pos": "名詞",
+      "examples": [
+        "**｜過去《かこ》**の｜記録《きろく》を｜調《しら》べると、この｜川《かわ》は｜百年《ひゃくねん》に｜三回《さんかい》あふれている。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 53,
+          "note": "見出し語 No.243"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/1. N2 12-2010/booklet.md",
+          "note": "12/2010 問題1-1：問題文に「過去最大の規模」（下線語は「規模」）。official_count には数えない"
+        }
+      ],
+      "related": [
+        "v-0242"
+      ],
+      "quiz": [],
+      "group": "第2章 暮らし／時を表す言葉",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-0244",
+      "word": "年月",
+      "reading": "ねんげつ",
+      "pos": "名詞",
+      "examples": [
+        "｜祖母《そぼ》の｜家《いえ》の｜柱《はしら》は、｜百年《ひゃくねん》の**｜年月《ねんげつ》**を｜感《かん》じさせる｜深《ふか》い｜色《いろ》をしている。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 53,
+          "note": "見出し語 No.244"
+        },
+        {
+          "ref": "refs/Soumatome/nihongo-soumatome-n2-goi.pdf",
+          "page": 77,
+          "note": "第5週 読み方に注意「物事・日中・年月」"
+        }
+      ],
+      "related": [
+        "v-0245"
+      ],
+      "quiz": [],
+      "group": "第2章 暮らし／時を表す言葉",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-0245",
+      "word": "月日",
+      "reading": "つきひ",
+      "pos": "名詞",
+      "examples": [
+        "**｜月日《つきひ》**を｜重《かさ》ねるうちに、｜町《まち》の｜様子《ようす》もすっかり｜変《か》わった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 53,
+          "note": "見出し語 No.245"
+        }
+      ],
+      "related": [
+        "v-0244"
+      ],
+      "quiz": [],
+      "group": "第2章 暮らし／時を表す言葉",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-0246",
+      "word": "日時",
+      "reading": "にちじ",
+      "pos": "名詞",
+      "examples": [
+        "｜大雨《おおあめ》のため、｜試合《しあい》の**｜日時《にちじ》**が｜変《か》わった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 53,
+          "note": "見出し語 No.246（＋日程）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第2章 暮らし／時を表す言葉",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-0247",
+      "word": "今日",
+      "reading": "こんにち",
+      "pos": "名詞",
+      "examples": [
+        "｜百年前《ひゃくねんまえ》には｜珍《めずら》しかった｜電気《でんき》も、**｜今日《こんにち》**ではどの｜家《いえ》にもある。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 53,
+          "note": "見出し語 No.247「今日（こんにち）」"
+        },
+        {
+          "ref": "refs/Soumatome/nihongo-soumatome-n2-goi.pdf",
+          "page": 78,
+          "note": "第5週「今日（こんにち）」"
+        }
+      ],
+      "related": [
+        "v-0242"
+      ],
+      "quiz": [],
+      "group": "第2章 暮らし／時を表す言葉",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-0248",
+      "word": "年代",
+      "reading": "ねんだい",
+      "pos": "名詞",
+      "examples": [
+        "この｜寺《てら》は、｜建《た》てられた**｜年代《ねんだい》**がはっきりわかっていない。",
+        "この｜合唱団《がっしょうだん》では、｜二十代《にじゅうだい》から｜七十代《ななじゅうだい》まで、｜幅広《はばひろ》い**｜年代《ねんだい》**の｜人《ひと》が｜一緒《いっしょ》に｜歌《うた》っている。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 53,
+          "note": "見出し語 No.248（①時代の中のある期間 ②同じくらいの年齢）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/7. N2 7-2016/booklet.md",
+          "note": "7/2016 問題3-12：語形成「年代（順）」の正解は「順」。official_count には数えない"
+        },
+        {
+          "ref": "refs/Soumatome/nihongo-soumatome-n2-goi.pdf",
+          "page": 78,
+          "note": "第5週「年代」（同じ年代）"
+        }
+      ],
+      "related": [
+        "v-0022"
+      ],
+      "quiz": [],
+      "group": "第2章 暮らし／時を表す言葉",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-0249",
+      "word": "年間",
+      "reading": "ねんかん",
+      "pos": "名詞",
+      "examples": [
+        "このスポーツクラブは、**｜年間《ねんかん》**の｜会費《かいひ》をまとめて｜払《はら》うと、｜二割《にわり》｜安《やす》くなる。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 54,
+          "note": "見出し語 No.249"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/5. N2 7-2014/booklet.md",
+          "note": "7/2014 問題6-31：「こつこつ」の用法問題の正しい文に「この一年間」（期間の「〜年間」）。official_count には数えない"
+        },
+        {
+          "ref": "refs/Soumatome/nihongo-soumatome-n2-goi.pdf",
+          "page": 78,
+          "note": "第5週「年間」"
+        }
+      ],
+      "related": [
+        "v-0250"
+      ],
+      "quiz": [],
+      "group": "第2章 暮らし／時を表す言葉",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-0250",
+      "word": "年中",
+      "reading": "ねんじゅう",
+      "pos": "名詞・副詞",
+      "examples": [
+        "この｜山《やま》の｜上《うえ》のほうには、**｜年中《ねんじゅう》**｜雪《ゆき》が｜残《のこ》っている。",
+        "うちの｜猫《ねこ》は、**｜年中《ねんじゅう》**ソファの｜上《うえ》で｜寝《ね》てばかりいる。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 54,
+          "note": "見出し語 No.250（名・副）"
+        },
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Goi.pdf",
+          "page": 116,
+          "note": "第2部2章1課 連語「しょっちゅう・年中」"
+        }
+      ],
+      "related": [
+        "v-0249"
+      ],
+      "quiz": [],
+      "group": "第2章 暮らし／時を表す言葉",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-0251",
+      "word": "本年",
+      "reading": "ほんねん",
+      "pos": "名詞",
+      "examples": [
+        "**｜本年《ほんねん》**の｜新入社員《しんにゅうしゃいん》は、｜昨年《さくねん》より｜十人《じゅうにん》｜多《おお》い。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 54,
+          "note": "見出し語 No.251"
+        },
+        {
+          "ref": "refs/Soumatome/nihongo-soumatome-n2-goi.pdf",
+          "page": 87,
+          "note": "「本年」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第2章 暮らし／時を表す言葉",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-0252",
+      "word": "日中",
+      "reading": "にっちゅう",
+      "pos": "名詞",
+      "examples": [
+        "｜夏《なつ》は**｜日中《にっちゅう》**の｜暑《あつ》さを｜避《さ》けて、｜朝早《あさはや》くに｜畑《はたけ》の｜仕事《しごと》をする。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 54,
+          "note": "見出し語 No.252"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/3. N2 7-2012/booklet.md",
+          "note": "7/2012 問題5-26 の下線語（正解は「昼間」）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/11. N2 12-2020/booklet.md",
+          "note": "12/2020 問題5-24：「終日」の言い換え問題の誤りの選択肢に「夜間」。official_count には数えない"
+        },
+        {
+          "ref": "refs/Soumatome/nihongo-soumatome-n2-goi.pdf",
+          "page": 77,
+          "note": "第5週 読み方に注意「物事・日中・年月」"
+        }
+      ],
+      "related": [
+        "v-0253"
+      ],
+      "quiz": [],
+      "group": "第2章 暮らし／時を表す言葉",
+      "tags": [
+        "問題5 言い換え"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "v-0253",
+      "word": "夜間",
+      "reading": "やかん",
+      "pos": "名詞",
+      "examples": [
+        "この｜駐車場《ちゅうしゃじょう》は、**｜夜間《やかん》**は｜入《い》り｜口《ぐち》が｜閉《し》まるので、｜車《くるま》を｜出《だ》せない。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 54,
+          "note": "見出し語 No.253"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/3. N2 7-2012/booklet.md",
+          "note": "7/2012 問題5-26：「日中」の言い換え問題の誤りの選択肢。official_count には数えない"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/11. N2 12-2020/booklet.md",
+          "note": "12/2020 問題5-24：「終日」の言い換え問題の誤りの選択肢。official_count には数えない"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/9. N2 7-2018/booklet.md",
+          "note": "7/2018 問題2-9：問題文に「夜間でも」（下線語は「けいび」）。official_count には数えない"
+        }
+      ],
+      "related": [
+        "v-0252"
+      ],
+      "quiz": [],
+      "group": "第2章 暮らし／時を表す言葉",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-0254",
+      "word": "ただ今",
+      "reading": "ただいま",
+      "pos": "名詞・副詞",
+      "examples": [
+        "**ただ｜今《いま》**の｜時刻《じこく》は、｜午後《ごご》｜三時《さんじ》｜十分《じゅっぷん》です。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 54,
+          "note": "見出し語 No.254（名・副）"
+        }
+      ],
+      "related": [
+        "v-0242"
+      ],
+      "quiz": [],
+      "group": "第2章 暮らし／時を表す言葉",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-0255",
+      "word": "先ほど",
+      "reading": "さきほど",
+      "pos": "副詞",
+      "examples": [
+        "**｜先《さき》ほど**｜配《くば》った｜資料《しりょう》に、｜間違《まちが》いが｜一《ひと》つありました。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 54,
+          "note": "見出し語 No.255（↔後ほど）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第2章 暮らし／時を表す言葉",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-0256",
+      "word": "近々",
+      "reading": "ちかぢか",
+      "pos": "副詞",
+      "examples": [
+        "｜姉《あね》は**｜近々《ちかぢか》**｜結婚《けっこん》することになり、｜今《いま》は｜準備《じゅんび》で｜忙《いそが》しい。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 54,
+          "note": "見出し語 No.256"
+        },
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Goi.pdf",
+          "page": 132,
+          "note": "第2部4章1課 副詞「時間（未来）」④近々・近く"
+        },
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Goi.pdf",
+          "page": 133,
+          "note": "第2部4章 基本練習 用法（使う時の制限）「近々」"
+        },
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Goi.pdf",
+          "page": 134,
+          "note": "第2部4章 基本練習 用法「近々」（数分後には使わない）"
+        }
+      ],
+      "related": [
+        "v-0258",
+        "v-0259"
+      ],
+      "quiz": [],
+      "group": "第2章 暮らし／時を表す言葉",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-0257",
+      "word": "後日",
+      "reading": "ごじつ",
+      "pos": "名詞",
+      "examples": [
+        "｜事故《じこ》のときの｜様子《ようす》について、｜警察《けいさつ》から**｜後日《ごじつ》**｜連絡《れんらく》があった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 55,
+          "note": "見出し語 No.257"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第2章 暮らし／時を表す言葉",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-0258",
+      "word": "やがて",
+      "reading": "やがて",
+      "pos": "副詞",
+      "examples": [
+        "｜庭《にわ》にまいた｜種《たね》から｜芽《め》が｜出《で》て、**やがて**｜小《ちい》さな｜花《はな》が｜咲《さ》いた。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 55,
+          "note": "見出し語 No.258"
+        }
+      ],
+      "related": [
+        "v-0256",
+        "v-0259"
+      ],
+      "quiz": [],
+      "group": "第2章 暮らし／時を表す言葉",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-0259",
+      "word": "いずれ",
+      "reading": "いずれ",
+      "pos": "副詞",
+      "examples": [
+        "うそをついても、**いずれ**は｜本当《ほんとう》のことがわかってしまうよ。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 55,
+          "note": "見出し語 No.259"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/3. N2 7-2012/booklet.md",
+          "note": "7/2012 問題3-12：問題文に「いずれ本採用になる」（正解は「仮」）。official_count には数えない"
+        },
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Goi.pdf",
+          "page": 132,
+          "note": "第2部4章1課 副詞「時間（未来）」①いずれ"
+        }
+      ],
+      "related": [
+        "v-0256",
+        "v-0258"
+      ],
+      "quiz": [],
+      "group": "第2章 暮らし／時を表す言葉",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-0260",
+      "word": "今後",
+      "reading": "こんご",
+      "pos": "名詞・副詞",
+      "examples": [
+        "この｜道《みち》は、**｜今後《こんご》**、｜自転車《じてんしゃ》で｜通《とお》ることができなくなる。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 55,
+          "note": "見出し語 No.260（名・副）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/4. N2 12-2013/booklet.md",
+          "note": "12/2013 問題2-7：問題文に「今後もサービス向上に」（下線語は「つとめて」）。official_count には数えない"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/14. N2 7-2023/booklet.md",
+          "note": "7/2023 問題2-7：問題文に「今後は」（下線語は「ふくし」）。official_count には数えない"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第2章 暮らし／時を表す言葉",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-0261",
+      "word": "すでに",
+      "reading": "すでに",
+      "pos": "副詞",
+      "examples": [
+        "その｜話《はなし》なら、**すでに**｜部長《ぶちょう》から｜聞《き》いています。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 55,
+          "note": "見出し語 No.261"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/17.N2 12-2025/booklet.md",
+          "note": "12/2025 問題2-10：問題文に「犯人はすでに」（下線語は「のうこう」）。official_count には数えない"
+        },
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Goi.pdf",
+          "page": 113,
+          "note": "第2部2章1課 意味が似ている言葉「既に・とっくに・もう」"
+        }
+      ],
+      "related": [
+        "v-o-tokkuni"
+      ],
+      "quiz": [],
+      "group": "第2章 暮らし／時を表す言葉",
+      "tags": [],
+      "official_count": 0
+    },
+    {
       "id": "v-0262",
       "word": "あらかじめ",
       "reading": "あらかじめ",
@@ -6414,6 +6986,169 @@
       "official_count": 1
     },
     {
+      "id": "v-0263",
+      "word": "従来",
+      "reading": "じゅうらい",
+      "pos": "名詞・副詞",
+      "examples": [
+        "｜新《あたら》しい｜電池《でんち》は、**｜従来《じゅうらい》**の｜物《もの》より｜二倍《にばい》｜長《なが》く｜使《つか》えるそうだ。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 55,
+          "note": "見出し語 No.263（名・副）"
+        },
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Goi.pdf",
+          "page": 132,
+          "note": "第2部4章1課 副詞「時間（過去）」④従来"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第2章 暮らし／時を表す言葉",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-0264",
+      "word": "あくる",
+      "reading": "あくる",
+      "pos": "連体詞",
+      "examples": [
+        "｜旅行《りょこう》から｜帰《かえ》った**あくる**｜日《ひ》から、また｜朝早《あさはや》く｜起《お》きる｜生活《せいかつ》に｜戻《もど》った。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 55,
+          "note": "見出し語 No.264「あくる〜」（＋あくる日）"
+        },
+        {
+          "ref": "refs/Soumatome/nihongo-soumatome-n2-goi.pdf",
+          "page": 104,
+          "note": "「あくる」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第2章 暮らし／時を表す言葉",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-0265",
+      "word": "一時",
+      "reading": "いちじ",
+      "pos": "名詞・副詞",
+      "examples": [
+        "｜祖父《そふ》の｜病気《びょうき》は**｜一時《いちじ》**よくなったが、｜冬《ふゆ》になってまた｜悪《わる》くなった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 56,
+          "note": "見出し語 No.265（名・副、＋いっとき）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/16. N2 7-2025/booklet.md",
+          "note": "7/2025 問題4-15：正解は派生した形「一時的に」。official_count には数えない"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/5. N2 12-2014/booklet.md",
+          "note": "12/2014 問題4-19：「一気に」が正解の文脈問題の誤りの選択肢「一時的に」。official_count には数えない"
+        },
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Goi.pdf",
+          "page": 132,
+          "note": "第2部4章1課 副詞「時間（一時）」"
+        },
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Goi.pdf",
+          "page": 143,
+          "note": "第2部4章 実践練習に時刻の「一時」"
+        }
+      ],
+      "related": [
+        "v-0295"
+      ],
+      "quiz": [],
+      "group": "第2章 暮らし／時を表す言葉",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-0266",
+      "word": "一生",
+      "reading": "いっしょう",
+      "pos": "名詞・副詞",
+      "examples": [
+        "｜祖父《そふ》は、**｜一生《いっしょう》**を｜海《うみ》の｜仕事《しごと》にささげた。",
+        "｜祖母《そぼ》は、｜生《う》まれた｜村《むら》から**｜一生《いっしょう》**｜出《で》ることがなかった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 56,
+          "note": "見出し語 No.266（名・副）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第2章 暮らし／時を表す言葉",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-0267",
+      "word": "永遠に",
+      "reading": "えいえんに",
+      "pos": "副詞",
+      "examples": [
+        "｜人《ひと》はだれも、**｜永遠《えいえん》に**｜生《い》きられるわけではない。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 56,
+          "note": "見出し語 No.267（＋永久に）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/8. N2 7-2017/booklet.md",
+          "note": "7/2017 問題2-10：「えいきゅう」の表記問題の誤りの選択肢「永遠」。official_count には数えない"
+        }
+      ],
+      "related": [
+        "v-o-eikyuuni"
+      ],
+      "quiz": [],
+      "group": "第2章 暮らし／時を表す言葉",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-0268",
+      "word": "夜明け",
+      "reading": "よあけ",
+      "pos": "名詞",
+      "examples": [
+        "**｜夜明《よあ》け**とともに、｜漁師《りょうし》たちは｜船《ふね》を｜出《だ》した。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 59,
+          "note": "見出し語 No.268（＋明け方）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第3章 家で／朝",
+      "tags": [],
+      "official_count": 0
+    },
+    {
       "id": "v-0269",
       "word": "起床",
       "reading": "きしょう",
@@ -6441,6 +7176,673 @@
         "問題1 読み"
       ],
       "official_count": 1
+    },
+    {
+      "id": "v-0270",
+      "word": "もたれる",
+      "reading": "もたれる",
+      "pos": "動詞",
+      "examples": [
+        "バス｜停《てい》で、｜疲《つか》れた｜様子《ようす》の｜男性《だんせい》が｜柱《はしら》に**もたれて**｜立《た》っていた。",
+        "｜夜遅《よるおそ》くに｜揚《あ》げ｜物《もの》を｜食《た》べたら、｜朝《あさ》まで｜胃《い》が**もたれて**いた。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 59,
+          "note": "見出し語 No.270（①かたい物に体を預ける ②食べた物が胃に重く残る）"
+        },
+        {
+          "ref": "refs/Soumatome/nihongo-soumatome-n2-goi.pdf",
+          "page": 104,
+          "note": "「もたれる」（壁にもたれる）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第3章 家で／朝",
+      "tags": [
+        "自動詞"
+      ],
+      "official_count": 0
+    },
+    {
+      "id": "v-0271",
+      "word": "フレッシュ",
+      "reading": "ふれっしゅ",
+      "pos": "ナ形容詞",
+      "examples": [
+        "この｜店《みせ》では、｜農家《のうか》から｜届《とど》いた**フレッシュな**｜果物《くだもの》でケーキを｜作《つく》っている。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 59,
+          "note": "見出し語 No.271「フレッシュな」"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/1. N2 7-2010/booklet.md",
+          "note": "7/2010 問題4-17：「マイペース」が正解の文脈問題の誤りの選択肢。official_count には数えない"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第3章 家で／朝",
+      "tags": [
+        "カタカナ語"
+      ],
+      "official_count": 0
+    },
+    {
+      "id": "v-0272",
+      "word": "乳製品",
+      "reading": "にゅうせいひん",
+      "pos": "名詞",
+      "examples": [
+        "｜牛乳《ぎゅうにゅう》やチーズなどの**｜乳製品《にゅうせいひん》**を｜食《た》べると、おなかが｜痛《いた》くなる｜人《ひと》もいる。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 59,
+          "note": "見出し語 No.272"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第3章 家で／朝",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-0273",
+      "word": "洗い物",
+      "reading": "あらいもの",
+      "pos": "名詞",
+      "examples": [
+        "パーティーの｜後《あと》、｜台所《だいどころ》には**｜洗《あら》い｜物《もの》**が｜山《やま》のようにたまっていた。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 59,
+          "note": "見出し語 No.273"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第3章 家で／朝",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-0274",
+      "word": "欠かす",
+      "reading": "かかす",
+      "pos": "動詞",
+      "examples": [
+        "この｜店《みせ》の｜主人《しゅじん》は、｜料理《りょうり》を｜始《はじ》める｜前《まえ》に｜包丁《ほうちょう》を｜研《と》ぐことを**｜欠《か》かさない**。",
+        "チームが｜勝《か》つためには、｜彼《かれ》の｜力《ちから》が**｜欠《か》かせない**。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 59,
+          "note": "見出し語 No.274"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/9. N2 7-2018/booklet.md",
+          "note": "7/2018 問題4-19 の正解（「欠かさない」の形）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/12. N2 12-2021/booklet.md",
+          "note": "12/2021 問題5-24 の下線語（「欠かせない」の形、正解は「ないと困る」）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第3章 家で／朝",
+      "tags": [
+        "他動詞",
+        "問題4 文脈",
+        "問題5 言い換え"
+      ],
+      "official_count": 2
+    },
+    {
+      "id": "v-0275",
+      "word": "配達",
+      "reading": "はいたつ",
+      "pos": "名詞",
+      "examples": [
+        "｜注文《ちゅうもん》した｜本《ほん》は、あしたの｜午前中《ごぜんちゅう》に**｜配達《はいたつ》**される｜予定《よてい》だ。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 60,
+          "note": "見出し語 No.275「配達〈する〉」（＋新聞配達）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/13. N2 7-2022/booklet.md",
+          "note": "7/2022 問題5-24：「会計」が正解の言い換え問題の誤りの選択肢。official_count には数えない"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第3章 家で／朝",
+      "tags": [
+        "する動詞"
+      ],
+      "official_count": 0
+    },
+    {
+      "id": "v-0276",
+      "word": "見出し",
+      "reading": "みだし",
+      "pos": "名詞",
+      "examples": [
+        "｜新聞《しんぶん》の｜大《おお》きな**｜見出《みだ》し**を｜見《み》て、｜大雪《おおゆき》で｜空港《くうこう》が｜閉《と》じたことを｜知《し》った。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 60,
+          "note": "見出し語 No.276"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第3章 家で／朝",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-0277",
+      "word": "一切",
+      "reading": "いっさい",
+      "pos": "副詞",
+      "examples": [
+        "この｜店《みせ》では、｜料理《りょうり》に｜化学調味料《かがくちょうみりょう》を**｜一切《いっさい》**｜使《つか》っていない。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 60,
+          "note": "見出し語 No.277「一切（〜ない）」（名詞の「全部」の用法もある）"
+        },
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Goi.pdf",
+          "page": 141,
+          "note": "第2部4章 実践練習「一切」"
+        }
+      ],
+      "related": [
+        "v-0569"
+      ],
+      "quiz": [],
+      "group": "第3章 家で／朝",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-0278",
+      "word": "合間",
+      "reading": "あいま",
+      "pos": "名詞",
+      "examples": [
+        "｜祖母《そぼ》は、｜畑《はたけ》｜仕事《しごと》の**｜合間《あいま》**に、｜木《き》の｜下《した》でお｜茶《ちゃ》を｜飲《の》む。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 60,
+          "note": "見出し語 No.278"
+        }
+      ],
+      "related": [
+        "v-0280"
+      ],
+      "quiz": [],
+      "group": "第3章 家で／朝",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-0279",
+      "word": "てきぱき",
+      "reading": "てきぱき",
+      "pos": "副詞",
+      "examples": [
+        "｜病院《びょういん》の｜受付《うけつけ》の｜人《ひと》が、**てきぱき**と｜患者《かんじゃ》を｜案内《あんない》していた。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 60,
+          "note": "見出し語 No.279「てきぱき［と］〈する〉」"
+        },
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Goi.pdf",
+          "page": 151,
+          "note": "第2部5章 オノマトペ 連語「てきぱき」"
+        }
+      ],
+      "related": [
+        "v-0378"
+      ],
+      "quiz": [],
+      "group": "第3章 家で／朝",
+      "tags": [
+        "する動詞",
+        "オノマトペ"
+      ],
+      "official_count": 0
+    },
+    {
+      "id": "v-0280",
+      "word": "間",
+      "reading": "ま",
+      "pos": "名詞",
+      "examples": [
+        "｜彼《かれ》は｜少《すこ》し**｜間《ま》**をあけてから、｜静《しず》かに｜答《こた》えた。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 60,
+          "note": "見出し語 No.280「間（ま）」"
+        }
+      ],
+      "related": [
+        "v-0278"
+      ],
+      "quiz": [],
+      "group": "第3章 家で／朝",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-0281",
+      "word": "周辺",
+      "reading": "しゅうへん",
+      "pos": "名詞",
+      "examples": [
+        "この｜鳥《とり》は、｜湖《みずうみ》の**｜周辺《しゅうへん》**の｜林《はやし》に｜巣《す》を｜作《つく》る。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 60,
+          "note": "見出し語 No.281"
+        }
+      ],
+      "related": [
+        "v-0282"
+      ],
+      "quiz": [],
+      "group": "第3章 家で／朝",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-0282",
+      "word": "周囲",
+      "reading": "しゅうい",
+      "pos": "名詞",
+      "examples": [
+        "この｜湖《みずうみ》は、**｜周囲《しゅうい》**が｜十《じゅっ》キロほどある。",
+        "｜彼《かれ》は**｜周囲《しゅうい》**の｜反対《はんたい》を｜押《お》し｜切《き》って、｜一人《ひとり》で｜海外《かいがい》の｜大学《だいがく》に｜進《すす》んだ。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 60,
+          "note": "見出し語 No.282"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/1. N2 12-2010/booklet.md",
+          "note": "12/2010 読解の選択肢・問いに「周囲の協力」「周囲の人」（周りの人々の意味）。official_count には数えない"
+        }
+      ],
+      "related": [
+        "v-0281",
+        "v-1272"
+      ],
+      "quiz": [],
+      "group": "第3章 家で／朝",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-0283",
+      "word": "あと",
+      "reading": "あと",
+      "pos": "副詞",
+      "examples": [
+        "｜駅《えき》まで**あと**｜少《すこ》しだから、がんばって｜歩《ある》こう。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 60,
+          "note": "見出し語 No.283"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第3章 家で／朝",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-0284",
+      "word": "すれ違う",
+      "reading": "すれちがう",
+      "pos": "動詞",
+      "examples": [
+        "｜細《ほそ》い｜山道《やまみち》で｜大《おお》きなトラックと**すれ｜違《ちが》う**ときは、｜怖《こわ》かった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 61,
+          "note": "見出し語 No.284"
+        },
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Goi.pdf",
+          "page": 172,
+          "note": "第2部7章 実践練習 用法「すれ違う」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第3章 家で／朝",
+      "tags": [
+        "自動詞"
+      ],
+      "official_count": 0
+    },
+    {
+      "id": "v-0285",
+      "word": "はう",
+      "reading": "はう",
+      "pos": "動詞",
+      "examples": [
+        "｜赤《あか》ちゃんが、｜部屋《へや》の｜中《なか》を**はって**｜母親《ははおや》のところへ｜行《い》った。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 61,
+          "note": "見出し語 No.285（＋はいはい〈する〉）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第3章 家で／朝",
+      "tags": [
+        "自動詞"
+      ],
+      "official_count": 0
+    },
+    {
+      "id": "v-0286",
+      "word": "替える",
+      "reading": "かえる",
+      "pos": "動詞",
+      "examples": [
+        "｜客《きゃく》から、｜担当者《たんとうしゃ》を**｜替《か》えて**ほしいという｜電話《でんわ》があった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 61,
+          "note": "見出し語 No.286（＋換える）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/7. N2 12-2016/booklet.md",
+          "note": "12/2016 問題2-9：問題文に「お札をこうかに替えた」（下線語は「こうか」）。official_count には数えない"
+        }
+      ],
+      "related": [
+        "v-0227"
+      ],
+      "quiz": [],
+      "group": "第3章 家で／朝",
+      "tags": [
+        "他動詞"
+      ],
+      "official_count": 0
+    },
+    {
+      "id": "v-0287",
+      "word": "整える",
+      "reading": "ととのえる",
+      "pos": "動詞",
+      "examples": [
+        "｜発表《はっぴょう》の｜前《まえ》に、｜深《ふか》く｜息《いき》を｜吸《す》って｜呼吸《こきゅう》を**｜整《ととの》えた**。",
+        "｜町《まち》は、｜外国《がいこく》からの｜観光客《かんこうきゃく》を｜迎《むか》える｜準備《じゅんび》を**｜整《ととの》えて**いる。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 61,
+          "note": "見出し語 No.287（①きちんとした状態にする ②そなえる、＋整う）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/13. N2 7-2022/booklet.md",
+          "note": "7/2022 問題2-9：「備える」が正解の表記問題の誤りの選択肢「整える」。official_count には数えない"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/1. N2 7-2010/booklet.md",
+          "note": "7/2010 問題1-4：「備えて」の読み問題の誤りの選択肢「ととのえて」。official_count には数えない"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/8. N2 12-2017/booklet.md",
+          "note": "12/2017 問題1-1：問題文に「きれいに整えた髪」（下線語は「乱れて」）。official_count には数えない"
+        }
+      ],
+      "related": [
+        "v-0942"
+      ],
+      "quiz": [],
+      "group": "第3章 家で／朝",
+      "tags": [
+        "他動詞"
+      ],
+      "official_count": 0
+    },
+    {
+      "id": "v-0288",
+      "word": "ろくに",
+      "reading": "ろくに",
+      "pos": "副詞",
+      "examples": [
+        "｜街灯《がいとう》のない｜夜道《よみち》で、｜足《あし》もとが**ろくに**｜見《み》えなかった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 61,
+          "note": "見出し語 No.288「ろくに（〜ない）」（＋ろくな（〜ない））"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第3章 家で／朝",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-0289",
+      "word": "めりはり",
+      "reading": "めりはり",
+      "pos": "名詞",
+      "examples": [
+        "この｜映画《えいが》は、｜静《しず》かな｜場面《ばめん》と｜激《はげ》しい｜場面《ばめん》の**めりはり**がきいていて、｜最後《さいご》まで｜飽《あ》きない。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 62,
+          "note": "見出し語 No.289"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第3章 家で／日課",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-0290",
+      "word": "何度も",
+      "reading": "なんども",
+      "pos": "副詞",
+      "examples": [
+        "この｜古《ふる》い｜橋《はし》は、｜大雨《おおあめ》のたびに**｜何度《なんど》も**｜流《なが》されてきた。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 62,
+          "note": "見出し語 No.290"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/1. N2 12-2010/booklet.md",
+          "note": "12/2010 問題5-24 の正解（下線語「たびたび」の言い換え）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/7. N2 7-2016/booklet.md",
+          "note": "7/2016 問題5-23 の正解（下線語「たびたび」の言い換え）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/13. N2 7-2022/booklet.md",
+          "note": "7/2022 問題5-22 の正解（下線語「再三」の言い換え）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/5. N2 12-2014/booklet.md",
+          "note": "12/2014 問題5-24：「偶然」が正解の言い換え問題の誤りの選択肢。official_count には数えない"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/10. N2 7-2019/booklet.md",
+          "note": "7/2019 問題5-23：「一生懸命」が正解の言い換え問題の誤りの選択肢。official_count には数えない"
+        },
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Goi.pdf",
+          "page": 116,
+          "note": "第2部2章1課 連語「再三・何度も」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第3章 家で／日課",
+      "tags": [
+        "問題5 言い換え"
+      ],
+      "official_count": 3
+    },
+    {
+      "id": "v-0291",
+      "word": "ほぼ",
+      "reading": "ほぼ",
+      "pos": "副詞",
+      "examples": [
+        "｜会場《かいじょう》の｜席《せき》は、**ほぼ**｜満員《まんいん》だった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 62,
+          "note": "見出し語 No.291"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/2. N2 7-2011/booklet.md",
+          "note": "7/2011 問題5-26 の下線語（正解は「だいたい」）"
+        },
+        {
+          "ref": "refs/Shinkanzen/Shin_Kanzen_Masuta_N2-Goi.pdf",
+          "page": 116,
+          "note": "第2部2章1課 連語「ほぼ・大体」と「およそ・約」"
+        }
+      ],
+      "related": [
+        "v-1253"
+      ],
+      "quiz": [],
+      "group": "第3章 家で／日課",
+      "tags": [
+        "問題5 言い換え"
+      ],
+      "official_count": 1
+    },
+    {
+      "id": "v-0292",
+      "word": "寄り道",
+      "reading": "よりみち",
+      "pos": "名詞",
+      "examples": [
+        "｜出張《しゅっちょう》の｜帰《かえ》りに｜少《すこ》し**｜寄《よ》り｜道《みち》**をして、｜海沿《うみぞ》いの｜町《まち》を｜歩《ある》いた。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 62,
+          "note": "見出し語 No.292「寄り道〈する〉」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第3章 家で／日課",
+      "tags": [
+        "する動詞"
+      ],
+      "official_count": 0
+    },
+    {
+      "id": "v-0293",
+      "word": "食物",
+      "reading": "しょくもつ",
+      "pos": "名詞",
+      "examples": [
+        "この｜島《しま》では、**｜食物《しょくもつ》**のほとんどを｜船《ふね》で｜運《はこ》んでいる。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 62,
+          "note": "見出し語 No.293"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第3章 家で／日課",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-0294",
+      "word": "換気",
+      "reading": "かんき",
+      "pos": "名詞",
+      "examples": [
+        "｜会議室《かいぎしつ》は｜人《ひと》が｜多《おお》かったので、｜休憩《きゅうけい》のたびに**｜換気《かんき》**をした。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 62,
+          "note": "見出し語 No.294「換気〈する〉」（＋換気せん）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第3章 家で／日課",
+      "tags": [
+        "する動詞"
+      ],
+      "official_count": 0
     },
     {
       "id": "v-0295",
@@ -6473,7 +7875,8 @@
         }
       ],
       "related": [
-        "v-0190"
+        "v-0190",
+        "v-0265"
       ],
       "quiz": [],
       "group": "第3章 家で／日課",
@@ -6481,6 +7884,69 @@
         "問題6 用法"
       ],
       "official_count": 1
+    },
+    {
+      "id": "v-0296",
+      "word": "物干し",
+      "reading": "ものほし",
+      "pos": "名詞",
+      "examples": [
+        "｜晴《は》れたので、ベランダの**｜物干《ものほ》し**に｜布団《ふとん》を｜干《ほ》した。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 62,
+          "note": "見出し語 No.296（＋物干しざお）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第3章 家で／日課",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-0297",
+      "word": "食卓",
+      "reading": "しょくたく",
+      "pos": "名詞",
+      "examples": [
+        "｜休《やす》みの｜日《ひ》の｜夕食《ゆうしょく》は、｜家族《かぞく》｜全員《ぜんいん》で**｜食卓《しょくたく》**を｜囲《かこ》む。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 63,
+          "note": "見出し語 No.297"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第3章 家で／日課",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-0298",
+      "word": "後回し",
+      "reading": "あとまわし",
+      "pos": "名詞",
+      "examples": [
+        "｜面倒《めんどう》な｜仕事《しごと》を**｜後回《あとまわ》し**にしていたら、｜締《し》め｜切《き》りの｜前《まえ》に｜大変《たいへん》なことになった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 63,
+          "note": "見出し語 No.298"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第3章 家で／日課",
+      "tags": [],
+      "official_count": 0
     },
     {
       "id": "v-0299",
@@ -6521,6 +7987,35 @@
       "official_count": 2
     },
     {
+      "id": "v-0300",
+      "word": "かなえる",
+      "reading": "かなえる",
+      "pos": "動詞",
+      "examples": [
+        "｜入院中《にゅういんちゅう》の｜母《はは》の「もう｜一度《いちど》｜海《うみ》が｜見《み》たい」という｜望《のぞ》みを、｜家族《かぞく》で**かなえた**。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 63,
+          "note": "見出し語 No.300（＋（〜が）かなう）"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/14. N2 12-2023/booklet.md",
+          "note": "12/2023 問題4-19：「まねて」が正解の文脈問題の誤りの選択肢「かなえて」。official_count には数えない"
+        }
+      ],
+      "related": [
+        "v-o-kanau"
+      ],
+      "quiz": [],
+      "group": "第3章 家で／日課",
+      "tags": [
+        "他動詞"
+      ],
+      "official_count": 0
+    },
+    {
       "id": "v-0301",
       "word": "調節",
       "reading": "ちょうせつ",
@@ -6550,6 +8045,167 @@
         "問題1 読み"
       ],
       "official_count": 1
+    },
+    {
+      "id": "v-0302",
+      "word": "ゆったり",
+      "reading": "ゆったり",
+      "pos": "副詞",
+      "examples": [
+        "この｜旅館《りょかん》では、｜海《うみ》を｜見《み》ながら**ゆったり**とお｜茶《ちゃ》を｜楽《たの》しめる。",
+        "｜年《とし》をとった｜父《ちち》には、**ゆったり**したズボンが｜楽《らく》らしい。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 63,
+          "note": "見出し語 No.302「ゆったり［と］〈する〉」（①時間に余裕があって落ち着く ②服などがきつくない）"
+        }
+      ],
+      "related": [
+        "v-o-nonbiri"
+      ],
+      "quiz": [],
+      "group": "第3章 家で／日課",
+      "tags": [
+        "する動詞",
+        "オノマトペ"
+      ],
+      "official_count": 0
+    },
+    {
+      "id": "v-0303",
+      "word": "売り買い",
+      "reading": "うりかい",
+      "pos": "名詞",
+      "examples": [
+        "この｜市場《いちば》では、｜昔《むかし》から｜魚《さかな》の**｜売《う》り｜買《か》い**が｜盛《さか》んに｜行《おこな》われてきた。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 63,
+          "note": "見出し語 No.303「売り買い〈する〉」"
+        }
+      ],
+      "related": [
+        "v-o-boueki"
+      ],
+      "quiz": [],
+      "group": "第3章 家で／日課",
+      "tags": [
+        "する動詞"
+      ],
+      "official_count": 0
+    },
+    {
+      "id": "v-0304",
+      "word": "思い浮かべる",
+      "reading": "おもいうかべる",
+      "pos": "動詞",
+      "examples": [
+        "｜目《め》を｜閉《と》じて｜海《うみ》の｜景色《けしき》を**｜思《おも》い｜浮《う》かべる**と、｜気持《きも》ちが｜落《お》ち｜着《つ》く。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 64,
+          "note": "見出し語 No.304（＋（〜が）思い浮かぶ）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第3章 家で／日課",
+      "tags": [
+        "他動詞"
+      ],
+      "official_count": 0
+    },
+    {
+      "id": "v-0305",
+      "word": "独り言",
+      "reading": "ひとりごと",
+      "pos": "名詞",
+      "examples": [
+        "｜隣《となり》の｜席《せき》の｜人《ひと》が、パソコンに｜向《む》かって｜何《なに》か**｜独《ひと》り｜言《ごと》**をつぶやいていた。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 64,
+          "note": "見出し語 No.305"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第3章 家で／日課",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-0306",
+      "word": "風呂場",
+      "reading": "ふろば",
+      "pos": "名詞",
+      "examples": [
+        "**｜風呂場《ふろば》**の｜床《ゆか》がぬれていて、｜滑《すべ》りそうになった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 64,
+          "note": "見出し語 No.306"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第3章 家で／日課",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-0307",
+      "word": "かぐ",
+      "reading": "かぐ",
+      "pos": "動詞",
+      "examples": [
+        "｜犬《いぬ》は｜地面《じめん》のにおいを**かぎ**ながら、ゆっくり｜歩《ある》いていた。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 64,
+          "note": "見出し語 No.307「かぐ」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第3章 家で／日課",
+      "tags": [
+        "他動詞"
+      ],
+      "official_count": 0
+    },
+    {
+      "id": "v-0308",
+      "word": "寝つき",
+      "reading": "ねつき",
+      "pos": "名詞",
+      "examples": [
+        "｜昼間《ひるま》に｜体《からだ》をたくさん｜動《うご》かした｜日《ひ》は、**｜寝《ね》つき**がいい。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 64,
+          "note": "見出し語 No.308（↔寝起き）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第3章 家で／日課",
+      "tags": [],
+      "official_count": 0
     },
     {
       "id": "v-0309",
@@ -6590,6 +8246,29 @@
         "問題5 言い換え"
       ],
       "official_count": 3
+    },
+    {
+      "id": "v-0310",
+      "word": "メッセージ",
+      "reading": "めっせーじ",
+      "pos": "名詞",
+      "examples": [
+        "｜家《いえ》に｜帰《かえ》ると、｜机《つくえ》の｜上《うえ》に｜母《はは》からの**メッセージ**が｜置《お》いてあった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 64,
+          "note": "見出し語 No.310"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第3章 家で／日課",
+      "tags": [
+        "カタカナ語"
+      ],
+      "official_count": 0
     },
     {
       "id": "v-0319",
@@ -6747,7 +8426,8 @@
       "related": [
         "v-o-tachimachi",
         "v-0608",
-        "v-0724"
+        "v-0724",
+        "v-0279"
       ],
       "quiz": [],
       "group": "第3章 家で／引っ越し",
@@ -7766,7 +9446,8 @@
       ],
       "related": [
         "v-o-sukkiri",
-        "v-0108"
+        "v-0108",
+        "v-0277"
       ],
       "quiz": [],
       "group": "第5章 学校で／試験",
@@ -9822,7 +11503,8 @@
       "related": [
         "v-0309",
         "v-0262",
-        "v-o-takuwaeru"
+        "v-o-takuwaeru",
+        "v-0287"
       ],
       "quiz": [],
       "group": "第8章 自然・レジャー／台風・地震",
@@ -11174,7 +12856,9 @@
           "note": "第2部4章 副詞"
         }
       ],
-      "related": [],
+      "related": [
+        "v-0291"
+      ],
       "quiz": [],
       "group": "第10章 ニュース／政治",
       "tags": [
@@ -11400,7 +13084,8 @@
       ],
       "related": [
         "v-o-yononaka",
-        "v-0008"
+        "v-0008",
+        "v-0282"
       ],
       "quiz": [],
       "group": "第10章 ニュース／社会",
@@ -12531,7 +14216,8 @@
         }
       ],
       "related": [
-        "v-o-izen"
+        "v-o-izen",
+        "v-0267"
       ],
       "quiz": [],
       "group": "第2章 暮らし／時を表す言葉",
@@ -12560,7 +14246,9 @@
           "note": "7/2011 問題6-32 の見出し語"
         }
       ],
-      "related": [],
+      "related": [
+        "v-0300"
+      ],
       "quiz": [],
       "group": "第3章 家で／日課",
       "tags": [
@@ -17125,7 +18813,9 @@
           "note": "第2部2章 意味が似ている言葉"
         }
       ],
-      "related": [],
+      "related": [
+        "v-0261"
+      ],
       "quiz": [],
       "group": "N2単語2500外（公式）",
       "tags": [
@@ -17503,7 +19193,8 @@
         }
       ],
       "related": [
-        "v-0988"
+        "v-0988",
+        "v-0302"
       ],
       "quiz": [],
       "group": "N2単語2500外（公式）",
@@ -18121,7 +19812,9 @@
           "note": "12/2014 問題1-5 の下線語"
         }
       ],
-      "related": [],
+      "related": [
+        "v-0303"
+      ],
       "quiz": [],
       "group": "N2単語2500外（公式）",
       "tags": [

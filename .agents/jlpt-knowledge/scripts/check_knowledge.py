@@ -652,6 +652,7 @@ RUBY_SUSPECTS = [
     (re.compile(r"[0-9０-９一二三四五六七八九十百]+(?:時|年|日|週)《[^》]*》｜間《あいだ》"),
      "a duration 間 read あいだ — should be かん (文法 B11 QA)"),
     (re.compile(r"一《ひと》[かヶケ]｜?月"), "一か月 read ひと — should be いっ (語彙 B5 QA)"),
+    (re.compile(r"(?<=[ァ-ヺー》一-龥])｜?作《つく》り"), "〜作り in a compound read つく — should be づく (漢字 B4 QA)"),
 ]
 
 

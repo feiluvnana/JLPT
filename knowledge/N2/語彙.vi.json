@@ -780,7 +780,7 @@
     "meaning": "Đưa mắt sang hướng khác (để khỏi bắt gặp ánh mắt)",
     "usage": "「目をそらす」, 「思わず目をそらす」 (bất giác đưa mắt đi chỗ khác).",
     "nuance": "",
-    "compare": "「そらす」: chỉ là đưa mắt, quay mặt sang hướng khác: 「目をそらす」. 「｜避《さ》ける」: tránh không đến gần người, việc mình không muốn: 「人を避ける」.",
+    "compare": "「そらす」: chỉ là đưa mắt, quay mặt sang hướng khác: 「目をそらす」. 「｜避《さ》ける」: tránh không đến gần người, việc mình không muốn: 「人を避ける」. 「｜向《む》く」 HƯỚNG: quay về một phía.",
     "example_notes": [
       "Bị bố hỏi chuyện điểm số, em trai tôi bất giác đưa mắt đi chỗ khác."
     ]
@@ -836,7 +836,7 @@
     "meaning": "Cúi mặt, cúi gằm xuống",
     "usage": "「うつむいて歩く」, 「うつむいたまま」. Cùng nghĩa với 「下を向く」.",
     "nuance": "Câu hỏi từ gần nghĩa trong đề: 「うつむいて」 ≈ 「下を向いて」; phương án sai là 「横を向いて」, 「後ろを向いて」, 「腕を組んで」….",
-    "compare": "",
+    "compare": "「うつむく」 = 「｜下《した》を｜向《む》く」: cúi mặt xuống. 「｜向《む》く」 HƯỚNG: quay về bất kỳ phía nào.",
     "example_notes": [
       "Vừa đi vừa cúi mặt nhìn điện thoại thì khó nhận ra người đi ngược chiều."
     ]
@@ -1616,7 +1616,7 @@
     "meaning": "Sơ lược, chỉ nắm những nét chính",
     "usage": "「大まかな予定」, 「大まかに説明する」 (giải thích sơ qua).",
     "nuance": "Trong đề, người không giữ cả quy tắc mình đặt ra là 「いいかげんな」, ảnh hưởng rất lớn là 「多大な」; 「大まかな」 là phương án sai ở cả hai câu.",
-    "compare": "",
+    "compare": "「｜大《おお》ざっぱ」: chữ ĐẠI không có nghĩa \"to\"; là qua loa, sơ sài, nặng ý cẩu thả hơn 「｜大《おお》まか」.",
     "example_notes": [
       "Trước hết hãy định lịch trình sơ lược của chuyến đi, chi tiết thì tính sau."
     ]
@@ -1653,7 +1653,7 @@
     "meaning": "Viện trợ, giúp đỡ bằng tiền bạc hay vật chất",
     "usage": "「援助する」, 「援助を受ける」, 「学費の援助」, 「親に援助してもらう」, 「食料を援助する」. Hán Việt \"viện trợ\" (「援」 viện, 「助」 trợ).",
     "nuance": "Bẫy chữ viết: đề thi đã gài 「補助」「援財」「補財」. 「補助」 là từ có thật nhưng không phải chữ của 「えんじょ」.",
-    "compare": "「援助」: giúp người, nước khó khăn bằng tiền, vật chất: 「経済的な援助」. 「｜寄付《きふ》」: tặng tiền, đồ cho tổ chức, xã hội: 「図書館に本を寄付する」. 「サポート」: giúp bên cạnh. 「｜救助《きゅうじょ》」 (CỨU TRỢ): cứu người gặp nạn.",
+    "compare": "「援助」: giúp người, nước khó khăn bằng tiền, vật: 「経済的な援助」. 「｜寄付《きふ》」: tặng tổ chức, xã hội: 「図書館に本を寄付する」. 「サポート」: giúp bên cạnh. 「｜救助《きゅうじょ》」 (CỨU TRỢ): cứu người gặp nạn. 「｜支援《しえん》」 CHI VIỆN.",
     "example_notes": [
       "Nước đó đã viện trợ lương thực cho nước láng giềng bị lũ lớn.",
       "Tổ chức đó hỗ trợ việc học của trẻ em ở nước ngoài."
@@ -2593,7 +2593,7 @@
     "meaning": "Xung quanh, chu vi; những người xung quanh",
     "usage": "① 「家の周囲」, 「周囲〜キロ」 (chu vi). ② 「周囲の人・目」: người chung quanh mình.",
     "nuance": "",
-    "compare": "「周辺」: khu vực gần một nơi. 「世間」: rộng tới người đời, xã hội. 「周囲」: vòng quanh vật, hay người bên cạnh. 「辺り」: vùng quanh một chỗ: 「この辺り」.",
+    "compare": "「周辺」: khu vực gần một nơi. 「世間」: người đời, xã hội. 「周囲」: vòng quanh vật, người bên cạnh. 「辺り」: vùng quanh một chỗ: 「この辺り」. 「｜環境《かんきょう》」 HOÀN CẢNH: môi trường tự nhiên, xã hội.",
     "example_notes": [
       "Hồ này có chu vi khoảng mười cây số.",
       "Anh ấy bất chấp mọi người xung quanh phản đối, một mình sang học đại học ở nước ngoài."
@@ -4121,7 +4121,7 @@
     "meaning": "Niềm tự hào về bản thân hay điều gần gũi với mình",
     "usage": "「誇りに思う」 (lấy làm tự hào), 「誇りを持つ」 (có niềm tự hào). Động từ: 「誇る」.",
     "nuance": "",
-    "compare": "",
+    "compare": "「プライド」 (pride): lòng tự trọng, sĩ diện của bản thân, không chỉ \"kiêu hãnh\".",
     "example_notes": [
       "Bố tôi tự hào về công việc ông làm suốt bốn mươi năm."
     ]
@@ -5030,7 +5030,7 @@
     "meaning": "Kiên nhẫn, sự bền bỉ",
     "usage": "「｜根気《こんき》がいる」, 「｜根気《こんき》がある・ない」, 「｜根気《こんき》よく〜する」 (kiên nhẫn làm), 「｜根気強《こんきづよ》い」 (rất kiên nhẫn).",
     "nuance": "",
-    "compare": "「｜根気《こんき》」: sức bền để làm việc lâu dài. 「｜地道《じみち》」: cách làm chắc chắn, không đi tắt: 「｜地道《じみち》な｜努力《どりょく》」. 「｜辛抱《しんぼう》」 TÂN BÃO: chịu đựng điều khổ: 「もう｜少《すこ》しの｜辛抱《しんぼう》だ」.",
+    "compare": "「｜根気《こんき》」: sức bền để làm việc lâu dài. 「｜地道《じみち》」: cách làm chắc chắn, không đi tắt: 「｜地道《じみち》な｜努力《どりょく》」. 「｜辛抱《しんぼう》」 TÂN BÃO: chịu đựng điều khổ: 「もう｜少《すこ》しの｜辛抱《しんぼう》だ」. 「ねばり｜強《づよ》い」: bám bền tới cùng.",
     "example_notes": [
       "Công việc chuyển ảnh cũ thành dữ liệu đòi hỏi sự kiên nhẫn."
     ]
@@ -7350,7 +7350,7 @@
     "meaning": "Dũng cảm, hùng dũng, đầy khí thế",
     "usage": "「勇ましい人」, 「勇ましい声」, 「勇ましく戦う」, 「勇ましく立ち向かう」. Hán Việt 「勇」 là \"dũng\" (dũng cảm).",
     "nuance": "Đọc 「いさましい」: đề đã cho 「たくましい」「やかましい」「あつかましい」. Viết: đề đã gài 「戦ましい」「騒ましい」「勢ましい」.",
-    "compare": "「勇ましい」: dũng cảm, hùng dũng, không sợ hãi: 「勇ましく戦う」. 「たくましい」: mạnh mẽ, chịu được khó khăn; thân hình rắn chắc: 「たくましい体」. Đề hỏi đọc từng gài 「たくましい」.",
+    "compare": "「勇ましい」: dũng cảm, hùng dũng, không sợ hãi: 「勇ましく戦う」. 「たくましい」: mạnh mẽ, chịu được khó khăn; thân hình rắn chắc: 「たくましい体」. Đề hỏi đọc từng gài 「たくましい」. 「｜大胆《だいたん》」 ĐẠI ĐẢM: táo bạo.",
     "example_notes": [
       "Những người lính cứu hỏa dũng cảm lao vào giữa đám khói.",
       "Em trai tôi người nhỏ bé mà vẫn dũng cảm đối đầu với con chó to."
@@ -8425,7 +8425,7 @@
     "meaning": "Bí quyết để làm tốt việc gì",
     "usage": "「〜のコツ」, 「コツを｜知《し》る」.",
     "nuance": "",
-    "compare": "",
+    "compare": "「｜要領《ようりょう》」 YẾU LĨNH ở đây không phải \"điểm chính\" mà là cách làm khéo, gọn.",
     "example_notes": [
       "Cô giáo bảo bí quyết để chơi giỏi nhạc cụ mới là thả lỏng sức và di chuyển các ngón tay."
     ]
@@ -11954,6 +11954,123 @@
       "Bài hát này nổi tiếng nhờ được dùng trong quảng cáo một loại đồ uống nổi tiếng."
     ]
   },
+  "v-1291": {
+    "meaning": "Quốc kỳ; cờ tượng trưng cho một nước",
+    "usage": "「｜国旗《こっき》を｜掲《かか》げる」 (treo, kéo quốc kỳ), 「｜国旗《こっき》｜掲揚《けいよう》」 (lễ kéo cờ), 「｜各国《かっこく》の｜国旗《こっき》」 (quốc kỳ các nước).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Từ sâu trong kho, người ta tìm ra một lá quốc kỳ nước ngoài đã phai màu."
+    ]
+  },
+  "v-1292": {
+    "meaning": "Nhiều thứ khác nhau, nhiều kiểu",
+    "usage": "「｜様々《さまざま》な｜意見《いけん》」 (nhiều ý kiến khác nhau), 「｜様々《さまざま》な｜方法《ほうほう》」 (nhiều cách); đứng trước danh từ bằng 「な」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Ở lượt bốc thăm của phố mua sắm, có thể chọn món mình thích trong nhiều loại quà."
+    ]
+  },
+  "v-1293": {
+    "meaning": "Quốc tịch",
+    "usage": "「｜国籍《こくせき》を｜取《と》る」 (nhập quốc tịch), 「｜国籍《こくせき》を｜問《と》わず」 (không phân biệt quốc tịch), 「｜国籍《こくせき》の｜欄《らん》」 (ô quốc tịch).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Khi làm hộ chiếu, đơn đăng ký có ô để ghi quốc tịch."
+    ]
+  },
+  "v-1294": {
+    "meaning": "Nước phát triển (công nghiệp hóa)",
+    "usage": "「｜先進国《せんしんこく》の｜仲間入《なかまい》り」 (gia nhập hàng ngũ nước phát triển), 「｜先進国《せんしんこく》と｜途上国《とじょうこく》」. Từ liên quan: 「｜発展途上国《はってんとじょうこく》」 (nước đang phát triển).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Ngay cả nước được gọi là phát triển, mức sống giữa các vùng vẫn chênh lệch lớn."
+    ]
+  },
+  "v-1295": {
+    "meaning": "Cách gọi, cách xưng hô",
+    "usage": "「｜正式《せいしき》な｜呼称《こしょう》」 (tên gọi chính thức), 「｜呼称《こしょう》を｜統一《とういつ》する」 (thống nhất cách gọi).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Loài cá này mỗi vùng gọi một tên khác nhau nên tôi không nhận ra là cùng một loại."
+    ]
+  },
+  "v-1296": {
+    "meaning": "Tôn giáo",
+    "usage": "「｜宗教《しゅうきょう》を｜信《しん》じる」 (theo một tôn giáo), 「｜宗教《しゅうきょう》の｜違《ちが》い」 (khác biệt tôn giáo).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tùy tôn giáo mà có những món bị coi là không được ăn."
+    ]
+  },
+  "v-1297": {
+    "meaning": "Văn hóa khác (của nước, vùng khác)",
+    "usage": "「｜異文化《いぶんか》｜理解《りかい》」 (hiểu biết văn hóa khác), 「｜異文化《いぶんか》に｜戸惑《とまど》う」 (bỡ ngỡ trước văn hóa khác). Từ liên quan: 「｜異文化《いぶんか》｜交流《こうりゅう》」 (giao lưu văn hóa).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Để hiểu hơn về văn hóa khác, trường hằng năm mời người nước ngoài đến nói chuyện."
+    ]
+  },
+  "v-1298": {
+    "meaning": "Phủ định, phủ nhận",
+    "usage": "「｜事実《じじつ》を｜否定《ひてい》する」 (phủ nhận sự thật), 「｜否定的《ひていてき》な｜意見《いけん》」 (ý kiến tiêu cực). Trái nghĩa: 「｜肯定《こうてい》する」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Giám đốc phủ nhận rõ ràng tin báo rằng công ty đang lỗ."
+    ]
+  },
+  "v-1299": {
+    "meaning": "Di dân, người di cư",
+    "usage": "「｜移民《いみん》の｜子孫《しそん》」 (con cháu người di cư), 「｜海外《かいがい》へ｜移民《いみん》する」 (di cư ra nước ngoài); vừa chỉ người vừa chỉ việc di cư.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Sau chiến tranh, nhiều người đã di cư ra nước ngoài tìm vùng đất mới."
+    ]
+  },
+  "v-1300": {
+    "meaning": "Cách nhìn, quan điểm",
+    "usage": "「｜見方《みかた》が｜分《わ》かれる」 (cách nhìn bị chia rẽ), 「｜別《べつ》の｜見方《みかた》」 (một cách nhìn khác), 「｜見方《みかた》を｜変《か》える」 (đổi cách nhìn).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Về việc chế độ mới có lợi hay thiệt, ngay cả giữa các chuyên gia cũng có những cách nhìn khác nhau."
+    ]
+  },
+  "v-1301": {
+    "meaning": "Quyền lợi, quyền",
+    "usage": "「｜権利《けんり》を｜持《も》つ」 (có quyền), 「｜権利《けんり》を｜守《まも》る」 (bảo vệ quyền lợi), 「｜当然《とうぜん》の｜権利《けんり》」 (quyền đương nhiên).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Trẻ em có quyền được học ở trường."
+    ]
+  },
+  "v-1302": {
+    "meaning": "Chi viện, hỗ trợ, giúp đỡ",
+    "usage": "「｜支援《しえん》を｜受《う》ける」 (nhận hỗ trợ), 「｜支援《しえん》｜団体《だんたい》」 (tổ chức hỗ trợ), 「｜生活《せいかつ》｜支援《しえん》」 (hỗ trợ đời sống).",
+    "nuance": "",
+    "compare": "CHI VIỆN: hỗ trợ, tiếp sức cho người hay việc cần giúp. 「｜援助《えんじょ》」 VIỆN TRỢ: giúp bằng tiền, vật cho người, nước khó khăn.",
+    "example_notes": [
+      "Để hỗ trợ du học sinh, trường đại học lập chế độ chi một phần sinh hoạt phí."
+    ]
+  },
+  "v-1303": {
+    "meaning": "Đói (thiếu ăn nghiêm trọng)",
+    "usage": "「｜飢《う》えに｜苦《くる》しむ」 (khổ vì đói), 「｜飢《う》えをしのぐ」 (cầm cự qua cơn đói); mạnh hơn \"đói bụng\" thường ngày.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Vào mùa đông ở núi, cả động vật hoang dã cũng có lúc không có gì ăn mà bị đói."
+    ]
+  },
   "v-1304": {
     "meaning": "Chiếm (một phần, một tỉ lệ, một chỗ)",
     "usage": "「〜を占める」: 「半分を占める」, 「大半を占める」, 「８割を占める」, 「部屋を占める」. Hán Việt 「占」 là \"chiếm\".",
@@ -11962,6 +12079,24 @@
     "example_notes": [
       "Chiếc ghế sofa lớn chiếm gần hết căn phòng chật.",
       "Trong cuộc họp, ý kiến phản đối kế hoạch chiếm đa số."
+    ]
+  },
+  "v-1305": {
+    "meaning": "Từng, trước đây, đã từng",
+    "usage": "Đứng đầu câu về quá khứ xa: 「かつて〜た」 (trước đây từng ...), 「かつての〜」 (... ngày xưa).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Gần phố mua sắm này ngày xưa từng có một nhà máy lớn, công nhân ngày nào cũng ghé mua đồ."
+    ]
+  },
+  "v-1306": {
+    "meaning": "Chủ trương, ý kiến (nêu ra và giữ vững)",
+    "usage": "「｜意見《いけん》を｜主張《しゅちょう》する」 (nêu ý kiến của mình), 「｜無実《むじつ》を｜主張《しゅちょう》する」 (khẳng định mình vô tội). Từ liên quan: 「｜自己《じこ》｜主張《しゅちょう》」 (thể hiện cái tôi).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Dù bị hỏi bao nhiêu lần, nhân chứng vẫn khăng khăng thủ phạm đội mũ đỏ."
     ]
   },
   "v-1307": {
@@ -11974,6 +12109,43 @@
       "Tôi đã thương lượng với chủ nhà để được dọn nhà sớm hơn."
     ]
   },
+  "v-1308": {
+    "meaning": "So sánh",
+    "usage": "「｜値段《ねだん》を｜比較《ひかく》する」 (so sánh giá), 「｜比較《ひかく》の｜対象《たいしょう》」. Từ liên quan: 「｜比較的《ひかくてき》」 (tương đối).",
+    "nuance": "",
+    "compare": "「比較」 TỶ GIẢO là danh từ \"sự so sánh\" (「比較する」). 「｜比較的《ひかくてき》」 là phó từ \"tương đối, khá\": 「比較的すいている」.",
+    "example_notes": [
+      "Sau khi so sánh giá của hai cửa hàng, tôi quyết định mua ở chỗ rẻ hơn."
+    ]
+  },
+  "v-1309": {
+    "meaning": "Nguy cơ, khủng hoảng, lúc nguy ngập",
+    "usage": "「｜危機《きき》に｜陥《おちい》る」 (rơi vào khủng hoảng), 「｜危機《きき》を｜乗《の》り｜越《こ》える」 (vượt qua khủng hoảng). Từ liên quan: 「｜経済《けいざい》｜危機《きき》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Thiếu vốn, đoàn kịch nhỏ bị đẩy vào nguy cơ giải tán."
+    ]
+  },
+  "v-1310": {
+    "meaning": "Khủng bố",
+    "usage": "「テロを｜防《ふせ》ぐ」 (ngăn chặn khủng bố), 「テロ｜対策《たいさく》」 (biện pháp chống khủng bố).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Ở cổng sân thi đấu, nhân viên kiểm tra bên trong túi khán giả để ngăn khủng bố."
+    ]
+  },
+  "v-1311": {
+    "meaning": "Thảm kịch; bi kịch (vở kịch kết thúc buồn)",
+    "usage": "①「｜悲劇《ひげき》が｜起《お》きる」 (xảy ra thảm kịch) ②「｜悲劇《ひげき》を｜上演《じょうえん》する」 (diễn bi kịch).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Một mẩu thuốc lá đã gây ra thảm kịch thiêu rụi một nửa thị trấn.",
+      "Tháng sau nhà hát này sẽ công diễn một vở bi kịch nổi tiếng."
+    ]
+  },
   "v-1312": {
     "meaning": "Thực tế là, bằng chứng là (sự thật đã thấy rõ)",
     "usage": "Phó từ, đứng đầu câu sau, nêu sự thật làm bằng chứng cho câu trước: 「〜。現に、〜」.",
@@ -11984,6 +12156,163 @@
       "Ngày mưa hay xảy ra tai nạn. Bằng chứng là tháng trước trước nhà ga cũng đã xảy ra hai vụ."
     ]
   },
+  "v-1313": {
+    "meaning": "Giảm sinh, tỉ lệ sinh giảm",
+    "usage": "「｜少子化《しょうしか》の｜影響《えいきょう》」 (ảnh hưởng của giảm sinh), 「｜少子化《しょうしか》｜対策《たいさく》」 (biện pháp đối phó giảm sinh). Từ liên quan: 「｜少子《しょうし》｜高齢化《こうれいか》」 (ít con, già hóa).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Do ít con, số trẻ vào nhà trẻ gần nhà giảm đi mỗi năm."
+    ]
+  },
+  "v-1314": {
+    "meaning": "Chủ yếu, phần lớn",
+    "usage": "「｜主《おも》に〜だ」 (chủ yếu là ...), 「｜主《おも》に〜で｜使《つか》う」 (chủ yếu dùng ở ...).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Khách của quán này chủ yếu là người lớn tuổi sống gần đó."
+    ]
+  },
+  "v-1315": {
+    "meaning": "Môi trường (xung quanh con người, sinh vật)",
+    "usage": "「｜職場《しょくば》の｜環境《かんきょう》」 (môi trường làm việc), 「｜環境《かんきょう》に｜優《やさ》しい」 (thân thiện môi trường). Từ liên quan: 「｜環境《かんきょう》｜問題《もんだい》」.",
+    "nuance": "",
+    "compare": "Đọc Hán Việt là HOÀN CẢNH nhưng nghĩa là môi trường xung quanh, không phải \"hoàn cảnh khó khăn\". 「エコ」: thân thiện môi trường. 「｜周囲《しゅうい》」 CHU VI: chỗ, người ngay quanh mình.",
+    "example_notes": [
+      "Sau khi chuyển việc, tôi được làm trong môi trường có quan hệ giữa người với người tốt."
+    ]
+  },
+  "v-1316": {
+    "meaning": "Hiện tượng (trái đất) ấm lên",
+    "usage": "「｜温暖化《おんだんか》が｜進《すす》む」 (ấm lên ngày càng rõ), 「｜温暖化《おんだんか》｜対策《たいさく》」. Cũng nói 「｜地球《ちきゅう》｜温暖化《おんだんか》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Do ấm lên toàn cầu, ngày càng nhiều vùng sang đông vẫn không có tuyết."
+    ]
+  },
+  "v-1317": {
+    "meaning": "Khai thác, phát triển (đất đai; sản phẩm mới)",
+    "usage": "「｜新製品《しんせいひん》を｜開発《かいはつ》する」 (phát triển sản phẩm mới), 「｜土地《とち》の｜開発《かいはつ》」 (khai thác đất). Không phải 「｜発展《はってん》」 (sự tiến triển).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Công ty này mất mười năm để phát triển giống lúa chỉ cần ít nước.",
+      "Để khai phá khu nhà ở mới, rất nhiều cây trong rừng đã bị đốn."
+    ]
+  },
+  "v-1318": {
+    "meaning": "Điều tra, khảo sát",
+    "usage": "「｜調査《ちょうさ》を｜行《おこな》う」 (tiến hành khảo sát), 「｜実態《じったい》｜調査《ちょうさ》」. Chú ý: là tìm hiểu để nắm số liệu, thực trạng, không chỉ là \"điều tra\" của công an.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Thành phố mất ba ngày khảo sát số người đi bộ quanh nhà ga."
+    ]
+  },
+  "v-1319": {
+    "meaning": "Năng lượng",
+    "usage": "「エネルギーを｜使《つか》う」 (dùng năng lượng), 「エネルギー｜問題《もんだい》」. Từ liên quan: 「エネルギー｜資源《しげん》」 (tài nguyên năng lượng).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Nhà máy này tự lo một phần năng lượng dùng bằng ánh sáng mặt trời."
+    ]
+  },
+  "v-1320": {
+    "meaning": "Vô hạn, vô tận",
+    "usage": "「｜無限《むげん》の｜可能性《かのうせい》」 (khả năng vô hạn), 「｜無限《むげん》に〜」 (... mãi không ngừng). Từ liên quan: 「｜無限大《むげんだい》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Trí tưởng tượng của bọn trẻ đọc cuốn truyện tranh này cứ lan ra vô tận."
+    ]
+  },
+  "v-1321": {
+    "meaning": "Tiết kiệm điện",
+    "usage": "「｜節電《せつでん》を｜心《こころ》がける」 (chú ý tiết kiệm điện), 「｜節電《せつでん》の｜呼《よ》びかけ」. Từ liên quan: 「｜節水《せっすい》」 (tiết kiệm nước).",
+    "nuance": "",
+    "compare": "「節電」 TIẾT ĐIỆN: chỉ điện. 「｜省《しょう》エネ」: giảm cả ga và nguồn khác. 「｜節約《せつやく》」 TIẾT ƯỚC: tiết kiệm nói chung, cả tiền.",
+    "example_notes": [
+      "Suốt mùa hè, văn phòng tắt đèn trong giờ nghỉ trưa để tiết kiệm điện."
+    ]
+  },
+  "v-1322": {
+    "meaning": "(Thân thiện với) sinh thái, môi trường",
+    "usage": "「エコな｜生活《せいかつ》」 (lối sống xanh), 「エコを｜意識《いしき》する」. Từ liên quan: 「エコバッグ」 (túi vải), 「エコロジー」.",
+    "nuance": "",
+    "compare": "「エコ」 là từ vay \"eco\", không có Hán Việt; đừng dịch máy móc là \"môi trường\" — đó là 「｜環境《かんきょう》」 HOÀN CẢNH. 「｜省《しょう》エネ」 TỈNH là hành động bớt dùng năng lượng.",
+    "example_notes": [
+      "Để ý đến sinh thái, đi mua sắm tôi luôn mang túi vải."
+    ]
+  },
+  "v-1323": {
+    "meaning": "Tiết kiệm, giảm tiêu hao năng lượng",
+    "usage": "「｜省《しょう》エネの｜製品《せいひん》」 (sản phẩm tiết kiệm năng lượng), 「｜省《しょう》エネを｜進《すす》める」. Viết tắt của 「｜省《しょう》エネルギー」.",
+    "nuance": "",
+    "compare": "「省」 ở đây đọc TỈNH như \"tỉnh lược\" (bớt đi), không phải \"tỉnh\" hành chính. 「｜節電《せつでん》」 TIẾT ĐIỆN chỉ riêng điện; 「エコ」 nói về tính chất \"xanh\".",
+    "example_notes": [
+      "Chiếc xe buýt mới này thiết kế tiết kiệm năng lượng nên chạy cùng quãng đường mà tốn ít nhiên liệu hơn."
+    ]
+  },
+  "v-1324": {
+    "meaning": "Ô nhiễm",
+    "usage": "「｜川《かわ》が｜汚染《おせん》される」 (sông bị ô nhiễm), 「｜大気《たいき》｜汚染《おせん》」 (ô nhiễm không khí). Từ liên quan: 「｜環境《かんきょう》｜汚染《おせん》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Do dầu chảy ra biển, cát bờ biển bị ô nhiễm."
+    ]
+  },
+  "v-1325": {
+    "meaning": "Diện tích",
+    "usage": "「｜面積《めんせき》が｜広《ひろ》い」 (diện tích rộng), 「｜面積《めんせき》を｜測《はか》る」 (đo diện tích).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Nhà thi đấu mới có diện tích gấp đôi cái trước."
+    ]
+  },
+  "v-1326": {
+    "meaning": "Bảo vệ, giữ gìn; tuân thủ (quy tắc, hẹn)",
+    "usage": "①「｜卵《たまご》を｜守《まも》る」 (bảo vệ trứng) ②「｜約束《やくそく》を｜守《まも》る」 (giữ lời hẹn), 「ルールを｜守《まも》る」 (tuân thủ luật).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Chim mẹ cố bảo vệ trứng khỏi con mèo đến gần tổ.",
+      "Với người không giữ đúng giờ hẹn thì khó làm việc."
+    ]
+  },
+  "v-1327": {
+    "meaning": "Tính cách, con người (vẻ toát ra từ một người)",
+    "usage": "「｜人柄《ひとがら》が｜表《あらわ》れる」 (lộ rõ con người), 「｜誠実《せいじつ》な｜人柄《ひとがら》」 (con người chân thành). Từ liên quan: 「｜家柄《いえがら》」 (dòng dõi), 「｜土地柄《とちがら》」 (đặc trưng vùng).",
+    "nuance": "",
+    "compare": "「柄」 BÍNH ở đây là \"vẻ, phẩm chất\", như trong 「｜家柄《いえがら》」: con người nhìn từ bên ngoài. 「｜性質《せいしつ》」 TÍNH CHẤT là bản tính, dùng cả cho vật.",
+    "example_notes": [
+      "Có công ty khi phỏng vấn quyết định tuyển dụng dựa vào con người hơn là lý lịch."
+    ]
+  },
+  "v-1328": {
+    "meaning": "Bản tính (người); tính chất (vật)",
+    "usage": "①「｜飽《あ》きっぽい｜性質《せいしつ》」 (bản tính mau chán) ②「｜水《みず》に｜溶《と》ける｜性質《せいしつ》」 (tính chất tan trong nước).",
+    "nuance": "",
+    "compare": "「｜性質《せいしつ》」 TÍNH CHẤT dùng cho vật như tiếng Việt, nhưng với người là \"bản tính\" sinh ra đã có; còn 「｜人柄《ひとがら》」 là vẻ con người toát ra bên ngoài.",
+    "example_notes": [
+      "Em trai tôi có bản tính đã quyết điều gì là không bỏ dở giữa chừng.",
+      "Loại dầu này có tính chất không hòa lẫn với nước."
+    ]
+  },
+  "v-1329": {
+    "meaning": "Hợp, thích hợp; quay về hướng",
+    "usage": "①「〜に｜向《む》いている」 (hợp với ...) ②「｜横《よこ》を｜向《む》く」 (quay sang bên), 「｜前《まえ》を｜向《む》く」 (nhìn về phía trước).",
+    "nuance": "",
+    "compare": "「向」 HƯỚNG: quay về một phía, hoặc hợp với. 「｜下《した》を｜向《む》く」 chính là 「うつむく」 (cúi mặt); 「そらす」: lảng mắt, quay đi chỗ khác.",
+    "example_notes": [
+      "Người cao thường được cho là hợp chơi bóng rổ.",
+      "Học sinh ngồi quay mặt về phía trước trong lúc thầy viết lên bảng."
+    ]
+  },
   "v-1330": {
     "meaning": "Hiền hậu, điềm đạm (tính cách con người)",
     "usage": "「温厚な人」, 「温厚な人柄」, 「温厚な上司」, 「〜は温厚で…」. Hán Việt \"ôn hậu\", nghĩa gần tiếng Việt.",
@@ -11992,6 +12321,15 @@
     "example_notes": [
       "Thầy chủ nhiệm mới hiền hậu và kiên nhẫn lắng nghe học sinh nói.",
       "Nhờ ông cửa hàng trưởng hiền hậu mà không khí trong tiệm rất dễ chịu."
+    ]
+  },
+  "v-1331": {
+    "meaning": "Hòa đồng, cởi mở, dễ làm quen",
+    "usage": "「｜社交的《しゃこうてき》な｜性格《せいかく》」 (tính hòa đồng). XÃ GIAO trong tiếng Việt là lịch sự cho có lệ; 「｜社交的《しゃこうてき》」 là thích gặp gỡ, dễ làm quen. Trái nghĩa: 「｜内向的《ないこうてき》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Anh ấy hòa đồng, dù lần đầu đến buổi tiệc vẫn nhanh chóng kết bạn."
     ]
   },
   "v-1332": {
@@ -12014,24 +12352,141 @@
       "Em trai tôi có tính cứng đầu, đã nói ra là không chịu nghe ai."
     ]
   },
+  "v-1334": {
+    "meaning": "Chất phác, mộc mạc, giản dị",
+    "usage": "「｜素朴《そぼく》な｜味《あじ》」 (vị mộc mạc), 「｜素朴《そぼく》な｜人《ひと》」 (người chất phác); không cầu kỳ, không màu mè.",
+    "nuance": "",
+    "compare": "TỐ PHÁC gần \"chất phác\" của tiếng Việt: mộc mạc, tự nhiên. 「｜質素《しっそ》」 CHẤT TỐ không gần từ Việt nào: là sống đạm bạc, không xa hoa.",
+    "example_notes": [
+      "Bánh kẹo của quán này có vị mộc mạc, gợi nhớ thời thơ ấu."
+    ]
+  },
+  "v-1335": {
+    "meaning": "Ngây thơ, trong sáng, hồn nhiên",
+    "usage": "「｜無邪気《むじゃき》に｜笑《わら》う」 (cười hồn nhiên), 「｜無邪気《むじゃき》な｜子《こ》ども」; không có ý xấu, không toan tính.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Nhìn gương mặt đứa trẻ cười ngây thơ, tôi thấy hết mệt."
+    ]
+  },
+  "v-1336": {
+    "meaning": "Khiêm tốn, khiêm nhường",
+    "usage": "「｜謙虚《けんきょ》な｜態度《たいど》」 (thái độ khiêm tốn), 「｜謙虚《けんきょ》に｜学《まな》ぶ」 (khiêm tốn học hỏi).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Dù nhận giải, anh ấy vẫn khiêm tốn nói \"nhờ mọi người xung quanh\"."
+    ]
+  },
+  "v-1337": {
+    "meaning": "Ít nói, kín tiếng",
+    "usage": "「｜無口《むくち》な｜父《ちち》」 (người cha ít nói), 「｜急《きゅう》に｜無口《むくち》になる」 (bỗng lặng thinh).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Ông nội ít nói, riêng chuyện của cháu thì nghe rất vui."
+    ]
+  },
+  "v-1338": {
+    "meaning": "Nhút nhát, ngại người lạ",
+    "usage": "「｜人見知《ひとみし》りが｜激《はげ》しい」 (rất sợ người lạ), 「｜人見知《ひとみし》りな｜子《こ》」; thường nói về trẻ nhỏ hay người rụt rè.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Con nhà tôi nhút nhát với người lạ, hễ có người lạ đến là trốn sau lưng mẹ."
+    ]
+  },
+  "v-1339": {
+    "meaning": "Nhát gan, hèn nhát",
+    "usage": "「おく｜病《びょう》な｜人《ひと》」 (người nhát gan), 「おく｜病《びょう》になる」 (sinh ra sợ sệt). Từ liên quan: 「おく｜病者《びょうもの》」 (kẻ nhát gan).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Con chó nhát gan, nghe tiếng sấm là chui xuống gầm bàn."
+    ]
+  },
+  "v-1340": {
+    "meaning": "Bạo dạn, táo bạo",
+    "usage": "「｜大胆《だいたん》な｜計画《けいかく》」 (kế hoạch táo bạo), 「｜大胆《だいたん》に〜する」 (mạnh dạn làm ...). Từ liên quan: 「｜小心《しょうしん》」 (nhút nhát, nhỏ gan).",
+    "nuance": "",
+    "compare": "ĐẠI ĐẢM = \"to gan\": táo bạo, dám làm điều người khác ngại. 「｜勇《いさ》ましい」 DŨNG: hùng dũng khi đối mặt nguy hiểm.",
+    "example_notes": [
+      "Cô nhân viên mới dám bạo dạn nêu ý kiến ngay cả trước mặt giám đốc."
+    ]
+  },
+  "v-1341": {
+    "meaning": "Suồng sã (quá thân mật khi chưa thân)",
+    "usage": "「なれなれしい｜態度《たいど》」 (thái độ suồng sã), 「なれなれしく｜呼《よ》ぶ」. Từ liên quan: 「よそよそしい」 (hờ hững), 「フレンドリー」.",
+    "nuance": "",
+    "compare": "Dễ nhầm với \"thân thiện\": 「なれなれしい」 là suồng sã, làm người khác khó chịu; thân thiện là 「フレンドリー」. 「｜厚《あつ》かましい」: trơ, không biết ngại khi nhờ vả.",
+    "example_notes": [
+      "Tôi ngại bị nhân viên bắt chuyện quá suồng sã nên luôn chọn quán yên tĩnh."
+    ]
+  },
   "v-1342": {
     "meaning": "Trơ trẽn, mặt dày, không biết ngại",
     "usage": "「厚かましい人」, 「厚かましい態度」, 「厚かましい要求」, 「厚かましいお願い」. Từ gần nghĩa: 「図々しい」.",
     "nuance": "Viết: 「厚」 (dày — dễ nhớ như \"mặt dày\"). Đề thi đã gài 「圧」「熱」「暑」, đều đọc 「あつ」. Đề còn đặt 「あつかましい」 làm nhiễu cho 「そそっかしい」 (hấp tấp, hay quên).",
-    "compare": "「厚かましい」: không biết ngại, tự nhiên nhờ vả hay chen vào: 「厚かましいお願い」. 「わがまま」: chỉ muốn làm theo ý mình, không nghĩ tới người khác: 「わがままを言う」.",
+    "compare": "「厚かましい」: không biết ngại, tự nhiên nhờ vả hay chen vào: 「厚かましいお願い」. 「わがまま」: chỉ muốn làm theo ý mình, không nghĩ tới người khác: 「わがままを言う」. 「なれなれしい」: suồng sã.",
     "example_notes": [
       "Trước thái độ trơ trẽn của gã đàn ông chen ngang hàng, mọi người xung quanh đều ngán ngẩm.",
       "Thật là lời nhờ vả quá đáng, nhưng cho tôi ở nhờ thêm một đêm nữa được không ạ?"
+    ]
+  },
+  "v-1343": {
+    "meaning": "Tham lam, ham muốn nhiều thứ",
+    "usage": "「｜欲張《よくば》りな｜人《ひと》」 (người tham), 「｜欲張《よくば》りすぎる」 (tham quá). Từ liên quan: 「｜欲張《よくば》る」 (động từ, tham).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Người càng tham thì rốt cuộc càng chẳng có được gì."
+    ]
+  },
+  "v-1344": {
+    "meaning": "Kiên nhẫn, kiên trì, bền bỉ",
+    "usage": "「ねばり｜強《づよ》く｜続《つづ》ける」 (kiên trì tiếp tục), 「ねばり｜強《づよ》い｜人《ひと》」. Đi với việc không bỏ cuộc dù khó.",
+    "nuance": "",
+    "compare": "「ねばり」 là độ dẻo, dính → bám bền tới cùng. 「｜根気《こんき》」 CĂN KHÍ: sức bền khi làm lâu. 「｜辛抱《しんぼう》」 TÂN BÃO: nhịn chịu khổ.",
+    "example_notes": [
+      "Nhờ kiên trì đàm phán đến cùng, cuối cùng tôi cũng được giảm giá."
+    ]
+  },
+  "v-1345": {
+    "meaning": "Đại khái, sơ sài, không tỉ mỉ",
+    "usage": "「｜大《おお》ざっぱな｜人《ひと》」 (người đại khái, xuề xòa), 「｜大《おお》ざっぱに｜言《い》う」 (nói qua loa, nói đại khái).",
+    "nuance": "",
+    "compare": "ĐẠI 「大」 trong 「｜大《おお》ざっぱ」 không nói \"lớn\": đại khái, qua loa, hay hơi cẩu thả. 「｜大《おお》まか」 chỉ nắm khái quát.",
+    "example_notes": [
+      "Lời giải thích của cô ấy sơ sài, những chỗ chi tiết tôi không hiểu rõ."
     ]
   },
   "v-1346": {
     "meaning": "Luộm thuộm, bê bối, không có nề nếp",
     "usage": "「だらしない格好」, 「だらしない性格」, 「お金にだらしない」 (tiêu tiền không có chừng mực).",
     "nuance": "Nói về cách sống, ăn mặc của người. Đề thi coi là sai khi dùng cho vị súp nhạt, cỏ mọc um tùm, kiến thức nghèo nàn. Từng là nhiễu cho 「勝手な」＝「わがままな」.",
-    "compare": "",
+    "compare": "「ルーズ」 (từ \"loose\"): lơi lỏng giờ giấc, tiền bạc; 「だらしない」 rộng hơn.",
     "example_notes": [
       "Không được đi phỏng vấn trong bộ dạng luộm thuộm, áo sơ mi chưa cài cúc.",
       "Bố tôi tiêu tiền không có chừng mực, trước ngày lĩnh lương ví lúc nào cũng rỗng."
+    ]
+  },
+  "v-1347": {
+    "meaning": "Lỏng lẻo, lề mề, cẩu thả (kỷ luật)",
+    "usage": "「｜金銭《きんせん》にルーズ」 (xuề xòa chuyện tiền), 「ルーズな｜管理《かんり》」 (quản lý lỏng lẻo); đi với 「に」.",
+    "nuance": "",
+    "compare": "Từ \"loose\": ở đây là lơi lỏng giờ giấc, tiền bạc, quy định (đi với 「に」). 「だらしない」 rộng hơn: cẩu thả cả ăn mặc, nếp sống.",
+    "example_notes": [
+      "Nhiều thành viên cẩu thả với việc trực phiên nên lúc nào cũng một mình đàn anh dọn dẹp."
+    ]
+  },
+  "v-1348": {
+    "meaning": "Nóng tính, hay cáu",
+    "usage": "「｜短気《たんき》な｜性格《せいかく》」 (tính nóng nảy), 「｜短気《たんき》を｜起《お》こす」 (nổi nóng). Cùng nghĩa 「｜気《き》が｜短《みじか》い」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Ông quản lý quán nóng tính, đơn hàng chỉ chậm chút là quát nhân viên làm thêm."
     ]
   },
   "v-1349": {
@@ -12044,6 +12499,15 @@
       "Có những kẻ hèn hạ, thấy sắp thua là định đổi luật."
     ]
   },
+  "v-1350": {
+    "meaning": "Lòng kiêu hãnh, lòng tự trọng",
+    "usage": "「プライドが｜傷《きず》つく」 (tự ái bị tổn thương), 「プライドを｜捨《す》てる」 (bỏ qua sĩ diện).",
+    "nuance": "",
+    "compare": "\"Pride\" không chỉ là \"kiêu hãnh\": 「プライドが｜傷《きず》つく」 là chạm lòng tự trọng, sĩ diện. 「｜誇《ほこ》り」 KHOA: niềm tự hào về điều mình có.",
+    "example_notes": [
+      "Khi bị chỉ ra lỗi, lòng tự trọng bị tổn thương nên tôi lỡ cãi lại."
+    ]
+  },
   "v-1351": {
     "meaning": "Điển hình, tiêu biểu cho một loại",
     "usage": "ナ形容詞: 「典型的な例」, 「典型的なパターン」, 「典型的な〜の作り」. Hán Việt \"điển hình\", nghĩa như tiếng Việt.",
@@ -12052,6 +12516,43 @@
     "example_notes": [
       "Tòa nhà này mang lối kiến trúc nhà nông điển hình của Nhật ngày xưa.",
       "Triệu chứng điển hình của bệnh này là sốt cao và ho."
+    ]
+  },
+  "v-1352": {
+    "meaning": "Cách làm khéo, nắm đúng cách làm việc",
+    "usage": "「｜要領《ようりょう》が｜悪《わる》い」 (vụng cách làm), 「｜要領《ようりょう》をつかむ」 (nắm được cách làm).",
+    "nuance": "",
+    "compare": "YẾU LĨNH, nhưng không phải \"điểm chính\" như tiếng Việt: 「｜要領《ようりょう》がいい」 là biết cách làm gọn, khéo. 「コツ」: mẹo cho một việc cụ thể.",
+    "example_notes": [
+      "Vốn làm việc vụng về, chỉ riêng việc đóng gói hành lý tôi đã mất đến tối."
+    ]
+  },
+  "v-1353": {
+    "meaning": "Sự hòa nhập, hòa đồng theo không khí",
+    "usage": "「｜乗《の》りが｜悪《わる》い」 (không hào hứng hùa theo). Cũng viết 「ノリ」; khác 「｜乗《の》り｜物《もの》」 (phương tiện).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi rủ mọi người cùng hát nhưng ai cũng uể oải, chẳng ai đứng dậy."
+    ]
+  },
+  "v-1354": {
+    "meaning": "Sự vật, sự việc; mọi việc nói chung",
+    "usage": "「｜物事《ものごと》の｜順序《じゅんじょ》」 (trình tự của sự việc), 「｜物事《ものごと》を｜深《ふか》く｜考《かんが》える」 (suy nghĩ sâu về mọi việc).",
+    "nuance": "",
+    "compare": "",
+    "quiz": [],
+    "example_notes": [
+      "Nếu lúc nào cũng nghĩ mọi việc theo hướng xấu thì ngày nào cũng chẳng thấy vui."
+    ]
+  },
+  "v-1355": {
+    "meaning": "Mặt trái, mặt khác (của cùng một người, việc)",
+    "usage": "「〜｜反面《はんめん》、〜」 (mặt này thì ..., mặt khác ...). PHẢN DIỆN trong tiếng Việt là nhân vật xấu; 「｜反面《はんめん》」 chỉ là mặt đối lập của cùng một sự vật.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Nhà này đón nắng tốt nhưng ngược lại mùa hè rất nóng."
     ]
   },
   "v-1357": {
@@ -12138,7 +12639,7 @@
     "meaning": "Giản dị, đạm bạc, không xa hoa",
     "usage": "Danh từ và ナ形容詞: 「質素な生活」, 「質素な食事」, 「質素に暮らす」. Trái nghĩa: 「ぜいたく」.",
     "nuance": "Nói về cách sống, bữa ăn, đồ dùng không tốn kém. Đề thi coi là sai khi dùng cho câu văn dễ hiểu, giá tour rẻ, kinh nghiệm ít.",
-    "compare": "「質素」: lối sống giản dị, thanh đạm, chi tiêu chừng mực: 「質素に暮らす」. 「｜粗末《そまつ》」: sơ sài, tồi tàn, phẩm chất kém hoặc xem thường đồ vật: 「粗末に扱う」.",
+    "compare": "「質素」: lối sống giản dị, thanh đạm, chi tiêu chừng mực: 「質素に暮らす」. 「｜粗末《そまつ》」: sơ sài, tồi tàn, phẩm chất kém hoặc xem thường đồ vật: 「粗末に扱う」. 「｜素朴《そぼく》」 TỐ PHÁC: mộc mạc.",
     "example_notes": [
       "Dù đã lên làm giám đốc, bữa trưa của ông ấy vẫn đạm bạc, chỉ hai nắm cơm.",
       "Căn phòng ở ngôi chùa ấy bày biện giản dị, chỉ có một chiếc bàn."
@@ -12467,7 +12968,7 @@
     "meaning": "Tương đối, khá (so với mức thường hay cái khác)",
     "usage": "Phó từ, đứng trước tính từ: 「比較的やさしい」, 「比較的すいている」, 「比較的大きい」.",
     "nuance": "Gốc là 「｜比較《ひかく》」 (so sánh). Đọc 「ひかくてき」; đề đặt 「ひこうてい」「ひこてき」「ひかてき」 làm nhiễu.",
-    "compare": "「比較的」: so với mức thường thì khá…: 「比較的すいている」. 「わりと」: khá, hơn mình nghĩ: 「わりと簡単」. 「｜相当《そうとう》」 mạnh hơn, vượt hẳn mức thường: 「相当疲れた」. 「わりあい」: gần nghĩa với 「わりと」: 「わりあい簡単だ」.",
+    "compare": "「比較的」: so với mức thường thì khá: 「比較的すいている」. 「わりと」: hơn mình nghĩ: 「わりと簡単」. 「｜相当《そうとう》」: vượt hẳn mức thường: 「相当疲れた」. 「わりあい」: như 「わりと」: 「わりあい簡単だ」. 「｜比較《ひかく》」: danh từ.",
     "example_notes": [
       "Cuốn sách bài tập này tương đối dễ nên hợp với cả người mới học lần đầu.",
       "Buổi sáng ngày thường, bệnh viện này cũng tương đối vắng."
@@ -13375,7 +13876,7 @@
     "meaning": "Tiết kiệm, dùng ít đi để không lãng phí",
     "usage": "「電気代を節約する」, 「水を節約する」, 「食費を節約する」, 「時間を節約する」. Hán Việt \"tiết ước\"; tiếng Việt nói \"tiết kiệm\".",
     "nuance": "Đề thi coi là sai: 「渋滞を節約する」, 「アルバイトの仕事を節約する」, 「温度や湿度を節約」. Câu đúng: 「紙や郵送費を節約する」. Điền từ: phương án sai 「減量」「省略」「短縮」.",
-    "compare": "「節約」: bớt dùng tiền, điện, nước. 「調節」: tăng giảm cho vừa mức: 「温度を調節する」. Hai từ cùng chữ 「節」.",
+    "compare": "「節約」: bớt dùng tiền, điện, nước. 「調節」: tăng giảm cho vừa mức: 「温度を調節する」. Hai từ cùng chữ 「節」. 「｜節電《せつでん》」 TIẾT ĐIỆN; 「｜省《しょう》エネ」 TỈNH: bớt cả ga, nhiên liệu.",
     "example_notes": [
       "Trong chuyến du lịch, tôi đi bộ thay vì đi xe buýt để tiết kiệm tiền đi lại.",
       "Để tiết kiệm nước, tôi dùng nước thừa trong bồn tắm để giặt đồ."

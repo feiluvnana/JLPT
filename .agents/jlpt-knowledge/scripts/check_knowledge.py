@@ -57,7 +57,8 @@ KNOWLEDGE_BANDS = {
 }
 GUIDE_BODY_PARAGRAPHS = (1, 6)
 
-ID_RE = re.compile(r"^[a-z0-9][a-z0-9-]*$")
+# stable ascii, plus the one 漢字 series named by its character: kx-<kanji> (SKILL §Book order)
+ID_RE = re.compile(r"^(?:[a-z0-9][a-z0-9-]*|kx-[\u4e00-\u9fff])$")
 ARCHIVE_BINARY = (".pdf", ".mp3", ".rar", ".wav", ".m4a", ".zip")
 
 # Keys a shared entry may carry beyond its category's `fields`.
@@ -311,7 +312,7 @@ def check_category(level: str, spec: dict, check, warn, skip, git_tracks):
             eid = e.get("id")
             where = f"{rel} {eid if isinstance(eid, str) else f'[{i}]'}"
             if not (isinstance(eid, str) and ID_RE.match(eid)):
-                _bad(problems, where, f"id {eid!r} must match {ID_RE.pattern} (stable ascii)")
+                _bad(problems, where, f"id {eid!r} must match {ID_RE.pattern} (stable ascii, or kx-<one kanji>)")
             check_shared_entry(spec, e, where, problems)
             entries.append({**e, "_where": where, "_part": p.name})
 

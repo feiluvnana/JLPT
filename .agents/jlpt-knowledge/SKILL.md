@@ -72,7 +72,7 @@ Every entry:
 
 | key | | |
 | - | - | - |
-| `id` | required | stable ascii `[a-z0-9-]`, unique in the category (`g-kanenai`, `v-0412`, `k-dai`) |
+| `id` | required | stable ascii `[a-z0-9-]`, unique in the category (`g-kanenai`, `v-0412`, `k-0471`); the one exception is a 漢字 SK does not number, `kx-<kanji>` (`kx-端`, §Book order) |
 | `examples` | required | ORIGINAL Japanese sentences, furigana `｜漢字《かんじ》`; count per categories.json |
 | `sources` | required, ≥1 | `{ref, page?, note?}` — `ref` a repo path that exists; `page` the PDF page |
 | `related` | optional | ids in the same category |

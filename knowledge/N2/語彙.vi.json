@@ -577,7 +577,7 @@
     "meaning": "Ngay trong tích tắc, không kịp suy nghĩ",
     "usage": "「とっさに」＋ động từ: 「とっさにつかむ」. Là danh từ nên cũng có 「とっさの〜」.",
     "nuance": "",
-    "compare": "「とっさに」: trong tích tắc, không kịp nghĩ: 「とっさにつかむ」. 「たちまち」: tình hình thay đổi rất nhanh: 「客がたちまち増える」. 「｜途端《とたん》に」: việc trước vừa xảy ra thì việc sau liền tới.",
+    "compare": "「とっさに」: trong tích tắc, không kịp nghĩ: 「とっさにつかむ」. 「たちまち」: tình hình đổi rất nhanh: 「客がたちまち増える」. 「｜途端《とたん》に」: việc trước vừa xảy ra là việc sau tới. 「｜一瞬《いっしゅん》」: khoảnh khắc ngắn.",
     "example_notes": [
       "Tôi trượt chân trên cầu thang nhưng kịp chộp lấy tay vịn nên thoát nạn."
     ]
@@ -1022,7 +1022,7 @@
     "meaning": "Trách móc, đổ lỗi cho ai đó",
     "usage": "「人を責める」, 「自分を責める」 (tự trách mình), 「失敗を責める」, 「一方的に責める」 (trách một phía).",
     "nuance": "Bẫy chữ viết: đề thi đã gài 「凝めたら」「怒めたら」「憎めたら」. Chữ đúng là 「責」 (trách). Đừng nhầm với 「｜攻《せ》める」 (tấn công), cũng đọc 「せめる」.",
-    "compare": "「｜責《せ》める」 TRÁCH: trách móc. 「｜攻《せ》める」 CÔNG: tấn công. Hai từ cùng đọc 「せめる」, phân biệt bằng chữ.",
+    "compare": "「｜責《せ》める」 TRÁCH: trách móc. 「｜攻《せ》める」 CÔNG: tấn công. Hai từ cùng đọc 「せめる」, phân biệt bằng chữ. 「｜非難《ひなん》」 (PHI NẠN, 「ひなん」): chỉ trích.",
     "example_notes": [
       "Thất bại không phải lỗi của riêng cậu, nên đừng tự trách mình.",
       "Tôi không nỡ trách người bạn đã thất hứa."
@@ -1524,7 +1524,7 @@
     "meaning": "Nộp (thuế, học phí, lệ phí) cho nơi quy định",
     "usage": "「税金を納める」, 「授業料を納める」, 「入学金を納める」, 「期日までに納める」 (nộp trước hạn).",
     "nuance": "Đọc 「おさめる」. Đề thi đã cho 「さだめた」「ためた」「もとめた」 làm phương án sai khi hỏi cách đọc 「納めた」.",
-    "compare": "「納める」: đóng khoản phải nộp (thuế, học phí). 「会計」: tính tiền ở quán, cửa hàng: 「会計を済ませる」. 「｜収《おさ》まる」: lắng xuống, nằm gọn: 「風が収まる」. 「｜払《はら》い｜込《こ》む」: trả qua ngân hàng, ATM: 「銀行で払い込む」.",
+    "compare": "「納める」 (NẠP): nộp thuế, học phí. 「会計」: tính tiền ở quán: 「会計を済ませる」. 「｜収《おさ》まる」: lắng xuống, nằm gọn: 「風が収まる」. 「｜払《はら》い｜込《こ》む」: trả qua ngân hàng: 「銀行で払い込む」. 「｜治《おさ》める」 (TRỊ): cai trị.",
     "example_notes": [
       "Thuế của nhân viên công ty được trừ vào lương hằng tháng để nộp."
     ]
@@ -1653,7 +1653,7 @@
     "meaning": "Viện trợ, giúp đỡ bằng tiền bạc hay vật chất",
     "usage": "「援助する」, 「援助を受ける」, 「学費の援助」, 「親に援助してもらう」, 「食料を援助する」. Hán Việt \"viện trợ\" (「援」 viện, 「助」 trợ).",
     "nuance": "Bẫy chữ viết: đề thi đã gài 「補助」「援財」「補財」. 「補助」 là từ có thật nhưng không phải chữ của 「えんじょ」.",
-    "compare": "「援助」: giúp người, nước đang khó khăn bằng tiền hay vật chất: 「経済的な援助」. 「｜寄付《きふ》」: tặng tiền, đồ vật cho tổ chức, trường học, xã hội: 「図書館に本を寄付する」. 「サポート」: \"support\", giúp bên cạnh.",
+    "compare": "「援助」: giúp người, nước khó khăn bằng tiền, vật chất: 「経済的な援助」. 「｜寄付《きふ》」: tặng tiền, đồ cho tổ chức, xã hội: 「図書館に本を寄付する」. 「サポート」: giúp bên cạnh. 「｜救助《きゅうじょ》」 (CỨU TRỢ): cứu người gặp nạn.",
     "example_notes": [
       "Nước đó đã viện trợ lương thực cho nước láng giềng bị lũ lớn.",
       "Tổ chức đó hỗ trợ việc học của trẻ em ở nước ngoài."
@@ -3578,7 +3578,7 @@
     ]
   },
   "v-0383": {
-    "meaning": "Ăng-ten; khả năng bắt thông tin",
+    "meaning": "Ăng-ten; độ nhạy nắm bắt tin tức mới",
     "usage": "「テレビのアンテナ」, 「アンテナを｜張《は》る」 (luôn để ý đón bắt thông tin).",
     "nuance": "",
     "compare": "",
@@ -3757,7 +3757,7 @@
     "meaning": "Sơ tán, lánh đến nơi an toàn khi có thiên tai, sự cố",
     "usage": "「〜へ避難する」, 「安全な場所に避難する」, 「｜避難場所《ひなんばしょ》」, 「｜避難訓練《ひなんくんれん》」 (diễn tập sơ tán).",
     "nuance": "Hán Việt \"tị nạn\" nhưng đừng hiểu là người tị nạn bỏ xứ; đây là tạm lánh khi động đất, lũ, cháy. Viết: đề đã gài 「被離」「避離」「被難」.",
-    "compare": "",
+    "compare": "Hán Việt TỊ NẠN. 「｜避難《ひなん》」 là lánh nạn; 「｜非難《ひなん》」 (PHI NẠN) cũng đọc 「ひなん」 nhưng là chỉ trích — đừng lẫn vì cùng đọc.",
     "example_notes": [
       "Vì nước sông dâng do mưa lớn, người dân đã sơ tán đến trường học trên vùng đất cao.",
       "Ngửi thấy mùi khói, mọi người trong tòa nhà đã xuống cầu thang thoát ra ngoài."
@@ -4186,7 +4186,7 @@
     "meaning": "Người trẻ, giới trẻ",
     "usage": "「若者が多い」 (nhiều người trẻ), 「若者の間で」 (trong giới trẻ).",
     "nuance": "",
-    "compare": "",
+    "compare": "Hán Việt NHƯỢC GIẢ. 「｜若者《わかもの》」 là người trẻ nói chung, cả nam lẫn nữ; 「｜少年《しょうねん》」 (THIẾU NIÊN) là bé trai chưa lớn.",
     "example_notes": [
       "Một buổi họp lắng nghe ý kiến giới trẻ được tổ chức ở nhà văn hóa."
     ]
@@ -4296,7 +4296,7 @@
     "meaning": "Công cộng, thuộc về mọi người trong xã hội",
     "usage": "「公共の交通手段」 (phương tiện giao thông công cộng), 「公共の場所」 (nơi công cộng).",
     "nuance": "",
-    "compare": "",
+    "compare": "Hán Việt CÔNG CỘNG. 「｜公共《こうきょう》」 (「こうきょう」) là cái thuộc về mọi người; 「｜公《おおやけ》」 đọc 「おおやけ」 là phạm vi chung, nơi mọi người thấy được.",
     "example_notes": [
       "Đừng nói to ở nơi công cộng nhé."
     ]
@@ -4544,7 +4544,7 @@
     "meaning": "Trở nên phổ biến, lan rộng khắp xã hội (sản phẩm, công nghệ)",
     "usage": "「携帯電話が普及する」, 「〜を普及させる」, 「全国に普及する」, 「一般に普及する」. Hán Việt \"phổ cập\".",
     "nuance": "Không dùng cho thứ lây lan hay truyền miệng. Đề thi coi là sai: 「うわさが普及する」, 「インフルエンザが普及する」, 「病気が人から人へ普及する」, 「飲み物が全員に普及した」.",
-    "compare": "「普及」: cái mới lan rộng khắp xã hội: 「全国に普及する」. 「導入」: một nơi đưa cái mới vào dùng: 「制度を導入する」. 「｜流行《りゅうこう》」: được nhiều người ưa chuộng trong một thời kỳ: 「流行の服」.",
+    "compare": "「普及」: cái mới lan rộng khắp xã hội: 「全国に普及する」. 「導入」: một nơi đưa cái mới vào dùng: 「制度を導入する」. 「｜流行《りゅうこう》」: được nhiều người ưa chuộng trong một thời kỳ: 「流行の服」. 「｜定着《ていちゃく》」: ăn sâu thành nếp.",
     "example_notes": [
       "Để phổ cập ô tô điện, người ta đang tăng thêm các điểm sạc.",
       "Món ăn này đã phổ biến khắp cả nước sau khi được giới thiệu trên tivi."
@@ -4554,7 +4554,7 @@
     "meaning": "Tăng nhanh, tăng đột ngột",
     "usage": "「｜人口《じんこう》が｜急増《きゅうぞう》する」, 「｜利用者《りようしゃ》が｜急増《きゅうぞう》している」. Ngược lại là 「｜激減《げきげん》」 (giảm mạnh); 「｜激増《げきぞう》」 (tăng mạnh).",
     "nuance": "",
-    "compare": "",
+    "compare": "Hán Việt CẤP TĂNG. 「｜急増《きゅうぞう》」 là tăng vọt trong thời gian ngắn; 「｜増《ま》す」 là tăng dần về mức, độ.",
     "example_notes": [
       "Việc người cao tuổi sống một mình tăng nhanh đang trở thành vấn đề của khu vực này."
     ]
@@ -4776,7 +4776,7 @@
     ]
   },
   "v-0513": {
-    "meaning": "(Ngày sống) có ý nghĩa, trọn vẹn; (thiết bị, chế độ) đầy đủ",
+    "meaning": "(Ngày sống) có ý nghĩa, trọn vẹn; (thiết bị, dịch vụ) đầy đủ",
     "usage": "「充実した一日」, 「週末が充実する」, 「設備が充実している」, 「制度が充実している」. 「充実感」: cảm giác mãn nguyện vì sống có ý nghĩa.",
     "nuance": "Nói về nội dung, chất lượng. Đề thi coi là sai khi dùng cho mây phủ kín trời, mùi cà phê lan khắp quán, hay vấn đề còn nhiều.",
     "compare": "「充実」: nội dung đủ chất, ngày sống có ý nghĩa: 「充実した毎日」. 「豊富」: số lượng, chủng loại nhiều: 「メニューが豊富」. 「｜豊《ゆた》か」: dồi dào, tràn đầy: 「豊かな自然」.",
@@ -5576,7 +5576,7 @@
     "meaning": "Luận bàn, bàn luận, tranh luận",
     "usage": "「問題を論じる」, 「〜について論じる」.",
     "nuance": "",
-    "compare": "「論じる」: nêu lý lẽ để bàn về một vấn đề: 「経済を論じる」. 「｜述《の》べる」: nói ra ý kiến, cảm nghĩ của mình.",
+    "compare": "「論じる」: nêu lý lẽ để bàn về một vấn đề: 「経済を論じる」. 「｜述《の》べる」: nói ra ý kiến, cảm nghĩ của mình. 「｜議論《ぎろん》」 (NGHỊ LUẬN): cùng nêu ý kiến để bàn bạc.",
     "example_notes": [
       "Bài luận văn này bàn về nguyên nhân tình trạng ít con ngày càng tăng, dựa trên tư liệu lịch sử."
     ]
@@ -6086,7 +6086,7 @@
     "meaning": "Ít ra thì, tối thiểu cũng (mong được như vậy)",
     "usage": "「せめて〜だけは」, 「せめて〜たい」, 「せめて〜てほしい」. Nói mức tối thiểu mà mình mong muốn có được.",
     "nuance": "Đề thi coi là sai khi dùng cho ước đoán giá, cho việc không kịp giờ, hay cho điểm số đã đạt: 「せめて」 nói điều mình mong, không phải điều đã xảy ra.",
-    "compare": "",
+    "compare": "「｜少《すく》なくとも」 là mức tối thiểu đã chắc; 「せめて」 là điều ước 'ít ra cũng cho được thế này'.",
     "example_notes": [
       "Dù bận đến đâu, tôi cũng muốn ít nhất mỗi tuần một lần cả nhà cùng ăn tối.",
       "Trận đấu thì thua rồi, nhưng tôi đã muốn ít ra cũng ghi được một điểm."
@@ -7340,7 +7340,7 @@
     "meaning": "Kéo dài thêm (thời gian, thời hạn)",
     "usage": "「期間を延長する」, 「〜が延長される」, 「延長の手続き」, 「延長戦」 (hiệp phụ). Hán Việt \"diên trường\".",
     "nuance": "Là kéo dài thêm cái đang có. Đề thi coi là sai khi dùng cho việc hoãn ngày khởi hành, xây thêm tầng nhà, hay đi quá ga cần xuống.",
-    "compare": "",
+    "compare": "Hán Việt DIÊN TRƯỜNG. 「｜延長《えんちょう》」 là danh từ chỉ việc kéo dài thêm; 「｜延《の》びる」 là động từ: thời hạn, lịch bị kéo dài ra.",
     "example_notes": [
       "Trước khi visa hết hạn, tôi đã làm thủ tục gia hạn.",
       "Vì được đón nhận nồng nhiệt, triển lãm được kéo dài thêm hai tuần."
@@ -7927,7 +7927,7 @@
     "meaning": "Đánh giá, nhận định giá trị hay mức độ tốt xấu",
     "usage": "「評価する」, 「評価される」, 「評価の対象」, 「評価が分かれる」, 「高い評価」. Hán Việt \"bình giá\".",
     "nuance": "Điền từ: diễn xuất rất cá tính nên （　） của người xem chia làm nhiều phía → 「評価」. Đề đặt 「考慮」「信頼」「測定」.",
-    "compare": "「評価」: phán xét giá trị: 「高く評価する」. 「評判」: tiếng đồn, lời bàn tán: 「〜と評判だ」 — ở khung này 「評価」 không vào được. 「｜批評《ひひょう》」: nêu điểm hay, điểm dở của tác phẩm.",
+    "compare": "「評価」: phán xét giá trị: 「高く評価する」. 「評判」: tiếng đồn, lời bàn tán: 「〜と評判だ」 — ở khung này 「評価」 không vào được. 「｜批評《ひひょう》」: nêu điểm hay, điểm dở của tác phẩm. 「｜判断《はんだん》」: quyết định, kết luận.",
     "example_notes": [
       "Không chỉ bài thi cuối kỳ mà bài tập mỗi buổi cũng được tính vào đánh giá.",
       "Tranh của cô ấy chỉ được đánh giá đúng sau khi cô mất."
@@ -8091,7 +8091,7 @@
     "meaning": "Bối cảnh (của sự việc); phông nền, hậu cảnh",
     "usage": "Nghĩa 1: 「｜事件《じけん》の｜背景《はいけい》」, 「｜背景《はいけい》を｜調《しら》べる」, 「｜社会的《しゃかいてき》｜背景《はいけい》」. Nghĩa 2: 「〜を｜背景《はいけい》に」 (lấy làm phông), 「｜背景《はいけい》の｜絵《え》」.",
     "nuance": "",
-    "compare": "",
+    "compare": "Hán Việt BỐI CẢNH (「｜背景《はいけい》」) là nền tảng dẫn tới sự việc, còn 「｜事情《じじょう》」 (SỰ TÌNH) là các lý do, tình tiết liên quan đến việc; 「｜背景《はいけい》」 còn là 'phông nền' của ảnh.",
     "example_notes": [
       "Đằng sau việc rạp chiếu phim cũ của thị trấn đóng cửa dường như là sự sụt giảm khách.",
       "Phía sau sân khấu có bức tranh lớn vẽ thị trấn lúc hoàng hôn làm phông nền."
@@ -8101,7 +8101,7 @@
     "meaning": "Thực tế, điều đang có thật",
     "usage": "「｜実際《じっさい》に〜する」, 「｜実際《じっさい》の〜」, 「｜実際《じっさい》には」. 「｜実際《じっさい》に」 đối lập với suy đoán hay tưởng tượng.",
     "nuance": "Câu thay thế trong đề: 「｜実際《じっさい》には」 là phương án nhiễu của câu 「｜依然《いぜん》として」 (đáp án 「｜相変《あいか》わらず」).",
-    "compare": "「｜実際《じっさい》」 (THỰC TẾ) như \"thực tế\": 「｜実際《じっさい》に｜使《つか》ってみる」. 「｜現《げん》に」 (HIỆN) không phải \"hiện nay\": đưa sự thật ra làm bằng chứng: 「｜現《げん》に｜熱《ねつ》が｜下《さ》がった」.",
+    "compare": "「｜実際《じっさい》」 (THỰC TẾ) như \"thực tế\": 「｜実際《じっさい》に｜使《つか》ってみる」. 「｜現《げん》に」 (HIỆN) không phải \"hiện nay\": đưa sự thật ra làm bằng chứng: 「｜現《げん》に｜熱《ねつ》が｜下《さ》がった」. 「｜事実《じじつ》」 (SỰ THỰC): việc có thật.",
     "example_notes": [
       "Tôi đã nghe nói rồi, nhưng khi thật sự dùng thử thì tiện hơn dự đoán."
     ]
@@ -8434,7 +8434,7 @@
     "meaning": "Khoảnh khắc",
     "usage": "「｜決定的《けっていてき》な｜瞬間《しゅんかん》」.",
     "nuance": "",
-    "compare": "THUẤN GIAN (瞬間) là \"trong nháy mắt\", tức khoảnh khắc. 「〜た瞬間」 gần nghĩa 「〜た｜途端《とたん》」, nhưng 「途端」 nhấn việc sau liền xảy ra, còn 「瞬間」 là chính khoảnh khắc ấy.",
+    "compare": "THUẤN GIAN (瞬間) là \"trong nháy mắt\", tức khoảnh khắc. 「〜た瞬間」 gần nghĩa 「〜た｜途端《とたん》」, nhưng 「途端」 nhấn việc sau liền xảy ra, còn 「瞬間」 là chính khoảnh khắc ấy. 「｜一瞬《いっしゅん》」: một quãng ngắn.",
     "example_notes": [
       "Ngay khoảnh khắc tôi bấm máy, con chim bay vút lên."
     ]
@@ -8928,7 +8928,7 @@
     "meaning": "Tai họa lớn, gây thiệt hại nặng nề",
     "usage": "「｜災害《さいがい》に｜備《そな》える」. Kèm 「｜天災《てんさい》」, 「｜人災《じんさい》」.",
     "nuance": "",
-    "compare": "",
+    "compare": "Hán Việt TAI HẠI. 「｜災害《さいがい》」 là thảm họa lớn nói chung (động đất, bão, lụt…); 「｜火災《かさい》」 (HỎA TAI) là vụ cháy do lửa.",
     "example_notes": [
       "Xem tin tức về thiên tai, tôi quyết định góp tiền ủng hộ."
     ]
@@ -9528,7 +9528,7 @@
     "meaning": "Vượt quá (mức, hạn)",
     "usage": "「｜超過《ちょうか》する」, 「｜超過料金《ちょうかりょうきん》」.",
     "nuance": "",
-    "compare": "SIÊU QUÁ (「｜超過《ちょうか》」) là vượt quá mức đã quy định: 「｜超過料金《ちょうかりょうきん》」. 「オーバー」 là từ mượn tiếng Anh, còn có nghĩa 'phóng đại'.",
+    "compare": "SIÊU QUÁ (「｜超過《ちょうか》」) là vượt quá mức đã quy định: 「｜超過料金《ちょうかりょうきん》」. 「オーバー」 là từ mượn tiếng Anh, còn có nghĩa 'phóng đại'. 「｜上回《うわまわ》る」: động từ, con số cao hơn một mức: 「｜予想《よそう》を｜上回《うわまわ》る」.",
     "example_notes": [
       "Nếu quá thời gian đỗ xe thì phải trả thêm phí."
     ]
@@ -9864,7 +9864,7 @@
     "meaning": "Vượt qua (khó khăn, trở ngại)",
     "usage": "「〜を｜乗《の》り｜越《こ》える」.",
     "nuance": "",
-    "compare": "「｜乗《の》り｜越《こ》える」 là động từ; danh từ/する動詞 gần nghĩa là 「｜克服《こくふく》」 (KHẮC PHỤC): vượt qua bệnh, nỗi sợ, điểm yếu.",
+    "compare": "「｜乗《の》り｜越《こ》える」 là động từ; danh từ/する動詞 gần nghĩa là 「｜克服《こくふく》」 (KHẮC PHỤC): vượt qua bệnh, nỗi sợ, điểm yếu. 「｜上回《うわまわ》る」: con số cao hơn một mức.",
     "example_notes": [
       "Cửa hàng mới đã vượt qua giai đoạn khó khăn ngay sau khi khai trương nhờ sự động viên của khách quen."
     ]
@@ -10032,7 +10032,7 @@
     "meaning": "Phòng ngừa, đề phòng",
     "usage": "「〜を｜予防《よぼう》する」, 「｜予防注射《よぼうちゅうしゃ》」 (tiêm phòng).",
     "nuance": "",
-    "compare": "Tiếng Việt 'đề phòng' dịch được cả hai: 「｜予防《よぼう》」 (DỰ PHÒNG) là làm một việc cụ thể để ngăn trước, như tiêm 「ワクチン」; 「｜用心《ようじん》」 (DỤNG TÂM, không phải 'dụng tâm' là cố ý) là thái độ cảnh giác.",
+    "compare": "「｜予防《よぼう》」 (DỰ PHÒNG): làm việc cụ thể để ngăn trước, như tiêm 「ワクチン」. 「｜用心《ようじん》」 (DỤNG TÂM, không phải 'dụng tâm' cố ý): thái độ cảnh giác. 「｜防止《ぼうし》」 (PHÒNG CHỈ): ngăn việc xấu xảy ra.",
     "example_notes": [
       "Để phòng sâu răng, tôi nhất định đánh răng trước khi ngủ."
     ]
@@ -10833,7 +10833,7 @@
     "meaning": "Dính líu, có liên quan; gây ảnh hưởng xấu (đến mạng sống…)",
     "usage": "「〜に｜関《かか》わる」, 「｜事件《じけん》に｜関《かか》わる」 (dính líu); 「｜健康《けんこう》に｜関《かか》わる」 (ảnh hưởng xấu).",
     "nuance": "",
-    "compare": "「｜関《かか》わる」 (QUAN): dính líu, có liên quan; đi với 「｜命《いのち》」 「｜健康《けんこう》」 thì là ảnh hưởng xấu. 「｜携《たずさ》わる」: trực tiếp làm việc đó. 「｜及《およ》ぼす」: gây ảnh hưởng, đi với 「｜影響《えいきょう》を」.",
+    "compare": "「｜関《かか》わる」 (QUAN): dính líu, có liên quan; đi với 「｜命《いのち》」 「｜健康《けんこう》」 thì là ảnh hưởng xấu. 「｜携《たずさ》わる」: trực tiếp làm việc đó. 「｜及《およ》ぼす」: gây ảnh hưởng, đi với 「｜影響《えいきょう》を」. 「｜関連《かんれん》」 (LIÊN QUAN): danh từ (+「する」).",
     "example_notes": [
       "Suốt ba mươi năm, bố tôi tham gia vào việc chuẩn bị lễ hội của thị trấn.",
       "Cứ sống kiểu thức khuya mãi thì sẽ ảnh hưởng xấu đến sức khỏe."
@@ -10871,7 +10871,7 @@
     "meaning": "Thô bạo, cục cằn (trong động tác, ăn nói)",
     "usage": "「｜乱暴《らんぼう》な｜言葉《ことば》」, 「｜乱暴《らんぼう》に｜扱《あつか》う」, 「｜乱暴《らんぼう》する」.",
     "nuance": "Đề viết chữ Hán: đáp án 「｜乱暴《らんぼう》」; các phương án khác là 「荒暴」 「乱亡」 「荒亡」.",
-    "compare": "「｜乱暴《らんぼう》」 (LOẠN BẠO) ≈ 'thô bạo': làm mạnh tay, nói lời thô — 「｜乱暴《らんぼう》に｜扱《あつか》う」. Ra tay đánh người là 「｜暴力《ぼうりょく》」 (BẠO LỰC); quậy phá là động từ 「｜暴《あば》れる」.",
+    "compare": "「｜乱暴《らんぼう》」 (LOẠN BẠO) ≈ 'thô bạo': làm mạnh tay, nói lời thô — 「｜乱暴《らんぼう》に｜扱《あつか》う」. Ra tay đánh người là 「｜暴力《ぼうりょく》」 (BẠO LỰC); quậy phá là động từ 「｜暴《あば》れる」. 「｜荒《あら》っぽい」: tính từ, làm hay nói ẩu.",
     "example_notes": [
       "Tôi xử lý hành lý thô bạo nên đồ sứ bên trong bị vỡ."
     ]
@@ -11061,6 +11061,15 @@
       "Cuối cùng tôi cũng tìm thấy cuốn sách đã tìm bấy lâu ở tiệm sách cũ."
     ]
   },
+  "v-1195": {
+    "meaning": "Phát sinh, xảy ra (sự cố, vấn đề, hiện tượng)",
+    "usage": "「トラブルが｜発生《はっせい》する」 (sự cố phát sinh), 「｜発生《はっせい》｜件数《けんすう》」 (số vụ xảy ra), 「｜発生源《はっせいげん》」 (nguồn gây ra).",
+    "nuance": "",
+    "compare": "Hán Việt PHÁT SINH; tiếng Việt dùng như động từ, còn 「｜発生《はっせい》」 là danh từ, thêm 「する」 mới thành động từ: 「｜事故《じこ》が｜発生《はっせい》する」. Động từ thuần Nhật cùng nghĩa: 「｜生《しょう》じる」.",
+    "example_notes": [
+      "Ngay sau khi cập nhật ứng dụng, đã phát sinh lỗi khiến màn hình bị đứng."
+    ]
+  },
   "v-1196": {
     "meaning": "Nối đuôi nhau xảy ra, dồn dập kéo đến",
     "usage": "Tự động từ: 「〜が相次ぐ」, 「事故が相次ぐ」; dạng 「相次いで」 + động từ: 「相次いで届く」.",
@@ -11069,6 +11078,107 @@
     "example_notes": [
       "Về loại thuốc mới, điện thoại hỏi thăm gọi đến liên tục.",
       "Tháng này, tin báo kết hôn của đồng nghiệp trong công ty liên tiếp gửi đến."
+    ]
+  },
+  "v-1197": {
+    "meaning": "Lao ra, nhảy vọt ra, phóng ra",
+    "usage": "「｜部屋《へや》から｜飛《と》び｜出《だ》す」 (lao ra khỏi phòng), 「｜中《なか》から｜飛《と》び｜出《だ》す」 (bật ra từ bên trong); nói về đột ngột, mạnh.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Vừa mở nắp, con búp bê lò xo bật tung ra khỏi hộp khiến ai cũng bật cười."
+    ]
+  },
+  "v-1198": {
+    "meaning": "Khoảnh khắc; (phó từ) trong thoáng chốc",
+    "usage": "Danh từ: 「｜一瞬《いっしゅん》の｜油断《ゆだん》」 (một phút lơ là), 「｜一瞬《いっしゅん》で｜終《お》わる」 (xong trong chớp mắt); phó từ: 「｜一瞬《いっしゅん》、〜た」 (thoáng chốc đã…).",
+    "nuance": "",
+    "compare": "Tiếng Việt 'khoảnh khắc' dịch được cả 「｜一瞬《いっしゅん》」 (NHẤT THUẤN) lẫn 「｜瞬間《しゅんかん》」 (THUẤN GIAN). 「｜一瞬《いっしゅん》」 là quãng cực ngắn, làm phó từ được; 「｜瞬間《しゅんかん》」 là đúng thời điểm ấy. 「とっさに」: phản xạ không kịp nghĩ.",
+    "example_notes": [
+      "Khoảnh khắc bấm máy đã quyết định giá trị của bức ảnh này.",
+      "Bước vào quán, trong thoáng chốc tôi không biết mình đang ở nước nào."
+    ]
+  },
+  "v-1199": {
+    "meaning": "Không thể có; không thể chấp nhận được",
+    "usage": "「あり｜得《え》ない｜話《はなし》」 (chuyện không thể có), 「そんなことはあり｜得《え》ない」; cũng dùng để chê việc quá đáng.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Hôm trước ngày nộp mà vẫn chưa viết được tờ nào thì không thể chấp nhận được."
+    ]
+  },
+  "v-1200": {
+    "meaning": "Thô lỗ, cẩu thả",
+    "usage": "「｜荒《あら》っぽい｜言葉《ことば》」 (lời lẽ thô), 「｜荒《あら》っぽいやり｜方《かた》」 (cách làm ẩu); chê cách làm, cách nói thiếu nhẹ nhàng.",
+    "nuance": "",
+    "compare": "「｜荒《あら》っぽい」 (HOANG) là tính từ đuôi い: làm, nói ẩu, thiếu nhẹ nhàng. 「｜乱暴《らんぼう》」 (LOẠN BẠO) là 'thô bạo'. Chữ 「荒」 từng là chữ nhiễu khi đề hỏi cách viết 「｜乱暴《らんぼう》」.",
+    "example_notes": [
+      "Anh trai đóng ngăn kéo rất thô bạo nên lúc nào cũng bị mẹ nhắc."
+    ]
+  },
+  "v-1201": {
+    "meaning": "Thiếu niên, cậu bé (nam)",
+    "usage": "「｜少年《しょうねん》｜野球《やきゅう》」 (bóng chày thiếu niên), 「｜少年時代《しょうねんじだい》」 (thời niên thiếu); từ đối là 「｜少女《しょうじょ》」 (bé gái).",
+    "nuance": "",
+    "compare": "Tiếng Việt 'thiếu niên' gồm cả trai lẫn gái, còn 「｜少年《しょうねん》」 (THIẾU NIÊN) chỉ con trai; con gái là 「｜少女《しょうじょ》」. 「｜若者《わかもの》」 (NHƯỢC GIẢ) là người trẻ nói chung.",
+    "example_notes": [
+      "Cậu bé đang bơi dưới sông kêu lớn nhờ người lớn gần đó giúp."
+    ]
+  },
+  "v-1202": {
+    "meaning": "Sự quản chế, kiểm soát chặt (để mọi người tuân thủ)",
+    "usage": "「｜取《と》り｜締《し》まりを｜強《つよ》める」 (siết chặt xử lý), 「｜違反《いはん》の｜取《と》り｜締《し》まり」 (xử lý vi phạm); đi với động từ 「｜取《と》り｜締《し》まる」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Thành phố quyết định từ tháng sau siết chặt việc xử lý hành vi vứt rác trái phép."
+    ]
+  },
+  "v-1203": {
+    "meaning": "Ngăn chặn, đề phòng (không để xảy ra)",
+    "usage": "「｜再発《さいはつ》を｜防止《ぼうし》する」 (ngăn tái phát), 「｜防止策《ぼうしさく》」 (biện pháp ngăn ngừa), 「｜危険防止《きけんぼうし》」 (phòng tránh nguy hiểm).",
+    "nuance": "",
+    "compare": "Tiếng Việt 'đề phòng' dịch được cả hai. 「｜防止《ぼうし》」 (PHÒNG CHỈ): chặn không cho việc xấu xảy ra: 「｜危険防止《きけんぼうし》」. 「｜予防《よぼう》」 (DỰ PHÒNG): phòng từ trước, như tiêm 「ワクチン」.",
+    "example_notes": [
+      "Nhà trường mỗi tháng đều khảo sát để ngăn ngừa nạn bắt nạt."
+    ]
+  },
+  "v-1204": {
+    "meaning": "Hoàn cảnh đằng sau sự việc; tình hình (một lĩnh vực)",
+    "usage": "「｜事情《じじょう》を｜説明《せつめい》する」 (giải thích hoàn cảnh), 「｜家庭《かてい》の｜事情《じじょう》」 (hoàn cảnh gia đình), 「｜住宅事情《じゅうたくじじょう》」 (tình hình nhà ở): hai nghĩa — lý do của việc, và tình hình chung.",
+    "nuance": "",
+    "compare": "Hán Việt SỰ TÌNH, gần 'sự tình' (đầu đuôi câu chuyện) của tiếng Việt, nhưng 「｜事情《じじょう》」 còn là tình hình một lĩnh vực: 「｜住宅事情《じゅうたくじじょう》」. 「｜背景《はいけい》」 (BỐI CẢNH): nền dẫn tới việc; cả phông nền ảnh.",
+    "example_notes": [
+      "Lý do cậu ấy bỏ câu lạc bộ, mãi sau nghe bạn kể tôi mới biết.",
+      "Để tìm hiểu tình hình y tế của làng này, tôi đã hỏi chuyện người ở trạm y tế."
+    ]
+  },
+  "v-1205": {
+    "meaning": "Việc có hay không",
+    "usage": "「｜経験《けいけん》の｜有無《うむ》」 (có kinh nghiệm hay không), 「｜有無《うむ》を｜問《と》わず」 (bất kể có hay không); luôn đi với 「〜の｜有無《うむ》」. Đọc 「うむ」, không phải 「ゆうむ」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Ở quán này, trước khi gọi món lúc nào cũng được hỏi có dị ứng hay không."
+    ]
+  },
+  "v-1206": {
+    "meaning": "Tận mắt chứng kiến, mục kích",
+    "usage": "「｜目撃《もくげき》｜情報《じょうほう》」 (thông tin của người chứng kiến), 「｜現場《げんば》を｜目撃《もくげき》する」 (chứng kiến tại hiện trường); người chứng kiến là 「｜目撃者《もくげきしゃ》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Người tận mắt thấy sao băng rơi đã đăng ảnh đó lên mạng."
+    ]
+  },
+  "v-1207": {
+    "meaning": "Phán đoán, nhận định rồi đưa ra kết luận",
+    "usage": "「｜判断《はんだん》を｜誤《あやま》る」 (phán đoán sai), 「｜判断力《はんだんりょく》」 (khả năng phán đoán), 「｜正《ただ》しい｜判断《はんだん》」; kết quả là một quyết định hoặc kết luận.",
+    "nuance": "",
+    "compare": "Hán Việt PHÁN ĐOÁN, nhưng 'phán đoán' tiếng Việt nghiêng về đoán; 「｜判断《はんだん》」 là cân nhắc rồi quyết định: 「｜判断《はんだん》を｜誤《あやま》る」. Đánh giá mức tốt xấu, giá trị là 「｜評価《ひょうか》」 (BÌNH GIÁ).",
+    "example_notes": [
+      "Nhìn nét mặt đối phương, tôi nhận định không nên tiếp tục câu chuyện này nữa."
     ]
   },
   "v-1208": {
@@ -11085,20 +11195,65 @@
     "meaning": "Tung tích, nơi đang ở của người hay vật đã đi mất",
     "usage": "「行方がわからない」, 「行方を捜す」, 「行方不明」 (mất tích). Đọc đặc biệt: 「ゆくえ」.",
     "nuance": "Chỉ nơi của người, vật đã biến mất. Đề thi coi là sai khi dùng cho điểm đến của xe buýt, phía trước mặt, hay nơi mình hay tới vào chủ nhật.",
-    "compare": "",
+    "compare": "「｜不明《ふめい》」 (BẤT MINH): chưa rõ; ghép 「｜行方不明《ゆくえふめい》」 mới là 'mất tích'.",
     "example_notes": [
       "Tôi đi hỏi khắp hàng xóm về tung tích con mèo biến mất lúc đi dạo.",
       "Chiếc mũ bị gió thổi bay, rốt cuộc không biết đã đi đâu."
+    ]
+  },
+  "v-1210": {
+    "meaning": "Đến nay vẫn (chưa…), cho tới bây giờ",
+    "usage": "Thường đi với phủ định: 「｜未《いま》だに〜ない」 (đến giờ vẫn chưa); cũng viết bằng kana 「いまだに」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Cuốn sách tôi cho mượn mười năm trước đến giờ vẫn chưa được trả lại."
+    ]
+  },
+  "v-1211": {
+    "meaning": "Không rõ, chưa rõ ràng",
+    "usage": "「｜不明《ふめい》な｜点《てん》」 (điểm chưa rõ), 「｜身元《みもと》｜不明《ふめい》」 (chưa rõ lai lịch); ghép với 「｜行方不明《ゆくえふめい》」 (mất tích).",
+    "nuance": "",
+    "compare": "Hán Việt BẤT MINH. 「｜不明《ふめい》」 là chưa rõ, đứng được một mình; 「｜行方《ゆくえ》」 (HÀNH PHƯƠNG) là nơi đã đi tới — ghép lại thành 「｜行方不明《ゆくえふめい》」 mới là 'mất tích'.",
+    "example_notes": [
+      "Thư không rõ nguồn gốc thì nên xóa luôn, đừng mở."
+    ]
+  },
+  "v-1212": {
+    "meaning": "Sơ suất, lỗi do cẩu thả hay lơ đễnh",
+    "usage": "「｜過失《かしつ》を｜認《みと》める」 (nhận lỗi sơ suất), 「｜重大《じゅうだい》な｜過失《かしつ》」 (sơ suất nghiêm trọng); nói về lỗi do thiếu cẩn thận.",
+    "nuance": "",
+    "compare": "Hán Việt QUÁ THẤT — hiểu là 'sơ suất', lỗi vô ý, và là danh từ: 「｜過失《かしつ》を｜認《みと》める」. Muốn nói 'làm sai' bằng động từ thì dùng 「｜誤《あやま》る」.",
+    "example_notes": [
+      "Do sơ suất của nhân viên, ngày đặt chỗ đã bị ghi lệch mất một ngày."
     ]
   },
   "v-1213": {
     "meaning": "Làm sai, nhầm (cách dùng, đường đi, phán đoán)",
     "usage": "「使い方を誤る」, 「道を誤る」, 「判断を誤る」, 「誤った情報」 (thông tin sai). Hán Việt 「誤」 là \"ngộ\".",
     "nuance": "Câu thay thế trong đề: 「あやまった」＝「正しくない」; nhiễu 「古い」「秘密の」「必要のない」. Cùng âm với 「謝る」 (xin lỗi) — phân biệt bằng chữ.",
-    "compare": "「誤る」: động từ, làm sai, chọn sai: 「道を誤る」. 「｜誤解《ごかい》」: danh từ, hiểu lầm ý người khác hay sự việc: 「誤解を招く」, 「誤解される」. 「｜勘違《かんちが》い」: danh từ, tưởng nhầm một điều: 「私の勘違い」.",
+    "compare": "「誤る」: động từ, làm sai, chọn sai: 「道を誤る」. 「｜誤解《ごかい》」: danh từ, hiểu lầm ý người khác hay sự việc: 「誤解を招く」, 「誤解される」. 「｜勘違《かんちが》い」: danh từ, tưởng nhầm một điều: 「私の勘違い」. 「｜過失《かしつ》」: lỗi do sơ suất.",
     "example_notes": [
       "Dùng sai cách thì dụng cụ tiện lợi cũng thành nguồn gây thương tích.",
       "Đi nhầm đường trên núi, chúng tôi xuống núi trễ tận hai tiếng so với dự định."
+    ]
+  },
+  "v-1214": {
+    "meaning": "Xích mích, tranh cãi, cãi cọ",
+    "usage": "「〜をめぐってもめる」 (xích mích về…), 「もめごと」 (chuyện rắc rối, tranh chấp); chuyện giữa hai bên trở lên.",
+    "nuance": "",
+    "compare": "Tiếng Việt 'cãi cọ', 'tranh chấp' dịch được cả hai. 「もめる」: xích mích vì bất đồng ý kiến; 「｜争《あらそ》う」 rộng hơn, còn là tranh giành để thắng: 「｜水《みず》をめぐって｜争《あらそ》う」.",
+    "example_notes": [
+      "Vì chuyện dùng phòng mà tôi với bạn cùng phòng đã xích mích."
+    ]
+  },
+  "v-1215": {
+    "meaning": "Dự liệu, lường trước",
+    "usage": "「｜予期《よき》しない｜結果《けっか》」 (kết quả ngoài dự liệu), 「｜予期《よき》していた｜通《とお》り」 (đúng như đã lường trước).",
+    "nuance": "",
+    "compare": "Hán Việt DỰ KỲ, nghĩa gần 'lường trước': 「｜予期《よき》しない｜結果《けっか》」, 「｜予期《よき》せぬ」. 「｜予測《よそく》」 (DỰ TRẮC) là đoán diễn biến sắp tới, như từ số liệu: 「｜売《う》り｜上《あ》げを｜予測《よそく》する」.",
+    "example_notes": [
+      "Ngày đầu mở bán, lượng khách xếp hàng nhiều hơn hẳn dự tính."
     ]
   },
   "v-1216": {
@@ -11109,6 +11264,179 @@
     "example_notes": [
       "Nước lạnh uống sau khi đổ mồ hôi thật sự rất ngon.",
       "Ở sân bay, người ta phát đi phát lại thông báo chuyến bay khởi hành trễ."
+    ]
+  },
+  "v-1217": {
+    "meaning": "Nổ, phát nổ",
+    "usage": "「ガスが｜爆発《ばくはつ》する」 (khí gas nổ); cũng dùng cho cảm xúc: 「｜不満《ふまん》が｜爆発《ばくはつ》する」 (bất mãn bùng lên).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Bình xịt để quên trong xe hơi giữa mùa hè đã phát nổ vì nóng."
+    ]
+  },
+  "v-1218": {
+    "meaning": "Làm ẩu, bỏ bớt (việc cần làm); rút, nhổ, tháo ra",
+    "usage": "「｜手《て》を｜抜《ぬ》く」 (làm qua loa), 「｜手抜《てぬ》き」 (sự làm ẩu), 「｜栓《せん》を｜抜《ぬ》く」 (rút nút), 「くぎを｜抜《ぬ》く」 (nhổ đinh); hai nghĩa: bỏ bớt việc, và lấy vật ra khỏi chỗ đang ở.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Hôm nay tôi làm ẩu khâu chuẩn bị bữa tối nên chỉ dọn ra được món đơn giản.",
+      "Tôi nhổ cái đinh cũ ra rồi đóng lại vào tấm ván mới."
+    ]
+  },
+  "v-1219": {
+    "meaning": "Hỏa hoạn, vụ cháy",
+    "usage": "「｜火災報知器《かさいほうちき》」 (chuông báo cháy), 「｜火災保険《かさいほけん》」 (bảo hiểm hỏa hoạn), 「｜火災《かさい》が｜起《お》きる」.",
+    "nuance": "",
+    "compare": "「｜災害《さいがい》」 đọc Hán Việt TAI HẠI nhưng không phải tính từ 'tai hại'; đó là thiên tai, thảm họa (động đất, lụt…). 「｜火災《かさい》」 (HỎA TAI) là hỏa hoạn, vụ cháy.",
+    "example_notes": [
+      "Để phòng hỏa hoạn, tôi quyết định đặt bình chữa cháy ở mỗi phòng."
+    ]
+  },
+  "v-1220": {
+    "meaning": "Xe chữa cháy",
+    "usage": "「｜消防車《しょうぼうしゃ》が｜到着《とうちゃく》する」 (xe cứu hỏa đến), 「｜消防車《しょうぼうしゃ》のサイレン」 (còi xe cứu hỏa).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Nghe tiếng động lớn gần đó, nhìn ra cửa sổ thì thấy xe cứu hỏa đã đỗ."
+    ]
+  },
+  "v-1221": {
+    "meaning": "Ít nhất cũng, tối thiểu là",
+    "usage": "Đứng trước số lượng, thời gian: 「｜少《すく》なくとも｜三日《みっか》」, 「｜少《すく》なくとも｜一時間《いちじかん》」; thực tế có thể còn hơn mức đó.",
+    "nuance": "",
+    "compare": "Tiếng Việt 'ít nhất' dịch được cả hai. 「｜少《すく》なくとも」 là mức tối thiểu chắc chắn, đi với con số; 「せめて」 là mong 'ít ra thì…', vế sau là điều mong muốn: 「せめて｜一度《いちど》は」.",
+    "example_notes": [
+      "Để hoàn thành việc này thì ít nhất cũng phải mất thêm nửa tiếng nữa."
+    ]
+  },
+  "v-1222": {
+    "meaning": "Cứu hộ, cứu giúp người gặp nạn",
+    "usage": "「｜人命《じんめい》｜救助《きゅうじょ》」 (cứu người), 「｜救助隊《きゅうじょたい》」 (đội cứu hộ), 「｜救助《きゅうじょ》される」 (được cứu); đối tượng là người đang gặp nguy hiểm.",
+    "nuance": "",
+    "compare": "Hán Việt CỨU TRỢ, nhưng 「｜救助《きゅうじょ》」 không phải 'cứu trợ' (gửi tiền, hàng cho vùng bị nạn) mà là cứu người đang gặp nguy hiểm: 'cứu hộ'. Giúp bằng tiền, vật chất là 「｜援助《えんじょ》」 (VIỆN TRỢ).",
+    "example_notes": [
+      "Người leo núi bị lạc trên núi tuyết đã được trực thăng cứu hộ."
+    ]
+  },
+  "v-1223": {
+    "meaning": "Chính sách (của chính phủ, đảng phái)",
+    "usage": "「｜経済政策《けいざいせいさく》」 (chính sách kinh tế), 「｜政策《せいさく》を｜打ち出《うちだ》す」 (đưa ra chính sách); chủ thể là chính phủ hay đảng, chính trị gia.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Chính sách của đảng này đặt trọng tâm vào việc tăng lương cho người lao động."
+    ]
+  },
+  "v-1224": {
+    "meaning": "Cai trị, trị vì (đất nước, vùng)",
+    "usage": "「｜領地《りょうち》を｜治《おさ》める」 (cai quản lãnh địa), 「｜天下《てんか》を｜治《おさ》める」 (trị thiên hạ); đi cùng tự động từ 「｜治《おさ》まる」 (yên ổn lại).",
+    "nuance": "",
+    "compare": "Cùng đọc 「おさめる」 với 「｜納《おさ》める」 (NẠP: nộp thuế, học phí). 「｜治《おさ》める」 (TRỊ) là cai trị, làm cho yên ổn: 「｜国《くに》を｜治《おさ》める」. Viết sai chữ là sai nghĩa.",
+    "example_notes": [
+      "Thị trưởng mới đang cố gắng ổn định lại thành phố đang hỗn loạn."
+    ]
+  },
+  "v-1225": {
+    "meaning": "Đảng chính trị",
+    "usage": "「｜新《あたら》しい｜政党《せいとう》」 (đảng mới), 「｜与党《よとう》」 (đảng cầm quyền), 「｜野党《やとう》」 (đảng đối lập).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Đảng mới thành lập đặt mục tiêu tăng số ghế trong kỳ bầu cử tới."
+    ]
+  },
+  "v-1226": {
+    "meaning": "Nêu ra (chủ trương, mục tiêu); giương cao (cờ, biển)",
+    "usage": "「｜公約《こうやく》を｜掲《かか》げる」 (nêu cam kết), 「スローガンを｜掲《かか》げる」, 「｜看板《かんばん》を｜掲《かか》げる」 (treo biển); nghĩa gốc là nâng lên cao cho mọi người thấy.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Hiệu trưởng mới bắt đầu công việc với mục tiêu 'một ngôi trường yên tĩnh và ấm áp'.",
+      "Trước khung thành, đội cổ vũ đang giương cao tấm băng rôn lớn."
+    ]
+  },
+  "v-1227": {
+    "meaning": "Ngoại giao",
+    "usage": "「｜外交関係《がいこうかんけい》」 (quan hệ ngoại giao), 「｜外交交渉《がいこうこうしょう》」 (đàm phán ngoại giao), 「｜外交官《がいこうかん》」 (nhà ngoại giao); nói về quan hệ giữa các quốc gia.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Hai nước đã nhất trí tìm cách giải quyết vấn đề thông qua ngoại giao."
+    ]
+  },
+  "v-1228": {
+    "meaning": "Bình luận, nhận xét ngắn",
+    "usage": "「コメントを｜出《だ》す」 (đưa ra bình luận), 「コメントを｜控《ひか》える」 (không bình luận); thường là lời ngắn đáp lại một sự việc.",
+    "nuance": "",
+    "compare": "Từ mượn 'comment'. 'Bình luận' tiếng Việt ứng với 「コメント」: lời nhận xét ngắn. 「｜発言《はつげん》」 (PHÁT NGÔN) là tự lên tiếng nêu ý kiến, như trong cuộc họp.",
+    "example_notes": [
+      "Được hỏi về sản phẩm mới, giám đốc chỉ đưa ra một lời nhận xét ngắn."
+    ]
+  },
+  "v-1229": {
+    "meaning": "Phát ngôn, phát biểu (ý kiến)",
+    "usage": "「｜発言《はつげん》を｜求《もと》める」 (xin phát biểu), 「｜発言《はつげん》を｜取り消《とりけ》す」 (rút lại phát ngôn), 「｜問題発言《もんだいはつげん》」; kèm 「｜失言《しつげん》」 là lỡ lời.",
+    "nuance": "",
+    "compare": "Hán Việt PHÁT NGÔN, nhưng không chỉ là lời phát ngôn chính thức: ai lên tiếng trong cuộc họp cũng là 「｜発言《はつげん》」. 「コメント」 là lời nhận xét ngắn khi được hỏi.",
+    "example_notes": [
+      "Trong buổi họp nhỏ chừng mười người, người nhỏ tuổi nhất lên tiếng phát biểu và bầu không khí thay đổi đôi chút."
+    ]
+  },
+  "v-1230": {
+    "meaning": "Quốc hội",
+    "usage": "「｜国会議員《こっかいぎいん》」 (nghị sĩ quốc hội), 「｜国会《こっかい》で｜審議《しんぎ》する」 (xem xét tại Quốc hội); nói về Quốc hội cấp quốc gia.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Anh trai tôi làm thư ký cho một nghị sĩ ở Quốc hội nên buổi tối lúc nào cũng về muộn."
+    ]
+  },
+  "v-1231": {
+    "meaning": "Tranh luận, thảo luận",
+    "usage": "「｜議論《ぎろん》を｜重《かさ》ねる」 (bàn bạc nhiều lần), 「｜議論《ぎろん》が｜分《わ》かれる」 (ý kiến chia rẽ), 「｜議論《ぎろん》の｜余地《よち》」 (chỗ còn để bàn).",
+    "nuance": "",
+    "compare": "Hán Việt NGHỊ LUẬN. 「｜議論《ぎろん》」 là cùng đưa ý kiến bàn bạc; 「｜討論《とうろん》」 (THẢO LUẬN) là nhiều người đưa ý kiến ra bàn; 「｜論《ろん》じる」 là luận bàn có lý lẽ. Đừng đọc nhầm 「ぎろん」 thành 「とうろん」.",
+    "example_notes": [
+      "Các thành viên đã tranh luận đến khuya về việc cuối tuần sẽ làm gì."
+    ]
+  },
+  "v-1232": {
+    "meaning": "Kéo dài ra, bị lùi lại (lịch, hạn chót)",
+    "usage": "「｜期限《きげん》が｜延《の》びる」 (thời hạn bị kéo dài), 「｜完成《かんせい》が｜延《の》びる」 (hoàn thành bị lùi); tha động từ là 「｜延《の》ばす」.",
+    "nuance": "",
+    "compare": "Hán Việt DIÊN. 「｜延《の》びる」 là thời gian/lịch bị kéo dài ra; 「｜延長《えんちょう》」 (DIÊN TRƯỜNG) là danh từ chỉ việc kéo dài. Cùng đọc 「のびる」 với 「｜伸《の》びる」 (dài ra về chiều cao, năng lực).",
+    "example_notes": [
+      "Do ảnh hưởng của tuyết, việc hoàn thành cây cầu bị lùi sang năm sau."
+    ]
+  },
+  "v-1233": {
+    "meaning": "Bộ trưởng",
+    "usage": "「｜総理大臣《そうりだいじん》」 (thủ tướng), 「｜外務大臣《がいむだいじん》」 (bộ trưởng ngoại giao), 「｜大臣《だいじん》に｜就任《しゅうにん》する」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Vị bộ trưởng mới nhậm chức đã nói về dự định của mình tại buổi họp báo."
+    ]
+  },
+  "v-1234": {
+    "meaning": "Nghị sĩ, nghị viên",
+    "usage": "「｜市議会《しぎかい》｜議員《ぎいん》」 (nghị viên hội đồng thành phố), 「｜県議会《けんぎかい》｜議員《ぎいん》」 (nghị viên hội đồng tỉnh), 「｜議員《ぎいん》に｜当選《とうせん》する」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Chú tôi sau khi làm nghị viên thị trấn, cuối tuần nào cũng có mặt ở các buổi họp khu dân cư."
+    ]
+  },
+  "v-1235": {
+    "meaning": "Bầu cử, cuộc bầu cử",
+    "usage": "「｜選挙《せんきょ》に｜出《で》る」 (ra tranh cử), 「｜選挙権《せんきょけん》」 (quyền bầu cử), 「｜候補者《こうほしゃ》」 (ứng cử viên).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Trong lúc chờ kết quả bầu cử, văn phòng của ứng cử viên im lặng như tờ."
     ]
   },
   "v-1236": {
@@ -11131,6 +11459,42 @@
       "Tôi ủng hộ ý kiến bỏ đồng phục ở trường."
     ]
   },
+  "v-1238": {
+    "meaning": "Mỗi người, từng người; mỗi cái một",
+    "usage": "「｜各々《おのおの》の｜意見《いけん》」 (ý kiến của mỗi người), 「｜各々《おのおの》が〜する」; đứng làm chủ ngữ cho từng người một. Có thêm 「｜各自《かくじ》」 cùng nghĩa.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Trước giờ xuất phát, ai nấy lại kiểm tra hành lý của mình một lần nữa."
+    ]
+  },
+  "v-1239": {
+    "meaning": "To lớn, khổng lồ (tiền, số lượng)",
+    "usage": "「ばく｜大《だい》な｜利益《りえき》」 (lợi nhuận khổng lồ), 「ばく｜大《だい》な｜借金《しゃっきん》」 (món nợ khổng lồ); dùng cho tiền bạc, số lượng lớn. Cũng viết 「｜莫大《ばくだい》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Cả nhà mất một năm để sắp xếp số thư khổng lồ mà ông để lại."
+    ]
+  },
+  "v-1240": {
+    "meaning": "Bất chính, sai trái",
+    "usage": "「｜不正《ふせい》を｜働《はたら》く」 (làm điều sai trái), 「｜不正《ふせい》な｜取引《とりひき》」 (giao dịch bất chính); dùng được cả như danh từ lẫn như 「｜不正《ふせい》な〜」, 「｜不正《ふせい》に〜」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Qua điều tra, việc dùng tiền công ty một cách sai trái đã bị phát hiện."
+    ]
+  },
+  "v-1241": {
+    "meaning": "Tư tưởng",
+    "usage": "「｜思想家《しそうか》」 (nhà tư tưởng), 「｜思想《しそう》を｜広《ひろ》める」 (truyền bá tư tưởng); là quan niệm nền tảng về xã hội, cuộc sống.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tư tưởng của anh ấy chịu ảnh hưởng lớn từ một cuốn sách đọc hồi trẻ."
+    ]
+  },
   "v-1242": {
     "meaning": "Sửa đổi luật, quy chế cho phù hợp",
     "usage": "「法律を改正する」, 「規則を改正する」, 「憲法改正」. Hán Việt \"cải chính\", nhưng tiếng Việt \"cải chính\" là sửa tin sai — nghĩa ấy tiếng Nhật là 「訂正」.",
@@ -11139,6 +11503,42 @@
     "example_notes": [
       "Về việc có sửa đổi hiến pháp hay không, ý kiến người dân đang chia rẽ.",
       "Công ty dự định sửa đổi nội quy lao động vào tháng Tư năm sau."
+    ]
+  },
+  "v-1243": {
+    "meaning": "Thực thi, tiến hành (chương trình, quy định)",
+    "usage": "「｜調査《ちょうさ》を｜実施《じっし》する」 (tiến hành khảo sát), 「｜実施日《じっしび》」 (ngày thực hiện); chủ thể thường là tổ chức, cơ quan.",
+    "nuance": "",
+    "compare": "Hán Việt THỰC THI. 「｜実施《じっし》」 là tổ chức triển khai kế hoạch, quy định; 「｜実践《じっせん》」 (THỰC TIỄN) là cá nhân đem điều đã học ra làm thật. Hai chữ đọc 「じっし」 / 「じっせん」 dễ lẫn.",
+    "example_notes": [
+      "Từ tháng sau sẽ tiến hành khám sức khỏe cho toàn bộ nhân viên."
+    ]
+  },
+  "v-1244": {
+    "meaning": "Yếu tố, nhân tố",
+    "usage": "「｜大切《たいせつ》な｜要素《ようそ》」 (yếu tố quan trọng), 「｜複数《ふくすう》の｜要素《ようそ》」 (nhiều yếu tố), 「｜要素《ようそ》の｜一《ひと》つ」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi so sánh ba yếu tố là màu sắc, hình dáng và trọng lượng rồi chọn chiếc hộp mới."
+    ]
+  },
+  "v-1245": {
+    "meaning": "Thành lập, hình thành; được thông qua (hợp đồng, ngân sách)",
+    "usage": "「｜契約《けいやく》が｜成立《せいりつ》する」 (hợp đồng được chốt), 「｜法案《ほうあん》が｜成立《せいりつ》する」 (dự luật được thông qua); kết quả của việc thống nhất.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Hai công ty đã thống nhất được với nhau, và cuối cùng hợp đồng cũng được ký kết."
+    ]
+  },
+  "v-1246": {
+    "meaning": "Sự thật, việc có thật",
+    "usage": "「｜事実《じじつ》を｜確《たし》かめる」 (xác minh sự thật), 「｜事実《じじつ》と｜違《ちが》う」 (khác sự thật), 「｜事実上《じじつじょう》」 (trên thực tế).",
+    "nuance": "",
+    "compare": "Hán Việt SỰ THỰC, như 'sự thật'. 「｜実際《じっさい》」 (THỰC TẾ) không có nghĩa 'thực dụng' như 'người thực tế' trong tiếng Việt; nó là thực tế đối lại tưởng tượng, và phó từ 'thực ra'.",
+    "example_notes": [
+      "Điều nghe được có khi khác sự thật, nên trước hết hãy tự mình kiểm chứng."
     ]
   },
   "v-1247": {
@@ -11161,6 +11561,24 @@
       "Chị gái tôi phải lo hai đứa con nhỏ mà ngày nào cũng đi làm."
     ]
   },
+  "v-1249": {
+    "meaning": "Chi phối, cai trị",
+    "usage": "「｜支配《しはい》を｜受《う》ける」 (bị cai trị), 「｜支配下《しはいか》」 (dưới sự thống trị), 「｜人《ひと》を｜支配《しはい》する」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Công ty đó gần như chi phối cả thị trường trò chơi điện tử trong nước."
+    ]
+  },
+  "v-1250": {
+    "meaning": "Chỉ trích, lên án, trách móc",
+    "usage": "「｜非難《ひなん》を｜浴《あ》びる」 (hứng chỉ trích), 「｜非難《ひなん》の｜声《こえ》」 (tiếng chỉ trích), 「｜厳《きび》しく｜非難《ひなん》する」.",
+    "nuance": "",
+    "compare": "Hán Việt PHI NẠN. 「｜非難《ひなん》」 là chỉ trích; 「｜避難《ひなん》」 (TỊ NẠN) cũng đọc 「ひなん」 nhưng là lánh nạn — nghe như nhau, nghĩa khác hẳn. 「｜責《せ》める」 là động từ 'trách', nhắm vào lỗi của ai đó.",
+    "example_notes": [
+      "Phát ngôn của giám đốc đã bị nhiều người chỉ trích trên mạng xã hội."
+    ]
+  },
   "v-1251": {
     "meaning": "Đòi hỏi, yêu cầu người khác phải làm, phải đáp ứng",
     "usage": "「〜を要求する」, 「〜ように要求する」, 「〜が要求される」 (năng lực được đòi hỏi). Hán Việt \"yêu cầu\".",
@@ -11171,6 +11589,15 @@
       "Email bất ngờ gửi đến đòi tôi trả một khoản phí mà tôi không hề biết."
     ]
   },
+  "v-1252": {
+    "meaning": "Cuộc biểu tình",
+    "usage": "「デモ｜行進《こうしん》」 (diễu hành biểu tình), 「デモの｜参加者《さんかしゃ》」 (người tham gia biểu tình); viết tắt từ 'demonstration'.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Những người tham gia biểu tình cầm biển và chậm rãi đi trên đường."
+    ]
+  },
   "v-1253": {
     "meaning": "Khoảng chừng, xấp xỉ; đại khái",
     "usage": "Trước con số: 「およそ20分」, 「およそ10万人」. Trước động từ: 「およそわかった」 (hiểu đại khái). Từ cùng nghĩa: 「おおよそ」.",
@@ -11179,6 +11606,15 @@
     "example_notes": [
       "Nhà máy này có khoảng 300 người làm việc.",
       "Nghe giải thích một lần, tôi đã hiểu đại khái nội dung câu chuyện."
+    ]
+  },
+  "v-1254": {
+    "meaning": "Liên quan, có liên hệ với nhau",
+    "usage": "「｜関連《かんれん》する」 (có liên quan), 「｜関連記事《かんれんきじ》」 (bài viết liên quan), 「〜に｜関連《かんれん》して」.",
+    "nuance": "",
+    "compare": "Hán Việt LIÊN QUAN, nghĩa như tiếng Việt, nhưng là danh từ (+「する」): 「〜に｜関連《かんれん》する」, 「｜関連記事《かんれんきじ》」. 「｜関《かか》わる」 là động từ: tự mình dính líu, can dự vào việc gì.",
+    "example_notes": [
+      "Tài liệu này tổng hợp các bài viết liên quan đến chủ đề lần này."
     ]
   },
   "v-1255": {
@@ -11221,14 +11657,104 @@
       "Trong thi đấu thể thao, cần có luật lệ công bằng cho cả hai đội."
     ]
   },
+  "v-1259": {
+    "meaning": "Phục hưng, khôi phục lại như trước",
+    "usage": "「｜復興《ふっこう》が｜進《すす》む」 (việc tái thiết tiến triển), 「｜復興《ふっこう》を｜目指《めざ》す」 (hướng tới phục hồi).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Cho đến khi thị trấn bị chiến tranh đốt cháy được phục hưng, mọi người đã chung sức làm việc."
+    ]
+  },
+  "v-1260": {
+    "meaning": "Nghĩa vụ",
+    "usage": "「｜義務《ぎむ》を｜果《は》たす」 (làm tròn nghĩa vụ), 「｜義務《ぎむ》づける」 (bắt buộc), 「｜義務教育《ぎむきょういく》」 (giáo dục bắt buộc).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Khi vào công ty, mình có nghĩa vụ giữ bí mật biết được qua công việc."
+    ]
+  },
+  "v-1261": {
+    "meaning": "Chế độ (của xã hội, tổ chức)",
+    "usage": "「｜制度《せいど》を｜利用《りよう》する」 (sử dụng chế độ), 「｜保険制度《ほけんせいど》」 (chế độ bảo hiểm), 「｜教育制度《きょういくせいど》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Từ khi chế độ mới bắt đầu, số nam giới nghỉ chăm con tăng lên."
+    ]
+  },
+  "v-1262": {
+    "meaning": "Tình hình kinh tế (tốt hay xấu)",
+    "usage": "「｜景気《けいき》がいい」 (kinh tế tốt), 「｜景気《けいき》が｜冷《ひ》え｜込《こ》む」 (kinh tế lạnh đi), 「｜不景気《ふけいき》」 / 「｜不況《ふきょう》」 (suy thoái).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Khi kinh tế khởi sắc, số công ty tuyển thêm người cũng tăng."
+    ]
+  },
+  "v-1263": {
+    "meaning": "Lạm phát",
+    "usage": "「インフレが｜進《すす》む」 (lạm phát gia tăng), 「インフレ｜対策《たいさく》」; viết đầy đủ 「インフレーション」, trái nghĩa 「デフレ」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Nếu lạm phát kéo dài thì cùng số tiền mua được ít hàng hơn."
+    ]
+  },
+  "v-1264": {
+    "meaning": "Tăng tốc, đẩy nhanh",
+    "usage": "「｜加速《かそく》する」 (tăng tốc), 「｜変化《へんか》が｜加速《かそく》する」 (thay đổi diễn ra nhanh hơn), 「｜加速度《かそくど》」 (gia tốc).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Ở địa phương, xu hướng người trẻ giảm đi đang tăng nhanh."
+    ]
+  },
+  "v-1265": {
+    "meaning": "Vượt quá, vượt hơn (mức, con số)",
+    "usage": "「｜予想《よそう》を｜上回《うわまわ》る」 (vượt dự đoán), 「｜目標《もくひょう》を｜上回《うわまわ》る」 (vượt mục tiêu); đối nghĩa là 「｜下回《したまわ》る」 (thấp hơn).",
+    "nuance": "",
+    "compare": "Tiếng Việt đều có chữ 'vượt'. 「｜上回《うわまわ》る」: con số cao hơn một mức (đối nghĩa 「｜下回《したまわ》る」); 「｜超過《ちょうか》」 (SIÊU QUÁ): vượt mức quy định; 「｜乗《の》り｜越《こ》える」: vượt qua khó khăn.",
+    "example_notes": [
+      "Số người đăng ký lần này đã vượt quá số ghế đã chuẩn bị."
+    ]
+  },
   "v-1266": {
     "meaning": "Dự đoán trước điều sẽ xảy ra (dựa trên dữ liệu, tình hình)",
     "usage": "「予測する」, 「予測がつく／つかない」, 「将来を予測する」. Hán Việt \"dự trắc\"; tiếng Việt nói \"dự đoán\".",
     "nuance": "Điền từ trong đề: từ nhiều dữ liệu, （　） dân số Nhật mười năm sau → 「予測」. Nhiễu cùng chữ 「予」: 「予報」 (dự báo), 「予感」 (linh cảm), 「予習」 (học trước).",
-    "compare": "「予測」: dự đoán điều sắp xảy ra, thường dựa trên dữ liệu: 「将来を予測する」. 「｜見当《けんとう》」: đoán chừng, ước lượng đại khái: 「見当がつく」, 「見当をつける」. Cả hai đều dịch được là \"đoán\".",
+    "compare": "「予測」: dự đoán điều sắp xảy ra, thường dựa trên dữ liệu: 「将来を予測する」. 「｜見当《けんとう》」: đoán chừng, ước lượng đại khái: 「見当がつく」, 「見当をつける」. Cả hai đều dịch được là \"đoán\". 「｜予期《よき》」: dự liệu trước.",
     "example_notes": [
       "Trận đấu ai thắng ai thua, đến phút cuối vẫn hoàn toàn không đoán được.",
       "Dự đoán chính xác khi nào động đất lớn xảy ra là việc khó."
+    ]
+  },
+  "v-1267": {
+    "meaning": "Quan điểm, cách nhìn của một người hay tổ chức",
+    "usage": "「｜見解《けんかい》が｜分《わ》かれる」 (quan điểm chia rẽ), 「｜見解《けんかい》の｜相違《そうい》」 (bất đồng quan điểm), 「｜公式見解《こうしきけんかい》」 (quan điểm chính thức).",
+    "nuance": "Câu hỏi từ gần nghĩa trong đề: 「｜見解《けんかい》」 ≈ 「｜考《かんが》え｜方《かた》」; phương án sai: 「｜教《おし》え｜方《かた》」, 「｜調《しら》べ｜方《かた》」, 「｜決《き》め｜方《かた》」.",
+    "compare": "",
+    "example_notes": [
+      "Hiệp hội bác sĩ đã đưa ra quan điểm chính thức về hiệu quả của loại thuốc mới."
+    ]
+  },
+  "v-1268": {
+    "meaning": "Tăng lên; làm cho tăng",
+    "usage": "「｜自信《じしん》が｜増《ま》す」 (thêm tự tin), 「｜勢《いきお》いを｜増《ま》す」 (mạnh thêm), 「｜重《おも》みを｜増《ま》す」; cả hai nghĩa tăng lên / làm tăng.",
+    "nuance": "",
+    "compare": "Hán Việt TĂNG. 「｜増《ま》す」 là tăng dần về mức, độ; 「｜急増《きゅうぞう》」 (CẤP TĂNG) là tăng vọt trong thời gian ngắn. Đừng nhầm 「｜増《ま》す」 với 「ます」 ở cuối câu lịch sự.",
+    "example_notes": [
+      "Từ khi có con, tôi cảm thấy tinh thần trách nhiệm với gia đình tăng thêm."
+    ]
+  },
+  "v-1269": {
+    "meaning": "Tiêu chuẩn, mức (chất lượng, đời sống)",
+    "usage": "「｜水準《すいじゅん》が｜高《たか》い」 (mức cao), 「｜水準《すいじゅん》に｜達《たっ》する」 (đạt mức), 「｜一定《いってい》の｜水準《すいじゅん》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Trường này nổi tiếng là có trình độ giáo dục cao."
     ]
   },
   "v-1270": {
@@ -11239,6 +11765,15 @@
     "example_notes": [
       "Ô nhiễm không khí ngày càng nghiêm trọng, có hôm không thể vận động ngoài trời.",
       "Biết tình hình kinh doanh của công ty nghiêm trọng hơn mình tưởng, các nhân viên đều sửng sốt."
+    ]
+  },
+  "v-1271": {
+    "meaning": "Kêu gọi, lên tiếng rủ mọi người",
+    "usage": "「｜参加《さんか》を｜呼《よ》びかける」 (kêu gọi tham gia), 「｜注意《ちゅうい》を｜呼《よ》びかける」 (kêu gọi chú ý); đối tượng là nhiều người.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi rủ bạn bè cùng nhau dọn sạch dòng sông vào ngày nghỉ."
     ]
   },
   "v-1272": {
@@ -11269,6 +11804,96 @@
     "example_notes": [
       "Người sống một mình tăng lên nên nhu cầu tủ lạnh cỡ nhỏ đang cao lên.",
       "Để biết nhu cầu của người cao tuổi, thị trấn đã làm một cuộc khảo sát."
+    ]
+  },
+  "v-1275": {
+    "meaning": "Chấp thuận, đồng ý (sau khi nghe)",
+    "usage": "「｜了承《りょうしょう》を｜求《もと》める」 (xin chấp thuận), 「ご｜了承《りょうしょう》ください」 (xin thông cảm), 「｜了承《りょうしょう》する」; gần nghĩa với 「｜了解《りょうかい》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi giải thích hoàn cảnh với thầy và được thầy đồng ý cho nộp muộn."
+    ]
+  },
+  "v-1276": {
+    "meaning": "Thông tin cá nhân",
+    "usage": "「｜個人情報《こじんじょうほう》の｜管理《かんり》」 (quản lý thông tin cá nhân), 「｜個人情報《こじんじょうほう》の｜漏《ろう》えい」 (rò rỉ thông tin cá nhân), 「マイナンバー」.",
+    "nuance": "",
+    "compare": "Hán Việt CÁ NHÂN TÌNH BÁO, nhưng 「｜情報《じょうほう》」 không phải 'tình báo' (gián điệp) mà là 'thông tin'. 「プライバシー」 là đời tư, rộng hơn dữ liệu như tên, địa chỉ.",
+    "example_notes": [
+      "Khi nhập thông tin cá nhân lên trang bán hàng, tôi muốn kiểm tra công ty điều hành có đáng tin hay không."
+    ]
+  },
+  "v-1277": {
+    "meaning": "Sự riêng tư, đời tư",
+    "usage": "「プライバシーを｜守《まも》る」 (bảo vệ riêng tư), 「プライバシーの｜侵害《しんがい》」 (xâm phạm đời tư).",
+    "nuance": "",
+    "compare": "Từ mượn 'privacy'. Đừng dịch 「｜個人情報《こじんじょうほう》」 là 'riêng tư': đó là dữ liệu cụ thể (tên, địa chỉ…); 「プライバシー」 là đời sống riêng không muốn ai biết.",
+    "example_notes": [
+      "Ngay cả với bạn cùng phòng, vẫn có đời tư mà mình không muốn bị nhìn thấy."
+    ]
+  },
+  "v-1278": {
+    "meaning": "Định hình, ăn sâu, trở thành nếp",
+    "usage": "「｜習慣《しゅうかん》が｜定着《ていちゃく》する」 (thói quen ăn sâu), 「｜定着率《ていちゃくりつ》」 (tỉ lệ gắn bó, ở lại), 「｜文化《ぶんか》が｜定着《ていちゃく》する」.",
+    "nuance": "",
+    "compare": "Hán Việt ĐỊNH TRƯỚC — không phải 'định trước' (quyết sẵn) của tiếng Việt; 「｜定着《ていちゃく》」 là đã ăn sâu, thành nếp. 「｜普及《ふきゅう》」 (PHỔ CẬP) mới chỉ là lan rộng.",
+    "example_notes": [
+      "Cách làm việc tại nhà đã khá ăn sâu trong vài năm gần đây."
+    ]
+  },
+  "v-1279": {
+    "meaning": "Cùng lúc làm tốt cả hai việc",
+    "usage": "「AとBを｜両立《りょうりつ》させる」 (làm tốt cả A lẫn B), 「｜両立《りょうりつ》を｜図《はか》る」 (tìm cách giữ được cả hai).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Anh ấy vừa làm nông vừa lo việc tổ chức lễ hội địa phương, cân bằng được cả hai."
+    ]
+  },
+  "v-1280": {
+    "meaning": "Hệ thống",
+    "usage": "「システムを｜導入《どうにゅう》する」 (đưa hệ thống vào), 「システムエラー」 (lỗi hệ thống), 「｜予約《よやく》システム」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Từ khi đưa hệ thống mới vào, thời gian chờ ở quầy tiếp nhận đã ngắn lại."
+    ]
+  },
+  "v-1281": {
+    "meaning": "Khói",
+    "usage": "「｜煙《けむり》が｜出《で》る」 (bốc khói), 「｜煙《けむり》を｜吸《す》う」 (hít khói), 「｜煙突《えんとつ》」 (ống khói).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Nhận ra khói trắng bốc ra từ bếp, tôi vội tắt lửa."
+    ]
+  },
+  "v-1282": {
+    "meaning": "Công, việc chung; (làm cho) công khai",
+    "usage": "「｜公《おおやけ》にする」 (công khai ra), 「｜公《おおやけ》の｜機関《きかん》」 (cơ quan công), 「｜公的《こうてき》な」 (mang tính công); đọc 「おおやけ」, khác với 「こう」.",
+    "nuance": "",
+    "compare": "Hán Việt CÔNG. 「｜公《おおやけ》」 đọc 「おおやけ」 là phạm vi chung, trước mắt mọi người; 「｜公共《こうきょう》」 (CÔNG CỘNG) là cái thuộc về mọi người. Trong từ ghép như 「｜公共《こうきょう》」 thì đọc 「こう」.",
+    "example_notes": [
+      "Nếu tài liệu này bị công khai thì công ty sẽ bị truy cứu trách nhiệm."
+    ]
+  },
+  "v-1283": {
+    "meaning": "Truyền thông đại chúng",
+    "usage": "「マスコミ｜関係《かんけい》」 (giới truyền thông), 「マスコミに｜取り上《とりあ》げられる」 (được báo đài đưa tin); viết tắt từ 'mass communication'.",
+    "nuance": "",
+    "compare": "Viết tắt 'mass communication'. 'Truyền thông' dịch được cả hai: 「マスコミ」 là giới báo đài, các công ty đưa tin; 「メディア」 là phương tiện mang tin. 「｜口《くち》コミ」 là truyền miệng.",
+    "example_notes": [
+      "Sản phẩm mới được truyền thông đưa tin và nổi tiếng chỉ sau một đêm."
+    ]
+  },
+  "v-1284": {
+    "meaning": "Phương tiện truyền thông",
+    "usage": "「メディアの｜影響《えいきょう》」 (ảnh hưởng của truyền thông), 「｜新《あたら》しいメディア」 (phương tiện mới), 「ソーシャルメディア」.",
+    "nuance": "",
+    "compare": "Từ mượn 'media'. 「メディア」 là phương tiện (báo, TV, mạng): 「ソーシャルメディア」; nói giới nhà báo, các đài đưa tin thì dùng 「マスコミ」: 「マスコミに｜取《と》り｜上《あ》げられる」.",
+    "example_notes": [
+      "Mỗi lần có phương tiện truyền thông mới xuất hiện, hình thức quảng cáo cũng dần thay đổi."
     ]
   },
   "v-1285": {
@@ -11309,6 +11934,24 @@
     "example_notes": [
       "Ghi nhầm số điện thoại trong đơn đăng ký, tôi gạch hai nét rồi sửa lại.",
       "Sửa lại lời mình đã lỡ nói ra là việc cần can đảm."
+    ]
+  },
+  "v-1289": {
+    "meaning": "Ngay lập tức, tức khắc",
+    "usage": "「ただちに｜出発《しゅっぱつ》する」 (xuất phát ngay), 「ただちに｜中止《ちゅうし》する」 (dừng ngay); gần nghĩa 「すぐに」.",
+    "nuance": "Câu hỏi từ gần nghĩa trong đề: 「ただちに」 ≈ 「すぐに」; phương án sai: 「あとで」, 「くわしく」, 「きちんと」.",
+    "compare": "Tiếng Việt đều dịch 'ngay', 'tức thì'. 「ただちに」: làm ngay, không để chậm trễ, gần 「すぐに」. 「たちまち」: tình hình đổi trong chớp mắt: 「たちまち｜売《う》り｜切《き》れる」.",
+    "example_notes": [
+      "Khi có động đất, hãy chui ngay xuống gầm bàn để tự bảo vệ."
+    ]
+  },
+  "v-1290": {
+    "meaning": "Đoạn giới thiệu hàng hóa phát trên TV, radio",
+    "usage": "「コマーシャルに｜出《で》る」 (xuất hiện trong quảng cáo), 「テレビコマーシャル」; viết tắt 「CM」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Bài hát này nổi tiếng nhờ được dùng trong quảng cáo một loại đồ uống nổi tiếng."
     ]
   },
   "v-1304": {
@@ -11924,7 +12567,7 @@
     "meaning": "Tranh giành, tranh chấp; cãi cọ, xung đột với ai",
     "usage": "「AとBが争う」, 「優勝を争う」 (tranh chức vô địch), 「〜をめぐって争う」 (tranh chấp về …), 「先を争って」 (chen nhau lên trước).",
     "nuance": "Viết: đề đã gài 「戦って」「競って」「抗って」. Điền từ: tranh chức vô địch đến phút cuối → 「争って」; sai 「戦って」「奪って」「破って」. 「きそって」 là cách đọc của 「競う」.",
-    "compare": "「争う」: tranh giành, kể cả cãi cọ, tranh chấp: 「水をめぐって争う」. 「｜競《きそ》う」: ganh đua để hơn người khác: 「トップを競う」. 「｜戦《たたか》う」 CHIẾN: đấu trực tiếp với đối thủ: 「｜強豪《きょうごう》と｜戦《たたか》う」. 「｜対立《たいりつ》」 (ĐỐI LẬP).",
+    "compare": "「争う」: tranh giành, cả cãi cọ, tranh chấp: 「水をめぐって争う」. 「｜競《きそ》う」: ganh đua để hơn người khác: 「トップを競う」. 「｜戦《たたか》う」 CHIẾN: đấu với đối thủ: 「｜強豪《きょうごう》と｜戦《たたか》う」. 「｜対立《たいりつ》」 (ĐỐI LẬP). 「もめる」: xích mích.",
     "example_notes": [
       "Hai ngôi làng này từ xưa đã tranh chấp nhau về cách dùng nước sông.",
       "Ngày giảm giá đầu năm, khách chen nhau ùa vào cửa hàng."
@@ -12582,7 +13225,7 @@
     "meaning": "Phát sinh, nảy sinh (vấn đề, sai lệch, thay đổi)",
     "usage": "「〜が生じる」: 「問題が生じる」, 「誤解が生じる」, 「遅れが生じる」, 「変化が生じる」. Đọc 「しょうじる」.",
     "nuance": "Không phải \"sinh ra\" nói chung. Đề thi coi là sai: 「子どもが生じた」, 「アイデアが生じない」, 「牛乳から生じる」, 「研究者が多く生じている」, 「新しい技術が生じた」.",
-    "compare": "「生じる」: một vấn đề, một thay đổi phát sinh — một lần cũng dùng được: 「遅れが生じる」. 「｜続出《ぞくしゅつ》」: nhiều chuyện cùng loại xảy ra liên tiếp, hết cái này đến cái khác.",
+    "compare": "「生じる」: một vấn đề, một thay đổi phát sinh — một lần cũng dùng được: 「遅れが生じる」. 「｜続出《ぞくしゅつ》」: nhiều chuyện cùng loại xảy ra liên tiếp, hết cái này đến cái khác. 「｜発生《はっせい》」: danh từ, +「する」.",
     "example_notes": [
       "Do lịch trình thay đổi đột ngột, công việc đã bị chậm trễ.",
       "Nếu uống thuốc mà cơ thể có thay đổi gì, hãy báo ngay."
@@ -12632,7 +13275,7 @@
     "meaning": "Thực hành, đem điều đã học, đã nghĩ ra làm thật",
     "usage": "「〜を実践する」, 「習ったことを実践する」, 「実践を重視する」 (coi trọng thực hành), 「すぐに実践できる」.",
     "nuance": "Viết: đề đã gài 「実施」「実桟」「実旋」 — 「践」 có bộ 「足」. Đọc 「じっせん」; đề gài 「じっけん」「じっぜん」「じっげん」. Hán Việt 'thực tiễn'.",
-    "compare": "",
+    "compare": "Hán Việt THỰC TIỄN. 「｜実践《じっせん》」 (「じっせん」) là tự mình làm thật điều đã học; 「｜実施《じっし》」 (THỰC THI, 「じっし」) là triển khai kế hoạch, quy định — hai từ đọc gần giống.",
     "example_notes": [
       "Khóa học này coi trọng thực hành, một nửa số giờ học là thực tập.",
       "Những việc có thể làm để giảm rác, trước hết tôi thực hành trong cuộc sống của mình."
@@ -12862,7 +13505,7 @@
     "meaning": "Trong chớp mắt, (thay đổi) xảy ra tức thì",
     "usage": "「たちまち増える」, 「たちまち広まる」, 「たちまち売り切れる」, 「たちまち〜になった」.",
     "nuance": "Câu thay thế trong đề: 「たちまち」＝「すぐに」. Phương án sai 「次第に」 là \"dần dần\" — ngược nghĩa.",
-    "compare": "「たちまち」: đổi gần như tức thì. 「さっさと」: làm mau cho xong. 「｜一気《いっき》に」: liền một mạch. 「｜急激《きゅうげき》」: đổi mạnh: 「急激に増える」. 「｜途端《とたん》に」: việc trước xong, việc sau liền tới. 「とっさに」: tích tắc, không kịp nghĩ.",
+    "compare": "「たちまち」: đổi gần như tức thì. 「さっさと」: làm mau cho xong. 「｜一気《いっき》に」: một mạch. 「｜急激《きゅうげき》」: đổi mạnh: 「急激に増える」. 「｜途端《とたん》に」: vừa xong là tới. 「とっさに」: không kịp nghĩ. 「ただちに」: ngay, không chậm trễ.",
     "example_notes": [
       "Cửa hàng vừa được giới thiệu trên tivi là khách tăng vọt ngay.",
       "Vừa thấy trời tối sầm là lập tức mưa như trút."
@@ -13011,7 +13654,7 @@
     "meaning": "Thảo luận tranh biện, đối thoại tranh luận",
     "usage": "「討論を行う」, 「討論会」 (buổi tranh luận), 「熱心に討論する」.",
     "nuance": "",
-    "compare": "「討論」: tranh luận, mỗi người nêu ý kiến về một vấn đề: 「討論会」. 「｜打《う》ち｜合《あ》わせ」: họp bàn trước cách tiến hành công việc: 「事前の打ち合わせ」.",
+    "compare": "「討論」: tranh luận, mỗi người nêu ý kiến về một vấn đề: 「討論会」. 「｜打《う》ち｜合《あ》わせ」: họp bàn trước cách tiến hành công việc: 「事前の打ち合わせ」. 「｜議論《ぎろん》」 (NGHỊ LUẬN): cùng nêu ý kiến để bàn bạc.",
     "example_notes": [
       "Trước kỳ bầu cử, ba vị ứng cử viên đã tiến hành một buổi tranh luận công khai trước công chúng.",
       "Quy tắc trong tranh luận là phải lắng nghe hết ý kiến của đối phương rồi mới được phản biện."
@@ -13068,7 +13711,7 @@
     ]
   },
   "v-o-dounyuu": {
-    "meaning": "Đưa vào áp dụng (hệ thống, chế độ, thiết bị mới)",
+    "meaning": "Đưa vào áp dụng (phương pháp, kỹ thuật, thiết bị mới)",
     "usage": "「制度を導入する」, 「システムが導入される」, 「タブレットが導入される」.",
     "nuance": "Điền từ: hệ thống quản lý được nhiều công ty đưa vào dùng → 「導入」; phương án sai 「引用」「吸収」「移行」.",
     "compare": "「導入」: một nơi (công ty, trường, thành phố) đưa hệ thống, thiết bị mới vào dùng: 「制度を導入する」. 「｜普及《ふきゅう》」: cái mới lan rộng khắp xã hội: 「携帯電話が普及する」. 「｜取《と》り｜入《い》れる」: thuần Nhật, cũng là \"áp dụng\".",

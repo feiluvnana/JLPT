@@ -814,7 +814,7 @@
     ]
   },
   "v-0089": {
-    "meaning": "Tỏ ra (thái độ, tình cảm); chỉ ra cho người khác thấy rõ",
+    "meaning": "Tỏ ra (thái độ, sự quan tâm); chỉ ra cho người khác thấy rõ",
     "usage": "① Để người khác thấy tình cảm, thái độ: 「関心を示す」, 「同意を示す」. ② Chỉ ra cho thấy rõ: 「例を示す」, 「道を示す」.",
     "nuance": "",
     "compare": "",
@@ -4052,7 +4052,7 @@
     "meaning": "Rời khỏi, cách xa (một nơi hay một người)",
     "usage": "「故郷を離れる」 (rời quê), 「〜から離れる」, 「駅から離れた場所」 (chỗ xa ga), 「家族と離れて暮らす」. Hậu tố 「〜離れ」: 「現実離れ」 (xa rời thực tế), 「読書離れ」.",
     "nuance": "「家族と離れて暮らす」 là sống xa gia đình, không phải chia tay: đề thi đặt 「別れて」 làm phương án sai ở đúng câu này. Hán Việt 「離」 là \"ly\" (ly biệt).",
-    "compare": "「離れる」: rời xa, cách xa một chỗ, một người: 「駅から離れる」. 「｜外《はず》れる」: vật tuột khỏi chỗ lắp: 「チェーンが外れる」; đoán sai: 「予想が外れる」.",
+    "compare": "「離れる」: rời xa, cách xa một chỗ, một người: 「駅から離れる」. 「｜外《はず》れる」: vật tuột khỏi chỗ lắp: 「チェーンが外れる」; đoán sai: 「予想が外れる」. 「｜去《さ》る」 (KHỨ): rời hẳn nơi mình ở: 「台風が去る」.",
     "example_notes": [
       "Nguy hiểm đấy, hãy đứng cách xa lò sưởi một chút.",
       "Tôi đã thuê một căn hộ ở chỗ yên tĩnh, cách xa nhà ga."
@@ -8199,14 +8199,60 @@
       "Cậu được gọi là mọt sách số một của lớp ấy, giờ nghỉ cũng không ngẩng mặt khỏi sách."
     ]
   },
+  "v-0884": {
+    "meaning": "Lớp học thêm, việc theo học một môn (như đàn piano)",
+    "usage": "「｜習《なら》い｜事《ごと》をする」, 「ピアノなどの｜習《なら》い｜事《ごと》」. Từ liên quan: 「けいこ」 (luyện tập, học thêm).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Em gái tôi học thêm nhiều môn nên các buổi tối trong tuần hầu như không ở nhà."
+    ]
+  },
+  "v-0885": {
+    "meaning": "Chú trọng chi tiết; cứ bận tâm mãi vào chuyện nhỏ",
+    "usage": "Nghĩa 1: 「｜靴《くつ》にこだわる」 (coi trọng chi tiết theo ý mình). Nghĩa 2: 「いつまでもこだわる」 (bận tâm quá mức vào điều không đáng). Đi với 「に」.",
+    "nuance": "\"Câu nệ\" trong tiếng Việt thường là chê; nghĩa 1 của 「こだわる」 lại là khen, chỉ nghĩa 2 mới mang ý chê.",
+    "compare": "Ba từ dễ bị dịch chung là \"mê, kỹ\": 「こだわる」 = giữ đúng ý mình đến từng chi tiết; 「｜凝《こ》る」 (NGƯNG) = mê một thú vui; 「こだわり」 chỉ là danh từ của 「こだわる」.",
+    "example_notes": [
+      "Người thợ đóng giày này rất chú trọng cách chọn da nên đã nhiều lần đổi nơi nhập hàng.",
+      "Vì cứ bận tâm mãi một thất bại nhỏ, tôi chẳng nghe lọt cả lời động viên của đồng nghiệp."
+    ]
+  },
+  "v-0886": {
+    "meaning": "Điều chủ trương riêng, sự khắt khe đặc biệt của mình",
+    "usage": "「〜にこだわりがある」 (có chủ trương riêng về …). Động từ cùng gốc: 「こだわる」.",
+    "nuance": "",
+    "compare": "Hay được dịch \"phong cách riêng\", nhưng 「こだわり」 là điều mình nhất quyết giữ: 「〜にこだわりがある」. Động từ: 「こだわる」. 「｜凝《こ》る」 (NGƯNG) thì là say mê một thú.",
+    "example_notes": [
+      "Chị tôi rất khắt khe về văn phòng phẩm, đi hết mấy cửa hàng cho tới khi tìm được chiếc bút ưng ý."
+    ]
+  },
+  "v-0887": {
+    "meaning": "Say mê, dồn tâm sức vào một thú vui",
+    "usage": "「〜に｜凝《こ》っている」 (dạo này mê …). Từ liên quan: 「｜凝《こ》り｜性《しょう》」 (người hay mê, chuyên tâm vào một thứ).",
+    "nuance": "",
+    "compare": "Hán Việt NGƯNG, không phải \"ngưng\" (dừng): 「凝る」 là mê một thú. 「こだわる」/「こだわり」: kỹ tính đến từng chi tiết. 「｜熱中《ねっちゅう》」 (NHIỆT TRUNG): danh từ, sự say mê.",
+    "example_notes": [
+      "Ông tôi đang mê làm mô hình thuyền bằng gỗ, khắp phòng toàn là mô hình."
+    ]
+  },
   "v-0888": {
     "meaning": "Mải mê, say sưa với một việc mình thích",
     "usage": "「〜に熱中する」: 「絵に熱中する」, 「ゲームに熱中する」, 「熱中していて気づかない」.",
     "nuance": "Người mải mê làm một việc. Đề thi coi là sai khi dùng cho lời chỉ trích dồn về người phụ trách, thích một bộ quần áo, hay sự chú ý đổ về một nơi.",
-    "compare": "「熱中」: say mê vì thích, quên cả xung quanh: 「ゲームに熱中する」. 「｜専念《せんねん》」: tự chọn dồn sức vào một việc, gác việc khác: 「治療に専念する」.",
+    "compare": "「熱中」: say mê vì thích, quên cả xung quanh: 「ゲームに熱中する」. 「｜専念《せんねん》」: tự chọn dồn sức vào một việc, gác việc khác: 「治療に専念する」. 「｜凝《こ》る」 (NGƯNG): động từ, mê một thú: 「〜に凝る」.",
     "example_notes": [
       "Tôi mải vẽ tranh đến mức không để ý đã đến giờ ăn tối.",
       "Dạo này bố tôi say mê trồng rau trong vườn."
+    ]
+  },
+  "v-0889": {
+    "meaning": "Bộ sưu tập; việc sưu tầm",
+    "usage": "「〜のコレクション」, 「コレクションする」. Kèm 「コレクター」 (nhà sưu tầm).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Chú tôi tự hào về bộ sưu tập tem cũ, hễ có khách là nhất định đem ra cho xem."
     ]
   },
   "v-0890": {
@@ -8219,6 +8265,105 @@
       "Ở quán này có thể thưởng thức nhiều món ăn đa dạng làm từ rau theo mùa."
     ]
   },
+  "v-0891": {
+    "meaning": "Người nghiệp dư, người chưa phải dân chuyên",
+    "usage": "「まだまだ｜素人《しろうと》だ」, 「｜素人《しろうと》の〜」. Đối nghĩa: 「｜玄人《くろうと》」.",
+    "nuance": "",
+    "compare": "TỐ NHÂN (素人) đối với HUYỀN NHÂN (玄人): dân không chuyên. 「｜初心者《しょしんしゃ》」 (SƠ TÂM GIẢ) là người mới học. Cả hai hay dịch \"người mới\" nhưng không đồng nghĩa.",
+    "example_notes": [
+      "Ngay cả người nghiệp dư như tôi nhìn vào cũng biết việc sửa chữa này được làm cẩn thận."
+    ]
+  },
+  "v-0892": {
+    "meaning": "Người mới vào học một môn",
+    "usage": "「〜の｜初心者《しょしんしゃ》」, 「｜初心者《しょしんしゃ》でも｜教《おし》える」. Kèm 「｜初歩《しょほ》」 (bước đầu).",
+    "nuance": "",
+    "compare": "SƠ TÂM GIẢ (初心者) là người mới học. Đừng hiểu 「｜初歩《しょほ》」 (SƠ BỘ) theo nghĩa \"sơ bộ\" (tạm, chưa kỹ): đó là trình độ nhập môn. 「｜素人《しろうと》」 (TỐ NHÂN) là dân không chuyên.",
+    "example_notes": [
+      "Ở khu trượt tuyết có sườn dốc thoai thoải rộng dành cho người mới tập."
+    ]
+  },
+  "v-0893": {
+    "meaning": "Một cách thực thụ, nghiêm túc",
+    "usage": "「｜本格的《ほんかくてき》に〜する」, 「｜本格的《ほんかくてき》な〜」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Anh ấy mê gốm đến mức cuối cùng làm hẳn một cái lò nung đúng nghĩa."
+    ]
+  },
+  "v-0894": {
+    "meaning": "Bậc thầy, người giỏi hơn hẳn trong một lĩnh vực",
+    "usage": "「〜の｜名人《めいじん》」. Kèm 「｜達人《たつじん》」 (người thành thạo).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Cụ già ấy nổi tiếng trong khu phố như một bậc thầy gấp giấy origami."
+    ]
+  },
+  "v-0895": {
+    "meaning": "Chung, giống nhau giữa nhiều người hay vật",
+    "usage": "「｜共通《きょうつう》の｜趣味《しゅみ》」, 「｜共通《きょうつう》する」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Anh em ruột mà hầu như chẳng có điểm nào chung nên thường làm người ta ngạc nhiên."
+    ]
+  },
+  "v-0896": {
+    "meaning": "Trào lưu, cơn sốt",
+    "usage": "「〜がブームになる」, 「マイブーム」 (cơn sốt riêng của mình).",
+    "nuance": "Đề thay từ: 「ブーム」 được thay bằng 「｜流行《りゅうこう》」 (đáp án); nhiễu là 「｜効果《こうか》」「｜状態《じょうたい》」「｜緊張《きんちょう》」.",
+    "compare": "LƯU HÀNH (流行) không phải \"lưu hành\" (được lưu thông) của tiếng Việt mà là thịnh hành, kể cả bệnh lây lan. 「ブーム」 là cơn sốt nổi lên nhanh; đề thay từ đổi 「ブーム」 thành 「｜流行《りゅうこう》」.",
+    "example_notes": [
+      "Trò chơi của mười năm trước bỗng thành cơn sốt, giá đồ cũ tăng lên gấp nhiều lần."
+    ]
+  },
+  "v-0897": {
+    "meaning": "Hoạt động ngoài trời",
+    "usage": "「アウトドアを｜楽《たの》しむ」. Kèm 「アウトドアライフ」; đồng nghĩa 「アウトドアアクティビティ」, trái nghĩa 「インドア」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Anh ấy vốn thích ở trong nhà nhưng từ khi được bạn rủ đi thì bỗng mê hoạt động ngoài trời."
+    ]
+  },
+  "v-0898": {
+    "meaning": "Đồ đan móc; việc đan len",
+    "usage": "「｜編《あ》み｜物《もの》をする」, 「｜編《あ》み｜物《もの》を｜教《おそ》わる」. Động từ gốc: 「｜編《あ》む」 (đan).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Anh tôi lần đầu thử đan len để làm quà tặng."
+    ]
+  },
+  "v-0899": {
+    "meaning": "Trò ảo thuật",
+    "usage": "「｜手品《てじな》を｜見《み》る」. Kèm 「マジック」, 「マジシャン」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Chú tôi giỏi ảo thuật, làm biến mất đồng xu khiến mấy đứa cháu kinh ngạc."
+    ]
+  },
+  "v-0900": {
+    "meaning": "Việc bói toán",
+    "usage": "「｜占《うらな》いが｜好《す》きだ」, 「｜星座《せいざ》｜占《うらな》い」, 「｜血液型《けつえきがた》｜占《うらな》い」, 「｜手相《てそう》｜占《うらな》い」. Động từ: 「｜占《うらな》う」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Kết quả bói cung hoàng đạo trên tivi buổi sáng không tốt nên cả ngày tôi không yên."
+    ]
+  },
+  "v-0901": {
+    "meaning": "Ngôn ngữ ký hiệu",
+    "usage": "「｜手話《しゅわ》の｜教室《きょうしつ》」, 「｜手話《しゅわ》を｜覚《おぼ》える」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Muốn nói chuyện với người bạn không nghe được, tôi học dần từng chút ngôn ngữ ký hiệu."
+    ]
+  },
   "v-0902": {
     "meaning": "Truyền thống",
     "usage": "「伝統がある」, 「伝統を守る」, 「〜年の伝統を持つ」, 「伝統的な」 (mang tính truyền thống).",
@@ -8227,6 +8372,15 @@
     "example_notes": [
       "Câu lạc bộ kèn của trường cấp ba này có truyền thống: trước buổi biểu diễn, cả đội đứng thành vòng tròn và hô to.",
       "Con búp bê này được làm ở một cửa hàng có truyền thống hơn hai trăm năm."
+    ]
+  },
+  "v-0903": {
+    "meaning": "Lễ nghi, quy cách ứng xử khi giao tiếp",
+    "usage": "「｜茶道《さどう》の｜作法《さほう》」, 「｜作法《さほう》を｜学《まな》ぶ」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Được mời dự đám cưới nhưng không biết phép tắc khi trao tiền mừng nên tôi đã tìm hiểu."
     ]
   },
   "v-0904": {
@@ -8239,6 +8393,79 @@
       "Bộ phim này được quay ở một ngôi làng nhỏ tại Hokkaido."
     ]
   },
+  "v-0905": {
+    "meaning": "Ống kính",
+    "usage": "「レンズが｜高《たか》い」, 「カメラのレンズ」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Nhìn qua thấu kính của chiếc kính lúp, tôi thấy rõ cả những đường gân nhỏ trên chiếc lá."
+    ]
+  },
+  "v-0906": {
+    "meaning": "Vé số",
+    "usage": "「｜宝《たから》くじを｜買《か》う」, 「｜宝《たから》くじが｜当《あ》たる」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Ở quầy vé số trong khu phố, mẹ tôi mua mười tờ rồi mang về."
+    ]
+  },
+  "v-0907": {
+    "meaning": "Trúng (giải); va, đụng phải",
+    "usage": "Nghĩa 1: 「｜宝《たから》くじで｜当《あ》たる」. Nghĩa 2: 「ボールが｜当《あ》たる」. Tha động từ 「(〜を)｜当《あ》てる」, danh từ 「｜当《あ》たり」. Trái nghĩa: 「｜外《はず》れる」.",
+    "nuance": "Nghĩa ① là đúng như mong đợi (trúng thưởng, đoán trúng); nghĩa ② là đụng trúng một vật.",
+    "compare": "Cặp trái nghĩa: 「当たる」 trúng, 「｜外《はず》れる」 trượt, đoán sai (「予想が外れる」). Tiếng Việt cũng dùng \"trúng\" cho cả trúng thưởng lẫn bị va trúng, khớp hai nghĩa của 「当たる」.",
+    "example_notes": [
+      "Tôi gửi phiếu dự thi trúng thưởng và trúng chiếc tai nghe mới ra mắt.",
+      "Viên đá nhỏ va vào cửa kính, nghe một tiếng nhẹ."
+    ]
+  },
+  "v-0908": {
+    "meaning": "Bí quyết để làm tốt việc gì",
+    "usage": "「〜のコツ」, 「コツを｜知《し》る」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Cô giáo bảo bí quyết để chơi giỏi nhạc cụ mới là thả lỏng sức và di chuyển các ngón tay."
+    ]
+  },
+  "v-0909": {
+    "meaning": "Khoảnh khắc",
+    "usage": "「｜決定的《けっていてき》な｜瞬間《しゅんかん》」.",
+    "nuance": "",
+    "compare": "THUẤN GIAN (瞬間) là \"trong nháy mắt\", tức khoảnh khắc. 「〜た瞬間」 gần nghĩa 「〜た｜途端《とたん》」, nhưng 「途端」 nhấn việc sau liền xảy ra, còn 「瞬間」 là chính khoảnh khắc ấy.",
+    "example_notes": [
+      "Ngay khoảnh khắc tôi bấm máy, con chim bay vút lên."
+    ]
+  },
+  "v-0910": {
+    "meaning": "Ghép, kết hợp nhiều thứ lại với nhau",
+    "usage": "「〜を｜組《く》み｜合《あ》わせて｜作《つく》る」. Danh từ: 「｜組《く》み｜合《あ》わせ」 (sự kết hợp).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi ghép hai bản nhạc ngắn lại thành một bản nhạc mới."
+    ]
+  },
+  "v-0911": {
+    "meaning": "Gần gũi, ngay bên cạnh mình",
+    "usage": "Danh từ: 「｜身近《みぢか》に｜置《お》く」. ナ形容詞: 「｜身近《みぢか》な｜問題《もんだい》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Thấy thất bại của người thân cận, tôi nghĩ mình cũng phải cẩn thận."
+    ]
+  },
+  "v-0912": {
+    "meaning": "Khí hậu: đặc điểm nóng lạnh, mưa nắng kéo dài của một nơi",
+    "usage": "「｜温暖《おんだん》な｜気候《きこう》」. Kèm 「｜天候《てんこう》」 (thời tiết).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Hòn đảo này khí hậu khắc nghiệt nên suốt mùa đông hầu như không có tàu ra khơi."
+    ]
+  },
   "v-0913": {
     "meaning": "Mùa, thời kỳ của một hoạt động hay một sản vật",
     "usage": "「旅行のシーズン」, 「〜のシーズンが始まる」, 「さんまのシーズン」.",
@@ -8247,6 +8474,106 @@
     "example_notes": [
       "Mùa thu là mùa cá thu đao, siêu thị bày bán rất nhiều.",
       "Mùa giải bóng chày chuyên nghiệp bắt đầu là tối nào bố tôi cũng không rời khỏi tivi."
+    ]
+  },
+  "v-0914": {
+    "meaning": "Bốn mùa",
+    "usage": "「｜四季《しき》がある」, 「｜春夏秋冬《しゅんかしゅうとう》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Để lưu lại sự đổi thay của bốn mùa bằng ảnh, tháng nào tôi cũng đến cùng một công viên."
+    ]
+  },
+  "v-0915": {
+    "meaning": "Phồng lên, nở to ra; (mong đợi) dâng đầy",
+    "usage": "Nghĩa 1: 「つぼみがふくらむ」. Nghĩa 2: 「｜期待《きたい》に｜胸《むね》がふくらむ」. Tha động từ: 「(〜を)ふくらます」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Thổi hơi vào bóng bay, lớp cao su mỏng ra và phồng tròn lên.",
+      "Trước chuyến du lịch nước ngoài đầu tiên, lòng tôi tràn đầy mong đợi nên không ngủ được."
+    ]
+  },
+  "v-0916": {
+    "meaning": "Mùa mưa",
+    "usage": "「｜梅雨《つゆ》が｜始《はじ》まる」, 「｜梅雨入《つゆい》り」, 「｜梅雨明《つゆあ》け」, 「｜梅雨前線《ばいうぜんせん》」 (đọc 「ばいうぜんせん」).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Từ khi vào mùa mưa, ngày nào bầu trời cũng âm u kéo dài."
+    ]
+  },
+  "v-0917": {
+    "meaning": "Đầu hè",
+    "usage": "「｜初夏《しょか》が｜好《す》きだ」. Đối lập với 「｜真夏《まなつ》」 (giữa hè).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Gió đầu hè dễ chịu đến mức tôi mở cửa sổ rồi ngủ trưa luôn."
+    ]
+  },
+  "v-0918": {
+    "meaning": "Vùng ôn đới",
+    "usage": "「｜温帯《おんたい》では〜」, 「｜温帯《おんたい》に｜属《ぞく》する」. Kèm 「｜熱帯《ねったい》」, 「｜亜熱帯《あねったい》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Phần lớn các nước châu Âu nằm ở vùng ôn đới, nhưng ở phía bắc Nhật Bản."
+    ]
+  },
+  "v-0919": {
+    "meaning": "Thuộc về (một nhóm, một loại)",
+    "usage": "「〜に｜属《ぞく》する」: 「｜温帯《おんたい》に｜属《ぞく》する」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Cá voi không phải là cá mà thuộc loài có vú."
+    ]
+  },
+  "v-0920": {
+    "meaning": "Xác suất",
+    "usage": "「｜降水《こうすい》｜確率《かくりつ》」 (xác suất có mưa).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tung xúc xắc ra mặt sáu có xác suất là một phần sáu."
+    ]
+  },
+  "v-0921": {
+    "meaning": "Mưa giông buổi chiều tối",
+    "usage": "「｜夕立《ゆうだち》が｜降《ふ》る」. Kèm 「にわか｜雨《あめ》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Trên đường đến nhà bạn, tôi gặp mưa rào và trú dưới mái hiên một quán gần đó."
+    ]
+  },
+  "v-0922": {
+    "meaning": "Đột ngột, bất chợt",
+    "usage": "「にわかに〜なる」. Kèm 「にわか｜雨《あめ》」 (mưa rào).",
+    "nuance": "",
+    "compare": "Viết bằng kana nên không có Hán Việt để đoán: 「にわか」 = bất chợt, không báo trước. 「｜急速《きゅうそく》」 đọc CẤP TỐC nhưng không có ý \"gấp, khẩn cấp\": nó chỉ thay đổi nhanh.",
+    "example_notes": [
+      "Một ca sĩ nổi tiếng ghé quán, trong quán đang yên tĩnh bỗng ồn ào hẳn lên."
+    ]
+  },
+  "v-0923": {
+    "meaning": "Bao phủ, che kín bề mặt",
+    "usage": "「｜雲《くも》に｜覆《おお》われている」, 「〜を｜覆《おお》う」.",
+    "nuance": "Đề 問題6 chọn 「｜並木道《なみきみち》が｜落《お》ち｜葉《ば》で｜覆《おお》われて」; các câu 「｜記者《きしゃ》に｜覆《おお》われて」, 「｜顔《かお》が｜汗《あせ》で｜覆《おお》われて」 không phải đáp án.",
+    "compare": "",
+    "example_notes": [
+      "Tuyết phủ kín cả ngọn núi, đến mức không phân biệt được đường đi."
+    ]
+  },
+  "v-0924": {
+    "meaning": "Ướt sũng",
+    "usage": "「びしょびしょになる」. Kèm 「びしょぬれ」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Đang rửa xe thì nước từ vòi bắn ra, chiếc áo sơ mi ướt sũng."
     ]
   },
   "v-0925": {
@@ -8259,14 +8586,149 @@
       "Ngày đi dã ngoại mà tôi háo hức chờ đợi, không may trời lại mưa to từ sáng."
     ]
   },
+  "v-0926": {
+    "meaning": "Bão tuyết",
+    "usage": "「｜吹雪《ふぶき》になる」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Bão tuyết làm gần như không thấy phía trước, xe chỉ chạy chậm được."
+    ]
+  },
+  "v-0927": {
+    "meaning": "Lạnh cóng, tê cứng vì rét",
+    "usage": "「｜凍《こご》えそうな｜寒《さむ》さ」.",
+    "nuance": "",
+    "compare": "Cả hai đều có thể dịch \"lạnh cóng\". ĐÔNG (凍, như \"đông đá\") 「凍える」: tay chân, cơ thể tê cứng vì rét: 「凍えた指」. LÃNH (冷) 「｜冷《ひ》え｜込《こ》む」: khí trời trở lạnh hẳn.",
+    "example_notes": [
+      "Quên găng tay nên tôi phải xoay chìa khóa bằng những ngón tay tê cứng vì rét."
+    ]
+  },
+  "v-0928": {
+    "meaning": "Trời lạnh hẳn đi, lạnh buốt",
+    "usage": "「｜冷《ひ》え｜込《こ》んでいる」. Danh từ: 「｜冷《ひ》え｜込《こ》み」 (cái lạnh đột ngột).",
+    "nuance": "",
+    "compare": "Đừng dịch \"lạnh cóng\" cho cả hai: 「冷え込む」 (LÃNH) là nhiệt độ hạ, trời rét hẳn; 「｜凍《こご》える」 (ĐÔNG, như \"đông đá\") là người rét đến tê cứng.",
+    "example_notes": [
+      "Mặt trời lặn là trời lạnh buốt hẳn, nên ở nhà nghỉ trên núi người ta cho tôi mượn chiếc chăn dày."
+    ]
+  },
   "v-0929": {
     "meaning": "(Người, âm nhạc) hoạt bát, rộn ràng; (danh từ) tiết trời",
     "usage": "ナ形容詞: 「陽気な人」, 「陽気な音楽」. Danh từ: 「春の陽気」, 「陽気がいい」 (trời đẹp). Hán Việt \"dương khí\", nhưng nghĩa khác tiếng Việt.",
     "nuance": "Viết: 「陽」 (dương) + 「気」. Đề thi đã gài 「揚起」「揚気」「陽起」: 「揚」 và 「起」 cũng đọc 「よう」, 「き」.",
-    "compare": "「陽気」: tính người hay âm nhạc tươi vui: 「陽気な人」. 「｜活発《かっぱつ》」: người, hoạt động năng nổ, sôi nổi: 「活発な議論」. 「｜活気《かっき》」: không khí sôi động của một nơi: 「活気のある町」.",
+    "compare": "「陽気」: người, nhạc tươi vui: 「陽気な人」; (danh từ) tiết trời. 「｜活発《かっぱつ》」: năng nổ: 「活発な議論」. 「｜活気《かっき》」: nơi sôi động: 「活気のある町」. 「〜｜日和《びより》」: trời đẹp đúng dịp làm gì.",
     "example_notes": [
       "Người hàng xóm mới là người vui tính, gặp lúc nào cũng chào to.",
       "Bị tiết trời xuân dễ chịu rủ rê, tôi đi dạo tới tận công viên."
+    ]
+  },
+  "v-0930": {
+    "meaning": "Thời tiết đẹp hợp với một việc",
+    "usage": "「｜散歩日和《さんぽびより》」, 「｜行楽日和《こうらくびより》」, 「｜洗濯日和《せんたくびより》」.",
+    "nuance": "",
+    "compare": "「〜｜日和《びより》」 ghép sau một việc: trời đẹp đúng để làm việc ấy (「散歩日和」). 「｜陽気《ようき》」 đọc DƯƠNG KHÍ nhưng không phải \"dương khí\" (sinh lực): là tiết trời theo mùa, hoặc tính vui vẻ.",
+    "example_notes": [
+      "Đúng ngày đẹp trời để đi chơi nên đường cao tốc đông từ sáng."
+    ]
+  },
+  "v-0931": {
+    "meaning": "Ánh nắng",
+    "usage": "「｜日差《ひざ》しが｜強《つよ》い」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Bên khung cửa sổ nắng đông dịu dàng chiếu vào, con mèo ngủ mãi không dậy."
+    ]
+  },
+  "v-0932": {
+    "meaning": "Hơn nữa, càng thêm",
+    "usage": "「いっそう｜強《つよ》くなる」.",
+    "nuance": "",
+    "compare": "Cả hai dịch \"hơn nữa\". 「｜一段《いちだん》と」 (NHẤT ĐOẠN) gói ý \"hơn hẳn một bậc\"; 「いっそう」 chỉ nói mức độ tăng thêm.",
+    "example_notes": [
+      "Càng gần tới đỉnh núi, không khí càng lạnh hơn."
+    ]
+  },
+  "v-0933": {
+    "meaning": "Hơn hẳn một bậc",
+    "usage": "「｜一段《いちだん》と｜厳《きび》しくなる」.",
+    "nuance": "",
+    "compare": "NHẤT ĐOẠN (一段) không phải \"một đoạn\" (khúc) mà là \"một bậc\": 「一段と」 = hơn hẳn một bậc. 「いっそう」 chỉ là \"càng thêm\", không gói ý \"bậc\".",
+    "example_notes": [
+      "Từ khi đổi giày mới, đi bộ lên dốc nhẹ nhàng hơn hẳn một bậc."
+    ]
+  },
+  "v-0934": {
+    "meaning": "Nhanh chóng, cấp tốc",
+    "usage": "「｜急速《きゅうそく》に〜する」, 「｜急速《きゅうそく》に｜冷《ひ》え｜込《こ》む」.",
+    "nuance": "",
+    "compare": "CẤP TỐC (急速) ở đây không phải \"cấp tốc\" (gấp rút, khẩn cấp) của tiếng Việt mà là tốc độ thay đổi nhanh: 「急速に進む」. Chuyện xảy ra bất chợt thì dùng 「にわか」.",
+    "example_notes": [
+      "Mười năm gần đây, thị trấn này già hóa dân số rất nhanh."
+    ]
+  },
+  "v-0935": {
+    "meaning": "Dần dần, một mạch tăng lên",
+    "usage": "「ぐんぐん｜上《あ》がる」, 「ぐんぐんと」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Cây giống lớn vụt lên sau mưa, một tuần mà chiều cao đã gấp đôi."
+    ]
+  },
+  "v-0936": {
+    "meaning": "Phần nào, hơi, một chút",
+    "usage": "「いくぶん｜弱《よわ》くなる」. Đồng nghĩa: 「いくらか」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Mưa nhỏ dần, cảnh vật nhìn qua cửa sổ sáng lên phần nào."
+    ]
+  },
+  "v-0937": {
+    "meaning": "Rõ rệt, trông thấy",
+    "usage": "「めっきり｜寒《さむ》くなる」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Mấy năm nay, khách du lịch đi trên con phố này giảm rõ rệt."
+    ]
+  },
+  "v-0938": {
+    "meaning": "Quá (mức)",
+    "usage": "「あまりに〜」, 「あまりにも｜暑《あつ》い」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Chuyện quá đột ngột nên tôi xin ít thời gian trước khi trả lời."
+    ]
+  },
+  "v-0939": {
+    "meaning": "Khoảng cách, sự chênh lệch",
+    "usage": "「〜に｜差《さ》がある」.",
+    "nuance": "Hán Việt SAI (差) nghĩa là chênh lệch, không phải \"sai\" (nhầm).",
+    "compare": "",
+    "example_notes": [
+      "Tôi không bận tâm chênh lệch tuổi tác, kết bạn với đàn anh hơn mình hai mươi tuổi."
+    ]
+  },
+  "v-0940": {
+    "meaning": "Vốn dĩ, ban đầu; về cơ bản",
+    "usage": "「｜本来《ほんらい》、〜ない」 (dùng như phó từ).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Ngôi chùa này vốn được xây để cho lữ khách nghỉ chân, người ta truyền lại như vậy."
+    ]
+  },
+  "v-0941": {
+    "meaning": "Đến gần, tiến lại gần",
+    "usage": "「〜に｜接近《せっきん》する」. Đi với 「に」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Trên con đường tối, tôi cảm thấy có ai đó đến gần phía sau nên rảo bước nhanh hơn."
     ]
   },
   "v-0942": {
@@ -8277,6 +8739,51 @@
     "example_notes": [
       "Để phòng tuyết lớn, tôi đã thay lốp xe sang loại dùng cho mùa đông.",
       "Để chuẩn bị cho kỳ thi ngày mai, tối nay tôi đi ngủ sớm."
+    ]
+  },
+  "v-0943": {
+    "meaning": "Cát",
+    "usage": "「｜砂《すな》を｜袋《ふくろ》に｜詰《つ》める」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Cát lọt vào giày nên từ bãi biển đi về, bước nào cũng nghe lạo xạo."
+    ]
+  },
+  "v-0944": {
+    "meaning": "Tràn ra, ngập tràn",
+    "usage": "「｜水《みず》があふれる」. Kèm 「｜洪水《こうずい》」 (lũ lụt).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi đổ quá nhiều nước vào chậu rửa mặt nên nước tràn qua mép xuống sàn."
+    ]
+  },
+  "v-0945": {
+    "meaning": "Lượng mưa",
+    "usage": "「｜降水量《こうすいりょう》を｜記録《きろく》する」. Kèm 「｜雨量《うりょう》」, 「｜降雪《こうせつ》｜量《りょう》」 (lượng tuyết rơi).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Vùng này lượng mưa cả năm ít nên nông dân rất chú ý chuyện quản lý nước."
+    ]
+  },
+  "v-0946": {
+    "meaning": "Quan trắc, theo dõi và đo đạc",
+    "usage": "「〜を｜観測《かんそく》する」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Ở đài khí tượng, người ta quan trắc sức gió và hướng gió mỗi ngày."
+    ]
+  },
+  "v-0947": {
+    "meaning": "Khí quyển bao quanh Trái Đất",
+    "usage": "「｜大気《たいき》が｜不安定《ふあんてい》だ」. Kèm 「｜気圧《きあつ》」 (khí áp).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Leo lên núi cao, không khí loãng nên thở rất khó."
     ]
   },
   "v-0948": {
@@ -8299,6 +8806,105 @@
       "Từ khi ông chủ đột ngột qua đời, việc kinh doanh của nhà trọ ấy sa sút dần."
     ]
   },
+  "v-0950": {
+    "meaning": "Bước qua, bắc chân qua",
+    "usage": "「〜をまたぐ」, 「またいで｜進《すす》む」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Bố tôi bước qua con chó đang ngủ rồi đi vào bếp."
+    ]
+  },
+  "v-0951": {
+    "meaning": "Sự đáp lại, hồi âm",
+    "usage": "「｜応答《おうとう》がない」, 「｜応答《おうとう》する」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Gọi điện hỏi thì trước tiên là giọng nói tự động trả lời."
+    ]
+  },
+  "v-0952": {
+    "meaning": "Lắng xuống, trở nên yên",
+    "usage": "「〜が｜静《しず》まる」: 「｜雨《あめ》も｜風《かぜ》も｜静《しず》まった」.",
+    "nuance": "",
+    "compare": "TĨNH (静) là yên lặng: 「静まる」 nhấn vào tiếng động, mưa gió lặng đi. 「｜収《おさ》まる」 (THU) cũng dùng cho gió, cãi vã lắng xuống, và còn nghĩa nằm gọn trong một khuôn khổ.",
+    "example_notes": [
+      "Em bé nín khóc, căn phòng mới lặng xuống."
+    ]
+  },
+  "v-0953": {
+    "meaning": "Đem đến, mang tới cho một nơi hay một người",
+    "usage": "「｜被害《ひがい》をもたらす」, 「〜に〜をもたらす」.",
+    "nuance": "",
+    "compare": "Không có Hán Việt, dễ bị dịch chung là \"gây ra\"; 「もたらす」 là đem một kết quả đến cho nơi nào đó: 「変化をもたらす」. 「｜及《およ》ぼす」 (CẬP, như \"phổ cập\") là làm ảnh hưởng lan tới: 「影響を及ぼす」.",
+    "example_notes": [
+      "Chế độ mới đã mang lại thay đổi lớn cho những người làm việc."
+    ]
+  },
+  "v-0954": {
+    "meaning": "Gây ảnh hưởng, làm tác động đến",
+    "usage": "「｜被害《ひがい》を｜及《およ》ぼす」, 「｜影響《えいきょう》を｜及《およ》ぼす」, 「〜に〜を｜及《およ》ぼす」.",
+    "nuance": "",
+    "compare": "CẬP (及) như \"phổ cập\": lan tới. Cặp tự/tha: 「｜及《およ》ぶ」 (lan tới một mức) và 「及ぼす」 (làm lan sang, đi với 「を」: 「影響を及ぼす」). 「もたらす」: đem lại một kết quả.",
+    "example_notes": [
+      "Thiếu ngủ cũng gây ảnh hưởng xấu đến thành tích công việc."
+    ]
+  },
+  "v-0955": {
+    "meaning": "Lên tới, đạt mức (số lượng)",
+    "usage": "「｜数十億円《すうじゅうおくえん》に｜及《およ》ぶ」. Đi với 「に」.",
+    "nuance": "",
+    "compare": "Gốc của CẬP (及) là \"tới\", như \"cập bến\": 「及ぶ」 = lan, kéo dài tới một mức: 「数十億円に及ぶ」. 「｜達《たっ》する」 (ĐẠT) cũng là chạm mức; tha động từ của 「及ぶ」 là 「｜及《およ》ぼす」.",
+    "example_notes": [
+      "Chuyện xưa của ông kể, khi nhận ra thì đã kéo dài tới hai tiếng."
+    ]
+  },
+  "v-0956": {
+    "meaning": "Bỏ đi, đi khỏi một nơi",
+    "usage": "「｜台風《たいふう》が｜去《さ》る」, 「〜を｜去《さ》る」.",
+    "nuance": "",
+    "compare": "KHỨ (去) như \"quá khứ\": đi qua, bỏ lại. 「去る」 = rời hẳn nơi mình đang ở: 「台風が去る」. 「｜離《はな》れる」 (LI) nói khoảng cách xa ra: 「駅から離れる」.",
+    "example_notes": [
+      "Người bạn đỗ kỳ thi đã rời quê hương vào mùa xuân để lên thành phố."
+    ]
+  },
+  "v-0957": {
+    "meaning": "Tạm thời, trước mắt",
+    "usage": "「ひとまず｜安心《あんしん》だ」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Chuyện chi tiết để sau, trước mắt hãy uống chút trà đã."
+    ]
+  },
+  "v-0958": {
+    "meaning": "Ngay sau khi, ngay sau đó",
+    "usage": "「｜鳴《な》った｜直後《ちょくご》」, 「〜た｜直後《ちょくご》に」. Trái nghĩa: 「｜直前《ちょくぜん》」.",
+    "nuance": "",
+    "compare": "TRỰC HẬU (直後) và TRỰC TIỀN (直前): 直 ở đây là \"sát liền\", không phải \"trực tiếp\". Sau và trước một sự việc.",
+    "example_notes": [
+      "Vừa cúp máy xong thì ngoài cửa sổ có tiếng động lớn."
+    ]
+  },
+  "v-0959": {
+    "meaning": "Hành động, hoạt động",
+    "usage": "「｜落《お》ち｜着《つ》いて｜行動《こうどう》する」, 「｜自由行動《じゆうこうどう》」, 「｜団体行動《だんたいこうどう》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Giờ tham quan, mỗi nhóm bốn người đi chung với nhau."
+    ]
+  },
+  "v-0960": {
+    "meaning": "Nếu chẳng may, lỡ ra",
+    "usage": "「｜万一《まんいち》、〜」. Dùng khi nói về việc không tốt có thể xảy ra.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Nếu chẳng may đến muộn, xin hãy vào trước."
+    ]
+  },
   "v-0961": {
     "meaning": "Khuynh hướng, xu hướng",
     "usage": "「〜傾向がある」, 「〜傾向にある」, 「増える傾向」, 「最近の傾向」. Hán Việt \"khuynh hướng\", nghĩa như tiếng Việt.",
@@ -8307,6 +8913,24 @@
     "example_notes": [
       "Ở cửa hàng này, doanh thu có xu hướng giảm vào những ngày mưa.",
       "Tôi có xu hướng nói nhanh mỗi khi hồi hộp."
+    ]
+  },
+  "v-0962": {
+    "meaning": "Đạt tới, lên đến (một mức)",
+    "usage": "「5｜億円《おくえん》に｜達《たっ》する」. Đi với 「に」.",
+    "nuance": "Đề điền từ: 「〜｜度《ど》に（｜達《たっ》した）」; nhiễu 「｜減《へ》った」「｜通《つう》じた」「｜沈《しず》んだ」.",
+    "compare": "ĐẠT (達) trong tiếng Việt hay gợi \"đạt được, thành công\"; 「達する」 chỉ là chạm tới một mức, kể cả con số xấu (thiệt hại, nhiệt độ âm). 「｜及《およ》ぶ」 (CẬP) cũng đi với 「に」 và một mức.",
+    "example_notes": [
+      "Số người đăng ký đã đạt một vạn chỉ sau nửa năm kể từ khi mở."
+    ]
+  },
+  "v-0963": {
+    "meaning": "Tai họa lớn, gây thiệt hại nặng nề",
+    "usage": "「｜災害《さいがい》に｜備《そな》える」. Kèm 「｜天災《てんさい》」, 「｜人災《じんさい》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Xem tin tức về thiên tai, tôi quyết định góp tiền ủng hộ."
     ]
   },
   "v-0988": {
@@ -9192,7 +9816,7 @@
     "meaning": "Bước đầu, trình độ sơ cấp khi mới học một môn",
     "usage": "「初歩から学ぶ」, 「初歩から説明する」, 「初歩の練習曲」.",
     "nuance": "Đề thi coi là sai khi nói đầu trận đấu, đầu mùa nóng hay nguyên nhân cuộc cãi nhau: 「初歩」 là trình độ ban đầu của việc học, không phải lúc bắt đầu của mọi việc.",
-    "compare": "「｜高等《こうとう》」: trình độ cao.",
+    "compare": "「｜高等《こうとう》」: trình độ cao. 「｜初心者《しょしんしゃ》」 (SƠ TÂM GIẢ) là người mới học; còn 「初歩」 (SƠ BỘ) là trình độ nhập môn, không phải \"sơ bộ\" (tạm, chưa kỹ).",
     "example_notes": [
       "Cuốn sách này giải thích cẩn thận về máy tính từ những điều sơ đẳng nhất.",
       "Tôi mới bắt đầu học ghita nên chỉ chơi được những bản luyện tập sơ cấp."
@@ -9202,7 +9826,7 @@
     "meaning": "Tuột ra, rời khỏi chỗ; (dự đoán) sai, không trúng",
     "usage": "「チェーンが外れる」, 「予想が外れる」 (đoán sai), 「くじが外れる」 (trượt xổ số).",
     "nuance": "Trái nghĩa với 「｜当《あ》たる」 (trúng). Đọc 「はずれる」; đề đọc chữ đặt 「みだれて」「やぶれて」「つぶれて」 làm nhiễu.",
-    "compare": "「外れる」: tuột khỏi chỗ, đoán sai. 「｜取《と》れる」: nút, quai rời ra; vết bẩn mất đi. 「｜離《はな》れる」: rời xa, cách xa một chỗ: 「駅から離れる」.",
+    "compare": "「外れる」: tuột khỏi chỗ, đoán sai. 「｜取《と》れる」: nút, quai rời ra; vết bẩn mất đi. 「｜離《はな》れる」: rời xa, cách xa một chỗ: 「駅から離れる」. 「｜当《あ》たる」 là trái nghĩa: trúng thưởng, đoán trúng.",
     "example_notes": [
       "Đang đổ dốc thì xích xe đạp bị tuột.",
       "Tôi đoán đường sẽ vắng nhưng đã đoán sai, ra tới ga mất cả một tiếng."
@@ -9212,7 +9836,7 @@
     "meaning": "Ngay trước (một việc, một thời điểm)",
     "usage": "「〜の直前」, 「〜する直前に」, 「出発の直前」. Trái nghĩa: 「｜直後《ちょくご》」 (ngay sau).",
     "nuance": "Câu thay thế: 「｜間際《まぎわ》」 (sát lúc) ＝「直前」; nhiễu 「直後」「当日」「前日」.",
-    "compare": "",
+    "compare": "「｜直後《ちょくご》」 (TRỰC HẬU) là từ ngược nghĩa: ngay sau. 直 ở đây là \"sát liền\", đừng dịch thành \"trực tiếp\".",
     "example_notes": [
       "Ngay trước lễ tốt nghiệp, tôi nhận được một bức thư ngắn từ bạn.",
       "Ngay trước khi cửa tàu đóng, một người đàn ông chạy ào vào."
@@ -9601,7 +10225,7 @@
     "meaning": "(Gió, cãi vã) lắng xuống, dịu đi; nằm gọn trong (một khuôn khổ)",
     "usage": "Tự động từ: 「風が収まる」, 「言い合いが収まる」, 「かばんに収まる」, 「予算内に収まる」.",
     "nuance": "Đọc 「おさまる」; đề đã gài 「さだまった」「しずまった」「やすまった」. Tha động từ là 「収める」: đề đã cho 「書籍が収められている」 = nơi này cất giữ nhiều sách.",
-    "compare": "「収まる」: lắng xuống, hay nằm gọn trong một chỗ. 「｜納《おさ》める」: nộp thuế, học phí. Khác chữ, cùng âm 「おさ」.",
+    "compare": "「収まる」: lắng xuống, hay nằm gọn trong một chỗ. 「｜納《おさ》める」: nộp thuế, học phí. Khác chữ, cùng âm 「おさ」. 「｜静《しず》まる」 (TĨNH): tiếng động, mưa gió lặng đi.",
     "example_notes": [
       "Cuộc cãi vã của hai người phải đến khi thầy giáo can vào mới lắng xuống.",
       "Hành lý nhiều nhưng rốt cuộc cũng nhét vừa một cái túi."
@@ -10548,7 +11172,7 @@
     "meaning": "Đúng lúc vừa…; ngay lúc đó (việc khác liền xảy ra)",
     "usage": "「その途端（に）」 (đúng lúc đó), 「途端に」 (liền, lập tức), 「〜たとたん（に）」 (vừa… thì).",
     "nuance": "Ở thẻ này 「途端」 đứng một mình: 「その途端」「途端に」; mẫu 「〜たとたん」 có thẻ ngữ pháp riêng. Đọc 「とたん」, không trường âm; đề đặt 「とうたんに」 làm nhiễu.",
-    "compare": "「途端に」: việc trước vừa xảy ra thì việc sau liền tới: 「その途端」. 「たちまち」: thay đổi xảy ra rất nhanh: 「客がたちまち増える」. 「とっさに」: trong tích tắc, không kịp nghĩ.",
+    "compare": "「途端に」: việc trước vừa xảy ra thì việc sau liền tới: 「その途端」. 「たちまち」: đổi rất nhanh: 「客がたちまち増える」. 「とっさに」: tích tắc, không kịp nghĩ. 「｜瞬間《しゅんかん》」: chính khoảnh khắc ấy.",
     "example_notes": [
       "Cô ấy bước vào phòng. Đúng lúc đó, tiếng nói chuyện của mọi người tắt ngấm.",
       "Mưa tạnh, nắng vừa lên là trẻ con liền kéo đến công viên."
@@ -11038,7 +11662,7 @@
     "meaning": "Thịnh hành, rộ lên thành trào lưu một thời (thời trang; cả bệnh lây lan)",
     "usage": "「流行を追う」 (chạy theo xu hướng), 「かぜが流行する」, 「流行語」 (từ ngữ thịnh hành).",
     "nuance": "Động từ thuần Nhật 「流行る」 (đọc 「はやる」) cùng nghĩa với 「流行する」; còn 「流行」 thì đọc 「りゅうこう」. Dùng cho cả trào lưu lẫn bệnh lan rộng.",
-    "compare": "「流行」: được nhiều người ưa chuộng, lan rộng trong một thời kỳ: 「流行の服」. 「｜普及《ふきゅう》」: cái mới (sản phẩm, công nghệ) được dùng rộng khắp xã hội: 「スマホの普及」.",
+    "compare": "「流行」 (LƯU HÀNH, không phải \"lưu hành\" là được lưu thông): nhiều người ưa chuộng một thời: 「流行の服」. 「｜普及《ふきゅう》」: cái mới dùng khắp xã hội: 「スマホの普及」. 「ブーム」: cơn sốt nổi lên nhanh.",
     "example_notes": [
       "Nhờ được giới thiệu trên một chương trình truyền hình mà việc vừa đi dạo vừa ăn bánh mì đang rộ lên ở thị trấn đó.",
       "Mùa đông năm nay, cả nhà tôi đều mắc đợt cảm đang lan rộng."

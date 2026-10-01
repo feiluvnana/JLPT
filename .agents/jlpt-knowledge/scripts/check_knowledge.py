@@ -775,11 +775,48 @@ def check_all(check, warn, skip, git_tracks=None):
         check_index(lv, check)
 
 
+def check_kanji_self_ruby(level: str, spec: dict, warn):
+    """WARN when a 漢字 card's primary prose rubies its own kanji with a reading the card
+    does not list, or rubies it with a 訓 reading after 音読み (or 音 after 訓読み) —
+    the 〜位《くらい》 / 様《さま》 slip that came back in three batches (漢字 B9/B10 QA)."""
+    if spec.get("headword") != "kanji":
+        return
+    cat = D.locate(level, spec)
+    k2h = lambda t: "".join(chr(ord(c) - 0x60) if "ァ" <= c <= "ヶ" else c for c in t)
+    hits = []
+    for part in cat.parts:
+        files = part.lang_files.values() if isinstance(part.lang_files, dict) else part.lang_files
+        prim = next((p for p in files if p and p.name.endswith(f".{langs.primary()}.json")), None)
+        if not (part.shared.is_file() and prim and prim.is_file()):
+            continue
+        prose = json.loads(prim.read_text(encoding="utf-8"))
+        for e in json.loads(part.shared.read_text(encoding="utf-8")).get("entries", []):
+            k = e.get("kanji")
+            on = {k2h(o) for o in e.get("on", [])}
+            kun = {x.split(".")[0] for x in e.get("kun", [])}
+            t = (prose.get(e.get("id"), {}) or {}).get("usage", "") or ""
+            for m in re.finditer(r"｜?([^｜《》\s「」、。]+)《([^》]+)》", t):
+                # only a stand-alone mention (「〜位《…》」, 「様《…》」), not a kanji inside a
+                # word (お兄《にい》さん, 出入り口《ぐち》) whose special reading is the word's
+                if m.group(1) != k or (m.start() and t[m.start() - 1] not in "「〜・、（ "):
+                    continue
+                if t[m.end():m.end() + 1] not in ("」", "、", "・", ""):
+                    continue
+                r, pre = m.group(2), t[:m.start()]
+                ctx = "on" if pre.rfind("音読") > pre.rfind("訓読") else ("kun" if "訓読" in pre else "")
+                if (r not in on | kun) or (ctx == "on" and r not in on) or (ctx == "kun" and r not in kun):
+                    hits.append(f"{e.get('id')} {k}《{r}》")
+    warn(f"knowledge/{level}/{spec['stem']}: a card rubies its own kanji only with a reading it lists",
+         not hits, "; ".join(hits[:8]) + (f" … and {len(hits) - 8} more" if len(hits) > 8 else "")
+         + " — use the 音 reading in the 音読み row and a listed 訓 in the 訓読み row")
+
+
 def check_one(level: str, spec: dict, check, warn, skip, git_tracks):
     """Every check of one category — what `make check` runs per category, and what
     batch_tool.py `gate` runs on its temp tree."""
     check_category(level, spec, check, warn, skip, git_tracks)
     check_ruby_suspects(level, spec, warn)
+    check_kanji_self_ruby(level, spec, warn)
     check_prose_citations(level, spec, warn)
     check_related_symmetry(level, spec, warn)
     check_meaning_lures(level, spec, warn)

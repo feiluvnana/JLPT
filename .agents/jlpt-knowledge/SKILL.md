@@ -200,10 +200,18 @@ stop and ask). Furigana is hand-checked, never pasted from pykakasi unverified
 
 The rule `exam-model-answer` §"Two languages, two rewrites" states for 詳細解説
 applies here unchanged: each language's prose is **written** for its reader from
-the shared file and refs/, never translated from another language's file. Author
-each language in its own context, reading the shared file and the refs — never
-the other language's file. In the primary prose, furigana every kanji an N2
-learner needs; in a learner language, only on the Japanese being taught.
+the shared file and refs/, never translated from another language's file. In the
+primary prose, furigana every kanji an N2 learner needs; in a learner language,
+only on the Japanese being taught.
+
+**One author context may write every language of a 知識 batch** (owner, 2026-10-01,
+to halve the token cost of reading the sources twice). This exempts 知識 only;
+`詳細解説` keeps one context per language. The author writes each language
+FROM THE SOURCES and the shared fields — the learner pane's gloss from the book's
+own learner-language gloss where it prints one (Hajimete's VI line), its usage and
+nuance from what that reader needs — never by rendering the primary pane sentence
+by sentence. The fresh-eyes QA (a context that wrote nothing) checks for it: a
+learner field that only restates the primary field is a translation finding.
 
 ## Quiz integrity
 
@@ -533,6 +541,26 @@ prose short — `nuance`/`compare` may be `""` there.
    check each meaning/接続 against the cited page, check no example is a
    textbook sentence, check the furigana.
 5. `make knowledge LEVEL=<L>`, then `make check` — read every line (§0.5).
+
+## Batch tool
+
+`scripts/batch_tool.py <cmd> <cat> <n> --batches DIR` (or `$KNOWLEDGE_BATCHES`) replaces
+the per-batch scratch scripts. Each command prints one line per hit plus a summary;
+`--with N` merges another open batch first. Only `merge` writes the real tree.
+
+- `stats` — band use per field (max / cap / >75%), ids vs the shared file, example_notes vs examples.
+- `gate` — merge (live fixes, back-links, a stub pane for a missing language) + build +
+  check_knowledge on a temp copy; prints FAIL/WARN/REVIEW, marking WARNs live has too.
+- `frames` — rules 11/34/35/39/40: each example and stem against every module sentence,
+  open batches, refs/**/*.md and tests/imported-* (shared content tokens, top 3;
+  `!!` = an official 問題6 misuse sentence), plus the rule 3/32 10-char window scan.
+- `lures` — rules 28/29/34/40 on the merged generated quizzes: key↔distractor gloss word
+  or Hán Việt overlap (GW), a wrong option printing the headword (LURE), a gloss carrying
+  another headword (HW), a fake reading another spelling really has (READ), unlinked
+  same-pos look-alikes (PAIR).
+- `rebase` — back-links that drop part of the live compare (the lost fragments) and every
+  live meaning fix, live → new.
+- `merge` — merge_batch.py's merge plus the `<V|K><n>[<code>]_live_meaning_fix.json` files.
 
 ## Adding a category or a level
 

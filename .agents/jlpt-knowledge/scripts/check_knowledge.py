@@ -770,12 +770,18 @@ def check_all(check, warn, skip, git_tracks=None):
             skip(f"knowledge/{lv}/", "no knowledge data for this level yet")
             continue
         for spec in D.categories(lv):
-            check_category(lv, spec, check, warn, skip, git_tracks)
-            check_ruby_suspects(lv, spec, warn)
-            check_prose_citations(lv, spec, warn)
-            check_related_symmetry(lv, spec, warn)
-            check_meaning_lures(lv, spec, warn)
+            check_one(lv, spec, check, warn, skip, git_tracks)
         check_index(lv, check)
+
+
+def check_one(level: str, spec: dict, check, warn, skip, git_tracks):
+    """Every check of one category — what `make check` runs per category, and what
+    batch_tool.py `gate` runs on its temp tree."""
+    check_category(level, spec, check, warn, skip, git_tracks)
+    check_ruby_suspects(level, spec, warn)
+    check_prose_citations(level, spec, warn)
+    check_related_symmetry(level, spec, warn)
+    check_meaning_lures(level, spec, warn)
 
 
 if __name__ == "__main__":

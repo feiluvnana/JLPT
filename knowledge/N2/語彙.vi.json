@@ -4847,7 +4847,7 @@
     "meaning": "Hoàn thành (chương trình học)",
     "usage": "「｜課程《かてい》を｜修了《しゅうりょう》する」, 「｜修了証書《しゅうりょうしょうしょ》」 (chứng nhận hoàn thành), 「｜修了《しゅうりょう》｜式《しき》」 (lễ kết thúc khóa).",
     "nuance": "",
-    "compare": "",
+    "compare": "Cả hai đều dịch là \"hoàn thành\": 「修了」 là học xong một khóa, chương trình: 「課程を修了する」; 「｜完成《かんせい》」 là làm xong một vật, công trình: 「作品が完成する」.",
     "example_notes": [
       "Ai hoàn thành khóa đào tạo nửa năm sẽ được cấp giấy chứng nhận."
     ]
@@ -4893,7 +4893,7 @@
     "meaning": "Việc học tập",
     "usage": "「｜学習《がくしゅう》する」, 「｜学習時間《がくしゅうじかん》」 (thời gian học), 「｜学習法《がくしゅうほう》」 (phương pháp học), 「｜学習《がくしゅう》の｜記録《きろく》」.",
     "nuance": "",
-    "compare": "Hán Việt: 「｜学習《がくしゅう》」 HỌC TẬP, 「｜学力《がくりょく》」 HỌC LỰC. 「｜学習《がくしゅう》」: danh từ, nhấn vào quá trình học; 「｜学《まな》ぶ」: động từ, học một điều gì đó; 「｜学力《がくりょく》」: năng lực đã có.",
+    "compare": "Hán Việt: 「｜学習《がくしゅう》」 HỌC TẬP, 「｜学力《がくりょく》」 HỌC LỰC. 「｜学習《がくしゅう》」: danh từ, nhấn vào quá trình học; 「｜学《まな》ぶ」: động từ, học một điều gì đó; 「｜学力《がくりょく》」: năng lực đã có. 「｜学問《がくもん》」 HỌC VẤN: tri thức của một ngành.",
     "example_notes": [
       "Ứng dụng này tự lưu lại việc học của bạn mỗi ngày."
     ]
@@ -4908,10 +4908,10 @@
     ]
   },
   "v-0527": {
-    "meaning": "Học vấn, vốn hiểu biết rộng về văn hóa",
+    "meaning": "Học thức, vốn hiểu biết rộng về văn hóa",
     "usage": "「｜教養《きょうよう》がある」, 「｜教養《きょうよう》を｜身《み》につける」, 「｜教養《きょうよう》を｜深《ふか》める」, 「｜教養《きょうよう》のある｜人《ひと》」.",
     "nuance": "",
-    "compare": "",
+    "compare": "「教養」: vốn hiểu biết rộng và sự tinh tế của một người: 「教養のある人」. 「｜学問《がくもん》」 HỌC VẤN: tri thức của một ngành do nghiên cứu mà có — \"người có học vấn\" tiếng Việt thường ứng với 「教養がある」.",
     "example_notes": [
       "Anh ấy am hiểu cả hội họa lẫn âm nhạc, là người có học vấn, có văn hóa."
     ]
@@ -5144,6 +5144,15 @@
       "Tôi đem kimono cũ không dùng nữa làm lại thành túi để tận dụng."
     ]
   },
+  "v-0553": {
+    "meaning": "Thử sức với việc khó, đương đầu thử thách",
+    "usage": "「新しい仕事に挑戦する」, 「挑戦してみる」. Cũng nói 「チャレンジする」 (cùng nghĩa).",
+    "nuance": "",
+    "compare": "Hán Việt KHIÊU CHIẾN, nhưng 「挑戦」 không phải \"thách đấu\" kiểu tiếng Việt: 「N2に挑戦する」 là thử sức với kỳ thi khó. Dốc sức làm một việc, không nhấn vào cái khó, là 「｜取《と》り｜組《く》む」.",
+    "example_notes": [
+      "Cô cháu gái đang học đại học đã thử sức đi nước ngoài một mình lần đầu vào kỳ nghỉ hè."
+    ]
+  },
   "v-0554": {
     "meaning": "Phạm vi, phần có giới hạn của một vùng hay một mức độ",
     "usage": "「広い範囲」, 「できる範囲で」 (trong khả năng), 「試験の範囲」, 「使える範囲」. Hán Việt \"phạm vi\", nghĩa như tiếng Việt.",
@@ -5152,6 +5161,134 @@
     "example_notes": [
       "Tôi muốn giúp công việc tình nguyện của thị trấn trong khả năng của mình.",
       "Vé tháng này chỉ dùng được trong một phạm vi nhất định."
+    ]
+  },
+  "v-0555": {
+    "meaning": "Kiểu, mẫu, khuôn mẫu",
+    "usage": "「いろいろなパターン」, 「同じパターン」. 「ワンパターン」 là chỉ có một kiểu, một mẫu.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Cuộc sống mỗi ngày cứ lặp lại một kiểu nên tôi thấy hơi chán."
+    ]
+  },
+  "v-0556": {
+    "meaning": "Tất cả, mọi (đứng trước danh từ)",
+    "usage": "「あらゆる方法」, 「あらゆる人」. Chỉ đứng trước danh từ; có cụm 「ありとあらゆる」 (đủ mọi thứ).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi đã thử mọi cách nhưng cái khóa cửa sổ cứng vẫn không sao mở được."
+    ]
+  },
+  "v-0557": {
+    "meaning": "Đề tài, bài được giao; điều còn phải khắc phục",
+    "usage": "Nghĩa ①: 「レポートの課題」 (đề tài, bài được giao). Nghĩa ②: 「今後の課題」, 「課題が残る」 (điều còn phải khắc phục).",
+    "nuance": "",
+    "compare": "「課題」: bài được giao, hoặc điều còn phải khắc phục: 「今後の課題」. 「｜目標《もくひょう》」: đích mình đặt ra để đạt tới: 「目標を立てる」.",
+    "example_notes": [
+      "Bài được giao trong kỳ nghỉ đông là nghe ông kể chuyện hồi nhỏ rồi viết lại thành bài văn.",
+      "Trước khi bắt đầu chế độ mới, việc gom chi phí bằng cách nào là vấn đề cuối cùng còn lại."
+    ]
+  },
+  "v-0558": {
+    "meaning": "Đoạn (của bài viết)",
+    "usage": "「最後の段落」, 「段落を分ける」.",
+    "nuance": "",
+    "compare": "「段落」: một đoạn văn gồm nhiều câu cùng một ý. 「｜改行《かいぎょう》」: xuống dòng; khi sang đoạn mới thì xuống dòng rồi lùi vào một ô.",
+    "example_notes": [
+      "Viết xong bài văn, tôi thêm một đoạn nữa để bổ sung ý kiến của mình."
+    ]
+  },
+  "v-0559": {
+    "meaning": "Chỗ, điểm cụ thể",
+    "usage": "「訂正箇所」, 「傷んでいる箇所」, 「危険な箇所」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Cây cầu cũ đang được kiểm tra từng chỗ hư hỏng rồi sửa lại."
+    ]
+  },
+  "v-0560": {
+    "meaning": "Giấy in sẵn mẫu (giấy đề thi, giấy trả lời, mẫu đơn)",
+    "usage": "「問題用紙」 (giấy đề thi), 「解答用紙」 (giấy trả lời), 「答案用紙」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Mẫu giấy này ô nhỏ quá nên tên dài bị tràn ra ngoài."
+    ]
+  },
+  "v-0561": {
+    "meaning": "Ứng dụng, vận dụng",
+    "usage": "「知識を応用する」, 「応用して使う」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi vận dụng cách chuyển ngón đã học ở đàn guitar nên chẳng mấy chốc đã chơi được cả đàn shamisen."
+    ]
+  },
+  "v-0562": {
+    "meaning": "Sự lựa chọn, chọn lọc",
+    "usage": "「進路の選択」, 「選択する」, 「選択肢」 (các phương án để chọn).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Mỗi lần tôi phân vân chuyện chọn hướng đi, mẹ luôn nghe tôi nói đến hết."
+    ]
+  },
+  "v-0563": {
+    "meaning": "Phù hợp, đúng với (điều kiện, mẫu)",
+    "usage": "「条件に当てはまる」, 「当てはまるものを選ぶ」. Tha động từ: 「当てはめる」 (áp vào).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Ai đáp ứng các điều kiện sau, xin hãy lấy số thứ tự ở quầy tiếp nhận."
+    ]
+  },
+  "v-0564": {
+    "meaning": "Trình bày, nói ra (ý kiến, cảm tưởng)",
+    "usage": "「意見を述べる」, 「感想を述べる」, 「お礼を述べる」.",
+    "nuance": "",
+    "compare": "「述べる」: nói ra ý kiến, cảm nghĩ của mình. 「｜論《ろん》じる」: nêu lý lẽ để bàn về một vấn đề: 「経済を論じる」.",
+    "example_notes": [
+      "Trong buổi phỏng vấn, hãy trình bày ngắn gọn lý do bạn chọn công ty này."
+    ]
+  },
+  "v-0565": {
+    "meaning": "Nói cách khác, đổi sang cách nói khác",
+    "usage": "「別の言葉に言い換える」, 「易しい言葉に言い換える」.",
+    "nuance": "",
+    "compare": "「言い換える」: nói cùng một ý bằng từ khác trong cùng một thứ tiếng. 「｜訳《やく》す」: chuyển sang thứ tiếng khác: 「英語に訳す」.",
+    "example_notes": [
+      "Tôi đổi những từ khó trong bài báo thành cách diễn đạt học sinh tiểu học cũng hiểu rồi viết lên bảng."
+    ]
+  },
+  "v-0566": {
+    "meaning": "Ngồi nghĩ mãi, chìm vào suy tư",
+    "usage": "「考え込んでしまう」, 「一人で考え込む」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Được bạn nhờ một việc, anh ấy khoanh tay ngồi nghĩ một lúc lâu."
+    ]
+  },
+  "v-0567": {
+    "meaning": "Giới hạn, khoanh trong phạm vi; (「〜に限る」) tốt nhất là…",
+    "usage": "Nghĩa ①: 「時間が限られている」, 「人数を限る」. Nghĩa ②: 「〜に限る」 (không gì bằng, tốt nhất là…).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Nhà thi đấu nhỏ nên số người vào được bị giới hạn ở một trăm người.",
+      "Lái xe ngày tuyết thì không gì bằng đi chậm, đừng vội."
+    ]
+  },
+  "v-0568": {
+    "meaning": "Dễ nhầm lẫn, khó phân biệt",
+    "usage": "「紛らわしい名前」, 「紛らわしい表現」, 「紛らわしい選択肢」.",
+    "nuance": "",
+    "compare": "「紛らわしい」: giống cái khác nên khó phân biệt. 「｜明確《めいかく》」: rành mạch, không thể lẫn: 「明確な答え」.",
+    "example_notes": [
+      "Hai loại thuốc này hộp có màu giống nhau, dễ nhầm, nên tôi để ở hai kệ riêng cho khỏi lẫn."
     ]
   },
   "v-0569": {
@@ -5164,6 +5301,43 @@
       "Được nha sĩ làm sạch răng xong, trong miệng thấy sạch sẽ, khoan khoái hẳn."
     ]
   },
+  "v-0570": {
+    "meaning": "Trực giác, linh cảm",
+    "usage": "「勘が働く」, 「勘で答える」, 「長年の勘」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Lạc đường, tôi cứ theo linh cảm rẽ phải thì lại ra được đường lớn."
+    ]
+  },
+  "v-0571": {
+    "meaning": "Buổi chính thức, ngày diễn ra thật (không phải tập)",
+    "usage": "「本番が近づく」, 「本番に備える」, 「本番で緊張する」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Trong buổi diễn ba lê chính thức, vừa nhìn thấy gương mặt gia đình dưới hàng ghế khán giả, tôi nhảy cao hơn hẳn mọi lần."
+    ]
+  },
+  "v-0572": {
+    "meaning": "Đến gần, tiến sát (thời hạn, khoảng cách, nguy hiểm)",
+    "usage": "Nghĩa ① thời gian: 「期限が迫る」, 「日が迫る」. Nghĩa ② khoảng cách: 「危険が迫る」, 「後ろから車が迫る」.",
+    "nuance": "Đề thi từng cho điền ở dạng 「迫って」 với chủ ngữ là hạn nộp; bẫy là 「限って」.",
+    "compare": "",
+    "example_notes": [
+      "Càng gần đến mùa đông, cây trên núi càng rụng dần lá.",
+      "Đang đi trên đường tối thì một chiếc xe tiến sát phía sau nên tôi tránh vào mép đường."
+    ]
+  },
+  "v-0573": {
+    "meaning": "Dốc hết sức, quyết tâm bằng mọi giá",
+    "usage": "「必死に頑張る」, 「必死な顔」, 「必死に〜する」.",
+    "nuance": "Đề thi từng bắt đổi 「必死」 sang 「一生懸命」.",
+    "compare": "",
+    "example_notes": [
+      "Đứa trẻ bị lạc cứ gào gọi tên mẹ bằng tất cả sức lực."
+    ]
+  },
   "v-0574": {
     "meaning": "Đồng loạt, nhiều người hay vật cùng bắt đầu một lúc",
     "usage": "Phó từ: 「いっせいに咲く」, 「いっせいに始める」, 「いっせいに発売される」. Chữ Hán: 「一斉に」 (nhất tề).",
@@ -5174,14 +5348,86 @@
       "Trò chơi mới được bán ra cùng lúc ở các cửa hàng trên cả nước."
     ]
   },
+  "v-0575": {
+    "meaning": "Kết thúc, chấm dứt",
+    "usage": "「受付が終了する」, 「終了時間」, 「試験終了」.",
+    "nuance": "",
+    "compare": "「終了」 CHUNG LIỄU: giờ giấc, buổi, dịch vụ đến lúc dừng: 「受付が終了する」. Đừng dịch \"hoàn thành\" thành 「｜完成《かんせい》」 cho trường hợp này — 「完成」 chỉ dùng khi làm ra xong một vật: 「作品が完成する」.",
+    "example_notes": [
+      "Lớp hội thoại tiếng Anh duy trì mỗi tuần sẽ kết thúc vào tháng này."
+    ]
+  },
+  "v-0576": {
+    "meaning": "Thu hồi, thu lại về một nơi",
+    "usage": "「アンケートを回収する」, 「ごみの回収」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Lon rỗng cứ sáng thứ Hai hằng tuần lại có xe tải của thành phố đến thu gom."
+    ]
+  },
+  "v-0577": {
+    "meaning": "Chấm điểm",
+    "usage": "「答案を採点する」, 「採点基準」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Thầy giáo chấm bài của một trăm người đến tận khuya."
+    ]
+  },
+  "v-0578": {
+    "meaning": "Chắc chắn, không sai sót",
+    "usage": "「確実に届く」, 「確実な方法」, 「確実な情報」.",
+    "nuance": "",
+    "compare": "Bẫy Hán Việt: 「確実」 XÁC THỰC không phải \"xác thực\" (thật, đã kiểm chứng) của tiếng Việt; nghĩa là chắc chắn: 「確実に届く」. Rõ ràng, không mơ hồ là 「｜明確《めいかく》」 MINH XÁC.",
+    "example_notes": [
+      "Đi đường này thì chắc chắn kịp giờ hẹn."
+    ]
+  },
   "v-0579": {
     "meaning": "Theo học một khóa học, một lớp giảng",
     "usage": "「講座を受講する」, 「受講の申し込み」, 「受講者」 (học viên). Hán Việt \"thụ giảng\": nhận bài giảng.",
     "nuance": "Viết: 「受」 (nhận) + 「講」 (giảng). Đề thi đã gài 「授講」「受校」「授校」: 「授」 là \"trao\", phía người dạy.",
-    "compare": "「受講」: theo học, tham dự một khóa, một bài giảng: 「講座を受講する」. 「｜講義《こうぎ》」: bài giảng của thầy ở đại học: 「講義を聞く」.",
+    "compare": "「受講」: theo học, tham dự một khóa, một bài giảng: 「講座を受講する」. 「｜講義《こうぎ》」: bài giảng của thầy ở đại học: 「講義を聞く」. 「｜休講《きゅうこう》」: buổi giảng bị hủy, hôm đó không có lớp: 「休講になる」.",
     "example_notes": [
       "Tôi được học khóa tiếng Anh giao tiếp bằng tiền của công ty.",
       "Khóa học này được ưa chuộng, mỗi năm có hơn một trăm học viên."
+    ]
+  },
+  "v-0580": {
+    "meaning": "Ghi chép lại, ghi lại cho khỏi quên",
+    "usage": "「メモに書き留める」, 「話を書き留める」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi ghi vào sổ tay trong giờ nghỉ những bí quyết công việc mà đàn anh đã kể."
+    ]
+  },
+  "v-0581": {
+    "meaning": "Mục tiêu, đích nhắm tới",
+    "usage": "「目標を立てる」, 「目標を達成する」, 「目標に向かう」.",
+    "nuance": "",
+    "compare": "「目標」: đích mình tự đặt ra để đạt tới: 「目標を立てる」. 「｜課題《かだい》」: bài được giao hay điều còn phải khắc phục: 「今後の課題」.",
+    "example_notes": [
+      "Mục tiêu tháng này của tôi là mỗi ngày đi bộ ba mươi phút."
+    ]
+  },
+  "v-0582": {
+    "meaning": "Sự chuẩn bị tinh thần, tâm thế",
+    "usage": "「心構えができる」, 「心構えが必要だ」, 「〜する心構え」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Trước khi nhận trông trẻ, tôi nghe mẹ — người làm giáo viên mầm non lâu năm — dặn về tâm thế cần có."
+    ]
+  },
+  "v-0583": {
+    "meaning": "Học vấn, sự học (theo đuổi một ngành nghiên cứu)",
+    "usage": "「学問の場」, 「学問に励む」, 「学問を好む」.",
+    "nuance": "",
+    "compare": "「学問」 HỌC VẤN là tri thức của cả một ngành, do nghiên cứu mà có: 「学問の場」. Nói người \"có học vấn, hiểu biết rộng\" thì dùng 「｜教養《きょうよう》がある」; việc học hằng ngày là 「｜学習《がくしゅう》」.",
+    "example_notes": [
+      "Vị giáo sư coi việc học là niềm vui của đời mình, qua tám mươi tuổi vẫn tiếp tục viết luận văn."
     ]
   },
   "v-0584": {
@@ -5192,6 +5438,15 @@
     "example_notes": [
       "Chị tôi đang nghiên cứu thuốc mới trong lĩnh vực y tế.",
       "Về lĩnh vực nấu ăn, anh ấy có kiến thức không thua ai."
+    ]
+  },
+  "v-0585": {
+    "meaning": "Dốc sức làm, bắt tay vào (một việc)",
+    "usage": "「研究に取り組む」, 「問題に取り組む」. Danh từ: 「取り組み」 (sự nỗ lực làm).",
+    "nuance": "",
+    "compare": "「取り組む」: dốc sức làm, không cần là việc khó: 「研究に取り組む」, 「取り組み」. Khi muốn nói \"thử sức với cái khó\" thì dùng 「｜挑戦《ちょうせん》する」 — chữ Hán đọc KHIÊU CHIẾN nhưng không mang nghĩa gây chiến.",
+    "example_notes": [
+      "Người dân trong thị trấn tuần nào cũng dốc sức làm hoạt động giảm rác dưới sông."
     ]
   },
   "v-0586": {
@@ -5214,6 +5469,15 @@
       "Khi bế tắc, tôi thử viết hết mọi điều chợt nghĩ ra lên giấy."
     ]
   },
+  "v-0588": {
+    "meaning": "Phát minh",
+    "usage": "「機械を発明する」, 「発明家」 (nhà phát minh).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Dụng cụ này do một bà nội trợ thấy bất tiện mà phát minh ra."
+    ]
+  },
   "v-0589": {
     "meaning": "Phân tích (dữ liệu, kết quả, nguyên nhân)",
     "usage": "「データを分析する」, 「結果を分析する」, 「原因を分析する」, 「分析には時間がかかる」. Hán Việt \"phân tích\", nghĩa như tiếng Việt.",
@@ -5234,6 +5498,15 @@
       "Sau khi bàn bạc, kế hoạch này được quyết định tiếp tục cả năm tới."
     ]
   },
+  "v-0591": {
+    "meaning": "Chỉ (một chút, một ít), vỏn vẹn",
+    "usage": "「ほんの少し」, 「ほんの五分」. Chỉ đứng trước danh từ chỉ lượng nhỏ.",
+    "nuance": "",
+    "compare": "「ほんの」: chỉ đứng trước danh từ: 「ほんの少し」. 「わずか」: tự đứng làm vị ngữ được: 「残りはわずかだ」.",
+    "example_notes": [
+      "Chỉ cần một chút thời gian thôi, anh nghe tôi nói được không?"
+    ]
+  },
   "v-0592": {
     "meaning": "Tiếp nhận, nhận vào (người đến học, đến sống, đến chữa bệnh)",
     "usage": "「留学生を受け入れる」, 「患者を受け入れる」, 「家族を受け入れる」. Động từ ghép 「受け」 + 「入れる」, cùng họ với 「受け持つ」「受け取る」.",
@@ -5242,6 +5515,24 @@
     "example_notes": [
       "Làng này tích cực đón nhận các gia đình từ thành phố chuyển về sống.",
       "Bệnh viện này tiếp nhận cả bệnh nhân cấp cứu lúc nửa đêm."
+    ]
+  },
+  "v-0593": {
+    "meaning": "Khuôn viên trường, khu học xá",
+    "usage": "「大学のキャンパス」, 「キャンパスを歩く」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Xuân đến, sinh viên ngồi ăn trưa dưới gốc anh đào trong khuôn viên trường nhiều hẳn lên."
+    ]
+  },
+  "v-0594": {
+    "meaning": "Nghỉ giảng, buổi học bị hủy",
+    "usage": "「休講になる」, 「休講の知らせ」.",
+    "nuance": "",
+    "compare": "「休講」: buổi giảng bị hủy, hôm đó không có lớp. 「｜受講《じゅこう》」: người học đến nghe giảng, theo một khóa. Cả hai đều có chữ 「講」.",
+    "example_notes": [
+      "Vì bão, trường đại học báo rằng mọi buổi giảng ngày mai đều nghỉ."
     ]
   },
   "v-0595": {
@@ -5254,6 +5545,42 @@
       "Buổi nói chuyện lần tới sẽ mời một nhà nghiên cứu vũ trụ làm diễn giả."
     ]
   },
+  "v-0596": {
+    "meaning": "Hội nghị khoa học, hội học thuật",
+    "usage": "「学会に出席する」, 「学会で発表する」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Mỗi năm một lần, dì tôi báo cáo kết quả nghiên cứu tại hội nghị khoa học nơi bác sĩ và y tá tụ họp."
+    ]
+  },
+  "v-0597": {
+    "meaning": "Chỉ một chút, ít ỏi",
+    "usage": "「わずかな時間」, 「わずかに残る」, 「残りはわずかだ」.",
+    "nuance": "Đề thi từng bắt đổi 「わずかに」 sang 「少し」.",
+    "compare": "「わずか」: ít, chỉ có chừng ấy: 「残りはわずかだ」. 「ほんの」: chỉ đứng trước danh từ: 「ほんの少し」.",
+    "example_notes": [
+      "Mua giày xong, trong ví chỉ còn lại ít tiền lẻ."
+    ]
+  },
+  "v-0598": {
+    "meaning": "Có logic, mạch lạc, hợp lý",
+    "usage": "「論理的に話す」, 「論理的な文」, 「論理的に考える」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Anh ấy không bao giờ nóng nảy, lúc nào cũng nói mạch lạc nên cả người phản đối cũng lắng nghe."
+    ]
+  },
+  "v-0599": {
+    "meaning": "Luận bàn, bàn luận, tranh luận",
+    "usage": "「問題を論じる」, 「〜について論じる」.",
+    "nuance": "",
+    "compare": "「論じる」: nêu lý lẽ để bàn về một vấn đề: 「経済を論じる」. 「｜述《の》べる」: nói ra ý kiến, cảm nghĩ của mình.",
+    "example_notes": [
+      "Bài luận văn này bàn về nguyên nhân tình trạng ít con ngày càng tăng, dựa trên tư liệu lịch sử."
+    ]
+  },
   "v-0600": {
     "meaning": "Trích dẫn lời, câu văn của người khác",
     "usage": "「〜を引用する」, 「言葉を引用する」, 「論文を引用する」, 「〜からの引用」. Hán Việt \"dẫn dụng\"; tiếng Việt nói \"trích dẫn\".",
@@ -5262,6 +5589,69 @@
     "example_notes": [
       "Đầu bài phát biểu, tôi đã trích dẫn lời của nhà văn mình yêu thích.",
       "Cuốn sách này trích dẫn nhiều từ thư từ ngày xưa nên khó đọc."
+    ]
+  },
+  "v-0601": {
+    "meaning": "Dịch (sang ngôn ngữ khác)",
+    "usage": "「英語に訳す」, 「日本語に訳す」.",
+    "nuance": "",
+    "compare": "「訳す」: chuyển sang thứ tiếng khác: 「英語に訳す」. 「｜言《い》い｜換《か》える」: nói cùng ý bằng từ khác trong cùng một thứ tiếng.",
+    "example_notes": [
+      "Muốn biết nghĩa lời bài hát, tôi vừa tra từ điển vừa thử dịch sang tiếng Nhật."
+    ]
+  },
+  "v-0602": {
+    "meaning": "Biên tập, chỉnh sửa (văn bản, video)",
+    "usage": "「文章を編集する」, 「動画を編集する」, 「編集者」 (người biên tập).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi biên tập video quay ở hội thao, chỉ giữ lại cảnh sôi nổi nhất."
+    ]
+  },
+  "v-0603": {
+    "meaning": "Ý chính, bản tóm lược",
+    "usage": "「論文の要旨」, 「要旨をまとめる」. Cũng có 「要点」 (điểm quan trọng).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Bài phát biểu của giám đốc dài, nhưng ý chính là năm sau vẫn tăng doanh số."
+    ]
+  },
+  "v-0604": {
+    "meaning": "Rành mạch, minh xác",
+    "usage": "「明確な目的」, 「明確に答える」, 「明確にする」.",
+    "nuance": "",
+    "compare": "「明確」 MINH XÁC: rõ ràng, không hiểu sai được: 「明確な目的」. Dễ lẫn với 「｜確実《かくじつ》」 XÁC THỰC = chắc chắn (không phải \"xác thực\" tiếng Việt). Trái lại với rõ ràng là 「｜紛《まぎ》らわしい」: dễ nhầm.",
+    "example_notes": [
+      "Trước khi ký hợp đồng, tôi muốn làm rõ phí sẽ tốn bao nhiêu."
+    ]
+  },
+  "v-0605": {
+    "meaning": "Nêu ra, đưa ra (ví dụ, tên)",
+    "usage": "「例を挙げる」, 「名前を挙げる」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Cô giáo bảo hãy nêu ra một mùa mình thích và kể lý do."
+    ]
+  },
+  "v-0606": {
+    "meaning": "Dùng, sử dụng, vận dụng",
+    "usage": "「方法を用いる」, 「データを用いる」, 「材料を用いる」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Bức tranh này chỉ dùng màu xanh mà thể hiện được độ sâu của biển."
+    ]
+  },
+  "v-0607": {
+    "meaning": "Viết tay",
+    "usage": "「手書きで書く」, 「手書きの手紙」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Thiệp mừng năm mới, tôi viết tay thêm một lời cho từng tấm."
     ]
   },
   "v-0608": {
@@ -5274,6 +5664,51 @@
       "Tôi chạy một mạch lên con dốc dài từ ga về nhà."
     ]
   },
+  "v-0609": {
+    "meaning": "Hoàn thành (làm xong một sản phẩm, công trình)",
+    "usage": "「作品が完成する」, 「完成品」 (thành phẩm), 「完成が近い」.",
+    "nuance": "",
+    "compare": "Bẫy Hán Việt: 「完成」 HOÀN THÀNH chỉ dùng khi làm ra xong một vật, công trình. \"Hoàn thành khóa học\" là 「｜修了《しゅうりょう》」, \"hoàn thành thủ tục\" là 「｜完了《かんりょう》」; giờ, buổi kết thúc là 「｜終了《しゅうりょう》」.",
+    "example_notes": [
+      "Khi bệnh viện mới xây xong, sẽ không phải đi sang tận thị trấn bên cạnh nữa."
+    ]
+  },
+  "v-0610": {
+    "meaning": "Khởi động (máy tính, máy móc)",
+    "usage": "「パソコンを起動する」, 「再起動」 (khởi động lại).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Mùa đông lạnh, mỗi sáng tôi pha trà trong lúc chờ máy tính khởi động."
+    ]
+  },
+  "v-0611": {
+    "meaning": "Phần chính, thân máy",
+    "usage": "「パソコンの本体」, 「機械の本体」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Thân máy chơi game còn nguyên, nhưng tay cầm điều khiển thì hỏng mất."
+    ]
+  },
+  "v-0612": {
+    "meaning": "Bàn phím",
+    "usage": "「キーボードを打つ」, 「キーボードで入力する」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Làm đổ cà phê lên bàn phím nên vài phím không bấm được nữa."
+    ]
+  },
+  "v-0613": {
+    "meaning": "Màn hình, thiết bị hiện chữ và hình",
+    "usage": "「大きなディスプレイ」, 「ディスプレイに映る」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Từ khi dùng hai màn hình đặt cạnh nhau, công việc nhẹ nhàng hơn."
+    ]
+  },
   "v-0614": {
     "meaning": "Kết nối (thiết bị, mạng); nối chuyến giữa các tuyến tàu xe",
     "usage": "「インターネットに接続する」, 「AをBに接続する」, 「プリンターが接続されている」. Với tàu xe: 「〜に接続している」 (có chuyến nối).",
@@ -5282,6 +5717,168 @@
     "example_notes": [
       "Chuyến tàu này nối với xe buýt đi sân bay ở ga tiếp theo.",
       "Tôi kết nối điện thoại với tivi để xem ảnh du lịch trên màn hình lớn."
+    ]
+  },
+  "v-0615": {
+    "meaning": "Tìm kiếm (trên máy tính, mạng)",
+    "usage": "「ネットで検索する」, 「検索結果」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi tra trên mạng tên quán nghe bà kể thì thấy ghi là đã đóng cửa rồi."
+    ]
+  },
+  "v-0616": {
+    "meaning": "Chuyển tiếp (thư, dữ liệu)",
+    "usage": "「メールを転送する」, 「転送先」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi chuyển tiếp bảng lịch từ địa chỉ thư công việc sang địa chỉ thư cá nhân của mình."
+    ]
+  },
+  "v-0617": {
+    "meaning": "Văn bản (viết ra để làm việc, làm thủ tục)",
+    "usage": "「文書を作る」, 「文書を送る」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Văn bản gửi từ cơ quan hành chính có ghi hạn trả lời."
+    ]
+  },
+  "v-0618": {
+    "meaning": "Cài đặt, thiết lập (định dạng, thông số)",
+    "usage": "「設定を変える」, 「言語を設定する」, 「文字の設定」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Mua điện thoại mới, việc đầu tiên tôi làm là đổi phần cài đặt ngôn ngữ sang tiếng Nhật."
+    ]
+  },
+  "v-0619": {
+    "meaning": "Lề, chỗ để trống trên trang giấy",
+    "usage": "「余白をとる」, 「ノートの余白」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi ghi nhỏ vào phần lề vở những điều quan trọng thầy đã nói."
+    ]
+  },
+  "v-0620": {
+    "meaning": "Phông chữ, kiểu chữ",
+    "usage": "「フォントを選ぶ」, 「フォントを変える」, 「太いフォント」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Đổi máy tính mới thì không còn phông chữ trước đây vẫn dùng, nên tấm thiệp mời trông khác hẳn."
+    ]
+  },
+  "v-0621": {
+    "meaning": "Con trỏ, dấu nhỏ chỉ vị trí đang gõ",
+    "usage": "「カーソルを動かす」, 「カーソルを合わせる」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi đưa con trỏ về cuối câu rồi gõ tiếp phần sau."
+    ]
+  },
+  "v-0622": {
+    "meaning": "Xuống dòng",
+    "usage": "「改行する」, 「改行を入れる」.",
+    "nuance": "",
+    "compare": "「改行」: xuống dòng ngay trong văn bản: 「改行を入れる」. 「｜段落《だんらく》」: một đoạn văn. 「｜区切《くぎ》る」: chia thành từng phần.",
+    "example_notes": [
+      "Thư dài ra nên tôi xuống dòng ở chỗ chuyển chủ đề."
+    ]
+  },
+  "v-0623": {
+    "meaning": "Chia ra, ngăn cách thành từng đoạn",
+    "usage": "「段落を区切る」, 「三日に区切る」.",
+    "nuance": "Đề thi dùng danh từ 「区切り」 (đã có thẻ riêng), không phải 「区切る」.",
+    "compare": "「区切る」: chia cái liền một khối thành từng phần: 「三日に区切る」. 「｜区切《くぎ》り」: danh từ, chỗ ngắt. 「｜改行《かいぎょう》」: xuống dòng.",
+    "example_notes": [
+      "Tôi quyết định chia quãng đường dài thành ba ngày để đi bộ."
+    ]
+  },
+  "v-0624": {
+    "meaning": "Dán (ảnh, văn bản) vào chỗ khác",
+    "usage": "「コピーして貼り付ける」, 「本文に貼り付ける」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Dán cái bảng vào tài liệu thì chữ bị thu nhỏ, không đọc được nữa."
+    ]
+  },
+  "v-0625": {
+    "meaning": "Nhấn mạnh, làm nổi bật",
+    "usage": "「安さを強調する」, 「強調して言う」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Người quản lý tòa nhà nhấn mạnh nhiều lần rằng trước khi ra ngoài phải khóa van gas tổng."
+    ]
+  },
+  "v-0626": {
+    "meaning": "Phóng to, mở rộng",
+    "usage": "「写真を拡大する」, 「画面を拡大する」. Trái nghĩa: 「｜縮小《しゅくしょう》」 (thu nhỏ).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi đọc những chữ nhỏ trên tấm bản đồ cũ bằng cách phóng to nó bằng kính lúp."
+    ]
+  },
+  "v-0627": {
+    "meaning": "Xóa bỏ, xóa sạch (dữ liệu, ghi âm)",
+    "usage": "「データを消去する」, 「録音を消去する」.",
+    "nuance": "",
+    "compare": "「消去」: xóa thứ đã ghi (chữ, dữ liệu, tiếng) cho mất đi: 「録音を消去する」. 「｜削除《さくじょ》」: bỏ phần chữ, dữ liệu ra khỏi văn bản: 「一行を削除する」.",
+    "example_notes": [
+      "Lỡ tay xóa mất bản ghi âm nên tôi phải thu lại từ đầu."
+    ]
+  },
+  "v-0628": {
+    "meaning": "Lưu đè lên bản cũ",
+    "usage": "「上書き保存する」, 「上書き保存してしまう」.",
+    "nuance": "",
+    "compare": "「上書き保存」: lưu và thay luôn bản cũ bằng nội dung mới. 「｜保存《ほぞん》」: giữ lại dữ liệu hay thực phẩm: 「データを保存する」.",
+    "example_notes": [
+      "Tôi lỡ lưu đè tấm ảnh đã chỉnh cho sáng lên nên không quay lại được ảnh gốc nữa."
+    ]
+  },
+  "v-0629": {
+    "meaning": "Thứ tự, trình tự",
+    "usage": "「順序を守る」, 「順序よく並べる」, 「順序を変える」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Thứ tự trình bày được quyết định bằng cách bốc thăm."
+    ]
+  },
+  "v-0630": {
+    "meaning": "In (ra giấy)",
+    "usage": "「文書を印刷する」, 「両面印刷」. Cũng nói 「プリントアウト」.",
+    "nuance": "",
+    "compare": "「印刷」: việc in chữ, hình ra giấy: 「文書を印刷する」. 「プリンター」: cái máy dùng để in.",
+    "example_notes": [
+      "In bản đồ ra giấy mang theo thì dù lên núi sóng yếu cũng yên tâm."
+    ]
+  },
+  "v-0631": {
+    "meaning": "Máy in",
+    "usage": "「プリンターが動かない」, 「プリンターを買う」.",
+    "nuance": "",
+    "compare": "「プリンター」: cái máy dùng để in: 「プリンターが動かない」. 「｜印刷《いんさつ》」: việc in chữ, hình ra giấy.",
+    "example_notes": [
+      "Máy in mới êm nên dùng ban đêm cũng không thấy phiền."
+    ]
+  },
+  "v-0632": {
+    "meaning": "Mực (in, viết)",
+    "usage": "「インクが切れる」, 「インクを入れる」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Mực dính lên áo, giặt mãi mà vẫn không sạch."
     ]
   },
   "v-0633": {
@@ -6667,7 +7264,7 @@
     "meaning": "Chỗ ngắt, chỗ phân đoạn; điểm dừng của công việc",
     "usage": "「区切りをつける」 (tạm dừng ở một chỗ), 「区切りのいいところで」 (ở chỗ tiện dừng), 「意味の区切り」, 「話題ごとの区切り」.",
     "nuance": "Danh từ của 「｜区切《くぎ》る」 (ngắt, chia). Đề thi coi là sai khi dùng cho trận đấu tạm dừng vì mưa, thời khắc thành bại, hai tiếng chờ xe buýt.",
-    "compare": "「区切り」: chỗ ngắt mình đặt ra để dừng: 「区切りをつける」. 「｜中断《ちゅうだん》」: việc đang làm bị dừng giữa chừng: 「試合が中断される」.",
+    "compare": "「区切り」: chỗ ngắt mình đặt ra để dừng: 「区切りをつける」. 「｜中断《ちゅうだん》」: việc đang làm bị dừng giữa chừng: 「試合が中断される」. 「｜区切《くぎ》る」: động từ, chia một khối liền thành từng phần: 「三日に区切る」.",
     "example_notes": [
       "Câu dài thì đặt dấu phẩy ở chỗ ngắt nghĩa sẽ dễ đọc hơn.",
       "Khi thuyết trình, phân rõ chỗ ngắt giữa các chủ đề thì người nghe dễ theo."
@@ -7246,7 +7843,7 @@
     "meaning": "Hoàn tất, xong xuôi (thủ tục, công việc, quá trình)",
     "usage": "「手続きが完了する」, 「登録が完了する」, 「準備が完了した」, 「〜が完了するまで」. Hán Việt \"hoàn liễu\".",
     "nuance": "Đề thi đặt khung thủ tục, đăng ký đã xong với các phương án nhiễu 「決定」「実現」「達成」「決着」「到達」: đáp án là 「完了」.",
-    "compare": "「完了」: một thủ tục, công việc đã xong: 「手続きが完了する」. 「｜果《は》たす」: làm tròn trách nhiệm, giữ lời hứa, đạt mục tiêu: 「約束を果たす」.",
+    "compare": "「完了」: một thủ tục, công việc đã xong: 「手続きが完了する」. 「｜果《は》たす」: làm tròn trách nhiệm, giữ lời hứa, đạt mục tiêu: 「約束を果たす」. 「｜完成《かんせい》」: làm xong một thành phẩm: 「作品が完成する」.",
     "example_notes": [
       "Xin đừng tắt nguồn máy tính cho đến khi cập nhật phần mềm hoàn tất.",
       "Việc chuẩn bị chuyển nhà đã xong xuôi hết từ hôm qua."
@@ -7554,7 +8151,7 @@
     "meaning": "Xóa bỏ (dữ liệu, chữ, đoạn văn)",
     "usage": "「メールを削除する」, 「データを削除する」, 「段落を削除する」, 「写真を削除する」. Hán Việt \"tước trừ\".",
     "nuance": "Đọc 「さくじょ」: 「除」 là 「じょ」, không phải 「じ」; 「削」 là 「さく」, không phải 「そく」. Đề thi đã cho 「さくじ」「そくじょ」「しょうじょ」.",
-    "compare": "「削除」: xóa bỏ hoàn toàn dữ liệu, nội dung: 「データを削除する」. 「｜省略《しょうりゃく》」: lược bớt đoạn hoặc khâu không cần thiết để rút ngắn lại.",
+    "compare": "「削除」: xóa bỏ hoàn toàn dữ liệu, nội dung: 「データを削除する」. 「｜省略《しょうりゃく》」: lược bớt đoạn hoặc khâu không cần thiết để rút ngắn lại. 「｜消去《しょうきょ》」: xóa thứ đã ghi cho mất đi: 「録音を消去する」.",
     "example_notes": [
       "Bài viết quá dài nên tôi đã xóa đoạn cuối.",
       "Tôi đăng ảnh lên mạng xã hội nhưng đã xóa đi vì bạn nhờ."
@@ -8393,7 +8990,7 @@
     "meaning": "Bảo quản (thực phẩm) để giữ lâu; lưu (dữ liệu, văn bản)",
     "usage": "「冷蔵庫で保存する」, 「長く保存できる」, 「データを保存する」, 「文書を保存しておく」.",
     "nuance": "Đề thi coi là sai: để dành tiền, giữ chỗ cho bạn, giữ sức khi leo núi. Điền từ: 「保存」 là phương án sai cạnh 「確保」. Hán Việt 'bảo tồn'; ở đây nghĩa là 'bảo quản', 'lưu'.",
-    "compare": "",
+    "compare": "「｜上書《うわが》き｜保存《ほぞん》」: lưu và thay luôn bản cũ bằng nội dung mới.",
     "example_notes": [
       "Đồ ăn ngâm muối hay đường thì bảo quản được lâu.",
       "Văn bản đang viết dở thì nên lưu lại thường xuyên."

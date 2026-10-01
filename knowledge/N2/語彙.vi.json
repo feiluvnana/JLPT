@@ -652,7 +652,7 @@
     "meaning": "Sự chu đáo, ân cần lo cho người xung quanh",
     "usage": "「〜の気配り」, 「気配りができる」, 「気配りする」. Gần nghĩa: 「｜配慮《はいりょ》」.",
     "nuance": "",
-    "compare": "「気配り」 đọc 「きくばり」: chu đáo với người khác. 「｜気配《けはい》」: cùng hai chữ nhưng đọc 「けはい」, là dấu hiệu lờ mờ: 「人の気配」. 「｜思《おも》いやり」: tấm lòng nghĩ cho người khác.",
+    "compare": "「気配り」 đọc 「きくばり」: chu đáo với người khác. 「｜気配《けはい》」: đọc 「けはい」, là dấu hiệu lờ mờ: 「人の気配」. 「｜思《おも》いやり」: lòng nghĩ cho người khác. 「｜配慮《はいりょ》」 (PHỐI LỰ): cân nhắc cho hoàn cảnh người khác.",
     "example_notes": [
       "Nhờ sự chu đáo của người tổ chức, buổi tiệc vui cả với những người không uống được rượu."
     ]
@@ -744,7 +744,7 @@
     "meaning": "Nếu phải chọn giữa hai bên thì nghiêng về bên sau",
     "usage": "Mẫu 「AよりむしろB」: so với A thì B hơn; B là điều người nói chọn hay thấy đúng hơn.",
     "nuance": "",
-    "compare": "「むしろ」: so hai bên, nghiêng về bên này hơn. 「いっそ」: bỏ cách cũ, dứt khoát chọn hẳn cách khác.",
+    "compare": "「むしろ」: so hai bên, nghiêng về bên này hơn. 「いっそ」: bỏ cách cũ, dứt khoát chọn hẳn cách khác. 「かえって」: kết quả lại ngược với điều mình định.",
     "example_notes": [
       "Bố tôi là người thà tự làm mẫu cho xem để dạy, hơn là giải thích bằng lời."
     ]
@@ -3041,7 +3041,7 @@
     "meaning": "Thừa, dư ra (quá phần cần thiết)",
     "usage": "「｜余分《よぶん》な｜物《もの》」, 「｜余分《よぶん》に｜買《か》う」.",
     "nuance": "",
-    "compare": "「｜余分《よぶん》」 (DƯ PHÂN): phần thừa ra. 「｜余裕《よゆう》」 (DƯ DỤ): phần còn dư để làm thêm.",
+    "compare": "「｜余分《よぶん》」 (DƯ PHÂN): phần thừa ra. 「｜余裕《よゆう》」 (DƯ DỤ): phần còn dư để làm thêm. 「｜余計《よけい》な」: thừa đến mức không cần; 「｜余計《よけい》に」: phó từ 'càng thêm'.",
     "example_notes": [
       "Tôi cố không bỏ đồ thừa vào vali đi du lịch.",
       "Tôi đã mua dư vé nên bạn đến đột xuất cũng không sao."
@@ -5075,7 +5075,7 @@
     "meaning": "Trừ ra, không tính (một phần) vào",
     "usage": "「〜を除いて」 (trừ ~ ra): 「日曜日を除いて」, 「一人を除いて全員」. Dạng 「〜を除けば」 cũng có.",
     "nuance": "Đọc 「のぞく」. Đề thi đã gài 「はぶいて」「ぬいて」「ひいて」 — đều mang ý \"bỏ bớt, rút ra\". Chữ của 「はぶく」 là 「省く」, không phải 「除く」.",
-    "compare": "「除く」: trừ ra, không tính vào. 「｜取《と》り｜除《のぞ》く」: lấy hẳn thứ gây vướng đi (rác, xương).",
+    "compare": "「除く」: trừ ra, không tính vào. 「｜取《と》り｜除《のぞ》く」: lấy hẳn thứ gây vướng đi (rác, xương). Cùng âm, viết kana 「のぞく」 là nhòm ngó.",
     "example_notes": [
       "Chúng tôi mở cửa đến 8 giờ tối hằng ngày, trừ Chủ nhật.",
       "Trừ một người, cả lớp đều thi đỗ."
@@ -5295,7 +5295,7 @@
     "meaning": "「〜ない」: hoàn toàn không…; 「〜する」: khoan khoái, thoáng người",
     "usage": "「さっぱりわからない」, 「さっぱり覚えていない」, 「さっぱり釣れない」; 「さっぱりする」 (khoan khoái, sạch sẽ dễ chịu sau khi tắm, sau khi được làm sạch).",
     "nuance": "Nghĩa \"hoàn toàn không\" cần vế phủ định đi sau. Đề điền từ: tắm xong cả người lẫn tâm trạng （　） → 「さっぱり」; 「きっぱり」 là phương án sai.",
-    "compare": "「さっぱりする」: khoan khoái vì sạch mồ hôi, bụi bẩn. 「すっきり」: nhẹ nhõm vì hết mệt, hết vướng bận: 「気分がすっきりする」. 「きっぱり」: thái độ dứt khoát: 「きっぱり断る」. 「一切〜ない」: tuyệt nhiên không.",
+    "compare": "「さっぱりする」: khoan khoái vì sạch mồ hôi, bụi. 「すっきり」: nhẹ nhõm vì hết mệt: 「気分がすっきりする」. 「きっぱり」: dứt khoát: 「きっぱり断る」. 「一切〜ない」: tuyệt nhiên không; 「一向に〜ない」: mãi chẳng.",
     "example_notes": [
       "Câu cá ngoài sông cả ngày mà chẳng câu được con nào.",
       "Được nha sĩ làm sạch răng xong, trong miệng thấy sạch sẽ, khoan khoái hẳn."
@@ -5622,7 +5622,7 @@
     "meaning": "Rành mạch, minh xác",
     "usage": "「明確な目的」, 「明確に答える」, 「明確にする」.",
     "nuance": "",
-    "compare": "「明確」 MINH XÁC: rõ ràng, không hiểu sai được: 「明確な目的」. Dễ lẫn với 「｜確実《かくじつ》」 XÁC THỰC = chắc chắn (không phải \"xác thực\" tiếng Việt). Trái lại với rõ ràng là 「｜紛《まぎ》らわしい」: dễ nhầm.",
+    "compare": "「明確」 MINH XÁC: rõ ràng, không hiểu sai được: 「明確な目的」. Dễ lẫn với 「｜確実《かくじつ》」 XÁC THỰC = chắc chắn (không phải 'xác thực'). Trái lại là 「｜紛《まぎ》らわしい」: dễ nhầm. 「｜明《あき》らか」: sự thật hiển nhiên.",
     "example_notes": [
       "Trước khi ký hợp đồng, tôi muốn làm rõ phí sẽ tốn bao nhiêu."
     ]
@@ -5914,7 +5914,7 @@
     "meaning": "Tham gia, làm việc có liên quan đến",
     "usage": "「〜に｜携《たずさ》わる」: 「｜開発《かいはつ》に｜携《たずさ》わる」, 「｜教育《きょういく》に｜携《たずさ》わっている」. Đi với trợ từ 「に」.",
     "nuance": "",
-    "compare": "",
+    "compare": "「｜関《かか》わる」 chỉ là có liên quan, dính líu; 「｜携《たずさ》わる」 là trực tiếp làm việc đó.",
     "example_notes": [
       "Kỹ sư đã gắn bó nhiều năm với việc thiết kế cầu sẽ nghỉ việc vào tháng sau."
     ]
@@ -8790,7 +8790,7 @@
     "meaning": "(Thời tiết, biển) nổi gió sóng dữ; (da) bị nứt nẻ, thô ráp",
     "usage": "「海が荒れる」, 「天気が荒れる」, 「手が荒れる」, 「肌が荒れる」. Là tự động từ.",
     "nuance": "Đề thi coi là sai khi dùng cho giày mòn cũ, thành tích bán hàng sụt, táo bị hỏng. 「あれて」 cũng bị đặt làm cách đọc sai cho 「乱れて」 (tóc rối).",
-    "compare": "「荒れる」: sóng gió, thời tiết dữ; da thô ráp: 「海が荒れる」. 「｜乱《みだ》れる」: trật tự, hàng lối bị rối: 「髪が乱れる」, 「列が乱れる」.",
+    "compare": "「荒れる」: sóng gió, thời tiết dữ; da thô ráp: 「海が荒れる」. 「｜乱《みだ》れる」: trật tự, hàng lối bị rối: 「髪が乱れる」, 「列が乱れる」. 「かさかさ」: từ tượng thái, da khô ráp.",
     "example_notes": [
       "Bão đến gần, từ chiều trời bắt đầu nổi gió mưa.",
       "Mùa đông không khí khô nên tay dễ bị nứt nẻ."
@@ -8846,7 +8846,7 @@
     "meaning": "Gây ảnh hưởng, làm tác động đến",
     "usage": "「｜被害《ひがい》を｜及《およ》ぼす」, 「｜影響《えいきょう》を｜及《およ》ぼす」, 「〜に〜を｜及《およ》ぼす」.",
     "nuance": "",
-    "compare": "CẬP (及) như \"phổ cập\": lan tới. Cặp tự/tha: 「｜及《およ》ぶ」 (lan tới một mức) và 「及ぼす」 (làm lan sang, đi với 「を」: 「影響を及ぼす」). 「もたらす」: đem lại một kết quả.",
+    "compare": "CẬP (及) như \"phổ cập\": lan tới. Cặp tự/tha: 「｜及《およ》ぶ」 (lan tới một mức) và 「及ぼす」 (làm lan sang, đi với 「を」: 「影響を及ぼす」). 「もたらす」: đem lại một kết quả. 「｜関《かか》わる」: có liên quan.",
     "example_notes": [
       "Thiếu ngủ cũng gây ảnh hưởng xấu đến thành tích công việc."
     ]
@@ -9864,7 +9864,7 @@
     "meaning": "Vượt qua (khó khăn, trở ngại)",
     "usage": "「〜を｜乗《の》り｜越《こ》える」.",
     "nuance": "",
-    "compare": "",
+    "compare": "「｜乗《の》り｜越《こ》える」 là động từ; danh từ/する動詞 gần nghĩa là 「｜克服《こくふく》」 (KHẮC PHỤC): vượt qua bệnh, nỗi sợ, điểm yếu.",
     "example_notes": [
       "Cửa hàng mới đã vượt qua giai đoạn khó khăn ngay sau khi khai trương nhờ sự động viên của khách quen."
     ]
@@ -9975,7 +9975,7 @@
     "meaning": "Đi bệnh viện khám, điều trị đều đặn",
     "usage": "「｜通院《つういん》する」, 「｜通院《つういん》している」.",
     "nuance": "",
-    "compare": "Đi khám một lần chưa phải 「｜通院《つういん》」 (THÔNG VIỆN): từ này là đi lại bệnh viện nhiều lần trong một thời gian. Còn việc chữa bệnh là 「｜治療《ちりょう》」 (TRỊ LIỆU).",
+    "compare": "Đi khám một lần chưa phải 「｜通院《つういん》」 (THÔNG VIỆN): từ này là đi lại bệnh viện nhiều lần trong một thời gian. Còn việc chữa bệnh là 「｜治療《ちりょう》」 (TRỊ LIỆU). Cả ngành y tế là 「｜医療《いりょう》」 (Y LIỆU).",
     "example_notes": [
       "Sau khi gãy xương, suốt nửa năm tôi đi bệnh viện hai lần một tuần."
     ]
@@ -10003,7 +10003,7 @@
     "meaning": "Suy yếu, yếu dần đi (sức khỏe, trí nhớ, sức mạnh)",
     "usage": "Tự động từ: 「体力が衰える」, 「記憶力が衰える」, 「筋肉が衰える」, 「勢いが衰える」. Hán Việt 「衰」 là \"suy\".",
     "nuance": "Điền từ trong đề: trí nhớ （　） nên khó nhớ điều mới; không vận động thì cơ bắp dần （　） → 「衰える」. Nhiễu gồm 「傷む」「散る」「かれる」「潰れる」「欠ける」「尽きる」.",
-    "compare": "「衰える」: sức lực, trí nhớ yếu dần theo thời gian: 「体力が衰える」. 「｜傾《かたむ》く」: vật bị nghiêng, hoặc việc làm ăn sa sút: 「経営が傾く」. Tiếng Việt đều có thể nói \"đi xuống\" nên dễ lẫn.",
+    "compare": "「衰える」: sức lực, trí nhớ yếu dần: 「体力が衰える」. 「｜傾《かたむ》く」: nghiêng; làm ăn sa sút: 「経営が傾く」. Tiếng Việt đều nói 'đi xuống' nên dễ lẫn. 「｜低下《ていか》」 (ĐÊ HẠ): mức độ tụt xuống.",
     "example_notes": [
       "Đến tối, sức mạnh của cơn bão vẫn không hề yếu đi.",
       "Bà tôi đã ngoài chín mươi mà tính tò mò vẫn không hề giảm đi chút nào."
@@ -10095,7 +10095,7 @@
     "meaning": "Bác sĩ",
     "usage": "「｜医師《いし》の｜診察《しんさつ》」, 「｜医師《いし》に｜相談《そうだん》する」.",
     "nuance": "",
-    "compare": "Người làm cả hai việc là 「｜医師《いし》」 (Y SƯ, tức bác sĩ): CHẨN ĐOÁN (「｜診断《しんだん》」) là kết luận bệnh sau khi khám, TRỊ LIỆU (「｜治療《ちりょう》」) là chữa bệnh ấy.",
+    "compare": "Người làm cả hai việc là 「｜医師《いし》」 (Y SƯ, tức bác sĩ): CHẨN ĐOÁN (「｜診断《しんだん》」) là kết luận bệnh sau khi khám, TRỊ LIỆU (「｜治療《ちりょう》」) là chữa bệnh ấy. Cả ngành là 「｜医療《いりょう》」 (Y LIỆU).",
     "example_notes": [
       "Hôm đầu tiên đi khám, bác sĩ hỏi tôi tỉ mỉ về cách sinh hoạt hằng ngày."
     ]
@@ -10307,9 +10307,91 @@
     "meaning": "Phản ứng (trước tác động)",
     "usage": "「｜反応《はんのう》がない」, 「｜反応《はんのう》が｜早《はや》い」.",
     "nuance": "",
-    "compare": "'Phản ứng' và 'đáp lại' gần nhau: 「｜応答《おうとう》」 (ỨNG ĐÁP) là có lời đáp khi được gọi, hỏi; 「｜反応《はんのう》」 rộng hơn, cả cử động của người, con vật. 「｜刺激《しげき》」 (KÍCH THÍCH) là tác động gây ra nó.",
+    "compare": "「｜応答《おうとう》」 (ỨNG ĐÁP): đáp lại khi được gọi, hỏi; 「｜反応《はんのう》」 rộng hơn, cả cử động của người, con vật. 「｜刺激《しげき》」 (KÍCH THÍCH) là tác động gây ra nó. 「｜作用《さよう》」 (TÁC DỤNG): chiều tác động lên vật khác.",
     "example_notes": [
       "Gọi tên mà con mèo không động đậy cả tai, hoàn toàn không phản ứng."
+    ]
+  },
+  "v-1114": {
+    "meaning": "Mắc bệnh, đau ốm (cách nói hơi cũ)",
+    "usage": "「｜心《こころ》を｜病《や》む」 (suy sụp tinh thần), 「｜病《や》んだ｜心《こころ》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Anh trai tôi vì quan hệ với đồng nghiệp mà tinh thần suy sụp, phải nghỉ làm khoảng nửa năm."
+    ]
+  },
+  "v-1115": {
+    "meaning": "Bị thương; vết thương phải chịu",
+    "usage": "「｜負傷《ふしょう》する」, 「｜負傷者《ふしょうしゃ》」 (người bị thương).",
+    "nuance": "",
+    "compare": "PHỤ THƯƠNG: 「負」 ở đây là mang, chịu (vết thương), không phải 'phụ' là thêm vào. Nặng tới mức nguy kịch là 「｜重体《じゅうたい》」 (TRỌNG THỂ); nhẹ là 「｜軽傷《けいしょう》」 (KHINH THƯƠNG).",
+    "example_notes": [
+      "Thay cho nhân viên giao hàng bị thương vì trượt chân trên đường tuyết, cửa hàng trưởng đã đi giao hàng."
+    ]
+  },
+  "v-1116": {
+    "meaning": "Tình trạng nguy kịch (bệnh nặng, bị thương nặng)",
+    "usage": "「｜重体《じゅうたい》になる」, 「｜重体《じゅうたい》だ」, 「｜意識不明《いしきふめい》の｜重体《じゅうたい》」.",
+    "nuance": "",
+    "compare": "Hán Việt TRỌNG THỂ, dễ lừa: tiếng Việt \"trọng thể\" là long trọng, còn 「｜重体《じゅうたい》」 là nguy kịch. 「｜負傷《ふしょう》」: bị thương chung chung; 「｜軽傷《けいしょう》」 là nhẹ, 「｜重体《じゅうたい》」 là nặng.",
+    "example_notes": [
+      "Theo tin tức, đứa trẻ bị đuối nước ở sông đến giờ vẫn trong tình trạng nguy kịch."
+    ]
+  },
+  "v-1117": {
+    "meaning": "Chứng say nắng, sốc nhiệt",
+    "usage": "「｜熱中症《ねっちゅうしょう》にかかる」, 「｜熱中症《ねっちゅうしょう》を｜防《ふせ》ぐ」, 「｜熱中症《ねっちゅうしょう》に｜注意《ちゅうい》する」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Những người làm việc dưới trời nắng gắt uống nước thường xuyên để phòng say nắng."
+    ]
+  },
+  "v-1118": {
+    "meaning": "Vi khuẩn, vi trùng",
+    "usage": "「｜細菌《さいきん》が｜増《ふ》える」, 「｜細菌《さいきん》がつく」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Dùng dao vừa thái thịt sống mà không rửa thì vi khuẩn sẽ lây sang thức ăn khác."
+    ]
+  },
+  "v-1119": {
+    "meaning": "Vấp, vấp chân; (nghĩa bóng) vấp váp, thất bại giữa chừng",
+    "usage": "「｜石《いし》につまずく」, 「｜段差《だんさ》につまずく」 (vấp chân); 「｜資金《しきん》｜不足《ふそく》につまずく」 (vấp ở khâu nào đó).",
+    "nuance": "Đề điền từ: đáp án 「つまずいて」; các phương án khác là 「つっこんで」 「くっついて」 「かたむいて」.",
+    "compare": "",
+    "example_notes": [
+      "Tôi vấp phải dây điện trên sàn hành lang tối và làm rơi chiếc đĩa đang cầm.",
+      "Mở tiệm được nửa năm thì vấp vì thiếu vốn, phải tạm đóng cửa một thời gian."
+    ]
+  },
+  "v-1120": {
+    "meaning": "Y tế (các hoạt động, dịch vụ chữa bệnh)",
+    "usage": "「｜医療機関《いりょうきかん》」 (cơ sở y tế), 「｜医療技術《いりょうぎじゅつ》」 (kỹ thuật y tế), 「｜医療費《いりょうひ》」 (chi phí y tế).",
+    "nuance": "",
+    "compare": "「｜医療《いりょう》」 Y LIỆU là y tế nói chung, không phải việc chữa một ca. Chữa một bệnh: 「｜治療《ちりょう》」 (TRỊ LIỆU); sơ cứu tại chỗ: 「｜手当《てあ》て」; người chữa: 「｜医師《いし》」 (Y SƯ); đi khám đều đặn: 「｜通院《つういん》」.",
+    "example_notes": [
+      "Chỗ dựa của y tế trên đảo chỉ là một bác sĩ mỗi tuần đến hai lần."
+    ]
+  },
+  "v-1121": {
+    "meaning": "Ở mức cao, tiên tiến",
+    "usage": "ナ形容詞 (và danh từ): 「｜高度《こうど》な｜技術《ぎじゅつ》」, 「｜高度《こうど》な｜知識《ちしき》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Ở tiệm này, người làm bánh có tay nghề cao tự tay trang trí từng chiếc."
+    ]
+  },
+  "v-1122": {
+    "meaning": "Những việc thực sự đã làm được và chứng minh được",
+    "usage": "「｜実績《じっせき》がある」, 「｜実績《じっせき》を｜積《つ》む」, 「｜実績《じっせき》を｜上《あ》げる」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Công ty thiết kế này có nhiều thành tích trong việc xây cầu và trường học."
     ]
   },
   "v-1123": {
@@ -10322,6 +10404,88 @@
       "Một mình nhận cùng lúc ba việc phụ trách thì gánh nặng quá lớn."
     ]
   },
+  "v-1124": {
+    "meaning": "Áp dụng, đem ra dùng cho một đối tượng (luật lệ, bảo hiểm…)",
+    "usage": "「｜規則《きそく》を｜適用《てきよう》する」, 「〜に｜適用《てきよう》される」 (được áp dụng cho …).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Quy định mới sẽ được áp dụng cho toàn bộ các chi nhánh từ tháng sau."
+    ]
+  },
+  "v-1125": {
+    "meaning": "Sơ cứu, xử lý chăm sóc ban đầu cho vết thương",
+    "usage": "「｜傷《きず》の｜手当《てあ》て」, 「｜応急手当《おうきゅうてあ》て」 (sơ cứu), 「｜手当《てあ》てを｜受《う》ける」.",
+    "nuance": "",
+    "compare": "「｜手当《てあ》て」 gần với 'sơ cứu, băng bó' ngay khi bị thương. Chữa cho khỏi, có khi kéo dài, là 「｜治療《ちりょう》」 (TRỊ LIỆU); cả ngành y tế là 「｜医療《いりょう》」 (Y LIỆU).",
+    "example_notes": [
+      "Cô y tá ở phòng y tế đã sơ cứu cho đứa trẻ bị ngã trầy đầu gối."
+    ]
+  },
+  "v-1126": {
+    "meaning": "Dốc hết (sức, khả năng)",
+    "usage": "「｜力《ちから》を｜尽《つ》くす」, 「｜最善《さいぜん》を｜尽《つ》くす」 (làm hết khả năng), 「｜持《も》てる｜力《ちから》を｜尽《つ》くす」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Mọi người dốc hết sức giải bài trong khoảng thời gian còn lại."
+    ]
+  },
+  "v-1127": {
+    "meaning": "Dược phẩm, thuốc men",
+    "usage": "「｜薬品《やくひん》｜会社《かいしゃ》」 (công ty dược phẩm), 「｜化学《かがく》｜薬品《やくひん》」 (hóa chất).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Công ty này phân phối dược phẩm dùng trong bệnh viện đi khắp cả nước."
+    ]
+  },
+  "v-1128": {
+    "meaning": "Tác dụng gây ra cho vật khác (thuốc, thành phần…)",
+    "usage": "「〜する｜作用《さよう》がある」, 「｜作用《さよう》する」, 「｜体《からだ》に｜作用《さよう》する」.",
+    "nuance": "",
+    "compare": "Hán Việt TÁC DỤNG, nghĩa gần như tiếng Việt. 「｜副作用《ふくさよう》」 (PHÓ TÁC DỤNG) là tác dụng phụ, đảo trật tự. 「｜機能《きのう》」: chức năng. 「｜反応《はんのう》」 (PHẢN ỨNG) là chiều ngược lại: thay đổi khi bị tác động.",
+    "example_notes": [
+      "Thành phần có trong cà phê có tác dụng làm tỉnh ngủ."
+    ]
+  },
+  "v-1129": {
+    "meaning": "Mốc ước chừng, tiêu chuẩn tham khảo",
+    "usage": "「〜が｜目安《めやす》だ」, 「｜目安《めやす》になる」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Thầy nói lượng bài tập mỗi ngày khoảng ba mươi phút là mức tham khảo."
+    ]
+  },
+  "v-1130": {
+    "meaning": "Tác dụng phụ (của thuốc)",
+    "usage": "「｜副作用《ふくさよう》が｜出《で》る」, 「｜副作用《ふくさよう》がある」, 「｜副作用《ふくさよう》が｜心配《しんぱい》だ」.",
+    "nuance": "",
+    "compare": "Hán Việt PHÓ TÁC DỤNG: tiếng Việt nói ngược thứ tự, \"tác dụng phụ\". 「｜作用《さよう》」 là tác dụng chung; 「｜副作用《ふくさよう》」 là tác dụng không mong muốn đi kèm.",
+    "example_notes": [
+      "Tôi lo tác dụng phụ của thuốc cảm nên ngày phải lái xe thì không uống."
+    ]
+  },
+  "v-1131": {
+    "meaning": "Nhiều hơn bình thường; hơn trước (ngoài mong muốn)",
+    "usage": "「｜余計《よけい》に〜かかる」, 「｜余計《よけい》に〜する」, 「｜余計《よけい》に〜なる」.",
+    "nuance": "",
+    "compare": "Cùng chữ DƯ 「余」: 「｜余計《よけい》に」 là phó từ 'càng thêm, nhiều hơn (ngoài ý muốn)'; 「｜余計《よけい》な」 là 'thừa, không cần'; 「｜余分《よぶん》」 (DƯ PHÂN) là phần dư ra. Tiếng Việt 'dư' gói cả ba nên dễ lẫn.",
+    "example_notes": [
+      "Tôi tưởng đi đường tắt nhưng nhầm đường nên càng mất thêm thời gian.",
+      "Tuần trước kỳ thi, tôi cố ngủ nhiều hơn bình thường."
+    ]
+  },
+  "v-1132": {
+    "meaning": "Thừa thãi, không cần thiết",
+    "usage": "「｜余計《よけい》なことを｜言《い》う」, 「｜余計《よけい》なお｜世話《せわ》」 (lo chuyện bao đồng).",
+    "nuance": "",
+    "compare": "「｜余計《よけい》な」: thừa, chẳng ai cần, như 「｜余計《よけい》なお｜世話《せわ》」. Khác 「｜余分《よぶん》」 (DƯ PHÂN): phần dư về số lượng. 「｜余計《よけい》に」 là phó từ 'càng thêm'.",
+    "example_notes": [
+      "Không ai nhờ mà tôi lại nói thừa, làm bầu không khí xấu đi."
+    ]
+  },
   "v-1133": {
     "meaning": "Xoa bóp, nắn bóp (vai, chân)",
     "usage": "Tha động từ: 「肩をもむ」, 「足をもむ」, 「ふくらはぎをもむ」. Từ gần nghĩa: 「マッサージ」.",
@@ -10330,6 +10494,69 @@
     "example_notes": [
       "Ngâm mình trong bồn tắm, tôi thong thả xoa bóp đôi chân mỏi vì đi bộ nhiều.",
       "Xoa bóp bắp chân thì chân dễ bớt phù."
+    ]
+  },
+  "v-1134": {
+    "meaning": "Báo, cho biết (điều quan trọng)",
+    "usage": "「〜に〜を｜告《つ》げる」, 「｜結果《けっか》を｜告《つ》げる」, 「｜別《わか》れを｜告《つ》げる」 (nói lời từ biệt).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Nhân viên nhà ga đi báo cho hành khách biết tàu sẽ bị trễ."
+    ]
+  },
+  "v-1135": {
+    "meaning": "Sẵn lòng đón nhận điều xấu có thể xảy ra",
+    "usage": "「｜覚悟《かくご》する」, 「｜覚悟《かくご》を｜決《き》める」, 「｜覚悟《かくご》ができる」.",
+    "nuance": "Hán Việt GIÁC NGỘ, dễ lừa: tiếng Việt \"giác ngộ\" là nhận ra chân lý, còn 「｜覚悟《かくご》」 là chuẩn bị chịu điều xấu.",
+    "compare": "",
+    "example_notes": [
+      "Đường đông nên tôi chấp nhận khả năng trễ giờ hẹn và đã gọi điện báo trước."
+    ]
+  },
+  "v-1136": {
+    "meaning": "Ở bên trông nom người ốm",
+    "usage": "「｜看病《かんびょう》する」, 「｜家族《かぞく》の｜看病《かんびょう》」, 「｜看病《かんびょう》で｜疲《つか》れる」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Người bố ở bên chăm sóc suốt đêm cho cô con gái bị sốt cao."
+    ]
+  },
+  "v-1137": {
+    "meaning": "Quan tâm, cân nhắc cho người khác",
+    "usage": "「〜に｜配慮《はいりょ》する」, 「｜配慮《はいりょ》を｜欠《か》く」.",
+    "nuance": "",
+    "compare": "「｜配慮《はいりょ》」 PHỐI LỰ: âm Hán Việt lạ tai, nghĩa là cân nhắc cho hoàn cảnh người khác. 「｜気配《きくば》り」: chu đáo đến từng việc nhỏ.",
+    "example_notes": [
+      "Vì nghĩ cho những người đến từ xa, họ đã đổi giờ họp sang buổi chiều."
+    ]
+  },
+  "v-1138": {
+    "meaning": "Di truyền",
+    "usage": "「｜遺伝《いでん》する」, 「｜遺伝子《いでんし》」 (gen), 「｜遺伝《いでん》だ」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Cha và ông đều cao nên tôi nghĩ chiều cao của mình cũng là do di truyền."
+    ]
+  },
+  "v-1139": {
+    "meaning": "Vượt qua, chiến thắng (nỗi sợ, điểm yếu, khó khăn)",
+    "usage": "「｜苦手《にがて》を｜克服《こくふく》する」, 「｜弱点《じゃくてん》を｜克服《こくふく》する」, 「｜恐怖心《きょうふしん》を｜克服《こくふく》する」.",
+    "nuance": "",
+    "compare": "「｜克服《こくふく》」 (KHẮC PHỤC): vượt qua bệnh, nỗi sợ, điểm yếu, dùng 「〜を｜克服《こくふく》する」. 「｜乗《の》り｜越《こ》える」: động từ, vượt qua khó khăn, thử thách.",
+    "example_notes": [
+      "Vốn sợ độ cao, cô ấy tập mỗi tuần và đã vượt qua nỗi sợ."
+    ]
+  },
+  "v-1140": {
+    "meaning": "Tập phục hồi chức năng, vật lý trị liệu",
+    "usage": "「リハビリをする」, 「リハビリ｜中《ちゅう》」 (đang tập phục hồi); cũng nói 「リハビリテーション」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Chị tôi bị gãy chân, mỗi tối bám vào ghế trong bếp để tập phục hồi."
     ]
   },
   "v-1141": {
@@ -10342,6 +10569,51 @@
       "Da tôi yếu nên khi dùng chất tẩy rửa lúc nào tôi cũng đeo găng tay."
     ]
   },
+  "v-1142": {
+    "meaning": "Chăm sóc, sửa sang cho tốt (da, vườn, đồ vật)",
+    "usage": "「｜手入《てい》れをする」, 「｜手入《てい》れが｜行《い》き｜届《とど》く」, 「｜道具《どうぐ》の｜手入《てい》れ」.",
+    "nuance": "",
+    "compare": "「｜手入《てい》れ」: bỏ công chăm cho đồ vật, cây cối, da. 「ケア」: từ vay mượn, chăm sóc cơ thể hoặc tinh thần: 「スキンケア」「｜心《こころ》のケア」.",
+    "example_notes": [
+      "Cây trong vườn mỗi năm hai lần được người chuyên nghiệp đến tỉa tót chăm sóc."
+    ]
+  },
+  "v-1143": {
+    "meaning": "Chăm lo, giữ gìn (cơ thể, làn da, tinh thần)",
+    "usage": "「ケアする」, 「スキンケア」, 「ヘアケア」, 「｜心《こころ》のケア」.",
+    "nuance": "",
+    "compare": "「ケア」: chăm sóc cơ thể, tinh thần: 「スキンケア」 「｜心《こころ》のケア」. 「｜手入《てい》れ」: bỏ công chăm cho đồ vật, cây cối, cả da: 「｜道具《どうぐ》の｜手入《てい》れ」.",
+    "example_notes": [
+      "Ở cơ sở điều dưỡng, họ cũng chú trọng chăm sóc tinh thần cho người già."
+    ]
+  },
+  "v-1144": {
+    "meaning": "Duy trì (trạng thái hiện tại)",
+    "usage": "「｜維持《いじ》する」, 「｜健康《けんこう》を｜維持《いじ》する」, 「｜現状《げんじょう》を｜維持《いじ》する」.",
+    "nuance": "",
+    "compare": "Hán Việt DUY TRÌ, nghĩa như tiếng Việt. 「｜維持《いじ》」: giữ nguyên hiện trạng cho đến lúc sau. 「｜保《たも》つ」: động từ thuần Nhật, giữ cho không đổi: 「｜体温《たいおん》を｜保《たも》つ」.",
+    "example_notes": [
+      "Quán cơm này vẫn giữ nguyên mức giá như mười năm trước."
+    ]
+  },
+  "v-1145": {
+    "meaning": "Chức năng; hoạt động đúng chức năng",
+    "usage": "「｜機能《きのう》する」 (hoạt động đúng chức năng), 「〜という｜機能《きのう》がある」.",
+    "nuance": "Đề điền từ: đáp án 「｜機能《きのう》」; các phương án khác là 「｜効用《こうよう》」 「｜才能《さいのう》」 「｜効力《こうりょく》」.",
+    "compare": "CƠ NĂNG: tiếng Việt 'cơ năng' thường là năng lượng cơ học; 「｜機能《きのう》」 là 'chức năng' của bộ phận, máy móc. 「｜作用《さよう》」 (TÁC DỤNG): tác động lên vật khác.",
+    "example_notes": [
+      "Bình chữa cháy này mỗi năm đều được kiểm tra để chắc chắn hoạt động khi có hỏa hoạn."
+    ]
+  },
+  "v-1146": {
+    "meaning": "Ngược lại, trái lại (kết quả ngược với dự tính)",
+    "usage": "「かえって〜になる」, 「かえって〜してしまう」.",
+    "nuance": "",
+    "compare": "「かえって」: kết quả đi ngược điều mình định làm. 「むしろ」: so hai bên rồi nghiêng về bên sau: 「むしろ｜好《す》きだ」.",
+    "example_notes": [
+      "Tôi giúp với ý tốt, ai ngờ lại khiến người ta phải ngại, phải bận tâm vì mình."
+    ]
+  },
   "v-1147": {
     "meaning": "Sự kích thích (lên cơ thể, giác quan hay tinh thần)",
     "usage": "「刺激が強い」, 「刺激を受ける」, 「〜を刺激する」, 「想像力が刺激される」, 「好奇心を刺激する」.",
@@ -10350,6 +10622,33 @@
     "example_notes": [
       "Nếu mắt có cảm giác bị kích thích mạnh, hãy rửa ngay bằng nước.",
       "Được thành công của đối thủ thúc đẩy, anh ấy cũng bắt đầu chạy bộ mỗi sáng."
+    ]
+  },
+  "v-1148": {
+    "meaning": "Khô ráp, khô nẻ",
+    "usage": "「かさかさになる」, 「かさかさだ」, 「かさかさしている」. Dùng cho da, môi, gót chân.",
+    "nuance": "Đề điền từ: đáp án 「かさかさ」, bên cạnh 「どろどろ」 「ふさふさ」 「べたべた」. Đề đổi cách nói: 「かさかさしている」 = 「｜乾燥《かんそう》している」.",
+    "compare": "「かさかさ」: từ tượng thái, da, môi khô ráp vì mất nước. 「｜荒《あ》れる」: động từ, da sần sùi, nhưng còn dùng cho biển, thời tiết: 「｜海《うみ》が｜荒《あ》れる」.",
+    "example_notes": [
+      "Làm việc ngoài trời mùa đông, tay tôi khô ráp rồi nứt nẻ."
+    ]
+  },
+  "v-1149": {
+    "meaning": "Giảm sút, suy giảm (năng lực, mức độ)",
+    "usage": "「｜体力《たいりょく》が｜低下《ていか》する」, 「｜集中力《しゅうちゅうりょく》が｜低下《ていか》する」, 「〜の｜低下《ていか》」.",
+    "nuance": "",
+    "compare": "「｜低下《ていか》」 (ĐÊ HẠ): mức độ, năng lực tụt xuống — 「〜が｜低下《ていか》する」. 「｜衰《おとろ》える」: động từ, sức lực yếu dần theo thời gian. Tiếng Việt đều nói được 'suy giảm' nên dễ lẫn.",
+    "example_notes": [
+      "Hễ mệt mỏi tích tụ thì ăn không ngon và thức dậy buổi sáng cũng khổ sở."
+    ]
+  },
+  "v-1150": {
+    "meaning": "Hiện lên sắc nét, rõ mồn một",
+    "usage": "「くっきり(と)｜見《み》える」, 「くっきりした｜線《せん》」.",
+    "nuance": "",
+    "compare": "「くっきり」: rõ nét, đường viền sắc. Ngược lại là 「ぼんやり」: mờ, nhòe.",
+    "example_notes": [
+      "Buổi sáng mùa đông trời quang, hình dáng ngọn núi xa hiện rõ mồn một."
     ]
   },
   "v-1151": {
@@ -10362,6 +10661,33 @@
       "Đánh xi đôi giày da cũ thì nó bóng lên."
     ]
   },
+  "v-1152": {
+    "meaning": "Mỡ, chất béo",
+    "usage": "「｜脂肪《しぼう》が｜多《おお》い」, 「｜脂肪《しぼう》を｜減《へ》らす」, 「｜体脂肪《たいしぼう》」 (mỡ trong cơ thể).",
+    "nuance": "",
+    "compare": "「｜脂肪《しぼう》」 (CHI PHƯƠNG): mỡ, chất béo. 「｜肥満《ひまん》」 (PHÌ MÃN): tình trạng béo phì. 「｜減量《げんりょう》」 (GIẢM LƯỢNG) ở đây là giảm cân.",
+    "example_notes": [
+      "Thịt nhiều dầu mỡ có nhiều chất béo nên tôi cố không ăn quá nhiều."
+    ]
+  },
+  "v-1153": {
+    "meaning": "Béo phì, quá béo",
+    "usage": "「｜肥満《ひまん》を｜防《ふせ》ぐ」, 「｜肥満《ひまん》になる」, 「｜肥満《ひまん》｜気味《ぎみ》」.",
+    "nuance": "",
+    "compare": "「｜肥満《ひまん》」 PHÌ MÃN: béo phì, là một tình trạng, không phải chất. Chất béo là 「｜脂肪《しぼう》」 (CHI PHƯƠNG); giảm cân là 「｜減量《げんりょう》」 (GIẢM LƯỢNG).",
+    "example_notes": [
+      "Để phòng béo phì, tôi chỉ ăn bánh kẹo vào cuối tuần."
+    ]
+  },
+  "v-1154": {
+    "meaning": "Giảm cân (giảm trọng lượng cơ thể)",
+    "usage": "「｜減量《げんりょう》する」, 「〜キロ｜減量《げんりょう》する」.",
+    "nuance": "Trong đề điền từ, 「｜減量《げんりょう》」 bốn lần là phương án sai.",
+    "compare": "「｜減量《げんりょう》」 GIẢM LƯỢNG: ở đây là giảm cân, không phải giảm số lượng nói chung. 「｜肥満《ひまん》」 (PHÌ MÃN): béo phì; 「｜脂肪《しぼう》」 (CHI PHƯƠNG): chất béo.",
+    "example_notes": [
+      "Võ sĩ quyền anh giảm năm ký trong một tháng trước trận đấu."
+    ]
+  },
   "v-1155": {
     "meaning": "Đột ngột và mạnh, thay đổi dồn dập trong thời gian ngắn",
     "usage": "ナ形容詞, đi với động từ tăng, giảm, thay đổi: 「急激に増える」, 「急激に下がる」, 「急激な変化」.",
@@ -10370,6 +10696,24 @@
     "example_notes": [
       "Về đêm nhiệt độ hạ đột ngột, đường sá đóng băng hết.",
       "Đồng yên tăng giá đột ngột khiến các công ty xuất khẩu gặp khó."
+    ]
+  },
+  "v-1156": {
+    "meaning": "Hoàn toàn (không), mãi chẳng",
+    "usage": "「｜一向《いっこう》に〜ない」, 「｜一向《いっこう》に〜しない」, 「｜一向《いっこう》に〜ならない」.",
+    "nuance": "",
+    "compare": "Cùng nghĩa 'hoàn toàn không' với 「さっぱり〜ない」; cả hai cần vế phủ định theo sau: 「｜一向《いっこう》に｜来《こ》ない」, 「さっぱりわからない」.",
+    "example_notes": [
+      "Liên lạc bao nhiêu lần, anh ấy vẫn chẳng hồi âm gì."
+    ]
+  },
+  "v-1157": {
+    "meaning": "Đáng nghi, khó tin",
+    "usage": "「〜かどうか｜疑《うたが》わしい」, 「｜疑《うたが》わしい｜点《てん》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Quảng cáo \"chắc chắn có lãi\" của tiệm kia nghe thật đáng ngờ."
     ]
   },
   "v-1158": {
@@ -10382,6 +10726,24 @@
       "Công ty đang tỏ thái độ tích cực trong việc giải quyết vấn đề."
     ]
   },
+  "v-1159": {
+    "meaning": "Đi khám bác sĩ, đến bác sĩ điều trị",
+    "usage": "「｜医者《いしゃ》にかかる」, 「｜医者《いしゃ》にかかったほうがいい」 (nên đi khám).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Sốt ba ngày không hạ nên tôi đã đi khám bác sĩ gần nhà."
+    ]
+  },
+  "v-1160": {
+    "meaning": "Lệ thuộc, dựa dẫm; nghiện",
+    "usage": "「〜に｜依存《いぞん》する」, 「｜依存症《いぞんしょう》」, 「アルコール｜依存症《いぞんしょう》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Anh ấy lệ thuộc vào điện thoại đến khuya nên thiếu ngủ."
+    ]
+  },
   "v-1161": {
     "meaning": "Soi, chiếu (hình ảnh lên gương, màn hình)",
     "usage": "「鏡に顔を映す」, 「スクリーンに映す」. Tự động từ: 「〜が映る」.",
@@ -10389,6 +10751,15 @@
     "compare": "「映す」: tha động từ, người soi, chiếu: 「スクリーンに映す」. 「｜映《うつ》る」: tự động từ, hình hiện lên: 「鏡に顔が映る」.",
     "example_notes": [
       "Thầy giáo chiếu từng tác phẩm của học sinh lên màn hình rồi giải thích."
+    ]
+  },
+  "v-1162": {
+    "meaning": "Tiếng ồn",
+    "usage": "「｜騒音《そうおん》がひどい」, 「｜騒音《そうおん》に｜悩《なや》まされる」, 「｜騒音問題《そうおんもんだい》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Nhà gần đường ray thì ban đêm khó ngủ vì tiếng ồn của tàu."
     ]
   },
   "v-1163": {
@@ -10401,6 +10772,34 @@
       "Đề quá khó nên người tham gia bỏ cuộc giữa chừng liên tiếp."
     ]
   },
+  "v-1164": {
+    "meaning": "Bất giác, không kìm được",
+    "usage": "「｜思《おも》わず〜してしまう」, 「｜思《おも》わず｜笑《わら》う」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Thấy mặt người bạn lâu ngày mới gặp, tôi bất giác bật cười."
+    ]
+  },
+  "v-1165": {
+    "meaning": "Chỉ một chiều; một trong hai bên",
+    "usage": "「〜する｜一方《いっぽう》だ」 (cứ thế mãi); 「｜二《ふた》つのうちの｜一方《いっぽう》」 (một trong hai).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Đến tối, sức mưa vẫn cứ mạnh thêm mãi.",
+      "Trong hai tấm ảnh, một tấm đã bị phai màu."
+    ]
+  },
+  "v-1166": {
+    "meaning": "Đối lập, bất đồng gay gắt",
+    "usage": "「｜意見《いけん》が｜対立《たいりつ》する」, 「〜と｜対立《たいりつ》する」, 「｜対立《たいりつ》が｜深《ふか》まる」.",
+    "nuance": "",
+    "compare": "「｜対立《たいりつ》」 ĐỐI LẬP, nghĩa như tiếng Việt: hai bên ý kiến, lập trường trái nhau. 「｜争《あらそ》う」: động từ, tranh giành, cãi cọ, cả thi đua: 「｜一位《いちい》を｜争《あらそ》う」.",
+    "example_notes": [
+      "Về việc xem xét lại nội quy trường, ý kiến của hội học sinh và các thầy cô đang đối lập."
+    ]
+  },
   "v-1167": {
     "meaning": "Bác bỏ, từ chối dứt khoát điều người khác đề nghị",
     "usage": "「要求を拒否する」 (cự tuyệt yêu cầu), 「契約の更新を拒否する」, 「受け入れを拒否する」.",
@@ -10409,6 +10808,218 @@
     "example_notes": [
       "Không thỏa mãn với điều kiện phía đội bóng đưa ra, cầu thủ đó đã từ chối gia hạn hợp đồng.",
       "Con mèo cự tuyệt việc uống thuốc, cứ ngậm chặt miệng lại."
+    ]
+  },
+  "v-1168": {
+    "meaning": "Kiện ra tòa; kêu đau, than phiền với người khác",
+    "usage": "「｜会社《かいしゃ》を｜訴《うった》える」, 「｜裁判所《さいばんしょ》に｜訴《うった》える」 (kiện); 「｜不安《ふあん》を｜訴《うった》える」 (bày tỏ nỗi lo).",
+    "nuance": "",
+    "compare": "「｜訴《うった》える」 (TỐ): 'tố' như trong 'khởi tố' — kiện ra tòa; còn là kêu, bày tỏ nỗi khổ: 「｜不安《ふあん》を｜訴《うった》える」. Phiên xử ở tòa là 「｜裁判《さいばん》」 (TÀI PHÁN).",
+    "example_notes": [
+      "Cửa hàng quần áo bị sao chép thiết kế đã kiện công ty đó ra tòa.",
+      "Ở phòng khám, cậu bé kêu \"con đau bụng\"."
+    ]
+  },
+  "v-1169": {
+    "meaning": "Xét xử, phiên tòa",
+    "usage": "「｜裁判《さいばん》を｜起《お》こす」, 「｜裁判《さいばん》になる」, 「｜裁判所《さいばんしょ》」, 「｜裁判官《さいばんかん》」.",
+    "nuance": "",
+    "compare": "「｜裁判《さいばん》」 TÀI PHÁN: việc tòa xét xử — 「｜裁判《さいばん》を｜起《お》こす」 là khởi kiện. Hành động đi kiện là động từ 「｜訴《うった》える」 (TỐ).",
+    "example_notes": [
+      "Vụ xử này mất đến ba năm mới có phán quyết."
+    ]
+  },
+  "v-1170": {
+    "meaning": "Dính líu, có liên quan; gây ảnh hưởng xấu (đến mạng sống…)",
+    "usage": "「〜に｜関《かか》わる」, 「｜事件《じけん》に｜関《かか》わる」 (dính líu); 「｜健康《けんこう》に｜関《かか》わる」 (ảnh hưởng xấu).",
+    "nuance": "",
+    "compare": "「｜関《かか》わる」 (QUAN): dính líu, có liên quan; đi với 「｜命《いのち》」 「｜健康《けんこう》」 thì là ảnh hưởng xấu. 「｜携《たずさ》わる」: trực tiếp làm việc đó. 「｜及《およ》ぼす」: gây ảnh hưởng, đi với 「｜影響《えいきょう》を」.",
+    "example_notes": [
+      "Suốt ba mươi năm, bố tôi tham gia vào việc chuẩn bị lễ hội của thị trấn.",
+      "Cứ sống kiểu thức khuya mãi thì sẽ ảnh hưởng xấu đến sức khỏe."
+    ]
+  },
+  "v-1171": {
+    "meaning": "Văng, bắn tung; nhảy lên",
+    "usage": "「｜油《あぶら》がはねる」, 「｜水《みず》がはねる」 (văng); 「ウサギがはねる」 (nhảy).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Đang rán đồ thì dầu bắn lên tay làm tôi bị bỏng.",
+      "Ở khu vườn sau mưa, bọn trẻ nhảy chơi trong vũng nước."
+    ]
+  },
+  "v-1172": {
+    "meaning": "Tội phạm, hành vi phạm tội",
+    "usage": "「｜犯罪《はんざい》を｜防《ふせ》ぐ」, 「｜犯罪《はんざい》が｜起《お》きる」, 「｜犯罪者《はんざいしゃ》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Nhà văn đó viết tiểu thuyết lấy đề tài là tội phạm qua mạng internet."
+    ]
+  },
+  "v-1173": {
+    "meaning": "Quậy phá, làm loạn, hung hăng",
+    "usage": "「｜暴《あば》れる」, 「｜暴《あば》れだす」, 「｜酔《よ》って｜暴《あば》れる」.",
+    "nuance": "",
+    "compare": "Ba từ cùng chữ BẠO 「暴」. 「｜暴《あば》れる」: động từ, quậy phá, lồng lộn. 「｜乱暴《らんぼう》」: cách làm, lời nói thô bạo. 「｜暴力《ぼうりょく》」 (BẠO LỰC): đánh, đá người.",
+    "example_notes": [
+      "Chú chó con sợ tiêm đã quậy tưng trên bàn khám, làm bác sĩ thú y khó xử."
+    ]
+  },
+  "v-1174": {
+    "meaning": "Thô bạo, cục cằn (trong động tác, ăn nói)",
+    "usage": "「｜乱暴《らんぼう》な｜言葉《ことば》」, 「｜乱暴《らんぼう》に｜扱《あつか》う」, 「｜乱暴《らんぼう》する」.",
+    "nuance": "Đề viết chữ Hán: đáp án 「｜乱暴《らんぼう》」; các phương án khác là 「荒暴」 「乱亡」 「荒亡」.",
+    "compare": "「｜乱暴《らんぼう》」 (LOẠN BẠO) ≈ 'thô bạo': làm mạnh tay, nói lời thô — 「｜乱暴《らんぼう》に｜扱《あつか》う」. Ra tay đánh người là 「｜暴力《ぼうりょく》」 (BẠO LỰC); quậy phá là động từ 「｜暴《あば》れる」.",
+    "example_notes": [
+      "Tôi xử lý hành lý thô bạo nên đồ sứ bên trong bị vỡ."
+    ]
+  },
+  "v-1175": {
+    "meaning": "Bạo lực",
+    "usage": "「｜暴力《ぼうりょく》をふるう」, 「｜暴力《ぼうりょく》を｜受《う》ける」, 「｜家庭内《かていない》｜暴力《ぼうりょく》」.",
+    "nuance": "",
+    "compare": "Hán Việt BẠO LỰC, nghĩa như tiếng Việt; đi với 「ふるう」: 「｜暴力《ぼうりょく》をふるう」 (dùng bạo lực). 「｜乱暴《らんぼう》」: thô bạo trong cách làm; 「｜暴《あば》れる」: quậy phá.",
+    "example_notes": [
+      "Học sinh ra tay đánh bạn bị gọi lên gặp thầy cùng phụ huynh."
+    ]
+  },
+  "v-1176": {
+    "meaning": "Dọa nạt; làm cho giật mình",
+    "usage": "「〜をおどかす」, 「おどかされる」 (bị dọa).",
+    "nuance": "",
+    "compare": "「おどかす」 và 「｜驚《おどろ》かす」 (KINH) đều là làm cho giật mình, nhưng chỉ 「おどかす」 còn có nghĩa dọa nạt cho sợ.",
+    "example_notes": [
+      "Tên tội phạm dùng dao dọa nhân viên cửa hàng rồi lấy tiền trong quầy.",
+      "Tôi nhảy ra từ sau cánh cửa để làm em gái giật mình."
+    ]
+  },
+  "v-1177": {
+    "meaning": "Xâm nhập, đột nhập (vào nhà, khu đất người khác)",
+    "usage": "「｜侵入《しんにゅう》する」, 「｜不法侵入《ふほうしんにゅう》」, 「｜侵入者《しんにゅうしゃ》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Nửa đêm có kẻ đột nhập vào văn phòng, két sắt bị mở."
+    ]
+  },
+  "v-1178": {
+    "meaning": "Nhòm, ngó vào; nhìn trộm",
+    "usage": "「すき｜間《ま》からのぞく」, 「｜窓《まど》からのぞく」.",
+    "nuance": "",
+    "compare": "Cùng âm 「のぞく」: viết kana ở đây là nhòm, ngó trộm; viết 「｜除《のぞ》く」 là trừ ra, không tính. Dựa vào chữ Hán và ngữ cảnh để phân biệt.",
+    "example_notes": [
+      "Đứa trẻ đang nhòm sang khu vườn nhà bên qua cái lỗ trên bờ tường."
+    ]
+  },
+  "v-1179": {
+    "meaning": "Lạ, chưa từng gặp",
+    "usage": "「｜見知《みし》らぬ｜土地《とち》」, 「｜見知《みし》らぬ｜町《まち》」, 「｜見知《みし》らぬ｜顔《かお》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Ngày chuyển trường, bước vào lớp học toàn gương mặt lạ khiến tôi hồi hộp."
+    ]
+  },
+  "v-1180": {
+    "meaning": "Lại gần, tiến sát",
+    "usage": "「〜に｜近寄《ちかよ》る」, 「｜近寄《ちかよ》らない」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Con chó đột nhiên gầm gừ nên tôi sợ và tránh lại gần."
+    ]
+  },
+  "v-1181": {
+    "meaning": "Rút ngắn lại, thu hẹp lại (khoảng cách, chênh lệch)",
+    "usage": "「｜差《さ》が｜縮《ちぢ》まる」, 「｜距離《きょり》が｜縮《ちぢ》まる」.",
+    "nuance": "",
+    "compare": "「｜縮《ちぢ》まる」 và 「｜縮《ちぢ》む」 gần như cùng nghĩa, đều là tự động từ; 「｜縮《ちぢ》まる」 đi với 「｜差《さ》」 「｜距離《きょり》」. Chủ động làm cho ngắn lại thì dùng tha động từ 「｜縮《ちぢ》める」.",
+    "example_notes": [
+      "Gần cuối trận, khoảng cách với đội thứ hai ngày một thu hẹp."
+    ]
+  },
+  "v-1182": {
+    "meaning": "Cưỡng ép, bắt ép bằng được",
+    "usage": "「｜無理《むり》やり〜させる」, 「｜無理《むり》やり｜連《つ》れていく」, 「｜無理《むり》やり〜される」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Em trai không muốn đi nhưng mẹ cứ ép đưa đến bệnh viện."
+    ]
+  },
+  "v-1183": {
+    "meaning": "Điều tra (của cảnh sát)",
+    "usage": "「｜捜査《そうさ》する」, 「｜捜査《そうさ》を｜進《すす》める」, 「｜捜査《そうさ》に｜協力《きょうりょく》する」.",
+    "nuance": "",
+    "compare": "「｜捜査《そうさ》」 SƯU TRA: cảnh sát điều tra vụ án. Người làm việc đó là 「｜刑事《けいじ》」 HÌNH SỰ, dễ lừa: không phải 'hình sự' (luật) như tiếng Việt mà là người cảnh sát điều tra.",
+    "example_notes": [
+      "Các điều tra viên đi từng nhà quanh hiện trường để điều tra."
+    ]
+  },
+  "v-1184": {
+    "meaning": "Chốt hẳn, được quyết định chắc chắn",
+    "usage": "「〜が｜確定《かくてい》する」, 「｜確定《かくてい》した」, 「｜確定《かくてい》を｜待《ま》つ」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Trong buổi bàn bạc lần ba, lịch trình chuyến đi cuối cùng cũng được chốt."
+    ]
+  },
+  "v-1185": {
+    "meaning": "Hiển nhiên, quá rõ, không còn nghi ngờ",
+    "usage": "「｜明《あき》らかになる」, 「｜明《あき》らかな｜違《ちが》い」, 「｜明《あき》らかに〜だ」.",
+    "nuance": "Đề đổi cách nói: đáp án 「はっきりした」; các phương án khác là 「さまざまな」 「｜別《べつ》の」 「｜新《あたら》しい」.",
+    "compare": "「｜明確《めいかく》」 (MINH XÁC) cũng là 'rõ ràng' nhưng là nói, viết rành mạch, không hiểu sai được. 「｜明《あき》らか」: sự thật hiển nhiên, ai nhìn cũng thấy.",
+    "example_notes": [
+      "Kết quả khảo sát đã cho thấy rõ sự không hài lòng của khách đối với bãi đỗ xe."
+    ]
+  },
+  "v-1186": {
+    "meaning": "Trùng khớp, nhất trí",
+    "usage": "「｜意見《いけん》が｜一致《いっち》する」, 「〜と｜一致《いっち》する」, 「｜全員一致《ぜんいんいっち》」.",
+    "nuance": "Đề đổi cách nói: đáp án 「｜同《おな》じだった」; các phương án khác là 「｜正《ただ》しかった」 「はっきりしていた」 「｜似《に》ていた」.",
+    "compare": "",
+    "example_notes": [
+      "Sở thích của hai người trùng nhau nên nơi du lịch được chọn ngay."
+    ]
+  },
+  "v-1187": {
+    "meaning": "Tự mình, chính mình (làm việc)",
+    "usage": "「｜自《みずか》ら〜する」, 「｜自《みずか》ら｜進《すす》んで」, 「｜自《みずか》らの｜手《て》で」.",
+    "nuance": "Đề đổi cách nói: đáp án 「｜自分《じぶん》で」; các phương án khác là 「すぐに」 「｜仲間《なかま》と」 「しばらくして」.",
+    "compare": "",
+    "example_notes": [
+      "Cửa hàng trưởng tự mình đi quanh các bàn khách để hỏi cảm tưởng."
+    ]
+  },
+  "v-1188": {
+    "meaning": "Nơi ở, chỗ đang ở của một người",
+    "usage": "「｜居場所《いばしょ》を｜探《さが》す」, 「｜居場所《いばしょ》を｜知《し》らせる」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Ông không nghe điện thoại, mẹ tôi gọi từng quán ông hay lui tới để tìm xem ông đang ở đâu."
+    ]
+  },
+  "v-1189": {
+    "meaning": "Chủ sở hữu, người có đồ vật",
+    "usage": "「｜土地《とち》の｜持《も》ち｜主《ぬし》」 (chủ đất), 「｜持《も》ち｜主《ぬし》が｜変《か》わる」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Chủ của căn nhà cũ này hiện đang sống ở nước ngoài."
+    ]
+  },
+  "v-1190": {
+    "meaning": "Đến cùng, kiên trì; (cả 「あくまでも」) chỉ là, chỉ trong phạm vi",
+    "usage": "「あくまで｜反対《はんたい》する」 (phản đối đến cùng); 「あくまでも〜だ」 (chỉ là).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Cho đến khi đối phương xin lỗi, anh ấy vẫn nhất quyết giữ ý kiến của mình.",
+      "Đây chỉ là cảm nghĩ riêng của tôi, không phải quan điểm của công ty."
     ]
   },
   "v-1191": {
@@ -10421,6 +11032,16 @@
       "Lời giải thích của anh ấy thật dễ hiểu, ai trong hội trường cũng gật gù."
     ]
   },
+  "v-1192": {
+    "meaning": "Khó khăn, trở ngại; khó thực hiện",
+    "usage": "「｜困難《こんなん》な｜状況《じょうきょう》」, 「〜が｜困難《こんなん》だ」, 「｜困難《こんなん》に｜負《ま》けない」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Công việc mới có những khó khăn bất ngờ đang chờ.",
+      "Ở hòn đảo này, sau bão việc cho tàu ra khơi trở nên khó khăn."
+    ]
+  },
   "v-1193": {
     "meaning": "Sửa đổi, thay đổi cho tốt hơn (cách làm, cách ghi, lối sống)",
     "usage": "Tha động từ: 「やり方を改める」, 「表示を改める」, 「生活を改める」. Hán Việt 「改」 là \"cải\" (cải cách).",
@@ -10429,6 +11050,15 @@
     "example_notes": [
       "Sau khi nhận phàn nàn từ khách, cửa hàng đã sửa lại cách tiếp nhận.",
       "Nhà ga đã đổi cách ghi trên bảng chỉ dẫn để người nước ngoài cũng hiểu được."
+    ]
+  },
+  "v-1194": {
+    "meaning": "Cuối cùng cũng (sau một thời gian dài)",
+    "usage": "「ようやく〜する」, 「ようやく〜できた」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Cuối cùng tôi cũng tìm thấy cuốn sách đã tìm bấy lâu ở tiệm sách cũ."
     ]
   },
   "v-1196": {
@@ -10625,7 +11255,7 @@
     "meaning": "Làm cho (ai) giật mình, ngạc nhiên",
     "usage": "Tha động từ ứng với 「驚く」: 「人を驚かす」, 「みんなを驚かす」. Dạng 「驚かせる」 cũng dùng: 「驚かせてしまって」.",
     "nuance": "Viết: 「驚」 như trong 「驚く」. Đề thi đã gài 「怖かせて」「焦かせて」「騒かせて」 — chữ của sợ, sốt ruột, ồn ào.",
-    "compare": "",
+    "compare": "「おどかす」: ngoài làm giật mình còn là dọa cho sợ.",
     "example_notes": [
       "Tôi hét to từ phía sau làm em trai giật mình.",
       "Tôi khẽ mở cửa để không làm con chó đang ngủ giật mình."
@@ -11134,7 +11764,7 @@
     "meaning": "Lơ đãng, đầu óc mơ màng; (thấy) mờ, không rõ nét",
     "usage": "「頭がぼんやりする」, 「ぼんやり（と）見る」 (nhìn vô định), 「ぼんやりとしか見えない」 (chỉ thấy lờ mờ). Gần nghĩa: 「ぼうっと」.",
     "nuance": "Điền từ: nhìn ra cửa sổ rất lâu, đầu óc để đâu đâu → 「ぼんやり」; phương án sai 「ふんわり」「うっすら」「しっとり」. Ở câu khác, 「ぼんやり」 là phương án sai cạnh 「たっぷり」「ごちゃごちゃ」.",
-    "compare": "「ぼんやり」: đầu óc lơ đãng, hay hình ảnh mờ: 「字がぼんやり見える」. 「かすか」: tiếng, hình rất yếu, vừa đủ nhận ra: 「かすかに見える」. 「あいまい」: lời nói, thái độ mập mờ: 「あいまいな返事」. 「ぼうっと」 cũng hai nghĩa ấy.",
+    "compare": "「ぼんやり」: lơ đãng, hình mờ: 「字がぼんやり見える」. 「かすか」: rất yếu: 「かすかに見える」. 「あいまい」: mập mờ: 「あいまいな返事」. 「ぼうっと」 cũng hai nghĩa ấy. Ngược lại là 「くっきり」: rõ nét.",
     "example_notes": [
       "Vì thiếu ngủ, suốt buổi họp đầu óc tôi cứ lơ mơ.",
       "Bỏ kính ra thì chữ trên bảng tôi chỉ thấy lờ mờ."
@@ -11144,7 +11774,7 @@
     "meaning": "Vết thương nhẹ, không nguy đến tính mạng",
     "usage": "「軽傷を負う」 (bị thương nhẹ), 「幸い軽傷だった」. Đối nghĩa: 「｜重傷《じゅうしょう》」 (chấn thương nặng).",
     "nuance": "Tránh nhầm với 「｜軽症《けいしょう》」 (bệnh nhẹ) đọc giống hệt.",
-    "compare": "",
+    "compare": "Bị thương nói chung, nặng nhẹ đều được, là 「｜負傷《ふしょう》」 (PHỤ THƯƠNG). Nặng tới nguy kịch là 「｜重体《じゅうたい》」 (TRỌNG THỂ — không phải 'trọng thể' là long trọng).",
     "example_notes": [
       "Xe buýt phanh gấp làm hành khách ngã dúi dụi, may mắn mọi người chỉ bị xây xát thương tích nhẹ.",
       "Những người bị thương nhẹ tự đi bộ đến bệnh viện, còn người chấn thương nặng được chuyển bằng xe cấp cứu."
@@ -11164,7 +11794,7 @@
     "meaning": "Duy trì, không để mất (sức khỏe, sự điềm tĩnh, cân nặng)",
     "usage": "「健康を保つ」, 「落ち着きを保つ」 (giữ bình tĩnh), 「体重を保つ」, 「〜を保っている」.",
     "nuance": "Đề thi coi là sai khi dùng cho giữ đúng giờ hẹn, để dành phần ăn cho ai, để nguyên rác đó: 「保つ」 giữ một trạng thái, không phải cất đồ hay giữ lời hẹn.",
-    "compare": "",
+    "compare": "「｜維持《いじ》」 (DUY TRÌ) là danh từ/する動詞 cùng nghĩa giữ nguyên: 「｜健康《けんこう》を｜維持《いじ》する」.",
     "example_notes": [
       "Dù sắp thua trận, cô ấy vẫn giữ được bình tĩnh đến phút cuối.",
       "Nhờ sáng nào cũng chạy bộ, anh ấy giữ được cân nặng như cũ suốt hai mươi năm."
@@ -11174,7 +11804,7 @@
     "meaning": "Co lại, nhỏ đi (vải sau khi giặt, gỗ, chiều cao)",
     "usage": "「セーターが縮む」, 「シャツが縮む」, 「背が縮む」, 「少し縮んだ」.",
     "nuance": "Câu thay thế: 「ちぢんで」＝「小さくなって」. Đề thi coi là sai khi nói hộp bị đè bẹp, bút chì mòn ngắn, khu vườn hẹp lại.",
-    "compare": "「縮む」: tự động từ, tự co lại: 「シャツが縮む」. 「｜縮《ちぢ》める」: tha động từ, làm cho ngắn lại: 「すそを縮める」「記録を縮める」.",
+    "compare": "「縮む」: tự động từ, tự co lại: 「シャツが縮む」. 「｜縮《ちぢ》める」: tha động từ, làm cho ngắn lại: 「すそを縮める」「記録を縮める」. 「｜縮《ちぢ》まる」: gần như cùng nghĩa, đi với 「｜差《さ》」 「｜距離《きょり》」.",
     "example_notes": [
       "Chiếc bàn gỗ mua hồi mùa hè, sang đông có lẽ vì khô hanh nên đã co lại một chút.",
       "Càng có tuổi, ông tôi càng thấp dần đi."
@@ -11184,7 +11814,7 @@
     "meaning": "Thu gọn lại cho đỡ dài (ống quần, thời gian chạy)",
     "usage": "「すそを縮める」 (cắt ngắn ống quần), 「長さを縮める」, 「記録を縮める」 (rút ngắn thời gian).",
     "nuance": "Đề viết chữ: 「ちぢめて」 → 「縮めて」; nhiễu 「薄めて」「納めて」「貯めて」.",
-    "compare": "「縮める」: tha động từ, làm cho ngắn lại. 「｜縮《ちぢ》む」: tự động từ, tự co lại: 「シャツが縮む」. 「｜略《りゃく》す」: bỏ bớt một phần cho gọn: 「説明を略す」.",
+    "compare": "「縮める」: tha động từ, làm cho ngắn lại. 「｜縮《ちぢ》む」: tự động từ, tự co lại: 「シャツが縮む」. 「｜略《りゃく》す」: bỏ bớt một phần cho gọn: 「説明を略す」. 「｜縮《ちぢ》まる」: tự động từ, khoảng cách tự ngắn lại.",
     "example_notes": [
       "Quần dài quá nên tôi nhờ người ta cắt ngắn ống quần ba phân.",
       "Nhờ ngày nào cũng tập luyện, anh ấy đã rút ngắn thành tích của mình hai giây."
@@ -11294,7 +11924,7 @@
     "meaning": "Tranh giành, tranh chấp; cãi cọ, xung đột với ai",
     "usage": "「AとBが争う」, 「優勝を争う」 (tranh chức vô địch), 「〜をめぐって争う」 (tranh chấp về …), 「先を争って」 (chen nhau lên trước).",
     "nuance": "Viết: đề đã gài 「戦って」「競って」「抗って」. Điền từ: tranh chức vô địch đến phút cuối → 「争って」; sai 「戦って」「奪って」「破って」. 「きそって」 là cách đọc của 「競う」.",
-    "compare": "「争う」: tranh giành, kể cả cãi cọ, tranh chấp: 「水をめぐって争う」. 「｜競《きそ》う」: ganh đua để hơn người khác: 「トップを競う」. 「｜戦《たたか》う」 CHIẾN: đấu trực tiếp với đối thủ: 「｜強豪《きょうごう》と｜戦《たたか》う」.",
+    "compare": "「争う」: tranh giành, kể cả cãi cọ, tranh chấp: 「水をめぐって争う」. 「｜競《きそ》う」: ganh đua để hơn người khác: 「トップを競う」. 「｜戦《たたか》う」 CHIẾN: đấu trực tiếp với đối thủ: 「｜強豪《きょうごう》と｜戦《たたか》う」. 「｜対立《たいりつ》」 (ĐỐI LẬP).",
     "example_notes": [
       "Hai ngôi làng này từ xưa đã tranh chấp nhau về cách dùng nước sông.",
       "Ngày giảm giá đầu năm, khách chen nhau ùa vào cửa hàng."
@@ -11763,7 +12393,7 @@
     "meaning": "Cảnh sát điều tra, thám tử (người phá án)",
     "usage": "「〜は刑事だ」, 「刑事ドラマ」 (phim hình sự).",
     "nuance": "Đọc 「けいじ」; đề đã gài 「けんじ」「かんじ」「かいじ」. Hán Việt 'hình sự' — tiếng Việt dùng như tính từ ('vụ án hình sự'); ở thẻ này 「刑事」 là người cảnh sát.",
-    "compare": "",
+    "compare": "「｜刑事《けいじ》」 HÌNH SỰ, dễ lừa: ở đây là người cảnh sát điều tra; việc họ làm là 「｜捜査《そうさ》」 (SƯU TRA).",
     "example_notes": [
       "Viên cảnh sát ấy không bỏ sót lời nói dối nhỏ nào của thủ phạm.",
       "Hồi nhỏ, tuần nào tôi cũng háo hức chờ xem phim hình sự trên tivi."
@@ -12282,7 +12912,7 @@
     "meaning": "Chữa trị, điều trị (bệnh, vết thương)",
     "usage": "「治療する」, 「治療を受ける」, 「けがの治療」, 「虫歯の治療」, 「治療を始める」. Hán Việt \"trị liệu\".",
     "nuance": "Đọc 「ちりょう」: 「治」 đọc 「ち」, 「療」 có trường âm. Đề thi (hai lần) đã cho 「じりょ」「ちりょ」「じりょう」 làm phương án sai.",
-    "compare": "Đi bệnh viện nhiều lần để 「｜治療《ちりょう》」 là 「｜通院《つういん》」; người chữa là 「｜医師《いし》」.",
+    "compare": "Đi bệnh viện nhiều lần để 「｜治療《ちりょう》」 là 「｜通院《つういん》」; người chữa là 「｜医師《いし》」. Cả ngành y tế là 「｜医療《いりょう》」 (Y LIỆU); sơ cứu ngay tại chỗ là 「｜手当《てあ》て」.",
     "example_notes": [
       "Bố tôi đến bệnh viện mỗi tuần một lần để chữa đau lưng.",
       "Bệnh này nếu bắt đầu điều trị sớm thì dễ khỏi."

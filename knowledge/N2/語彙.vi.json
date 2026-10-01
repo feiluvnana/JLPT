@@ -1,4 +1,41 @@
 {
+  "v-0001": {
+    "meaning": "Cả nhà, cả gia đình (một hộ)",
+    "usage": "「一家そろって」 (cả nhà cùng…), 「一家で〜」. Gần nghĩa: 「ファミリー」. 「｜一家団《いっかだん》らん」: cả nhà quây quần. Hán Việt \"nhất gia\".",
+    "nuance": "Đọc 「いっか」 (có âm ngắt 「っ」).",
+    "compare": "",
+    "example_notes": [
+      "Nhà bị bão làm hư hại, cả gia đình phải sang ở nhờ nhà họ hàng một thời gian.",
+      "Cuối năm, cả nhà lại cùng nhau tụ họp ở nhà ông bà."
+    ]
+  },
+  "v-0002": {
+    "meaning": "Biết ơn, quý hóa (vì được giúp đỡ)",
+    "usage": "「〜てくれてありがたい」, 「本当にありがたかった」. Khi nhờ vả: 「〜ていただけるとありがたいです」 (nếu được… thì tốt quá). Cùng gốc với 「ありがとう」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Sáng tuyết rơi dày, người hàng xóm còn xúc tuyết giúp cả trước cửa nhà tôi, thật quý hóa quá."
+    ]
+  },
+  "v-0003": {
+    "meaning": "Đối mặt, nhìn thẳng vào (khó khăn, con người)",
+    "usage": "「〜と向き合う」: 「病気と向き合う」, 「問題と向き合う」, 「子どもと向き合う」, 「自分と向き合う」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Nghe bác sĩ báo tên bệnh, bố tôi vẫn bình tĩnh đối mặt với căn bệnh của mình."
+    ]
+  },
+  "v-0004": {
+    "meaning": "Thấm thía, (cảm thấy, nghĩ) thật sâu sắc",
+    "usage": "「つくづく思う」, 「つくづく感じる」, 「つくづく〜と思う」. Cũng nói 「つくづくと」. Gần nghĩa: 「しみじみ」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Nhìn bố mẹ mở cửa hàng từ sáng sớm, tôi thấm thía rằng buôn bán chẳng dễ dàng gì."
+    ]
+  },
   "v-0005": {
     "meaning": "Nuôi (gia đình, người thân); bồi dưỡng (năng lực, vị giác)",
     "usage": "「家族を養う」 (nuôi gia đình), 「両親を養う」, 「力を養う」 (rèn năng lực). Thể bị động: 「舌が養われる」 (vị giác được rèn).",
@@ -19,6 +56,69 @@
       "Linh kiện nhỏ này giữ một vai trò quan trọng bên trong cỗ máy."
     ]
   },
+  "v-0007": {
+    "meaning": "Làm nũng, nhõng nhẽo (với ông bà, cha mẹ)",
+    "usage": "「〜に甘える」: 「祖父に甘える」, 「母に甘える」. Liên quan: 「｜甘《あま》え」 (tính nhõng nhẽo), 「｜甘《あま》やかす」 (nuông chiều người khác).",
+    "nuance": "",
+    "compare": "「甘える」: tự động từ, chính mình làm nũng, dựa vào sự dịu dàng của người thân: 「母に甘える」. 「｜甘《あま》やかす」: tha động từ, nuông chiều người khác: 「孫を甘やかす」.",
+    "example_notes": [
+      "Đứa cháu ba tuổi làm nũng ông, đi đâu cũng đòi bế."
+    ]
+  },
+  "v-0008": {
+    "meaning": "Ngây thơ, chưa trải sự đời",
+    "usage": "「世間知らずの〜」, 「世間知らずだ」, 「世間知らずだと言われる」.",
+    "nuance": "",
+    "compare": "「世間知らず」: người chưa hiểu chuyện đời. 「｜世間《せけん》」: thiên hạ, người đời: 「世間の目」. Ghép từ 「世間」＋「知らず」 (không biết).",
+    "example_notes": [
+      "Bà lo lắng khi đứa ngây thơ chưa trải sự đời như tôi sang nước ngoài sống một mình."
+    ]
+  },
+  "v-0009": {
+    "meaning": "Sự dạy dỗ nề nếp, phép tắc (cho con trẻ)",
+    "usage": "「しつけが厳しい」, 「子どものしつけ」, 「親のしつけ」. Động từ: 「しつける」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Vì bà dạy dỗ nề nếp nghiêm khắc nên đến giờ mẹ tôi vẫn rất khắt khe về phép tắc ăn uống."
+    ]
+  },
+  "v-0010": {
+    "meaning": "Mách, méc (lỗi của ai với người trên)",
+    "usage": "「〜を〜に言いつける」: 「先生に言いつける」, 「母に言いつける」.",
+    "nuance": "",
+    "compare": "「言いつける」: mách lỗi của người khác: 「先生に言いつける」. 「｜言《い》い｜出《だ》す」: tự mình mở lời nêu ý muốn: 「行きたくないと言い出す」.",
+    "example_notes": [
+      "Hình như có ai đó đã mách thầy chuyện làm vỡ cửa kính bằng quả bóng hồi giờ ra chơi."
+    ]
+  },
+  "v-0011": {
+    "meaning": "Tự lập, tự lo cuộc sống của mình",
+    "usage": "「自立する」, 「親から自立する」, 「就職して自立する」. Hán Việt \"tự lập\", nghĩa như tiếng Việt.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Cho đến khi đi làm và tự lập, tôi vẫn được bố mẹ chu cấp tiền sinh hoạt."
+    ]
+  },
+  "v-0012": {
+    "meaning": "Ngỏ ý, mở lời (nêu mong muốn, đề nghị)",
+    "usage": "「〜と言い出す」: 「行きたくないと言い出す」. 「言い出せない」: không dám mở lời. Gồm 「言う」＋「〜出す」 (bắt đầu).",
+    "nuance": "",
+    "compare": "「言い出す」: tự mình mở lời nêu ý muốn. 「｜言《い》いつける」: mách lỗi người khác với người trên: 「母に言いつける」.",
+    "example_notes": [
+      "Đến tối hôm trước ngày khởi hành, con trai tôi lại nói rằng không muốn đi du lịch."
+    ]
+  },
+  "v-0013": {
+    "meaning": "Ý định, chủ ý của bản thân (mình định làm gì)",
+    "usage": "「本人の意思」, 「意思を確かめる」, 「意思を伝える」, 「自分の意思を持つ」.",
+    "nuance": "Cùng đọc 「いし」 với 「｜意志《いし》」: 「意志」 là ý chí, sức quyết tâm theo đuổi đến cùng (「強い意志」). 「意思」 ở thẻ này là điều mình định làm, muốn làm.",
+    "compare": "",
+    "example_notes": [
+      "Chưa hỏi rõ ý muốn của chính em ấy, người lớn xung quanh đã quyết luôn trường em sẽ học lên."
+    ]
+  },
   "v-0014": {
     "meaning": "Tôn trọng, coi trọng như điều có giá trị (ý kiến, cá tính)",
     "usage": "「意見を尊重する」, 「個性を尊重する」, 「伝統を尊重する」, 「少数意見も尊重する」. Hán Việt \"tôn trọng\", nghĩa như tiếng Việt.",
@@ -27,6 +127,24 @@
     "example_notes": [
       "Vừa tôn trọng truyền thống của địa phương, vừa xây dựng một thị trấn mới.",
       "Ở trường này, cá tính của từng học sinh đều được tôn trọng."
+    ]
+  },
+  "v-0015": {
+    "meaning": "Thuyết phục (để người khác nghe theo)",
+    "usage": "「〜を説得する」, 「説得して〜てもらう」, 「｜説得力《せっとくりょく》がある」 (có sức thuyết phục). Hán Việt \"thuyết đắc\".",
+    "nuance": "",
+    "compare": "「説得」: mình nói để người khác đồng ý: 「祖父を説得する」. 「｜納得《なっとく》」: chính mình hiểu ra rồi chịu: 「事情に納得する」.",
+    "example_notes": [
+      "Mất khá nhiều thời gian thuyết phục, cuối cùng tôi cũng khiến ông chịu thôi lái xe."
+    ]
+  },
+  "v-0016": {
+    "meaning": "Hiểu ra và chịu, thấy hợp lý nên đồng ý",
+    "usage": "「〜に納得する」, 「納得がいく」 (thấy thỏa đáng), 「納得いくまで」 (cho đến khi thấy ưng ý). Hán Việt \"nạp đắc\".",
+    "nuance": "Trong đề, 「納得」 từng là phương án sai ở câu cần 「｜油断《ゆだん》」 (chủ quan nên thua).",
+    "compare": "「納得」: chính mình thấy hợp lý mà chịu. 「｜説得《せっとく》」: nói cho người khác chịu nghe theo. 「説得」 xong thì người kia 「納得する」.",
+    "example_notes": [
+      "Nói chuyện trực tiếp với người phụ trách, cuối cùng tôi mới hiểu và thấy thỏa đáng lý do kế hoạch bị chậm."
     ]
   },
   "v-0017": {
@@ -49,14 +167,33 @@
       "Rút kinh nghiệm vì đi muộn, tôi đã dùng hai chiếc đồng hồ báo thức."
     ]
   },
+  "v-0019": {
+    "meaning": "Bỏ mặc, để yên không đụng tới",
+    "usage": "「〜を放っておく」: 「虫歯を放っておく」, 「彼のことは放っておこう」 (cứ để mặc anh ấy). Viết kana: 「ほうっておく」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Thấy không đau nên tôi để mặc cái răng sâu, rồi nó trở nên nặng.",
+      "Có vẻ anh ấy muốn suy nghĩ một mình, nên tạm thời cứ để anh ấy yên."
+    ]
+  },
   "v-0020": {
     "meaning": "Chăm sóc tận tay người già, người bệnh trong sinh hoạt hằng ngày",
     "usage": "Cách dùng: 「介護する」, 「｜祖母《そぼ》を介護する」, 「親の介護」, 「介護の仕事」. Người làm nghề này là 「｜介護士《かいごし》」. Hán Việt \"giới hộ\".",
     "nuance": "Bẫy chính tả: đề thi từng đặt 「看護」 cạnh 「介護」 — hai từ cùng chữ 「護」, chỉ khác chữ đầu. Cách đọc là 「かいご」, không có trường âm (「かいごう」 sai).",
-    "compare": "",
+    "compare": "「介護」: chính việc chăm sóc người già, người bệnh: 「親の介護」. 「ホームヘルパー」: người đến tận nhà giúp nấu ăn, giặt giũ, chăm sóc.",
     "example_notes": [
       "Mẹ tôi đã giảm giờ làm xuống ba ngày một tuần để chăm sóc ông.",
       "Chị gái tôi đã lấy chứng chỉ chăm sóc người già/người bệnh ở trường chuyên môn."
+    ]
+  },
+  "v-0021": {
+    "meaning": "Người trợ giúp, chăm sóc tại nhà",
+    "usage": "「ホームヘルパーに頼む」, 「ホームヘルパーに来てもらう」. Nói gọn: 「ヘルパー」.",
+    "nuance": "",
+    "compare": "「ホームヘルパー」: người đến nhà giúp nấu ăn, giặt giũ, chăm sóc. 「｜介護《かいご》」: chính việc chăm sóc người già, người bệnh: 「祖父の介護」.",
+    "example_notes": [
+      "Dì tôi đi lại khó khăn nên nhờ người trợ giúp tại nhà lo nấu ăn và giặt giũ."
     ]
   },
   "v-0022": {
@@ -67,6 +204,88 @@
     "example_notes": [
       "Bài hát này được cả thế hệ cha mẹ lẫn thế hệ trẻ yêu thích.",
       "Ở công ty của bố tôi, giám đốc đã nhường lại cho con trai, việc chuyển giao thế hệ đang diễn ra."
+    ]
+  },
+  "v-0023": {
+    "meaning": "Nối nghiệp, kế thừa (cửa hàng, công ty của gia đình)",
+    "usage": "「店を継ぐ」, 「父の会社を継ぐ」, 「〜の代から続く店を継ぐ」. Gần nghĩa: 「｜受《う》け｜継《つ》ぐ」 (kế thừa, tiếp nhận).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi nối nghiệp quán mì soba có từ đời ông, đến nay đã mười năm."
+    ]
+  },
+  "v-0024": {
+    "meaning": "Có thai, mang thai",
+    "usage": "「妊娠する」, 「妊娠〜か月」 (có thai… tháng), 「妊娠がわかる」. Liên quan: 「｜妊婦《にんぷ》」 (bà bầu), 「｜産婦人科《さんふじんか》」 (khoa sản).",
+    "nuance": "",
+    "compare": "「妊娠」: có thai, giai đoạn trước khi sinh. 「｜出産《しゅっさん》」: lúc sinh em bé ra.",
+    "example_notes": [
+      "Từ khi biết mình có thai, chị tôi đã thôi uống cà phê."
+    ]
+  },
+  "v-0025": {
+    "meaning": "Sinh con, sự sinh nở",
+    "usage": "「出産する」, 「病院で出産する」, 「｜出産祝《しゅっさんいわ》い」 (quà mừng sinh em bé). Hán Việt \"xuất sản\".",
+    "nuance": "",
+    "compare": "「出産」: danh từ, thêm 「する」 thành động từ: việc sinh con. 「｜産《う》む」: động từ: 「子どもを産む」, cả 「卵を産む」. 「｜妊娠《にんしん》」: có thai, trước khi sinh.",
+    "example_notes": [
+      "Cả nhóm đã góp tiền mua quần áo em bé làm quà mừng đồng nghiệp sinh con."
+    ]
+  },
+  "v-0026": {
+    "meaning": "Sinh, đẻ (con, trứng)",
+    "usage": "「子どもを産む」, 「卵を産む」, 「産んで育てる」.",
+    "nuance": "Cùng đọc 「う」 với 「｜生《う》まれる」, nhưng 「産む」 là người mẹ sinh ra, 「生まれる」 là đứa trẻ được sinh ra.",
+    "compare": "「産む」: động từ, người mẹ sinh con, con vật đẻ trứng. 「｜出産《しゅっさん》」: danh từ, cũng nói 「出産する」: 「出産祝い」.",
+    "example_notes": [
+      "Bà tôi đã sinh và nuôi lớn sáu người con."
+    ]
+  },
+  "v-0027": {
+    "meaning": "Bạn, người bạn",
+    "usage": "「友人の家」, 「友人に会う」, 「｜友人達《ゆうじんたち》」 (những người bạn). Hán Việt \"hữu nhân\".",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi ngủ lại nhà một người bạn và hai đứa trò chuyện suốt đêm."
+    ]
+  },
+  "v-0028": {
+    "meaning": "Quan hệ, tình cảm giữa hai hay nhiều người",
+    "usage": "「仲がいい」, 「仲が悪くなる」, 「二人の仲」, 「｜仲良《なかよ》し」 (bạn thân), 「｜仲直《なかなお》り」 (làm lành).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Anh em hồi nhỏ hay cãi nhau, lớn lên rồi lại rất thân thiết.",
+      "Chỉ vì một hiểu lầm nhỏ mà quan hệ giữa hai người trở nên xấu đi."
+    ]
+  },
+  "v-0029": {
+    "meaning": "Duyên, cơ duyên gặp gỡ (giữa người với người, với nơi chốn)",
+    "usage": "「縁がある」, 「縁がない」 (không có duyên, không dính dáng gì), 「ご縁があれば」 (nếu có duyên).",
+    "nuance": "Hán Việt \"duyên\", nghĩa gần với tiếng Việt.",
+    "compare": "",
+    "example_notes": [
+      "Tôi vốn chẳng có duyên gì với thị trấn này, nhưng vì công việc mà chuyển đến sống, giờ nó đã thành quê hương thứ hai."
+    ]
+  },
+  "v-0030": {
+    "meaning": "Biệt danh, tên gọi thân mật",
+    "usage": "「ニックネームで呼ぶ」, 「ニックネームを決める」. Cùng nghĩa: 「あだ｜名《な》」, 「｜愛称《あいしょう》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Ở lớp mới, tôi tự đặt biệt danh cho mình rồi viết lên bảng tên."
+    ]
+  },
+  "v-0031": {
+    "meaning": "Phần lớn, hơn một nửa",
+    "usage": "「〜の大半」: 「住民の大半」, 「一日の大半」, 「利用者の大半」. Hán Việt \"đại bán\" (quá nửa).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Phần lớn cư dân thị trấn này làm việc ở nhà máy gần ga."
     ]
   },
   "v-0032": {
@@ -99,6 +318,15 @@
       "Đội trưởng mới tuy trẻ nhưng rất đáng tin cậy."
     ]
   },
+  "v-0035": {
+    "meaning": "Noi gương, học theo cách làm của người khác",
+    "usage": "「先輩を見習う」, 「〜を見習って〜」. Danh từ 「｜見習《みなら》い」: người học việc, sự học việc.",
+    "nuance": "",
+    "compare": "「見習う」: động từ, mình học theo người giỏi. 「｜模範《もはん》」: danh từ, tấm gương để người khác noi theo: 「模範を示す」.",
+    "example_notes": [
+      "Học theo ông, sáng nào tôi cũng đi quét dọn công viên gần nhà."
+    ]
+  },
   "v-0036": {
     "meaning": "Thổ lộ, nói ra điều mình giữ kín (bí mật, nỗi phiền muộn)",
     "usage": "「秘密を打ち明ける」, 「悩みを打ち明ける」, 「〜に打ち明ける」 (thổ lộ với ai). Thể bị động: 「〜から打ち明けられる」 (được ai thổ lộ).",
@@ -107,6 +335,287 @@
     "example_notes": [
       "Nỗi lo trước giờ chỉ dám viết vào nhật ký, lần đầu tiên cô ấy đã thổ lộ với thầy giáo chủ nhiệm.",
       "Người bạn lâu năm thú thật với tôi rằng hồi nhỏ bạn ấy vốn không ưa tôi."
+    ]
+  },
+  "v-0037": {
+    "meaning": "Động viên, khích lệ (cho có thêm tinh thần)",
+    "usage": "「〜を励ます」, 「仲間を励ます」, 「みんなで励ます」.",
+    "nuance": "",
+    "compare": "「励ます」: tiếp thêm sức để người kia muốn cố gắng tiếp. 「なぐさめる」: làm dịu nỗi buồn, nỗi khổ của người đang đau lòng.",
+    "example_notes": [
+      "Cả đội đã động viên người bạn bị thương ở chân không thể ra sân thi đấu."
+    ]
+  },
+  "v-0038": {
+    "meaning": "Cố ý, dám làm (điều người ta thường không làm)",
+    "usage": "「あえて〜する」, 「あえて〜ない」 (cố ý không…), 「あえて〜を選ぶ」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Dù quán đã đông khách, ông chủ vẫn cố ý không mở rộng quán mà đến giờ vẫn một mình nấu nướng."
+    ]
+  },
+  "v-0039": {
+    "meaning": "An ủi (người đang buồn, đau khổ)",
+    "usage": "「〜をなぐさめる」, 「やさしくなぐさめる」. Chữ Hán: 「｜慰《なぐさ》める」.",
+    "nuance": "",
+    "compare": "「なぐさめる」: làm dịu nỗi buồn của người đang đau lòng. 「｜励《はげ》ます」: tiếp thêm tinh thần để người kia cố gắng tiếp.",
+    "example_notes": [
+      "Cậu bé bị lạc đang khóc, và nhân viên cửa hàng đã dịu dàng dỗ dành em."
+    ]
+  },
+  "v-0040": {
+    "meaning": "Đoán ra, cảm nhận được (tâm trạng, hoàn cảnh người khác)",
+    "usage": "「事情を察する」, 「気持ちを察する」, 「様子から察する」.",
+    "nuance": "Hán Việt \"sát\", như trong 「｜観察《かんさつ》」.",
+    "compare": "",
+    "example_notes": [
+      "Qua câu trả lời cụt lủn của trưởng phòng, tôi đoán ra ông không mấy mặn mà với kế hoạch."
+    ]
+  },
+  "v-0041": {
+    "meaning": "Tấm lòng biết nghĩ, biết thương cho người khác",
+    "usage": "「〜への思いやり」, 「思いやりがある」, 「思いやりのある人」. Động từ: 「｜思《おも》いやる」.",
+    "nuance": "",
+    "compare": "「思いやり」: tấm lòng nghĩ cho người khác. 「｜気配《きくば》り」: sự chu đáo, để ý từng chỗ cho người xung quanh, như 「｜配慮《はいりょ》」.",
+    "example_notes": [
+      "Tôi đã để anh ấy chờ giữa trời lạnh, vậy mà anh còn chuẩn bị cả đồ uống nóng cho tôi. Tấm lòng ấy làm tôi rất vui."
+    ]
+  },
+  "v-0042": {
+    "meaning": "Bình thường, vô tư, không có ý gì đặc biệt",
+    "usage": "「何気ない会話」, 「何気ないこと」. Phó từ 「何気なく」: làm mà không có mục đích hay lý do rõ ràng.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Trong nhật ký của ông, ngày nào cũng ghi những chuyện bình thường như thời tiết hay bữa ăn."
+    ]
+  },
+  "v-0043": {
+    "meaning": "Trêu, chọc ghẹo (người khác)",
+    "usage": "「〜をからかう」, 「友達にからかわれる」 (bị bạn trêu).",
+    "nuance": "",
+    "compare": "「からかう」: tha động từ, chọc ghẹo một người: 「弟をからかう」. 「ふざける」: tự động từ, tự mình đùa giỡn, nghịch: 「授業中にふざける」.",
+    "example_notes": [
+      "Hễ tôi đổi kiểu tóc mới là anh trai lại trêu chọc."
+    ]
+  },
+  "v-0044": {
+    "meaning": "Người lo liệu mọi việc cho buổi tiệc, buổi họp mặt",
+    "usage": "「飲み会の幹事」, 「幹事になる」, 「幹事をする」.",
+    "nuance": "Hán Việt \"cán sự\"; ở đây là người lo đặt quán, gửi thông báo cho cả nhóm.",
+    "compare": "",
+    "example_notes": [
+      "Vì được giao lo tổ chức tiệc tất niên, tôi đang tìm quán và gửi thông báo cho mọi người."
+    ]
+  },
+  "v-0045": {
+    "meaning": "Gọi (ai) đến, gọi ra một chỗ",
+    "usage": "「〜に呼び出す」: 「職員室に呼び出す」, 「呼び出される」 (bị gọi lên). Gồm 「呼ぶ」＋「〜出す」.",
+    "nuance": "",
+    "compare": "「呼び出す」: gọi người đến chỗ mình hay ra một nơi. 「｜呼《よ》び｜止《と》める」: gọi người đang đi cho họ dừng lại.",
+    "example_notes": [
+      "Đang giờ học thì bị gọi lên phòng giáo viên, tôi lo không biết mình đã làm gì sai."
+    ]
+  },
+  "v-0046": {
+    "meaning": "(Không khí) sôi nổi lên; (mặt đất) nhô, gồ lên",
+    "usage": "① 「会場が盛り上がる」, 「パーティーが盛り上がる」. ② 「地面が盛り上がる」, 「道が盛り上がる」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Khi đội nhà ghi bàn trong trận chung kết, cả khán đài lập tức sôi động hẳn lên.",
+      "Rễ cây to ra làm một đoạn vỉa hè bị gồ lên."
+    ]
+  },
+  "v-0047": {
+    "meaning": "Ngán ngẩm, sững sờ (vì điều quá tệ)",
+    "usage": "「〜にあきれる」, 「すっかりあきれる」, 「あきれてしまう」.",
+    "nuance": "Dễ lẫn hình với 「あきる」 (chán), 「あきらめる」 (bỏ cuộc), 「あこがれる」 (ngưỡng mộ, mong được như).",
+    "compare": "",
+    "example_notes": [
+      "Chính sếp nhờ tôi làm việc đó, vậy mà giờ đã quên mất, tôi thật ngán ngẩm."
+    ]
+  },
+  "v-0048": {
+    "meaning": "Đùa giỡn, nghịch ngợm",
+    "usage": "「授業中にふざける」, 「友達とふざける」, 「ふざけていて〜」.",
+    "nuance": "",
+    "compare": "「ふざける」: tự động từ, tự đùa giỡn, nghịch. 「からかう」: tha động từ, trêu chọc một người cụ thể: 「〜をからかう」.",
+    "example_notes": [
+      "Mấy học sinh đùa giỡn trong giờ học đã bị thầy nhắc nhở."
+    ]
+  },
+  "v-0049": {
+    "meaning": "Đã lâu (rồi)",
+    "usage": "Dạng 「久しく〜ていない」 (đã lâu không…): 「久しく帰っていない」, 「久しく会っていない」. Liên quan: 「｜久《ひさ》しぶり」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Đã lâu lắm rồi tôi không về thị trấn nơi mình sinh ra và lớn lên."
+    ]
+  },
+  "v-0050": {
+    "meaning": "Lần đầu gặp mặt",
+    "usage": "「初対面の人」, 「初対面だ」, 「初対面のあいさつ」. Hán Việt \"sơ đối diện\".",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Nghe nói ông bà tôi gặp nhau lần đầu tiên vào chính ngày cưới."
+    ]
+  },
+  "v-0051": {
+    "meaning": "Tự giới thiệu bản thân",
+    "usage": "「自己紹介をする」, 「自己紹介で〜の話をする」. 「｜自己流《じこりゅう》」: theo kiểu riêng của mình.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Khi tự giới thiệu ở chỗ làm mới, tôi đã kể về sở thích câu cá."
+    ]
+  },
+  "v-0052": {
+    "meaning": "Cúi chào, cúi đầu chào",
+    "usage": "「おじぎをする」, 「深くおじぎをする」, 「おじぎする」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Cho đến khi cửa thang máy đóng lại, nhân viên vẫn cúi đầu chào thật sâu."
+    ]
+  },
+  "v-0053": {
+    "meaning": "Sự giao thiệp, qua lại với hàng xóm",
+    "usage": "「近所付き合いがある」, 「近所付き合いが盛んだ」. Cùng kiểu: 「｜友達付《ともだちづ》き｜合《あ》い」. Khi ghép, 「つきあい」 đọc 「づきあい」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Ở ngôi làng bà tôi sống, hàng xóm đến nay vẫn qua lại thân thiết, việc chuẩn bị lễ hội cả làng cùng làm."
+    ]
+  },
+  "v-0054": {
+    "meaning": "Chủ nhà cho thuê, chủ trọ",
+    "usage": "「大家さん」, 「アパートの大家」. Người thuê trả 「｜家賃《やちん》」 cho 「大家」.",
+    "nuance": "Đọc 「おおや」.",
+    "compare": "",
+    "example_notes": [
+      "Mỗi lần tôi đến trả tiền nhà, chủ nhà lại mời tôi uống trà."
+    ]
+  },
+  "v-0055": {
+    "meaning": "Chủ nuôi (thú cưng)",
+    "usage": "「ペットの飼い主」, 「犬の飼い主」. Từ 「｜飼《か》う」 (nuôi) ＋ 「主」 (chủ).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Ở chung cư này, chủ nuôi thú cưng phải nộp giấy báo cho công ty quản lý."
+    ]
+  },
+  "v-0056": {
+    "meaning": "Trao qua lại (lời nói, lời chào)",
+    "usage": "「言葉を交わす」, 「あいさつを交わす」, 「会話を交わす」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Hai người trao nhau vài lời ngắn ngủi trên sân ga rồi chia tay."
+    ]
+  },
+  "v-0057": {
+    "meaning": "Gọi giật lại, gọi người đang đi cho dừng lại",
+    "usage": "「〜を呼び止める」, 「〜に呼び止められる」: 「警察官に呼び止められる」.",
+    "nuance": "Điền từ: đang đi trước ga thì bất ngờ bị phóng viên （　） để phỏng vấn → 「呼び止められて」. Đề đặt 「聞き取られて」「問い合わせられて」「見分けられて」.",
+    "compare": "「呼び止める」: gọi người đang đi cho dừng lại. 「｜呼《よ》び｜出《だ》す」: gọi người đến một chỗ. 「｜引《ひ》き｜止《と》める」: níu người đang định đi, định bỏ, không cho đi.",
+    "example_notes": [
+      "Tôi bị cảnh sát gọi dừng lại ở ngã tư và nhắc phải bật đèn xe đạp."
+    ]
+  },
+  "v-0058": {
+    "meaning": "Quay lại nhìn phía sau; nhìn lại (quá khứ)",
+    "usage": "① 「後ろを振り返る」. ② 「一年を振り返る」, 「学生時代を振り返る」.",
+    "nuance": "",
+    "compare": "「振り返る」: quay đầu nhìn ra sau, và cả nhìn lại chuyện đã qua: 「一年を振り返る」. 「｜振《ふ》り｜向《む》く」: quay đầu nhìn ra sau: 「名前を呼ばれて振り向く」.",
+    "example_notes": [
+      "Đang băng qua vạch kẻ đường thì nghe tiếng động lớn phía sau, tôi liền quay lại nhìn.",
+      "Cuối năm xem lại sổ chi tiêu cả năm, tôi thấy mình tiêu khá nhiều tiền vào việc ăn ngoài."
+    ]
+  },
+  "v-0059": {
+    "meaning": "Gặp lại (sau thời gian xa cách)",
+    "usage": "「〜と再会する」, 「家族と再会する」, 「再会できる」. Hán Việt \"tái hội\".",
+    "nuance": "Cùng đọc 「さいかい」 với 「｜再開《さいかい》」 (bắt đầu lại sau khi dừng).",
+    "compare": "",
+    "example_notes": [
+      "Bị thất lạc nhau vì thiên tai, cuối cùng tôi cũng gặp lại được gia đình ở nơi sơ tán."
+    ]
+  },
+  "v-0060": {
+    "meaning": "Việc nhớ là mình đã từng làm, từng gặp",
+    "usage": "「〜た覚えがある」, 「〜た覚えがない」 (không nhớ là đã…). Liên quan: 「｜記憶《きおく》」.",
+    "nuance": "",
+    "compare": "「覚え」: trong mẫu 「〜た覚えがある・ない」, nhớ (hay không nhớ) là mình đã từng làm, từng gặp. 「｜記憶《きおく》」: ký ức, trí nhớ nói chung: 「記憶に残る」.",
+    "example_notes": [
+      "Tôi nhớ là đã khóa cửa, vậy mà về đến nơi thì cửa ra vào lại đang mở."
+    ]
+  },
+  "v-0061": {
+    "meaning": "Điều mình biết hay nghĩ ra được về một chuyện",
+    "usage": "「心当たりがある」, 「心当たりがない」 (chẳng nghĩ ra là ai, là gì), 「心当たりのない〜」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Trong vườn có một chiếc xe đạp lạ, nhưng chẳng ai trong nhà biết là của ai."
+    ]
+  },
+  "v-0062": {
+    "meaning": "Gắn liền, liên kết với nhau (điều này với điều kia)",
+    "usage": "「〜と結びつく」; nối tới một kết quả: 「〜に結びつく」 (「仕事に結びつく」, 「逮捕に結びつく」). Tha động từ: 「〜を結びつける」.",
+    "nuance": "Câu điền từ về bạn mới chuyển trường đã hòa vào lớp: đáp án 「｜溶《と》け｜込《こ》んで」, còn 「結びついて」 là phương án sai.",
+    "compare": "",
+    "example_notes": [
+      "Dấu giày còn lại ở hiện trường đã dẫn đến việc bắt được thủ phạm."
+    ]
+  },
+  "v-0063": {
+    "meaning": "Ngay trong tích tắc, không kịp suy nghĩ",
+    "usage": "「とっさに」＋ động từ: 「とっさにつかむ」. Là danh từ nên cũng có 「とっさの〜」.",
+    "nuance": "",
+    "compare": "「とっさに」: trong tích tắc, không kịp nghĩ: 「とっさにつかむ」. 「たちまち」: tình hình thay đổi rất nhanh: 「客がたちまち増える」. 「｜途端《とたん》に」: việc trước vừa xảy ra thì việc sau liền tới.",
+    "example_notes": [
+      "Tôi trượt chân trên cầu thang nhưng kịp chộp lấy tay vịn nên thoát nạn."
+    ]
+  },
+  "v-0064": {
+    "meaning": "Cứ ngỡ chắc chắn là…",
+    "usage": "「てっきり〜と思った」, 「てっきり〜だと思っていた」.",
+    "nuance": "",
+    "compare": "「てっきり」: phó từ, đứng trước 「〜と思う」. 「｜思《おも》い｜込《こ》む」: động từ, tin chắc một điều: 「〜と思い込む」.",
+    "example_notes": [
+      "Thấy người ta tụ tập trước ga, tôi cứ ngỡ là có tai nạn, hóa ra là đang quay phim truyền hình."
+    ]
+  },
+  "v-0065": {
+    "meaning": "Đinh ninh, tin chắc (điều mình tưởng)",
+    "usage": "「〜と思い込む」, 「思い込んでいた」. Danh từ: 「｜思《おも》い｜込《こ》み」.",
+    "nuance": "Điền từ: cứ （　） là truyện hư cấu, hóa ra có thật → 「思い込んで」. Đề đặt 「思い起こして」「考え抜いて」「考えついて」.",
+    "compare": "「思い込む」: động từ: 「〜と思い込む」. 「てっきり」: phó từ, đi với 「〜と思った」.",
+    "example_notes": [
+      "Tôi cứ đinh ninh con đường này là đường tắt nên ngày nào cũng đi vòng xa."
+    ]
+  },
+  "v-0066": {
+    "meaning": "Giao tiếp, truyền đạt ý nghĩ cho nhau",
+    "usage": "「コミュニケーションができる」, 「コミュニケーションをとる」, 「〜とのコミュニケーション」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Ở nơi du lịch tôi không hiểu tiếng, nhưng nhờ ra hiệu bằng tay chân mà cũng giao tiếp được."
+    ]
+  },
+  "v-0067": {
+    "meaning": "Mạng lưới (người quen, nhóm người hỗ trợ nhau)",
+    "usage": "「ネットワークを作る」, 「ネットワークを広げる」, 「地域のネットワーク」.",
+    "nuance": "Gốc nghĩa là mạng lưới phát sóng truyền thanh, truyền hình.",
+    "compare": "",
+    "example_notes": [
+      "Các bậc cha mẹ đang nuôi con nhỏ đã lập một mạng lưới để giúp đỡ nhau trong khu vực."
     ]
   },
   "v-0068": {
@@ -119,6 +628,53 @@
       "Chỗ táo này tôi mua trực tiếp từ nhà nông."
     ]
   },
+  "v-0069": {
+    "meaning": "Tiếp xúc, cư xử với người; giáp, nằm sát cạnh",
+    "usage": "① 「人と接する」, 「留学生と接する」, 「異文化に接する」. ② 「国境を接する」, 「〜と接している」.",
+    "nuance": "Hán Việt \"tiếp\", như trong 「｜接触《せっしょく》」.",
+    "compare": "「接する」: cư xử với người; còn là giáp ranh: 「国境を接する」. 「｜触《ふ》れる」: chạm vào; nhắc đến. Cả 「異文化に接する」 lẫn 「文化に触れる」 đều là tiếp xúc văn hóa.",
+    "example_notes": [
+      "Vào câu lạc bộ, tôi có thêm dịp tiếp xúc với du học sinh, nên cũng dần quen nói tiếng Anh.",
+      "Nước đó có chung đường biên giới với năm nước."
+    ]
+  },
+  "v-0070": {
+    "meaning": "Mời (đến nhà, đến bữa ăn); gây ra (kết quả xấu)",
+    "usage": "① 「家に招く」, 「食事に招く」. ② 「誤解を招く」, 「混乱を招く」, 「不満を招く」.",
+    "nuance": "Đọc 「まねく」, Hán Việt \"chiêu\". Câu viết chữ: đề đặt 「伯いた」「泊いた」「召いた」 cạnh 「招いた」.",
+    "compare": "",
+    "example_notes": [
+      "Nhân kỷ niệm hai mươi năm ngày cưới của bố mẹ, tôi đã mời hai người đi ăn ở nhà hàng.",
+      "Việc giải thích không đủ đã khiến người dùng bất mãn."
+    ]
+  },
+  "v-0071": {
+    "meaning": "Sự chu đáo, ân cần lo cho người xung quanh",
+    "usage": "「〜の気配り」, 「気配りができる」, 「気配りする」. Gần nghĩa: 「｜配慮《はいりょ》」.",
+    "nuance": "",
+    "compare": "「気配り」 đọc 「きくばり」: chu đáo với người khác. 「｜気配《けはい》」: cùng hai chữ nhưng đọc 「けはい」, là dấu hiệu lờ mờ: 「人の気配」. 「｜思《おも》いやり」: tấm lòng nghĩ cho người khác.",
+    "example_notes": [
+      "Nhờ sự chu đáo của người tổ chức, buổi tiệc vui cả với những người không uống được rượu."
+    ]
+  },
+  "v-0072": {
+    "meaning": "Gửi gắm, dồn (tình cảm, tâm huyết) vào",
+    "usage": "「思いを込める」, 「心を込める」, 「愛を込めて」, 「〜を込めて〜する」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Anh ấy đã viết một bài hát gửi gắm nỗi nhớ người bạn đã khuất."
+    ]
+  },
+  "v-0073": {
+    "meaning": "Người vào cùng đợt (cùng năm vào công ty)",
+    "usage": "「会社の同期」, 「同期の中で」, 「同期の仲間」. Hán Việt \"đồng kỳ\".",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Trong số những người vào công ty cùng đợt, người đầu tiên lên trưởng phòng là anh Yamada."
+    ]
+  },
   "v-0074": {
     "meaning": "Lời than vãn, kêu ca cho vơi bực bội",
     "usage": "「ぐちを言う」, 「ぐちをこぼす」 (than thở), 「会社のぐち」, 「ぐちばかり言う」. Đề thi viết bằng kana: 「ぐち」.",
@@ -127,6 +683,15 @@
     "example_notes": [
       "Ông tôi kể chuyện mình vất vả, nhưng chưa một lần than vãn.",
       "Bà cụ nhà bên tuy hay than đau đầu gối nhưng sáng nào cũng không bỏ buổi đi dạo."
+    ]
+  },
+  "v-0075": {
+    "meaning": "Rất, rất nhiều, hết mức",
+    "usage": "「大いに楽しむ」, 「大いににぎわう」, 「大いに〜する」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Thủy cung mới mở rất đông khách gia đình đến chơi trong kỳ nghỉ hè."
     ]
   },
   "v-0092": {
@@ -637,7 +1202,7 @@
     ]
   },
   "v-0513": {
-    "meaning": "(Ngày sống) có ý nghĩa, trọn vẹn; (thiết bị, chế độ) chu đáo",
+    "meaning": "(Ngày sống) có ý nghĩa, trọn vẹn; (thiết bị, chế độ) đầy đủ",
     "usage": "「充実した一日」, 「週末が充実する」, 「設備が充実している」, 「制度が充実している」. 「充実感」: cảm giác mãn nguyện vì sống có ý nghĩa.",
     "nuance": "Nói về nội dung, chất lượng. Đề thi coi là sai khi dùng cho mây phủ kín trời, mùi cà phê lan khắp quán, hay vấn đề còn nhiều.",
     "compare": "「充実」: nội dung đủ chất, ngày sống có ý nghĩa: 「充実した毎日」. 「豊富」: số lượng, chủng loại nhiều: 「メニューが豊富」. 「｜豊《ゆた》か」: dồi dào, tràn đầy: 「豊かな自然」.",
@@ -1060,7 +1625,7 @@
     "meaning": "Níu giữ, giữ lại người đang định đi hay định bỏ",
     "usage": "「〜を引き止める」, 「娘を引き止める」, 「〜に引き止められる」 (bị giữ lại).",
     "nuance": "Điền từ: có chuyện muốn nói nên （　） người bạn đang định về → 「引き止めた」. Đề đặt 「取り付けた」「持ち寄った」「受け入れた」.",
-    "compare": "",
+    "compare": "「引き止める」: níu người đang định đi, định bỏ: 「娘を引き止める」. 「｜呼《よ》び｜止《と》める」: gọi người đang đi cho dừng lại: 「警察官に呼び止められる」.",
     "example_notes": [
       "Tôi đã muốn níu con gái sắp đi du học ở lại, nhưng chẳng nói được lời nào.",
       "Bị nhân viên cửa hàng giữ lại, tôi phải nghe giới thiệu sản phẩm mới tới ba mươi phút."
@@ -1839,7 +2404,7 @@
     "meaning": "Thiên hạ, người đời, xã hội quanh mình",
     "usage": "「世間の注目を集める」, 「世間の目を気にする」 (để ý con mắt người đời), 「世間で話題になる」, 「世間の厳しさ」. Hán Việt \"thế gian\".",
     "nuance": "Đọc 「せけん」, không phải 「せかん」. Đề thi coi là sai: 「数学の世間」 (giới toán học), 「動物の世間」, 「よりよい世間の実現」.",
-    "compare": "「世間」: thiên hạ, người đời quanh mình: 「世間の目を気にする」. 「｜世《よ》の｜中《なか》」: cuộc đời, xã hội nói chung: 「世の中の役に立つ」.",
+    "compare": "「世間」: thiên hạ, người đời quanh mình: 「世間の目を気にする」. 「｜世《よ》の｜中《なか》」: cuộc đời, xã hội nói chung: 「世の中の役に立つ」. 「｜世間知《せけんし》らず」: người chưa trải sự đời.",
     "example_notes": [
       "Thiên hạ đã bắt đầu kỳ nghỉ dài, còn tôi thì ngày nào cũng đi làm.",
       "Hồi còn là sinh viên, tôi chưa hiểu sự khắc nghiệt của cuộc đời."
@@ -2139,7 +2704,7 @@
     "meaning": "Nuông chiều, chiều chuộng (con cái, người mới, cấp dưới)",
     "usage": "「子どもを甘やかす」, thể bị động 「甘やかされて育つ」 (lớn lên trong sự nuông chiều), phủ định 「甘やかさず」 (không nuông chiều).",
     "nuance": "Gốc là 「｜甘《あま》える」 (làm nũng, dựa dẫm): người được chiều thì 「甘える」, người chiều thì 「甘やかす」. Đề thi coi là sai khi nói đề thi dễ đi, bệnh cảm, cà phê ngọt hơn.",
-    "compare": "",
+    "compare": "「甘やかす」: tha động từ, nuông chiều con cái, người mới, cấp dưới: 「新人を甘やかす」. 「｜甘《あま》える」: tự động từ, làm nũng, dựa dẫm vào người thân: 「母に甘える」.",
     "example_notes": [
       "Huấn luyện viên không nuông chiều cả cầu thủ vừa trở lại sau chấn thương, mà cho tập giống hệt các cầu thủ khác.",
       "Nếu cứ chiều chuộng người mới chỉ vì họ là người mới thì họ sẽ mãi không thạo việc."
@@ -2169,7 +2734,7 @@
     "meaning": "Ký ức, trí nhớ; sự ghi nhớ",
     "usage": "「記憶がない」 (không nhớ gì), 「〜の記憶をたよりに」 (dựa vào trí nhớ của…), する動詞: 「記憶している」.",
     "nuance": "Hán Việt \"ký ức\", nhưng 「記憶」 còn làm động từ với 「する」: câu thay thế 「記憶している」＝「覚えている」 (nhớ).",
-    "compare": "",
+    "compare": "「記憶」: ký ức, trí nhớ: 「記憶に残る」, 「記憶力」. 「｜覚《おぼ》え」: trong mẫu 「〜た覚えがある・ない」, nhớ (hay không nhớ) là mình đã từng làm, từng gặp.",
     "example_notes": [
       "Tôi không còn nhớ gì về lúc trước và sau vụ tai nạn, tỉnh lại thì đã nằm trên giường bệnh.",
       "Dựa vào trí nhớ của bà, chúng tôi đi tìm ngôi nhà cả gia đình từng sống ngày xưa."
@@ -3016,7 +3581,7 @@
     "meaning": "Dấu hiệu, hơi hướng, cảm giác lờ mờ nhận thấy",
     "usage": "「人の気配」, 「気配がする」, 「気配を感じる」, 「人の気配がない」.",
     "nuance": "Chữ Hán là \"khí phối\" nhưng đọc là 「けはい」 chứ không đọc là 「きはい」.",
-    "compare": "",
+    "compare": "「気配」 đọc 「けはい」: dấu hiệu lờ mờ: 「人の気配」. 「｜気配《きくば》り」: cùng hai chữ 「気配」 thêm 「り」, đọc 「きくばり」, là sự chu đáo với người khác.",
     "example_notes": [
       "Nửa đêm thấy có dấu hiệu động đậy gì đó dưới bếp, tôi liền giật mình tỉnh giấc.",
       "Con mèo hễ cảm nhận thấy hơi người là trốn ngay vào chỗ khuất."
@@ -3456,7 +4021,7 @@
     "meaning": "Trong chớp mắt, (thay đổi) xảy ra tức thì",
     "usage": "「たちまち増える」, 「たちまち広まる」, 「たちまち売り切れる」, 「たちまち〜になった」.",
     "nuance": "Câu thay thế trong đề: 「たちまち」＝「すぐに」. Phương án sai 「次第に」 là \"dần dần\" — ngược nghĩa.",
-    "compare": "「たちまち」: vật, tình hình đổi gần như tức thì. 「さっさと」: người làm mau cho xong. 「｜一気《いっき》に」: liền một mạch. 「｜急激《きゅうげき》」: con số đổi mạnh: 「急激に増える」. 「｜途端《とたん》に」: ngay sau việc trước, việc khác liền tới.",
+    "compare": "「たちまち」: đổi gần như tức thì. 「さっさと」: làm mau cho xong. 「｜一気《いっき》に」: liền một mạch. 「｜急激《きゅうげき》」: đổi mạnh: 「急激に増える」. 「｜途端《とたん》に」: việc trước xong, việc sau liền tới. 「とっさに」: tích tắc, không kịp nghĩ.",
     "example_notes": [
       "Cửa hàng vừa được giới thiệu trên tivi là khách tăng vọt ngay.",
       "Vừa thấy trời tối sầm là lập tức mưa như trút."
@@ -3625,7 +4190,7 @@
     "meaning": "Đúng lúc vừa…; ngay lúc đó (việc khác liền xảy ra)",
     "usage": "「その途端（に）」 (đúng lúc đó), 「途端に」 (liền, lập tức), 「〜たとたん（に）」 (vừa… thì).",
     "nuance": "Ở thẻ này 「途端」 đứng một mình: 「その途端」「途端に」; mẫu 「〜たとたん」 có thẻ ngữ pháp riêng. Đọc 「とたん」, không trường âm; đề đặt 「とうたんに」 làm nhiễu.",
-    "compare": "「途端に」: việc trước vừa xảy ra thì việc sau liền tới: 「その途端」. 「たちまち」: thay đổi xảy ra rất nhanh: 「客がたちまち増える」.",
+    "compare": "「途端に」: việc trước vừa xảy ra thì việc sau liền tới: 「その途端」. 「たちまち」: thay đổi xảy ra rất nhanh: 「客がたちまち増える」. 「とっさに」: trong tích tắc, không kịp nghĩ.",
     "example_notes": [
       "Cô ấy bước vào phòng. Đúng lúc đó, tiếng nói chuyện của mọi người tắt ngấm.",
       "Mưa tạnh, nắng vừa lên là trẻ con liền kéo đến công viên."
@@ -3865,7 +4430,7 @@
     "meaning": "Ngoái đầu nhìn lại, quay đầu nhìn ra sau",
     "usage": "「後ろを振り向く」, 「振り向いて手を振る」, 「名前を呼ばれて振り向く」.",
     "nuance": "Chỉ dùng khi quay đầu, quay người ra phía sau; nhìn sang hai bên, ngước lên hay cúi xuống thì không dùng 「振り向く」.",
-    "compare": "",
+    "compare": "「振り向く」: quay đầu nhìn ra sau: 「後ろを振り向く」. 「｜振《ふ》り｜返《かえ》る」: cũng là quay lại nhìn, và còn là nhìn lại chuyện đã qua: 「一年を振り返る」.",
     "example_notes": [
       "Khi vừa bước ra khỏi cửa soát vé ở nhà ga, mẹ tôi đã ngoái lại vẫy tay nhiều lần.",
       "Đang đi dạo, chú chó ngoái lại nhìn chủ như muốn kiểm tra xem chủ có đang đi theo không."
@@ -3875,7 +4440,7 @@
     "meaning": "Chạm nhẹ; tiếp xúc, được biết đến (văn hóa…); nhắc đến",
     "usage": "「手で触れる」, 「文化に触れる」 (tiếp xúc văn hóa), 「問題に触れる」 (nhắc tới vấn đề).",
     "nuance": "Cùng chữ với 「｜触《さわ》る」 nhưng đọc khác: 「触れる」 là 「ふれる」.",
-    "compare": "",
+    "compare": "「触れる」: chạm vào; nhắc đến: 「問題に触れる」. 「｜接《せっ》する」: cư xử với người; giáp ranh: 「国境を接する」. Cả 「文化に触れる」 lẫn 「異文化に接する」 đều là tiếp xúc văn hóa.",
     "example_notes": [
       "Bàn tay lạnh buốt chạm vào cổ làm tôi bất giác thốt lên thành tiếng.",
       "Nhờ chương trình này mà tôi bắt đầu được tiếp cận cả với nhạc jazz, thứ mà ngày thường tôi không nghe.",
@@ -4035,7 +4600,7 @@
     "meaning": "Tấm gương, khuôn mẫu để người khác noi theo",
     "usage": "「模範となる」, 「模範を示す」, 「よい模範」, 「｜模範解答《もはんかいとう》」 (đáp án mẫu). Hán Việt \"mô phạm\".",
     "nuance": "Đọc 「もはん」: không có trường âm, 「範」 đọc 「はん」. Đề thi đã cho 「もうほん」「もうはん」「もほん」 và 「もうばん」「もばん」.",
-    "compare": "",
+    "compare": "「模範」: danh từ, tấm gương để người khác noi theo: 「模範を示す」. 「｜見習《みなら》う」: động từ, học theo tấm gương ấy: 「先輩を見習う」.",
     "example_notes": [
       "Bài văn của Tanaka được đọc to trước lớp như một bài mẫu.",
       "Sau bài kiểm tra, thầy giáo đã phát đáp án mẫu."

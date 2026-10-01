@@ -744,7 +744,7 @@
     "meaning": "Nếu phải chọn giữa hai bên thì nghiêng về bên sau",
     "usage": "Mẫu 「AよりむしろB」: so với A thì B hơn; B là điều người nói chọn hay thấy đúng hơn.",
     "nuance": "",
-    "compare": "",
+    "compare": "「むしろ」: so hai bên, nghiêng về bên này hơn. 「いっそ」: bỏ cách cũ, dứt khoát chọn hẳn cách khác.",
     "example_notes": [
       "Bố tôi là người thà tự làm mẫu cho xem để dạy, hơn là giải thích bằng lời."
     ]
@@ -1131,7 +1131,7 @@
     "meaning": "Làm lộ (bí mật); tháo rời (đồ) ra từng mảnh",
     "usage": "① Nói lộ điều đang giữ kín: 「秘密をばらす」. ② Tháo một vật thành nhiều mảnh: 「ベッドをばらす」, 「棚をばらす」.",
     "nuance": "",
-    "compare": "① 「ばらす」: làm lộ bí mật; 「｜打《う》ち｜明《あ》ける」: tự mình thổ lộ điều giấu kín; 「｜言《い》いつける」: mách lỗi của ai với người trên. ② 「ばらす」: tháo đồ ra từng mảnh; 「｜分解《ぶんかい》」: tháo máy ra từng bộ phận.",
+    "compare": "① 「ばらす」: làm lộ bí mật; 「｜打《う》ち｜明《あ》ける」: tự thổ lộ điều giấu kín; 「｜言《い》いつける」: mách lỗi với người trên; 「もれる」: bí mật tự lọt ra. ② 「ばらす」: tháo đồ ra từng mảnh; 「｜分解《ぶんかい》」: tháo máy thành bộ phận.",
     "example_notes": [
       "Kế hoạch gây bất ngờ vào ngày sinh nhật đã bị em trai tôi lỡ miệng tiết lộ với mẹ.",
       "Tôi tháo rời cái kệ cũ không dùng nữa rồi đem bỏ vào ngày thu gom rác cồng kềnh."
@@ -1805,7 +1805,7 @@
     "meaning": "Bữa ăn đủ các món theo thứ tự, từ khai vị đến tráng miệng",
     "usage": "Gần nghĩa: 「コース料理」 (bữa ăn theo set món).",
     "nuance": "",
-    "compare": "",
+    "compare": "「フルコース」 là một bữa đủ món dọn lần lượt; 「｜献立《こんだて》」 mới là \"thực đơn\": các món đã lên cho bữa ăn.",
     "example_notes": [
       "Bữa ăn trọn bộ của tiệm này có bảy đĩa lần lượt được mang ra, từ khai vị đến tráng miệng."
     ]
@@ -2566,7 +2566,7 @@
     "meaning": "Gọn gàng, mau lẹ (xử lý công việc)",
     "usage": "「てきぱき（と）働く・片付ける」, 「てきぱきした人」.",
     "nuance": "",
-    "compare": "「さっさと」: làm nhanh cho xong, không chần chừ. 「てきぱき」: vừa nhanh vừa khéo, xử lý việc này sang việc khác gọn gàng.",
+    "compare": "「さっさと」: làm nhanh cho xong, không chần chừ. 「てきぱき」: vừa nhanh vừa khéo, xử lý việc này sang việc khác gọn gàng. 「さっと」: động tác nhanh gọn.",
     "example_notes": [
       "Nhân viên quầy tiếp nhận ở bệnh viện hướng dẫn bệnh nhân rất gọn gàng, mau lẹ."
     ]
@@ -2630,7 +2630,7 @@
     "meaning": "Thay (cái đang dùng) bằng cái khác, đổi",
     "usage": "「AをBに替える」, 「担当を替える」. Cách viết gần: 「換える」.",
     "nuance": "",
-    "compare": "「買い換える」: mua cái mới thay cái cũ. 「替える」: đổi sang cái khác, người khác, không nhất thiết phải mua.",
+    "compare": "「買い換える」: mua cái mới thay cái cũ. 「替える」: đổi sang cái khác, người khác, không nhất thiết phải mua. 「｜入《い》れ｜替《か》える」: lấy cái đang có ra, thay cái khác vào.",
     "example_notes": [
       "Khách gọi điện yêu cầu đổi người phụ trách."
     ]
@@ -2768,7 +2768,7 @@
     "meaning": "Điều chỉnh tăng giảm cho vừa mức (nhiệt độ, âm lượng, độ cao)",
     "usage": "「温度を調節する」, 「音量を調節する」, 「高さを調節する」, 「〜に合わせて調節する」. Hán Việt \"điều tiết\".",
     "nuance": "Đọc 「ちょうせつ」: 「節」 đọc 「せつ」. Đề thi đã cho 「ちょうさい」「ちょうせい」「ちょうさつ」 làm phương án sai.",
-    "compare": "「調節」: tăng giảm cho vừa. 「節約」: dùng ít đi để không lãng phí. Đề thi coi 「温度や湿度を節約しています」 là sai — nhiệt độ thì 「調節」.",
+    "compare": "「調節」: tăng giảm cho vừa. 「節約」: dùng ít đi để không lãng phí. Đề thi coi 「温度や湿度を節約しています」 là sai — nhiệt độ thì 「調節」. 「｜加減《かげん》」: mức độ vừa phải.",
     "example_notes": [
       "Tôi đã chỉnh độ cao của ghế cho vừa với bàn.",
       "Tôi chỉnh âm lượng micro để hàng ghế cuối cũng nghe được."
@@ -2857,6 +2857,86 @@
       "Về đến nhà thì thấy trên bàn có lời nhắn của mẹ."
     ]
   },
+  "v-0311": {
+    "meaning": "Việc nấu ăn, việc bếp núc",
+    "usage": "「｜炊事《すいじ》をする」, 「｜炊事《すいじ》が｜好《す》きだ」. Thường đứng cùng 「｜洗濯《せんたく》」「｜掃除《そうじ》」 khi kể các việc nhà hằng ngày.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Ở trại tập huấn, mọi người chia phiên nhau lo việc nấu ăn.",
+      "Từ khi bị đau chân, bà giao việc bếp núc cho mẹ tôi."
+    ]
+  },
+  "v-0312": {
+    "meaning": "Thực đơn (kế hoạch các món cho bữa ăn)",
+    "usage": "「｜献立《こんだて》を｜考《かんが》える・｜決《き》める」, 「｜今日《きょう》の｜献立《こんだて》」. Chỉ danh sách món đã định cho một bữa ăn.",
+    "nuance": "",
+    "compare": "「｜献立《こんだて》」 mới là \"thực đơn\": các món đã lên cho bữa ăn. 「フルコース」 là một bữa nhiều món dọn lần lượt theo thứ tự.",
+    "example_notes": [
+      "Nhìn rau còn trong tủ lạnh, tôi nghĩ ra thực đơn cho tuần này.",
+      "Thực đơn của nhà ăn công ty được dán lên từ đầu tháng."
+    ]
+  },
+  "v-0313": {
+    "meaning": "Yêu cầu, đề nghị (điều mình muốn người khác làm)",
+    "usage": "「〜をリクエストする」, 「｜友達《ともだち》のリクエスト」. Dùng được như danh từ lẫn với 「する」.",
+    "nuance": "",
+    "compare": "Cả hai đều dịch là \"yêu cầu\": 「リクエスト」 là nhờ theo ý thích (bài hát, món ăn); 「｜要求《ようきゅう》」 là đòi hỏi như điều đương nhiên phải được đáp ứng.",
+    "example_notes": [
+      "Tôi đã gửi cho chương trình radio lời nhờ phát bài hát mình thích.",
+      "Đáp lại yêu cầu của khán giả, nghệ sĩ dương cầm chơi thêm một bản."
+    ]
+  },
+  "v-0314": {
+    "meaning": "Bồn rửa (trong bếp)",
+    "usage": "「｜流《なが》しで｜洗《あら》う」, 「｜流《なが》しの｜下《した》」.",
+    "nuance": "Cũng nói 「｜流《なが》し｜台《だい》」.",
+    "compare": "",
+    "example_notes": [
+      "Sáng ngủ dậy thì thấy bát đĩa chất đầy trong bồn rửa.",
+      "Cái nồi lớn được cất trong tủ dưới bồn rửa."
+    ]
+  },
+  "v-0315": {
+    "meaning": "Xé (bằng tay) thành miếng nhỏ",
+    "usage": "「｜紙《かみ》をちぎる」, 「｜小《ちい》さくちぎる」, 「ちぎって｜入《い》れる」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi xé một góc khăn giấy, viết số điện thoại rồi đưa.",
+      "Đứa trẻ xé giấy màu thành mảnh nhỏ để làm tranh dán."
+    ]
+  },
+  "v-0316": {
+    "meaning": "Làm nguội (đồ nóng)",
+    "usage": "「お｜茶《ちゃ》を｜冷《さ》ます」, 「｜冷《さ》ましてから｜食《た》べる」. Có người chủ động làm nguội, đi với 「〜を」.",
+    "nuance": "",
+    "compare": "「｜冷《さ》ます」: người làm cho nguội: 「スープを｜冷《さ》ます」. 「｜冷《さ》める」: tự nguội đi, chủ ngữ là vật nóng: 「スープが｜冷《さ》める」.",
+    "example_notes": [
+      "Tôi để trà nóng nguội bớt rồi mới đưa cho con.",
+      "Khoai lang luộc xong thì để trên rổ cho nguội."
+    ]
+  },
+  "v-0317": {
+    "meaning": "Chín (do được nấu trong nồi)",
+    "usage": "「｜魚《さかな》が｜煮《に》える」, 「｜煮《に》えたら｜火《ひ》を｜止《や》める」, 「｜煮《に》えるまで｜待《ま》つ」. Chủ ngữ là món đang nấu.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi cắm xiên vào xem khoai tây đã chín chưa.",
+      "Đậu lâu chín nên tôi ngâm nước từ hôm trước."
+    ]
+  },
+  "v-0318": {
+    "meaning": "Việc nêm gia vị, sự nêm nếm",
+    "usage": "「｜味付《あじつ》けをする」, 「｜味付《あじつ》けが｜濃《こ》い・｜薄《うす》い」.",
+    "nuance": "",
+    "compare": "Đừng nhầm: 「｜味付《あじつ》け」 là việc nêm; 「｜加減《かげん》」 (như 「｜味《あじ》｜加減《かげん》」) là độ đậm nhạt vừa hay chưa.",
+    "example_notes": [
+      "Ông tôi không cầu kỳ chuyện nêm nếm, món nào cũng rưới nước tương.",
+      "Cách nêm nếm của quán trọ nơi đi du lịch hơi đậm đối với tôi."
+    ]
+  },
   "v-0319": {
     "meaning": "Pha loãng, làm nhạt đi (bằng cách thêm nước)",
     "usage": "「水で薄める」, 「味を薄める」, 「十倍に薄める」, 「絵の具を薄める」. Dùng cho chất lỏng, vị, màu.",
@@ -2865,6 +2945,136 @@
     "example_notes": [
       "Tôi pha loãng màu vẽ bằng nước rồi tô màu bầu trời.",
       "Nước tẩy rửa này pha loãng mười lần với nước rồi mới dùng."
+    ]
+  },
+  "v-0320": {
+    "meaning": "Vị ngọt",
+    "usage": "「｜甘《あま》みが｜強《つよ》い」, 「｜甘《あま》みを｜足《た》す」, 「｜甘《あま》みを｜控《ひか》える」 (làm bớt ngọt).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Hành tây vùng này đem nướng thì vị ngọt tăng lên.",
+      "Tôi không dùng đường mà thêm vị ngọt bằng mật ong."
+    ]
+  },
+  "v-0321": {
+    "meaning": "Công phu, bỏ công nghĩ cách (để làm tốt hơn)",
+    "usage": "「｜工夫《くふう》する」, 「〜を｜工夫《くふう》する」, 「ひと｜工夫《くふう》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi khéo xếp đồ nên chỉ một chiếc túi là đủ.",
+      "Tôi nghĩ cách phối món ăn để cơm hộp mỗi ngày không giống nhau."
+    ]
+  },
+  "v-0322": {
+    "meaning": "Thêm vào, đính kèm (vật phụ đi cùng vật chính)",
+    "usage": "「｜手紙《てがみ》を｜添《そ》える」, 「｜写真《しゃしん》を｜添《そ》えて｜出《だ》す」. 「AにBを｜添《そ》える」: kèm B vào A.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi gửi hàng kèm theo tấm thiệp cảm ơn.",
+      "Tôi kèm một tờ biên lai rồi nhờ quyết toán chi phí."
+    ]
+  },
+  "v-0323": {
+    "meaning": "Kẹp (vào giữa hai vật)",
+    "usage": "「｜本《ほん》にしおりを｜挟《はさ》む」, 「パンに｜具《ぐ》を｜挟《はさ》む」, 「ドアに｜指《ゆび》を｜挟《はさ》む」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi kẹp tờ hóa đơn vào giữa sách để làm thẻ đánh dấu.",
+      "Tôi bị kẹp ngón tay vào cửa, đau mãi không hết."
+    ]
+  },
+  "v-0324": {
+    "meaning": "Mức độ vừa phải, sự điều chỉnh tăng giảm",
+    "usage": "「｜味《あじ》｜加減《かげん》」 (độ đậm nhạt của vị), 「｜塩《しお》｜加減《かげん》」 (mức muối), 「｜加減《かげん》がいい」.",
+    "nuance": "",
+    "compare": "「｜加減《かげん》」: mức vừa phải, hoặc việc chỉnh cho vừa. 「｜調節《ちょうせつ》」: đổi lượng, mức để cho hợp. 「｜味付《あじつ》け」: nêm gia vị.",
+    "example_notes": [
+      "Chỉnh lửa khó quá nên tôi làm cháy trứng cuộn.",
+      "Tôi lấy tay thử độ nóng của nước vòi sen rồi mới vào tắm."
+    ]
+  },
+  "v-0325": {
+    "meaning": "Đông cứng lại, rắn lại",
+    "usage": "「ゼリーが｜固《かた》まる」, 「｜固《かた》まったら｜型《かた》から｜出《だ》す」.",
+    "nuance": "",
+    "compare": "「｜固《かた》まる」: vật tự đông cứng. 「｜固《かた》める」 (làm cho cứng): có người tác động, đi với 「〜を」.",
+    "example_notes": [
+      "Xi măng chưa đông cứng thì xin đừng bước lên.",
+      "Sáp nến đông cứng lại trên đĩa, không gỡ ra được."
+    ]
+  },
+  "v-0326": {
+    "meaning": "Liếm; nếm thử",
+    "usage": "「｜手《て》をなめる」, 「｜少《すこ》しなめて｜確《たし》かめる」.",
+    "nuance": "",
+    "compare": "\"Liếm\" và \"mút\" khác nhau: 「なめる」 = liếm, nếm qua; 「しゃぶる」 = ngậm trong miệng mà mút (kẹo, ngón tay).",
+    "example_notes": [
+      "Con chó vui mừng liếm tay tôi.",
+      "Tôi định liếm con tem để dán thì thấy không có keo."
+    ]
+  },
+  "v-0327": {
+    "meaning": "Hôi, thối (có mùi khó chịu)",
+    "usage": "「｜靴《くつ》が｜臭《くさ》い」, 「｜臭《くさ》くなる」.",
+    "nuance": "",
+    "compare": "「｜臭《くさ》い」 là hôi nói chung (giày, phòng); mùi tanh của cá thì dùng riêng 「｜生臭《なまぐさ》い」.",
+    "example_notes": [
+      "Để mặc đôi giày bị ướt mưa thì cả phòng bốc mùi hôi.",
+      "Vì tỏi ăn tối qua mà tôi bị nói là miệng hôi."
+    ]
+  },
+  "v-0328": {
+    "meaning": "Nguội đi (đồ nóng)",
+    "usage": "「ご｜飯《はん》が｜冷《さ》める」, 「｜冷《さ》めないうちに」.",
+    "nuance": "",
+    "compare": "「｜冷《さ》める」: tự nguội, chủ ngữ là vật nóng. 「｜冷《さ》ます」: có người làm cho nguội, đi với 「〜を」.",
+    "example_notes": [
+      "Cơm mới nấu xong để ba mươi phút cũng nguội mất.",
+      "Tôi viết xong bản nháp báo cáo trước khi ly cà phê mới pha kịp nguội."
+    ]
+  },
+  "v-0329": {
+    "meaning": "Thừa, dư ra (quá phần cần thiết)",
+    "usage": "「｜余分《よぶん》な｜物《もの》」, 「｜余分《よぶん》に｜買《か》う」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi cố không bỏ đồ thừa vào vali đi du lịch.",
+      "Tôi đã mua dư vé nên bạn đến đột xuất cũng không sao."
+    ]
+  },
+  "v-0330": {
+    "meaning": "Đồ đựng, hộp đựng",
+    "usage": "「｜容器《ようき》に｜入《い》れる」, 「｜容器《ようき》に｜移《うつ》す」, 「｜食品《しょくひん》の｜容器《ようき》」.",
+    "nuance": "Cũng nói 「｜入《い》れ｜物《もの》」.",
+    "compare": "",
+    "example_notes": [
+      "Hộp đựng bánh này rửa xong dùng lại nhiều lần được.",
+      "Tôi chuyển thức ăn thừa vào hộp rồi cho vào tủ lạnh."
+    ]
+  },
+  "v-0331": {
+    "meaning": "Hạn dùng tốt nhất (hạn còn giữ được vị ngon)",
+    "usage": "「｜賞味期限《しょうみきげん》が｜切《き》れる」, 「｜賞味期限《しょうみきげん》が｜近《ちか》い」.",
+    "nuance": "「｜消費《しょうひ》｜期限《きげん》」 là hạn dùng an toàn, khác với 「｜賞味期限《しょうみきげん》」.",
+    "compare": "",
+    "example_notes": [
+      "Hạn dùng tốt nhất của sữa đã hết từ hôm qua.",
+      "Tôi mua thực phẩm sắp hết hạn tốt nhất với giá rẻ."
+    ]
+  },
+  "v-0332": {
+    "meaning": "Tự tay làm, đồ thủ công nhà làm",
+    "usage": "「｜手作《てづく》りの〜」, 「｜手作《てづく》りする」.",
+    "nuance": "Còn có 「｜手料理《てりょうり》」 (món ăn tự nấu) và 「お｜手製《てせい》」 (đồ tự làm).",
+    "compare": "",
+    "example_notes": [
+      "Ông tôi dùng chiếc ghế tự tay làm từ gỗ cây trong vườn.",
+      "Cờ cổ vũ cho ngày hội thể thao do phụ huynh tự tay làm."
     ]
   },
   "v-0333": {
@@ -2877,6 +3087,16 @@
       "Tôi đã đưa người bạn từ xa đến đi tham quan thị trấn để tiếp đãi."
     ]
   },
+  "v-0334": {
+    "meaning": "Rò rỉ (nước, âm thanh); lọt ra ngoài (chuyện cần giấu)",
+    "usage": "「｜水《みず》がもれる」, 「｜音《おと》がもれる」, 「｜秘密《ひみつ》がもれる」. 「〜をもらす」: làm cho rò, làm lộ ra.",
+    "nuance": "",
+    "compare": "「もれる」: bí mật tự lọt ra ngoài, chủ ngữ là bí mật. 「ばらす」: có người nói toạc bí mật của người khác ra.",
+    "example_notes": [
+      "Tiếng ban nhạc đang tập lọt ra từ cửa phòng thu.",
+      "Nội dung cuộc họp bị lộ ra ngoài và lên cả báo."
+    ]
+  },
   "v-0335": {
     "meaning": "Lộn xộn, bừa bộn; (phó từ) cằn nhằn, nói mãi",
     "usage": "「ごちゃごちゃしている」 (bừa bộn), 「ごちゃごちゃだ」, 「ごちゃごちゃと並ぶ」, 「ごちゃごちゃ言う」 (cằn nhằn, lải nhải).",
@@ -2885,6 +3105,56 @@
     "example_notes": [
       "Trước ga biển hiệu xếp lộn xộn nên khó tìm ra cửa hàng mình định đến.",
       "Chuyện đã qua rồi, mong anh đừng cằn nhằn mãi nữa."
+    ]
+  },
+  "v-0336": {
+    "meaning": "Cái ban đầu, trạng thái/vị trí cũ; thuở đầu",
+    "usage": "「｜元《もと》の｜場所《ばしょ》」, 「｜元《もと》に｜戻《もど》す」, 「｜元《もと》は〜だった」.",
+    "nuance": "Còn có 「もともと」 (vốn dĩ).",
+    "compare": "",
+    "example_notes": [
+      "Hai người từng cãi nhau, cuối cùng cũng làm lành như cũ.",
+      "Truy về gốc thì cửa hàng này khởi đầu từ một quầy hàng nhỏ."
+    ]
+  },
+  "v-0337": {
+    "meaning": "Tự động (không cần người thao tác)",
+    "usage": "「｜自動的《じどうてき》に｜開《ひら》く」, 「｜自動的《じどうてき》な〜」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Cây dù này bấm nút là tự động bung ra.",
+      "Hết mất điện thì máy tự động chạy lại."
+    ]
+  },
+  "v-0338": {
+    "meaning": "Nhanh chóng, thoắt một cái",
+    "usage": "「さっと｜立《た》つ」, 「さっと｜動《うご》く」. Dùng khi động tác diễn ra chớp nhoáng.",
+    "nuance": "",
+    "compare": "Đều là \"nhanh\": 「さっと」 chỉ một động tác chớp nhoáng; 「さっさと」: làm cho xong, không lề mề; 「てきぱき」: nhanh mà khéo, gọn việc.",
+    "example_notes": [
+      "Chuông cửa reo, mẹ vội tháo tạp dề rồi đi ra cửa.",
+      "Vừa được gọi tên, em trai tôi giơ tay ngay."
+    ]
+  },
+  "v-0339": {
+    "meaning": "Dọn dẹp, làm vệ sinh (cho sạch)",
+    "usage": "「｜清掃《せいそう》する」, 「｜清掃《せいそう》｜会社《かいしゃ》」.",
+    "nuance": "Từ liên quan: 「｜掃《は》き｜掃除《そうじ》」 (quét dọn), 「｜拭《ふ》き｜掃除《そうじ》」 (lau chùi).",
+    "compare": "",
+    "example_notes": [
+      "Nhà vệ sinh công viên được dọn hai lần, sáng và chiều tối.",
+      "Việc dọn nhà thi đấu do các thành viên câu lạc bộ thay phiên đảm nhiệm."
+    ]
+  },
+  "v-0340": {
+    "meaning": "Loại bỏ, lọc bỏ (thứ không cần, thứ gây cản trở)",
+    "usage": "「ごみを｜取《と》り｜除《のぞ》く」, 「｜骨《ほね》を｜取《と》り｜除《のぞ》く」.",
+    "nuance": "",
+    "compare": "「｜除《のぞ》く」 gần \"trừ ra\" của tiếng Việt: không tính vào. 「｜取《と》り｜除《のぞ》く」 mới là lấy hẳn thứ gây vướng đi (rác, xương).",
+    "example_notes": [
+      "Tôi cắt bỏ phần gốc rau chân vịt rồi mới luộc.",
+      "Nhổ hết cỏ mọc trong vườn mất nửa ngày."
     ]
   },
   "v-0341": {
@@ -2897,14 +3167,434 @@
       "Mùa hè, áo sơ mi bằng chất liệu thấm mồ hôi tốt thì dễ mặc."
     ]
   },
+  "v-0342": {
+    "meaning": "Hiển thị, ghi nhãn cho người ta nhìn thấy",
+    "usage": "「｜表示《ひょうじ》する」, 「｜表示《ひょうじ》がある」, 「｜表示価格《ひょうじかかく》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Điểm đến được hiển thị bằng đèn điện ở mặt trước tàu.",
+      "Tôi xem giá niêm yết ở các trạm xăng để tìm chỗ rẻ."
+    ]
+  },
+  "v-0343": {
+    "meaning": "Phân loại",
+    "usage": "「｜分類《ぶんるい》する」, 「｜国《くに》ごとに｜分類《ぶんるい》する」.",
+    "nuance": "",
+    "compare": "「｜分類《ぶんるい》」 (phân loại) dùng cho mọi thứ. 「｜分別《ぶんべつ》」 đọc Hán Việt là \"phân biệt\" nhưng không mang nghĩa đó: nó là chia rác, đồ cũ theo loại để bỏ.",
+    "example_notes": [
+      "Tôi phân loại số tem sưu tầm theo từng nước rồi cho vào hộp.",
+      "Tôi chia các cảm nghĩ nhận được thành hai loại: có thiện cảm hay phê phán."
+    ]
+  },
+  "v-0344": {
+    "meaning": "Xả (cho sạch xà phòng); súc (miệng)",
+    "usage": "「｜水《みず》ですすぐ」, 「｜口《くち》をすすぐ」, 「よくすすぐ」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi tráng bát đĩa kỹ bằng nước cho khỏi còn nước rửa.",
+      "Đánh răng xong, tôi súc miệng bằng nước."
+    ]
+  },
+  "v-0345": {
+    "meaning": "Lưới, túi lưới",
+    "usage": "「ネットに｜入《い》れる」, 「ネットを｜張《は》る」.",
+    "nuance": "Cũng nói 「あみ」 (lưới).",
+    "compare": "",
+    "example_notes": [
+      "Tôi cho bóng đá vào túi lưới để mang đi.",
+      "Tôi căng lưới lên cửa sổ để côn trùng không vào."
+    ]
+  },
+  "v-0346": {
+    "meaning": "Hấp thụ, hút vào",
+    "usage": "「｜水分《すいぶん》を｜吸収《きゅうしゅう》する」, 「｜吸収力《きゅうしゅうりょく》」 (sức hút). Gần nghĩa: 「｜吸《す》い｜込《こ》む」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Đất hút nước mưa nên trở nên mềm.",
+      "Tấm thảm này hút nước tốt nên rất tiện sau khi tắm."
+    ]
+  },
+  "v-0347": {
+    "meaning": "Bùn",
+    "usage": "「｜泥《どろ》だらけ」 (đầy bùn), 「｜泥《どろ》んこ」 (lấm bùn), 「｜泥《どろ》がつく」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Lũ trẻ xuống ruộng nên mặt mũi cũng đầy bùn.",
+      "Bánh xe ô tô sa vào bùn, không nhúc nhích được."
+    ]
+  },
+  "v-0348": {
+    "meaning": "Trí tuệ, sự khôn khéo biết cách xoay xở",
+    "usage": "「｜知恵《ちえ》を｜出《だ》す」, 「｜知恵《ちえ》がある」, 「｜昔《むかし》の｜人《ひと》の｜知恵《ちえ》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Nhờ sự khéo léo của bà mà chiếc áo yukata cũ thành tấm đệm ngồi mới.",
+      "Mọi người cùng góp trí khôn để giải quyết vấn đề."
+    ]
+  },
+  "v-0349": {
+    "meaning": "Rác đốt được",
+    "usage": "「｜可燃《かねん》ごみの｜日《ひ》」, 「｜可燃《かねん》ごみを｜出《だ》す」.",
+    "nuance": "Trái nghĩa là 「｜不燃《ふねん》ごみ」 (rác không đốt được).",
+    "compare": "Ba loại rác theo lịch thu gom: 「｜可燃《かねん》ごみ」 đốt được; 「｜資源《しげん》ごみ」 tái chế được (lon, chai); 「｜粗大《そだい》ごみ」 đồ cỡ lớn, bỏ phải trả phí.",
+    "example_notes": [
+      "Ông tôi có thói quen đi bỏ rác đốt được trước bữa sáng.",
+      "Túi rác đốt được bị rách, đồ bên trong vương vãi ra đường."
+    ]
+  },
+  "v-0350": {
+    "meaning": "Rác tái chế, rác có thể tái sinh",
+    "usage": "「｜資源《しげん》ごみの｜日《ひ》」, 「｜資源《しげん》ごみを｜出《だ》す」.",
+    "nuance": "",
+    "compare": "Phân biệt theo lịch thu gom: 「｜資源《しげん》ごみ」 tái chế được (lon, chai); 「｜可燃《かねん》ごみ」 đốt được; 「｜粗大《そだい》ごみ」 đồ cỡ lớn, bỏ phải trả phí.",
+    "example_notes": [
+      "Qua thông báo của cơ quan hành chính, tôi biết cách bỏ rác tái chế sắp thay đổi.",
+      "Tôi ghi ngày bỏ rác tái chế lên lịch."
+    ]
+  },
+  "v-0351": {
+    "meaning": "Rác cỡ lớn",
+    "usage": "「｜粗大《そだい》ごみに｜出《だ》す」, 「｜粗大《そだい》ごみを｜捨《す》てる」. Vứt loại này phải trả phí.",
+    "nuance": "",
+    "compare": "Phân biệt theo lịch thu gom: 「｜粗大《そだい》ごみ」 đồ cỡ lớn, bỏ phải trả phí; 「｜可燃《かねん》ごみ」 đốt được; 「｜資源《しげん》ごみ」 tái chế được (lon, chai).",
+    "example_notes": [
+      "Tôi bỏ chiếc xe đạp hỏng làm rác cỡ lớn thì mất phí.",
+      "Muốn thu gom rác cỡ lớn thì phải gọi điện đặt hẹn trước."
+    ]
+  },
+  "v-0352": {
+    "meaning": "Báo cũ",
+    "usage": "「｜古新聞《ふるしんぶん》を｜出《だ》す」, 「｜古新聞《ふるしんぶん》をためる」.",
+    "nuance": "Cùng kiểu: 「｜古雑誌《ふるざっし》」 (tạp chí cũ).",
+    "compare": "",
+    "example_notes": [
+      "Tôi nhét báo cũ vào thùng gửi trái cây cho khỏi vỡ.",
+      "Tôi gói cá bằng tờ báo cũ đã đọc xong."
+    ]
+  },
+  "v-0353": {
+    "meaning": "Phân loại rác, chia theo loại để bỏ",
+    "usage": "「｜分別《ぶんべつ》する」, 「ごみの｜分別《ぶんべつ》」.",
+    "nuance": "",
+    "compare": "Bẫy Hán Việt: 「｜分別《ぶんべつ》」 là \"phân biệt\" nhưng ở đây nghĩa là chia rác, đồ cũ theo loại để bỏ. Xếp loại nói chung (tem, ý kiến) thì dùng 「｜分類《ぶんるい》」.",
+    "example_notes": [
+      "Quần áo cũ thu gom về trước hết được chia theo chất liệu.",
+      "Thùng rác ở ga được chia riêng lon, chai và loại khác."
+    ]
+  },
+  "v-0354": {
+    "meaning": "Túi đựng rác",
+    "usage": "「ごみ｜袋《ぶくろ》を｜買《か》う」, 「ごみ｜袋《ぶくろ》に｜入《い》れる」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Để túi rác không rách, tôi gói đồ có góc cạnh bằng giấy rồi mới bỏ vào.",
+      "Túi rác trong bếp đầy rồi nên tôi thay cái mới."
+    ]
+  },
+  "v-0355": {
+    "meaning": "Hôi tanh (mùi như cá)",
+    "usage": "「｜手《て》が｜生臭《なまぐさ》い」, 「｜生臭《なまぐさ》くなる」.",
+    "nuance": "",
+    "compare": "Mùi tanh (cá, thớt) thì dùng 「｜生臭《なまぐさ》い」; 「｜臭《くさ》い」 rộng hơn, mùi hôi nào cũng được.",
+    "example_notes": [
+      "Tay sau khi cắt cá, rửa xà phòng rồi vẫn còn tanh.",
+      "Cái thớt bị tanh nên tôi dội nước sôi lên."
+    ]
+  },
+  "v-0356": {
+    "meaning": "Lớn và nhỏ; sự chênh nhau về cỡ",
+    "usage": "「｜大小《だいしょう》さまざま」, 「｜大小《だいしょう》に｜関係《かんけい》なく」.",
+    "nuance": "",
+    "compare": "「｜大小《だいしょう》」 (đại tiểu) là to nhỏ của từng vật; độ lớn của cả một sự việc, tổ chức là 「｜規模《きぼ》」 (quy mô).",
+    "example_notes": [
+      "Táo được đóng túi lẫn cả quả to quả nhỏ.",
+      "Bản đồ này vẽ đủ các hòn đảo to nhỏ."
+    ]
+  },
+  "v-0357": {
+    "meaning": "Mút, ngậm trong miệng",
+    "usage": "「｜指《ゆび》をしゃぶる」, 「｜飴《あめ》をしゃぶる」.",
+    "nuance": "",
+    "compare": "「しゃぶる」 = mút, bú (ngón tay, kẹo ngậm); chỉ lè lưỡi liếm hay nếm qua thì là 「なめる」.",
+    "example_notes": [
+      "Khi đau họng, ngậm kẹo ngậm họng thì dễ chịu hơn.",
+      "Con chó đang gặm mút khúc xương."
+    ]
+  },
+  "v-0358": {
+    "meaning": "Tã (cho em bé)",
+    "usage": "「おむつを｜替《か》える」, 「｜紙《かみ》おむつ」 (tã giấy).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Nửa đêm em bé khóc nên tôi thay tã.",
+      "Thời điểm bỏ tã khác nhau tùy từng em bé."
+    ]
+  },
+  "v-0359": {
+    "meaning": "Trẻ sinh đôi, cặp song sinh",
+    "usage": "「｜双子《ふたご》が｜生《う》まれる」, 「｜双子《ふたご》の｜兄弟《きょうだい》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Hai cậu con trai sinh đôi của chị tôi giống nhau cả mặt lẫn giọng.",
+      "Vì là sinh đôi nên hồi nhỏ tôi hay bị nhầm."
+    ]
+  },
+  "v-0360": {
+    "meaning": "Quần áo, y phục",
+    "usage": "「｜衣類《いるい》を｜出《だ》す」, 「｜衣類《いるい》を｜整理《せいり》する」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Lúc giao mùa, tôi sắp xếp lại quần áo một lượt.",
+      "Mùa mưa, tôi chú ý để quần áo không bị mốc."
+    ]
+  },
+  "v-0361": {
+    "meaning": "Thay thế, đổi cho nhau (vật cũ bằng vật khác)",
+    "usage": "「｜水《みず》を｜入《い》れ｜替《か》える」, 「｜選手《せんしゅ》を｜入《い》れ｜替《か》える」.",
+    "nuance": "",
+    "compare": "「｜替《か》える」: đổi sang cái khác. 「｜入《い》れ｜替《か》える」: thay cái đang ở trong (nước, đất), hoặc hoán đổi hai bên (chỗ ngồi, cầu thủ).",
+    "example_notes": [
+      "Tôi bỏ đất cũ đi, thay đất trong chậu cây bằng đất mới.",
+      "Chúng tôi quyết định bốc thăm đổi chỗ ngồi giữa chỗ cạnh cửa sổ và chỗ trong cùng."
+    ]
+  },
+  "v-0362": {
+    "meaning": "Phát điên, mất bình tĩnh; (kế hoạch) bị lệch, rối tung",
+    "usage": "「｜気《き》が｜狂《くる》う」, 「｜予定《よてい》が｜狂《くる》う」, 「｜気《き》が｜狂《くる》いそうだ」 (sắp phát điên).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tiếng ồn kéo dài suốt đêm làm tôi sắp phát điên.",
+      "Bị ốm nặng phải nhập viện, kế hoạch cuối năm của tôi đổ vỡ hết."
+    ]
+  },
+  "v-0363": {
+    "meaning": "Vứt bỏ đồ không cần; xử phạt (người vi phạm quy định)",
+    "usage": "「｜処分《しょぶん》する」, 「｜処分《しょぶん》を｜受《う》ける」.",
+    "nuance": "",
+    "compare": "「｜処分《しょぶん》」 có hai nghĩa: vứt bỏ đồ, và xử phạt. 「｜処理《しょり》」 như \"xử lý\" tiếng Việt: giải quyết cho xong. Bản thân hành vi phạm quy là 「｜違反《いはん》」.",
+    "example_notes": [
+      "Tôi vứt bỏ một lượt đống giấy tờ cũ trong ngăn kéo.",
+      "Nhân viên nghỉ làm nhiều lần không phép sẽ bị xử phạt."
+    ]
+  },
+  "v-0364": {
+    "meaning": "Đồ không cần dùng nữa",
+    "usage": "「｜不用品《ふようひん》を｜売《う》る」, 「｜不用品《ふようひん》を｜整理《せいり》する」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Ở chợ từ thiện của tổ dân phố, tôi bán rẻ đồ không dùng nữa.",
+      "Từ góc sâu tủ âm tường lôi ra rất nhiều đồ bỏ đi tích lại bao năm."
+    ]
+  },
+  "v-0365": {
+    "meaning": "Gỡ ra, bóc ra (thứ đang dán)",
+    "usage": "「シールをはがす」, 「きれいにはがす」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi ngâm nước nóng rồi bóc nhãn dán trên chai.",
+      "Tôi giật miếng băng cá nhân một phát thì đau."
+    ]
+  },
+  "v-0366": {
+    "meaning": "Bó, một bó (vật đã được bó lại)",
+    "usage": "「｜束《たば》にする」, 「｜花束《はなたば》」 (bó hoa), 「｜札束《さつたば》」 (xấp tiền).",
+    "nuance": "",
+    "compare": "「｜束《たば》」 là danh từ: cái bó (「｜花束《はなたば》」 bó hoa). Động từ \"buộc, bó\" là 「しばる」.",
+    "example_notes": [
+      "Tôi bó thư cũ lại rồi cất vào sâu trong ngăn kéo.",
+      "Tôi bó đũa dùng một lần từng mười đôi một rồi cho vào túi."
+    ]
+  },
+  "v-0367": {
+    "meaning": "Buộc, trói, bó lại (bằng dây)",
+    "usage": "「ひもでしばる」, 「しばって｜運《はこ》ぶ」.",
+    "nuance": "Trái nghĩa là 「ほどく」 (tháo ra). Gần nghĩa: 「｜結《むす》ぶ」.",
+    "compare": "「しばる」 là động từ buộc bằng dây; bó đã buộc xong là danh từ 「｜束《たば》」.",
+    "example_notes": [
+      "Tôi buộc chặt chân bằng băng để vết thương không toác ra.",
+      "Tôi buộc tóc ra sau rồi bắt đầu nấu ăn."
+    ]
+  },
+  "v-0368": {
+    "meaning": "Thùng các-tông, giấy các-tông",
+    "usage": "「｜段《だん》ボール｜箱《はこ》」 (thùng các-tông), 「｜段《だん》ボールに｜入《い》れる」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Bát đĩa thì gói từng cái bằng giấy trước khi cho vào thùng các-tông.",
+      "Thùng các-tông dùng xong thì gấp lại và bó bằng dây."
+    ]
+  },
+  "v-0369": {
+    "meaning": "Băng keo (loại dùng dán thùng hàng)",
+    "usage": "「ガムテープで｜留《と》める」, 「ガムテープを｜貼《は》る」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi dán băng keo chữ thập để nắp hộp không bật ra.",
+      "Tôi dán băng keo lên cửa sổ vỡ để chặn gió."
+    ]
+  },
+  "v-0370": {
+    "meaning": "Nhét, ấn vào (chỗ chật)",
+    "usage": "「〜に〜を｜押《お》し｜込《こ》む」, 「｜無理《むり》に｜押《お》し｜込《こ》む」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi nhét mạnh áo khoác vào cặp thì khóa kéo bị hỏng.",
+      "Tôi nhét chăn nệm vào tủ âm tường."
+    ]
+  },
+  "v-0371": {
+    "meaning": "Danh sách",
+    "usage": "「リストを｜作《つく》る」, 「リストに｜載《の》る」.",
+    "nuance": "「リストアップする」: lập thành danh sách để nêu ra.",
+    "compare": "",
+    "example_notes": [
+      "Tôi lập danh sách đồ mang theo để khỏi quên.",
+      "Cửa hàng trưởng lập danh sách hàng còn thiếu rồi gửi về trụ sở chính."
+    ]
+  },
+  "v-0372": {
+    "meaning": "Bị mắc vào, vướng; bị mắc lừa",
+    "usage": "「｜釘《くぎ》に｜引《ひ》っかかる」, 「｜話《はなし》に｜引《ひ》っかかる」. Dạng 「〜を｜引《ひ》っ｜掛《か》ける」: móc, treo vào.",
+    "nuance": "",
+    "compare": "Đều là \"vướng\": 「｜引《ひ》っ｜掛《か》かる」 là mắc vào một chỗ (đinh, bàn đạp); 「｜絡《から》まる」 là dây, tóc quấn rối vào nhau.",
+    "example_notes": [
+      "Gấu quần mắc vào bàn đạp xe đạp làm tôi suýt ngã.",
+      "Mắc lừa vụ làm ăn béo bở nên tôi mất hết tiền tiết kiệm."
+    ]
+  },
+  "v-0373": {
+    "meaning": "Nhấc lên (bằng tay)",
+    "usage": "「｜重《おも》い｜物《もの》を｜持《も》ち｜上《あ》げる」, 「｜持《も》ち｜上《あ》げて｜運《はこ》ぶ」.",
+    "nuance": "",
+    "compare": "\"Nhấc\" khác \"vác\": 「｜持《も》ち｜上《あ》げる」 nhấc lên bằng tay; 「｜担《かつ》ぐ」 đặt lên vai mà mang.",
+    "example_notes": [
+      "Tôi nhấc chậu cây lớn lên thì thấy nhẹ hơn tưởng.",
+      "Tôi nhấc bổng đứa bé lên cao rồi chụp ảnh."
+    ]
+  },
+  "v-0374": {
+    "meaning": "Vác (lên vai)",
+    "usage": "「｜荷物《にもつ》を｜担《かつ》ぐ」, 「みこしを｜担《かつ》ぐ」.",
+    "nuance": "",
+    "compare": "「｜担《かつ》ぐ」 = vác trên vai (kiệu, ba lô); chỉ dùng tay nhấc lên là 「｜持《も》ち｜上《あ》げる」.",
+    "example_notes": [
+      "Ở lễ hội, các chàng trai vác kiệu.",
+      "Người câu cá vác cần câu dài trên vai đi ra sông."
+    ]
+  },
+  "v-0375": {
+    "meaning": "Mệt mỏi, kiệt sức; (đồ) cũ sờn, mất dáng",
+    "usage": "「くたびれたので｜休《やす》む」, 「くたびれた｜服《ふく》」.",
+    "nuance": "",
+    "compare": "「くたびれる」: mệt, và cả đồ dùng lâu nên cũ sờn. 「｜疲労《ひろう》」: danh từ chỉ sự mệt. 「くたくた」, 「ぐったり」: tả dáng mệt.",
+    "example_notes": [
+      "Tổng vệ sinh, chạy tới chạy lui cả ngày nên tôi mệt rã rời.",
+      "Cái cặp da đã cũ sờn nhưng tôi quý nên không nỡ bỏ."
+    ]
+  },
+  "v-0376": {
+    "meaning": "Khe hở, khoảng trống",
+    "usage": "「すき｜間《ま》に｜落《お》ちる」, 「すき｜間《ま》を｜埋《う》める」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Ánh nắng buổi sáng chiếu vào qua khe rèm.",
+      "Cây bút rơi vào khe giữa tường và giá sách."
+    ]
+  },
+  "v-0377": {
+    "meaning": "Bên trong, thứ được đựng bên trong",
+    "usage": "「｜箱《はこ》の｜中身《なかみ》」, 「｜中身《なかみ》を｜出《だ》す」, 「｜中身《なかみ》を｜確《たし》かめる」.",
+    "nuance": "Cũng viết 「｜中味《なかみ》」.",
+    "compare": "",
+    "example_notes": [
+      "Món quà bên trong là gì thì giữ bí mật cho đến khi mở.",
+      "Phần bên trong chai nhựa đã vơi đi một nửa."
+    ]
+  },
   "v-0378": {
     "meaning": "(Người) làm nhanh cho xong việc, không lề mề",
     "usage": "Đi với hành động của người: 「さっさと帰る」, 「さっさと片付ける」, 「さっさと〜しなさい」 (mau mà làm đi). Có thể nói 「さっさとする」.",
     "nuance": "Chỉ tả cách một người hành động. Đề thi đã dùng câu sai 「さっさと雨が降り出した」, 「さっさと壊れた」: mưa hay đồ vật hỏng thì không dùng 「さっさと」.",
-    "compare": "「さっさと」: một người làm cho xong việc, không chần chừ. 「たちまち」: thay đổi đến ngay, cả với mưa, đồ vật. 「｜一気《いっき》に」: làm liền một mạch. 「｜至急《しきゅう》」: việc gấp, cần làm ngay. 「てきぱき」: nhanh, khéo.",
+    "compare": "「さっさと」: làm cho xong, không lề mề. 「たちまち」: đổi ngay cả với mưa, đồ vật. 「｜一気《いっき》に」: làm liền một mạch. 「｜至急《しきゅう》」: việc gấp, cần làm ngay. 「てきぱき」: nhanh mà khéo. 「さっと」: động tác chớp nhoáng.",
     "example_notes": [
       "Cuộc họp vừa xong là anh ấy về ngay mất.",
       "Quần áo phơi khô rồi thì mình gấp cho xong luôn đi."
+    ]
+  },
+  "v-0379": {
+    "meaning": "Treo, móc lên (cho thõng xuống)",
+    "usage": "「｜天井《てんじょう》からつるす」, 「つるして｜干《ほ》す」.",
+    "nuance": "Cũng có dạng 「つる」.",
+    "compare": "",
+    "example_notes": [
+      "Treo chuông gió dưới mái hiên thì nghe tiếng nghe mát mẻ.",
+      "Tôi treo đèn lồng lên dây thừng để đêm cắm trại được sáng."
+    ]
+  },
+  "v-0380": {
+    "meaning": "Đúng là, chính là; đúng vào lúc",
+    "usage": "「まさに〜だ」, 「まさに〜ようとしたとき」 (ngay lúc sắp…).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tay nghề của người thợ ấy đúng là xứng gọi là nghệ thuật.",
+      "Đúng lúc tôi sắp bấm nút thì màn hình tắt."
+    ]
+  },
+  "v-0381": {
+    "meaning": "Cảm giác khi ở một nơi (dễ chịu hay không)",
+    "usage": "「｜居心地《いごこち》がいい」, 「｜居心地《いごこち》が｜悪《わる》い」.",
+    "nuance": "Cùng kiểu có 「｜座《すわ》り｜心地《ここち》」, 「｜乗《の》り｜心地《ここち》」, 「｜着心地《きごこち》」.",
+    "compare": "",
+    "example_notes": [
+      "Quán cà phê này ở thấy dễ chịu nên tôi cứ ngồi lâu.",
+      "Dù là lần đầu đến nhà này mà tôi vẫn thấy thoải mái."
+    ]
+  },
+  "v-0382": {
+    "meaning": "Thay đổi hoàn toàn",
+    "usage": "「｜一変《いっぺん》する」, 「｜様子《ようす》が｜一変《いっぺん》する」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Từ khi nhà máy đóng cửa, bộ mặt thị trấn thay đổi hoàn toàn.",
+      "Bầu trời xanh ban nãy bỗng đổi khác, trời tối sầm lại."
+    ]
+  },
+  "v-0383": {
+    "meaning": "Ăng-ten; khả năng bắt thông tin",
+    "usage": "「テレビのアンテナ」, 「アンテナを｜張《は》る」 (luôn để ý đón bắt thông tin).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Gió mạnh làm cái ăng-ten trên mái nhà bị cong.",
+      "Phóng viên luôn dỏng tai để mắt xung quanh để không bỏ sót cả thay đổi nhỏ."
+    ]
+  },
+  "v-0384": {
+    "meaning": "Thà rằng, chi bằng (chọn cách dứt khoát hơn)",
+    "usage": "「いっそ〜しよう」, 「いっそ〜たらどうか」.",
+    "nuance": "",
+    "compare": "Đều dịch được là \"thà\": 「むしろ」 so hai bên rồi nghiêng về một bên; 「いっそ」 là dứt khoát chọn hẳn cách khác (mua mới, vứt hết).",
+    "example_notes": [
+      "Sửa hoài mà vẫn hỏng thì thà mua cái mới còn rẻ hơn.",
+      "Giữ lại nửa vời thì thà vứt hết đi."
     ]
   },
   "v-0389": {
@@ -2981,7 +3671,7 @@
     "meaning": "Xử lý, giải quyết cho xong (rác, giấy tờ, dữ liệu, việc tồn)",
     "usage": "「ごみを処理する」, 「書類を処理する」, 「〜を処理しきれない」 (xử lý không xuể). Hán Việt \"xử lý\", nghĩa gần như tiếng Việt.",
     "nuance": "Đọc 「しょり」: 「処」 là 「しょ」 ngắn. Đề thi đã cho 「しゅり」「しょうり」「しゅうり」 làm phương án sai.",
-    "compare": "",
+    "compare": "「処理」 nghĩa như \"xử lý\" tiếng Việt: giải quyết việc, rác, giấy tờ cho xong. 「｜処分《しょぶん》」 là vứt bỏ hẳn, hoặc xử phạt người vi phạm.",
     "example_notes": [
       "Cho đến khi xử lý xong vụ tai nạn, con đường này không đi qua được.",
       "Email nhiều quá, trong một ngày không xử lý hết được."
@@ -3181,7 +3871,7 @@
     "meaning": "Trừ ra, không tính (một phần) vào",
     "usage": "「〜を除いて」 (trừ ~ ra): 「日曜日を除いて」, 「一人を除いて全員」. Dạng 「〜を除けば」 cũng có.",
     "nuance": "Đọc 「のぞく」. Đề thi đã gài 「はぶいて」「ぬいて」「ひいて」 — đều mang ý \"bỏ bớt, rút ra\". Chữ của 「はぶく」 là 「省く」, không phải 「除く」.",
-    "compare": "",
+    "compare": "「除く」: trừ ra, không tính vào. 「｜取《と》り｜除《のぞ》く」: lấy hẳn thứ gây vướng đi (rác, xương).",
     "example_notes": [
       "Chúng tôi mở cửa đến 8 giờ tối hằng ngày, trừ Chủ nhật.",
       "Trừ một người, cả lớp đều thi đỗ."
@@ -3971,7 +4661,7 @@
     "meaning": "Sự mệt mỏi, mỏi mệt (của cơ thể, của mắt)",
     "usage": "「疲労がたまる」, 「目の疲労」, 「疲労を回復する」, 「疲労する」. Hán Việt \"bì lao\".",
     "nuance": "Viết: 「疲」 (mệt) + 「労」 (nhọc). Đề thi đã gài 「病労」「疲老」「病老」 — 「病」 cũng mang ý ốm mệt, 「老」 cùng âm 「ろう」.",
-    "compare": "「疲労」: danh từ, sự mệt mỏi của cơ thể, tinh thần: 「疲労がたまる」. 「くたくた」, 「ぐったり」: từ tượng hình tả dáng người mệt rã rời, rũ ra: 「くたくたになる」, 「ぐったりする」.",
+    "compare": "「疲労」: danh từ, sự mệt mỏi của cơ thể, tinh thần: 「疲労がたまる」. 「くたくた」, 「ぐったり」: từ tượng hình tả dáng người mệt rã rời, rũ ra: 「くたくたになる」, 「ぐったりする」. 「くたびれる」: còn nghĩa cũ sờn.",
     "example_notes": [
       "Vì cứ đọc chữ nhỏ mãi nên mắt tôi mỏi rã rời.",
       "Chạy marathon xong, chân tôi vẫn còn mỏi nên leo cầu thang thật khổ sở."
@@ -4250,7 +4940,7 @@
     "meaning": "Đòi hỏi, yêu cầu người khác phải làm, phải đáp ứng",
     "usage": "「〜を要求する」, 「〜ように要求する」, 「〜が要求される」 (năng lực được đòi hỏi). Hán Việt \"yêu cầu\".",
     "nuance": "Đọc 「ようきゅう」: cả hai âm đều dài, không có 「っ」. Đề thi đã gài 「ようきゅ」「よっきゅう」「よっきゅ」.",
-    "compare": "「要求」: đòi bên kia làm điều mình cho là đương nhiên: 「支払いを要求する」. 「｜催促《さいそく》」: giục làm nhanh việc người kia còn chưa làm. 「ニーズ」: nhu cầu của khách, của xã hội.",
+    "compare": "「要求」: đòi bên kia làm điều mình cho là đương nhiên: 「支払いを要求する」. 「｜催促《さいそく》」: giục người kia làm nhanh việc còn chưa làm. 「ニーズ」: nhu cầu của khách, xã hội. 「リクエスト」: nhờ theo ý thích.",
     "example_notes": [
       "Tôi bị người nhà bên yêu cầu cắt cành cây trong vườn.",
       "Email bất ngờ gửi đến đòi tôi trả một khoản phí mà tôi không hề biết."
@@ -4700,7 +5390,7 @@
     "meaning": "Làm cho cứng, chắc lại; quyết chắc (ý định, phương án)",
     "usage": "「土を固める」, 「ゼリーを固める」, 「方針を固める」 (chốt phương án), 「決意を固める」 (hạ quyết tâm).",
     "nuance": "Tự động từ là 「｜固《かた》まる」: 「ゼリーが固まる」 (thạch đông lại). Đề điền từ: hạ quyết tâm làm bác sĩ → 「固めた」; nhiễu 「まとめた」「仕上げた」「合わせた」.",
-    "compare": "",
+    "compare": "「｜固《かた》める」: có người làm cho cứng, đi với 「〜を」. 「｜固《かた》まる」: vật tự đông cứng.",
     "example_notes": [
       "Để đất bồn hoa không bị mưa làm lở, tôi lấy tấm ván nện cho đất chắc lại.",
       "Thành phố đã chốt phương án làm một mái che lớn ở quảng trường trước ga."
@@ -5089,7 +5779,7 @@
     "meaning": "Vi phạm (luật lệ, quy định, hợp đồng)",
     "usage": "「規則に違反する」, 「契約に違反する」, 「ルール違反」, 「規則違反になる」. Đối tượng đứng trước 「に」. Hán Việt \"vi phản\".",
     "nuance": "Chỉ dùng với luật, quy tắc. Đề thi coi là sai: 「親に違反する」 (chống đối cha mẹ), 「意見に違反する」 (phản đối ý kiến), 「予想に違反して」 (trái dự đoán).",
-    "compare": "",
+    "compare": "「違反」: hành vi không tuân thủ luật, quy định, cam kết. 「｜処分《しょぶん》」: hình phạt nhận sau đó, hoặc việc vứt bỏ đồ.",
     "example_notes": [
       "Công ty yêu cầu đối tác giải thích vì cho rằng họ đã vi phạm hợp đồng.",
       "Dùng điện thoại trong giờ thi là vi phạm quy chế."
@@ -5269,7 +5959,7 @@
     "meaning": "Bị vướng víu, quấn chặt vào nhau rối rắm",
     "usage": "「糸が絡まる」 (chỉ bị rối), 「コードが絡まる」, 「髪が絡まる」.",
     "nuance": "",
-    "compare": "",
+    "compare": "「絡まる」: dây, tóc quấn rối vào nhau. 「｜引《ひ》っ｜掛《か》かる」: mắc vào một chỗ nào đó, hoặc mắc lừa.",
     "example_notes": [
       "Dây câu bị quấn chặt vào tảng đá mãi vẫn chưa gỡ ra được.",
       "Trong ngăn kéo, dây tai nghe đã bị quấn rối mù vào nhau."
@@ -5358,7 +6048,7 @@
     "meaning": "Quy mô, tầm vóc lớn nhỏ của sự việc, tổ chức",
     "usage": "「大規模」 (quy mô lớn), 「小規模」 (quy mô nhỏ), 「規模を拡大する」, 「規模を縮小する」.",
     "nuance": "",
-    "compare": "",
+    "compare": "「規模」 là \"quy mô\", nghĩa như tiếng Việt: độ lớn của cả sự việc. 「｜大小《だいしょう》」: to nhỏ của từng vật.",
     "example_notes": [
       "Thành phố đã quyết định thu hẹp quy mô của lễ hội pháo hoa vào năm tới.",
       "Chợ sách cũ cuối tuần có quy mô nhỏ xíu, chỉ vỏn vẹn chừng mười tiệm mở bán."

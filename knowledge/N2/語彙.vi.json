@@ -432,7 +432,7 @@
     "meaning": "Ngán ngẩm, sững sờ (vì điều quá tệ)",
     "usage": "「〜にあきれる」, 「すっかりあきれる」, 「あきれてしまう」.",
     "nuance": "Dễ lẫn hình với 「あきる」 (chán), 「あきらめる」 (bỏ cuộc), 「あこがれる」 (ngưỡng mộ, mong được như).",
-    "compare": "",
+    "compare": "「あきれる」: ngán ngẩm, sững sờ vì điều quá tệ: 「すっかりあきれる」. 「｜飽《あ》きる」: chán vì làm, ăn mãi một thứ: 「ゲームに飽きる」.",
     "example_notes": [
       "Chính sếp nhờ tôi làm việc đó, vậy mà giờ đã quên mất, tôi thật ngán ngẩm."
     ]
@@ -632,7 +632,7 @@
     "meaning": "Tiếp xúc, cư xử với người; giáp, nằm sát cạnh",
     "usage": "① 「人と接する」, 「留学生と接する」, 「異文化に接する」. ② 「国境を接する」, 「〜と接している」.",
     "nuance": "Hán Việt \"tiếp\", như trong 「｜接触《せっしょく》」.",
-    "compare": "「接する」: cư xử với người; còn là giáp ranh: 「国境を接する」. 「｜触《ふ》れる」: chạm vào; nhắc đến. Cả 「異文化に接する」 lẫn 「文化に触れる」 đều là tiếp xúc văn hóa.",
+    "compare": "「接する」: cư xử với người; còn là giáp ranh: 「国境を接する」. 「｜触《ふ》れる」: chạm vào; nhắc đến. Cả 「異文化に接する」 lẫn 「文化に触れる」 đều là tiếp xúc văn hóa. 「扱う」: đối xử, coi như thế nào: 「子ども扱い」.",
     "example_notes": [
       "Vào câu lạc bộ, tôi có thêm dịp tiếp xúc với du học sinh, nên cũng dần quen nói tiếng Anh.",
       "Nước đó có chung đường biên giới với năm nước."
@@ -1249,7 +1249,7 @@
     "meaning": "Khoản vay trả dần (để mua nhà, xe)",
     "usage": "「〜年ローン」, 「ローンを返す」, 「｜住宅《じゅうたく》ローン」 (khoản vay mua nhà).",
     "nuance": "",
-    "compare": "",
+    "compare": "「ローン」: khoản vay ngân hàng trả dần từng tháng: 「住宅ローン」. 「返済」: hành động trả lại tiền đã vay: 「ローンを返済する」.",
     "example_notes": [
       "Bố tôi dự định trả xong khoản vay mua nhà trước tuổi sáu mươi."
     ]
@@ -1339,7 +1339,7 @@
     "meaning": "Không gian, khoảng trống",
     "usage": "「〜の空間」, 「空間を使う」, 「空間を生かす」 (tận dụng không gian). Hán Việt \"không gian\", nghĩa như tiếng Việt.",
     "nuance": "",
-    "compare": "",
+    "compare": "「空間」: khoảng không, khoảng trống, cả bề cao bề rộng: 「広い空間」. 「スペース」: chỗ trống để đặt đồ, đỗ xe…: 「スペースを空ける」.",
     "example_notes": [
       "Tôi tận dụng khoảng trống dưới gầm giường để cất quần áo theo mùa."
     ]
@@ -1455,11 +1455,76 @@
       "Vừa chuyển vào nhà mới xây, phòng nào cũng còn mùi gỗ."
     ]
   },
+  "v-0159": {
+    "meaning": "Thu nhập, khoản tiền kiếm được",
+    "usage": "Hán Việt \"thu nhập\". Trái nghĩa: 「｜支出《ししゅつ》」 (khoản chi ra). Gần nghĩa: 「｜所得《しょとく》」, 「｜年収《ねんしゅう》」 (thu nhập cả năm).",
+    "nuance": "",
+    "compare": "「収入」: tiền đi vào túi mình (lương, tiền làm thêm). 「｜出費《しゅっぴ》」: tiền mình phải bỏ ra: 「出費が多い」.",
+    "example_notes": [
+      "Chỉ làm thêm cuối tuần thì không có được khoản thu nhập đủ để sống."
+    ]
+  },
+  "v-0160": {
+    "meaning": "Cực kỳ, vô cùng (đứng trước từ chỉ mức độ, số lượng)",
+    "usage": "「ごく一部」 (một phần rất nhỏ), 「ごく短い時間」 (thời gian rất ngắn).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Nghe nói số người uống thuốc này mà bị buồn ngủ chỉ là một phần rất nhỏ."
+    ]
+  },
+  "v-0161": {
+    "meaning": "Nhiều lắm cũng chỉ, tối đa là; (cố) hết sức trong khả năng",
+    "usage": "① Mức trên cùng mà vẫn nhỏ: 「せいぜい一人だろう」, 「せいぜい〜だろう」. ② Khuyên ai làm hết mình trong khả năng: 「せいぜい楽しむ」.",
+    "nuance": "Nghĩa ① là \"nhiều nhất\", không phải \"ít nhất\": không dùng để nói mức tối thiểu cần có.",
+    "compare": "",
+    "example_notes": [
+      "Với doanh thu hiện giờ của tiệm, nhiều lắm cũng chỉ thuê được một người làm thêm.",
+      "Nghe nói suốt chuyến đi trời sẽ đẹp, nên cứ vui chơi cho thỏa nhé."
+    ]
+  },
+  "v-0162": {
+    "meaning": "Khoản chi tiêu, tiền phải bỏ ra",
+    "usage": "「大きな出費」, 「出費を減らす」, 「出費する」. Gần nghĩa: 「｜経費《けいひ》」 (kinh phí). Hán Việt \"xuất phí\".",
+    "nuance": "",
+    "compare": "「出費」: tiền mình bỏ ra: 「出費を減らす」. 「｜収入《しゅうにゅう》」: tiền mình thu vào: 「生活できるほどの収入」.",
+    "example_notes": [
+      "Hai đứa con cùng vào trường trong một năm, nên mùa xuân năm đó các khoản chi cứ dồn lên."
+    ]
+  },
+  "v-0163": {
+    "meaning": "Lỗ, thâm hụt (chi nhiều hơn thu); chữ đỏ sửa bài",
+    "usage": "① 「赤字になる」, 「赤字に終わる」 (rốt cuộc bị lỗ). ② 「赤字で直す」 (sửa bằng chữ đỏ).",
+    "nuance": "Nghĩa ② không phải mọi chữ màu đỏ, mà là chữ đỏ ghi vào bài để sửa lỗi.",
+    "compare": "",
+    "example_notes": [
+      "Lễ hội mùa hè này vì mưa mà khách không đến, rốt cuộc bị lỗ.",
+      "Tài liệu này, hãy sửa đúng theo chỗ trưởng phòng ghi chữ đỏ rồi hẵng phát."
+    ]
+  },
+  "v-0164": {
+    "meaning": "Số tiền lớn, món tiền to",
+    "usage": "「大金を持ち歩く」 (mang theo người số tiền lớn). Hán Việt \"đại kim\".",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Mang theo người số tiền lớn như thế thì nguy hiểm, nên gửi vào ngân hàng thì hơn."
+    ]
+  },
+  "v-0165": {
+    "meaning": "Tiền thuế",
+    "usage": "「税金を払う」, 「税金が上がる」. 「｜税込《ぜいこみ》」: giá đã gồm thuế.",
+    "nuance": "",
+    "compare": "「税金」: tiền thuế nói chung, nộp cho nhà nước, thành phố. 「｜消費税《しょうひぜい》」: thuế cộng thêm khi mua hàng: 「消費税だけで八百円」.",
+    "example_notes": [
+      "Bằng tiền thuế thu được, một thư viện mới đã được xây ở trước ga."
+    ]
+  },
   "v-0166": {
     "meaning": "Nộp (thuế, học phí, lệ phí) cho nơi quy định",
     "usage": "「税金を納める」, 「授業料を納める」, 「入学金を納める」, 「期日までに納める」 (nộp trước hạn).",
     "nuance": "Đọc 「おさめる」. Đề thi đã cho 「さだめた」「ためた」「もとめた」 làm phương án sai khi hỏi cách đọc 「納めた」.",
-    "compare": "「納める」: nộp khoản tiền phải đóng cho nhà nước, nhà trường. 「会計」: tính tiền, thanh toán sau khi ăn uống, mua hàng: 「会計を済ませる」. 「｜収《おさ》まる」: lắng xuống, nằm gọn: 「風が収まる」.",
+    "compare": "「納める」: đóng khoản phải nộp (thuế, học phí). 「会計」: tính tiền ở quán, cửa hàng: 「会計を済ませる」. 「｜収《おさ》まる」: lắng xuống, nằm gọn: 「風が収まる」. 「｜払《はら》い｜込《こ》む」: trả qua ngân hàng, ATM: 「銀行で払い込む」.",
     "example_notes": [
       "Thuế của nhân viên công ty được trừ vào lương hằng tháng để nộp."
     ]
@@ -1474,6 +1539,60 @@
       "Nước suối nóng này chứa nhiều chất sắt nên có màu hơi đỏ."
     ]
   },
+  "v-0168": {
+    "meaning": "Phí dịch vụ công cộng (tiền điện, nước, ga nói chung)",
+    "usage": "「公共料金が上がる」 (phí dịch vụ công cộng tăng). Hán Việt \"công cộng\".",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Từ tháng tư, các khoản phí công cộng như điện, ga sẽ tăng, nên tôi lo cho chi tiêu trong nhà."
+    ]
+  },
+  "v-0169": {
+    "meaning": "Nộp tiền vào (qua ngân hàng, máy ATM) để trả một khoản",
+    "usage": "「〜を払い込む」: 「会費を払い込む」, 「銀行で払い込む」. Gần nghĩa: 「｜振《ふ》り｜込《こ》む」 (chuyển khoản).",
+    "nuance": "",
+    "compare": "「払い込む」: nói cách trả, đưa tiền vào qua ngân hàng, ATM: 「銀行で払い込む」. 「｜納《おさ》める」: nói việc đóng khoản phải nộp cho nơi quy định: 「税金を納める」.",
+    "example_notes": [
+      "Năm nào ông tôi cũng ra quầy bưu điện nộp tiền đặt mua tạp chí cả năm."
+    ]
+  },
+  "v-0170": {
+    "meaning": "Việc tiền bị trừ thẳng từ tài khoản ngân hàng (để trả phí)",
+    "usage": "「引き落とし日」 (ngày trừ tiền), 「料金の引き落とし」. Động từ: 「｜引《ひ》き｜落《お》とす」: 「口座から引き落とす」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Ngày tiền cước điện thoại di động bị trừ từ tài khoản là ngày 27 hằng tháng."
+    ]
+  },
+  "v-0171": {
+    "meaning": "Lệ phí, phí dịch vụ (khi gửi, rút tiền…)",
+    "usage": "「手数料が高い」, 「手数料無料」 (miễn phí dịch vụ).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Gửi tiền vào tài khoản ở nước ngoài, tôi bất ngờ vì phí cao hơn mình tưởng."
+    ]
+  },
+  "v-0172": {
+    "meaning": "Việc gửi tiền vào và rút tiền ra; tiền ra tiền vào",
+    "usage": "「お金の出し入れ」, 「出し入れする」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Bà tôi ghi hết mọi khoản tiền ra vào vào sổ chi tiêu gia đình."
+    ]
+  },
+  "v-0173": {
+    "meaning": "Rốt cuộc tốn kém, thành ra tốn nhiều tiền hơn",
+    "usage": "「〜より高くつく」 (tốn hơn so với…). Trái nghĩa: 「｜安《やす》く｜済《す》む」 (xong việc mà ít tốn).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Ngày nào cũng mua đồ uống ở cửa hàng tiện lợi thì tốn hơn là mua gộp ở siêu thị."
+    ]
+  },
   "v-0174": {
     "meaning": "Số dư (tiền còn lại trong tài khoản, trong thẻ)",
     "usage": "「口座の残高」, 「カードの残高」, 「残高が足りない」, 「残高が減る」, 「残高をチェックする」.",
@@ -1482,6 +1601,33 @@
     "example_notes": [
       "Số dư trong thẻ không đủ nên tôi bị chặn lại ở cửa soát vé nhà ga.",
       "Tiền dùng thẻ ở nước ngoài bị trừ, số dư trong tài khoản giảm hẳn một lúc."
+    ]
+  },
+  "v-0175": {
+    "meaning": "Chăm chỉ, cặm cụi làm hăng say không nghỉ tay",
+    "usage": "「せっせと〜する」: 「せっせと働く」, 「せっせと草を抜く」.",
+    "nuance": "",
+    "compare": "「せっせと」: đang cặm cụi làm không nghỉ tay: 「せっせと草を抜く」. 「こつこつ」: bền bỉ từng chút qua thời gian dài: 「こつこつためる」.",
+    "example_notes": [
+      "Sáng nào ông tôi cũng chăm chỉ nhổ cỏ trong vườn."
+    ]
+  },
+  "v-0176": {
+    "meaning": "Sơ lược, chỉ nắm những nét chính",
+    "usage": "「大まかな予定」, 「大まかに説明する」 (giải thích sơ qua).",
+    "nuance": "Trong đề, người không giữ cả quy tắc mình đặt ra là 「いいかげんな」, ảnh hưởng rất lớn là 「多大な」; 「大まかな」 là phương án sai ở cả hai câu.",
+    "compare": "",
+    "example_notes": [
+      "Trước hết hãy định lịch trình sơ lược của chuyến đi, chi tiết thì tính sau."
+    ]
+  },
+  "v-0177": {
+    "meaning": "Trừ đi (một khoản) khỏi tổng số",
+    "usage": "「AからBを差し引く」: 「合計から差し引く」, 「代金から差し引く」; bị động: 「差し引かれる」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Dùng phiếu giảm giá này thì 500 yên được trừ vào tổng tiền."
     ]
   },
   "v-0178": {
@@ -1494,6 +1640,15 @@
       "Công ty đang nỗ lực thực hiện các biện pháp an toàn để ngăn ngừa tai nạn."
     ]
   },
+  "v-0179": {
+    "meaning": "Trả hộ trước, ứng tiền trước (người kia trả lại sau)",
+    "usage": "「〜を立て替える」: 「代金を立て替える」 (trả hộ trước tiền hàng).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tiền khách sạn khi đi công tác sau này công ty sẽ trả lại, nên tạm thời tôi tự ứng ra."
+    ]
+  },
   "v-0180": {
     "meaning": "Viện trợ, giúp đỡ bằng tiền bạc hay vật chất",
     "usage": "「援助する」, 「援助を受ける」, 「学費の援助」, 「親に援助してもらう」, 「食料を援助する」. Hán Việt \"viện trợ\" (「援」 viện, 「助」 trợ).",
@@ -1504,6 +1659,129 @@
       "Tổ chức đó hỗ trợ việc học của trẻ em ở nước ngoài."
     ]
   },
+  "v-0181": {
+    "meaning": "Trả nợ, hoàn trả số tiền đã vay",
+    "usage": "「〜を返済する」: 「ローンを返済する」; 「〜の返済」: 「奨学金の返済」 (trả khoản học bổng đã vay).",
+    "nuance": "",
+    "compare": "「返済」: người đi vay trả lại tiền đã mượn: 「ローンを返済する」. 「｜返金《へんきん》」: bên đã nhận tiền trả lại cho người đã trả: 「会費が返金される」. 「ローン」: khoản vay trả dần từng kỳ; 「ローンの返済」 là việc trả khoản đó.",
+    "example_notes": [
+      "Để trả khoản học bổng đã vay, mỗi tháng tôi để dành 20.000 yên."
+    ]
+  },
+  "v-0182": {
+    "meaning": "Ổn định, không thay đổi lớn; vững, không lắc, không đổ",
+    "usage": "① 「安定する」, 「安定している」. ② Đồ vật đặt xuống: 「安定が悪い」 (không vững). Trái nghĩa: 「｜不安定《ふあんてい》な」; 「｜安定感《あんていかん》」: cảm giác ổn định.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Từ khi bắt đầu uống thuốc, huyết áp của bà tôi ổn định.",
+      "Cái thang gấp này đứng không vững, nên khi trèo lên tôi nhờ người giữ cho."
+    ]
+  },
+  "v-0183": {
+    "meaning": "Sự kén chọn, thích cái này ghét cái kia (ăn uống)",
+    "usage": "「好き嫌いなく食べる」 (ăn không kén). Thành ngữ gần nghĩa trong tiếng Việt: \"kén cá chọn canh\".",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Chồng tôi kén ăn dữ lắm, nên lần nào chọn quán để ăn ngoài cũng vất vả."
+    ]
+  },
+  "v-0184": {
+    "meaning": "Món ưa thích, thứ mình thích ăn",
+    "usage": "「〜の好物」, 「好物のおやつ」. 「｜大好物《だいこうぶつ》」: món cực kỳ thích. Hán Việt \"hảo vật\".",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Đi dạo về, tôi có lệ cho con chó một món ăn vặt mà nó thích."
+    ]
+  },
+  "v-0185": {
+    "meaning": "Chán, hết hứng vì lặp mãi một thứ",
+    "usage": "「〜に飽きる」: 「ゲームに飽きる」; 「飽きてしまう」.",
+    "nuance": "",
+    "compare": "「飽きる」: chán vì làm, ăn mãi một thứ: 「ゲームに飽きる」. 「あきれる」: ngán ngẩm, sững sờ vì điều quá tệ: 「すっかりあきれる」. Hai từ chỉ khác 「る」/「れる」.",
+    "example_notes": [
+      "Phòng tập hồi đầu ngày nào tôi cũng đến, vậy mà nửa năm đã chán mất rồi."
+    ]
+  },
+  "v-0186": {
+    "meaning": "Thấy thiếu thiếu, chưa đủ để thỏa mãn",
+    "usage": "「少し物足りない」, 「〜では物足りない」 (chỉ… thì chưa đủ).",
+    "nuance": "Đề thi coi là sai khi dùng cho nỗi buồn vì bạn chuyển trường, sự bỡ ngỡ khi mới đến, hay sự thất vọng vì tiệc bị hủy. Đúng: lớp quá dễ nên thấy chưa đủ.",
+    "compare": "",
+    "example_notes": [
+      "Kỳ nghỉ chỉ có hai ngày thì đi du lịch hơi thiếu thiếu."
+    ]
+  },
+  "v-0187": {
+    "meaning": "Lượng nhiều, độ đầy đặn (món ăn); âm lượng (tiếng)",
+    "usage": "① 「ボリュームたっぷり」 (nhiều, đầy đặn). ② 「ボリュームを上げる」, 「ボリュームを小さくする」 (tăng, giảm âm lượng).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Hộp cơm này rẻ mà lượng nhiều, nên được sinh viên ưa chuộng.",
+      "Mở âm lượng tai nghe to quá thì sẽ hại tai đấy."
+    ]
+  },
+  "v-0188": {
+    "meaning": "Một miếng, một ngụm; (ăn) gọn trong một miếng",
+    "usage": "① 「一口で」: cả món vừa một miếng: 「一口で口に入る」. ② Chỉ ăn, uống một chút: 「一口飲む」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Chiếc bánh manjū này nhỏ, cỡ vừa một miếng bỏ vào miệng.",
+      "Uống một ngụm súp, tôi nhận ra vị y hệt món mẹ nấu."
+    ]
+  },
+  "v-0189": {
+    "meaning": "Cắn, gặm (một miếng, từng chút)",
+    "usage": "「〜をかじる」: 「パンをかじる」, 「いすの脚をかじる」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Con chó nhà tôi cứ gặm chân ghế những lúc nhà không có ai."
+    ]
+  },
+  "v-0190": {
+    "meaning": "Một khi đã (… thì …)",
+    "usage": "「ひとたび〜と」, 「ひとたび〜たら」: một khi đã… thì kết quả theo sau.",
+    "nuance": "Là cách nói cứng hơn của 「いったん」 và 「一度」.",
+    "compare": "「ひとたび」: một khi đã… thì…: 「ひとたび聞くと」. 「いったん」: cũng có nghĩa này, và còn nghĩa tạm làm một bước rồi tiếp: 「いったん家に帰る」.",
+    "example_notes": [
+      "Bài hát này một khi đã nghe thì cả ngày cứ lởn vởn trong đầu."
+    ]
+  },
+  "v-0191": {
+    "meaning": "Ngon; giỏi, khéo (làm việc gì)",
+    "usage": "① Gần nghĩa 「おいしい」: 「うまい魚」. ② Gần nghĩa 「上手だ」: 「〜がうまい」, 「〜のがうまい」 (giỏi làm…).",
+    "nuance": "",
+    "compare": "「うまい」: (món) ngon; (ai) làm việc gì giỏi, khéo: 「覚えるのがうまい」. 「いける」: uống được rượu; làm được khá: 「カレーならいける」.",
+    "example_notes": [
+      "Cá vừa đánh bắt sáng sớm thì chỉ nướng thôi cũng ngon.",
+      "Chị tôi giỏi nhớ mặt những người mới gặp một lần."
+    ]
+  },
+  "v-0192": {
+    "meaning": "Uống được (rượu); làm được, khá (việc gì)",
+    "usage": "① Uống được: 「日本酒ならいける」. ② Làm được: 「〜ならいける」 (nếu là… thì làm được).",
+    "nuance": "Với hai nghĩa này không dùng thể phủ định 「いけない」.",
+    "compare": "「いける」: làm được, uống được: 「日本酒ならいける」. 「うまい」: ngon; giỏi, khéo: 「顔を覚えるのがうまい」.",
+    "example_notes": [
+      "Bố tôi thường ngày không uống, nhưng nghe nói rượu Nhật thì uống được chút ít.",
+      "Tôi kém nấu ăn, nhưng món cà ri thì đến tôi cũng nấu được."
+    ]
+  },
+  "v-0193": {
+    "meaning": "Chát (vị); trầm, mộc mạc mà tao nhã (màu, sở thích)",
+    "usage": "① 「渋い柿」: vị chát làm tê lưỡi. ② 「渋い色」, 「色も形も渋い」: trầm, già dặn.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Quả hồng này còn chát, không ăn ngay được.",
+      "Chiếc chén trà này cả màu lẫn dáng đều trầm nhã, là món ông tôi ưng ý."
+    ]
+  },
   "v-0194": {
     "meaning": "(Lời nói) dài dòng, lặp đi lặp lại; (vị) quá đậm, ngấy",
     "usage": "Nghĩa 1: 「話がくどい」, 「説明がくどい」, 「くどい人」. Nghĩa 2: 「くどい味」, 「ソースが少しくどい」 (nhiều bơ, kem).",
@@ -1512,6 +1790,33 @@
     "example_notes": [
       "Cuốn tiểu thuyết này cứ lặp đi lặp lại những đoạn giải thích giống nhau, dài dòng quá nên tôi bỏ đọc giữa chừng.",
       "Hồi trẻ tôi thích thịt nhiều mỡ, nhưng dạo này lại thấy ngấy."
+    ]
+  },
+  "v-0195": {
+    "meaning": "Nhà hàng gia đình, quán ăn bình dân",
+    "usage": "Dạng nói gọn của 「ファミリーレストラン」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Quán nhà hàng gia đình mở cả đêm đông nghịt người tan làm."
+    ]
+  },
+  "v-0196": {
+    "meaning": "Bữa ăn đủ các món theo thứ tự, từ khai vị đến tráng miệng",
+    "usage": "Gần nghĩa: 「コース料理」 (bữa ăn theo set món).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Bữa ăn trọn bộ của tiệm này có bảy đĩa lần lượt được mang ra, từ khai vị đến tráng miệng."
+    ]
+  },
+  "v-0197": {
+    "meaning": "Việc gọi món, đặt món (ở quán ăn)",
+    "usage": "「オーダーする」, 「料理をオーダーする」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Món được mang ra khác với món tôi đã gọi với nhân viên."
     ]
   },
   "v-0198": {
@@ -1534,6 +1839,88 @@
       "Thanh toán xong ra khỏi quán, tôi mới nhận ra mình quên cái ô."
     ]
   },
+  "v-0200": {
+    "meaning": "Kiểu ăn tự chọn, lấy món tùy thích",
+    "usage": "「バイキング形式」 (kiểu tự chọn). Gần nghĩa: 「ビュッフェ」 (ăn buffet).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Bữa tự chọn của tiệm này, trong vòng 90 phút thì lấy món gì, bao nhiêu lần cũng được."
+    ]
+  },
+  "v-0201": {
+    "meaning": "Cái khay, cái mâm (để bưng đồ ăn)",
+    "usage": "Cũng viết 「トレー」. 「トレイごと」: cả khay.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Ăn xong, xin để nguyên cả khay vào chỗ trả khay."
+    ]
+  },
+  "v-0202": {
+    "meaning": "Đồ đựng thức ăn (chén, bát, đĩa nói chung)",
+    "usage": "「〜の器」, 「器に盛る」 (bày món ăn vào chén đĩa). Hán Việt \"khí\".",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Mẹ bày thức ăn vào chiếc chén gốm tôi mua ở nơi đi du lịch."
+    ]
+  },
+  "v-0203": {
+    "meaning": "Chồng lên nhau; làm thêm nhiều lần (việc, sự việc)",
+    "usage": "① 「二枚重ねて着る」, 「本を重ねる」. ② 「失敗を重ねる」, 「練習を重ねる」.",
+    "nuance": "",
+    "compare": "「重ねる」: đặt vật này lên trên vật kia, hay làm thêm nhiều lần: 「失敗を重ねる」. 「｜積《つ》む」: chất đồ lên cao, lên xe; tích dần: 「経験を積む」.",
+    "example_notes": [
+      "Ngày lạnh tôi mặc chồng hai chiếc áo len.",
+      "Thất bại hết lần này đến lần khác, tôi dần hiểu ra mình hay sai ở chỗ nào."
+    ]
+  },
+  "v-0204": {
+    "meaning": "(Xếp) thành hàng dài, la liệt",
+    "usage": "「ずらりと並ぶ」. Cùng nghĩa: 「ずらっと」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Trong bãi đỗ xe, những chiếc xe trắng cùng kiểu xếp thành hàng dài."
+    ]
+  },
+  "v-0205": {
+    "meaning": "Lương thực chính, thức ăn chính hằng ngày (như gạo)",
+    "usage": "Hán Việt \"chủ thực\" (thức ăn chính).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Ở vùng này từ xưa, lương thực chính là khoai chứ không phải gạo."
+    ]
+  },
+  "v-0206": {
+    "meaning": "Sống, chưa nấu chín",
+    "usage": "「生のまま」, 「生の魚」. Ghép: 「｜生野菜《なまやさい》」 (rau sống), 「｜生《なま》ビール」 (bia tươi).",
+    "nuance": "",
+    "compare": "「生」: trạng thái chưa nấu chín: 「生のまま食べる」. 「なま物」: chính món đồ ăn tươi sống đó, dễ hỏng: 「なま物を贈る」.",
+    "example_notes": [
+      "Cà chua này ngọt, nên đừng nướng mà để sống làm salad đi."
+    ]
+  },
+  "v-0207": {
+    "meaning": "Đồ ăn tươi sống, chưa qua nấu nướng",
+    "usage": "「なま物を贈る」 (gửi tặng đồ tươi sống).",
+    "nuance": "",
+    "compare": "「なま物」: danh từ chỉ thứ đồ ăn tươi sống: 「なま物を贈る」. 「｜生《なま》」: trạng thái chưa nấu: 「生のまま」.",
+    "example_notes": [
+      "Nếu gửi quà mùa hè là đồ tươi sống, nên hỏi trước ngày người nhận có ở nhà."
+    ]
+  },
+  "v-0208": {
+    "meaning": "Làm riêng, chế biến đặc biệt (món của nhà, của tiệm)",
+    "usage": "「特製ソース」, 「店の特製」. Hán Việt \"đặc chế\".",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Nước sốt đặc chế của tiệm này được làm từ 20 loại rau."
+    ]
+  },
   "v-0209": {
     "meaning": "Đơn sơ, tồi tàn; đối xử cẩu thả, coi nhẹ",
     "usage": "「粗末な食事」, 「粗末な小屋」, 「物を粗末にする」 (không biết quý trọng đồ đạc).",
@@ -1544,22 +1931,294 @@
       "Tôi đã dùng đồ mượn một cách cẩu thả làm nó bị hỏng mất."
     ]
   },
+  "v-0210": {
+    "meaning": "Mua vào (hàng hóa, đồ vật)",
+    "usage": "「購入する」, 「品物を購入する」. Trái nghĩa: 「｜販売《はんばい》」 (bán).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Thành phố đã mua ba chiếc xe mới thay cho những xe cứu thương đã cũ."
+    ]
+  },
+  "v-0211": {
+    "meaning": "Món hời, mua được với giá có lợi",
+    "usage": "「お買い得だ」, 「お買い得なセット」. Cũng nói 「買い得」.",
+    "nuance": "",
+    "compare": "「お買い得」: món hàng mua được lợi: 「かなりお買い得だ」. 「｜値引《ねび》き」: việc người bán hạ giá: 「二割値引きする」.",
+    "example_notes": [
+      "Bộ này rẻ hơn tới 30% so với mua lẻ từng cái, khá là hời."
+    ]
+  },
+  "v-0212": {
+    "meaning": "(Giá) phải chăng, vừa túi tiền",
+    "usage": "「値段が手頃だ」, 「手頃な価格」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Chiếc máy tính xách tay này giá phải chăng so với tính năng."
+    ]
+  },
+  "v-0213": {
+    "meaning": "Giảm giá, bớt tiền so với giá bán",
+    "usage": "「値引きする」, 「二割値引きする」 (giảm 20%). Cùng nghĩa: 「まける」.",
+    "nuance": "",
+    "compare": "「値引き」: người bán hạ giá: 「二割値引き」. 「おまけ」: bớt thêm chút tiền hay tặng kèm đồ: 「少しおまけする」. 「お買い得」: món hàng mua lợi.",
+    "example_notes": [
+      "Món đồ gỗ hơi bị trầy, người bán hàng đã giảm cho tôi 20%."
+    ]
+  },
+  "v-0214": {
+    "meaning": "Bớt thêm chút tiền; đồ tặng kèm khi mua",
+    "usage": "① 「少しおまけする」 (bớt cho một chút). ② 「おまけに〜が付く」 (được tặng kèm…), 「おまけが付く」.",
+    "nuance": "",
+    "compare": "「おまけ」: bớt chút tiền, hoặc cho thêm món khác: 「おまけが付く」. 「｜値引《ねび》き」: hạ giá chính món hàng: 「二割値引きする」.",
+    "example_notes": [
+      "Ông chủ tiệm hoa nói nếu mua nhiều thì sẽ bớt cho một chút.",
+      "Mua tạp chí thì được tặng kèm một chiếc túi mua sắm."
+    ]
+  },
   "v-0215": {
     "meaning": "Trả lại hàng đã mua cho cửa hàng",
     "usage": "「返品する」, 「商品を返品する」, 「返品できる」, 「一週間以内なら返品できる」.",
     "nuance": "Bẫy chữ viết: đề thi đã gài 「変品」「逆品」「戻品」. 「返」 (phản, trả lại) là chữ của 「返す」.",
-    "compare": "「返品」 là trả món hàng đã mua lại cho cửa hàng: 「シャツを返品する」. Còn đồ mượn, đồ được gửi giữ thì trả bằng 「｜返却《へんきゃく》」: 「本を返却する」.",
+    "compare": "「返品」 là trả món hàng đã mua lại cho cửa hàng: 「シャツを返品する」. Còn đồ mượn, đồ được gửi giữ thì trả bằng 「｜返却《へんきゃく》」: 「本を返却する」. 「｜返金《へんきん》」: trả lại tiền đã thu: 「会費が返金される」.",
     "example_notes": [
       "Chiếc áo sơ mi giao đến bị bẩn nên tôi đã trả lại ngay."
+    ]
+  },
+  "v-0216": {
+    "meaning": "Hoàn tiền, trả lại tiền cho người đã trả",
+    "usage": "「返金する」, 「返金される」.",
+    "nuance": "",
+    "compare": "「返金」: trả lại tiền đã thu: 「会費が返金される」. 「｜返品《へんぴん》」: trả lại món hàng. 「｜返済《へんさい》」: trả khoản tiền đã vay: 「ローンを返済する」.",
+    "example_notes": [
+      "Khoản hội phí tôi lỡ trả hai lần, sau đó đã được hoàn lại."
+    ]
+  },
+  "v-0217": {
+    "meaning": "Giá, giá cả (của hàng hóa)",
+    "usage": "「価格が違う」, 「価格が上がる」. 「｜低価格《ていかかく》」: giá thấp. Hán Việt \"giá cách\".",
+    "nuance": "",
+    "compare": "「価格」: giá bán của món hàng: 「店によって価格が違う」. 「｜金額《きんがく》」: con số tiền: 「レシートの金額」. 「｜価値《かち》」: mức đáng giá: 「読む価値がある」.",
+    "example_notes": [
+      "Cùng một món hàng mà giá mỗi tiệm khác nhau khá nhiều."
+    ]
+  },
+  "v-0218": {
+    "meaning": "Đắt tiền, giá cao",
+    "usage": "「高価なネックレス」. Trái nghĩa: 「｜安価《あんか》な」 (rẻ tiền).",
+    "nuance": "",
+    "compare": "「高価」: nói về giá tiền cao: 「高価なネックレス」. 「｜貴重《きちょう》」: nói về sự quý báu, giá trị lớn: 「貴重な時間」.",
+    "example_notes": [
+      "Tôi được bà cho một chiếc vòng cổ ngọc trai đắt tiền."
+    ]
+  },
+  "v-0219": {
+    "meaning": "Số tiền (tính bằng con số)",
+    "usage": "「〜の金額」, 「レシートの金額」, 「金額を確かめる」.",
+    "nuance": "",
+    "compare": "「金額」: con số tiền: 「レシートの金額」. 「｜価格《かかく》」: giá bán của món hàng: 「店によって価格が違う」.",
+    "example_notes": [
+      "Nhìn số tiền trên hóa đơn, tôi thấy cùng một món bị tính hai lần."
+    ]
+  },
+  "v-0220": {
+    "meaning": "Giá trị, mức đáng giá của một vật, một việc",
+    "usage": "「価値がある」, 「価値がない」, 「〜する価値がある」 (đáng để…). 「｜価値観《かちかん》」: quan niệm giá trị.",
+    "nuance": "Trong đề, 「くだらない」 được nói lại bằng 「価値がない」, không phải 「効果がない」 hay 「目的がない」.",
+    "compare": "「価値」: mức đáng giá: 「読む価値がある」. 「｜価格《かかく》」: giá tiền bán ra: 「店によって価格が違う」.",
+    "example_notes": [
+      "Dù chỉ đọc một lần, cuốn sách này cũng đáng để đọc."
+    ]
+  },
+  "v-0221": {
+    "meaning": "Chất lượng (của hàng hóa, sản phẩm)",
+    "usage": "「製品の品質」, 「品質を検査する」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Ở nhà máy này, mỗi ngày người ta kiểm tra chất lượng sản phẩm nhiều lần."
+    ]
+  },
+  "v-0222": {
+    "meaning": "Thuế tiêu dùng, cộng vào khi mua hàng",
+    "usage": "「消費税が上がる」. 「｜税込《ぜいこみ》」: giá đã gồm thuế.",
+    "nuance": "",
+    "compare": "「消費税」: thuế cộng thêm khi mua hàng: 「消費税だけで八百円」. 「｜税金《ぜいきん》」: tiền thuế nói chung: 「税金を納める」.",
+    "example_notes": [
+      "Nhìn hóa đơn thì chỉ riêng thuế tiêu dùng đã là 800 yên."
+    ]
+  },
+  "v-0223": {
+    "meaning": "Đấu giá (bán cho người trả cao nhất)",
+    "usage": "「オークションに出す」 (đem ra đấu giá).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi đem chiếc máy ảnh không dùng nữa ra đấu giá, bán được giá cao hơn tôi nghĩ."
+    ]
+  },
+  "v-0224": {
+    "meaning": "Đặc sản, sản vật nổi tiếng của một vùng",
+    "usage": "「〜の名物」, 「名物のそば」. Gần nghĩa: 「｜特産《とくさん》」, 「｜名産《めいさん》」 (đặc sản).",
+    "nuance": "",
+    "compare": "「名物」: món, sản vật nổi tiếng: 「名物のそば」. 「｜名所《めいしょ》」: nơi nổi tiếng, nhiều người đến xem: 「桜の名所」.",
+    "example_notes": [
+      "Ở quầy hàng trong ga, tôi mua hộp cơm có mì soba đặc sản của vùng này."
+    ]
+  },
+  "v-0225": {
+    "meaning": "Đặt hàng để gửi đến (từ nơi xa, nơi khác)",
+    "usage": "「〜から取り寄せる」. Danh từ: 「［お］｜取《と》り｜寄《よ》せ」 (việc đặt hàng gửi đến).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Linh kiện đó ở Nhật không kiếm được, nên tôi quyết định đặt hàng từ một công ty Đức gửi sang."
+    ]
+  },
+  "v-0226": {
+    "meaning": "Có bán (mặt hàng); coi, đối đãi như là…; cầm, dùng (đồ vật)",
+    "usage": "① Tiệm có bán: 「〜を扱っている」. ② 「〜として扱う」 (coi, đối đãi như là…). ③ 「道具を扱う」 (cầm, dùng đồ nghề). Gần nghĩa: 「｜取《と》り｜扱《あつか》う」.",
+    "nuance": "Bẫy chữ viết: đề thi đã gài 「拠って」「吸って」「処って」 khi hỏi cách viết 「あつかって」.",
+    "compare": "「扱う」: đối xử, coi (ai, cái gì) theo một cách: 「子ども扱いする」. 「｜接《せっ》する」: tiếp xúc, cư xử khi gặp người: 「客に接する」.",
+    "example_notes": [
+      "Hiệu sách này có bán cả tạp chí nước ngoài."
+    ]
+  },
+  "v-0227": {
+    "meaning": "Mua cái mới thay cho cái cũ",
+    "usage": "Cũng viết 「買い替える」. Danh từ: 「｜買《か》い｜換《か》え」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi đã thay chiếc tủ lạnh dùng mười lăm năm bằng một cái mới tốn ít tiền điện hơn."
+    ]
+  },
+  "v-0228": {
+    "meaning": "Bắt đầu đem bán ra (sản phẩm mới)",
+    "usage": "「新商品を売り出す」. Gần nghĩa: 「｜発売《はつばい》」 (việc bắt đầu bán).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Hướng tới mùa hè, công ty đó tung ra loại áo sơ mi ra mồ hôi cũng không có mùi."
+    ]
+  },
+  "v-0229": {
+    "meaning": "Tờ rơi, tờ bướm quảng cáo",
+    "usage": "「塾のチラシ」, 「チラシを見る」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Trong hộp thư có tờ rơi của một trung tâm luyện thi mới mở."
+    ]
+  },
+  "v-0230": {
+    "meaning": "Cắt rời ra để lấy riêng (ảnh, phiếu trên tờ giấy)",
+    "usage": "「〜を切り取る」: 「写真を切り取る」, 「記事を切り取る」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi cắt lấy tấm ảnh mình thích trong tạp chí rồi dán vào vở."
+    ]
+  },
+  "v-0231": {
+    "meaning": "Hộp, vỉ đựng hàng bán gộp; đắp mặt nạ dưỡng da",
+    "usage": "① 「卵一パック」, 「牛乳パック」. ② 「パックする」 (đắp mặt nạ).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Mẹ nhờ tôi mua về một hộp trứng.",
+      "Tôi đắp mặt nạ mát lạnh lên khuôn mặt bị cháy nắng."
+    ]
+  },
+  "v-0232": {
+    "meaning": "Việc gói bọc hàng hóa lại (giấy gói, bao bì)",
+    "usage": "「包装する」, 「包装される」. Hán Việt \"bao trang\".",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Cuốn sách nhỏ mua qua mạng được gói trong một chiếc hộp lớn rồi giao tới."
+    ]
+  },
+  "v-0233": {
+    "meaning": "Ăn thử (trước khi mua, trước khi quyết)",
+    "usage": "「試食する」. Gần nghĩa: 「｜試飲《しいん》」 (uống thử).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Trước khi quyết định thực đơn mới, tất cả nhân viên đã cùng ăn thử."
+    ]
+  },
+  "v-0234": {
+    "meaning": "Mặc thử, mang thử (quần áo, giày trước khi mua)",
+    "usage": "「試着する」. 「｜試着室《しちゃくしつ》」: phòng thử đồ.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Nhân viên cửa hàng bảo tôi nên đi thử giày vào lúc chiều tối."
+    ]
+  },
+  "v-0235": {
+    "meaning": "Tương đối, khá là (so với mức thường, điều mình nghĩ)",
+    "usage": "「わりあい（に）」: 「わりあいうまくできた」, 「わりあい簡単だ」.",
+    "nuance": "",
+    "compare": "「わりあい」 và 「わりと」 gần nghĩa: khá, hơn mình nghĩ: 「わりと簡単」. 「｜比較的《ひかくてき》」: so với mức thường thì khá…: 「比較的すいている」. 「｜相当《そうとう》」 mạnh hơn hẳn: 「相当難しい」.",
+    "example_notes": [
+      "Lần đầu làm bánh kem mà như vậy là khá thành công."
+    ]
+  },
+  "v-0236": {
+    "meaning": "Bị trùng, có hai cái giống hệt (cùng một thứ)",
+    "usage": "「名前がダブる」, 「予定がダブる」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Xem danh sách thì thấy tên của cùng một người bị ghi trùng."
+    ]
+  },
+  "v-0237": {
+    "meaning": "Thôi, không làm nữa (việc định làm)",
+    "usage": "「〜をよす」, 「よしておく」 (thôi không làm).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi định nói, nhưng thấy mọi người có vẻ bận nên thôi không nói chuyện đó."
     ]
   },
   "v-0238": {
     "meaning": "Khá là, tương đối (so với điều mình nghĩ)",
     "usage": "「わりと簡単だ」, 「わりとすいている」, 「わりと安い」. Mẫu gặp trong đề: 「…と思ったけど、わりと…」.",
     "nuance": "Điền từ: 「込んでいるかと思ったけど、（　）すいているね」 → 「わりと」. Phương án sai: 「たいして」「どうりで」「よけい」.",
-    "compare": "「わりと」: khá, hơn mình nghĩ hay hơn cái khác: 「わりと簡単」. 「｜相当《そうとう》」: vượt hẳn mức thông thường: 「相当難しい」. 「｜比較的《ひかくてき》」: so với mức thường thì khá…: 「比較的すいている」.",
+    "compare": "「わりと」: khá, hơn mình nghĩ hay hơn cái khác: 「わりと簡単」; 「わりあい」 gần nghĩa: 「わりあいうまく」. 「｜相当《そうとう》」: vượt hẳn mức thông thường: 「相当難しい」. 「｜比較的《ひかくてき》」: so với mức thường thì khá: 「比較的すいている」.",
     "example_notes": [
       "Nghe nói khó, nhưng bài thi lại khá dễ."
+    ]
+  },
+  "v-0239": {
+    "meaning": "Vật thật, đồ thật (không phải ảnh, hình)",
+    "usage": "「〜の実物」, 「実物を見る」.",
+    "nuance": "Hán Việt \"thực vật\", nhưng không phải cây cỏ (cây cỏ là 「｜植物《しょくぶつ》」): 「実物」 là đồ thật.",
+    "compare": "",
+    "example_notes": [
+      "Lần đầu tiên tôi được tận mắt xem bức tượng Phật thật ở bảo tàng, trước giờ chỉ thấy qua ảnh."
+    ]
+  },
+  "v-0240": {
+    "meaning": "Hạt, viên (vật nhỏ, tròn)",
+    "usage": "「一粒」 (một hạt), 「一粒も残さない」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Bà tôi hay dặn ăn cơm thì đừng để sót lại một hạt nào."
+    ]
+  },
+  "v-0241": {
+    "meaning": "Chỗ trống dành cho một việc (đỗ xe, đặt đồ)",
+    "usage": "「スペースができる」, 「スペースを空ける」.",
+    "nuance": "Điền từ trong đề: chỗ để đỗ xe trước siêu thị → 「スペース」; nhiễu 「フロア」「ステージ」「フロント」.",
+    "compare": "「スペース」: chỗ trống để dùng vào việc gì: 「駐車スペース」. 「｜空間《くうかん》」: khoảng không, khoảng trống nói chung, cả bề cao bề rộng: 「広い空間」.",
+    "example_notes": [
+      "Bớt đi một chiếc giá sách, căn phòng có được một khoảng rộng."
     ]
   },
   "v-0262": {
@@ -1586,7 +2245,7 @@
     "meaning": "Tạm làm một bước rồi mới tiếp; một khi đã (làm gì)",
     "usage": "Nghĩa 1: 「いったん家に帰る」, 「いったん電源を切る」, 「いったん戻る」. Nghĩa 2: 「いったん決めたら」, 「いったん〜と」 (một khi đã…).",
     "nuance": "Không phải \"một lần\" để đếm. Đề thi coi là sai: 「いったんも行ったことがない」, 「いったんしか会っていない」, 「１週間にいったん」. Câu đúng: 「いったん戻ったが、すぐにまた出かけた」.",
-    "compare": "",
+    "compare": "「いったん」: tạm làm một bước rồi tiếp, hoặc một khi đã: 「いったん決めたら」. 「ひとたび」: một khi đã… thì…, cách nói cứng hơn: 「ひとたび聞くと」.",
     "example_notes": [
       "Nếu màn hình bị đơ, xin hãy tạm tắt nguồn máy tính đã.",
       "Việc gì một khi đã quyết, tôi định làm đến cùng."
@@ -1936,7 +2595,7 @@
     "meaning": "Cần mẫn, bền bỉ cố gắng đều đặn (trong thời gian dài)",
     "usage": "「こつこつ（と）勉強する」, 「こつこつためる」, 「こつこつ準備を進める」. Còn tả tiếng lọc cọc khi vật cứng gõ vào nhau, như tiếng giày.",
     "nuance": "Đề thi coi là sai khi nói hiểu ra dần, ăn chậm vì nóng, nhiệt độ tăng dần: 「こつこつ」 là người bền bỉ cố gắng, không phải sự thay đổi dần dần.",
-    "compare": "「こつこつ」: một người bền bỉ cố gắng từng chút: 「こつこつ勉強する」. 「｜着々《ちゃくちゃく》と」: công việc, kế hoạch tiến từng bước: 「準備が着々と進む」.",
+    "compare": "「こつこつ」: một người bền bỉ cố gắng từng chút: 「こつこつ勉強する」. 「｜着々《ちゃくちゃく》と」: công việc, kế hoạch tiến từng bước: 「準備が着々と進む」. 「せっせと」: đang cặm cụi làm không nghỉ tay: 「せっせと草を抜く」.",
     "example_notes": [
       "Bố tôi đều đặn để dành từng chút tiền lương hằng tháng, cuối cùng đã mua được một chiếc thuyền nhỏ.",
       "Những cái cây người trong làng cần mẫn trồng suốt ba mươi năm nay đã thành một khu rừng."
@@ -2726,7 +3385,7 @@
     "meaning": "Danh lam, nơi nổi tiếng được nhiều người đến ngắm",
     "usage": "「観光名所」, 「桜の名所」, 「〜の名所」, 「名所を回る」. Hán Việt \"danh sở\".",
     "nuance": "Điền từ trong đề: nơi đây là （　） hoa anh đào nên mùa xuân nhiều người đến ngắm → 「名所」. Nhiễu 「要所」「実地」「現場」.",
-    "compare": "「名所」: nơi nổi tiếng, nhiều người đến xem: 「町の名所」. 「｜景色《けしき》」: cảnh vật bày ra trước mắt: 「窓からの景色」.",
+    "compare": "「名所」: nơi nổi tiếng, nhiều người đến xem: 「町の名所」. 「｜景色《けしき》」: cảnh vật bày ra trước mắt: 「窓からの景色」. 「｜名物《めいぶつ》」: món, sản vật nổi tiếng: 「名物のそば」.",
     "example_notes": [
       "Cây cầu cổ ấy giờ đã trở thành danh thắng tiêu biểu của thị trấn.",
       "Hòn đảo này có nhiều cảnh đẹp khiến người ta muốn chụp ảnh, như ngọn hải đăng cũ."
@@ -3335,7 +3994,7 @@
     "meaning": "Quý giá, quý báu, có giá trị lớn",
     "usage": "ナ形容詞: 「貴重な時間」, 「貴重な体験」, 「貴重な資料」. 「貴重品」: đồ vật quý giá. Hán Việt \"quý trọng\".",
     "nuance": "Đọc 「きちょう」: 「貴」 là 「き」, 「重」 là 「ちょう」. Đề thi đã gài 「きじゅう」「きっじゅう」「きっちょう」.",
-    "compare": "",
+    "compare": "「貴重」: nói về sự quý báu, giá trị lớn: 「貴重な時間」. 「｜高価《こうか》」: nói về giá tiền cao: 「高価なネックレス」.",
     "example_notes": [
       "Ở thị trấn giữa sa mạc, nước vô cùng quý giá.",
       "Cảm ơn anh chị đã dành thời gian quý báu dù đang bận rộn."
@@ -3674,7 +4333,7 @@
     "meaning": "Tương đối, khá (so với mức thường hay cái khác)",
     "usage": "Phó từ, đứng trước tính từ: 「比較的やさしい」, 「比較的すいている」, 「比較的大きい」.",
     "nuance": "Gốc là 「｜比較《ひかく》」 (so sánh). Đọc 「ひかくてき」; đề đặt 「ひこうてい」「ひこてき」「ひかてき」 làm nhiễu.",
-    "compare": "「比較的」: so với mức thường thì khá…: 「比較的すいている」. 「わりと」: khá, hơn mình nghĩ: 「わりと簡単」. 「｜相当《そうとう》」 mạnh hơn, vượt hẳn mức thường: 「相当疲れた」.",
+    "compare": "「比較的」: so với mức thường thì khá…: 「比較的すいている」. 「わりと」: khá, hơn mình nghĩ: 「わりと簡単」. 「｜相当《そうとう》」 mạnh hơn, vượt hẳn mức thường: 「相当疲れた」. 「わりあい」: gần nghĩa với 「わりと」: 「わりあい簡単だ」.",
     "example_notes": [
       "Cuốn sách bài tập này tương đối dễ nên hợp với cả người mới học lần đầu.",
       "Buổi sáng ngày thường, bệnh viện này cũng tương đối vắng."
@@ -4642,7 +5301,7 @@
     "meaning": "Khá, rất (vượt hẳn mức bình thường)",
     "usage": "「相当難しい」, 「相当な被害」, 「相当時間がかかる」.",
     "nuance": "",
-    "compare": "「相当」: vượt hẳn mức thường: 「相当疲れた」. 「わりと」: khá, so với mình nghĩ hay so với cái khác: 「わりと簡単」. 「｜比較的《ひかくてき》」 nhẹ hơn: chỉ là tương đối, so với mức thường: 「比較的すいている」.",
+    "compare": "「相当」: vượt hẳn mức thường: 「相当疲れた」. 「わりと」「わりあい」: khá, so với mình nghĩ hay so với cái khác: 「わりと簡単」. 「｜比較的《ひかくてき》」 nhẹ hơn: chỉ là tương đối, so với mức thường: 「比較的すいている」.",
     "example_notes": [
       "Nghe nói đặt được chỗ ở nhà hàng kia khá là khó.",
       "Sau cơn bão, những con tàu ở bến cảng có vẻ đã phải gánh chịu thiệt hại rất đáng kể."
@@ -4792,7 +5451,7 @@
     "meaning": "Chất lên cao; tích lũy (kinh nghiệm, rèn luyện)",
     "usage": "「荷物を積む」, 「車に積む」, 「経験を積む」 (tích lũy kinh nghiệm), 「練習を積む」.",
     "nuance": "「雪が積もる」 dùng tự động từ 「｜積《つ》もる」, không phải 「積む」.",
-    "compare": "「積む」: chất đồ lên nhau, hoặc tích dần kinh nghiệm, luyện tập: 「経験を積む」. 「｜蓄《たくわ》える」: để dành tiền, đồ, sức lực cho sau này: 「食料を蓄える」.",
+    "compare": "「積む」: chất đồ lên, hoặc tích dần kinh nghiệm: 「経験を積む」. 「｜蓄《たくわ》える」: để dành tiền, đồ, sức cho sau này: 「食料を蓄える」. 「｜重《かさ》ねる」: đặt chồng lên nhau, làm thêm nhiều lần: 「失敗を重ねる」.",
     "example_notes": [
       "Củi đốt dùng trong mùa đông được xếp thành đống cao dọc theo bức tường của căn chòi.",
       "Để hướng tới buổi biểu diễn chính thức, các diễn viên kịch đã tích cực tập dượt mỗi tối."

@@ -1294,7 +1294,7 @@
     "meaning": "Nhà cửa nói chung (xét như công trình xây dựng)",
     "usage": "「木造の家屋」 (nhà gỗ), 「家屋が残る」. Hán Việt \"gia ốc\".",
     "nuance": "",
-    "compare": "「家屋」: nhà ở nói chung, xét như công trình: 「木造の家屋」. 「｜一戸建《いっこだ》て」 (nhà riêng biệt lập) và 「マイホーム」 (nhà mình sở hữu) đều là một kiểu 「家屋」.",
+    "compare": "「家屋」: nhà ở nói chung, xét như công trình: 「木造の家屋」. 「｜一戸建《いっこだ》て」 (nhà riêng biệt lập) và 「マイホーム」 (nhà mình sở hữu) đều là một kiểu 「家屋」. 「住宅」: nhà để ở: 「住宅街」.",
     "example_notes": [
       "Ở khu này, đến nay vẫn còn những ngôi nhà gỗ xây từ hơn trăm năm trước."
     ]
@@ -1450,7 +1450,7 @@
     "meaning": "Mới xây (nhà, tòa nhà); việc xây mới",
     "usage": "「新築の家」, 「新築する」. Liên quan: 「｜築年数《ちくねんすう》」 (số năm kể từ khi xây).",
     "nuance": "",
-    "compare": "",
+    "compare": "「新築」 (tân trúc): nhà vừa xây mới, hoặc việc xây mới. 「建築」 (kiến trúc): việc xây một công trình, cũng là ngành kiến trúc.",
     "example_notes": [
       "Vừa chuyển vào nhà mới xây, phòng nào cũng còn mùi gỗ."
     ]
@@ -2290,7 +2290,7 @@
     "meaning": "Trong (một) năm, tính theo năm",
     "usage": "「年間の会費」 (hội phí cả năm), 「年間〜人」. Sau con số: 「三年間」 (trong ba năm).",
     "nuance": "",
-    "compare": "「年中」: quanh năm, lúc nào cũng. 「年間」: khoảng thời gian một năm làm đơn vị tính.",
+    "compare": "「年中」: quanh năm, lúc nào cũng. 「年間」: khoảng thời gian một năm làm đơn vị tính. 「年度」 (niên độ): năm tài khóa: 「今年度」「年度末」.",
     "example_notes": [
       "Câu lạc bộ thể thao này giảm hai mươi phần trăm nếu đóng gộp hội phí cả năm."
     ]
@@ -2584,7 +2584,7 @@
     "meaning": "Vùng xung quanh (một địa điểm)",
     "usage": "Hán Việt \"chu biên\": 「駅の周辺」, 「周辺地域」.",
     "nuance": "",
-    "compare": "「周囲」: vòng quanh một vật, chu vi; hoặc người xung quanh. 「周辺」: khu vực gần một nơi.",
+    "compare": "「周囲」: vòng quanh một vật, chu vi; hoặc người xung quanh. 「周辺」: khu vực gần một nơi. 「辺り」: quanh một chỗ: 「この辺り」. 「付近」 (phụ cận): ngay sát bên: 「駅の付近」.",
     "example_notes": [
       "Loài chim này làm tổ trong những khu rừng quanh hồ."
     ]
@@ -2593,7 +2593,7 @@
     "meaning": "Xung quanh, chu vi; những người xung quanh",
     "usage": "① 「家の周囲」, 「周囲〜キロ」 (chu vi). ② 「周囲の人・目」: người chung quanh mình.",
     "nuance": "",
-    "compare": "「周辺」: khu vực gần một nơi. 「世間」: rộng tới người đời, xã hội. 「周囲」: vòng quanh vật, hay người bên cạnh.",
+    "compare": "「周辺」: khu vực gần một nơi. 「世間」: rộng tới người đời, xã hội. 「周囲」: vòng quanh vật, hay người bên cạnh. 「辺り」: vùng quanh một chỗ: 「この辺り」.",
     "example_notes": [
       "Hồ này có chu vi khoảng mười cây số.",
       "Anh ấy bất chấp mọi người xung quanh phản đối, một mình sang học đại học ở nước ngoài."
@@ -2797,7 +2797,7 @@
     "meaning": "Hình dung lại, nhớ ra (hình ảnh trong đầu)",
     "usage": "「〜の顔・景色を思い浮かべる」. Tự động từ: 「思い浮かぶ」.",
     "nuance": "",
-    "compare": "",
+    "compare": "「思い浮かべる」: hình ảnh hiện lên trong đầu: 「顔を思い浮かべる」. 「描く」: vẽ bằng tranh, chữ; hay hình dung trong lòng: 「夢に描く」.",
     "example_notes": [
       "Nhắm mắt hình dung cảnh biển là thấy lòng dịu lại."
     ]
@@ -2842,7 +2842,7 @@
     "meaning": "Cẩn thận, để ý giữ an toàn trước nguy hiểm",
     "usage": "「〜に用心する」, 「火の元に用心する」, 「知らない人に用心する」. Tính từ liên quan: 「｜用心深《ようじんぶか》い」 (thận trọng). Câu thay thế trong đề: 「用心する」＝「注意する」「気をつける」.",
     "nuance": "Hán Việt là \"dụng tâm\", nhưng đừng hiểu theo nghĩa tiếng Việt \"có chủ ý, có ý đồ\". 「用心」 chỉ đơn giản là để ý giữ an toàn, gần với 「気をつける」.",
-    "compare": "「用心」 là thái độ cảnh giác, để ý để điều xấu không xảy ra. 「｜備《そな》える」 là việc chuẩn bị sẵn đồ đạc: 「地震に備える」. 「｜油断《ゆだん》」: lơ là cảnh giác.",
+    "compare": "「用心」 là thái độ cảnh giác, để ý để điều xấu không xảy ra. 「｜備《そな》える」 là việc chuẩn bị sẵn đồ đạc: 「地震に備える」. 「｜油断《ゆだん》」: lơ là cảnh giác. 「慎重」 (thận trọng): làm việc cẩn thận.",
     "example_notes": [
       "Những ngày không khí khô, xin hãy hết sức cẩn thận với nguồn lửa.",
       "Tôi cảnh giác với cuộc gọi từ số lạ và không nghe máy ngay."
@@ -3491,7 +3491,7 @@
     "meaning": "Vác (lên vai)",
     "usage": "「｜荷物《にもつ》を｜担《かつ》ぐ」, 「みこしを｜担《かつ》ぐ」.",
     "nuance": "",
-    "compare": "「｜担《かつ》ぐ」 = vác trên vai (kiệu, ba lô); chỉ dùng tay nhấc lên là 「｜持《も》ち｜上《あ》げる」.",
+    "compare": "「｜担《かつ》ぐ」 = vác trên vai (kiệu, ba lô); chỉ dùng tay nhấc lên là 「｜持《も》ち｜上《あ》げる」. Cùng chữ 担 nhưng 「担う」 (đọc 「になう」) là gánh trách nhiệm, không phải vác đồ.",
     "example_notes": [
       "Ở lễ hội, các chàng trai vác kiệu.",
       "Người câu cá vác cần câu dài trên vai đi ra sông."
@@ -3597,6 +3597,42 @@
       "Giữ lại nửa vời thì thà vứt hết đi."
     ]
   },
+  "v-0385": {
+    "meaning": "Khu phố, thị trấn có nhiều nhà cửa, cửa hàng",
+    "usage": "「街に出る」 (ra phố), 「港の街」 (thị trấn cảng).",
+    "nuance": "",
+    "compare": "「街」: nơi nhà cửa, cửa hàng tập trung, không nói đến quy mô. 「都市」 (đô thị): nơi đông dân và rộng lớn, đi với 「大都市」「地方都市」. 「下町」: riêng khu phố bình dân, phố cổ: 「東京の下町」.",
+    "example_notes": [
+      "Chú tôi sống ở thị trấn cảng gửi cho tôi số sò mới đánh bắt sáng nay."
+    ]
+  },
+  "v-0386": {
+    "meaning": "Đô thị, nơi đông dân và rộng lớn",
+    "usage": "「大都市」 (thành phố lớn), 「地方都市」 (thành phố địa phương).",
+    "nuance": "",
+    "compare": "「都市」 (đô thị): nơi đông dân, rộng lớn: 「大都市」「地方都市」. 「街」: chỉ nơi nhà cửa, cửa hàng tụ lại, không bàn đến quy mô.",
+    "example_notes": [
+      "Gần con sông này có ba đô thị mà dân số vượt một triệu người."
+    ]
+  },
+  "v-0387": {
+    "meaning": "Khu phố bình dân, phố chợ",
+    "usage": "「東京の下町」 (khu phố bình dân của Tokyo); 「下町生まれ」 (sinh ra ở khu phố chợ).",
+    "nuance": "",
+    "compare": "「下町」: khu phố của người dân thường (「庶民」), phố cổ: 「下町生まれ」. 「街」: phố xá nói chung, nơi nhà cửa, cửa hàng tụ lại: 「街に出る」.",
+    "example_notes": [
+      "Ông tôi từng mở một tiệm đậu phụ nhỏ ở khu phố bình dân."
+    ]
+  },
+  "v-0388": {
+    "meaning": "Đất, mảnh đất có diện tích nhất định",
+    "usage": "「土地の値段」 (giá đất), 「土地を買う」 (mua đất).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi định mua một mảnh đất rộng gần núi để làm ruộng."
+    ]
+  },
   "v-0389": {
     "meaning": "Sức sống, không khí sôi động tràn đầy năng lượng",
     "usage": "Danh từ: 「活気がある」, 「活気が出る」, 「活気にあふれる」, 「活気を取り戻す」. Tả nơi chốn, tập thể: 「町」「商店街」「会議」.",
@@ -3607,6 +3643,15 @@
       "Để khu phố mua sắm lấy lại sức sống, các chủ tiệm trẻ đã mở những cửa hàng mới."
     ]
   },
+  "v-0390": {
+    "meaning": "Lượng người qua lại trên đường",
+    "usage": "「人通りが多い／少ない」, 「人通りがない」 (vắng người).",
+    "nuance": "",
+    "compare": "「人通り」: mức đông hay vắng người qua lại, đi với 「多い／少ない」. 「歩行者」 (bộ hành giả): chính người đang đi bộ: 「歩行者用」.",
+    "example_notes": [
+      "Tôi tránh đi bộ một mình vào ban đêm trên những con đường vắng người qua lại."
+    ]
+  },
   "v-0391": {
     "meaning": "Dứt, ngừng hẳn, không còn nữa",
     "usage": "「人通りが絶える」, 「連絡が絶える」, 「客が絶えない」 (khách không ngớt), 「笑いが絶えない」.",
@@ -3615,6 +3660,87 @@
     "example_notes": [
       "Quán này đông khách, cả ngày khách không ngớt.",
       "Mười năm kể từ khi tốt nghiệp, liên lạc giữa tôi và anh ấy đã đứt hẳn."
+    ]
+  },
+  "v-0392": {
+    "meaning": "Con dốc, đoạn đường lên xuống",
+    "usage": "「坂の多い町」 (thị trấn nhiều dốc), 「急な坂」 (dốc đứng).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Con đường này là một dốc đứng, mùa đông xe không leo lên được."
+    ]
+  },
+  "v-0393": {
+    "meaning": "Vùng quanh đây, khu vực chung quanh một chỗ",
+    "usage": "「この辺り」 (quanh đây), 「駅の辺り」 (quanh chỗ nhà ga).",
+    "nuance": "",
+    "compare": "「辺り」: vùng quanh một chỗ, hay nói 「この辺り」. 「付近」 (phụ cận): nơi ngay sát bên: 「駅の付近」. 「周辺」 (chu biên): vùng bao quanh một điểm. 「周囲」 (chu vi): vòng quanh một vật.",
+    "example_notes": [
+      "Tôi nghĩ mình đánh rơi ví quanh đây nên sẽ tìm lại một lần nữa."
+    ]
+  },
+  "v-0394": {
+    "meaning": "Khu vực gần kề, lân cận",
+    "usage": "「駅の付近」 (gần nhà ga), 「付近の住民」 (dân quanh vùng).",
+    "nuance": "",
+    "compare": "「付近」 (phụ cận): nơi ngay sát bên, đi sau tên nơi: 「駅の付近」. 「辺り」: vùng quanh một chỗ, hay nói 「この辺り」. 「周辺」 (chu biên): vùng bao quanh một điểm, rộng hơn một chút.",
+    "example_notes": [
+      "Cảnh sát đang điều tra khu vực gần con sông nơi xảy ra vụ việc."
+    ]
+  },
+  "v-0395": {
+    "meaning": "Nhà ở (nơi gia đình sinh sống)",
+    "usage": "「高級な住宅」 (nhà ở cao cấp), 「住宅街」 (khu dân cư).",
+    "nuance": "",
+    "compare": "「住宅」 (trụ trạch): nhà để ở, nơi gia đình sống, đi với 「住宅街」「住宅地」. 「家屋」 (gia ốc): ngôi nhà xét như một công trình: 「木造の家屋」.",
+    "example_notes": [
+      "Ngôi nhà này được xây theo kiểu chịu động đất tốt."
+    ]
+  },
+  "v-0396": {
+    "meaning": "Khu, khu vực (một phần được chia ra của thị trấn)",
+    "usage": "「この地区」 (khu này), 「地区ごとに」 (theo từng khu).",
+    "nuance": "",
+    "compare": "「地区」 (địa khu): một khu trong thị trấn, thành phố: 「この地区」「地区ごとに」. 「エリア」: từ ngoại lai, vùng được khoanh ra như khu cấm hút thuốc: 「禁煙エリア」.",
+    "example_notes": [
+      "Khu vực này đang liên tục thi công đường ống nước."
+    ]
+  },
+  "v-0397": {
+    "meaning": "Vùng, khu vực (một phạm vi nhất định)",
+    "usage": "「立入禁止のエリア」 (khu vực cấm vào), 「エリアごとに」 (theo từng khu).",
+    "nuance": "",
+    "compare": "「エリア」: vùng được khoanh ra, như 「禁煙エリア」「立入禁止のエリア」. 「地区」 (địa khu): khu nằm trong thị trấn, thành phố, như 「この地区」.",
+    "example_notes": [
+      "Hội trường chia làm bốn khu vực, mỗi khu có cửa vào khác màu."
+    ]
+  },
+  "v-0398": {
+    "meaning": "Khoảng giữa, điểm nằm giữa hai nơi",
+    "usage": "「AとBの中間」 (giữa A và B), 「中間の場所」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi nhờ cho xuống xe ở khoảng giữa hai trạm xe buýt."
+    ]
+  },
+  "v-0399": {
+    "meaning": "Ranh giới, đường phân chia hai vùng",
+    "usage": "「隣の町との境」 (ranh giới với thị trấn bên cạnh), 「県の境」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Từ đèo nằm ở ranh giới tỉnh, có thể nhìn thấy biển."
+    ]
+  },
+  "v-0400": {
+    "meaning": "Xéo, chéo (không thẳng đứng cũng không nằm ngang)",
+    "usage": "「斜めに置く」 (đặt chéo), 「斜め前」 (chéo phía trước), 「斜め後ろ」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi đặt cái bàn chéo góc thì thấy căn phòng có vẻ chật hơn."
     ]
   },
   "v-0401": {
@@ -3637,6 +3763,33 @@
       "Ngửi thấy mùi khói, mọi người trong tòa nhà đã xuống cầu thang thoát ra ngoài."
     ]
   },
+  "v-0403": {
+    "meaning": "Huấn luyện, rèn luyện lặp đi lặp lại cho thành thạo",
+    "usage": "「訓練を行う」 (tiến hành huấn luyện), 「避難訓練」 (diễn tập sơ tán).",
+    "nuance": "",
+    "compare": "「訓練」 (huấn luyện): rèn luyện lặp lại cho thành thạo: 「避難訓練」. 「研修」 (nghiên tu): học thêm kiến thức, kỹ thuật cần cho công việc: 「新人研修」.",
+    "example_notes": [
+      "Con chó này được huấn luyện để giúp người khiếm thị."
+    ]
+  },
+  "v-0404": {
+    "meaning": "Đi tuần, đi một vòng xem xét khắp nơi",
+    "usage": "「住宅地を見回る」 (đi tuần khu nhà ở), 「見回っている」. Danh từ: 「見回り」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Trước khi đi ngủ, mẹ tôi đi một vòng khắp nhà, kiểm tra cửa nẻo đã khóa chưa."
+    ]
+  },
+  "v-0405": {
+    "meaning": "Gây dựng nên (quan hệ, cơ nghiệp) vững chắc",
+    "usage": "「関係を築く」 (xây dựng mối quan hệ), 「財産を築く」 (gây dựng cơ nghiệp).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Bắt đầu từ một cửa tiệm nhỏ, anh ấy đã gây dựng nên khối tài sản lớn."
+    ]
+  },
   "v-0406": {
     "meaning": "Sự phỏng đoán, ước đoán sơ bộ",
     "usage": "「見当がつく」 (đoán ra được), 「見当がつかない」 (không đoán nổi), 「見当をつける」 (ước chừng trước).",
@@ -3645,6 +3798,105 @@
     "example_notes": [
       "Viên cảnh sát hình sự đã đoán được đại khái hung thủ là ai.",
       "Tôi ước chừng đi bộ đến ga mất khoảng mười phút rồi ra khỏi nhà."
+    ]
+  },
+  "v-0407": {
+    "meaning": "Vẽ bậy, viết bậy lên chỗ không được phép",
+    "usage": "「壁に落書きする」 (vẽ bậy lên tường), 「落書きされる」 (bị vẽ bậy).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Dưới gầm cầu có ngày càng nhiều hình vẽ bậy nên thành phố bắt đầu xóa đi."
+    ]
+  },
+  "v-0408": {
+    "meaning": "Tăng cường, đẩy mạnh cho mạnh hơn",
+    "usage": "「見回りを強化する」 (tăng cường tuần tra), 「足腰の強化」 (rèn cho chân và lưng khỏe hơn).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Câu lạc bộ judo đang tập trung rèn chân và lưng để chuẩn bị cho giải đấu."
+    ]
+  },
+  "v-0409": {
+    "meaning": "Chính quyền (tỉnh, thành phố, thị xã) tự quản việc của vùng mình",
+    "usage": "「自治体の職員」 (nhân viên chính quyền địa phương), 「地方自治体」 (chính quyền địa phương).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Chính quyền địa phương này tặng sách tranh cho mỗi em bé mới sinh."
+    ]
+  },
+  "v-0410": {
+    "meaning": "Thống đốc (người đứng đầu một tỉnh)",
+    "usage": "「知事が発表する」, 「県の知事」. Đối với thành phố, thị trấn thì gọi 「市長」「町長」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Thống đốc giới thiệu đặc sản của tỉnh trong buổi họp báo."
+    ]
+  },
+  "v-0411": {
+    "meaning": "Đáp lại, đáp ứng kỳ vọng của người khác",
+    "usage": "「期待に応える」 (đáp lại kỳ vọng), 「声に応える」 (đáp lại tiếng cổ vũ). Đi với trợ từ 「に」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Đáp lại tiếng cổ vũ của mọi người, anh ấy chạy đến phút cuối cùng."
+    ]
+  },
+  "v-0412": {
+    "meaning": "Người dân, cư dân sống ở một nơi",
+    "usage": "「住民の生活」 (đời sống người dân), 「住民の声」 (tiếng nói của cư dân).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Một nửa dân cư của thị trấn đã quá bảy mươi tuổi."
+    ]
+  },
+  "v-0413": {
+    "meaning": "Giấy tờ tùy thân (chứng minh nhân dân, thẻ căn cước…)",
+    "usage": "「身分証明書が必要だ」 (cần giấy tờ tùy thân), 「身分証明書を作る」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Khi đăng ký điện thoại di động, nhân viên cửa hàng yêu cầu tôi xuất trình giấy tờ tùy thân."
+    ]
+  },
+  "v-0414": {
+    "meaning": "Ngày tháng năm sinh",
+    "usage": "「生年月日を書く」 (ghi ngày tháng năm sinh), 「生年月日を聞く」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Trong đơn đăng ký có ô để ghi ngày tháng năm sinh ngay dưới tên."
+    ]
+  },
+  "v-0415": {
+    "meaning": "Ký tên (viết tên mình lên văn bản)",
+    "usage": "「署名をお願いする」 (xin vui lòng ký tên), 「署名する」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Hai nghìn người đã ký tên để giữ lại công viên của thị trấn."
+    ]
+  },
+  "v-0416": {
+    "meaning": "Sửa chữa, chỉnh sửa chỗ sai hoặc chỗ chưa tốt",
+    "usage": "「修正する」 (sửa lại), 「修正テープ」 (băng xóa).",
+    "nuance": "",
+    "compare": "「修正」 (tu chính): sửa chỗ sai, chỗ chưa ổn. 「訂正」 (đính chính): sửa lỗi chữ, số, lời nói. 「改善」 (cải thiện): làm khá lên. \"Tu chính\" trong tiếng Việt thường là sửa luật, gần 「改正」.",
+    "example_notes": [
+      "Khách hàng liên lạc, muốn sửa lại một phần thiết kế."
+    ]
+  },
+  "v-0417": {
+    "meaning": "Lương hưu, tiền trợ cấp nhận định kỳ khi về già",
+    "usage": "「年金をもらう」 (nhận lương hưu), 「年金保険料を納める」 (đóng phí bảo hiểm hưu trí).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Bà tôi dành một phần lương hưu làm tiền tiêu vặt cho cháu."
     ]
   },
   "v-0418": {
@@ -3657,6 +3909,42 @@
       "Khu thể thao trên núi có cả phòng để nghỉ lại qua đêm."
     ]
   },
+  "v-0419": {
+    "meaning": "Tủ khóa để gửi hành lý, đồ dùng",
+    "usage": "「ロッカーを使う」, 「コインロッカー」 (tủ khóa bỏ tiền xu).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi gửi vali vào tủ khóa ở nhà ga rồi đi dạo cho nhẹ nhàng."
+    ]
+  },
+  "v-0420": {
+    "meaning": "Xây cất; kiến trúc",
+    "usage": "「建築する」 (xây dựng), 「木造建築」 (công trình bằng gỗ), 「建築家」 (kiến trúc sư).",
+    "nuance": "",
+    "compare": "「建築」 (kiến trúc): việc xây một công trình, cũng là ngành kiến trúc. 「新築」 (tân trúc): nhà vừa xây mới, hoặc việc xây mới.",
+    "example_notes": [
+      "Dãy lớp học của ngôi trường tiểu học này được xây từ sáu mươi năm trước."
+    ]
+  },
+  "v-0421": {
+    "meaning": "Làm mới lại cái đã cũ (quán xá, cửa hàng…)",
+    "usage": "「リニューアルする」, 「店をリニューアルする」 (làm mới lại cửa hàng).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Nhà trọ kiểu Nhật này năm ngoái đã làm mới toàn bộ các phòng."
+    ]
+  },
+  "v-0422": {
+    "meaning": "Đưa lại gần, cho lại gần",
+    "usage": "「子どもを近づけない」 (không để trẻ lại gần), 「顔を近づける」. Tự động từ: 「近づく」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Mẹ đưa mắt sát vào bức tranh để xem kỹ những đường nét nhỏ."
+    ]
+  },
   "v-0423": {
     "meaning": "Phúc lợi xã hội (chính sách, dịch vụ phúc lợi)",
     "usage": "「福祉が充実している」 (phúc lợi đầy đủ), 「福祉の仕事」, 「福祉サービス」, 「福祉を学ぶ」. Hán Việt \"phúc chỉ\".",
@@ -3665,6 +3953,42 @@
     "example_notes": [
       "Thành phố đã tăng các dịch vụ phúc lợi dành cho người cao tuổi.",
       "Tôi muốn học về phúc lợi xã hội ở đại học và làm công việc hỗ trợ người khuyết tật."
+    ]
+  },
+  "v-0424": {
+    "meaning": "Năm tài khóa (năm tính sổ sách của cơ quan, công ty)",
+    "usage": "「今年度」 (năm tài khóa này), 「年度が始まる」, 「年度末」 (cuối năm tài khóa).",
+    "nuance": "",
+    "compare": "「年度」 (niên độ): năm tài khóa, có thể bắt đầu từ tháng 4: 「今年度」「年度末」. 「年間」 (niên gian): khoảng thời gian một năm, tính từ lúc nào cũng được.",
+    "example_notes": [
+      "Ngân sách không dùng hết nên được chuyển sang năm tài khóa sau."
+    ]
+  },
+  "v-0425": {
+    "meaning": "Thay phiên, đổi người đảm nhiệm lần lượt",
+    "usage": "「選手が交替する」 (thay cầu thủ), 「交替で行う」 (luân phiên làm).",
+    "nuance": "Cũng viết là 「交代」.",
+    "compare": "",
+    "example_notes": [
+      "Ở nhà máy này, ba nhóm thay phiên nhau làm việc, mỗi nhóm tám tiếng."
+    ]
+  },
+  "v-0426": {
+    "meaning": "Thu gom, thu thập từ nhiều nơi",
+    "usage": "「ごみの収集」 (thu gom rác), 「ごみ収集車」 (xe thu gom rác), 「コインの収集」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Thú vui của em trai tôi là sưu tầm tiền xu trên thế giới."
+    ]
+  },
+  "v-0427": {
+    "meaning": "Phát, phân phát cho nhiều người",
+    "usage": "「パンフレットを配布する」 (phát tờ rơi), 「配布される」 (được phát).",
+    "nuance": "Chữ 「配付」 dùng khi phát đề thi và những thứ tương tự.",
+    "compare": "",
+    "example_notes": [
+      "Đồng phục thi đấu mới được phát cho các tuyển thủ."
     ]
   },
   "v-0428": {
@@ -3677,6 +4001,24 @@
       "Email nhiều quá, trong một ngày không xử lý hết được."
     ]
   },
+  "v-0429": {
+    "meaning": "Nhu cầu của người mua, người dùng",
+    "usage": "「需要が高まる」 (nhu cầu tăng), 「需要に応える」 (đáp ứng nhu cầu).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Gần đến mùa hè, nhu cầu mua quạt máy tăng lên."
+    ]
+  },
+  "v-0430": {
+    "meaning": "Cung cấp (đồ vật, tri thức…) để người khác dùng",
+    "usage": "「情報を提供する」 (cung cấp thông tin), 「場を提供する」 (tạo chỗ, cung cấp địa điểm).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Một cựu sinh viên đã cung cấp kinh nghiệm xin việc cho đàn em."
+    ]
+  },
   "v-0431": {
     "meaning": "Công dụng, mục đích mà một đồ vật được dùng vào",
     "usage": "「用途に合わせて選ぶ」, 「いろいろな用途に使える」, 「本来の用途」 (công dụng vốn có của đồ vật).",
@@ -3687,11 +4029,20 @@
       "Xe mới mua thì nên chọn cho hợp với mục đích sử dụng."
     ]
   },
+  "v-0432": {
+    "meaning": "Quê hương, quê nhà (nơi mình sinh ra và lớn lên)",
+    "usage": "「故郷に帰る」 (về quê), 「故郷を思う」 (nhớ quê).",
+    "nuance": "",
+    "compare": "「故郷」 (cố hương): nơi mình sinh ra và lớn lên: 「故郷に帰る」. 「地元」 (địa nguyên): nơi mình đang sống hoặc quê mình: 「地元の友達」.",
+    "example_notes": [
+      "Đến giờ tôi vẫn đôi khi nhớ lại tiếng dòng sông ở quê."
+    ]
+  },
   "v-0433": {
     "meaning": "Địa phương nơi mình sống hoặc quê mình, vùng sở tại",
     "usage": "「地元の人」 (người địa phương), 「地元の友達」, 「地元に戻る」 (về quê), 「地元でとれた野菜」 (rau trồng ở vùng này), 「地元のスーパー」.",
     "nuance": "Đọc 「じもと」: chữ 「地」 đọc 「じ」, không phải 「ち」. Đề thi đã cho 「ちもと」「ちげん」「じけん」 làm phương án sai.",
-    "compare": "",
+    "compare": "「地元」 (địa nguyên): nơi mình đang sống hoặc quê mình: 「地元の友達」. 「故郷」 (cố hương): nơi mình sinh ra và lớn lên: 「故郷に帰る」.",
     "example_notes": [
       "Lễ hội này năm nào cũng do người dân địa phương chuẩn bị.",
       "Tiệm bánh mì này dùng lúa mì thu hoạch ngay tại địa phương."
@@ -3707,6 +4058,16 @@
       "Tôi đã thuê một căn hộ ở chỗ yên tĩnh, cách xa nhà ga."
     ]
   },
+  "v-0435": {
+    "meaning": "Nắm chặt bằng tay; chộp lấy (thời cơ…) làm của mình",
+    "usage": "「腕をつかむ」 (nắm chặt cánh tay), 「チャンスをつかむ」 (nắm bắt cơ hội).",
+    "nuance": "",
+    "compare": "「つかむ」: tay nắm lấy vật gì (tha động từ, đi với 「を」). 「つかまる」: bám vào vật để khỏi ngã (tự động từ, đi với 「に」): 「つり革につかまる」. 「握る」: co ngón tay nắm chặt.",
+    "example_notes": [
+      "Anh ấy chộp lấy quả bóng rơi xuống bằng một tay.",
+      "Nhờ công việc này, cô ấy lần đầu nắm được thành công lớn."
+    ]
+  },
   "v-0436": {
     "meaning": "Về quê thăm nhà (vào dịp nghỉ lễ, nghỉ hè)",
     "usage": "Thêm 「する」: 「帰省する」, 「お正月に帰省する」, 「帰省する人」, 「帰省の予定」. Nơi về là quê nhà.",
@@ -3717,11 +4078,21 @@
       "Trong kỳ nghỉ dài, tàu Shinkansen chật kín người về quê."
     ]
   },
+  "v-0437": {
+    "meaning": "Đường đi đến một nơi; truy cập trang web",
+    "usage": "「アクセスが悪い」 (đi lại bất tiện), 「ホームページにアクセスする」 (truy cập trang web).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Suối nước nóng này có xe buýt đến thuận tiện nên khách đi về trong ngày cũng nhiều.",
+      "Tôi định truy cập trang đăng ký nhưng không vào được."
+    ]
+  },
   "v-0438": {
     "meaning": "Cải thiện, làm cho tình trạng khá lên",
     "usage": "「〜を改善する」, thể bị động 「〜が改善される」, 「手順を改善する」, 「交通が改善される」.",
     "nuance": "Hán Việt \"cải thiện\", nghĩa như tiếng Việt. Đề điền từ đặt 「訂正」「変換」「整備」 cạnh 「改善」.",
-    "compare": "「改善」: làm tình trạng, cách làm khá lên. 「｜訂正《ていせい》」: sửa chỗ sai: 「数字を訂正する」. 「｜改《あらた》める」: động từ, đổi cách làm, lối sống: 「やり方を改める」.",
+    "compare": "「改善」: làm tình trạng, cách làm khá lên. 「｜訂正《ていせい》」: sửa chỗ sai: 「数字を訂正する」. 「｜改《あらた》める」: động từ, đổi cách làm, lối sống: 「やり方を改める」. 「修正」: sửa lỗi, chỗ chưa ổn: 「データを修正する」.",
     "example_notes": [
       "Nhờ làm cửa sổ hai lớp, chuyện phòng lạnh vào mùa đông đã được cải thiện đáng kể.",
       "Nhà máy này cải tiến quy trình làm việc, số sản phẩm làm được mỗi ngày tăng thêm hai mươi phần trăm."
@@ -3737,6 +4108,42 @@
       "Cuối năm công ty có nhiều sự kiện, gần như tuần nào cũng có tiệc nhậu."
     ]
   },
+  "v-0440": {
+    "meaning": "Xa xôi, rất xa (về nơi chốn hoặc thời gian)",
+    "usage": "「はるか昔」 (thuở xa xưa), 「はるか遠く」 (tận nơi xa).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Ánh sáng của ngôi sao này đã phát ra từ thuở xa xưa."
+    ]
+  },
+  "v-0441": {
+    "meaning": "Niềm tự hào về bản thân hay điều gần gũi với mình",
+    "usage": "「誇りに思う」 (lấy làm tự hào), 「誇りを持つ」 (có niềm tự hào). Động từ: 「誇る」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Bố tôi tự hào về công việc ông làm suốt bốn mươi năm."
+    ]
+  },
+  "v-0442": {
+    "meaning": "Được đăng, được in lên báo, sách",
+    "usage": "「新聞に載る」 (được đăng báo), 「雑誌に載る」. Tha động từ: 「載せる」 (đăng).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tiệm bánh mì gần nhà được đăng lên tạp chí nên khách đông hơn."
+    ]
+  },
+  "v-0443": {
+    "meaning": "Quảng cáo, tuyên truyền để nhiều người biết điểm tốt",
+    "usage": "「商品を宣伝する」 (quảng cáo sản phẩm), 「テレビで宣伝する」 (quảng cáo trên TV).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Quán này cắm cờ ngoài đường để quảng cáo món mới."
+    ]
+  },
   "v-0444": {
     "meaning": "Soạn, lập (tài liệu, bảng biểu, áp phích)",
     "usage": "「資料を作成する」, 「資料の作成」, 「表を作成する」, 「ポスターを作成する」.",
@@ -3745,6 +4152,125 @@
     "example_notes": [
       "Trước chuyến đi, tôi lập một bảng kiểm tra đồ mang theo rồi bỏ vào ngăn túi của chiếc cặp.",
       "Các em học sinh trung học cơ sở đã lập bảng niên biểu tóm tắt lịch sử thị trấn này."
+    ]
+  },
+  "v-0445": {
+    "meaning": "Nhìn quen, trở nên quen mắt",
+    "usage": "「見慣れた景色」 (cảnh quen thuộc), 「見慣れない人」 (người lạ mắt). Cũng có 「聞き慣れる」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Con gái tôi nhận ra có chiếc xe lạ mắt đỗ trước nhà."
+    ]
+  },
+  "v-0446": {
+    "meaning": "Ngoại ô, vùng ngay bên ngoài một thành phố lớn",
+    "usage": "「東京の近郊」 (ngoại ô Tokyo), 「近郊に住む」 (sống ở vùng ngoại ô).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tuyến tàu này nối Nagoya với các thị trấn vùng ven."
+    ]
+  },
+  "v-0447": {
+    "meaning": "Vẽ bằng tranh, nét chữ; hình dung trong đầu",
+    "usage": "「風景を描く」 (vẽ phong cảnh), 「夢に描く」 (mơ ước, hình dung trong lòng).",
+    "nuance": "Nghĩa vẽ tranh cũng có thể viết bằng hiragana 「かく」.",
+    "compare": "「描く」: vẽ bằng tranh, chữ; hay hình dung trong lòng: 「夢に描く」. 「思い浮かべる」: hình ảnh hiện lên trong đầu: 「顔を思い浮かべる」.",
+    "example_notes": [
+      "Đứa trẻ vẽ bằng bút sáp đàn cá bơi trong biển.",
+      "Anh ấy mất mười năm để xây ngôi nhà lý tưởng đã hình dung trong lòng."
+    ]
+  },
+  "v-0448": {
+    "meaning": "Người trẻ, giới trẻ",
+    "usage": "「若者が多い」 (nhiều người trẻ), 「若者の間で」 (trong giới trẻ).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Một buổi họp lắng nghe ý kiến giới trẻ được tổ chức ở nhà văn hóa."
+    ]
+  },
+  "v-0449": {
+    "meaning": "Quay về quê; quay đầu xe đi ngược lại",
+    "usage": "「Uターン就職」 (về quê làm việc), 「道でUターンする」 (quay đầu xe giữa đường).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Một người trẻ trở về quê đã sửa lại ngôi nhà cũ trong làng để mở quán cà phê.",
+      "Vì là đường cụt, chiếc xe tải phải lùi tiến nhiều lần để quay đầu trên con đường hẹp."
+    ]
+  },
+  "v-0450": {
+    "meaning": "Đi qua đi lại giữa hai nơi",
+    "usage": "「人の行き来」 (người qua lại), 「行き来が多い」 (qua lại nhiều).",
+    "nuance": "",
+    "compare": "「行き来」: đi qua đi lại giữa hai nơi, đi cùng 「する」. 「行き帰り」: lượt đi và lượt về của một chuyến: 「会社の行き帰り」.",
+    "example_notes": [
+      "Đảo này và đất liền có tàu qua lại nên mua sắm cũng không khó."
+    ]
+  },
+  "v-0451": {
+    "meaning": "Gánh vác (trọng trách, tương lai…)",
+    "usage": "「将来を担う」 (gánh vác tương lai), 「責任を担う」 (đảm nhận trách nhiệm).",
+    "nuance": "",
+    "compare": "「担う」: gánh vác trọng trách, tương lai: 「責任を担う」. 「担ぐ」: cùng chữ 担 nhưng đọc 「かつぐ」, là vác đồ trên vai: 「荷物を担ぐ」.",
+    "example_notes": [
+      "Công tác cứu hỏa của ngôi làng nhỏ này do các tình nguyện viên đảm nhận."
+    ]
+  },
+  "v-0452": {
+    "meaning": "Nơi sẽ đi đến, điểm đến",
+    "usage": "「行き先を決める」 (quyết định nơi đi), 「行き先を確認する」 (xác nhận điểm đến).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Trước khi xuất phát, tôi đã nói cho mẹ biết mình đi đâu."
+    ]
+  },
+  "v-0453": {
+    "meaning": "Hướng, phía; vùng nằm ở hướng đó",
+    "usage": "「東京方面」 (hướng Tokyo), 「北の方面」 (phía bắc).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Bản tin sáng nói phía tây sẽ có mây từ chiều."
+    ]
+  },
+  "v-0454": {
+    "meaning": "Lượt đi và lượt về",
+    "usage": "「会社の行き帰り」 (lúc đi làm và lúc về), 「行き帰りの道」 (đường đi và về).",
+    "nuance": "",
+    "compare": "「行き帰り」: lượt đi và lượt về của một chuyến: 「会社の行き帰り」. 「行き来」: đi qua đi lại giữa hai nơi: 「人の行き来」.",
+    "example_notes": [
+      "Tôi học thuộc từ vựng tiếng Anh trên tàu lúc đi và lúc về."
+    ]
+  },
+  "v-0455": {
+    "meaning": "Băng qua (đường, sông…) theo chiều ngang",
+    "usage": "「道を横断する」 (băng qua đường), 「横断歩道」 (vạch qua đường).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Chúng tôi dùng thuyền băng qua con sông rộng."
+    ]
+  },
+  "v-0456": {
+    "meaning": "Sự đi lại, lưu thông trên đường",
+    "usage": "「通行できない」 (không đi qua được), 「通行止め」 (cấm đường), 「通行禁止」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tuyết làm giao thông ngừng trệ nên tôi đi đường vòng để về."
+    ]
+  },
+  "v-0457": {
+    "meaning": "Người đi bộ",
+    "usage": "「歩行者が渡る」 (người đi bộ băng qua), 「歩行者用」 (dành cho người đi bộ). Cũng có 「通行人」.",
+    "nuance": "",
+    "compare": "「歩行者」 (bộ hành giả): người đi bộ, đối lại với xe: 「歩行者用」. 「人通り」: lượng người qua lại trên đường, không chỉ một người: 「人通りが少ない」.",
+    "example_notes": [
+      "Đèn đỏ, người đi bộ đứng lại chờ."
     ]
   },
   "v-0458": {
@@ -3757,6 +4283,24 @@
       "Bà tôi lúc nào cũng lo lắng cho các cháu sống ở xa."
     ]
   },
+  "v-0459": {
+    "meaning": "Phương tiện, cách thức để làm nên việc",
+    "usage": "「交通手段」 (phương tiện giao thông), 「連絡手段」 (cách thức liên lạc).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Như một cách để tiết kiệm tiền, anh ấy ngày nào cũng tự làm cơm hộp."
+    ]
+  },
+  "v-0460": {
+    "meaning": "Công cộng, thuộc về mọi người trong xã hội",
+    "usage": "「公共の交通手段」 (phương tiện giao thông công cộng), 「公共の場所」 (nơi công cộng).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Đừng nói to ở nơi công cộng nhé."
+    ]
+  },
   "v-0461": {
     "meaning": "Tiền vé, cước phí đi tàu xe",
     "usage": "「バスの運賃」, 「運賃を払う」, 「運賃が上がる」, 「運賃はいくらですか」. Hán Việt \"vận nhẫm\": 「賃」 là tiền công, tiền thuê, như trong 「家賃」 (tiền nhà).",
@@ -3765,6 +4309,33 @@
     "example_notes": [
       "Từ tháng sau, giá vé của tuyến tàu này sẽ tăng.",
       "Cước taxi sẽ tăng lên khi về khuya."
+    ]
+  },
+  "v-0462": {
+    "meaning": "Bám vào, nắm vào vật gì để khỏi ngã",
+    "usage": "「つり革につかまる」 (nắm tay vịn trên tàu), 「手すりにつかまる」 (bám vào lan can). Đi với 「に」.",
+    "nuance": "",
+    "compare": "「つかまる」: bám vào vật để khỏi ngã (tự động từ, đi với 「に」). 「つかむ」: tay nắm lấy vật hay cơ hội (tha động từ, đi với 「を」): 「腕をつかむ」.",
+    "example_notes": [
+      "Con gái nhỏ bám vào tay tôi, vui vẻ bước đi."
+    ]
+  },
+  "v-0463": {
+    "meaning": "Thông báo bằng loa cho nhiều người nghe",
+    "usage": "「アナウンスが流れる」 (có thông báo phát ra), 「車内アナウンス」 (thông báo trên tàu xe).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Trong tòa nhà có tiếng thông báo loa nói rằng có người đang tìm đồ bị bỏ quên."
+    ]
+  },
+  "v-0464": {
+    "meaning": "Hoãn lại, tạm dừng việc đã dự định",
+    "usage": "「運転を見合わせる」 (tạm ngừng chạy tàu xe), 「購入を見合わせる」 (hoãn việc mua).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Chúng tôi quyết định hoãn việc mua máy mới cho đến khi có kết luận."
     ]
   },
   "v-0465": {
@@ -3777,6 +4348,69 @@
       "Người dồn đến hội trường nên hàng người bị rối loạn."
     ]
   },
+  "v-0466": {
+    "meaning": "Bắt đầu lại điều đã bị dừng",
+    "usage": "「運転が再開される」 (việc chạy tàu xe được nối lại), 「再開する」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Ông tôi đã nghỉ nay sức khỏe hồi phục nên làm ruộng trở lại."
+    ]
+  },
+  "v-0467": {
+    "meaning": "Thẻ IC, thẻ có gắn chip điện tử nhỏ",
+    "usage": "「ICカードで乗る」 (dùng thẻ IC đi tàu xe), 「ICカードを使う」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Nếu nạp tiền sẵn vào thẻ IC thì không cần tìm tiền lẻ cũng qua được cổng soát vé."
+    ]
+  },
+  "v-0468": {
+    "meaning": "Giấy phép, bằng (nhà nước cho phép làm nghề, lái xe)",
+    "usage": "「運転免許」 (bằng lái xe), 「免許を取る」 (lấy bằng), 「免許証」 (thẻ bằng).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Năm ngoái anh trai tôi gia hạn bằng lái xe mô tô phân khối lớn."
+    ]
+  },
+  "v-0469": {
+    "meaning": "Trái và phải, hai bên",
+    "usage": "「左右を見る」 (nhìn trái phải), 「左右に窓がある」. Cặp tương tự: 「前後」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Căn phòng có cửa sổ lớn ở cả hai bên thì ban ngày cũng sáng."
+    ]
+  },
+  "v-0470": {
+    "meaning": "Đường thẳng, đường không cong",
+    "usage": "「直線の道」 (con đường thẳng), 「直線を引く」 (kẻ đường thẳng).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Đường ray này kéo dài thành một đoạn thẳng, nhìn thấy được tận phía xa."
+    ]
+  },
+  "v-0471": {
+    "meaning": "Thoai thoải, không dốc gấp, êm",
+    "usage": "「なだらかなカーブ」 (khúc cua thoai thoải), 「なだらかな道」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Từ cửa sổ có thể thấy rõ dáng núi thoai thoải."
+    ]
+  },
+  "v-0472": {
+    "meaning": "Khoảng cách chừa ra giữa hai vật",
+    "usage": "「間隔をあける」 (chừa khoảng cách), 「間隔が広い／狭い」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Cột điện trên con đường này đứng cách nhau gần như đều."
+    ]
+  },
   "v-0473": {
     "meaning": "Trơn tru, trôi chảy, không bị vướng ở khâu nào",
     "usage": "ナ形容詞: 「スムーズに進む」, 「手続きがスムーズになる」, 「乗り換えがスムーズだ」. Từ gốc tiếng Anh \"smooth\".",
@@ -3787,6 +4421,33 @@
       "Mang ít hành lý thì chuyển tàu cũng suôn sẻ."
     ]
   },
+  "v-0474": {
+    "meaning": "Chỉ vào, hướng kim hay ngón tay về một vật, một hướng",
+    "usage": "「針が指す」 (kim chỉ vào), 「地図を指す」 (chỉ vào bản đồ).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Thầy giáo dùng bút chỉ vào một điểm trên bản đồ."
+    ]
+  },
+  "v-0475": {
+    "meaning": "Chầm chậm, lề mề, chậm chạp",
+    "usage": "「のろのろ走る」 (chạy chậm rì), 「のろのろと歩く」 (lê bước). Tính từ: 「のろい」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Con chó bị đau chân lê từng bước chậm chạp trong sân."
+    ]
+  },
+  "v-0476": {
+    "meaning": "Quay vòng vòng, xoay quanh một chỗ",
+    "usage": "「ぐるぐる回る」 (quay vòng vòng), 「公園をぐるぐる歩く」 (đi vòng vòng quanh công viên).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Con chó đuổi theo cái đuôi, quay vòng vòng tại chỗ."
+    ]
+  },
   "v-0477": {
     "meaning": "(Lốp xe) bị thủng, xẹp hết hơi",
     "usage": "「タイヤがパンクする」, 「パンクしたタイヤ」, 「パンクを直す」. Từ gốc tiếng Anh \"puncture\".",
@@ -3795,6 +4456,24 @@
     "example_notes": [
       "Tôi nhờ trạm xăng vá chiếc lốp bị thủng.",
       "Để không bị thủng lốp trên đường núi, tôi đã bơm hơi trước khi đi."
+    ]
+  },
+  "v-0478": {
+    "meaning": "Thận trọng, cẩn thận cân nhắc để tránh nguy hiểm",
+    "usage": "「慎重に運転する」 (lái xe thận trọng), 「慎重に確かめる」 (kiểm tra cẩn thận).",
+    "nuance": "",
+    "compare": "「慎重」 (thận trọng): tính từ đuôi な, chỉ cách làm cẩn thận: 「慎重に確かめる」. 「用心」 (Hán Việt \"dụng tâm\" nhưng không phải \"cố ý\"): danh từ, đề phòng trước: 「火の元に用心する」.",
+    "example_notes": [
+      "Anh ấy kiểm tra nhiệt độ nước nóng thật cẩn thận rồi mới nhúng chân vào."
+    ]
+  },
+  "v-0479": {
+    "meaning": "Lơ là, thả lỏng sự chú ý",
+    "usage": "「気を抜く」, 「気を抜いて失敗する」 (lơ là nên thất bại).",
+    "nuance": "",
+    "compare": "「気を抜く」: thả lỏng, lơ là giữa chừng: 「最後まで気を抜かない」. 「油断」: danh từ, chủ quan mất cảnh giác vì nghĩ là không sao, đi với 「する」: 「油断して失敗する」.",
+    "example_notes": [
+      "Khi xuống núi tôi lơ là nên bị trật chân."
     ]
   },
   "v-0482": {
@@ -5080,7 +5759,7 @@
     "meaning": "Đính chính, sửa lại chỗ sai (chữ, số, lời nói)",
     "usage": "「訂正する」, 「誤りを訂正する」, 「発言を訂正する」, 「訂正を出す」. Hán Việt \"đính chính\", nghĩa như tiếng Việt.",
     "nuance": "Điền từ trong đề: bản thảo sai chữ Hán nên （　） bằng bút đỏ → 「訂正」. Nhiễu 「交換」「改訂」「変換」. 「訂正」 cũng từng là nhiễu cho 「改善」 (thói quen sinh hoạt).",
-    "compare": "「訂正」: sửa chỗ sai: 「数字を訂正する」. 「｜改正《かいせい》」: sửa luật, quy chế: 「法律を改正する」. 「｜改《あらた》める」: đổi cách làm cho tốt hơn: 「やり方を改める」. 「｜改善《かいぜん》」: làm tình trạng khá lên: 「問題が改善される」.",
+    "compare": "「訂正」: sửa chỗ sai: 「数字を訂正する」. 「｜改正《かいせい》」: sửa luật, quy chế: 「法律を改正する」. 「｜改《あらた》める」: đổi cho tốt hơn: 「やり方を改める」. 「｜改善《かいぜん》」: làm khá lên: 「問題が改善される」. 「修正」: sửa lỗi, chỗ chưa ổn.",
     "example_notes": [
       "Ghi nhầm số điện thoại trong đơn đăng ký, tôi gạch hai nét rồi sửa lại.",
       "Sửa lại lời mình đã lỡ nói ra là việc cần can đảm."
@@ -6217,7 +6896,7 @@
     "meaning": "Tập huấn, đào tạo bồi dưỡng nâng cao nghiệp vụ",
     "usage": "「研修を受ける」, 「研修を行う」, 「研修期間」 (giai đoạn tập huấn), 「新人研修」.",
     "nuance": "Hán Việt \"nghiên tu\", chỉ việc rèn luyện thực tế trong công việc, nghề nghiệp.",
-    "compare": "",
+    "compare": "「研修」 (nghiên tu): học thêm kiến thức, kỹ thuật cần cho công việc: 「新人研修」. 「訓練」 (huấn luyện): rèn luyện lặp lại cho thành thạo: 「避難訓練」.",
     "example_notes": [
       "Năm đầu tiên trở thành y tá, tôi phải luân chuyển qua nhiều khoa trong bệnh viện để tập huấn.",
       "Các lính cứu hỏa đã ở lại khu tập huấn vùng núi suốt một tuần để đào tạo cứu hộ địa hình núi non."
@@ -6866,7 +7545,7 @@
     "meaning": "Nắm chặt bằng bàn tay; nắm giữ (quyền hành)",
     "usage": "「手を握る」, 「ハンドルを握る」, 「権力を握る」 (nắm quyền), 「秘密を握る」 (nắm được bí mật).",
     "nuance": "",
-    "compare": "「握る」: co ngón tay nắm chặt, hay nắm quyền: 「権力を握る」. 「｜握手《あくしゅ》」: hai người bắt tay nhau: 「握手を交わす」. 「｜抱《かか》える」: ôm vật bằng hai tay: 「荷物を抱える」.",
+    "compare": "「握る」: co ngón tay nắm chặt, hay nắm quyền: 「権力を握る」. 「｜握手《あくしゅ》」: hai người bắt tay nhau: 「握手を交わす」. 「｜抱《かか》える」: ôm vật bằng hai tay: 「荷物を抱える」. 「つかむ」: chộp lấy: 「チャンスをつかむ」.",
     "example_notes": [
       "Khi đu xà đơn, nên vòng ngón tay cái từ dưới lên để nắm thanh xà.",
       "Tuy không nói gì trong cuộc họp nhưng anh ấy mới là người thực sự nắm quyền quyết định của nhóm."
@@ -7246,7 +7925,7 @@
     "meaning": "Lơ là, mất cảnh giác vì nghĩ là không sao",
     "usage": "「油断大敵」 (lơ là là kẻ thù lớn nhất), 「一瞬も油断できない」, 「油断してミスをする」.",
     "nuance": "",
-    "compare": "「油断」: buông lỏng cảnh giác, chủ quan: 「油断して財布を盗まれた」. 「｜用心《ようじん》」: chú ý đề phòng, cẩn thận trông chừng: 「火の元に用心する」.",
+    "compare": "「油断」: buông lỏng cảnh giác, chủ quan: 「油断して財布を盗まれた」. 「｜用心《ようじん》」: chú ý đề phòng, cẩn thận trông chừng: 「火の元に用心する」. 「気を抜く」: thả lỏng giữa chừng: 「最後まで気を抜かない」.",
     "example_notes": [
       "Ở sân bay, chỉ cần lơ đãng một chút là có thể bị kẻ gian trộm mất hành lý.",
       "Không được chủ quan lái xe mà không cài dây an toàn chỉ vì nghĩ gần nhà."

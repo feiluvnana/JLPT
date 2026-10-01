@@ -622,7 +622,7 @@
     "meaning": "Trực tiếp, không qua người hay khâu trung gian",
     "usage": "Phó từ: 「直接聞く」, 「直接会う」, 「直接伝える」, 「農家から直接買う」. Danh từ: 「直接の原因」. Ngược nghĩa: 「｜間接《かんせつ》」. Hán Việt \"trực tiếp\".",
     "nuance": "Câu thay thế trong đề: 「じかに伝える」＝「直接伝える」. Phương án sai: 「あとで」「すべて」「確実に」.",
-    "compare": "",
+    "compare": "「｜直接《ちょくせつ》」 TRỰC TIẾP làm được cả phó từ lẫn danh từ: 「｜直接《ちょくせつ》の｜原因《げんいん》」. 「じかに」 chỉ là phó từ, cùng nghĩa: 「じかに｜話《はな》す」.",
     "example_notes": [
       "Chi tiết xin hãy hỏi trực tiếp người phụ trách.",
       "Chỗ táo này tôi mua trực tiếp từ nhà nông."
@@ -670,7 +670,7 @@
     "meaning": "Người vào cùng đợt (cùng năm vào công ty)",
     "usage": "「会社の同期」, 「同期の中で」, 「同期の仲間」. Hán Việt \"đồng kỳ\".",
     "nuance": "",
-    "compare": "",
+    "compare": "「｜同期《どうき》」 ĐỒNG KỲ: người vào công ty cùng đợt, cùng năm. 「｜入社《にゅうしゃ》」 NHẬP XÃ: hành động vào công ty: 「｜入社《にゅうしゃ》して｜三年《さんねん》」.",
     "example_notes": [
       "Trong số những người vào công ty cùng đợt, người đầu tiên lên trưởng phòng là anh Yamada."
     ]
@@ -1240,7 +1240,7 @@
     "meaning": "Gia hạn (hợp đồng, giấy tờ); phá, làm mới (kỷ lục)",
     "usage": "「免許証の更新」, 「契約を更新する」, 「記録を更新する」 (phá kỷ lục). Hán Việt \"canh tân\".",
     "nuance": "",
-    "compare": "",
+    "compare": "「｜更新《こうしん》」 CANH TÂN: làm mới cái đã có, như hợp đồng hết hạn: 「｜契約《けいやく》を｜更新《こうしん》する」. 「｜契約《けいやく》」 KHẾ ƯỚC: bản thân việc ký kết: 「｜契約《けいやく》を｜結《むす》ぶ」.",
     "example_notes": [
       "Để gia hạn bằng lái xe, tôi xin nghỉ một ngày trong tuần."
     ]
@@ -1440,7 +1440,7 @@
     "meaning": "Canh gác, bảo vệ an ninh cho một nơi",
     "usage": "「警備員」 (nhân viên bảo vệ), 「警備会社」, 「警備が厳しい」 (canh gác nghiêm ngặt), 「警備に当たる」 (đảm nhận việc canh gác). Hán Việt \"cảnh bị\".",
     "nuance": "Đọc 「けいび」: chữ 「備」 đọc 「び」 (hữu thanh), đề thi đã cho 「けいひ」「けび」 làm phương án sai. Khi hỏi cách viết, đề đã gài 「警秘」「係備」「警護」.",
-    "compare": "「警備」: canh gác, bảo vệ một nơi: 「警備員」. 「｜防犯《ぼうはん》」: phòng ngừa tội phạm nói chung: 「防犯カメラ」.",
+    "compare": "「警備」: canh gác, bảo vệ một nơi: 「警備員」. 「｜防犯《ぼうはん》」: phòng ngừa tội phạm nói chung: 「防犯カメラ」. 「ガードマン」: người làm việc canh gác đó.",
     "example_notes": [
       "Quanh hội trường buổi hòa nhạc, rất nhiều người đang làm nhiệm vụ canh gác.",
       "Bảo tàng mỹ thuật này được máy móc canh gác cả vào ban đêm."
@@ -4866,7 +4866,7 @@
     "meaning": "Nhận thức, sự nhận ra",
     "usage": "「〜を｜認識《にんしき》する」, 「｜認識不足《にんしきぶそく》」 (thiếu nhận thức), 「｜認識《にんしき》させる」.",
     "nuance": "",
-    "compare": "",
+    "compare": "「｜認識《にんしき》」 NHẬN THỨC hướng ra sự việc: 「｜危険《きけん》を｜認識《にんしき》する」. 「｜自覚《じかく》」 TỰ GIÁC hướng vào bản thân: 「｜自覚《じかく》がある」.",
     "example_notes": [
       "Về mức phí mới, người của cửa hàng và khách có nhận định khác nhau."
     ]
@@ -5901,6 +5901,132 @@
       "Từ nhỏ, anh ấy đã mong muốn trở thành bác sĩ."
     ]
   },
+  "v-0635": {
+    "meaning": "Đăng ký dự tuyển, nộp hồ sơ ứng tuyển",
+    "usage": "「エントリーする」, 「エントリーシート」 (phiếu dự tuyển ghi lý lịch).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Cứ làm theo hướng dẫn trên trang tuyển dụng, tối nay tôi sẽ đăng ký dự tuyển cho xong."
+    ]
+  },
+  "v-0636": {
+    "meaning": "Tham gia, làm việc có liên quan đến",
+    "usage": "「〜に｜携《たずさ》わる」: 「｜開発《かいはつ》に｜携《たずさ》わる」, 「｜教育《きょういく》に｜携《たずさ》わっている」. Đi với trợ từ 「に」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Kỹ sư đã gắn bó nhiều năm với việc thiết kế cầu sẽ nghỉ việc vào tháng sau."
+    ]
+  },
+  "v-0637": {
+    "meaning": "Phát huy, tận dụng",
+    "usage": "「｜経験《けいけん》を｜生《い》かす」, 「｜長所《ちょうしょ》を｜生《い》かす」, 「〜を｜生《い》かした｜仕事《しごと》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi tận dụng khả năng ngoại ngữ để giúp khách du lịch hỏi đường."
+    ]
+  },
+  "v-0638": {
+    "meaning": "Quý công ty",
+    "usage": "「｜貴社《きしゃ》の｜製品《せいひん》」, 「｜貴社《きしゃ》のご｜発展《はってん》」. Gọi công ty của người nhận. 「｜御社《おんしゃ》」 cùng nghĩa; 「｜弊社《へいしゃ》」 là công ty của chính mình (ngược lại).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Chúng tôi đã xem xét trong nội bộ đề xuất của quý công ty mà hôm trước đã gửi cho chúng tôi."
+    ]
+  },
+  "v-0639": {
+    "meaning": "Kính gửi (viết sau tên đơn vị ở phần người nhận)",
+    "usage": "「〇〇｜商事《しょうじ》 ｜御中《おんちゅう》」: ghi sau tên công ty khi gửi thư cho công ty.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi ghi 「青葉小学校 御中」 lên phong bì đựng đơn đăng ký rồi gửi đi."
+    ]
+  },
+  "v-0640": {
+    "meaning": "Động cơ",
+    "usage": "「｜動機《どうき》を｜話《はな》す」, 「｜動機《どうき》を｜伝《つた》える」, 「｜志望動機《しぼうどうき》」 (động cơ xin vào, nộp đơn).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Trưởng phòng hỏi kỹ tôi về động cơ xin chuyển sang bộ phận mới."
+    ]
+  },
+  "v-0641": {
+    "meaning": "Nhiệt tình, thành ý",
+    "usage": "「｜熱意《ねつい》がある」, 「｜熱意《ねつい》を｜見《み》せる」, 「｜熱意《ねつい》を｜伝《つた》える」, 「｜熱意《ねつい》に｜動《うご》かされる」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Chị ấy với nhiệt huyết muốn giữ gìn những bộ phim cũ đã tập hợp bạn bè và tổ chức một liên hoan phim nhỏ."
+    ]
+  },
+  "v-0642": {
+    "meaning": "Lý lịch học tập, trình độ học vấn đã qua",
+    "usage": "「｜学歴《がくれき》を｜問《と》わない」, 「｜学歴《がくれき》｜不問《ふもん》」, 「｜高学歴《こうがくれき》」 (học vấn cao).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Vị chủ doanh nghiệp ấy học vấn tuy không cao nhưng có nhiều kinh nghiệm thực tế tại hiện trường."
+    ]
+  },
+  "v-0643": {
+    "meaning": "Không hỏi tới, không đặt điều kiện",
+    "usage": "Ghép sau danh từ: 「｜経験《けいけん》｜不問《ふもん》」, 「｜年齢《ねんれい》｜不問《ふもん》」, 「｜学歴《がくれき》｜不問《ふもん》」, 「｜性別《せいべつ》｜不問《ふもん》」. Dùng trong quảng cáo tuyển người.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Cuộc thi tranh không hỏi quốc tịch nên chị tôi, du học sinh, cũng nộp tác phẩm."
+    ]
+  },
+  "v-0644": {
+    "meaning": "Sự hạn chế, giới hạn",
+    "usage": "「｜制限《せいげん》する」, 「｜制限《せいげん》がある」, 「｜速度制限《そくどせいげん》」, 「｜人数制限《にんずうせいげん》」, 「｜年齢《ねんれい》の｜制限《せいげん》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Trang video này đặt giới hạn về khoảng thời gian trẻ em được xem."
+    ]
+  },
+  "v-0645": {
+    "meaning": "Sở trường, kỹ năng đặc biệt",
+    "usage": "「｜特技《とくぎ》は〜です」, 「｜特技《とくぎ》がある」. Có thể đi cùng 「｜趣味《しゅみ》」 (sở thích): 「｜趣味《しゅみ》・｜特技《とくぎ》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Sở trường của anh tôi là dù bài khó đến đâu, chỉ nghe một lần là huýt sáo được."
+    ]
+  },
+  "v-0646": {
+    "meaning": "Sự hòa đồng, hợp tác",
+    "usage": "「｜協調《きょうちょう》する」, 「｜協調性《きょうちょうせい》」 (tính hòa đồng, hợp tác), 「｜協調性《きょうちょうせい》がある」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi cùng những người bạn mới hòa hợp với nhau để dựng nên một vở diễn."
+    ]
+  },
+  "v-0647": {
+    "meaning": "Quan trọng nhất, then chốt, cốt lõi",
+    "usage": "「｜肝心《かんじん》な｜点《てん》」, 「｜肝心《かんじん》な｜書類《しょるい》」, 「〜が｜肝心《かんじん》だ」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Đến ga tôi mới nhận ra mình để quên trên bàn tấm vé tháng quan trọng nhất."
+    ]
+  },
+  "v-0648": {
+    "meaning": "Hết sức mình, dốc toàn lực",
+    "usage": "Phó từ: 「｜精一杯《せいいっぱい》がんばる」, 「｜精一杯《せいいっぱい》｜走《はし》る」. Danh từ: 「これが｜精一杯《せいいっぱい》だ」 (chỉ làm được đến mức này).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Giữa trời tuyết, tôi vừa thở hổn hển vừa dốc hết sức chạy trên đường đi đón mẹ."
+    ]
+  },
   "v-0649": {
     "meaning": "Làm nổi bật điểm hay của mình, của sản phẩm cho người khác thấy",
     "usage": "「自分をアピールする」, 「良さをアピールする」, 「〜にアピールする」, 「アピールする力」. Từ gốc tiếng Anh \"appeal\".",
@@ -5909,6 +6035,51 @@
     "example_notes": [
       "Trước cuộc bầu cử, các ứng viên đứng trước ga trình bày quan điểm của mình.",
       "Tấm áp phích này màu sắc nhạt nhòa, sức hút với người xem yếu."
+    ]
+  },
+  "v-0650": {
+    "meaning": "Ứng xử, xử lý, đối ứng; trả lời",
+    "usage": "「｜対応《たいおう》する」, 「｜対応《たいおう》が｜早《はや》い」, 「｜質問《しつもん》への｜対応《たいおう》」, 「｜客《きゃく》に｜対応《たいおう》する」.",
+    "nuance": "",
+    "compare": "「｜対応《たいおう》」 ĐỐI ỨNG (chữ 「対」 đứng trước) là xử lý tình huống, vấn đề: 「｜苦情《くじょう》に｜対応《たいおう》する」. 「｜応対《おうたい》」 ỨNG ĐỐI (chữ 「応」 trước) là tiếp, trả lời người đến, người gọi: 「｜電話《でんわ》の｜応対《おうたい》」.",
+    "example_notes": [
+      "Người phụ trách đã xử lý email hỏi đáp trước sáng hôm sau."
+    ]
+  },
+  "v-0651": {
+    "meaning": "Chung, liên hợp, tập thể (nhiều bên cùng làm)",
+    "usage": "「｜合同《ごうどう》で｜行《おこな》う」, 「｜合同《ごうどう》｜発表《はっぴょう》」, 「｜合同練習《ごうどうれんしゅう》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Trong buổi luyện tập chung của các câu lạc bộ kèn đồng, tôi giật mình trước độ to tiếng của thành viên trường khác."
+    ]
+  },
+  "v-0652": {
+    "meaning": "Đáng mong muốn, được kỳ vọng",
+    "usage": "「〜ことが｜望《のぞ》ましい」, 「｜望《のぞ》ましい｜結果《けっか》」, 「｜望《のぞ》ましくない」.",
+    "nuance": "",
+    "compare": "Cả hai đều dịch được là \"tốt, nên\". Chữ 「望」 VỌNG (mong): 「｜望《のぞ》ましい」 là điều mong cho xảy ra, thường 「〜ことが｜望《のぞ》ましい」. Chữ 「好」 HẢO (ưa): 「｜好《この》ましい」 là thấy ưa, dễ chịu: 「｜好《この》ましい｜印象《いんしょう》」.",
+    "example_notes": [
+      "Trước khi đi tàu thuyền, tốt nhất nên ăn nhẹ."
+    ]
+  },
+  "v-0653": {
+    "meaning": "Đáng ưa chuộng, đáng mến, thích hợp hơn",
+    "usage": "「｜好《この》ましい｜印象《いんしょう》」, 「〜のほうが｜好《この》ましい」, 「｜好《この》ましくない」. Liên quan: 「｜好《この》む」 (ưa chuộng, thích).",
+    "nuance": "",
+    "compare": "Gốc chữ giúp phân biệt: 「好」 HẢO (ưa, thích) → 「｜好《この》ましい」 là cảm giác mình thấy ưa: 「｜好《この》ましい｜青年《せいねん》」. 「望」 VỌNG (mong) → 「｜望《のぞ》ましい」 là điều nên có: 「｜参加《さんか》が｜望《のぞ》ましい」.",
+    "example_notes": [
+      "Hàng xóm đều nói cậu ấy là một chàng trai đáng mến vì không bao giờ quên chào hỏi."
+    ]
+  },
+  "v-0654": {
+    "meaning": "Công bằng, sự công bằng",
+    "usage": "「｜公平《こうへい》な｜判断《はんだん》」, 「｜公平《こうへい》に｜分《わ》ける」, 「｜公平《こうへい》に｜扱《あつか》う」. Phủ định: 「｜不公平《ふこうへい》」 (không công bằng). Từ liên quan: 「｜公正《こうせい》」 (công chính).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Thứ tự được quyết định bằng số chọn khi nhắm mắt nên công bằng với mọi người."
     ]
   },
   "v-0655": {
@@ -5921,6 +6092,24 @@
       "Trận đấu thì thua rồi, nhưng tôi đã muốn ít ra cũng ghi được một điểm."
     ]
   },
+  "v-0656": {
+    "meaning": "Nhận (được), tiếp nhận",
+    "usage": "「｜手紙《てがみ》を｜受《う》け｜取《と》る」, 「｜荷物《にもつ》を｜受《う》け｜取《と》る」, 「｜通知《つうち》を｜受《う》け｜取《と》る」.",
+    "nuance": "",
+    "compare": "Tiếng Việt đều nói \"nhận\", nhưng 「｜受《う》け｜取《と》る」 là nhận vật, giấy tờ người khác trao: 「｜荷物《にもつ》を｜受《う》け｜取《と》る」; 「｜得《え》る」 ĐẮC là có được thứ trừu tượng: 「｜信頼《しんらい》を｜得《え》る」.",
+    "example_notes": [
+      "Được gọi số ở quầy, tôi nhận thẻ bảo hiểm mới."
+    ]
+  },
+  "v-0657": {
+    "meaning": "Quyết định nội bộ, tạm quyết định (hay dùng trong tuyển dụng)",
+    "usage": "「｜内定《ないてい》をもらう」, 「｜内定《ないてい》が｜出《で》る」, 「｜内定《ないてい》を｜辞退《じたい》する」, 「｜内定《ないてい》の｜知《し》らせ」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Một tuần sau buổi phỏng vấn, thông báo trúng tuyển đã đến qua email."
+    ]
+  },
   "v-0658": {
     "meaning": "Từ chối nhận, xin rút (vị trí, giải thưởng, lời mời)",
     "usage": "「〜を辞退する」, 「賞を辞退する」, 「代表を辞退する」, 「辞退させていただきます」. Hán Việt \"từ thoái\".",
@@ -5929,6 +6118,96 @@
     "example_notes": [
       "Anh ấy được trao giải nhưng đã từ chối nhận.",
       "Cảm ơn lời mời quý báu, nhưng lần này xin phép cho tôi được từ chối."
+    ]
+  },
+  "v-0659": {
+    "meaning": "Hợp đồng; ký hợp đồng",
+    "usage": "「｜契約《けいやく》する」, 「｜契約《けいやく》を｜結《むす》ぶ」, 「｜契約書《けいやくしょ》」, 「｜契約社員《けいやくしゃいん》」 (nhân viên hợp đồng).",
+    "nuance": "",
+    "compare": "「｜契約《けいやく》」 KHẾ ƯỚC: việc ký kết hợp đồng: 「｜契約《けいやく》を｜結《むす》ぶ」. 「｜更新《こうしん》」 CANH TÂN: làm mới hợp đồng đã có khi hết hạn: 「｜契約《けいやく》を｜更新《こうしん》する」.",
+    "example_notes": [
+      "Tôi đã ký hợp đồng chuyển đường truyền internet sang một công ty mới."
+    ]
+  },
+  "v-0660": {
+    "meaning": "Vào công ty, gia nhập công ty",
+    "usage": "「｜入社《にゅうしゃ》する」, 「｜四月《しがつ》に｜入社《にゅうしゃ》する」, 「｜入社《にゅうしゃ》して｜三年《さんねん》」. Từ trái nghĩa: 「｜退社《たいしゃ》」.",
+    "nuance": "",
+    "compare": "「｜入社《にゅうしゃ》」 NHẬP XÃ: hành động vào công ty, dùng 「｜入社《にゅうしゃ》する」. Người vừa vào là 「｜新入社員《しんにゅうしゃいん》」 TÂN NHẬP XÃ VIÊN; người vào cùng đợt là 「｜同期《どうき》」 ĐỒNG KỲ.",
+    "example_notes": [
+      "Vào năm thứ ba kể từ khi vào công ty, lần đầu tiên tôi đi xem nhà máy ở nước ngoài."
+    ]
+  },
+  "v-0661": {
+    "meaning": "Thấu hiểu, nắm rõ, nhận thức",
+    "usage": "「｜心得《こころえ》ておく」, 「ルールを｜心得《こころえ》る」, danh từ 「｜心得《こころえ》」 (sự thấu hiểu, nhận thức).",
+    "nuance": "",
+    "compare": "「｜心得《こころえ》る」 đọc theo âm Nhật; âm Hán TÂM ĐẮC dễ gợi \"tâm đắc\" (rất ưng ý) của tiếng Việt, nghĩa khác: đây là nắm rõ điều cần giữ: 「マナーを｜心得《こころえ》る」. 「｜自覚《じかく》」 TỰ GIÁC: biết rõ tình trạng của mình.",
+    "example_notes": [
+      "Ai đã nắm vững thao tác cơ bản của máy tính thì sẽ nhanh chóng học được việc này."
+    ]
+  },
+  "v-0662": {
+    "meaning": "Người đi làm, người đã tốt nghiệp và ra làm việc",
+    "usage": "「｜社会人《しゃかいじん》になる」, 「｜社会人《しゃかいじん》｜一年目《いちねんめ》」. Đối lập với 「｜学生《がくせい》」 (sinh viên, học sinh).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Từ khi đi làm, tôi bắt đầu tự quyết định cách tiêu tiền lương của mình."
+    ]
+  },
+  "v-0663": {
+    "meaning": "Tự giác, tự nhận thức rõ",
+    "usage": "「｜自覚《じかく》する」, 「｜自覚《じかく》がある」, 「｜自覚《じかく》を｜持《も》つ」, 「｜自覚症状《じかくしょうじょう》」 (triệu chứng tự nhận biết).",
+    "nuance": "",
+    "compare": "「｜自覚《じかく》」 TỰ GIÁC hướng vào bản thân: 「｜疲《つか》れの｜自覚《じかく》がない」. 「｜認識《にんしき》」 NHẬN THỨC hướng ra sự việc bên ngoài: 「｜状況《じょうきょう》を｜認識《にんしき》する」. 「｜心得《こころえ》る」: nắm rõ điều cần giữ.",
+    "example_notes": [
+      "Anh ấy tự nhận thức rõ khuyết điểm của mình và mỗi ngày cố sửa dần từng chút."
+    ]
+  },
+  "v-0664": {
+    "meaning": "Cuối cùng thì, đến lúc rồi, sắp đến",
+    "usage": "「いよいよ｜明日《あした》だ」, 「いよいよ｜始《はじ》まる」, 「いよいよ｜本番《ほんばん》だ」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Buổi biểu diễn mà tôi đã luyện tập suốt nửa năm cuối cùng cũng đã sát ngày mai."
+    ]
+  },
+  "v-0665": {
+    "meaning": "Doanh nghiệp lớn, tập đoàn",
+    "usage": "「｜大企業《だいきぎょう》に｜勤《つと》める」, 「｜中小企業《ちゅうしょうきぎょう》」 (doanh nghiệp vừa và nhỏ), 「｜一流《いちりゅう》｜企業《きぎょう》」 (doanh nghiệp hàng đầu).",
+    "nuance": "",
+    "compare": "「｜大企業《だいきぎょう》」 ĐẠI XÍ NGHIỆP: xét theo quy mô, nhiều nhân viên. 「｜大手《おおて》」 đọc 「おおて」: xét theo vị trí đứng đầu trong một ngành: 「｜大手《おおて》の｜銀行《ぎんこう》」.",
+    "example_notes": [
+      "Chú tôi nghỉ việc ở một doanh nghiệp lớn để mở một nông trại nhỏ."
+    ]
+  },
+  "v-0666": {
+    "meaning": "Công ty lớn, doanh nghiệp đầu ngành",
+    "usage": "「｜大手《おおて》の｜会社《かいしゃ》」, 「｜大手《おおて》ではない」. Nói về công ty nằm ở nhóm đầu của một ngành.",
+    "nuance": "",
+    "compare": "「｜大手《おおて》」 đọc theo âm Nhật 「おおて」, nói vị trí trong một ngành: 「｜旅行業界《りょこうぎょうかい》の｜大手《おおて》」. 「｜大企業《だいきぎょう》」 ĐẠI XÍ NGHIỆP nói về quy mô công ty.",
+    "example_notes": [
+      "Anh tôi được nhận vào một công ty du lịch lớn, nhưng chỉ một năm sau đã bị đổi bộ phận."
+    ]
+  },
+  "v-0667": {
+    "meaning": "Đại diện",
+    "usage": "「｜代表《だいひょう》する」, 「｜代表者《だいひょうしゃ》」, 「〜の｜代表《だいひょう》」, 「｜日本《にほん》を｜代表《だいひょう》する〜」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Mỗi bộ phận cử một người đại diện đến dự cuộc họp."
+    ]
+  },
+  "v-0668": {
+    "meaning": "Tư nhân, khu vực tư nhân",
+    "usage": "「｜民間企業《みんかんきぎょう》」, 「｜民間《みんかん》の｜会社《かいしゃ》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Sở thú này do một công ty tư nhân điều hành."
     ]
   },
   "v-0669": {
@@ -5941,24 +6220,169 @@
       "Đã làm việc trong một tổ chức thì không thể hành động tùy tiện."
     ]
   },
+  "v-0670": {
+    "meaning": "Nhân viên, người làm cho công ty",
+    "usage": "「｜従業員《じゅうぎょういん》を｜雇《やと》う」, 「｜従業員数《じゅうぎょういんすう》」, 「｜従業員《じゅうぎょういん》｜三百人《さんびゃくにん》の｜会社《かいしゃ》」. Từ liên quan: 「｜労働者《ろうどうしゃ》」 (người lao động).",
+    "nuance": "",
+    "compare": "「｜従業員《じゅうぎょういん》」 TÒNG NGHIỆP VIÊN: mọi người làm thuê cho công ty, cửa hàng. 「｜新入社員《しんにゅうしゃいん》」 TÂN NHẬP XÃ VIÊN: người mới vào. 「｜派遣社員《はけんしゃいん》」 PHÁI KHIỂN XÃ VIÊN: người do công ty khác gửi tới.",
+    "example_notes": [
+      "Ở nhà trọ kiểu Nhật này, quy định là toàn thể nhân viên cùng dọn dẹp vào buổi sáng."
+    ]
+  },
+  "v-0671": {
+    "meaning": "Nhân viên mới vào công ty",
+    "usage": "「｜新入社員《しんにゅうしゃいん》｜研修《けんしゅう》」, 「｜新入社員《しんにゅうしゃいん》の｜山田《やまだ》さん」. Từ liên quan: 「｜新入生《しんにゅうせい》」 (học sinh, sinh viên mới vào trường).",
+    "nuance": "",
+    "compare": "「｜新入社員《しんにゅうしゃいん》」 TÂN NHẬP XÃ VIÊN: chữ 「新入」 là \"mới vào\". 「｜入社《にゅうしゃ》」 là hành động vào; 「｜同期《どうき》」 là người vào cùng đợt; 「｜従業員《じゅうぎょういん》」, 「｜派遣社員《はけんしゃいん》」 nói về cách được thuê.",
+    "example_notes": [
+      "Nhân viên mới Yamaguchi chép cách nghe điện thoại vào sổ tay rồi học thuộc."
+    ]
+  },
+  "v-0672": {
+    "meaning": "Nhân viên ngắn hạn do bên phái cử đưa tới",
+    "usage": "「｜派遣社員《はけんしゃいん》として｜働《はたら》く」, 「｜派遣会社《はけんがいしゃ》」 (công ty phái cử nhân lực). Đối lập với 「｜正社員《せいしゃいん》」 (nhân viên chính thức).",
+    "nuance": "",
+    "compare": "「｜派遣《はけん》」 PHÁI KHIỂN = phái đi: 「｜派遣社員《はけんしゃいん》」 do 「｜派遣会社《はけんがいしゃ》」 gửi tới làm. 「｜従業員《じゅうぎょういん》」 TÒNG NGHIỆP VIÊN: người làm cho công ty nói chung. 「｜新入社員《しんにゅうしゃいん》」: người mới vào.",
+    "example_notes": [
+      "Người phụ nữ đến làm theo diện phái cử, nửa năm sau đã trở thành nhân viên chính thức."
+    ]
+  },
+  "v-0673": {
+    "meaning": "Chủ sở hữu, ông chủ",
+    "usage": "「｜店《みせ》のオーナー」, 「ホテルのオーナー」, 「｜会社《かいしゃ》のオーナー」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Ông chủ khách sạn này sáng nào cũng tự tay thay hoa ở lối vào."
+    ]
+  },
+  "v-0674": {
+    "meaning": "Giám đốc, lãnh đạo cấp cao",
+    "usage": "「｜重役《じゅうやく》になる」, 「｜重役《じゅうやく》と｜会《あ》う」. Từ liên quan: 「｜役員《やくいん》」 (cán bộ điều hành).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Anh ấy được chọn làm một trong các lãnh đạo cấp cao sau hai mươi năm vào công ty."
+    ]
+  },
+  "v-0675": {
+    "meaning": "Văn phòng",
+    "usage": "「オフィスビル」, 「オフィス｜街《がい》」, 「オフィスで｜働《はたら》く」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Từ khi chuyển sang văn phòng có cửa sổ rộng, nụ cười của nhân viên nhiều hơn."
+    ]
+  },
+  "v-0676": {
+    "meaning": "Cấp phát, chi trả (tiền, vật dụng)",
+    "usage": "「｜支給《しきゅう》する」, 「｜支給《しきゅう》される」, 「｜支給額《しきゅうがく》」, 「｜給料《きゅうりょう》が｜支給《しきゅう》される」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Công ty cấp cho vé tháng dùng để đi làm."
+    ]
+  },
   "v-0677": {
     "meaning": "Thăng tiến, leo lên địa vị cao trong công việc",
     "usage": "「出世する」, 「出世のために」, 「出世よりも〜」. Hán Việt \"xuất thế\", nhưng tiếng Việt \"xuất thế\" là lánh đời — nghĩa khác hẳn.",
     "nuance": "Viết: 「出」 + 「世」. Đề thi đã gài 「出成」「昇成」「昇世」: 「昇」 cũng mang nghĩa \"lên\" nên dễ chọn nhầm.",
-    "compare": "",
+    "compare": "Cả hai đều dịch được là \"thăng tiến\". 「｜出世《しゅっせ》」 XUẤT THẾ: leo lên địa vị cao trong đời, trong công ty: 「｜出世《しゅっせ》が｜早《はや》い」. 「｜昇進《しょうしん》」 THĂNG TIẾN: lên một chức cụ thể.",
     "example_notes": [
       "Tôi muốn coi trọng thời gian bên gia đình hơn là thăng tiến.",
       "Để thăng tiến, ngày nghỉ tôi cũng tiếp tục học lấy chứng chỉ."
+    ]
+  },
+  "v-0678": {
+    "meaning": "Thăng chức, thăng tiến",
+    "usage": "「｜昇進《しょうしん》する」, 「｜部長《ぶちょう》に｜昇進《しょうしん》する」, 「｜昇進《しょうしん》が｜決《き》まる」.",
+    "nuance": "",
+    "compare": "Cả hai đều dịch được là \"thăng tiến\". 「｜昇進《しょうしん》」 THĂNG TIẾN là lên một chức cụ thể: 「｜部長《ぶちょう》に｜昇進《しょうしん》する」. 「｜出世《しゅっせ》」 XUẤT THẾ là leo lên địa vị cao nói chung: 「｜出世《しゅっせ》が｜早《はや》い」.",
+    "example_notes": [
+      "Hôm có quyết định thăng chức của chị ấy, các đồng nghiệp đã chuẩn bị một bó hoa nhỏ."
     ]
   },
   "v-0679": {
     "meaning": "Chuyển công tác đến nơi làm việc khác trong cùng công ty",
     "usage": "「転勤する」, 「〜への転勤を命じられる」, 「父の転勤で」, 「転勤が多い」.",
     "nuance": "Điền từ: được lệnh chuyển từ chi nhánh Kyoto về trụ sở Tokyo → 「転勤」. Đề đặt 「転職」 (đổi sang công ty khác), 「移住」, 「移行」 làm phương án nhiễu.",
-    "compare": "",
+    "compare": "「｜転勤《てんきん》」 CHUYỂN CẦN: đổi nơi làm trong cùng công ty. 「｜赴任《ふにん》」 PHÓ NHIỆM: đến nơi làm mới để nhận chức: 「｜大阪《おおさか》に｜赴任《ふにん》する」.",
     "example_notes": [
       "Vì bố chuyển công tác, tôi đã đổi trường tiểu học tới ba lần.",
       "Tôi chọn một công việc không phải chuyển công tác và làm việc ở quê."
+    ]
+  },
+  "v-0680": {
+    "meaning": "Đi nhận chức ở nơi làm việc mới",
+    "usage": "「｜赴任《ふにん》する」, 「〜へ｜赴任《ふにん》する」, 「｜単身赴任《たんしんふにん》」 (đi làm xa một mình, để gia đình ở lại).",
+    "nuance": "",
+    "compare": "「｜赴任《ふにん》」 PHÓ NHIỆM: đến nơi làm mới để nhận chức: 「｜単身赴任《たんしんふにん》」. 「｜転勤《てんきん》」 CHUYỂN CẦN: bị đổi nơi làm trong cùng công ty: 「｜転勤《てんきん》が｜多《おお》い」.",
+    "example_notes": [
+      "Hiệu trưởng mới nhận chức đã đứng ở cổng trường chào học sinh vào buổi sáng đầu tiên."
+    ]
+  },
+  "v-0681": {
+    "meaning": "Nghỉ phép có lương",
+    "usage": "「｜有給休暇《ゆうきゅうきゅうか》を｜取《と》る」. Nói gọn là 「｜有休《ゆうきゅう》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Để đi dự đám cưới, tôi đã xin nghỉ phép có lương vào thứ Sáu."
+    ]
+  },
+  "v-0682": {
+    "meaning": "Nhân sự",
+    "usage": "「｜人事部《じんじぶ》」, 「｜人事《じんじ》の｜担当者《たんとうしゃ》」, 「｜来年度《らいねんど》の｜人事《じんじ》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Ngày công bố nhân sự năm tới đã gần, trong công ty ai cũng hơi thấp thỏm."
+    ]
+  },
+  "v-0683": {
+    "meaning": "Nhân tài, nguồn nhân lực",
+    "usage": "「｜人材《じんざい》を｜育《そだ》てる」, 「｜優秀《ゆうしゅう》な｜人材《じんざい》」, 「｜人材《じんざい》が｜集《あつ》まる」.",
+    "nuance": "",
+    "compare": "「｜人材《じんざい》」 NHÂN TÀI không chỉ \"người tài giỏi\": là người có năng lực, xét như nguồn lực: 「｜人材《じんざい》を｜育《そだ》てる」. 「｜人手《ひとで》」 đọc 「ひとで」: số người làm, sức lao động: 「｜人手《ひとで》が｜足《た》りない」.",
+    "example_notes": [
+      "Công ty này cử nhân tài trẻ đến chi nhánh để học việc ở hiện trường."
+    ]
+  },
+  "v-0684": {
+    "meaning": "Người làm việc, nhân công",
+    "usage": "「｜人手《ひとで》が｜足《た》りない」, 「｜人手不足《ひとでぶそく》」 (thiếu người làm), 「｜人手《ひとで》がいる」.",
+    "nuance": "",
+    "compare": "「｜人手《ひとで》」 đọc 「ひとで」, không đọc theo âm Hán: số người làm việc: 「｜人手不足《ひとでぶそく》」. 「｜人材《じんざい》」 NHÂN TÀI: người có năng lực: 「｜優秀《ゆうしゅう》な｜人材《じんざい》」.",
+    "example_notes": [
+      "Cuối năm, các cửa hàng ở khu phố sầm uất khó tìm được người khuân hàng."
+    ]
+  },
+  "v-0685": {
+    "meaning": "Người dùng thử và góp ý; sự theo dõi, kiểm chứng",
+    "usage": "「｜商品《しょうひん》のモニターをする」, 「モニターになる」, 「モニターに｜応募《おうぼ》する」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi được chọn làm người dùng thử mỹ phẩm mới và báo cáo cảm nhận sau một tháng sử dụng."
+    ]
+  },
+  "v-0686": {
+    "meaning": "Thành tích, kết quả hoạt động của công ty",
+    "usage": "「｜業績《ぎょうせき》が｜伸《の》びる」, 「｜業績《ぎょうせき》が｜上《あ》がる」, 「｜業績《ぎょうせき》が｜下《さ》がる」, 「｜会社《かいしゃ》の｜業績《ぎょうせき》」.",
+    "nuance": "",
+    "compare": "「｜業績《ぎょうせき》」 NGHIỆP TÍCH: kết quả làm ăn của công ty, cửa hàng: 「｜業績《ぎょうせき》が｜伸《の》びる」. 「｜成果《せいか》」 THÀNH QUẢ: kết quả tốt nhờ cố gắng, kể cả của một cá nhân: 「｜研究《けんきゅう》の｜成果《せいか》」.",
+    "example_notes": [
+      "Sản phẩm mới trúng thị hiếu nên kết quả kinh doanh của công ty đi lên hai năm liền."
+    ]
+  },
+  "v-0687": {
+    "meaning": "Vốn liếng, tiền vốn; thứ cần có làm gốc",
+    "usage": "「｜体《からだ》が｜資本《しほん》だ」 (sức khỏe là vốn quý), 「｜資本《しほん》を｜増《ふ》やす」, 「｜資本金《しほんきん》」 (vốn điều lệ).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Với ngôi làng này, nước sông sạch là vốn quý nhất.",
+      "Lấy một khoản tiền tiết kiệm ít ỏi làm vốn, tôi mở một tiệm bánh mì nhỏ."
     ]
   },
   "v-0688": {
@@ -5971,6 +6395,51 @@
       "Chúng tôi đã bàn bạc và quyết định phương hướng hoạt động câu lạc bộ năm tới."
     ]
   },
+  "v-0689": {
+    "meaning": "Chúng tôi, chúng ta",
+    "usage": "「｜我々《われわれ》は〜」, 「｜我々《われわれ》の｜会社《かいしゃ》」, 「｜我々《われわれ》の｜方針《ほうしん》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Thứ chúng tôi nhắm tới là loại máy mà cả người cao tuổi cũng dễ dùng."
+    ]
+  },
+  "v-0690": {
+    "meaning": "Sản phẩm, thành phẩm, hàng hóa",
+    "usage": "「｜製品《せいひん》を｜作《つく》る」, 「｜新製品《しんせいひん》」, 「｜製品《せいひん》の｜品質《ひんしつ》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Sản phẩm của công ty này có nhiều chỗ được sửa dựa trên ý kiến của người dùng."
+    ]
+  },
+  "v-0691": {
+    "meaning": "Tình hình bán hàng, mức độ bán chạy",
+    "usage": "「｜売《う》れ｜行《ゆ》きがいい」, 「｜売《う》れ｜行《ゆ》きが｜悪《わる》い」, 「｜売《う》れ｜行《ゆ》きが｜伸《の》びる」.",
+    "nuance": "",
+    "compare": "「｜売《う》れ｜行《ゆ》き」 là hàng bán chạy hay ế, đánh giá bằng 「いい・｜悪《わる》い」: 「｜売《う》れ｜行《ゆ》きがいい」. 「｜売《う》り｜上《あ》げ」 là con số tiền thu được: 「｜売《う》り｜上《あ》げが｜二割《にわり》｜減《へ》った」.",
+    "example_notes": [
+      "Loại bánh này bán chạy đến mức ngay hôm mở bán đã có hàng hết sạch."
+    ]
+  },
+  "v-0692": {
+    "meaning": "Doanh thu, doanh số bán ra",
+    "usage": "「｜売《う》り｜上《あ》げが｜落《お》ちる」, 「｜売《う》り｜上《あ》げを｜伸《の》ばす」, 「｜一日《いちにち》の｜売《う》り｜上《あ》げ」. Cũng viết 「｜売上《うりあげ》」.",
+    "nuance": "",
+    "compare": "「｜売《う》り｜上《あ》げ」 là tổng tiền thu được, đo bằng con số: 「｜一日《いちにち》の｜売《う》り｜上《あ》げ」. 「｜売《う》れ｜行《ゆ》き」 là mức bán chạy hay ế: 「｜売《う》れ｜行《ゆ》きが｜悪《わる》い」.",
+    "example_notes": [
+      "Tuyết rơi liên tiếp, doanh thu tháng trước giảm hai mươi phần trăm so với năm trước."
+    ]
+  },
+  "v-0693": {
+    "meaning": "Giá thành, phí tổn",
+    "usage": "「コストがかかる」, 「コストを｜下《さ》げる」, 「コストを｜抑《おさ》える」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Để giảm chi phí vận chuyển nguyên liệu, họ đã chuyển nhà máy đến gần cảng."
+    ]
+  },
   "v-0694": {
     "meaning": "Làm tròn, thực hiện được (trách nhiệm, lời hứa, mục tiêu)",
     "usage": "「役割を果たす」, 「約束を果たす」, 「責任を果たす」, 「優勝を果たす」.",
@@ -5979,6 +6448,62 @@
     "example_notes": [
       "Lời hứa với bạn mười năm trước, cuối cùng tôi đã thực hiện được.",
       "Đội này đã giành chức vô địch sau ba năm."
+    ]
+  },
+  "v-0695": {
+    "meaning": "Có được, giành được, đạt được",
+    "usage": "「｜許可《きょか》を｜得《え》る」, 「｜信頼《しんらい》を｜得《え》る」.",
+    "nuance": "",
+    "compare": "「｜得《え》る」 ĐẮC: có được, thường với danh từ trừu tượng: 「｜許可《きょか》を｜得《え》る」, 「｜信頼《しんらい》を｜得《え》る」. Vật cụ thể người khác đưa thì dùng 「｜受《う》け｜取《と》る」: 「｜手紙《てがみ》を｜受《う》け｜取《と》る」.",
+    "example_notes": [
+      "Đi lại lâu ngày, chị ấy dần có được sự tin tưởng của hàng xóm."
+    ]
+  },
+  "v-0696": {
+    "meaning": "Đồng ý, chấp nhận; thừa nhận; công nhận giá trị",
+    "usage": "Ba nghĩa: 「｜休暇《きゅうか》を｜認《みと》める」 (đồng ý cho), 「｜間違《まちが》いを｜認《みと》める」 (thừa nhận), 「｜才能《さいのう》を｜認《みと》められる」 (được công nhận).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Anh tôi thẳng thắn thừa nhận lỗi tính toán của mình và xin lỗi mọi người.",
+      "Mỗi lần nộp tác phẩm, tôi dần được cả ban giám khảo công nhận.",
+      "Thầy giáo đã cho phép dùng từ điển trong giờ thi."
+    ]
+  },
+  "v-0697": {
+    "meaning": "Kinh doanh, buôn bán",
+    "usage": "「ビジネスチャンス」, 「ビジネスマン」 (doanh nhân), 「ビジネスを｜始《はじ》める」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Sở dĩ tôi dồn sức học ngoại ngữ là vì tương lai muốn làm kinh doanh ở nước ngoài."
+    ]
+  },
+  "v-0698": {
+    "meaning": "Nhận (công việc), bắt đầu làm một nghề",
+    "usage": "「｜仕事《しごと》に｜就《つ》く」, 「｜職《しょく》に｜就《つ》く」. Đi với trợ từ 「に」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Chú tôi nghỉ bệnh lâu ngày, cuối cùng đã nhận được một công việc mới."
+    ]
+  },
+  "v-0699": {
+    "meaning": "Lẽ sống, niềm vui mà mình sống vì nó",
+    "usage": "「｜生《い》きがいを｜感《かん》じる」, 「｜生《い》きがいを｜見《み》つける」, 「〜を｜生《い》きがいにする」.",
+    "nuance": "",
+    "compare": "Cùng hậu tố 「〜がい」 (đáng): 「｜生《い》きがい」 (「｜生《い》き」 = sống) là lẽ sống: 「｜孫《まご》が｜生《い》きがいだ」. 「やりがい」 (「やり」 = làm) là cảm giác việc đáng làm: 「やりがいのある｜仕事《しごと》」.",
+    "example_notes": [
+      "Hằng tuần dạy vẽ cho trẻ con trong xóm là lẽ sống hiện giờ của tôi."
+    ]
+  },
+  "v-0700": {
+    "meaning": "Đáng làm, giá trị của việc làm",
+    "usage": "「やりがいがある」, 「やりがいを｜感《かん》じる」, 「やりがいのある〜」.",
+    "nuance": "",
+    "compare": "「やりがい」 gắn với một việc cụ thể (「やる」 = làm): 「この｜仕事《しごと》はやりがいがある」. 「｜生《い》きがい」 gắn với cả cuộc sống (「｜生《い》きる」 = sống): 「｜趣味《しゅみ》が｜生《い》きがいだ」.",
+    "example_notes": [
+      "Học điều dưỡng vất vả, nhưng cảm giác công việc đáng làm khi được bệnh nhân cảm ơn là rất lớn."
     ]
   },
   "v-0701": {
@@ -6001,6 +6526,33 @@
       "Trước buổi chụp ảnh, người chụp và người mẫu đã thống nhất trước vị trí đứng."
     ]
   },
+  "v-0703": {
+    "meaning": "Cuộc hẹn gặp (hẹn trước)",
+    "usage": "「アポイントを｜取《と》る」, 「アポなし」 (không hẹn trước). Nói gọn là 「アポ」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Muốn gặp giám đốc thì phải hẹn trước thông qua thư ký."
+    ]
+  },
+  "v-0704": {
+    "meaning": "Tiếp chuyện, ứng đối (trả lời, tiếp khách)",
+    "usage": "「｜応対《おうたい》する」, 「｜電話《でんわ》の｜応対《おうたい》」, 「｜客《きゃく》の｜応対《おうたい》」. 「｜応接《おうせつ》」 (tiếp đón) là từ liên quan.",
+    "nuance": "",
+    "compare": "「｜応対《おうたい》」 ỨNG ĐỐI và 「｜対応《たいおう》」 ĐỐI ỨNG cùng hai chữ, đảo vị trí. 「｜応対《おうたい》」 hướng vào người: 「｜客《きゃく》の｜応対《おうたい》」; 「｜対応《たいおう》」 hướng vào việc: 「｜事故《じこ》に｜対応《たいおう》する」.",
+    "example_notes": [
+      "Cô lễ tân tiếp chuyện bằng nụ cười ngay cả với vị khách bị lạc đường."
+    ]
+  },
+  "v-0705": {
+    "meaning": "Lời nhắn, tin nhắn",
+    "usage": "「｜伝言《でんごん》を｜頼《たの》む」, 「｜伝言《でんごん》を｜残《のこ》す」, 「｜伝言《でんごん》を｜伝《つた》える」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi nhờ đứa em gái nghe máy nhắn lại với mẹ rằng tôi sẽ về muộn."
+    ]
+  },
   "v-0706": {
     "meaning": "Lại một lần nữa (vào dịp khác); (cảm nhận) lại, rõ hơn trước",
     "usage": "Phó từ: 「改めて連絡する」 (liên lạc lại sau), 「改めて話し合う」, 「改めて感じる」 (lại thấm thía).",
@@ -6009,6 +6561,69 @@
     "example_notes": [
       "Hôm nay không có thời gian, việc này để dịp khác chúng ta bàn lại nhé.",
       "Bị ốm, tôi lại một lần nữa thấm thía sức khỏe quan trọng thế nào."
+    ]
+  },
+  "v-0707": {
+    "meaning": "Trực tiếp",
+    "usage": "「じかに｜会《あ》う」, 「じかに｜話《はな》す」, 「じかに｜伝《つた》える」. Nghĩa gần với 「｜直接《ちょくせつ》」 (trực tiếp).",
+    "nuance": "",
+    "compare": "「じかに」 chỉ là phó từ: 「じかに｜会《あ》う」, 「じかに｜伝《つた》える」. 「｜直接《ちょくせつ》」 TRỰC TIẾP còn làm danh từ: 「｜直接《ちょくせつ》の｜原因《げんいん》」. Câu thay thế trong đề đã đổi 「じかに」 thành 「｜直接《ちょくせつ》」.",
+    "example_notes": [
+      "Tôi được người thợ của tiệm bánh nổi tiếng trực tiếp chỉ cho cách làm."
+    ]
+  },
+  "v-0708": {
+    "meaning": "Dự án",
+    "usage": "「プロジェクトを｜進《すす》める」, 「プロジェクトチーム」 (nhóm dự án), 「｜大《おお》きなプロジェクト」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Sinh viên cũng tham gia dự án làm sống lại khu phố buôn bán cũ của thị trấn."
+    ]
+  },
+  "v-0709": {
+    "meaning": "Ý đồ, chủ ý",
+    "usage": "「｜意図《いと》する」, 「｜意図《いと》がわかる」, 「｜意図《いと》した｜通《とお》りに」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Không ai hiểu ý đồ trong lời nói của anh ấy nên cả hội trường im lặng."
+    ]
+  },
+  "v-0710": {
+    "meaning": "Mới, mới mẻ",
+    "usage": "「｜新《あら》たな〜」: 「｜新《あら》たな｜問題《もんだい》」, 「｜新《あら》たな｜事実《じじつ》」. Đứng trước danh từ.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Càng điều tra, những sự thật mới càng lần lượt được làm rõ."
+    ]
+  },
+  "v-0711": {
+    "meaning": "Kết hợp, phối hợp; lập nhóm cùng làm",
+    "usage": "「チームを｜組《く》む」, 「〜と｜組《く》む」, 「｜組《く》んで〜する」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Trong công việc vẽ bản đồ, tôi cặp với một kỹ sư lớn tuổi hơn và đi khắp các ngọn núi."
+    ]
+  },
+  "v-0712": {
+    "meaning": "Giao dịch, quan hệ làm ăn",
+    "usage": "「｜取《と》り｜引《ひ》きする」, 「｜取《と》り｜引《ひ》きを｜続《つづ》ける」, 「｜取引先《とりひきさき》」 (đối tác, khách hàng). Cũng viết 「｜取引《とりひき》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Chúng tôi vẫn duy trì giao dịch với cửa hàng đó từ ba mươi năm trước."
+    ]
+  },
+  "v-0713": {
+    "meaning": "Yêu cầu, nhờ vả, đề nghị",
+    "usage": "「｜依頼《いらい》する」, 「｜依頼《いらい》を｜受《う》ける」, 「｜仕事《しごと》の｜依頼《いらい》」, 「〜を｜依頼《いらい》される」.",
+    "nuance": "",
+    "compare": "「｜依頼《いらい》」 âm Hán Y LẠI, dễ gợi \"ỷ lại\" (dựa dẫm) của tiếng Việt, nhưng nghĩa là nhờ người khác làm: 「｜仕事《しごと》を｜依頼《いらい》する」. 「｜引《ひ》き｜受《う》ける」 là phía nhận lời làm việc được nhờ.",
+    "example_notes": [
+      "Biên tập viên tạp chí đã nhờ tôi viết một bài về du lịch."
     ]
   },
   "v-0714": {
@@ -6021,6 +6636,87 @@
       "Chi tiết thì giao cả cho cậu, cứ làm theo cách cậu thích."
     ]
   },
+  "v-0715": {
+    "meaning": "Nhận lời, nhận về mình (việc được nhờ)",
+    "usage": "「｜仕事《しごと》を｜引《ひ》き｜受《う》ける」, 「｜依頼《いらい》を｜引《ひ》き｜受《う》ける」, 「｜引《ひ》き｜受《う》けてくれる」.",
+    "nuance": "",
+    "compare": "「｜引《ひ》き｜受《う》ける」 là phía nhận việc: 「｜依頼《いらい》を｜引《ひ》き｜受《う》ける」. Phía nhờ là 「｜依頼《いらい》する」 (Y LẠI, không phải \"ỷ lại\" của tiếng Việt).",
+    "example_notes": [
+      "Tôi không từ chối được nên đã nhận làm kế toán cho hội dân phố."
+    ]
+  },
+  "v-0716": {
+    "meaning": "Làm xong thành thạo, xử lý trôi chảy, nắm vững",
+    "usage": "「｜仕事《しごと》をこなす」, 「うまくこなす」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Dù xử lý xong hai mươi cuộc thăm hỏi trong một ngày, anh ấy cũng không tỏ vẻ mệt chút nào."
+    ]
+  },
+  "v-0717": {
+    "meaning": "Thành quả, kết quả đạt được",
+    "usage": "「｜成果《せいか》が｜出《で》る」, 「｜成果《せいか》を｜上《あ》げる」, 「｜成果《せいか》をほめる」.",
+    "nuance": "",
+    "compare": "「｜成果《せいか》」 THÀNH QUẢ là kết quả có được: 「｜成果《せいか》を｜上《あ》げる」. 「｜達成《たっせい》」 ĐẠT THÀNH là hành động đạt mục tiêu: 「｜目標《もくひょう》を｜達成《たっせい》する」. 「｜業績《ぎょうせき》」 NGHIỆP TÍCH: kết quả làm ăn của công ty.",
+    "example_notes": [
+      "Thí nghiệm kéo dài ba năm cuối cùng đã cho kết quả."
+    ]
+  },
+  "v-0718": {
+    "meaning": "Đạt được (mục tiêu đã đề ra)",
+    "usage": "「｜目標《もくひょう》を｜達成《たっせい》する」, 「｜達成感《たっせいかん》」, 「｜目標《もくひょう》｜達成《たっせい》」.",
+    "nuance": "",
+    "compare": "「｜達成《たっせい》」 ĐẠT THÀNH là hành động, đi với 「｜目標《もくひょう》」: 「｜目標《もくひょう》を｜達成《たっせい》する」. 「｜成果《せいか》」 THÀNH QUẢ là thứ có được sau cố gắng: 「｜成果《せいか》が｜出《で》る」.",
+    "example_notes": [
+      "Số tiền quyên góp mục tiêu của tháng này đã đạt được sớm hơn dự định ba ngày."
+    ]
+  },
+  "v-0719": {
+    "meaning": "Công việc làm bằng tay, thao tác, tác nghiệp",
+    "usage": "「｜作業《さぎょう》する」, 「｜作業《さぎょう》を｜進《すす》める」, 「｜作業中《さぎょうちゅう》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Công việc thi công được quy định kết thúc lúc sáu giờ chiều."
+    ]
+  },
+  "v-0720": {
+    "meaning": "Bảo lưu, hoãn lại chưa quyết",
+    "usage": "「｜保留《ほりゅう》する」, 「｜保留《ほりゅう》にする」, 「｜返事《へんじ》を｜保留《ほりゅう》する」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Việc phân định về đích được tạm treo lại cho đến khi kiểm tra bằng ảnh."
+    ]
+  },
+  "v-0721": {
+    "meaning": "Làm lại",
+    "usage": "「｜最初《さいしょ》からやり｜直《なお》す」, 「やり｜直《なお》し」 (việc làm lại), 「｜何度《なんど》でもやり｜直《なお》す」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Dù chậm một năm, tôi vẫn định thi đại học lại một lần nữa."
+    ]
+  },
+  "v-0722": {
+    "meaning": "Vụ, việc, chuyện (đã được nhắc tới)",
+    "usage": "「その｜件《けん》」, 「｜先日《せんじつ》の｜件《けん》」, 「〜の｜件《けん》で」, 「｜件名《けんめい》」 (tên vụ việc, tiêu đề).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi đã gọi điện cho công ty quản lý về chuyện bãi đỗ xe."
+    ]
+  },
+  "v-0723": {
+    "meaning": "Việc gấp, việc đột xuất",
+    "usage": "「｜急用《きゅうよう》ができる」, 「｜急用《きゅうよう》で〜」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Có cuộc gọi báo việc gấp nên tôi bỏ dở buổi đi dạo và quay về nhà."
+    ]
+  },
   "v-0724": {
     "meaning": "Khẩn cấp, gấp, cần làm không chậm trễ",
     "usage": "「至急〜てください」, 「至急連絡する」, 「至急戻る」. 「大至急」: cực kỳ gấp.",
@@ -6029,6 +6725,42 @@
     "example_notes": [
       "Trưởng phòng gọi điện bảo tôi quay về công ty gấp.",
       "Nước máy không khóa được, anh đến gấp giúp tôi được không?"
+    ]
+  },
+  "v-0725": {
+    "meaning": "Trình tự, các bước làm",
+    "usage": "「｜手順《てじゅん》を｜覚《おぼ》える」, 「｜手順《てじゅん》を｜守《まも》る」, 「｜手順《てじゅん》どおりに」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi tóm tắt các bước cập nhật trang web ra giấy rồi đưa cho người phụ trách mới."
+    ]
+  },
+  "v-0726": {
+    "meaning": "Di chuyển",
+    "usage": "「｜移動《いどう》する」, 「｜移動中《いどうちゅう》」, 「｜移動時間《いどうじかん》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Có lẽ vì mệt sau chuyến di chuyển bằng máy bay, vừa đến nơi là anh ấy ngủ ngay."
+    ]
+  },
+  "v-0727": {
+    "meaning": "Thợ mộc, thợ xây nhà",
+    "usage": "「｜大工《だいく》になる」, 「｜大工《だいく》の｜仕事《しごと》」, 「｜大工《だいく》さん」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Giá sách do chú tôi, một thợ mộc, đóng không bị cong dù dùng nhiều năm."
+    ]
+  },
+  "v-0728": {
+    "meaning": "Người bảo vệ (tòa nhà, cơ quan)",
+    "usage": "「ビルのガードマン」, 「ガードマンを｜置《お》く」.",
+    "nuance": "",
+    "compare": "「ガードマン」 là người; 「｜警備《けいび》」 CẢNH BỊ là việc canh gác một nơi. Người làm việc đó còn gọi là 「｜警備員《けいびいん》」.",
+    "example_notes": [
+      "Trong tòa nhà ban đêm, người bảo vệ cầm đèn pin đi tuần từng tầng."
     ]
   },
   "v-0730": {
@@ -7640,7 +8372,7 @@
     ]
   },
   "v-o-ihan": {
-    "meaning": "Vi phạm (luật lệ, quy định, hợp đồng)",
+    "meaning": "Vi phạm (luật lệ, quy định, điều đã cam kết)",
     "usage": "「規則に違反する」, 「契約に違反する」, 「ルール違反」, 「規則違反になる」. Đối tượng đứng trước 「に」. Hán Việt \"vi phản\".",
     "nuance": "Chỉ dùng với luật, quy tắc. Đề thi coi là sai: 「親に違反する」 (chống đối cha mẹ), 「意見に違反する」 (phản đối ý kiến), 「予想に違反して」 (trái dự đoán).",
     "compare": "「違反」: hành vi không tuân thủ luật, quy định, cam kết. 「｜処分《しょぶん》」: hình phạt nhận sau đó, hoặc việc vứt bỏ đồ.",

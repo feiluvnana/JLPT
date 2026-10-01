@@ -87,7 +87,7 @@
     "meaning": "Mách, méc (lỗi của ai với người trên)",
     "usage": "「〜を〜に言いつける」: 「先生に言いつける」, 「母に言いつける」.",
     "nuance": "",
-    "compare": "「言いつける」: mách lỗi của người khác: 「先生に言いつける」. 「｜言《い》い｜出《だ》す」: tự mình mở lời nêu ý muốn: 「行きたくないと言い出す」.",
+    "compare": "「言いつける」: mách lỗi của người khác: 「先生に言いつける」. 「｜言《い》い｜出《だ》す」: tự mình mở lời nêu ý muốn: 「行きたくないと言い出す」. 「ばらす」: làm lộ chuyện người khác muốn giấu: 「秘密をばらす」.",
     "example_notes": [
       "Hình như có ai đó đã mách thầy chuyện làm vỡ cửa kính bằng quả bóng hồi giờ ra chơi."
     ]
@@ -265,7 +265,7 @@
     "meaning": "Duyên, cơ duyên gặp gỡ (giữa người với người, với nơi chốn)",
     "usage": "「縁がある」, 「縁がない」 (không có duyên, không dính dáng gì), 「ご縁があれば」 (nếu có duyên).",
     "nuance": "Hán Việt \"duyên\", nghĩa gần với tiếng Việt.",
-    "compare": "",
+    "compare": "「縁」: duyên gặp gỡ giữa người với người, với nơi chốn: 「縁がある」. 「｜運命《うんめい》」: số phận, định mệnh: 「運命を変える」.",
     "example_notes": [
       "Tôi vốn chẳng có duyên gì với thị trấn này, nhưng vì công việc mà chuyển đến sống, giờ nó đã thành quê hương thứ hai."
     ]
@@ -331,7 +331,7 @@
     "meaning": "Thổ lộ, nói ra điều mình giữ kín (bí mật, nỗi phiền muộn)",
     "usage": "「秘密を打ち明ける」, 「悩みを打ち明ける」, 「〜に打ち明ける」 (thổ lộ với ai). Thể bị động: 「〜から打ち明けられる」 (được ai thổ lộ).",
     "nuance": "Đề thi coi là sai khi dùng cho giải thích việc mình không hiểu, nhắn lại lời nhắn, báo thông tin cho cấp trên: đó không phải chuyện mình giấu kín.",
-    "compare": "",
+    "compare": "「打ち明ける」: tự mình nói ra điều mình giấu kín: 「悩みを打ち明ける」. 「ばらす」: làm lộ bí mật cho người khác biết: 「秘密をばらす」.",
     "example_notes": [
       "Nỗi lo trước giờ chỉ dám viết vào nhật ký, lần đầu tiên cô ấy đã thổ lộ với thầy giáo chủ nhiệm.",
       "Người bạn lâu năm thú thật với tôi rằng hồi nhỏ bạn ấy vốn không ưa tôi."
@@ -395,7 +395,7 @@
     "meaning": "Trêu, chọc ghẹo (người khác)",
     "usage": "「〜をからかう」, 「友達にからかわれる」 (bị bạn trêu).",
     "nuance": "",
-    "compare": "「からかう」: tha động từ, chọc ghẹo một người: 「弟をからかう」. 「ふざける」: tự động từ, tự mình đùa giỡn, nghịch: 「授業中にふざける」.",
+    "compare": "「からかう」: tha động từ, chọc ghẹo một người: 「弟をからかう」. 「ふざける」: tự động từ, tự mình đùa giỡn, nghịch: 「授業中にふざける」. 「ばかにする」: coi thường người khác: 「〜をばかにする」.",
     "example_notes": [
       "Hễ tôi đổi kiểu tóc mới là anh trai lại trêu chọc."
     ]
@@ -495,7 +495,7 @@
     "meaning": "Chủ nhà cho thuê, chủ trọ",
     "usage": "「大家さん」, 「アパートの大家」. Người thuê trả 「｜家賃《やちん》」 cho 「大家」.",
     "nuance": "Đọc 「おおや」.",
-    "compare": "",
+    "compare": "「大家」: người chủ cho thuê nhà: 「大家さん」. 「｜賃貸《ちんたい》」: việc cho thuê nhà, nhà đi thuê: 「賃貸のアパート」.",
     "example_notes": [
       "Mỗi lần tôi đến trả tiền nhà, chủ nhà lại mời tôi uống trà."
     ]
@@ -595,7 +595,7 @@
     "meaning": "Đinh ninh, tin chắc (điều mình tưởng)",
     "usage": "「〜と思い込む」, 「思い込んでいた」. Danh từ: 「｜思《おも》い｜込《こ》み」.",
     "nuance": "Điền từ: cứ （　） là truyện hư cấu, hóa ra có thật → 「思い込んで」. Đề đặt 「思い起こして」「考え抜いて」「考えついて」.",
-    "compare": "「思い込む」: động từ: 「〜と思い込む」. 「てっきり」: phó từ, đi với 「〜と思った」.",
+    "compare": "「思い込む」: động từ: 「〜と思い込む」. 「てっきり」: phó từ, đi với 「〜と思った」. 「｜勘違《かんちが》い」: danh từ, nhầm một điều: 「私の勘違いだった」.",
     "example_notes": [
       "Tôi cứ đinh ninh con đường này là đường tắt nên ngày nào cũng đi vòng xa."
     ]
@@ -694,6 +694,153 @@
       "Thủy cung mới mở rất đông khách gia đình đến chơi trong kỳ nghỉ hè."
     ]
   },
+  "v-0076": {
+    "meaning": "Cặp đôi, một đôi nam nữ đang yêu nhau",
+    "usage": "「若いカップル」 (cặp đôi trẻ), đếm bằng 「組」: 「何組ものカップル」. Gần nghĩa: 「ペア」 (một cặp, một đôi).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Ở lớp học nấu ăn có nhiều cặp đôi sắp cưới đến tham gia."
+    ]
+  },
+  "v-0077": {
+    "meaning": "Tình yêu, lòng yêu thương (với người, với vật)",
+    "usage": "「〜への愛」 (tình yêu dành cho…), 「愛を込める」. Động từ: 「｜愛《あい》する」; danh từ gần nghĩa: 「｜愛情《あいじょう》」 (tình yêu, tình thương).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Từ cuốn sách tranh này, ta cảm nhận được tình yêu của tác giả dành cho các loài vật."
+    ]
+  },
+  "v-0078": {
+    "meaning": "Những người cùng là ~ với nhau (đi sau danh từ)",
+    "usage": "Danh từ ＋「同士」: 「恋人同士」, 「一年生同士」, 「｜友達同士《ともだちどうし》」 (giữa bạn bè với nhau), 「｜他人同士《たにんどうし》」 (giữa những người dưng).",
+    "nuance": "",
+    "compare": "「同士」: đi sau danh từ, chỉ những người cùng một quan hệ, vị thế: 「恋人同士」. 「お｜互《たが》い」: hai bên cùng làm với nhau, đứng một mình được: 「お互いに助け合う」.",
+    "example_notes": [
+      "Ở câu lạc bộ, các bạn năm nhất tụ họp với nhau để lên kế hoạch cho chuyến tập huấn mùa hè."
+    ]
+  },
+  "v-0079": {
+    "meaning": "Nhau, lẫn nhau; cả hai bên đối với nhau",
+    "usage": "Danh từ: 「お互いの〜」 (「お互いの国」). Phó từ: 「お互いに〜」 (「お互いに助け合う」). Có thể bỏ 「お」: 「互いに」.",
+    "nuance": "",
+    "compare": "「お互い」: dùng được như danh từ (「お互いの国」) và phó từ (「お互いに」). 「｜相互《そうご》」: cũng nói 「相互に」, và ghép thành từ: 「相互理解」, 「相互関係」. 「｜同士《どうし》」: chỉ đi sau danh từ: 「一年生同士」.",
+    "example_notes": [
+      "Du học sinh và sinh viên Nhật nấu món ăn của nước mình rồi giới thiệu cho nhau.",
+      "Với người bạn đã chuyển nhà đi xa, đến giờ chúng tôi vẫn gửi ảnh cho nhau."
+    ]
+  },
+  "v-0080": {
+    "meaning": "Cân xứng, tương xứng với nhau (giữa hai bên)",
+    "usage": "「AとBがつり合う」, 「〜につり合う」; phủ định: 「収入につり合わない」 (không tương xứng với thu nhập).",
+    "nuance": "",
+    "compare": "「つり合う」: hai bên cân xứng với nhau (người với người, món đồ với thu nhập). 「ふさわしい」: A xứng với một vai trò, một dịp: 「〜にふさわしい人」.",
+    "example_notes": [
+      "Mua chiếc xe đắt không tương xứng với thu nhập, giờ tháng nào tôi cũng chật vật với khoản thanh toán."
+    ]
+  },
+  "v-0081": {
+    "meaning": "Nếu phải chọn giữa hai bên thì nghiêng về bên sau",
+    "usage": "Mẫu 「AよりむしろB」: so với A thì B hơn; B là điều người nói chọn hay thấy đúng hơn.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Bố tôi là người thà tự làm mẫu cho xem để dạy, hơn là giải thích bằng lời."
+    ]
+  },
+  "v-0082": {
+    "meaning": "Có thể nói là, nói ví von thì như là",
+    "usage": "「いわば〜のようなものだ」, 「いわば〜だ」: đem một sự việc ví với thứ dễ hình dung hơn.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Quán cà phê trước ga này, với người dân thị trấn, có thể nói là như một phòng khách vậy."
+    ]
+  },
+  "v-0083": {
+    "meaning": "Ánh mắt, hướng nhìn của mắt",
+    "usage": "「視線を向ける」 (hướng mắt về), 「視線を合わせる」 (nhìn vào mắt nhau). Hán Việt \"thị tuyến\".",
+    "nuance": "",
+    "compare": "「視線」: hướng mắt đang nhìn: 「視線を向ける」. 「｜視野《しや》」: phạm vi mắt thấy được, hay tầm hiểu biết: 「視野が広い」.",
+    "example_notes": [
+      "Cô ấy cứ hướng mắt ra ngoài cửa sổ, chẳng trả lời gì."
+    ]
+  },
+  "v-0084": {
+    "meaning": "Nhìn chăm chú, nhìn chằm chằm không rời mắt",
+    "usage": "「〜を見つめる」, 「じっと見つめる」. 「｜見《み》つめ｜合《あ》う」: nhìn nhau chằm chằm.",
+    "nuance": "",
+    "compare": "「見つめる」: nhìn chăm chú, không rời mắt. 「にらむ」: nhìn trừng trừng với vẻ giận: 「〜をにらむ」.",
+    "example_notes": [
+      "Em bé chăm chú nhìn con chó lần đầu được thấy với vẻ lạ lẫm."
+    ]
+  },
+  "v-0085": {
+    "meaning": "Đưa mắt sang hướng khác (để khỏi bắt gặp ánh mắt)",
+    "usage": "「目をそらす」, 「思わず目をそらす」 (bất giác đưa mắt đi chỗ khác).",
+    "nuance": "",
+    "compare": "「そらす」: chỉ là đưa mắt, quay mặt sang hướng khác: 「目をそらす」. 「｜避《さ》ける」: tránh không đến gần người, việc mình không muốn: 「人を避ける」.",
+    "example_notes": [
+      "Bị bố hỏi chuyện điểm số, em trai tôi bất giác đưa mắt đi chỗ khác."
+    ]
+  },
+  "v-0086": {
+    "meaning": "(Nhìn) thoáng qua, liếc qua trong chốc lát",
+    "usage": "「ちらっと見る」. Cùng nghĩa: 「ちらりと」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Trên đường ra lối ra, tôi liếc nhìn chiếc đồng hồ trên tường."
+    ]
+  },
+  "v-0087": {
+    "meaning": "Biết đâu chừng, cũng có thể là (chỉ một khả năng)",
+    "usage": "Đi với 「〜かもしれない」: 「もしかすると〜かもしれない」. Cùng nghĩa: 「もしかしたら」, 「もしかして」, 「ひょっとすると」.",
+    "nuance": "",
+    "compare": "「もしかすると」: đi với 「〜かもしれない」, chỉ là một khả năng. 「おそらく」: đi với 「〜だろう」, đoán là nhiều khả năng như vậy.",
+    "example_notes": [
+      "Ông tôi bảo biết đâu chiếc đĩa cũ này lại bán được giá cao."
+    ]
+  },
+  "v-0088": {
+    "meaning": "Dò xét kín đáo; lần tìm vật không thấy bằng tay",
+    "usage": "① Tìm hiểu mà không để ai biết: 「気持ちを探る」, 「値段を探る」. ② Lần tìm bằng tay: 「ポケットを探る」, 「手で探る」. Hán Việt \"thám\" (thăm dò).",
+    "nuance": "Đọc 「さぐる」. Trong đề, 「さぐった」 từng là cách đọc sai đặt cho 「絞った」 (đọc 「しぼった」).",
+    "compare": "",
+    "example_notes": [
+      "Trước khi mở cửa hàng mới, tôi đã lén dò giá của các cửa hàng gần đó.",
+      "Trong căn phòng tối, tôi lần tay trên tường và tìm thấy công tắc đèn."
+    ]
+  },
+  "v-0089": {
+    "meaning": "Tỏ ra (thái độ, tình cảm); chỉ ra cho người khác thấy rõ",
+    "usage": "① Để người khác thấy tình cảm, thái độ: 「関心を示す」, 「同意を示す」. ② Chỉ ra cho thấy rõ: 「例を示す」, 「道を示す」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Giám đốc tỏ ra rất quan tâm đến kế hoạch mới.",
+      "Biển báo này cho biết từ đây trở đi không được đi xe đạp qua."
+    ]
+  },
+  "v-0090": {
+    "meaning": "Lý do viện ra để che mục đích thật",
+    "usage": "「〜を口実に」, 「〜を口実にして」 (lấy… làm lý do để…). Hán Việt \"khẩu thực\".",
+    "nuance": "",
+    "compare": "「口実」: lý do viện ra để làm việc mình muốn: 「散歩を口実に」. 「｜言《い》い｜訳《わけ》」: lời bào chữa cho lỗi của mình: 「言い訳をする」.",
+    "example_notes": [
+      "Bố tôi lấy cớ dắt chó đi dạo để tối nào cũng ra cửa hàng tiện lợi mua bánh kẹo."
+    ]
+  },
+  "v-0091": {
+    "meaning": "Cúi mặt, cúi gằm xuống",
+    "usage": "「うつむいて歩く」, 「うつむいたまま」. Cùng nghĩa với 「下を向く」.",
+    "nuance": "Câu hỏi từ gần nghĩa trong đề: 「うつむいて」 ≈ 「下を向いて」; phương án sai là 「横を向いて」, 「後ろを向いて」, 「腕を組んで」….",
+    "compare": "",
+    "example_notes": [
+      "Vừa đi vừa cúi mặt nhìn điện thoại thì khó nhận ra người đi ngược chiều."
+    ]
+  },
   "v-0092": {
     "meaning": "Lén lút, vụng trộm, làm sao cho người khác không biết",
     "usage": "「こそこそ（と）〜する」: 「こそこそ食べる」, 「こそこそ話す」, 「こそこそ付き合う」. Cũng nói 「こそこそする」. Từ gần: 「こっそり」 (lén, âm thầm).",
@@ -704,21 +851,139 @@
       "Đừng có lén lút, có gì muốn nói thì hãy nói thẳng ra."
     ]
   },
+  "v-0093": {
+    "meaning": "Thì thầm, nói nhỏ nhẹ với ai",
+    "usage": "「〜に〜とささやく」, 「ささやくように話す」. Gần: 「つぶやく」 (lẩm bẩm).",
+    "nuance": "Câu hỏi từ gần nghĩa trong đề: 「ささやくように」 ≈ 「小声で」; phương án sai 「大声で」, 「急いで」, 「ゆっくり」.",
+    "compare": "",
+    "example_notes": [
+      "Ở thư viện, đứa bạn ngồi cạnh thì thầm với tôi: \"Về thôi.\""
+    ]
+  },
+  "v-0094": {
+    "meaning": "Điều cấm kỵ, việc tuyệt đối nên tránh",
+    "usage": "Mẫu 「〜は禁物だ」. Gần: 「｜禁句《きんく》」 (từ, câu kiêng nói). Hán Việt \"cấm vật\".",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Khi đang nướng bánh mì, mở cửa lò nhiều lần là điều tối kỵ."
+    ]
+  },
+  "v-0095": {
+    "meaning": "Tha thứ (cho lỗi); cho phép (làm gì)",
+    "usage": "「〜を許す」 (tha cho ai), 「笑って許す」, 「〜は許されない」 (không được phép).",
+    "nuance": "Hán Việt của 「許」 là \"hứa\", dễ nhầm với \"hứa\" (hứa hẹn) trong tiếng Việt; 「許す」 là tha, cho phép, không phải hứa.",
+    "compare": "",
+    "example_notes": [
+      "Bị làm bẩn cuốn sách quý, anh trai vẫn cười và tha cho em.",
+      "Ở hòn đảo này, du khách không được phép mang ô tô vào."
+    ]
+  },
+  "v-0096": {
+    "meaning": "Tiệc gặp mặt để nam nữ làm quen với nhau",
+    "usage": "「合コンに参加する」, 「合コンで知り合う」. Liên quan: 「コンパ」 (buổi tiệc, liên hoan).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Được đàn anh ở trường rủ, lần đầu tôi đi dự một buổi tiệc làm quen."
+    ]
+  },
+  "v-0097": {
+    "meaning": "Chủ động tiếp cận, bắt chuyện với người mình để ý",
+    "usage": "「〜にアプローチする」, 「先にアプローチする」 (chủ động trước).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi muốn tiếp cận cậu bạn cùng lớp, nhưng mãi vẫn chưa dám bắt chuyện."
+    ]
+  },
+  "v-0098": {
+    "meaning": "Số phận, vận mệnh",
+    "usage": "「運命を変える」, 「運命の人」 (người định mệnh). Hán Việt \"vận mệnh\", nghĩa như tiếng Việt.",
+    "nuance": "",
+    "compare": "「運命」: số phận, định mệnh: 「運命を変える」. 「｜縁《えん》」: duyên gặp gỡ giữa người với người, với nơi chốn: 「縁がある」.",
+    "example_notes": [
+      "Việc lỡ chuyến bay ấy đã làm thay đổi lớn số phận của anh ấy."
+    ]
+  },
+  "v-0099": {
+    "meaning": "Sự quyết ý, quyết chí làm một việc",
+    "usage": "「〜と決意する」, 「〜する決意を固める」. Gần nghĩa: 「｜決心《けっしん》」 (quyết tâm). Hán Việt \"quyết ý\".",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi đã quyết chí bỏ đàn piano sau ba năm học để tập trung học vẽ."
+    ]
+  },
+  "v-0100": {
+    "meaning": "Cầu hôn, lời cầu hôn",
+    "usage": "「〜にプロポーズする」, 「プロポーズを受ける」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Anh ấy cầu hôn ở bờ biển nơi hai người gặp nhau lần đầu."
+    ]
+  },
+  "v-0101": {
+    "meaning": "Thề, hứa chắc chắn sẽ làm (hay không làm) điều gì",
+    "usage": "「〜と誓う」, 「〜ことを誓う」, 「愛を誓う」. Hán Việt \"thệ\" (như \"tuyên thệ\").",
+    "nuance": "Điền từ trong đề: hứa trước mọi người là sẽ không làm điều xấu nữa → 「誓った」; phương án sai 「論じた」, 「命じた」, 「迫った」.",
+    "compare": "",
+    "example_notes": [
+      "Tại lễ khai mạc, các vận động viên tuyên thệ sẽ thi đấu đường đường chính chính."
+    ]
+  },
+  "v-0102": {
+    "meaning": "Cô dâu",
+    "usage": "「花嫁姿」 (dáng vẻ cô dâu trong lễ cưới). Đối: 「｜花《はな》むこ」 (chú rể).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Cô dâu mặc váy trắng cùng bố chậm rãi bước vào."
+    ]
+  },
+  "v-0103": {
+    "meaning": "Nhỏ nhặt, vụn vặt, chẳng đáng kể",
+    "usage": "Trước danh từ: 「ささいなこと」, 「ささいな原因」, 「ささいなことで〜」 (chỉ vì chuyện cỏn con mà…).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Con gái ba tuổi của tôi cười rồi khóc chỉ vì những chuyện cỏn con."
+    ]
+  },
+  "v-0104": {
+    "meaning": "Tránh, né (người, việc, thời điểm)",
+    "usage": "「〜を避ける」: 「人を避ける」, 「ラッシュを避ける」 (tránh giờ cao điểm), 「〜のは避けている」.",
+    "nuance": "Viết: trong đề, 「避けて」 từng là phương án sai cho 「はなれて」 (đúng là 「離れて」).",
+    "compare": "「避ける」: tránh xa người, việc, thời điểm: 「ラッシュを避ける」. 「そらす」: chỉ là đưa mắt đi chỗ khác: 「目をそらす」.",
+    "example_notes": [
+      "Nghĩ cho sức khỏe, tôi tránh ăn đồ ngọt vào đêm khuya."
+    ]
+  },
   "v-0105": {
     "meaning": "Hiểu lầm, hiểu sai về người khác hay sự việc",
     "usage": "「誤解する」, 「〜だと誤解される」 (bị hiểu lầm là…), 「誤解を招く」, 「誤解を与える」, 「誤解が解ける」. Từ gần: 「｜勘違《かんちが》い」. Hán Việt \"ngộ giải\".",
     "nuance": "Điền từ: 「冷たい人だとよく（　）される」 → 「誤解」; phương án sai 「観測」「決意」「承認」. Thể bị động 「誤解される」: bị hiểu lầm.",
-    "compare": "「誤解」: danh từ, hiểu lầm ý người khác hay sự việc: 「誤解を招く」. 「｜誤《あやま》る」: động từ, làm sai, chọn sai: 「道を誤る」, 「使い方を誤る」.",
+    "compare": "「誤解」: danh từ, hiểu lầm ý người khác hay sự việc: 「誤解を招く」. 「｜誤《あやま》る」: động từ, làm sai, chọn sai: 「道を誤る」, 「使い方を誤る」. 「｜勘違《かんちが》い」: phán đoán nhầm một điều: 「私の勘違い」.",
     "example_notes": [
       "Bài báo đó sai sự thật, e rằng sẽ khiến người đọc hiểu lầm.",
       "Tôi hiểu lầm người ở đầu dây là chị gái nên đã lỡ nói điều thất lễ."
+    ]
+  },
+  "v-0106": {
+    "meaning": "Nhầm, tưởng nhầm (phán đoán sai một điều)",
+    "usage": "「勘違いする」, 「私の勘違いで」, 「勘違いだった」.",
+    "nuance": "",
+    "compare": "「勘違い」: phán đoán nhầm một điều (giờ, ngày): 「私の勘違い」. 「｜誤解《ごかい》」: hiểu sai về người hay ý người khác: 「誤解を招く」. 「｜思《おも》い｜込《こ》む」: cứ đinh ninh như thế: 「〜と思い込む」. 「｜誤《あやま》る」: làm sai, chọn sai: 「道を誤る」.",
+    "example_notes": [
+      "Tôi cứ tưởng cuộc họp bắt đầu lúc ba giờ, hóa ra là tôi nhầm, thật ra là hai giờ."
     ]
   },
   "v-0107": {
     "meaning": "Lời phân trần, biện bạch; lời bào chữa cho lỗi của mình",
     "usage": "「言い訳をする」, 「言い訳ばかりする」, 「〜を言い訳にする」 (lấy… làm cớ).",
     "nuance": "Là lời bào chữa cho lỗi, thiếu sót của mình. Đề thi coi là sai khi dùng cho trình bày một đề xuất, thầy giảng bài, bác sĩ giải thích về buổi khám.",
-    "compare": "",
+    "compare": "「言い訳」: lời bào chữa cho lỗi, thiếu sót của mình: 「言い訳ばかりする」. 「｜口実《こうじつ》」: lý do viện ra để làm việc mình muốn: 「〜を口実にする」.",
     "example_notes": [
       "Người đầu bếp ấy không hề phân trần một lời nào về việc món ăn đã nguội.",
       "Lấy cớ trời lạnh, sáng nay em trai tôi lại bỏ buổi chạy bộ."
@@ -734,6 +999,25 @@
       "Anh họ tôi dứt khoát từ bỏ giấc mơ làm ca sĩ chuyên nghiệp và vào làm ở một công ty tại quê."
     ]
   },
+  "v-0109": {
+    "meaning": "Coi thường, chế nhạo người khác",
+    "usage": "「〜をばかにする」, bị động 「ばかにされる」. Gần nghĩa: 「｜鼻《はな》で｜笑《わら》う」.",
+    "nuance": "",
+    "compare": "「ばかにする」: coi người khác là kém cỏi. 「けなす」: chê bai thành lời, ngược với 「ほめる」. 「からかう」: trêu chọc người khác: 「弟をからかう」.",
+    "example_notes": [
+      "Bị cả lớp chế giễu giọng địa phương, cậu ấy chẳng nói năng gì suốt một thời gian."
+    ]
+  },
+  "v-0110": {
+    "meaning": "Lời mỉa mai, nói xỏ; (thái độ) làm người khác khó chịu",
+    "usage": "Danh từ: 「いやみを言う」. ナ形容詞: 「いやみな言い方」, 「〜はいやみだ」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi đến trễ hẹn, chị tôi mỉa: \"Đến sớm quá nhỉ.\"",
+      "Cái thái độ cứ kể đi kể lại chuyện thành tích tốt của mình của anh ta thật hơi khó chịu."
+    ]
+  },
   "v-0111": {
     "meaning": "Trách móc, đổ lỗi cho ai đó",
     "usage": "「人を責める」, 「自分を責める」 (tự trách mình), 「失敗を責める」, 「一方的に責める」 (trách một phía).",
@@ -742,6 +1026,359 @@
     "example_notes": [
       "Thất bại không phải lỗi của riêng cậu, nên đừng tự trách mình.",
       "Tôi không nỡ trách người bạn đã thất hứa."
+    ]
+  },
+  "v-0112": {
+    "meaning": "Chê bai, nói xấu (người, tác phẩm)",
+    "usage": "「〜をけなす」, bị động 「けなされる」 (bị chê). Ngược nghĩa: 「ほめる」.",
+    "nuance": "",
+    "compare": "「けなす」: chê bai điểm xấu thành lời: 「映画をけなす」. 「ばかにする」: coi thường người khác: 「〜をばかにする」.",
+    "example_notes": [
+      "Bộ phim đó bị chê thậm tệ trên mục điện ảnh của báo, vậy mà khán giả vẫn đến đông."
+    ]
+  },
+  "v-0113": {
+    "meaning": "Im lặng, nín, không nói gì",
+    "usage": "「だまってしまう」, 「だまっている」, 「だまって〜する」 (lặng lẽ làm, không nói gì). Kanji: 「｜黙《だま》る」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Khi tôi hỏi về giá tiền, nhân viên bỗng im bặt."
+    ]
+  },
+  "v-0114": {
+    "meaning": "Lườm, trừng mắt nhìn (với vẻ giận)",
+    "usage": "「〜をにらむ」, 「じっとにらむ」.",
+    "nuance": "",
+    "compare": "「にらむ」: nhìn trừng trừng với vẻ giận. 「｜見《み》つめる」: nhìn chăm chú, không rời mắt: 「じっと見つめる」.",
+    "example_notes": [
+      "Có lẽ không phục quyết định, cầu thủ đó lườm trọng tài chằm chằm."
+    ]
+  },
+  "v-0115": {
+    "meaning": "Phản bội người đã tin mình",
+    "usage": "「仲間を裏切る」, bị động 「〜に裏切られる」 (bị phản bội).",
+    "nuance": "",
+    "compare": "「裏切る」: phụ lòng tin của người vốn tin mình: 「仲間を裏切る」. 「だます」: nói dối, giở trò để người khác tin điều sai: 「人をだます」.",
+    "example_notes": [
+      "Anh ta phản bội những đồng nghiệp đã làm việc cùng bao năm, chuyển sang công ty đối thủ."
+    ]
+  },
+  "v-0116": {
+    "meaning": "Lừa, lừa gạt (làm cho tin điều sai)",
+    "usage": "「人をだます」, bị động 「〜にだまされる」 (bị lừa), 「〜にだまされるところだった」 (suýt bị lừa).",
+    "nuance": "",
+    "compare": "「だます」: nói dối để người khác tin điều sai. 「裏切る」: phụ lòng tin của người vốn tin mình: 「仲間を裏切る」.",
+    "example_notes": [
+      "Ông tôi suýt nữa bị một gã gọi điện giả làm con trai ông lừa."
+    ]
+  },
+  "v-0117": {
+    "meaning": "Nguyên nhân của chuyện không hay; lỗi, trách nhiệm",
+    "usage": "「〜のせいで」 (tại…, do…), 「〜のせいにする」 (đổ lỗi cho…).",
+    "nuance": "Chỉ nguyên nhân của điều xấu. Nguyên nhân của điều tốt thì dùng 「おかげ」 (nhờ…).",
+    "compare": "",
+    "example_notes": [
+      "Tại vết bẩn trên ống kính mà ảnh chuyến du lịch tấm nào cũng bị mờ."
+    ]
+  },
+  "v-0118": {
+    "meaning": "Hành vi, việc làm của một người",
+    "usage": "「危険な行為」, 「｜迷惑行為《めいわくこうい》」 (hành vi gây phiền toái). Hán Việt \"hành vi\", nghĩa như tiếng Việt.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Đặt đá lên đường ray là hành vi nguy hiểm có thể dẫn đến tai nạn lớn."
+    ]
+  },
+  "v-0119": {
+    "meaning": "Cãi nhau, đấu khẩu",
+    "usage": "「〜と口論になる」, 「口論する」. Cùng nghĩa: 「｜口《くち》げんか」. Hán Việt \"khẩu luận\".",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Vì chuyện chỗ đỗ xe, tôi đã cãi nhau với người nhà bên cạnh."
+    ]
+  },
+  "v-0120": {
+    "meaning": "Quát tháo, hét lớn (vì giận)",
+    "usage": "「大声で怒鳴る」, 「〜に向かって怒鳴る」, bị động 「怒鳴られる」 (bị quát).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Trong trận đấu, huấn luyện viên trên băng ghế nhiều lần quát tháo các cầu thủ."
+    ]
+  },
+  "v-0121": {
+    "meaning": "Đấm, đánh (người)",
+    "usage": "「人を殴る」, bị động 「〜に殴られる」 (bị đánh). Hán Việt \"ẩu\", như trong \"ẩu đả\".",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Một vị khách say rượu đã đánh nhân viên và bị cảnh sát đưa đi."
+    ]
+  },
+  "v-0122": {
+    "meaning": "Việc cho mượn và đi mượn qua lại (đồ vật, tiền)",
+    "usage": "「お金の貸し借り」, 「貸し借りをする」. Ghép từ 「貸す」 (cho mượn) và 「借りる」 (mượn).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi với chị gái hay cho nhau mượn quần áo, túi xách."
+    ]
+  },
+  "v-0123": {
+    "meaning": "Làm lộ (bí mật); tháo rời (đồ) ra từng mảnh",
+    "usage": "① Nói lộ điều đang giữ kín: 「秘密をばらす」. ② Tháo một vật thành nhiều mảnh: 「ベッドをばらす」, 「棚をばらす」.",
+    "nuance": "",
+    "compare": "① 「ばらす」: làm lộ bí mật; 「｜打《う》ち｜明《あ》ける」: tự mình thổ lộ điều giấu kín; 「｜言《い》いつける」: mách lỗi của ai với người trên. ② 「ばらす」: tháo đồ ra từng mảnh; 「｜分解《ぶんかい》」: tháo máy ra từng bộ phận.",
+    "example_notes": [
+      "Kế hoạch gây bất ngờ vào ngày sinh nhật đã bị em trai tôi lỡ miệng tiết lộ với mẹ.",
+      "Tôi tháo rời cái kệ cũ không dùng nữa rồi đem bỏ vào ngày thu gom rác cồng kềnh."
+    ]
+  },
+  "v-0124": {
+    "meaning": "Ngượng ngập, khó xử (bầu không khí, quan hệ)",
+    "usage": "「気まずい雰囲気」, 「気まずい関係」, 「気まずくなる」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Ở thang máy, chỉ còn tôi với trưởng phòng, người tôi vừa phản đối trong cuộc họp, thật khó xử."
+    ]
+  },
+  "v-0125": {
+    "meaning": "Đến giờ này (thì đã muộn), bây giờ mới…",
+    "usage": "Đi với ý đã quá muộn: 「今さら〜できない」, 「今さら〜ても」.",
+    "nuance": "Đừng nhầm với 「｜今《いま》にも」 (sắp sửa, chực) và 「｜今《いま》や」 (giờ đây thì đã).",
+    "compare": "",
+    "example_notes": [
+      "Đã cắt mác và mặc một lần rồi, giờ này không thể đem trả lại cửa hàng được nữa."
+    ]
+  },
+  "v-0126": {
+    "meaning": "Hỏng bét, công cốc, mất hết giá trị",
+    "usage": "「〜が台無しになる」, 「〜を台無しにする」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Làm đổ cà phê lên áo sơ mi trắng, bộ đồ mới thế là hỏng bét."
+    ]
+  },
+  "v-0127": {
+    "meaning": "Oán hận, mang hận (người đã gây hại cho mình)",
+    "usage": "「〜をうらむ」, 「今もうらんでいる」. Danh từ: 「うらみ」 (mối hận).",
+    "nuance": "Trong đề, 「うらんで」 từng là cách đọc sai đặt cho 「憎んで」 (đọc 「にくんで」).",
+    "compare": "「うらむ」: oán hận người đã làm hại mình. 「｜憎《にく》む」: căm ghét người, điều xấu: 「差別を憎む」.",
+    "example_notes": [
+      "Anh ấy đến giờ vẫn oán hận người đồng nghiệp đã cướp mất đề án của mình."
+    ]
+  },
+  "v-0128": {
+    "meaning": "Đuổi ra ngoài, tống ra khỏi (nhà, phòng)",
+    "usage": "「〜を外に追い出す」, bị động 「家を追い出される」 (bị đuổi ra khỏi nhà).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi mở cửa sổ đuổi con ong bay vào phòng ra ngoài."
+    ]
+  },
+  "v-0129": {
+    "meaning": "Bị gạt ra rìa, bị cho ra khỏi nhóm",
+    "usage": "「仲間外れにする」, 「仲間外れにされる」 (bị cho ra rìa).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Bị cho ra rìa trong trận bóng giờ nghỉ trưa, em trai tôi vừa khóc vừa về nhà."
+    ]
+  },
+  "v-0130": {
+    "meaning": "Thằng đó, hắn, nó (cách gọi người khác suồng sã)",
+    "usage": "「あいつに任せる」, 「あいつとは〜」. Gần: 「やつ」 (thằng, gã).",
+    "nuance": "Cách nói suồng sã của 「あの人」: dùng với người dưới mình, hoặc người rất thân.",
+    "compare": "",
+    "example_notes": [
+      "Giao cho thằng đó là ổn thôi. Từ xưa nó đã là đứa đáng tin cậy mà."
+    ]
+  },
+  "v-0131": {
+    "meaning": "Người dưng, người ngoài (không phải mình hay người thân)",
+    "usage": "「他人の家」, 「他人のこと」, 「｜他人同士《たにんどうし》」. Hán Việt \"tha nhân\".",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi lớn lên với lời dặn: khi vào nhà người khác thì phải cởi giày và xếp ngay ngắn."
+    ]
+  },
+  "v-0132": {
+    "meaning": "Sống một mình (ở một nơi)",
+    "usage": "「一人住まいの〜」 (người sống một mình). Cùng nghĩa: 「｜一人暮《ひとりぐ》らし」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Vì bà sống một mình, cuối tuần nào tôi cũng đến xem bà thế nào."
+    ]
+  },
+  "v-0133": {
+    "meaning": "Việc cho thuê (nhà, phòng); nhà đi thuê",
+    "usage": "「賃貸のアパート」, 「賃貸に住む」, 「｜賃貸住宅《ちんたいじゅうたく》」 (nhà cho thuê).",
+    "nuance": "",
+    "compare": "「賃貸」: việc cho thuê nhà, nhà đi thuê: 「賃貸に住む」. 「｜大家《おおや》」: người chủ cho thuê nhà: 「大家さん」.",
+    "example_notes": [
+      "Hai vợ chồng đang bàn nên mua nhà hay tiếp tục ở nhà thuê."
+    ]
+  },
+  "v-0134": {
+    "meaning": "Tiền đặt cọc khi thuê nhà",
+    "usage": "「敷金を払う」, 「敷金が戻る」. Đi kèm: 「｜礼金《れいきん》」 (tiền lễ).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Vì giữ phòng sạch sẽ, khi chuyển đi tôi được trả lại gần hết tiền cọc."
+    ]
+  },
+  "v-0135": {
+    "meaning": "Gia hạn (hợp đồng, giấy tờ); phá, làm mới (kỷ lục)",
+    "usage": "「免許証の更新」, 「契約を更新する」, 「記録を更新する」 (phá kỷ lục). Hán Việt \"canh tân\".",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Để gia hạn bằng lái xe, tôi xin nghỉ một ngày trong tuần."
+    ]
+  },
+  "v-0136": {
+    "meaning": "Khoản vay trả dần (để mua nhà, xe)",
+    "usage": "「〜年ローン」, 「ローンを返す」, 「｜住宅《じゅうたく》ローン」 (khoản vay mua nhà).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Bố tôi dự định trả xong khoản vay mua nhà trước tuổi sáu mươi."
+    ]
+  },
+  "v-0137": {
+    "meaning": "Nội quy, điều lệ chung mọi người cùng theo",
+    "usage": "「決まりを作る」, 「〜という決まりがある」. Gần nghĩa: 「ルール」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Con trai tôi học tiểu học, luôn giữ đúng quy định của nhà là mỗi ngày chỉ chơi game một tiếng."
+    ]
+  },
+  "v-0138": {
+    "meaning": "Nhà riêng biệt lập (không chung tòa với nhà khác)",
+    "usage": "「一戸建てを買う」. Cùng nghĩa: 「｜一軒家《いっけんや》」. Khác 「マンション」 (căn hộ trong tòa nhà chung).",
+    "nuance": "",
+    "compare": "「一戸建て」: nhà riêng biệt lập, khác 「マンション」. 「｜家屋《かおく》」: nhà ở nói chung, không phân biệt kiểu nhà.",
+    "example_notes": [
+      "Nếu là nhà riêng thì khác với chung cư, không phải bận tâm tiếng bước chân ở tầng trên."
+    ]
+  },
+  "v-0139": {
+    "meaning": "Ngôi nhà của chính mình (đã mua, không phải nhà thuê)",
+    "usage": "「マイホームを買う」, 「マイホームを建てる」.",
+    "nuance": "",
+    "compare": "「マイホーム」: ngôi nhà mình sở hữu, khác nhà thuê. 「｜我《わ》が｜家《や》」: nhà mình, gia đình mình: 「我が家では〜」. 「｜家屋《かおく》」: nhà ở nói chung, xét như công trình xây dựng.",
+    "example_notes": [
+      "Hai vợ chồng đã dành dụm suốt mười năm để xây ngôi nhà của riêng mình."
+    ]
+  },
+  "v-0140": {
+    "meaning": "Nhà mình, gia đình mình",
+    "usage": "「我が家では〜」 (ở nhà tôi thì…), 「我が家に帰る」 (về nhà mình). Cùng kiểu: 「｜我《わ》が｜町《まち》」, 「｜我《わ》が｜国《くに》」.",
+    "nuance": "",
+    "compare": "「我が家」: nhà mình, cả gia đình mình: 「我が家では〜」. 「マイホーム」: ngôi nhà mình mua, khác nhà thuê: 「マイホームを建てる」.",
+    "example_notes": [
+      "Ở nhà tôi, rửa bát sau bữa tối là phần việc của bố."
+    ]
+  },
+  "v-0141": {
+    "meaning": "Nhà cửa nói chung (xét như công trình xây dựng)",
+    "usage": "「木造の家屋」 (nhà gỗ), 「家屋が残る」. Hán Việt \"gia ốc\".",
+    "nuance": "",
+    "compare": "「家屋」: nhà ở nói chung, xét như công trình: 「木造の家屋」. 「｜一戸建《いっこだ》て」 (nhà riêng biệt lập) và 「マイホーム」 (nhà mình sở hữu) đều là một kiểu 「家屋」.",
+    "example_notes": [
+      "Ở khu này, đến nay vẫn còn những ngôi nhà gỗ xây từ hơn trăm năm trước."
+    ]
+  },
+  "v-0142": {
+    "meaning": "Phần mái che trên cùng của ngôi nhà",
+    "usage": "「屋根の上」, 「屋根に積もる」, 「赤い屋根の家」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Sáng mùa đông, lớp tuyết phủ trên mái nhà lấp lánh dưới nắng."
+    ]
+  },
+  "v-0143": {
+    "meaning": "Phòng rửa mặt, chỗ rửa mặt trong nhà",
+    "usage": "「洗面所を使う」, 「洗面所で〜」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Buổi sáng cả nhà ai cũng dùng phòng rửa mặt nên lúc nào cũng phải chờ lượt."
+    ]
+  },
+  "v-0144": {
+    "meaning": "Kho nhỏ, chỗ cất đồ ít dùng",
+    "usage": "「物置に入れる」, 「物置にしまう」, 「物置に片付ける」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Mùa đông qua rồi nên tôi cất lò sưởi vào kho."
+    ]
+  },
+  "v-0145": {
+    "meaning": "Cách bố trí các phòng trong nhà, sơ đồ nhà",
+    "usage": "「〜の間取り」, 「間取りが使いやすい」. Kiểu ghi 「4LDK」: bốn phòng cùng phòng khách, phòng ăn, bếp.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Phòng này hẹp nhưng cách bố trí dễ dùng nên tôi rất ưng."
+    ]
+  },
+  "v-0146": {
+    "meaning": "Không gian, khoảng trống",
+    "usage": "「〜の空間」, 「空間を使う」, 「空間を生かす」 (tận dụng không gian). Hán Việt \"không gian\", nghĩa như tiếng Việt.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi tận dụng khoảng trống dưới gầm giường để cất quần áo theo mùa."
+    ]
+  },
+  "v-0147": {
+    "meaning": "Phần sâu bên trong; chỗ xa lối vào",
+    "usage": "① Chỗ sâu trong một vật: 「のどの奥」, 「押し入れの奥」. ② Chỗ xa cửa vào: 「奥の部屋」, 「奥のほう」.",
+    "nuance": "",
+    "compare": "「奥」: chỗ sâu bên trong, xa lối vào: 「奥の部屋」. 「｜手前《てまえ》」: phía gần mình hơn: 「棚の手前」.",
+    "example_notes": [
+      "Bị hóc xương cá sâu trong cổ họng, tôi phải đến bệnh viện lấy ra.",
+      "Sân ga đông nên lên tàu rồi tôi tiến vào phía trong đứng."
+    ]
+  },
+  "v-0148": {
+    "meaning": "Phía gần mình, phía trước (của một vật)",
+    "usage": "「手前に置く」 (đặt ở phía gần mình), 「棚の手前」, 「いちばん手前」.",
+    "nuance": "",
+    "compare": "「手前」: phía gần người đang nhìn: 「棚の手前」. 「奥」: chỗ sâu bên trong, xa lối vào: 「奥の部屋」.",
+    "example_notes": [
+      "Gia vị hay dùng tôi xếp ở phía ngoài cùng của kệ."
+    ]
+  },
+  "v-0149": {
+    "meaning": "Quay về hướng nam (cửa, phòng, nhà)",
+    "usage": "「南向きの部屋」, 「南向きの窓」. Cùng kiểu: 「｜北向《きたむ》き」, 「｜西向《にしむ》き」, 「｜東向《ひがしむ》き」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi xếp mấy chậu hoa gần cửa sổ hướng nam."
+    ]
+  },
+  "v-0150": {
+    "meaning": "Hơi ấm, cảm giác ấm áp",
+    "usage": "「布団の温もり」, 「手の温もり」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Hơi ấm của chăn dễ chịu quá nên mãi tôi không dậy nổi."
     ]
   },
   "v-0151": {
@@ -754,14 +1391,68 @@
       "Căn chòi ông tôi dựng đến nay đã năm mươi năm mà vẫn chắc chắn."
     ]
   },
+  "v-0152": {
+    "meaning": "Kiểm tra máy móc, thiết bị xem có chỗ hỏng không",
+    "usage": "「〜を点検する」, 「エレベーターの点検」, 「｜点検中《てんけんちゅう》」 (đang kiểm tra, bảo dưỡng).",
+    "nuance": "Điền từ trong đề: kiểm tra xem thang máy có bất thường không → 「点検」; phương án sai 「参観」, 「検診」, 「観測」.",
+    "compare": "",
+    "example_notes": [
+      "Người của sở cứu hỏa đã đến kiểm tra thiết bị báo cháy của tòa chung cư."
+    ]
+  },
+  "v-0153": {
+    "meaning": "Ngừng hoạt động, đứng lại (máy móc, xe)",
+    "usage": "「〜が停止する」, 「〜を停止する」. Hán Việt \"đình chỉ\".",
+    "nuance": "",
+    "compare": "「停止」: máy móc, xe ngừng hoạt động: 「機械が停止する」. 「｜中断《ちゅうだん》」: việc đang làm bị dừng giữa chừng: 「試合が中断される」.",
+    "example_notes": [
+      "Bấm nút khẩn cấp là băng chuyền dừng lại ngay."
+    ]
+  },
+  "v-0154": {
+    "meaning": "Tiếng động (phát ra từ đâu đó)",
+    "usage": "「物音がする」, 「物音が聞こえる」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Nghe trong bếp có tiếng động lớn, tôi vào xem thì thấy cái nồi đã rơi từ trên kệ xuống."
+    ]
+  },
+  "v-0155": {
+    "meaning": "Phòng chống tội phạm",
+    "usage": "「防犯のために」, 「防犯ベル」 (chuông báo động), 「防犯カメラ」. Hán Việt \"phòng phạm\".",
+    "nuance": "",
+    "compare": "「防犯」: phòng ngừa tội phạm nói chung: 「防犯カメラ」. 「｜警備《けいび》」: canh gác, bảo vệ một nơi: 「警備員」.",
+    "example_notes": [
+      "Tôi cho con gái, đứa hay phải đi đường đêm một mình, mang theo chuông báo động chống tội phạm."
+    ]
+  },
+  "v-0156": {
+    "meaning": "Rùng mình, ớn lạnh (vì sợ)",
+    "usage": "「ぞっとする」, 「下を見てぞっとする」.",
+    "nuance": "Khác 「がっかりする」 (thất vọng): đề từng đặt 「ぞっとした」 làm phương án sai cho câu hỏi từ gần nghĩa với 「失望した」.",
+    "compare": "",
+    "example_notes": [
+      "Lúc đi trên con đường hẹp sát mép vực, nhìn xuống dưới tôi rợn cả người."
+    ]
+  },
   "v-0157": {
     "meaning": "Canh gác, bảo vệ an ninh cho một nơi",
     "usage": "「警備員」 (nhân viên bảo vệ), 「警備会社」, 「警備が厳しい」 (canh gác nghiêm ngặt), 「警備に当たる」 (đảm nhận việc canh gác). Hán Việt \"cảnh bị\".",
     "nuance": "Đọc 「けいび」: chữ 「備」 đọc 「び」 (hữu thanh), đề thi đã cho 「けいひ」「けび」 làm phương án sai. Khi hỏi cách viết, đề đã gài 「警秘」「係備」「警護」.",
-    "compare": "",
+    "compare": "「警備」: canh gác, bảo vệ một nơi: 「警備員」. 「｜防犯《ぼうはん》」: phòng ngừa tội phạm nói chung: 「防犯カメラ」.",
     "example_notes": [
       "Quanh hội trường buổi hòa nhạc, rất nhiều người đang làm nhiệm vụ canh gác.",
       "Bảo tàng mỹ thuật này được máy móc canh gác cả vào ban đêm."
+    ]
+  },
+  "v-0158": {
+    "meaning": "Mới xây (nhà, tòa nhà); việc xây mới",
+    "usage": "「新築の家」, 「新築する」. Liên quan: 「｜築年数《ちくねんすう》」 (số năm kể từ khi xây).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Vừa chuyển vào nhà mới xây, phòng nào cũng còn mùi gỗ."
     ]
   },
   "v-0166": {
@@ -1225,7 +1916,7 @@
     "meaning": "Xứng đáng, xứng hợp với một vai trò hay một dịp",
     "usage": "Mẫu 「AはBにふさわしい」: 「リーダーにふさわしい」, 「卒業式にふさわしい服装」, 「〜にふさわしい人」. Đứng trước danh từ: 「ふさわしい案」.",
     "nuance": "Không dùng cho cỡ vừa hay tính hợp nhau. Đề thi coi là sai: 「私にふさわしいサイズの帽子」, 「性格がふさわしい」, 「指摘はいつもふさわしい」.",
-    "compare": "「ふさわしい」 nói A xứng với B (người với vị trí, trang phục với dịp). 「｜妥当《だとう》」 là nhận xét một kết luận, mức giá có hợp lý, thỏa đáng không: 「妥当な金額」.",
+    "compare": "「ふさわしい」: A xứng với B (người với vị trí, trang phục với dịp). 「｜妥当《だとう》」: nhận xét một kết luận, mức giá có hợp lý, thỏa đáng không: 「妥当な金額」. 「つり｜合《あ》う」: hai bên cân xứng nhau: 「収入につり合う」.",
     "example_notes": [
       "Người ta đang lấy ý kiến về một cái tên xứng hợp cho thư viện mới.",
       "Bản nhạc piano êm dịu rất hợp để đọc sách buổi tối."
@@ -1665,7 +2356,7 @@
     "meaning": "Tạm dừng giữa chừng, bị gián đoạn",
     "usage": "「〜が中断する」, 「〜を中断する」, 「試合が中断される」, 「研究を中断する」. Tiếng Việt nói \"gián đoạn\".",
     "nuance": "Việc đang làm bị dừng giữa chừng. Đề thi coi là sai cho sự kiện hủy trước khi bắt đầu, cây gãy, nghỉ việc ở công ty, hủy đặt bàn, che nắng, từ chối lời mời.",
-    "compare": "「中断」: việc đang làm bị dừng giữa chừng: 「試合が中断される」. 「｜区切《くぎ》り」: chỗ ngắt mình đặt ra để dừng: 「区切りをつける」.",
+    "compare": "「中断」: việc đang làm bị dừng giữa chừng: 「試合が中断される」. 「｜区切《くぎ》り」: chỗ ngắt mình đặt ra để dừng: 「区切りをつける」. 「｜停止《ていし》」: máy móc, xe ngừng hoạt động: 「機械が停止する」.",
     "example_notes": [
       "Vì mất điện, cuộc họp bị gián đoạn khoảng ba mươi phút.",
       "Vì bệnh, anh ấy đã tạm dừng việc nghiên cứu ở đại học một năm."
@@ -2085,7 +2776,7 @@
     "meaning": "Tầm nhìn của mắt; tầm hiểu biết, cách nhìn nhận",
     "usage": "「視野が広い／狭い」, 「視野を広げる」, 「視野に入る」. Hán Việt \"thị dã\".",
     "nuance": "Điền từ trong đề: người đứng đầu tổ chức cần có （　） rộng → 「視野」. Ba nhiễu cùng chữ 「視」: 「視界」 (khoảng mắt thấy được), 「視線」 (ánh mắt), 「視察」 (thị sát).",
-    "compare": "",
+    "compare": "「視野」: phạm vi mắt thấy được, hay tầm hiểu biết: 「視野を広げる」. 「｜視線《しせん》」: hướng mắt đang nhìn: 「視線を向ける」.",
     "example_notes": [
       "Khi lái xe, tôi để ý cả những chiếc xe đạp lọt vào rìa tầm nhìn.",
       "Làm việc với người nhiều nước, tôi mới nhận ra tầm nhìn của mình hẹp đến thế nào."
@@ -2254,7 +2945,7 @@
     "meaning": "Làm sai, nhầm (cách dùng, đường đi, phán đoán)",
     "usage": "「使い方を誤る」, 「道を誤る」, 「判断を誤る」, 「誤った情報」 (thông tin sai). Hán Việt 「誤」 là \"ngộ\".",
     "nuance": "Câu thay thế trong đề: 「あやまった」＝「正しくない」; nhiễu 「古い」「秘密の」「必要のない」. Cùng âm với 「謝る」 (xin lỗi) — phân biệt bằng chữ.",
-    "compare": "「誤る」: động từ, làm sai, chọn sai: 「道を誤る」. 「｜誤解《ごかい》」: danh từ, hiểu lầm ý người khác hay sự việc: 「誤解を招く」, 「誤解される」.",
+    "compare": "「誤る」: động từ, làm sai, chọn sai: 「道を誤る」. 「｜誤解《ごかい》」: danh từ, hiểu lầm ý người khác hay sự việc: 「誤解を招く」, 「誤解される」. 「｜勘違《かんちが》い」: danh từ, tưởng nhầm một điều: 「私の勘違い」.",
     "example_notes": [
       "Dùng sai cách thì dụng cụ tiện lợi cũng thành nguồn gây thương tích.",
       "Đi nhầm đường trên núi, chúng tôi xuống núi trễ tận hai tiếng so với dự định."
@@ -3253,7 +3944,7 @@
     "meaning": "Có lẽ, nhiều khả năng là (khi đoán)",
     "usage": "Phó từ, cuối câu là lời đoán: 「おそらく〜だろう」, 「おそらく〜と思う」. Chữ Hán: 「恐らく」.",
     "nuance": "Câu thay thế trong đề: 「おそらく」＝「たぶん」. Nhiễu 「当然」「やはり」「絶対」.",
-    "compare": "",
+    "compare": "「おそらく」: đi với 「〜だろう」, 「〜と思う」, đoán là nhiều khả năng như vậy. 「もしかすると」: đi với 「〜かもしれない」, chỉ là một khả năng.",
     "example_notes": [
       "Nếu có ga mới thì có lẽ giá đất quanh đây sẽ tăng.",
       "Đèn phòng bên đã tắt, có lẽ họ đã ra ngoài rồi."
@@ -3931,7 +4622,7 @@
     "meaning": "Tương hỗ, qua lại lẫn nhau giữa hai bên",
     "usage": "「相互理解」 (hiểu biết lẫn nhau), 「相互に助け合う」, 「相互関係」.",
     "nuance": "",
-    "compare": "",
+    "compare": "「相互」: qua lại giữa hai bên, ghép được thành từ: 「相互理解」, 「相互関係」. 「お｜互《たが》い」: dùng được như danh từ (「お互いの国」) và phó từ (「お互いに」).",
     "example_notes": [
       "Hai trường đại học này hàng năm đều tiến hành gửi sinh viên trao đổi qua lại cho nhau.",
       "Các thư viện trong thành phố hợp tác qua lại để cùng cho mượn và mượn sách lẫn nhau."
@@ -4270,7 +4961,7 @@
     "meaning": "Căm ghét, oán ghét (người, điều xấu)",
     "usage": "「人を憎む」, 「差別を憎む」, 「長い間憎んでいた」.",
     "nuance": "Đọc 「にくむ」; đề đã gài 「なやんで」「くやんで」「うらんで」. Viết: 「憎めたら」 là phương án sai cho 「責めたら」 (「せめたら」).",
-    "compare": "「憎む」: động từ, căm ghét ai: 「相手を憎む」. 「｜憎《にく》い」: tính từ, nói cảm giác ghét: 「〜が憎い」.",
+    "compare": "「憎む」: động từ, căm ghét ai: 「相手を憎む」. 「｜憎《にく》い」: tính từ, nói cảm giác ghét: 「〜が憎い」. 「うらむ」: oán hận người đã làm hại mình: 「今もうらんでいる」.",
     "example_notes": [
       "Bộ phim kể về một luật sư căm ghét sự phân biệt đối xử.",
       "Anh ấy đã oán ghét kẻ lừa mình suốt một thời gian dài."
@@ -4461,7 +5152,7 @@
     "meaning": "Tháo rời (máy móc, mô hình) ra từng bộ phận",
     "usage": "「機械を分解する」, 「分解して点検する」, 「部品ごとに分解する」.",
     "nuance": "Đề thi coi là sai: cắt dưa hấu làm bốn, đổi tờ nghìn yên ra tiền lẻ, ba người chia nhau làm việc gấp. Hán Việt 'phân giải'; ở thẻ này nghĩa là tháo rời.",
-    "compare": "「分解」: tháo vật ra từng bộ phận: 「機械を分解する」. 「｜分析《ぶんせき》」: phân tích dữ liệu, nguyên nhân. Đề đọc từng gài 「ぶんかい」 cho 「分析」.",
+    "compare": "「分解」: tháo vật ra từng bộ phận: 「機械を分解する」. 「｜分析《ぶんせき》」: phân tích dữ liệu, nguyên nhân. Đề từng gài cách đọc 「ぶんかい」 cho 「分析」. 「ばらす」: tháo đồ ra từng mảnh: 「棚をばらす」.",
     "example_notes": [
       "Mô hình con tàu này được làm để có thể tháo rời từng bộ phận."
     ]

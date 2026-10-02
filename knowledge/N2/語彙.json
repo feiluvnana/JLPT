@@ -39988,6 +39988,48 @@
       "official_count": 0
     },
     {
+      "id": "v-o-umareru",
+      "word": "生まれる",
+      "reading": "うまれる",
+      "pos": "動詞",
+      "examples": [
+        "｜春《はる》に**｜生《う》まれた**｜子猫《こねこ》は、もう｜庭《にわ》を｜走《はし》り｜回《まわ》っている。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 14,
+          "note": "見出し語 No.26「産む」の＋語「生まれる」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第1章 人と人との関係／家族",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-kaigoshi",
+      "word": "介護士",
+      "reading": "かいごし",
+      "pos": "名詞",
+      "examples": [
+        "｜祖母《そぼ》が｜通《かよ》う｜施設《しせつ》には、｜優《やさ》しい**｜介護士《かいごし》**が｜何人《なんにん》もいる。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 13,
+          "note": "見出し語 No.20「介護」の＋語「介護士」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第1章 人と人との関係／家族",
+      "tags": [],
+      "official_count": 0
+    },
+    {
       "id": "v-o-sanfujinka",
       "word": "産婦人科",
       "reading": "さんふじんか",
@@ -40239,6 +40281,27 @@
       "official_count": 0
     },
     {
+      "id": "v-o-omoiyaru",
+      "word": "思いやる",
+      "reading": "おもいやる",
+      "pos": "動詞",
+      "examples": [
+        "｜一人《ひとり》で｜住《す》む｜叔母《おば》の｜毎日《まいにち》を**｜思《おも》いやり**、｜季節《きせつ》ごとに｜手紙《てがみ》を｜送《おく》っている。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 16,
+          "note": "見出し語 No.41「思いやり」の＋語「思いやる」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第1章 人と人との関係／友達",
+      "tags": [],
+      "official_count": 0
+    },
+    {
       "id": "v-o-tayori",
       "word": "頼り",
       "reading": "たより",
@@ -40350,6 +40413,27 @@
       "related": [],
       "quiz": [],
       "group": "第1章 人と人との関係／友達",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-omoikomi",
+      "word": "思い込み",
+      "reading": "おもいこみ",
+      "pos": "名詞",
+      "examples": [
+        "この｜道《みち》が｜近道《ちかみち》だというのは｜私《わたし》の**｜思《おも》い｜込《こ》み**で、｜実際《じっさい》は｜遠回《とおまわ》りだった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 20,
+          "note": "見出し語 No.65「思い込む」の＋語「思い込み」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第1章 人と人との関係／知人・付き合い",
       "tags": [],
       "official_count": 0
     },
@@ -40757,6 +40841,27 @@
       "related": [],
       "quiz": [],
       "group": "第1章 人と人との関係／恋人",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-okage",
+      "word": "おかげ",
+      "reading": "おかげ",
+      "pos": "名詞",
+      "examples": [
+        "｜隣《となり》の｜人《ひと》が｜席《せき》をゆずってくれた**おかげ**で、｜座《すわ》って｜帰《かえ》れた。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 29,
+          "note": "見出し語 No.117「せい」の＋語「おかげ」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第1章 人と人との関係／関係悪化",
       "tags": [],
       "official_count": 0
     },
@@ -41335,6 +41440,48 @@
       "official_count": 0
     },
     {
+      "id": "v-o-kaikae",
+      "word": "買い換え",
+      "reading": "かいかえ",
+      "pos": "名詞",
+      "examples": [
+        "｜古《ふる》くなった｜冷蔵庫《れいぞうこ》の**｜買《か》い｜換《か》え**を、｜年末《ねんまつ》に｜予定《よてい》している。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 50,
+          "note": "見出し語 No.227「買い換える」の＋語「買い換え」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第2章 暮らし／買い物",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-kachikan",
+      "word": "価値観",
+      "reading": "かちかん",
+      "pos": "名詞",
+      "examples": [
+        "｜海外《かいがい》で｜暮《く》らしてから、お｜金《かね》に｜対《たい》する｜自分《じぶん》の**｜価値観《かちかん》**が｜変《か》わった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 49,
+          "note": "見出し語 No.220「価値」の＋語「価値観」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第2章 暮らし／買い物",
+      "tags": [],
+      "official_count": 0
+    },
+    {
       "id": "v-o-kujibiki",
       "word": "くじ引き",
       "reading": "くじびき",
@@ -41678,6 +41825,27 @@
       "official_count": 0
     },
     {
+      "id": "v-o-kaeru",
+      "word": "換える",
+      "reading": "かえる",
+      "pos": "動詞",
+      "examples": [
+        "｜旅行《りょこう》の｜前《まえ》に、｜銀行《ぎんこう》で｜円《えん》を｜現地《げんち》のお｜金《かね》に**｜換《か》えた**。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 61,
+          "note": "見出し語 No.286「替える」の＋語「換える」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第3章 家で／朝",
+      "tags": [],
+      "official_count": 0
+    },
+    {
       "id": "v-o-shuushin",
       "word": "就寝",
       "reading": "しゅうしん",
@@ -41744,6 +41912,27 @@
       "tags": [
         "自動詞"
       ],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-omoiukabu",
+      "word": "思い浮かぶ",
+      "reading": "おもいうかぶ",
+      "pos": "動詞",
+      "examples": [
+        "｜散歩《さんぽ》の｜途中《とちゅう》で、｜忘《わす》れていた｜歌《うた》の｜題名《だいめい》がふと**｜思《おも》い｜浮《う》かんだ**。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 64,
+          "note": "見出し語 No.304「思い浮かべる」の＋語「思い浮かぶ」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第3章 家で／日課",
+      "tags": [],
       "official_count": 0
     },
     {
@@ -41882,6 +42071,27 @@
         "v-0330",
         "v-0202"
       ],
+      "quiz": [],
+      "group": "第3章 家で／料理",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-otesei",
+      "word": "お手製",
+      "reading": "おてせい",
+      "pos": "名詞",
+      "examples": [
+        "｜母《はは》の**お｜手製《てせい》**の｜梅干《うめぼ》しは、｜毎年《まいとし》｜親戚《しんせき》に｜配《くば》られる。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 67,
+          "note": "見出し語 No.332「手作り」の＋語「お手製」"
+        }
+      ],
+      "related": [],
       "quiz": [],
       "group": "第3章 家で／料理",
       "tags": [],
@@ -42545,6 +42755,27 @@
       "official_count": 0
     },
     {
+      "id": "v-o-kaigoshisetsu",
+      "word": "介護施設",
+      "reading": "かいごしせつ",
+      "pos": "名詞",
+      "examples": [
+        "｜両親《りょうしん》は、｜自宅《じたく》に｜近《ちか》い**｜介護《かいご》｜施設《しせつ》**を｜見学《けんがく》しに｜行《い》った。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 86,
+          "note": "見出し語 No.418「施設」の＋語「介護施設」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第4章 町／役所",
+      "tags": [],
+      "official_count": 0
+    },
+    {
       "id": "v-o-kenchikuka",
       "word": "建築家",
       "reading": "けんちくか",
@@ -42757,6 +42988,48 @@
       "related": [],
       "quiz": [],
       "group": "第4章 町／ふるさと",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-enkatsu",
+      "word": "円滑",
+      "reading": "えんかつ",
+      "pos": "ナ形容詞",
+      "examples": [
+        "｜工事《こうじ》の｜手続《てつづ》きが**｜円滑《えんかつ》**に｜進《すす》むよう、｜書類《しょるい》を｜先《さき》にそろえておいた。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 95,
+          "note": "見出し語 No.473「スムーズ」の＋語「円滑」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第4章 町／交通",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-oudanhodou",
+      "word": "横断歩道",
+      "reading": "おうだんほどう",
+      "pos": "名詞",
+      "examples": [
+        "｜信号《しんごう》のない**｜横断歩道《おうだんほどう》**でも、｜車《くるま》が｜止《と》まって｜待《ま》ってくれた。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 93,
+          "note": "見出し語 No.455「横断」の＋語「横断歩道」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第4章 町／交通",
       "tags": [],
       "official_count": 0
     },
@@ -43109,6 +43382,27 @@
       "official_count": 0
     },
     {
+      "id": "v-o-gakkousuisen",
+      "word": "学校推薦",
+      "reading": "がっこうすいせん",
+      "pos": "名詞",
+      "examples": [
+        "｜部活動《ぶかつどう》での｜活躍《かつやく》が｜認《みと》められ、**｜学校推薦《がっこうすいせん》**で｜大学《だいがく》に｜入《はい》れることになった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 101,
+          "note": "見出し語 No.504「推薦」の＋語「学校推薦」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第5章 学校で／学校",
+      "tags": [],
+      "official_count": 0
+    },
+    {
       "id": "v-o-juujitsukan",
       "word": "充実感",
       "reading": "じゅうじつかん",
@@ -43236,6 +43530,69 @@
       "tags": [
         "カタカナ語"
       ],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-kakikomi",
+      "word": "書き込み",
+      "reading": "かきこみ",
+      "pos": "名詞",
+      "examples": [
+        "｜資料《しりょう》の｜余白《よはく》に、｜先生《せんせい》の**｜書《か》き｜込《こ》み**がたくさん｜残《のこ》っていた。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 105,
+          "note": "見出し語 No.529「書き込む」の＋語「書き込み」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第5章 学校で／勉強",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-kakitori",
+      "word": "書き取り",
+      "reading": "かきとり",
+      "pos": "名詞",
+      "examples": [
+        "｜毎朝《まいあさ》｜十分間《じゅっぷんかん》、｜漢字《かんじ》の**｜書《か》き｜取《と》り**をしている。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 105,
+          "note": "見出し語 No.530「書き取る」の＋語「書き取り」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第5章 学校で／勉強",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-gakushuuhou",
+      "word": "学習法",
+      "reading": "がくしゅうほう",
+      "pos": "名詞",
+      "examples": [
+        "｜自分《じぶん》に｜合《あ》った**｜学習法《がくしゅうほう》**を｜見《み》つけるまで、｜何度《なんど》もやり｜方《かた》を｜変《か》えた。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 105,
+          "note": "見出し語 No.525「学習」の＋語「学習法」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第5章 学校で／勉強",
+      "tags": [],
       "official_count": 0
     },
     {
@@ -43480,6 +43837,27 @@
       "tags": [
         "他動詞"
       ],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-kaitouyoushi",
+      "word": "解答用紙",
+      "reading": "かいとうようし",
+      "pos": "名詞",
+      "examples": [
+        "｜名前《なまえ》の｜欄《らん》を｜空《あ》けたまま**｜解答用紙《かいとうようし》**を｜出《だ》してしまい、｜焦《あせ》った。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 110,
+          "note": "見出し語 No.560「用紙」の＋語「解答用紙」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第5章 学校で／試験",
+      "tags": [],
       "official_count": 0
     },
     {
@@ -43796,6 +44174,69 @@
         "問題6 用法"
       ],
       "official_count": 1
+    },
+    {
+      "id": "v-o-entoriishiito",
+      "word": "エントリーシート",
+      "reading": "えんとりーしーと",
+      "pos": "名詞",
+      "examples": [
+        "｜面接《めんせつ》の｜前《まえ》に、｜志望動機《しぼうどうき》を｜書《か》いた**エントリーシート**をメールで｜送《おく》った。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 121,
+          "note": "見出し語 No.635「エントリー」の＋語「エントリーシート」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第6章 会社で／就職",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-onsha",
+      "word": "御社",
+      "reading": "おんしゃ",
+      "pos": "名詞",
+      "examples": [
+        "｜面接《めんせつ》で、「**｜御社《おんしゃ》**の｜製品《せいひん》を｜使《つか》ったことがあります」と｜話《はな》した。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 121,
+          "note": "見出し語 No.638「貴社」の＝語「御社」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第6章 会社で／就職",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-gakurekifumon",
+      "word": "学歴不問",
+      "reading": "がくれきふもん",
+      "pos": "名詞",
+      "examples": [
+        "この｜工場《こうじょう》の｜募集《ぼしゅう》は**｜学歴《がくれき》｜不問《ふもん》**だが、｜経験者《けいけんしゃ》は｜歓迎《かんげい》される。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 122,
+          "note": "見出し語 No.643「不問」の＋語「学歴不問」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第6章 会社で／就職",
+      "tags": [],
+      "official_count": 0
     },
     {
       "id": "v-o-kyouchousei",
@@ -44300,6 +44741,48 @@
       "official_count": 0
     },
     {
+      "id": "v-o-ousetsu",
+      "word": "応接",
+      "reading": "おうせつ",
+      "pos": "名詞",
+      "examples": [
+        "｜受付《うけつけ》では、｜来客《らいきゃく》の**｜応接《おうせつ》**を｜新人《しんじん》が｜担当《たんとう》している。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 133,
+          "note": "見出し語 No.704「応対」の＋語「応接」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第6章 会社で／仕事",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-kaigou",
+      "word": "会合",
+      "reading": "かいごう",
+      "pos": "名詞",
+      "examples": [
+        "｜月《つき》に｜一度《いちど》、｜町内《ちょうない》の**｜会合《かいごう》**が｜公民館《こうみんかん》で｜開《ひら》かれる。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 132,
+          "note": "見出し語 No.702「打ち合わせ」の＋語「会合」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第6章 会社で／仕事",
+      "tags": [],
+      "official_count": 0
+    },
+    {
       "id": "v-o-kuraianto",
       "word": "クライアント",
       "reading": "くらいあんと",
@@ -44411,6 +44894,48 @@
         "カタカナ語",
         "する動詞"
       ],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-owabi",
+      "word": "おわび",
+      "reading": "おわび",
+      "pos": "名詞",
+      "examples": [
+        "｜配達《はいたつ》が｜遅《おく》れたことへの**おわび**に、｜小《ちい》さな｜菓子《かし》が｜添《そ》えられていた。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 137,
+          "note": "見出し語 No.744「わびる」の＋語「おわび」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第6章 会社で／上下関係",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-katagaki",
+      "word": "肩書き",
+      "reading": "かたがき",
+      "pos": "名詞",
+      "examples": [
+        "｜名刺《めいし》の**｜肩書《かたが》き**には、｜課長《かちょう》と｜書《か》かれていた。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 136,
+          "note": "見出し語 No.729「地位」の＋語「肩書き」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第6章 会社で／上下関係",
+      "tags": [],
       "official_count": 0
     },
     {
@@ -44640,6 +45165,48 @@
       "official_count": 0
     },
     {
+      "id": "v-o-enchousen",
+      "word": "延長戦",
+      "reading": "えんちょうせん",
+      "pos": "名詞",
+      "examples": [
+        "｜笛《ふえ》が｜鳴《な》っても｜差《さ》がつかず、｜両《りょう》チームは**｜延長戦《えんちょうせん》**を｜戦《たたか》った。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 148,
+          "note": "見出し語 No.791「延長」の＋語「延長戦」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第7章 お気に入り／競技",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-kachimake",
+      "word": "勝ち負け",
+      "reading": "かちまけ",
+      "pos": "名詞",
+      "examples": [
+        "この｜遊《あそ》びは、**｜勝《か》ち｜負《ま》け**より、みんなで｜笑《わら》うことが｜大切《たいせつ》だ。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 147,
+          "note": "見出し語 No.782「勝敗」の＝語「勝ち負け」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第7章 お気に入り／競技",
+      "tags": [],
+      "official_count": 0
+    },
+    {
       "id": "v-o-shidousha",
       "word": "指導者",
       "reading": "しどうしゃ",
@@ -44849,6 +45416,27 @@
       "official_count": 0
     },
     {
+      "id": "v-o-kakkoii",
+      "word": "かっこいい",
+      "reading": "かっこいい",
+      "pos": "イ形容詞",
+      "examples": [
+        "｜背筋《せすじ》を｜伸《の》ばして｜歌《うた》う｜姿《すがた》が、とても**かっこいい**。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 151,
+          "note": "見出し語 No.806「格好」の＋語「かっこいい」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第7章 お気に入り／ファッション",
+      "tags": [],
+      "official_count": 0
+    },
+    {
       "id": "v-o-gaiken",
       "word": "外見",
       "reading": "がいけん",
@@ -44983,6 +45571,27 @@
       "related": [],
       "quiz": [],
       "group": "第7章 お気に入り／ファッション",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-enjiru",
+      "word": "演じる",
+      "reading": "えんじる",
+      "pos": "動詞",
+      "examples": [
+        "｜新人《しんじん》の｜俳優《はいゆう》が、｜悩《なや》む｜父親《ちちおや》の｜役《やく》を｜見事《みごと》に**｜演《えん》じた**。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 156,
+          "note": "見出し語 No.839「演技」の＋語「演じる」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第7章 お気に入り／エンターテインメント",
       "tags": [],
       "official_count": 0
     },
@@ -46109,6 +46718,27 @@
       "official_count": 0
     },
     {
+      "id": "v-o-uryou",
+      "word": "雨量",
+      "reading": "うりょう",
+      "pos": "名詞",
+      "examples": [
+        "｜今年《ことし》の｜梅雨《つゆ》は、｜去年《きょねん》より**｜雨量《うりょう》**が｜少《すく》なかった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 173,
+          "note": "見出し語 No.945「降水量」の＋語「雨量」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第8章 自然・レジャー／台風・地震",
+      "tags": [],
+      "official_count": 0
+    },
+    {
       "id": "v-o-kouzui",
       "word": "洪水",
       "reading": "こうずい",
@@ -46219,6 +46849,27 @@
       "related": [],
       "quiz": [],
       "group": "第8章 自然・レジャー／台風・地震",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-kaitei",
+      "word": "海底",
+      "reading": "かいてい",
+      "pos": "名詞",
+      "examples": [
+        "｜深《ふか》い｜海《うみ》の**｜海底《かいてい》**には、｜光《ひかり》がほとんど｜届《とど》かない。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 178,
+          "note": "見出し語 No.972「底」の＋語「海底」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第8章 自然・レジャー／自然",
       "tags": [],
       "official_count": 0
     },
@@ -46368,6 +47019,27 @@
       "related": [
         "v-0996"
       ],
+      "quiz": [],
+      "group": "第8章 自然・レジャー／休日",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-onbu",
+      "word": "おんぶ",
+      "reading": "おんぶ",
+      "pos": "名詞",
+      "examples": [
+        "｜山《やま》の｜途中《とちゅう》で｜足《あし》を｜痛《いた》めた｜友人《ゆうじん》を、**おんぶ**して｜下《くだ》りた。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 183,
+          "note": "見出し語 No.1011「おぶう」の＋語「おんぶ」"
+        }
+      ],
+      "related": [],
       "quiz": [],
       "group": "第8章 自然・レジャー／休日",
       "tags": [],
@@ -46815,6 +47487,27 @@
       "official_count": 0
     },
     {
+      "id": "v-o-oogara",
+      "word": "大柄",
+      "reading": "おおがら",
+      "pos": "ナ形容詞",
+      "examples": [
+        "｜弟《おとうと》は｜高校《こうこう》に｜入《はい》ってから、｜急《きゅう》に**｜大柄《おおがら》**な｜体《からだ》つきになった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 194,
+          "note": "見出し語 No.1055「小柄」の↔語「大柄」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第9章 健康のために／体と健康",
+      "tags": [],
+      "official_count": 0
+    },
+    {
       "id": "v-o-kizuguchi",
       "word": "傷口",
       "reading": "きずぐち",
@@ -46937,6 +47630,27 @@
       "related": [],
       "quiz": [],
       "group": "第9章 健康のために／体と健康",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-undoubusoku",
+      "word": "運動不足",
+      "reading": "うんどうぶそく",
+      "pos": "名詞",
+      "examples": [
+        "｜在宅勤務《ざいたくきんむ》が｜続《つづ》いて、｜最近《さいきん》は**｜運動不足《うんどうぶそく》**で｜肩《かた》がこる。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 198,
+          "note": "見出し語 No.1085「不足」の＋語「運動不足」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第9章 健康のために／病気になる前に",
       "tags": [],
       "official_count": 0
     },
@@ -47067,6 +47781,27 @@
       "related": [
         "v-1109"
       ],
+      "quiz": [],
+      "group": "第9章 健康のために／症状",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-okan",
+      "word": "悪寒",
+      "reading": "おかん",
+      "pos": "名詞",
+      "examples": [
+        "｜階段《かいだん》を｜上《のぼ》るとき、｜急《きゅう》に**｜悪寒《おかん》**が｜走《はし》って｜立《た》ち｜止《と》まった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 202,
+          "note": "見出し語 No.1104「寒気」の＋語「悪寒」"
+        }
+      ],
+      "related": [],
       "quiz": [],
       "group": "第9章 健康のために／症状",
       "tags": [],
@@ -48162,6 +48897,140 @@
       "official_count": 0
     },
     {
+      "id": "v-o-ooyoso",
+      "word": "おおよそ",
+      "reading": "おおよそ",
+      "pos": "副詞",
+      "examples": [
+        "｜作業《さぎょう》の｜流《なが》れは、**おおよそ**｜頭《あたま》に｜入《はい》っている。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 227,
+          "note": "見出し語 No.1253「およそ」の＝語「おおよそ」"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/15. N2 7-2024/booklet.md",
+          "note": "7/2024 問題5-21 の下線語（正解は「だいたい」）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第10章 ニュース／政治",
+      "tags": [],
+      "official_count": 1
+    },
+    {
+      "id": "v-o-osamaru-2",
+      "word": "治まる",
+      "reading": "おさまる",
+      "pos": "動詞",
+      "examples": [
+        "｜長《なが》かった｜争《あらそ》いがやっと**｜治《おさ》まり**、｜町《まち》に｜静《しず》けさが｜戻《もど》った。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 223,
+          "note": "見出し語 No.1224「治める」の＋語「治まる」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第10章 ニュース／政治",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-kakuji",
+      "word": "各自",
+      "reading": "かくじ",
+      "pos": "名詞",
+      "examples": [
+        "｜飲《の》み｜物《もの》は**｜各自《かくじ》**で｜用意《ようい》してください、と｜連絡《れんらく》が｜来《き》た。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 225,
+          "note": "見出し語 No.1238「各々」の＋語「各自」"
+        },
+        {
+          "ref": "refs/JLPT_N2_NEW/14. N2 12-2023/booklet.md",
+          "note": "12/2023 問題5-21 の下線語（正解は「一人一人」）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第10章 ニュース／政治",
+      "tags": [],
+      "official_count": 1
+    },
+    {
+      "id": "v-o-kakureru",
+      "word": "隠れる",
+      "reading": "かくれる",
+      "pos": "動詞",
+      "examples": [
+        "｜月《つき》が｜厚《あつ》い｜雲《くも》の｜後《うし》ろに**｜隠《かく》れて**、あたりが｜暗《くら》くなった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 226,
+          "note": "見出し語 No.1247「隠す」の＋語「隠れる」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第10章 ニュース／政治",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-gaikoukan",
+      "word": "外交官",
+      "reading": "がいこうかん",
+      "pos": "名詞",
+      "examples": [
+        "｜姉《あね》は**｜外交官《がいこうかん》**になるために、｜三《みっ》つの｜外国語《がいこくご》を｜勉強《べんきょう》している。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 224,
+          "note": "見出し語 No.1227「外交」の＋語「外交官」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第10章 ニュース／政治",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-gaimudaijin",
+      "word": "外務大臣",
+      "reading": "がいむだいじん",
+      "pos": "名詞",
+      "examples": [
+        "**｜外務大臣《がいむだいじん》**が｜来週《らいしゅう》、｜隣国《りんごく》を｜訪《おとず》れることが｜発表《はっぴょう》された。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 224,
+          "note": "見出し語 No.1233「大臣」の＋語「外務大臣」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第10章 ニュース／政治",
+      "tags": [],
+      "official_count": 0
+    },
+    {
       "id": "v-o-kouhosha",
       "word": "候補者",
       "reading": "こうほしゃ",
@@ -48487,6 +49356,69 @@
       "official_count": 0
     },
     {
+      "id": "v-o-ekobaggu",
+      "word": "エコバッグ",
+      "reading": "えこばっぐ",
+      "pos": "名詞",
+      "examples": [
+        "レジ｜袋《ふくろ》をもらわずに、｜折《お》りたためる**エコバッグ**に｜買《か》った｜物《もの》を｜入《い》れた。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 237,
+          "note": "見出し語 No.1322「エコ」の＋語「エコバッグ」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第10章 ニュース／世界・環境",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-ekorojii",
+      "word": "エコロジー",
+      "reading": "えころじー",
+      "pos": "名詞",
+      "examples": [
+        "この｜店《みせ》は、**エコロジー**の｜考《かんが》え｜方《かた》を｜大切《たいせつ》にして｜商品《しょうひん》を｜選《えら》んでいる。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 237,
+          "note": "見出し語 No.1322「エコ」の＝語「エコロジー」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第10章 ニュース／世界・環境",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-enerugii-shigen",
+      "word": "エネルギー資源",
+      "reading": "えねるぎーしげん",
+      "pos": "名詞",
+      "examples": [
+        "｜電気《でんき》や｜熱《ねつ》を｜作《つく》るもとになる**エネルギー｜資源《しげん》**を、｜輸入《ゆにゅう》に｜頼《たよ》る｜国《くに》は｜多《おお》い。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 236,
+          "note": "見出し語 No.1319「エネルギー」の＋語「エネルギー資源」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第10章 ニュース／世界・環境",
+      "tags": [],
+      "official_count": 0
+    },
+    {
       "id": "v-o-kateikankyou",
       "word": "家庭環境",
       "reading": "かていかんきょう",
@@ -48670,6 +49602,48 @@
       "related": [
         "v-1327"
       ],
+      "quiz": [],
+      "group": "第11章 様子・イメージ／性格",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-okubyoumono",
+      "word": "おく病者",
+      "reading": "おくびょうもの",
+      "pos": "名詞",
+      "examples": [
+        "｜暗《くら》い｜道《みち》を｜一人《ひとり》で｜歩《ある》けない｜自分《じぶん》を、**おく｜病者《びょうしゃ》**だと｜思《おも》う。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 242,
+          "note": "見出し語 No.1339「おく病」の＋語「おく病者」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第11章 様子・イメージ／性格",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-onwa",
+      "word": "温和",
+      "reading": "おんわ",
+      "pos": "ナ形容詞",
+      "examples": [
+        "｜新《あたら》しい｜担任《たんにん》の｜先生《せんせい》は、**｜温和《おんわ》**な｜話《はな》し｜方《かた》をする｜人《ひと》だった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 241,
+          "note": "見出し語 No.1330「温厚」の＋語「温和」"
+        }
+      ],
+      "related": [],
       "quiz": [],
       "group": "第11章 様子・イメージ／性格",
       "tags": [],
@@ -48890,6 +49864,27 @@
       "official_count": 0
     },
     {
+      "id": "v-o-ushiromuki",
+      "word": "後ろ向き",
+      "reading": "うしろむき",
+      "pos": "名詞",
+      "examples": [
+        "｜失敗《しっぱい》を｜恐《おそ》れて｜何《なに》も｜試《ため》さないのは、**｜後《うし》ろ｜向《む》き**な｜考《かんが》え｜方《かた》だ。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 246,
+          "note": "見出し語 No.1364「前向き」の↔語「後ろ向き」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第11章 様子・イメージ／いい気分",
+      "tags": [],
+      "official_count": 0
+    },
+    {
       "id": "v-o-kouun",
       "word": "幸運",
       "reading": "こううん",
@@ -48991,6 +49986,27 @@
       "related": [],
       "quiz": [],
       "group": "第11章 様子・イメージ／いい気分",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-uzai",
+      "word": "うざい",
+      "reading": "うざい",
+      "pos": "イ形容詞",
+      "examples": [
+        "｜寝《ね》ようとしているのに、｜通知《つうち》が｜何度《なんど》も｜鳴《な》って**うざい**。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 250,
+          "note": "見出し語 No.1384「うんざり」の＋語「うざい」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第11章 様子・イメージ／ブルーな気分",
       "tags": [],
       "official_count": 0
     },
@@ -49319,6 +50335,27 @@
       "official_count": 2
     },
     {
+      "id": "v-o-uma-ga-au",
+      "word": "馬が合う",
+      "reading": "うまがあう",
+      "pos": "動詞",
+      "examples": [
+        "｜同《おな》じ｜班《はん》の｜山口《やまぐち》さんとは、なぜか｜初《はじ》めから**｜馬《うま》が｜合《あ》う**。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 261,
+          "note": "見出し語 No.1437「気が合う」の＋語「馬が合う」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第12章 間違えやすい表現／慣用句①気・心・胸",
+      "tags": [],
+      "official_count": 0
+    },
+    {
       "id": "v-o-kigayowai",
       "word": "気が弱い",
       "reading": "きがよわい",
@@ -49441,6 +50478,27 @@
       "related": [],
       "quiz": [],
       "group": "第12章 間違えやすい表現／慣用句②頭・顔",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-ude-o-ageru",
+      "word": "腕を上げる",
+      "reading": "うでをあげる",
+      "pos": "動詞",
+      "examples": [
+        "｜毎晩《まいばん》ギターを｜弾《ひ》いて、ずいぶん**｜腕《うで》を｜上《あ》げた**ねと｜兄《あに》に｜言《い》われた。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 269,
+          "note": "見出し語 No.1497「腕が上がる」の＋語「腕を上げる」"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第12章 間違えやすい表現／慣用句③体",
       "tags": [],
       "official_count": 0
     },

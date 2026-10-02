@@ -18122,6 +18122,33 @@
       "Giải thích dài dòng nhưng tóm lại là phải nộp trong tháng này."
     ]
   },
+  "v-o-tomokaku": {
+    "meaning": "Tạm gác lại, trước hết",
+    "usage": "「Aはともかく、B」: gác A sang một bên, bàn B trước. 「ともかく〜」: dù sao cũng trước hết làm việc đó. Gần với 「とにかく」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Vị thì tạm chưa nói, món ăn nhìn rất đẹp mắt."
+    ]
+  },
+  "v-o-toriaezu": {
+    "meaning": "Trước mắt, tạm thời",
+    "usage": "「とりあえずビール」: cứ làm việc gấp trước, việc sau tính tiếp. Khác 「とにかく」 (dù thế nào cũng) ở chỗ chỉ là biện pháp tạm.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Trong lúc chờ mọi người đến đủ, xin cứ uống tạm chén trà chờ nhé."
+    ]
+  },
+  "v-o-naoissou": {
+    "meaning": "Càng thêm, hơn nữa",
+    "usage": "「なおいっそう努力する」: vốn đã ở mức cao mà còn tăng thêm. Cùng loại với 「よりいっそう」, mạnh hơn 「いっそう」 một mình.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Thua trận, việc tập luyện của anh ấy lại càng thêm khắc nghiệt."
+    ]
+  },
   "v-o-aruiwa": {
     "meaning": "Hoặc, hay là",
     "usage": "「AあるいはB」, 「現金あるいはカードで払う」.",
@@ -18129,6 +18156,114 @@
     "compare": "Cùng nghĩa 'hoặc' với 「または」: nối hai lựa chọn, chỉ cần chọn một trong hai.",
     "example_notes": [
       "Người có nguyện vọng hãy chọn một ảnh hoặc một video rồi gửi đến."
+    ]
+  },
+  "v-o-sunawachi": {
+    "meaning": "Tức là, nói cách khác",
+    "usage": "「AすなわちB」: nói lại A bằng một cách khác là B. Hay gặp trong văn viết, trang trọng hơn 「つまり」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Thủ đô của Nhật Bản, tức là Tokyo, tuần này hoa anh đào đã nở rộ."
+    ]
+  },
+  "v-o-sonoketsuka": {
+    "meaning": "Kết quả là",
+    "usage": "「〜。その結果、〜」: nêu điều xảy ra sau một hành động hay sự việc. Dùng cho cả kết quả tốt lẫn xấu.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi đi bộ mỗi ngày 30 phút. Kết quả là trong ba tháng cân nặng giảm bốn ký."
+    ]
+  },
+  "v-o-sonotame": {
+    "meaning": "Vì thế, do đó",
+    "usage": "「〜。そのため、〜」: lấy vế trước làm lý do cho vế sau, thiên về văn viết, thông báo. Vế sau thường là sự việc khách quan, ít khi là ý chí của người nói.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tuyết rơi dày nên tàu ngừng chạy. Vì thế cuộc họp bắt đầu muộn một tiếng."
+    ]
+  },
+  "v-o-soreja": {
+    "meaning": "Vậy thì, thế thì",
+    "usage": "Dạng thân mật của 「それでは」: tiếp lời đối phương rồi đưa ra ý kiến, quyết định. Cũng dùng khi chào chia tay: 「それじゃ、また」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "\"Hôm nay tôi bận lắm.\" \"Vậy thì, để tôi đi thay nhé?\""
+    ]
+  },
+  "v-o-sorenara": {
+    "meaning": "Nếu vậy thì, nếu thế thì",
+    "usage": "「それなら、〜」: coi lời đối phương là điều kiện rồi đưa ra lời khuyên, đề nghị. Mang sắc thái 'đã thế thì…'.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "\"Ga xa lắm đấy.\" \"Nếu vậy thì để tôi chở bằng ô tô nhé.\""
+    ]
+  },
+  "v-o-soreni": {
+    "meaning": "Hơn nữa, với lại",
+    "usage": "「〜。それに、〜」: thêm một ý cùng chiều (ưu điểm chồng lên ưu điểm, hoặc ngược lại). Gần nghĩa 「そのうえ」 nhưng khẩu ngữ hơn.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Căn phòng này gần ga. Hơn nữa tiền thuê cũng rẻ."
+    ]
+  },
+  "v-o-sorenitaishite": {
+    "meaning": "Ngược lại, trái với điều đó",
+    "usage": "「AはX。それに対して、BはY」: đặt hai đối tượng cạnh nhau để làm rõ điểm khác biệt. Không nói về nguyên nhân – kết quả.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Anh trai thích đồ ngọt. Ngược lại, em trai toàn ăn đồ cay."
+    ]
+  },
+  "v-o-sorebakaridenaku": {
+    "meaning": "Không chỉ vậy, không những thế",
+    "usage": "「〜。そればかりでなく、〜」: thêm một ý nặng hơn, đáng chú ý hơn ý trước. Gần như 「そればかりか」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Anh ấy nói được tiếng Anh. Không những thế, tiếng Trung cũng giỏi."
+    ]
+  },
+  "v-o-dakara": {
+    "meaning": "Cho nên, vì vậy",
+    "usage": "「〜。だから、〜」: nêu lý do rồi đến kết luận hiển nhiên. Khẩu ngữ, nghe khá chắc chắn; vế sau có thể là ý chí, mệnh lệnh, khác với 「そのため」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Đêm qua tôi gần như không ngủ. Cho nên hôm nay đầu óc không làm việc nổi."
+    ]
+  },
+  "v-o-toiunowa": {
+    "meaning": "Lý do là, bởi vì",
+    "usage": "「〜。というのは、〜からだ/のだ」: nói kết luận trước, giải thích lý do sau. Cuối câu thường là 「からだ」「のだ」. Khác với 「というのは」 chỉ định nghĩa (「AというのはB」).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Hôm nay tôi về sớm. Lý do là hôm nay là sinh nhật mẹ tôi."
+    ]
+  },
+  "v-o-toittemo": {
+    "meaning": "Nói là… nhưng, tuy nói vậy",
+    "usage": "「〜。といっても、〜」: làm giảm ấn tượng của câu trước, cho biết mức độ thật. Còn 「そうはいっても」 thì nhấn việc không thể làm khác.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi đã đi du lịch. Nói là đi nhưng chỉ ngủ một đêm ở thị trấn bên cạnh."
+    ]
+  },
+  "v-o-nazekatoiuto": {
+    "meaning": "Sở dĩ như vậy là vì",
+    "usage": "「〜。なぜかというと、〜からだ」: nêu kết luận trước, rồi giải thích lý do. Cuối câu bắt buộc kèm 「からだ」「ためだ」. Gần 「なぜなら」, khẩu ngữ hơn.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi không có xe hơi. Sở dĩ vậy là vì đi tàu điện tiện hơn."
     ]
   },
   "v-o-aikawarazu": {

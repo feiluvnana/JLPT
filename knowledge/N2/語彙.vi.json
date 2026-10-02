@@ -9305,7 +9305,7 @@
     "meaning": "Hồi hộp, thấp thỏm (lo cho ai đó)",
     "usage": "「はらはらする」, 「｜見《み》ていてはらはらする」. Từ liên quan: 「ひやひや〈する〉」 (lo lắng, căng thẳng).",
     "nuance": "",
-    "compare": "",
+    "compare": "Cả hai đều dịch \"hồi hộp\": 「はらはら」 lo thót tim cho người khác, cho kết quả; 「そわそわ」 bồn chồn, tay chân không yên.",
     "example_notes": [
       "Xem màn đi trên dây, khán giả hồi hộp đến toát mồ hôi tay."
     ]
@@ -12317,7 +12317,7 @@
     "meaning": "Hiền hậu, điềm đạm (tính cách con người)",
     "usage": "「温厚な人」, 「温厚な人柄」, 「温厚な上司」, 「〜は温厚で…」. Hán Việt \"ôn hậu\", nghĩa gần tiếng Việt.",
     "nuance": "Chỉ tả con người. Đề thi coi là sai: 「温厚な歓迎」, 「温厚なコート」, 「温厚なスープ」. Khung 「上司は（　）で、怒ったのを見たことがない」 có 「温暖」 là phương án nhiễu.",
-    "compare": "「温厚」: tính hiền hậu, ít nổi giận của một người. 「｜和《なご》やか」: không khí êm ấm khi nhiều người bên nhau. 「｜冷静《れいせい》」: giữ bình tĩnh: 「冷静に対応する」. 「｜善良《ぜんりょう》」: lương thiện, ngay thẳng.",
+    "compare": "「｜温厚《おんこう》」: tính hiền hậu, ít nổi giận. 「｜和《なご》やか」: không khí êm ấm khi nhiều người bên nhau. 「｜冷静《れいせい》」: giữ bình tĩnh: 「｜冷静《れいせい》に｜対応《たいおう》する」. 「｜善良《ぜんりょう》」: lương thiện, ngay thẳng. 「｜穏《おだ》やか」: tâm trạng, vẻ mặt yên ổn.",
     "example_notes": [
       "Thầy chủ nhiệm mới hiền hậu và kiên nhẫn lắng nghe học sinh nói.",
       "Nhờ ông cửa hàng trưởng hiền hậu mà không khí trong tiệm rất dễ chịu."
@@ -12374,7 +12374,7 @@
     "meaning": "Khiêm tốn, khiêm nhường",
     "usage": "「｜謙虚《けんきょ》な｜態度《たいど》」 (thái độ khiêm tốn), 「｜謙虚《けんきょ》に｜学《まな》ぶ」 (khiêm tốn học hỏi).",
     "nuance": "",
-    "compare": "",
+    "compare": "Cả hai đều dịch \"khiêm tốn\". Tính từ là 「｜謙虚《けんきょ》な」 (KHIÊM HƯ); 「｜謙遜《けんそん》」 (KHIÊM TỐN) lại là danh từ, dùng 「｜謙遜《けんそん》する」: tự nói nhún mình.",
     "example_notes": [
       "Dù nhận giải, anh ấy vẫn khiêm tốn nói \"nhờ mọi người xung quanh\"."
     ]
@@ -12401,7 +12401,7 @@
     "meaning": "Nhát gan, hèn nhát",
     "usage": "「おく｜病《びょう》な｜人《ひと》」 (người nhát gan), 「おく｜病《びょう》になる」 (sinh ra sợ sệt). Từ liên quan: 「おく｜病者《びょうもの》」 (kẻ nhát gan).",
     "nuance": "",
-    "compare": "",
+    "compare": "Đều gần \"sợ\": 「おく｜病《びょう》」 là tính nhát; 「｜恐《おそ》れる」 (KHỦNG) động từ, lo sợ điều xấu; 「｜心細《こころぼそ》い」 bơ vơ vì thiếu chỗ dựa; 「｜弱気《よわき》」 lúc mất tự tin.",
     "example_notes": [
       "Con chó nhát gan, nghe tiếng sấm là chui xuống gầm bàn."
     ]
@@ -12410,7 +12410,7 @@
     "meaning": "Bạo dạn, táo bạo",
     "usage": "「｜大胆《だいたん》な｜計画《けいかく》」 (kế hoạch táo bạo), 「｜大胆《だいたん》に〜する」 (mạnh dạn làm ...). Từ liên quan: 「｜小心《しょうしん》」 (nhút nhát, nhỏ gan).",
     "nuance": "",
-    "compare": "ĐẠI ĐẢM = \"to gan\": táo bạo, dám làm điều người khác ngại. 「｜勇《いさ》ましい」 DŨNG: hùng dũng khi đối mặt nguy hiểm.",
+    "compare": "ĐẠI ĐẢM = \"to gan\": táo bạo, dám làm điều người khác ngại. 「｜勇《いさ》ましい」 DŨNG: hùng dũng khi đối mặt nguy hiểm. Trái lại, 「ためらう」: chần chừ chưa dám làm.",
     "example_notes": [
       "Cô nhân viên mới dám bạo dạn nêu ý kiến ngay cả trước mặt giám đốc."
     ]
@@ -12555,34 +12555,340 @@
       "Nhà này đón nắng tốt nhưng ngược lại mùa hè rất nóng."
     ]
   },
+  "v-1356": {
+    "meaning": "Dễ chịu, tiện nghi, dễ ở (phòng, chuyến đi)",
+    "usage": "Tính từ -na: 「｜快適《かいてき》な｜部屋《へや》」, 「｜快適《かいてき》な｜旅《たび》」, 「｜快適《かいてき》に｜過《す》ごす」, 「｜快適《かいてき》さ」.",
+    "nuance": "",
+    "compare": "KHOÁI THÍCH. 「｜快適《かいてき》」: khách sạn, căn phòng dễ chịu để ở. 「｜心地《ここち》よい」: gió, tiếng sóng dễ chịu. 「｜快《こころよ》い」: cũng nói gió, âm thanh; còn là vui lòng nhận lời.",
+    "example_notes": [
+      "Căn phòng có cửa sổ lớn này thông thoáng nên mùa hè cũng thoải mái."
+    ]
+  },
   "v-1357": {
     "meaning": "(Cảm giác) dễ chịu, khoan khoái; vui lòng (nhận lời)",
     "usage": "「快い風」, 「快い気分」. Dạng 「快く」 khi nhận lời người khác: 「快く引き受ける」, 「快く応じる」, 「相談に快く乗る」. Hán Việt 「快」 là \"khoái\".",
     "nuance": "Đề thi coi là sai: 「快くもらっていきます」, 「快く遊びに来てください」, 「快く打ち明けられる」. Viết: 「希く」「敬く」「喜く」 đều sai.",
-    "compare": "「快い」: cảm giác dễ chịu từ gió, âm thanh: 「快い風」; 「快く」: vui lòng nhận lời. 「すっきり」: đi với 「する」, hết mệt, hết bực nên thấy nhẹ nhõm: 「頭がすっきりする」.",
+    "compare": "「｜快《こころよ》い」: gió, âm thanh dễ chịu: 「｜快《こころよ》い｜風《かぜ》」; 「｜快《こころよ》く」: vui lòng nhận lời. 「すっきり」＋「する」: hết mệt, hết bực: 「｜頭《あたま》がすっきりする」. 「｜快適《かいてき》」: phòng, khách sạn dễ chịu. 「｜心地《ここち》よい」: gió, tiếng sóng.",
     "example_notes": [
       "Mở cửa sổ ra, làn gió buổi sáng dễ chịu thổi vào.",
       "Khi tôi nhờ mang giúp món hành lý nặng, người hàng xóm vui vẻ giúp ngay."
+    ]
+  },
+  "v-1358": {
+    "meaning": "Dễ chịu, êm ái, thoải mái (gió, âm thanh)",
+    "usage": "「｜心地《ここち》よい｜音楽《おんがく》」, 「｜心地《ここち》よく｜眠《ねむ》る」, 「｜心地《ここち》よい｜眠《ねむ》り」, 「｜心地《ここち》よさ」.",
+    "nuance": "Hán Việt TÂM ĐỊA, trùng âm với từ \"tâm địa\" (lòng dạ, thường xấu) trong tiếng Việt nhưng nghĩa khác hẳn. Đọc 「ここち」: cảm giác.",
+    "compare": "Cả ba đều dịch \"dễ chịu\". 「｜心地《ここち》よい」: gió, tiếng sóng làm người ta thấy dễ chịu. 「｜快適《かいてき》」: khách sạn, căn phòng. 「｜快《こころよ》い」: giống 「｜心地《ここち》よい」 ở gió, âm thanh; còn là vui lòng nhận lời: 「｜快《こころよ》く｜引《ひ》き｜受《う》ける」.",
+    "example_notes": [
+      "Tiếng sóng nghe dễ chịu quá, tôi đã ngủ thiếp đi trên bãi cát."
+    ]
+  },
+  "v-1359": {
+    "meaning": "Sảng khoái, trong lành, tươi mát",
+    "usage": "「すがすがしい｜朝《あさ》」, 「すがすがしい｜風《かぜ》」, 「すがすがしく｜感《かん》じる」.",
+    "nuance": "",
+    "compare": "Cả ba đều gần \"sảng khoái\". 「すがすがしい」: tính từ -i, lòng người thanh thoát, tươi mới. 「すっきり」, 「すっと」: dùng với 「する」, hết mệt, hết bực nên nhẹ người; 「すっと」: cục tức được giải tỏa.",
+    "example_notes": [
+      "Dậy sớm leo núi thì lòng thấy sảng khoái, trong lành."
+    ]
+  },
+  "v-1360": {
+    "meaning": "Lấy lại sức, tươi tỉnh lại (sau khi nghỉ)",
+    "usage": "「リフレッシュする」, 「リフレッシュできる」. Từ mượn từ \"refresh\".",
+    "nuance": "",
+    "compare": "Tiếng Việt cả hai đều dễ dịch \"xả hơi\". 「リフレッシュ」 (từ mượn \"refresh\"): nghỉ để tinh thần, cơ thể khỏe lại. 「｜気分転換《きぶんてんかん》」 KHÍ PHÂN CHUYỂN HOÁN: làm việc khác để đổi tâm trạng.",
+    "example_notes": [
+      "Kỳ nghỉ dài, tôi đi suối nước nóng để tinh thần và cơ thể đều được làm mới."
+    ]
+  },
+  "v-1361": {
+    "meaning": "Ôn hòa, yên ả, thanh thản (tâm trạng, vẻ mặt, thời tiết)",
+    "usage": "Tính từ -na: 「｜穏《おだ》やかな｜表情《ひょうじょう》」, 「｜穏《おだ》やかに｜話《はな》す」, 「｜穏《おだ》やかな｜日《ひ》」.",
+    "nuance": "Đọc 「おだやか」 (「｜穏《おだ》」 đọc là 「おだ」). Đề thi cho 「おだやか」 làm đáp án nhiễu cạnh 「なごやか」, 「あざやか」.",
+    "compare": "ÔN HÒA. 「｜穏《おだ》やか」: lòng người, vẻ mặt, thời tiết yên ổn. 「｜和《なご》やか」: bầu không khí khi nhiều người tụ họp. 「｜温厚《おんこう》」: tính hiền của một người.",
+    "example_notes": [
+      "Từ khi về già, ông tôi ngắm hoa trong vườn với vẻ mặt thanh thản."
     ]
   },
   "v-1362": {
     "meaning": "Yên tâm, vững dạ vì có người hay thứ để dựa vào",
     "usage": "「〜がいて心強い」, 「〜があるので心強い」, 「心強い味方」.",
     "nuance": "Là cảm giác yên tâm vì có chỗ dựa, không phải tính mạnh mẽ. Đề thi coi là sai khi dùng cho người cứng rắn không khóc, tiếng Anh khá giỏi, người kiên trì.",
-    "compare": "「心強い」: cảm giác của mình, yên tâm vì có chỗ dựa: 「仲間がいて心強い」. 「｜頼《たの》もしい」: nhận xét về người kia, đáng tin cậy: 「頼もしい人」.",
+    "compare": "「心強い」: cảm giác của mình, yên tâm vì có chỗ dựa: 「仲間がいて心強い」. 「｜頼《たの》もしい」: nhận xét về người kia, đáng tin cậy: 「頼もしい人」. 「｜心細《こころぼそ》い」: thiếu chỗ dựa nên bất an, trái nghĩa với 「｜心強《こころづよ》い」.",
     "example_notes": [
       "Vì đã mua bảo hiểm nên có phải nhập viện đột xuất tôi cũng yên tâm.",
       "Khi có thiên tai, có hàng xóm sẵn sàng giúp đỡ nhau thật vững dạ."
+    ]
+  },
+  "v-1363": {
+    "meaning": "Nhớ, nhớ mong (người, nơi chốn, điều đã xa)",
+    "usage": "「｜家族《かぞく》が｜恋《こい》しい」, 「｜恋《こい》しくなる」, 「｜恋《こい》しがる」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Bắt đầu sống một mình, tôi thấy nhớ tiếng cười của gia đình."
+    ]
+  },
+  "v-1364": {
+    "meaning": "Tích cực, nhìn về tương lai",
+    "usage": "「｜前向《まえむ》きな｜姿勢《しせい》・｜考《かんが》え｜方《かた》」, 「｜前向《まえむ》きに｜考《かんが》える」, 「｜前向《まえむ》きに｜取《と》り｜組《く》む」.",
+    "nuance": "Danh từ, thêm 「な」 hoặc 「に」 khi bổ nghĩa. Trái nghĩa: 「｜後《うし》ろ｜向《む》き」.",
+    "compare": "",
+    "example_notes": [
+      "Dù thất bại, cô ấy vẫn tích cực nghĩ cách tiếp theo."
+    ]
+  },
+  "v-1365": {
+    "meaning": "Đáng mừng, vui mừng (chuyện cưới hỏi, sinh nở…)",
+    "usage": "「めでたい｜知《し》らせ」, 「めでたい｜話《はなし》」, 「めでたく〜する」. Từ liên quan: 「おめでとう」 (chúc mừng).",
+    "nuance": "",
+    "compare": "Đừng dịch 「めでたい」 là \"hạnh phúc\": đây là tính từ cho SỰ VIỆC đáng chúc mừng (「めでたい｜知《し》らせ」). 「｜幸福《こうふく》」 HẠNH PHÚC: trạng thái của con người.",
+    "example_notes": [
+      "Nhà hàng xóm có tin vui: vừa sinh đôi."
+    ]
+  },
+  "v-1366": {
+    "meaning": "May mắn (từ mượn \"lucky\")",
+    "usage": "「ラッキーだった」, 「ラッキーなことに」, 「ラッキー！」. Trái nghĩa: 「アンラッキー」.",
+    "nuance": "",
+    "compare": "「ラッキー」: gặp may trong một lần cụ thể (rơi ví mà tìm lại được). 「｜幸福《こうふく》」 HẠNH PHÚC: nói về cuộc sống. Từ liên quan: 「｜幸運《こううん》」 HẠNH VẬN.",
+    "example_notes": [
+      "Làm rơi ví nhưng tìm được ngay, thật may."
+    ]
+  },
+  "v-1367": {
+    "meaning": "Hạnh phúc, niềm hạnh phúc",
+    "usage": "Hán Việt HẠNH PHÚC. Danh từ: 「｜幸福《こうふく》を｜感《かん》じる」, 「｜幸福《こうふく》な｜家庭《かてい》」. Tính từ -na: 「｜幸福《こうふく》な｜人《ひと》」. Trái nghĩa: 「｜不幸《ふこう》」.",
+    "nuance": "",
+    "compare": "HẠNH PHÚC, dùng như tiếng Việt cho trạng thái sống hạnh phúc. Gặp may một lần là 「ラッキー」; tin vui đáng chúc mừng là 「めでたい」. Từ liên quan: 「｜幸運《こううん》」.",
+    "example_notes": [
+      "Tôi nghĩ hạnh phúc nằm ở những ngày cười đùa bên bạn bè, hơn là trúng số."
+    ]
+  },
+  "v-1368": {
+    "meaning": "Hăng hái, phấn chấn, đầy khí thế",
+    "usage": "「｜張《は》り｜切《き》って〜する」, 「｜張《は》り｜切《き》っている」, 「｜張《は》り｜切《き》る」 + việc làm: 「｜張《は》り｜切《き》って｜働《はたら》く」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Hôm lần đầu được giao phần thuyết trình, anh ấy hăng hái từ sáng."
+    ]
+  },
+  "v-1369": {
+    "meaning": "Háo hức, nôn nao mong chờ (chuyện vui)",
+    "usage": "「わくわくする」, 「わくわくして｜待《ま》つ」, 「｜胸《むね》がわくわくする」.",
+    "nuance": "Hồi hộp vì mong chờ chuyện VUI sắp đến. Đề thi dùng 「わくわく」 làm đáp án nhiễu cạnh 「いらいら」 (bực bội).",
+    "compare": "「わくわく」: háo hức mong điều vui sắp đến. 「そわそわ」: ngồi đứng không yên, không tập trung vì chờ đợi, lo lắng. Cả hai đều dịch \"hồi hộp\".",
+    "example_notes": [
+      "Nghĩ đến chuyến tham quan ngày mai là háo hức đến mức không ngủ được."
+    ]
+  },
+  "v-1370": {
+    "meaning": "Bồn chồn, thấp thỏm, đứng ngồi không yên",
+    "usage": "「そわそわする」, 「そわそわと｜待《ま》つ」, 「そわそわしている」.",
+    "nuance": "",
+    "compare": "「そわそわ」: bồn chồn, tay chân không yên. 「わくわく」: háo hức, lòng nhảy lên vì mong chuyện vui. 「はらはら」: lo thót tim cho kết quả hay cho ai đó. Tiếng Việt dịch đều là \"hồi hộp\".",
+    "example_notes": [
+      "Chờ đến lượt phỏng vấn, cô ấy bồn chồn cứ chỉnh lại mái tóc."
+    ]
+  },
+  "v-1371": {
+    "meaning": "Say mê, ngây ngất, như bị thôi miên",
+    "usage": "「うっとりする」, 「うっとりと｜聞《き》く」, 「うっとりした｜表情《ひょうじょう》」, 「うっとりして｜見《み》る」.",
+    "nuance": "Đề thi dùng 「うっとり」 làm đáp án nhiễu cạnh 「じろじろ」 (nhìn chằm chằm).",
+    "compare": "",
+    "example_notes": [
+      "Tiếng vĩ cầm khiến tôi ngây ngất nhắm mắt lại."
+    ]
+  },
+  "v-1372": {
+    "meaning": "Nhẹ nhõm, hả dạ (hết bực, hết nghẹn)",
+    "usage": "「すっとする」, 「すっとした｜気持《きも》ち」, 「｜気分《きぶん》がすっとする」.",
+    "nuance": "",
+    "compare": "「すっと」: cục tức, điều nghẹn trong lòng được giải tỏa. 「すっきり」: hết mệt, hết bực nên nhẹ nhõm. 「すがすがしい」: lòng người tươi mới. Tiếng Việt đều nói \"sảng khoái\".",
+    "example_notes": [
+      "Thấy chủ quán từ chối thẳng thừng vị khách vô lễ, tôi thấy hả dạ."
+    ]
+  },
+  "v-1373": {
+    "meaning": "Giải khuây, đổi gió (cho đỡ chán)",
+    "usage": "「｜気分転換《きぶんてんかん》をする」, 「｜気分転換《きぶんてんかん》に〜」, 「｜気分転換《きぶんてんかん》になる」. Danh từ + する.",
+    "nuance": "",
+    "compare": "KHÍ PHÂN CHUYỂN HOÁN: chuyển tâm trạng bằng một việc khác, như đi dạo. 「リフレッシュ」: nghỉ cho người khỏe lại. Tiếng Việt cả hai đều dễ dịch \"xả hơi\".",
+    "example_notes": [
+      "Học mệt rồi nên tôi đi dạo để đổi không khí."
+    ]
+  },
+  "v-1374": {
+    "meaning": "U sầu, ủ rũ, nặng nề trong lòng (không muốn làm gì)",
+    "usage": "Hán Việt ƯU UẤT. 「ゆううつな｜気分《きぶん》」, 「ゆううつだ」, 「ゆううつそうな｜顔《かお》」. Danh từ hoặc tính từ -na.",
+    "nuance": "Đề thi dùng 「ゆううつ」 làm đáp án nhiễu cạnh 「ぐち」.",
+    "compare": "Hán Việt ƯU UẤT: lòng nặng nề, không muốn làm gì (danh từ, tính từ -na). 「｜落《お》ち｜込《こ》む」: động từ, tụt tinh thần sau một chuyện không vui.",
+    "example_notes": [
+      "Đêm cuối kỳ nghỉ dài, nghĩ đến công việc từ ngày mai là lòng tôi nặng nề."
+    ]
+  },
+  "v-1375": {
+    "meaning": "Thảm hại, khốn khổ, đáng thương (cảnh ngộ, thân phận)",
+    "usage": "「みじめな｜思《おも》い」, 「みじめな｜姿《すがた》」, 「みじめに｜思《おも》える」, 「みじめだ」.",
+    "nuance": "",
+    "compare": "Đều gần \"khổ\", \"đáng thương\", khác góc nhìn: 「みじめ」 tự thấy tủi thân; 「あわれ」 người ngoài thấy thương; 「｜情《なさ》けない」 xấu hổ vì kém; 「つらい」 khó chịu đựng.",
+    "example_notes": [
+      "Thất bại trước mặt mọi người, tôi thấy mình thật thảm hại."
+    ]
+  },
+  "v-1376": {
+    "meaning": "Đau khổ, khổ sở, vất vả",
+    "usage": "「つらい｜思《おも》い」, 「｜別《わか》れがつらい」, 「〜のがつらい」, 「つらくなる」.",
+    "nuance": "Viết 「｜辛《つら》い」. Cùng chữ này còn đọc 「からい」 (cay).",
+    "compare": "「つらい」: bản thân chịu đựng nỗi khổ, thấy nặng lòng. 「みじめ」: cảnh ngộ thảm hại, tủi thân. Tiếng Việt đều gần với \"khổ\".",
+    "example_notes": [
+      "Không thể nói thật với người mình thích thì thật khổ tâm."
+    ]
+  },
+  "v-1377": {
+    "meaning": "Cô đơn, trơ trọi, bơ vơ",
+    "usage": "「｜心細《こころぼそ》い｜気持《きも》ち」, 「｜心細《こころぼそ》くなる」, 「｜心細《こころぼそ》く｜思《おも》う」, 「｜一人《ひとり》で｜心細《こころぼそ》い」.",
+    "nuance": "",
+    "compare": "TÂM TẾ ↔ TÂM CƯỜNG 「｜心強《こころづよ》い」: thiếu chỗ dựa thì bơ vơ; có người bên cạnh thì yên tâm. 「おく｜病《びょう》」: tính nhát, việc nhỏ cũng sợ.",
+    "example_notes": [
+      "Lạc đường ở thành phố lạ, xung quanh chẳng có ai để hỏi, tôi thấy bơ vơ."
+    ]
+  },
+  "v-1378": {
+    "meaning": "Yếu bóng vía, nhụt chí, thiếu tự tin",
+    "usage": "「｜弱気《よわき》になる」, 「｜弱気《よわき》な｜発言《はつげん》」, 「｜弱気《よわき》を｜見《み》せる」. Trái nghĩa: 「｜強気《つよき》」.",
+    "nuance": "Hán Việt NHƯỢC KHÍ: tâm lý lùi bước, e sợ, không phải thân thể yếu (khác 「｜弱《よわ》い」).",
+    "compare": "Đều gần \"nhát\": 「｜弱気《よわき》」 NHƯỢC KHÍ là lúc mất tự tin, chùn bước; 「おく｜病《びょう》」 là tính nhát, chuyện nhỏ cũng sợ.",
+    "example_notes": [
+      "Sắp thi đấu rồi, đừng nói những lời nhụt chí như vậy."
     ]
   },
   "v-1379": {
     "meaning": "Buồn bã, suy sụp tinh thần",
     "usage": "「すっかり落ち込む」, 「〜で落ち込んでいる」, 「落ち込んだ顔」.",
     "nuance": "Câu thay thế: 「落ち込んだ」＝「がっかりした」 (thất vọng); nhiễu 「緊張した」「びっくりした」「心配した」.",
-    "compare": "",
+    "compare": "「｜落《お》ち｜込《こ》む」 là động từ: tụt tinh thần sau một chuyện. 「ゆううつ」 (ƯU UẤT) là tâm trạng nặng nề, danh từ / tính từ -na.",
     "example_notes": [
       "Con mèo nuôi trong nhà chết, em gái tôi buồn rũ rượi.",
       "Không biết có phải bố đang buồn chuyện công việc không mà suốt bữa tối ông chẳng nói một lời."
+    ]
+  },
+  "v-1380": {
+    "meaning": "Thất vọng (vì điều mong đợi không như ý)",
+    "usage": "Hán Việt THẤT VỌNG. 「｜失望《しつぼう》する」, 「｜失望《しつぼう》させる」, 「｜失望《しつぼう》の｜色《いろ》」, 「｜失望感《しつぼうかん》」. Danh từ + する.",
+    "nuance": "Đề thi cho 「｜失望《しつぼう》した」 gần nghĩa với 「がっかりした」.",
+    "compare": "THẤT VỌNG ≠ TUYỆT VỌNG. 「｜失望《しつぼう》」: mong mà không được như ý nên buồn, thất vọng. 「｜絶望《ぜつぼう》」: hết hy vọng, thấy không còn đường.",
+    "example_notes": [
+      "Háo hức đến công viên giải trí, nhưng hầu hết trò chơi đang kiểm tra nên ai cũng thất vọng."
+    ]
+  },
+  "v-1381": {
+    "meaning": "Tuyệt vọng, hết hy vọng",
+    "usage": "Hán Việt TUYỆT VỌNG. 「｜絶望《ぜつぼう》する」, 「｜絶望的《ぜつぼうてき》な｜状況《じょうきょう》」, 「｜絶望感《ぜつぼうかん》」, 「｜絶望《ぜつぼう》のどん｜底《そこ》」.",
+    "nuance": "",
+    "compare": "「｜絶望《ぜつぼう》」: hết hẳn hy vọng, thấy không còn lối thoát. 「｜失望《しつぼう》」: mong mà không được nên buồn, thất vọng. Hai chữ chỉ khác 「｜失《しつ》」 (mất) và 「｜絶《ぜつ》」 (đứt).",
+    "example_notes": [
+      "Trượt cả kỳ thi lại, tôi tuyệt vọng vì nghĩ mình không thể học lên."
+    ]
+  },
+  "v-1382": {
+    "meaning": "Bị tổn thương (tình cảm, lòng tự trọng); bị thương",
+    "usage": "「｜傷《きず》つく」: 「｜心《こころ》が｜傷《きず》つく」, 「｜傷《きず》つきやすい」. Ngoại động từ: 「｜傷《きず》つける」 (làm tổn thương, làm bị thương).",
+    "nuance": "Hán Việt THƯƠNG. Gốc 「｜傷《きず》」 đọc 「きず」: vết thương, vết trầy.",
+    "compare": "",
+    "example_notes": [
+      "Chỉ một câu nói đùa mà bạn tôi đã bị tổn thương."
+    ]
+  },
+  "v-1383": {
+    "meaning": "Phiền phức, rắc rối, rườm rà",
+    "usage": "「わずらわしい｜手続《てつづ》き」, 「わずらわしく｜思《おも》う」, 「わずらわしさ」.",
+    "nuance": "",
+    "compare": "「わずらわしい」: nhiều chuyện rườm rà, mệt người. 「うっとうしい」: nặng nề, vướng víu, bực bội. 「やっかい」: việc hay người rắc rối, khó giải quyết. Tiếng Việt đều dịch gần \"phiền\".",
+    "example_notes": [
+      "Thủ tục quá nhiều, rườm rà quá nên tôi bỏ dở giữa chừng."
+    ]
+  },
+  "v-1384": {
+    "meaning": "Chán ngấy, ngán tận cổ",
+    "usage": "「うんざりする」, 「うんざりした｜顔《かお》」, 「うんざりしている」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Ngày nào cũng bị hỏi một câu giống nhau, tôi ngán đến tận cổ."
+    ]
+  },
+  "v-1385": {
+    "meaning": "Bối rối, lúng túng, không biết xử lý thế nào",
+    "usage": "「｜戸惑《とまど》う」: 「｜戸惑《とまど》いを｜見《み》せる」, 「｜戸惑《とまど》った｜顔《かお》」, 「｜戸惑《とまど》いを｜覚《おぼ》える」.",
+    "nuance": "",
+    "compare": "Cả ba đều có thể dịch \"lúng túng\": 「｜戸惑《とまど》う」 bối rối trước tình huống mới; 「まごまご」 lóng ngóng lộ ra ở tay chân; 「ためらう」 biết việc cần làm mà còn chần chừ.",
+    "example_notes": [
+      "Cách dùng ứng dụng mới bỗng thay đổi nên nhiều người lúng túng."
+    ]
+  },
+  "v-1386": {
+    "meaning": "Do dự, ngập ngừng, lưỡng lự",
+    "usage": "「ためらわずに｜答《こた》える」, 「ためらいがちに｜話《はな》す」, 「ためらいを｜見《み》せる」.",
+    "nuance": "",
+    "compare": "Đều có thể dịch \"do dự\": 「ためらう」 có ý định mà chưa dám làm; 「｜迷《まよ》う」 chưa chọn được, hoặc lạc đường; 「｜戸惑《とまど》う」 bối rối vì chuyện bất ngờ. Trái lại: 「｜大胆《だいたん》」.",
+    "example_notes": [
+      "Tôi còn ngập ngừng không biết có nên giơ tay không thì hết giờ."
+    ]
+  },
+  "v-1387": {
+    "meaning": "Rất tiếc, thấy có lỗi (vì làm phiền, vì mình sai)",
+    "usage": "「｜申《もう》し｜訳《わけ》ない」+ 「｜気《き》がする」, 「｜申《もう》し｜訳《わけ》ありません」, 「｜申《もう》し｜訳《わけ》なく｜思《おも》う」, 「｜申《もう》し｜訳《わけ》なさそう」.",
+    "nuance": "「｜訳《わけ》」 ở đây không phải \"dịch\": 「｜申《もう》し｜訳《わけ》」 là lời bào chữa; 「｜申《もう》し｜訳《わけ》ない」 là thấy có lỗi.",
+    "compare": "Cả hai đều dịch \"xin lỗi\". 「｜申《もう》し｜訳《わけ》ない」: thấy có lỗi, áy náy vì làm phiền hay làm sai: 「｜申《もう》し｜訳《わけ》ありません」. 「すまない」: xin lỗi, cũng nói khi cảm ơn người đã giúp.",
+    "example_notes": [
+      "Nhờ vả mãi một đàn anh đang bận, tôi thấy áy náy."
+    ]
+  },
+  "v-1388": {
+    "meaning": "Xin lỗi, phiền anh quá, áy náy",
+    "usage": "「すまない」, 「すまなそうに」, 「すまない｜気持《きも》ち」.",
+    "nuance": "",
+    "compare": "Cả hai đều dịch \"xin lỗi\". 「すまない」: xin lỗi, cũng nói khi cảm ơn người đã giúp: 「すまなかった」. 「｜申《もう》し｜訳《わけ》ない」: thấy có lỗi, áy náy: 「｜申《もう》し｜訳《わけ》ありません」.",
+    "example_notes": [
+      "Cảm ơn cậu đã giúp, phiền cậu quá nhé."
+    ]
+  },
+  "v-1389": {
+    "meaning": "Hết cách, đành chịu, đành vậy",
+    "usage": "「｜仕方《しかた》がない」, 「｜仕方《しかた》なく〜する」, 「｜仕方《しかた》ないと｜思《おも》う」. Đồng nghĩa: 「しょうがない」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Chuyện đã quyết rồi, có phàn nàn cũng đành chịu."
+    ]
+  },
+  "v-1390": {
+    "meaning": "Chết rồi!, Hỏng rồi!, Thôi chết! (khi nhận ra lỗi)",
+    "usage": "「しまった！」 nói một mình khi phát hiện mình quên hay làm sai.",
+    "nuance": "Khác với động từ 「しまう」 (cất): đây là tiếng thốt lên khi tiếc vì sai sót.",
+    "compare": "",
+    "example_notes": [
+      "Chết rồi, tôi để quên cây dù trên tàu!"
+    ]
+  },
+  "v-1391": {
+    "meaning": "Sợ, e sợ, khiếp sợ",
+    "usage": "Hán Việt KHỦNG. 「｜変化《へんか》を｜恐《おそ》れる」, 「｜恐《おそ》れずに〜」, 「〜ことを｜恐《おそ》れる」, 「｜恐《おそ》れ」 (nỗi sợ).",
+    "nuance": "",
+    "compare": "Hán Việt KHỦNG, động từ: lo sợ điều xấu sắp đến: 「｜批判《ひはん》を｜恐《おそ》れる」. 「｜怖《こわ》い」: tính từ, thấy sợ trước mắt. 「おく｜病《びょう》」: tính nhát, việc nhỏ cũng sợ.",
+    "example_notes": [
+      "Anh ấy sợ bị người khác cười nên không phát biểu."
+    ]
+  },
+  "v-1392": {
+    "meaning": "Đáng xấu hổ, thảm hại, đáng chê (với bản thân hay người khác)",
+    "usage": "「｜情《なさ》けない」: 「｜自分《じぶん》が｜情《なさ》けない」, 「｜情《なさ》けない｜結果《けっか》」, 「｜情《なさ》けない｜姿《すがた》」, 「｜情《なさ》けなくなる」.",
+    "nuance": "Đừng đọc 「｜情《なさ》」 thành \"tình\" rồi hiểu \"vô tình\": 「｜情《なさ》けない」 là thấy tiếc, xấu hổ vì kém cỏi.",
+    "compare": "Đều gần \"thảm hại\": 「｜情《なさ》けない」 nhấn sự kém cỏi đáng xấu hổ; 「みじめ」 cảnh ngộ khổ sở, tủi thân; 「あわれ」 người khác đáng thương.",
+    "example_notes": [
+      "Cứ khóc lóc xin lỗi bố mẹ mãi, tôi thấy mình thật đáng xấu hổ."
     ]
   },
   "v-1393": {
@@ -12593,6 +12899,24 @@
     "example_notes": [
       "Hỏi người khác điều mình không biết không phải là điều đáng xấu hổ.",
       "Để không làm bố mẹ mất mặt, tôi cư xử đàng hoàng trong buổi lễ."
+    ]
+  },
+  "v-1394": {
+    "meaning": "(Không) đặc biệt, (không) gì cả — đi với phủ định",
+    "usage": "「｜別《べつ》に〜ない」: 「｜別《べつ》に｜困《こま》らない」, 「｜別《べつ》に｜急《いそ》がない」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Không cần phải vội gì đâu."
+    ]
+  },
+  "v-1395": {
+    "meaning": "Không sao, không bận tâm, mặc kệ",
+    "usage": "「〜ても｜構《かま》わない」, 「｜構《かま》いません」, 「どちらでも｜構《かま》わない」, 「｜構《かま》わずに〜」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Đến muộn chút cũng không sao, cứ đi cẩn thận nhé."
     ]
   },
   "v-1396": {
@@ -12615,6 +12939,15 @@
       "Y tá dặn tôi lúc nào cũng phải giữ sạch vùng quanh vết thương."
     ]
   },
+  "v-1398": {
+    "meaning": "Mang tính khách quan, khách quan",
+    "usage": "Hán Việt KHÁCH QUAN. 「｜客観的《きゃっかんてき》な｜意見《いけん》・データ」, 「｜客観的《きゃっかんてき》に｜見《み》る」, 「｜客観的《きゃっかんてき》に｜判断《はんだん》する」. Trái nghĩa: 「｜主観的《しゅかんてき》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi muốn phán đoán dựa trên số liệu khách quan chứ không phải cảm tưởng."
+    ]
+  },
   "v-1399": {
     "meaning": "Bình tĩnh, tỉnh táo, không để cảm xúc chi phối",
     "usage": "ナ形容詞: 「冷静に話し合う」, 「冷静な判断」, 「冷静に行動する」. Hán Việt \"lãnh tĩnh\".",
@@ -12623,6 +12956,115 @@
     "example_notes": [
       "Đừng để cảm xúc lấn át, hãy bình tĩnh bàn bạc với nhau.",
       "Chính lúc đội đang bị dẫn điểm, huấn luyện viên càng cần phán đoán bình tĩnh."
+    ]
+  },
+  "v-1400": {
+    "meaning": "Có lý, đương nhiên, đúng đắn",
+    "usage": "Tính từ -na: 「もっともな｜意見《いけん》」, 「もっともな｜話《はなし》」, 「もっともな｜理由《りゆう》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Cô ấy nói rất có lý nên tôi chẳng đáp lại được lời nào."
+    ]
+  },
+  "v-1401": {
+    "meaning": "Khiêm tốn, nhún nhường",
+    "usage": "Hán Việt KHIÊM TỐN. 「｜謙遜《けんそん》する」, 「｜謙遜《けんそん》して｜言《い》う」. Danh từ + する.",
+    "nuance": "",
+    "compare": "Cả hai đều dịch \"khiêm tốn\". 「｜謙遜《けんそん》」 (KHIÊM TỐN) là danh từ, dùng 「｜謙遜《けんそん》する」: tự nói nhún mình. Tính từ là 「｜謙虚《けんきょ》な」 (KHIÊM HƯ).",
+    "example_notes": [
+      "Dù vô địch, anh ấy vẫn khiêm tốn nói chỉ là may mắn."
+    ]
+  },
+  "v-1402": {
+    "meaning": "Trẻ trung, tràn đầy sức sống (nhìn và cảm thấy)",
+    "usage": "「｜若々《わかわか》しい｜声《こえ》・｜姿《すがた》・｜顔《かお》」, 「｜若々《わかわか》しく｜見《み》える」, 「｜若々《わかわか》しさ」.",
+    "nuance": "Chữ 「｜若《わか》」 là NHƯỢC (trẻ), trùng âm Hán Việt với 「｜弱《よわ》」 NHƯỢC (yếu). 「｜若々《わかわか》しい」 là trẻ trung, không liên quan đến yếu.",
+    "compare": "",
+    "example_notes": [
+      "Bà diễn viên ngoài bảy mươi tuổi vẫn tiếp tục đứng trên sân khấu với nụ cười trẻ trung."
+    ]
+  },
+  "v-1403": {
+    "meaning": "Độc đáo, khác thường, có nét riêng",
+    "usage": "「ユニークな｜発想《はっそう》」, 「ユニークな｜人《ひと》」, 「ユニークだ」. Từ mượn \"unique\".",
+    "nuance": "",
+    "compare": "「ユニーク」 hay bị dịch \"duy nhất\" nhưng là độc đáo, có nét riêng: 「ユニークな｜発想《はっそう》」; nhiều thứ cùng 「ユニーク」 được. 「｜唯一《ゆいいつ》」 DUY NHẤT: chỉ có một.",
+    "example_notes": [
+      "Quán cà phê này có giá sách là chiếc xích đu, thật độc đáo."
+    ]
+  },
+  "v-1404": {
+    "meaning": "Duy nhất, chỉ có một",
+    "usage": "Hán Việt DUY NHẤT. 「｜唯一《ゆいいつ》の〜」, 「｜唯一無二《ゆいいつむに》」, 「｜唯一《ゆいいつ》のチャンス」, 「〜が｜唯一《ゆいいつ》だ」.",
+    "nuance": "",
+    "compare": "DUY NHẤT, đúng nghĩa tiếng Việt: chỉ có một. 「ユニーク」 cũng hay bị dịch \"duy nhất\" nhưng là độc đáo, có nét riêng.",
+    "example_notes": [
+      "Bệnh viện duy nhất trên đảo sẽ đóng cửa vào tháng sau."
+    ]
+  },
+  "v-1405": {
+    "meaning": "Được trau chuốt, thanh lịch, lịch sự",
+    "usage": "「｜洗練《せんれん》された〜」, 「｜洗練《せんれん》する」, 「｜洗練《せんれん》されたデザイン・｜文章《ぶんしょう》」.",
+    "nuance": "Hán Việt TẨY LUYỆN, nhưng nghĩa là trau chuốt đến mức tinh tế, đẹp mắt. Dùng dạng bị động 「｜洗練《せんれん》された」.",
+    "compare": "TẨY LUYỆN, không phải \"tẩy rửa\": là trau chuốt nên tinh tế: 「｜洗練《せんれん》されたデザイン」. 「｜品《ひん》」 PHẨM: vẻ thanh nhã toát ra từ lời nói, cử chỉ.",
+    "example_notes": [
+      "Bộ bát đĩa của quán này gọn gàng, không thừa nét nào, thiết kế rất tinh tế."
+    ]
+  },
+  "v-1406": {
+    "meaning": "Phẩm cách, vẻ thanh nhã, nét sang trọng",
+    "usage": "「｜品《ひん》のある｜話《はな》し｜方《かた》」, 「｜品《ひん》のいい｜人《ひと》」, 「｜品《ひん》がない」.",
+    "nuance": "Hán Việt PHẨM. Ở đây đọc 「ひん」, là phẩm cách của người hoặc vẻ thanh nhã của vật, không phải \"món hàng\" (「しな」).",
+    "compare": "PHẨM: tiếng Việt \"phẩm chất\" dễ khiến nghĩ tới chất lượng hàng, nhưng 「｜品《ひん》」 là vẻ thanh nhã ở người. 「｜洗練《せんれん》」: trau chuốt thành tinh tế. Từ liên quan: 「｜上品《じょうひん》」, 「｜下品《げひん》」.",
+    "example_notes": [
+      "Anh ấy từ chối mà không to tiếng, dáng vẻ rất có phẩm cách."
+    ]
+  },
+  "v-1407": {
+    "meaning": "Rộng lớn, thênh thang, bao la",
+    "usage": "「｜広々《ひろびろ》とした｜部屋《へや》」, 「｜広々《ひろびろ》とした｜玄関《げんかん》」, 「｜広々《ひろびろ》と｜見《み》える」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Mở rộng cửa sổ, lối vào nhà trở nên rộng rãi thoáng đãng."
+    ]
+  },
+  "v-1408": {
+    "meaning": "Mềm xốp, bông xốp, mềm mại",
+    "usage": "「ふわふわの｜毛布《もうふ》」, 「ふわふわしている」, 「ふわふわな〜」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Lông chú cún con mềm xốp, sờ vào rất dễ chịu."
+    ]
+  },
+  "v-1409": {
+    "meaning": "Vượt trội rõ rệt, hẳn là (khi so sánh)",
+    "usage": "「｜断然《だんぜん》〜のほうが」, 「｜断然《だんぜん》｜安《やす》い」, 「｜断然《だんぜん》〜だ」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "So hai phương án thì phương án này rẻ hơn hẳn."
+    ]
+  },
+  "v-1410": {
+    "meaning": "① Tốt, tuyệt, đẹp; ② Đủ rồi, không cần nữa",
+    "usage": "① 「｜結構《けっこう》なお｜茶《ちゃ》」. ② 「もう｜結構《けっこう》です」, 「｜結構《けっこう》ですので」.",
+    "nuance": "Hán Việt KẾT CẤU, nhưng 「｜結構《けっこう》」 ở đây không có nghĩa \"kết cấu\".",
+    "compare": "",
+    "example_notes": [
+      "Khu vườn đẹp quá. Chắc chăm sóc vất vả lắm nhỉ.",
+      "Không cần túi đâu ạ, tôi cầm về thế này luôn."
+    ]
+  },
+  "v-1411": {
+    "meaning": "Tuyệt vời, đẹp mắt, khéo léo đáng khen",
+    "usage": "「｜見事《みごと》な｜演技《えんぎ》」, 「｜見事《みごと》に〜する」, 「｜見事《みごと》だ」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Cô ấy đã chơi trọn bản nhạc khó một cách xuất sắc."
     ]
   },
   "v-1412": {
@@ -12645,6 +13087,62 @@
       "Căn phòng ở ngôi chùa ấy bày biện giản dị, chỉ có một chiếc bàn."
     ]
   },
+  "v-1414": {
+    "meaning": "Giống như, tương tự, như nhau",
+    "usage": "「〜と｜同様《どうよう》に」, 「〜と｜同様《どうよう》だ」, 「｜同様《どうよう》の〜」, 「｜例年《れいねん》｜同様《どうよう》」.",
+    "nuance": "Hán Việt ĐỒNG DẠNG, nhưng không phải \"đồng dạng\" của hình học: là \"cũng như, giống như\".",
+    "compare": "",
+    "example_notes": [
+      "Với cô giáo mới, tôi cũng cư xử lễ phép như với cô giáo trước."
+    ]
+  },
+  "v-1415": {
+    "meaning": "Đáng ghét, ghê tởm, đáng giận",
+    "usage": "Hán Việt TĂNG. 「｜憎《にく》らしい｜人《ひと》・｜態度《たいど》」, 「｜憎《にく》らしくなる」, 「｜憎《にく》らしいほど〜」.",
+    "nuance": "",
+    "compare": "Cùng chữ TĂNG 「｜憎《にく》」: 「｜憎《にく》い」 ghét sâu, không chịu nổi; 「｜憎《にく》らしい」 thấy cử chỉ, lời nói của ai đó đáng ghét.",
+    "example_notes": [
+      "Thằng em nghịch ngợm rồi cười, tôi thấy chướng mắt nên lỡ giận."
+    ]
+  },
+  "v-1416": {
+    "meaning": "Cưỡng ép, ép buộc, áp đặt",
+    "usage": "「｜強引《ごういん》なやり｜方《かた》」, 「｜強引《ごういん》な｜人《ひと》」, 「｜強引《ごういん》に｜決《き》める」, 「｜強引《ごういん》に〜する」.",
+    "nuance": "Đề thi dùng 「｜強引《ごういん》に」 làm đáp án nhiễu cạnh 「｜夢中《むちゅう》に」.",
+    "compare": "",
+    "example_notes": [
+      "Đàn anh chẳng hỏi lịch của tôi mà tự quyết định tôi làm người phụ trách buổi liên hoan."
+    ]
+  },
+  "v-1417": {
+    "meaning": "① Ảm đạm, nặng nề (thời tiết); ② Phiền, vướng víu, khó chịu",
+    "usage": "① 「うっとうしい｜空《そら》」. ② 「うっとうしい｜人《ひと》」, 「うっとうしく｜思《おも》う」.",
+    "nuance": "Đề thi đặt 「うっとうしい」 làm đáp án nhiễu cạnh 「そそっかしい」.",
+    "compare": "Tiếng Việt đều gần \"phiền\": 「うっとうしい」 còn là trời u ám, nặng nề; 「わずらわしい」 nhiều bước rườm rà; 「やっかい」 việc, người khó xử lý.",
+    "example_notes": [
+      "Từ sáng trời đã tối sầm, gió ẩm thổi, thật ảm đạm khó chịu.",
+      "Ông sếp ngày nào cũng gửi email giục việc, thật khó chịu."
+    ]
+  },
+  "v-1418": {
+    "meaning": "Phiền toái, rắc rối, khó xử lý",
+    "usage": "「やっかいな｜問題《もんだい》・｜人《ひと》」, 「やっかいなことになる」, 「やっかいをかける」. Danh từ hoặc tính từ -na.",
+    "nuance": "",
+    "compare": "「やっかい」: việc hay người rắc rối, khó giải quyết. 「わずらわしい」: nhiều chuyện rườm rà. 「うっとうしい」: nặng nề, vướng víu. Tiếng Việt đều dịch gần \"phiền\".",
+    "example_notes": [
+      "Tưởng việc đơn giản, nào ngờ biến thành một vấn đề rắc rối hơn dự tính."
+    ]
+  },
+  "v-1419": {
+    "meaning": "① Quá quắt, khó tưởng nổi; ② Không dám đâu ạ (đáp lời khen, cảm ơn)",
+    "usage": "① 「とんでもない｜人《ひと》・｜話《はなし》」. ② 「とんでもないです」, 「とんでもございません」 (đáp lại lời cảm ơn, xin lỗi).",
+    "nuance": "Nghĩa ② là cách đáp lại lời cảm ơn, lời xin lỗi hay lời khen mà không nhận.",
+    "compare": "",
+    "example_notes": [
+      "Tự dưng tăng tiền nhà lên gấp đôi, thật là chuyện quá quắt.",
+      "\"Xin lỗi vì anh đang bận.\" \"Dạ không có gì đâu ạ.\""
+    ]
+  },
   "v-1420": {
     "meaning": "Dễ dãi, làm cho tiện mà không suy nghĩ kỹ",
     "usage": "ナ形容詞: 「安易な方法」, 「安易に考える」, 「安易に決める」. Hán Việt \"an dị\".",
@@ -12655,11 +13153,65 @@
       "Không nên chọn việc một cách dễ dãi chỉ vì nó được ưa chuộng."
     ]
   },
+  "v-1421": {
+    "meaning": "Tạm ổn, chấp nhận được, không gây rắc rối",
+    "usage": "「｜無難《ぶなん》な｜選択《せんたく》・｜服装《ふくそう》・｜答《こた》え」, 「｜無難《ぶなん》に〜する」, 「〜のが｜無難《ぶなん》だ」.",
+    "nuance": "",
+    "compare": "Đều có vẻ \"tàm tạm\", nhưng 「｜無難《ぶなん》」 VÔ NAN là chọn cách an toàn, không bị chê; 「｜平凡《へいぼん》」 BÌNH PHÀM là tầm thường, không nổi bật.",
+    "example_notes": [
+      "Đi phỏng vấn thì bộ vest đen là lựa chọn an toàn hơn màu sặc sỡ."
+    ]
+  },
+  "v-1422": {
+    "meaning": "Bình thường, tầm thường, không có gì nổi bật",
+    "usage": "Hán Việt BÌNH PHÀM. 「｜平凡《へいぼん》な｜人《ひと》」, 「｜平凡《へいぼん》な｜結果《けっか》」, 「｜平凡《へいぼん》だ」, 「｜平凡《へいぼん》に｜暮《く》らす」. Trái nghĩa: 「｜非凡《ひぼん》」.",
+    "nuance": "",
+    "compare": "BÌNH PHÀM, như tiếng Việt \"bình thường, tầm thường\". 「｜無難《ぶなん》」 VÔ NAN không phải \"tầm thường\" mà là an toàn, không bị chê.",
+    "example_notes": [
+      "Bài hát của anh ấy tầm thường, không để lại ấn tượng gì."
+    ]
+  },
+  "v-1423": {
+    "meaning": "Xấu mặt, mất thể diện, khó coi",
+    "usage": "「みっともない｜姿《すがた》」, 「みっともないことをする」, 「〜のはみっともない」.",
+    "nuance": "",
+    "compare": "「みっともない」: dáng vẻ, hành vi làm mất mặt, khó coi. 「｜見苦《みぐる》しい」: nhìn không chịu nổi, kể cả lời bào chữa. 「みにくい」: xấu xí về hình dạng hoặc tâm địa. Cả ba đều gần với \"xấu\".",
+    "example_notes": [
+      "Đang bữa mà ăn phát ra tiếng to thì thật mất mặt."
+    ]
+  },
+  "v-1424": {
+    "meaning": "Khó coi, chướng mắt, nhìn không chịu nổi",
+    "usage": "「｜見苦《みぐる》しい｜言《い》い｜訳《わけ》・｜姿《すがた》」, 「お｜見苦《みぐる》しい｜点《てん》」, 「｜見苦《みぐる》しいまねをする」.",
+    "nuance": "",
+    "compare": "Cả ba đều có thể dịch \"khó coi\": 「｜見苦《みぐる》しい」 thái độ, lời nói khiến người nhìn khó chịu; 「みっともない」 làm mất mặt; 「みにくい」 xấu về hình dạng, tâm địa.",
+    "example_notes": [
+      "Trễ hạn rồi lại đổ lỗi cho người khác thì thật khó coi."
+    ]
+  },
+  "v-1425": {
+    "meaning": "Xấu xí, khó coi (hình dạng, tâm địa, cuộc cãi vã)",
+    "usage": "「みにくい｜心《こころ》」, 「みにくい｜姿《すがた》」. Viết 「｜醜《みにく》い」.",
+    "nuance": "Đừng lẫn với đuôi 「〜にくい」 (khó làm) như 「｜読《よ》みにくい」: đây là một từ riêng.",
+    "compare": "「みにくい」 viết 「｜醜《みにく》い」, nghĩa xấu xí — khác hẳn đuôi 「〜にくい」 (khó). Gần nghĩa: 「みっともない」 (mất mặt), 「｜見苦《みぐる》しい」 (khó coi).",
+    "example_notes": [
+      "Thấy mình hùa theo nói xấu người khác, tôi thấy bản thân thật xấu xí."
+    ]
+  },
+  "v-1426": {
+    "meaning": "Rách nát, tả tơi, hư hỏng nặng",
+    "usage": "「ぼろぼろだ」, 「ぼろぼろになる」, 「ぼろぼろの〜」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Cuốn sổ của ông tôi các trang đã rách nát, gần như không đọc được."
+    ]
+  },
   "v-1427": {
     "meaning": "Đáng thương, tội nghiệp",
     "usage": "ナ形容詞: 「あわれな声」, 「あわれな姿」, 「あわれに思う」.",
     "nuance": "Câu thay thế trong đề: 「あわれな」＝「かわいそうな」. Nhiễu 「たいくつな」「おかしな」「不安な」.",
-    "compare": "",
+    "compare": "Đều gần \"đáng thương\", khác góc nhìn: 「あわれ」 người ngoài nhìn thấy thương; 「みじめ」 chính mình tủi thân; 「｜情《なさ》けない」 xấu hổ vì kém cỏi.",
     "example_notes": [
       "Chú chim non bị thương không bay được đang kêu những tiếng thảm thương.",
       "Chỉ mình anh ấy không được ra sân, dáng ngồi chờ trên ghế dự bị trông thật tội nghiệp."
@@ -12675,6 +13227,24 @@
       "Hộp cơm này ít màu sắc nên tôi thêm vài quả cà chua bi."
     ]
   },
+  "v-1429": {
+    "meaning": "Nửa vời, dở dang, lưng chừng",
+    "usage": "「｜中途半端《ちゅうとはんぱ》な｜仕事《しごと》・｜気持《きも》ち」, 「｜中途半端《ちゅうとはんぱ》に｜終《お》わる」, 「｜中途半端《ちゅうとはんぱ》にする」. Danh từ hoặc tính từ -na.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Đừng bỏ bài tập dở dang rồi chạy đi chơi."
+    ]
+  },
+  "v-1430": {
+    "meaning": "Lóng ngóng, lúng túng, hoang mang",
+    "usage": "「まごまごする」, 「まごまごしているうちに」, 「まごまごして〜しまう」.",
+    "nuance": "",
+    "compare": "Đều dịch \"lúng túng\": 「まごまご」 lúng túng lộ ra ngoài, loay hoay tay chân; 「｜戸惑《とまど》う」 bối rối trong lòng trước điều mới.",
+    "example_notes": [
+      "Bất ngờ bị nhờ dẫn chương trình, tôi lúng túng không biết nói gì trước."
+    ]
+  },
   "v-1431": {
     "meaning": "Mâu thuẫn, trước sau không khớp nhau",
     "usage": "「矛盾する」, 「〜と矛盾している」, 「矛盾がある」. Hán Việt \"mâu thuẫn\".",
@@ -12683,6 +13253,33 @@
     "example_notes": [
       "Vừa nói \"sức khỏe là trên hết\" vừa uống rượu mỗi tối là mâu thuẫn.",
       "Số liệu trong hai tài liệu mâu thuẫn nhau, không biết bên nào đúng."
+    ]
+  },
+  "v-1432": {
+    "meaning": "Cười nhếch mép, cười giả tạo",
+    "usage": "「にやにやする」, 「にやにや｜笑《わら》う」, 「にやにやしながら〜」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Từ nãy đến giờ anh ta cứ cười nhếch mép, chắc đang toan tính gì đó."
+    ]
+  },
+  "v-1433": {
+    "meaning": "Gồ ghề, lồi lõm, không bằng phẳng",
+    "usage": "「でこぼこの｜道《みち》」, 「でこぼこだ」, 「でこぼこする」. Cũng viết 「｜凸凹《でこぼこ》」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Chiếc bàn dùng nhiều năm mặt đã gồ ghề, viết chữ rất khó."
+    ]
+  },
+  "v-1434": {
+    "meaning": "Tương xứng, ra dáng, ở mức nhất định",
+    "usage": "「それなりに〜」, 「それなりの〜」, 「それなりに｜楽《たの》しい」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Đã trả phí cao thì tôi mong được phục vụ tương xứng."
     ]
   },
   "v-o-amayakasu": {
@@ -13626,7 +14223,7 @@
     "meaning": "Sợ, đáng sợ",
     "usage": "「〜が怖い」 (sợ …), 「怒ると怖い」, 「怖いと思う」.",
     "nuance": "Đọc 「こわい」; đề đã gài 「つらい」「きつい」「ゆるい」. Ở câu hỏi đọc 「憎い」, 「こわい」 là phương án sai. Câu thay thế: 「臆病だ」＝「何でも怖がる」.",
-    "compare": "",
+    "compare": "Tính từ 「｜怖《こわ》い」 (BỐ) là thấy sợ ngay trước mắt. Động từ 「｜恐《おそ》れる」 (KHỦNG) là lo một điều xấu chưa xảy ra: 「｜批判《ひはん》を｜恐《おそ》れる」.",
     "example_notes": [
       "Tàu lượn siêu tốc thì chỉ đứng nhìn thôi cũng thấy sợ.",
       "Thầy ấy bình thường hiền, nhưng khi nổi giận thì rất đáng sợ."
@@ -13846,7 +14443,7 @@
     "meaning": "Sảng khoái, nhẹ nhõm, dễ chịu (trong người, trong đầu)",
     "usage": "Đi với 「する」: 「頭がすっきりする」, 「気分がすっきりする」, 「すっきりした気分」.",
     "nuance": "Điền từ trong đề: bỏ đồ thừa, dọn lại căn phòng bừa bộn thì tâm trạng （　） → 「すっきり」. Nhiễu 「ぎっしり」「ぶらぶら」「きらきら」.",
-    "compare": "「すっきり」＋「する」: hết mệt, hết bực, nhẹ nhõm: 「気分がすっきりする」. 「｜快《こころよ》い」: dễ chịu (gió, âm thanh): 「快い風」; còn là vui lòng nhận lời. Cả hai dịch \"dễ chịu\". 「さっぱりする」: sạch mồ hôi, khoan khoái.",
+    "compare": "「すっきり」＋「する」: hết mệt, hết bực: 「｜気分《きぶん》がすっきりする」. 「｜快《こころよ》い」: gió, âm thanh: 「｜快《こころよ》い｜風《かぜ》」; còn là vui lòng nhận lời. Cả hai dịch \"dễ chịu\". 「さっぱりする」: sạch mồ hôi, khoan khoái. 「すっと」: cục tức tan đi.",
     "example_notes": [
       "Hạ sốt rồi, cuối cùng người tôi cũng thấy nhẹ nhõm.",
       "Vấn đề day dứt bấy lâu đã được giải quyết, tôi thấy nhẹ cả người."
@@ -14225,7 +14822,7 @@
     "meaning": "Êm ấm, hòa thuận, vui vẻ (bầu không khí)",
     "usage": "「和やかな雰囲気」, 「和やかなパーティー」, 「和やかに話す」, 「教室が和やかになる」. 「和」 đọc 「なご」.",
     "nuance": "Đề thi coi là sai: 「和やかな行動を取る」 (khi hỏa hoạn), 「気候が和やか」, 「和やかな味」. Đọc: đề đặt 「おだやか」「さわやか」「にぎやか」 cạnh 「なごやか」.",
-    "compare": "「和やか」: không khí êm ấm giữa mọi người. 「｜活気《かっき》」: không khí sôi động, rộn ràng. 「｜温厚《おんこう》」: tính hiền của một người. 「｜鮮《あざ》やか」: màu sắc tươi rực (cùng đuôi 「〜やか」).",
+    "compare": "「｜和《なご》やか」: không khí êm ấm giữa mọi người. 「｜活気《かっき》」: sôi động, rộn ràng. 「｜温厚《おんこう》」: tính hiền của một người. 「｜鮮《あざ》やか」: màu tươi rực (cùng đuôi 「〜やか」). 「｜穏《おだ》やか」: tâm trạng, vẻ mặt yên ổn.",
     "example_notes": [
       "Lúc đầu còn căng thẳng, nhưng nhờ câu đùa của thầy mà lớp học trở nên vui vẻ.",
       "Ông bà trò chuyện vui vẻ với các cháu."
@@ -14245,7 +14842,7 @@
     "meaning": "Đáng ghét, đáng căm (người, kẻ gây hại)",
     "usage": "「〜が憎い」, 「犯人が憎い」, 「憎くてしかたない」 (ghét không chịu nổi).",
     "nuance": "Đọc 「にくい」; đề đã gài 「こわい」「ひどい」「ずるい」. Đừng lẫn với đuôi 「〜にくい」 (khó làm), như 「読みにくい」.",
-    "compare": "「憎い」: tính từ, nói cảm giác ghét: 「犯人が憎い」. 「｜憎《にく》む」: động từ, căm ghét ai hay điều gì: 「差別を憎む」.",
+    "compare": "「憎い」: tính từ, nói cảm giác ghét: 「犯人が憎い」. 「｜憎《にく》む」: động từ, căm ghét ai hay điều gì: 「差別を憎む」. 「｜憎《にく》らしい」: thấy hành vi, bộ dạng của ai đó chướng mắt.",
     "example_notes": [
       "Anh ta thất hứa mà mặt vẫn tỉnh bơ, tôi ghét không chịu nổi.",
       "Tôi căm kẻ đã phóng hỏa khu rừng quý giá."
@@ -14525,7 +15122,7 @@
     "meaning": "Phân vân, do dự; lạc (đường)",
     "usage": "「〜か…か迷う」 (phân vân không biết nên… hay…), 「道に迷う」 (lạc đường), 「森の中で迷う」.",
     "nuance": "Đọc 「まよう」; đề đọc chữ đặt 「あやまった」「あせった」「うたがって」 làm nhiễu.",
-    "compare": "",
+    "compare": "Đều có thể dịch \"do dự\": 「｜迷《まよ》う」 chưa chọn được bên nào; 「ためらう」 đã định làm mà còn chần chừ chưa dám.",
     "example_notes": [
       "Đang phân vân trước cửa hàng không biết có nên vào hay không thì nhân viên trong tiệm bước ra.",
       "Tôi bị lạc trong rừng, nhưng rồi cũng về được tới lối lên núi trước khi trời tối."

@@ -6705,5 +6705,294 @@
     ]
    }
   }
+ },
+ "needs_evidence": {
+  "orthography": {
+   "削減": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "診る(医師が)": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "納入": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "促進": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "措置": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "協議": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "照会": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "改定": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "免除": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "免責": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "審査": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "撤回": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "破棄": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "お手伝いさん": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "圧縮": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "宛名": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "威張る": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "意地悪": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "為替": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "緯度": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "衣食住": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "井戸": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "引算": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "羽根": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "運河": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "英文": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "英和": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "円周": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "煙突": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "塩辛い": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "王女": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "下車": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "下駄": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "仮名遣い": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "加速度": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "可決": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "家主": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "架空": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "火口": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "火山": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "火傷": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "貨物": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "過半数": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "回数券": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "器械": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "基地": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "客間": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "逆様": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "給与": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "漁師": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "近付ける": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "句読点": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "苦心": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "偶数": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "形容動詞": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "稽古": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   },
+   "経度": {
+    "on": "2026-10-02",
+    "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
+    "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
+   }
+  }
  }
 }

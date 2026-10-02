@@ -295,6 +295,10 @@ FREE_UNIT_GRANDFATHERED = {
     "20260807_1", "20260810_1", "20260810_2", "20260811_1", "20260812_1",
     "20260812_2", "20260813_1", "20260813_2", "20260814_1", "20260817_1",
     "20260817_2", "20260817_3", "20260818_1",
+    # Shipped before the connective-card unit (qa-report-20260929_1 F1, applied
+    # 2026-10-02): each fronts a bare 文頭接続詞 card and reads FREE UNITS: 2
+    # under the new count. Drop an id once its item is re-cut.
+    "20260819_1", "20260827_2", "20260909_1", "20260910_1", "20260928_2",
 }
 
 
@@ -439,8 +443,16 @@ def _predicate_demand_message(item: dict, card: str, leg: str,
 # particle or 形式名詞 slot, a 呼応 template — plus the bound predicate tails
 # (「そうだ」「からだ」「ない」…) that cannot stand anywhere but after their host.
 # What survives is a list of blocks; the last one carries the final predicate,
-# a leading discourse connective (「つまり」) is fixed to clause-initial position
-# and does not count, and everything else is a free unit.
+# a sentence-connective card (「したがって、」「なお、」 — `_is_connective`) is a
+# free unit of its own wherever it sits, and everything else is a free unit.
+#
+# CONNECTIVES COUNT (qa-report-20260929_1 F1, 2026-10-02). Until then a lone
+# connective card was exempted as "fixed to clause-initial position". It is not
+# fixed: 「食事の数時間前に、したがって、作っておきましょう」 is marked, not
+# ungrammatical, in written style, so the connective scrambles against any other
+# unchained block. 20260929_1 問題8-46 pre-fix (したがって、／食事の／数時間前に／
+# 作っておきましょう) printed FREE UNITS: 1 under the exemption and had a rival ★;
+# it now prints 2. Same class: 20260910_1 (「したがって」), 20260928_2 47 (「なお、」).
 #
 # DIRECTION OF ERROR — read this before trusting a green line. The merger is
 # deliberately GENEROUS: every rule above merges on a string test, so an
@@ -481,7 +493,9 @@ BOUND_OPENING = re.compile(
     r"|ちがい|違い|かもしれ|べき|つもり|つつ|ながら|しか|ない|なかった|だろう"
     r"|でしょう|いく|くる|おく|みる|ある|いる|しまう|しまった|きった|くれ|もらう"
     r"|やる|ねば|なければ|ざる|得ない|えない|とはいえ|といって|といえ|といった"
-    r"|ものの|のに|ので|し|つ|た|て|で)")
+    r"|ものの|のに|ので|の[がはを]|し|つ|た|て|で)")
+# 「の[がはを]」 is the 準体助詞 nominalising its left (「作っておく／のがいい」,
+# 20260929_1 問題8-46 post-fix); it needs a host exactly as 「ので」 does.
 # A card that CLOSES a subordinate clause. Everything to its left belongs to
 # that clause and cannot scramble out of it (bunpou.md source 1, generalised
 # from 連体修飾 to every subordinate clause), so a closer absorbs its left.
@@ -559,9 +573,27 @@ def free_unit_count(item: dict) -> tuple[int, list[str]]:
         if CLAUSE_CLOSER.search(_clean(cur)) and len(blocks) > 1:
             merged = [c for b in blocks for c in b]
             blocks = [merged]
-    free = [b for b in blocks[:-1]
-            if not (len(b) == 1 and CONNECTIVE_CARD.match(_clean(b[0])))]
-    return len(free), ["＋".join(b) for b in blocks]
+    # Each connective card is one free unit wherever the merger put it; the
+    # rest of every non-final block is one more.
+    # A listed word that closed a clause from inside a block (「出かける＋一方」)
+    # is that clause's closer, not a connective.
+    n = 0
+    for i, b in enumerate(blocks):
+        rest = [c for j, c in enumerate(b) if not _is_connective(c)
+                or (j and CLAUSE_CLOSER.search(_clean(c)))]
+        n += len(b) - len(rest)
+        if rest and i < len(blocks) - 1:
+            n += 1
+    return n, ["＋".join(b) for b in blocks]
+
+
+def _is_connective(card: str) -> bool:
+    """A sentence-connective card: listed in CONNECTIVE_CARD, or a bare word
+    ending in 「、」 that does not close a subordinate clause (「疲れたので、」 is a
+    clause closer, already one unit with its left — not a second one)."""
+    c, raw = _clean(card), re.sub(r"[\s　]", "", card)
+    return bool(CONNECTIVE_CARD.match(c)) or (
+        raw.endswith(("、", ",")) and not CLAUSE_CLOSER.search(c))
 
 
 # --- The asserted-uniqueness audit (`--audit-claims`) ----------------------

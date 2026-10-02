@@ -151,7 +151,8 @@ defect through.
     `qa-report-20260903_1-round2` §5.)
 
   - **a headline theme (問題9/12/13/14/聴解問題5-1番/聴解問題5-2番) repeating the
-    immediately-previous test's headline theme in ANY slot** —
+    immediately-previous test's headline theme in ANY slot**
+    （composed 聴解問題5 は WARN・draw audit — exam-blueprint rule 4） —
     `exam-blueprint` rule 4's zero-tolerance clause, unchecked by any script.
     Build the 6-slot set yourself from the SHIPPED content and diff against
     the previous test's recorded set.

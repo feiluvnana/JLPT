@@ -190,6 +190,15 @@ the 解説 says. That is an item defect, not a proof defect.
 > 語彙的に順序づける呼応テンプレート の四つだけであり、「重い前置きが三つ並ぶと崩れる」
 > のような処理負荷・自然さの議論は根拠にならない。自由な単位が二つ残るなら、片方を
 > 下線の前の文中へ移すか、主要部が隣接を強制するカードに差し替えて切り直す。
+>
+> 文頭の接続詞カード（したがって、／なお、／ところが、…）は、それ自体が自由な単位。
+> 載せるなら残り三枚は最終述語まで一続きに鎖でつなぐ（四つの源のいずれか）こと。
+> つなげないなら接続詞は下線の前に出す。
+
+Register: したがって is written-style — a spoken stem takes ですから, or a
+printed-text frame (「（料理の本で）」). Founding case and the
+`verify_scramble.py` count: `qa-report-20260929_1` F1 (問題8-46; same class
+20260910_1, 20260928_2 47).
 
 **Why the rename — the worked example this wording exists for.** From
 2026-08-19 to 2026-08-20 this section read *"at most ONE card may be a free

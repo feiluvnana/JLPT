@@ -236,7 +236,22 @@ def has_reading_trap(entry) -> bool:
 # parses carry 0,0,1,1,1,1,2,2,2 keigo). That is why all 14 papers measure
 # keigo-heavy 問題4s: no amount of authoring can fix a register the draw has
 # already fixed. The cap is the archive's own maximum.
-KEIGO_CAP = {"quick_response": 2}
+#
+# 問題7 敬語 keys, the same cap one section over (RC-BP-1, 2026-10-02;
+# `qa/blueprint-rerolls-20260929_1.md`). The 2026-09-28 audit added eleven
+# 敬語/使役 entries to `grammar_p7`; every never-drawn entry weighs 10**9+1 in
+# `weighted_sample_no_replacement()` against ~10 for a cooled one, so the first
+# draw after the audit (`20260929_1`) took 7 敬語 points into 12 問題7 slots and
+# no gate saw it. MEASURED over all 31 sittings' keyed 問題7 options (371 of 372
+# parsed, every hit read by hand): 0 in 6 sittings, 1 in 21, 2 in 4 — never 3.
+# The cap is that maximum; the per-paper COUNT is drawn from the histogram
+# (`sample_keigo_capped(dist=…)`), because filling the cap every paper would
+# reproduce the archive's maximum as its norm — the WAGO_DIST argument.
+# `tools/check_consistency.py` imports `is_keigo_grammar` and this constant.
+GRAMMAR_P7_KEIGO_CAP = 2
+GRAMMAR_P7_KEIGO_DIST = {0: 6, 1: 21, 2: 4}
+KEIGO_CAP = {"quick_response": 2, "grammar_p7": GRAMMAR_P7_KEIGO_CAP}
+KEIGO_DIST = {"grammar_p7": GRAMMAR_P7_KEIGO_DIST}
 
 # 問題2 composition, enforced during the draw by `sample_wago_floor()`
 # (REPORT-GOI.md §F3). Measured over 31 of 31 sittings: 1–3 of the five 問題2
@@ -338,19 +353,143 @@ def _dictionary_readings(ch: str) -> set:
     return {str(y).translate(to_hira) for y, _ in table.get(ch, ())}
 
 
+# --- per-kanji chunking for the two multi-kanji rulings (RC-9, 2026-10-02) ---
+# qa-report-20260929_1 §4 "(ruling) 夜明け classifier": 夜明け(よあけ) read 音
+# (よ|あ are both one mora, and one mora is on-SHAPED) while 素直(すなお) read 訓
+# (す|なお does not cut into two on-shaped chunks) — the paper's count of 2 was
+# right by accident. Both rulings need the reading cut PER KANJI, which the
+# shape test alone cannot do, so the cut is constrained by `_dictionary_readings()`
+# (rendaku and 促音 folded) and a chunk is judged 音 only on a STRONG signal:
+# 拗音, a ん/っ ending, a long vowel (〜う, e-row + い), or a reading listed in
+# `_ON_READINGS_SHAPE_BLIND`. A bare one-mora chunk (よ, て, た, め) is NOT an 音
+# signal — that is the 夜明け half of the ruling.
+_COPULA_TAILS = ("な", "に", "だ", "と", "の", "で")
+_E_ROW = set("えけせてねへめれげぜでべぺ")
+# 音読み the shape cannot see: one-mora 音 (素=す, 絵=え, 具=ぐ) and two-mora 音 on a
+# く/き/つ/ち tail, which 訓 shares (厚=あつ, 奥=おく are 訓). Hand-maintained,
+# from the 常用漢字表 音訓 column, and limited to the kanji the pool's multi-kanji
+# 訓 candidates actually cut into (measured 2026-10-02). A new 湯桶/重箱 entry
+# whose 音 half is one of these shapes needs its kanji added here.
+_ON_READINGS_SHAPE_BLIND = {
+    "素": {"す", "そ"}, "絵": {"え"}, "具": {"ぐ"}, "翌": {"よく"},
+    "欲": {"よく"}, "血": {"けつ"}, "液": {"えき"},
+}
+_VOICED_TO_PLAIN = str.maketrans(
+    "がぎぐげござじずぜぞだぢづでどばびぶべぼぱぴぷぺぽ",
+    "かきくけこさしすせそたちつてとはひふへほはひふへほ")
+
+
+def _chunk_forms(chunk: str, first: bool) -> set:
+    """`chunk` plus its un-rendaku'd and un-促音'd forms (がえ→かえ, いっ→いつ)."""
+    out = {chunk}
+    if not first and chunk:
+        out.add(chunk[0].translate(_VOICED_TO_PLAIN) + chunk[1:])
+    for x in list(out):
+        if x.endswith("っ"):
+            out |= {x[:-1] + e for e in "つちくき"}
+    return out
+
+
+def _is_on_chunk(kanji: str, chunk: str, first: bool) -> bool:
+    if _chunk_forms(chunk, first) & _ON_READINGS_SHAPE_BLIND.get(kanji, set()):
+        return True
+    ms = _morae(chunk)
+    if any(s in chunk for s in _KUN_SMALL) or chunk.endswith(("ん", "っ")):
+        return True
+    return len(ms) == 2 and (ms[1] == "う" or (ms[1] == "い" and ms[0] in _E_ROW))
+
+
+def _kanji_cuts(stem: str, ks: list, free_last: bool) -> list[list[str]]:
+    """Every cut of `stem` into one chunk per kanji of `ks` whose chunks are
+    dictionary readings of their kanji. `free_last` leaves the last chunk
+    unchecked (an okurigana-bearing kanji's stem, 明け → あ). Empty when no
+    dictionary is available or no cut fits — callers then keep the shape verdict."""
+    ms = _morae(stem)
+    k = len(ks)
+    out: list[list[str]] = []
+
+    def rec(i: int, j: int, acc: list[str]) -> None:
+        if j == k:
+            if i == len(ms):
+                out.append(list(acc))
+            return
+        last = j == k - 1
+        for L in ([len(ms) - i] if last else range(1, len(ms) - i - (k - j - 1) + 1)):
+            if L <= 0:
+                continue
+            c = "".join(ms[i:i + L])
+            if not (last and free_last) and not (
+                    _chunk_forms(c, j == 0) & _dictionary_readings(ks[j])):
+                continue
+            rec(i + L, j + 1, acc + [c])
+
+    rec(0, 0, [])
+    return out
+
+
 def is_kun_target(entry) -> bool:
     """True when a `kanji_reading` entry's target is a 訓読み word.
 
-    KNOWN LIMIT, stated rather than hidden: this decides 音 vs 訓 from the SHAPE
-    of the recorded reading, so a single-kanji 訓読み word whose reading happens
-    to be on-shaped (灰(はい), 恋(こい), 奥(おく), 筒(つつ), 乳(ちち) — 5 of the
-    pool's 74 single-kanji entries) reads as 音読み here. It errs toward
-    UNDER-counting 訓読み, i.e. toward letting a draw through, never toward
-    failing a compliant one. The four founding cases it must reproduce are
-    `20260807_1` (4), `20260819_1` (4), `20260810_1` (3), `20260817_2` (3);
+    KNOWN LIMITS, stated rather than hidden — this decides 音 vs 訓 from the
+    SHAPE of the recorded reading, cut per kanji by pykakasi's (unmarked)
+    readings, so:
+    - a single-kanji 訓読み word whose reading happens to be on-shaped (灰(はい),
+      恋(こい), 奥(おく), 筒(つつ), 乳(ちち) — 5 of the pool's 74 single-kanji
+      entries) reads as 音読み;
+    - a multi-kanji 訓 word with a long-vowel 訓 chunk reads 音: 夕暮れ(ゆう|ぐれ);
+    - a word whose 音 half is ONE mora reads 訓 unless the kanji is in
+      `_ON_READINGS_SHAPE_BLIND`: 怒鳴る(ど|なる), 仕上げる(し|あげる);
+    - internal kana is judged 訓 before any cut, so 認め印(みとめ|いん) and the
+      お/ご-prefixed ご存知/お歳暮/お礼状 read 訓;
+    - with pykakasi missing no cut fits, and both 2026-10-02 rulings fall back to
+      the plain shape verdict (夜明け 音, 素直 訓).
+    FIXED 2026-10-02 (RC-9, qa-report-20260929_1 §4 ruling): a multi-kanji
+    target with a printed okurigana tail whose core cuts into 訓-shaped chunks
+    reads 訓 — 夜明け(よ|あ+け), 厚切り, 田植え, 手続き, 目立つ; one with an 音
+    chunk stays 音 (訓読み, 欲張り, 一戸建て, 平年並み, 動物好き). A mixed
+    湯桶/重箱 word with no tail no longer counts as 訓: 素直(す|なお), 両替, 船便,
+    県境, 金色, 雨具, 似顔絵.
+    The four founding cases it must reproduce are `20260807_1` (4),
+    `20260819_1` (4), `20260810_1` (3), `20260817_2` (3), plus the archive's
+    14 of 35 current-era targets (exactly 2 per sitting);
     `check_mondai1_reading_type_mix()` in `tools/check_consistency.py` imports
     THIS function so the gate and the sampler can never disagree.
     """
+    verdict = _is_kun_shape(entry)
+    t, r = split_reading_entry(entry)
+    t = t.replace("〜", "").replace("～", "").replace("~", "")
+    m = re.search(r"([ぁ-ん]+)$", t)
+    tail = m.group(1) if m else ""
+    core = t[:len(t) - len(tail)] if tail else t
+    ks = _KUN_KANJI.findall(core)
+    if len(ks) < 2 or not r or _KUN_KANA.search(core):
+        return verdict
+    if tail:
+        # Ruling 1: printed okurigana on a multi-kanji core. The kanji carrying
+        # the okurigana is 訓 by construction; the word is 訓 when no other
+        # kanji reads 音. Upgrade-only: a shape verdict of 訓 is left alone.
+        if (verdict or tail in _SURU_TAILS or tail in _COPULA_TAILS
+                or not r.endswith(tail)):
+            return verdict
+        cuts = _kanji_cuts(r[:-len(tail)], ks, free_last=True)
+        return bool(cuts) and all(
+            not any(_is_on_chunk(kj, c, j == 0)
+                    for j, (kj, c) in enumerate(zip(ks[:-1], cut[:-1])))
+            for cut in cuts)
+    # Ruling 2: no tail. A 湯桶/重箱 word is not 訓 — demote when every
+    # dictionary cut carries an 音 chunk. Demote-only.
+    if not verdict:
+        return verdict
+    cuts = _kanji_cuts(r, ks, free_last=False)
+    if cuts and all(any(_is_on_chunk(kj, c, j == 0)
+                        for j, (kj, c) in enumerate(zip(ks, cut)))
+                    for cut in cuts):
+        return False
+    return verdict
+
+
+def _is_kun_shape(entry) -> bool:
+    """The pre-2026-10-02 shape verdict `is_kun_target()` refines."""
     t, r = split_reading_entry(entry)
     t = t.replace("〜", "").replace("～", "").replace("~", "")
     if not _KUN_KANJI.search(t):
@@ -611,22 +750,31 @@ def sample_kun_capped(rng: random.Random, eligible: list, n: int,
 
 def sample_keigo_capped(rng: random.Random, eligible: list, n: int, cap: int,
                         name: str, kept: list | tuple = (), weight_fn=None,
-                        conflict_fn=None, seen: set | None = None) -> list:
-    """`n` `quick_response` entries with at most `cap` fixed-keigo stimuli.
+                        conflict_fn=None, seen: set | None = None,
+                        is_keigo=None, dist: dict | None = None) -> list:
+    """`n` entries with at most `cap` keigo entries (`quick_response`, `grammar_p7`).
 
     Same shape and the same reason as `sample_kun_capped()`: the pool's own
     share of a property (40% fixed-keigo sentences) is far above the archive's
     (median 0 of 11, max 2), so an unbounded draw reproduces the POOL's
     distribution instead of the exam's. `kept` is what a `--reroll-one` keeps,
     counted against the cap so a one-entry redraw cannot push a paper over it.
+    `is_keigo` is the category's predicate (`keigo_predicate()`); `dist`, when
+    given, is the archive's per-paper histogram and sets the paper's TARGET
+    count (still capped) instead of filling the cap — `grammar_p7` (RC-BP-1).
     """
-    keigo = [e for e in eligible if is_keigo_stimulus(e)]
-    plain = [e for e in eligible if not is_keigo_stimulus(e)]
-    have = sum(1 for x in kept if is_keigo_stimulus(x))
+    is_keigo = is_keigo or is_keigo_stimulus
+    keigo = [e for e in eligible if is_keigo(e)]
+    plain = [e for e in eligible if not is_keigo(e)]
+    have = sum(1 for x in kept if is_keigo(x))
     room = max(0, cap - have)
     pick = _subset_picker(rng, weight_fn, conflict_fn, seen)
 
     take_k = min(room, len(keigo), n)
+    if dist:
+        counts = sorted(dist)
+        want = rng.choices(counts, weights=[dist[c] for c in counts])[0]
+        take_k = min(take_k, max(0, want - have))
     if len(plain) < n - take_k:
         print(f"  warning: pool '{name}' has too few non-keigo entries "
               f"({len(plain)}) to fill {n - take_k} of {n} slots — falling back "
@@ -651,6 +799,22 @@ def is_keigo_stimulus(entry) -> bool:
     if len(text) < 12 or text.startswith("〜"):
         return False
     return bool(re.search(r"ございます|いただ|ておりま|申し訳|伺|存じ|いらっしゃ|なさ|くださ", text))
+
+
+def is_keigo_grammar(entry) -> bool:
+    """True when a `grammar_p7` entry is a 敬語 point — the pool's `敬語:`
+    prefix (敬語:拝見する, 敬語:〜させていただく). `使役:`/`使役受身:` entries are
+    not 敬語 and do not count (RC-BP-1). Public: the gate imports it."""
+    return item_text(entry).startswith("敬語:")
+
+
+KEIGO_PREDICATE = {"quick_response": is_keigo_stimulus,
+                   "grammar_p7": is_keigo_grammar}
+
+
+def keigo_predicate(cat: str):
+    """The `KEIGO_CAP` category's keigo test (default: `is_keigo_stimulus`)."""
+    return KEIGO_PREDICATE.get(cat, is_keigo_stimulus)
 
 
 def sample_wago_floor(rng: random.Random, eligible: list, n: int, floor: int,
@@ -1191,11 +1355,28 @@ def is_retired(cat: str, entry, pools: dict | None = None) -> bool:
     return item_text(entry) in (retired_map(pools).get(cat) or {})
 
 
+# NEEDS EVIDENCE (qa-report-20260929_1 F2, applied 2026-10-02). Same shape and
+# same reason as `retired_entries` — a top-level `{cat: {entry-string: record}}`
+# map, the entry staying a bare string in its list so every recorded draw still
+# resolves — but a different ruling: the entry is not judged off-band, it has
+# ZERO hits in the four textbook extracts and the 31 sittings' booklet.md +
+# script.md, and a 問題2 target (a kanji the candidate must WRITE) is not drawn on
+# no evidence (founding case 基盤, 問題2-7). It leaves the map when someone opens
+# a page and quotes it (book + page/line + headword) — never on a grep total.
+def needs_evidence_map(pools: dict | None = None) -> dict[str, dict[str, dict]]:
+    """`{category: {entry-string: record}}` from `pools.json`'s `needs_evidence`."""
+    pools = all_pools() if pools is None else pools
+    raw = pools.get("needs_evidence") or {}
+    return {c: dict(v) for c, v in raw.items() if isinstance(v, dict)}
+
+
 def drawable(cat: str, pool, pools: dict | None = None) -> list:
-    """`pool` minus its retired entries — what a draw may pick, and what a
-    cooldown window may be sized from. Never use it for provenance: a retired
-    entry is still a pool entry for every lookup of a draw already made."""
-    gone = retired_map(pools).get(cat) or {}
+    """`pool` minus its retired and `needs_evidence` entries — what a draw may
+    pick, and what a cooldown window may be sized from. Never use it for
+    provenance: either kind is still a pool entry for every lookup of a draw
+    already made."""
+    gone = dict(retired_map(pools).get(cat) or {})
+    gone.update(needs_evidence_map(pools).get(cat) or {})
     return [x for x in pool if item_text(x) not in gone] if gone else list(pool)
 
 
@@ -1278,7 +1459,18 @@ def cooldown_for(cat: str, pool) -> int:
     pool = drawable(cat, pool)
     n = DRAW[cat]
     pool_size = len(pool)
-    if cat in KEIGO_CAP:
+    if cat in KEIGO_CAP and cat in KEIGO_DIST:
+        # `grammar_p7` (RC-BP-1, 2026-10-02): the cap has NO floor — the
+        # archive's histogram includes 0 — so a cooled-out 敬語 side only means a
+        # paper draws fewer 敬語 points, inside band. The side that must sustain
+        # the window is the PLAIN one, at its worst case of all `n` slots.
+        # Dividing the 敬語 side by the cap as well (the quick_response branch)
+        # would cut the whole category's window 10 -> 5 for 14 entries that can
+        # never block a draw (measured on the 2026-10-02 pool).
+        is_k = keigo_predicate(cat)
+        plain_n = sum(1 for x in pool if not is_k(item_text(x)))
+        depth = min(pool_size // n if n else 0, plain_n // max(1, n))
+    elif cat in KEIGO_CAP:
         cap = KEIGO_CAP[cat]
         keigo_n = sum(1 for x in pool if is_keigo_stimulus(item_text(x)))
         plain_n = pool_size - keigo_n
@@ -2200,9 +2392,10 @@ def draw(rng: random.Random, pool: list, recency: dict, n: int,
         # of n entries that are all one errand holds ONE pick, not n (A).
         sufficient = independent_count(eligible, taken_tokens, base_seen) >= n
         if sufficient and name in KEIGO_CAP:
-            have_keigo_kept = sum(1 for x in kept if is_keigo_stimulus(x))
+            is_k = keigo_predicate(name)
+            have_keigo_kept = sum(1 for x in kept if is_k(x))
             room = max(0, KEIGO_CAP[name] - have_keigo_kept)
-            keigo_elig = sum(1 for x in eligible if is_keigo_stimulus(x))
+            keigo_elig = sum(1 for x in eligible if is_k(x))
             plain_elig = len(eligible) - keigo_elig
             take_k = min(room, keigo_elig, n)
             sufficient = plain_elig >= n - take_k
@@ -2266,7 +2459,9 @@ def draw(rng: random.Random, pool: list, recency: dict, n: int,
                 return top_up(sample_keigo_capped(
                     rng, eligible, n, KEIGO_CAP[name], name, kept=kept,
                     weight_fn=weight,
-                    conflict_fn=taken_tokens, seen=seen)), cool
+                    conflict_fn=taken_tokens, seen=seen,
+                    is_keigo=keigo_predicate(name),
+                    dist=KEIGO_DIST.get(name))), cool
             if name in WAGO_FLOOR:
                 return top_up(sample_wago_floor(
                     rng, eligible, n, WAGO_FLOOR[name], COMPOUND_CAP[name],
@@ -2443,7 +2638,7 @@ def check_pool_depths(pools: dict) -> None:
             window = (f"  window {cooldown_for(cat, pools.get(cat, [])):3d} "
                       f"(spends {eff:4.1f}/paper)")
         print(f"  [{status:4s}] {cat:20s}: {size:4d} items / {n:2d} draw ({ratio:5.1f}x headroom)"
-              + window + (f"  [{gone} retired, not counted]" if gone else ""))
+              + window + (f"  [{gone} retired/needs_evidence, not counted]" if gone else ""))
 
 
 def main():
@@ -2776,6 +2971,27 @@ def main():
         # true. This is the one-line fix the doc proposed, and it touches only
         # the reroll-one branch — the full-draw RNG stream is unchanged.
         taken_text |= set(taken_tokens(replaced))
+        # ...AND EVERY ENTRY AN EARLIER `--reroll-one` OF THIS SAME INDEX
+        # REJECTED (RC-BP-1 (c), 2026-10-02). The line above bars only the entry
+        # leaving NOW, so the third reroll of one slot could hand back what the
+        # first one threw out (`qa/blueprint-rerolls-20260929_1.md` row 9). Read
+        # from this paper's own `reroll_log` (spec and ledger row, de-duplicated);
+        # pool categories only — an authored entry's `out` is a theme, and the
+        # theme path has its own `exclude_themes`.
+        prior_rejects = set()
+        if cat not in AUTHORED_THEME_CATS:
+            for rec in (list(((spec.get("rotation") or {}).get("reroll_log")) or [])
+                        + list((own_entry or {}).get("reroll_log") or [])):
+                if (isinstance(rec, dict) and rec.get("op") == "reroll-one"
+                        and rec.get("category") == cat
+                        and rec.get("index") == idx and rec.get("out")):
+                    prior_rejects.add(str(rec["out"]))
+            for out in sorted(prior_rejects):
+                taken_text |= set(taken_tokens(out))
+            if prior_rejects:
+                print(f"  reroll-one {cat}[{idx}]: also excluding "
+                      f"{len(prior_rejects)} entr(ies) earlier rerolls of this "
+                      f"index rejected: {', '.join(sorted(prior_rejects))}")
         # THIS TEST'S OWN ENTRY LEAVES THE HISTORY, not just its rerolled
         # category (F1 fix pass, 2026-08-20). Popping the category alone left
         # the entry occupying a slot, so every `ago` draw() measured was one
@@ -3067,6 +3283,22 @@ def main():
     prior_history = history[:self_idx] if self_idx is not None else \
         [h for h in history if str(h.get("test_id")) != str(args.test_id)]
     spec["rotation"]["history_len"] = len(prior_history)
+    # Per-paper 敬語 caps, checked on the WHOLE category (kept + new) before
+    # anything is written — `sample_keigo_capped()`'s uncapped fallback is the
+    # one path that could breach (RC-BP-1, qa/blueprint-rerolls-20260929_1.md).
+    # Only the categories this run drew: a paper drawn before a cap existed
+    # keeps its recorded draw, and rerolling another category must not trip on it.
+    for kcat, kcap in KEIGO_CAP.items():
+        if kcat not in rotation_check_items:
+            continue
+        is_k = keigo_predicate(kcat)
+        kxs = (spec.get("items") or {}).get(kcat) or []
+        kn = sum(1 for x in kxs if is_k(x))
+        # breach = over the cap AND this run added a keigo entry (a legacy
+        # paper already over it may still reroll a plain slot)
+        if kn > kcap and any(is_k(x) for x in rotation_check_items[kcat]):
+            sys.exit(f"{kcat}: {kn} keigo entries drawn, cap {kcap} — nothing "
+                     f"written. Grow the non-keigo side of the pool.")
     assert_rotation(rotation_check_items, prior_history, pools)
 
     LOGS_DIR.mkdir(parents=True, exist_ok=True)

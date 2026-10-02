@@ -885,6 +885,14 @@ FINDING_REPAIR: dict[str, tuple[str, str]] = {
     # a cell edit, but never mechanical: the replacement has to be a word the
     # passage actually uses and actually needs explaining.
     "note_anchored":                  ("passage prose",        "assisted"),
+    # F3 (qa-report-20260929_1): renumbering （注N） in reading order touches the
+    # in-body markers and the definition lines, nothing else — but the markers
+    # live in the prose, so it is a prose edit, read once to confirm the order.
+    "note_order":                     ("passage prose",        "assisted"),
+    # F5 (qa-report-20260929_1): the 読解 section's mean option length is moved
+    # by trimming or lengthening OPTION cells — keys first where they are the
+    # uniquely longest, so the key-rank share does not move the wrong way.
+    "dokkai_option_mean":             ("stem/option/key-cell", "assisted"),
     "dokkai_lexical_load_warn":       ("<surface re-author>",  "authoring"),
     # The FLOOR is the opposite artifact from the ceiling above, and that is why
     # it gets its own row. Too MUCH load is a property of the subject (a passage
@@ -3635,9 +3643,14 @@ def check_topics_themes():
 # verdict on a live paper is `exam-qa-review` §5's, and that half is a FAIL.
 HEADLINE_READING_SURFACES = ("問題9", "問題12", "問題13", "問題14")
 
+# Widened 2026-10-02 (qa-report-20260929_1 §4, the 問題12/13 theme-token WARN
+# row, applied AFTER that paper shipped, never to clear it): 睡眠・健康 had no
+# body-care word, so a passage on lifting without hurting one's back read as
+# off-theme; 科学・技術 had 測定 but not the plain verb or the instrument, so a
+# passage on how air temperature is measured read as off-theme.
 THEME_TOKENS = {
     "睡眠・健康": ("睡眠", "眠", "寝", "健康", "体調", "疲れ", "休養", "ストレス",
-                "運動"),
+                "運動", "腰", "膝", "筋肉", "痛め"),
     "医療・福祉": ("医療", "医師", "医者", "病院", "医院", "患者", "看護", "介護",
                 "福祉", "薬", "治療", "診察", "診療", "検査", "手術", "接種",
                 "保険", "車いす", "車椅子", "障害", "リハビリ", "健診", "補聴器",
@@ -3676,7 +3689,8 @@ THEME_TOKENS = {
     "旅行・観光": ("旅行", "観光", "旅", "宿", "名所", "訪れ", "客", "案内", "土産",
                "見学", "ツアー"),
     "科学・技術": ("科学", "技術", "研究", "実験", "機械", "装置", "測定", "開発",
-               "工学", "データ", "実証", "分析"),
+               "工学", "データ", "実証", "分析", "測る", "測っ", "測り",
+               "温度計", "観測"),
 }
 
 
@@ -4403,27 +4417,51 @@ def check_note_anchored(name: str, body: str):
          slug="note_anchored", test_id=name)
 
 
+# Pre-rule papers whose in-body （注N） numbers do not ascend in reading order
+# (measured 2026-10-02, the day the order half of `check_note_pairing` landed):
+# 20260807_1 11(1) [3,4,1,5,2], 11(2), 11(3), 13; 20260812_1 11(1) [1,2,6,3,4,5];
+# 20260812_2 11(2), 13. Renumbering is an apparatus-only repair (markers plus the
+# definition lines, no prose change) — do it, then drop the id from this set.
+NOTE_ORDER_GRANDFATHERED = {"20260807_1", "20260812_1", "20260812_2"}
+
+
 def check_note_pairing(name: str, body: str):
-    """（注N） markers and definitions pair 1-to-1 per passage (G2c).
+    """（注N） markers and definitions pair 1-to-1 per passage (G2c), and the
+    in-body markers are numbered in reading order.
 
     An orphan either way is an automatic QA fail and both have shipped: a
     paper has defined 格段/精神論/屋上緑化 for passages that no longer contain
     them, and papers have printed a 注5 marker in 問題13 with only four
     definitions.
+
+    ORDER (qa-report-20260929_1 F3, 2026-10-02). Official numbers its glosses
+    in order of FIRST APPEARANCE in the body — 0 of the ten imported sittings
+    break it. 20260929_1 11(3) shipped to QA reading 届け（注2）… 返事に詰まり
+    ました（注1） — [2, 1, 3, 4] — and the pairing half passed it, because the SET
+    of numbers matched on both sides. Three earlier generated papers carried
+    the same defect unseen (NOTE_ORDER_GRANDFATHERED). The sequence checked is
+    the first appearance of each number, so a gloss the prose marks twice is
+    not a reorder.
     """
-    bad = []
+    bad, misordered = [], []
     for n in (9, 10, 11, 12, 13, 14):
         sec = dokkai_section(body, n)
         if not sec:
             continue
         for i, sc in enumerate(passage_scopes(sec, n), 1):
             marks, defs = set(), set()
+            seq: list[int] = []
             for ln in sc.splitlines():
                 d = NOTE_DEF.match(ln)
                 if d:
                     defs.add(d.group(1) or "1")
                 else:
-                    marks |= {m.group(1) or "1" for m in NOTE_MARK.finditer(ln)}
+                    found = [m.group(1) or "1" for m in NOTE_MARK.finditer(ln)]
+                    marks |= set(found)
+                    seq += [int(x) for x in found]
+            first = list(dict.fromkeys(seq))
+            if first != sorted(first):
+                misordered.append(f"問題{n}({i}): {first}")
             if marks != defs:
                 unmarked = sorted(defs - marks)
                 undefined = sorted(marks - defs)
@@ -4433,6 +4471,16 @@ def check_note_pairing(name: str, body: str):
     check(f"{name}: （注N） markers and definitions pair 1-to-1 per passage", not bad,
           "; ".join(bad).strip() + " — a note the passage never marks (or a "
           "marker with no note) is an automatic fail (exam-qa-review)")
+    (warn if name in NOTE_ORDER_GRANDFATHERED else check)(
+        f"{name}: （注N） markers are numbered in reading order per passage",
+        not misordered,
+        "; ".join(misordered) + " — in-body marker numbers, in order of first "
+        "appearance, must read 1, 2, 3 … (official: 0 of 10 imported sittings "
+        "break it; qa-report-20260929_1 F3, where 11(3) read [2, 1, 3, 4]). "
+        "Renumber the markers in reading order and reorder the definition lines "
+        "to match — no prose change (dokkai.md §（注N）)"
+        + (GRANDFATHER_NOTE if name in NOTE_ORDER_GRANDFATHERED else ""),
+        slug="note_order", test_id=name)
 
 
 NOTE_LEAK_MIN_RUN = 4        # characters of shared text before it is reportable
@@ -6548,6 +6596,51 @@ def check_dokkai_option_length_balance(name: str, opts: dict[int, list[str]]):
          f"{'; '.join(warn_items)} — official p90 is 1.61; consider balancing option lengths (dokkai.md §'読解 keys')", slug="dokkai_option_length_band", test_id=name)
 
 
+# 読解 section mean option length, JP chars (`jp_char_count`), all 80 options of
+# 問題10–14 (52–71) — dokkai.md §"Option length band" owns 24–30.
+DOKKAI_OPTION_MEAN_BAND = (24, 30)
+
+
+def check_dokkai_option_mean(name: str, opts: dict[int, list[str]]):
+    """The 読解 section's mean option length sits in dokkai.md's 24–30 band.
+
+    THE HOLE (qa-report-20260929_1 F5, 2026-10-02). The band had no gate line,
+    so 20260929_1 reached stage 3 at 30.19 and stage 3 deferred it for want of
+    a safe trim; the fix (four keys and two distractors shortened, 29.81) is
+    cheap at stage 2 and dear once the 解説 quote the options. A per-item ratio
+    (`check_dokkai_option_length_balance`) cannot see it: every item can be
+    balanced and the whole set still run long.
+
+    Method: `jp_char_count` (the JP_CHAR class) over every option of 52–71 —
+    the same count `dokkai_profile.py` reports as `mean_opt_len`, which
+    reproduces it to the hundredth on all ten imports.
+
+    MEASURED, AND WHY THIS IS GENERATED-ONLY. The ceiling survives the whole
+    archive (31 sittings, max 29.40 at 7/2015). The FLOOR does not: current era
+    22.93–28.15 (mean 25.70; 12/2022 22.93 and 12/2023 23.57 sit under 24), all
+    31 sittings 22.04–29.40. So the band is applied as an authoring target to
+    generated papers, not as an archive fact; dokkai.md's floor and its
+    「official current era 26.3」 (which does not reproduce — 25.70) are the
+    owner's to correct. Generated papers on disk run 26.55–37.85.
+    """
+    lens = [jp_char_count(x) for q in range(52, 72) for x in (opts.get(q) or [])]
+    if not lens:
+        return
+    lo, hi = DOKKAI_OPTION_MEAN_BAND
+    mean = statistics.mean(lens)
+    warn(f"{name}: 読解 mean option length {mean:.2f} JP chars sits in {lo}–{hi}",
+         lo <= mean <= hi,
+         f"{mean:.2f} over {len(lens)} options of 52–71 (JP_CHAR method) — "
+         f"dokkai.md §'Option length band' (qa-report-20260929_1 F5). "
+         + ("Trim the UNIQUELY LONGEST keys first (that also lowers the "
+            "uniquely-longest share), then long distractors; keep each a "
+            "paraphrase, re-run the key-rank and ratio lines, and re-sync the "
+            "解説 quotes" if mean > hi else
+            "Lengthen the shortest distractors toward their key; never pad "
+            "one option alone"),
+         slug="dokkai_option_mean", test_id=name)
+
+
 def check_dokkai_key_rank_spread(name: str, keys: dict[int, int],
                                  opts: dict[int, list[str]],
                                  origin: str = "generated"):
@@ -7294,6 +7387,31 @@ def check_cross_test_listening_subjects():
               "(exam-qa-review); re-author the surface onto a different "
               "institution/errand and record `origin: reauthored` + a note "
               "in test_spec.json and logs/ledger.json")
+
+
+def check_spec_p7_keigo_cap(test_dir, spec: dict, sample):
+    """問題7 keys at most GRAMMAR_P7_KEIGO_CAP (2) 敬語 points per paper (RC-BP-1).
+
+    Official 問題7 keys 0–2 敬語 points per sitting (max 2, median 1; 31 of 31
+    sittings). The 2026-09-28 pool audit added eleven never-used 敬語 entries,
+    and never-used entries outweigh cooled ones ~10**8 to 1 in
+    `weighted_sample_no_replacement()`, so the first draw after it put 7 of 12
+    問題7 slots on 敬語 — and nothing saw it (qa/blueprint-rerolls-20260929_1.md
+    RC-BP-1). The sampler now enforces the cap in the full draw and in both
+    reroll modes; this is the backstop for a hand-edited spec. Predicate and
+    cap are imported from the sampler so the two cannot drift.
+
+    THE REPAIR: `sample_items.py --reroll-one grammar_p7:<index>` on a 敬語
+    slot with a fresh RNG seed, then re-author the item.
+    """
+    cap = sample.GRAMMAR_P7_KEIGO_CAP
+    entries = spec.get("items", {}).get("grammar_p7", [])
+    keigo = [e for e in entries if sample.is_keigo_grammar(e)]
+    check(f"{test_dir.name}: 問題7 draws at most {cap} 敬語 points "
+          f"({len(keigo)} of {len(entries)})", len(keigo) <= cap,
+          f"敬語 draws: {keigo} — official keys 0–2 per sitting (31 of 31). "
+          f"`--reroll-one grammar_p7:<index>` on a 敬語 slot with a fresh seed, "
+          f"never a hand substitute (RC-BP-1, qa/blueprint-rerolls-20260929_1.md)")
 
 
 def check_spec_blend(spec: dict):
@@ -9799,6 +9917,7 @@ def check_rotation_inputs():
     for d, spec in specs:
         print(f"  {d.name}/test_spec.json")
         check_spec_blend(spec)
+        check_spec_p7_keigo_cap(d, spec, sample)
         check_spec_adjunct(spec)
         check_spec_rotation(d, spec, sample, pools)
         check_spec_errand_rotation(d, spec, sample, pools)
@@ -14445,6 +14564,77 @@ def check_choukai_textbook_bands():
          "which, and say so; do not widen the band to quiet this line")
 
 
+def check_choukai_bank_kaisetsu_bands():
+    """Every DECLARED bank item's explanation panes sit inside the terseness bands.
+
+    THE HOLE (stage3-report-20260929_1 RC-S3-1). A textbook or archive item's
+    `explanation`/`explanation_<code>` is authored in a declaration file
+    (`textbook_items.json`, `archive_items.json`), copied into the bank, and
+    measured by nothing until a paper draws it — then it is that paper's
+    per-test `詳細解説.json inside the terseness bands` FAIL, at stage 3. Three
+    問題5-1 archive declarations reached the bank that way on 2026-09-29.
+
+    The builders now refuse such a declaration
+    (`build_textbook_bank.refuse_over_band_panes`); this line is the backstop
+    for a bank written before that rule or by hand, the same reason
+    `check_choukai_textbook_bands` re-derives the duration guards. Measured
+    with `kaisetsu_item_breaches` — the per-test line's own measurement.
+    Records lifted from an imported test are skipped: their panes are that
+    test's 詳細解説, which `check_kaisetsu_length` already reads.
+
+    REPAIR: cut the pane in the DECLARATION to band, then `make choukai-bank`
+    (and `make mp3 <id> REPLAY=1` for any paper that drew the clip). Never edit
+    logs/choukai_bank.json or a composed paper's 詳細解説 by hand.
+    """
+    print("\n聴解 bank declarations inside the 詳細解説 terseness bands")
+    bank_path = ROOT / "logs" / "choukai_bank.json"
+    if not bank_path.is_file():
+        return skip("bank declarations inside the terseness bands",
+                    "no logs/choukai_bank.json on disk")
+    bank = json.loads(bank_path.read_text(encoding="utf-8"))
+    primary = _LANG_ORDER[0]
+    bad: dict[str, list[str]] = {lg: [] for lg in _LANG_ORDER}
+    n = 0
+    for rec in bank.get("records", []):
+        if rec.get("kind") != "item":
+            continue
+        panes: list[tuple[str, dict]] = []
+        if "explanation_payload" in rec:                  # textbook half
+            panes.append((primary, rec["explanation_payload"]))
+            panes += [(lg, rec[LANGS.content_field(lg) + "_payload"])
+                      for lg in LEARNERS
+                      if LANGS.content_field(lg) + "_payload" in rec]
+        elif rec.get("provenance") == "archive":          # archive half
+            for lg in _LANG_ORDER:
+                f = "explanation" if lg == primary else LANGS.content_field(lg)
+                panes += [(lg, v) for v in (rec.get(f) or {}).values()]
+        else:
+            continue                  # an imported test's own 詳細解説
+        n += 1
+        for lg, pane in panes:
+            if lg not in bad or not isinstance(pane, dict):
+                continue
+            fields, n_pts, spent = kaisetsu_item_breaches(pane, lg)
+            bits = fields + ([f"{n_pts} points"] if n_pts is not None else []) \
+                + ([f"item {spent}>{KAISETSU_ITEM_BUDGET[lg]}"]
+                   if spent is not None else [])
+            if bits:
+                bad[lg].append(f"{rec['id']} ({', '.join(bits)})")
+    for lg in _LANG_ORDER:
+        name = (f"every declared bank item's {lg} explanation sits inside the "
+                f"terseness bands ({n} declared items)")
+        detail = (f"{len(bad[lg])} over: {'; '.join(bad[lg][:6])}"
+                  f"{' …' if len(bad[lg]) > 6 else ''} — the next paper that "
+                  f"draws one fails its 詳細解説 line at stage 3 "
+                  f"(stage3-report-20260929_1 RC-S3-1). Cut the pane in "
+                  f"textbook_items.json / archive_items.json to band (item "
+                  f"budget {KAISETSU_ITEM_BUDGET[lg]}), then make choukai-bank")
+        if lg == primary or LANGS.required(lg):
+            check(name, not bad[lg], detail)
+        else:
+            warn(name, not bad[lg], detail)
+
+
 def check_choukai_archive_bank():
     """The ARCHIVE half's guards, re-derived FROM THE BANK.
 
@@ -14853,6 +15043,41 @@ def _kaisetsu_len(text: str) -> int:
     return len(text.strip())
 
 
+def kaisetsu_item_breaches(item: dict, lang: str) -> tuple[list[str], int | None, int | None]:
+    """One explanation item against the terseness bands, measured once.
+
+    Returns (fields over their cap as 「field n>cap」, the point count if it is
+    outside KAISETSU_POINTS_RANGE else None, the item's spend if it is over
+    KAISETSU_ITEM_BUDGET else None). `check_kaisetsu_length` reads a paper's
+    詳細解説 through it, and the 聴解 bank builders read every declared pane
+    through it (`build_textbook_bank.refuse_over_band_panes`, RC-S3-1) — one
+    measurement, so a declaration the builder admits is one the per-test line
+    passes once a paper draws it.
+    """
+    band = KAISETSU_BANDS[lang]
+    budget = KAISETSU_ITEM_BUDGET[lang]
+    lo, hi = KAISETSU_POINTS_RANGE
+    over = []
+    n = _kaisetsu_len(item.get("why_correct", ""))
+    if n > band["why"]:
+        over.append(f"why_correct {n}>{band['why']}")
+    for i, opt in enumerate(item.get("options_analysis") or [], 1):
+        n = _kaisetsu_len(opt)
+        if n > band["opt"]:
+            over.append(f"options_analysis[{i}] {n}>{band['opt']}")
+    points = item.get("points") or []
+    for i, pt in enumerate(points, 1):
+        n = _kaisetsu_len(pt)
+        if n > band["point"]:
+            over.append(f"points[{i}] {n}>{band['point']}")
+    spent = (_kaisetsu_len(item.get("why_correct", ""))
+             + sum(_kaisetsu_len(o) for o in (item.get("options_analysis") or []))
+             + sum(_kaisetsu_len(pt) for pt in points))
+    return (over,
+            None if lo <= len(points) <= hi else len(points),
+            spent if spent > budget else None)
+
+
 def check_kaisetsu_length(test_id: str, lang: str, data: dict):
     """詳細解説 prose must stay inside the terseness bands (KAISETSU_BANDS)."""
     band = KAISETSU_BANDS[lang]
@@ -14863,25 +15088,11 @@ def check_kaisetsu_length(test_id: str, lang: str, data: dict):
     for key, item in sorted(data.items()):
         if not isinstance(item, dict):
             continue
-        n = _kaisetsu_len(item.get("why_correct", ""))
-        if n > band["why"]:
-            over.append(f"{key}.why_correct {n}>{band['why']}")
-        for i, opt in enumerate(item.get("options_analysis") or [], 1):
-            n = _kaisetsu_len(opt)
-            if n > band["opt"]:
-                over.append(f"{key}.options_analysis[{i}] {n}>{band['opt']}")
-        points = item.get("points") or []
-        for i, pt in enumerate(points, 1):
-            n = _kaisetsu_len(pt)
-            if n > band["point"]:
-                over.append(f"{key}.points[{i}] {n}>{band['point']}")
-        if not (lo <= len(points) <= hi):
-            n_pts_bad.append(f"{key}({len(points)})")
-
-        spent = (_kaisetsu_len(item.get("why_correct", ""))
-                 + sum(_kaisetsu_len(o) for o in (item.get("options_analysis") or []))
-                 + sum(_kaisetsu_len(pt) for pt in points))
-        if spent > budget:
+        fields, n_pts, spent = kaisetsu_item_breaches(item, lang)
+        over += [f"{key}.{f}" for f in fields]
+        if n_pts is not None:
+            n_pts_bad.append(f"{key}({n_pts})")
+        if spent is not None:
             over_budget.append(f"{key}({spent})")
 
     name = f"{test_id}: {fname} inside the terseness bands"
@@ -17603,6 +17814,7 @@ def check_tests():
             check_dokkai_final_sentence_templates(d.name, gengo_prose, bi)
             check_dokkai_abs_quantifiers(d.name, opts)
             check_dokkai_option_length_balance(d.name, opts)
+            check_dokkai_option_mean(d.name, opts)
             check_chuuryaku(d.name, gengo_prose)
             check_dokkai_banned_stems(d.name, gengo_prose)
             check_mondai11_stems(d.name, gengo_prose)
@@ -18035,6 +18247,7 @@ def main():
         check_choukai_source_mix()
         check_choukai_textbook_bands()
         check_choukai_archive_bank()
+        check_choukai_bank_kaisetsu_bands()
         check_textbook_script_grammaticality()
         check_choukai_script_latin()
         check_draw_provenance()

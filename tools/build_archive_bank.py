@@ -85,8 +85,8 @@ sys.path.insert(0, str(ROOT / "tools"))
 
 from build_textbook_bank import (  # noqa: E402
     CHAR_RATE_OFFICIAL, EXPECTED_OPTIONS, PRINTED_OPTION_SECTIONS,
-    SPOKEN_CHOICE_RE, TYPE_BANDS, Refused, figure_dependent, speech_runs,
-    spoken_shape, window_span)
+    SPOKEN_CHOICE_RE, TYPE_BANDS, Refused, figure_dependent,
+    refuse_over_band_panes, speech_runs, spoken_shape, window_span)
 from choukai_segment import (  # noqa: E402
     ANSWER_SPLIT, OPTION_READING, expected_gaps, find_pauses, measure,
     slots_for)
@@ -538,6 +538,10 @@ def build_one(spec: dict) -> dict:
             f"{item_id}: the Japanese pane analyses "
             f"{len(payload.get('options_analysis') or [])} options, not "
             f"{len(options)}")
+    refuse_over_band_panes(
+        item_id, [(LANGS.order()[0], payload)]
+        + [(lg, learner[LANGS.content_field(lg)][key])
+           for lg in LANGS.learners() if LANGS.content_field(lg) in learner])
 
     return {
         "id": item_id,

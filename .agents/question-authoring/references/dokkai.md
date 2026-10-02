@@ -292,6 +292,10 @@ over its cap.
 | 反論への応答 | a named objection is taken seriously and answered on its own terms; it is not set up to be knocked down | ≤3 |
 | （実用文） | 問題10's email/notice/案内 members and 問題14 — no authorial voice, no move | — |
 
+**Cross-paper bar.** A MOVE the previous paper used twice may be assigned at most
+once here, and the persona 「〈役〉が〈N年分〉を数える」 may not repeat within two
+papers (qa-report-20260929_1 F7: 数えたことの報告 by a record-keeper, three papers running).
+
 **The cap is 2; the band it sits inside is measured, not chosen.** Official
 sittings re-measured by hand against this exact three-beat rubric (attributed
 assumption + explicit denial + 実は Y), essay surfaces only, 問題12 A+B as one
@@ -672,7 +676,7 @@ Per-passage bounds: each 問題10 passage 150–350 JP chars (ceiling 350; archi
 ~240, 問題11 to ~650. An official 短文 is *allowed* to be short; a generated
 one that's short is usually thin, not deliberate.
 
-**Option length band**: mean option length per paper **24–30** JP chars across all 20 items (official current era 26.3 JP chars).
+**Option length band**: mean option length per paper **24–30** JP chars across all 20 items — an AUTHORING target for generated papers (`check_dokkai_option_mean` WARNs outside it), not an official band: the 7 current-era sittings measure 22.93–28.15, mean 25.70 (all 31: 22.04–29.40; measured 2026-10-02, `jp_char_count` over the 80 options of 52–71 = `dokkai_profile.py` `mean_opt_len`). The older "26.3" here was the 問題6 用法 mean, copied by mistake.
 
 ### Sentence rhythm
 
@@ -832,6 +836,9 @@ All figures from `official_calibration.md` §4 — current era, n=7 sittings,
     spellings (7/2010 問題2 offers 伝達, and 12/2022 glosses 伝達する). Measured
     that way, 0 true hits in all 10 imported sittings (two substring false
     positives: 一日中, ごくごく). Not gated yet; a WARN is feasible on this measure.
+    Same direction: 公式がほかの注の**定義文の中で使う**語（例: 7/2022
+    『どっぷりはまる：深く入り込む』）は既知語として扱い、注を付けない
+    (qa-report-20260929_1 F4).
   - ✅ **TARGETS**: N1-level/rare words, specialized domain jargon, contextual metaphors.
   - **No answer leaks**: a gloss must not give away the answer to a question
     anchored on it. **Operational form, and now gated** (`check_note_answer_leak`,

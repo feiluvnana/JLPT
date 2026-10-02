@@ -267,6 +267,48 @@ class Refused(Exception):
     """An item did not survive the guards, so it is not banked."""
 
 
+def refuse_over_band_panes(item_id: str, panes: list[tuple[str, dict]]) -> None:
+    """Refuse a declaration whose explanation breaches the terseness bands.
+
+    THE HOLE (stage3-report-20260929_1 RC-S3-1, 2026-09-29). Three 問題5-1
+    declarations in `archive_items.json` were banked with panes far over
+    `KAISETSU_ITEM_BUDGET` (ja 244/241, vi 648/562/539). Nothing measured them
+    until a paper DREW one — 20260929_1 drew 2017-12 — and the breach surfaced
+    as that paper's per-test 詳細解説 FAIL at stage 3, two stages and one
+    context away from the declaration that held the text. The other two were
+    waiting to fail the next paper that drew them.
+
+    THE RULE: a declared pane is measured here, at bank-build time, with the
+    gate's own `check_consistency.kaisetsu_item_breaches` (`_kaisetsu_len`,
+    `KAISETSU_BANDS`, `KAISETSU_ITEM_BUDGET` — imported, never restated), so
+    the error lands on the declaration's author. `make check`'s
+    `check_choukai_bank_kaisetsu_bands` is the backstop for a bank built before
+    this rule. REPAIR: cut the pane in the declaration file to band (the
+    budget, not the caps, is what shortens it; never reword into a
+    placeholder), then `make choukai-bank`.
+
+    `panes` is [(language code, pane dict), …] — the primary first.
+    """
+    import check_consistency as _cc      # lazy: the gate loads this module too
+    bad = []
+    for lang, pane in panes:
+        fields, n_pts, spent = _cc.kaisetsu_item_breaches(pane or {}, lang)
+        bits = list(fields)
+        if n_pts is not None:
+            lo, hi = _cc.KAISETSU_POINTS_RANGE
+            bits.append(f"{n_pts} points (wants {lo}–{hi})")
+        if spent is not None:
+            bits.append(f"item {spent}>{_cc.KAISETSU_ITEM_BUDGET[lang]}")
+        if bits:
+            bad.append(f"{lang}: " + ", ".join(bits))
+    if bad:
+        raise Refused(
+            f"{item_id}: explanation over the terseness bands — "
+            + "; ".join(bad)
+            + " (exam-model-answer bands; stage3-report-20260929_1 RC-S3-1). "
+              "Cut the pane in the declaration to band, then make choukai-bank")
+
+
 def rate_band_for(book: str) -> tuple[float, float]:
     """The CHAR_RATE band this source's pacing is measured against.
 
@@ -591,6 +633,11 @@ def build_one(spec: dict) -> dict:
                 f"{spec['id']}: the {LANGS.name(lg)} pane analyses "
                 f"{len(pane.get('options_analysis') or [])} options, not {len(options)}")
         learner[f + "_payload"] = pane
+    refuse_over_band_panes(
+        spec["id"], [(LANGS.order()[0], payload)]
+        + [(lg, learner[LANGS.content_field(lg) + "_payload"])
+           for lg in LANGS.learners()
+           if LANGS.content_field(lg) + "_payload" in learner])
 
     return {
         "id": spec["id"],

@@ -74,6 +74,19 @@ disproportionate: absence in OCR extracts is weak evidence, so a missing
 citation says nothing about an entry's band. They are audited when drawn, under
 §2.5. Not gated: string entries have no field to hold the citation.
 
+**Exception, `orthography` only: a zero-hit entry is `needs_evidence`, i.e.
+undrawable** (2026-10-02, qa-report-20260929_1 F2). 問題2 asks the candidate to
+WRITE the kanji, and 基盤 (0 hits anywhere) reached 問題2-7 under "audited when
+drawn" — the second paper running (after 懸念). One-off sweep, headword
+substring over the four textbook extracts plus the 31 sittings' `booklet.md` +
+`script.md`: **57 of 243 drawable entries had 0 hits** (削減, 措置, 火山 … — OCR
+absence, so many are surely N2), now **186 drawable**, window 10 → 8, 和語 side
+36 → 30. They sit in a top-level `needs_evidence` map shaped like
+`retired_entries` (the string stays in its list, so provenance resolves);
+`drawable()` filters both. An entry leaves the map when a page is opened and
+quoted (book + page/line + headword) — never on a grep total. The other pools
+keep the "audited when drawn" rule above.
+
 **An `orthography` entry containing a 表外漢字 is a pool defect — delete it and
 re-draw (`sample_items.py --reroll orthography`), never patch the sentence.**
 問題2 prints all four options, so every glyph in the grid must be standard
@@ -514,7 +527,7 @@ required it. `exam-qa-review` §2.5's "every key N3-or-lower is TOO_EASY"
 test does not apply to a 問題5 key for the same reason, and its founding line in
 `check_pool_gloss_band()`'s docstring cites the old section name.
 
-## Composition is drawn, not authored — three shapes `draw()` enforces
+## Composition is drawn, not authored — four shapes `draw()` enforces
 
 **Most 文字・語彙 quotas are properties of the DRAW, not writing choices.** The
 和語 share of 問題2, the 訓読み count of 問題1 and the katakana rate of 問題5/6 are
@@ -528,6 +541,7 @@ the thing being corrected for. **Never re-derive a target from
 |---|---|---|---|
 | `paraphrase`, `usage` | `sample_katakana_capped()` | `n` Bernoulli(`KATAKANA_TARGET_RATE`) trials pick the katakana slots, capped at `KATAKANA_CAP` | katakana headword in 3/35 問題5 and 1/35 問題6 items |
 | `kanji_reading` | `sample_kun_capped()` | 訓読み count inside `KUN_FLOOR`–`KUN_CAP` = **2–2 of 5** (floor 1 until 2026-09-28), both bounds, `--reroll-one` included; per-slot rate `KUN_TARGET_RATE` = 14/35 | `is_kun_target()` scores 14 of the 35 current-era targets 訓 — exactly 2 in each of the seven sittings |
+| `grammar_p7` | `sample_keigo_capped(dist=…)` | 敬語 count (`is_keigo_grammar()`: the pool's `敬語:` prefix; 使役 not counted) drawn from `GRAMMAR_P7_KEIGO_DIST`, capped at `GRAMMAR_P7_KEIGO_CAP` = 2; `--reroll`/`--reroll-one` count kept entries | keyed 問題7 敬語: 0 in 6, 1 in 21, 2 in 4 of 31 sittings (RC-BP-1, `qa/blueprint-rerolls-20260929_1.md`) |
 | `orthography` | `sample_wago_floor()` | 和語 count drawn from the archive's own histogram `WAGO_DIST` (floor `WAGO_FLOOR`), bare 2-kanji compounds ≤ `COMPOUND_CAP` = 3 | 和語 1–3 and compounds 1–3 in **31 of 31** sittings |
 
 Two things the 2026-08-21 additions record, because both were shipped defects:
@@ -544,6 +558,18 @@ Two things the 2026-08-21 additions record, because both were shipped defects:
 `is_kun_target()`, `is_wago_orthography()` and `is_bare_compound()` are the
 classifiers, and `tools/check_consistency.py` imports them, so the sampler and
 the gate can never disagree about what a branch is.
+
+- **敬語 cap (RC-BP-1, 2026-10-02).** The 2026-09-28 audit's never-drawn 敬語
+  entries weighed 10**9+1, so `20260929_1` drew 7 of 12. Now capped at the
+  archive's max, with the count drawn from the histogram rather than filled to
+  the cap (a fixed 2 would make the archive's max its norm). `main()` refuses to
+  write a draw that adds a 敬語 entry over the cap.
+- **`is_kun_target()` per-kanji rulings (RC-9, qa-report-20260929_1 §4).** A
+  multi-kanji target with printed okurigana whose other kanji cut into 訓-shaped
+  chunks reads 訓 (夜明け, 田植え, 手続き); a no-tail 湯桶/重箱 word does not (素直,
+  両替, 船便). Measured: 24 pool flips, the archive's 14/35 (2 per sitting)
+  unchanged, and only `20260929_1`'s membership moves (素直 → 夜明け, still 2).
+  Its docstring lists what the cut still gets wrong (夕暮れ, 怒鳴る, 認め印 …).
 
 **Growth history, briefly:** both pools were grown and re-curated across
 several 2026-08-11 passes — legacy 2級-era katakana dumps and off-domain
@@ -905,6 +931,11 @@ flat ledger migrates automatically.
   and a pool edit moves them. As with every window here, the repair for a
   too-optimistic promise is to make the arithmetic honest, never to lower a
   number until the gate goes green.
+- **`grammar_p7`'s 敬語 side is NOT a window-sizing sub-pool** (RC-BP-1,
+  2026-10-02). Its cap has no floor (the archive has 0 in 6 sittings), so a
+  cooled-out 敬語 side just draws fewer 敬語 points. `cooldown_for()` sizes the
+  PLAIN side at all `n` slots; dividing the 14 敬語 entries by the cap, as
+  `quick_response` does, would have cut the category's window 10 → 5.
 - **...and it is not only the grammar pair: EVERY pool category shares one
   rotation space with every other (2026-09-28).** Recency has always been by
   WORD across categories (below), so a `kanji_reading` 「柔軟(じゅうなん)」, an
@@ -1364,6 +1395,9 @@ seed-shopping (qa-report-20260928_1 RC-2). **`--exclude-theme <THEME>`**
 recorded in the seed token as `reroll-one(cat:i,seed,exclude=A|B)` (RC-10).
 Before writing, `--reroll-one` prints the new entry's identity tokens against the
 cooldown window — read that line before accepting a grammar redraw (RC-R2-1).
+It also excludes every entry an earlier `--reroll-one` of the SAME index rejected
+(read from this paper's `reroll_log`, pool categories only), so a third reroll
+of a slot cannot hand back the first reject (RC-BP-1 (c), 2026-10-02).
 
 **FIXED 2026-09-07 — `--reroll-one` used to be a NO-OP on an entry the pool had
 never drawn before.** `draw()` weights by `ago(x) + 1` with `ago = 10**9` for a

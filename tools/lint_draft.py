@@ -5,6 +5,7 @@ Fast Deterministic Pre-Linter & Zero-Token Auto-Fixer for JLPT N2 Drafts.
 Run this BEFORE invoking QA or committing a draft to instantly catch & auto-repair
 mechanical flaws that would otherwise trigger costly QA review round-trips:
 - Choukai script contraction rate (縮約形), reaction turns, and filler band
+  (report-only on a composed paper — `--fix` never rewrites a composed script)
 - Choukai banned formulas, split turns, and accidental answer reveals
 - Dokkai absolute quantifier / categorical denial option markers
 - Dokkai numbered marker and （注N） pairing
@@ -539,6 +540,15 @@ def lint_gengo_dokkai(gengo_text: str, report: LintReport, fix: bool = False) ->
     return gengo_text
 
 
+def is_composed(test_dir: Path) -> bool:
+    """True when the paper's 聴解 half was composed from banked recordings."""
+    try:
+        meta = json.loads((Path(test_dir) / "聴解_チャプター.json").read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return False
+    return isinstance(meta, dict) and meta.get("source") == "composed"
+
+
 def lint_test_dir(test_dir: Path, fix: bool = False):
     test_dir = Path(test_dir)
     report = LintReport(test_dir.name)
@@ -555,7 +565,21 @@ def lint_test_dir(test_dir: Path, fix: bool = False):
         if fix and new_gengo != gengo_text and gengo_path.is_file():
             gengo_path.write_text(new_gengo, encoding="utf-8")
 
-    if script_text:
+    if script_text and is_composed(test_dir):
+        # A COMPOSED script is the verbatim transcript of real recordings
+        # (compose_choukai.py owns it; the chapters' `script_sha` pins it). Its
+        # CHOUKAI checks are TTS-era authoring targets, so they report only and
+        # `--fix` never touches it: the old rewrite injected contractions the
+        # audio does not speak (stage3-report-20260929_1 RC-S3-2 / RC-S3-3).
+        sub = LintReport(test_dir.name)
+        lint_choukai_script(script_text, sub, fix=False)
+        for cat, msg in sub.errors + sub.warnings:
+            report.notice(cat, f"(composed 聴解 — report only) {msg}")
+        if fix:
+            report.notice("CHOUKAI-COMPOSED", "聴解スクリプト.txt is composed "
+                          "(聴解_チャプター.json source=composed) — --fix left it "
+                          "untouched; repair the draw with `make mp3`.")
+    elif script_text:
         new_script = lint_choukai_script(script_text, report, fix=fix)
         if fix and new_script != script_text and script_path.is_file():
             script_path.write_text(new_script, encoding="utf-8")

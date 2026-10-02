@@ -13925,6 +13925,42 @@
       "Nếu cứ chiều chuộng người mới chỉ vì họ là người mới thì họ sẽ mãi không thạo việc."
     ]
   },
+  "v-o-sanfujinka": {
+    "meaning": "Khoa sản phụ",
+    "usage": "「産婦人科に通う」, 「産婦人科の医師」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Biết mình có thai, tôi đã đặt lịch khám ở khoa sản gần nhà."
+    ]
+  },
+  "v-o-shitsukeru": {
+    "meaning": "Dạy dỗ, rèn nếp",
+    "usage": "「子どもをしつける」, 「犬をしつける」. Danh từ: 「しつけ」 (nền nếp dạy dỗ).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi đang dạy dỗ con giữ lễ phép."
+    ]
+  },
+  "v-o-shimijimi": {
+    "meaning": "Thấm thía, sâu sắc",
+    "usage": "「しみじみと思う」, 「しみじみ感じる」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Lâu rồi mới về quê, tôi thấm thía lòng biết ơn bố mẹ."
+    ]
+  },
+  "v-o-shussaniwai": {
+    "meaning": "Quà mừng sinh em bé",
+    "usage": "「出産祝いを贈る」, 「出産祝いをもらう」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Đồng nghiệp vừa sinh em bé nên tôi tặng quà mừng."
+    ]
+  },
   "v-o-teikou": {
     "meaning": "Chống cự, chống lại; cảm giác ngại, khó chấp nhận",
     "usage": "「計画に抵抗する」, 「最後まで抵抗する」, 「〜に抵抗がある」 (thấy ngại với…), 「抵抗を感じる」.",
@@ -13945,6 +13981,15 @@
       "Mẹ tôi sống một mình, việc gì cũng trông cậy vào chị tôi ở nhà bên cạnh."
     ]
   },
+  "v-o-kansetsu": {
+    "meaning": "Gián tiếp",
+    "usage": "「間接的に」, 「間接照明」. Trái nghĩa là 「直接」 (trực tiếp).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Dùng ánh sáng gián tiếp thì căn phòng có không khí dịu nhẹ."
+    ]
+  },
   "v-o-kioku": {
     "meaning": "Ký ức, trí nhớ; sự ghi nhớ",
     "usage": "「記憶がない」 (không nhớ gì), 「〜の記憶をたよりに」 (dựa vào trí nhớ của…), する動詞: 「記憶している」.",
@@ -13953,6 +13998,69 @@
     "example_notes": [
       "Tôi không còn nhớ gì về lúc trước và sau vụ tai nạn, tỉnh lại thì đã nằm trên giường bệnh.",
       "Dựa vào trí nhớ của bà, chúng tôi đi tìm ngôi nhà cả gia đình từng sống ngày xưa."
+    ]
+  },
+  "v-o-jikoryuu": {
+    "meaning": "Theo cách riêng của mình, tự mày mò",
+    "usage": "「自己流で覚える」, 「自己流のやり方」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Nấu ăn tôi toàn tự mày mò học nên không làm đúng theo công thức được."
+    ]
+  },
+  "v-o-kinku": {
+    "meaning": "Từ cấm kỵ, lời không nên nói",
+    "usage": "「禁句を口にする」, 「それは禁句だ」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Người ta nói trước mặt thí sinh thì từ 「落ちる」 (trượt) là từ cấm kỵ."
+    ]
+  },
+  "v-o-kesshin": {
+    "meaning": "Quyết tâm, quyết định trong lòng",
+    "usage": "「決心する」, 「決心がつく」, 「決心を固める」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Anh ấy đã quyết tâm sang năm sẽ đi du học."
+    ]
+  },
+  "v-o-kossori": {
+    "meaning": "Lén lút, âm thầm",
+    "usage": "「こっそり〜する」, 「こっそりと」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Để không đánh thức cả nhà, nửa đêm tôi lén ăn bánh kẹo trong bếp."
+    ]
+  },
+  "v-o-keihi": {
+    "meaning": "Kinh phí, chi phí",
+    "usage": "「経費がかかる」, 「経費を削る」 (cắt giảm chi phí), 「経費で落とす」 (tính vào chi phí công ty).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tiền đi lại khi đi công tác có thể quyết toán vào chi phí của công ty."
+    ]
+  },
+  "v-o-shishutsu": {
+    "meaning": "Chi tiêu, khoản chi",
+    "usage": "「支出を抑える」, 「支出が増える」. Trái nghĩa: 「収入」 (thu nhập).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tháng này vì chuyển nhà nên khoản chi vượt quá thu nhập."
+    ]
+  },
+  "v-o-shotoku": {
+    "meaning": "Thu nhập, thu nhập chịu thuế",
+    "usage": "「所得が低い」, 「所得税」 (thuế thu nhập).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Thu nhập tăng thì thuế phải nộp cũng tăng."
     ]
   },
   "v-o-fukumeru": {
@@ -13965,6 +14073,33 @@
       "Tôi đã làm xong toàn bộ bài tập hè, kể cả bài nghiên cứu tự chọn."
     ]
   },
+  "v-o-kanjou": {
+    "meaning": "Tiền thanh toán, hóa đơn; tính tiền",
+    "usage": "「お勘定をお願いします」 (cho tôi thanh toán), 「勘定を済ませる」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Ăn xong, tôi nhờ nhân viên tính tiền."
+    ]
+  },
+  "v-o-kujibiki": {
+    "meaning": "Bốc thăm, rút thăm",
+    "usage": "「くじ引きで決める」, 「くじ引きに当たる」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Nhờ bốc thăm của hội dân phố, tôi trúng vé du lịch suối nước nóng."
+    ]
+  },
+  "v-o-shougaisha": {
+    "meaning": "Người khuyết tật",
+    "usage": "「障がい者用」, 「障がい者を支援する」. Thường viết 「障がい」 xen chữ hiragana.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Cửa hàng này không có bậc ở lối vào nên người khuyết tật cũng dễ vào."
+    ]
+  },
   "v-o-eikyuuni": {
     "meaning": "Mãi mãi, vĩnh viễn về sau",
     "usage": "「永久に残る」, 「永久に続く」, 「永久に〜わけではない」 (không phải mãi mãi…). Hán Việt 「永久」 là \"vĩnh cửu\". Từ gần: 「｜永遠《えいえん》に」.",
@@ -13973,6 +14108,33 @@
     "example_notes": [
       "Tôi muốn giữ mãi bức ảnh này làm kỷ niệm của gia đình.",
       "Lòng tin một khi đã mất có lẽ sẽ không bao giờ trở lại."
+    ]
+  },
+  "v-o-kokuchi": {
+    "meaning": "Thông báo, báo cho biết",
+    "usage": "「告知する」, 「告知を受ける」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Lịch trình sự kiện sẽ được thông báo trước trên trang web."
+    ]
+  },
+  "v-o-jizenni": {
+    "meaning": "Trước, từ trước (khi việc xảy ra)",
+    "usage": "「事前に連絡する」, 「事前の準備」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi đã xem bản đồ để biết đường từ trước nên không bị lạc."
+    ]
+  },
+  "v-o-shuushin": {
+    "meaning": "Đi ngủ, đi nghỉ (cách nói trang trọng)",
+    "usage": "「就寝時間」, 「就寝前」. Trang trọng hơn 「寝る」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Ở nhà trọ này, đèn hành lang tắt theo giờ đi ngủ lúc mười giờ tối."
     ]
   },
   "v-o-kanau": {
@@ -13995,6 +14157,141 @@
       "Thành phố đã chốt phương án làm một mái che lớn ở quảng trường trước ga."
     ]
   },
+  "v-o-shiokagen": {
+    "meaning": "Độ mặn vừa phải, lượng muối",
+    "usage": "「塩加減を見る」, 「塩加減が難しい」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi vừa nếm vừa điều chỉnh độ mặn của món súp."
+    ]
+  },
+  "v-o-shouhikigen": {
+    "meaning": "Hạn sử dụng (hạn ăn an toàn)",
+    "usage": "「消費期限が切れる」, 「消費期限を過ぎる」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Cơm hộp có hạn sử dụng đến hôm nay được bán nửa giá."
+    ]
+  },
+  "v-o-kamiomutsu": {
+    "meaning": "Tã giấy",
+    "usage": "「紙おむつを替える」, 「紙おむつをつける」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Vì em bé, tôi đã mua cả một thùng tã giấy."
+    ]
+  },
+  "v-o-kuiki": {
+    "meaning": "Khu vực, vùng",
+    "usage": "「危険区域」 (khu vực nguy hiểm), 「区域を決める」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Ở khu vực này, việc thi công sau mười giờ tối bị cấm."
+    ]
+  },
+  "v-o-koukyuuna": {
+    "meaning": "Cao cấp, sang trọng",
+    "usage": "「高級な店」, 「高級品」, 「高級感」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Vào ngày kỷ niệm, chúng tôi đã dùng bữa ở một nhà hàng cao cấp."
+    ]
+  },
+  "v-o-kenchikuka": {
+    "meaning": "Kiến trúc sư",
+    "usage": "「建築家に頼む」. Nói chung cũng gặp 「建築士」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Một kiến trúc sư nổi tiếng đã thiết kế bảo tàng mỹ thuật mới."
+    ]
+  },
+  "v-o-gekigen": {
+    "meaning": "Giảm mạnh, giảm đột ngột",
+    "usage": "「激減する」, 「人口が激減」. Trái nghĩa: 「激増」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Dân số giới trẻ đã giảm mạnh trong mười năm qua."
+    ]
+  },
+  "v-o-gekizou": {
+    "meaning": "Tăng mạnh, tăng đột biến",
+    "usage": "「激増する」, 「事故が激増」. Trái nghĩa: 「激減」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Khách du lịch tăng đột biến nên khu vực quanh ga trở nên đông đúc."
+    ]
+  },
+  "v-o-juujitsukan": {
+    "meaning": "Cảm giác viên mãn, trọn vẹn",
+    "usage": "「充実感がある」, 「充実感を味わう」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Ngày nào cũng bận nhưng công việc đáng làm nên tôi thấy cuộc sống trọn vẹn."
+    ]
+  },
+  "v-o-kikitoru": {
+    "meaning": "Nghe và hiểu, nghe ra",
+    "usage": "「話を聞き取る」, 「聞き取れない」. Danh từ: 「聞き取り」 (bài nghe chép/nghe hiểu).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Nghe hiểu hết cuộc hội thoại tốc độ nhanh bằng ngoại ngữ là điều khó."
+    ]
+  },
+  "v-o-kisoteki": {
+    "meaning": "Mang tính cơ bản, nền tảng",
+    "usage": "「基礎的な知識」, 「基礎的な練習」. Danh từ: 「基礎」 (cơ sở, nền tảng).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi đang học lại từ phần ngữ pháp cơ bản của tiếng Nhật."
+    ]
+  },
+  "v-o-konkiduyoi": {
+    "meaning": "Kiên trì, bền bỉ",
+    "usage": "「根気強く待つ」, 「根気強い人」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Kiên trì tưới nước mãi, cuối cùng hoa cũng nở."
+    ]
+  },
+  "v-o-gouriteki": {
+    "meaning": "Hợp lý, có lý",
+    "usage": "「合理的な考え」, 「合理的に進める」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Anh ấy là người việc gì cũng quyết định bằng phán đoán hợp lý."
+    ]
+  },
+  "v-o-kokorogake": {
+    "meaning": "Thái độ, sự chú tâm thường ngày",
+    "usage": "「日頃の心掛け」, 「心掛けがいい」. Động từ: 「心掛ける」 (chú tâm, cố gắng).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Nhờ thái độ sống thường ngày tốt nên lúc nào cũng được mọi người giúp đỡ."
+    ]
+  },
+  "v-o-janru": {
+    "meaning": "Thể loại",
+    "usage": "「ジャンルを問わず」 (bất kể thể loại), 「映画のジャンル」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Thể loại âm nhạc tôi thích là jazz và nhạc cổ điển."
+    ]
+  },
   "v-o-kugiri": {
     "meaning": "Chỗ ngắt, chỗ phân đoạn; điểm dừng của công việc",
     "usage": "「区切りをつける」 (tạm dừng ở một chỗ), 「区切りのいいところで」 (ở chỗ tiện dừng), 「意味の区切り」, 「話題ごとの区切り」.",
@@ -14005,6 +14302,87 @@
       "Khi thuyết trình, phân rõ chỗ ngắt giữa các chủ đề thì người nghe dễ theo."
     ]
   },
+  "v-o-kyouchousei": {
+    "meaning": "Tính hòa đồng, tinh thần hợp tác",
+    "usage": "「協調性がある」, 「協調性に欠ける」 (thiếu tinh thần hợp tác).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Nhân viên mới không chỉ được yêu cầu năng lực làm việc mà còn cả tính hòa đồng."
+    ]
+  },
+  "v-o-keiyakusho": {
+    "meaning": "Bản hợp đồng",
+    "usage": "「契約書にサインする」, 「契約書を交わす」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Trước khi ký tên, tôi đã đọc kỹ các điều kiện chi tiết trong hợp đồng."
+    ]
+  },
+  "v-o-kousei": {
+    "meaning": "Công bằng, công minh",
+    "usage": "「公正な判断」, 「公正に扱う」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Việc thẩm định phải được tiến hành một cách công minh."
+    ]
+  },
+  "v-o-shiboukou": {
+    "meaning": "Trường nguyện vọng",
+    "usage": "「志望校に合格する」, 「第一志望校」 (trường nguyện vọng 1).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi bàn với thầy cô rồi quyết định trường nguyện vọng một."
+    ]
+  },
+  "v-o-shiboudouki": {
+    "meaning": "Động cơ ứng tuyển",
+    "usage": "「志望動機を述べる」, 「志望動機を書く」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Trong buổi phỏng vấn, tôi được hỏi động cơ chọn công ty."
+    ]
+  },
+  "v-o-shikyuugaku": {
+    "meaning": "Số tiền được cấp, mức chi trả",
+    "usage": "「支給額を決める」, 「支給額が増える」. Động từ: 「支給する」 (cấp, chi trả).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Mức trợ cấp đi lại được quy định theo nội quy công ty."
+    ]
+  },
+  "v-o-shihonkin": {
+    "meaning": "Vốn điều lệ, vốn góp",
+    "usage": "「資本金を増やす」, 「資本金は〜円」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Công ty vừa mới thành lập này có vốn điều lệ là mười triệu yên."
+    ]
+  },
+  "v-o-kuraianto": {
+    "meaning": "Khách hàng (đặt công việc)",
+    "usage": "「クライアントに提案する」, 「クライアントの要望」. Gần với 「取引先」 hoặc 「お客様」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi đang bận chuẩn bị bài thuyết trình cho buổi họp với khách hàng mới."
+    ]
+  },
+  "v-o-gomasuri": {
+    "meaning": "Nịnh bợ, kẻ nịnh hót",
+    "usage": "「ごますりが上手だ」. Cụm động từ: 「ごまをする」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Người đó suốt ngày nịnh sếp nên bị đồng nghiệp ghét."
+    ]
+  },
   "v-o-koukai": {
     "meaning": "Hối hận, ân hận về việc mình đã làm hay đã không làm",
     "usage": "「〜を後悔する」, 「〜したことを後悔している」, 「ずっと後悔している」.",
@@ -14013,6 +14391,15 @@
     "example_notes": [
       "Ông tôi đến cuối đời vẫn ân hận vì đã bán ngôi nhà cũ.",
       "Gọi món quá nhiều, ăn không hết nên tôi hối hận."
+    ]
+  },
+  "v-o-shidousha": {
+    "meaning": "Người hướng dẫn, người lãnh đạo",
+    "usage": "「指導者になる」, 「指導者を育てる」, 「優れた指導者」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Dưới sự dẫn dắt của một người hướng dẫn xuất sắc, đội đã trưởng thành nhiều."
     ]
   },
   "v-o-tekunikku": {
@@ -14035,6 +14422,15 @@
       "Táo ở cửa hàng này tuy vẻ ngoài không đẹp nhưng vị không thua gì táo đắt tiền."
     ]
   },
+  "v-o-kouhyou": {
+    "meaning": "Được đánh giá tốt, được ưa chuộng",
+    "usage": "「好評を得る」, 「好評だ」. Trái nghĩa: 「不評」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Sản phẩm mới ra mắt được giới trẻ đánh giá cao."
+    ]
+  },
   "v-o-nuno": {
     "meaning": "Vải, tấm vải",
     "usage": "「厚い布」, 「丈夫な布」, 「布を広げる」, 「布でできている」 (làm bằng vải).",
@@ -14043,6 +14439,69 @@
     "example_notes": [
       "Để may rèm cửa, tôi đã mua ba mét vải dày ở cửa hàng.",
       "Chiếc lều này làm bằng loại vải bền, không thấm nước mưa."
+    ]
+  },
+  "v-o-guranpuri": {
+    "meaning": "Giải lớn nhất, giải Grand Prix",
+    "usage": "「グランプリを獲得する」, 「グランプリに輝く」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Một bé gái tiểu học đã được chọn nhận giải Grand Prix tại cuộc thi làm bánh."
+    ]
+  },
+  "v-o-geinoujin": {
+    "meaning": "Nghệ sĩ, người của làng giải trí",
+    "usage": "「芸能人に会う」, 「芸能界」 (làng giải trí).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tình cờ tôi thấy một nghệ sĩ nổi tiếng ở nhà ga."
+    ]
+  },
+  "v-o-shibai": {
+    "meaning": "Vở kịch, diễn kịch",
+    "usage": "「芝居を見る」. 「芝居を打つ」 nghĩa là giả vờ, dựng chuyện.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Cuối tuần, tôi cùng bạn đến nhà hát xem kịch."
+    ]
+  },
+  "v-o-kikite": {
+    "meaning": "Người nghe",
+    "usage": "「聞き手の反応」. Trái nghĩa là 「話し手」 (người nói).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Người nói vừa nhìn mặt người nghe vừa thay đổi tốc độ nói."
+    ]
+  },
+  "v-o-geimei": {
+    "meaning": "Nghệ danh",
+    "usage": "「芸名をつける」. Trái nghĩa: 「本名」 (tên thật).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Ca sĩ đó hoạt động bằng nghệ danh chứ không phải tên thật."
+    ]
+  },
+  "v-o-kumiawase": {
+    "meaning": "Sự kết hợp, tổ hợp",
+    "usage": "「色の組み合わせ」, 「組み合わせを考える」. Động từ: 「組み合わせる」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Món này có sự kết hợp giữa vị ngọt và vị cay thật tuyệt vời."
+    ]
+  },
+  "v-o-kurouto": {
+    "meaning": "Người chuyên nghiệp, dân trong nghề",
+    "usage": "Đọc đặc biệt 「くろうと」 (không đọc げんじん). 「玄人向け」. Trái nghĩa: 「素人」 (しろうと).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Cô ấy vẽ tranh chỉ là sở thích nhưng tay nghề khiến cả dân chuyên cũng ngạc nhiên."
     ]
   },
   "v-o-shoho": {
@@ -14065,6 +14524,42 @@
       "Tôi đoán đường sẽ vắng nhưng đã đoán sai, ra tới ga mất cả một tiếng."
     ]
   },
+  "v-o-sanpobiyori": {
+    "meaning": "Ngày đẹp trời để đi dạo",
+    "usage": "「散歩日和だ」. Cùng cách tạo từ với 「行楽日和」, 「洗濯日和」 (ngày thích hợp để đi chơi, giặt đồ).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Bầu trời xanh, gió dịu, một buổi sáng thật đẹp để đi dạo."
+    ]
+  },
+  "v-o-shizunofu": {
+    "meaning": "Mùa vắng khách, mùa thấp điểm",
+    "usage": "「シーズンオフに行く」. Trái nghĩa: 「シーズン」 (mùa cao điểm).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Khu trượt tuyết trên núi vào mùa thấp điểm vắng người, hiu quạnh."
+    ]
+  },
+  "v-o-kouzui": {
+    "meaning": "Lũ lụt",
+    "usage": "「洪水が起きる」, 「洪水の被害」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Mưa lớn làm sông tràn bờ, thị trấn chịu thiệt hại do lũ lụt."
+    ]
+  },
+  "v-o-jinsai": {
+    "meaning": "Thảm họa do con người gây ra",
+    "usage": "Trái nghĩa: 「天災」 (thiên tai). 「人災だ」, 「人災と言える」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Người ta nói sông tràn bờ là thảm họa do con người, vì khâu quản lý có sai sót."
+    ]
+  },
   "v-o-chokuzen": {
     "meaning": "Ngay trước (một việc, một thời điểm)",
     "usage": "「〜の直前」, 「〜する直前に」, 「出発の直前」. Trái nghĩa: 「｜直後《ちょくご》」 (ngay sau).",
@@ -14073,6 +14568,15 @@
     "example_notes": [
       "Ngay trước lễ tốt nghiệp, tôi nhận được một bức thư ngắn từ bạn.",
       "Ngay trước khi cửa tàu đóng, một người đàn ông chạy ào vào."
+    ]
+  },
+  "v-o-sakyuu": {
+    "meaning": "Cồn cát",
+    "usage": "「砂丘を歩く」, 「鳥取砂丘」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi đã trải nghiệm cưỡi lạc đà trên cồn cát ở Tottori."
     ]
   },
   "v-o-omoigakenai": {
@@ -14095,6 +14599,15 @@
       "Bài báo đó viết về cảnh vụ tai nạn khá phóng đại."
     ]
   },
+  "v-o-kankoumeisho": {
+    "meaning": "Điểm tham quan nổi tiếng",
+    "usage": "「観光名所を巡る」, 「観光名所になる」. 「名所」 đọc めいしょ.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Nhắc đến điểm tham quan của thị trấn này thì trước hết phải kể đến tòa lâu đài cổ."
+    ]
+  },
   "v-o-keikaku": {
     "meaning": "Kế hoạch; lập kế hoạch",
     "usage": "「計画を立てる」 (lập kế hoạch), 「計画を練る」 (cân nhắc kỹ kế hoạch), 「計画通り」 (đúng kế hoạch), する動詞: 「計画する」.",
@@ -14102,6 +14615,42 @@
     "compare": "「計画」: kế hoạch nói chung: 「計画を立てる」. 「プラン」: từ ngoại lai, thay được bằng 「計画」. 「｜企画《きかく》」: nghĩ ra và dựng kế hoạch cho sự kiện, chương trình.",
     "example_notes": [
       "Anh tôi đã mất một năm để cân nhắc kế hoạch đạp xe vòng quanh Nhật Bản."
+    ]
+  },
+  "v-o-goraku": {
+    "meaning": "Giải trí, trò tiêu khiển",
+    "usage": "「娯楽施設」, 「娯楽番組」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Ở làng ngày xưa, lễ hội là một trong số ít thú vui giải trí."
+    ]
+  },
+  "v-o-kizuguchi": {
+    "meaning": "Miệng vết thương",
+    "usage": "「傷口を洗う」, 「傷口がふさがる」 (vết thương liền lại).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi rửa vết thương do ngã bằng nước rồi sát trùng."
+    ]
+  },
+  "v-o-kiryoku": {
+    "meaning": "Sức lực tinh thần, ý chí",
+    "usage": "「気力がわく」, 「気力を失う」, 「気力に満ちる」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Kiệt sức đến mức không còn tinh thần để bắt đầu làm bất cứ việc gì."
+    ]
+  },
+  "v-o-kinnikutsuu": {
+    "meaning": "Đau cơ",
+    "usage": "「筋肉痛になる」, 「筋肉痛が治る」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Lâu rồi mới chạy nên hôm sau tôi bị đau cơ dữ dội."
     ]
   },
   "v-o-oginau": {
@@ -14122,6 +14671,42 @@
     "example_notes": [
       "Từ khi trưởng phòng mới đến, phòng kinh doanh liên tục làm ăn tốt.",
       "Năm nay đội đang có phong độ tốt, thắng năm trận liền từ đầu mùa."
+    ]
+  },
+  "v-o-kansen": {
+    "meaning": "Lây nhiễm, nhiễm bệnh",
+    "usage": "「感染する」, 「感染を防ぐ」, 「感染が広がる」, 「感染症」 (bệnh truyền nhiễm).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Rửa tay là điều cơ bản để phòng lây nhiễm cảm cúm và các bệnh tương tự."
+    ]
+  },
+  "v-o-geri": {
+    "meaning": "Tiêu chảy",
+    "usage": "「下痢をする」, 「下痢が続く」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Uống quá nhiều đồ lạnh nên từ sáng tôi bị tiêu chảy liên tục."
+    ]
+  },
+  "v-o-koraeru": {
+    "meaning": "Chịu đựng, nén lại",
+    "usage": "「痛みをこらえる」, 「笑いをこらえる」, 「涙をこらえる」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi cố hết sức nén lại để nước mắt không trào ra."
+    ]
+  },
+  "v-o-shikai": {
+    "meaning": "Tầm nhìn",
+    "usage": "「視界が悪い」, 「視界に入る」, 「視界が広がる」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Sương mù dày đặc khiến tầm nhìn gần như bằng không."
     ]
   },
   "v-o-chuushouteki": {
@@ -14154,6 +14739,15 @@
       "Những người bị thương nhẹ tự đi bộ đến bệnh viện, còn người chấn thương nặng được chuyển bằng xe cấp cứu."
     ]
   },
+  "v-o-juushou": {
+    "meaning": "Vết thương nặng, bị thương nặng",
+    "usage": "「重傷を負う」. Trái nghĩa: 「軽傷」 (bị thương nhẹ).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Người đàn ông bị thương nặng trong vụ tai nạn đã được đưa đến bệnh viện."
+    ]
+  },
   "v-o-utsuru": {
     "meaning": "(Hình ảnh) hiện lên, in bóng (trong gương, mặt nước, màn hình)",
     "usage": "「鏡に映る」, 「水に映る」, 「テレビに映る」 (hiện lên trên TV), 「ビデオに映る」.",
@@ -14164,6 +14758,15 @@
       "Chiếc gương này cũ nên mặt soi vào bị méo một chút."
     ]
   },
+  "v-o-shigekitekina": {
+    "meaning": "Mang tính kích thích, gây hưng phấn",
+    "usage": "「刺激的な体験」, 「刺激的な味」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Có nhiều hình ảnh mang tính kích thích nên tôi không muốn cho trẻ con xem."
+    ]
+  },
   "v-o-tamotsu": {
     "meaning": "Duy trì, không để mất (sức khỏe, sự điềm tĩnh, cân nặng)",
     "usage": "「健康を保つ」, 「落ち着きを保つ」 (giữ bình tĩnh), 「体重を保つ」, 「〜を保っている」.",
@@ -14172,6 +14775,24 @@
     "example_notes": [
       "Dù sắp thua trận, cô ấy vẫn giữ được bình tĩnh đến phút cuối.",
       "Nhờ sáng nào cũng chạy bộ, anh ấy giữ được cân nặng như cũ suốt hai mươi năm."
+    ]
+  },
+  "v-o-saibansho": {
+    "meaning": "Tòa án",
+    "usage": "「裁判所に訴える」, 「地方裁判所」. Người xét xử là 「裁判官」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Anh trai tôi tốt nghiệp đại học rồi làm việc ở tòa án."
+    ]
+  },
+  "v-o-shougen": {
+    "meaning": "Lời khai, chứng ngôn",
+    "usage": "「証言する」, 「証言を得る」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Lời khai của nhân chứng đã giúp giải quyết vụ án."
     ]
   },
   "v-o-chijimu": {
@@ -14194,6 +14815,96 @@
       "Nhờ ngày nào cũng tập luyện, anh ấy đã rút ngắn thành tích của mình hai giây."
     ]
   },
+  "v-o-shibou": {
+    "meaning": "Tử vong",
+    "usage": "「死亡事故」, 「死亡する」. Cách nói trang trọng trong tin tức, giấy tờ.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tin tức đưa rằng tài xế đã tử vong trong vụ tai nạn."
+    ]
+  },
+  "v-o-kouhosha": {
+    "meaning": "Ứng cử viên, người được đề cử",
+    "usage": "「候補者を立てる」, 「候補者に投票する」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Ứng cử viên của cuộc bầu cử đang diễn thuyết trước nhà ga."
+    ]
+  },
+  "v-o-shijisha": {
+    "meaning": "Người ủng hộ",
+    "usage": "「支持者が増える」, 「熱心な支持者」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Thị trưởng thắng cử mỉm cười vẫy tay trước những người ủng hộ."
+    ]
+  },
+  "v-o-shitsugen": {
+    "meaning": "Lỡ lời, lời nói sai",
+    "usage": "「失言を謝る」, 「失言が問題になる」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Lời lỡ miệng của bộ trưởng trở thành vấn đề và ông phải xin lỗi."
+    ]
+  },
+  "v-o-shitamawaru": {
+    "meaning": "Thấp hơn, dưới mức",
+    "usage": "「予想を下回る」, 「平均を下回る」. Trái nghĩa: 「上回る」 (vượt trên).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Doanh thu năm nay thấp hơn dự đoán."
+    ]
+  },
+  "v-o-kateikankyou": {
+    "meaning": "Môi trường gia đình",
+    "usage": "「家庭環境が複雑だ」, 「家庭環境に恵まれる」. Đi cùng 「教育環境」 (môi trường giáo dục).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tính cách của trẻ chịu ảnh hưởng rất lớn từ môi trường gia đình."
+    ]
+  },
+  "v-o-kankyouosen": {
+    "meaning": "Ô nhiễm môi trường",
+    "usage": "「環境汚染が進む」, 「環境汚染を防ぐ」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Nước thải nhà máy đang dẫn đến ô nhiễm môi trường của con sông."
+    ]
+  },
+  "v-o-keizaikiki": {
+    "meaning": "Khủng hoảng kinh tế",
+    "usage": "「経済危機に陥る」, 「経済危機を乗り越える」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Do khủng hoảng kinh tế toàn cầu, nhiều công ty đã cắt giảm nhân sự."
+    ]
+  },
+  "v-o-koushinkoku": {
+    "meaning": "Nước chậm phát triển",
+    "usage": "Ngày nay thường nói 「発展途上国」 (nước đang phát triển) cho nhẹ nhàng hơn.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Quốc gia từng bị gọi là nước chậm phát triển nay đang tăng trưởng nhanh chóng."
+    ]
+  },
+  "v-o-koutei": {
+    "meaning": "Khẳng định, thừa nhận",
+    "usage": "「肯定する」, 「肯定的に考える」. Trái nghĩa: 「否定」 (phủ định).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Trả lời 「はい」 cho câu hỏi tức là khẳng định nội dung đó."
+    ]
+  },
   "v-o-hikakuteki": {
     "meaning": "Tương đối, khá (so với mức thường hay cái khác)",
     "usage": "Phó từ, đứng trước tính từ: 「比較的やさしい」, 「比較的すいている」, 「比較的大きい」.",
@@ -14204,6 +14915,78 @@
       "Buổi sáng ngày thường, bệnh viện này cũng tương đối vắng."
     ]
   },
+  "v-o-kigamijikai": {
+    "meaning": "Nóng tính, thiếu kiên nhẫn",
+    "usage": "「気が短い人」. Trái nghĩa: 「気が長い」 (kiên nhẫn, thong thả).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Bố tôi nóng tính, hễ bị bắt chờ là nổi giận ngay."
+    ]
+  },
+  "v-o-shoushinna": {
+    "meaning": "Nhát gan, bé gan",
+    "usage": "「小心な人」. Trái nghĩa: 「大胆な」 (táo bạo).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Anh trai nhát gan của tôi trước kỳ thi quan trọng lúc nào cũng mất ngủ."
+    ]
+  },
+  "v-o-kouun": {
+    "meaning": "May mắn, vận may",
+    "usage": "「幸運に恵まれる」, 「幸運を祈る」, 「幸運な人」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Kiếm được chỗ ngồi quả thật là may mắn."
+    ]
+  },
+  "v-o-kizutsukeru": {
+    "meaning": "Làm tổn thương, làm bị thương",
+    "usage": "「心を傷つける」, 「プライドを傷つける」. Tự động từ: 「傷つく」 (bị tổn thương).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Một câu nói vô tình đã làm tổn thương bạn tôi."
+    ]
+  },
+  "v-o-shitsubokan": {
+    "meaning": "Cảm giác thất vọng",
+    "usage": "「失望感が広がる」, 「失望感を味わう」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Kết quả mong đợi không đến, cảm giác thất vọng lan ra cả đội."
+    ]
+  },
+  "v-o-kichouhin": {
+    "meaning": "Đồ vật quý giá",
+    "usage": "「貴重品を預ける」, 「貴重品は身につける」 (giữ đồ quý bên người).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Khi đi du lịch, tôi gửi đồ quý giá vào két sắt của khách sạn."
+    ]
+  },
+  "v-o-shukanteki": {
+    "meaning": "Mang tính chủ quan",
+    "usage": "「主観的な意見」. Trái nghĩa: 「客観的」 (khách quan).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Đó chỉ là cảm tưởng chủ quan của cá nhân mà thôi."
+    ]
+  },
+  "v-o-jouhinna": {
+    "meaning": "Thanh lịch, tao nhã",
+    "usage": "「上品な味」, 「上品に話す」. Trái nghĩa: 「下品な」 (thô tục).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Một bà cụ thanh lịch đang lặng lẽ uống trà."
+    ]
+  },
   "v-o-yutaka": {
     "meaning": "Dồi dào, phong phú, đầy đủ",
     "usage": "「自然が豊かだ」, 「豊かな自然」, 「水が豊か」, 「経験の豊かな人」. Ngược nghĩa: 「｜乏《とぼ》しい」.",
@@ -14212,6 +14995,51 @@
     "example_notes": [
       "Đi dạo trong rừng, giữa màu xanh bạt ngàn, lòng tôi thấy bình yên.",
       "Được một bác sĩ giàu kinh nghiệm khám cho, tôi thấy yên tâm."
+    ]
+  },
+  "v-o-kigayowai": {
+    "meaning": "Yếu bóng vía, nhút nhát",
+    "usage": "「気が弱い人」. Trái nghĩa: 「気が強い」 (mạnh mẽ, cứng cỏi).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Em trai tôi nhút nhát, hễ đứng trước đám đông là giọng run lên."
+    ]
+  },
+  "v-o-kinikakeru": {
+    "meaning": "Bận tâm, quan tâm lo lắng",
+    "usage": "「〜を気にかける」, 「気にかけてくれる」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Cô ấy luôn quan tâm lo lắng cho đồng nghiệp mới."
+    ]
+  },
+  "v-o-kokorogahiroi": {
+    "meaning": "Rộng lượng, độ lượng",
+    "usage": "「心が広い人」. Trái nghĩa: 「心が狭い」 (hẹp hòi).",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Người đàn anh rộng lượng đã cười và tha thứ cho lỗi của đàn em."
+    ]
+  },
+  "v-o-kokorokubari": {
+    "meaning": "Sự chu đáo, quan tâm tinh tế",
+    "usage": "Đọc 「こころくばり」, không phải 「しんぱい」 (lo lắng). 「心配りが行き届く」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Khách ai nấy đều cảm động trước sự chu đáo tinh tế của bà chủ nhà trọ."
+    ]
+  },
+  "v-o-kuchiwosuberasu": {
+    "meaning": "Lỡ miệng, lỡ lời",
+    "usage": "「つい口を滑らす」. Cũng nói 「口を滑らせる」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Tôi lỡ miệng nói ra chuyện quà tặng dành cho bạn."
     ]
   },
   "v-o-aikawarazu": {

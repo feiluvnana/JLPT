@@ -38839,6 +38839,92 @@
       "official_count": 1
     },
     {
+      "id": "v-o-sanfujinka",
+      "word": "産婦人科",
+      "reading": "さんふじんか",
+      "pos": "名詞",
+      "examples": [
+        "｜妊娠《にんしん》がわかり、｜近所《きんじょ》の**｜産婦人科《さんふじんか》**を｜予約《よやく》した。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 14,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第1章 人と人との関係／家族",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-shitsukeru",
+      "word": "しつける",
+      "reading": "しつける",
+      "pos": "動詞",
+      "examples": [
+        "｜礼儀《れいぎ》を｜守《まも》るように、｜子《こ》どもを**しつけて**いる。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 12,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第1章 人と人との関係／家族",
+      "tags": [
+        "他動詞"
+      ],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-shimijimi",
+      "word": "しみじみ",
+      "reading": "しみじみ",
+      "pos": "副詞",
+      "examples": [
+        "｜久《ひさ》しぶりに｜実家《じっか》に｜帰《かえ》り、｜親《おや》のありがたさを**しみじみ**｜感《かん》じた。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 11,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第1章 人と人との関係／家族",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-shussaniwai",
+      "word": "出産祝い",
+      "reading": "しゅっさんいわい",
+      "pos": "名詞",
+      "examples": [
+        "｜同僚《どうりょう》に｜赤《あか》ちゃんが｜生《う》まれたので、**｜出産祝《しゅっさんいわ》い**を｜贈《おく》った。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 14,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第1章 人と人との関係／家族",
+      "tags": [],
+      "official_count": 0
+    },
+    {
       "id": "v-o-teikou",
       "word": "抵抗",
       "reading": "ていこう",
@@ -38901,6 +38987,27 @@
       "official_count": 1
     },
     {
+      "id": "v-o-kansetsu",
+      "word": "間接",
+      "reading": "かんせつ",
+      "pos": "名詞",
+      "examples": [
+        "**｜間接《かんせつ》**｜照明《しょうめい》を｜使《つか》うと、｜部屋《へや》がやわらかい｜雰囲気《ふんいき》になる。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 20,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第1章 人と人との関係／知人・付き合い",
+      "tags": [],
+      "official_count": 0
+    },
+    {
       "id": "v-o-kioku",
       "word": "記憶",
       "reading": "きおく",
@@ -38937,6 +39044,157 @@
       "official_count": 2
     },
     {
+      "id": "v-o-jikoryuu",
+      "word": "自己流",
+      "reading": "じこりゅう",
+      "pos": "名詞",
+      "examples": [
+        "｜料理《りょうり》は｜全部《ぜんぶ》**｜自己流《じこりゅう》**で｜覚《おぼ》えたので、レシピ｜通《どお》りには｜作《つく》れない。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 18,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第1章 人と人との関係／知人・付き合い",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-kinku",
+      "word": "禁句",
+      "reading": "きんく",
+      "pos": "名詞",
+      "examples": [
+        "｜受験生《じゅけんせい》の｜前《まえ》では、「｜落《お》ちる」が**｜禁句《きんく》**だと｜言《い》われている。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 24,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第1章 人と人との関係／恋人",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-kesshin",
+      "word": "決心",
+      "reading": "けっしん",
+      "pos": "名詞",
+      "examples": [
+        "｜彼《かれ》は、｜来年《らいねん》から｜留学《りゅうがく》すると**｜決心《けっしん》**した。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 25,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第1章 人と人との関係／恋人",
+      "tags": [
+        "する動詞"
+      ],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-kossori",
+      "word": "こっそり",
+      "reading": "こっそり",
+      "pos": "副詞",
+      "examples": [
+        "｜夜中《よなか》に｜家族《かぞく》を｜起《お》こさないよう、**こっそり**｜台所《だいどころ》でお｜菓子《かし》を｜食《た》べた。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 24,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第1章 人と人との関係／恋人",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-keihi",
+      "word": "経費",
+      "reading": "けいひ",
+      "pos": "名詞",
+      "examples": [
+        "｜出張《しゅっちょう》の｜交通費《こうつうひ》は、｜会社《かいしゃ》の**｜経費《けいひ》**として｜精算《せいさん》できる。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 39,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第2章 暮らし／お金",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-shishutsu",
+      "word": "支出",
+      "reading": "ししゅつ",
+      "pos": "名詞",
+      "examples": [
+        "｜今月《こんげつ》は｜引《ひ》っ｜越《こ》しがあって、**｜支出《ししゅつ》**が｜収入《しゅうにゅう》を｜上回《うわまわ》った。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 39,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第2章 暮らし／お金",
+      "tags": [
+        "する動詞"
+      ],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-shotoku",
+      "word": "所得",
+      "reading": "しょとく",
+      "pos": "名詞",
+      "examples": [
+        "**｜所得《しょとく》**が｜増《ふ》えると、｜払《はら》う｜税金《ぜいきん》も｜増《ふ》える。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 39,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第2章 暮らし／お金",
+      "tags": [],
+      "official_count": 0
+    },
+    {
       "id": "v-o-fukumeru",
       "word": "含める",
       "reading": "ふくめる",
@@ -38966,6 +39224,71 @@
         "問題1 読み"
       ],
       "official_count": 1
+    },
+    {
+      "id": "v-o-kanjou",
+      "word": "勘定",
+      "reading": "かんじょう",
+      "pos": "名詞",
+      "examples": [
+        "｜食事《しょくじ》のあと、｜店員《てんいん》に**｜勘定《かんじょう》**をお｜願《ねが》いした。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 45,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第2章 暮らし／食事",
+      "tags": [
+        "する動詞"
+      ],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-kujibiki",
+      "word": "くじ引き",
+      "reading": "くじびき",
+      "pos": "名詞",
+      "examples": [
+        "｜町内会《ちょうないかい》の**くじ｜引《び》き**で、｜温泉《おんせん》の｜旅行券《りょこうけん》が｜当《あ》たった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 49,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第2章 暮らし／買い物",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-shougaisha",
+      "word": "障がい者",
+      "reading": "しょうがいしゃ",
+      "pos": "名詞",
+      "examples": [
+        "この｜店《みせ》は｜入口《いりぐち》に｜段差《だんさ》がなく、**｜障《しょう》がい｜者《しゃ》**も｜入《はい》りやすい。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 52,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第2章 暮らし／買い物",
+      "tags": [],
+      "official_count": 0
     },
     {
       "id": "v-o-eikyuuni",
@@ -39001,6 +39324,73 @@
         "問題2 表記"
       ],
       "official_count": 2
+    },
+    {
+      "id": "v-o-kokuchi",
+      "word": "告知",
+      "reading": "こくち",
+      "pos": "名詞",
+      "examples": [
+        "イベントの｜日程《にってい》は、｜事前《じぜん》にホームページで**｜告知《こくち》**される。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 55,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第2章 暮らし／時を表す言葉",
+      "tags": [
+        "する動詞"
+      ],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-jizenni",
+      "word": "事前に",
+      "reading": "じぜんに",
+      "pos": "名詞・副詞",
+      "examples": [
+        "**｜事前《じぜん》に**｜地図《ちず》で｜道順《みちじゅん》を｜確《たし》かめておいたので、｜迷《まよ》わなかった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 55,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第2章 暮らし／時を表す言葉",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-shuushin",
+      "word": "就寝",
+      "reading": "しゅうしん",
+      "pos": "名詞",
+      "examples": [
+        "この｜旅館《りょかん》では、｜夜《よる》｜十時《じゅうじ》の**｜就寝《しゅうしん》**に｜合《あ》わせて、｜廊下《ろうか》の｜電気《でんき》が｜消《き》える。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 59,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第3章 家で／朝",
+      "tags": [
+        "する動詞"
+      ],
+      "official_count": 0
     },
     {
       "id": "v-o-kanau",
@@ -39074,6 +39464,329 @@
       "official_count": 1
     },
     {
+      "id": "v-o-shiokagen",
+      "word": "塩加減",
+      "reading": "しおかげん",
+      "pos": "名詞",
+      "examples": [
+        "スープの**｜塩加減《しおかげん》**を、｜味見《あじみ》をしながら｜調節《ちょうせつ》した。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 66,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第3章 家で／料理",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-shouhikigen",
+      "word": "消費期限",
+      "reading": "しょうひきげん",
+      "pos": "名詞",
+      "examples": [
+        "**｜消費期限《しょうひきげん》**が｜今日《きょう》までのお｜弁当《べんとう》は、｜半額《はんがく》で｜売《う》られていた。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 67,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第3章 家で／料理",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-kamiomutsu",
+      "word": "紙おむつ",
+      "reading": "かみおむつ",
+      "pos": "名詞",
+      "examples": [
+        "｜赤《あか》ちゃんのために、**｜紙《かみ》おむつ**を｜一箱《ひとはこ》まとめて｜買《か》った。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 71,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第3章 家で／家事",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-kuiki",
+      "word": "区域",
+      "reading": "くいき",
+      "pos": "名詞",
+      "examples": [
+        "この**｜区域《くいき》**では、｜夜《よる》｜十時《じゅうじ》｜以降《いこう》の｜工事《こうじ》が｜禁止《きんし》されている。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 82,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第4章 町／町",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-koukyuuna",
+      "word": "高級な",
+      "reading": "こうきゅうな",
+      "pos": "ナ形容詞",
+      "examples": [
+        "｜記念日《きねんび》に、**｜高級《こうきゅう》な**レストランで｜食事《しょくじ》をした。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 82,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第4章 町／町",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-kenchikuka",
+      "word": "建築家",
+      "reading": "けんちくか",
+      "pos": "名詞",
+      "examples": [
+        "｜有名《ゆうめい》な**｜建築家《けんちくか》**が、｜新《あたら》しい｜美術館《びじゅつかん》を｜設計《せっけい》した。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 86,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第4章 町／役所",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-gekigen",
+      "word": "激減",
+      "reading": "げきげん",
+      "pos": "名詞",
+      "examples": [
+        "｜若者《わかもの》の｜人口《じんこう》が、この｜十年《じゅうねん》で**｜激減《げきげん》**した。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 98,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第4章 町／産業",
+      "tags": [
+        "する動詞"
+      ],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-gekizou",
+      "word": "激増",
+      "reading": "げきぞう",
+      "pos": "名詞",
+      "examples": [
+        "｜観光客《かんこうきゃく》が**｜激増《げきぞう》**して、｜駅《えき》の｜周《まわ》りが｜混《こ》むようになった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 98,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第4章 町／産業",
+      "tags": [
+        "する動詞"
+      ],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-juujitsukan",
+      "word": "充実感",
+      "reading": "じゅうじつかん",
+      "pos": "名詞",
+      "examples": [
+        "｜毎日《まいにち》｜忙《いそが》しいが、｜仕事《しごと》にやりがいがあって**｜充実感《じゅうじつかん》**がある。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 102,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第5章 学校で／学校",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-kikitoru",
+      "word": "聞き取る",
+      "reading": "ききとる",
+      "pos": "動詞",
+      "examples": [
+        "｜外国語《がいこくご》の｜速《はや》い｜会話《かいわ》を、｜全部《ぜんぶ》**｜聞《き》き｜取《と》る**のは｜難《むずか》しい。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 105,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第5章 学校で／勉強",
+      "tags": [
+        "他動詞"
+      ],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-kisoteki",
+      "word": "基礎的な",
+      "reading": "きそてきな",
+      "pos": "ナ形容詞",
+      "examples": [
+        "｜日本語《にほんご》の**｜基礎的《きそてき》な**｜文法《ぶんぽう》から、もう｜一度《いちど》｜勉強《べんきょう》し｜直《なお》している。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 107,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第5章 学校で／勉強",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-konkiduyoi",
+      "word": "根気強い",
+      "reading": "こんきづよい",
+      "pos": "イ形容詞",
+      "examples": [
+        "**｜根気強《こんきづよ》く**｜水《みず》をやり｜続《つづ》けて、ようやく｜花《はな》が｜咲《さ》いた。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 107,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第5章 学校で／勉強",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-gouriteki",
+      "word": "合理的な",
+      "reading": "ごうりてきな",
+      "pos": "ナ形容詞",
+      "examples": [
+        "｜彼《かれ》は｜何事《なにごと》も**｜合理的《ごうりてき》な**｜判断《はんだん》で｜決《き》める｜人《ひと》だ。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 107,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第5章 学校で／勉強",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-kokorogake",
+      "word": "心掛け",
+      "reading": "こころがけ",
+      "pos": "名詞",
+      "examples": [
+        "｜日頃《ひごろ》の**｜心掛《こころが》け**がいいから、いつも｜人《ひと》に｜助《たす》けてもらえるのだ。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 113,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第5章 学校で／大学・大学院",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-janru",
+      "word": "ジャンル",
+      "reading": "じゃんる",
+      "pos": "名詞",
+      "examples": [
+        "｜好《す》きな｜音楽《おんがく》の**ジャンル**は、ジャズとクラシックだ。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 113,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第5章 学校で／大学・大学院",
+      "tags": [
+        "カタカナ語"
+      ],
+      "official_count": 0
+    },
+    {
       "id": "v-o-kugiri",
       "word": "区切り",
       "reading": "くぎり",
@@ -39107,6 +39820,197 @@
         "問題6 用法"
       ],
       "official_count": 1
+    },
+    {
+      "id": "v-o-kyouchousei",
+      "word": "協調性",
+      "reading": "きょうちょうせい",
+      "pos": "名詞",
+      "examples": [
+        "｜新入社員《しんにゅうしゃいん》には、｜仕事《しごと》の｜力《ちから》だけでなく**｜協調性《きょうちょうせい》**も｜求《もと》められる。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 123,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第6章 会社で／就職",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-keiyakusho",
+      "word": "契約書",
+      "reading": "けいやくしょ",
+      "pos": "名詞",
+      "examples": [
+        "サインをする｜前《まえ》に、**｜契約書《けいやくしょ》**の｜細《こま》かい｜条件《じょうけん》を｜読《よ》んだ。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 125,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第6章 会社で／就職",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-kousei",
+      "word": "公正",
+      "reading": "こうせい",
+      "pos": "名詞・ナ形容詞",
+      "examples": [
+        "｜審査《しんさ》は、**｜公正《こうせい》**に｜行《おこな》われなければならない。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 124,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第6章 会社で／就職",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-shiboukou",
+      "word": "志望校",
+      "reading": "しぼうこう",
+      "pos": "名詞",
+      "examples": [
+        "｜先生《せんせい》と｜相談《そうだん》して、｜第一《だいいち》**｜志望校《しぼうこう》**を｜決《き》めた。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 121,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第6章 会社で／就職",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-shiboudouki",
+      "word": "志望動機",
+      "reading": "しぼうどうき",
+      "pos": "名詞",
+      "examples": [
+        "｜面接《めんせつ》で、｜会社《かいしゃ》を｜選《えら》んだ**｜志望動機《しぼうどうき》**を｜聞《き》かれた。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 122,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第6章 会社で／就職",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-shikyuugaku",
+      "word": "支給額",
+      "reading": "しきゅうがく",
+      "pos": "名詞",
+      "examples": [
+        "｜通勤《つうきん》｜手当《てあて》の**｜支給額《しきゅうがく》**は、｜会社《かいしゃ》の｜規則《きそく》で｜決《き》まっている。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 128,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第6章 会社で／会社",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-shihonkin",
+      "word": "資本金",
+      "reading": "しほんきん",
+      "pos": "名詞",
+      "examples": [
+        "｜設立《せつりつ》されたばかりのこの｜会社《かいしゃ》の**｜資本金《しほんきん》**は、｜一千万円《いっせんまんえん》だ。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 130,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第6章 会社で／会社",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-kuraianto",
+      "word": "クライアント",
+      "reading": "くらいあんと",
+      "pos": "名詞",
+      "examples": [
+        "｜新《あたら》しい**クライアント**との｜打《う》ち｜合《あ》わせで、プレゼンの｜準備《じゅんび》に｜追《お》われている。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 134,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第6章 会社で／仕事",
+      "tags": [
+        "カタカナ語"
+      ],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-gomasuri",
+      "word": "ごますり",
+      "reading": "ごますり",
+      "pos": "名詞",
+      "examples": [
+        "あの｜人《ひと》は｜上司《じょうし》に**ごますり**ばかりして、｜同僚《どうりょう》から｜嫌《きら》われている。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 138,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第6章 会社で／上下関係",
+      "tags": [],
+      "official_count": 0
     },
     {
       "id": "v-o-koukai",
@@ -39144,6 +40048,27 @@
         "問題4 文脈"
       ],
       "official_count": 1
+    },
+    {
+      "id": "v-o-shidousha",
+      "word": "指導者",
+      "reading": "しどうしゃ",
+      "pos": "名詞",
+      "examples": [
+        "｜優《すぐ》れた**｜指導者《しどうしゃ》**のもとで、チームは｜大《おお》きく｜成長《せいちょう》した。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 150,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第7章 お気に入り／競技",
+      "tags": [],
+      "official_count": 0
     },
     {
       "id": "v-o-tekunikku",
@@ -39226,6 +40151,27 @@
       "official_count": 1
     },
     {
+      "id": "v-o-kouhyou",
+      "word": "好評",
+      "reading": "こうひょう",
+      "pos": "名詞",
+      "examples": [
+        "｜新《あたら》しく｜出《だ》した｜商品《しょうひん》は、｜若《わか》い｜人《ひと》に**｜好評《こうひょう》**だ。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 154,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第7章 お気に入り／ファッション",
+      "tags": [],
+      "official_count": 0
+    },
+    {
       "id": "v-o-nuno",
       "word": "布",
       "reading": "ぬの",
@@ -39254,6 +40200,155 @@
         "問題2 表記"
       ],
       "official_count": 1
+    },
+    {
+      "id": "v-o-guranpuri",
+      "word": "グランプリ",
+      "reading": "ぐらんぷり",
+      "pos": "名詞",
+      "examples": [
+        "ケーキ｜作《づく》りの｜大会《たいかい》で、｜小学生《しょうがくせい》の｜女《おんな》の｜子《こ》が**グランプリ**に｜選《えら》ばれた。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 158,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第7章 お気に入り／エンターテインメント",
+      "tags": [
+        "カタカナ語"
+      ],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-geinoujin",
+      "word": "芸能人",
+      "reading": "げいのうじん",
+      "pos": "名詞",
+      "examples": [
+        "｜駅《えき》で｜偶然《ぐうぜん》、｜有名《ゆうめい》な**｜芸能人《げいのうじん》**を｜見《み》かけた。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 155,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第7章 お気に入り／エンターテインメント",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-shibai",
+      "word": "芝居",
+      "reading": "しばい",
+      "pos": "名詞",
+      "examples": [
+        "｜週末《しゅうまつ》に、｜友達《ともだち》と｜劇場《げきじょう》へ**｜芝居《しばい》**を｜見《み》に｜行《い》った。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 155,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第7章 お気に入り／エンターテインメント",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-kikite",
+      "word": "聞き手",
+      "reading": "ききて",
+      "pos": "名詞",
+      "examples": [
+        "｜話《はな》し｜手《て》は、**｜聞《き》き｜手《て》**の｜顔《かお》を｜見《み》ながら｜話《はな》す｜速《はや》さを｜変《か》えた。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 159,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第7章 お気に入り／本",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-geimei",
+      "word": "芸名",
+      "reading": "げいめい",
+      "pos": "名詞",
+      "examples": [
+        "その｜歌手《かしゅ》は、｜本名《ほんみょう》ではなく**｜芸名《げいめい》**で｜活動《かつどう》している。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 159,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第7章 お気に入り／本",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-kumiawase",
+      "word": "組み合わせ",
+      "reading": "くみあわせ",
+      "pos": "名詞",
+      "examples": [
+        "この｜料理《りょうり》は、｜甘《あま》さと｜辛《から》さの**｜組《く》み｜合《あ》わせ**が｜絶妙《ぜつみょう》だ。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 167,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第7章 お気に入り／趣味・好み",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-kurouto",
+      "word": "玄人",
+      "reading": "くろうと",
+      "pos": "名詞",
+      "examples": [
+        "あの｜主婦《しゅふ》の｜作《つく》る｜刺繍《ししゅう》は、**｜玄人《くろうと》**も｜驚《おどろ》くほどの｜出来《でき》だ。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 165,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第7章 お気に入り／趣味・好み",
+      "tags": [],
+      "official_count": 0
     },
     {
       "id": "v-o-shoho",
@@ -39324,6 +40419,92 @@
       "official_count": 1
     },
     {
+      "id": "v-o-sanpobiyori",
+      "word": "散歩日和",
+      "reading": "さんぽびより",
+      "pos": "名詞",
+      "examples": [
+        "｜空《そら》が｜青《あお》くて｜風《かぜ》も｜穏《おだ》やかな、**｜散歩日和《さんぽびより》**の｜朝《あさ》だ。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 171,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第8章 自然・レジャー／気候と天気",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-shizunofu",
+      "word": "シーズンオフ",
+      "reading": "しーずんおふ",
+      "pos": "名詞",
+      "examples": [
+        "**シーズンオフ**の｜山《やま》のスキー｜場《じょう》は、｜人《ひと》が｜少《すく》なくて｜寂《さび》しい。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 169,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第8章 自然・レジャー／気候と天気",
+      "tags": [
+        "カタカナ語"
+      ],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-kouzui",
+      "word": "洪水",
+      "reading": "こうずい",
+      "pos": "名詞",
+      "examples": [
+        "｜大雨《おおあめ》で｜川《かわ》があふれ、｜町《まち》が**｜洪水《こうずい》**の｜被害《ひがい》を｜受《う》けた。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 173,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第8章 自然・レジャー／台風・地震",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-jinsai",
+      "word": "人災",
+      "reading": "じんさい",
+      "pos": "名詞",
+      "examples": [
+        "｜川《かわ》の｜氾濫《はんらん》は、｜管理《かんり》の｜不備《ふび》が｜招《まね》いた**｜人災《じんさい》**だと｜言《い》われている。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 176,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第8章 自然・レジャー／台風・地震",
+      "tags": [],
+      "official_count": 0
+    },
+    {
       "id": "v-o-chokuzen",
       "word": "直前",
       "reading": "ちょくぜん",
@@ -39352,6 +40533,27 @@
         "問題5 言い換え"
       ],
       "official_count": 1
+    },
+    {
+      "id": "v-o-sakyuu",
+      "word": "砂丘",
+      "reading": "さきゅう",
+      "pos": "名詞",
+      "examples": [
+        "｜鳥取《とっとり》の**｜砂丘《さきゅう》**で、ラクダに｜乗《の》る｜体験《たいけん》をした。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 177,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第8章 自然・レジャー／自然",
+      "tags": [],
+      "official_count": 0
     },
     {
       "id": "v-o-omoigakenai",
@@ -39432,6 +40634,27 @@
       "official_count": 1
     },
     {
+      "id": "v-o-kankoumeisho",
+      "word": "観光名所",
+      "reading": "かんこうめいしょ",
+      "pos": "名詞",
+      "examples": [
+        "この｜町《まち》の**｜観光名所《かんこうめいしょ》**といえば、まず｜古《ふる》いお｜城《しろ》が｜挙《あ》げられる。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 188,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第8章 自然・レジャー／旅行",
+      "tags": [],
+      "official_count": 0
+    },
+    {
       "id": "v-o-keikaku",
       "word": "計画",
       "reading": "けいかく",
@@ -39465,6 +40688,90 @@
         "問題5 言い換え"
       ],
       "official_count": 1
+    },
+    {
+      "id": "v-o-goraku",
+      "word": "娯楽",
+      "reading": "ごらく",
+      "pos": "名詞",
+      "examples": [
+        "｜昔《むかし》の｜村《むら》では、お｜祭《まつ》りが｜数少《かずすく》ない**｜娯楽《ごらく》**だった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 185,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第8章 自然・レジャー／旅行",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-kizuguchi",
+      "word": "傷口",
+      "reading": "きずぐち",
+      "pos": "名詞",
+      "examples": [
+        "｜転《ころ》んでできた**｜傷口《きずぐち》**を、｜水《みず》で｜洗《あら》ってから｜消毒《しょうどく》した。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 195,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第9章 健康のために／体と健康",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-kiryoku",
+      "word": "気力",
+      "reading": "きりょく",
+      "pos": "名詞",
+      "examples": [
+        "｜疲《つか》れ｜果《は》てて、｜何《なに》かを｜始《はじ》める**｜気力《きりょく》**が｜出《で》なかった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 192,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第9章 健康のために／体と健康",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-kinnikutsuu",
+      "word": "筋肉痛",
+      "reading": "きんにくつう",
+      "pos": "名詞",
+      "examples": [
+        "｜久《ひさ》しぶりに｜走《はし》ったので、｜翌日《よくじつ》ひどい**｜筋肉痛《きんにくつう》**になった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 195,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第9章 健康のために／体と健康",
+      "tags": [],
+      "official_count": 0
     },
     {
       "id": "v-o-oginau",
@@ -39532,6 +40839,96 @@
         "問題4 文脈"
       ],
       "official_count": 2
+    },
+    {
+      "id": "v-o-kansen",
+      "word": "感染",
+      "reading": "かんせん",
+      "pos": "名詞",
+      "examples": [
+        "｜手洗《てあら》いは、｜風邪《かぜ》などの**｜感染《かんせん》**を｜防《ふせ》ぐ｜基本《きほん》だ。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 203,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第9章 健康のために／症状",
+      "tags": [
+        "する動詞"
+      ],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-geri",
+      "word": "下痢",
+      "reading": "げり",
+      "pos": "名詞",
+      "examples": [
+        "｜冷《つめ》たい｜物《もの》を｜飲《の》みすぎて、｜朝《あさ》から**｜下痢《げり》**が｜続《つづ》いている。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 201,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第9章 健康のために／症状",
+      "tags": [
+        "する動詞"
+      ],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-koraeru",
+      "word": "こらえる",
+      "reading": "こらえる",
+      "pos": "動詞",
+      "examples": [
+        "｜涙《なみだ》が｜出《で》そうになるのを、｜必死《ひっし》に**こらえた**。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 201,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第9章 健康のために／症状",
+      "tags": [
+        "他動詞"
+      ],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-shikai",
+      "word": "視界",
+      "reading": "しかい",
+      "pos": "名詞",
+      "examples": [
+        "｜濃《こ》い｜霧《きり》で、**｜視界《しかい》**がほとんどきかなくなった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 201,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第9章 健康のために／症状",
+      "tags": [],
+      "official_count": 0
     },
     {
       "id": "v-o-chuushouteki",
@@ -39638,6 +41035,27 @@
       "official_count": 1
     },
     {
+      "id": "v-o-juushou",
+      "word": "重傷",
+      "reading": "じゅうしょう",
+      "pos": "名詞",
+      "examples": [
+        "｜事故《じこ》で**｜重傷《じゅうしょう》**を｜負《お》った｜男性《だんせい》が、｜病院《びょういん》に｜運《はこ》ばれた。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 204,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第9章 健康のために／病気と治療",
+      "tags": [],
+      "official_count": 0
+    },
+    {
       "id": "v-o-utsuru",
       "word": "映る",
       "reading": "うつる",
@@ -39671,6 +41089,27 @@
         "問題1 読み"
       ],
       "official_count": 1
+    },
+    {
+      "id": "v-o-shigekitekina",
+      "word": "刺激的な",
+      "reading": "しげきてきな",
+      "pos": "ナ形容詞",
+      "examples": [
+        "**｜刺激的《しげきてき》な**｜映像《えいぞう》が｜多《おお》いので、｜子《こ》どもには｜見《み》せたくない。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 209,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第9章 健康のために／美容",
+      "tags": [],
+      "official_count": 0
     },
     {
       "id": "v-o-tamotsu",
@@ -39710,6 +41149,50 @@
         "問題6 用法"
       ],
       "official_count": 1
+    },
+    {
+      "id": "v-o-saibansho",
+      "word": "裁判所",
+      "reading": "さいばんしょ",
+      "pos": "名詞",
+      "examples": [
+        "｜兄《あに》は｜大学《だいがく》を｜出《で》て、**｜裁判所《さいばんしょ》**で｜働《はたら》いている。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 214,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第10章 ニュース／トラブル・事件",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-shougen",
+      "word": "証言",
+      "reading": "しょうげん",
+      "pos": "名詞",
+      "examples": [
+        "｜目撃者《もくげきしゃ》の**｜証言《しょうげん》**が、｜事件《じけん》の｜解決《かいけつ》につながった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 216,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第10章 ニュース／トラブル・事件",
+      "tags": [
+        "する動詞"
+      ],
+      "official_count": 0
     },
     {
       "id": "v-o-chijimu",
@@ -39786,6 +41269,222 @@
       "official_count": 1
     },
     {
+      "id": "v-o-shibou",
+      "word": "死亡",
+      "reading": "しぼう",
+      "pos": "名詞",
+      "examples": [
+        "｜事故《じこ》で｜運転手《うんてんしゅ》が**｜死亡《しぼう》**したと、ニュースで｜伝《つた》えられた。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 220,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第10章 ニュース／事故",
+      "tags": [
+        "する動詞"
+      ],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-kouhosha",
+      "word": "候補者",
+      "reading": "こうほしゃ",
+      "pos": "名詞",
+      "examples": [
+        "｜選挙《せんきょ》の**｜候補者《こうほしゃ》**が、｜駅前《えきまえ》で｜演説《えんぜつ》をしている。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 223,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第10章 ニュース／政治",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-shijisha",
+      "word": "支持者",
+      "reading": "しじしゃ",
+      "pos": "名詞",
+      "examples": [
+        "｜選挙《せんきょ》に｜勝《か》った｜市長《しちょう》は、**｜支持者《しじしゃ》**の｜前《まえ》で｜笑顔《えがお》で｜手《て》を｜振《ふ》った。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 225,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第10章 ニュース／政治",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-shitsugen",
+      "word": "失言",
+      "reading": "しつげん",
+      "pos": "名詞",
+      "examples": [
+        "｜大臣《だいじん》の**｜失言《しつげん》**が｜問題《もんだい》になり、｜謝罪《しゃざい》することになった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 224,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第10章 ニュース／政治",
+      "tags": [
+        "する動詞"
+      ],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-shitamawaru",
+      "word": "下回る",
+      "reading": "したまわる",
+      "pos": "動詞",
+      "examples": [
+        "｜今年《ことし》の｜売《う》り｜上《あ》げは、｜予想《よそう》を**｜下回《したまわ》った**。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 229,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第10章 ニュース／社会",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-kateikankyou",
+      "word": "家庭環境",
+      "reading": "かていかんきょう",
+      "pos": "名詞",
+      "examples": [
+        "｜子《こ》どもの｜性格《せいかく》は、**｜家庭環境《かていかんきょう》**に｜大《おお》きく｜左右《さゆう》される。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 236,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第10章 ニュース／世界・環境",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-kankyouosen",
+      "word": "環境汚染",
+      "reading": "かんきょうおせん",
+      "pos": "名詞",
+      "examples": [
+        "｜工場《こうじょう》の｜排水《はいすい》が、｜川《かわ》の**｜環境汚染《かんきょうおせん》**につながっている。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 237,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第10章 ニュース／世界・環境",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-keizaikiki",
+      "word": "経済危機",
+      "reading": "けいざいきき",
+      "pos": "名詞",
+      "examples": [
+        "｜世界的《せかいてき》な**｜経済危機《けいざいきき》**のせいで、｜多《おお》くの｜会社《かいしゃ》が｜人員《じんいん》を｜減《へ》らした。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 235,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第10章 ニュース／世界・環境",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-koushinkoku",
+      "word": "後進国",
+      "reading": "こうしんこく",
+      "pos": "名詞",
+      "examples": [
+        "かつて**｜後進国《こうしんこく》**と｜呼《よ》ばれた｜国《くに》が、｜今《いま》は｜急速《きゅうそく》に｜成長《せいちょう》している。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 233,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第10章 ニュース／世界・環境",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-koutei",
+      "word": "肯定",
+      "reading": "こうてい",
+      "pos": "名詞",
+      "examples": [
+        "｜質問《しつもん》に「はい」と｜答《こた》えるのは、その｜内容《ないよう》を**｜肯定《こうてい》**することだ。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 234,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第10章 ニュース／世界・環境",
+      "tags": [
+        "する動詞"
+      ],
+      "official_count": 0
+    },
+    {
       "id": "v-o-hikakuteki",
       "word": "比較的",
       "reading": "ひかくてき",
@@ -39822,6 +41521,176 @@
         "問題1 読み"
       ],
       "official_count": 1
+    },
+    {
+      "id": "v-o-kigamijikai",
+      "word": "気が短い",
+      "reading": "きがみじかい",
+      "pos": "イ形容詞",
+      "examples": [
+        "｜父《ちち》は**｜気《き》が｜短《みじか》くて**、｜待《ま》たされるとすぐに｜怒《おこ》り｜出《だ》す。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 244,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第11章 様子・イメージ／性格",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-shoushinna",
+      "word": "小心な",
+      "reading": "しょうしんな",
+      "pos": "ナ形容詞",
+      "examples": [
+        "**｜小心《しょうしん》な**｜兄《あに》は、｜大事《だいじ》な｜試験《しけん》の｜前《まえ》はいつも｜眠《ねむ》れない。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 243,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第11章 様子・イメージ／性格",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-kouun",
+      "word": "幸運",
+      "reading": "こううん",
+      "pos": "名詞・ナ形容詞",
+      "examples": [
+        "｜席《せき》が｜取《と》れたのは、｜本当《ほんとう》に**｜幸運《こううん》**だった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 247,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第11章 様子・イメージ／いい気分",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-kizutsukeru",
+      "word": "傷つける",
+      "reading": "きずつける",
+      "pos": "動詞",
+      "examples": [
+        "｜何気《なにげ》ない｜一言《ひとこと》が、｜友達《ともだち》の｜心《こころ》を**｜傷《きず》つけて**しまった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 250,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第11章 様子・イメージ／ブルーな気分",
+      "tags": [
+        "他動詞"
+      ],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-shitsubokan",
+      "word": "失望感",
+      "reading": "しつぼうかん",
+      "pos": "名詞",
+      "examples": [
+        "｜期待《きたい》していた｜結果《けっか》が｜出《で》ず、チーム｜全体《ぜんたい》に**｜失望感《しつぼうかん》**が｜広《ひろ》がった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 249,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第11章 様子・イメージ／ブルーな気分",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-kichouhin",
+      "word": "貴重品",
+      "reading": "きちょうひん",
+      "pos": "名詞",
+      "examples": [
+        "｜旅行《りょこう》｜中《ちゅう》は、**｜貴重品《きちょうひん》**をホテルの｜金庫《きんこ》に｜預《あず》けておく。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 253,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第11章 様子・イメージ／プラスのイメージ",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-shukanteki",
+      "word": "主観的な",
+      "reading": "しゅかんてきな",
+      "pos": "ナ形容詞",
+      "examples": [
+        "それは｜個人《こじん》の**｜主観的《しゅかんてき》な**｜感想《かんそう》にすぎない。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 252,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第11章 様子・イメージ／プラスのイメージ",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-jouhinna",
+      "word": "上品な",
+      "reading": "じょうひんな",
+      "pos": "ナ形容詞",
+      "examples": [
+        "**｜上品《じょうひん》な**おばあさんが、｜静《しず》かにお｜茶《ちゃ》を｜飲《の》んでいた。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 253,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第11章 様子・イメージ／プラスのイメージ",
+      "tags": [],
+      "official_count": 0
     },
     {
       "id": "v-o-yutaka",
@@ -39869,6 +41738,111 @@
         "問題2 表記"
       ],
       "official_count": 2
+    },
+    {
+      "id": "v-o-kigayowai",
+      "word": "気が弱い",
+      "reading": "きがよわい",
+      "pos": "イ形容詞",
+      "examples": [
+        "**｜気《き》が｜弱《よわ》い**｜弟《おとうと》は、｜人前《ひとまえ》に｜立《た》つと｜声《こえ》が｜震《ふる》える。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 261,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第12章 間違えやすい表現／慣用句①気・心・胸",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-kinikakeru",
+      "word": "気にかける",
+      "reading": "きにかける",
+      "pos": "動詞",
+      "examples": [
+        "｜彼女《かのじょ》は、｜新《あたら》しい｜同僚《どうりょう》のことをいつも**｜気《き》にかけて**いる。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 262,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第12章 間違えやすい表現／慣用句①気・心・胸",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-kokorogahiroi",
+      "word": "心が広い",
+      "reading": "こころがひろい",
+      "pos": "イ形容詞",
+      "examples": [
+        "**｜心《こころ》が｜広《ひろ》い**｜先輩《せんぱい》は、｜後輩《こうはい》の｜失敗《しっぱい》を｜笑《わら》って｜許《ゆる》してくれた。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 262,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第12章 間違えやすい表現／慣用句①気・心・胸",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-kokorokubari",
+      "word": "心配り",
+      "reading": "こころくばり",
+      "pos": "名詞",
+      "examples": [
+        "｜旅館《りょかん》の｜女将《おかみ》の｜細《こま》やかな**｜心配《こころくば》り**に、｜客《きゃく》はみな｜感動《かんどう》した。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 263,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第12章 間違えやすい表現／慣用句①気・心・胸",
+      "tags": [],
+      "official_count": 0
+    },
+    {
+      "id": "v-o-kuchiwosuberasu",
+      "word": "口を滑らす",
+      "reading": "くちをすべらす",
+      "pos": "動詞",
+      "examples": [
+        "つい**｜口《くち》を｜滑《すべ》らせて**、｜同僚《どうりょう》の｜転職《てんしょく》の｜噂《うわさ》を｜広《ひろ》めてしまった。"
+      ],
+      "sources": [
+        {
+          "ref": "refs/Hajimete/はじめての日本語能力試験 N2単語 2500.pdf",
+          "page": 267,
+          "note": "50音索引の付記語（見出し語の近くに印刷）"
+        }
+      ],
+      "related": [],
+      "quiz": [],
+      "group": "第12章 間違えやすい表現／慣用句②頭・顔",
+      "tags": [],
+      "official_count": 0
     },
     {
       "id": "v-o-aikawarazu",

@@ -3,7 +3,7 @@
     "meaning": "Cả nhà, cả gia đình (một hộ)",
     "usage": "「一家そろって」 (cả nhà cùng…), 「一家で〜」. Gần nghĩa: 「ファミリー」. 「｜一家団《いっかだん》らん」: cả nhà quây quần. Hán Việt \"nhất gia\".",
     "nuance": "Đọc 「いっか」 (có âm ngắt 「っ」).",
-    "compare": "",
+    "compare": "「一家団らん」: cả nhà quây quần.",
     "example_notes": [
       "Nhà bị bão làm hư hại, cả gia đình phải sang ở nhờ nhà họ hàng một thời gian.",
       "Cuối năm, cả nhà lại cùng nhau tụ họp ở nhà ông bà."
@@ -60,7 +60,7 @@
     "meaning": "Làm nũng, nhõng nhẽo (với ông bà, cha mẹ)",
     "usage": "「〜に甘える」: 「祖父に甘える」, 「母に甘える」. Liên quan: 「｜甘《あま》え」 (tính nhõng nhẽo), 「｜甘《あま》やかす」 (nuông chiều người khác).",
     "nuance": "",
-    "compare": "「甘える」: tự động từ, chính mình làm nũng, dựa vào sự dịu dàng của người thân: 「母に甘える」. 「｜甘《あま》やかす」: tha động từ, nuông chiều người khác: 「孫を甘やかす」.",
+    "compare": "「甘える」: tự động từ, chính mình làm nũng, dựa vào sự dịu dàng của người thân: 「母に甘える」. 「｜甘《あま》やかす」: tha động từ, nuông chiều người khác: 「孫を甘やかす」. 「甘え」: danh từ.",
     "example_notes": [
       "Đứa cháu ba tuổi làm nũng ông, đi đâu cũng đòi bế."
     ]
@@ -210,7 +210,7 @@
     "meaning": "Nối nghiệp, kế thừa (cửa hàng, công ty của gia đình)",
     "usage": "「店を継ぐ」, 「父の会社を継ぐ」, 「〜の代から続く店を継ぐ」. Gần nghĩa: 「｜受《う》け｜継《つ》ぐ」 (kế thừa, tiếp nhận).",
     "nuance": "",
-    "compare": "",
+    "compare": "「受け継ぐ」 cùng nghĩa 'kế thừa'.",
     "example_notes": [
       "Tôi nối nghiệp quán mì soba có từ đời ông, đến nay đã mười năm."
     ]
@@ -274,7 +274,7 @@
     "meaning": "Biệt danh, tên gọi thân mật",
     "usage": "「ニックネームで呼ぶ」, 「ニックネームを決める」. Cùng nghĩa: 「あだ｜名《な》」, 「｜愛称《あいしょう》」.",
     "nuance": "",
-    "compare": "",
+    "compare": "「愛称」, 「あだ名」 cũng là 'biệt danh', cùng nghĩa.",
     "example_notes": [
       "Ở lớp mới, tôi tự đặt biệt danh cho mình rồi viết lên bảng tên."
     ]
@@ -707,7 +707,7 @@
     "meaning": "Tình yêu, lòng yêu thương (với người, với vật)",
     "usage": "「〜への愛」 (tình yêu dành cho…), 「愛を込める」. Động từ: 「｜愛《あい》する」; danh từ gần nghĩa: 「｜愛情《あいじょう》」 (tình yêu, tình thương).",
     "nuance": "",
-    "compare": "",
+    "compare": "Cùng chữ ÁI: 「愛する」 động từ 'yêu', 「愛情」 'tình thương'. \"Ái tình\" tiếng Việt nghiêng về yêu đôi lứa.",
     "example_notes": [
       "Từ cuốn sách tranh này, ta cảm nhận được tình yêu của tác giả dành cho các loài vật."
     ]
@@ -1267,7 +1267,7 @@
     "meaning": "Nhà riêng biệt lập (không chung tòa với nhà khác)",
     "usage": "「一戸建てを買う」. Cùng nghĩa: 「｜一軒家《いっけんや》」. Khác 「マンション」 (căn hộ trong tòa nhà chung).",
     "nuance": "",
-    "compare": "「一戸建て」: nhà riêng biệt lập, khác 「マンション」. 「｜家屋《かおく》」: nhà ở nói chung, không phân biệt kiểu nhà.",
+    "compare": "「一戸建て」: nhà riêng biệt lập, khác 「マンション」. 「｜家屋《かおく》」: nhà ở nói chung, không phân biệt kiểu nhà. 「一軒家」 cùng nghĩa; 「家」 đọc 「や」.",
     "example_notes": [
       "Nếu là nhà riêng thì khác với chung cư, không phải bận tâm tiếng bước chân ở tầng trên."
     ]
@@ -1672,7 +1672,7 @@
     "meaning": "Ổn định, không thay đổi lớn; vững, không lắc, không đổ",
     "usage": "① 「安定する」, 「安定している」. ② Đồ vật đặt xuống: 「安定が悪い」 (không vững). Trái nghĩa: 「｜不安定《ふあんてい》な」; 「｜安定感《あんていかん》」: cảm giác ổn định.",
     "nuance": "",
-    "compare": "",
+    "compare": "「安定感」: cảm giác ổn định.",
     "example_notes": [
       "Từ khi bắt đầu uống thuốc, huyết áp của bà tôi ổn định.",
       "Cái thang gấp này đứng không vững, nên khi trèo lên tôi nhờ người giữ cho."
@@ -1861,7 +1861,7 @@
     "meaning": "Đồ đựng thức ăn (chén, bát, đĩa nói chung)",
     "usage": "「〜の器」, 「器に盛る」 (bày món ăn vào chén đĩa). Hán Việt \"khí\".",
     "nuance": "",
-    "compare": "",
+    "compare": "「入れ物」: đồ đựng nói chung. 「器」: đồ đựng thức ăn.",
     "example_notes": [
       "Mẹ bày thức ăn vào chiếc chén gốm tôi mua ở nơi đi du lịch."
     ]
@@ -2008,7 +2008,7 @@
     "meaning": "Đắt tiền, giá cao",
     "usage": "「高価なネックレス」. Trái nghĩa: 「｜安価《あんか》な」 (rẻ tiền).",
     "nuance": "",
-    "compare": "「高価」: nói về giá tiền cao: 「高価なネックレス」. 「｜貴重《きちょう》」: nói về sự quý báu, giá trị lớn: 「貴重な時間」. 「｜上等《じょうとう》」 THƯỢNG ĐẲNG nói chất lượng, không nói giá: 「｜上等《じょうとう》な｜肉《にく》」.",
+    "compare": "「高価」: nói về giá tiền cao: 「高価なネックレス」. 「｜貴重《きちょう》」: nói về sự quý báu, giá trị lớn: 「貴重な時間」. 「｜上等《じょうとう》」 THƯỢNG ĐẲNG nói chất lượng, không nói giá: 「｜上等《じょうとう》な｜肉《にく》」. 「安価」: trái nghĩa, giá rẻ.",
     "example_notes": [
       "Tôi được bà cho một chiếc vòng cổ ngọc trai đắt tiền."
     ]
@@ -2427,7 +2427,7 @@
     "meaning": "(Ngày, sáng, năm) tiếp theo, kế đó",
     "usage": "Luôn đứng trước danh từ chỉ thời gian: 「あくる日」, 「あくる朝」, 「あくる年」.",
     "nuance": "",
-    "compare": "",
+    "compare": "「あくる日」: ngày hôm sau (「日」 đọc 「ひ」); ghép tương tự: 「あくる朝」.",
     "example_notes": [
       "Từ hôm sau ngày đi du lịch về, tôi lại quay về nếp dậy sớm."
     ]
@@ -2436,7 +2436,7 @@
     "meaning": "Nhất thời, tạm trong một lúc",
     "usage": "Hán Việt \"nhất thời\", nghĩa gần tiếng Việt: 「一時よくなる」, 「一時的な」. Còn đọc 「いっとき」.",
     "nuance": "Cùng cách viết với 「一時（いちじ）」 = một giờ (giờ đồng hồ).",
-    "compare": "「いったん」: dừng hay quay lại một bước rồi mới tiếp. 「一時」: tình trạng chỉ kéo dài ít lâu.",
+    "compare": "「いったん」: dừng hay quay lại một bước rồi mới tiếp. 「一時」: tình trạng chỉ kéo dài ít lâu. 「いっとき」: một lúc ngắn; không đọc 「いちじ」.",
     "example_notes": [
       "Bệnh của ông tôi có lúc đã đỡ, nhưng sang đông lại nặng lên."
     ]
@@ -2464,7 +2464,7 @@
     "meaning": "Rạng sáng, lúc trời hửng sáng",
     "usage": "「夜明けを待つ」, 「夜明け前」. Gần nghĩa: 「明け方」.",
     "nuance": "",
-    "compare": "",
+    "compare": "「明け方」 cũng là lúc trời hửng; 「方」 đọc 「がた」, không phải 「ほう」.",
     "example_notes": [
       "Trời vừa rạng sáng, ngư dân đã ra khơi."
     ]
@@ -2991,7 +2991,7 @@
     "meaning": "Mức độ vừa phải, sự điều chỉnh tăng giảm",
     "usage": "「｜味《あじ》｜加減《かげん》」 (độ đậm nhạt của vị), 「｜塩《しお》｜加減《かげん》」 (mức muối), 「｜加減《かげん》がいい」.",
     "nuance": "",
-    "compare": "「｜加減《かげん》」: mức vừa phải, hoặc việc chỉnh cho vừa. 「｜調節《ちょうせつ》」: đổi lượng, mức để cho hợp. 「｜味付《あじつ》け」: nêm gia vị.",
+    "compare": "「｜加減《かげん》」: mức vừa phải, hoặc việc chỉnh cho vừa. 「｜調節《ちょうせつ》」: đổi lượng, mức để cho hợp. 「｜味付《あじつ》け」: nêm gia vị. 「味加減」: độ đậm nhạt của vị món ăn.",
     "example_notes": [
       "Chỉnh lửa khó quá nên tôi làm cháy trứng cuộn.",
       "Tôi lấy tay thử độ nóng của nước vòi sen rồi mới vào tắm."
@@ -3051,7 +3051,7 @@
     "meaning": "Đồ đựng, hộp đựng",
     "usage": "「｜容器《ようき》に｜入《い》れる」, 「｜容器《ようき》に｜移《うつ》す」, 「｜食品《しょくひん》の｜容器《ようき》」.",
     "nuance": "Cũng nói 「｜入《い》れ｜物《もの》」.",
-    "compare": "",
+    "compare": "「入れ物」 cùng nghĩa 'đồ đựng'.",
     "example_notes": [
       "Hộp đựng bánh này rửa xong dùng lại nhiều lần được.",
       "Tôi chuyển thức ăn thừa vào hộp rồi cho vào tủ lạnh."
@@ -3251,7 +3251,7 @@
     "meaning": "Rác tái chế, rác có thể tái sinh",
     "usage": "「｜資源《しげん》ごみの｜日《ひ》」, 「｜資源《しげん》ごみを｜出《だ》す」.",
     "nuance": "",
-    "compare": "Phân biệt theo lịch thu gom: 「｜資源《しげん》ごみ」 tái chế được (lon, chai); 「｜可燃《かねん》ごみ」 đốt được; 「｜粗大《そだい》ごみ」 đồ cỡ lớn, bỏ phải trả phí.",
+    "compare": "Phân biệt theo lịch thu gom: 「｜資源《しげん》ごみ」 tái chế được (lon, chai); 「｜可燃《かねん》ごみ」 đốt được; 「｜粗大《そだい》ごみ」 đồ cỡ lớn, bỏ phải trả phí. 「アルミ缶」 (lon nhôm) cũng thuộc loại này.",
     "example_notes": [
       "Qua thông báo của cơ quan hành chính, tôi biết cách bỏ rác tái chế sắp thay đổi.",
       "Tôi ghi ngày bỏ rác tái chế lên lịch."
@@ -3551,7 +3551,7 @@
     "meaning": "Đúng là, chính là; đúng vào lúc",
     "usage": "「まさに〜だ」, 「まさに〜ようとしたとき」 (ngay lúc sắp…).",
     "nuance": "",
-    "compare": "",
+    "compare": "Cả hai dịch 'đúng là': 「いかにも」 hay đi với 「〜そうだ」, 「〜らしい」; 「まさに」 còn có nghĩa 'đúng lúc'.",
     "example_notes": [
       "Tay nghề của người thợ ấy đúng là xứng gọi là nghệ thuật.",
       "Đúng lúc tôi sắp bấm nút thì màn hình tắt."
@@ -4563,7 +4563,7 @@
     "meaning": "Không khí, nét riêng gợi cảm xúc của phố xá, phong cảnh",
     "usage": "「｜情緒《じょうちょ》がある」 (có hồn, có nét riêng), 「｜異国情緒《いこくじょうちょ》」 (không khí xứ lạ), 「｜下町《したまち》｜情緒《じょうちょ》」.",
     "nuance": "Hán Việt TÌNH TỰ; \"tình tự\" tiếng Việt thường hiểu là tâm tình đôi lứa, còn 「｜情緒《じょうちょ》」 ở đây là không khí riêng của một nơi.",
-    "compare": "",
+    "compare": "「異国情緒」: nét như ở nước ngoài.",
     "example_notes": [
       "Con đường lát đá cũ toát ra một không khí rất riêng."
     ]
@@ -4752,7 +4752,7 @@
     "meaning": "Đảm nhiệm, phụ trách",
     "usage": "「〜を｜受《う》け｜持《も》つ」, 「クラス・｜授業《じゅぎょう》を｜受《う》け｜持《も》つ」, 「｜仕事《しごと》を｜受《う》け｜持《も》つ」. Danh từ: 「｜受《う》け｜持《も》ち」.",
     "nuance": "",
-    "compare": "「｜受《う》け｜持《も》つ」: nhận phần việc, lớp học về mình. 「｜担任《たんにん》」: chủ nhiệm một lớp, là danh từ chỉ giáo viên.",
+    "compare": "「｜受《う》け｜持《も》つ」: nhận phần việc, lớp học về mình. 「｜担任《たんにん》」: chủ nhiệm một lớp, là danh từ chỉ giáo viên. 「受け持ち」: danh từ.",
     "example_notes": [
       "Trong dự án này, tôi phụ trách mảng truyền thông."
     ]
@@ -4761,7 +4761,7 @@
     "meaning": "Ủy viên, cán sự",
     "usage": "「｜委員《いいん》になる・を｜務《つと》める」, 「クラス｜委員《いいん》」 (cán sự lớp), 「｜委員会《いいんかい》」 (ủy ban, hội đồng).",
     "nuance": "",
-    "compare": "",
+    "compare": "「委員会」: nhóm họp của các 「委員」.",
     "example_notes": [
       "Ở ban quản trị chung cư, tôi nhận làm ủy viên bàn bạc cách dùng bãi đỗ xe."
     ]
@@ -4965,7 +4965,7 @@
     "meaning": "Đường gạch dưới",
     "usage": "「｜下線《かせん》を｜引《ひ》く」 (gạch chân), 「｜下線《かせん》が｜引《ひ》いてある」, 「｜下線部《かせんぶ》」 (phần gạch chân). Cũng nói 「アンダーライン」.",
     "nuance": "",
-    "compare": "",
+    "compare": "「アンダーライン」 cùng nghĩa.",
     "example_notes": [
       "Địa chỉ ghi trong thư có gạch chân, bấm vào là mở ra."
     ]
@@ -5176,7 +5176,7 @@
     "meaning": "Tất cả, mọi (đứng trước danh từ)",
     "usage": "「あらゆる方法」, 「あらゆる人」. Chỉ đứng trước danh từ; có cụm 「ありとあらゆる」 (đủ mọi thứ).",
     "nuance": "",
-    "compare": "",
+    "compare": "「ありとあらゆる」 cùng nghĩa.",
     "example_notes": [
       "Tôi đã thử mọi cách nhưng cái khóa cửa sổ cứng vẫn không sao mở được."
     ]
@@ -5240,7 +5240,7 @@
     "meaning": "Phù hợp, đúng với (điều kiện, mẫu)",
     "usage": "「条件に当てはまる」, 「当てはまるものを選ぶ」. Tha động từ: 「当てはめる」 (áp vào).",
     "nuance": "",
-    "compare": "",
+    "compare": "「当てはまる」: tự động từ, tự khớp. 「当てはめる」: tha động từ, làm cho khớp.",
     "example_notes": [
       "Ai đáp ứng các điều kiện sau, xin hãy lấy số thứ tự ở quầy tiếp nhận."
     ]
@@ -5258,7 +5258,7 @@
     "meaning": "Nói cách khác, đổi sang cách nói khác",
     "usage": "「別の言葉に言い換える」, 「易しい言葉に言い換える」.",
     "nuance": "",
-    "compare": "「言い換える」: nói cùng một ý bằng từ khác trong cùng một thứ tiếng. 「｜訳《やく》す」: chuyển sang thứ tiếng khác: 「英語に訳す」.",
+    "compare": "「言い換える」: nói cùng một ý bằng từ khác trong cùng một thứ tiếng. 「｜訳《やく》す」: chuyển sang thứ tiếng khác: 「英語に訳す」. 「言い直す」: nói lại cho đúng.",
     "example_notes": [
       "Tôi đổi những từ khó trong bài báo thành cách diễn đạt học sinh tiểu học cũng hiểu rồi viết lên bảng."
     ]
@@ -6530,7 +6530,7 @@
     "meaning": "Cuộc hẹn gặp (hẹn trước)",
     "usage": "「アポイントを｜取《と》る」, 「アポなし」 (không hẹn trước). Nói gọn là 「アポ」.",
     "nuance": "",
-    "compare": "",
+    "compare": "「アポ」: dạng rút gọn; 「アポなし」: không hẹn trước.",
     "example_notes": [
       "Muốn gặp giám đốc thì phải hẹn trước thông qua thư ký."
     ]
@@ -6814,7 +6814,7 @@
     "meaning": "Lời nhắc nhở, cảnh cáo (vì muốn tốt cho người khác)",
     "usage": "「｜忠告《ちゅうこく》する」, 「｜忠告《ちゅうこく》を｜聞《き》く」, 「｜忠告《ちゅうこく》を｜無視《むし》する」, 「｜友人《ゆうじん》の｜忠告《ちゅうこく》」.",
     "nuance": "",
-    "compare": "",
+    "compare": "「アドバイス」: chỉ cách làm tốt; 「忠告」: nhắc điều chưa tốt.",
     "example_notes": [
       "Tôi bị bạn khuyên nhắc nhiều lần là đừng xem điện thoại khi đang lái xe."
     ]
@@ -7526,7 +7526,7 @@
     "meaning": "Chưa thật ổn, còn thiếu chút nữa",
     "usage": "「いまひとつ〜ない」 (đi với phủ định): chưa thật…, còn thiếu chút. Đồng nghĩa 「いまいち」.",
     "nuance": "",
-    "compare": "",
+    "compare": "「いまいち」 cùng nghĩa.",
     "example_notes": [
       "Bài hát mới không tệ nhưng chưa thật đọng lại trong lòng."
     ]
@@ -8323,7 +8323,7 @@
     "meaning": "Hoạt động ngoài trời",
     "usage": "「アウトドアを｜楽《たの》しむ」. Kèm 「アウトドアライフ」; đồng nghĩa 「アウトドアアクティビティ」, trái nghĩa 「インドア」.",
     "nuance": "",
-    "compare": "",
+    "compare": "「アウトドアアクティビティ」: cùng nghĩa. 「インドア」: trái nghĩa (trong nhà). 「アウトドアライフ」: cuộc sống ngoài trời.",
     "example_notes": [
       "Anh ấy vốn thích ở trong nhà nhưng từ khi được bạn rủ đi thì bỗng mê hoạt động ngoài trời."
     ]
@@ -8332,7 +8332,7 @@
     "meaning": "Đồ đan móc; việc đan len",
     "usage": "「｜編《あ》み｜物《もの》をする」, 「｜編《あ》み｜物《もの》を｜教《おそ》わる」. Động từ gốc: 「｜編《あ》む」 (đan).",
     "nuance": "",
-    "compare": "",
+    "compare": "「編む」: động từ đan.",
     "example_notes": [
       "Anh tôi lần đầu thử đan len để làm quà tặng."
     ]
@@ -8415,7 +8415,7 @@
     "meaning": "Trúng (giải); va, đụng phải",
     "usage": "Nghĩa 1: 「｜宝《たから》くじで｜当《あ》たる」. Nghĩa 2: 「ボールが｜当《あ》たる」. Tha động từ 「(〜を)｜当《あ》てる」, danh từ 「｜当《あ》たり」. Trái nghĩa: 「｜外《はず》れる」.",
     "nuance": "Nghĩa ① là đúng như mong đợi (trúng thưởng, đoán trúng); nghĩa ② là đụng trúng một vật.",
-    "compare": "Cặp trái nghĩa: 「当たる」 trúng, 「｜外《はず》れる」 trượt, đoán sai (「予想が外れる」). Tiếng Việt cũng dùng \"trúng\" cho cả trúng thưởng lẫn bị va trúng, khớp hai nghĩa của 「当たる」.",
+    "compare": "Cặp trái nghĩa: 「当たる」 trúng, 「｜外《はず》れる」 trượt, đoán sai (「予想が外れる」). Tiếng Việt cũng dùng \"trúng\" cho cả trúng thưởng lẫn bị va trúng, khớp hai nghĩa của 「当たる」. 「当てる」: tha động từ.",
     "example_notes": [
       "Tôi gửi phiếu dự thi trúng thưởng và trúng chiếc tai nghe mới ra mắt.",
       "Viên đá nhỏ va vào cửa kính, nghe một tiếng nhẹ."
@@ -8517,7 +8517,7 @@
     "meaning": "Vùng ôn đới",
     "usage": "「｜温帯《おんたい》では〜」, 「｜温帯《おんたい》に｜属《ぞく》する」. Kèm 「｜熱帯《ねったい》」, 「｜亜熱帯《あねったい》」.",
     "nuance": "",
-    "compare": "",
+    "compare": "「亜熱帯」 (Á nhiệt đới) là vùng gần nhiệt đới; 「亜」 không phải châu Á.",
     "example_notes": [
       "Phần lớn các nước châu Âu nằm ở vùng ôn đới, nhưng ở phía bắc Nhật Bản."
     ]
@@ -8681,7 +8681,7 @@
     "meaning": "Phần nào, hơi, một chút",
     "usage": "「いくぶん｜弱《よわ》くなる」. Đồng nghĩa: 「いくらか」.",
     "nuance": "",
-    "compare": "",
+    "compare": "「いくらか」 cùng nghĩa 'một chút'.",
     "example_notes": [
       "Mưa nhỏ dần, cảnh vật nhìn qua cửa sổ sáng lên phần nào."
     ]
@@ -9230,7 +9230,7 @@
     "meaning": "Việc này việc kia, cái này cái nọ",
     "usage": "「あれこれ｜考《かんが》える」, 「あれこれ(と)やる」. Cùng nghĩa với 「あれやこれや」.",
     "nuance": "",
-    "compare": "",
+    "compare": "「あれやこれや」 cũng cùng nghĩa.",
     "example_notes": [
       "Tôi nghĩ đủ thứ để chọn quà sinh nhật nhưng rốt cuộc vẫn chưa quyết được."
     ]
@@ -9666,7 +9666,7 @@
     "meaning": "Dấu vết, vết tích",
     "usage": "「｜足跡《あしあと》」 (dấu chân), 「｜城跡《しろあと》」 (di tích thành cổ), 「｜雨《あめ》の｜跡《あと》」.",
     "nuance": "",
-    "compare": "",
+    "compare": "「足跡」 (あしあと): dấu chân, một kiểu 「跡」.",
     "example_notes": [
       "Trên bức tường cũ còn vết nước mưa chảy, đen sẫm."
     ]
@@ -9801,7 +9801,7 @@
     "meaning": "Cổ tay",
     "usage": "「｜手首《てくび》」; cổ chân là 「｜足首《あしくび》」.",
     "nuance": "",
-    "compare": "Tiếng Việt cũng ghép 'cổ' với tay, chân: 「｜手首《てくび》」 là cổ tay, 「｜足首《あしくび》」 là cổ chân. 「かかと」 là gót chân, 「つま｜先《さき》」 là đầu ngón chân, 「｜腕《うで》」 là cả cánh tay.",
+    "compare": "Tiếng Việt cũng ghép 'cổ' với tay, chân: 「｜手首《てくび》」 là cổ tay, 「｜足首《あしくび》」 là cổ chân. 「かかと」 là gót chân, 「つま｜先《さき》」 là đầu ngón chân, 「｜腕《うで》」 là cả cánh tay. Từ liên quan: 「足首」 (cổ chân).",
     "example_notes": [
       "Dây đồng hồ đeo tay quá chật nên cổ tay hằn một vệt đỏ."
     ]
@@ -9937,7 +9937,7 @@
     "meaning": "Hơi, một chút (mức độ nhẹ)",
     "usage": "Phó từ đứng trước tính từ, động từ: 「やや大きい」, 「やや遠い」, 「やや高い」.",
     "nuance": "Câu thay thế trong đề: 「やや」＝「少し」. Nhiễu 「絶対」「もっと」「たぶん」 — 「もっと」 là so sánh hơn nữa, còn 「やや」 chỉ mức nhẹ.",
-    "compare": "",
+    "compare": "「いくらか」 cũng là 'một chút'.",
     "example_notes": [
       "Đôi giày này hơi rộng so với chân tôi.",
       "Hôm nay trông anh ấy có vẻ hơi kém tươi tỉnh hơn mọi khi."
@@ -9993,7 +9993,7 @@
     "meaning": "① Hơn nữa, thêm vào đó ② Càng, thêm một bậc nữa",
     "usage": "① 「さらに〜も」 (thêm cả…) ② 「さらに｜増《ふ》える」 (tăng thêm nữa).",
     "nuance": "",
-    "compare": "Tiếng Việt 'hơn nữa' dịch được cả ba, nhưng chỉ 「さらに」 còn nghĩa 'thêm vào đó' để nối thêm việc khác: 「さらに〜も」. 「いっそう」, 「｜一段《いちだん》と」 chỉ nói mức tăng lên.",
+    "compare": "Tiếng Việt 'hơn nữa' dịch được cả ba, nhưng chỉ 「さらに」 còn nghĩa 'thêm vào đó' để nối thêm việc khác: 「さらに〜も」. 「いっそう」, 「｜一段《いちだん》と」 chỉ nói mức tăng lên. 「より」 'hơn'; gần 「その上」.",
     "example_notes": [
       "Dọn phòng xong, tôi còn nhổ cỏ trong vườn nữa.",
       "Càng lên cao, nhiệt độ càng xuống thấp hơn."
@@ -10270,7 +10270,7 @@
     "meaning": "Bất thường, dị thường (khác trạng thái bình thường)",
     "usage": "「｜異常《いじょう》がない」, 「｜異常《いじょう》な｜暑《あつ》さ」, 「｜異常気象《いじょうきしょう》」.",
     "nuance": "",
-    "compare": "Nghĩa là 'bất thường' (Hán Việt DỊ THƯỜNG). 「｜異常《いじょう》がない」 là không có gì bất thường, kể cả với máy móc: 「｜異常《いじょう》な｜音《おと》」. Trái nghĩa là 「｜通常《つうじょう》」 (THÔNG THƯỜNG).",
+    "compare": "Nghĩa là 'bất thường' (Hán Việt DỊ THƯỜNG). 「｜異常《いじょう》がない」 là không có gì bất thường, kể cả với máy móc: 「｜異常《いじょう》な｜音《おと》」. Trái nghĩa là 「｜通常《つうじょう》」 (THÔNG THƯỜNG). 「異常気象」: thời tiết bất thường.",
     "example_notes": [
       "Máy nước nóng ngoài ban công phát ra tiếng bất thường nên tôi liên lạc ngay với người quản lý."
     ]
@@ -10352,7 +10352,7 @@
     "meaning": "Vi khuẩn, vi trùng",
     "usage": "「｜細菌《さいきん》が｜増《ふ》える」, 「｜細菌《さいきん》がつく」.",
     "nuance": "",
-    "compare": "",
+    "compare": "「ウイルス」 (vi-rút) khác 「細菌」 (vi khuẩn).",
     "example_notes": [
       "Dùng dao vừa thái thịt sống mà không rửa thì vi khuẩn sẽ lây sang thức ăn khác."
     ]
@@ -10371,7 +10371,7 @@
     "meaning": "Y tế (các hoạt động, dịch vụ chữa bệnh)",
     "usage": "「｜医療機関《いりょうきかん》」 (cơ sở y tế), 「｜医療技術《いりょうぎじゅつ》」 (kỹ thuật y tế), 「｜医療費《いりょうひ》」 (chi phí y tế).",
     "nuance": "",
-    "compare": "「｜医療《いりょう》」 Y LIỆU là y tế nói chung, không phải việc chữa một ca. Chữa một bệnh: 「｜治療《ちりょう》」 (TRỊ LIỆU); sơ cứu tại chỗ: 「｜手当《てあ》て」; người chữa: 「｜医師《いし》」 (Y SƯ); đi khám đều đặn: 「｜通院《つういん》」.",
+    "compare": "「｜医療《いりょう》」 Y LIỆU là y tế nói chung, không phải việc chữa một ca. Chữa một bệnh: 「｜治療《ちりょう》」 (TRỊ LIỆU); sơ cứu tại chỗ: 「｜手当《てあ》て」; người chữa: 「｜医師《いし》」 (Y SƯ); đi khám đều đặn: 「｜通院《つういん》」. Xem: 「医療機関」「医療技術」",
     "example_notes": [
       "Chỗ dựa của y tế trên đảo chỉ là một bác sĩ mỗi tuần đến hai lần."
     ]
@@ -10408,7 +10408,7 @@
     "meaning": "Áp dụng, đem ra dùng cho một đối tượng (luật lệ, bảo hiểm…)",
     "usage": "「｜規則《きそく》を｜適用《てきよう》する」, 「〜に｜適用《てきよう》される」 (được áp dụng cho …).",
     "nuance": "",
-    "compare": "",
+    "compare": "「当てはめる」: động từ, đưa cho khớp với quy tắc. 「適用」 THÍCH DỤNG: áp dụng luật lệ.",
     "example_notes": [
       "Quy định mới sẽ được áp dụng cho toàn bộ các chi nhánh từ tháng sau."
     ]
@@ -10536,7 +10536,7 @@
     "meaning": "Di truyền",
     "usage": "「｜遺伝《いでん》する」, 「｜遺伝子《いでんし》」 (gen), 「｜遺伝《いでん》だ」.",
     "nuance": "",
-    "compare": "",
+    "compare": "「遺伝子」: gen, thứ được truyền đi.",
     "example_notes": [
       "Cha và ông đều cao nên tôi nghĩ chiều cao của mình cũng là do di truyền."
     ]
@@ -10739,7 +10739,7 @@
     "meaning": "Lệ thuộc, dựa dẫm; nghiện",
     "usage": "「〜に｜依存《いぞん》する」, 「｜依存症《いぞんしょう》」, 「アルコール｜依存症《いぞんしょう》」.",
     "nuance": "",
-    "compare": "",
+    "compare": "Thêm 「症」 CHỨNG thành tên bệnh: 「アルコール依存症」.",
     "example_notes": [
       "Anh ấy lệ thuộc vào điện thoại đến khuya nên thiếu ngủ."
     ]
@@ -10782,13 +10782,14 @@
     ]
   },
   "v-1165": {
-    "meaning": "Chỉ một chiều; một trong hai bên",
-    "usage": "「〜する｜一方《いっぽう》だ」 (cứ thế mãi); 「｜二《ふた》つのうちの｜一方《いっぽう》」 (một trong hai).",
-    "nuance": "",
+    "meaning": "① Chỉ một chiều ② Một trong hai bên ③ (liên từ) mặt khác, còn bên kia",
+    "usage": "「〜する｜一方《いっぽう》だ」 (cứ thế mãi); 「｜二《ふた》つのうちの｜一方《いっぽう》」 (một trong hai); 「〜。一方、〜」 (liên từ, đặt hai vế cạnh nhau).",
+    "nuance": "Nghĩa ③ là liên từ đầu câu: đặt hai sự việc cạnh nhau để so sánh — đừng dịch là 'một phía'. Từ liên quan: 「それに対して」.",
     "compare": "",
     "example_notes": [
       "Đến tối, sức mưa vẫn cứ mạnh thêm mãi.",
-      "Trong hai tấm ảnh, một tấm đã bị phai màu."
+      "Trong hai tấm ảnh, một tấm đã bị phai màu.",
+      "Anh trai tôi quen dậy sớm, sáu giờ sáng nào cũng dậy. Còn tôi thì quen thức khuya, thức tới nửa đêm."
     ]
   },
   "v-1166": {
@@ -11103,7 +11104,7 @@
     "meaning": "Không thể có; không thể chấp nhận được",
     "usage": "「あり｜得《え》ない｜話《はなし》」 (chuyện không thể có), 「そんなことはあり｜得《え》ない」; cũng dùng để chê việc quá đáng.",
     "nuance": "",
-    "compare": "",
+    "compare": "Trái nghĩa: 「あり得る」 'có thể xảy ra'.",
     "example_notes": [
       "Hôm trước ngày nộp mà vẫn chưa viết được tờ nào thì không thể chấp nhận được."
     ]
@@ -11697,7 +11698,7 @@
     "meaning": "Lạm phát",
     "usage": "「インフレが｜進《すす》む」 (lạm phát gia tăng), 「インフレ｜対策《たいさく》」; viết đầy đủ 「インフレーション」, trái nghĩa 「デフレ」.",
     "nuance": "",
-    "compare": "",
+    "compare": "「インフレーション」: dạng đầy đủ.",
     "example_notes": [
       "Nếu lạm phát kéo dài thì cùng số tiền mua được ít hàng hơn."
     ]
@@ -12288,7 +12289,7 @@
     "meaning": "Tính cách, con người (vẻ toát ra từ một người)",
     "usage": "「｜人柄《ひとがら》が｜表《あらわ》れる」 (lộ rõ con người), 「｜誠実《せいじつ》な｜人柄《ひとがら》」 (con người chân thành). Từ liên quan: 「｜家柄《いえがら》」 (dòng dõi), 「｜土地柄《とちがら》」 (đặc trưng vùng).",
     "nuance": "",
-    "compare": "「柄」 BÍNH ở đây là \"vẻ, phẩm chất\", như trong 「｜家柄《いえがら》」: con người nhìn từ bên ngoài. 「｜性質《せいしつ》」 TÍNH CHẤT là bản tính, dùng cả cho vật.",
+    "compare": "「柄」 BÍNH ở đây là \"vẻ, phẩm chất\", như trong 「｜家柄《いえがら》」: con người nhìn từ bên ngoài. 「｜性質《せいしつ》」 TÍNH CHẤT là bản tính, dùng cả cho vật. 「家柄」: gia thế của dòng họ.",
     "example_notes": [
       "Có công ty khi phỏng vấn quyết định tuyển dụng dựa vào con người hơn là lý lịch."
     ]
@@ -12651,7 +12652,7 @@
     "meaning": "May mắn (từ mượn \"lucky\")",
     "usage": "「ラッキーだった」, 「ラッキーなことに」, 「ラッキー！」. Trái nghĩa: 「アンラッキー」.",
     "nuance": "",
-    "compare": "「ラッキー」: gặp may trong một lần cụ thể (rơi ví mà tìm lại được). 「｜幸福《こうふく》」 HẠNH PHÚC: nói về cuộc sống. Từ liên quan: 「｜幸運《こううん》」 HẠNH VẬN.",
+    "compare": "「ラッキー」: gặp may trong một lần cụ thể (rơi ví mà tìm lại được). 「｜幸福《こうふく》」 HẠNH PHÚC: nói về cuộc sống. Từ liên quan: 「｜幸運《こううん》」 HẠNH VẬN. Trái nghĩa: 「アンラッキー」 (xui xẻo).",
     "example_notes": [
       "Làm rơi ví nhưng tìm được ngay, thật may."
     ]
@@ -13915,6 +13916,385 @@
       "Tôi muốn giữ khoảng cách với người chỉ toàn nói những lời kéo chân bạn cùng khóa có thành tích tốt."
     ]
   },
+  "v-1505": {
+    "meaning": "Về nhiều mặt, việc gì cũng…",
+    "usage": "Đứng trước vị ngữ: 「何かと世話になる」, 「何かと気にかける」, 「何かと便利だ」. Gộp nhiều chuyện lặt vặt lại một lần.",
+    "nuance": "",
+    "compare": "Chữ 「何」 (HÀ) đọc 「なに」 trong 「何かと」, 「何しろ」 nhưng đọc 「なん」 trong 「何だかんだ」, 「何だか」, 「何とも」: gặp lần đầu rất dễ đọc nhầm.",
+    "example_notes": [
+      "Người hàng xóm đối xử tốt với tôi, vừa mới chuyển công tác đến, về đủ mọi việc."
+    ]
+  },
+  "v-1506": {
+    "meaning": "Chuyện này chuyện kia, nói đủ điều",
+    "usage": "Dạng 「何だかんだと〜」: 「何だかんだと言う」, 「何だかんだと文句をつける」. Gom hết mọi lý do, lời nói vặt lại.",
+    "nuance": "",
+    "compare": "Dịch 'cái này cái kia' nhưng 「何だかんだ」 gom LỜI NÓI, lý do (「何だかんだと言う」); 「何かと」 gom các mặt của sự việc. Đọc 「なん」, không phải 「なに」. Đừng lẫn với 「何だか」 (hơi hơi thấy…).",
+    "example_notes": [
+      "Anh trai viện hết lý do này đến lý do khác, chẳng chịu đến làm phiên dọn vệ sinh khu phố."
+    ]
+  },
+  "v-1507": {
+    "meaning": "Chẳng hiểu sao, không rõ vì lý do gì",
+    "usage": "「なぜか〜」: 「なぜか気になる」, 「なぜか涙が出る」, 「なぜか｜懐《なつ》かしい」. Dùng khi chính người nói cũng chưa giải thích được nguyên do.",
+    "nuance": "",
+    "compare": "Cùng gốc 「なぜ」 ('tại sao') nhưng 「なぜか」 là 'chẳng hiểu sao' (không rõ lý do), còn 「なぜなら」 là 'bởi vì' (nêu lý do). 「何だか」 chỉ cảm giác mơ hồ, không bàn đến lý do.",
+    "example_notes": [
+      "Đêm trước chuyến đi, chẳng hiểu sao mắt cứ tỉnh táo, không ngủ được."
+    ]
+  },
+  "v-1508": {
+    "meaning": "Không hiểu sao, hơi hơi thấy…",
+    "usage": "「何だか寂しい」, 「何だか変だ」, 「何だか疲れた」. Đi với trạng thái, cảm giác chủ quan của người nói.",
+    "nuance": "",
+    "compare": "Cả 「何だか」 và 「なぜか」 đều có thể dịch 'không hiểu sao': 「何だか」 nhấn vào cảm giác lờ mờ, 「なぜか」 nhấn vào nguyên do chưa rõ. 「何だかんだ」 là từ khác (chuyện này chuyện kia), đừng gộp.",
+    "example_notes": [
+      "Từ sáng đến giờ không hiểu sao người cứ uể oải, đến leo cầu thang cũng thấy mệt."
+    ]
+  },
+  "v-1509": {
+    "meaning": "Dù gì đi nữa thì (vì vốn là…)",
+    "usage": "Vế sau là lý do hay hoàn cảnh: 「何しろ初めてなので〜」, 「何しろ〜のだから」.",
+    "nuance": "",
+    "compare": "Cả ba đều có thể dịch 'dù sao': 「何しろ」 đứng TRƯỚC LÝ DO ('dù gì thì cũng vì…'), 「とにかく」 đứng trước việc cần làm. Nêu lý do thẳng thì dùng 「なぜなら」 (…からだ). 「何」 đọc 「なに」.",
+    "example_notes": [
+      "Ý kiến của ông ấy có trọng lượng. Dù sao thì ông ấy cũng là người làm công việc này suốt ba mươi năm."
+    ]
+  },
+  "v-1510": {
+    "meaning": "(Đi với phủ định) chẳng sao cả, chẳng nghĩ gì",
+    "usage": "Luôn kèm vế phủ định: 「何ともない」, 「何とも感じない」, 「何とも気にならない」.",
+    "nuance": "",
+    "compare": "Người Việt dễ hiểu 「何とも」 là 'gì cũng': thật ra luôn đi với phủ định, nghĩa 'chẳng sao/chẳng gì cả'. 「とても〜ない」 cũng cần phủ định nhưng là 'không thể nào… nổi'. 「何」 đọc 「なん」.",
+    "example_notes": [
+      "Lúc ngã tôi giật mình, nhưng không bị thương, người chẳng sao cả."
+    ]
+  },
+  "v-1511": {
+    "meaning": "Làm ơn, vui lòng (khi nhờ vả)",
+    "usage": "Đi với câu nhờ: 「どうか〜てください」, 「どうか〜ていただけませんか」, 「どうかお許しください」.",
+    "nuance": "",
+    "compare": "Chữ 「どう」 mở đầu cả ba từ này, nhưng nghĩa rất xa: 「どうか」 = 'xin', 「どうにか」 = 'bằng cách nào đó cũng xong', 「どうしても」 = 'nhất định/làm sao cũng không'.",
+    "example_notes": [
+      "\"Xin thầy làm ơn cho em gia hạn thời hạn nộp thêm đúng một ngày\", tôi đã nhờ thầy như thế."
+    ]
+  },
+  "v-1512": {
+    "meaning": "Bằng cách nào đó mà vẫn… được",
+    "usage": "Thường đi với kết quả vừa đủ: 「どうにか間に合う」, 「どうにか終わる」, 「どうにか乗り切る」.",
+    "nuance": "",
+    "compare": "Tiếng Việt hay gộp 「どうにか」 với 「どうか」 vì cùng gốc 「どう」: 「どうか」 là lời NHỜ ('xin'), 「どうしても」 là 'nhất định', còn 「どうにか」 là kết quả 'vất vả mà vẫn xong'.",
+    "example_notes": [
+      "Tôi hoảng vì không tìm thấy chìa khóa, nhưng tìm mãi cuối cùng cũng thấy."
+    ]
+  },
+  "v-1513": {
+    "meaning": "① Nhất định phải… ② Cố mấy cũng không…",
+    "usage": "① 「どうしても〜たい」: muốn bằng được. ② 「どうしても〜ない」: cố mấy cũng không.",
+    "nuance": "Nghĩa ① đi với ý muốn mạnh, nghĩa ② đi với phủ định.",
+    "compare": "Một từ có hai nghĩa trái chiều ('nhất định' và 'sao cũng không'): nhìn vế sau 「〜たい」 hay 「〜ない」. 「どうにか」 là 'cuối cùng cũng xong', 「どうか」 là 'xin' – khác hẳn.",
+    "example_notes": [
+      "Trước khi thầy nghỉ việc, tôi nhất định muốn trực tiếp nói lời cảm ơn.",
+      "Thử bao nhiêu lần, cái nắp lọ vẫn không sao mở được."
+    ]
+  },
+  "v-1514": {
+    "meaning": "Đằng nào cũng, dù sao thì",
+    "usage": "「どうせ〜から」, 「どうせ〜ない」. Người nói coi kết quả đằng nào cũng như nhau.",
+    "nuance": "",
+    "compare": "Dịch 'dù sao' như 「とにかく」, nhưng 「どうせ」 nói kết quả không đổi dù làm thế nào, còn 「とにかく」 dặn 'trước hết cứ làm'. Đừng lẫn với 「どうやら」 ('hình như').",
+    "example_notes": [
+      "Dù sao mai cũng được nghỉ, nên tối nay cứ đọc sách đến khuya."
+    ]
+  },
+  "v-1515": {
+    "meaning": "Có vẻ như, hình như là",
+    "usage": "Đi với từ suy đoán: 「どうやら〜ようだ」, 「どうやら〜らしい」, 「どうやら〜そうだ」.",
+    "nuance": "",
+    "compare": "Dịch 'hình như', nhưng nói về điều đoán ra từ dấu hiệu nhìn thấy. Dễ lẫn với 「どうせ」 vì cùng mở đầu 「どう」: 「どうせ」 là 'dù sao', không phải suy đoán.",
+    "example_notes": [
+      "Căn phòng bên cạnh vốn ồn ào mà giờ chẳng nghe tiếng động nào. Hình như mọi người đã ra ngoài cả."
+    ]
+  },
+  "v-1516": {
+    "meaning": "Dù sao cũng, trước hết cứ",
+    "usage": "Mở đầu vế nêu việc cần làm: 「とにかく先に〜」, 「とにかく〜しよう」, 「とにかく〜しなさい」. Cùng nghĩa: 「ともかく」; từ liên quan: 「とりあえず」 (tạm thời).",
+    "nuance": "",
+    "compare": "Có ba từ cùng dịch 'dù sao': 「とにかく」 (trước hết cứ làm), 「何しろ」 (vì dù sao… nên…), 「どうせ」 (đằng nào cũng vậy).",
+    "example_notes": [
+      "Chuyện chi tiết để sau, trước hết cứ giữ chỗ ở hội trường đã."
+    ]
+  },
+  "v-1517": {
+    "meaning": "Không thể nào… nổi (đi với phủ định)",
+    "usage": "Kèm phủ định, hay là thể khả năng phủ định: 「とても払えない」 (không trả nổi), 「とても間に合わない」 (không thể kịp).",
+    "nuance": "",
+    "compare": "Trong mẫu có phủ định, đừng dịch 「とても」 là 'rất': 「とても〜ない」 nghĩa 'không thể nào… nổi'. 「何とも〜ない」 là 'chẳng sao/chẳng gì cả'.",
+    "example_notes": [
+      "Ngọn núi cao như vậy thì người mới như tôi không thể nào leo nổi."
+    ]
+  },
+  "v-1518": {
+    "meaning": "Hơn, ở mức cao hơn",
+    "usage": "Đặt trước tính từ, phó từ: 「より良い」, 「よりわかりやすい」, 「よりいっそう」.",
+    "nuance": "",
+    "compare": "Chữ 「より」 quen thuộc là trợ từ 'từ/hơn'; ở đây nó là PHÓ TỪ, đứng trước tính từ để nói 'hơn' (gần 「さらに」). Nối nhau thành 「よりいっそう」.",
+    "example_notes": [
+      "Vì đã phóng to chữ nên bản đồ hướng dẫn trở nên dễ nhìn hơn."
+    ]
+  },
+  "v-1519": {
+    "meaning": "Biết bao, đến mức nào, như thế nào",
+    "usage": "Làm thành một mệnh đề 「いかに〜か」, theo sau là động từ như 「わかる」, 「示す」.",
+    "nuance": "",
+    "compare": "'Như thế nào' của tiếng Việt vừa hỏi cách, vừa than mức độ; 「いかに」 ở đây là MỨC ĐỘ ('đến mức nào'). Thêm 「も」 thành 「いかにも」 thì lại là 'trông y như'.",
+    "example_notes": [
+      "Số liệu thống kê này cho thấy công việc của nhà nông vất vả đến mức nào."
+    ]
+  },
+  "v-1520": {
+    "meaning": "Trông y như là, thật đúng vẻ",
+    "usage": "Hay đi với 「〜そうだ」, 「〜らしい」: 「いかにも強そうだ」, 「いかにも学生らしい」.",
+    "nuance": "",
+    "compare": "Đừng tưởng 「いかにも」 là 'như thế nào' như 「いかに」: có 「も」 thì nghĩa thành 'trông y như' (「〜そうだ」, 「〜らしい」). 「まさに」 cũng 'đúng là', nhưng còn nghĩa 'đúng lúc'.",
+    "example_notes": [
+      "Cách nói chuyện nhẹ nhàng ấy quả đúng là phong thái của một người thầy."
+    ]
+  },
+  "v-1521": {
+    "meaning": "Vì thế nên, do đó (kết quả của việc trước)",
+    "usage": "Nối hai câu: 「〜た。それで、〜」. Từ liên quan: 「そのため」, 「その結果」.",
+    "nuance": "Cùng nghĩa với 「だから」.",
+    "compare": "「それで」, 「そこで」, 「すると」 đều dịch 'vì vậy/thế là': 「それで」 là kết quả tự nhiên, 「そこで」 là việc mình quyết làm, 「すると」 là việc xảy ra sau đó. 「それでも」, 「それでは」 chỉ giống mặt chữ.",
+    "example_notes": [
+      "Bố tôi bị đau đầu gối. Vì vậy ông đang nghỉ đi dạo hàng ngày."
+    ]
+  },
+  "v-1522": {
+    "meaning": "Cho nên, nhân đó (làm gì để đối phó)",
+    "usage": "Vế sau là việc đã làm: 「〜た。そこで、〜た」. Hay nói về hành động có chủ ý.",
+    "nuance": "",
+    "compare": "Người Việt hay dịch 「そこで」 là 'ở đó' vì 「そこ」: ở đầu câu nó là 'cho nên mới', theo sau là việc mình chủ động làm. Kết quả tự đến là 「それで」; việc bất ngờ xảy ra là 「すると」.",
+    "example_notes": [
+      "Cốc dùng cho khách không đủ. Vì vậy tôi đi mượn từ bộ phận bên cạnh."
+    ]
+  },
+  "v-1523": {
+    "meaning": "Thế là, ngay sau đó (có việc xảy ra)",
+    "usage": "「〜た。すると、〜た」: câu sau nêu việc xảy ra tiếp theo ngay sau việc trước.",
+    "nuance": "",
+    "compare": "Cùng dịch 'thế là', nhưng 「すると」 là SỰ VIỆC xảy ra sau (không do mình chủ động), còn 「そこで」 là việc mình làm để đáp lại, 「それで」 là kết quả của nguyên nhân.",
+    "example_notes": [
+      "Tôi mở cửa sổ nhìn ra ngoài. Thế là thấy một con mèo lạ đang ngồi trong vườn."
+    ]
+  },
+  "v-1524": {
+    "meaning": "Bởi vì, lý do là (mở đầu phần nêu lý do)",
+    "usage": "Mẫu: 「〜。なぜなら、〜からだ」: câu sau kết bằng 「から」 để nêu lý do.",
+    "nuance": "",
+    "compare": "Đều là 'bởi vì' đứng đầu câu: 「なぜなら」 trả lời thẳng 'tại sao', 「というのも」 giải thích sự việc vừa nêu, 「何しろ」 nhấn 'dù gì thì cũng vì'. Đừng lẫn 「なぜか」 ('chẳng hiểu sao').",
+    "example_notes": [
+      "Tôi phản đối việc đóng cửa tiệm này. Bởi vì khách lớn tuổi sẽ mất chỗ để đến."
+    ]
+  },
+  "v-1525": {
+    "meaning": "Sở dĩ như vậy là vì, lý do là",
+    "usage": "Đứng sau một sự việc đã nêu: 「〜。というのも、〜からだ」. Cùng nghĩa: 「というのは」.",
+    "nuance": "",
+    "compare": "Dịch 'là bởi vì' như 「なぜなら」, nhưng 「というのも」 nối với sự việc ngay trước ('sở dĩ vậy là…'), còn 「なぜなら」 nghe như trả lời câu 'tại sao'.",
+    "example_notes": [
+      "Dạo này em gái tôi đi ngủ sớm. Sở dĩ vậy là vì từ tháng sau em bắt đầu công việc buổi sáng sớm."
+    ]
+  },
+  "v-1526": {
+    "meaning": "Nói cách khác, tức là",
+    "usage": "「〜。つまり、〜ということだ」: nhắc lại hoặc tóm gọn điều vừa nói. Từ liên quan: 「要するに」, 「すなわち」.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Quán này chỉ nghỉ thứ Tư, các ngày khác ngày nào cũng mở. Tức là mỗi tuần mở sáu ngày."
+    ]
+  },
+  "v-1527": {
+    "meaning": "Cái gọi là, thường được gọi là",
+    "usage": "Đứng ngay trước danh từ: 「いわゆる〜」. Mang ý 'người ta vẫn gọi như vậy'.",
+    "nuance": "",
+    "compare": "",
+    "example_notes": [
+      "Nhân viên mới vào tháng trước là người mà ta hay gọi là 'con em từ nước ngoài về', nghe nói học ở trường nước ngoài suốt đến hết cấp hai."
+    ]
+  },
+  "v-1528": {
+    "meaning": "Hơn nữa, thêm vào đó",
+    "usage": "Cộng thêm một ý cùng hướng: 「〜。その上、〜」. Cùng nghĩa: 「それに」.",
+    "nuance": "",
+    "compare": "Ba từ đều là 'hơn nữa': 「その上」 (=「それに」) cộng thêm một ý; 「しかも」 là 'chưa kể'; 「そればかりか」 là 'không chỉ vậy mà còn…'. 「さらに」 cũng có nghĩa này.",
+    "example_notes": [
+      "Con đường này đêm xuống là tối. Hơn nữa lại ít người qua lại."
+    ]
+  },
+  "v-1529": {
+    "meaning": "Không chỉ thế, mà còn",
+    "usage": "Thêm một việc nữa vào điều vừa nói: 「〜。そればかりか、〜」. Cùng nghĩa: 「そればかりでなく」.",
+    "nuance": "",
+    "compare": "Cùng dịch 'không chỉ vậy', nhưng 「そればかりか」 mở bằng 'ngoài chuyện đó ra' rồi mới đưa việc thứ hai, còn 「その上」 chỉ xếp thêm ý, không dùng mẫu 'không chỉ…'.",
+    "example_notes": [
+      "Em trai tôi ngày nào cũng chạy bộ. Không chỉ thế, ngày nghỉ còn đi leo núi."
+    ]
+  },
+  "v-1530": {
+    "meaning": "Chưa kể, lại còn",
+    "usage": "Chồng thêm một sự việc nữa lên cùng chuyện: 「〜。しかも、〜」.",
+    "nuance": "",
+    "compare": "Nghĩa 'hơn nữa', 'chưa kể': gần 「その上」 và 「そればかりか」. Đừng nhầm 「しかし」 ('nhưng') vì chỉ khác một chữ ở cuối.",
+    "example_notes": [
+      "Sáng nay tôi bị đau đầu. Chưa kể còn bắt đầu sốt nữa."
+    ]
+  },
+  "v-1531": {
+    "meaning": "Và, ngoài ra (nêu thêm một việc khác)",
+    "usage": "Xếp thêm một sự việc khác, ngang hàng với việc trước: 「〜。また、〜」.",
+    "nuance": "",
+    "compare": "Cùng dịch 'ngoài ra' với 「なお」, nhưng 「また」 xếp thêm một sự việc khác, còn 「なお」 bổ sung lời dặn như 「なお、〜てください」.",
+    "example_notes": [
+      "Thị trấn này có một bến cảng lâu đời. Ngoài ra, phía núi còn có suối nước nóng."
+    ]
+  },
+  "v-1532": {
+    "meaning": "Nhưng, tuy nhiên",
+    "usage": "Đứng đầu câu: 「〜。しかし、〜」. Từ liên quan: 「だが」, 「けれども」.",
+    "nuance": "",
+    "compare": "Tiếng Việt gom 「しかし」, 「ところが」, 「ただ」, 「ただし」 vào 'nhưng': 「しかし」 nêu ý ngược lại; 「ところが」 mang bất ngờ; 「ただ」 thêm điểm vướng; 「ただし」 kèm điều kiện. 「しかも」 là 'hơn nữa'.",
+    "example_notes": [
+      "Tôi thử cài ứng dụng mới. Nhưng nó không dễ dùng như tôi nghĩ."
+    ]
+  },
+  "v-1533": {
+    "meaning": "Ngờ đâu lại…, nhưng (trái dự đoán)",
+    "usage": "Mẫu 「〜と思った。ところが、〜」: vế sau trái với điều mình tưởng.",
+    "nuance": "Thể hiện sự ngạc nhiên của người nói.",
+    "compare": "「しかし」 chỉ là 'nhưng' phản bác; 「ところが」 thêm cảm giác 'ngờ đâu lại…'. Đừng nhầm với 「ところで」 (đổi chủ đề) vì cùng mở đầu 「ところ」.",
+    "example_notes": [
+      "Tôi nghĩ chạy tới ga thì kịp. Thế mà đến trước cổng soát vé mới nhận ra không có vé tháng."
+    ]
+  },
+  "v-1534": {
+    "meaning": "Dù vậy, dẫu thế vẫn…",
+    "usage": "Vế sau không bị vế trước làm đổi: 「〜。それでも、〜」, 「それでもなお」.",
+    "nuance": "",
+    "compare": "Chữ 「も」 làm đổi nghĩa hoàn toàn: 「それで」 = 'vì thế', 「それでも」 = 'dù vậy mà vẫn'. Gần nó là 「それにもかかわらず」 ('bất chấp') và 「そうはいっても」 ('nói thì nói vậy').",
+    "example_notes": [
+      "Dự báo thời tiết nói sẽ có gió mạnh. Dù vậy, bố tôi vẫn đi câu."
+    ]
+  },
+  "v-1535": {
+    "meaning": "Vậy mà, bất chấp điều đó",
+    "usage": "「〜。それにもかかわらず、〜」: vế sau không như điều vế trước khiến ta đoán.",
+    "nuance": "",
+    "compare": "Khó tách 'dù vậy' (「それでも」) và 'bất chấp điều đó' (「それにもかかわらず」): từ sau nặng hơn, nhấn sự trái ngược. Cũng gần 「そうはいっても」, 「それにしては」.",
+    "example_notes": [
+      "Công ty đó thua lỗ ba năm liền. Bất chấp điều đó, họ vẫn quyết định xây nhà máy mới."
+    ]
+  },
+  "v-1536": {
+    "meaning": "Dù nói vậy, nói thì nói thế nhưng",
+    "usage": "「〜。そうはいっても、〜」: thừa nhận điều vừa nói rồi chuyển sang thực tế khác. Từ liên quan: 「といっても」.",
+    "nuance": "",
+    "compare": "'Dù nói vậy' dễ bị dùng như 'dù vậy' (「それでも」): 「そうはいっても」 thì đáp lại CHÍNH LỜI vừa nói ('nói thế chứ thực tế thì…'). 「それにもかかわらず」, 「それにしては」 không có ý này.",
+    "example_notes": [
+      "Tôi nghĩ dậy sớm tốt cho sức khỏe. Nói thế chứ sáng mùa đông không muốn chui ra khỏi chăn."
+    ]
+  },
+  "v-1537": {
+    "meaning": "So với chuyện đó thì… (mà lại), thế mà",
+    "usage": "「〜。それにしては、〜」: lấy vế trước làm mốc, nói thực tế lệch với mốc đó.",
+    "nuance": "",
+    "compare": "Cùng nghĩa 'vậy mà' với 「それにもかかわらず」, nhưng 「それにしては」 so với một TIÊU CHUẨN ('đáng lẽ phải…'). Khác 「そうはいっても」, vốn đáp lại lời vừa nói.",
+    "example_notes": [
+      "Tôi nghe nói chiếc đồng hồ này là hàng cao cấp. Vậy mà trông nó được làm khá rẻ tiền."
+    ]
+  },
+  "v-1539": {
+    "meaning": "Có điều, chỉ có điều là",
+    "usage": "「〜。ただ、〜」: sau ý chính thêm một điểm vướng nhỏ.",
+    "nuance": "",
+    "compare": "'Có điều' (「ただ」) và 'tuy nhiên' (「ただし」) đều thêm một ý sau câu chính: 「ただ」 là chỗ vướng người nói tự thấy, 「ただし」 là điều kiện, ngoại lệ của quy định. Ý ngược hẳn thì là 「しかし」.",
+    "example_notes": [
+      "Công việc này vui. Chỉ có điều những hôm về muộn nhiều nên hơi phiền."
+    ]
+  },
+  "v-1540": {
+    "meaning": "Tuy nhiên, nhưng (kèm điều kiện, ngoại lệ)",
+    "usage": "Đứng sau một quy định: 「〜。ただし、〜」. Từ liên quan: 「もっとも」.",
+    "nuance": "",
+    "compare": "Dịch 'tuy nhiên' nên dễ dùng như 「しかし」, nhưng 「ただし」 chỉ thêm ĐIỀU KIỆN hoặc NGOẠI LỆ cho điều vừa nêu (thông báo, nội quy). Chỗ vướng cá nhân thì dùng 「ただ」.",
+    "example_notes": [
+      "Vào cửa miễn phí. Tuy nhiên, trẻ em từ tiểu học trở xuống phải đi cùng người giám hộ."
+    ]
+  },
+  "v-1541": {
+    "meaning": "Thêm nữa, xin lưu ý thêm",
+    "usage": "Thông báo, giải thích xong rồi bổ sung thông tin: 「〜。なお、〜」.",
+    "nuance": "",
+    "compare": "Trong tiếng Việt 'ngoài ra' dịch cả 「また」 lẫn 「なお」: 「なお」 bổ sung thông tin vào một thông báo, lời giải thích; xếp thêm một sự việc khác thì dùng 「また」.",
+    "example_notes": [
+      "Tiệc chia tay bắt đầu lúc 6 giờ. Ngoài ra, hội phí sẽ thu vào ngày hôm đó."
+    ]
+  },
+  "v-1542": {
+    "meaning": "Hoặc, hoặc là",
+    "usage": "Dạng 「AまたはB」: nêu các lựa chọn trong câu thông tin. Cùng nghĩa: 「あるいは」.",
+    "nuance": "",
+    "compare": "Cả 「または」 và 「それとも」 là 'hoặc': 「または」 liệt kê lựa chọn trong câu kể, còn 「それとも」 đi với CÂU HỎI ('hay là…?'). 「あるいは」 cũng là \"hoặc\", dùng như 「または」 trong câu kể.",
+    "example_notes": [
+      "Người vắng mặt phải báo trước cho giáo viên chủ nhiệm hoặc đại diện lớp."
+    ]
+  },
+  "v-1543": {
+    "meaning": "Hay là (hỏi chọn một trong hai)",
+    "usage": "Chỉ ở câu hỏi: 「Aですか。それとも、Bですか」, 「Aする？　それとも、Bする？」.",
+    "nuance": "",
+    "compare": "Chữ 'hay là' trong câu hỏi lựa chọn. Câu kể thì dùng 「または」 ('hoặc'). 「それでは」 là 'vậy thì' – khác hẳn dù mở đầu giống nhau.",
+    "example_notes": [
+      "Bữa tối ăn ở nhà hay là ra ngoài ăn?"
+    ]
+  },
+  "v-1544": {
+    "meaning": "À này, nhân tiện (chuyển chủ đề)",
+    "usage": "Đầu câu, đổi sang chuyện khác: 「〜。ところで、〜」.",
+    "nuance": "",
+    "compare": "Dễ lẫn với 「ところが」 ('thế mà'): 「ところで」 chỉ đổi chủ đề, không đối lập. 「さて」 thì chuyển sang bước kế tiếp của CÙNG câu chuyện.",
+    "example_notes": [
+      "Việc kiểm tra tài liệu đến đây là hết. À này, địa điểm tiệc chào mừng tháng sau đã quyết chưa?"
+    ]
+  },
+  "v-1545": {
+    "meaning": "Nào, bây giờ thì (bắt đầu bước tiếp)",
+    "usage": "Mở đầu việc kế tiếp: 「さて、〜」, 「さて、〜しようか」.",
+    "nuance": "",
+    "compare": "'Nào' của tiếng Việt dịch được cả 「さて」 lẫn 「それでは」: 「さて」 chuyển sang bước kế tiếp TRONG cùng mạch việc, 「それでは」 là 'vậy thì' sau khi việc trước xong. Đổi hẳn chủ đề thì là 「ところで」.",
+    "example_notes": [
+      "Dọn phòng mãi cũng xong. Nào, pha chén trà uống thôi."
+    ]
+  },
+  "v-1546": {
+    "meaning": "Vậy thì, nào thì",
+    "usage": "「それでは、〜ます」: dùng khi mở đầu hoặc kết thúc một việc. Cùng nghĩa: 「では」; từ liên quan: 「それなら」, 「それじゃ」.",
+    "nuance": "",
+    "compare": "Đừng nhầm 「それでは」 với 「それで」 ('vì thế') hay 「それとも」 ('hay là'): chỉ khác vài âm nhưng nghĩa khác hẳn. 「それでは」 = 'vậy thì…', gần 「さて」 ('nào').",
+    "example_notes": [
+      "Chuẩn bị xong chưa? Vậy thì chúng ta bắt đầu thôi."
+    ]
+  },
+  "v-o-amae": {
+    "meaning": "Tính ỷ lại, nhõng nhẽo; sự dựa dẫm",
+    "usage": "「甘えが出る」, 「甘えがある」, 「甘えを捨てる」. Từ liên quan của 「甘える」.",
+    "nuance": "",
+    "compare": "「甘え」 là danh từ của 「甘える」, chỉ tâm lý ỷ lại vào người khác. Đừng đọc 「あまい」: nó không có nghĩa 'ngọt'.",
+    "example_notes": [
+      "Cái tính ỷ lại, tin rằng có làm hỏng thì vẫn có người giúp, đang cản trở sự trưởng thành của anh ấy."
+    ]
+  },
   "v-o-amayakasu": {
     "meaning": "Nuông chiều, chiều chuộng (con cái, người mới, cấp dưới)",
     "usage": "「子どもを甘やかす」, thể bị động 「甘やかされて育つ」 (lớn lên trong sự nuông chiều), phủ định 「甘やかさず」 (không nuông chiều).",
@@ -13923,6 +14303,24 @@
     "example_notes": [
       "Huấn luyện viên không nuông chiều cả cầu thủ vừa trở lại sau chấn thương, mà cho tập giống hệt các cầu thủ khác.",
       "Nếu cứ chiều chuộng người mới chỉ vì họ là người mới thì họ sẽ mãi không thạo việc."
+    ]
+  },
+  "v-o-ikkadanran": {
+    "meaning": "Cả nhà quây quần vui vẻ",
+    "usage": "「一家団らんの時間」, 「一家団らんを楽しむ」. Từ liên quan của 「一家」.",
+    "nuance": "",
+    "compare": "「一家」 là cả nhà; 「団らん」 có chữ 「団」 ĐOÀN như 'đoàn tụ'. Ghép lại: 「一家団らん」 là cả nhà quây quần.",
+    "example_notes": [
+      "Dịp Tết, ngay cả các con ở xa cũng về, cả nhà cùng tận hưởng không khí quây quần."
+    ]
+  },
+  "v-o-uketsugu": {
+    "meaning": "Kế thừa, nối tiếp người đi trước",
+    "usage": "「伝統を受け継ぐ」, 「技を受け継ぐ」, 「親から受け継ぐ」.",
+    "nuance": "",
+    "compare": "「継ぐ」 và 「受け継ぐ」 đều là 'kế thừa'. 「受け継ぐ」 ghép 「受ける」 (nhận) với 「継ぐ」: nhấn việc nhận từ người đi trước rồi giữ tiếp.",
+    "example_notes": [
+      "Lò gốm này đến nay vẫn nung đồ bằng phương pháp kế thừa từ đời trước."
     ]
   },
   "v-o-sanfujinka": {
@@ -13980,6 +14378,24 @@
       "Bà tôi nhờ người giúp việc chăm sóc đến nhà hai lần mỗi tuần."
     ]
   },
+  "v-o-aishou": {
+    "meaning": "Tên gọi thân mật, biệt danh",
+    "usage": "「愛称で呼ぶ」, 「愛称をつける」, 「〜という愛称で親しまれる」.",
+    "nuance": "",
+    "compare": "「ニックネーム」, 「あだ名」, 「愛称」 đều là 'biệt danh', cùng nghĩa. Chữ 「称」 XƯNG là gọi tên: 愛称 = tên gọi thương mến.",
+    "example_notes": [
+      "Cậu đàn em được các bạn trong câu lạc bộ gọi bằng biệt danh \"Hiro\"."
+    ]
+  },
+  "v-o-adana": {
+    "meaning": "Biệt danh, tên gọi riêng đặt cho một người",
+    "usage": "「あだ名をつける」, 「あだ名で呼ぶ」, 「あだ名がつく」.",
+    "nuance": "",
+    "compare": "Chữ 「名」 (DANH) trong 「あだ名」 đọc 「な」 như 「名前」, không phải 「めい」 như 「名人」. Cùng nghĩa với 「ニックネーム」, 「愛称」.",
+    "example_notes": [
+      "Hồi tiểu học, tôi cao nên bị gắn biệt danh \"cột điện\"."
+    ]
+  },
   "v-o-tayori": {
     "meaning": "Chỗ dựa, người hay vật mình trông cậy vào",
     "usage": "「頼りにする」 (trông cậy vào), 「頼りになる」 (đáng tin cậy), 「〜だけが頼りだ」 (chỉ còn trông vào…).",
@@ -14034,6 +14450,24 @@
     "compare": "",
     "example_notes": [
       "Khi thuê xe, tôi xuất trình giấy phép lái xe."
+    ]
+  },
+  "v-o-aijou": {
+    "meaning": "Tình thương, tình cảm yêu mến",
+    "usage": "「愛情を注ぐ」, 「愛情が深い」, 「愛情のこもった手紙」.",
+    "nuance": "",
+    "compare": "Dễ nhầm với \"ái tình\" tiếng Việt, vốn nghiêng về tình yêu đôi lứa; 「愛情」 dịch là 'tình yêu, tình thương', gồm cả tình cha mẹ con cái.",
+    "example_notes": [
+      "Mẹ mỗi tuần đều gửi cho cô con gái sống ở nước ngoài một lá thư chứa chan tình thương."
+    ]
+  },
+  "v-o-aisuru": {
+    "meaning": "Yêu, yêu thương",
+    "usage": "「家族を愛する」, 「故郷を愛する」, 「愛している」. Từ liên quan: 「愛情」 (tình thương).",
+    "nuance": "",
+    "compare": "Cùng chữ 愛 ÁI với 「愛」, 「愛情」: 「愛」 là danh từ, 「愛する」 là động từ đi với 「を」: 「故郷を愛する」.",
+    "example_notes": [
+      "Bà tôi yêu hòn đảo nơi bà sinh ra và lớn lên, già rồi vẫn không chịu rời đi."
     ]
   },
   "v-o-kinku": {
@@ -14108,6 +14542,15 @@
       "Nói to trên tàu điện là hành vi gây phiền hà cho mọi người."
     ]
   },
+  "v-o-ikkenya": {
+    "meaning": "Nhà riêng (một căn nhà độc lập)",
+    "usage": "「一軒家を借りる」, 「一軒家に住む」, 「一軒家を買う」.",
+    "nuance": "",
+    "compare": "Cùng nghĩa với 「一戸建て」. Chữ 「家」 đọc 「や」 (không phải 「いえ」, 「か」): 「一軒家」 đọc là いっけんや.",
+    "example_notes": [
+      "Vì muốn nuôi chó trong vườn, tôi quyết định chuyển từ chung cư sang nhà riêng."
+    ]
+  },
   "v-o-hitorigurashi": {
     "meaning": "Sống một mình",
     "usage": "「一人暮らしをする」, 「一人暮らしの部屋」.",
@@ -14142,6 +14585,15 @@
     "compare": "",
     "example_notes": [
       "Niềm tự hào của thị trấn chúng tôi là hàng anh đào mùa xuân."
+    ]
+  },
+  "v-o-anteikan": {
+    "meaning": "Cảm giác ổn định, vững vàng",
+    "usage": "「安定感がある」, 「安定感に欠ける」, 「安定感を与える」.",
+    "nuance": "",
+    "compare": "「安定」 ỔN ĐỊNH nói trạng thái; 「安定感」 thêm 「感」 CẢM, nói cảm giác thấy vững: 「安定感がある」.",
+    "example_notes": [
+      "Chiếc ghế này chân to nên ngồi vào thấy rất vững."
     ]
   },
   "v-o-keihi": {
@@ -14208,6 +14660,15 @@
       "Tiệc sau đám cưới theo kiểu buffet nên tôi lấy được món mình thích."
     ]
   },
+  "v-o-anka": {
+    "meaning": "Giá rẻ, rẻ tiền",
+    "usage": "「安価な品」, 「安価で買える」, 「安価に作る」. Trái nghĩa với 「高価」.",
+    "nuance": "",
+    "compare": "Cặp trái nghĩa: 「安価」 AN GIÁ (giá rẻ) – 「高価」 CAO GIÁ (giá cao). Chữ 「安」 ở đây là 'rẻ', không phải 'yên ổn'.",
+    "example_notes": [
+      "Linh kiện này rẻ nên dù mua nhiều số lượng cũng không tốn kém."
+    ]
+  },
   "v-o-kujibiki": {
     "meaning": "Bốc thăm, rút thăm",
     "usage": "「くじ引きで決める」, 「くじ引きに当たる」.",
@@ -14233,6 +14694,24 @@
     "compare": "",
     "example_notes": [
       "Tôi mua phô mai đặc sản nổi tiếng của Hokkaido làm quà."
+    ]
+  },
+  "v-o-akuruhi": {
+    "meaning": "Ngày hôm sau, hôm sau",
+    "usage": "「あくる日の朝」, 「あくる日になる」, 「あくる日から」.",
+    "nuance": "",
+    "compare": "「あくる」 chỉ đứng trước danh từ. Chữ 「日」 trong 「あくる日」 đọc 「ひ」, không phải 「にち」.",
+    "example_notes": [
+      "Bố tôi hôm trước uống đến khuya, sang hôm sau mà vẫn chưa chịu dậy."
+    ]
+  },
+  "v-o-ittoki": {
+    "meaning": "Một lúc, một thời gian ngắn",
+    "usage": "「いっときの感情」, 「いっときだけ」, 「いっとき流行る」. Từ liên quan của 「一時」.",
+    "nuance": "",
+    "compare": "Từ liên quan của 「一時」, viết bằng kana: 「いっとき」 là 'một lúc ngắn'. Còn 「一時」 đọc 「いちじ」, đừng đọc lẫn.",
+    "example_notes": [
+      "Đừng quyết định theo cảm xúc nhất thời, hãy nghĩ qua một đêm rồi hãy trả lời."
     ]
   },
   "v-o-eikyuuni": {
@@ -14261,6 +14740,15 @@
     "compare": "",
     "example_notes": [
       "Tôi đã xem bản đồ để biết đường từ trước nên không bị lạc."
+    ]
+  },
+  "v-o-akegata": {
+    "meaning": "Rạng sáng, lúc trời sắp sáng",
+    "usage": "「明け方に目が覚める」, 「明け方まで起きている」, 「明け方の空」.",
+    "nuance": "",
+    "compare": "Cùng chỉ lúc trời hửng: 「夜明け」 và 「明け方」. Chữ 「方」 trong 「明け方」 đọc 「がた」 như 「夕方」, không phải 「ほう」.",
+    "example_notes": [
+      "Tiếng khóc của em bé nhà bên làm tôi tỉnh giấc lúc rạng sáng."
     ]
   },
   "v-o-shuushin": {
@@ -14300,6 +14788,24 @@
       "Ông tôi tính thận trọng, trước khi ra ngoài kiểm tra khóa cửa nhiều lần."
     ]
   },
+  "v-o-ajikagen": {
+    "meaning": "Mức đậm nhạt của vị (khi nêm nếm)",
+    "usage": "「味加減を見る」, 「味加減がちょうどいい」, 「味加減を整える」. Từ liên quan: 「加減」.",
+    "nuance": "",
+    "compare": "「味加減」 = 「味」 (vị) + 「加減」 (mức vừa phải): nói độ đậm nhạt vừa miệng; 「味付け」 thì nói việc nêm gia vị.",
+    "example_notes": [
+      "Món súp miso của bà lúc nào uống cũng có độ đậm nhạt y như cũ."
+    ]
+  },
+  "v-o-iremono": {
+    "meaning": "Đồ đựng, hộp đựng",
+    "usage": "「入れ物に移す」, 「入れ物を探す」, 「入れ物が足りない」.",
+    "nuance": "",
+    "compare": "「入れ物」 ghép 「入れる」 (cho vào) với 「物」; nghĩa giống 「容器」 'đồ đựng'.",
+    "example_notes": [
+      "Đồ đựng số sò hến nhặt được đã không còn đủ chỗ."
+    ]
+  },
   "v-o-katameru": {
     "meaning": "Làm cho cứng, chắc lại; quyết chắc (ý định, phương án)",
     "usage": "「土を固める」, 「ゼリーを固める」, 「方針を固める」 (chốt phương án), 「決意を固める」 (hạ quyết tâm).",
@@ -14326,6 +14832,15 @@
     "compare": "",
     "example_notes": [
       "Cơm hộp có hạn sử dụng đến hôm nay được bán nửa giá."
+    ]
+  },
+  "v-o-arumikan": {
+    "meaning": "Lon nhôm",
+    "usage": "「アルミ缶を集める」, 「アルミ缶を出す」. Từ liên quan của 「資源ごみ」.",
+    "nuance": "",
+    "compare": "「アルミ缶」 được kể là một loại 「資源ごみ」 (rác tái chế).",
+    "example_notes": [
+      "Sau giải đấu, mọi người cùng nhặt những lon nhôm bị vứt lại ở hội trường."
     ]
   },
   "v-o-kamiomutsu": {
@@ -14490,6 +15005,15 @@
       "Gia đình đã định sẵn phương tiện liên lạc khi điện thoại không gọi được."
     ]
   },
+  "v-o-ikokujouchou": {
+    "meaning": "Không khí ngoại quốc, nét như ở nước ngoài",
+    "usage": "「異国情緒あふれる町」, 「異国情緒を感じる」, 「異国情緒のある通り」.",
+    "nuance": "",
+    "compare": "「情緒」 TÌNH TỰ: chữ 「緒」 đọc 「ちょ」 (không phải 「しょ」). 「異国情緒」 = 「異国」 (nước khác) + 「情緒」 (vẻ riêng gợi cảm xúc).",
+    "example_notes": [
+      "Gần cảng có nhiều quán phục vụ món ăn nước ngoài, mang lại cảm giác như ở xứ lạ."
+    ]
+  },
   "v-o-gekigen": {
     "meaning": "Giảm mạnh, giảm đột ngột",
     "usage": "「激減する」, 「人口が激減」. Trái nghĩa: 「激増」.",
@@ -14517,6 +15041,24 @@
       "Để có sức khỏe, giấc ngủ mỗi ngày là yếu tố không thể thiếu."
     ]
   },
+  "v-o-iinkai": {
+    "meaning": "Ủy ban; ban, hội đồng (nhóm người được giao việc)",
+    "usage": "「委員会を開く」, 「委員会で話し合う」, 「委員会に入る」.",
+    "nuance": "",
+    "compare": "「委員」 ỦY VIÊN là một người; 「委員会」 ỦY VIÊN HỘI là nhóm họp lại để làm việc.",
+    "example_notes": [
+      "Chúng tôi sẽ bàn về hội thao tháng sau trong buổi họp ủy ban hôm nay."
+    ]
+  },
+  "v-o-ukemochi": {
+    "meaning": "Việc phụ trách, phần mình đảm nhiệm",
+    "usage": "「受け持ちの先生」, 「受け持ちのクラス」, 「受け持ちが決まる」. Từ liên quan của 「受け持つ」.",
+    "nuance": "",
+    "compare": "「受け持つ」 là động từ 'phụ trách'; 「受け持ち」 là danh từ: phần việc, lớp mình phụ trách.",
+    "example_notes": [
+      "Phần tôi phụ trách là môn Quốc ngữ của khối lớp ba, mỗi ngày dạy năm tiết."
+    ]
+  },
   "v-o-juujitsukan": {
     "meaning": "Cảm giác viên mãn, trọn vẹn",
     "usage": "「充実感がある」, 「充実感を味わう」.",
@@ -14533,6 +15075,15 @@
     "compare": "",
     "example_notes": [
       "Tôi muốn coi trọng cả quá trình dẫn đến kết quả, chứ không chỉ kết quả."
+    ]
+  },
+  "v-o-andaarain": {
+    "meaning": "Đường gạch chân",
+    "usage": "「アンダーラインを引く」, 「アンダーラインが引いてある」.",
+    "nuance": "",
+    "compare": "「アンダーライン」 (từ mượn 'underline') và 「下線」 HẠ TUYẾN đều là 'đường gạch chân': cùng nghĩa.",
+    "example_notes": [
+      "Ngày tháng trong tài liệu được gạch chân là dấu hiệu cho biết có thay đổi."
     ]
   },
   "v-o-kikitoru": {
@@ -14596,6 +15147,33 @@
     "compare": "",
     "example_notes": [
       "Trước kỳ thi tôi thức khuya học bài nên sáng ngủ quên mất."
+    ]
+  },
+  "v-o-atehameru": {
+    "meaning": "Áp dụng, đưa vào cho khớp với (quy tắc, công thức)",
+    "usage": "「公式に当てはめる」, 「規則に当てはめて考える」, 「〜を当てはめる」.",
+    "nuance": "",
+    "compare": "Tha động từ của 「当てはまる」 ('khớp, đúng với'): 「当てはまる」 là tự nó khớp, 「当てはめる」 là người làm cho cái này khớp vào cái kia.",
+    "example_notes": [
+      "Chỉ cần đưa các con số vào công thức này là có đáp án ngay."
+    ]
+  },
+  "v-o-aritoarayuru": {
+    "meaning": "Tất cả, mọi thứ không trừ cái nào",
+    "usage": "「ありとあらゆる方法」, 「ありとあらゆる物」. Đứng trước danh từ.",
+    "nuance": "",
+    "compare": "「あらゆる」 và 「ありとあらゆる」 đều là 'mọi, tất cả', chỉ đứng trước danh từ, không đứng cuối câu.",
+    "example_notes": [
+      "Để giải quyết vấn đề này, anh ấy đã tra cứu đủ mọi tài liệu."
+    ]
+  },
+  "v-o-iinaosu": {
+    "meaning": "Nói lại cho đúng, nói sửa lại",
+    "usage": "「正しく言い直す」, 「丁寧に言い直す」, 「言い直してから伝える」.",
+    "nuance": "",
+    "compare": "Cả hai đều là nói lại, nhưng 「言い換える」 đổi từ cho cùng ý; 「言い直す」 nói lại cho đúng điều đã nói trước đó.",
+    "example_notes": [
+      "Thầy giáo lỡ gọi nhầm tên, liền nói lại cho đúng rồi xin lỗi."
     ]
   },
   "v-o-mondai-youshi": {
@@ -14761,6 +15339,24 @@
       "Ở nhà máy này có nhiều người lao động nước ngoài đang làm việc."
     ]
   },
+  "v-o-apo": {
+    "meaning": "Cuộc hẹn gặp (nói gọn của 「アポイント」)",
+    "usage": "「アポを取る」, 「アポが入る」, 「アポを入れる」.",
+    "nuance": "",
+    "compare": "「アポ」 là dạng rút gọn của 「アポイント」: cùng nghĩa 'hẹn gặp trước'.",
+    "example_notes": [
+      "Để tiện ghé qua trên đường về từ triển lãm, tôi đã hẹn trước với phía đối tác."
+    ]
+  },
+  "v-o-apo-nashi": {
+    "meaning": "Không hẹn trước",
+    "usage": "「アポなしで訪ねる」, 「アポなしの訪問」, 「アポなしで行く」. Từ liên quan của 「アポイント」.",
+    "nuance": "",
+    "compare": "「アポなし」 = 「アポ」 + 「なし」 (không có): đến thẳng mà không hẹn. Ngược lại: 「アポを取る」.",
+    "example_notes": [
+      "Người ở quầy lễ tân tỏ vẻ khó xử trước vị khách đến mà không hẹn trước."
+    ]
+  },
   "v-o-kuraianto": {
     "meaning": "Khách hàng (đặt công việc)",
     "usage": "「クライアントに提案する」, 「クライアントの要望」. Gần với 「取引先」 hoặc 「お客様」.",
@@ -14768,6 +15364,15 @@
     "compare": "",
     "example_notes": [
       "Tôi đang bận chuẩn bị bài thuyết trình cho buổi họp với khách hàng mới."
+    ]
+  },
+  "v-o-adobaisu": {
+    "meaning": "Lời khuyên; khuyên bảo",
+    "usage": "「アドバイスをもらう」, 「アドバイスを求める」, 「アドバイスする」.",
+    "nuance": "",
+    "compare": "Cả hai dịch 'lời khuyên', nhưng 「忠告」 TRUNG CÁO là nhắc điều chưa tốt để sửa; 「アドバイス」 là chỉ cho cách làm tốt.",
+    "example_notes": [
+      "Lần đầu thuê phòng, tôi đã nhờ chú có kinh nghiệm cho lời khuyên."
     ]
   },
   "v-o-gomasuri": {
@@ -14887,6 +15492,15 @@
     "compare": "",
     "example_notes": [
       "Trong bảng xếp hạng doanh số tuần này, cuốn sách đó đứng nhất."
+    ]
+  },
+  "v-o-imaichi": {
+    "meaning": "Chưa được lắm, còn thiếu chút nữa",
+    "usage": "「味がいまいちだ」, 「いまいち分からない」, 「いまいち人気がない」.",
+    "nuance": "",
+    "compare": "Cùng nghĩa với 「いまひとつ」: 'chưa tới'. Đi với vị ngữ phủ định hoặc nhận xét chưa tốt, như 「いまいち分からない」.",
+    "example_notes": [
+      "Điện thoại mới tiện lợi nhưng pin dùng chưa được tốt lắm."
     ]
   },
   "v-o-gaiken": {
@@ -15053,6 +15667,60 @@
       "Tôi đã tận hưởng bữa tối lãng mạn ở nhà hàng nhìn ra biển."
     ]
   },
+  "v-o-autodoa-akutibiti": {
+    "meaning": "Hoạt động vui chơi ngoài trời",
+    "usage": "「アウトドアアクティビティを楽しむ」, 「アウトドアアクティビティに参加する」.",
+    "nuance": "",
+    "compare": "「アウトドア」 và 「アウトドアアクティビティ」 cùng nghĩa; ngược lại là 「インドア」 (trong nhà).",
+    "example_notes": [
+      "Nhà nghỉ trên núi chuẩn bị sẵn các hoạt động ngoài trời như câu cá, chèo ca-nô cho khách lưu trú."
+    ]
+  },
+  "v-o-autodoa-raifu": {
+    "meaning": "Cuộc sống ngoài trời, sống gần thiên nhiên",
+    "usage": "「アウトドアライフを楽しむ」, 「アウトドアライフに憧れる」. Từ liên quan: 「アウトドア」.",
+    "nuance": "",
+    "compare": "「ライフ」 là 'life' (cuộc sống), nên 「アウトドアライフ」 là cả lối sống ngoài trời, còn 「アウトドア」 chỉ việc vui chơi ngoài trời.",
+    "example_notes": [
+      "Cứ cuối tuần lại lên chòi trên núi, tôi đã hoàn toàn quen với cuộc sống ngoài trời."
+    ]
+  },
+  "v-o-atari": {
+    "meaning": "Việc trúng (thưởng), sự trúng",
+    "usage": "「当たりが出る」, 「当たりを引く」.",
+    "nuance": "",
+    "compare": "「当たり」 là danh từ, 「当たる」 là tự động từ (「くじが当たる」). Trái nghĩa: 「外れ」 (trượt).",
+    "example_notes": [
+      "Trong buổi bốc thăm của khu phố mua sắm, em trai tôi trúng giải nên vui mừng khôn xiết."
+    ]
+  },
+  "v-o-ateru": {
+    "meaning": "Làm cho trúng, ném trúng; trúng (thưởng)",
+    "usage": "「ボールを当てる」, 「的に当てる」, 「くじを当てる」.",
+    "nuance": "",
+    "compare": "Tha động từ của 「当たる」: 「当たる」 là 'trúng, bị trúng', 「当てる」 là 'làm cho trúng'. Tiếng Việt chỉ có \"trúng\" cho cả hai.",
+    "example_notes": [
+      "Ném bóng trúng ngay giữa tâm bia khó hơn tôi tưởng."
+    ]
+  },
+  "v-o-amu": {
+    "meaning": "Đan, đan (len, sợi)",
+    "usage": "「毛糸で編む」, 「セーターを編む」, 「手袋を編む」. Từ liên quan của 「編み物」 (đồ đan).",
+    "nuance": "",
+    "compare": "「編む」 là động từ, 「編み物」 là danh từ 'đồ đan, việc đan'. Chữ 「編」 BIÊN giống 'biên tập', nhưng 「編む」 chỉ đan sợi.",
+    "example_notes": [
+      "Em gái tôi vừa xem sách hướng dẫn cách đan vừa đan chiếc khăn quàng màu trắng."
+    ]
+  },
+  "v-o-indoa": {
+    "meaning": "Trong nhà (việc làm, thú vui trong nhà)",
+    "usage": "「インドアで遊ぶ」, 「インドアの遊び場」. Trái nghĩa với 「アウトドア」.",
+    "nuance": "",
+    "compare": "Cặp trái nghĩa: 「インドア」 (trong nhà) – 「アウトドア」 (ngoài trời).",
+    "example_notes": [
+      "Thay vì vận động cơ thể, tôi hợp với thú vui trong nhà như ngồi giải ô chữ."
+    ]
+  },
   "v-o-kumiawase": {
     "meaning": "Sự kết hợp, tổ hợp",
     "usage": "「色の組み合わせ」, 「組み合わせを考える」. Động từ: 「組み合わせる」.",
@@ -15107,6 +15775,24 @@
     "compare": "",
     "example_notes": [
       "Ở tiệc sinh nhật, bạn tôi đã biểu diễn ảo thuật cho xem."
+    ]
+  },
+  "v-o-anettai": {
+    "meaning": "Vùng cận nhiệt đới",
+    "usage": "「亜熱帯の気候」, 「亜熱帯の島」. Từ liên quan của 「温帯」.",
+    "nuance": "",
+    "compare": "Chữ 「亜」 (Á) ở đây nghĩa 'gần như', không phải châu Á. 「温帯」 ôn đới – 「亜熱帯」 cận nhiệt đới.",
+    "example_notes": [
+      "Loài cây này mọc nhiều ở vùng cận nhiệt đới và yếu trước cái lạnh."
+    ]
+  },
+  "v-o-ikuraka": {
+    "meaning": "Một chút, phần nào",
+    "usage": "「いくらか楽になる」, 「いくらか安い」, 「いくらか増える」.",
+    "nuance": "",
+    "compare": "Cùng nghĩa 'một chút' với 「いくぶん」. Đừng nhầm với 「いくら」 + 「か」 (bao nhiêu?) trong 「料金はいくらか」: nghĩa khác hẳn.",
+    "example_notes": [
+      "Cơn sốt đã giảm đi phần nào nên từ trưa tôi ăn được một chút."
     ]
   },
   "v-o-sanpobiyori": {
@@ -15191,6 +15877,15 @@
       "Con mèo đang ngủ say sưa ở chỗ nắng."
     ]
   },
+  "v-o-areyakoreya": {
+    "meaning": "Này nọ, đủ thứ việc",
+    "usage": "「あれやこれやと考える」, 「あれやこれやで忙しい」.",
+    "nuance": "",
+    "compare": "「あれやこれや」 và 「あれこれ」 cùng nghĩa 'này nọ, đủ thứ'; chữ 「や」 chỉ nối 'cái kia' với 'cái này'.",
+    "example_notes": [
+      "Đêm trước buổi thuyết trình, tôi cứ lo chuyện này chuyện nọ nên trằn trọc đến sáng."
+    ]
+  },
   "v-o-hiyahiya": {
     "meaning": "Thót tim, lo thấp thỏm",
     "usage": "「ひやひやする」, 「ひやひやしながら見守る」.",
@@ -15207,6 +15902,15 @@
     "compare": "",
     "example_notes": [
       "Mộ ông tôi nằm ở nghĩa địa dưới chân núi."
+    ]
+  },
+  "v-o-ashiato": {
+    "meaning": "Dấu chân",
+    "usage": "「足跡が残る」, 「足跡をつける」, 「足跡を見つける」.",
+    "nuance": "",
+    "compare": "Chữ 「跡」 TÍCH đọc 「あと」: 「足跡」 (あしあと) dấu chân, 「城跡」 (しろあと) di tích thành cổ.",
+    "example_notes": [
+      "Trên sàn nhà thi đấu còn lưu lại từng dấu chân ướt."
     ]
   },
   "v-o-omoigakenai": {
@@ -15292,6 +15996,15 @@
       "Máy bay cất cánh đúng giờ rồi lên cao nhanh chóng."
     ]
   },
+  "v-o-ashikubi": {
+    "meaning": "Cổ chân",
+    "usage": "「足首をひねる」, 「足首が痛い」, 「足首を回す」. Từ liên quan của 「手首」.",
+    "nuance": "",
+    "compare": "Giống tiếng Việt, chữ 「首」 (THỦ, vốn là cổ) ghép với 「手」, 「足」: 「手首」 cổ tay, 「足首」 cổ chân.",
+    "example_notes": [
+      "Sau khi chạy quãng đường dài, tôi xoay cổ chân cho giãn ra."
+    ]
+  },
   "v-o-kizuguchi": {
     "meaning": "Miệng vết thương",
     "usage": "「傷口を洗う」, 「傷口がふさがる」 (vết thương liền lại).",
@@ -15337,6 +16050,15 @@
     "example_notes": [
       "Từ khi trưởng phòng mới đến, phòng kinh doanh liên tục làm ăn tốt.",
       "Năm nay đội đang có phong độ tốt, thắng năm trận liền từ đầu mùa."
+    ]
+  },
+  "v-o-ijoukishou": {
+    "meaning": "Thời tiết bất thường",
+    "usage": "「異常気象が続く」, 「異常気象の影響」, 「異常気象に備える」.",
+    "nuance": "",
+    "compare": "「気象」 KHÍ TƯỢNG là hiện tượng thời tiết, 「異常」 DỊ THƯỜNG là bất thường: 「異常気象」 = thời tiết bất thường.",
+    "example_notes": [
+      "Năm nay có lẽ do thời tiết bất thường nên hoa anh đào nở sớm hơn mọi năm rất nhiều."
     ]
   },
   "v-o-kansen": {
@@ -15413,6 +16135,42 @@
       "Dạo này bận quá nên bạn bè bảo tôi trông hơi gầy đi."
     ]
   },
+  "v-o-idenshi": {
+    "meaning": "Gen (thứ truyền đặc điểm từ cha mẹ sang con)",
+    "usage": "「遺伝子を調べる」, 「遺伝子の働き」, 「遺伝子が関係する」.",
+    "nuance": "",
+    "compare": "「遺伝」 DI TRUYỀN là hiện tượng truyền đi, 「遺伝子」 là 'gen', thứ được truyền. Chữ 「子」 ở đây không phải 'con'.",
+    "example_notes": [
+      "Nghiên cứu này đang tìm hiểu các gen liên quan đến thể chất."
+    ]
+  },
+  "v-o-iryoukikan": {
+    "meaning": "Cơ sở y tế, nơi khám chữa bệnh",
+    "usage": "「医療機関を受診する」, 「医療機関で働く」, 「医療機関に相談する」. Từ liên quan của 「医療」.",
+    "nuance": "",
+    "compare": "Cùng họ 「医療」 Y LIỆU: 「医療機関」 là nơi làm việc y tế, 「医療技術」 là kỹ thuật dùng để chữa.",
+    "example_notes": [
+      "Nửa đêm con bị sốt, tôi đi tìm một cơ sở y tế còn mở cửa."
+    ]
+  },
+  "v-o-iryougijutsu": {
+    "meaning": "Công nghệ y tế",
+    "usage": "「医療技術が進む」, 「医療技術を学ぶ」, 「高い医療技術」.",
+    "nuance": "",
+    "compare": "「技術」 KỸ THUẬT ghép sau 「医療」: 「医療技術」 là cách thức, kỹ thuật dùng để chữa bệnh, chữa thương.",
+    "example_notes": [
+      "Ở nước này, ngày càng nhiều người vận dụng kỹ thuật y tế học được ở nước ngoài vào công việc."
+    ]
+  },
+  "v-o-uirusu": {
+    "meaning": "Vi-rút",
+    "usage": "「ウイルスに感染する」, 「ウイルスが広がる」, 「新しいウイルス」. Từ liên quan của 「細菌」.",
+    "nuance": "",
+    "compare": "「細菌」 TẾ KHUẨN là vi khuẩn; 「ウイルス」 là vi-rút (từ mượn). Hai thứ khác nhau, đừng dịch cái này bằng cái kia.",
+    "example_notes": [
+      "Một loại vi-rút mới được phát hiện và các nhà nghiên cứu đang tiến hành điều tra."
+    ]
+  },
   "v-o-keishou": {
     "meaning": "Vết thương nhẹ, không nguy đến tính mạng",
     "usage": "「軽傷を負う」 (bị thương nhẹ), 「幸い軽傷だった」. Đối nghĩa: 「｜重傷《じゅうしょう》」 (chấn thương nặng).",
@@ -15439,6 +16197,15 @@
     "compare": "",
     "example_notes": [
       "Vụ tai nạn có hơn chục người bị thương được đưa đến bệnh viện."
+    ]
+  },
+  "v-o-arukooru-izonshou": {
+    "meaning": "Chứng nghiện rượu",
+    "usage": "「アルコール依存症になる」, 「アルコール依存症の人」. Từ liên quan của 「依存」.",
+    "nuance": "",
+    "compare": "「依存」 Ỷ TỒN là 'phụ thuộc'; thêm 「症」 CHỨNG thành tên bệnh: 「アルコール依存症」 = chứng phụ thuộc vào rượu.",
+    "example_notes": [
+      "Hằng tháng tôi đều tham gia buổi gặp của nhóm hỗ trợ người nhà của người nghiện rượu."
     ]
   },
   "v-o-utsuru": {
@@ -15526,6 +16293,15 @@
       "Nhờ ngày nào cũng tập luyện, anh ấy đã rút ngắn thành tích của mình hai giây."
     ]
   },
+  "v-o-arieru": {
+    "meaning": "Có thể xảy ra, có khả năng",
+    "usage": "「あり得る話だ」, 「十分あり得る」. Cũng đọc 「ありえる」.",
+    "nuance": "",
+    "compare": "Trái nghĩa với 「あり得ない」 ('không thể có'): 「あり得る」 là 'có thể xảy ra'. Chữ 「得」 đọc 「う」 hoặc 「え」.",
+    "example_notes": [
+      "Giữa đường bị tắc, đến nơi muộn là chuyện hoàn toàn có thể xảy ra."
+    ]
+  },
   "v-o-shibou": {
     "meaning": "Tử vong",
     "usage": "「死亡事故」, 「死亡する」. Cách nói trang trọng trong tin tức, giấy tờ.",
@@ -15587,6 +16363,15 @@
     "compare": "",
     "example_notes": [
       "Lời lỡ miệng của bộ trưởng trở thành vấn đề và ông phải xin lỗi."
+    ]
+  },
+  "v-o-infureeshon": {
+    "meaning": "Lạm phát",
+    "usage": "「インフレーションが進む」, 「インフレーションが起こる」. Viết gọn: 「インフレ」.",
+    "nuance": "",
+    "compare": "「インフレーション」 và 「インフレ」 cùng nghĩa 'lạm phát'; trái nghĩa là 「デフレ」.",
+    "example_notes": [
+      "Nếu lạm phát kéo dài, giá trị tiền tiết kiệm sẽ giảm đi."
     ]
   },
   "v-o-shitamawaru": {
@@ -15716,6 +16501,15 @@
       "Tôi tin rằng khả năng của trẻ nhỏ là vô hạn."
     ]
   },
+  "v-o-iegara": {
+    "meaning": "Dòng dõi, gia thế",
+    "usage": "「家柄がよい」, 「家柄にこだわる」, 「家柄に関係なく」.",
+    "nuance": "",
+    "compare": "「家柄」 nói về gia thế (địa vị của dòng họ), còn 「人柄」 nói về tính cách con người. Chữ 「柄」 BÍNH đọc 「がら」.",
+    "example_notes": [
+      "Cô ấy là người đối xử với mọi người công bằng, bất kể gia thế."
+    ]
+  },
   "v-o-kigamijikai": {
     "meaning": "Nóng tính, thiếu kiên nhẫn",
     "usage": "「気が短い人」. Trái nghĩa: 「気が長い」 (kiên nhẫn, thong thả).",
@@ -15759,6 +16553,15 @@
     "compare": "",
     "example_notes": [
       "Từ sau lần cãi nhau, thái độ của bạn tôi trở nên xa cách."
+    ]
+  },
+  "v-o-anrakkii": {
+    "meaning": "Không may, xui xẻo",
+    "usage": "「アンラッキーな一日」, 「アンラッキーだった」. Trái nghĩa với 「ラッキー」.",
+    "nuance": "",
+    "compare": "Cặp trái nghĩa: 「ラッキー」 (may mắn) – 「アンラッキー」, như 'lucky' – 'unlucky' trong tiếng Anh.",
+    "example_notes": [
+      "Xe buýt chạy mất ngay trước giờ xuất phát, đúng là xui xẻo thật."
     ]
   },
   "v-o-kouun": {
@@ -15931,6 +16734,15 @@
     "compare": "",
     "example_notes": [
       "Giải thích dài dòng nhưng tóm lại là phải nộp trong tháng này."
+    ]
+  },
+  "v-o-aruiwa": {
+    "meaning": "Hoặc, hay là",
+    "usage": "「AあるいはB」, 「現金あるいはカードで払う」.",
+    "nuance": "",
+    "compare": "Cùng nghĩa 'hoặc' với 「または」: nối hai lựa chọn, chỉ cần chọn một trong hai.",
+    "example_notes": [
+      "Người có nguyện vọng hãy chọn một ảnh hoặc một video rồi gửi đến."
     ]
   },
   "v-o-aikawarazu": {
@@ -17385,7 +18197,7 @@
     "meaning": "Làm va, đập (vật hay thân mình) vào cái khác",
     "usage": "Tha động từ, mẫu 「AをBにぶつける」: 「足を机にぶつける」, 「家具にぶつける」, 「車にボールをぶつける」.",
     "nuance": "Câu thay thế trong đề: 「当てて」＝「ぶつけて」; phương án sai 「隠して」「落として」「詰めて」. Tự động từ là 「ぶつかる」 (tự đâm vào): đề đã cho 「衝突する」＝「ぶつかる」.",
-    "compare": "",
+    "compare": "「当てる」: làm cho trúng chỗ nhắm tới.",
     "example_notes": [
       "Trong phòng tối, tôi va chân vào góc bàn.",
       "Tôi đẩy máy hút bụi thật chậm để khỏi va vào đồ đạc."

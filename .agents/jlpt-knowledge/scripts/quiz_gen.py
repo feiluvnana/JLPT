@@ -259,16 +259,35 @@ def excluded_meaning_sources(e: dict, entries: list[dict], spec: dict) -> set[st
     hw = headword(e, spec)
     ks = set(_KANJI.findall(hw)) if spec["headword"] != "kanji" else set()
     out = {e["id"]} | set(e.get("related") or [])
+    memo = _MEMO.get("hw")      # set by generate(): {id: (headword, kanji set)}
     for x in entries:
-        xh = headword(x, spec)
+        xh, xk = memo[x["id"]] if memo else (headword(x, spec), None)
         if (e["id"] in (x.get("related") or []) or xh == hw
-                or (ks and ks & set(_KANJI.findall(xh)))):
+                or (ks and ks & (xk if xk is not None else set(_KANJI.findall(xh))))):
             out.add(x["id"])
     return out
 
 
+# Per-generate() memo (2026-10-03): _meaning_item() walked every entry for every entry,
+# re-running meanings() + D.plain() and the headword regex each time — ~5M regex passes
+# over 2206 語彙 entries, which pushed `make check` past 30 min on a loaded machine.
+# The memo changes no output (verified item-for-item against the unmemoised generator).
+_MEMO: dict = {}
+
+
+def _plain_meanings(prose: dict, eid: str) -> tuple[dict, dict]:
+    pm = _MEMO.get("pm")
+    if pm is not None and eid in pm:
+        return pm[eid]
+    m = meanings(prose, eid)
+    v = (m, {c: D.plain(t).strip() for c, t in m.items()})
+    if pm is not None:
+        pm[eid] = v
+    return v
+
+
 def _meaning_item(e, spec, entries, prose):
-    mine = meanings(prose, e["id"])
+    mine, mine_p = _plain_meanings(prose, e["id"])
     prim = langs.primary()
     if prim not in mine:
         return None
@@ -278,18 +297,18 @@ def _meaning_item(e, spec, entries, prose):
     for x in entries:
         if x["id"] in skip:
             continue
-        theirs = meanings(prose, x["id"])
-        if not all(c in theirs and D.plain(theirs[c]).strip() != D.plain(mine[c]).strip() for c in mine):
+        theirs, theirs_p = _plain_meanings(prose, x["id"])
+        if not all(c in theirs and theirs_p[c] != mine_p[c] for c in mine):
             continue
         same_pos = bool(e.get("pos")) and x.get("pos") == e.get("pos")
-        cands.append((not same_pos, _h(q, x["id"]), x, theirs))
+        cands.append((not same_pos, _h(q, x["id"]), x, theirs, theirs_p))
     cands.sort(key=lambda t: t[:2])
-    pick, texts = [], {c: {D.plain(mine[c]).strip()} for c in mine}
-    for _, _, x, theirs in cands:
-        if any(D.plain(theirs[c]).strip() in texts[c] for c in mine):
+    pick, texts = [], {c: {mine_p[c]} for c in mine}
+    for _, _, x, theirs, theirs_p in cands:
+        if any(theirs_p[c] in texts[c] for c in mine):
             continue
         for c in mine:
-            texts[c].add(D.plain(theirs[c]).strip())
+            texts[c].add(theirs_p[c])
         pick.append({"owner": x["id"], "word": headword(x, spec), "text": {c: theirs[c] for c in mine}})
         if len(pick) == 3:
             break
@@ -316,6 +335,10 @@ def generate(spec: dict, entries: list[dict], prose: dict) -> dict[str, list[dic
             if len(k) == 1:
                 by_kanji.setdefault(k, {"id": e["id"], "readings": _kanji_readings(e)})
     items = {k: [] for k in kinds}
+    _MEMO.clear()
+    _MEMO["pm"] = {}
+    _MEMO["hw"] = {x["id"]: (headword(x, spec), set(_KANJI.findall(headword(x, spec))))
+                   for x in entries}
     taken: set = set()          # compounds already shown, claimed in id order (stable)
     for e in sorted(entries, key=lambda x: x["id"]):
         if "reading" in kinds:
@@ -327,6 +350,7 @@ def generate(spec: dict, entries: list[dict], prose: dict) -> dict[str, list[dic
             it = _meaning_item(e, spec, entries, prose)
             if it:
                 items["meaning"].append(it)
+    _MEMO.clear()               # never let a later outside call read this run's memo
     out: dict[str, list[dict]] = {}
     for kind in kinds:
         for n, it in enumerate(sorted(items[kind], key=lambda t: _h(t["qid"]))):

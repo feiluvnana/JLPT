@@ -292,9 +292,12 @@ over its cap.
 | 反論への応答 | a named objection is taken seriously and answered on its own terms; it is not set up to be knocked down | ≤3 |
 | （実用文） | 問題10's email/notice/案内 members and 問題14 — no authorial voice, no move | — |
 
-**Cross-paper bar.** A MOVE the previous paper used twice may be assigned at most
-once here, and the persona 「〈役〉が〈N年分〉を数える」 may not repeat within two
-papers (qa-report-20260929_1 F7: 数えたことの報告 by a record-keeper, three papers running).
+**Cross-paper bar (per 大問, like the template bar).** A MOVE the previous paper
+used twice IN ONE 大問 may be assigned at most once in that 大問, and the persona
+「〈役〉が〈N年分〉を数える」 may not repeat within two papers (qa-report-20260929_1 F7:
+数えたことの報告 by a record-keeper, three papers running). A paper-wide reading is
+unsatisfiable: 20260929_1 used every MOVE but 〈想定→実は〉 twice, leaving 6 slots for
+10 essay surfaces (qa/dokkai-allocation-20261002_1.md).
 
 **The cap is 2; the band it sits inside is measured, not chosen.** Official
 sittings re-measured by hand against this exact three-beat rubric (attributed

@@ -158,8 +158,8 @@ make scaffold-sections <id>        # -> the three _sections/ fragments
   `check_dokkai_template_repeat_prev_paper`). A stage-3 or QA re-author brief
   names the MOVE and the template that are off-limits, not only the subject —
   qa-report-20260928_2 F2's repair moved 将棋 to 山歩き and kept both.
-  The same bar covers the MOVE column: a MOVE the previous paper used twice gets
-  at most one surface here, and 「〈役〉が〈N年分〉を数える」 skips two papers
+  The same bar covers the MOVE column, per 大問: a MOVE the previous paper used
+  twice in one 大問 gets at most one surface of that 大問 here, and 「〈役〉が〈N年分〉を数える」 skips two papers
   (`dokkai.md` MOVE table; qa-report-20260929_1 F7).
 
 ## Stage 3 — build + gate

@@ -3999,59 +3999,6 @@
    }
   },
   {
-   "id": "kanzenmoshi:cd1-04",
-   "book": "kanzenmoshi",
-   "cd": 1,
-   "track": 4,
-   "section": "問題1",
-   "answer": 3,
-   "source_page": "第1回 解答・解説 p.26 問題1 1番 (CD1 トラック04)、選択肢 問題冊子 p.32",
-   "script_lines": [
-    "大学の事務室で女の学生と係の人が話しています。女の学生がセミナーに行く前に出すのは何ですか。",
-    "女:あの、この就職セミナー、まだ申し込めますか。",
-    "男:来月8日のセミナーですね。まだ大丈夫ですよ。この用紙に必要事項を記入してください。",
-    "女:はい。…これでいいですか。",
-    "男:ええ、結構ですよ。それでは、当日までにこの資料をよく読んでおいてください。あ、資料は当日も持ってきてくださいね。",
-    "女:はい。",
-    "男:それから、アンケートと課題があります。アンケートは今月20日までにこちらに提出してください。こちらのサイトからダウンロードして、メールで送ってもらってもかまいません。課題の方は当日持ってきてください。",
-    "女:はい、わかりました。",
-    "女の学生がセミナーに行く前に出すのは何ですか。"
-   ],
-   "printed_options": [
-    "しりょう",
-    "課題",
-    "メール",
-    "アンケート"
-   ],
-   "kaisetsu_cell": "男「アンケートは今月20日までにこちらに提出…メールで送ってもらってもかまいません」＝事前に出すのはメール（アンケートの送付）。1 ✗「当日も持ってきて」＝持参。2 ✗「課題の方は当日持ってきて」＝当日提出。4 ✗ 提出手段としてメールが選ばれている。",
-   "explanation": {
-    "why_correct": "アンケートは「メールで送《おく》ってもらってもかまいません」と指示《しじ》。",
-    "options_analysis": [
-     "資料《しりょう》は「当日《とうじつ》も持《も》ってきて」と指示《しじ》。",
-     "課題《かだい》は「当日《とうじつ》持《も》ってきてください」と指示《しじ》。",
-     "アンケートはメールで送《おく》ってよいと述《の》べられている。",
-     "アンケート提出《ていしゅつ》の手段《しゅだん》として選択肢《せんたくし》3が該当《がいとう》。"
-    ],
-    "points": [
-     "提出《ていしゅつ》：書類《しょるい》などを出《だ》すこと。",
-     "当日《とうじつ》：その催《よおよ》しがある日《ひ》。"
-    ]
-   },
-   "explanation_vi": {
-    "why_correct": "Nhân viên hướng dẫn gửi bảng câu hỏi qua email trước ngày 20.",
-    "options_analysis": [
-     "Tài liệu đọc trước và mang theo vào ngày diễn ra hội thảo.",
-     "Bài tập mang đến nộp vào ngày diễn ra sự kiện.",
-     "Bảng câu hỏi được phép tải về rồi gửi qua email trước ngày 20.",
-     "Phương thức nộp bảng câu hỏi trước ngày diễn ra là gửi email."
-    ],
-    "points": [
-     "提出《ていしゅつ》: nộp tài liệu, giấy tờ.",
-     "当日《とうじつ》: ngày diễn ra sự kiện."
-    ]
-   }
-  },
-  {
    "id": "kanzenmoshi:cd1-06",
    "book": "kanzenmoshi",
    "cd": 1,
@@ -4376,6 +4323,63 @@
    "section": "問題1",
    "source_page": "第1回 解答・解説 p.26 問題1 2番 (CD1 トラック05)、選択肢 問題冊子 p.32",
    "reason": "Figure-dependent. The printed options on 問題冊子 p.32 are four postcard/envelope address layout illustrations, which cannot be represented as text options in the composed text-only booklet format (textbook_bank_plan.md §4)."
+  },
+  {
+   "id": "kanzenmoshi:cd1-04",
+   "book": "kanzenmoshi",
+   "cd": 1,
+   "track": 4,
+   "section": "問題1",
+   "source_page": "第1回 解答・解説 p.26 問題1 1番 (CD1 トラック04)、選択肢 問題冊子 p.32",
+   "reason": "Two defensible answers (qa-report-20261002_1 F1, automatic). The question is 「女の学生がセミナーに行く前に出すのは何ですか」 and the book keys 3 メール, but the script says 「アンケートは今月20日までにこちらに提出してください。こちらのサイトからダウンロードして、メールで送ってもらってもかまいません」: the thing submitted before the seminar is 4 アンケート, and email is only one optional channel (「てもかまいません」, beside 「こちらに提出」). 「メールを出す」 also collocates with 出す, so 3 stays defensible too. Source checked: Taisaku p.26 prints 「1番 正答3」 and the bank transcript matches the page, so the publisher key is the defect. Refused, NOT re-keyed to 4 — that would still leave メール defensible. The declaration as banked is kept under `refused_declaration` for the record.",
+   "refused_on": "2026-10-02",
+   "refused_declaration": {
+    "answer": 3,
+    "script_lines": [
+     "大学の事務室で女の学生と係の人が話しています。女の学生がセミナーに行く前に出すのは何ですか。",
+     "女:あの、この就職セミナー、まだ申し込めますか。",
+     "男:来月8日のセミナーですね。まだ大丈夫ですよ。この用紙に必要事項を記入してください。",
+     "女:はい。…これでいいですか。",
+     "男:ええ、結構ですよ。それでは、当日までにこの資料をよく読んでおいてください。あ、資料は当日も持ってきてくださいね。",
+     "女:はい。",
+     "男:それから、アンケートと課題があります。アンケートは今月20日までにこちらに提出してください。こちらのサイトからダウンロードして、メールで送ってもらってもかまいません。課題の方は当日持ってきてください。",
+     "女:はい、わかりました。",
+     "女の学生がセミナーに行く前に出すのは何ですか。"
+    ],
+    "printed_options": [
+     "しりょう",
+     "課題",
+     "メール",
+     "アンケート"
+    ],
+    "kaisetsu_cell": "男「アンケートは今月20日までにこちらに提出…メールで送ってもらってもかまいません」＝事前に出すのはメール（アンケートの送付）。1 ✗「当日も持ってきて」＝持参。2 ✗「課題の方は当日持ってきて」＝当日提出。4 ✗ 提出手段としてメールが選ばれている。",
+    "explanation": {
+     "why_correct": "アンケートは「メールで送《おく》ってもらってもかまいません」と指示《しじ》。",
+     "options_analysis": [
+      "資料《しりょう》は「当日《とうじつ》も持《も》ってきて」と指示《しじ》。",
+      "課題《かだい》は「当日《とうじつ》持《も》ってきてください」と指示《しじ》。",
+      "アンケートはメールで送《おく》ってよいと述《の》べられている。",
+      "アンケート提出《ていしゅつ》の手段《しゅだん》として選択肢《せんたくし》3が該当《がいとう》。"
+     ],
+     "points": [
+      "提出《ていしゅつ》：書類《しょるい》などを出《だ》すこと。",
+      "当日《とうじつ》：その催《よおよ》しがある日《ひ》。"
+     ]
+    },
+    "explanation_vi": {
+     "why_correct": "Nhân viên hướng dẫn gửi bảng câu hỏi qua email trước ngày 20.",
+     "options_analysis": [
+      "Tài liệu đọc trước và mang theo vào ngày diễn ra hội thảo.",
+      "Bài tập mang đến nộp vào ngày diễn ra sự kiện.",
+      "Bảng câu hỏi được phép tải về rồi gửi qua email trước ngày 20.",
+      "Phương thức nộp bảng câu hỏi trước ngày diễn ra là gửi email."
+     ],
+     "points": [
+      "提出《ていしゅつ》: nộp tài liệu, giấy tờ.",
+      "当日《とうじつ》: ngày diễn ra sự kiện."
+     ]
+    }
+   }
   }
  ]
 }

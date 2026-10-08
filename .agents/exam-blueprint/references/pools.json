@@ -1719,7 +1719,6 @@
   "〜別(男女別)",
   "〜振り(久し振り)",
   "〜じみる(所帯じみる)",
-  "〜ぶる(偉ぶる)",
   "〜立て(出来立て)",
   "〜連れ(家族連れ)",
   "〜事(出来事)",
@@ -1727,7 +1726,6 @@
   "〜ずくめ(黒ずくめ)",
   "〜めく(春めく)",
   "〜がる(怖がる)",
-  "〜めく(謎めく)",
   "偽〜(偽物)",
   "不〜(不満)",
   "反〜(反対)",
@@ -1859,7 +1857,6 @@
   "和やか",
   "鮮やか",
   "健やか",
-  "おおらか",
   "平穏",
   "円滑",
   "柔軟",
@@ -3340,7 +3337,6 @@
   "和やか",
   "鮮やか",
   "健やか",
-  "おおらか",
   "平穏",
   "円滑",
   "連携",
@@ -6562,6 +6558,17 @@
     "drawn_by": [
      "20260812_2"
     ]
+   },
+   "〜に即して": {
+    "on": "2026-10-08",
+    "ruling": "qa-report-20261008_1 F1 (coordinator-assigned): retire, never delete — a shipped paper drew it, so check_draw_provenance() must keep resolving it",
+    "reason": "off-band (N1): no N2 evidence of either kind bunpou.md §Inventory admits — absent from the Shin Kanzen N2 文法 索引 (book pp.208-211, PDF pp.217-220; the に row lists に沿って but no に即して), and 即し occurs 0 times in all 31 refs/JLPT_N2_NEW/*/booklet.md, so it is neither an official key nor printed anywhere in the archive",
+    "drawn_by": [
+     "20260904_2"
+    ],
+    "also_drawn_then_rerolled_out": [
+     "20261008_1 (grammar_p7:10, seed 48018312 → 〜とみえる; qa-report-20261008_1 F1)"
+    ]
    }
   },
   "kanji_reading": {
@@ -6996,10 +7003,10 @@
    "on": "2026-10-08",
    "kanji_reading": 1424,
    "orthography": 245,
-   "word_formation": 99,
-   "context_words": 1359,
+   "word_formation": 97,
+   "context_words": 1358,
    "paraphrase": 145,
-   "usage": 212,
+   "usage": 211,
    "grammar_p7": 203,
    "grammar_p8": 70
   },

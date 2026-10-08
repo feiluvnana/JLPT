@@ -1,0 +1,618 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet"><title>聴解</title>
+<!-- src_sha: 聴解.md=1aac1d3b91f4 -->
+<style>
+@page { size: A4; margin: 18mm 16mm 20mm;
+  @bottom-center { content: "— " counter(page) " —"; font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", sans-serif;
+                   font-size: 10pt; color: #1a1a1a; } }
+/* The cover is not page 1: official numbering starts on the first page of
+   questions. A named page is the one reset Chrome honours (counter-reset on an
+   element or on @page:first is ignored). */
+@page bk-cover { counter-reset: page 0; @bottom-center { content: none; }
+                 @top-right { content: none; } }
+body { font-family: "YuMincho", "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", "Noto Serif CJK JP", serif;
+       font-size: 11.5pt; line-height: 1.9; color: #1a1a1a; background: #fff; }
+h1, h2, h3 { font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", sans-serif; break-after: avoid; page-break-after: avoid;
+             break-inside: avoid; }
+h1 { font-size: 15pt; border-bottom: 2.5px solid #1a1a1a; padding-bottom: 5px;
+     margin: 30px 0 14px; }
+/* 【文字・語彙】/【文法】/【読解】: official prints the part as a small boxed
+   label (the tab on the page edge), not a banner. */
+h1.bk-part { display: table; font-size: 10.5pt; letter-spacing: .08em;
+             border: 1px solid #1a1a1a; padding: 1px 12px; margin: 22px 0 12px; }
+h2 { font-size: 12pt; margin: 26px 0 12px; }
+/* 「問題1　＿＿の言葉の…」: bold Gothic, the instruction hanging under itself. */
+h2.bk-mondai { display: flex; align-items: baseline; gap: 0 1em; line-height: 1.75; }
+h2.bk-mondai .bk-mn { flex: 0 0 auto; white-space: nowrap; }
+h2.bk-mondai .bk-mi { flex: 1 1 auto; min-width: 0; }
+h2.bk-mondai-l { font-size: 18pt; margin: 34px 0 8px; }
+h3 { font-size: 11pt; margin: 20px 0 8px; }
+p { margin: 12px 0; orphans: 2; widows: 2; }
+strong { font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", sans-serif; }
+/* The item number, in a thin box (official 「[11] 9時（　）の…」). */
+strong.bk-qn { display: inline-block; min-width: 1.55em; padding: 0 .28em;
+               border: 1px solid #1a1a1a; line-height: 1.3; text-align: center;
+               font-size: .9em; margin-right: .6em; box-sizing: border-box; }
+/* The tested word / the marked span: official UNDERLINES it in the body face.
+   The Markdown convention stays **word**; only its rendering changed. */
+strong.bk-tw { font-family: inherit; font-weight: normal; text-decoration: underline;
+               text-decoration-thickness: 1px; text-underline-offset: .24em; }
+/* Options: 「1　はしら」, no period, on four equal columns — or two, or one,
+   whichever the longest option fits (widen() decides). */
+.bk-opts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+           gap: .05em 1em; margin: .3em 0 .1em 2.1em; }
+.bk-opts.bk-c2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.bk-opts.bk-c1 { grid-template-columns: minmax(0, 1fr); }
+.bk-o, .bk-ov { display: flex; gap: .95em; }
+.bk-ov { margin: .05em 0 0 2.1em; }
+.bk-on { flex: 0 0 auto; }
+.bk-ot { flex: 1 1 auto; min-width: 0; }
+.bk-opts + br, .bk-ov + br { display: none; }
+/* The stem hangs past its number box; its options sit on the same edge. */
+p:has(> strong.bk-qn:first-child) { padding-left: 1.95em; text-indent: -1.95em; }
+p:has(> strong.bk-qn:first-child) > .bk-opts,
+p:has(> strong.bk-qn:first-child) > .bk-ov { margin-left: 0; }
+.bk-opts, .bk-ov, strong.bk-qn, ruby { text-indent: 0; }
+/* Furigana: WeasyPrint has NO ruby layout (and ignores ruby-position), so the
+   reading is stacked manually. rt is taken out of flow and pinned above the
+   base, which keeps the base glyphs on the text baseline and leaves line
+   spacing untouched. Do NOT go back to display:inline-table -- WeasyPrint
+   drops the base onto its own line under the reading. */
+ruby {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  vertical-align: baseline;
+  /* line-height 1 keeps the ruby box hugging its glyphs; with a taller
+     inherited line-height the box grows and `bottom: 100%` would push the
+     reading far above the text. */
+  line-height: 1;
+}
+rb { display: inline; }
+rt {
+  position: absolute;
+  bottom: calc(100% + 0.1em);
+  left: -0.6em;
+  right: -0.6em;
+  font-size: 0.5em;
+  line-height: 1;
+  font-weight: normal;
+  color: #333;
+  white-space: nowrap;
+  text-align: center;
+}
+rp { display: none; }
+/* Only blocks that actually carry furigana get extra leading, so the reading
+   clears the descenders of the line above without loosening plain text. */
+p.furi, li.furi { line-height: 2.1; }
+/* 注 glosses: body-ish size under the passage, no rule; the inline （注N）
+   marker is small and raised, as printed. */
+.vocab-notes { margin: 10px 0 0; font-size: 10pt; line-height: 1.75; color: #1a1a1a; }
+.bk-chu { font-size: .68em; position: relative; top: -.4em; }
+table { border-collapse: collapse; margin: 10px 0; width: 100%; page-break-inside: avoid; }
+th, td { border: 1px solid #888; padding: 4px 9px; font-size: 10pt;
+         line-height: 1.6; }
+th { background: #f0f0f0; font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", sans-serif; }
+blockquote { border: 1px solid #999; background: #fafafa; margin: 10px 0;
+             padding: 10px 14px; page-break-inside: avoid; }
+/* 問題9-14: the passage/notice text official booklets print inside a thin
+   black rule on white, separate from the questions below it. See
+   box_passages(). A box too tall for a page (問題13's essay, 問題14's flyer)
+   carries the .bk-flow marker and may break; the rest stay whole. The box must
+   not scroll in print: Chrome lays a scroll container out as one unbreakable
+   block, which is how 問題14 once printed a blank page. */
+.passage-box { border: 1px solid #1a1a1a; background: #fff; margin: 10px 0 16px;
+               padding: 12px 18px; break-inside: avoid; page-break-inside: avoid; }
+.passage-box:has(> .bk-flow) { break-inside: auto; page-break-inside: auto; }
+.passage-box > *:first-child, .passage-box > .bk-flow + * { margin-top: 0; }
+.passage-box > *:last-child { margin-bottom: 0; }
+.bk-flow { display: none; }
+/* 聴解: 「― メモ ―」 centred, with room to write under it. */
+.bk-memo { text-align: center; letter-spacing: .25em; margin: 16px 0 72px; }
+hr { border: none; border-top: 1px dashed #999; margin: 22px 0; }
+/* The 問題用紙 cover (booklet HTML only — the sheet has its own gate screen). */
+.bk-cover { font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", sans-serif; }
+.bk-cv-head { display: flex; justify-content: space-between; align-items: baseline; }
+.bk-cv-en { font-size: 10pt; font-weight: 700; }
+.bk-cv-kind { font-size: 17pt; font-weight: 700; }
+.bk-cv-level { text-align: center; font-size: 46pt; font-weight: 800; line-height: 1.2;
+               margin: 1.1em 0 .1em; letter-spacing: .04em; }
+.bk-cv-title { text-align: center; font-size: 21pt; font-weight: 800; line-height: 1.4; }
+.bk-cv-time { text-align: center; font-size: 17pt; font-weight: 700; margin: .3em 0 .9em; }
+.bk-cv-notes { border: 1px solid #1a1a1a; padding: .8em 1.8em 1em; margin: 0 auto 1.4em;
+               max-width: 36em; font-family: "YuMincho", "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif; }
+.bk-cv-nh { text-align: center; font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", sans-serif; font-weight: 700; font-size: 13pt;
+            letter-spacing: .5em; margin-bottom: .4em; }
+.bk-cv-nh small { font-size: 7.5pt; letter-spacing: 0; }
+.bk-cv-item { display: flex; gap: .8em; margin: .35em 0; line-height: 1.6; }
+.bk-cv-item small { display: block; font-size: 8pt; color: #333; line-height: 1.35; }
+.bk-cv-box { display: inline-block; border: 1px solid #1a1a1a; min-width: 1.2em;
+             line-height: 1.15; text-align: center; font-size: .85em; font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", sans-serif; }
+.bk-cv-id { max-width: 36em; margin: .7em auto; font-family: "YuMincho", "Yu Mincho", serif; }
+.bk-cv-id th { width: 45%; background: #fff; font-weight: normal; text-align: left;
+               font-family: inherit; }
+.bk-cv-id td { height: 2.2em; }
+@media print {
+  .bk-cover { page: bk-cover; break-after: page; }
+  h1.bk-brk, h1.bk-key { break-before: page; page-break-before: always; }
+  /* An item (stem + its options) never splits across pages. */
+  p:has(> .bk-opts), p:has(> .bk-ov) { break-inside: avoid; page-break-inside: avoid; }
+  /* 聴解: every 問題 opens a new page, as printed (the first follows the label). */
+  h2.bk-mondai-l { break-before: page; page-break-before: always; }
+  h1.bk-part + h2.bk-mondai-l { break-before: auto; page-break-before: auto; }
+  /* 「右のページは…の案内である」: the flyer gets a page of its own. */
+  .passage-box:has(> .bk-flyer) { break-before: page; page-break-before: always; }
+}
+@page { @top-right { content: "聴解"; font-family: "YuGothic", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", "Noto Sans CJK JP", sans-serif; font-size: 8.5pt; color: #333; } }
+@media screen {
+  :root { --gutter: 1.6em; }
+  body { max-width: 60em; margin: 0 auto; padding: 2.5em var(--gutter) 6em;
+         background: #fff; }
+  table { max-width: 100%; }
+  /* A wide 問題14 table scrolls sideways on a narrow screen. Screen only: a
+     scroll container cannot break across printed pages (see .passage-box). */
+  .passage-box { overflow-x: auto; }
+  .bk-cover { border: 1px solid #d4d4d4; padding: 2.4em 2.6em 1.6em; margin: 0 0 3em; }
+}
+@media screen and (max-width: 48em) {
+  :root { --gutter: 0.8em; }
+  body { padding: 1.2em var(--gutter) 4em; font-size: 11pt; }
+  table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  blockquote { padding: 8px 10px; margin: 8px 0; }
+  h1 { font-size: 13.5pt; margin: 22px 0 10px; }
+  h2 { font-size: 11pt; margin: 18px 0 10px; }
+  h2.bk-mondai-l { font-size: 15pt; }
+  .passage-box { padding: 10px 12px; }
+  /* Four columns do not fit a phone: halve them, never wrap mid-option. */
+  .bk-opts { margin-left: .4em; }
+  .bk-opts.bk-c4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .bk-opts.bk-c2 { grid-template-columns: minmax(0, 1fr); }
+  .bk-ov { margin-left: .4em; }
+  .bk-cover { padding: 1.2em 1em; }
+  .bk-cv-level { font-size: 32pt; }
+  .bk-cv-title { font-size: 15pt; }
+  .bk-cv-notes { padding: .6em .9em; }
+}
+</style></head><body><section class="bk-cover"><div class="bk-cv-head"><span class="bk-cv-en">Listening</span><span class="bk-cv-kind">問題用紙</span></div><div class="bk-cv-level">N2</div><div class="bk-cv-title">聴解</div><div class="bk-cv-time">（50分）</div><div class="bk-cv-notes"><div class="bk-cv-nh">注意 <small>Notes</small></div><div class="bk-cv-item"><span>1.</span><div>試験が始まるまで、この問題用紙を開けないでください。<small>Do not open this question booklet until the test begins.</small></div></div><div class="bk-cv-item"><span>2.</span><div>この問題用紙を持って帰ることはできません。<small>Do not take this question booklet with you after the test.</small></div></div><div class="bk-cv-item"><span>3.</span><div>受験番号と名前を下の欄に、受験票と同じように書いてください。<small>Write your examinee registration number and name clearly in each box below as written on your test voucher.</small></div></div><div class="bk-cv-item"><span>4.</span><div>この問題用紙にメモをとってもかまいません。<small>You may make notes in this question booklet.</small></div></div></div><table class="bk-cv-id"><tr><th>受験番号　Examinee Registration Number</th><td></td></tr></table><table class="bk-cv-id"><tr><th>名前　Name</th><td></td></tr></table></section><h1 class="bk-part">【聴解】</h1>
+<h2 class="bk-mondai bk-mondai-l"><span class="bk-mn">問題1</span></h2>
+<p class="furi"><ruby>問題<rt>もんだい</rt></ruby>1では、まず<ruby>質問<rt>しつもん</rt></ruby>を<ruby>聞<rt>き</rt></ruby>いてください。それから<ruby>話<rt>はなし</rt></ruby>を<ruby>聞<rt>き</rt></ruby>いて、<ruby>問題<rt>もんだい</rt></ruby><ruby>用紙<rt>ようし</rt></ruby>の1から4の<ruby>中<rt>なか</rt></ruby>から、<ruby>最<rt>もっと</rt></ruby>もよいものを<ruby>一<rt>ひと</rt></ruby>つ<ruby>選<rt>えら</rt></ruby>んでください。</p>
+<p class="furi"><strong>1<ruby>番<rt>ばん</rt></ruby></strong><br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot"><ruby>先生<rt>せんせい</rt></ruby>の<ruby>研究室<rt>けんきゅうしつ</rt></ruby>に<ruby>行<rt>い</rt></ruby>く</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">リーさんに<ruby>電話<rt>でんわ</rt></ruby>する</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot"><ruby>先生<rt>せんせい</rt></ruby>にメールする</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot"><ruby>女<rt>おんな</rt></ruby>の<ruby>学生<rt>がくせい</rt></ruby>にメールする</span></span></p>
+<p class="furi"><strong>2<ruby>番<rt>ばん</rt></ruby></strong><br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">2700<ruby>円<rt>えん</rt></ruby></span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">3000<ruby>円<rt>えん</rt></ruby></span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">8100<ruby>円<rt>えん</rt></ruby></span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">9000<ruby>円<rt>えん</rt></ruby></span></span></p>
+<p class="furi"><strong>3<ruby>番<rt>ばん</rt></ruby></strong><br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot"><ruby>商品名<rt>しょうひんめい</rt></ruby>の<ruby>文字<rt>もじ</rt></ruby>の<ruby>色<rt>いろ</rt></ruby>を<ruby>変<rt>か</rt></ruby>える</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot"><ruby>商品<rt>しょうひん</rt></ruby>の<ruby>厚<rt>あつ</rt></ruby>さの<ruby>数字<rt>すうじ</rt></ruby>を<ruby>大<rt>おお</rt></ruby>きく<ruby>書<rt>か</rt></ruby>く</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot"><ruby>以前<rt>いぜん</rt></ruby>の<ruby>商品<rt>しょうひん</rt></ruby>と<ruby>比<rt>くら</rt></ruby>べた<ruby>図<rt>ず</rt></ruby>を<ruby>入<rt>い</rt></ruby>れる</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot"><ruby>性能<rt>せいのう</rt></ruby>のへんこう<ruby>点<rt>てん</rt></ruby>を<ruby>加<rt>くわ</rt></ruby>える</span></span></p>
+<p class="furi"><strong>4<ruby>番<rt>ばん</rt></ruby></strong><br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">ケースをそうじする<ruby>回数<rt>かいすう</rt></ruby>を<ruby>増<rt>ふ</rt></ruby>やす</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">ケースに<ruby>入<rt>い</rt></ruby>れる<ruby>貝<rt>かい</rt></ruby>を<ruby>増<rt>ふ</rt></ruby>やす</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">ケースに<ruby>入<rt>い</rt></ruby>れるえさを<ruby>減<rt>へ</rt></ruby>らす</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">ケースを<ruby>移動<rt>いどう</rt></ruby>する</span></span></p>
+<p class="furi"><strong>5<ruby>番<rt>ばん</rt></ruby></strong><br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot"><ruby>置<rt>お</rt></ruby>く<ruby>場所<rt>ばしょ</rt></ruby>を<ruby>変<rt>か</rt></ruby>える</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot"><ruby>水<rt>みず</rt></ruby>を<ruby>十分<rt>じゅうぶん</rt></ruby>にあたえる</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot"><ruby>弱<rt>よわ</rt></ruby>くなったえだを<ruby>切<rt>き</rt></ruby>る</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot"><ruby>別<rt>べつ</rt></ruby>のはちにうえる</span></span></p>
+<h2 class="bk-mondai bk-mondai-l"><span class="bk-mn">問題2</span></h2>
+<p class="furi"><ruby>問題<rt>もんだい</rt></ruby>2では、まず<ruby>質問<rt>しつもん</rt></ruby>を<ruby>聞<rt>き</rt></ruby>いてください。そのあと、<ruby>問題<rt>もんだい</rt></ruby><ruby>用紙<rt>ようし</rt></ruby>を<ruby>見<rt>み</rt></ruby>てください。<ruby>読<rt>よ</rt></ruby>む<ruby>時間<rt>じかん</rt></ruby>があります。それから<ruby>話<rt>はなし</rt></ruby>を<ruby>聞<rt>き</rt></ruby>いて、<ruby>問題<rt>もんだい</rt></ruby><ruby>用紙<rt>ようし</rt></ruby>の1から4の<ruby>中<rt>なか</rt></ruby>から、<ruby>最<rt>もっと</rt></ruby>もよいものを<ruby>一<rt>ひと</rt></ruby>つ<ruby>選<rt>えら</rt></ruby>んでください。</p>
+<p class="furi"><strong>1<ruby>番<rt>ばん</rt></ruby></strong><br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot"><ruby>親<rt>した</rt></ruby>しみやすい<ruby>印象<rt>いんしょう</rt></ruby>をあたえる<ruby>点<rt>てん</rt></ruby></span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot"><ruby>聞<rt>き</rt></ruby>き<ruby>取<rt>と</rt></ruby>りやすい<ruby>声<rt>こえ</rt></ruby>をしている<ruby>点<rt>てん</rt></ruby></span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">しかい<ruby>者<rt>もの</rt></ruby>として<ruby>番組<rt>ばんぐみ</rt></ruby>を<ruby>進<rt>すす</rt></ruby>めるのが<ruby>上手<rt>じょうず</rt></ruby>な<ruby>点<rt>てん</rt></ruby></span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">インタビューで<ruby>相手<rt>あいて</rt></ruby>の<ruby>話<rt>はなし</rt></ruby>をうまく<ruby>聞<rt>き</rt></ruby>き<ruby>出<rt>だ</rt></ruby>す<ruby>点<rt>てん</rt></ruby></span></span></p>
+<p class="furi"><strong>2<ruby>番<rt>ばん</rt></ruby></strong><br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot"><ruby>毎日<rt>まいにち</rt></ruby><ruby>運動<rt>うんどう</rt></ruby>をしている<ruby>人<rt>ひと</rt></ruby></span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot"><ruby>一日<rt>ついたち</rt></ruby>に6<ruby>時間<rt>じかん</rt></ruby><ruby>以上<rt>いじょう</rt></ruby><ruby>寝<rt>ね</rt></ruby>ている<ruby>人<rt>ひと</rt></ruby></span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot"><ruby>毎日<rt>まいにち</rt></ruby>30<ruby>分<rt>ふん</rt></ruby><ruby>程度<rt>ていど</rt></ruby><ruby>動画<rt>どうが</rt></ruby>を<ruby>見<rt>み</rt></ruby>ている<ruby>人<rt>ひと</rt></ruby></span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot"><ruby>過去<rt>かこ</rt></ruby>に<ruby>実験<rt>じっけん</rt></ruby>に<ruby>参加<rt>さんか</rt></ruby>したことがある<ruby>人<rt>ひと</rt></ruby></span></span></p>
+<p class="furi"><strong>3<ruby>番<rt>ばん</rt></ruby></strong><br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot"><ruby>腕<rt>うで</rt></ruby>を<ruby>横<rt>よこ</rt></ruby>に<ruby>伸<rt>の</rt></ruby>ばすとまだ<ruby>痛<rt>いた</rt></ruby>みがある</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot"><ruby>腕<rt>うで</rt></ruby>を<ruby>後<rt>うし</rt></ruby>ろに<ruby>回<rt>まわ</rt></ruby>すことができる</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot"><ruby>腕<rt>うで</rt></ruby>を<ruby>上<rt>あ</rt></ruby>げることはできない</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot"><ruby>肩<rt>かた</rt></ruby>にテープを<ruby>貼<rt>は</rt></ruby>らなければいけない</span></span></p>
+<p class="furi"><strong>4<ruby>番<rt>ばん</rt></ruby></strong><br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot"><ruby>様々<rt>さまざま</rt></ruby>な<ruby>値段<rt>ねだん</rt></ruby>から<ruby>選<rt>えら</rt></ruby>ぶから</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot"><ruby>古<rt>ふる</rt></ruby>い<ruby>物<rt>もの</rt></ruby>でも<ruby>古<rt>ふる</rt></ruby>さを<ruby>感<rt>かん</rt></ruby>じさせないから</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot"><ruby>帯<rt>おび</rt></ruby>や<ruby>小物<rt>こもの</rt></ruby>との<ruby>組み合<rt>くみあ</rt></ruby>わせが<ruby>楽<rt>たの</rt></ruby>しめるから</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot"><ruby>注目<rt>ちゅうもく</rt></ruby>を<ruby>集<rt>あつ</rt></ruby>めることができる</span></span></p>
+<p class="furi"><strong>5<ruby>番<rt>ばん</rt></ruby></strong><br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot"><ruby>最後<rt>さいご</rt></ruby>に<ruby style="min-width:2.50em">十分<rt>じゅうぶん</rt></ruby><ruby>加速<rt>かそく</rt></ruby>できたから</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot"><ruby>最初<rt>さいしょ</rt></ruby>から<ruby>最後<rt>さいご</rt></ruby>まで<ruby>自分<rt>じぶん</rt></ruby>のペースで<ruby>走<rt>はし</rt></ruby>れたから</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">とちゅうで<ruby>一度<rt>いちど</rt></ruby>スピードを<ruby>落<rt>お</rt></ruby>としたから</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot"><ruby>早<rt>はや</rt></ruby>めに<ruby>先頭<rt>せんとう</rt></ruby>に<ruby>立<rt>た</rt></ruby>てたから</span></span></p>
+<p class="furi"><strong>6<ruby>番<rt>ばん</rt></ruby></strong><br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot"><ruby>人間関係<rt>にんげんかんけい</rt></ruby>が<ruby>難<rt>むずか</rt></ruby>しかったから</span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot"><ruby>責任<rt>せきにん</rt></ruby>のある<ruby>仕事<rt>しごと</rt></ruby>をさせてもらえないと<ruby>思<rt>おも</rt></ruby>ったから</span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot"><ruby>自分<rt>じぶん</rt></ruby>のスキルを<ruby>認<rt>みと</rt></ruby>めてもらえなかったから</span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot"><ruby>男女<rt>だんじょ</rt></ruby>の<ruby>能力<rt>のうりょく</rt></ruby>の<ruby>差<rt>さ</rt></ruby>がありすぎたから</span></span></p>
+<h2 class="bk-mondai bk-mondai-l"><span class="bk-mn">問題3</span></h2>
+<p class="furi"><ruby>問題<rt>もんだい</rt></ruby>3では、<ruby>問題<rt>もんだい</rt></ruby><ruby>用紙<rt>ようし</rt></ruby>に<ruby>何<rt>なに</rt></ruby>も<ruby>印刷<rt>いんさつ</rt></ruby>されていません。この<ruby>問題<rt>もんだい</rt></ruby>は、<ruby>全体<rt>ぜんたい</rt></ruby>としてどんな<ruby>内容<rt>ないよう</rt></ruby>かを<ruby>聞<rt>き</rt></ruby>く<ruby>問題<rt>もんだい</rt></ruby>です。<ruby>話<rt>はなし</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>に<ruby>質問<rt>しつもん</rt></ruby>はありません。まず<ruby>話<rt>はなし</rt></ruby>を<ruby>聞<rt>き</rt></ruby>いてください。それから、<ruby>質問<rt>しつもん</rt></ruby>とせんたくしを<ruby>聞<rt>き</rt></ruby>いて、1から4の<ruby>中<rt>なか</rt></ruby>から、<ruby>最<rt>もっと</rt></ruby>もよいものを<ruby>一<rt>ひと</rt></ruby>つ<ruby>選<rt>えら</rt></ruby>んでください。</p>
+<p class="furi"><strong>1<ruby>番<rt>ばん</rt></ruby></strong> 1 ・ 2 ・ 3 ・ 4<br />
+<strong>2<ruby>番<rt>ばん</rt></ruby></strong> 1 ・ 2 ・ 3 ・ 4<br />
+<strong>3<ruby>番<rt>ばん</rt></ruby></strong> 1 ・ 2 ・ 3 ・ 4<br />
+<strong>4<ruby>番<rt>ばん</rt></ruby></strong> 1 ・ 2 ・ 3 ・ 4<br />
+<strong>5<ruby>番<rt>ばん</rt></ruby></strong> 1 ・ 2 ・ 3 ・ 4</p>
+<p class="bk-memo">― メモ ―</p>
+<h2 class="bk-mondai bk-mondai-l"><span class="bk-mn">問題4</span></h2>
+<p class="furi"><ruby>問題<rt>もんだい</rt></ruby>4では、<ruby>問題<rt>もんだい</rt></ruby><ruby>用紙<rt>ようし</rt></ruby>に<ruby>何<rt>なに</rt></ruby>も<ruby>印刷<rt>いんさつ</rt></ruby>されていません。まず<ruby>文<rt>ぶん</rt></ruby>を<ruby>聞<rt>き</rt></ruby>いてください。それから、それに<ruby>対<rt>たい</rt></ruby>する<ruby>返事<rt>へんじ</rt></ruby>を<ruby>聞<rt>き</rt></ruby>いて、1から3の<ruby>中<rt>なか</rt></ruby>から、<ruby>最<rt>もっと</rt></ruby>もよいものを<ruby>一<rt>ひと</rt></ruby>つ<ruby>選<rt>えら</rt></ruby>んでください。</p>
+<p class="furi"><strong>1<ruby>番<rt>ばん</rt></ruby></strong> 1 ・ 2 ・ 3<br />
+<strong>2<ruby>番<rt>ばん</rt></ruby></strong> 1 ・ 2 ・ 3<br />
+<strong>3<ruby>番<rt>ばん</rt></ruby></strong> 1 ・ 2 ・ 3<br />
+<strong>4<ruby>番<rt>ばん</rt></ruby></strong> 1 ・ 2 ・ 3<br />
+<strong>5<ruby>番<rt>ばん</rt></ruby></strong> 1 ・ 2 ・ 3<br />
+<strong>6<ruby>番<rt>ばん</rt></ruby></strong> 1 ・ 2 ・ 3<br />
+<strong>7<ruby>番<rt>ばん</rt></ruby></strong> 1 ・ 2 ・ 3<br />
+<strong>8<ruby>番<rt>ばん</rt></ruby></strong> 1 ・ 2 ・ 3<br />
+<strong>9<ruby>番<rt>ばん</rt></ruby></strong> 1 ・ 2 ・ 3<br />
+<strong>10<ruby>番<rt>ばん</rt></ruby></strong> 1 ・ 2 ・ 3<br />
+<strong>11<ruby>番<rt>ばん</rt></ruby></strong> 1 ・ 2 ・ 3</p>
+<p class="bk-memo">― メモ ―</p>
+<h2 class="bk-mondai bk-mondai-l"><span class="bk-mn">問題5</span></h2>
+<p class="furi"><ruby>問題<rt>もんだい</rt></ruby>5では、<ruby>長<rt>なが</rt></ruby>めの<ruby>話<rt>はなし</rt></ruby>を<ruby>聞<rt>き</rt></ruby>きます。この<ruby>問題<rt>もんだい</rt></ruby>には<ruby>練習<rt>れんしゅう</rt></ruby>はありません。<ruby>問題<rt>もんだい</rt></ruby><ruby>用紙<rt>ようし</rt></ruby>にメモをとってもかまいません。</p>
+<p class="furi"><strong>1<ruby>番<rt>ばん</rt></ruby></strong><br />
+<ruby>問題<rt>もんだい</rt></ruby><ruby>用紙<rt>ようし</rt></ruby>に<ruby>何<rt>なに</rt></ruby>も<ruby>印刷<rt>いんさつ</rt></ruby>されていません。まず<ruby>話<rt>はなし</rt></ruby>を<ruby>聞<rt>き</rt></ruby>いてください。それから、<ruby>質問<rt>しつもん</rt></ruby>とせんたくしを<ruby>聞<rt>き</rt></ruby>いて、1から4の<ruby>中<rt>なか</rt></ruby>から、<ruby>最<rt>もっと</rt></ruby>もよいものを<ruby>一<rt>ひと</rt></ruby>つ<ruby>選<rt>えら</rt></ruby>んでください。</p>
+<p class="furi"><strong>1<ruby>番<rt>ばん</rt></ruby></strong> 1 ・ 2 ・ 3 ・ 4</p>
+<p class="bk-memo">― メモ ―</p>
+<p class="furi"><strong>2<ruby>番<rt>ばん</rt></ruby></strong><br />
+まず<ruby>話<rt>はなし</rt></ruby>を<ruby>聞<rt>き</rt></ruby>いてください。それから、<ruby>二<rt>ふた</rt></ruby>つの<ruby>質問<rt>しつもん</rt></ruby>を<ruby>聞<rt>き</rt></ruby>いて、それぞれ<ruby>問題<rt>もんだい</rt></ruby><ruby>用紙<rt>ようし</rt></ruby>の1から4の<ruby>中<rt>なか</rt></ruby>から、<ruby>最<rt>もっと</rt></ruby>もよいものを<ruby>一<rt>ひと</rt></ruby>つ<ruby>選<rt>えら</rt></ruby>んでください。</p>
+<p class="furi"><strong><ruby>質問<rt>しつもん</rt></ruby>1</strong><br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">1<ruby>番<rt>ばん</rt></ruby>の<ruby>自転車<rt>じてんしゃ</rt></ruby></span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">2<ruby>番<rt>ばん</rt></ruby>の<ruby>自転車<rt>じてんしゃ</rt></ruby></span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">3<ruby>番<rt>ばん</rt></ruby>の<ruby>自転車<rt>じてんしゃ</rt></ruby></span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">4<ruby>番<rt>ばん</rt></ruby>の<ruby>自転車<rt>じてんしゃ</rt></ruby></span></span></p>
+<p class="furi"><strong><ruby>質問<rt>しつもん</rt></ruby>2</strong><br />
+<span class="bk-ov"><span class="bk-on">1</span><span class="bk-ot">1<ruby>番<rt>ばん</rt></ruby>の<ruby>自転車<rt>じてんしゃ</rt></ruby></span></span><br />
+<span class="bk-ov"><span class="bk-on">2</span><span class="bk-ot">2<ruby>番<rt>ばん</rt></ruby>の<ruby>自転車<rt>じてんしゃ</rt></ruby></span></span><br />
+<span class="bk-ov"><span class="bk-on">3</span><span class="bk-ot">3<ruby>番<rt>ばん</rt></ruby>の<ruby>自転車<rt>じてんしゃ</rt></ruby></span></span><br />
+<span class="bk-ov"><span class="bk-on">4</span><span class="bk-ot">4<ruby>番<rt>ばん</rt></ruby>の<ruby>自転車<rt>じてんしゃ</rt></ruby></span></span></p>
+<h1 class="bk-key">解答用紙(マークシート)</h1>
+<p>答えの番号に○をつけてください。（出典の台本に練習問題「例」の行がないため、例の欄はありません。）</p>
+<h2>問題1</h2>
+<table>
+<thead>
+<tr>
+<th>1番</th>
+<th>2番</th>
+<th>3番</th>
+<th>4番</th>
+<th>5番</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 2 3 4</td>
+<td>1 2 3 4</td>
+<td>1 2 3 4</td>
+<td>1 2 3 4</td>
+<td>1 2 3 4</td>
+</tr>
+</tbody>
+</table>
+<h2>問題2</h2>
+<table>
+<thead>
+<tr>
+<th>1番</th>
+<th>2番</th>
+<th>3番</th>
+<th>4番</th>
+<th>5番</th>
+<th>6番</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 2 3 4</td>
+<td>1 2 3 4</td>
+<td>1 2 3 4</td>
+<td>1 2 3 4</td>
+<td>1 2 3 4</td>
+<td>1 2 3 4</td>
+</tr>
+</tbody>
+</table>
+<h2>問題3</h2>
+<table>
+<thead>
+<tr>
+<th>1番</th>
+<th>2番</th>
+<th>3番</th>
+<th>4番</th>
+<th>5番</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 2 3 4</td>
+<td>1 2 3 4</td>
+<td>1 2 3 4</td>
+<td>1 2 3 4</td>
+<td>1 2 3 4</td>
+</tr>
+</tbody>
+</table>
+<h2>問題4</h2>
+<table>
+<thead>
+<tr>
+<th>1番</th>
+<th>2番</th>
+<th>3番</th>
+<th>4番</th>
+<th>5番</th>
+<th>6番</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 2 3</td>
+<td>1 2 3</td>
+<td>1 2 3</td>
+<td>1 2 3</td>
+<td>1 2 3</td>
+<td>1 2 3</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>7番</th>
+<th>8番</th>
+<th>9番</th>
+<th>10番</th>
+<th>11番</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 2 3</td>
+<td>1 2 3</td>
+<td>1 2 3</td>
+<td>1 2 3</td>
+<td>1 2 3</td>
+</tr>
+</tbody>
+</table>
+<h2>問題5</h2>
+<table>
+<thead>
+<tr>
+<th>1番</th>
+<th>2番-質問1</th>
+<th>2番-質問2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 2 3 4</td>
+<td>1 2 3 4</td>
+<td>1 2 3 4</td>
+</tr>
+</tbody>
+</table>
+<h1>【正解・解説】※解き終わってから見てください</h1>
+<h2>問題1</h2>
+<table>
+<thead>
+<tr>
+<th>番号</th>
+<th>正解</th>
+<th>解説</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1番</td>
+<td>1</td>
+<td>女「先生の許可がない限りは、勝手に変えられないよ。まず、研究室に行ってみれば？」男「わかった」＝先生の研究室に行く。2 ✗ リーさんへの連絡は先生の許可後。3 ✗ 直接会えるためメールはやめた。4 ✗ 目の前にいる女の学生には後で連絡する。</td>
+</tr>
+<tr>
+<td>2番</td>
+<td>1</td>
+<td>男「現金で、別々でお願いします。クーポンは1枚で3名まで」＝現金で別々に支払い、各人10％引き（3000円−300円＝2700円）。2 ✗ 割引前の1人分。3 ✗ 割引後の3人分合計。4 ✗ カード払い（割引無効）の3人分合計。</td>
+</tr>
+<tr>
+<td>3番</td>
+<td>3</td>
+<td>課長「今までのものと図で比較するとか、そういう感じの方がいいんじゃないかな」→女「はい、そうします」＝以前の商品と比べた図を入れる。文字の色は「あんまり目立たない」という指摘のみで直す指示はなく、数字は「大きく目立つように書いてある」で十分、変更点のまとめは「他に付け加えるものはないね」と評価済み。</td>
+</tr>
+<tr>
+<td>4番</td>
+<td>4</td>
+<td>男「場所は、玄関に置けば？」女「じゃあ、餌はいいとして、置き場所を変えてみる」→ケースを移動する。餌の量は「少なすぎるくらいでいいんだよ」と現状維持、貝は既に入れている、掃除の回数は話題にしていない。</td>
+</tr>
+<tr>
+<td>5番</td>
+<td>1</td>
+<td>「日光がよく当たる窓際に移してあげるといいですよ」→まず置く場所を変える。水は「それでいいですよ」、弱った枝は「その必要はないですよ」、植え替えは「元気になったら」。</td>
+</tr>
+</tbody>
+</table>
+<h2>問題2</h2>
+<table>
+<thead>
+<tr>
+<th>番号</th>
+<th>正解</th>
+<th>解説</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1番</td>
+<td>3</td>
+<td>男「討論番組で司会している時の進行の仕方に感心させられる」「自分が会議なんかで司会するときの参考にしたい」→3。親しみやすさと声は女の発言や一般の評価で、男は「声や雰囲気っていうよりは」と否定。</td>
+</tr>
+<tr>
+<td>2番</td>
+<td>2</td>
+<td>「一日に、少なくとも六時間は睡眠を取っている人のみ参加できます」→2。運動習慣や動画視聴時間、過去の参加経験は条件にない（過去の参加者も可）。</td>
+</tr>
+<tr>
+<td>3番</td>
+<td>1</td>
+<td>医者「横に伸ばすと、どうですか」→女「あ、それはまだ痛いです」。2 ✗「まだ全然できません」。3 ✗「ゆっくりとなら、手を上にあげられるようになりました」。4 ✗「もう、テープは貼らなくてもいい」。</td>
+</tr>
+<tr>
+<td>4番</td>
+<td>3</td>
+<td>女「合わせるもので同じ着物とは思えないってくらい印象が変わるんだよ。私、そこから毎日着たいくらい大好きになっちゃった」＝夢中になったきっかけ。安さは高くない理由、古さは「そういうわけじゃない」、注目は「他の人の目は気にならないんだ」。</td>
+</tr>
+<tr>
+<td>5番</td>
+<td>1</td>
+<td>1 ○「最後はきつかったんですけど、思い切ってスピードを上げて、それが効いたんだと思います」→勝因／2 ✗「もっと早い段階で前に出て自分のペースを維持できればよかったんですけど」→できなかった／3 ✗「スピードを落とさずにいる自信がなくて」→落としたとは言っていない／4 ✗「次の試合は早めに先頭を取りに行きたい」→次回の課題。</td>
+</tr>
+<tr>
+<td>6番</td>
+<td>2</td>
+<td>「女性には、責任のある仕事を任されることがあまりないと感じ、辞めることを決心しました」が理由。1 ✗「人間関係にも問題がなく」。3 ✗ スキルは「スキルアップができて」と今後の希望。4 ✗「男女の区別なく」働きたいという希望で、能力差の話ではない。</td>
+</tr>
+</tbody>
+</table>
+<h2>問題3</h2>
+<table>
+<thead>
+<tr>
+<th>番号</th>
+<th>正解</th>
+<th>解説</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1番</td>
+<td>3</td>
+<td>「次から次へと、お菓子や、土産物、雑誌なんかを売りに来る」＝車内販売が不満の中身。1 ✗ 放送は売りに来る前ぶれとして引かれただけ。2 ✗ 4 ✗ 話は「列車が発車すると」以降の車内のことで、駅の話は出ない。</td>
+</tr>
+<tr>
+<td>2番</td>
+<td>4</td>
+<td>1 ✗神話への言及はあるが物語の紹介ではない／2 ✗栄養の話はない／3 ✗「ハチミツが採りやすくなった」と触れるだけ／4 ○「2000年以上前の書物に…記録を見ることができます」「日本では8世紀の書物に…」「明治になると…一般の人の間でも一気に普及した」→食べ物としてのハチミツの歴史。</td>
+</tr>
+<tr>
+<td>3番</td>
+<td>4</td>
+<td>「海外でも多くの人の心を掴み、評判が高まっているんだそうです」「世界中でファンを獲得しているようです」→世界的な人気の高まり。1 ✗ 一作品のみで共通点の分析ではない。2 ✗「5つの言語に翻訳されています」→質には触れない。3 ✗「長編アニメとして映画化されました」→この作品の一例。</td>
+</tr>
+<tr>
+<td>4番</td>
+<td>4</td>
+<td>「改めてご寄付という形でご協力いただければ幸いです」→新校舎のための寄付の依頼。</td>
+</tr>
+<tr>
+<td>5番</td>
+<td>2</td>
+<td>1 ✗農業を長く続けることの大切さの話ではない／2 ○「農業体験会も行っていて人気があると伺っています」「私もそういった気持ちを経験していただきたいと思って始めた」→農業体験会を行う目的についての話。／3 ✗美味しい野菜を作る努力の話ではない／4 ✗田舎に住むことのメリットの話ではない。</td>
+</tr>
+</tbody>
+</table>
+<h2>問題4</h2>
+<table>
+<thead>
+<tr>
+<th>番号</th>
+<th>正解</th>
+<th>解説</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1番</td>
+<td>1</td>
+<td>「笑わせないでくれよ」＝本気とは思えないという意味→本気だと返す1。2 ✗「笑ってなんかいないわよ」→字義通りに取っている。3 ✗「すごく面白いのよ」→面白さの話。</td>
+</tr>
+<tr>
+<td>2番</td>
+<td>3</td>
+<td>「もう行かないと、飛行機に乗り遅れるよ」＝出発を促す→「そろそろ出るよ。ありがとう」</td>
+</tr>
+<tr>
+<td>3番</td>
+<td>3</td>
+<td>「具合でも悪いのかな」＝姿を見ない理由の推測→別の理由を挙げる3。1 ✗「会ったことないから」→話題は最近見ないこと。2 ✗「都合悪いって言ってた」→予定の話で、理由にならない。</td>
+</tr>
+<tr>
+<td>4番</td>
+<td>2</td>
+<td>「お箸をお付けしますか」＝店員の申し出→受ける2。1 ✗「大丈夫です」＝断りの意味になり「はい」と矛盾。3 ✗「お付けして」は謙譲語で、相手の行為には使えない。</td>
+</tr>
+<tr>
+<td>5番</td>
+<td>1</td>
+<td>「やめるべきじゃなかったんじゃない？」＝やめたのは失敗では→「ちょっと後悔してるんだ」</td>
+</tr>
+<tr>
+<td>6番</td>
+<td>3</td>
+<td>「出席、欠席に関わらず早く返事くれ」＝全員が返事をする→「出席できない人は連絡いらないって思ってたよ」</td>
+</tr>
+<tr>
+<td>7番</td>
+<td>2</td>
+<td>「大したもんだって言ってたよ。」＝部長のほめ言葉の伝達→「え、部長が褒めてくれたんですか。」</td>
+</tr>
+<tr>
+<td>8番</td>
+<td>1</td>
+<td>「使ってもらえるとありがたい」＝差し出す申し出→ありがたく受け取る1。2 ✗「ええ、どうぞ」→差し出す側の言葉。3 ✗「もう使わないものなんで」→差し出す側の説明で立場が逆。</td>
+</tr>
+<tr>
+<td>9番</td>
+<td>2</td>
+<td>主催者の「お越しいただきありがとうございます」への客側の返答→「ご招待、感謝申し上げます。」</td>
+</tr>
+<tr>
+<td>10番</td>
+<td>1</td>
+<td>「値段が安いわりになかなかの味だったよ」という好意的な感想への同意→「安くておいしいなら、毎日でも行けそうね。」</td>
+</tr>
+<tr>
+<td>11番</td>
+<td>3</td>
+<td>「できっこないよね」という弱気な発言への励まし→「そんなこと言わないで、頑張ろうよ!」</td>
+</tr>
+</tbody>
+</table>
+<h2>問題5</h2>
+<table>
+<thead>
+<tr>
+<th>番号</th>
+<th>正解</th>
+<th>解説</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1番</td>
+<td>2</td>
+<td>「やっぱり温泉があるほうがいいな」「少しでも安いほうがいいから」→温泉付きで最安（9000円）の緑ホテルを予約。1 ✗ 1万3000円で高い。3 ✗ 1万円で緑ホテルより高い。4 ✗ 8000円だが温泉なし。</td>
+</tr>
+<tr>
+<td>2番-質問1</td>
+<td>3</td>
+<td>女は「長い距離を走っても疲れないのがいいわね」と言い、最後に「私はやっぱり安全に通勤できるように1番安定性が高いのにする」。安定性が最も優れているのは「3番は長い距離を走るのに適しています…こちらの4つの中では最も安定性に優れています」の3番の自転車。</td>
+</tr>
+<tr>
+<td>2番-質問2</td>
+<td>2</td>
+<td>男は釣りに行く時に使いたいと考え、女が「凸凹道に強いのがいいんじゃない？川沿いの道、ちゃんと整備されてないところもあるし」と提案するが、男は「帰りは釣った魚を持って帰りたいから車で行って…折りたためる自転車ならうちの小さい車でも乗せられるね」と結論。小さく畳めて車にも乗せられるのは「2番は小さく畳めますから手で持って運ぶことができますし、車にも乗せられます」の2番の自転車。</td>
+</tr>
+</tbody>
+</table>
+<h2>得点の目安</h2>
+<ul>
+<li>27〜30問：合格ライン以上</li>
+<li>18〜26問：合格圏内</li>
+<li>17問以下：N2聴解の聞き取りを強化</li>
+</ul></body></html>

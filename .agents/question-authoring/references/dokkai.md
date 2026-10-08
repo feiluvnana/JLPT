@@ -917,6 +917,16 @@ The gloss band therefore stays what it is: the hand-written BANNED list, the
 subtraction test (`check_note_band`), the same-paper reuse test
 (`check_note_band_reuse`), and a human read against the archive.
 
+**Re-proposed 2026-10-08 (qa-report-20261002_1 F11: 畳, ブレーキ) and refuted
+again, with the narrowest form tried:** flag a gloss whose headword is printed
+bare in ≥K other sittings AND glossed in none (same bare-use proxy as
+above, okurigana stripped). Over the 10 imports (leave-one-out) it still flags **0–7 per sitting at K=2** and **0–5 at K=5**
+(2022-12 類, 時には; 2023-07 ごく; 2025-07 成す), while ブレーキ (3 sittings)
+already drops out at K=5 — so a threshold that clears the archive misses half the
+founding case. 畳 and ブレーキ stand as a reviewer's call, read against the
+archive counts; extending the official-option test above from 問題3–5 option
+lines to all prose is not a rule.
+
 ## 問題14 (情報検索)
 
 **70 and 71 are BOTH person-scenario items** — 7 of 7 papers (`official_calibration.md` §6). The answer always combines **≥2** constraints from the table.
@@ -961,6 +971,10 @@ subtraction test (`check_note_band`), the same-paper reuse test
   700 / 1,100 / 1,200 / 800 to pin its key at 2; qa-report-20260928_1 RC-11).
 - **The 解説 cells for 70/71 must each quote the TWO flyer cells the key combines**.
 - **Every WRONG option must contain at least one clause factually FALSE against the flyer** — not merely incomplete. Build wrong options from true combinations with ONE fact changed to something the flyer contradicts.
+- **A deadline is printed as a DATE, or as an offset no calendar convention
+  changes** (「受付日の2日前」). Never 「前の週の〜曜日」: whether a week starts on
+  Sunday or Monday moves it (20261002_1's flyer read 6/5 one way and 5/29 the
+  other — qa-report-20261002_1 F12).
 
 ### 問題14's flyer and its two stems are APPARATUS — write them, do not re-skin them
 

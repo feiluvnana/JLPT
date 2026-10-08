@@ -122,6 +122,9 @@ make sample <id> SEED=<n>          # -> test_spec.json + ledger
 - No harvest step. Each themed surface gets `{theme, origin:"authored",
   avoid:[…]}`; the author invents the subject (`exam-blueprint` Part II).
 - Do not run while another test's QA is open (above).
+- The 読解 allocation table (`qa/dokkai-allocation-<id>.md`) lists the previous
+  paper's 13 `claim` sentences and its 科学・技術/消費・経済 domains beside the
+  avoid lists (`exam-blueprint` Part II, "claims, not only subjects").
 
 ## Stage 2 — authoring
 
@@ -202,7 +205,9 @@ make assemble <id> && make autofix <id> && make lint-draft <id> \
 - **A repair made to clear one gate check is not verified by that check
   passing.** After ANY edit to 問題10–14 prose — （注N） glosses included —
   re-grep every 問題7/8/9 keyed form across the whole 読解 half, record the counts
-  AND the frames (文末／連用／連体) in the hand-off, and re-read the edited
+  AND the frames (文末／連用／連体) in the hand-off — a 問題9 [論理接続] key
+  too: a 読解 sentence opening on it is its frame, not an exemption
+  (`exam-qa-review` §3; qa-report-20261002_1 F10) — and re-read the edited
   passage's closing move. (`20260903_1` F2: a gloss rewritten to clear a
   byte-identical-gloss FAIL planted 問題8-44's own drawn target in its own frame,
   in printed booklet text, and `make check` went green.)

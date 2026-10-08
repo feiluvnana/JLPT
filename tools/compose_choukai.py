@@ -97,6 +97,20 @@ AFTER_NUMBER_CALL = 2.7
 # a reference the textbook pool can be compared against by ear.
 OFFICIAL_ONLY_TESTS = {"20260807_1"}
 
+# Clips with a KNOWN upstream transcript defect that `make check` grandfathers
+# for the papers already holding them and FAILs for any new holder
+# (`check_consistency.CHOUKAI_QUESTION_REPEAT_GRANDFATHERED`, the `imported-*`
+# keys). Drawing one spends a seed for nothing: 20261002_1's seed 85360207 drew
+# 2022-07:問題2-4 and FAILed at stage 3, and two more re-draws (54137854,
+# 64787247) drew it again (stage3-report-20261002_1 RC-S3-1). Excluded like a
+# figure item, and PRINTED. An id leaves this map when its audio is ear-checked
+# and the import repaired upstream (`make choukai-bank`, then `--replay` of every
+# holder) — the gate keeps the two lists in step.
+UPSTREAM_DEFECT_CLIPS: dict[str, str] = {
+    "2022-07:問題2-4": "head 「何だと言っていますか」 / tail 「何と言っていますか」",
+    "2021-07:問題2-5": "head 「言っていますか」 / tail 「いっていますか」",
+}
+
 # Slots per 大問 that every OTHER paper fills from the textbook pool. Every
 # number here is set from `tools/choukai_wear.py`, not chosen: it divides
 # `slots x mixed papers` by the pool depth and holds the result under
@@ -601,6 +615,7 @@ def draw(bank: dict, seed: int, used: Counter, test_id: str,
     textbook: dict[str, list[dict]] = {}
     preambles: dict[str, list[dict]] = {}
     skipped_figure: list[str] = []
+    skipped_defect: list[str] = []
     for rec in bank["records"]:
         if rec["kind"] != "item":
             preambles.setdefault(rec["section"], []).append(rec)
@@ -618,6 +633,9 @@ def draw(bank: dict, seed: int, used: Counter, test_id: str,
         if rec.get("figure_dependent"):
             skipped_figure.append(rec["id"])
             continue
+        if rec["id"] in UPSTREAM_DEFECT_CLIPS:
+            skipped_defect.append(rec["id"])
+            continue
         if rec.get("needs_number_call"):
             textbook.setdefault(rec["section"], []).append(rec)
         else:
@@ -628,6 +646,10 @@ def draw(bank: dict, seed: int, used: Counter, test_id: str,
         print(f"  note: {len(skipped_figure)} figure item(s) excluded from the "
               f"draw (options are picture regions, uncomposable): "
               f"{', '.join(sorted(skipped_figure))}")
+    if skipped_defect:
+        print(f"  note: {len(skipped_defect)} clip(s) with a known upstream "
+              f"transcript defect excluded from the draw (UPSTREAM_DEFECT_CLIPS): "
+              f"{', '.join(sorted(skipped_defect))}")
 
     for section, count in SECTIONS.items():
         for slot in range(1, count + 1):

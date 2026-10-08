@@ -599,8 +599,6 @@
   "観客(かんきゃく)",
   "乗客(じょうきゃく)",
   "逆転(ぎゃくてん)",
-  "上級(じょうきゅう)",
-  "中級(ちゅうきゅう)",
   "軍(ぐん)",
   "軍隊(ぐんたい)",
   "係員(かかりいん)",
@@ -1865,7 +1863,6 @@
   "平穏",
   "円滑",
   "柔軟",
-  "切実",
   "漠然",
   "頻繁",
   "卓越",
@@ -2185,7 +2182,6 @@
   "高くつく",
   "出し入れ",
   "多少",
-  "ただ",
   "たたく",
   "立ち上げる",
   "たった",
@@ -3329,7 +3325,6 @@
   "抑制",
   "転換",
   "柔軟",
-  "切実",
   "漠然",
   "頻繁",
   "順調",
@@ -6993,6 +6988,30 @@
     "ruling": "qa-report-20260929_1 F2 (one-off orthography sweep)",
     "hits": "0 in refs/Shinkanzen/goi_reference.md, refs/Shinkanzen/kanji_tables.md, refs/Soumatome/goi_reference.md, refs/Hajimete/vocab_reference.md and the 31 refs/JLPT_N2_NEW booklet.md + script.md (headword substring)"
    }
+  }
+ },
+ "band_sources": {
+  "_rule": "exam-blueprint SKILL.md §'A NEW usage/context_words/paraphrase entry carries its evidence' (qa-report-20261002_1 F5-F7). An entry ADDED to a tested category after 2026-10-08 carries a record here: book + page/line + quoted headword, or an official sitting + 問題 where it is printed unglossed. `frozen_unsourced` is the count of entries per category that predate the rule and carry none; check_pool_band_sources FAILs a category whose unsourced count rises above it. Lower a count when an unsourced entry is deleted or gains a record; never raise one.",
+  "frozen_unsourced": {
+   "on": "2026-10-08",
+   "kanji_reading": 1424,
+   "orthography": 245,
+   "word_formation": 99,
+   "context_words": 1359,
+   "paraphrase": 145,
+   "usage": 212,
+   "grammar_p7": 203,
+   "grammar_p8": 70
+  },
+  "entries": {
+   "kanji_reading": {},
+   "orthography": {},
+   "word_formation": {},
+   "context_words": {},
+   "paraphrase": {},
+   "usage": {},
+   "grammar_p7": {},
+   "grammar_p8": {}
   }
  }
 }

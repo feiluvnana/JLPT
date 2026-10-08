@@ -748,6 +748,28 @@ Untranscribed, in the order they pay off:
 Nothing here is blocked on a source any more; it is blocked on transcription time,
 one 大問 at a time.
 
+### Key-derivability audit (point 6), 2026-10-08
+
+`kanzenmoshi:cd1-04` was refused for two defensible answers (qa-report-20261002_1
+F1) and `cd1-05` is a figure item, so `SKILL.md` point 6 was run over the other
+nine banked 第1回 問題1/2 declarations, each printed option read against its
+question and script. **All nine pass; none refused, so the bank is unchanged:**
+
+| id | key | the line that decides it | nearest rival, and why it loses |
+|---|---|---|---|
+| cd1-06 問1 | 1 電車に乗る | 「私は中央線だから、じゃあ」 | 3 電話 — already made in the dialogue |
+| cd1-07 問1 | 1 研究室に行く | 「まず、研究室に行ってみれば？」「わかった」 | 2 リーさん — only after the 先生's 許可 |
+| cd1-08 問1 | 1 2700円 | 「現金で、別々で」「1枚で3名まで」 | 3 8100円 — the joint total, before 別々 |
+| cd1-11 問2 | 2 精神的に | 「肉体的なことよりも気持ちの面で限界」 | 1 肉体的 — subordinated by よりも |
+| cd1-12 問2 | 2 筋肉 | 「健康診断で筋肉を増やしたほうがいい」 | 1 やせる — the friend's guess, corrected by 「というか」 |
+| cd1-13 問2 | 1 コンタクトがない | 「切らしちゃって」 | 4 合わない — said of the glasses |
+| cd1-14 問2 | 1 吐き気 | 「前に…飲んだ時に吐き気がして」 | 2 胃 — the stomach medicine was only co-prescribed |
+| cd1-15 問2 | 1 働きやすそう | 「本音で話せた」「ここなら長く働けるかな」 | 4 事業内容 — 「にも関心はあった」, an add-on |
+| cd1-16 問2 | 1 鍵 | 「どうせ会場の鍵を借りるのに行かなきゃなんない」 | 2 ピンマイク — he only goes to ask, and the trip is owed to the key |
+
+Read from the declarations and the bank records (identical); the Taisaku pages
+were not re-opened, so this audits derivability, not transcription.
+
 
 ---
 

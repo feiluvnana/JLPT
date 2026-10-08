@@ -349,6 +349,14 @@ particle tail before the printed tail (nothing to predicate), a テ形 or ます
 no host, a 連用 form the tail cannot receive, a card that is not the form the
 printed tail demands.
 
+**The printed text after the blanks is a host too.** For every card ending in
+「の」 or a 連体形, test the PRINTED continuation — across a 、 — as its head
+before claiming the card cannot stand last. `20261002_1` 問題8-44's 解説 argued
+「読点の前に置くと係る名詞がない」, yet 「…駅前の図書館の、近くに住む人たちを対象にした
+見学会」 parses with 「図書館の」 heading 見学会 (qa-report-20261002_1 F9; same family
+as 20260827_2 F1, a host outside the four cards). `verify_scramble` prints
+UNDECIDED here, so the written test is the only evidence.
+
 The class has now shipped **three times in one paper's five items**, which is why
 the procedure above replaced the old one-paragraph rule:
 

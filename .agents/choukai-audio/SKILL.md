@@ -171,6 +171,16 @@ Point 5 is the discriminator: **模試/実戦 books press to exam timing, 練習
 books abridge it.** Sweep with `choukai_segment.measure` + `find_pauses`, not
 `silencedetect` (Part 4 step 2 owns why).
 
+**Point 6 is per ITEM, at declaration time, and it is a read, not a measurement:
+the publisher's key must be derivable.** For every 問題1/2 declaration, read
+each printed option against the question and the script. A key a reader cannot
+derive from the script, or a second option the script supports as well, refuses
+the declaration — move it to `excluded` with the quotes and a
+`refused_declaration`, never re-key it (a publisher key is not the official
+one). Founding case: `kanzenmoshi:cd1-04`, keyed メール where the thing
+submitted is the アンケート (qa-report-20261002_1 F1). Audit of every banked
+完全模試 問題1/2 declaration: `references/textbook_bank_plan.md` §8.
+
 Then, before declaring items:
 
 1. **Map the tracks by measuring, not by assuming.** Durations plus a
@@ -355,6 +365,17 @@ repair** — a bank fix reaches a shipped paper only by re-rendering it, and onl
 a past paper's draw"; `make mp3 <id> SEED=<recorded seed>` re-draws it instead).
 An item-line repair is ear-checked first, at the item's `聴解_チャプター.json`
 offset (`exam-qa-review` §4 check 6 owns the three script-defect classes).
+
+**Open ear-checks** — agent sessions have no playback, so these wait for a human
+listener. An entry leaves when the audio is heard and the import is repaired
+(or confirmed as spoken) and every holder replayed.
+
+| clip | the line in question | where to listen | filed |
+|---|---|---|---|
+| `2022-12:問題1-3` | 「来年の春とだけ書い**ていて**おいてくれれば」 (page prints it; WARNed by `check_bank_doubled_auxiliary`) | `tests/20261002_1/聴解.mp3` 問題1-3番 at 369.29 s, line ≈440–460 s | qa-report-20261002_1 F14 |
+| `2022-07:問題1-3` | 「それはもっと**全面**に出した方がいいね」 (前面?) | `tests/20260929_1/聴解.mp3` at 320.11 s | qa-report-20260929_1 F6 |
+| `2025-07:問題5-1` | 「全然、頑張ります」 | 7/2025 sitting MP3 | qa-report-20260928_2 F5 |
+| `2022-07:問題2-4`, `2021-07:問題2-5` | head/tail question differ (何だと/何と; 言/い) — undrawable meanwhile (`compose_choukai.UPSTREAM_DEFECT_CLIPS`) | the sittings' MP3s | stage3-report-20261002_1 RC-S3-1 |
 `check_choukai_script_latin()` WARNs on a Latin run in a paper's script that no
 bank record carries, which is the detector for exactly this class.
 (Booklet HTML says `N2` too — print and speech now agree.)

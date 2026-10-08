@@ -72,7 +72,22 @@ deleted on 2026-09-28 (no shipped paper had drawn them). **The existing
 1,719 entries are not made undrawable** — that proposal was rejected as
 disproportionate: absence in OCR extracts is weak evidence, so a missing
 citation says nothing about an entry's band. They are audited when drawn, under
-§2.5. Not gated: string entries have no field to hold the citation.
+§2.5.
+
+**Gated since 2026-10-08, for every TESTED category** (kanji_reading,
+orthography, word_formation, context_words, paraphrase, usage, grammar_p7/p8 —
+qa-report-20261002_1 F5–F7). The citation goes in the top-level
+`band_sources.entries[cat][entry]` map (a map, like `retired_entries`, so the
+entry stays a bare string). `check_pool_band_sources` is a RATCHET: the
+pre-rule entries are frozen as a per-category count
+(`band_sources.frozen_unsourced`), and a category whose unsourced count rises
+above it FAILs. A full backfill of the ~3,750 entries was rejected — each
+citation means opening a page. Lower a frozen count when an unsourced entry is
+deleted or cited; never raise one. Same day's one-off audit deleted 中級, 上級
+(kanji_reading: beginner class names, no headword in the four vocabulary
+extracts), 切実 (context_words + usage: no N2 attestation) and connective ただ
+(context_words: no N2 volume heads it) — no shipped ledger row held any of
+them; 20261002_1 drew three and rerolled them out.
 
 **Exception, `orthography` only: a zero-hit entry is `needs_evidence`, i.e.
 undrawable** (2026-10-02, qa-report-20260929_1 F2). 問題2 asks the candidate to
@@ -512,7 +527,8 @@ What IS a pool defect in a `paraphrase` row: a TARGET below the band (the row
 tests nothing — `丈夫だ` was deleted 2026-09-28 on that ground), a gloss that is
 not a synonym (`なおさら(いよいよ)`, retired 2026-09-28 for `なおさら(いっそう)`;
 `いざ(いざとなったら)`, whose gloss is the target itself, deleted), or one that is
-not idiomatic in the target's frame (`うっすら` above).
+not idiomatic in the target's frame (`うっすら` above). A NEW target's band
+evidence is a `band_sources` record (§"Pool entries stay inside the N2 band").
 
 **Founding case, re-read (qa-report-20260904_1 F2/§5):** `20260904_1`'s 問題5-24
 shipped 「いつも」 as the key on target 常に, beside たまに／まれに／ときどき, and QA
@@ -1581,6 +1597,16 @@ source, no fetch, no citation.
   「空き家と相続後の判断の先延ばし」 is the same subject with a shorter name. The
   test is whether a candidate who sat both papers would recognise the situation,
   not whether the strings differ.
+- **Avoid the previous paper's CLAIMS, not only its subjects** (2026-10-08,
+  qa-report-20261002_1 F3/F4, stage-3 RC-S3-3). `avoid` is subject-level, so a
+  surface can miss every string and still restate the previous paper's domain +
+  MOVE or its claim: 20261002_1 11(1) re-argued 20260929_1 問題13's defence of a
+  measuring protocol, and 12(B) restated 20260929_1 11(4)'s claim that a
+  visible cue, not need, sets consumption. So the allocation table lists the
+  previous paper's 13 `claim` sentences, plus the domain of each of its
+  科学・技術/消費・経済 surfaces, beside every theme's `avoid`, and the 読解
+  author writes, per surface, which previous claim it is NOT. A read, not a
+  gate.
 - Errand identity for 聴解 (「two items may not run the same errand」) is no
   longer checkable at draw time, because there is no pool `key` to compare. It is
   checked on what SHIPPED, in the `shapes` column of `logs/topics.json`, by the

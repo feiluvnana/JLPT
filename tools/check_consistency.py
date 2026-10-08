@@ -5999,8 +5999,11 @@ KEY_EXPOSURE_GRANDFATHERED = {
 #      読解 prose cannot avoid them — the same reasoning, and the same tag, that
 #      `P9_SET_REUSE_MAX` already grants the class. Measured: without the
 #      exemption the predicate fires on 20260812_2 「しかし」, 20260817_2 「つまり」
-#      and 20260827_1 「ところが」, all sentence-initial, none a defect. They stay
-#      under the COUNT rule, which is what caught 20260817_3's 「ところが」×3.
+#      and 20260827_1 「ところが」, all sentence-initial. They stay under the COUNT
+#      rule, which is what caught 20260817_3's 「ところが」×3 — and, since
+#      2026-10-08, under a SENTENCE-INITIAL branch of their own: "none a defect"
+#      was wrong against `exam-qa-review` §3, which never exempted the class
+#      (qa-report-20261002_1 F10; P9_CONNECTIVE_INITIAL_GRANDFATHERED).
 #   3. **A DISCONTINUOUS 問題8 target is a same-frame hit at n=1 by
 #      construction.** 「〜のは…からだ」 or 「〜につれて…ていく」 is not a token, it is
 #      a frame; 読解 prose that reproduces both chunks in order inside one
@@ -6230,6 +6233,38 @@ KEY_FRAME_GRANDFATHERED = {
 }
 
 
+# F10 (qa-report-20261002_1), `GATE-BLIND`, 2026-10-08. Scoping decision 2 above
+# exempts a [論理接続] blank from the 文末/連用/連体 classes, which left a
+# SENTENCE-INITIAL reuse of the keyed connective visible to the count rule only:
+# 20261002_1 keyed 「ところが」 at 問題9-49 (「。（49）、…」) and 問題10(3) printed
+# 「ところが、半年もすると…」 once — 1 ≤ 1, green. `exam-qa-review` §3 owns the rule
+# ("never in the same syntactic frame as the stem") and does not exempt the class,
+# so the sentence-initial frame IS the stem's frame: a hit at n=1 when a 読解
+# sentence (line start, or after 。」』？！) opens with the keyed form + 「、」.
+# The class/exemption above is unchanged; this is one extra branch.
+#
+# MEASURED over all 21 generated papers on disk before landing (2026-10-08):
+# exactly ONE id moves — 20260812_2, 問題9-48 「しかし」 against 「しかし、うまく
+# いった例が示しているのは…」, re-read by hand, the shape the rule names. The
+# other two ids the 2026-09-03 measurement named (20260817_2 つまり, 20260827_1
+# ところが) are withdrawn (logs/withdrawn.json). Grandfathered BY NAME (its own
+# WARN line), because only the predicate moved; 20261002_1's founding hit was
+# reworded in its round-1 fix (けれども) and the predicate returns its pre-fix
+# line 「ところが、半年もすると…」 as a hit.
+P9_CONNECTIVE_INITIAL_GRANDFATHERED = {"20260812_2"}
+P9_CONNECTIVE_OPENERS = "。」』？！?!"
+
+
+def p9_connective_initial_hit(keyed: str, lines: list[str]) -> str | None:
+    """The first 読解 sentence opening with `keyed` + 「、」, quoted, or None."""
+    pat = re.compile(r"(?:^|(?<=[%s]))%s、" % (re.escape(P9_CONNECTIVE_OPENERS),
+                                               re.escape(keyed)))
+    for ln in lines:
+        if (m := pat.search(ln)):
+            return ln[m.start():m.end() + 14]
+    return None
+
+
 def check_key_grammar_exposure(test_id: str, gt: str, keys: dict[int, int],
                                opts: dict[int, list[str]], spec: dict, bi):
     """A form keyed in 問題7/8/9 appears at most once in the 読解 prose (F10).
@@ -6366,6 +6401,7 @@ def check_key_grammar_exposure(test_id: str, gt: str, keys: dict[int, int],
     frame_lines = dokkai_frame_lines(body, bi)
     tags = mondai9_tags(gt, bi)
     hits = []
+    initial_hits: list[str] = []
     counted = set()
     for q in list(range(31, 43)) + list(P9_BLANKS):
         row, k = opts.get(q) or [], keys.get(q)
@@ -6388,6 +6424,13 @@ def check_key_grammar_exposure(test_id: str, gt: str, keys: dict[int, int],
                 hits.append(f"問{q}「{keyed}」 same frame ×{nf} "
                             f"(読解 prose uses 「〜{conn}、」 clause-finally, the "
                             f"frame the item keys)")
+        # [論理接続]: the class branch below exempts it, but a sentence-initial
+        # reuse is the stem's own frame (F10, P9_CONNECTIVE_INITIAL_GRANDFATHERED).
+        if (q in P9_BLANKS and q not in counted and tags.get(q) == "論理接続"
+                and (ini := p9_connective_initial_hit(keyed, frame_lines))):
+            counted.add(q)
+            initial_hits.append(f"問{q}「{keyed}」 [論理接続] opens a 読解 "
+                                f"sentence, the stem's own frame: 「{ini}…」")
         # The FRAME half: one occurrence in the SAME class as the keyed stem is
         # a breach, whatever the count says. [論理接続] is exempt (see above).
         if q in counted or (q in P9_BLANKS and tags.get(q) == "論理接続"):
@@ -6432,6 +6475,14 @@ def check_key_grammar_exposure(test_id: str, gt: str, keys: dict[int, int],
             hits.append(f"問題8 target「{'…'.join(parts)}」 reproduced whole in "
                         f"one 読解 sentence: 「…{m8.group(0)[:44]}…」 "
                         f"(pool entry: {pool_entry_text(e)})")
+    if test_id in P9_CONNECTIVE_INITIAL_GRANDFATHERED:
+        warn(f"{test_id}: no 問題9 [論理接続] key opens a 問題10-14 sentence",
+             not initial_hits,
+             "; ".join(initial_hits) + " — reword the 読解 connective "
+             "(ところが → けれども／だが) (qa-report-20261002_1 F10)"
+             + GRANDFATHER_NOTE, test_id=test_id)
+    else:
+        hits += initial_hits
     name = (f"{test_id}: no 問題7/8/9 keyed form appears more than "
             f"{KEY_EXPOSURE_MAX}× in the 問題10-14 prose, or even once in the "
             f"same 文末/連用/連体 frame as its stem")
@@ -10204,7 +10255,18 @@ P14_DECIDER_GRANDFATHERED = {
 # Every remaining false positive is a generic phrase (「ある市」「この町」「別の市」)
 # and every one of those is already stop-listed, so the exact-name line reports
 # the same zero hits it did before — no committed paper changes verdict.
-PLACE_SUFFIX = "市町村"
+#
+# F2 (qa-report-20261002_1), GATE-BLIND, widened 2026-10-08 to district names
+# (台, 丘 — が丘 included): 「さくら台」 headed 20260917_1, 20260929_1 and pre-fix
+# 20261002_1 (the last two consecutive) and the 市町村 suffix set saw none of
+# them. MEASURED over all 21 generated papers: no exact or near-name verdict
+# moves; the new candidates are さくら台 (20260917_1, 20260929_1 — three papers
+# apart), かしわ台, みどりが丘 and noise (洗面台, 踏み台, 案内台, あの丘 …), which
+# only matters on an intersection and intersects nowhere. Reconstructed, pre-fix
+# 20261002_1's 「さくら台児童館」 against 20260929_1's 「さくら台二丁目町内会」
+# FAILs the 1-back line. 丁目/団地 were not added: 2-character suffixes need a
+# second scan, and every founding name already ends in 台.
+PLACE_SUFFIX = "市町村台丘"
 PLACE_JP_CHAR = re.compile(r"[ぁ-んァ-ヶ一-鿿ー々]")
 # Words whose tail happens to be 市/町 but which are not names.
 PLACE_STOP = {"都市", "大都市", "地方都市", "市町村", "朝市", "労働市", "国内市",
@@ -10948,6 +11010,67 @@ def check_pool_retired_entries():
           "that drew it, and is never drawn again (sample_items.drawable()). "
           "Never delete the list entry, never invent a gloss "
           "(exam-blueprint §\"Pool entries stay inside the N2 band\")")
+
+
+BAND_SOURCE_CATS = ("kanji_reading", "orthography", "word_formation",
+                    "context_words", "paraphrase", "usage", "grammar_p7",
+                    "grammar_p8")
+
+
+def check_pool_band_sources():
+    """A tested-category entry added after 2026-10-08 cites its N2 evidence.
+
+    F5–F7 (qa-report-20261002_1, RULE-UNENFORCEABLE): 中級, 切実 and connective
+    ただ reached three keys of one paper with no band evidence anywhere, after
+    賢い/治す (20260811_1) and 自ずから (20260914_1). The evidence rule
+    (`exam-blueprint` §"A NEW usage/context_words/paraphrase entry carries its
+    evidence") had nowhere to be written, because entries are bare strings and
+    making them objects would orphan every ledger row. So the citation lives in
+    a top-level map, `band_sources.entries[cat][entry] = "book + line + 「…」"`.
+
+    A FULL backfill is rejected, measured: ~3,750 live entries, and the
+    2026-09-07 proxy (headword present in an extract) clears only 71 % of one
+    pool while flagging plain N2 words — a citation means opening a page. So
+    the old entries are FROZEN as a per-category count (`frozen_unsourced`) and
+    the gate is a RATCHET: a category whose unsourced count rises above its
+    frozen number gained an entry with no citation. Also FAILs a record naming
+    no live entry, or one too short to name a source. Content stays human.
+    """
+    print("\npools.json band sources (a new entry cites its N2 evidence)")
+    pools_path = AGENTS / "exam-blueprint" / "references" / "pools.json"
+    if not pools_path.is_file():
+        return skip("new pool entries cite their band source", "no pools.json")
+    pools = json.loads(pools_path.read_text(encoding="utf-8"))
+    bs = pools.get("band_sources") or {}
+    frozen, entries = bs.get("frozen_unsourced") or {}, bs.get("entries") or {}
+    if not frozen:
+        return check("new pool entries cite their band source", False,
+                     "pools.json has no band_sources.frozen_unsourced")
+    bad, lower = [], []
+    for cat in BAND_SOURCE_CATS:
+        live = [pool_entry_text(e) for e in pools.get(cat) or []]
+        recs = entries.get(cat) or {}
+        for text, src in recs.items():
+            if text not in live:
+                bad.append(f"{cat}:「{text}」 has a band source but is not a {cat} entry")
+            elif not (isinstance(src, str) and len(src.strip()) >= 8):
+                bad.append(f"{cat}:「{text}」 band source names no source")
+        unsourced = sum(1 for t in live if t not in recs)
+        cap = frozen.get(cat)
+        if not isinstance(cap, int):
+            bad.append(f"{cat}: no frozen_unsourced count")
+        elif unsourced > cap:
+            bad.append(f"{cat}: {unsourced} unsourced entries, frozen at {cap}")
+        elif unsourced < cap:
+            lower.append(f"{cat} {cap}→{unsourced}")
+    check(f"new pool entries cite their band source "
+          f"({sum(len(entries.get(c) or {}) for c in BAND_SOURCE_CATS)} cited)",
+          not bad, "; ".join(bad) + " — add `band_sources.entries[cat][entry]` "
+          "with book + page/line + the quoted headword (or an official sitting "
+          "+ 問題 printing it unglossed), opened and read, never a grep total "
+          "(exam-blueprint §\"Pool entries stay inside the N2 band\")")
+    if lower:
+        print(f"  note: frozen_unsourced can be lowered: {', '.join(lower)}")
 
 
 def check_moji4_blank_stems(name: str, gt: str, keys: dict[int, int],
@@ -14460,6 +14583,19 @@ def check_choukai_source_mix():
           f"extras with `make mp3 <id> SEED=<rng>`, or fix the policy if the "
           f"control paper has moved")
 
+    # RC-S3-1 (stage3-report-20261002_1): a clip this gate grandfathers as an
+    # UPSTREAM defect FAILs any new paper that draws it, so the composer must not
+    # draw it. The two lists are one fact; keep them in step.
+    upstream = {re.sub(r"^imported-n2-|番$", "", k)
+                for k in CHOUKAI_QUESTION_REPEAT_GRANDFATHERED
+                if k.startswith("imported-")}
+    excluded = set(getattr(composer, "UPSTREAM_DEFECT_CLIPS", {}))
+    check(f"compose_choukai.UPSTREAM_DEFECT_CLIPS excludes every grandfathered "
+          f"upstream clip ({len(upstream)})", upstream == excluded,
+          f"grandfathered upstream {sorted(upstream)} vs excluded "
+          f"{sorted(excluded)} — a clip the gate FAILs for any new holder must "
+          f"not be drawable; an ear-checked, repaired clip leaves BOTH lists")
+
 
 def check_choukai_textbook_bands():
     """The textbook half's refusal bands, and the printed-options contract.
@@ -14724,6 +14860,8 @@ def check_choukai_archive_bank():
 # false-positive rate this shape (and not the looser `[kanji]って言`) was chosen
 # from. Owner of the predicate; the check imports nothing else for it.
 TEXTBOOK_TE_QUOTATIVE_RE = re.compile(r"(?<![\u4e00-\u9fff])[\u4e00-\u9fff]って\s*言")
+# 「書いていておいて」: 〜ている and 〜ておく stacked on one verb (F14, below).
+BANK_DOUBLED_AUX_RE = re.compile(r"[てで]いておい")
 
 
 def check_textbook_script_grammaticality():
@@ -14781,6 +14919,38 @@ def check_textbook_script_grammaticality():
          "track and read the line back against the page named in its "
          "`source_page`; a single-kanji NOUN plus a quotative って is a "
          "legitimate hit — say so in the report rather than editing the line")
+
+
+
+def check_bank_doubled_auxiliary():
+    """No banked 聴解 line stacks 〜ている and 〜ておく on one verb (F14).
+
+    qa-report-20261002_1 F14: 「〜ていておいて」 is the signature, and it reads the
+    WHOLE bank, official half included, because that half is OCR of a scanned
+    script PDF (`exam-qa-review` §4 check 6, faithfully-transcribed BAD ink).
+    Founding case `2022-12:問題1-3` 「…とだけ書いていておいてくれれば十分です」:
+    the page prints it at 200 dpi, so only the audio can say whether the speaker
+    did. MEASURED 2026-10-08: the founding line is the ONLY hit in the 442 bank
+    records, the 31 archive script.md files and every tests/ script. WARN until
+    the ear-check queued in `choukai-audio` §"Open ear-checks" is done.
+    """
+    print("\n聴解 bank (doubled auxiliaries in transcribed text)")
+    bank_path = ROOT / "logs" / "choukai_bank.json"
+    if bank_path.is_file():
+        bank = json.loads(bank_path.read_text(encoding="utf-8"))
+        doubled = []
+        for rec in bank.get("records", []):
+            text = rec.get("script_lines") or rec.get("script") or ""
+            text = "".join(text) if isinstance(text, list) else str(text)
+            for m in BANK_DOUBLED_AUX_RE.finditer(text):
+                doubled.append(f"{rec.get('id')} 「{text[max(0, m.start() - 12):m.end() + 6]}」")
+        warn(f"no banked 聴解 line doubles an auxiliary (〜ていておいて) "
+             f"({len(bank.get('records', []))} record(s))", not doubled,
+             "; ".join(doubled) + " — the ink may say it and the speaker may not. "
+             "Ear-check the clip (choukai-audio §'Open ear-checks'); if the audio "
+             "says 〜ておいて, fix the import's 聴解スクリプト.txt, `make "
+             "choukai-bank`, then `make mp3 <id> REPLAY=1 NO_AUDIO=1` for every "
+             "holder")
 
 
 # A run of Latin letters/digits inside otherwise-Japanese narration. Deliberately
@@ -18222,6 +18392,7 @@ def main():
         check_pool_glyph_inventory()
         check_pool_gloss_band()
         check_pool_retired_entries()
+        check_pool_band_sources()
         print("\nrotation inputs (why a new test is actually new)")
         check_rotation_inputs()
         check_ledger_draw_counts(load(".agents/exam-blueprint/scripts/sample_items.py"))
@@ -18249,6 +18420,7 @@ def main():
         check_choukai_archive_bank()
         check_choukai_bank_kaisetsu_bands()
         check_textbook_script_grammaticality()
+        check_bank_doubled_auxiliary()
         check_choukai_script_latin()
         check_draw_provenance()
         check_pools_sha_replayability()

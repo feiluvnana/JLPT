@@ -9,8 +9,32 @@
    "by": "qa-report-20261102_1",
    "verdict": "F6"
   },
+  "2021-07:問題4-10": {
+   "by": "qa-report-20261102_2",
+   "verdict": "ok"
+  },
+  "2021-07:問題4-5": {
+   "by": "qa-report-20261102_2",
+   "verdict": "ok"
+  },
+  "2021-07:問題4-preamble": {
+   "by": "qa-report-20261102_2",
+   "verdict": "ok"
+  },
   "2021-07:問題5-2": {
    "by": "qa-report-20261102_1",
+   "verdict": "ok"
+  },
+  "2021-12:問題2-5": {
+   "by": "qa-report-20261102_2",
+   "verdict": "ok"
+  },
+  "2021-12:問題3-1": {
+   "by": "qa-report-20261102_2",
+   "verdict": "ok"
+  },
+  "2021-12:問題4-2": {
+   "by": "qa-report-20261102_2",
    "verdict": "ok"
   },
   "2021-12:問題4-5": {
@@ -29,8 +53,24 @@
    "by": "qa-report-20261102_1",
    "verdict": "ok"
   },
+  "2022-07:問題5-2": {
+   "by": "qa-report-20261102_2",
+   "verdict": "ok"
+  },
+  "2022-12:問題2-6": {
+   "by": "qa-report-20261102_2",
+   "verdict": "ok"
+  },
+  "2023-07:問題1-2": {
+   "by": "qa-report-20261102_2",
+   "verdict": "ok"
+  },
   "2023-07:問題1-4": {
    "by": "qa-report-20261102_1",
+   "verdict": "ok"
+  },
+  "2023-07:問題1-5": {
+   "by": "qa-report-20261102_2",
    "verdict": "ok"
   },
   "2023-07:問題3-5": {
@@ -41,8 +81,16 @@
    "by": "qa-report-20261102_1",
    "verdict": "ok"
   },
+  "2023-07:問題4-6": {
+   "by": "qa-report-20261102_2",
+   "verdict": "ok"
+  },
   "2023-07:問題4-9": {
    "by": "qa-report-20261102_1",
+   "verdict": "ok"
+  },
+  "2023-12:問題1-1": {
+   "by": "qa-report-20261102_2",
    "verdict": "ok"
   },
   "2023-12:問題2-3": {
@@ -51,6 +99,18 @@
   },
   "2023-12:問題4-10": {
    "by": "qa-report-20261102_1",
+   "verdict": "ok"
+  },
+  "2024-07:問題1-preamble": {
+   "by": "qa-report-20261102_2",
+   "verdict": "ok"
+  },
+  "2024-07:問題2-3": {
+   "by": "qa-report-20261102_2",
+   "verdict": "ok"
+  },
+  "2024-07:問題3-2": {
+   "by": "qa-report-20261102_2",
    "verdict": "ok"
   },
   "2024-07:問題3-3": {
@@ -69,16 +129,60 @@
    "by": "qa-report-20261102_1",
    "verdict": "ok"
   },
+  "2024-12:問題2-1": {
+   "by": "qa-report-20261102_2",
+   "verdict": "ok"
+  },
   "2024-12:問題2-6": {
    "by": "qa-report-20261102_1",
+   "verdict": "ok"
+  },
+  "2024-12:問題3-preamble": {
+   "by": "qa-report-20261102_2",
    "verdict": "ok"
   },
   "2024-12:問題4-11": {
    "by": "qa-report-20261102_1",
    "verdict": "ok"
   },
+  "2024-12:問題4-8": {
+   "by": "qa-report-20261102_2",
+   "verdict": "ok"
+  },
+  "2025-07:問題2-preamble": {
+   "by": "qa-report-20261102_2",
+   "verdict": "ok"
+  },
+  "2025-07:問題3-3": {
+   "by": "qa-report-20261102_2",
+   "verdict": "ok"
+  },
+  "2025-07:問題5-preamble": {
+   "by": "qa-report-20261102_2",
+   "verdict": "ok"
+  },
   "2025-12:問題2-4": {
    "by": "qa-report-20261102_1",
+   "verdict": "ok"
+  },
+  "2025-12:問題4-1": {
+   "by": "qa-report-20261102_2",
+   "verdict": "ok"
+  },
+  "2025-12:問題4-4": {
+   "by": "qa-report-20261102_2",
+   "verdict": "ok"
+  },
+  "archive:2020-12:問題3-4": {
+   "by": "qa-report-20261102_2",
+   "verdict": "ok"
+  },
+  "archive:2020-12:問題5-1": {
+   "by": "qa-report-20261102_2",
+   "verdict": "ok"
+  },
+  "kanzenmoshi:cd1-06": {
+   "by": "qa-report-20261102_2",
    "verdict": "ok"
   },
   "kanzenmoshi:cd1-11": {
@@ -89,8 +193,24 @@
    "by": "qa-report-20261102_1",
    "verdict": "ok"
   },
+  "kanzenmoshi:cd1-16": {
+   "by": "qa-report-20261102_2",
+   "verdict": "ok"
+  },
+  "kanzenmoshi:cd1-21": {
+   "by": "qa-report-20261102_2",
+   "verdict": "F3"
+  },
+  "kanzenmoshi:cd1-27": {
+   "by": "qa-report-20261102_2",
+   "verdict": "ok"
+  },
   "kanzenmoshi:cd1-34": {
    "by": "qa-report-20261102_1",
+   "verdict": "ok"
+  },
+  "kanzenmoshi:cd1-35": {
+   "by": "qa-report-20261102_2",
    "verdict": "ok"
   },
   "mimikara:cd2-17": {
@@ -109,13 +229,29 @@
    "by": "qa-report-20261102_1",
    "verdict": "ok"
   },
+  "shinkanzen:cd2-71": {
+   "by": "qa-report-20261102_2",
+   "verdict": "ok"
+  },
+  "shinkanzen:cd2-72": {
+   "by": "qa-report-20261102_2",
+   "verdict": "ok"
+  },
   "soumatome:cd1-33": {
    "by": "qa-report-20261102_1",
+   "verdict": "ok"
+  },
+  "soumatome:cd1-44": {
+   "by": "qa-report-20261102_2",
    "verdict": "ok"
   },
   "soumatome:cd1-60": {
    "by": "qa-report-20261102_1",
    "verdict": "F5"
+  },
+  "soumatome:cd2-37": {
+   "by": "qa-report-20261102_2",
+   "verdict": "ok"
   }
  }
 }

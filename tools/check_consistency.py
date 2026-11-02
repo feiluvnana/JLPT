@@ -1608,6 +1608,14 @@ def _level_band_hits(haystack: str, bans: list[str], allows: list[str]) -> list[
     return hits
 
 
+# A paper that keyed a form BEFORE the form joined TOO_HARD. 20260904_2 keyed
+# 〜に即して at 問題7-34 and passed two QA rounds; the form was banned on
+# 2026-11-02 (qa-report-20261008_1 F1 root-cause row). Measured that day over
+# every paper on disk: `即し` is keyed by this id only (20261008_1 rerolled it
+# away at QA), so the new line moves exactly this id, to a named WARN.
+LEVEL_BAND_GRANDFATHERED = {"20260904_2": {"に即して", "に即した"}}
+
+
 def check_level_band_grammar(gt: str, keys: dict[int, int],
                              opts: dict[int, list[str]], origin: str,
                              test_id: str = ""):
@@ -1649,8 +1657,14 @@ def check_level_band_grammar(gt: str, keys: dict[int, int],
         for ban in _level_band_hits(haystack, band["TOO_EASY"], band["ALLOW"]):
             easy.append(f"{q}:{keyed_s or gm and gm.group(1) or '?'}({ban})")
 
+    grand = LEVEL_BAND_GRANDFATHERED.get(test_id, set())
+    old_hard = [h for h in hard if h.rsplit("(", 1)[-1].rstrip(")") in grand]
+    hard = [h for h in hard if h not in old_hard]
     check("問題7–9 keys are not N1-hard (level band)", not hard,
           "; ".join(hard) + " — see question-authoring/references/level_band_grammar.txt")
+    if old_hard:
+        warn(f"{test_id}: 問題7–9 key banned after this paper shipped (level band)",
+             False, "; ".join(old_hard) + GRANDFATHER_NOTE, test_id=test_id)
     check("問題7–9 keys are not N3–N5-easy (level band)", not easy,
           "; ".join(easy) + " — see question-authoring/references/level_band_grammar.txt")
 
@@ -7615,7 +7629,11 @@ def check_pool_grammar_band():
     cats = [c for c in pools if "grammar" in c and isinstance(pools[c], list)]
     out_of_band, dupes = [], []
     for cat in cats:
-        for entry in pools[cat]:
+        # Drawable rows only, as for word_formation below: a retired row is the
+        # ruling, not a defect, and must stay in the list so provenance resolves
+        # (〜に即して, retired 2026-10-08 and banned 2026-11-02).
+        for entry in SAMPLE_ITEMS.drawable(cat, pools[cat], pools):
+            entry = pool_entry_text(entry)
             # The band list spells forms without the 〜 placeholder, so strip it
             # before matching: 相対比較(〜ば〜ほど) only reads as `ばほど` that way.
             probe = entry.replace("〜", "").replace("～", "")
@@ -14590,11 +14608,31 @@ def check_choukai_source_mix():
                 for k in CHOUKAI_QUESTION_REPEAT_GRANDFATHERED
                 if k.startswith("imported-")}
     excluded = set(getattr(composer, "UPSTREAM_DEFECT_CLIPS", {}))
+    # qa-report-20261008_1 F4 (2026-11-02): the map also carries every clip on
+    # choukai-audio §"Open ear-checks", so an open transcript suspicion is not
+    # re-drawn into a new paper. The queue table is the second owner of those
+    # ids; the map must equal grandfathered-upstream ∪ queue, exactly.
+    queue: set[str] = set()
+    skill = AGENTS / "choukai-audio" / "SKILL.md"
+    if skill.is_file():
+        in_queue = False
+        for line in skill.read_text(encoding="utf-8").splitlines():
+            if line.startswith("**Open ear-checks**"):
+                in_queue = True
+                continue
+            if in_queue and line.startswith("| `"):
+                first = line.split("|")[1]
+                queue |= set(re.findall(r"`(\d{4}-\d{2}:問題\d-\d+)`", first))
+            elif in_queue and queue and not line.startswith("|"):
+                break
+    want = upstream | queue
     check(f"compose_choukai.UPSTREAM_DEFECT_CLIPS excludes every grandfathered "
-          f"upstream clip ({len(upstream)})", upstream == excluded,
-          f"grandfathered upstream {sorted(upstream)} vs excluded "
-          f"{sorted(excluded)} — a clip the gate FAILs for any new holder must "
-          f"not be drawable; an ear-checked, repaired clip leaves BOTH lists")
+          f"upstream clip ({len(upstream)}) and every open ear-check clip "
+          f"({len(queue - upstream)})", want == excluded,
+          f"grandfathered upstream ∪ ear-check queue {sorted(want)} vs excluded "
+          f"{sorted(excluded)} — a clip the gate FAILs for any new holder, or "
+          f"one waiting on an ear-check, must not be drawable; an ear-checked, "
+          f"repaired clip leaves the map AND the queue table")
 
 
 def check_choukai_textbook_bands():

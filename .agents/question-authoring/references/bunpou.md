@@ -109,6 +109,21 @@ fails the band even with the correct key かねない; rewrite toward
 「最近残業が続き休日もほとんど取れない。このまま働きすぎると、体を壊し(　)よ。」
 (scene + consequence). Same rule for 問題8 frames and 問題9 cloze prose.
 
+### At most one 推量 key per 問題7
+
+**At most ONE of the 12 keys may be an inference form** (らしい／みたい／
+ようだ／に違いない／に相違ない／とみえる／はずだ／のではあるまいか…), and **no
+two adjacent stems may run one scene template** (the same opener, the same
+"observe a third person → guess why" frame). Measured 2026-11-02 over every
+paper on disk: **0 of 10 imported sittings** key two inference forms in one
+問題7; of 22 generated papers, two did — `20260812_2` (32 とみえる, 42
+のではあるまいか) and `20261008_1` (41 とみえる, 42 に違いない, adjacent, both opening
+「隣の」 — qa-report-20261008_1-round2 R2-F2). Two keys from one Shin Kanzen
+lesson (22課 推量) on one paper read as a drill page. The pool cannot prevent
+it (no 課 mapping), so the author checks the 12 keys as a column before
+writing stems, and asks for a `--reroll-one` when the draw lands two. A hand
+rule, not a gate.
+
 **Shape:** every official paper includes several 問題7 items with dialogue
 turns or a setting label (`（会社で）`/`（電話で）`/`（インタビューで）`/
 homepage notice). Include at least 2 (prefer 2–4) of the 12 (`make check`
@@ -433,9 +448,13 @@ authoring decision.
   distinct type BEFORE writing, then check no type repeats:
   - **(a) 論理接続表現** — sentence-initial discourse connective
     (しかし/そのうえ/つまり…).
-  - **(b) 文末モーダル表現** — a modal/inference family on the previous
-    clause (わけだ/わけがない/わけではない/わけにはいかない, はずだ/はずがない,
-    のも無理はない…) — ONE such family per paper, never two blanks on the same family.
+  - **(b) 文末モーダル表現** — the modal that closes the previous clause.
+    **The four options share one stem and differ in the MODAL**, as official
+    does (7/2021-51: 期待できるからだ／期待できそうだ／期待できるはずだった／
+    期待できればよかった). Never one modal run over ±past × ±negative
+    (はずだ／はずがない／はずだった／はずではなかった, べき×4): 0 of the 40 imported
+    blanks use that grid (qa-report-20261008_1 RC-O1; 20260929_1-50,
+    20261008_1-51). ONE modal blank per paper.
   - **(c) 内容推論** — the choice requires tracking the whole passage's
     argument, not just the local sentence (at least one blank must be
     this). Options stay short grammar/phrase forms like (a)(b)(d)
@@ -481,7 +500,12 @@ against two sources:
    or read the 問題9 block of each. Zero exact repeats, and no repeat of a
    distinctive set phrase (慣用句・四字熟語・modal family) in any position.
    Ordinary connectives (しかし, つまり) and bare formal nouns recur in the
-   archive too and are exempt.
+   archive too and are exempt. **Read the SHAPE of each blank too, not only
+   its strings:** a body-part 慣用句 set (four idioms on 目/耳/口/顔…) may not
+   follow a paper that used one — 20260929_1-49, 20261002_1-50 and
+   20261008_1-48 ran three in a row, and 0 of the 40 imported blanks use the
+   shape (qa-report-20261008_1 RC-O1) — and no paper uses the one-modal
+   tense×polarity grid (b) bars.
 2. **This paper's own `test_spec.json`** — the drawn `quick_response`
    phrases, `bunpou` targets and `listening_scenarios`. A 問題9 option that
    is also a drawn item is an in-paper echo the ledger cannot see, because

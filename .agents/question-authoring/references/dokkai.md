@@ -285,7 +285,7 @@ over its cap.
 
 | MOVE | what the passage does | cap |
 |---|---|---|
-| **〈想定→実は〉** | an attributed assumption or 通説 X is stated, denied (ところが／しかし／外れた／ではなかった), and 実は Y replaces it | **2** — 3 is the ceiling, never the target |
+| **〈想定→実は〉** | an attributed assumption or 通説 X is stated, denied (ところが／しかし／外れた／ではなかった), and 実は Y replaces it | **2 across both halves** (聴解 talks included; owner: `jlpt-test-generation` §"One topic, one surface"). The official 3–4 of 9 is why 2 is not a floor, never a licence for 3 |
 | 機構の説明 | how a thing works, or how two things differ; no assumption is denied anywhere in the passage | ≤3 |
 | 数えたことの報告 | someone counted something and reports what the count showed; any surprise is the reader's, not the narrator's | ≤3 |
 | 一人称の前後比較 | the narrator describes a before and an after of their own PRACTICE; no third party's belief is quoted and nothing is corrected | ≤3 |
@@ -299,6 +299,19 @@ used twice IN ONE 大問 may be assigned at most once in that 大問, and the pe
 unsatisfiable: 20260929_1 used every MOVE but 〈想定→実は〉 twice, leaving 6 slots for
 10 essay surfaces (qa/dokkai-allocation-20261002_1.md).
 
+**Two surfaces on one MOVE get two different RESOLUTIONS, and no shared
+persona.** When the allocation gives one MOVE to two rows, it names each row's
+resolution in the same sitting, and the two rows may not share a `persona`
+token (`logs/topics.json`). For 反論への応答 the resolutions are
+「譲歩して一部を変える」「理由を示して変えない」「反論の前提を問い直す」; for the other
+MOVEs, name what the passage DOES at its end (what was counted and what it
+showed; which practice changed). Founding case: 20261008_1 問題9 and 問題11(4)
+— both 職業人, both defending a workplace timing rule against a member of the
+public, both conceding a blind spot and keeping the rule plus one exception
+(qa-report-20261008_1 F3; same class as 20260821_1 問題9/問題13 and
+20261002_1 F4). A claim is not string-decidable, so this is decided when the
+plan is written, not read after the prose exists. Not gated.
+
 **The cap is 2; the band it sits inside is measured, not chosen.** Official
 sittings re-measured by hand against this exact three-beat rubric (attributed
 assumption + explicit denial + 実は Y), essay surfaces only, 問題12 A+B as one
@@ -307,10 +320,12 @@ conservative; counting BORDERLINE surfaces as well gives 6, 6 and 8 of 9.
 `qa-report-20260911_1` §"F3 の根拠 — 公式を同一ルーブリックで実測" owns those
 three numbers and the sittings they came from; do not restate them from here
 without it. Official never reaches 5 of 9 and never falls to 0, so **the
-skeleton is a legitimate N2 move and the monoculture is the defect.** Plan 2,
-accept 3, treat 4 as a rewrite even though one sitting reached it — you are not
-measuring a paper, you are allocating one, and the allocator has no sampling
-error to spend.
+skeleton is a legitimate N2 move and the monoculture is the defect.** The cap
+is **2 across both halves** — a third surface is a rewrite, never an
+acceptance (qa-report-20261008_1-round2 RC-R2-2: this sentence used to read
+"plan 2, accept 3", contradicting the owner rule and the 20261002_1 precedent
+that re-angled 3 → 2). You are not measuring a paper, you are allocating one,
+and the allocator has no sampling error to spend.
 
 This is a DIFFERENT measurement from the `0–3 of 13` the gate prints.
 `check_dokkai_belief_denial_monotony()` counts marker-bearing surfaces over all

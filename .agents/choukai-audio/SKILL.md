@@ -38,7 +38,7 @@ no distractors to design.
   『耳から覚える 聴解トレーニング N2』 (§9, the second source that lays a real 20 s
   option-reading pause).
   `TEXTBOOK_SLOTS` says how many slots per 大問 (currently 問題1 ×2, 問題2 ×2,
-  問題3 ×3, 問題4 ×4: 11 of a paper's 29). **問題5 is the only 大問 still official-only in every paper**, and
+  問題3 ×1 since 2026-09-21, 問題4 ×4: 9 of a paper's 29 — the constant's own comment says why 問題3 dropped). **問題5 is the only 大問 still official-only in every paper**, and
   for SOURCE reasons, not policy ones (`textbook_bank_plan.md` §6).
 - **`TEXTBOOK_SLOTS` is set from a measurement, not chosen.** `make
   choukai-wear` divides `slots × mixed papers` by pool depth and exits non-zero
@@ -110,7 +110,11 @@ no distractors to design.
    is exact for an official draw, which is slot-preserving, and blind to a
    slot-free one, which the composer may place a slot over. 14 of the 25
    consecutive transitions on record repeated a slot-free clip that way before
-   `freshest()` took the whole previous paper as a bar.
+   `freshest()` took the whole previous paper as a bar. **The paper two back is
+   a SOFT bar** (2026-11-02, `two_back_clips()`): it narrows a slot only when a
+   candidate survives, and the composer prints any slot where it was dropped.
+   Two-back repeats had climbed to 6 of 29 (qa-report-20261008_1 RC-O2); the bar
+   spends no extra slot, so `make choukai-wear`'s projection is unchanged.
 3. **問題2's items contain their own option-reading pause.** A 問題2 item is
    「N番。」+situation+question → ~20 s to read the printed options → the talk →
    the question again. The 20 s pause is INSIDE the item, not between items.
@@ -367,14 +371,18 @@ An item-line repair is ear-checked first, at the item's `聴解_チャプター.
 offset (`exam-qa-review` §4 check 6 owns the three script-defect classes).
 
 **Open ear-checks** — agent sessions have no playback, so these wait for a human
-listener. An entry leaves when the audio is heard and the import is repaired
-(or confirmed as spoken) and every holder replayed.
+listener. **Every clip listed here is undrawable meanwhile**: it sits in
+`compose_choukai.UPSTREAM_DEFECT_CLIPS` too, and `make check` FAILs when the
+two disagree (qa-report-20261008_1 F4 — `2022-07:問題1-3` was filed at
+20260929_1 and drawn again by 20261008_1). An entry leaves BOTH when the audio
+is heard, the import is repaired (or confirmed as spoken) and every holder
+replayed (`make mp3 <id> REPLAY=1 NO_AUDIO=1`; holders: `logs/choukai_draws.json`).
 
 | clip | the line in question | where to listen | filed |
 |---|---|---|---|
 | `2022-12:問題1-3` | 「来年の春とだけ書い**ていて**おいてくれれば」 (page prints it; WARNed by `check_bank_doubled_auxiliary`) | `tests/20261002_1/聴解.mp3` 問題1-3番 at 369.29 s, line ≈440–460 s | qa-report-20261002_1 F14 |
-| `2022-07:問題1-3` | 「それはもっと**全面**に出した方がいいね」 (前面?) | `tests/20260929_1/聴解.mp3` at 320.11 s | qa-report-20260929_1 F6 |
-| `2025-07:問題5-1` | 「全然、頑張ります」 | 7/2025 sitting MP3 | qa-report-20260928_2 F5 |
+| `2022-07:問題1-3` | 「それはもっと**全面**に出した方がいいね」 (前面?), 「今まで最も」 (今までで?) | `tests/20260929_1/聴解.mp3` at 320.11 s (also held by 20261008_1, at 330.29 s) | qa-report-20260929_1 F6, qa-report-20261008_1 F4 |
+| `2025-07:問題5-1` | 「全然、頑張ります」 (宣伝?) | 7/2025 sitting MP3; `tests/20260928_2/聴解.mp3` 問題5-1番 at 2365.45 s | qa-report-20260928_2 F5 |
 | `2022-07:問題2-4`, `2021-07:問題2-5` | head/tail question differ (何だと/何と; 言/い) — undrawable meanwhile (`compose_choukai.UPSTREAM_DEFECT_CLIPS`) | the sittings' MP3s | stage3-report-20261002_1 RC-S3-1 |
 `check_choukai_script_latin()` WARNs on a Latin run in a paper's script that no
 bank record carries, which is the detector for exactly this class.

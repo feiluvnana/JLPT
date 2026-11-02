@@ -265,7 +265,9 @@ the DRAWN topic string. Then read it:
   and confirm **no clip id repeats the previous paper — in the same slot, and
   for a slot-free (textbook) clip in ANY slot** (`compose_choukai.py::freshest()`
   enforces both, so this is a verification; if a slot's candidates are
-  exhausted the composer drops the bar and PRINTS which slot — say so). Then
+  exhausted the composer drops the bar and PRINTS which slot — say so). The
+  paper two back is a soft bar (`two_back_clips()`): count its repeats too, and
+  any above 0 must match a printed "soft bar dropped" slot. Then
   read the `shapes` column across three papers for **errand identity** — two
   different clips running one errand, which no id check sees; a confirmed pair
   goes into `MUTUALLY_EXCLUSIVE_CLIPS` (`choukai-audio` Part 0 rule 4). **A 聴解

@@ -495,6 +495,12 @@ plus a pool-defect report, never a hand substitution.
   reuse another item's foil (same actor + same claimed reaction), or one
   passage line kills both (`dokkai.md` §"no free eliminations";
   qa-report-20260928_2-round2 R2-F1, where round 1's own wording did this).
+  **A re-angle YOU propose is a new MOVE:** before writing it into the report,
+  classify the proposed passage against the 〈想定→実は〉 skeleton and run the
+  deletion test on it (`dokkai.md` §"The rhetorical-MOVE allocation table"). A
+  proposal that relocates "the real cause" elsewhere IS the skeleton, and it
+  counts toward the cross-half cap of 2 (`20261008_1` F3's re-angle → round-2
+  R2-F1, the first repair collateral the reviewer authored).
 - **聴解 length/predictability:** the key must not be findable by length in ANY
   section — whole-section uniquely-longest rate ≤35 % (official 28 %), median
   key ÷ distractor-mean ≤1.15 (official 1.00). Both gated
@@ -923,8 +929,10 @@ Two columns only a human can judge, both shipped green in `20260810_1`:
   check`** — name the two surfaces, quote both new closings, and say which
   skeleton and which label each now carries. This is the third paper on record
   to show the repair-collateral class (`20260812_1` F2→F3, `20260903_1` F2,
-  `20260904_1` round-2 F2/F3), so treat every round-1 repair's landing site as
-  in scope for round 2, not just the defect it named.
+  `20260904_1` round-2 F2/F3, `20261008_1` round-2 R2-F1), so treat every
+  round-1 repair's landing site as in scope for round 2, not just the defect it
+  named — including a landing site this pass proposed (§3, "A re-angle YOU
+  propose is a new MOVE").
 
 **A refuted candidate metric, recorded so it is not re-derived
 (`qa-report-20260904_1` S5, 2026-09-04).** The obvious way to mechanise "the

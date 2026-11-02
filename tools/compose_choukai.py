@@ -106,9 +106,21 @@ OFFICIAL_ONLY_TESTS = {"20260807_1"}
 # figure item, and PRINTED. An id leaves this map when its audio is ear-checked
 # and the import repaired upstream (`make choukai-bank`, then `--replay` of every
 # holder) — the gate keeps the two lists in step.
+#
+# Since 2026-11-02 it also holds every clip on `choukai-audio` §"Open
+# ear-checks" (qa-report-20261008_1 F4): a clip whose transcript is suspected
+# and waits for a human listener re-ships its defect on every new draw —
+# `2022-07:問題1-3` 「全面に出した」 was filed at 20260929_1 F6 and drawn again by
+# 20261008_1 two papers later. Same exclusion, same exit: the ear-check is done,
+# the import repaired or confirmed, every holder replayed, and the id leaves
+# BOTH this map and the queue table (the gate asserts they agree).
 UPSTREAM_DEFECT_CLIPS: dict[str, str] = {
     "2022-07:問題2-4": "head 「何だと言っていますか」 / tail 「何と言っていますか」",
     "2021-07:問題2-5": "head 「言っていますか」 / tail 「いっていますか」",
+    "2022-07:問題1-3": "ear-check: 「全面に出した」(前面?) / 「今まで最も」(今までで?) "
+                       "— qa-report-20260929_1 F6, qa-report-20261008_1 F4",
+    "2022-12:問題1-3": "ear-check: 「書いていておいて」 — qa-report-20261002_1 F14",
+    "2025-07:問題5-1": "ear-check: 「全然、頑張ります」(宣伝?) — qa-report-20260928_2 F5",
 }
 
 # Slots per 大問 that every OTHER paper fills from the textbook pool. Every
@@ -263,6 +275,27 @@ def previous_slot_clips(draws: dict, exclude: str = "") -> dict[str, str]:
     earlier = [r for r in rows if id_order(r.get("test_id", "")) < id_order(exclude)]
     row = max(earlier, key=lambda r: id_order(r["test_id"])) if earlier else rows[-1]
     return dict(row["clips"])
+
+
+def two_back_clips(draws: dict, exclude: str = "") -> frozenset[str]:
+    """Every clip the paper TWO before this one spent (by test id), any slot.
+
+    The one-paper bars above left the two-back repeat free, and it grew: 3 of
+    29 slots in 20261002_1, then **6 of 29** in 20261008_1 (1-1, 1-2, 1-3, 3-3,
+    4-6, 4-9 = 20260929_1's — qa-report-20261008_1 RC-O2). Measured 2026-11-02
+    before landing: every official slot keeps >= 7 candidates after the
+    UPSTREAM_DEFECT_CLIPS exclusion, two papers bar at most 2 of them, and the
+    slot-free pools (18/16/19/36) lose at most 4/4/2/8; `make choukai-wear`'s
+    projection does not move (it is slots x papers / pool, and the bar spends
+    no extra slot) — 1.11-2.62 per clip against the 4.0 ceiling. Applied as a
+    SOFT tier in `freshest()`: it narrows only when something survives it, so it
+    can never starve a slot or override the one-paper bars.
+    """
+    earlier = sorted((r for r in draws["history"]
+                      if r.get("test_id") != exclude
+                      and id_order(r.get("test_id", "")) < id_order(exclude)),
+                     key=lambda r: id_order(r["test_id"]))
+    return frozenset(earlier[-2]["clips"].values()) if len(earlier) >= 2 else frozenset()
 
 
 def write_atomic(path: Path, text: str) -> None:
@@ -595,7 +628,8 @@ def question_partners(records, by_question: dict[str, set[str]]) -> frozenset[st
 
 def draw(bank: dict, seed: int, used: Counter, test_id: str,
          attempts: int = 400,
-         avoid_slot: dict[str, str] | None = None) -> tuple[dict, dict]:
+         avoid_slot: dict[str, str] | None = None,
+         soft_bar: frozenset[str] = frozenset()) -> tuple[dict, dict]:
     """Pick one record per slot and one preamble per section.
 
     Two objectives, in order: spend the least-used clips first (so the pool
@@ -771,9 +805,17 @@ def draw(bank: dict, seed: int, used: Counter, test_id: str,
                 avail = narrowed
             elif slot_key not in starved:
                 starved.append(slot_key)
+        # The two-back tier (`two_back_clips`, RC-O2): narrows only when a
+        # candidate survives it, and is never what starves a slot.
+        softer = [r for r in avail if r["id"] not in soft_bar]
+        if softer:
+            avail = softer
+        elif slot_key not in soft_starved:
+            soft_starved.append(slot_key)
         fewest = min(used[r["id"]] for r in avail)
         return rng.choice([r for r in avail if used[r["id"]] == fewest])
 
+    soft_starved: list[str] = []
     best = None
     for _ in range(attempts):
         picked: list[tuple[str, int, dict]] = []
@@ -810,6 +852,9 @@ def draw(bank: dict, seed: int, used: Counter, test_id: str,
             best = (score, picked)
 
     _, picked = best
+    if soft_starved:
+        print(f"  note: {len(set(soft_starved))} slot(s) could not avoid the paper "
+              f"two back (soft bar dropped): {', '.join(sorted(set(soft_starved)))}")
     if starved:
         print(f"  note: {len(starved)} slot(s) could not avoid the previous "
               f"paper's clip (candidates exhausted): {', '.join(sorted(set(starved)))}")
@@ -1195,7 +1240,8 @@ def main(argv: list[str] | None = None) -> int:
                      "pass --replay to re-render the existing draw")
         used = usage_counts(draws, exclude=args.test_id)
         clips, pres = draw(bank, args.seed, used, args.test_id,
-                           avoid_slot=previous_slot_clips(draws, exclude=args.test_id))
+                           avoid_slot=previous_slot_clips(draws, exclude=args.test_id),
+                           soft_bar=two_back_clips(draws, exclude=args.test_id))
 
     script = render_script(index, clips, pres)
     booklet = render_booklet(index, clips, pres)

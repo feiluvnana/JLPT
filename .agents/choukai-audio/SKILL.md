@@ -383,6 +383,7 @@ replayed (`make mp3 <id> REPLAY=1 NO_AUDIO=1`; holders: `logs/choukai_draws.json
 | `2022-12:問題1-3` | 「来年の春とだけ書い**ていて**おいてくれれば」 (page prints it; WARNed by `check_bank_doubled_auxiliary`) | `tests/20261002_1/聴解.mp3` 問題1-3番 at 369.29 s, line ≈440–460 s | qa-report-20261002_1 F14 |
 | `2022-07:問題1-3` | 「それはもっと**全面**に出した方がいいね」 (前面?), 「今まで最も」 (今までで?) | `tests/20260929_1/聴解.mp3` at 320.11 s (also held by 20261008_1, at 330.29 s) | qa-report-20260929_1 F6, qa-report-20261008_1 F4 |
 | `2025-07:問題5-1` | 「全然、頑張ります」 (宣伝?) | 7/2025 sitting MP3; `tests/20260928_2/聴解.mp3` 問題5-1番 at 2365.45 s | qa-report-20260928_2 F5 |
+| `soumatome:cd1-60` | 「ご都合のよろしいときに、**お貸し出しました**携帯電話をご持参の上」 (お貸し出しした? お貸ししました?) — declared in `references/textbook_items.json`; the Soumatome 聴解 book page is not on disk | `tests/20261102_1/聴解.mp3` 問題1-5番 at 473.59 s (also held by 20260917_1, 問題1-1番 at 111.45 s) | qa-report-20261102_1 F5 |
 | `2022-07:問題2-4`, `2021-07:問題2-5` | head/tail question differ (何だと/何と; 言/い) — undrawable meanwhile (`compose_choukai.UPSTREAM_DEFECT_CLIPS`) | the sittings' MP3s | stage3-report-20261002_1 RC-S3-1 |
 `check_choukai_script_latin()` WARNs on a Latin run in a paper's script that no
 bank record carries, which is the detector for exactly this class.

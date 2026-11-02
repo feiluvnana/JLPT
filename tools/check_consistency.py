@@ -14622,7 +14622,10 @@ def check_choukai_source_mix():
                 continue
             if in_queue and line.startswith("| `"):
                 first = line.split("|")[1]
-                queue |= set(re.findall(r"`(\d{4}-\d{2}:問題\d-\d+)`", first))
+                # Official `YYYY-MM:問題N-k` and slot-free `<book>:<track>`
+                # ids alike (soumatome:cd1-60, qa-report-20261102_1 F5).
+                queue |= set(re.findall(
+                    r"`(\d{4}-\d{2}:問題\d-\d+|[a-z]+:[a-z0-9-]+)`", first))
             elif in_queue and queue and not line.startswith("|"):
                 break
     want = upstream | queue

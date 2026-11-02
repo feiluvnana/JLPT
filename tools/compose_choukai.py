@@ -121,6 +121,8 @@ UPSTREAM_DEFECT_CLIPS: dict[str, str] = {
                        "— qa-report-20260929_1 F6, qa-report-20261008_1 F4",
     "2022-12:問題1-3": "ear-check: 「書いていておいて」 — qa-report-20261002_1 F14",
     "2025-07:問題5-1": "ear-check: 「全然、頑張ります」(宣伝?) — qa-report-20260928_2 F5",
+    "soumatome:cd1-60": "ear-check: 「お貸し出しました」(お貸し出しした? お貸ししました?) "
+                        "— qa-report-20261102_1 F5",
 }
 
 # Slots per 大問 that every OTHER paper fills from the textbook pool. Every

@@ -293,6 +293,14 @@ the DRAWN topic string. Then read it:
   explanatory, so counting 機構の説明 across halves is unsatisfiable against
   `dokkai.md`'s ≤3 (qa-report-20260928_1 RC-7). Not string-decidable, so no
   check backs this row.
+  **Which 聴解 talks count.** A 聴解 item counts toward the 〈想定→実は〉 cap when
+  the denied X is a belief about the topic held independently of the item's own
+  question — a presupposition, a plan, a 通説 (20261008_1 2-4番 「着物って高いん
+  だよね？」; 3-2番 「思ってたんです。ところが」). It does NOT count when X is a
+  candidate answer to the item's own question, raised and ruled out (問題1/2
+  elimination, 問題5 proposals: 20261008_1 1-4番, 20261102_1 2-6番) — that is
+  the task format, not a move (qa-report-20261102_1 Q1/RC-7; decided by hand on
+  three papers before it was written down).
   **The 読解 side is always the one re-angled** — the 聴解 item is a banked
   recording and nobody here chose its move.
 

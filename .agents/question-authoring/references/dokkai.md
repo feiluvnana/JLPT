@@ -249,7 +249,11 @@ reframe — 問題9「のではなく…こそが」, 問題10(2)「というよ
 問題13「というより」 — while `check_dokkai_closing_reframe` reported **1
 matched**, because its marker family had no 「というより」/「よりも」/「わけでは
 ない」 alternative at all. The tokens are now counted (`REFRAME_CLOSING`,
-`FINAL_SENTENCE_TEMPLATES`), but the gate is still only a proxy: the
+`FINAL_SENTENCE_TEMPLATES`, and since 2026-11-02 「わけではない」 in the
+closing-scope family `CLOSING_REFRAME_FAMILY` — `20261102_1` 12(A) closed on it
+while that line printed 0 of 13, qa-report-20261102_1-round2 RC-R2-1; the bare
+ではなく／こそ rows were measured there too and stay sentence-scope because they
+fire on 5 of 10 official sittings at two-sentence scope), but the gate is still only a proxy: the
 authoring-time procedure is to write all thirteen rows — **surface | theme |
 shape label | final-sentence template** — as the FIRST 読解 step, before any
 passage prose exists, and to reject any plan where one shape label or one
@@ -298,6 +302,16 @@ used twice IN ONE 大問 may be assigned at most once in that 大問, and the pe
 数えたことの報告 by a record-keeper, three papers running). A paper-wide reading is
 unsatisfiable: 20260929_1 used every MOVE but 〈想定→実は〉 twice, leaving 6 slots for
 10 essay surfaces (qa/dokkai-allocation-20261002_1.md).
+
+**A re-angle that answers a cross-paper CLAIM finding bars a skeleton, not only a
+final.** When a repair re-angles a surface because it echoed the previous
+paper's same-大問 passage, the allocation row lists that passage's **last two**
+sentences, and the new passage's last two are read against them: the NOT-list
+bars the closing skeleton, not only the final's template. Founding case:
+`20261102_1` 11(1)'s row barred 20261008_1 11(4)'s final and missed its
+penultimate, which is where the 「〜には…ようにしています」 beat lived — the repair
+kept it (qa-report-20261102_1 F4, RC-3; repair collateral, fifth paper:
+20260812_1, 20260903_1, 20260904_1, 20261008_1). Not string-decidable; no gate.
 
 **Two surfaces on one MOVE get two different RESOLUTIONS, and no shared
 persona.** When the allocation gives one MOVE to two rows, it names each row's
@@ -846,14 +860,22 @@ All figures from `official_calibration.md` §4 — current era, n=7 sittings,
   - 🚫 **BANNED**: glossing standard N2 or easier vocabulary (選択, 信号, 技術, 準備, 手順, 維持, 継続, 前提, バランス…) with circular definitions.
   - 🚫 **Official-option test, run BEFORE writing any gloss** (2026-09-29,
     qa-report-20260928_2 F4): grep the headword's stem over the 問題3–5 option
-    lines of every `refs/JLPT_N2_NEW/*/booklet.md`. If official prints it as a
-    vocabulary option there, official treats it as known — do not gloss it
+    lines **and the 問題6 headwords** of every `refs/JLPT_N2_NEW/*/booklet.md` —
+    a word official tests is a word official assumes known. If official prints it
+    as a vocabulary option or a 問題6 headword there, do not gloss it
     (`20260928_2` glossed 駆け込む, 相次ぐ, 詰め込む; official offers all three:
     7/2023, 12/2010 ×2). The mirror of `exam-qa-review` §2.5's "official glosses
-    what official will not test". Scope is 問題3–5 only: 問題1/2 print distractor
-    spellings (7/2010 問題2 offers 伝達, and 12/2022 glosses 伝達する). Measured
-    that way, 0 true hits in all 10 imported sittings (two substring false
-    positives: 一日中, ごくごく). Not gated yet; a WARN is feasible on this measure.
+    what official will not test". Scope is 問題3–5 options and 問題6 headwords:
+    問題1/2 print distractor spellings (7/2010 問題2 offers 伝達, and 12/2022
+    glosses 伝達する). `20261102_1` 問題13 glossed ちくちくする (7/2025 問題4-17
+    option ちくちく) and しみる (12/2019 問題6-28 headword, same sense) —
+    qa-report-20261102_1 F3, which widened the scope to 問題6. **Gated as a WARN**
+    (`check_note_official_option`, generated papers sampled from 2026-09-29):
+    whole-word equality after folding 〜する, plus a ≥2-char kanji stem for
+    inflected verb/adjective options (相次ぐ = 相次いで). Measured 2026-11-02:
+    0 hits in all 10 imported sittings. A gloss on a RARER sense than the tested
+    one is the one legitimate exception — record it in the QA report (and in
+    `NOTE_OFFICIAL_OPTION_SENSE_OK`).
     Same direction: 公式がほかの注の**定義文の中で使う**語（例: 7/2022
     『どっぷりはまる：深く入り込む』）は既知語として扱い、注を付けない
     (qa-report-20260929_1 F4).

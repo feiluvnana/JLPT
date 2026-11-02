@@ -295,6 +295,19 @@ def kana_tail(span: str) -> str:
     return m.group(1) if m else ""
 
 
+def kana_skeleton(span: str) -> str:
+    """The printed target's kana skeleton as a regex — every kanji run becomes
+    `.+`, every printed kana run stays literal: 「蒸し暑い」 -> `^.+し.+い$`,
+    「頻繁に」 -> `^.+に$`. Empty when the span prints no kana at all
+    (qa-report-20261102_1 RC-1: the tail-only test missed a medial し)."""
+    span = span or ""
+    if not re.search(r"[ぁ-ゟ]", span):
+        return ""
+    parts = re.split(r"([ぁ-ゟ]+)", span)
+    return "^" + "".join(re.escape(x) if re.fullmatch(r"[ぁ-ゟ]+", x)
+                         else (".+" if x else "") for x in parts) + "$"
+
+
 def measures(items: list[dict]) -> dict:
     """Every number the 文字・語彙 rules cite, for one paper or one corpus."""
     by = lambda *ns: [r for r in items if r["mondai"] in ns]

@@ -742,6 +742,18 @@ plus a pool-defect report, never a hand substitution.
 >    and only that one. `logs/choukai_draws.json` names each drawn clip's source,
 >    and a declaration's `source_page` names the page it was typed from.
 >
+>    **Record every read** (qa-report-20261102_1 RC-5): a read that leaves no
+>    trace is redone from scratch next paper, and a clip read badly once ships
+>    forever (友たち, お貸し出しました: two papers each, two earlier rounds
+>    unflagged). For each clip you read, write one row into
+>    `logs/choukai_script_reads.json` — `{"by": "qa-report-<id>", "verdict":
+>    "ok" | "<finding id>"}`, keyed by bank record id. The gate WARNs on the
+>    newest composed paper's clips that carry no row
+>    (`check_choukai_script_reads`), so check 6 reduces to "read the clips the
+>    WARN lists" — re-read a recorded clip only when its bank text changed or a
+>    finding names it. A clip whose bank text a fix changes keeps its row with
+>    the finding id as verdict.
+>
 >    **The cheapest lever, and it is specific to 問題1/2:** those items print
 >    their options in the booklet, so the options are a second witness to the same
 >    audio. Read each printed option against that item's script lines and flag a

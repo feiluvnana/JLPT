@@ -1,0 +1,121 @@
+{
+ "_doc": "One QA script read per banked 聴解 clip (qa-report-20261102_1 RC-5). Written by the QA pass that first reads a clip as Japanese (exam-qa-review §4 check 6): verdict \"ok\", or the finding id that filed a transcript defect. Keyed by bank record id; the bank is a build product, so the record lives here and survives `make choukai-bank`. `check_choukai_script_reads` lists the newest composed paper's clips that have no record.",
+ "reads": {
+  "2021-07:問題3-2": {
+   "by": "qa-report-20261102_1",
+   "verdict": "ok"
+  },
+  "2021-07:問題3-4": {
+   "by": "qa-report-20261102_1",
+   "verdict": "F6"
+  },
+  "2021-07:問題5-2": {
+   "by": "qa-report-20261102_1",
+   "verdict": "ok"
+  },
+  "2021-12:問題4-5": {
+   "by": "qa-report-20261102_1",
+   "verdict": "ok"
+  },
+  "2021-12:問題4-6": {
+   "by": "qa-report-20261102_1",
+   "verdict": "ok"
+  },
+  "2022-07:問題2-1": {
+   "by": "qa-report-20261102_1",
+   "verdict": "F7"
+  },
+  "2022-07:問題4-7": {
+   "by": "qa-report-20261102_1",
+   "verdict": "ok"
+  },
+  "2023-07:問題1-4": {
+   "by": "qa-report-20261102_1",
+   "verdict": "ok"
+  },
+  "2023-07:問題3-5": {
+   "by": "qa-report-20261102_1",
+   "verdict": "ok"
+  },
+  "2023-07:問題4-4": {
+   "by": "qa-report-20261102_1",
+   "verdict": "ok"
+  },
+  "2023-07:問題4-9": {
+   "by": "qa-report-20261102_1",
+   "verdict": "ok"
+  },
+  "2023-12:問題2-3": {
+   "by": "qa-report-20261102_1",
+   "verdict": "ok"
+  },
+  "2023-12:問題4-10": {
+   "by": "qa-report-20261102_1",
+   "verdict": "ok"
+  },
+  "2024-07:問題3-3": {
+   "by": "qa-report-20261102_1",
+   "verdict": "ok"
+  },
+  "2024-07:問題5-1": {
+   "by": "qa-report-20261102_1",
+   "verdict": "ok"
+  },
+  "2024-12:問題1-1": {
+   "by": "qa-report-20261102_1",
+   "verdict": "ok"
+  },
+  "2024-12:問題1-3": {
+   "by": "qa-report-20261102_1",
+   "verdict": "ok"
+  },
+  "2024-12:問題2-6": {
+   "by": "qa-report-20261102_1",
+   "verdict": "ok"
+  },
+  "2024-12:問題4-11": {
+   "by": "qa-report-20261102_1",
+   "verdict": "ok"
+  },
+  "2025-12:問題2-4": {
+   "by": "qa-report-20261102_1",
+   "verdict": "ok"
+  },
+  "kanzenmoshi:cd1-11": {
+   "by": "qa-report-20261102_1",
+   "verdict": "ok"
+  },
+  "kanzenmoshi:cd1-14": {
+   "by": "qa-report-20261102_1",
+   "verdict": "ok"
+  },
+  "kanzenmoshi:cd1-34": {
+   "by": "qa-report-20261102_1",
+   "verdict": "ok"
+  },
+  "mimikara:cd2-17": {
+   "by": "qa-report-20261102_1",
+   "verdict": "ok"
+  },
+  "mondaireishuu:問1-1": {
+   "by": "qa-report-20261102_1",
+   "verdict": "ok"
+  },
+  "shinkanzen:cd2-65": {
+   "by": "qa-report-20261102_1",
+   "verdict": "ok"
+  },
+  "shinkanzen:cd2-69": {
+   "by": "qa-report-20261102_1",
+   "verdict": "ok"
+  },
+  "soumatome:cd1-33": {
+   "by": "qa-report-20261102_1",
+   "verdict": "ok"
+  },
+  "soumatome:cd1-60": {
+   "by": "qa-report-20261102_1",
+   "verdict": "F5"
+  }
+ }
+}

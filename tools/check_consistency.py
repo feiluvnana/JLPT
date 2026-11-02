@@ -885,6 +885,7 @@ FINDING_REPAIR: dict[str, tuple[str, str]] = {
     # a cell edit, but never mechanical: the replacement has to be a word the
     # passage actually uses and actually needs explaining.
     "note_anchored":                  ("passage prose",        "assisted"),
+    "note_official_option":           ("passage prose",        "assisted"),
     # F3 (qa-report-20260929_1): renumbering （注N） in reading order touches the
     # in-body markers and the definition lines, nothing else — but the markers
     # live in the prose, so it is a prose edit, read once to confirm the order.
@@ -3206,7 +3207,21 @@ CLOSING_REFRAME_FAMILY = re.compile(
     r"|である前に.{0,20}だ|の中にこそ"
     r"|こそが?.{0,15}(だ|になっている|を作り上げている|が要る|にほかならない)"
     r"|というより|よりも.{0,25}(なのです|なのだ|である|だ)"
-    r"|のではなく")
+    r"|のではなく"
+    r"|わけでは(?:ない|ありません)(?!と)")
+# 「わけではない」 added 2026-11-02 (qa-report-20261102_1-round2 RC-R2-1): the
+# family is a not-A-but-B member per dokkai.md, and 20261102_1 12(A) closed on it
+# while this line printed 0 of 13. The row proposed ALL five not-A-but-B rows of
+# `FINAL_SENTENCE_TEMPLATES`; measured over every paper on disk at this
+# two-sentence scope, the bare ではなく / こそ / だけでなく rows fire on 5 of the 10
+# OFFICIAL sittings and push imported-n2-2025-12 to 3 (over the cap an official
+# paper must pass), with 20260807_1, 20260819_1, 20260904_3 (→4) over too — so
+# those rows stay at final-SENTENCE scope where they already are, and only
+# わけではない joins here. `(?!と)` drops reported speech (20260821_1 10(3)'s email
+# 「改造が遅くなるわけではないと申し添えて」, not a closing). Measured effect:
+# imports 0 move; 20260807_1 0→1, 20260928_1 1→2, 20260928_2 0→1, 20261102_1
+# 0→1 (12(A)), 20260914_1 2→3 (11(2) 「ただ、植えることに意味がないわけではな
+# い。」, a true closing) — grandfathered below.
 CLOSING_REFRAME_SENTENCES = 2   # final two sentences of each surface
 CLOSING_REFRAME_CAP = 2         # dokkai.md's own per-shape ceiling
 # Grandfathered BY NAME with the number measured 2026-08-24, the day this check
@@ -3221,6 +3236,10 @@ CLOSING_REFRAME_GRANDFATHERED = {
     # 「というより」 finals on; removing 「というより」 from the whole-passage net
     # took its WARN there away, and this line is where that breach is now
     # recorded honestly, at closing scope.
+    # ×3, measured 2026-11-02 when 「わけではない」 joined the family
+    # (qa-report-20261102_1-round2 RC-R2-1): 問題11(2) 「ただ、植えることに意味が
+    # ないわけではない。」 plus its two pre-existing members.
+    "20260914_1": 3,
 }
 
 
@@ -4429,6 +4448,113 @@ def check_note_anchored(name: str, body: str):
     warn(f"{name}: （注N） orphan count at official's own ceiling",
          len(bad) <= NOTE_ANCHOR_WARN, detail,
          slug="note_anchored", test_id=name)
+
+
+# RC-2 (qa-report-20261102_1 F3): the dokkai.md "Official-option test" as a WARN.
+# The rule dates from 2026-09-29 (qa-report-20260928_2 F4); papers sampled before
+# it keep their glosses and are listed, not warned (measured 2026-11-02 below).
+NOTE_OFFICIAL_OPTION_SINCE = "20260929"
+# Hits a reader ruled legitimate: the note glosses a rarer sense than the one
+# official tests (the WARN's own exception). Reason recorded per entry.
+NOTE_OFFICIAL_OPTION_SENSE_OK = {
+    ("20261008_1", "落ち着く"): "glossed 「ここでは、形がしっかりして、くずれなく"
+                              "なる」 (dough setting); official 12/2018 問題5-24 "
+                              "tests the calm/settled sense (2026-11-02)",
+}
+_NOTE_SURU = re.compile(r"(する|した|して|します)$")
+_NOTE_DICT_END = re.compile(r"^(.*[一-龯々])([ぁ-ゟ]{1,3})$")
+
+
+def _note_fold(w: str) -> str:
+    return _NOTE_SURU.sub("", re.sub(r"[\s　]", "", w or ""))
+
+
+@functools.lru_cache(maxsize=1)
+def _official_vocab_words() -> dict[str, str]:
+    """Folded 問題3–5 options and 問題6 headwords of every archive sitting."""
+    out: dict[str, str] = {}
+    for it in GOI.official_items():
+        words = (it["options"] if it["mondai"] in (3, 4, 5)
+                 else [it["stem"]] if it["mondai"] == 6 else [])
+        for w in words:
+            f = _note_fold(w)
+            if len(f) >= 2:
+                out.setdefault(f, f"{it['paper']} 問題{it['mondai']}-{it['no']}「{w}」")
+    return out
+
+
+def note_official_option_hit(head: str) -> str:
+    """The official item that prints this gloss headword as a tested word, or ''.
+
+    Equality after folding 〜する (ちくちくする = 問題4 option ちくちく — the
+    prototype in qa-report-20261102_1 RC-2 missed it without the fold); else, for
+    a dictionary-form verb/adjective headword (a ≥2-char stem ending in kanji +
+    a 1–3 kana ending in う段/い), an official option sharing that stem with a
+    ≤4-kana inflection
+    (相次ぐ = 相次いで, 詰め込む = 詰め込まれて). Equality, not substring, is
+    what keeps 一日中 / ごくごく (dokkai.md) from firing; the ending test is what
+    keeps 交代のしくみ / 仲間うち from matching 交代 / 仲間と.
+    """
+    vocab = _official_vocab_words()
+    f = _note_fold(head)
+    if f in vocab:
+        return vocab[f]
+    m = _NOTE_DICT_END.match(f)
+    if not m or len(m.group(1)) < 2 or f[-1] not in "うくぐすつぬぶむるい":
+        return ""                          # 一字 stems (引く, 越す) match too much
+    stem = m.group(1)
+    for v, src in vocab.items():
+        mv = re.match(rf"^{re.escape(stem)}([ぁ-ゟ]{{1,4}})$", v)
+        if mv:
+            return src
+    return ""
+
+
+def check_note_official_option(name: str, body: str, origin: str):
+    """A （注N） headword is not a word official TESTS (dokkai.md §（注N）).
+
+    THE RULE (2026-09-29, widened 2026-11-02): if official prints the headword
+    as a 問題3–5 option or a 問題6 headword in any `refs/JLPT_N2_NEW/*/booklet.md`,
+    official treats it as known — a gloss on it is apparatus inflation.
+
+    THE INCIDENTS: `20260928_2` glossed 駆け込む / 相次ぐ / 詰め込む (official
+    7/2023, 12/2010 ×2 options, F4); `20261102_1` 問題13 glossed ちくちくする
+    (7/2025 問題4-17 option ちくちく) and しみる (12/2019 問題6-28 headword) — F3.
+    All five fire on synthetic gloss lines (the shipped notes were deleted).
+
+    MEASURED 2026-11-02 over every paper on disk: 0 of the 10 imported sittings
+    (official never glosses a word it tests); 12 pre-rule generated papers carry
+    16 hits (20260812_2 傾向/妥当, 20260817_3 離れ, 20260818_1 決着, 20260827_2
+    根気/取り上げる, 20260903_1 あらかじめ/削除, 20260904_1 暮れ, 20260904_2 視野,
+    20260904_3 愛着, 20260909_1 ふさぐ, 20260914_1 見当) — listed, not warned;
+    post-rule: 20260929_1 暮れ/届け (true positives, WARNed) and 20261008_1
+    落ち着く (rarer sense, `NOTE_OFFICIAL_OPTION_SENSE_OK`). WARN, not
+    FAIL: a word official tests in one sense can need a note in a rarer one,
+    which only a reader can judge.
+    """
+    if origin != "generated":
+        return
+    if name[:8] < NOTE_OFFICIAL_OPTION_SINCE:
+        return
+    hits = []
+    for n in (9, 10, 11, 12, 13, 14):
+        sec = dokkai_section(body, n)
+        for l in sec.splitlines():
+            m = NOTE_DEF.match(l)
+            if not m:
+                continue
+            head = (m.group(2) or "").strip()
+            src = note_official_option_hit(head)
+            if src and (name, head) not in NOTE_OFFICIAL_OPTION_SENSE_OK:
+                hits.append(f"問題{n}「{head}」 = {src}")
+    warn(f"{name}: no （注N） glosses a word official tests as a 問題3–6 word "
+         f"({len(hits)} hit(s))", not hits,
+         "; ".join(hits) + " — official prints it as a vocabulary option or a "
+         "問題6 headword, so it treats it as known: delete the note (lengthen the "
+         "passage if the count drops below the floor), unless the passage uses a "
+         "rarer sense the tested one does not cover — then say so in the QA "
+         "report (dokkai.md §（注N） \"Official-option test\"; qa-report-20261102_1 "
+         "RC-2)", slug="note_official_option", test_id=name)
 
 
 # Pre-rule papers whose in-body （注N） numbers do not ascend in reading order
@@ -11415,7 +11541,7 @@ def check_moji2_composition(test_id: str, gt: str):
 
 
 def check_moji1_okurigana_exposure(test_id: str, gt: str):
-    """Whatever kana tail the 問題1 bold span prints, all four options carry it.
+    """Every kana run the 問題1 bold span prints, all four options carry it.
 
     THE RULE (moji-goi.md §問題1): the underline covers the whole word including
     its tail, so the tail is visibly printed — and an option that does not carry
@@ -11430,23 +11556,37 @@ def check_moji1_okurigana_exposure(test_id: str, gt: str):
     the compliant shape is `20260819_1`'s 「**常に**」 against
     すでに/ただちに/しだいに/つねに.
 
+    MEDIAL KANA TOO (qa-report-20261102_1 F1/RC-1): the tail is only the last
+    kana run. `20261102_1` 問題1-5 printed 「**蒸し暑い**」 against
+    はださむい/なまぬるい/あつくるしい/むしあつい — every option ends 〜い, so the
+    tail test passed, but with the kanji covered the span reads □し□い and only
+    むしあつい carries a し between two readings. So the test is the whole KANA
+    SKELETON (`GOI.kana_skeleton`: each kanji run → `.+`, 蒸し暑い →
+    `^.+し.+い$`) and every option must match it. Founding-case run over all 48
+    kana-bearing 問題1 targets on disk (2026-11-02): fires on that item (pre-fix)
+    only among generated papers; 折り曲げて and 打ち合わせる pass 4/4. It also
+    fires on official `imported-n2-2024-12` 問題1-2 (迷った vs うたがって), which
+    the tail test already failed — hence generated papers only.
+
     THE REPAIR: append the tail to all four options (tier A), or re-draw the
-    target if the tail makes an option a non-word (tier C). NOT exempted: this
-    is a well-formedness defect, not a calibration one.
+    target if the skeleton makes an option a non-word (tier C). NOT exempted:
+    this is a well-formedness defect, not a calibration one.
     """
     bad = []
     for r in _goi_paper(gt, test_id):
         if r["mondai"] != 1:
             continue
-        tail = GOI.kana_tail(r["target"] or "")
-        if tail and not all(o.endswith(tail) for o in r["options"]):
-            bad.append(f"問題1-{r['no']}「{r['target']}」 tail 「{tail}」 vs "
+        sk = GOI.kana_skeleton(r["target"] or "")
+        if sk and not all(re.match(sk, o) for o in r["options"]):
+            bad.append(f"問題1-{r['no']}「{r['target']}」 skeleton {sk} vs "
                        f"{r['options']}")
     check(f"{test_id}: every 問題1 option carries the printed okurigana",
           not bad,
-          "; ".join(bad) + " — the underline prints the tail, so an option "
-          "without it is eliminated on sight, and an item where NO option "
-          "carries it has no correct answer (moji-goi.md §問題1; REPORT-GOI §F9)")
+          "; ".join(bad) + " — the underline prints every kana run (medial as "
+          "well as the tail), so an option that does not fit the span's kana "
+          "skeleton is eliminated on sight, and an item where NO option fits "
+          "has no correct answer (moji-goi.md §\"Underline the WHOLE word\"; "
+          "REPORT-GOI §F9; qa-report-20261102_1 F1)")
 
 
 def check_moji_option_reuse(test_id: str, gt: str):
@@ -14636,6 +14776,57 @@ def check_choukai_source_mix():
           f"{sorted(excluded)} — a clip the gate FAILs for any new holder, or "
           f"one waiting on an ear-check, must not be drawable; an ear-checked, "
           f"repaired clip leaves the map AND the queue table")
+
+
+def check_choukai_script_reads():
+    """Every clip the newest composed paper drew carries a QA script-read record.
+
+    THE GAP (qa-report-20261102_1 RC-5, RULE-UNENFORCEABLE): `exam-qa-review`
+    §4 check 6 — read every composed clip as Japanese — was redone from scratch
+    on each paper and left no trace, so a clip read badly once shipped forever:
+    友たち (2022-07:問題2-1) shipped in 20260904_2 and 20261102_1, お貸し出しました
+    (soumatome:cd1-60) in 20260917_1 and 20261102_1, two of them through earlier
+    QA rounds unflagged.
+
+    THE RECORD: `logs/choukai_script_reads.json` maps a bank record id to
+    {"by": "qa-report-<id>", "verdict": "ok" | "<finding id>"}. The bank itself
+    is rebuilt by `make choukai-bank`, so the record lives beside it, not in it.
+    This line WARNs while the newest composed paper (highest test id in
+    `choukai_draws.json`) holds a clip with no record — the QA pass reads exactly those and
+    writes their rows, which clears it. A record naming a clip id the bank does
+    not carry FAILs (a typo would silently mark a different clip as read).
+    """
+    path = ROOT / "logs" / "choukai_script_reads.json"
+    draws_p = ROOT / "logs" / "choukai_draws.json"
+    bank_p = ROOT / "logs" / "choukai_bank.json"
+    if not (path.is_file() and draws_p.is_file() and bank_p.is_file()):
+        return skip("choukai script-read records", "a log file is missing")
+    reads = json.loads(path.read_text(encoding="utf-8")).get("reads", {})
+    bank_ids = {r["id"] for r in json.loads(bank_p.read_text(encoding="utf-8"))
+                ["records"]}
+    unknown = sorted(set(reads) - bank_ids)
+    bad = sorted(k for k, v in reads.items()
+                 if not (isinstance(v, dict) and str(v.get("by", "")).startswith("qa-report-")
+                         and re.fullmatch(r"ok|[A-Z][A-Z0-9-]*\d+", str(v.get("verdict", "")))))
+    check(f"logs/choukai_script_reads.json: {len(reads)} record(s), every id is a "
+          f"bank clip and every record is well-formed", not unknown and not bad,
+          f"unknown ids {unknown}; malformed {bad} — a record is "
+          f"{{\"by\": \"qa-report-<id>\", \"verdict\": \"ok\" | \"<finding id>\"}} "
+          f"keyed by a `logs/choukai_bank.json` record id (qa-report-20261102_1 RC-5)")
+    hist = json.loads(draws_p.read_text(encoding="utf-8")).get("history", [])
+    if not hist:
+        return
+    # Newest by TEST ID, not by row order: a `REPLAY=1` re-appends a holder's
+    # row (20260904_2 was replayed for F7 after 20261102_1 was composed).
+    last = max(hist, key=lambda r: re.sub(r"^[a-z0-9]+-(?=\d{8})", "",
+                                          str(r.get("test_id", ""))))
+    unread = sorted({c for c in last.get("clips", {}).values() if c not in reads})
+    warn(f"{last['test_id']}: every drawn 聴解 clip carries a QA script-read record "
+         f"({len(unread)} of {len(last.get('clips', {}))} unread)", not unread,
+         f"{unread} — exam-qa-review §4 check 6 reads these clips as Japanese "
+         f"(polarity before the decider, printed options as a second witness) "
+         f"and writes one `logs/choukai_script_reads.json` row per clip: verdict "
+         f"\"ok\", or the finding id that files its defect (qa-report-20261102_1 RC-5)")
 
 
 def check_choukai_textbook_bands():
@@ -18007,6 +18198,7 @@ def check_tests():
         check_note_pairing(d.name, gengo_prose)
         check_note_anchored(d.name, gengo_prose)
         check_note_answer_leak(d.name, gengo_prose, keys, opts)
+        check_note_official_option(d.name, gengo_prose, origin)
         check_note_band(d.name, gt, origin)
         check_note_band_reuse(d.name, gt, st_text, origin, ck_origin)
         if origin == "generated":
@@ -18457,6 +18649,7 @@ def main():
         check_choukai_nondialogue_medium_rotation()
         check_choukai_option_set_reuse()
         check_choukai_source_mix()
+        check_choukai_script_reads()
         check_choukai_textbook_bands()
         check_choukai_archive_bank()
         check_choukai_bank_kaisetsu_bands()

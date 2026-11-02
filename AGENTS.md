@@ -108,7 +108,8 @@ _site/                            GitHub Pages build output (gitignored, `make p
 - **`logs/`** holds `ledger.json` (every pool draw; rotation reads it),
   `topics.json` (surfaces per paper; the next blueprint's avoid-lists),
   `choukai_bank.json` / `choukai_draws.json` / `choukai_number_calls.json`
-  (the clip pool and what each paper spent), `upload_manifest.json` (what is
+  (the clip pool and what each paper spent), `choukai_script_reads.json` (one
+  QA read per clip, written by `exam-qa-review` check 6), `upload_manifest.json` (what is
   already on the releases, so `make upload-files` never re-pushes), and
   `adjunct_staging.json`. `findings.json` is the gate's `--json` output and is
   gitignored. A paper's blueprint is `tests/<test_id>/test_spec.json`.

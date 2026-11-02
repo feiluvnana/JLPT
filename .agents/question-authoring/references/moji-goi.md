@@ -120,13 +120,21 @@ happens to be one kanji — official draws them (腕, 柱, 針). A single-kanji 
 is a normal target; a single-kanji *fragment* of a longer word is not.
 
 **Okurigana exposure is a RELATION between the printed span and the option field,
-not a property of the options.** Whatever kana tail the bold span prints, all four
-options must carry it: `**生じる**` → every option ends 〜じる; `**常に**` →
+not a property of the options.** Every kana run the bold span prints — medial as
+well as the tail — must sit in every option in the same order: build the skeleton
+by replacing each kanji run with `.+` (蒸し暑い → `^.+し.+い$`), and all four
+options must match it. `**生じる**` → every option ends 〜じる; `**常に**` →
 すでに/ただちに/しだいに/つねに (`20260819_1`, compliant). `20260813_2` 問題1-5 printed
 `**頻繁に**` against ひんはん/びんぱん/びんはん/ひんぱん — the item asks for the reading
 of 頻繁に and **every available answer reads 頻繁**, so a candidate who reasons
 correctly finds no correct option (REPORT-GOI §F9; 24 of our 25 okurigana targets
-comply). Gate: `check_moji1_okurigana_exposure`, no exemptions.
+comply). `20261102_1` 問題1-5 printed `**蒸し暑い**` against
+はださむい/なまぬるい/あつくるしい/むしあつい: every option ends 〜い, but covered it
+reads □し□い and only the key has the medial し (qa-report-20261102_1 F1; compliant
+medial precedents: 折り曲げて → おりまげて/つりさげて/ほりさげて/もりあげて, 打ち合わせる →
+ま/も/た/うちあわせる). When no real set fits a medial skeleton, re-draw the target —
+never ship a tail-only set. Gate: `check_moji1_okurigana_exposure` (whole
+skeleton via `goi_profile.kana_skeleton`, generated papers), no exemptions.
 
 ## Exactly 2 of the 5 問題1 targets are 訓読み — a band, both bounds
 

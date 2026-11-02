@@ -263,7 +263,12 @@ it before calling any authoring work done.
     - Native compound items (やぬし→家主): plausible standard kanji only —
       never gibberish (`守柱`).
 15. **One grammar point may be the KEY only once per paper** — not once per
-    問題, and a tested form stays out of the reading passages.
+    問題, and a tested form stays out of the reading passages. Scope:
+    言語知識・読解. A composed 聴解 item is out of scope — 聴解 is sat after the
+    booklet is collected, so nothing leaks, and nobody chose the clip. Record
+    an overlap in the stage-3 report; never re-draw for one
+    (qa-report-20261102_1 Q2/RC-8; a composer penalty was rejected because it
+    spends draw depth to remove a non-leak).
 16. **問題6: the correct sentence must be FLAWLESS, the wrong ones merely
     wrong.** A distractor must be a MISUSE, not a rarer valid use (「品質の
     向上に妥協した」, 「考慮に値する」 are real = second correct sentences).

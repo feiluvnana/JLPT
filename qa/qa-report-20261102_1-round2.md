@@ -149,3 +149,5 @@ QA: PASS on the scoped items (0 automatic; 2 要修正 findings, both bookkeepin
 | R2-F2 item 58 option-4 解説 | **Fixed**, with one deviation: 「使い方が古い」 is option 4's wording, not passage text, so it is written without 「」 (a quoted string must trace to the passage): 「4の、使い方が古いということは述べておらず、筆者は暗さを認めたうえで、使う場が違えば問われることも違うと述べているだけで、客に改めるよう求めてはいない。」 Stage 5 carries the same reasoning. |
 
 RC-R2-1 (reframe check blind to わけではない) joins round 1's open rows.
+
+RC-R2-1 **applied in measured part (2026-11-02)**: 「わけでは(ない|ありません)」 joined `CLOSING_REFRAME_FAMILY` (20261102_1 now prints 1 of 13 for 12(A)); the bare ではなく／こそ rows were refuted at two-sentence scope (5 of 10 official sittings fire, 2025-12 reaches 3). Full disposition: `qa/qa-report-20261102_1.md` §"Root-cause rows applied (2026-11-02)". RC-R2-2: process failure, no edit.

@@ -387,6 +387,10 @@ replayed (`make mp3 <id> REPLAY=1 NO_AUDIO=1`; holders: `logs/choukai_draws.json
 | `2022-07:問題2-4`, `2021-07:問題2-5` | head/tail question differ (何だと/何と; 言/い) — undrawable meanwhile (`compose_choukai.UPSTREAM_DEFECT_CLIPS`) | the sittings' MP3s | stage3-report-20261002_1 RC-S3-1 |
 `check_choukai_script_latin()` WARNs on a Latin run in a paper's script that no
 bank record carries, which is the detector for exactly this class.
+**Script reads are recorded per clip** in `logs/choukai_script_reads.json`
+(`exam-qa-review` §4 check 6; qa-report-20261102_1 RC-5) — beside the bank, not
+in it, because `make choukai-bank` rebuilds the bank. `check_choukai_script_reads`
+WARNs on the newest composed paper's clips with no record.
 (Booklet HTML says `N2` too — print and speech now agree.)
 `validate_script()`'s `OPENING` substring is `これから、N2の聴解試験を始めます`.
 
